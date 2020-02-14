@@ -13,13 +13,12 @@ lblAlwaysTranslate.textContent = chrome.i18n.getMessage("lblAlwaysTranslate")
 btnTranslate.textContent = chrome.i18n.getMessage("btnTranslate")
 btnRestore.textContent = chrome.i18n.getMessage("btnRestore")
 
-chrome.storage.sync.get("alwaysTranslate").then(value => {
-    cbAlwaysTranslate.checked = value
-}, () => {
-    cbAlwaysTranslate.checked = false
-})
+if (localStorage.getItem("alwaysTranslate") == "true") {
+    cbAlwaysTranslate.checked = true
+}
 
 btnTranslate.addEventListener("click", () => {
+    localStorage.setItem("alwaysTranslate", cbAlwaysTranslate.checked ? "true" : "false")
     chrome.runtime.sendMessage({name: "alwaysTranslate", value: cbAlwaysTranslate.checked})
 
     chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
@@ -29,6 +28,9 @@ btnTranslate.addEventListener("click", () => {
 })
 
 btnRestore.addEventListener("click", () => {
+    localStorage.setItem("alwaysTranslate", cbAlwaysTranslate.checked ? "true" : "false")
+    chrome.runtime.sendMessage({name: "alwaysTranslate", value: cbAlwaysTranslate.checked})
+    
     chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
         chrome.tabs.executeScript(tabs[0].id, { file: "/scripts/restore.js" })
     })
