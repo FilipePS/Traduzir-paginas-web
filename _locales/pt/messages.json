@@ -19,7 +19,7 @@
       "description": "Titulo da label."
     },
 
-    "cbAlwaysTranslate": {
+    "lblAlwaysTranslate": {
       "message": "Traduzir automaticamente",
       "description": "Titulo da checkbox."
     },

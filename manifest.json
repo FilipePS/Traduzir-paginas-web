@@ -13,7 +13,8 @@
     },
 
     "permissions": [
-        "<all_urls>"
+        "<all_urls>",
+        "storage"
     ],
 
     "browser_action": {
@@ -23,5 +24,9 @@
         },
         "default_title": "__MSG_pageActionTitle__",
         "default_popup": "popup/popup.html"
+    },
+
+    "background": {
+        "scripts": ["background.js"]
     }
-  }
+}
