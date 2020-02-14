@@ -3,7 +3,7 @@ if (typeof browser !== 'undefined') {
 }
 
 const lblQuestion = document.getElementById("lblQuestion")
-const lblAlwaysTranslate = document.getElementById("lblQuestion")
+const lblAlwaysTranslate = document.getElementById("lblAlwaysTranslate")
 const cbAlwaysTranslate = document.getElementById("cbAlwaysTranslate")
 const btnTranslate = document.getElementById("btnTranslate")
 const btnRestore = document.getElementById("btnRestore")
