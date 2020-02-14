@@ -1,0 +1,26 @@
+{
+    "extensionName": {
+      "message": "Translate web pages",
+      "description": "Extension name."
+    },
+  
+    "extensionDescription": {
+      "message": "Translate your current page using Google Translate.",
+      "description": "Description of the extension."
+    },
+
+    "pageActionTitle": {
+      "message": "Translate this page",
+      "description": "Page action button title."
+    },
+
+    "btnTranslate": {
+      "message": "Translate",
+      "description": "Translate button text."    
+    },
+
+    "btnRestore": {
+      "message": "Show original",
+      "description": "Restore button text."    
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "extensionName": {
+      "message": "Traduzir Paginas Web",
+      "description": "Nome da extensão."
+    },
+  
+    "extensionDescription": {
+      "message": "Traduza sua página atual usando o Google Tradutor.",
+      "description": "Descriçao da extensão."
+    },
+
+    "pageActionTitle": {
+      "message": "Traduza esta pagina",
+      "description": "Titulo do botão page action."
+    },
+
+    "btnTranslate": {
+      "message": "Traduzir",
+      "description": "Texto do botão traduzir."    
+    },
+
+    "btnRestore": {
+      "message": "Mostrar original",
+      "description": "Texto do botão restaurar."    
+    }
+}
