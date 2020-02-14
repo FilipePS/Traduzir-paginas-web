@@ -14,6 +14,16 @@
       "description": "Page action button title."
     },
 
+    "lblQuestion": {
+      "message": "Do you want to translate this page?",
+      "description": "Label title."
+    },
+
+    "cbAlwaysTranslate": {
+      "message": "Automatically translate",
+      "description": "Checkbox title."
+    },
+
     "btnTranslate": {
       "message": "Translate",
       "description": "Translate button text."    

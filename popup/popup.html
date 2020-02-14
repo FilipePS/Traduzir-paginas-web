@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/w3css/4/w3.css">
 </head>
-<body>
-    <button id="btnTranslate">Translate</button>
-    <button id="btnRestore">Show original</button>
+<body class="w3-padding" style="width: 325px; height: 120px">
+    <label id="lblQuestion" class="">Do you want to translate this page?</label>
+    <br>
+    <input id="cbAlwaysTranslate" type="checkbox" class="w3-check w3-small">
+    <label for="cbAlwaysTranslate" class="w3-small">Automatically translate</label>
+    <div class="w3-display-bottomright w3-margin">
+    <button id="btnTranslate" class="w3-button w3-padding-small w3-border w3-round">Translate</button>
+    <button id="btnRestore" class="w3-button w3-padding-small w3-border w3-round">Show original</button>
+    </div>
     <script src="popup.js"></script>
 </body>
 </html>

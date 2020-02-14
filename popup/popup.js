@@ -2,9 +2,13 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+const lblQuestion = document.getElementById("lblQuestion")
+const cbAlwaysTranslate = document.getElementById("cbAlwaysTranslate")
 const btnTranslate = document.getElementById("btnTranslate")
 const btnRestore = document.getElementById("btnRestore")
 
+lblQuestion.textContent = chrome.i18n.getMessage("lblQuestion")
+cbAlwaysTranslate.textContent = chrome.i18n.getMessage("cbAlwaysTranslate")
 btnTranslate.textContent = chrome.i18n.getMessage("btnTranslate")
 btnRestore.textContent = chrome.i18n.getMessage("btnRestore")
 
