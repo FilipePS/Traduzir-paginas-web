@@ -2,6 +2,7 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+const btnClose = document.getElementById("btnClose")
 const lblQuestion = document.getElementById("lblQuestion")
 const lblAlwaysTranslate = document.getElementById("lblAlwaysTranslate")
 const cbAlwaysTranslate = document.getElementById("cbAlwaysTranslate")
@@ -21,6 +22,10 @@ btnRestore.textContent = chrome.i18n.getMessage("btnRestore")
 if (localStorage.getItem("alwaysTranslate") == "true") {
     cbAlwaysTranslate.checked = true
 }
+
+btnClose.addEventListener("click", () => {
+    window.close()
+})
 
 btnTranslate.addEventListener("click", () => {
     localStorage.setItem("alwaysTranslate", cbAlwaysTranslate.checked ? "true" : "false")
