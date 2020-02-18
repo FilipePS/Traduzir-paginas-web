@@ -85,10 +85,10 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     }
 })
 
-// if (isMobile.any()) {
+if (isMobile.any()) {
     chrome.contentScripts.register({
         "js": [{file: "/scripts/mobile.js"}],
         "matches": ["<all_urls>"],
         "runAt": "document_end"
     })
-// }
+}
