@@ -1,0 +1,36 @@
+{
+    "extensionName": {
+      "message": "Traducir paginas web",
+      "description": "Nombre de extensión"
+    },
+  
+    "extensionDescription": {
+      "message": "Traduce tu página actual con Google Translate.",
+      "description": "Descripción de la extensión."
+    },
+
+    "pageActionTitle": {
+      "message": "Traducir esta página",
+      "description": "Título del botón de acción de la página."
+    },
+
+    "lblQuestion": {
+      "message": "¿Quieres traducir esta página?",
+      "description": "Título de la etiqueta."
+    },
+
+    "lblAlwaysTranslate": {
+      "message": "Traducir automáticamente",
+      "description": "Título de la casilla de verificación."
+    },
+
+    "btnTranslate": {
+      "message": "Traducir",
+      "description": "Traducir el texto del botón."    
+    },
+
+    "btnRestore": {
+      "message": "Mostrar original",
+      "description": "Restaurar texto del botón."  
+    }
+}
