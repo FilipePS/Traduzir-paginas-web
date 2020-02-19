@@ -11,6 +11,8 @@ if (pageLang) {
     if (navigatorLang != pageLang) {
         injectPopup()
     }
+} else {
+    injectPopup()
 }
 
 function injectPopup()
