@@ -17,24 +17,38 @@ if (pageLang) {
 
 function injectPopup()
 {
+    var styles = document.createElement("style")
+    styles.textContent = `
+    .twpm-button {
+        flex: 1;
+        text-align: center;
+        font-family: "Verdana";
+        height: 100%;
+        font-size: 100%;
+        background-color: white;
+        border: none;
+    }
+    `
+    document.body.appendChild(styles)
+
     var element = document.createElement("div")
     element.setAttribute("translate", "no")
     element.classList.add("notranslate")
     element.style = `
+        all: initial;
+        z-index: 2000;
         position: fixed;
         bottom: 0;
         background-color: white;
-        box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.6);
+        box-shadow: 0px -1px 4px rgba(0, 0, 0, 1);
         width: 100%;
         height: 40px;
-        font-family: "Verdana";
-        font-size: 25px;
     `
     element.innerHTML = `
     <div style="display:flex; align-items: center; margin: 0 auto;">
-    <button id="twpm-btnTranslate" style="flex: 1; text-align: center;">Translate</button>
-    <button id="twpm-btnShowOriginal" style="flex: 1; text-align: center;">Show Original</button>
-    <button id="twpm-btnClose" style="flex: 1; text-align: center; max-width: 40px;" id="twpm-btnClose">&times;</button>
+    <button id="twpm-btnTranslate" class="twpm-button">Translate</button>
+    <button id="twpm-btnShowOriginal" class="twpm-button">Show Original</button>
+    <button id="twpm-btnClose" class="twpm-button" style="max-width: 40px">&times;</button>
     </div>
     `
     document.body.appendChild(element)
