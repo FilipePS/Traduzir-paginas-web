@@ -23,6 +23,18 @@ var isMobile = {
     }
 };
 
+chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
+    if (request.action == "Translate") {    
+        chrome.tabs.query({currentWindow: true, active: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "Translate"})
+        })
+    } else if (request.action == "Restore") {
+        chrome.tabs.query({currentWindow: true, active: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "Restore"})
+        })
+    }
+})
+
 if (isMobile.any()) {
     chrome.contentScripts.register({
         "js": [{file: "/scripts/mobile.js"}],

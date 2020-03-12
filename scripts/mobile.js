@@ -68,11 +68,11 @@ function injectPopup()
     const twpm_btnClose = document.getElementById("twpm-btnClose")
 
     twpm_btnTranslate.addEventListener("click", () => {
-        chrome.runtime.sendMessage({command: "translate"})
+        chrome.runtime.sendMessage({action: "Translate"})
     })
 
     twpm_btnShowOriginal.addEventListener("click", () => {
-        chrome.runtime.sendMessage({command: "showOriginal"})
+        chrome.runtime.sendMessage({action: "Restore"})
     })
 
     twpm_btnClose.addEventListener("click", () => {
