@@ -1,5 +1,9 @@
+if (typeof browser !== 'undefined') {
+    chrome = browser
+}
 
-if (!document.getElementById("twp_google_translate_element")) {
+function injectTranslate()
+{
     var twp_element
 
     twp_element = document.createElement("div")
@@ -33,4 +37,77 @@ if (!document.getElementById("twp_google_translate_element")) {
         }
     }
     twp_resetBodyStyle()
+}
+
+function ifTranslateInjected(callback)
+{
+    var eIframe = document.getElementById(":1.container")
+    if (eIframe) {
+        var eSkip = document.querySelector(".skiptranslate")
+        if (eSkip.style.display == "" || window.twp_googleTranslateIsInject) {
+            document.querySelector(".skiptranslate").style.display = "none"
+            window.twp_googleTranslateIsInject = true
+            callback()
+        }
+    } else {
+        setTimeout(translate, 100, callback)
+    }
+}
+function translate()
+{
+    ifTranslateInjected(() => {
+        var eIframe = document.getElementById(":1.container")
+        var eBtnTranslate = eIframe.contentWindow.document.getElementById(":1.confirm")
+        eBtnTranslate.click()
+    })
+}
+
+function restore()
+{
+    ifTranslateInjected(() => {
+        var eIframe = document.getElementById(":1.container")
+        var eBtnRestore = eIframe.contentWindow.document.getElementById(":1.restore")
+        eBtnRestore.click()
+    })
+}
+
+function getStatus()
+{
+    try {
+        var eSkip = document.querySelector(".skiptranslate")
+        if (eSkip.style.display == "" || window.twp_googleTranslateIsInject) {
+            var eIframe = document.getElementById(":1.container")
+            var iframeDocument = eIframe.contentWindow.document
+            var promptSection = iframeDocument.getElementById(":1.promptSection")
+            var finishSection = iframeDocument.getElementById(":1.finishSection")
+            var progressSection = iframeDocument.getElementById(":1.progressSection")
+            var errorSection = iframeDocument.getElementById(":1.errorSection")
+
+            if (getComputedStyle(promptSection).display != "none") {
+                return "prompt"
+            } else if(getComputedStyle(finishSection).display != "none") {
+                return "finish"
+            } else if (getComputedStyle(progressSection).display != "none") {
+                return "progress"
+            } else if (getComputedStyle(errorSection).display != "none") {
+                return "error"
+            }
+        }
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+
+if (!document.getElementById("twp_google_translate_element")) {
+    chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
+        if (request.action == "Translate") {
+            translate()
+        } else if(request.action == "Restore") {
+            restore()
+        } else if(request.action == "getStatus") {
+            sendResponse(getStatus())
+        }
+    })
+    injectTranslate()
 }

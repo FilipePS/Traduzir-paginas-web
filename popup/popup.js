@@ -5,10 +5,10 @@ if (typeof browser !== 'undefined') {
 // get elements
 const btnClose = document.getElementsByName("btnClose")
 
-const divTranslate = document.getElementById("divTranslate")
-const divTranslating = document.getElementById("divTranslating")
-const divRestore = document.getElementById("divRestore")
-const divError = document.getElementById("divError")
+const sectionTranslate = document.getElementById("sectionTranslate")
+const sectionTranslating = document.getElementById("sectionTranslating")
+const sectionRestore = document.getElementById("sectionRestore")
+const sectionError = document.getElementById("sectionError")
 
 const cbAlwaysTranslate = document.getElementsByName("cbAlwaysTranslate")
 const lblAlwaysTranslate = document.getElementsByName("lblAlwaysTranslate")
@@ -23,6 +23,14 @@ const btnRestore = document.getElementsByName("btnRestore")
 const btnTryAgain = document.getElementsByName("btnTryAgain")
 // const btnOpenOnGoogleTranslate = document.getElementsByName("btnOpenOnGoogleTranslate")
 
+function showSection(element)
+{
+    sectionTranslate.style.display = "none"
+    sectionTranslating.style.display = "none"
+    sectionRestore.style.display = "none"
+    sectionError.style.display = "none"
+    element.style.display = "block"
+}
 // chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
 //     btnOpenOnGoogleTranslate.setAttribute("href", "https://translate.google.com/translate?u=" + tabs[0].url)
 // })
@@ -47,25 +55,68 @@ btnClose.forEach(value => value.addEventListener("click", () => {
     window.close()
 }))
 
-// translate web page
-btnTranslate.forEach( value => value.addEventListener("click", () => {
-    localStorage.setItem("alwaysTranslate", cbAlwaysTranslate.checked ? "true" : "false")
-    chrome.runtime.sendMessage({name: "alwaysTranslate", value: cbAlwaysTranslate.checked})
+// get status
+chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
+    chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, response => {
+        if (response == "finish") {
+            showSection(sectionRestore)
+        } else if(response == "progress") {
+            showSection(sectionTranslating)
+        } else if (response == "error") {
+            showSection(sectionError)
+        } else {
+            showSection(sectionTranslate)
+        }
+    })
+})
+
+function translate()
+{
+    // localStorage.setItem("alwaysTranslate", cbAlwaysTranslate.checked ? "true" : "false")
+    // chrome.runtime.sendMessage({name: "alwaysTranslate", value: cbAlwaysTranslate.checked})
 
     chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
         chrome.tabs.executeScript(tabs[0].id, { file: "/scripts/injectTranslate.js" })
-        chrome.tabs.executeScript(tabs[0].id, { file: "/scripts/translate.js" })
+        chrome.tabs.sendMessage(tabs[0].id, {action: "Translate"})
     })
+    showSection(sectionTranslating)
+
+    let updateStatus = () => {
+        chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, response => {
+                if (response == "prompt") {
+                    showSection(sectionTranslate)
+                } else if (response == "finish") {
+                    showSection(sectionRestore) 
+                } else if (response == "error") {
+                    showSection(sectionError)
+                } else {
+                    setTimeout(updateStatus, 500)
+                }
+            })
+        })
+    }
+    setTimeout(updateStatus, 500)
+}
+
+// translate web page
+btnTranslate.forEach( value => value.addEventListener("click", () => {
+    translate()
 }))
 
 // show original text
 btnRestore.forEach( value => value.addEventListener("click", () => {
-    localStorage.setItem("alwaysTranslate", cbAlwaysTranslate.checked ? "true" : "false")
-    chrome.runtime.sendMessage({name: "alwaysTranslate", value: cbAlwaysTranslate.checked})
+    // localStorage.setItem("alwaysTranslate", cbAlwaysTranslate.checked ? "true" : "false")
+    // chrome.runtime.sendMessage({name: "alwaysTranslate", value: cbAlwaysTranslate.checked})
     
     chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-        chrome.tabs.executeScript(tabs[0].id, { file: "/scripts/restore.js" })
+        chrome.tabs.sendMessage(tabs[0].id, {action: "Restore"})
     })
+    showSection(sectionTranslate)
+}))
+
+btnTryAgain.forEach( value => value.addEventListener("click", () => {
+    translate()
 }))
 
 // cbAlwaysTranslate.addEventListener("change", () => {

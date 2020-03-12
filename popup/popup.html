@@ -9,7 +9,7 @@
 <body>
     <main>
     <span name="btnClose" class="w3-button w3-display-topright w3-circle w3-large">&times;</span>
-    <div id="divTranslate" style="display: block;">
+    <section id="sectionTranslate" style="display: block;">
         <label name="lblTranslate" class="">Translate this page?</label>
         <br>
         <input id="cb1" name="cbAlwaysTranslate" class="w3-check" type="checkbox">
@@ -18,27 +18,27 @@
             <button name="btnTranslate" class="w3-btn w3-padding-small w3-round w3-blue">Translate</button>
             <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
         </div>
-    </div>
-    <div id="divTranslating" style="display: none;">
+    </section>
+    <section id="sectionTranslating" style="display: none;">
         <label name="lblTranslating" class="">Translating...</label>
         <div class="containerRight">
-            <button name="btnRestore" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Show original</button>
+            <button name="btnRestore" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue w3-disabled">Show original</button>
         </div>
-    </div>
-    <div id="divRestore" style="display: none;">
+    </section>
+    <section id="sectionRestore" style="display: none;">
         <label name="lblTranslated" class="">Translated</label>
         <div class="containerRight">
             <button name="btnRestore" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue" style="margin-right: 5px;">Show original</button>
             <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
         </div>
-    </div>
-    <div id="divError" style="display: none;">
+    </section>
+    <section id="sectionError" style="display: none;">
         <label name="lblError" class="">It was not possible to translate this page</label>
         <div class="containerRight">
             <button name="btnTryAgain" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue" style="margin-right: 5px;">Try Again</button>
             <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
         </div>
-    </div>
+    </section>
     </main>
     <script src="popup.js"></script>
 </body>
