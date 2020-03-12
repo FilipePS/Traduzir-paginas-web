@@ -1,0 +1,27 @@
+body {
+    user-select: none;
+    width: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    margin: 10px;
+}
+
+.containerRight {
+    display:flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+span[name="btnClose"] {
+    font-weight: bold;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 0 8px;
+    /* width: 25x; */
+}
+
+button {
+    margin-left: 10px;
+}

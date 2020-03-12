@@ -4,18 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/w3css/4/w3.css">
+    <link rel="stylesheet" href="popup.css">
 </head>
-<body class="w3-padding" style="width: 325px; height: 130px; user-select: none;">
-    <span id="btnClose" class="w3-button w3-display-topright w3-round">&times;</span>
-    <label id="lblQuestion" class="">Do you want to translate this page?</label>
-    <br>
-    <input id="cbAlwaysTranslate" type="checkbox" class="w3-check w3-small">
-    <label id="lblAlwaysTranslate" for="cbAlwaysTranslate" class="w3-small">Automatically translate</label>
-    <div style="display:flex; justify-content: flex-end; margin-top: 10px;">
-    <button id="btnTranslate" class="w3-button w3-padding-small w3-border w3-round" style="margin-right: 5px;">Translate</button>
-    <button id="btnRestore" class="w3-button w3-padding-small w3-border w3-round">Show original</button>
+<body>
+    <main>
+    <span name="btnClose" class="w3-button w3-display-topright w3-circle w3-large">&times;</span>
+    <div id="divTranslate" style="display: block;">
+        <label name="lblTranslate" class="">Translate this page?</label>
+        <br>
+        <input id="cb1" name="cbAlwaysTranslate" class="w3-check" type="checkbox">
+        <label name="lblAlwaysTranslate" for="cb1" class="w3-small">Always translate from</label>
+        <div class="containerRight">
+            <button name="btnTranslate" class="w3-btn w3-padding-small w3-round w3-blue">Translate</button>
+            <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
+        </div>
     </div>
-    <a id="btnOpenOnGoogleTranslate" class="w3-tiny" href="https://translate.google.com/translate?u=" target="_blank" rel="noopener noreferrer">Open on google translate</a>
+    <div id="divTranslating" style="display: none;">
+        <label name="lblTranslating" class="">Translating...</label>
+        <div class="containerRight">
+            <button name="btnRestore" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Show original</button>
+        </div>
+    </div>
+    <div id="divRestore" style="display: none;">
+        <label name="lblTranslated" class="">Translated</label>
+        <div class="containerRight">
+            <button name="btnRestore" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue" style="margin-right: 5px;">Show original</button>
+            <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
+        </div>
+    </div>
+    <div id="divError" style="display: none;">
+        <label name="lblError" class="">It was not possible to translate this page</label>
+        <div class="containerRight">
+            <button name="btnTryAgain" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue" style="margin-right: 5px;">Try Again</button>
+            <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
+        </div>
+    </div>
+    </main>
     <script src="popup.js"></script>
 </body>
 </html>

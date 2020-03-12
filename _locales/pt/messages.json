@@ -1,36 +1,61 @@
 {
-    "extensionName": {
-      "message": "Traduzir Paginas Web",
-      "description": "Nome da extensão."
-    },
-  
-    "extensionDescription": {
-      "message": "Traduza sua página atual usando o Google Tradutor.",
-      "description": "Descriçao da extensão."
-    },
+  "extensionName": {
+    "message": "Traduzir páginas da web",
+    "description": "Nome da extensão"
+  },
 
-    "pageActionTitle": {
-      "message": "Traduza esta pagina",
-      "description": "Titulo do botão page action."
-    },
+  "extensionDescription": {
+    "message": "Traduza sua página atual usando o Google Translate",
+    "description": "Descrição da extensão"
+  },
 
-    "lblQuestion": {
-      "message": "Deseja traduzir esta página?",
-      "description": "Titulo da label."
-    },
+  "pageActionTitle": {
+    "message": "Traduzir esta página",
+    "description": "Título do botão de ação da página"
+  },
 
-    "lblAlwaysTranslate": {
-      "message": "Traduzir automaticamente",
-      "description": "Titulo da checkbox."
-    },
+  "lblTranslate": {
+    "message": "Traduzir esta página?",
+    "description": "Título da etiqueta"
+  },
 
-    "btnTranslate": {
-      "message": "Traduzir",
-      "description": "Texto do botão traduzir."    
-    },
+  "lblTranslating": {
+    "message": "Traduzindo ...",
+    "description": "Título da etiqueta"
+  },
 
-    "btnRestore": {
-      "message": "Mostrar original",
-      "description": "Texto do botão restaurar."    
-    }
+  "lblTranslated": {
+    "message": "Traduzido",
+    "description": "Título da etiqueta"
+  },
+
+  "lblError": {
+    "message": "Não foi possível traduzir esta página",
+    "description": "Título da etiqueta"
+  },
+
+  "lblAlwaysTranslate": {
+    "message": "Traduzir sempre de",
+    "description": "Título da caixa de seleção"
+  },
+
+  "btnTranslate": {
+    "message": "Traduzir",
+    "description": "Traduzir texto do botão"
+  },
+
+  "btnOptions": {
+    "message": "Opções",
+    "description": "Texto do botão Opções"
+  },
+
+  "btnRestore": {
+    "message": "Mostrar original",
+    "description": "Restaurar texto do botão"
+  },
+
+  "btnTryAgain": {
+    "message": "Tente novamente",
+    "description": "Tente novamente o texto do botão"
+  }
 }

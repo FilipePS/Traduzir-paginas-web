@@ -1,36 +1,61 @@
 {
     "extensionName": {
       "message": "Translate web pages",
-      "description": "Extension name."
+      "description": "Extension name"
     },
   
     "extensionDescription": {
-      "message": "Translate your current page using Google Translate.",
-      "description": "Description of the extension."
+      "message": "Translate your current page using Google Translate",
+      "description": "Description of the extension"
     },
 
     "pageActionTitle": {
       "message": "Translate this page",
-      "description": "Page action button title."
+      "description": "Page action button title"
     },
 
-    "lblQuestion": {
-      "message": "Do you want to translate this page?",
-      "description": "Label title."
+    "lblTranslate": {
+      "message": "Translate this page?",
+      "description": "Label title"
+    },
+
+    "lblTranslating": {
+      "message": "Translating...",
+      "description": "Label title"
+    },
+
+    "lblTranslated": {
+      "message": "Translated",
+      "description": "Label title"
+    },
+
+    "lblError": {
+      "message": "It was not possible to translate this page",
+      "description": "Label title"
     },
 
     "lblAlwaysTranslate": {
-      "message": "Automatically translate",
-      "description": "Checkbox title."
+      "message": "Always translate from",
+      "description": "Checkbox title"
     },
 
     "btnTranslate": {
       "message": "Translate",
-      "description": "Translate button text."    
+      "description": "Translate button text"    
+    },
+
+    "btnOptions": {
+      "message": "Options",
+      "description": "Options button text"    
     },
 
     "btnRestore": {
       "message": "Show original",
-      "description": "Restore button text."    
+      "description": "Restore button text"    
+    },
+
+    "btnTryAgain": {
+      "message": "Try Again",
+      "description": "Try Again button text"    
     }
 }

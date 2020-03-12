@@ -1,36 +1,61 @@
 {
-    "extensionName": {
-      "message": "Traducir paginas web",
-      "description": "Nombre de extensión"
-    },
-  
-    "extensionDescription": {
-      "message": "Traduce tu página actual con Google Translate.",
-      "description": "Descripción de la extensión."
-    },
+  "extensionName": {
+    "message": "Traducir páginas web",
+    "descripción": "Nombre de extensión"
+  },
 
-    "pageActionTitle": {
-      "message": "Traducir esta página",
-      "description": "Título del botón de acción de la página."
-    },
+  "extensionDescription": {
+    "message": "Traduce tu página actual usando Google Translate",
+    "description": "Descripción de la extensión"
+  },
 
-    "lblQuestion": {
-      "message": "¿Quieres traducir esta página?",
-      "description": "Título de la etiqueta."
-    },
+  "pageActionTitle": {
+    "mensaje": "Traducir esta página",
+    "description": "Título del botón de acción de página"
+  },
 
-    "lblAlwaysTranslate": {
-      "message": "Traducir automáticamente",
-      "description": "Título de la casilla de verificación."
-    },
+  "lblTranslate": {
+    "message": "¿Traducir esta página?",
+    "description": "Título de la etiqueta"
+  },
 
-    "btnTranslate": {
-      "message": "Traducir",
-      "description": "Traducir el texto del botón."    
-    },
+  "lblTranslating": {
+    "message": "Traduciendo ...",
+    "description": "Título de la etiqueta"
+  },
 
-    "btnRestore": {
-      "message": "Mostrar original",
-      "description": "Restaurar texto del botón."  
-    }
+  "lblTranslated": {
+    "mensaje": "Traducido",
+    "description": "Título de la etiqueta"
+  },
+
+  "lblError": {
+    "message": "No fue posible traducir esta página",
+    "description": "Título de la etiqueta"
+  },
+
+  "lblAlwaysTranslate": {
+    "mensaje": "Traducir siempre desde",
+    "description": "Título de la casilla de verificación"
+  },
+
+  "btnTranslate": {
+    "mensaje": "Traducir",
+    "description": "Texto del botón Traducir"
+  },
+
+  "btnOptions": {
+    "mensaje": "Opciones",
+    "description": "Texto del botón Opciones"
+  },
+
+  "btnRestore": {
+    "mensaje": "Mostrar original",
+    "descripción": "Restaurar texto del botón"
+  },
+
+  "btn TryAgain": {
+    "mensaje": "Inténtalo de nuevo",
+    "descripción": "Texto del botón Intentar de nuevo"
+  }
 }
