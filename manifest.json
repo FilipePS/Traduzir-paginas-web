@@ -39,7 +39,7 @@
         {
             "run_at": "document_end",
             "matches": ["<all_urls>"],
-            "js": ["contentScript.js"]
+            "js": ["scripts/contentScript.js"]
         }
     ],
 

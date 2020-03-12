@@ -55,7 +55,7 @@ btnClose.forEach(value => value.addEventListener("click", () => {
     window.close()
 }))
 
-// get status
+// update status
 chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, response => {
         if (response == "finish") {
@@ -76,7 +76,6 @@ function translate()
     // chrome.runtime.sendMessage({name: "alwaysTranslate", value: cbAlwaysTranslate.checked})
 
     chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-        chrome.tabs.executeScript(tabs[0].id, { file: "/scripts/injectTranslate.js" })
         chrome.tabs.sendMessage(tabs[0].id, {action: "Translate"})
     })
     showSection(sectionTranslating)
