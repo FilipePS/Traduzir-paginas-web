@@ -102,15 +102,21 @@ function getStatus()
     }
 }
 
+var pageLang = undefined
+
 function getPageLanguage()
 {
-    var eHtml = document.getElementsByTagName("html")[0]
+    if (typeof pageLang == "undefined") {
+        var eHtml = document.getElementsByTagName("html")[0]
 
-    if (eHtml) {
-        return eHtml.getAttribute("lang") || eHtml.getAttribute("xml:lang");
+        if (eHtml) {
+            pageLang =  eHtml.getAttribute("lang") || eHtml.getAttribute("xml:lang") || null
+            return pageLang
+        }
+    } else {
+        return pageLang
     }
 }
-
 
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
@@ -125,3 +131,13 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     }
 })
 
+chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
+    var alwaysTranslateLangs = onGot.alwaysTranslateLangs
+    if (!alwaysTranslateLangs) {
+        alwaysTranslateLangs = []
+    }
+    if (alwaysTranslateLangs.indexOf(getPageLanguage()) != -1) {
+        injectTranslate()
+        translate()
+    }
+})

@@ -23,31 +23,6 @@ var isMobile = {
     }
 };
 
-// if (localStorage.getItem("alwaysTranslate") == "true") {
-//     registerScripts()
-// }
-
-chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
-    // if (request.name == "alwaysTranslate") { 
-    //     if (request.value == true) {
-    //         registerScripts()
-    //     } else {
-    //         unregisterScripts()
-    //     }
-    // }
-
-    // if (request.command == "translate") {
-    //     chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-    //         chrome.tabs.executeScript(tabs[0].id, { file: "/scripts/injectTranslate.js" })
-    //         chrome.tabs.executeScript(tabs[0].id, { file: "/scripts/translate.js" })
-    //     })
-    // } else if (request.command == "showOriginal") {
-    //     chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-    //         chrome.tabs.executeScript(tabs[0].id, { file: "/scripts/restore.js" })
-    //     })
-    // }
-})
-
 if (isMobile.any()) {
     chrome.contentScripts.register({
         "js": [{file: "/scripts/mobile.js"}],
