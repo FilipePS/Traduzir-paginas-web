@@ -10,16 +10,18 @@ const divTranslating = document.getElementById("divTranslating")
 const divRestore = document.getElementById("divRestore")
 const divError = document.getElementById("divError")
 
-
+const cbAlwaysTranslate = document.getElementsByName("cbAlwaysTranslate")
+const lblAlwaysTranslate = document.getElementsByName("lblAlwaysTranslate")
 const lblTranslate = document.getElementsByName("lblTranslate")
 const lblTranslating = document.getElementsByName("lblTranslating")
 const lblTranslated = document.getElementsByName("lblTranslated")
 const lblError = document.getElementsByName("lblError")
 
-const cbAlwaysTranslate = document.getElementsByName("cbAlwaysTranslate")
 const btnTranslate = document.getElementsByName("btnTranslate")
+const btnOptions = document.getElementsByName("btnOptions")
 const btnRestore = document.getElementsByName("btnRestore")
-const btnOpenOnGoogleTranslate = document.getElementsByName("btnOpenOnGoogleTranslate")
+const btnTryAgain = document.getElementsByName("btnTryAgain")
+// const btnOpenOnGoogleTranslate = document.getElementsByName("btnOpenOnGoogleTranslate")
 
 // chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
 //     btnOpenOnGoogleTranslate.setAttribute("href", "https://translate.google.com/translate?u=" + tabs[0].url)

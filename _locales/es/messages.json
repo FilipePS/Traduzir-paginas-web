@@ -1,16 +1,16 @@
 {
   "extensionName": {
     "message": "Traducir páginas web",
-    "descripción": "Nombre de extensión"
+    "description": "Nombre de extensión"
   },
 
   "extensionDescription": {
     "message": "Traduce tu página actual usando Google Translate",
-    "description": "Descripción de la extensión"
+    "description": "description de la extensión"
   },
 
   "pageActionTitle": {
-    "mensaje": "Traducir esta página",
+    "message": "Traducir esta página",
     "description": "Título del botón de acción de página"
   },
 
@@ -25,7 +25,7 @@
   },
 
   "lblTranslated": {
-    "mensaje": "Traducido",
+    "message": "Traducido",
     "description": "Título de la etiqueta"
   },
 
@@ -35,27 +35,27 @@
   },
 
   "lblAlwaysTranslate": {
-    "mensaje": "Traducir siempre desde",
+    "message": "Traducir siempre desde",
     "description": "Título de la casilla de verificación"
   },
 
   "btnTranslate": {
-    "mensaje": "Traducir",
+    "message": "Traducir",
     "description": "Texto del botón Traducir"
   },
 
   "btnOptions": {
-    "mensaje": "Opciones",
+    "message": "Opciones",
     "description": "Texto del botón Opciones"
   },
 
   "btnRestore": {
-    "mensaje": "Mostrar original",
-    "descripción": "Restaurar texto del botón"
+    "message": "Mostrar original",
+    "description": "Restaurar texto del botón"
   },
 
-  "btn TryAgain": {
-    "mensaje": "Inténtalo de nuevo",
-    "descripción": "Texto del botón Intentar de nuevo"
+  "btnTryAgain": {
+    "message": "Inténtalo de nuevo",
+    "description": "Texto del botón Intentar de nuevo"
   }
 }
