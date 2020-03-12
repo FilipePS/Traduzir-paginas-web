@@ -23,5 +23,9 @@ span[name="btnClose"] {
 }
 
 button {
-    margin-left: 10px;
+    margin-left: 5px;
+}
+
+#optionsList {
+    position: static;
 }

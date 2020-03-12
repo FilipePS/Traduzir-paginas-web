@@ -21,7 +21,7 @@ const btnTranslate = document.getElementsByName("btnTranslate")
 const btnOptions = document.getElementsByName("btnOptions")
 const btnRestore = document.getElementsByName("btnRestore")
 const btnTryAgain = document.getElementsByName("btnTryAgain")
-// const btnOpenOnGoogleTranslate = document.getElementsByName("btnOpenOnGoogleTranslate")
+const btnOpenOnGoogleTranslate = document.getElementsByName("btnOpenOnGoogleTranslate")
 
 function showSection(element)
 {
@@ -31,9 +31,13 @@ function showSection(element)
     sectionError.style.display = "none"
     element.style.display = "block"
 }
-// chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-//     btnOpenOnGoogleTranslate.setAttribute("href", "https://translate.google.com/translate?u=" + tabs[0].url)
-// })
+chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
+    btnOpenOnGoogleTranslate.forEach( value => {
+        value.setAttribute("href", "https://translate.google.com/translate?u=" + tabs[0].url)
+        value.setAttribute("target", "_blank")
+        value.setAttribute("rel", "noopener noreferrer")
+    })
+})
 
 // translate
 lblTranslate.forEach( value => value.textContent = chrome.i18n.getMessage("lblTranslate") )
@@ -117,6 +121,22 @@ btnRestore.forEach( value => value.addEventListener("click", () => {
 btnTryAgain.forEach( value => value.addEventListener("click", () => {
     translate()
 }))
+
+btnOptions.forEach( value => value.addEventListener("click", () => {
+    var x = document.getElementById("optionsList");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}))
+
+window.addEventListener("click", e => {
+    var x = document.getElementById("optionsList");
+    if (e.target.getAttribute("name") != "btnOptions") {
+        x.className = x.className.replace(" w3-show", "");
+    }
+})
 
 // cbAlwaysTranslate.addEventListener("change", () => {
 //     if (!cbAlwaysTranslate.checked) {

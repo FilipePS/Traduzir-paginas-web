@@ -15,8 +15,13 @@
         <input id="cb1" name="cbAlwaysTranslate" class="w3-check" type="checkbox">
         <label name="lblAlwaysTranslate" for="cb1" class="w3-small">Always translate from</label>
         <div class="containerRight">
-            <button name="btnTranslate" class="w3-btn w3-padding-small w3-round w3-blue">Translate</button>
-            <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
+            <div class="w3-dropdown-click w3-hover-none">
+                <button name="btnTranslate" class="w3-btn w3-padding-small w3-round w3-blue">Translate</button>
+                <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
+                <div id="optionsList" class="w3-dropdown-content w3-bar-block w3-border w3-small">
+                    <a href="#" name="btnOpenOnGoogleTranslate" class="w3-bar-item w3-button">Open in google translate</a>
+                  </div>
+            </div>
         </div>
     </section>
     <section id="sectionTranslating" style="display: none;">
