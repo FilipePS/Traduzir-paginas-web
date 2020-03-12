@@ -60,12 +60,12 @@
   },
 
   "btnOpenOnGoogleTranslate": {
-    "mensaje": "Abrir en traductor de Google",
-    "descripción": ""
+    "message": "Abrir en traductor de google",
+    "description": ""
   },
 
   "btnReview": {
-    "mensaje": "Revisar esta extensión",
-    "descripción": ""
+    "message": "Revisar esta extensión",
+    "description": ""
   }
 }

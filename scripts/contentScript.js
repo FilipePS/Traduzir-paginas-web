@@ -50,9 +50,11 @@ function ifTranslateInjected(callback)
             document.querySelector(".skiptranslate").style.display = "none"
             window.twp_googleTranslateIsInject = true
             callback()
+        } else {
+            setTimeout(ifTranslateInjected, 200, callback)
         }
     } else {
-        setTimeout(translate, 100, callback)
+        setTimeout(ifTranslateInjected, 200, callback)
     }
 }
 function translate()
@@ -105,11 +107,7 @@ function getPageLanguage()
     var eHtml = document.getElementsByTagName("html")[0]
 
     if (eHtml) {
-        var pageLang = eHtml.getAttribute("lang") || eHtml.getAttribute("xml:lang");
-    }
-    
-    if (pageLang) {
-        return pageLang
+        return eHtml.getAttribute("lang") || eHtml.getAttribute("xml:lang");
     }
 }
 
