@@ -35,7 +35,7 @@
   },
 
   "lblAlwaysTranslate": {
-    "message": "Traduzir sempre de",
+    "message": "Traduzir sempre do",
     "description": "Título da caixa de seleção"
   },
 
@@ -57,5 +57,15 @@
   "btnTryAgain": {
     "message": "Tente novamente",
     "description": "Tente novamente o texto do botão"
+  },
+
+  "btnOpenOnGoogleTranslate": {
+    "message": "Abrir no google translate",
+    "descrição": ""
+  },
+
+  "btnReview": {
+    "message": "Revise esta extensão",
+    "descrição": ""
   }
 }

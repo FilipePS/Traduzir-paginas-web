@@ -21,7 +21,9 @@ const btnTranslate = document.getElementsByName("btnTranslate")
 const btnOptions = document.getElementsByName("btnOptions")
 const btnRestore = document.getElementsByName("btnRestore")
 const btnTryAgain = document.getElementsByName("btnTryAgain")
+
 const btnOpenOnGoogleTranslate = document.getElementsByName("btnOpenOnGoogleTranslate")
+const btnReview = document.getElementsByName("btnReview")
 
 function showSection(element)
 {
@@ -49,6 +51,8 @@ btnTranslate.forEach( value => value.textContent = chrome.i18n.getMessage("btnTr
 btnOptions.forEach( value => value.textContent = chrome.i18n.getMessage("btnOptions") )
 btnRestore.forEach( value => value.textContent = chrome.i18n.getMessage("btnRestore") )
 btnTryAgain.forEach( value => value.textContent = chrome.i18n.getMessage("btnTryAgain") )
+btnOpenOnGoogleTranslate.forEach( value => value.textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate") )
+btnReview.forEach( value => value.textContent = chrome.i18n.getMessage("btnReview") )
 
 // if (localStorage.getItem("alwaysTranslate") == "true") {
 //     cbAlwaysTranslate.checked = true

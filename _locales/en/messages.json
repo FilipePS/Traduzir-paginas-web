@@ -57,5 +57,15 @@
     "btnTryAgain": {
       "message": "Try Again",
       "description": "Try Again button text"    
+    }, 
+
+    "btnOpenOnGoogleTranslate": {
+      "message": "Open in google translate",
+      "description": ""
+    }, 
+
+    "btnReview": {
+      "message": "Review this extension",
+      "description": ""
     }
 }

@@ -57,5 +57,15 @@
   "btnTryAgain": {
     "message": "Inténtalo de nuevo",
     "description": "Texto del botón Intentar de nuevo"
+  },
+
+  "btnOpenOnGoogleTranslate": {
+    "mensaje": "Abrir en traductor de Google",
+    "descripción": ""
+  },
+
+  "btnReview": {
+    "mensaje": "Revisar esta extensión",
+    "descripción": ""
   }
 }
