@@ -76,16 +76,23 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             showSection(sectionTranslate)
         }
     })
+
+    chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
+        if (response) {
+            response = response.split('-')[0]
+            lblAlwaysTranslate.forEach( value => value.textContent = chrome.i18n.getMessage("lblAlwaysTranslate") + " \"" + response + "\"")
+        }
+    })
 })
 
 function translate()
 {
-    // localStorage.setItem("alwaysTranslate", cbAlwaysTranslate.checked ? "true" : "false")
-    // chrome.runtime.sendMessage({name: "alwaysTranslate", value: cbAlwaysTranslate.checked})
+    // chrome.runtime.sendMessage({action: "alwaysTranslate", lang: response, value: cbAlwaysTranslate.checked})
 
     chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "Translate"})
     })
+
     showSection(sectionTranslating)
 
     let updateStatus = () => {
@@ -113,12 +120,12 @@ btnTranslate.forEach( value => value.addEventListener("click", () => {
 
 // show original text
 btnRestore.forEach( value => value.addEventListener("click", () => {
-    // localStorage.setItem("alwaysTranslate", cbAlwaysTranslate.checked ? "true" : "false")
-    // chrome.runtime.sendMessage({name: "alwaysTranslate", value: cbAlwaysTranslate.checked})
+    // chrome.runtime.sendMessage({action: "alwaysTranslate", lang: response, value: cbAlwaysTranslate.checked})
     
     chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "Restore"})
     })
+    
     showSection(sectionTranslate)
 }))
 
@@ -127,24 +134,19 @@ btnTryAgain.forEach( value => value.addEventListener("click", () => {
 }))
 
 btnOptions.forEach( value => value.addEventListener("click", () => {
-    var x = document.getElementById("optionsList");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
+    document.getElementsByName("optionsList").forEach(x => {
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    })
 }))
 
 window.addEventListener("click", e => {
-    var x = document.getElementById("optionsList");
-    if (e.target.getAttribute("name") != "btnOptions") {
-        x.className = x.className.replace(" w3-show", "");
-    }
+    document.getElementsByName("optionsList").forEach(x => {
+        if (e.target.getAttribute("name") != "btnOptions") {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    })
 })
-
-// cbAlwaysTranslate.addEventListener("change", () => {
-//     if (!cbAlwaysTranslate.checked) {
-//         localStorage.setItem("alwaysTranslate", "false")
-//         chrome.runtime.sendMessage({name: "alwaysTranslate", value: false})
-//     }
-// })

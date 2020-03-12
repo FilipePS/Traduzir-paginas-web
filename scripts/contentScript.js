@@ -51,10 +51,10 @@ function ifTranslateInjected(callback)
             window.twp_googleTranslateIsInject = true
             callback()
         } else {
-            setTimeout(ifTranslateInjected, 200, callback)
+            setTimeout(ifTranslateInjected, 500, callback)
         }
     } else {
-        setTimeout(ifTranslateInjected, 200, callback)
+        setTimeout(ifTranslateInjected, 500, callback)
     }
 }
 function translate()

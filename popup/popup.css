@@ -26,6 +26,6 @@ button {
     margin-left: 5px;
 }
 
-#optionsList {
+[name="optionsList"] {
     position: static;
 }
