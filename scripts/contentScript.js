@@ -2,6 +2,8 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+var hideGoolgleTranslatorBar = true
+
 function injectTranslate()
 {
     if (!document.getElementById("twp_google_translate_element")) {
@@ -21,7 +23,9 @@ function injectTranslate()
         document.body.appendChild(twp_element)
 
         twp_element = document.createElement("style")
-        twp_element.textContent = ".skiptranslate { opacity: 0; }"
+        if (hideGoolgleTranslatorBar) {
+            twp_element.textContent = ".skiptranslate { opacity: 0; }"
+        }
         document.body.appendChild(twp_element)
 
         var twp_origBodyStyle = document.body.getAttribute("style")
@@ -37,26 +41,33 @@ function injectTranslate()
                 setTimeout(twp_resetBodyStyle, 100)
             }
         }
-        twp_resetBodyStyle()
+        if (hideGoolgleTranslatorBar) {
+            twp_resetBodyStyle()
+        }
     }
 }
 
+// wait for the google translator to load and call the callback
 function ifTranslateInjected(callback)
 {
     var eIframe = document.getElementById(":1.container")
     if (eIframe) {
         var eSkip = document.querySelector(".skiptranslate")
         if (eSkip.style.display == "" || window.twp_googleTranslateIsInject) {
-            document.querySelector(".skiptranslate").style.display = "none"
+            if (hideGoolgleTranslatorBar) {
+                document.querySelector(".skiptranslate").style.display = "none"
+            }
             window.twp_googleTranslateIsInject = true
             callback()
         } else {
-            setTimeout(ifTranslateInjected, 500, callback)
+            setTimeout(ifTranslateInjected, 200, callback)
         }
     } else {
-        setTimeout(ifTranslateInjected, 500, callback)
+        setTimeout(ifTranslateInjected, 200, callback)
     }
 }
+
+// translate
 function translate()
 {
     ifTranslateInjected(() => {
@@ -66,6 +77,7 @@ function translate()
     })
 }
 
+// show orignal
 function restore()
 {
     ifTranslateInjected(() => {
@@ -75,6 +87,7 @@ function restore()
     })
 }
 
+// get translation status
 function getStatus()
 {
     try {
@@ -95,6 +108,8 @@ function getStatus()
                 return "progress"
             } else if (getComputedStyle(errorSection).display != "none") {
                 return "error"
+            } else {
+                return "unknown"
             }
         }
     } catch (e) {
@@ -102,8 +117,8 @@ function getStatus()
     }
 }
 
+// get page language
 var pageLang = undefined
-
 function getPageLanguage()
 {
     if (typeof pageLang == "undefined") {
@@ -118,6 +133,7 @@ function getPageLanguage()
     }
 }
 
+// process messages
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
         injectTranslate()
@@ -131,6 +147,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     }
 })
 
+// auto translate pages
 chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
     var alwaysTranslateLangs = onGot.alwaysTranslateLangs
     if (!alwaysTranslateLangs) {

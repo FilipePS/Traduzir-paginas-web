@@ -9,51 +9,28 @@
 </head>
 <body>
     <main>
-    <span name="btnClose" class="w3-button w3-display-topright w3-circle w3-large">&times;</span>
-    <section id="sectionTranslate" style="display: block;">
-        <label name="lblTranslate" class="">Translate this page?</label>
-        <br>
-        <div id="divAlwaysTranslate">
-            <input id="cb1" name="cbAlwaysTranslate" class="w3-check" type="checkbox">
-            <label name="lblAlwaysTranslate" for="cb1" class="w3-small">Always translate from</label>
-        </div>
-        <div class="containerRight">
-            <div class="w3-dropdown-click w3-hover-none">
-                <button name="btnTranslate" class="w3-btn w3-padding-small w3-round w3-blue">Translate</button>
-                <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
-                <div name="optionsList" class="w3-dropdown-content w3-bar-block w3-border w3-small">
-                    <a name="btnOpenOnGoogleTranslate" href="#" class="w3-bar-item w3-button" rel="noopener noreferrer">Open in google translate</a>
-                    <a name="btnReview" href="https://addons.mozilla.org/firefox/addon/traduzir-paginas-web/" target="_blank" class="w3-bar-item w3-button" rel="noopener noreferrer">Review this extension</a>
-                </div>
+    <span id="btnClose" class="w3-button w3-display-topright w3-circle w3-large">&times;</span>
+    <label id="lblTranslate" class="">Translate this page?</label>
+    <label id="lblTranslating" class="">Translating...</label>
+    <label id="lblTranslated" class="">Translated</label>
+    <label id="lblError" class="">It was not possible to translate this page</label>
+    <br>
+    <div id="divAlwaysTranslate">
+        <input id="cbAlwaysTranslate" class="w3-check" type="checkbox">
+        <label id="lblAlwaysTranslate" for="cbAlwaysTranslate" class="w3-small">Always translate from</label>
+    </div>
+    <div class="containerRight">
+        <div class="w3-dropdown-click w3-hover-none">
+            <button id="btnTranslate" class="w3-btn w3-padding-small w3-round w3-blue">Translate</button>
+            <button id="btnRestore" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Show original</button>
+            <button id="btnTryAgain" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Try Again</button>
+            <button id="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
+            <div id="divOptionsList" class="w3-dropdown-content w3-bar-block w3-border w3-small">
+                <a id="btnOpenOnGoogleTranslate" href="#" class="w3-bar-item w3-button" rel="noopener noreferrer">Open in google translate</a>
+                <a id="btnReview" href="https://addons.mozilla.org/firefox/addon/traduzir-paginas-web/" target="_blank" class="w3-bar-item w3-button" rel="noopener noreferrer">Review this extension</a>
             </div>
         </div>
-    </section>
-    <section id="sectionTranslating" style="display: none;">
-        <label name="lblTranslating" class="">Translating...</label>
-        <div class="containerRight">
-            <button name="btnRestore" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue w3-disabled">Show original</button>
-        </div>
-    </section>
-    <section id="sectionRestore" style="display: none;">
-        <label name="lblTranslated" class="">Translated</label>
-        <div class="containerRight">
-            <div class="w3-dropdown-click w3-hover-none">
-                <button name="btnRestore" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue" style="margin-right: 5px;">Show original</button>
-                <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button>
-                <div name="optionsList" class="w3-dropdown-content w3-bar-block w3-border w3-small">
-                    <a name="btnOpenOnGoogleTranslate" href="#" class="w3-bar-item w3-button" rel="noopener noreferrer">Open in google translate</a>
-                    <a name="btnReview" href="https://addons.mozilla.org/firefox/addon/traduzir-paginas-web/" target="_blank" class="w3-bar-item w3-button" rel="noopener noreferrer">Review this extension</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="sectionError" style="display: none;">
-        <label name="lblError" class="">It was not possible to translate this page</label>
-        <div class="containerRight">
-            <button name="btnTryAgain" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue" style="margin-right: 5px;">Try Again</button>
-            <!-- <button name="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</button> -->
-        </div>
-    </section>
+    </div>
     </main>
     <script src="popup.js"></script>
 </body>

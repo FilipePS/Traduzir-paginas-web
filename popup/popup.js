@@ -3,85 +3,127 @@ if (typeof browser !== 'undefined') {
 }
 
 // get elements
+const btnClose = document.getElementById("btnClose")
+
+const lblTranslate = document.getElementById("lblTranslate")
+const lblTranslating = document.getElementById("lblTranslating")
+const lblTranslated = document.getElementById("lblTranslated")
+const lblError = document.getElementById("lblError")
+
 const divAlwaysTranslate = document.getElementById("divAlwaysTranslate")
-const btnClose = document.getElementsByName("btnClose")
+const cbAlwaysTranslate = document.getElementById("cbAlwaysTranslate")
+const lblAlwaysTranslate = document.getElementById("lblAlwaysTranslate")
 
-const sectionTranslate = document.getElementById("sectionTranslate")
-const sectionTranslating = document.getElementById("sectionTranslating")
-const sectionRestore = document.getElementById("sectionRestore")
-const sectionError = document.getElementById("sectionError")
+const divOptionsList = document.getElementById("divOptionsList")
 
-const cbAlwaysTranslate = document.getElementsByName("cbAlwaysTranslate")[0]
-const lblAlwaysTranslate = document.getElementsByName("lblAlwaysTranslate")
-const lblTranslate = document.getElementsByName("lblTranslate")
-const lblTranslating = document.getElementsByName("lblTranslating")
-const lblTranslated = document.getElementsByName("lblTranslated")
-const lblError = document.getElementsByName("lblError")
+const btnTranslate = document.getElementById("btnTranslate")
+const btnRestore = document.getElementById("btnRestore")
+const btnTryAgain = document.getElementById("btnTryAgain")
+const btnOptions = document.getElementById("btnOptions")
 
-const btnTranslate = document.getElementsByName("btnTranslate")
-const btnOptions = document.getElementsByName("btnOptions")
-const btnRestore = document.getElementsByName("btnRestore")
-const btnTryAgain = document.getElementsByName("btnTryAgain")
-
-const btnOpenOnGoogleTranslate = document.getElementsByName("btnOpenOnGoogleTranslate")
-const btnReview = document.getElementsByName("btnReview")
-
-function showSection(element)
-{
-    sectionTranslate.style.display = "none"
-    sectionTranslating.style.display = "none"
-    sectionRestore.style.display = "none"
-    sectionError.style.display = "none"
-    element.style.display = "block"
-}
-
-// set google translate page url
-chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-    btnOpenOnGoogleTranslate.forEach( value => {
-        value.setAttribute("href", "https://translate.google.com/translate?u=" + tabs[0].url)
-        value.setAttribute("target", "_blank")
-        value.setAttribute("rel", "noopener noreferrer")
-    })
-})
+const btnOpenOnGoogleTranslate = document.getElementById("btnOpenOnGoogleTranslate")
+const btnReview = document.getElementById("btnReview")
 
 // translate interface
-lblTranslate.forEach( value => value.textContent = chrome.i18n.getMessage("lblTranslate") )
-lblTranslating.forEach( value => value.textContent = chrome.i18n.getMessage("lblTranslating") )
-lblTranslated.forEach( value => value.textContent = chrome.i18n.getMessage("lblTranslated") )
-lblError.forEach( value => value.textContent = chrome.i18n.getMessage("lblError") )
-lblAlwaysTranslate.forEach( value => value.textContent = chrome.i18n.getMessage("lblAlwaysTranslate") )
-btnTranslate.forEach( value => value.textContent = chrome.i18n.getMessage("btnTranslate") )
-btnOptions.forEach( value => value.textContent = chrome.i18n.getMessage("btnOptions") )
-btnRestore.forEach( value => value.textContent = chrome.i18n.getMessage("btnRestore") )
-btnTryAgain.forEach( value => value.textContent = chrome.i18n.getMessage("btnTryAgain") )
-btnOpenOnGoogleTranslate.forEach( value => value.textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate") )
-btnReview.forEach( value => value.textContent = chrome.i18n.getMessage("btnReview") )
+lblTranslate.textContent = chrome.i18n.getMessage("lblTranslate")
+lblTranslating.textContent = chrome.i18n.getMessage("lblTranslating")
+lblTranslated.textContent = chrome.i18n.getMessage("lblTranslated")
+lblError.textContent = chrome.i18n.getMessage("lblError")
+lblAlwaysTranslate.textContent = chrome.i18n.getMessage("lblAlwaysTranslate")
+btnTranslate.textContent = chrome.i18n.getMessage("btnTranslate")
+btnRestore.textContent = chrome.i18n.getMessage("btnRestore")
+btnTryAgain.textContent = chrome.i18n.getMessage("btnTryAgain")
+btnOptions.textContent = chrome.i18n.getMessage("btnOptions")
+btnOpenOnGoogleTranslate.textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
+btnReview.textContent = chrome.i18n.getMessage("btnReview")
 
-// close popup
-btnClose.forEach(value => value.addEventListener("click", () => {
-    window.close()
-}))
+// function update popup interface by translation status
+var showAlwaysTranslateCheckbox = false
+function showPopupSection(status)
+{
+    btnRestore.className = btnRestore.className.replace(" w3-disabled", "")
 
-// update status
+    switch (status) {
+        case "finish":
+            lblTranslate.style.display = "none"
+            lblTranslating.style.display = "none"
+            lblTranslated.style.display = "inline"
+            lblError.style.display = "none"
+
+            divAlwaysTranslate.style.display = "none"
+            btnTranslate.style.display = "none"
+            btnRestore.style.display = "inline"
+            btnTryAgain.style.display = "none"
+            btnOptions.style.display = "inline"
+            break;
+        case "progress":
+            lblTranslate.style.display = "none"
+            lblTranslating.style.display = "inline"
+            lblTranslated.style.display = "none"
+            lblError.style.display = "none"
+
+            divAlwaysTranslate.style.display = "none"
+            btnTranslate.style.display = "none"
+            btnRestore.style.display = "inline"
+            btnTryAgain.style.display = "none"
+            btnOptions.style.display = "none"
+
+            if (btnRestore.className.indexOf("w3-disabled") == -1) {
+                btnRestore.className += " w3-disabled";
+            }
+            break;
+        case "error":
+            lblTranslate.style.display = "none"
+            lblTranslating.style.display = "none"
+            lblTranslated.style.display = "none"
+            lblError.style.display = "inline"
+
+            divAlwaysTranslate.style.display = "none"
+            btnTranslate.style.display = "none"
+            btnRestore.style.display = "none"
+            btnTryAgain.style.display = "inline"
+            btnOptions.style.display = "none"
+            break;
+        case "prompt":
+        case "unknown":
+        default:
+            lblTranslate.style.display = "inline"
+            lblTranslating.style.display = "none"
+            lblTranslated.style.display = "none"
+            lblError.style.display = "none"
+
+            showAlwaysTranslateCheckbox ? divAlwaysTranslate.style.display = "block" : "";
+            btnTranslate.style.display = "inline"
+            btnRestore.style.display = "none"
+            btnTryAgain.style.display = "none"
+            btnOptions.style.display = "inline"
+            break;
+    }
+}
+
+// update popup info
 chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-    // show the correct section in the popup
-    chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, response => {
-        if (response == "finish") {
-            showSection(sectionRestore)
-        } else if(response == "progress") {
-            showSection(sectionTranslating)
-        } else if (response == "error") {
-            showSection(sectionError)
-        } else {
-            showSection(sectionTranslate)
-        }
-    })
+    // set google translate page url
+    btnOpenOnGoogleTranslate.setAttribute("href", "https://translate.google.com/translate?u=" + tabs[0].url)
+    btnOpenOnGoogleTranslate.setAttribute("target", "_blank")
+    btnOpenOnGoogleTranslate.setAttribute("rel", "noopener noreferrer")
+
+    // auto show the correct section in the popup
+    let updateTranslateStatus = () => {
+        chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, response => {
+            if (typeof response == "string") {
+                showPopupSection(response)
+            }
+            setTimeout(updateTranslateStatus, 500)
+        })
+    }
+    updateTranslateStatus()
 
     // get page language
     chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
         if (response) {
             // show always translate checkbox
-            divAlwaysTranslate.style.display = "block"
+            showAlwaysTranslateCheckbox = true
             chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
                 var alwaysTranslateLangs = onGot.alwaysTranslateLangs
                 if (!alwaysTranslateLangs) {
@@ -100,12 +142,17 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             } else {
                 textContent = chrome.i18n.getMessage("lblAlwaysTranslate") + " \"" + response.split('-')[0] + "\""
             }
-            lblAlwaysTranslate.forEach( value => value.textContent = textContent)
+            lblAlwaysTranslate.textContent = textContent
         } else {
             // hide always translate checkbox if unknow language
-            divAlwaysTranslate.style.display = "none"
+            showAlwaysTranslateCheckbox = false
         }
     })
+})
+
+// close popup
+btnClose.addEventListener("click", () => {
+    window.close()
 })
 
 // function that translate the page
@@ -149,62 +196,40 @@ function translate()
                 })
             }
         })
+        showPopupSection("progress")
     })
-
-    // show section progress
-    showSection(sectionTranslating)
-
-    // update status
-    let updateStatus = () => {
-        chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, response => {
-                if (response == "prompt") {
-                    showSection(sectionTranslate)
-                } else if (response == "finish") {
-                    showSection(sectionRestore) 
-                } else if (response == "error") {
-                    showSection(sectionError)
-                } else {
-                    setTimeout(updateStatus, 500)
-                }
-            })
-        })
-    }
-    setTimeout(updateStatus, 500)
 }
 
 // translate web page
-btnTranslate.forEach( value => value.addEventListener("click", () => {
+btnTranslate.addEventListener("click", () => {
     translate()
-}))
+})
 
 // show original text
-btnRestore.forEach( value => value.addEventListener("click", () => {
+btnRestore.addEventListener("click", () => {
     chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "Restore"})
     })
-    
-    showSection(sectionTranslate)
-}))
+})
 
-btnTryAgain.forEach( value => value.addEventListener("click", () => {
+btnTryAgain.addEventListener("click", () => {
     translate()
-}))
+})
 
-btnOptions.forEach( value => value.addEventListener("click", () => {
-    document.getElementsByName("optionsList").forEach(x => {
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    })
-}))
+// toggle dropdown
+btnOptions.addEventListener("click", () => {
+    var x = divOptionsList
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+})
 
+// hide dropdown
 window.addEventListener("click", e => {
-    document.getElementsByName("optionsList").forEach(x => {
-        if (e.target.getAttribute("name") != "btnOptions") {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    })
+    var x = divOptionsList
+    if (e.target != btnOptions) {
+        x.className = x.className.replace(" w3-show", "");
+    }
 })

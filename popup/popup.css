@@ -14,18 +14,22 @@ main {
     margin-top: 10px;
 }
 
-span[name="btnClose"] {
-    font-weight: bold;
-    margin-right: 5px;
-    margin-top: 5px;
-    padding: 0 8px;
-    /* width: 25x; */
-}
-
 button {
     margin-left: 5px;
 }
 
-[name="optionsList"] {
+#btnClose {
+    font-weight: bold;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 0 8px;
+}
+
+#divOptionsList {
     position: static;
+}
+
+#lblTranslating, #lblTranslated, #lblError,
+#btnRestore, #btnTryAgain {
+    display: none;
 }
