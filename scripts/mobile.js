@@ -26,6 +26,7 @@ function injectPopup()
         }
     }
     .twpm-button {
+        all: initial;
         flex: 1;
         text-align: center;
         vertical-align: middle;
@@ -63,7 +64,7 @@ function injectPopup()
         height: 50px;
     `
     element.innerHTML = `
-    <div style="display:flex; align-items: center; margin: 0 auto; vertical-align: middle;">
+    <div style="all: initial; display:flex; align-items: center; margin: 0 auto; vertical-align: middle;">
     <button id="twpm-btnOriginal" class="twpm-button" style="color: #2196F3">Original</button>
     <button id="twpm-btnTranslate" class="twpm-button">Translated</button>
     <button id="twpm-btnClose" class="twpm-button" style="max-width: 40px">&times;</button>
