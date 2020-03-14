@@ -35,7 +35,8 @@ lblAlwaysTranslate.textContent = chrome.i18n.getMessage("lblAlwaysTranslate")
 btnTranslate.textContent = chrome.i18n.getMessage("btnTranslate")
 btnRestore.textContent = chrome.i18n.getMessage("btnRestore")
 btnTryAgain.textContent = chrome.i18n.getMessage("btnTryAgain")
-btnOptions.innerHTML = chrome.i18n.getMessage("btnOptions") + ' <i class="arrow-down"></i>'
+btnOptions.textContent = chrome.i18n.getMessage("btnOptions")
+btnOptions.innerHTML += ' <i class="arrow-down"></i>'
 btnNeverTranslate.textContent = chrome.i18n.getMessage("btnNeverTranslate")
 btnToggleGoogleBar.textContent = chrome.i18n.getMessage("btnToggleGoogleBar")
 btnOpenOnGoogleTranslate.textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
