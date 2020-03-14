@@ -2,37 +2,39 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+var googleTranslateIsInjected = false
 var hideGoolgleTranslatorBar = true
+var twp_origBodyStyle = null
+var twp_gBodyStyle = "position: relative; min-height: 100%; top: 40px;"
+var twp_element_style = null
 
 function injectTranslate()
 {
-    if (!document.getElementById("twp_google_translate_element")) {
-        var twp_element
+    if (!googleTranslateIsInjected) {
+        var twp_element_div = document.createElement("div")
+        twp_element_div.id = "twp_google_translate_element"
+        twp_element_div.style.display = "none"
+        document.body.appendChild(twp_element_div)
 
-        twp_element = document.createElement("div")
-        twp_element.id = "twp_google_translate_element"
-        twp_element.style.display = "none"
-        document.body.appendChild(twp_element)
-
-        twp_element = document.createElement("script");
-        twp_element.textContent = `
+        var twp_element_script = document.createElement("script");
+        twp_element_script.textContent = `
         function twp_googleTranslateElementInit() {
             new google.translate.TranslateElement({}, "twp_google_translate_element");
         }
         `
-        document.body.appendChild(twp_element)
+        document.body.appendChild(twp_element_script)
 
-        twp_element = document.createElement("style")
+        twp_element_style = document.createElement("style")
         if (hideGoolgleTranslatorBar) {
-            twp_element.textContent = ".skiptranslate { opacity: 0; }"
+            twp_element_style.textContent = ".skiptranslate { opacity: 0; }"
         }
-        document.body.appendChild(twp_element)
+        document.body.appendChild(twp_element_style)
 
-        var twp_origBodyStyle = document.body.getAttribute("style")
+        twp_origBodyStyle = document.body.getAttribute("style")
 
-        twp_element = document.createElement("script")
-        twp_element.src = "//translate.google.com/translate_a/element.js?cb=twp_googleTranslateElementInit"
-        document.body.appendChild(twp_element)
+        var twp_element_script2 = document.createElement("script")
+        twp_element_script2.src = "//translate.google.com/translate_a/element.js?cb=twp_googleTranslateElementInit"
+        document.body.appendChild(twp_element_script2)
 
         var twp_resetBodyStyle = () => {
             if (document.body.getAttribute("style") != twp_origBodyStyle) {
@@ -44,6 +46,8 @@ function injectTranslate()
         if (hideGoolgleTranslatorBar) {
             twp_resetBodyStyle()
         }
+
+        googleTranslateIsInjected = true
     }
 }
 
@@ -133,6 +137,28 @@ function getPageLanguage()
     }
 }
 
+// toggle google bar
+function toggleGoogleBar()
+{
+    if (googleTranslateIsInjected) {
+        if (twp_element_style) {
+            if (hideGoolgleTranslatorBar) {
+                twp_element_style.textContent = ".skiptranslate { opacity: 100; }"
+                document.querySelector(".skiptranslate").style.display = "block"
+                document.body.setAttribute("style", twp_gBodyStyle)
+            } else {
+                twp_element_style.textContent = ".skiptranslate { opacity: 0; }"
+                document.querySelector(".skiptranslate").style.display = "none"
+                document.body.setAttribute("style", twp_origBodyStyle)
+            }
+            hideGoolgleTranslatorBar = !hideGoolgleTranslatorBar
+        }
+    } else {
+        hideGoolgleTranslatorBar = false
+        injectTranslate()
+    }
+}
+
 // process messages
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
@@ -144,6 +170,8 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         sendResponse(getStatus())
     } else if (request.action == "getPageLanguage") {
         sendResponse(getPageLanguage())
+    } else if (request.action == "toggleGoogleBar") {
+        toggleGoogleBar()
     }
 })
 

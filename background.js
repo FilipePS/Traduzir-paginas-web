@@ -95,6 +95,10 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
                 }
             })
         })
+    } else if (request.action == "toggleGoogleBar") {
+        chrome.tabs.query({currentWindow: true, active: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, request)
+        })
     }
 })
 

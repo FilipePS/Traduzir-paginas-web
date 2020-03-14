@@ -67,5 +67,10 @@
     "btnReview": {
       "message": "Review this extension",
       "description": ""
+    }, 
+
+    "btnToggleGoogleBar": {
+      "message": "Show google bar",
+      "description": ""
     }
 }

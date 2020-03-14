@@ -21,6 +21,7 @@ const btnRestore = document.getElementById("btnRestore")
 const btnTryAgain = document.getElementById("btnTryAgain")
 const btnOptions = document.getElementById("btnOptions")
 
+const btnToggleGoogleBar = document.getElementById("btnToggleGoogleBar")
 const btnOpenOnGoogleTranslate = document.getElementById("btnOpenOnGoogleTranslate")
 const btnReview = document.getElementById("btnReview")
 
@@ -34,6 +35,7 @@ btnTranslate.textContent = chrome.i18n.getMessage("btnTranslate")
 btnRestore.textContent = chrome.i18n.getMessage("btnRestore")
 btnTryAgain.textContent = chrome.i18n.getMessage("btnTryAgain")
 btnOptions.innerHTML = chrome.i18n.getMessage("btnOptions") + ' <i class="arrow-down"></i>'
+btnToggleGoogleBar.textContent = chrome.i18n.getMessage("btnToggleGoogleBar")
 btnOpenOnGoogleTranslate.textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
 btnReview.textContent = chrome.i18n.getMessage("btnReview")
 
@@ -210,4 +212,9 @@ window.addEventListener("click", e => {
     if (e.target != btnOptions) {
         x.className = x.className.replace(" w3-show", "");
     }
+})
+
+// toggle google bar
+btnToggleGoogleBar.addEventListener("click", () => {
+    chrome.runtime.sendMessage({action: "toggleGoogleBar"})
 })

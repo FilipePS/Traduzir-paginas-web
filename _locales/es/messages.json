@@ -67,5 +67,10 @@
   "btnReview": {
     "message": "Revisar esta extensión",
     "description": ""
+  }, 
+
+  "btnToggleGoogleBar": {
+    "message": "Mostrar barra de google",
+    "description": ""
   }
 }
