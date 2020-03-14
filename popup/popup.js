@@ -114,7 +114,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             if (typeof response == "string") {
                 showPopupSection(response)
             }
-            setTimeout(updateTranslateStatus, 500)
+            setTimeout(updateTranslateStatus, 100)
         })
     }
     updateTranslateStatus()
