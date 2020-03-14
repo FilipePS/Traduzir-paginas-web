@@ -92,7 +92,7 @@ function showPopupSection(status)
             lblTranslated.style.display = "none"
             lblError.style.display = "none"
 
-            showAlwaysTranslateCheckbox ? divAlwaysTranslate.style.display = "block" : "";
+            showAlwaysTranslateCheckbox ? divAlwaysTranslate.style.display = "block" : divAlwaysTranslate.style.display = "none";
             btnTranslate.style.display = "inline"
             btnRestore.style.display = "none"
             btnTryAgain.style.display = "none"
@@ -117,7 +117,6 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             setTimeout(updateTranslateStatus, 100)
         })
     }
-    updateTranslateStatus()
 
     // get page language
     chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
@@ -148,6 +147,9 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             // hide always translate checkbox if unknow language
             showAlwaysTranslateCheckbox = false
         }
+        
+        showPopupSection("prompt")
+        updateTranslateStatus()
     })
 })
 
