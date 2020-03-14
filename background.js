@@ -23,6 +23,49 @@ var isMobile = {
     }
 };
 
+// remove element by value
+function removeA(arr) {
+    var what, a = arguments, L = a.length, ax;
+    while (L > 1 && arr.length) {
+        what = a[--L];
+        while ((ax= arr.indexOf(what)) !== -1) {
+            arr.splice(ax, 1);
+        }
+    }
+    return arr;
+}
+
+// add site never translate
+function addSiteToBlackList(url)
+{
+    chrome.storage.local.get("neverTranslateSites").then(onGot => {
+        var neverTranslateSites = onGot.neverTranslateSites
+        if (!neverTranslateSites) {
+            neverTranslateSites = []
+        }
+
+        if (neverTranslateSites.indexOf(url) == -1) {
+            neverTranslateSites.push(url)
+        }
+
+        chrome.storage.local.set({neverTranslateSites})
+    })
+}
+
+// remove site never translate
+function removeSiteFromBlackList(url)
+{
+    chrome.storage.local.get("neverTranslateSites").then(onGot => {
+        var neverTranslateSites = onGot.neverTranslateSites
+        if (!neverTranslateSites) {
+            neverTranslateSites = []
+        }
+
+        removeA(neverTranslateSites, url)
+        chrome.storage.local.set({neverTranslateSites})
+    })   
+}
+
 // enable auto translate for a language
 function enableAutoTranslate(lang)
 {
@@ -48,17 +91,6 @@ function disableAutoTranslate(lang)
         if (!alwaysTranslateLangs) {
             alwaysTranslateLangs = []
         }
-        
-        function removeA(arr) {
-            var what, a = arguments, L = a.length, ax;
-            while (L > 1 && arr.length) {
-                what = a[--L];
-                while ((ax= arr.indexOf(what)) !== -1) {
-                    arr.splice(ax, 1);
-                }
-            }
-            return arr;
-        }
 
         removeA(alwaysTranslateLangs, lang)
         chrome.storage.local.set({alwaysTranslateLangs})
@@ -69,6 +101,11 @@ function disableAutoTranslate(lang)
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, response => {
+                if (response) {
+                    removeSiteFromBlackList(response)
+                }
+            })
             chrome.tabs.sendMessage(tabs[0].id, {action: "Translate"})
         })
     } else if (request.action == "Restore") {
@@ -92,6 +129,14 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
                 if (response) {
                     response = response.split("-")[0]
                     disableAutoTranslate(response)
+                }
+            })
+        })
+    } else if (request.action == "neverTranslateThisSite") {
+        chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}).then((response) => {
+                if (response) {
+                    addSiteToBlackList(response)
                 }
             })
         })

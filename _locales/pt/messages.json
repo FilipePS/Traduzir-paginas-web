@@ -67,7 +67,12 @@
   "btnReview": {
     "message": "Revise esta extensão",
     "descrição": ""
-  }, 
+  },
+
+  "btnNeverTranslate": {
+    "message": "Nunca traduzir este site",
+    "description": ""
+  },
 
   "btnToggleGoogleBar": {
     "message": "Mostrar barra do google",

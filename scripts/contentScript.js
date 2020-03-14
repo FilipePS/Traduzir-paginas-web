@@ -170,20 +170,29 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         sendResponse(getStatus())
     } else if (request.action == "getPageLanguage") {
         sendResponse(getPageLanguage())
+    } else if (request.action == "getHostname") {
+        sendResponse(window.location.hostname)
     } else if (request.action == "toggleGoogleBar") {
         toggleGoogleBar()
     }
 })
 
 // auto translate pages
-chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
+chrome.storage.local.get(["alwaysTranslateLangs", "neverTranslateSites"]).then(onGot => {
     var alwaysTranslateLangs = onGot.alwaysTranslateLangs
     if (!alwaysTranslateLangs) {
         alwaysTranslateLangs = []
     }
     var pageLang = getPageLanguage()
     if (pageLang && alwaysTranslateLangs.indexOf(pageLang.split("-")[0]) != -1) {
-        injectTranslate()
-        translate()
+        var neverTranslateSites = onGot.neverTranslateSites
+        if (!neverTranslateSites) {
+            neverTranslateSites = []
+        }
+
+        if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
+            injectTranslate()
+            translate()
+        }
     }
 })
