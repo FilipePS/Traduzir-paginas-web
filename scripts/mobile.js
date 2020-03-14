@@ -19,35 +19,53 @@ function injectPopup()
 {
     var styles = document.createElement("style")
     styles.textContent = `
+    #twpm-popup {
+        all: initial;
+        * {
+          all: unset;
+        }
+    }
     .twpm-button {
         flex: 1;
         text-align: center;
+        vertical-align: middle;
         font-family: "Verdana";
-        height: 100%;
+        font-weight: bold;
+        height: 50px;
         font-size: 100%;
         background-color: white;
         border: none;
+        cursor: pointer;
     }
+    .twpm-button:focus {
+        outline: none;
+        animation: btn-color 0.8s forwards linear;
+    }
+    .twpm-button::-moz-focus-inner { border:0; }
+    .twpm-button:active {
+        background-color: #bbb;
+    }
+    @keyframes btn-color { 0% { background: white; } 50% { background: #aaa; } 100% { background: white; } }
     `
     document.body.appendChild(styles)
 
     var element = document.createElement("div")
+    element.setAttribute("id", "twpm-popup")
     element.setAttribute("translate", "no")
     element.classList.add("notranslate")
     element.style = `
-        all: initial;
         z-index: 2000;
         position: fixed;
         bottom: 0;
         background-color: white;
         box-shadow: 0px -1px 4px rgba(0, 0, 0, 1);
         width: 100%;
-        height: 40px;
+        height: 50px;
     `
     element.innerHTML = `
-    <div style="display:flex; align-items: center; margin: 0 auto;">
-    <button id="twpm-btnTranslate" class="twpm-button">Translate</button>
-    <button id="twpm-btnShowOriginal" class="twpm-button">Show Original</button>
+    <div style="display:flex; align-items: center; margin: 0 auto; vertical-align: middle;">
+    <button id="twpm-btnOriginal" class="twpm-button" style="color: #2196F3">Original</button>
+    <button id="twpm-btnTranslate" class="twpm-button">Translated</button>
     <button id="twpm-btnClose" class="twpm-button" style="max-width: 40px">&times;</button>
     </div>
     `
@@ -63,16 +81,20 @@ function injectPopup()
         }
     })
 
+    const twpm_btnOriginal = document.getElementById("twpm-btnOriginal")
     const twpm_btnTranslate= document.getElementById("twpm-btnTranslate")
-    const twpm_btnShowOriginal = document.getElementById("twpm-btnShowOriginal")
     const twpm_btnClose = document.getElementById("twpm-btnClose")
+
+    twpm_btnOriginal.addEventListener("click", () => {
+        chrome.runtime.sendMessage({action: "Restore"})
+        twpm_btnOriginal.style.color = "#2196F3"
+        twpm_btnTranslate.style.color = "black"
+    })
 
     twpm_btnTranslate.addEventListener("click", () => {
         chrome.runtime.sendMessage({action: "Translate"})
-    })
-
-    twpm_btnShowOriginal.addEventListener("click", () => {
-        chrome.runtime.sendMessage({action: "Restore"})
+        twpm_btnOriginal.style.color = "black"
+        twpm_btnTranslate.style.color = "#2196F3"
     })
 
     twpm_btnClose.addEventListener("click", () => {
