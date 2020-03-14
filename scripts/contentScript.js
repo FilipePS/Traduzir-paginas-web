@@ -153,7 +153,8 @@ chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
     if (!alwaysTranslateLangs) {
         alwaysTranslateLangs = []
     }
-    if (alwaysTranslateLangs.indexOf(getPageLanguage()) != -1) {
+    var pageLang = getPageLanguage()
+    if (pageLang && alwaysTranslateLangs.indexOf(pageLang.split("-")[0]) != -1) {
         injectTranslate()
         translate()
     }

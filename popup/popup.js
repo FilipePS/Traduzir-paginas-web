@@ -122,6 +122,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     // get page language
     chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
         if (response) {
+            response = response.split('-')[0]
             // show always translate checkbox
             showAlwaysTranslateCheckbox = true
             chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
@@ -140,7 +141,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             if (language) {
                 textContent = chrome.i18n.getMessage("lblAlwaysTranslate") + " " + language
             } else {
-                textContent = chrome.i18n.getMessage("lblAlwaysTranslate") + " \"" + response.split('-')[0] + "\""
+                textContent = chrome.i18n.getMessage("lblAlwaysTranslate") + " \"" + response + "\""
             }
             lblAlwaysTranslate.textContent = textContent
         } else {
@@ -155,6 +156,40 @@ btnClose.addEventListener("click", () => {
     window.close()
 })
 
+// disable auto translate for a language
+cbAlwaysTranslate.addEventListener("change", (e) => {
+    if (!e.target.checked) {
+        chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
+                if (response) {
+                    response = response.split("-")[0]
+
+                    chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
+                        var alwaysTranslateLangs = onGot.alwaysTranslateLangs
+                        if (!alwaysTranslateLangs) {
+                            alwaysTranslateLangs = []
+                        }
+
+                        function removeA(arr) {
+                            var what, a = arguments, L = a.length, ax;
+                            while (L > 1 && arr.length) {
+                                what = a[--L];
+                                while ((ax= arr.indexOf(what)) !== -1) {
+                                    arr.splice(ax, 1);
+                                }
+                            }
+                            return arr;
+                        }
+                        
+                        removeA(alwaysTranslateLangs, response)
+                        chrome.storage.local.set({alwaysTranslateLangs})
+                    })
+                }
+            })
+        })
+    }
+})
+
 // function that translate the page
 function translate()
 {
@@ -165,6 +200,7 @@ function translate()
         // get page language
         chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
             if (response) {
+                response = response.split("-")[0]
                 // get array auto translation languages 
                 chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
                     var alwaysTranslateLangs = onGot.alwaysTranslateLangs
@@ -212,6 +248,7 @@ btnRestore.addEventListener("click", () => {
     })
 })
 
+// try to translate again
 btnTryAgain.addEventListener("click", () => {
     translate()
 })
