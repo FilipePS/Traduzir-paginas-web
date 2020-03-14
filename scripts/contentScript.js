@@ -104,6 +104,12 @@ function getStatus()
             var progressSection = iframeDocument.getElementById(":1.progressSection")
             var errorSection = iframeDocument.getElementById(":1.errorSection")
 
+            // hide close button
+            var eCloseButton = iframeDocument.getElementById(":1.close")
+            if (eCloseButton) {
+                eCloseButton.style.display = "none"
+            }
+
             if (getComputedStyle(promptSection).display != "none") {
                 return "prompt"
             } else if(getComputedStyle(finishSection).display != "none") {
