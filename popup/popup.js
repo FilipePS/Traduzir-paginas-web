@@ -159,81 +159,22 @@ btnClose.addEventListener("click", () => {
 // disable auto translate for a language
 cbAlwaysTranslate.addEventListener("change", (e) => {
     if (!e.target.checked) {
-        chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
-                if (response) {
-                    response = response.split("-")[0]
-
-                    chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
-                        var alwaysTranslateLangs = onGot.alwaysTranslateLangs
-                        if (!alwaysTranslateLangs) {
-                            alwaysTranslateLangs = []
-                        }
-
-                        function removeA(arr) {
-                            var what, a = arguments, L = a.length, ax;
-                            while (L > 1 && arr.length) {
-                                what = a[--L];
-                                while ((ax= arr.indexOf(what)) !== -1) {
-                                    arr.splice(ax, 1);
-                                }
-                            }
-                            return arr;
-                        }
-                        
-                        removeA(alwaysTranslateLangs, response)
-                        chrome.storage.local.set({alwaysTranslateLangs})
-                    })
-                }
-            })
-        })
+        chrome.runtime.sendMessage({action: "disableAutoTranslate"})
     }
 })
 
 // function that translate the page
 function translate()
 {
-    chrome.tabs.query({currentWindow: true, active: true}, tabs => {
-        // send the message to the content script to translate the page
-        chrome.tabs.sendMessage(tabs[0].id, {action: "Translate"})
+    chrome.runtime.sendMessage({action: "Translate"})
 
-        // get page language
-        chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
-            if (response) {
-                response = response.split("-")[0]
-                // get array auto translation languages 
-                chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
-                    var alwaysTranslateLangs = onGot.alwaysTranslateLangs
-                    if (!alwaysTranslateLangs) {
-                        alwaysTranslateLangs = []
-                    }
+    if (cbAlwaysTranslate.checked) {
+        chrome.runtime.sendMessage({action: "enableAutoTranslate"})
+    } else {
+        chrome.runtime.sendMessage({action: "disableAutoTranslate"})
+    }
 
-                    function removeA(arr) {
-                        var what, a = arguments, L = a.length, ax;
-                        while (L > 1 && arr.length) {
-                            what = a[--L];
-                            while ((ax= arr.indexOf(what)) !== -1) {
-                                arr.splice(ax, 1);
-                            }
-                        }
-                        return arr;
-                    }
-
-                    // add or remove a language for auto translation
-                    if (cbAlwaysTranslate.checked) {
-                        if (alwaysTranslateLangs.indexOf(response) == -1) {
-                            alwaysTranslateLangs.push(response)
-                        }
-                    } else {
-                        removeA(alwaysTranslateLangs, response)
-                    }
-
-                    chrome.storage.local.set({alwaysTranslateLangs})
-                })
-            }
-        })
-        showPopupSection("progress")
-    })
+    showPopupSection("progress")
 }
 
 // translate web page
@@ -243,9 +184,7 @@ btnTranslate.addEventListener("click", () => {
 
 // show original text
 btnRestore.addEventListener("click", () => {
-    chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-        chrome.tabs.sendMessage(tabs[0].id, {action: "Restore"})
-    })
+    chrome.runtime.sendMessage({action: "Restore"})
 })
 
 // try to translate again
