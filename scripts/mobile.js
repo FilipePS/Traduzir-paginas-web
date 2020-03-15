@@ -87,7 +87,7 @@ function injectPopup()
     <button id="twpm-btnOriginal" class="twpm-item twpm-button" style="color: #2196F3">Original</button>
     <button id="twpm-btnTranslate" class="twpm-item twpm-button">Translated</button>
     <button id="twpm-spin" class="twpm-item twpm-button" style="display: none"><div class="twpm-loader twpm-button" style="margin: 0 auto;"></div></button>
-    <button id="twpm-btnClose" class=" twpm-item twpm-button" style="max-width: 40px">&times;</button>
+    <button id="twpm-btnClose" class=" twpm-item twpm-button" style="width: 50px; max-width: 50px">&times;</button>
     </div>
     `
     document.body.appendChild(element)
