@@ -151,6 +151,10 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, request)
         })
+    } else if (request.action == "showPopup") {
+        chrome.pageAction.show(sender.tab.id)
+    } else if (request.action == "hidePopup") {
+        chrome.pageAction.hide(sender.tab.id)
     }
 })
 

@@ -1,3 +1,7 @@
+if (typeof browser !== 'undefined') {
+    chrome = browser
+}
+
 var eHtml = document.getElementsByTagName("html")[0]
 
 if (eHtml) {
@@ -12,7 +16,8 @@ if (pageLang) {
         injectPopup()
     }
 } else {
-    injectPopup()
+    chrome.runtime.sendMessage({action: "showPopup"})
+    //injectPopup()
 }
 
 function injectPopup()
@@ -46,7 +51,7 @@ function injectPopup()
     .twpm-button:active {
         background-color: #bbb;
     }
-    @keyframes twpm-btn-color { 0% { background: white; } 50% { background: #aaa; } 100% { background: white; } }
+    @keyframes twpm-btn-color { 0% { background: white; } 50% { background: #eee; } 100% { background: white; } }
     .twpm-loader {
         border: 4px solid #eee;
         border-radius: 50%;
