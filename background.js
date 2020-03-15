@@ -112,6 +112,13 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "Restore"})
         })
+    } else if (request.action == "getStatus") {
+        chrome.tabs.query({currentWindow: true, active: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, response => {
+                sendResponse(response)
+            })
+        })
+        return true
     } else if (request.action == "enableAutoTranslate") {
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
             // get page language

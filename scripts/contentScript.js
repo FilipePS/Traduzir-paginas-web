@@ -123,7 +123,7 @@ function getStatus()
             }
         }
     } catch (e) {
-        //console.log(e)
+        console.log(e)
     }
 }
 
