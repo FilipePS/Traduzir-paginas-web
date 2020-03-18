@@ -3,7 +3,7 @@
     "manifest_version": 2,
     "default_locale": "en",
     "name": "__MSG_extensionName__",
-    "version": "3.1",
+    "version": "3.2",
   
     "description": "__MSG_extensionDescription__",
   
@@ -20,7 +20,8 @@
     ],
 
     "web_accessible_resources": [
-        "w3css/4/w3.css"
+        "w3css/4/w3.css",
+        "scripts/popupMobile.html"
     ],
 
     "page_action": {
