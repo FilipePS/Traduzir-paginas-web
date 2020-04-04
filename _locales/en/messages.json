@@ -74,8 +74,8 @@
     "description": ""
   },
 
-  "btnToggleGoogleBar": {
-    "message": "Show google bar",
+  "btnChangeLanguages": {
+    "message": "Change languages",
     "description": ""
   }
 }

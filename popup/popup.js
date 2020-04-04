@@ -22,7 +22,7 @@ const btnTryAgain = document.getElementById("btnTryAgain")
 const btnOptions = document.getElementById("btnOptions")
 
 const btnNeverTranslate = document.getElementById("btnNeverTranslate")
-const btnToggleGoogleBar = document.getElementById("btnToggleGoogleBar")
+const btnChangeLanguages = document.getElementById("btnChangeLanguages")
 const btnOpenOnGoogleTranslate = document.getElementById("btnOpenOnGoogleTranslate")
 const btnDonate = document.getElementById("btnDonate")
 
@@ -38,7 +38,7 @@ btnTryAgain.textContent = chrome.i18n.getMessage("btnTryAgain")
 btnOptions.textContent = chrome.i18n.getMessage("btnOptions")
 btnOptions.innerHTML += ' <i class="arrow-down"></i>'
 btnNeverTranslate.textContent = chrome.i18n.getMessage("btnNeverTranslate")
-btnToggleGoogleBar.textContent = chrome.i18n.getMessage("btnToggleGoogleBar")
+btnChangeLanguages.textContent = chrome.i18n.getMessage("btnChangeLanguages")
 btnOpenOnGoogleTranslate.textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
 btnDonate.textContent = chrome.i18n.getMessage("btnDonate")
 btnDonate.innerHTML += " &#10084;"
@@ -224,6 +224,6 @@ btnNeverTranslate.addEventListener("click", () => {
 })
 
 // toggle google bar
-btnToggleGoogleBar.addEventListener("click", () => {
-    chrome.runtime.sendMessage({action: "toggleGoogleBar"})
+btnChangeLanguages.addEventListener("click", () => {
+    chrome.runtime.sendMessage({action: "showGoogleBar"})
 })

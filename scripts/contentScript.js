@@ -105,10 +105,16 @@ function getStatus()
             var progressSection = iframeDocument.getElementById(":1.progressSection")
             var errorSection = iframeDocument.getElementById(":1.errorSection")
 
-            // hide close button
+            // replace close button
             var eCloseButton = iframeDocument.getElementById(":1.close")
             if (eCloseButton) {
+                eCloseButton.setAttribute("id", "twpm_googleBar_:1.close")
+                var eMyCloseButton = eCloseButton.cloneNode(true)
                 eCloseButton.style.display = "none"
+                eCloseButton.parentNode.appendChild(eMyCloseButton)
+                eMyCloseButton.onclick = () => {
+                    hideGoogleBar()
+                }
             }
 
             if (getComputedStyle(promptSection).display != "none") {
@@ -144,26 +150,37 @@ function getPageLanguage()
     }
 }
 
-// toggle google bar
-function toggleGoogleBar()
+// show google bar
+function showGoogleBar()
 {
     if (googleTranslateIsInjected) {
         if (element_style) {
-            if (hideGoolgleTranslatorBar) {
-                element_style.textContent = ".skiptranslate { opacity: 100; }"
-                document.querySelector(".skiptranslate").style.display = "block"
-                document.body.setAttribute("style", gBodyStyle)
-            } else {
-                element_style.textContent = ".skiptranslate { opacity: 0; }"
-                document.querySelector(".skiptranslate").style.display = "none"
-                document.body.setAttribute("style", origBodyStyle)
-            }
-            hideGoolgleTranslatorBar = !hideGoolgleTranslatorBar
+            // if (hideGoolgleTranslatorBar) {
+            //     element_style.textContent = ".skiptranslate { opacity: 100; }"
+            //     document.querySelector(".skiptranslate").style.display = "block"
+            //     document.body.setAttribute("style", gBodyStyle)
+            // } else {
+            //     element_style.textContent = ".skiptranslate { opacity: 0; }"
+            //     document.querySelector(".skiptranslate").style.display = "none"
+            //     document.body.setAttribute("style", origBodyStyle)
+            // }
+            // hideGoolgleTranslatorBar = !hideGoolgleTranslatorBar
+
+            element_style.textContent = ".skiptranslate { opacity: 100; }"
+            document.querySelector(".skiptranslate").style.display = "block"
+            document.body.setAttribute("style", gBodyStyle)
         }
     } else {
         hideGoolgleTranslatorBar = false
         injectTranslate()
     }
+}
+
+function hideGoogleBar()
+{
+    element_style.textContent = ".skiptranslate { opacity: 0; }"
+    document.querySelector(".skiptranslate").style.display = "none"
+    document.body.setAttribute("style", origBodyStyle)
 }
 
 // process messages
@@ -179,8 +196,8 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         sendResponse(getPageLanguage())
     } else if (request.action == "getHostname") {
         sendResponse(window.location.hostname)
-    } else if (request.action == "toggleGoogleBar") {
-        toggleGoogleBar()
+    } else if (request.action == "showGoogleBar") {
+        showGoogleBar()
     }
 })
 
