@@ -3,48 +3,49 @@ if (typeof browser !== 'undefined') {
 }
 
 var googleTranslateIsInjected = false
+var googleTranslateIsLoaded = false
 var hideGoolgleTranslatorBar = true
-var twp_origBodyStyle = null
-var twp_gBodyStyle = "position: relative; min-height: 100%; top: 40px;"
-var twp_element_style = null
+var origBodyStyle = null
+var gBodyStyle = "position: relative; min-height: 100%; top: 40px;"
+var element_style = null
 
 function injectTranslate()
 {
     if (!googleTranslateIsInjected) {
-        var twp_element_div = document.createElement("div")
-        twp_element_div.id = "twp_google_translate_element"
-        twp_element_div.style.display = "none"
-        document.body.appendChild(twp_element_div)
+        var element_div = document.createElement("div")
+        element_div.id = "twp_google_translate_element"
+        element_div.style.display = "none"
+        document.body.appendChild(element_div)
 
-        var twp_element_script = document.createElement("script");
-        twp_element_script.textContent = `
+        var element_script = document.createElement("script");
+        element_script.textContent = `
         function twp_googleTranslateElementInit() {
             new google.translate.TranslateElement({}, "twp_google_translate_element");
         }
         `
-        document.body.appendChild(twp_element_script)
+        document.body.appendChild(element_script)
 
-        twp_element_style = document.createElement("style")
+        element_style = document.createElement("style")
         if (hideGoolgleTranslatorBar) {
-            twp_element_style.textContent = ".skiptranslate { opacity: 0; }"
+            element_style.textContent = ".skiptranslate { opacity: 0; }"
         }
-        document.body.appendChild(twp_element_style)
+        document.body.appendChild(element_style)
 
-        twp_origBodyStyle = document.body.getAttribute("style")
+        origBodyStyle = document.body.getAttribute("style")
 
-        var twp_element_script2 = document.createElement("script")
-        twp_element_script2.src = "//translate.google.com/translate_a/element.js?cb=twp_googleTranslateElementInit"
-        document.body.appendChild(twp_element_script2)
+        var element_script2 = document.createElement("script")
+        element_script2.src = "//translate.google.com/translate_a/element.js?cb=twp_googleTranslateElementInit"
+        document.body.appendChild(element_script2)
 
-        var twp_resetBodyStyle = () => {
-            if (document.body.getAttribute("style") != twp_origBodyStyle) {
-                document.body.setAttribute("style", twp_origBodyStyle)
+        var resetBodyStyle = () => {
+            if (document.body.getAttribute("style") != origBodyStyle) {
+                document.body.setAttribute("style", origBodyStyle)
             } else {
-                setTimeout(twp_resetBodyStyle, 100)
+                setTimeout(resetBodyStyle, 100)
             }
         }
         if (hideGoolgleTranslatorBar) {
-            twp_resetBodyStyle()
+            resetBodyStyle()
         }
 
         googleTranslateIsInjected = true
@@ -57,11 +58,11 @@ function ifTranslateInjected(callback)
     var eIframe = document.getElementById(":1.container")
     if (eIframe) {
         var eSkip = document.querySelector(".skiptranslate")
-        if (eSkip.style.display == "" || window.twp_googleTranslateIsInject) {
+        if (eSkip.style.display == "" || googleTranslateIsLoaded) {
             if (hideGoolgleTranslatorBar) {
                 document.querySelector(".skiptranslate").style.display = "none"
             }
-            window.twp_googleTranslateIsInject = true
+            googleTranslateIsLoaded = true
             callback()
         } else {
             setTimeout(ifTranslateInjected, 10, callback)
@@ -96,7 +97,7 @@ function getStatus()
 {
     try {
         var eSkip = document.querySelector(".skiptranslate")
-        if (eSkip.style.display == "" || window.twp_googleTranslateIsInject) {
+        if (eSkip.style.display == "" || googleTranslateIsLoaded) {
             var eIframe = document.getElementById(":1.container")
             var iframeDocument = eIframe.contentWindow.document
             var promptSection = iframeDocument.getElementById(":1.promptSection")
@@ -147,15 +148,15 @@ function getPageLanguage()
 function toggleGoogleBar()
 {
     if (googleTranslateIsInjected) {
-        if (twp_element_style) {
+        if (element_style) {
             if (hideGoolgleTranslatorBar) {
-                twp_element_style.textContent = ".skiptranslate { opacity: 100; }"
+                element_style.textContent = ".skiptranslate { opacity: 100; }"
                 document.querySelector(".skiptranslate").style.display = "block"
-                document.body.setAttribute("style", twp_gBodyStyle)
+                document.body.setAttribute("style", gBodyStyle)
             } else {
-                twp_element_style.textContent = ".skiptranslate { opacity: 0; }"
+                element_style.textContent = ".skiptranslate { opacity: 0; }"
                 document.querySelector(".skiptranslate").style.display = "none"
-                document.body.setAttribute("style", twp_origBodyStyle)
+                document.body.setAttribute("style", origBodyStyle)
             }
             hideGoolgleTranslatorBar = !hideGoolgleTranslatorBar
         }
