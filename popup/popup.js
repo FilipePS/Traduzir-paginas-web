@@ -24,7 +24,7 @@ const btnOptions = document.getElementById("btnOptions")
 const btnNeverTranslate = document.getElementById("btnNeverTranslate")
 const btnToggleGoogleBar = document.getElementById("btnToggleGoogleBar")
 const btnOpenOnGoogleTranslate = document.getElementById("btnOpenOnGoogleTranslate")
-const btnReview = document.getElementById("btnReview")
+const btnDonate = document.getElementById("btnDonate")
 
 // translate interface
 lblTranslate.textContent = chrome.i18n.getMessage("lblTranslate")
@@ -40,7 +40,8 @@ btnOptions.innerHTML += ' <i class="arrow-down"></i>'
 btnNeverTranslate.textContent = chrome.i18n.getMessage("btnNeverTranslate")
 btnToggleGoogleBar.textContent = chrome.i18n.getMessage("btnToggleGoogleBar")
 btnOpenOnGoogleTranslate.textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
-btnReview.textContent = chrome.i18n.getMessage("btnReview")
+btnDonate.textContent = chrome.i18n.getMessage("btnDonate")
+btnDonate.innerHTML += " &#10084;"
 
 // function update popup interface by translation status
 var showAlwaysTranslateCheckbox = false
