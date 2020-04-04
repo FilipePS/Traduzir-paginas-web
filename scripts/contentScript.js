@@ -153,31 +153,19 @@ function getPageLanguage()
 // show google bar
 function showGoogleBar()
 {
+    hideGoolgleTranslatorBar = false
     if (googleTranslateIsInjected) {
-        if (element_style) {
-            // if (hideGoolgleTranslatorBar) {
-            //     element_style.textContent = ".skiptranslate { opacity: 100; }"
-            //     document.querySelector(".skiptranslate").style.display = "block"
-            //     document.body.setAttribute("style", gBodyStyle)
-            // } else {
-            //     element_style.textContent = ".skiptranslate { opacity: 0; }"
-            //     document.querySelector(".skiptranslate").style.display = "none"
-            //     document.body.setAttribute("style", origBodyStyle)
-            // }
-            // hideGoolgleTranslatorBar = !hideGoolgleTranslatorBar
-
-            element_style.textContent = ".skiptranslate { opacity: 100; }"
-            document.querySelector(".skiptranslate").style.display = "block"
-            document.body.setAttribute("style", gBodyStyle)
-        }
+        element_style.textContent = ".skiptranslate { opacity: 100; }"
+        document.querySelector(".skiptranslate").style.display = "block"
+        document.body.setAttribute("style", gBodyStyle)
     } else {
-        hideGoolgleTranslatorBar = false
         injectTranslate()
     }
 }
 
 function hideGoogleBar()
 {
+    hideGoolgleTranslatorBar = true
     element_style.textContent = ".skiptranslate { opacity: 0; }"
     document.querySelector(".skiptranslate").style.display = "none"
     document.body.setAttribute("style", origBodyStyle)
