@@ -88,7 +88,14 @@ function injectPopup()
         const btnMenu = shadowRoot.getElementById("btnMenu")
         const menu = shadowRoot.getElementById("menu")
         const btnNeverTranslate = shadowRoot.getElementById("btnNeverTranslate")
+        const btnDonate = shadowRoot.getElementById("btnDonate")
         const btnClose = shadowRoot.getElementById("btnClose")
+
+        btnOriginal.textContent = chrome.i18n.getMessage("btnMobileOriginal")
+        btnTranslate.textContent = chrome.i18n.getMessage("btnMobileTranslated")
+        btnNeverTranslate.textContent = chrome.i18n.getMessage("btnMobileNeverTranslate")
+        btnDonate.textContent = chrome.i18n.getMessage("btnMobileDonate")
+        btnDonate.innerHTML += " &#10084;"
     
         btnOriginal.addEventListener("click", () => {
             chrome.runtime.sendMessage({action: "Restore"})

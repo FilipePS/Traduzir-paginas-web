@@ -3,79 +3,80 @@
     "message": "Traduzir páginas da web",
     "description": "Nome da extensão"
   },
-
   "extensionDescription": {
     "message": "Traduza sua página atual usando o Google Translate",
     "description": "Descrição da extensão"
   },
-
   "pageActionTitle": {
     "message": "Traduzir esta página",
     "description": "Título do botão de ação da página"
   },
-
   "lblTranslate": {
     "message": "Traduzir esta página?",
     "description": "Título da etiqueta"
   },
-
   "lblTranslating": {
     "message": "Traduzindo...",
     "description": "Título da etiqueta"
   },
-
   "lblTranslated": {
     "message": "Traduzido",
     "description": "Título da etiqueta"
   },
-
   "lblError": {
     "message": "Não foi possível traduzir esta página",
     "description": "Título da etiqueta"
   },
-
   "lblAlwaysTranslate": {
     "message": "Traduzir sempre do",
     "description": "Título da caixa de seleção"
   },
-
   "btnTranslate": {
     "message": "Traduzir",
     "description": "Traduzir texto do botão"
   },
-
   "btnOptions": {
     "message": "Opções",
     "description": "Texto do botão Opções"
   },
-
   "btnRestore": {
     "message": "Mostrar original",
     "description": "Restaurar texto do botão"
   },
-
   "btnTryAgain": {
     "message": "Tente novamente",
     "description": "Tente novamente o texto do botão"
   },
-
   "btnOpenOnGoogleTranslate": {
     "message": "Abrir no google tradutor",
     "descrição": ""
   },
-
   "btnDonate": {
     "message": "Doar",
     "descrição": ""
   },
-
   "btnNeverTranslate": {
     "message": "Nunca traduzir este site",
     "description": ""
   },
-
   "btnChangeLanguages": {
     "message": "Alterar idiomas",
+    "description": ""
+  },
+  "btnMobileOriginal": {
+    "message": "Original",
+    "description": ""
+  },
+  "btnMobileTranslated": {
+    "message": "Traduzido",
+    "description": ""
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Nunca traduzir este site",
+    "description": ""
+  },
+  "btnMobileDonate": {
+    "message": "Doar",
     "description": ""
   }
 }

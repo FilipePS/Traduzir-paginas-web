@@ -3,79 +3,80 @@
     "message": "Traducir páginas web",
     "description": "Nombre de extensión"
   },
-
   "extensionDescription": {
     "message": "Traduce tu página actual usando Google Translate",
     "description": "description de la extensión"
   },
-
   "pageActionTitle": {
     "message": "Traducir esta página",
     "description": "Título del botón de acción de página"
   },
-
   "lblTranslate": {
     "message": "¿Traducir esta página?",
     "description": "Título de la etiqueta"
   },
-
   "lblTranslating": {
     "message": "Traduciendo...",
     "description": "Título de la etiqueta"
   },
-
   "lblTranslated": {
     "message": "Traducido",
     "description": "Título de la etiqueta"
   },
-
   "lblError": {
     "message": "No fue posible traducir esta página",
     "description": "Título de la etiqueta"
   },
-
   "lblAlwaysTranslate": {
     "message": "Traducir siempre desde",
     "description": "Título de la casilla de verificación"
   },
-
   "btnTranslate": {
     "message": "Traducir",
     "description": "Texto del botón Traducir"
   },
-
   "btnOptions": {
     "message": "Opciones",
     "description": "Texto del botón Opciones"
   },
-
   "btnRestore": {
     "message": "Mostrar original",
     "description": "Restaurar texto del botón"
   },
-
   "btnTryAgain": {
     "message": "Inténtalo de nuevo",
     "description": "Texto del botón Intentar de nuevo"
   },
-
   "btnOpenOnGoogleTranslate": {
     "message": "Abrir en traductor de google",
     "description": ""
   },
-
   "btnDonate": {
     "message": "Donar",
     "description": ""
   },
-
   "btnNeverTranslate": {
     "message": "Nunca traduzca este sitio",
     "description": ""
   },
-
   "btnChangeLanguages": {
     "message": "Cambiar idiomas",
+    "description": ""
+  },
+  "btnMobileOriginal": {
+    "message": "Original",
+    "description": ""
+  },
+  "btnMobileTranslated": {
+    "message": "Traducido",
+    "description": ""
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Nunca traduzca este sitio",
+    "description": ""
+  },
+  "btnMobileDonate": {
+    "message": "Donar",
     "description": ""
   }
 }

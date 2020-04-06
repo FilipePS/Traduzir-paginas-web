@@ -3,79 +3,80 @@
     "message": "Translate web pages",
     "description": "Extension name"
   },
-
   "extensionDescription": {
     "message": "Translate your current page using Google Translate",
     "description": "Description of the extension"
   },
-
   "pageActionTitle": {
     "message": "Translate this page",
     "description": "Page action button title"
   },
-
   "lblTranslate": {
     "message": "Translate this page?",
     "description": "Label title"
   },
-
   "lblTranslating": {
     "message": "Translating...",
     "description": "Label title"
   },
-
   "lblTranslated": {
     "message": "Translated",
     "description": "Label title"
   },
-
   "lblError": {
     "message": "It was not possible to translate this page",
     "description": "Label title"
   },
-
   "lblAlwaysTranslate": {
     "message": "Always translate from",
     "description": "Checkbox title"
   },
-
   "btnTranslate": {
     "message": "Translate",
-    "description": "Translate button text"    
+    "description": "Translate button text"
   },
-
   "btnOptions": {
     "message": "Options",
-    "description": "Options button text"    
+    "description": "Options button text"
   },
-
   "btnRestore": {
     "message": "Show original",
-    "description": "Restore button text"    
+    "description": "Restore button text"
   },
-
   "btnTryAgain": {
     "message": "Try Again",
-    "description": "Try Again button text"    
-  }, 
-
+    "description": "Try Again button text"
+  },
   "btnOpenOnGoogleTranslate": {
     "message": "Open in google translator",
     "description": ""
-  }, 
-
+  },
   "btnDonate": {
     "message": "Donate",
     "description": ""
   },
-
   "btnNeverTranslate": {
     "message": "Never translate this site",
     "description": ""
   },
-
   "btnChangeLanguages": {
     "message": "Change languages",
+    "description": ""
+  },
+  "btnMobileOriginal": {
+    "message": "Original",
+    "description": ""
+  },
+  "btnMobileTranslated": {
+    "message": "Translated",
+    "description": ""
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Never translate this site",
+    "description": ""
+  },
+  "btnMobileDonate": {
+    "message": "Donate",
     "description": ""
   }
 }
