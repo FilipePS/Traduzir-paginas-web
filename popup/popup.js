@@ -125,9 +125,10 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     }
 
     // get page language
-    chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
-        if (response) {
-            response = response.split('-')[0]
+    chrome.tabs.detectLanguage(tabs[0].id, codeLang => {
+        if (codeLang && codeLang != "und") {
+            codeLang = codeLang.split('-')[0]
+
             // show always translate checkbox
             showAlwaysTranslateCheckbox = true
             chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
@@ -135,18 +136,18 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
                 if (!alwaysTranslateLangs) {
                     alwaysTranslateLangs = []
                 }
-                if (alwaysTranslateLangs.indexOf(response) != -1) {
+                if (alwaysTranslateLangs.indexOf(codeLang) != -1) {
                     cbAlwaysTranslate.checked = true
                 }
             })
 
             // show page language
-            var language = codeToLanguage(response)
+            var language = codeToLanguage(codeLang)
             var textContent
             if (language) {
                 textContent = chrome.i18n.getMessage("lblAlwaysTranslate") + " " + language
             } else {
-                textContent = chrome.i18n.getMessage("lblAlwaysTranslate") + " \"" + response + "\""
+                textContent = chrome.i18n.getMessage("lblAlwaysTranslate") + " \"" + codeLang + "\""
             }
             lblAlwaysTranslate.textContent = textContent
         } else {
