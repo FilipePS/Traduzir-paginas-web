@@ -108,6 +108,8 @@ function showPopupSection(status)
 }
 
 // update popup info
+showAlwaysTranslateCheckbox = false
+showPopupSection("prompt")
 chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     // set google translate page url
     btnOpenOnGoogleTranslate.setAttribute("href", "https://translate.google.com/translate?u=" + tabs[0].url)
@@ -154,7 +156,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             // hide always translate checkbox if unknow language
             showAlwaysTranslateCheckbox = false
         }
-        
+
         showPopupSection("prompt")
         updateTranslateStatus()
     })
