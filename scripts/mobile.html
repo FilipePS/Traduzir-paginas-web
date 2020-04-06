@@ -12,6 +12,16 @@
         cursor: pointer;
     }
 
+    .item2 {
+        flex: 1;
+        text-align: center;
+        vertical-align: middle;
+        height: 50px;
+        background-color: white;
+        border: none;
+        cursor: pointer;      
+    }
+
     .button:focus {
         outline: none;
         animation: btn-color 0.8s forwards linear;
@@ -57,6 +67,53 @@
             transform: rotate(360deg);
         }
     }
+
+    .menuDot {
+        width: 4px;
+        height: 4px;
+        background-color: black;
+        margin: 4px auto;
+        border-radius: 50%;
+    }
+
+    #menu {
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+        font-family: "Arial";
+        font-size: 16px;
+    }
+
+    .dropup {
+        position: absolute;
+        right: 1px;
+    }
+
+    .dropup-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        width: 250px;
+        bottom: 10px;
+        right: 0;
+        z-index: 100002;
+    }
+
+    .dropup-content a {
+        color: black;
+        padding: 8px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropup-content a:hover {background-color: #ccc}
+
+    .dropup:hover .dropup-content {
+        display: block;
+    }
+
+    .dropup:hover .dropbtn {
+        background-color: #2980B9;
+    }
+
 </style>
 
 <div style="display:flex; align-items: center; margin: 0 auto; vertical-align: middle; padding-left: 10px">
@@ -68,5 +125,16 @@
     <button id="spin" class="item button" style="display: none">
         <div class="loader button" style="margin: 0 auto;"></div>
     </button>
-    <button id="btnClose" class="item button" style="width: 50px; max-width: 50px">&times;</button>
+    <button id="btnMenu" class="item2" style="width: 40px; max-width: 40px">
+        <div class="dropup">
+            <div id="menu" class="dropup-content">
+                <a href="#" id="btnNeverTranslate">Never translate this site</a>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url" target="_blank" value="btnDonate" rel="noopener noreferrer">Donate &#10084;</a>
+            </div>
+        </div>
+        <div class="menuDot"></div>
+        <div class="menuDot"></div>
+        <div class="menuDot"></div>
+    </button>
+    <button id="btnClose" class="item" style="width: 40px; max-width: 40px">&times;</button>
 </div>

@@ -8,16 +8,25 @@ if (eHtml) {
     var pageLang = eHtml.getAttribute("lang") || eHtml.getAttribute("xml:lang");
 }
 
-if (pageLang) {
-    pageLang = pageLang.split("-")[0]
-    var navigatorLang = navigator.language.split("-")[0]
-
-    if (navigatorLang != pageLang) {
-        injectPopup()
+chrome.storage.local.get("neverTranslateSites").then(onGot => {
+    var neverTranslateSites = onGot.neverTranslateSites
+    if (!neverTranslateSites) {
+        neverTranslateSites = []
     }
-} else {
-    injectPopup()
-}
+
+    if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
+        if (pageLang) {
+            pageLang = pageLang.split("-")[0]
+            var navigatorLang = navigator.language.split("-")[0]
+        
+            if (navigatorLang != pageLang) {
+                injectPopup()
+            }
+        } else {
+            injectPopup()
+        }
+    }
+})
 
 function readFile(_path, _cb){
     fetch(_path, {mode:'same-origin'})   // <-- important
@@ -45,12 +54,12 @@ function injectPopup()
     element.setAttribute("translate", "no")
     element.classList.add("notranslate")
     element.style = `
-        z-index: 9999;
+        z-index: 100001;
         position: fixed;
         left: 0;
         bottom: 0;
         background-color: white;
-        box-shadow: 0px -1px 4px rgba(0, 0, 0, 1);
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
         width: 100%;
         height: 50px;
         user-select: none;
@@ -76,6 +85,9 @@ function injectPopup()
         const btnOriginal = shadowRoot.getElementById("btnOriginal")
         const btnTranslate= shadowRoot.getElementById("btnTranslate")
         const spin = shadowRoot.getElementById("spin")
+        const btnMenu = shadowRoot.getElementById("btnMenu")
+        const menu = shadowRoot.getElementById("menu")
+        const btnNeverTranslate = shadowRoot.getElementById("btnNeverTranslate")
         const btnClose = shadowRoot.getElementById("btnClose")
     
         btnOriginal.addEventListener("click", () => {
@@ -103,6 +115,28 @@ function injectPopup()
                 })
             }
             updateStatus()
+        })
+
+        btnMenu.addEventListener("click", () => {
+            menu.style.display = "block"
+        })
+
+        document.addEventListener("click", e => {
+            if (e.target != element) {
+                menu.style.display = "none";
+            }
+        })
+
+        shadowRoot.addEventListener("click", e => {
+            if (e.target != btnMenu) {
+                menu.style.display = "none";
+            }
+        })
+
+        btnNeverTranslate.addEventListener("click", () => {
+            chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
+            btnCloseIsClicked = true
+            element.style.display = "none"
         })
     
         btnClose.addEventListener("click", () => {
