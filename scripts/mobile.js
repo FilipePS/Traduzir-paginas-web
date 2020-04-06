@@ -16,8 +16,7 @@ if (pageLang) {
         injectPopup()
     }
 } else {
-    chrome.runtime.sendMessage({action: "showPopup"})
-    //injectPopup()
+    injectPopup()
 }
 
 function readFile(_path, _cb){
