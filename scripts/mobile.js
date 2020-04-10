@@ -2,11 +2,37 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+function yandexDetectLanguage(text, callback)
+{
+    if (text.length > 10) {
+        let url = "https://translate.yandex.net/api/v1.5/tr.json/detect"
+        let apiKey = "trnsl.1.1.20200410T160011Z.1dabbc738bb3abea.bec131e2ab8e9346e2e5feb85666a4ab4d14a3c7"
+        text = text.substring(0, 100)
+
+        fetch(url + "?key=" + encodeURI(apiKey) + "&text=" + encodeURI(text))
+        .then(data => data.text())
+        .then(data => {
+            callback(data)
+        })
+        .catch(err => {
+            callback()
+        })
+    } else {
+        callback()
+    }
+}
+
 var eHtml = document.getElementsByTagName("html")[0]
 
 if (eHtml) {
-    var pageLang = eHtml.getAttribute("lang") || eHtml.getAttribute("xml:lang");
+    var langAttribute = eHtml.getAttribute("lang") || eHtml.getAttribute("xml:lang") || null;
 }
+
+if (langAttribute) {
+    langAttribute = langAttribute.split("-")[0]
+}
+
+var navigatorLang = navigator.language.split("-")[0]
 
 chrome.storage.local.get("neverTranslateSites").then(onGot => {
     var neverTranslateSites = onGot.neverTranslateSites
@@ -15,15 +41,16 @@ chrome.storage.local.get("neverTranslateSites").then(onGot => {
     }
 
     if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
-        if (pageLang) {
-            pageLang = pageLang.split("-")[0]
-            var navigatorLang = navigator.language.split("-")[0]
-        
-            if (navigatorLang != pageLang) {
-                injectPopup()
-            }
-        } else {
-            injectPopup()
+        if (navigatorLang !== langAttribute) {
+            yandexDetectLanguage(document.body.innerText, (data) => {
+                if (data && (data = JSON.parse(data)) && data.code == 200) {
+                    if (data.lang != navigatorLang) {
+                        injectPopup()
+                    }
+                } else {
+                    injectPopup()
+                }
+            })
         }
     }
 })
@@ -45,7 +72,9 @@ function readFile(_path, _cb){
         reader.readAsText(_blob); 
     })
 
-    .catch( e => console.log(e))
+    .catch( e => {
+        //console.log(e)
+    })
 };
 
 function injectPopup()
