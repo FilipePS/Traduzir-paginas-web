@@ -78,5 +78,9 @@
   "btnMobileDonate": {
     "message": "Donar",
     "description": ""
+  },
+  "optionsNeverTranslate": {
+    "message": "Nunca traduzca estos sitios",
+    "description": ""
   }
 }

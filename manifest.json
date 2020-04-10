@@ -23,6 +23,11 @@
         "scripts/popupMobile.html"
     ],
 
+    "options_ui": {
+        "browser_style": false,
+        "page": "options/options.html"
+    },
+
     "page_action": {
         "browser_style": false,
         "show_matches": [
