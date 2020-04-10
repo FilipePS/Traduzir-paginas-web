@@ -20,7 +20,6 @@
     ],
 
     "web_accessible_resources": [
-        "w3css/4/w3.css",
         "scripts/popupMobile.html"
     ],
 
