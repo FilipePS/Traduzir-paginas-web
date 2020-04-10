@@ -9,10 +9,18 @@ function yandexDetectLanguage(text, callback)
         let apiKey = "trnsl.1.1.20200410T160011Z.1dabbc738bb3abea.bec131e2ab8e9346e2e5feb85666a4ab4d14a3c7"
         text = text.substring(0, 100)
 
-        fetch(url + "?key=" + encodeURI(apiKey) + "&text=" + encodeURI(text))
+        fetch(url, {
+            method: "post",
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            body: "key=" + apiKey + "&text=" + encodeURI(text)
+        })
         .then(data => data.text())
         .then(data => {
-            callback(data)
+            if (data && (data = JSON.parse(data)) && data.code == 200) {
+                callback(data.lang)
+            } else {
+                callback()
+            }
         })
         .catch(err => {
             callback()
@@ -20,6 +28,33 @@ function yandexDetectLanguage(text, callback)
     } else {
         callback()
     }
+}
+
+function googleDetectLanguage(text, callback)
+{
+    if (text.length > 10) {
+        let url = "https://translate.google.com/translate_a/single?client=gtx&sl=auto"
+        text = text.substring(0, 200)
+
+        fetch(url, {
+            method: "post",
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            body: "q=" + encodeURI(text)
+        })
+        .then(data => data.text())
+        .then(data => {
+            if (data && (data = JSON.parse(data)) && data[2]) {
+                callback(data[2])
+            } else {
+                callback()
+            }
+        })
+        .catch(err => {
+            callback()
+        })
+    } else {
+        callback()
+    }   
 }
 
 var eHtml = document.getElementsByTagName("html")[0]
@@ -41,17 +76,17 @@ chrome.storage.local.get("neverTranslateSites").then(onGot => {
     }
 
     if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
-        if (navigatorLang !== langAttribute) {
-            yandexDetectLanguage(document.body.innerText, (data) => {
-                if (data && (data = JSON.parse(data)) && data.code == 200) {
-                    if (data.lang != navigatorLang) {
-                        injectPopup()
-                    }
-                } else {
+        googleDetectLanguage(document.body.innerText, (lang) => {
+            if (lang) {
+                if (lang.split("-")[0] != navigatorLang) {
                     injectPopup()
                 }
-            })
-        }
+            } else {
+                if (navigatorLang !== langAttribute) {
+                    injectPopup()
+                }
+            }
+        })
     }
 })
 
