@@ -155,11 +155,14 @@ function showGoogleBar()
 {
     hideGoolgleTranslatorBar = false
     if (googleTranslateIsInjected) {
-        element_style.textContent = ".skiptranslate { opacity: 100; }"
-        document.querySelector(".skiptranslate").style.display = "block"
-        document.body.setAttribute("style", gBodyStyle)
+        ifTranslateInjected(() => {
+            element_style.textContent = ".skiptranslate { opacity: 100; }"
+            document.querySelector(".skiptranslate").style.display = "block"
+            document.body.setAttribute("style", gBodyStyle)
+        })
     } else {
         injectTranslate()
+        ifTranslateInjected(() => {})
     }
 }
 
