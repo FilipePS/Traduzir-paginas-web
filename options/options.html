@@ -6,11 +6,17 @@
     <title>Translate Web Pages Options</title>
     <link rel="stylesheet" href="/w3css/4/w3.css">
     <link rel="stylesheet" href="options.css">
+    <script src="/languages.js"></script>
 </head>
 <body>
     <div class="w3-container">
         <h2 id="lblNeverTranslate">Never translate this sites</h2>
-        <ul id="neverTranslateList" class="w3-ul w3-card-4"></ul>
+        <ul id="neverTranslateList" class="w3-ul w3-card-4" style="overflow: scroll; max-height: 300px;"></ul>
+    </div>
+
+    <div class="w3-container">
+        <h2 id="lblNeverTranslate">Automatically translate these languages</h2>
+        <ul id="alwaysTranslateList" class="w3-ul w3-card-4" style="overflow: scroll; max-height: 300px;"></ul>
     </div>
 
     <script src="options.js"></script>
