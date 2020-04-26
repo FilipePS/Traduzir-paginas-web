@@ -164,6 +164,7 @@ function injectPopup()
         const btnMenu = shadowRoot.getElementById("btnMenu")
         const menu = shadowRoot.getElementById("menu")
         const btnNeverTranslate = shadowRoot.getElementById("btnNeverTranslate")
+        const btnChangeLanguages = shadowRoot.getElementById("btnChangeLanguages")
         const btnDonate = shadowRoot.getElementById("btnDonate")
         const btnClose = shadowRoot.getElementById("btnClose")
 
@@ -220,6 +221,10 @@ function injectPopup()
             chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
             btnCloseIsClicked = true
             element.style.display = "none"
+        })
+
+        btnChangeLanguages.addEventListener("click", () => {
+            chrome.runtime.sendMessage({action: "showGoogleBar"})
         })
     
         btnClose.addEventListener("click", () => {
