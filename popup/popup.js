@@ -110,6 +110,7 @@ function showPopupSection(status)
 // update popup info
 showAlwaysTranslateCheckbox = false
 showPopupSection("prompt")
+var globalCodeLang = null
 chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     // set google translate page url
     btnOpenOnGoogleTranslate.setAttribute("href", "https://translate.google.com/translate?u=" + tabs[0].url)
@@ -130,6 +131,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     chrome.tabs.detectLanguage(tabs[0].id, async codeLang => {
         if (codeLang && codeLang != "und") {
             codeLang = codeLang.split('-')[0]
+            globalCodeLang = codeLang
 
             // show always translate checkbox
             showAlwaysTranslateCheckbox = true
@@ -170,8 +172,8 @@ btnClose.addEventListener("click", () => {
 
 // disable auto translate for a language
 cbAlwaysTranslate.addEventListener("change", (e) => {
-    if (!e.target.checked) {
-        chrome.runtime.sendMessage({action: "disableAutoTranslate"})
+    if (!e.target.checked && globalCodeLang) {
+        chrome.runtime.sendMessage({action: "disableAutoTranslate", lang: globalCodeLang})
     }
 })
 
@@ -180,10 +182,12 @@ function translate()
 {
     chrome.runtime.sendMessage({action: "Translate"})
 
-    if (cbAlwaysTranslate.checked) {
-        chrome.runtime.sendMessage({action: "enableAutoTranslate"})
-    } else {
-        chrome.runtime.sendMessage({action: "disableAutoTranslate"})
+    if (globalCodeLang) {
+        if (cbAlwaysTranslate.checked) {
+            chrome.runtime.sendMessage({action: "enableAutoTranslate", lang: globalCodeLang})
+        } else {
+            chrome.runtime.sendMessage({action: "disableAutoTranslate", lang: globalCodeLang})
+        }
     }
 
     showPopupSection("progress")

@@ -120,25 +120,13 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         })
         return true
     } else if (request.action == "enableAutoTranslate") {
-        chrome.tabs.query({currentWindow: true, active: true}, tabs => {
-            // get page language
-            chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
-                if (response) {
-                    response = response.split("-")[0]
-                    enableAutoTranslate(response)
-                }
-            })
-        })
+        if (request.lang) {
+            enableAutoTranslate(request.lang)
+        }
     } else if (request.action == "disableAutoTranslate") {
-        chrome.tabs.query({currentWindow: true, active: true}, tabs => {
-            // get page language
-            chrome.tabs.sendMessage(tabs[0].id, {action: "getPageLanguage"}, response => {
-                if (response) {
-                    response = response.split("-")[0]
-                    disableAutoTranslate(response)
-                }
-            })
-        })
+        if (request.lang) {
+            disableAutoTranslate(request.lang)
+        }
     } else if (request.action == "neverTranslateThisSite") {
         chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}).then((response) => {
