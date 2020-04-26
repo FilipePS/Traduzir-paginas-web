@@ -137,12 +137,24 @@ function injectPopup()
         document.body.appendChild(element)
     
         let btnCloseIsClicked = false
+        let prevPageY = window.pageYOffset + 50
     
         window.addEventListener("scroll", () => {
-            if (window.pageYOffset < 10 && !btnCloseIsClicked) {
-                element.style.display = "block"
-            } else {
-                element.style.display = "none"
+            if (!btnCloseIsClicked) {
+                let offsetY = window.pageYOffset - prevPageY
+                if (offsetY > 50) {
+                    offsetY = 50
+                    prevPageY = window.pageYOffset - 50
+                } else if (offsetY < -50) {
+                    offsetY = -50
+                    prevPageY = window.pageYOffset + 50      
+                }
+                element.style.bottom = parseInt((offsetY + 50) / -2) + "px"
+                if (offsetY >= 50) {
+                    element.style.display = "none"
+                } else {
+                    element.style.display = "block"
+                }
             }
         })
     
