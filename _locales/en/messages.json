@@ -31,6 +31,10 @@
     "message": "Always translate from",
     "description": "Checkbox title"
   },
+  "lblTargetLanguage": {
+    "message": "Target language",
+    "description": ""
+  },
   "btnTranslate": {
     "message": "Translate",
     "description": "Translate button text"

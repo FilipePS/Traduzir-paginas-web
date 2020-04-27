@@ -31,6 +31,10 @@
     "message": "Traduzir sempre do",
     "description": "Título da caixa de seleção"
   },
+  "lblTargetLanguage": {
+    "message": "Idioma de destino",
+    "description": ""
+  },
   "btnTranslate": {
     "message": "Traduzir",
     "description": "Traduzir texto do botão"

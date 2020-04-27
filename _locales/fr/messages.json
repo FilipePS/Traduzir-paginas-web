@@ -31,6 +31,10 @@
     "message": "Toujours traduire à partir de",
     "description": "Titre de la case à cocher"
   },
+  "lblTargetLanguage": {
+    "message": "Langue cible",
+    "description": ""
+  },
   "btnTranslate": {
     "message": "Traduire",
     "description": "Traduire le texte du bouton"

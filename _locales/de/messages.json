@@ -31,6 +31,10 @@
         "message": "Immer übersetzen von",
         "description": "Checkbox title"
     },
+    "lblTargetLanguage": {
+        "message": "Zielsprache",
+        "description": ""
+    },
     "btnTranslate": {
         "message": "Translate",
         "description": "Schaltflächentext übersetzen"

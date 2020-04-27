@@ -31,6 +31,10 @@
     "message": "Traducir siempre desde",
     "description": "Título de la casilla de verificación"
   },
+  "lblTargetLanguage": {
+    "message": "Idioma de destino",
+    "description": ""
+  },
   "btnTranslate": {
     "message": "Traducir",
     "description": "Texto del botón Traducir"

@@ -31,6 +31,10 @@
     "message": "Всегда переводить с",
     "description": "Заголовок флажка"
   },
+  "lblTargetLanguage": {
+    "message": "Целевой язык",
+    "description": ""
+  },
   "btnTranslate": {
     "message": "Перевести",
     "description": "Перевести текст кнопки"

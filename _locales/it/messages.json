@@ -31,6 +31,10 @@
     "message": "Traduci sempre da",
     "description": "Titolo casella"
   },
+  "lblTargetLanguage": {
+    "message": "Lingua di destinazione",
+    "description": ""
+  },
   "btnTranslate": {
     "message": "Translate",
     "description": "Traduci testo pulsante"
