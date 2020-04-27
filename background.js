@@ -139,6 +139,16 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, request)
         })
+    } else if (request.action == "detectLanguage") {
+        chrome.tabs.detectLanguage(sender.tab.id, codeLang => {
+            if (codeLang && codeLang != "und") {
+                codeLang = codeLang.split('-')[0]
+                sendResponse(codeLang)
+            } else {
+                sendResponse(null)
+            }
+        })
+        return true
     }
 })
 

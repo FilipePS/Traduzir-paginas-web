@@ -189,25 +189,43 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         sendResponse(window.location.hostname)
     } else if (request.action == "showGoogleBar") {
         showGoogleBar()
+    } else if (request.action == "getDetectedLanguage") {
+        let foo = () => {
+            if (typeof detectedLanguage !== "undefined") {
+                sendResponse(detectedLanguage)
+            } else {
+                setTimeout(foo, 100)
+            }
+        }
+        foo()
+        return true
     }
 })
 
-// auto translate pages
-chrome.storage.local.get(["alwaysTranslateLangs", "neverTranslateSites"]).then(onGot => {
-    var alwaysTranslateLangs = onGot.alwaysTranslateLangs
-    if (!alwaysTranslateLangs) {
-        alwaysTranslateLangs = []
-    }
-    var pageLang = getPageLanguage()
-    if (pageLang && alwaysTranslateLangs.indexOf(pageLang.split("-")[0]) != -1) {
-        var neverTranslateSites = onGot.neverTranslateSites
-        if (!neverTranslateSites) {
-            neverTranslateSites = []
-        }
+// detect language
+var detectedLanguage = undefined
+chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
+    detectedLanguage = lang
 
-        if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
-            injectTranslate()
-            translate()
-        }
+    // auto translate pages
+    if (detectedLanguage) {
+        chrome.storage.local.get(["alwaysTranslateLangs", "neverTranslateSites"]).then(onGot => {
+            var alwaysTranslateLangs = onGot.alwaysTranslateLangs
+            if (!alwaysTranslateLangs) {
+                alwaysTranslateLangs = []
+            }
+            var pageLang = detectedLanguage
+            if (pageLang && alwaysTranslateLangs.indexOf(pageLang.split("-")[0]) != -1) {
+                var neverTranslateSites = onGot.neverTranslateSites
+                if (!neverTranslateSites) {
+                    neverTranslateSites = []
+                }
+
+                if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
+                    injectTranslate()
+                    translate()
+                }
+            }
+        })
     }
 })

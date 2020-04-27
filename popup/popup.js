@@ -128,8 +128,8 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     }
 
     // get page language
-    chrome.tabs.detectLanguage(tabs[0].id, async codeLang => {
-        if (codeLang && codeLang != "und") {
+    chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, async codeLang => {
+        if (codeLang) {
             codeLang = codeLang.split('-')[0]
             globalCodeLang = codeLang
 
