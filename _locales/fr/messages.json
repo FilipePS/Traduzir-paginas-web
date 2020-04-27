@@ -1,0 +1,90 @@
+{
+  "extensionName": {
+    "message": "Traduire des pages Web",
+    "description": "Nom de l'extension"
+  },
+  "extensionDescription": {
+    "message": "Traduire votre page actuelle à l'aide de Google Translate",
+    "description": "Description de l'extension"
+  },
+  "pageActionTitle": {
+    "message": "Traduire cette page",
+    "description": "Titre du bouton d'action de la page"
+  },
+  "lblTranslate": {
+    "message": "Traduire cette page?",
+    "description": "Titre du tag"
+  },
+  "lblTranslating": {
+    "message": "Traduction en cours ...",
+    "description": "Titre du tag"
+  },
+  "lblTranslated": {
+    "message": "Traduit",
+    "description": "Titre du tag"
+  },
+  "lblError": {
+    "message": "Cette page n'a pas pu être traduite",
+    "description": "Titre du tag"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Toujours traduire à partir de",
+    "description": "Titre de la case à cocher"
+  },
+  "btnTranslate": {
+    "message": "Traduire",
+    "description": "Traduire le texte du bouton"
+  },
+  "btnOptions": {
+    "message": "Options",
+    "description": "Texte du bouton Options"
+  },
+  "btnRestore": {
+    "message": "Afficher l'original",
+    "description": "Restaurer le texte du bouton"
+  },
+  "btnTryAgain": {
+    "message": "Réessayer",
+    "description": "Essayez à nouveau le texte du bouton"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Ouvrir dans le traducteur google",
+    "description": ""
+  },
+  "btnDonate": {
+    "message": "Faire un don",
+    "description": ""
+  },
+  "btnNeverTranslate": {
+    "message": "Ne jamais traduire ce site",
+    "description": ""
+  },
+  "btnChangeLanguages": {
+    "message": "Changer de langue",
+    "description": ""
+  },
+  "btnMobileOriginal": {
+    "message": "Original",
+    "description": ""
+  },
+  "btnMobileTranslated": {
+    "message": "Traduit",
+    "description": ""
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Ne jamais traduire ce site",
+    "description": ""
+  },
+  "btnMobileDonate": {
+    "message": "Faire un don",
+    "description": ""
+  },
+  "optionsNeverTranslate": {
+    "message": "Ne jamais traduire ces sites",
+    "description": ""
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Traduire automatiquement ces langues",
+    "description": ""
+  }
+}

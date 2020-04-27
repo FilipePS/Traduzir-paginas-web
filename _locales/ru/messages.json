@@ -1,0 +1,90 @@
+{
+  "extensionName": {
+    "message": "Перевести веб-страницы",
+    "description": "Внутренний номер"
+  },
+  "extensionDescription": {
+    "message": "Переведите свою текущую страницу с помощью Google Translate",
+    "description": "description расширения"
+  },
+  "pageActionTitle": {
+    "message": "Перевести эту страницу",
+    "description": "заголовок кнопки действия страницы"
+  },
+  "lblTranslate": {
+    "message": "Перевести эту страницу?",
+    "description": "заголовок тега"
+  },
+  "lblTranslating": {
+    "message": "Переводить ...",
+    "description": "заголовок тега"
+  },
+  "lblTranslated": {
+    "message": "Переведено",
+    "description": "заголовок тега"
+  },
+  "lblError": {
+    "message": "Эта страница не может быть переведена",
+    "description": "заголовок тега"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Всегда переводить с",
+    "description": "Заголовок флажка"
+  },
+  "btnTranslate": {
+    "message": "Перевести",
+    "description": "Перевести текст кнопки"
+  },
+  "btnOptions": {
+    "message": "Опции",
+    "description": "Текст кнопки настроек"
+  },
+  "btnRestore": {
+    "message": "Показать оригинал",
+    "description": "Восстановить текст кнопки"
+  },
+  "btnTryAgain": {
+    "message": "Попробуй еще раз",
+    "description": "Попробуйте текст кнопки еще раз"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Открыть в Google Переводчике",
+    "description": ""
+  },
+  "btnDonate": {
+    "message": "Пожертвовать",
+    "description": ""
+  },
+  "btnNeverTranslate": {
+    "message": "Никогда не переводите этот сайт",
+    "description": ""
+  },
+  "btnChangeLanguages": {
+    "message": "Сменить языки",
+    "description": ""
+  },
+  "btnMobileOriginal": {
+    "message": "Оригинал",
+    "description": ""
+  },
+  "btnMobileTranslated": {
+    "message": "Переведено",
+    "description": ""
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Никогда не переводите этот сайт",
+    "description": ""
+  },
+  "btnMobileDonate": {
+    "message": "Пожертвовать",
+    "description": ""
+  },
+  "optionsNeverTranslate": {
+    "message": "Никогда не переводите эти сайты",
+    "description": ""
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Автоматически переводить эти языки",
+    "description": ""
+  }
+}
