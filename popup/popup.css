@@ -41,3 +41,7 @@ button {
     padding: 3px;
     transform: rotate(45deg);
 }
+
+option {
+    color: black;
+}
