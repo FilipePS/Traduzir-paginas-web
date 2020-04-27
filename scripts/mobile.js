@@ -171,6 +171,7 @@ function injectPopup()
         btnOriginal.textContent = chrome.i18n.getMessage("btnMobileOriginal")
         btnTranslate.textContent = chrome.i18n.getMessage("btnMobileTranslated")
         btnNeverTranslate.textContent = chrome.i18n.getMessage("btnMobileNeverTranslate")
+        btnChangeLanguages.textContent = chrome.i18n.getMessage("btnChangeLanguages")
         btnDonate.textContent = chrome.i18n.getMessage("btnMobileDonate")
         btnDonate.innerHTML += " &#10084;"
     

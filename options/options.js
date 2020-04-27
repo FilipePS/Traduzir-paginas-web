@@ -4,9 +4,11 @@ if (typeof browser !== 'undefined') {
 
 const lblNeverTranslate = document.getElementById("lblNeverTranslate")
 const neverTranslateList = document.getElementById("neverTranslateList")
+const lblAlwaysTranslate = document.getElementById("lblAlwaysTranslate")
 const alwaysTranslateList = document.getElementById("alwaysTranslateList")
 
 lblNeverTranslate.textContent = chrome.i18n.getMessage("optionsNeverTranslate")
+lblAlwaysTranslate.textContent = chrome.i18n.getMessage("optionsAlwaysTranslate")
 
 function removeA(arr) {
     var what, a = arguments, L = a.length, ax;

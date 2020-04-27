@@ -82,5 +82,9 @@
   "optionsNeverTranslate": {
     "message": "Never translate these sites",
     "description": ""
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Automatically translate these languages",
+    "description": ""
   }
 }
