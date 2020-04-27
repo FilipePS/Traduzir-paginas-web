@@ -9,13 +9,17 @@ const lblTranslate = document.getElementById("lblTranslate")
 const lblTranslating = document.getElementById("lblTranslating")
 const lblTranslated = document.getElementById("lblTranslated")
 const lblError = document.getElementById("lblError")
+const lblTargetLanguage = document.getElementById("lblTargetLanguage")
 
 const divAlwaysTranslate = document.getElementById("divAlwaysTranslate")
 const cbAlwaysTranslate = document.getElementById("cbAlwaysTranslate")
 const lblAlwaysTranslate = document.getElementById("lblAlwaysTranslate")
 
+const selectTargetLanguage = document.getElementById("selectTargetLanguage")
+
 const divOptionsList = document.getElementById("divOptionsList")
 
+const btnReset = document.getElementById("btnReset")
 const btnTranslate = document.getElementById("btnTranslate")
 const btnRestore = document.getElementById("btnRestore")
 const btnTryAgain = document.getElementById("btnTryAgain")
@@ -41,69 +45,109 @@ btnNeverTranslate.textContent = chrome.i18n.getMessage("btnNeverTranslate")
 btnChangeLanguages.textContent = chrome.i18n.getMessage("btnChangeLanguages")
 btnOpenOnGoogleTranslate.textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
 btnDonate.textContent = chrome.i18n.getMessage("btnDonate")
-btnDonate.innerHTML += " &#10084;"
+btnDonate.innerHTML += " &#10084;";
+
+// fill language list
+(function() {
+    var langs = languages[chrome.i18n.getUILanguage().split("-")[0]]
+    if (!langs) {
+        langs = languages["en"]
+    }
+
+    for (i in langs) {
+        var option = document.createElement("option")
+        option.value = i
+        option.textContent = langs[i]
+        selectTargetLanguage.appendChild(option)
+    }
+
+    chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+        selectTargetLanguage.value = targetLanguage
+    })
+})()
 
 // function update popup interface by translation status
 var showAlwaysTranslateCheckbox = false
+var showSelectTargetLanguage = false
 function showPopupSection(status)
 {
     btnRestore.className = btnRestore.className.replace(" w3-disabled", "")
 
-    switch (status) {
-        case "finish":
-            lblTranslate.style.display = "none"
-            lblTranslating.style.display = "none"
-            lblTranslated.style.display = "inline"
-            lblError.style.display = "none"
+    if (showSelectTargetLanguage) {
+        lblTranslate.style.display = "none"
+        lblTranslating.style.display = "none"
+        lblTranslated.style.display = "none"
+        lblError.style.display = "none"
+        lblTargetLanguage.style.display = "inline"
 
-            divAlwaysTranslate.style.display = "none"
-            btnTranslate.style.display = "none"
-            btnRestore.style.display = "inline"
-            btnTryAgain.style.display = "none"
-            btnOptions.style.display = "inline"
-            break;
-        case "progress":
-            lblTranslate.style.display = "none"
-            lblTranslating.style.display = "inline"
-            lblTranslated.style.display = "none"
-            lblError.style.display = "none"
+        selectTargetLanguage.style.display = "inline"
+        btnReset.style.display = "inline"
 
-            divAlwaysTranslate.style.display = "none"
-            btnTranslate.style.display = "none"
-            btnRestore.style.display = "inline"
-            btnTryAgain.style.display = "none"
-            btnOptions.style.display = "none"
+        divAlwaysTranslate.style.display = "none"
+        btnTranslate.style.display = "inline"
+        btnRestore.style.display = "none"
+        btnTryAgain.style.display = "none"
+        btnOptions.style.display = "none"
+    } else {
+        lblTargetLanguage.style.display = "none"
+        selectTargetLanguage.style.display = "none"
+        btnReset.style.display = "none"
+        switch (status) {
+            case "finish":
+                lblTranslate.style.display = "none"
+                lblTranslating.style.display = "none"
+                lblTranslated.style.display = "inline"
+                lblError.style.display = "none"
 
-            if (btnRestore.className.indexOf("w3-disabled") == -1) {
-                btnRestore.className += " w3-disabled";
-            }
-            break;
-        case "error":
-            lblTranslate.style.display = "none"
-            lblTranslating.style.display = "none"
-            lblTranslated.style.display = "none"
-            lblError.style.display = "inline"
+                divAlwaysTranslate.style.display = "none"
+                btnTranslate.style.display = "none"
+                btnRestore.style.display = "inline"
+                btnTryAgain.style.display = "none"
+                btnOptions.style.display = "inline"
+                break;
+            case "progress":
+                lblTranslate.style.display = "none"
+                lblTranslating.style.display = "inline"
+                lblTranslated.style.display = "none"
+                lblError.style.display = "none"
 
-            divAlwaysTranslate.style.display = "none"
-            btnTranslate.style.display = "none"
-            btnRestore.style.display = "none"
-            btnTryAgain.style.display = "inline"
-            btnOptions.style.display = "none"
-            break;
-        case "prompt":
-        case "unknown":
-        default:
-            lblTranslate.style.display = "inline"
-            lblTranslating.style.display = "none"
-            lblTranslated.style.display = "none"
-            lblError.style.display = "none"
+                divAlwaysTranslate.style.display = "none"
+                btnTranslate.style.display = "none"
+                btnRestore.style.display = "inline"
+                btnTryAgain.style.display = "none"
+                btnOptions.style.display = "none"
 
-            showAlwaysTranslateCheckbox ? divAlwaysTranslate.style.display = "block" : divAlwaysTranslate.style.display = "none";
-            btnTranslate.style.display = "inline"
-            btnRestore.style.display = "none"
-            btnTryAgain.style.display = "none"
-            btnOptions.style.display = "inline"
-            break;
+                if (btnRestore.className.indexOf("w3-disabled") == -1) {
+                    btnRestore.className += " w3-disabled";
+                }
+                break;
+            case "error":
+                lblTranslate.style.display = "none"
+                lblTranslating.style.display = "none"
+                lblTranslated.style.display = "none"
+                lblError.style.display = "inline"
+
+                divAlwaysTranslate.style.display = "none"
+                btnTranslate.style.display = "none"
+                btnRestore.style.display = "none"
+                btnTryAgain.style.display = "inline"
+                btnOptions.style.display = "none"
+                break;
+            case "prompt":
+            case "unknown":
+            default:
+                lblTranslate.style.display = "inline"
+                lblTranslating.style.display = "none"
+                lblTranslated.style.display = "none"
+                lblError.style.display = "none"
+
+                showAlwaysTranslateCheckbox ? divAlwaysTranslate.style.display = "block" : divAlwaysTranslate.style.display = "none";
+                btnTranslate.style.display = "inline"
+                btnRestore.style.display = "none"
+                btnTryAgain.style.display = "none"
+                btnOptions.style.display = "inline"
+                break;
+        }
     }
 }
 
@@ -180,7 +224,8 @@ cbAlwaysTranslate.addEventListener("change", (e) => {
 // function that translate the page
 function translate()
 {
-    chrome.runtime.sendMessage({action: "Translate"})
+    showSelectTargetLanguage = false
+    chrome.runtime.sendMessage({action: "Translate", lang: selectTargetLanguage.value})
 
     if (globalCodeLang) {
         if (cbAlwaysTranslate.checked) {
@@ -192,6 +237,13 @@ function translate()
 
     showPopupSection("progress")
 }
+
+// reset language in select
+btnReset.addEventListener("click", () => {
+    chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+        selectTargetLanguage.value = targetLanguage
+    })
+})
 
 // translate web page
 btnTranslate.addEventListener("click", () => {
@@ -231,7 +283,8 @@ btnNeverTranslate.addEventListener("click", () => {
     chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
 })
 
-// toggle google bar
+// Change the language
 btnChangeLanguages.addEventListener("click", () => {
-    chrome.runtime.sendMessage({action: "showGoogleBar"})
+    showSelectTargetLanguage = true
+    showPopupSection()
 })

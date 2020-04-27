@@ -100,6 +100,10 @@ function disableAutoTranslate(lang)
 // process messages
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
+        if (request.lang) {
+            targetLanguage = request.lang
+            chrome.storage.local.set({targetLanguage})
+        }
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, response => {
                 if (response) {
@@ -149,6 +153,22 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             }
         })
         return true
+    } else if (request.action == "setTargetLanguage") {
+        if (request.lang) {
+            targetLanguage = request.lang
+            chrome.storage.local.set({targetLanguage})
+        }
+    } else if (request.action == "getTargetLanguage") {
+        sendResponse(targetLanguage)
+    }
+})
+
+// get target language saved
+var targetLanguage = chrome.i18n.getUILanguage().split("-")[0]
+chrome.storage.local.get("targetLanguage").then(onGot => {
+    var neverTranslateSites = onGot.targetLanguage
+    if (onGot.targetLanguage) {
+        targetLanguage = onGot.targetLanguage
     }
 })
 

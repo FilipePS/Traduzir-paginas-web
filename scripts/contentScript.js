@@ -76,9 +76,20 @@ function ifTranslateInjected(callback)
 function translate()
 {
     ifTranslateInjected(() => {
-        var eIframe = document.getElementById(":1.container")
-        var eBtnTranslate = eIframe.contentWindow.document.getElementById(":1.confirm")
-        eBtnTranslate.click()
+        chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+            var eIframe = document.getElementById(":1.container")
+            var eBtnTranslate = eIframe.contentWindow.document.getElementById(":1.confirm")
+            var eTargetLanguage = document.querySelector("#twp_google_translate_element select")
+    
+            if (eTargetLanguage) {
+                eTargetLanguage.value = targetLanguage
+                var evt = document.createEvent("HTMLEvents");
+                evt.initEvent("change", false, true);
+                eTargetLanguage.dispatchEvent(evt);
+            } else {
+                eBtnTranslate.click()
+            }
+        })
     })
 }
 
