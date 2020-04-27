@@ -77,6 +77,10 @@ function translate()
 {
     ifTranslateInjected(() => {
         chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+            if (targetLanguage == "zh") {
+                targetLanguage = "zh-CN"
+            }
+
             var eIframe = document.getElementById(":1.container")
             var eBtnTranslate = eIframe.contentWindow.document.getElementById(":1.confirm")
             var eTargetLanguage = document.querySelector("#twp_google_translate_element select")
