@@ -25,11 +25,6 @@ const btnRestore = document.getElementById("btnRestore")
 const btnTryAgain = document.getElementById("btnTryAgain")
 const btnOptions = document.getElementById("btnOptions")
 
-const btnNeverTranslate = document.getElementById("btnNeverTranslate")
-const btnChangeLanguages = document.getElementById("btnChangeLanguages")
-const btnOpenOnGoogleTranslate = document.getElementById("btnOpenOnGoogleTranslate")
-const btnDonate = document.getElementById("btnDonate")
-
 // translate interface
 lblTranslate.textContent = chrome.i18n.getMessage("lblTranslate")
 lblTranslating.textContent = chrome.i18n.getMessage("lblTranslating")
@@ -39,16 +34,16 @@ lblAlwaysTranslate.textContent = chrome.i18n.getMessage("lblAlwaysTranslate")
 btnTranslate.textContent = chrome.i18n.getMessage("btnTranslate")
 btnRestore.textContent = chrome.i18n.getMessage("btnRestore")
 btnTryAgain.textContent = chrome.i18n.getMessage("btnTryAgain")
-btnOptions.textContent = chrome.i18n.getMessage("btnOptions")
-btnOptions.innerHTML += ' <i class="arrow-down"></i>'
-btnNeverTranslate.textContent = chrome.i18n.getMessage("btnNeverTranslate")
-btnChangeLanguages.textContent = chrome.i18n.getMessage("btnChangeLanguages")
-btnOpenOnGoogleTranslate.textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
-btnDonate.textContent = chrome.i18n.getMessage("btnDonate")
-btnDonate.innerHTML += " &#10084;";
+
+document.querySelector("#btnOptions option[value='options']").textContent = chrome.i18n.getMessage("btnOptions")
+document.querySelector("#btnOptions option[value='neverTranslateThisSite']").textContent = chrome.i18n.getMessage("btnNeverTranslate")
+document.querySelector("#btnOptions option[value='changeLanguage']").textContent = chrome.i18n.getMessage("btnChangeLanguages")
+document.querySelector("#btnOptions option[value='openInGoogleTranslate']").textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
+document.querySelector("#btnOptions option[value='donate']").textContent = chrome.i18n.getMessage("btnDonate")
+document.querySelector("#btnOptions option[value='donate']").innerHTML += " &#10084;";
 
 // fill language list
-(function() {
+;(function() {
     var langs = languages[chrome.i18n.getUILanguage().split("-")[0]]
     if (!langs) {
         langs = languages["en"]
@@ -70,8 +65,6 @@ btnDonate.innerHTML += " &#10084;";
         option.textContent = value[1]
         selectTargetLanguage.appendChild(option)
     })
-
-    console.log(langsSorted)
 
     chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
         selectTargetLanguage.value = targetLanguage
@@ -164,15 +157,9 @@ function showPopupSection(status)
 }
 
 // update popup info
-showAlwaysTranslateCheckbox = false
 showPopupSection("prompt")
 var globalCodeLang = null
 chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-    // set google translate page url
-    btnOpenOnGoogleTranslate.setAttribute("href", "https://translate.google.com/translate?u=" + tabs[0].url)
-    btnOpenOnGoogleTranslate.setAttribute("target", "_blank")
-    btnOpenOnGoogleTranslate.setAttribute("rel", "noopener noreferrer")
-
     // auto show the correct section in the popup
     let updateTranslateStatus = () => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, response => {
@@ -272,31 +259,27 @@ btnTryAgain.addEventListener("click", () => {
     translate()
 })
 
-// toggle dropdown
-btnOptions.addEventListener("click", () => {
-    var x = divOptionsList
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
+// options
+var pageUrl = null
+chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
+    pageUrl = tabs[0].url
+})
+btnOptions.addEventListener("change", () => {
+    switch (btnOptions.value) {
+        case "neverTranslateThisSite":
+            chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
+            break
+        case "changeLanguage":
+            showSelectTargetLanguage = true
+            showPopupSection()
+            break
+        case "openInGoogleTranslate":
+            window.open("https://translate.google.com/translate?u=" + encodeURIComponent(pageUrl), "_blank")
+            break
+        case "donate":
+            window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url", "_blank")
+            break
+        default:
     }
-})
-
-// hide dropdown
-window.addEventListener("click", e => {
-    var x = divOptionsList
-    if (e.target != btnOptions) {
-        x.className = x.className.replace(" w3-show", "");
-    }
-})
-
-// never translate this site
-btnNeverTranslate.addEventListener("click", () => {
-    chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
-})
-
-// Change the language
-btnChangeLanguages.addEventListener("click", () => {
-    showSelectTargetLanguage = true
-    showPopupSection()
+    btnOptions.value = "options"
 })
