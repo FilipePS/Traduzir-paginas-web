@@ -54,12 +54,24 @@ btnDonate.innerHTML += " &#10084;";
         langs = languages["en"]
     }
 
-    for (i in langs) {
-        var option = document.createElement("option")
-        option.value = i
-        option.textContent = langs[i]
-        selectTargetLanguage.appendChild(option)
+    var langsSorted = []
+
+    for (var i in langs) {
+        langsSorted.push([i, langs[i]])
     }
+
+    langsSorted.sort(function(a, b) {
+        return a[1].localeCompare(b[1]);
+    })
+
+    langsSorted.forEach(value => {
+        var option = document.createElement("option")
+        option.value = value[0]
+        option.textContent = value[1]
+        selectTargetLanguage.appendChild(option)
+    })
+
+    console.log(langsSorted)
 
     chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
         selectTargetLanguage.value = targetLanguage
