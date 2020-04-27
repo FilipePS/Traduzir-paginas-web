@@ -9,15 +9,17 @@
     <script src="/languages.js"></script>
 </head>
 <body>
+    <br>
     <div class="w3-container">
-        <h2 id="lblNeverTranslate">Never translate this sites</h2>
-        <ul id="neverTranslateList" class="w3-ul w3-card-4" style="overflow: scroll; max-height: 300px;"></ul>
+        <button id="neverTranslateListButton" class="w3-button w3-round w3-light-grey w3-border"><span id="lblNeverTranslate">Never translate this sites</span> <i class="arrow down"></i></button>
+        <ul id="neverTranslateList" class="w3-ul w3-card-4" style="display: none;"></ul>
     </div>
-
+    <br>
     <div class="w3-container">
-        <h2 id="lblAlwaysTranslate">Automatically translate these languages</h2>
-        <ul id="alwaysTranslateList" class="w3-ul w3-card-4" style="overflow: scroll; max-height: 300px;"></ul>
+        <button id="alwaysTranslateListButton" class="w3-button w3-round w3-light-grey w3-border"><span id="lblAlwaysTranslate">Automatically translate these languages</span> <i class="arrow down"></i></button>
+        <ul id="alwaysTranslateList" class="w3-ul w3-card-4" style="display: none;"></ul>
     </div>
+    <br>
 
     <script src="options.js"></script>
 </body>

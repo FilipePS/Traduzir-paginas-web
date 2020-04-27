@@ -3,12 +3,25 @@ if (typeof browser !== 'undefined') {
 }
 
 const lblNeverTranslate = document.getElementById("lblNeverTranslate")
+const neverTranslateListButton = document.getElementById("neverTranslateListButton")
 const neverTranslateList = document.getElementById("neverTranslateList")
 const lblAlwaysTranslate = document.getElementById("lblAlwaysTranslate")
+const alwaysTranslateListButton = document.getElementById("alwaysTranslateListButton")
 const alwaysTranslateList = document.getElementById("alwaysTranslateList")
 
 lblNeverTranslate.textContent = chrome.i18n.getMessage("optionsNeverTranslate")
 lblAlwaysTranslate.textContent = chrome.i18n.getMessage("optionsAlwaysTranslate")
+
+function toggleList(x)
+{
+    if (x.style.display == "block") {
+        x.style.display = "none"
+    } else {
+        x.style.display = "block"
+    }
+}
+neverTranslateListButton.addEventListener("click", () => toggleList(neverTranslateList))
+alwaysTranslateListButton.addEventListener("click", () => toggleList(alwaysTranslateList))
 
 function removeA(arr) {
     var what, a = arguments, L = a.length, ax;
