@@ -128,7 +128,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     }
 
     // get page language
-    chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, async codeLang => {
+    chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, codeLang => {
         if (codeLang) {
             codeLang = codeLang.split('-')[0]
             globalCodeLang = codeLang
@@ -146,8 +146,8 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             })
 
             // show page language
-            var interfaceLanguages = await chrome.i18n.getAcceptLanguages()
-            var language = codeToLanguage(codeLang, interfaceLanguages[0])
+            var interfaceLanguage = chrome.i18n.getUILanguage()
+            var language = codeToLanguage(codeLang, interfaceLanguage)
             var textContent
             if (language) {
                 textContent = chrome.i18n.getMessage("lblAlwaysTranslate") + " " + language

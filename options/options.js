@@ -87,17 +87,17 @@ chrome.storage.local.get("neverTranslateSites").then(onGot => {
     })
 })
 
-chrome.storage.local.get("alwaysTranslateLangs").then(async onGot => {
+chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
     var alwaysTranslateLangs = onGot.alwaysTranslateLangs
     if (!alwaysTranslateLangs) {
         alwaysTranslateLangs = []
     }
     alwaysTranslateLangs.sort()
 
-    var interfaceLanguages = await chrome.i18n.getAcceptLanguages()
+    var interfaceLanguage = chrome.i18n.getUILanguage()
 
     alwaysTranslateLangs.forEach(value => {
-        var language = codeToLanguage(value, interfaceLanguages[0])
+        var language = codeToLanguage(value, interfaceLanguage)
         if (!language) {
             language = "\"" + value + "\""
         }
