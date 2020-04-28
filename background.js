@@ -207,6 +207,17 @@ chrome.storage.local.get("getShowPopupConfig").then(onGot => {
     }
 })
 
+// show options page
+chrome.runtime.onInstalled.addListener(details => {
+    console.log(details)
+    var thisVersion = chrome.runtime.getManifest().version
+    if (details.reason == "install") {
+        chrome.runtime.openOptionsPage()
+    } else if (details.reason == "update" && details.previousVersion < "4.6") {
+        chrome.runtime.openOptionsPage()
+    }
+})
+
 // popup for mobile
 if (isMobile.any()) {
     chrome.contentScripts.register({
