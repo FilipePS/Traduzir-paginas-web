@@ -2,6 +2,8 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+const lblTargetLanguage = document.getElementById("lblTargetLanguage")
+const selectTargetLanguage = document.getElementById("selectTargetLanguage")
 const lblNeverTranslate = document.getElementById("lblNeverTranslate")
 const neverTranslateListButton = document.getElementById("neverTranslateListButton")
 const neverTranslateList = document.getElementById("neverTranslateList")
@@ -9,8 +11,42 @@ const lblAlwaysTranslate = document.getElementById("lblAlwaysTranslate")
 const alwaysTranslateListButton = document.getElementById("alwaysTranslateListButton")
 const alwaysTranslateList = document.getElementById("alwaysTranslateList")
 
+lblTargetLanguage.textContent = chrome.i18n.getMessage("lblTargetLanguage")
 lblNeverTranslate.textContent = chrome.i18n.getMessage("optionsNeverTranslate")
 lblAlwaysTranslate.textContent = chrome.i18n.getMessage("optionsAlwaysTranslate")
+
+// fill language list
+;(function() {
+    var langs = languages[chrome.i18n.getUILanguage().split("-")[0]]
+    if (!langs) {
+        langs = languages["en"]
+    }
+
+    var langsSorted = []
+
+    for (var i in langs) {
+        langsSorted.push([i, langs[i]])
+    }
+
+    langsSorted.sort(function(a, b) {
+        return a[1].localeCompare(b[1]);
+    })
+
+    langsSorted.forEach(value => {
+        var option = document.createElement("option")
+        option.value = value[0]
+        option.textContent = value[1]
+        selectTargetLanguage.appendChild(option)
+    })
+
+    chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+        selectTargetLanguage.value = targetLanguage
+    })
+})()
+
+selectTargetLanguage.addEventListener("change", () => {
+    chrome.runtime.sendMessage({action: "setTargetLanguage", lang: selectTargetLanguage.value})
+})
 
 function toggleList(x)
 {
