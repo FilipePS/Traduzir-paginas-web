@@ -1,0 +1,106 @@
+{
+  "extensionName": {
+    "message": "翻译网页",
+    "description": "扩展名"
+  },
+  "extensionDescription": {
+    "message": "使用Google翻译翻译当前页面",
+    "description": "扩展名描述"
+  },
+  "pageActionTitle": {
+    "message": "翻译此页面",
+    "description": "页面操作按钮标题"
+  },
+  "lblTranslate": {
+    "message": "翻译此页面？",
+    "description": "标签标题"
+  },
+  "lblTranslating": {
+    "message": "翻译中...",
+    "description": "标签标题"
+  },
+  "lblTranslated": {
+    "message": "翻译",
+    "description": "标签标题"
+  },
+  "lblError": {
+    "message": "该页面无法翻译",
+    "description": "标签标题"
+  },
+  "lblAlwaysTranslate": {
+    "message": "总是翻译自",
+    "description": "复选框标题"
+  },
+  "lblTargetLanguage": {
+    "message": "目标语言",
+    "description": ""
+  },
+  "btnTranslate": {
+    "message": "翻译",
+    "description": "翻译按钮文字"
+  },
+  "btnOptions": {
+    "message": "选项",
+    "description": "选项按钮文字"
+  },
+  "btnRestore": {
+    "message": "显示原文",
+    "description": "还原按钮文本"
+  },
+  "btnTryAgain": {
+    "message": "再试一次",
+    "description": "再次尝试按钮文本"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "在谷歌翻译器中打开",
+    "description": ""
+  },
+  "btnDonate": {
+    "message": "捐赠",
+    "description": ""
+  },
+  "btnNeverTranslate": {
+    "message": "切勿翻译本网站",
+    "description": ""
+  },
+  "btnChangeLanguages": {
+    "message": "更改语言",
+    "description": ""
+  },
+  "btnMobileOriginal": {
+    "message": "原始",
+    "description": ""
+  },
+  "btnMobileTranslated": {
+    "message": "翻译",
+    "description": ""
+  },
+  "btnMobileNeverTranslate": {
+    "message": "切勿翻译本网站",
+    "description": ""
+  },
+  "btnMobileDonate": {
+    "message": "捐赠",
+    "description": ""
+  },
+  "optionsNeverTranslate": {
+    "message": "从不翻译这些网站",
+    "description": ""
+  },
+  "optionsAlwaysTranslate": {
+    "message": "自动翻译这些语言",
+    "description": ""
+  },
+  "optionPopupConfig": {
+    "message": "显示移动弹出窗口",
+    "description": ""
+  },
+  "optionPopupAuto": {
+    "message": "自动",
+    "description": ""
+  },
+  "optionPopupThreeFingers": {
+    "message": "当我触摸屏幕上的三个手指时",
+    "description": ""
+  }
+}
