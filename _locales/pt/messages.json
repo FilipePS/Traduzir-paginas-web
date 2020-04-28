@@ -90,5 +90,17 @@
   "optionsAlwaysTranslate": {
     "message": "Traduzir automaticamente esses idiomas",
     "description": ""
+  },
+  "optionPopupConfig": {
+    "message": "Mostrar o popup mobile",
+    "description": ""
+  },
+  "optionPopupAuto": {
+    "message": "Automaticamente",
+    "description": ""
+  },
+  "optionPopupThreeFingers": {
+    "message": "Quando eu tocar três dedos na tela",
+    "description": ""
   }
 }

@@ -4,6 +4,8 @@ if (typeof browser !== 'undefined') {
 
 const lblTargetLanguage = document.getElementById("lblTargetLanguage")
 const selectTargetLanguage = document.getElementById("selectTargetLanguage")
+const lblPopupConfig = document.getElementById("lblPopupConfig")
+const selectPopupConfig = document.getElementById("selectPopupConfig")
 const lblNeverTranslate = document.getElementById("lblNeverTranslate")
 const neverTranslateListButton = document.getElementById("neverTranslateListButton")
 const neverTranslateList = document.getElementById("neverTranslateList")
@@ -12,8 +14,12 @@ const alwaysTranslateListButton = document.getElementById("alwaysTranslateListBu
 const alwaysTranslateList = document.getElementById("alwaysTranslateList")
 
 lblTargetLanguage.textContent = chrome.i18n.getMessage("lblTargetLanguage")
+lblPopupConfig.textContent = chrome.i18n.getMessage("optionPopupConfig")
 lblNeverTranslate.textContent = chrome.i18n.getMessage("optionsNeverTranslate")
 lblAlwaysTranslate.textContent = chrome.i18n.getMessage("optionsAlwaysTranslate")
+
+document.querySelector("#selectPopupConfig option[value='auto']").textContent = chrome.i18n.getMessage("optionPopupAuto")
+document.querySelector("#selectPopupConfig option[value='threeFingersOnTheScreen']").textContent = chrome.i18n.getMessage("optionPopupThreeFingers")
 
 // fill language list
 ;(function() {
@@ -44,9 +50,19 @@ lblAlwaysTranslate.textContent = chrome.i18n.getMessage("optionsAlwaysTranslate"
     })
 })()
 
+// get popup config
+chrome.runtime.sendMessage({action: "getShowPopupConfig"}, showPopupConfig => {
+    selectPopupConfig.value = showPopupConfig
+})
+
 selectTargetLanguage.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setTargetLanguage", lang: selectTargetLanguage.value})
 })
+
+selectPopupConfig.addEventListener("change", () => {
+    chrome.runtime.sendMessage({action: "setShowPopupConfig", showPopupConfig: selectPopupConfig.value})
+})
+
 
 function toggleList(x)
 {

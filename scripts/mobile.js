@@ -127,6 +127,7 @@ function injectPopup()
         width: 100%;
         height: 50px;
         user-select: none;
+        display: none;
     `
 
     const shadowRoot = element.attachShadow({mode: 'closed'})
@@ -136,27 +137,40 @@ function injectPopup()
 
         document.body.appendChild(element)
     
+        let neverTranslateThisSite = false
         let btnCloseIsClicked = false
         let prevPageY = window.pageYOffset + 50
     
-        window.addEventListener("scroll", () => {
-            if (!btnCloseIsClicked) {
-                let offsetY = window.pageYOffset - prevPageY
-                if (offsetY > 50) {
-                    offsetY = 50
-                    prevPageY = window.pageYOffset - 50
-                } else if (offsetY < -50) {
-                    offsetY = -50
-                    prevPageY = window.pageYOffset + 50      
-                }
-                element.style.bottom = parseInt((offsetY + 50) / -2) + "px"
-                if (offsetY >= 50) {
-                    element.style.display = "none"
-                    menu.style.display = "none"
-                    menuSelectLanguage.style.display = "none";
-                } else {
-                    element.style.display = "block"
-                }
+        chrome.runtime.sendMessage({action: "getShowPopupConfig"}, showPopupConfig => {
+            if (showPopupConfig == "threeFingersOnTheScreen") {
+                element.style.display = "none"
+                window.addEventListener("touchstart", (e) => {
+                    if (e.touches.length == 3 && !neverTranslateThisSite) {
+                        element.style.display = "block"
+                    }
+                })
+            } else {
+                element.style.display = "block"
+                window.addEventListener("scroll", () => {
+                    if (!btnCloseIsClicked) {
+                        let offsetY = window.pageYOffset - prevPageY
+                        if (offsetY > 50) {
+                            offsetY = 50
+                            prevPageY = window.pageYOffset - 50
+                        } else if (offsetY < -50) {
+                            offsetY = -50
+                            prevPageY = window.pageYOffset + 50      
+                        }
+                        element.style.bottom = parseInt((offsetY + 50) / -2) + "px"
+                        if (offsetY >= 50) {
+                            element.style.display = "none"
+                            menu.style.display = "none"
+                            menuSelectLanguage.style.display = "none";
+                        } else {
+                            element.style.display = "block"
+                        }
+                    }
+                })
             }
         })
     
@@ -242,6 +256,7 @@ function injectPopup()
 
         btnNeverTranslate.addEventListener("click", () => {
             chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
+            neverTranslateThisSite = true
             btnCloseIsClicked = true
             element.style.display = "none"
         })

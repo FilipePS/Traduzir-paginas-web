@@ -162,6 +162,13 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         sendResponse(targetLanguage)
     } else if (request.action == "getLangs") {
         sendResponse(langs)
+    } else if (request.action == "setShowPopupConfig") {
+        if (request.showPopupConfig) {
+            showPopupConfig = request.showPopupConfig
+            chrome.storage.local.set({showPopupConfig})
+        } 
+    } else if (request.action == "getShowPopupConfig") {
+        sendResponse(showPopupConfig)
     }
 })
 
@@ -190,6 +197,15 @@ var langs = []
         return a[1].localeCompare(b[1]);
     })
 })()
+
+// get show popup config
+var showPopupConfig = "auto"
+chrome.storage.local.get("getShowPopupConfig").then(onGot => {
+    var showPopupConfig = onGot.showPopupConfig
+    if (onGot.showPopupConfig) {
+        showPopupConfig = onGot.showPopupConfig
+    }
+})
 
 // popup for mobile
 if (isMobile.any()) {
