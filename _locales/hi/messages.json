@@ -1,0 +1,106 @@
+{
+  "extensionName": {
+    "message": "वेब पृष्ठों का अनुवाद करें",
+    "description": "एक्सटेंशन नाम"
+  },
+  "extensionDescription": {
+    "message": "Google अनुवाद का उपयोग करके अपने वर्तमान पृष्ठ का अनुवाद करें",
+    "description": "विस्तार का description"
+  },
+  "pageActionTitle": {
+    "message": "इस पृष्ठ का अनुवाद करें",
+    "description": "पेज एक्शन बटन शीर्षक"
+  },
+  "lblTranslate": {
+    "message": "इस पृष्ठ का अनुवाद करें?",
+    "description": "टैग शीर्षक"
+  },
+  "lblTranslating": {
+    "message": "अनुवाद ...",
+    "description": "टैग शीर्षक"
+  },
+  "lblTranslated": {
+    "message": "अनुवादित",
+    "description": "टैग शीर्षक"
+  },
+  "lblError": {
+    "message": "इस पृष्ठ का अनुवाद नहीं किया जा सका",
+    "description": "टैग शीर्षक"
+  },
+  "lblAlwaysTranslate": {
+    "message": "हमेशा से अनुवाद",
+    "description": "चेकबॉक्स शीर्षक"
+  },
+  "lblTargetLanguage": {
+    "message": "लक्ष्य भाषा",
+    "वर्णन": ""
+  },
+  "btnTranslate": {
+    "message": "अनुवाद",
+    "description": "अनुवाद बटन पाठ"
+  },
+  "btnOptions": {
+    "message": "विकल्प",
+    "description": "विकल्प बटन पाठ"
+  },
+  "btnRestore": {
+    "message": "मूल दिखाएं",
+    "description": "पुनर्स्थापना बटन पाठ"
+  },
+  "btnTryAgain": {
+    "message": "फिर से कोशिश करें",
+    "description": "बटन पाठ को फिर से आज़माएं"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Google अनुवादक में खोलें",
+    "वर्णन": ""
+  },
+  "btnDonate": {
+    "message": "दान",
+    "वर्णन": ""
+  },
+  "btnNeverTranslate": {
+    "message": "इस साइट का अनुवाद कभी न करें",
+    "वर्णन": ""
+  },
+  "btnChangeLanguages": {
+    "message": "भाषा बदलें",
+    "वर्णन": ""
+  },
+  "btnMobileOriginal": {
+    "message": "मूल",
+    "वर्णन": ""
+  },
+  "btnMobileTranslated": {
+    "message": "अनुवादित",
+    "वर्णन": ""
+  },
+  "btnMobileNeverTranslate": {
+    "message": "इस साइट का अनुवाद कभी न करें",
+    "वर्णन": ""
+  },
+  "btnMobileDonate": {
+    "message": "दान",
+    "वर्णन": ""
+  },
+  "optionsNeverTranslate": {
+    "message": "इन साइटों का अनुवाद कभी न करें",
+    "वर्णन": ""
+  },
+  "optionsAlwaysTranslate": {
+    "message": "इन भाषाओं का स्वचालित रूप से अनुवाद करें",
+    "वर्णन": ""
+  },
+  "optionPopupConfig": {
+    "message": "मोबाइल पॉपअप दिखाएं",
+    "वर्णन": ""
+  },
+  "optionPopupAuto": {
+    "message": "स्वचालित रूप से",
+    "वर्णन": ""
+  },
+  "optionPopupThreeFingers": {
+    "message": "जब मैं स्क्रीन पर तीन उंगलियां छूता हूं",
+    "वर्णन": ""
+  }
+}
