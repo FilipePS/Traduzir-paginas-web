@@ -79,7 +79,15 @@
     #menu {
         box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
         font-family: "Arial";
-        font-size: 16px;
+        font-size: 15px;
+    }
+
+    #menuSelectLanguage {
+        overflow: scroll;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+        font-family: "Arial";
+        font-size: 15px;
+        max-height: 400px;
     }
 
     .dropup {
@@ -99,7 +107,7 @@
 
     .dropup-content a {
         color: black;
-        padding: 8px;
+        padding: 6px;
         text-decoration: none;
         display: block;
     }
@@ -132,6 +140,9 @@
                 <a id="btnNeverTranslate" href="#">Never translate this site</a>
                 <a id="btnDonate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url" target="_blank" value="btnDonate" rel="noopener noreferrer">Donate &#10084;</a>
             </div>
+        </div>
+        <div class="dropup">
+            <div id="menuSelectLanguage" class="dropup-content"></div>
         </div>
         <div class="menuDot"></div>
         <div class="menuDot"></div>

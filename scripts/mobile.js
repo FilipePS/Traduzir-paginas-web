@@ -152,6 +152,8 @@ function injectPopup()
                 element.style.bottom = parseInt((offsetY + 50) / -2) + "px"
                 if (offsetY >= 50) {
                     element.style.display = "none"
+                    menu.style.display = "none"
+                    menuSelectLanguage.style.display = "none";
                 } else {
                     element.style.display = "block"
                 }
@@ -163,6 +165,7 @@ function injectPopup()
         const spin = shadowRoot.getElementById("spin")
         const btnMenu = shadowRoot.getElementById("btnMenu")
         const menu = shadowRoot.getElementById("menu")
+        const menuSelectLanguage = shadowRoot.getElementById("menuSelectLanguage")
         const btnNeverTranslate = shadowRoot.getElementById("btnNeverTranslate")
         const btnChangeLanguages = shadowRoot.getElementById("btnChangeLanguages")
         const btnDonate = shadowRoot.getElementById("btnDonate")
@@ -180,9 +183,15 @@ function injectPopup()
             btnOriginal.style.color = "#2196F3"
             btnTranslate.style.color = "black"
         })
-    
-        btnTranslate.addEventListener("click", () => {
-            chrome.runtime.sendMessage({action: "Translate"})
+
+        var lang = null
+        chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+            lang = targetLanguage
+        })
+
+        function translate()
+        {
+            chrome.runtime.sendMessage({action: "Translate", lang: lang})
             btnOriginal.style.color = "black"
             btnTranslate.style.color = "#2196F3"
             btnTranslate.style.display = "none"
@@ -200,21 +209,34 @@ function injectPopup()
                 })
             }
             updateStatus()
+        }
+    
+        btnTranslate.addEventListener("click", () => {
+            translate()
         })
 
         btnMenu.addEventListener("click", () => {
             menu.style.display = "block"
+            menuSelectLanguage.style.display = "none";
         })
 
         document.addEventListener("click", e => {
             if (e.target != element) {
                 menu.style.display = "none";
+                menuSelectLanguage.style.display = "none";
+                if (aSelected) {aSelected.style.backgroundColor = null}
             }
         })
 
         shadowRoot.addEventListener("click", e => {
             if (e.target != btnMenu) {
                 menu.style.display = "none";
+                if (e.target == btnChangeLanguages) {
+                    menuSelectLanguage.style.display = "block";
+                } else {
+                    menuSelectLanguage.style.display = "none";
+                    if (aSelected) {aSelected.style.backgroundColor = null}
+                }
             }
         })
 
@@ -224,13 +246,33 @@ function injectPopup()
             element.style.display = "none"
         })
 
+        var aSelected = null
         btnChangeLanguages.addEventListener("click", () => {
-            chrome.runtime.sendMessage({action: "showGoogleBar"})
+            menuSelectLanguage.style.display = "block"
+            aSelected = shadowRoot.querySelector("#menuSelectLanguage a[value='" + lang + "']")
+            aSelected.style.backgroundColor = "#ccc"
+            menuSelectLanguage.scrollTop = aSelected.offsetTop
         })
     
         btnClose.addEventListener("click", () => {
             btnCloseIsClicked = true
             element.style.display = "none"
         })
+
+        ;(function() {
+            chrome.runtime.sendMessage({action: "getLangs"}, langs => {
+                langs.forEach(value => {
+                    var a = document.createElement("a")
+                    a.setAttribute("href", "#")
+                    a.setAttribute("value", value[0])
+                    a.textContent = value[1]
+                    a.addEventListener("click", () => {
+                        lang = value[0]
+                        translate()
+                    })
+                    menuSelectLanguage.appendChild(a)
+                })
+            })
+        })()
     })
 }

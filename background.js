@@ -160,6 +160,8 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
     } else if (request.action == "getTargetLanguage") {
         sendResponse(targetLanguage)
+    } else if (request.action == "getLangs") {
+        sendResponse(langs)
     }
 })
 
@@ -171,6 +173,23 @@ chrome.storage.local.get("targetLanguage").then(onGot => {
         targetLanguage = onGot.targetLanguage
     }
 })
+
+// listLangs
+var langs = []
+;(function() {
+    var langsObj = languages[chrome.i18n.getUILanguage().split("-")[0]]
+    if (!langsObj) {
+        langsObj = languages["en"]
+    }
+
+    for (var i in langsObj) {
+        langs.push([i, langsObj[i]])
+    }
+
+    langs.sort(function(a, b) {
+        return a[1].localeCompare(b[1]);
+    })
+})()
 
 // popup for mobile
 if (isMobile.any()) {
