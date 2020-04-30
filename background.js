@@ -200,8 +200,7 @@ var langs = []
 
 // get show popup config
 var showPopupConfig = "auto"
-chrome.storage.local.get("getShowPopupConfig").then(onGot => {
-    var showPopupConfig = onGot.showPopupConfig
+chrome.storage.local.get("showPopupConfig").then(onGot => {
     if (onGot.showPopupConfig) {
         showPopupConfig = onGot.showPopupConfig
     }
@@ -213,7 +212,7 @@ chrome.runtime.onInstalled.addListener(details => {
     var thisVersion = chrome.runtime.getManifest().version
     if (details.reason == "install") {
         chrome.runtime.openOptionsPage()
-    } else if (details.reason == "update" && details.previousVersion < "4.6") {
+    } else if (details.reason == "update" && details.previousVersion < "4.8") {
         chrome.runtime.openOptionsPage()
     }
 })
