@@ -106,5 +106,9 @@
   "lblTranslationEngine": {
     "message": "Motor de tradução",
     "description": ""
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Abrir no yandex translate",
+    "descrição": ""
   }
 }

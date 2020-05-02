@@ -106,5 +106,9 @@
   "lblTranslationEngine": {
     "message": "अनुवाद इंजन",
     "description": ""
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "यैंडेक्स अनुवाद में खोलें",
+    "descrição": ""
   }
 }

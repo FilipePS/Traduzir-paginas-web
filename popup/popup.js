@@ -44,6 +44,17 @@ document.querySelector("#btnOptions option[value='openInGoogleTranslate']").text
 document.querySelector("#btnOptions option[value='donate']").textContent = chrome.i18n.getMessage("btnDonate")
 document.querySelector("#btnOptions option[value='donate']").innerHTML += " &#10084;";
 
+// get translation engine
+var gTranslationEngine = "google"
+chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine => {
+    gTranslationEngine = translationEngine
+    if (translationEngine == "yandex") {
+        document.querySelector("#btnOptions option[value='openInGoogleTranslate']").textContent = chrome.i18n.getMessage("msgOpenOnYandexTranslator")
+    } else { // google
+        document.querySelector("#btnOptions option[value='openInGoogleTranslate']").textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
+    }
+})
+
 // fill language list
 ;(function() {
     var langs = languages[chrome.i18n.getUILanguage().split("-")[0]]
@@ -276,7 +287,11 @@ btnOptions.addEventListener("change", () => {
             showPopupSection()
             break
         case "openInGoogleTranslate":
-            window.open("https://translate.google.com/translate?u=" + encodeURIComponent(pageUrl), "_blank")
+            if (gTranslationEngine == "yandex") {
+                window.open("https://translate.yandex.com/translate?url=" + encodeURIComponent(pageUrl), "_blank")
+            } else { // google
+                window.open("https://translate.google.com/translate?u=" + encodeURIComponent(pageUrl), "_blank")
+            }
             break
         case "donate":
             window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url", "_blank")
