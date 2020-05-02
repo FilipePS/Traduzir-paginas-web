@@ -46,7 +46,7 @@
         {
             "run_at": "document_end",
             "matches": ["<all_urls>"],
-            "js": ["scripts/contentScript.js"]
+            "js": ["scripts/contentScript_google.js"]
         }
     ],
 
