@@ -16,6 +16,7 @@ const alwaysTranslateListButton = document.getElementById("alwaysTranslateListBu
 const alwaysTranslateList = document.getElementById("alwaysTranslateList")
 
 lblTargetLanguage.textContent = chrome.i18n.getMessage("lblTargetLanguage")
+lblTranslationEngine.textContent = chrome.i18n.getMessage("lblTranslationEngine")
 lblPopupConfig.textContent = chrome.i18n.getMessage("optionPopupConfig")
 lblNeverTranslate.textContent = chrome.i18n.getMessage("optionsNeverTranslate")
 lblAlwaysTranslate.textContent = chrome.i18n.getMessage("optionsAlwaysTranslate")

@@ -102,5 +102,9 @@
     "optionPopupThreeFingers": {
       "message": "Wenn ich drei Finger auf dem Bildschirm berühre",
       "description": ""
+    },
+    "lblTranslationEngine": {
+      "message": "Übersetzungsmaschine",
+      "description": ""
     }
 }

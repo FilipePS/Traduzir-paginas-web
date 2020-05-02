@@ -102,5 +102,9 @@
   "optionPopupThreeFingers": {
     "message": "जब मैं स्क्रीन पर तीन उंगलियां छूता हूं",
     "वर्णन": ""
+  },
+  "lblTranslationEngine": {
+    "message": "अनुवाद इंजन",
+    "description": ""
   }
 }
