@@ -254,7 +254,7 @@ chrome.runtime.onInstalled.addListener(details => {
     var thisVersion = chrome.runtime.getManifest().version
     if (details.reason == "install") {
         chrome.runtime.openOptionsPage()
-    } else if (details.reason == "update" && details.previousVersion < "4.8") {
+    } else if (details.reason == "update" && details.previousVersion < "5.0") {
         chrome.runtime.openOptionsPage()
     }
 })
