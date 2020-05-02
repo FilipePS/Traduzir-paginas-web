@@ -120,18 +120,6 @@ function getStatus()
             var progressSection = iframeDocument.getElementById(":1.progressSection")
             var errorSection = iframeDocument.getElementById(":1.errorSection")
 
-            // replace close button
-            var eCloseButton = iframeDocument.getElementById(":1.close")
-            if (eCloseButton) {
-                eCloseButton.setAttribute("id", "twpm_googleBar_:1.close")
-                var eMyCloseButton = eCloseButton.cloneNode(true)
-                eCloseButton.style.display = "none"
-                eCloseButton.parentNode.appendChild(eMyCloseButton)
-                eMyCloseButton.onclick = () => {
-                    hideGoogleBar()
-                }
-            }
-
             if (getComputedStyle(promptSection).display != "none") {
                 return "prompt"
             } else if(getComputedStyle(finishSection).display != "none") {
