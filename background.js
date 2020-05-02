@@ -97,6 +97,29 @@ function disableAutoTranslate(lang)
     })   
 }
 
+// register content script of translation engine
+var registeredContentScript = null
+async function changeTranslationEngine(translationEngine)
+{
+    if (registeredContentScript) {
+        registeredContentScript.unregister()
+        registeredContentScript = null
+    }
+    if (translationEngine == "google") {
+        registeredContentScript = await chrome.contentScripts.register({
+            matches: ["<all_urls>"],
+            js: [{file: "scripts/contentScript_google.js"}],
+            runAt: "document_end"
+        });
+    } else if (translationEngine == "yandex") {
+        registeredContentScript = await chrome.contentScripts.register({
+            matches: ["<all_urls>"],
+            js: [{file: "scripts/contentScript_yandex.js"}],
+            runAt: "document_end"
+        });     
+    }
+}
+
 // process messages
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
@@ -169,6 +192,14 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         } 
     } else if (request.action == "getShowPopupConfig") {
         sendResponse(showPopupConfig)
+    } else if (request.action == "setTranslationEngine") {
+        if (request.translationEngine) {
+            translationEngine = request.translationEngine
+            chrome.storage.local.set({translationEngine})
+            changeTranslationEngine(translationEngine)
+        }       
+    } else if (request.action == "getTranslationEngine") {
+        sendResponse(translationEngine)
     }
 })
 
@@ -198,6 +229,16 @@ var langs = []
     })
 })()
 
+// get translationEngine engine config
+var translationEngine = "google"
+chrome.storage.local.get("translationEngine").then(onGot => {
+    if (onGot.translationEngine) {
+        translationEngine = onGot.translationEngine
+    }
+
+    changeTranslationEngine(translationEngine)
+})
+
 // get show popup config
 var showPopupConfig = "auto"
 chrome.storage.local.get("showPopupConfig").then(onGot => {
@@ -208,7 +249,6 @@ chrome.storage.local.get("showPopupConfig").then(onGot => {
 
 // show options page
 chrome.runtime.onInstalled.addListener(details => {
-    console.log(details)
     var thisVersion = chrome.runtime.getManifest().version
     if (details.reason == "install") {
         chrome.runtime.openOptionsPage()

@@ -42,14 +42,6 @@
         "default_popup": "popup/popup.html"
     },
 
-    "content_scripts": [
-        {
-            "run_at": "document_end",
-            "matches": ["<all_urls>"],
-            "js": ["scripts/contentScript_google.js"]
-        }
-    ],
-
     "background": {
         "scripts": ["languages.js", "background.js"]
     }

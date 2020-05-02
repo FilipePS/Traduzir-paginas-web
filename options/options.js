@@ -4,6 +4,8 @@ if (typeof browser !== 'undefined') {
 
 const lblTargetLanguage = document.getElementById("lblTargetLanguage")
 const selectTargetLanguage = document.getElementById("selectTargetLanguage")
+const lblTranslationEngine = document.getElementById("lblTranslationEngine")
+const selectTranslationEngine = document.getElementById("selectTranslationEngine")
 const lblPopupConfig = document.getElementById("lblPopupConfig")
 const selectPopupConfig = document.getElementById("selectPopupConfig")
 const lblNeverTranslate = document.getElementById("lblNeverTranslate")
@@ -49,6 +51,15 @@ document.querySelector("#selectPopupConfig option[value='threeFingersOnTheScreen
         selectTargetLanguage.value = targetLanguage
     })
 })()
+
+// get translation engine
+chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine => {
+    selectTranslationEngine.value = translationEngine
+})
+
+selectTranslationEngine.addEventListener("change", () => {
+    chrome.runtime.sendMessage({action: "setTranslationEngine", translationEngine: selectTranslationEngine.value})
+})
 
 // get popup config
 chrome.runtime.sendMessage({action: "getShowPopupConfig"}, showPopupConfig => {
