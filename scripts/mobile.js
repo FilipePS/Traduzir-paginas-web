@@ -12,7 +12,7 @@ function yandexDetectLanguage(text, callback)
         fetch(url, {
             method: "post",
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
-            body: "key=" + apiKey + "&text=" + encodeURI(text)
+            body: "key=" + apiKey + "&text=" + encodeURIComponent(text)
         })
         .then(data => data.text())
         .then(data => {
@@ -39,7 +39,7 @@ function googleDetectLanguage(text, callback)
         fetch(url, {
             method: "post",
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
-            body: "q=" + encodeURI(text)
+            body: "q=" + encodeURIComponent(text)
         })
         .then(data => data.text())
         .then(data => {
