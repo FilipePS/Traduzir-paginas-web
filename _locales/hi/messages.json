@@ -110,5 +110,9 @@
   "msgOpenOnYandexTranslator": {
     "message": "यैंडेक्स अनुवाद में खोलें",
     "descrição": ""
+  },
+  "lblOthers": {
+    "message": "अन्य",
+    "description": ""
   }
 }

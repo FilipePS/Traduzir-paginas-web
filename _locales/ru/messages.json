@@ -110,5 +110,9 @@
   "msgOpenOnYandexTranslator": {
     "message": "Открой в яндексе переводи",
     "descrição": ""
+  },
+  "lblOthers": {
+    "message": "другие",
+    "description": ""
   }
 }

@@ -110,5 +110,9 @@
   "msgOpenOnYandexTranslator": {
     "message": "Ouvrir en yandex traduire",
     "descrição": ""
+  },
+  "lblOthers": {
+    "message": "Autres",
+    "description": ""
   }
 }
