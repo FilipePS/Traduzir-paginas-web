@@ -114,5 +114,9 @@
   "lblOthers": {
     "message": "Others",
     "description": ""
+  },
+  "btnMoreOptions": {
+    "message": "More options",
+    "description": ""
   }
 }

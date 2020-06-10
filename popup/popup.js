@@ -43,6 +43,7 @@ document.querySelector("#btnOptions option[value='changeLanguage']").textContent
 document.querySelector("#btnOptions option[value='openInGoogleTranslate']").textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
 document.querySelector("#btnOptions option[value='donate']").textContent = chrome.i18n.getMessage("btnDonate")
 document.querySelector("#btnOptions option[value='donate']").innerHTML += " &#10084;";
+document.querySelector("#btnOptions option[value='moreOptions']").textContent = chrome.i18n.getMessage("btnMoreOptions");
 
 // get translation engine
 var gTranslationEngine = "google"
@@ -295,6 +296,9 @@ btnOptions.addEventListener("change", () => {
             break
         case "donate":
             window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url", "_blank")
+            break
+        case "moreOptions":
+            chrome.runtime.openOptionsPage()
             break
         default:
     }
