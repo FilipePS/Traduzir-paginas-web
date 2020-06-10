@@ -183,6 +183,7 @@ function injectPopup()
         const btnNeverTranslate = shadowRoot.getElementById("btnNeverTranslate")
         const btnChangeLanguages = shadowRoot.getElementById("btnChangeLanguages")
         const btnDonate = shadowRoot.getElementById("btnDonate")
+        const btnMoreOptions = shadowRoot.getElementById("btnMoreOptions")
         const btnClose = shadowRoot.getElementById("btnClose")
 
         btnOriginal.textContent = chrome.i18n.getMessage("btnMobileOriginal")
@@ -191,6 +192,7 @@ function injectPopup()
         btnChangeLanguages.textContent = chrome.i18n.getMessage("btnChangeLanguages")
         btnDonate.textContent = chrome.i18n.getMessage("btnMobileDonate")
         btnDonate.innerHTML += " &#10084;"
+        btnMoreOptions.textContent = chrome.i18n.getMessage("btnMoreOptions")
     
         btnOriginal.addEventListener("click", () => {
             chrome.runtime.sendMessage({action: "Restore"})
@@ -267,6 +269,10 @@ function injectPopup()
             aSelected = shadowRoot.querySelector("#menuSelectLanguage a[value='" + lang + "']")
             aSelected.style.backgroundColor = "#ccc"
             menuSelectLanguage.scrollTop = aSelected.offsetTop
+        })
+
+        btnMoreOptions.addEventListener("click", () => {
+            chrome.runtime.sendMessage({action: "openOptionsPage"})
         })
     
         btnClose.addEventListener("click", () => {

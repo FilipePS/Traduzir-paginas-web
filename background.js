@@ -202,6 +202,8 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }       
     } else if (request.action == "getTranslationEngine") {
         sendResponse(translationEngine)
+    } else if (request.action == "openOptionsPage") {
+        chrome.runtime.openOptionsPage()
     }
 })
 
