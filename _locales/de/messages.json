@@ -118,5 +118,9 @@
     "btnMoreOptions": {
       "message": "Mehr Optionen",
       "description": ""
+    },
+    "lblPlsDonate": {
+      "message": "Helfen Sie dem Entwickler mit einer Spende",
+      "description": ""
     }
 }

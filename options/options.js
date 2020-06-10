@@ -2,6 +2,7 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+const lblPlsDonate = document.getElementById("lblPlsDonate")
 const lblTargetLanguage = document.getElementById("lblTargetLanguage")
 const selectTargetLanguage = document.getElementById("selectTargetLanguage")
 const lblTranslationEngine = document.getElementById("lblTranslationEngine")
@@ -16,6 +17,7 @@ const lblAlwaysTranslate = document.getElementById("lblAlwaysTranslate")
 const alwaysTranslateListButton = document.getElementById("alwaysTranslateListButton")
 const alwaysTranslateList = document.getElementById("alwaysTranslateList")
 
+lblPlsDonate.textContent = chrome.i18n.getMessage("lblPlsDonate")
 lblTargetLanguage.textContent = chrome.i18n.getMessage("lblTargetLanguage")
 lblTranslationEngine.textContent = chrome.i18n.getMessage("lblTranslationEngine")
 lblPopupConfig.textContent = chrome.i18n.getMessage("optionPopupConfig")
