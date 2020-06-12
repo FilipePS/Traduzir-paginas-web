@@ -234,10 +234,10 @@ btnClose.addEventListener("click", () => {
 // swap translator engine
 divIconTranslate.addEventListener("click", () => {
     chrome.runtime.sendMessage({action: "swapEngineTranslator"})
-    if (iconTranslate.getAttribute("src") == "icons/google-translate-32.png") {
-        iconTranslate.setAttribute("src", "icons/yandex-translate-32.png")
+    if (iconTranslate.getAttribute("src") == "/icons/google-translate-32.png") {
+        iconTranslate.setAttribute("src", "/icons/yandex-translate-32.png")
     } else {
-        iconTranslate.setAttribute("src", "icons/google-translate-32.png")
+        iconTranslate.setAttribute("src", "/icons/google-translate-32.png")
     }
 
     chrome.tabs.query({currentWindow: true, active: true}, tabs => {
