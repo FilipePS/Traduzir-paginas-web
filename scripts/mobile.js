@@ -174,6 +174,7 @@ function injectPopup()
             }
         })
     
+        const iconTranslate = shadowRoot.getElementById("iconTranslate")
         const btnOriginal = shadowRoot.getElementById("btnOriginal")
         const btnTranslate= shadowRoot.getElementById("btnTranslate")
         const spin = shadowRoot.getElementById("spin")
@@ -193,6 +194,20 @@ function injectPopup()
         btnDonate.textContent = chrome.i18n.getMessage("btnMobileDonate")
         btnDonate.innerHTML += " &#10084;"
         btnMoreOptions.textContent = chrome.i18n.getMessage("btnMoreOptions")
+
+        // set translation engine icon
+        chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine => {
+            if (translationEngine == "yandex") {
+                iconTranslate.setAttribute("src", chrome.runtime.getURL("/icons/yandex-translate-32.png"))
+            } else { // google
+                iconTranslate.setAttribute("src", chrome.runtime.getURL("/icons/google-translate-32.png"))
+            }
+        })
+
+        iconTranslate.addEventListener("click", () => {
+            chrome.runtime.sendMessage({action: "swapEngineTranslator"})
+            location.reload()
+        })
     
         btnOriginal.addEventListener("click", () => {
             chrome.runtime.sendMessage({action: "Restore"})
