@@ -1,6 +1,6 @@
 body {
     user-select: none;
-    width: 300px;
+    width: 310px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -44,4 +44,18 @@ button {
 
 option {
     color: black;
+}
+
+#divIconTranslate:hover #iconTranslate {
+    opacity: 0.6;
+}
+
+#iconSwap {
+    position: absolute; bottom: 0; left: 0;
+    display: none;
+    opacity: 0.8;
+}
+
+#divIconTranslate:hover #iconSwap {
+    display: block;
 }

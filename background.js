@@ -204,6 +204,14 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         sendResponse(translationEngine)
     } else if (request.action == "openOptionsPage") {
         chrome.runtime.openOptionsPage()
+    } else if (request.action == "swapEngineTranslator") {
+        if (translationEngine == "google") {
+            translationEngine = "yandex"
+        } else {
+            translationEngine = "google"
+        }
+        chrome.storage.local.set({translationEngine})
+        changeTranslationEngine(translationEngine)
     }
 })
 

@@ -4,6 +4,8 @@ if (typeof browser !== 'undefined') {
 
 // get elements
 const btnClose = document.getElementById("btnClose")
+const divIconTranslate = document.getElementById("divIconTranslate")
+const iconTranslate = document.getElementById("iconTranslate")
 
 const lblTranslate = document.getElementById("lblTranslate")
 const lblTranslating = document.getElementById("lblTranslating")
@@ -51,7 +53,9 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
     gTranslationEngine = translationEngine
     if (translationEngine == "yandex") {
         document.querySelector("#btnOptions option[value='openInGoogleTranslate']").textContent = chrome.i18n.getMessage("msgOpenOnYandexTranslator")
+        iconTranslate.setAttribute("src", "/icons/yandex-translate-32.png")
     } else { // google
+        iconTranslate.setAttribute("src", "/icons/google-translate-32.png")
         document.querySelector("#btnOptions option[value='openInGoogleTranslate']").textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
     }
 })
@@ -225,6 +229,20 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
 // close popup
 btnClose.addEventListener("click", () => {
     window.close()
+})
+
+// swap translator engine
+divIconTranslate.addEventListener("click", () => {
+    chrome.runtime.sendMessage({action: "swapEngineTranslator"})
+    if (iconTranslate.getAttribute("src") == "icons/google-translate-32.png") {
+        iconTranslate.setAttribute("src", "icons/yandex-translate-32.png")
+    } else {
+        iconTranslate.setAttribute("src", "icons/google-translate-32.png")
+    }
+
+    chrome.tabs.query({currentWindow: true, active: true}, tabs => {
+        chrome.tabs.reload(tabs[0].id)
+    })
 })
 
 // disable auto translate for a language
