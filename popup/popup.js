@@ -296,6 +296,7 @@ var pageUrl = null
 chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     pageUrl = tabs[0].url
 })
+
 btnOptions.addEventListener("change", () => {
     switch (btnOptions.value) {
         case "neverTranslateThisSite":
@@ -307,13 +308,13 @@ btnOptions.addEventListener("change", () => {
             break
         case "openInGoogleTranslate":
             if (gTranslationEngine == "yandex") {
-                window.open("https://translate.yandex.com/translate?url=" + encodeURIComponent(pageUrl), "_blank")
+                chrome.tabs.create({url: "https://translate.yandex.com/translate?url=" + encodeURIComponent(pageUrl)})
             } else { // google
-                window.open("https://translate.google.com/translate?u=" + encodeURIComponent(pageUrl), "_blank")
+                chrome.tabs.create({url: "https://translate.google.com/translate?u=" + encodeURIComponent(pageUrl)})
             }
             break
         case "donate":
-            window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url", "_blank")
+            chrome.tabs.create({url: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url"})
             break
         case "moreOptions":
             chrome.runtime.openOptionsPage()
