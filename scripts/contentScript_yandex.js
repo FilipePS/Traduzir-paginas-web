@@ -64,7 +64,6 @@ function getStatus()
     try {
         if (yandexTranslateIsLoaded) {
             var classes = Array.from(document.getElementById("yt-widget").classList)
-            console.log(classes)
             if (classes.indexOf("yt-state_done") != -1) {
                 return "finish"
             } else if(classes.indexOf("yt-state_busy") != -1) {
@@ -74,7 +73,7 @@ function getStatus()
             }
         }
     } catch (e) {
-        //console.log(e)
+        console.log(e)
     }
 }
 
