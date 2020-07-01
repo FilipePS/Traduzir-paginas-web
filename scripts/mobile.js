@@ -5,14 +5,14 @@ if (typeof browser !== 'undefined') {
 function yandexDetectLanguage(text, callback)
 {
     if (text.length > 10) {
-        let url = "https://translate.yandex.net/api/v1.5/tr.json/detect"
-        let apiKey = "trnsl.1.1.20200410T160011Z.1dabbc738bb3abea.bec131e2ab8e9346e2e5feb85666a4ab4d14a3c7"
-        text = text.substring(0, 100)
+        let url = "https://translate.yandex.net/api/v1/tr.json/detect"
+        text = text.trim().substring(0, 300)
 
         fetch(url, {
+            credentials: "omit",
             method: "post",
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
-            body: "key=" + apiKey + "&text=" + encodeURIComponent(text)
+            body: "srv=tr-url-widget" + "&text=" + encodeURIComponent(text)
         })
         .then(data => data.text())
         .then(data => {
@@ -34,9 +34,10 @@ function googleDetectLanguage(text, callback)
 {
     if (text.length > 10) {
         let url = "https://translate.google.com/translate_a/single?client=gtx&sl=auto"
-        text = text.substring(0, 200)
+        text = text.trim().substring(0, 300)
 
         fetch(url, {
+            credentials: "omit",
             method: "post",
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
             body: "q=" + encodeURIComponent(text)
