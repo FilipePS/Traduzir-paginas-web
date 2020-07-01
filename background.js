@@ -120,6 +120,45 @@ async function changeTranslationEngine(translationEngine)
     }
 }
 
+function captureGoogleTranslateTKK() {
+    return fetch("https://translate.google.com", {
+            "credentials": "omit",
+            "method": "GET",
+            "mode": "cors"
+        })
+        .then(response => response.text())
+        .then(responseText => {
+            var result = new RegExp(/\s*tkk\s*\:\s*['"][0-9\.]+(?=['"])/i).exec(responseText)
+            if (result) {
+                result = new RegExp(/[0-9\.]+/i).exec(result)
+                // console.log(result)
+                return result[0]
+            }
+        })
+        .catch(e => {
+            console.log(e)
+        })
+}
+
+var googleTranslateTKK = null
+captureGoogleTranslateTKK().then(tkk => {
+    googleTranslateTKK = tkk
+})
+
+setInterval(() => {
+    captureGoogleTranslateTKK().then(tkk => {
+        if (tkk) {
+            googleTranslateTKK = tkk
+
+            chrome.tabs.query({}).then(tabs => {
+                tabs.forEach(tab => {
+                    chrome.tabs.sendMessage(tab.id, {action: "updateGoogleTranslateTKK", googleTranslateTKK: googleTranslateTKK})
+                })
+            })
+        }
+    })    
+}, 30 * 1000 * 60)
+
 // process messages
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
@@ -212,6 +251,8 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
         chrome.storage.local.set({translationEngine})
         changeTranslationEngine(translationEngine)
+    } else if (request.action == "getGoogleTranslateTKK") {
+        sendResponse(googleTranslateTKK)
     }
 })
 
