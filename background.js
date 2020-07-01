@@ -263,6 +263,14 @@ chrome.storage.local.get("showPopupConfig").then(onGot => {
 chrome.runtime.onInstalled.addListener(details => {
     var thisVersion = chrome.runtime.getManifest().version
     if (details.reason == "install") {
+        // execute contentScript on Extension Install
+        chrome.tabs.query({}).then(tabs => {
+            tabs.forEach(tab => {
+                if (tab.status == "complete") {
+                    chrome.tabs.executeScript(tab.id, {file: "/scripts/contentScript_google.js"})
+                }
+            })
+        })
         chrome.runtime.openOptionsPage()
     } else if (details.reason == "update" && details.previousVersion < "5.0") {
         chrome.runtime.openOptionsPage()
