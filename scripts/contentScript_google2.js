@@ -174,7 +174,7 @@ function getRequestStrings() {
     var index = 0
     var requestLength = 0
     for (let i in nodesStrings) {
-        if (requestLength == 0 || requestLength + nodesStrings[i].length < 850) {
+        if (requestLength == 0 || requestLength + nodesStrings[i].length < 1000) {
             requestLength += nodesStrings[i].length
             requestsStrings[index].push(nodesStrings[i])
         } else {
@@ -194,38 +194,36 @@ function getRequestStrings() {
 
 function translateResults(i, results, translateNodes, requestsSum) {
     for (let j in results) {
-        try {
-            var resultSentences = []
-            var idx = 0
-            while (true) {
-                var sentenceStartIndex = results[0].indexOf("<b>", idx)
-                if (sentenceStartIndex == -1) break;
+        var resultSentences = []
+        var idx = 0
+        while (true) {
+            var sentenceStartIndex = results[j].indexOf("<b>", idx)
+            if (sentenceStartIndex == -1) break;
+            
+            var sentenceFinalIndex = results[j].indexOf("</b>", sentenceStartIndex)
+            if (sentenceFinalIndex == -1) break;
                 
-                var sentenceFinalIndex = results[0].indexOf("</b>", sentenceStartIndex)
-                if (sentenceFinalIndex == -1) break;
-                    
-                resultSentences.push(results[0].slice(sentenceStartIndex + 3, sentenceFinalIndex))
-                idx = sentenceFinalIndex
-            }
+            resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
+            idx = sentenceFinalIndex
+        }
 
-            var result = resultSentences.length > 0 ? resultSentences.join('') : results[0]
+        var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
 
-            var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
-            var indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=['"]{1}\s*\>)/g))).filter(value => !isNaN(value))
+        var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
+        var indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=['"]{1}\s*\>)/g))).filter(value => !isNaN(value))
 
-            resultArray = resultArray.map(value => {
-                var resultStartAtIndex = value.indexOf('>')
-                return value.slice(resultStartAtIndex + 1)
-            })
+        resultArray = resultArray.map(value => {
+            var resultStartAtIndex = value.indexOf('>')
+            return value.slice(resultStartAtIndex + 1)
+        })
 
-            for (let k in resultArray) {
-                translateNodes[i][indexes[k]].node.textContent = ""
-            }
+        for (let k in resultArray) {
+            translateNodes[parseInt(requestsSum[i]) + parseInt(j)][indexes[k]].node.textContent = ""
+        }
 
-            for (let k in resultArray) {
-                translateNodes[i][indexes[k]].node.textContent += unescapeHtml(resultArray[k]) + " "
-            }
-        } catch (e) {console.log(e)}
+        for (let k in resultArray) {
+            translateNodes[parseInt(requestsSum[i]) + parseInt(j)][indexes[k]].node.textContent += unescapeHtml(resultArray[k]) + " "
+        }
     }
 }
 
@@ -262,10 +260,10 @@ function translate()
         })
     } else {
         resultsTranslated = []
-        for (let i in nodesStrings) {
-            translateHtml([nodesStrings[i]]).then(results => {
+        for (let i in requestsStrings) {
+            translateHtml(requestsStrings[i]).then(results => {
                 countRequestsTranslated++
-                if (countRequestsTranslated == nodesStrings.length) {
+                if (countRequestsTranslated == requestsStrings.length) {
                     status = "finish"
                 }
                 resultsTranslated.push([i, results])
