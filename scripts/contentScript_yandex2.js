@@ -2,6 +2,9 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+var translatedStrings = []
+var nodesTranslated = []
+var status = "prompt"
 var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'B', 'BIG', 'BDO', 'B', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
 var htmlTagsNoTranslate = ['CODE', 'TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
 
@@ -24,14 +27,28 @@ function unescapeHtml(unsafe) {
 }
 
 function translateHtml(params) {
-
     var requestBody = "srv=tr-url-widget&format=html&lang=pt"
+    var translationInfo = []
+    var stringsToTranslateInfo = []
+    for (let str of params) {
+        var translatedStringInfo = translatedStrings.find(value => value.original == str)
+        if (translatedStringInfo) {
+            translationInfo.push(translatedStringInfo)
+        } else {
+            var newTransInfo = {
+                original: str,
+                status: "translating",
+                translated: null
+            }
+            translatedStrings.push(newTransInfo)
+            translationInfo.push(newTransInfo)
+            stringsToTranslateInfo.push(newTransInfo)
+            requestBody += "&text=" + encodeURIComponent(str)
+        }
+    }
 
-    params.forEach(value => {
-        requestBody += "&text=" + encodeURIComponent(value)
-    })
-
-    return fetch("https://translate.yandex.net/api/v1/tr.json/translate", {
+    if (stringsToTranslateInfo.length > 0) {
+        fetch("https://translate.yandex.net/api/v1/tr.json/translate", {
             "credentials": "omit",
             "headers": {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -42,14 +59,41 @@ function translateHtml(params) {
         })
         .then(response => response.json())
         .then(responseJson => {
+            responseJson.text.forEach((value, index) => {
+                stringsToTranslateInfo[index].status = "complete"
+                stringsToTranslateInfo[index].translated = value
+            })
             return responseJson.text
         })
         .catch(e => {
+            responseJson.text.forEach((value, index) => {
+                stringsToTranslateInfo[index].status = "error"
+                stringsToTranslateInfo[index].translated = value
+            })
             console.log(e)
-        })
+        }) 
+    }
+
+    return new Promise(resolve => {
+        function waitForTranslationFinish() {
+            var isTranslating = false
+            for (let info of translationInfo) {
+                if (info.status == "translating") {
+                    isTranslating = true
+                    break
+                }
+            }
+            if (isTranslating) {
+                setTimeout(waitForTranslationFinish, 100)
+            } else {
+                resolve(translationInfo.map(value => value.translated))
+            }
+        }
+        waitForTranslationFinish()
+    })
 }
 
-function getTranslateNodes() {
+function getTranslateNodes(element) {
     var translateNodes = [[]]
     var index = 0
     var getAllNodes = function (element) {
@@ -69,7 +113,7 @@ function getTranslateNodes() {
             }
         }
     }
-    getAllNodes(document.body)
+    getAllNodes(element)
     return translateNodes
 }
 
@@ -83,7 +127,7 @@ function getNodesStrings(translateNodes) {
     return nodesStrings
 }
 
-function getRequestStrings() {
+function getRequestStrings(nodesStrings) {
     var requestsSum = [0]
     var requestsStrings = [[]]
     var index = 0
@@ -111,138 +155,42 @@ function translateResults(i, results, translateNodes, requestsSum) {
     for (let j in results) {
         var resultArray = results[j].split('<wbr>').map(value => unescapeHtml(value))
         for (let k in resultArray) {
-            translateNodes[parseInt(requestsSum[i]) + parseInt(j)][parseInt(k)].node.textContent = resultArray[k]
+            var node = translateNodes[parseInt(requestsSum[i]) + parseInt(j)][parseInt(k)].node
+            nodesTranslated.push({node: node, original: node.textContent})
+            node.textContent = resultArray[k]
         }
     }
 }
 
-var status = "prompt"
-var countRequestsTranslated = 0
-var translateNodes = null
-var nodesStrings = null
-var requestsStrings = null
-var requestsSum = null
-var resultsTranslated = null
-/*
-if (!translateNodes || !nodesStrings || !requestsStrings || !requestsSum) {
-    translateNodes = getTranslateNodes()
-    nodesStrings = getNodesStrings(translateNodes)
-    var [rstr, rsum] = getRequestStrings(nodesStrings)
-    requestsStrings = rstr
-    requestsSum = rsum
-}
-
-function isDescendant(parent, child) {
-    var node = child.parentNode;
-    while (node != null) {
-        if (htmlTagsInlineText.indexOf(node.nodeName) == -1) {
-            return false
-        }
-
-        if (node == parent) {
-            return true;
-        }
-        node = node.parentNode;
-    }
-    return false;
-}
-
-var prevElement = null
-var prevText = null
-window.addEventListener("mousemove", event => {
-    return;
-    try {
-    var element = document.elementFromPoint(event.clientX, event.clientY)
-    if (!element) return;
-
-    if (prevElement && prevElement == element) return;
-    prevElement = element
-
-    var mouseTranslateNodes = []
-
-    var translateNodeIndex = null
-    for (idx in translateNodes) {
-        var translateNode = translateNodes[idx]
-        for (nodeInfo of translateNode) {
-            if (nodeInfo.node.parentNode == element || isDescendant(element, nodeInfo.node.parentNode)) {
-                translateNodeIndex = idx
-                mouseTranslateNodes.push(translateNode)
-                break;
-            }
-        }    
-    }
-
-    var nodesStrings = getNodesStrings(mouseTranslateNodes)
-    var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
-
-    resultsTranslated = resultsTranslated || []
-
-    var resultTranslated = resultsTranslated.filter(value => value[2] == translateNodeIndex)
-    if (resultTranslated.length > 0) {
-        for (let idx in resultTranslated) {
-            var i = resultTranslated[idx][0]
-            var results = resultTranslated[idx][1]
-            translateResults(i, results, mouseTranslateNodes, requestsSum)
-        }
-    } else {
-        for (let i in nodesStrings) {
-            translateHtml([nodesStrings[i]]).then(results => {
-                resultsTranslated.push([i, results, translateNodeIndex])
-                translateResults(i, results, mouseTranslateNodes, requestsSum)
-            })
-        }
-    }
-    } catch (e ) { console.log(e) }; 
-})
-//*/
 function translate()
 {
-
     countRequestsTranslated = 0
     status = "progress"
     
-    if (!translateNodes || !nodesStrings || !requestsStrings || !requestsSum) {
-        translateNodes = getTranslateNodes()
-        nodesStrings = getNodesStrings(translateNodes)
-        var [rstr, rsum] = getRequestStrings(nodesStrings)
-        requestsStrings = rstr
-        requestsSum = rsum
-    }
+    var translateNodes = getTranslateNodes(document.body)
+    var nodesStrings = getNodesStrings(translateNodes)
+    var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
+    
 
-    if (resultsTranslated) {
-        resultsTranslated.forEach(value => {
+    for (let i in requestsStrings) {
+        translateHtml(requestsStrings[i]).then(results => {
             countRequestsTranslated++
-            if (countRequestsTranslated == resultsTranslated.length) {
+            if (countRequestsTranslated == requestsStrings.length) {
                 status = "finish"
             }
-            var [i, results] = value
             translateResults(i, results, translateNodes, requestsSum)
         })
-    } else {
-        resultsTranslated = []
-        for (let i in requestsStrings) {
-            translateHtml(requestsStrings[i]).then(results => {
-                countRequestsTranslated++
-                if (countRequestsTranslated == requestsStrings.length) {
-                    status = "finish"
-                }
-                resultsTranslated.push([i, results])
-                translateResults(i, results, translateNodes, requestsSum)
-            })
-        }
     }
 }
 
 function restore()
 {
     status = "prompt"
-    if (translateNodes) {
-        translateNodes.forEach(value => {
-            value.forEach(value => {
-                value.node.textContent = value.textContent
-            })
-        })
-    }
+
+    nodesTranslated.forEach(nodeInfo => {
+        nodeInfo.node.textContent = nodeInfo.original
+    })
+    nodesTranslated = []
 }
 
 function getStatus()
@@ -268,7 +216,7 @@ function getPageLanguage()
 //*
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
-        translate()
+        try {translate()}catch(e){console.log(e)}
     } else if (request.action == "Restore") {
         restore()
     } else if (request.action == "getStatus") {
