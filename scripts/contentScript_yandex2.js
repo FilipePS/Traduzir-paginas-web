@@ -2,6 +2,7 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+var prevTargetLanguage = null
 var translatedStrings = []
 var nodesTranslated = []
 var status = "prompt"
@@ -26,8 +27,8 @@ function unescapeHtml(unsafe) {
          .replaceAll("&#39;", "'");
 }
 
-function translateHtml(params) {
-    var requestBody = "srv=tr-url-widget&format=html&lang=pt"
+function translateHtml(params, targetLanguage) {
+    var requestBody = "srv=tr-url-widget&format=html&lang=" + targetLanguage
     var translationInfo = []
     var stringsToTranslateInfo = []
     for (let str of params) {
@@ -164,23 +165,31 @@ function translateResults(i, results, translateNodes, requestsSum) {
 
 function translate()
 {
-    countRequestsTranslated = 0
-    status = "progress"
-    
-    var translateNodes = getTranslateNodes(document.body)
-    var nodesStrings = getNodesStrings(translateNodes)
-    var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
-    
+    chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+        if (prevTargetLanguage && prevTargetLanguage != targetLanguage) {
+            restore()
+            translatedStrings = []
+        }
+        prevTargetLanguage = targetLanguage
 
-    for (let i in requestsStrings) {
-        translateHtml(requestsStrings[i]).then(results => {
-            countRequestsTranslated++
-            if (countRequestsTranslated == requestsStrings.length) {
-                status = "finish"
-            }
-            translateResults(i, results, translateNodes, requestsSum)
-        })
-    }
+        countRequestsTranslated = 0
+        status = "progress"
+        
+        var translateNodes = getTranslateNodes(document.body)
+        var nodesStrings = getNodesStrings(translateNodes)
+        var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
+        
+
+        for (let i in requestsStrings) {
+            translateHtml(requestsStrings[i], targetLanguage).then(results => {
+                countRequestsTranslated++
+                if (countRequestsTranslated == requestsStrings.length) {
+                    status = "finish"
+                }
+                translateResults(i, results, translateNodes, requestsSum)
+            })
+        }
+    })
 }
 
 function restore()

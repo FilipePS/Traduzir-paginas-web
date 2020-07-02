@@ -2,6 +2,7 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+var prevTargetLanguage = null
 var translatedStrings = []
 var nodesTranslated = []
 var status = "prompt"
@@ -100,7 +101,7 @@ function unescapeHtml(unsafe) {
          .replaceAll("&#39;", "'");
 }
 
-function translateHtml(params) {
+function translateHtml(params, targetLanguage) {
     var requestBody = ""
     var translationInfo = []
     var stringsToTranslateInfo = []
@@ -124,7 +125,7 @@ function translateHtml(params) {
     if (stringsToTranslateInfo.length > 0) {
         var tk = calcHash(stringsToTranslateInfo.map(value => value.original).join(''), googleTranslateTKK)
         
-        fetch("https://translate.googleapis.com/translate_a/t?anno=3&client=te&format=html&v=1.0&sl=auto&tl=pt&tk=" + tk, {
+        fetch("https://translate.googleapis.com/translate_a/t?anno=3&client=te&format=html&v=1.0&sl=auto&tl=" + targetLanguage + "&tk=" + tk, {
             "credentials": "omit",
             "headers": {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -274,28 +275,40 @@ function translateResults(i, results, translateNodes, requestsSum) {
 
 function translate()
 {
-    countRequestsTranslated = 0
-    status = "progress"
-    
-    var translateNodes = getTranslateNodes(document.body)
-    var nodesStrings = getNodesStrings(translateNodes)
-    var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
-
-    for (let i in translateNodes) {
-        for (let nodeInfo of translateNodes[i]) {
-            nodesTranslated.push({node: nodeInfo.node, original: nodeInfo.node.textContent})
+    chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+        if (targetLanguage == "zh") {
+            targetLanguage = "zh-CN"
         }
-    }
 
-    for (let i in requestsStrings) {
-        translateHtml(requestsStrings[i]).then(results => {
-            countRequestsTranslated++
-            if (countRequestsTranslated == requestsStrings.length) {
-                status = "finish"
+        if (prevTargetLanguage && prevTargetLanguage != targetLanguage) {
+            restore()
+            translatedStrings = []
+        }
+        prevTargetLanguage = targetLanguage
+
+        countRequestsTranslated = 0
+        status = "progress"
+        
+        var translateNodes = getTranslateNodes(document.body)
+        var nodesStrings = getNodesStrings(translateNodes)
+        var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
+
+        for (let i in translateNodes) {
+            for (let nodeInfo of translateNodes[i]) {
+                nodesTranslated.push({node: nodeInfo.node, original: nodeInfo.node.textContent})
             }
-            translateResults(i, results, translateNodes, requestsSum)
-        })
-    }
+        }
+
+        for (let i in requestsStrings) {
+            translateHtml(requestsStrings[i], targetLanguage).then(results => {
+                countRequestsTranslated++
+                if (countRequestsTranslated == requestsStrings.length) {
+                    status = "finish"
+                }
+                translateResults(i, results, translateNodes, requestsSum)
+            })
+        }
+    })
 }
 
 function restore()
