@@ -108,13 +108,13 @@ async function changeTranslationEngine(translationEngine)
     if (translationEngine == "google") {
         registeredContentScript = await chrome.contentScripts.register({
             matches: ["<all_urls>"],
-            js: [{file: "scripts/contentScript_google.js"}],
+            js: [{file: "scripts/contentScript_google2.js"}],
             runAt: "document_end"
         });
     } else if (translationEngine == "yandex") {
         registeredContentScript = await chrome.contentScripts.register({
             matches: ["<all_urls>"],
-            js: [{file: "scripts/contentScript_yandex.js"}],
+            js: [{file: "scripts/contentScript_yandex2.js"}],
             runAt: "document_end"
         });     
     }
@@ -308,7 +308,14 @@ chrome.runtime.onInstalled.addListener(details => {
         chrome.tabs.query({}).then(tabs => {
             tabs.forEach(tab => {
                 if (tab.status == "complete") {
-                    chrome.tabs.executeScript(tab.id, {file: "/scripts/contentScript_google.js"})
+                    function injectScript() {
+                        if (googleTranslateTKK) {
+                            chrome.tabs.executeScript(tab.id, {file: "/scripts/contentScript_google2.js"})
+                        } else {
+                            setTimeout(injectScript, 500)
+                        }
+                    }
+                    injectScript()
                 }
             })
         })
