@@ -312,7 +312,7 @@ chrome.runtime.onInstalled.addListener(details => {
                 if (tab.status == "complete") {
                     function injectScript() {
                         if (googleTranslateTKK) {
-                            chrome.tabs.executeScript(tab.id, {file: "/scripts/contentScript_google2.js"})
+                            chrome.tabs.executeScript(tab.id, {file: "/scripts/contentScript_google2.js", allFrames: true})
                         } else {
                             setTimeout(injectScript, 500)
                         }
