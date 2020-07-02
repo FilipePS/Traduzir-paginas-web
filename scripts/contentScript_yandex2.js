@@ -89,7 +89,7 @@ function getRequestStrings() {
     var index = 0
     var requestLength = 0
     for (let i in nodesStrings) {
-        if (requestLength == 0 || requestLength + nodesStrings[i].length < 850) {
+        if (requestLength == 0 || requestLength + nodesStrings[i].length < 1000) {
             requestLength += nodesStrings[i].length
             requestsStrings[index].push(nodesStrings[i])
         } else {
@@ -123,7 +123,78 @@ var nodesStrings = null
 var requestsStrings = null
 var requestsSum = null
 var resultsTranslated = null
+/*
+if (!translateNodes || !nodesStrings || !requestsStrings || !requestsSum) {
+    translateNodes = getTranslateNodes()
+    nodesStrings = getNodesStrings(translateNodes)
+    var [rstr, rsum] = getRequestStrings(nodesStrings)
+    requestsStrings = rstr
+    requestsSum = rsum
+}
 
+function isDescendant(parent, child) {
+    var node = child.parentNode;
+    while (node != null) {
+        if (htmlTagsInlineText.indexOf(node.nodeName) == -1) {
+            return false
+        }
+
+        if (node == parent) {
+            return true;
+        }
+        node = node.parentNode;
+    }
+    return false;
+}
+
+var prevElement = null
+var prevText = null
+window.addEventListener("mousemove", event => {
+    return;
+    try {
+    var element = document.elementFromPoint(event.clientX, event.clientY)
+    if (!element) return;
+
+    if (prevElement && prevElement == element) return;
+    prevElement = element
+
+    var mouseTranslateNodes = []
+
+    var translateNodeIndex = null
+    for (idx in translateNodes) {
+        var translateNode = translateNodes[idx]
+        for (nodeInfo of translateNode) {
+            if (nodeInfo.node.parentNode == element || isDescendant(element, nodeInfo.node.parentNode)) {
+                translateNodeIndex = idx
+                mouseTranslateNodes.push(translateNode)
+                break;
+            }
+        }    
+    }
+
+    var nodesStrings = getNodesStrings(mouseTranslateNodes)
+    var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
+
+    resultsTranslated = resultsTranslated || []
+
+    var resultTranslated = resultsTranslated.filter(value => value[2] == translateNodeIndex)
+    if (resultTranslated.length > 0) {
+        for (let idx in resultTranslated) {
+            var i = resultTranslated[idx][0]
+            var results = resultTranslated[idx][1]
+            translateResults(i, results, mouseTranslateNodes, requestsSum)
+        }
+    } else {
+        for (let i in nodesStrings) {
+            translateHtml([nodesStrings[i]]).then(results => {
+                resultsTranslated.push([i, results, translateNodeIndex])
+                translateResults(i, results, mouseTranslateNodes, requestsSum)
+            })
+        }
+    }
+    } catch (e ) { console.log(e) }; 
+})
+//*/
 function translate()
 {
 
