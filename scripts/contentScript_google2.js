@@ -2,6 +2,11 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+var translatedStrings = []
+var nodesTranslated = []
+var status = "prompt"
+var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'B', 'BIG', 'BDO', 'B', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
+var htmlTagsNoTranslate = ['CODE', 'TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
 
 function shiftLeftOrRightThenSumOrXor(num, opArray) {
     return opArray.reduce((acc, opString) => {
@@ -77,9 +82,6 @@ chrome.runtime.sendMessage({action: "getGoogleTranslateTKK"}, gtTKK => {
     googleTranslateTKK = gtTKK
 })
 
-var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'B', 'BIG', 'BDO', 'B', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
-var htmlTagsNoTranslate = ['CODE', 'TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
-
 function escapeHtml(unsafe) {
     return unsafe
          .replaceAll("&", "&amp;")
@@ -99,16 +101,30 @@ function unescapeHtml(unsafe) {
 }
 
 function translateHtml(params) {
-
     var requestBody = ""
-
-    params.forEach(value => {
-        requestBody += "&q=" + encodeURIComponent(value)
-    })
-
-    var tk = calcHash(params.join(''), googleTranslateTKK)
-
-    return fetch("https://translate.googleapis.com/translate_a/t?anno=3&client=te&format=html&v=1.0&sl=auto&tl=pt&tk=" + tk, {
+    var translationInfo = []
+    var stringsToTranslateInfo = []
+    for (let str of params) {
+        var translatedStringInfo = translatedStrings.find(value => value.original == str)
+        if (translatedStringInfo) {
+            translationInfo.push(translatedStringInfo)
+        } else {
+            var newTransInfo = {
+                original: str,
+                status: "translating",
+                translated: null
+            }
+            translatedStrings.push(newTransInfo)
+            translationInfo.push(newTransInfo)
+            stringsToTranslateInfo.push(newTransInfo)
+            requestBody += "&q=" + encodeURIComponent(str)
+        }
+    }
+    
+    if (stringsToTranslateInfo.length > 0) {
+        var tk = calcHash(stringsToTranslateInfo.map(value => value.original).join(''), googleTranslateTKK)
+        
+        fetch("https://translate.googleapis.com/translate_a/t?anno=3&client=te&format=html&v=1.0&sl=auto&tl=pt&tk=" + tk, {
             "credentials": "omit",
             "headers": {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -120,17 +136,44 @@ function translateHtml(params) {
         .then(response => response.json())
         .then(responseJson => {
             if (typeof responseJson[0] == "string") {
-                return [responseJson[0]]
+                responseJson = [responseJson[0]]
             } else {
-                return responseJson.map(value => value[0])
+                responseJson = responseJson.map(value => value[0])
             }
+
+            responseJson.forEach((value, index) => {
+                stringsToTranslateInfo[index].status = "complete"
+                stringsToTranslateInfo[index].translated = value
+            })
         })
         .catch(e => {
+            stringsToTranslateInfo.forEach((value, index) => {
+                stringsToTranslateInfo[index].status = "error"
+            })
             console.log(e)
         })
+    }
+
+    return new Promise(resolve => {
+        function waitForTranslationFinish() {
+            var isTranslating = false
+            for (let info of translationInfo) {
+                if (info.status == "translating") {
+                    isTranslating = true
+                    break
+                }
+            }
+            if (isTranslating) {
+                setTimeout(waitForTranslationFinish, 100)
+            } else {
+                resolve(translationInfo.map(value => value.translated))
+            }
+        }
+        waitForTranslationFinish()
+    })
 }
 
-function getTranslateNodes() {
+function getTranslateNodes(element) {
     var translateNodes = [[]]
     var index = 0
     var getAllNodes = function (element) {
@@ -150,7 +193,7 @@ function getTranslateNodes() {
             }
         }
     }
-    getAllNodes(document.body)
+    getAllNodes(element)
     return translateNodes
 }
 
@@ -168,7 +211,7 @@ function getNodesStrings(translateNodes) {
     return nodesStrings
 }
 
-function getRequestStrings() {
+function getRequestStrings(nodesStrings) {
     var requestsSum = [0]
     var requestsStrings = [[]]
     var index = 0
@@ -218,71 +261,50 @@ function translateResults(i, results, translateNodes, requestsSum) {
         })
 
         for (let k in resultArray) {
-            translateNodes[parseInt(requestsSum[i]) + parseInt(j)][indexes[k]].node.textContent = ""
+            var node = translateNodes[parseInt(requestsSum[i]) + parseInt(j)][indexes[k]].node
+            node.textContent = ""
         }
 
         for (let k in resultArray) {
-            translateNodes[parseInt(requestsSum[i]) + parseInt(j)][indexes[k]].node.textContent += unescapeHtml(resultArray[k]) + " "
+            var node = translateNodes[parseInt(requestsSum[i]) + parseInt(j)][indexes[k]].node
+            node.textContent += unescapeHtml(resultArray[k]) + " "
         }
     }
 }
 
-var status = "prompt"
-var countRequestsTranslated = 0
-var translateNodes = null
-var nodesStrings = null
-var requestsStrings = null
-var requestsSum = null
-var resultsTranslated = null
-
 function translate()
 {
-
     countRequestsTranslated = 0
     status = "progress"
     
-    if (!translateNodes || !nodesStrings || !requestsStrings || !requestsSum) {
-        translateNodes = getTranslateNodes()
-        nodesStrings = getNodesStrings(translateNodes)
-        var [rstr, rsum] = getRequestStrings(nodesStrings)
-        requestsStrings = rstr
-        requestsSum = rsum
+    var translateNodes = getTranslateNodes(document.body)
+    var nodesStrings = getNodesStrings(translateNodes)
+    var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
+
+    for (let i in translateNodes) {
+        for (let nodeInfo of translateNodes[i]) {
+            nodesTranslated.push({node: nodeInfo.node, original: nodeInfo.node.textContent})
+        }
     }
 
-    if (resultsTranslated) {
-        resultsTranslated.forEach(value => {
+    for (let i in requestsStrings) {
+        translateHtml(requestsStrings[i]).then(results => {
             countRequestsTranslated++
-            if (countRequestsTranslated == resultsTranslated.length) {
+            if (countRequestsTranslated == requestsStrings.length) {
                 status = "finish"
             }
-            var [i, results] = value
             translateResults(i, results, translateNodes, requestsSum)
         })
-    } else {
-        resultsTranslated = []
-        for (let i in requestsStrings) {
-            translateHtml(requestsStrings[i]).then(results => {
-                countRequestsTranslated++
-                if (countRequestsTranslated == requestsStrings.length) {
-                    status = "finish"
-                }
-                resultsTranslated.push([i, results])
-                translateResults(i, results, translateNodes, requestsSum)
-            })
-        }
     }
 }
 
 function restore()
 {
     status = "prompt"
-    if (translateNodes) {
-        translateNodes.forEach(value => {
-            value.forEach(value => {
-                value.node.textContent = value.textContent
-            })
-        })
-    }
+    nodesTranslated.forEach(nodeInfo => {
+        nodeInfo.node.textContent = nodeInfo.original
+    })
+    nodesTranslated = []
 }
 
 function getStatus()
@@ -308,7 +330,7 @@ function getPageLanguage()
 //*
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
-        translate()
+        try {translate()} catch(e) {console.log(e)}
     } else if (request.action == "Restore") {
         restore()
     } else if (request.action == "getStatus") {
