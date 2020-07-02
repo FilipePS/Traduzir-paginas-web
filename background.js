@@ -108,12 +108,14 @@ async function changeTranslationEngine(translationEngine)
     if (translationEngine == "google") {
         registeredContentScript = await chrome.contentScripts.register({
             matches: ["<all_urls>"],
+            allFrames: true,
             js: [{file: "scripts/contentScript_google2.js"}],
             runAt: "document_end"
         });
     } else if (translationEngine == "yandex") {
         registeredContentScript = await chrome.contentScripts.register({
             matches: ["<all_urls>"],
+            allFrames: true,
             js: [{file: "scripts/contentScript_yandex2.js"}],
             runAt: "document_end"
         });     
