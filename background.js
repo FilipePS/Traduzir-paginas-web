@@ -313,6 +313,9 @@ chrome.runtime.onInstalled.addListener(details => {
                     function injectScript() {
                         if (googleTranslateTKK) {
                             chrome.tabs.executeScript(tab.id, {file: "/scripts/contentScript_google2.js", allFrames: true})
+                            if (isMobile.any()) {
+                                chrome.tabs.executeScript(tab.id, {file: "/scripts/mobile.js", allFrames: false})
+                            }
                         } else {
                             setTimeout(injectScript, 500)
                         }

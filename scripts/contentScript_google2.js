@@ -85,20 +85,20 @@ chrome.runtime.sendMessage({action: "getGoogleTranslateTKK"}, gtTKK => {
 
 function escapeHtml(unsafe) {
     return unsafe
-         .replaceAll("&", "&amp;")
-         .replaceAll("<", "&lt;")
-         .replaceAll(">", "&gt;")
-         .replaceAll("\"", "&quot;")
-         .replaceAll("'", "&#39;");
+        .replace(/\&/g, "&amp;")
+        .replace(/\</g, "&lt;")
+        .replace(/\>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/\'/g, "&#39;");
 }
 
 function unescapeHtml(unsafe) {
     return unsafe
-         .replaceAll("&amp;", "&")
-         .replaceAll("&lt;", "<")
-         .replaceAll("&gt;", ">")
-         .replaceAll("&quot;", "\"")
-         .replaceAll("&#39;", "'");
+        .replace(/\&amp;/g, "&")
+        .replace(/\&lt;/g, "<")
+        .replace(/\&gt;/g, ">")
+        .replace(/\&quot;/g, "\"")
+        .replace(/\&\#39;/g, "'");
 }
 
 function translateHtml(params, targetLanguage) {
