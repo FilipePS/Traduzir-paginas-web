@@ -134,7 +134,7 @@ function getRequestStrings(nodesStrings) {
     var index = 0
     var requestLength = 0
     for (let i in nodesStrings) {
-        if (requestLength == 0 || requestLength + nodesStrings[i].length < 1000) {
+        if (requestLength == 0 || requestLength + nodesStrings[i].length < 800) {
             requestLength += nodesStrings[i].length
             requestsStrings[index].push(nodesStrings[i])
         } else {
