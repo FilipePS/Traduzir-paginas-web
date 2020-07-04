@@ -283,14 +283,16 @@ function updateContextMenu() {
     } else {
         contextMenuTile += languages['en'][targetLanguage]
     }
-    chrome.contextMenus.removeAll()
-    if (showContextMenu == "yes") {
-        chrome.contextMenus.create({
-            id: "translate-web-page",
-            documentUrlPatterns: ["*://*/*"],
-            title: contextMenuTile,
-            contexts: ["page", "frame"]
-        })
+    if (typeof chrome.contextMenus != 'undefined') {
+        chrome.contextMenus.removeAll()
+        if (showContextMenu == "yes") {
+            chrome.contextMenus.create({
+                id: "translate-web-page",
+                documentUrlPatterns: ["*://*/*"],
+                title: contextMenuTile,
+                contexts: ["page", "frame"]
+            })
+        }
     }
 }
 
@@ -368,20 +370,22 @@ chrome.runtime.onInstalled.addListener(details => {
 })
 
 // popup for mobile
-// if (isMobile.any()) {
+if (isMobile.any()) {
     chrome.contentScripts.register({
         "js": [{file: "/scripts/mobile.js"}],
         "matches": ["<all_urls>"],
         "runAt": "document_end"
     })
-// }
+}
 
-chrome.contextMenus.onClicked.addListener((info, tab) => {
-    chrome.pageAction.openPopup()
-    chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, response => {
-        if (response) {
-            removeSiteFromBlackList(response)
-        }
+if (typeof chrome.contextMenus != 'undefined') {
+    chrome.contextMenus.onClicked.addListener((info, tab) => {
+        chrome.pageAction.openPopup()
+        chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, response => {
+            if (response) {
+                removeSiteFromBlackList(response)
+            }
+        })
+        chrome.tabs.sendMessage(tab.id, {action: "Translate"})
     })
-    chrome.tabs.sendMessage(tab.id, {action: "Translate"})
-})
+}
