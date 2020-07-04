@@ -165,9 +165,9 @@ function translateResults(i, results, translateNodes, requestsSum) {
 
 function translate()
 {
+    restore()
     chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
         if (prevTargetLanguage && prevTargetLanguage != targetLanguage) {
-            restore()
             translatedStrings = []
         }
         prevTargetLanguage = targetLanguage
