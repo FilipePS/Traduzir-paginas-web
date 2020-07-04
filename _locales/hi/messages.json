@@ -122,5 +122,17 @@
   "lblPlsDonate": {
     "message": "एक दान के साथ डेवलपर की मदद करें",
     "description": ""
+  },
+  "msgTranslateFor": {
+    "message": "अनुवाद करने के लिए"
+  },
+  "lblShowContextMenu": {
+    "message": "संदर्भ मेनू में पृष्ठ का अनुवाद करने का विकल्प दिखाएं"
+  },
+  "msgYes": {
+    "message": "हाँ"
+  },
+  "msgNo": {
+    "message": "नहीं"
   }
 }

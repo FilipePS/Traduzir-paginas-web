@@ -2,6 +2,8 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+const lblShowContextMenu = document.getElementById("lblShowContextMenu")
+const selectShowContextMenu = document.getElementById("selectShowContextMenu")
 const lblPlsDonate = document.getElementById("lblPlsDonate")
 const lblTargetLanguage = document.getElementById("lblTargetLanguage")
 const selectTargetLanguage = document.getElementById("selectTargetLanguage")
@@ -17,6 +19,7 @@ const lblAlwaysTranslate = document.getElementById("lblAlwaysTranslate")
 const alwaysTranslateListButton = document.getElementById("alwaysTranslateListButton")
 const alwaysTranslateList = document.getElementById("alwaysTranslateList")
 
+lblShowContextMenu.textContent = chrome.i18n.getMessage("lblShowContextMenu")
 lblPlsDonate.textContent = chrome.i18n.getMessage("lblPlsDonate")
 lblTargetLanguage.textContent = chrome.i18n.getMessage("lblTargetLanguage")
 lblTranslationEngine.textContent = chrome.i18n.getMessage("lblTranslationEngine")
@@ -25,8 +28,14 @@ lblOthers.textContent = chrome.i18n.getMessage("lblOthers")
 lblNeverTranslate.textContent = chrome.i18n.getMessage("optionsNeverTranslate")
 lblAlwaysTranslate.textContent = chrome.i18n.getMessage("optionsAlwaysTranslate")
 
+document.querySelector("#selectShowContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
+document.querySelector("#selectShowContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
 document.querySelector("#selectPopupConfig option[value='auto']").textContent = chrome.i18n.getMessage("optionPopupAuto")
 document.querySelector("#selectPopupConfig option[value='threeFingersOnTheScreen']").textContent = chrome.i18n.getMessage("optionPopupThreeFingers")
+
+selectShowContextMenu.addEventListener("change", () => {
+    chrome.runtime.sendMessage({action: "setShowContextMenu", showContextMenu: selectShowContextMenu.value})
+})
 
 // fill language list
 ;(function() {

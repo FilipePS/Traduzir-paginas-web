@@ -122,5 +122,17 @@
   "lblPlsDonate": {
     "message": "帮助开发人员捐款",
     "description": ""
+  },
+  "msgTranslateFor": {
+    "message": "翻译成"
+  },
+  "lblShowContextMenu": {
+    "message": "在上下文菜单中显示翻译页面的选项"
+  },
+  "msgYes": {
+    "message": "是"
+  },
+  "msgNo": {
+    "message": "没有"
   }
 }

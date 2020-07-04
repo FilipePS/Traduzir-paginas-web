@@ -122,5 +122,17 @@
   "lblPlsDonate": {
     "message": "Помогите разработчику с пожертвованием",
     "description": ""
+  },
+  "msgTranslateFor": {
+    "message": "Перевести на"
+  },
+  "lblShowContextMenu": {
+    "message": "Покажите вариант перевода страницы в контекстном меню"
+  },
+  "msgYes": {
+    "message": "да"
+  },
+  "msgNo": {
+    "message": "нет"
   }
 }

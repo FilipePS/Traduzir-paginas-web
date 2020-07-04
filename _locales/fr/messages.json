@@ -122,5 +122,17 @@
   "lblPlsDonate": {
     "message": "Aidez le développeur avec un don",
     "description": ""
+  },
+  "msgTranslateFor": {
+    "message": "Traduire en"
+  },
+  "lblShowContextMenu": {
+    "message": "Afficher l'option de traduire la page dans le menu contextuel"
+  },
+  "msgYes": {
+    "message": "Oui"
+  },
+  "msgNo": {
+    "message": "Non"
   }
 }

@@ -167,6 +167,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         if (request.lang) {
             targetLanguage = request.lang
             chrome.storage.local.set({targetLanguage})
+            updateContextMenu()
         }
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, response => {
@@ -223,6 +224,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         if (request.lang) {
             targetLanguage = request.lang
             chrome.storage.local.set({targetLanguage})
+            updateContextMenu()
         }
     } else if (request.action == "getTargetLanguage") {
         sendResponse(targetLanguage)
@@ -256,7 +258,41 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     } else if (request.action == "getGoogleTranslateTKK") {
         sendResponse(googleTranslateTKK)
     }
+    else if (request.action == "setShowContextMenu") {
+        if (request.showContextMenu) {
+            showContextMenu = request.showContextMenu
+            chrome.storage.local.set({showContextMenu})
+            updateContextMenu()
+        }
+    }
 })
+
+var showContextMenu = "yes"
+chrome.storage.local.get("showContextMenu").then(onGot => {
+    if (onGot.showContextMenu) {
+        showContextMenu = onGot.targetLanguage
+    }
+    updateContextMenu()
+})
+
+function updateContextMenu() {
+    var uilanguage = chrome.i18n.getUILanguage().split("-")[0]
+    var contextMenuTile = chrome.i18n.getMessage("msgTranslateFor") + " "
+    if (languages[uilanguage]) {
+        contextMenuTile += languages[uilanguage][targetLanguage]
+    } else {
+        contextMenuTile += languages['en'][targetLanguage]
+    }
+    chrome.contextMenus.removeAll()
+    if (showContextMenu == "yes") {
+        chrome.contextMenus.create({
+            id: "translate-web-page",
+            documentUrlPatterns: ["*://*/*"],
+            title: contextMenuTile,
+            contexts: ["page", "frame"]
+        })
+    }
+}
 
 // get target language saved
 var targetLanguage = chrome.i18n.getUILanguage().split("-")[0]
@@ -265,6 +301,7 @@ chrome.storage.local.get("targetLanguage").then(onGot => {
     if (onGot.targetLanguage) {
         targetLanguage = onGot.targetLanguage
     }
+    updateContextMenu()
 })
 
 // listLangs
@@ -331,10 +368,20 @@ chrome.runtime.onInstalled.addListener(details => {
 })
 
 // popup for mobile
-if (isMobile.any()) {
+// if (isMobile.any()) {
     chrome.contentScripts.register({
         "js": [{file: "/scripts/mobile.js"}],
         "matches": ["<all_urls>"],
         "runAt": "document_end"
     })
-}
+// }
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+    chrome.pageAction.openPopup()
+    chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, response => {
+        if (response) {
+            removeSiteFromBlackList(response)
+        }
+    })
+    chrome.tabs.sendMessage(tab.id, {action: "Translate"})
+})
