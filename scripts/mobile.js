@@ -2,39 +2,11 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
-function yandexDetectLanguage(text, callback)
-{
-    if (text.length > 10) {
-        let url = "https://translate.yandex.net/api/v1/tr.json/detect"
-        text = text.trim().substring(0, 300)
-
-        fetch(url, {
-            credentials: "omit",
-            method: "post",
-            headers: {'Content-Type':'application/x-www-form-urlencoded'},
-            body: "srv=tr-url-widget" + "&text=" + encodeURIComponent(text)
-        })
-        .then(data => data.text())
-        .then(data => {
-            if (data && (data = JSON.parse(data)) && data.code == 200) {
-                callback(data.lang)
-            } else {
-                callback()
-            }
-        })
-        .catch(err => {
-            callback()
-        })
-    } else {
-        callback()
-    }
-}
-
 function googleDetectLanguage(text, callback)
 {
     if (text.length > 10) {
         let url = "https://translate.google.com/translate_a/single?client=gtx&sl=auto"
-        text = text.trim().substring(0, 300)
+        text = text.trim().substring(0, 800)
 
         fetch(url, {
             credentials: "omit",
@@ -58,11 +30,7 @@ function googleDetectLanguage(text, callback)
     }   
 }
 
-var eHtml = document.getElementsByTagName("html")[0]
-
-if (eHtml) {
-    var langAttribute = eHtml.getAttribute("lang") || eHtml.getAttribute("xml:lang") || null;
-}
+var langAttribute = document.documentElement.getAttribute("lang") || document.documentElement.getAttribute("xml:lang") || null;
 
 if (langAttribute) {
     langAttribute = langAttribute.split("-")[0]
