@@ -26,6 +26,9 @@
   "lblTargetLanguage": {
     "message": "लक्ष्य भाषा"
   },
+  "btnReset": {
+    "message": "रीसेट"
+  },
   "btnTranslate": {
     "message": "अनुवाद"
   },

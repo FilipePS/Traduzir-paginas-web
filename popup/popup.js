@@ -35,6 +35,7 @@ lblError.textContent = chrome.i18n.getMessage("lblError")
 lblAlwaysTranslate.textContent = chrome.i18n.getMessage("lblAlwaysTranslate")
 lblTargetLanguage.textContent = chrome.i18n.getMessage("lblTargetLanguage")
 
+btnReset.textContent = chrome.i18n.getMessage("btnReset")
 btnTranslate.textContent = chrome.i18n.getMessage("btnTranslate")
 btnRestore.textContent = chrome.i18n.getMessage("btnRestore")
 btnTryAgain.textContent = chrome.i18n.getMessage("btnTryAgain")

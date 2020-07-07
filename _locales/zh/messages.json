@@ -26,6 +26,9 @@
   "lblTargetLanguage": {
     "message": "目标语言"
   },
+  "btnReset": {
+    "message": "重启"
+  },
   "btnTranslate": {
     "message": "翻译"
   },

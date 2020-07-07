@@ -26,6 +26,9 @@
   "lblTargetLanguage": {
     "message": "Язык перевода"
   },
+  "btnReset": {
+    "message": "Сброс"
+  },
   "btnTranslate": {
     "message": "Перевести"
   },

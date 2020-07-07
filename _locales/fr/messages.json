@@ -26,6 +26,9 @@
   "lblTargetLanguage": {
     "message": "Langue cible"
   },
+  "btnReset": {
+    "message": "Réinitialiser"
+  },
   "btnTranslate": {
     "message": "Traduire"
   },
