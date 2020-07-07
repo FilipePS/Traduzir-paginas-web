@@ -1,6 +1,6 @@
 body {
     user-select: none;
-    width: 310px;
+    min-width: 300px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
