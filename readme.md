@@ -8,4 +8,6 @@ Make a donation with [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclic
 
 Become a [Patreon](https://www.patreon.com/filipeps).
 
+[Crowdin](https://crowdin.com/project/translate-web-pages).
+
 Open [website](https://filipeps.github.io/Traduzir-paginas-web/).
