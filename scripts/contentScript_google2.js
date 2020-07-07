@@ -160,10 +160,10 @@ function getNodesStrings(translateNodes) {
     var nodesStrings = []
     translateNodes.forEach(value => {
         if (value.length > 0) {
-            nodesStrings.push(value
+            nodesStrings.push("<pre>" + ( value
                 .map(node => escapeHtml(node.textContent))
                 .map((text, index) => '<a i="' + index + '">' + text + '</a>')
-                .join('')
+                .join('') ) + "</pre>"
             )
         }
     })
@@ -202,10 +202,14 @@ function translateResults(i, results, translateNodes, requestsSum) {
             var sentenceStartIndex = results[j].indexOf("<b>", idx)
             if (sentenceStartIndex == -1) break;
             
-            var sentenceFinalIndex = results[j].indexOf("</b>", sentenceStartIndex)
-            if (sentenceFinalIndex == -1) break;
-                
-            resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
+            var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
+            
+            if (sentenceFinalIndex == -1) {
+                resultSentences.push(results[j].slice(sentenceStartIndex + 3))
+                break
+            } else {
+                resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
+            }
             idx = sentenceFinalIndex
         }
 
