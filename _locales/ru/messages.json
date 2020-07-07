@@ -1,138 +1,107 @@
 {
   "extensionName": {
-    "message": "Перевести веб-страницы",
-    "description": "Внутренний номер"
+    "message": "Перевести веб-страницы"
   },
   "extensionDescription": {
-    "message": "Переведите свою текущую страницу с помощью Google Translate",
-    "description": "description расширения"
+    "message": "Переводите страницу в режиме реального времени с помощью Google или Яндекс."
   },
   "pageActionTitle": {
-    "message": "Перевести эту страницу",
-    "description": "заголовок кнопки действия страницы"
+    "message": "Перевести страницу"
   },
   "lblTranslate": {
-    "message": "Перевести эту страницу?",
-    "description": "заголовок тега"
+    "message": "Перевести страницу?"
   },
   "lblTranslating": {
-    "message": "Переводить ...",
-    "description": "заголовок тега"
+    "message": "Перевод..."
   },
   "lblTranslated": {
-    "message": "Переведено",
-    "description": "заголовок тега"
+    "message": "Переведено"
   },
   "lblError": {
-    "message": "Эта страница не может быть переведена",
-    "description": "заголовок тега"
+    "message": "Невозможно перевести страницу"
   },
   "lblAlwaysTranslate": {
-    "message": "Всегда переводить с",
-    "description": "Заголовок флажка"
+    "message": "Всегда переводить с"
   },
   "lblTargetLanguage": {
-    "message": "Целевой язык",
-    "description": ""
+    "message": "Язык перевода"
   },
   "btnTranslate": {
-    "message": "Перевести",
-    "description": "Перевести текст кнопки"
+    "message": "Перевести"
   },
   "btnOptions": {
-    "message": "Опции",
-    "description": "Текст кнопки настроек"
+    "message": "Опции"
   },
   "btnRestore": {
-    "message": "Показать оригинал",
-    "description": "Восстановить текст кнопки"
+    "message": "Показать оригинал"
   },
   "btnTryAgain": {
-    "message": "Попробуй еще раз",
-    "description": "Попробуйте текст кнопки еще раз"
+    "message": "Попробуйте заново"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Открыть в Google Переводчике",
-    "description": ""
+    "message": "Открыть в Google Переводчике"
   },
   "btnDonate": {
-    "message": "Пожертвовать",
-    "description": ""
+    "message": "Пожертвовать"
   },
   "btnNeverTranslate": {
-    "message": "Никогда не переводите этот сайт",
-    "description": ""
+    "message": "Никогда не переводить этот сайт"
   },
   "btnChangeLanguages": {
-    "message": "Сменить языки",
-    "description": ""
+    "message": "Сменить языки"
   },
   "btnMobileOriginal": {
-    "message": "Оригинал",
-    "description": ""
+    "message": "Оригинал"
   },
   "btnMobileTranslated": {
-    "message": "Переведено",
-    "description": ""
+    "message": "Переведено"
   },
   "btnMobileNeverTranslate": {
-    "message": "Никогда не переводите этот сайт",
-    "description": ""
+    "message": "Никогда не переводить этот сайт"
   },
   "btnMobileDonate": {
-    "message": "Пожертвовать",
-    "description": ""
+    "message": "Пожертвовать"
   },
   "optionsNeverTranslate": {
-    "message": "Никогда не переводите эти сайты",
-    "description": ""
+    "message": "Никогда не переводить эти сайты"
   },
   "optionsAlwaysTranslate": {
-    "message": "Автоматически переводить эти языки",
-    "description": ""
+    "message": "Автоматически переводить эти языки"
   },
   "optionPopupConfig": {
-    "message": "Показать мобильное всплывающее окно",
-    "description": ""
+    "message": "Показывать мобильное всплывающее окно"
   },
   "optionPopupAuto": {
-    "message": "автоматически",
-    "description": ""
+    "message": "Автоматически"
   },
   "optionPopupThreeFingers": {
-    "message": "Когда я касаюсь трех пальцев на экране",
-    "description": ""
+    "message": "Когда я касаюсь экрана тремя пальцами"
   },
   "lblTranslationEngine": {
-    "message": "Механизм перевода",
-    "description": ""
+    "message": "Система перевода"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Открой в яндексе переводи",
-    "descrição": ""
+    "message": "Открыть в Яндекс.Переводчик"
   },
   "lblOthers": {
-    "message": "другие",
-    "description": ""
+    "message": "Прочие"
   },
   "btnMoreOptions": {
-    "message": "Больше вариантов",
-    "description": ""
+    "message": "Дополнительные настройки"
   },
   "lblPlsDonate": {
-    "message": "Помогите разработчику с пожертвованием",
-    "description": ""
+    "message": "Помочь разработчику пожертвованием"
   },
   "msgTranslateFor": {
     "message": "Перевести на"
   },
   "lblShowContextMenu": {
-    "message": "Покажите вариант перевода страницы в контекстном меню"
+    "message": "Показать возможность перевода страницы в контекстном меню"
   },
   "msgYes": {
-    "message": "да"
+    "message": "Да"
   },
   "msgNo": {
-    "message": "нет"
+    "message": "Нет"
   }
 }

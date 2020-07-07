@@ -9,7 +9,7 @@ var status = "prompt"
 var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'B', 'BIG', 'BDO', 'B', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
 var htmlTagsNoTranslate = ['CODE', 'TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
 
-function Cp(a, b) {
+function aux(a, b) {
     for (var c = 0; c < b.length - 2; c += 3) {
         var d = b.charAt(c + 2);
         d = 'a' <= d ? d.charCodeAt(0) - 87 : Number(d);
@@ -28,8 +28,8 @@ function calcHash(a, b) {
     }
     a = b;
     for (e = 0; e < d.length; e++) a += d[e],
-        a = Cp(a, '+-a^+6');
-    a = Cp(a, '+-3^+b+-f');
+        a = aux(a, '+-a^+6');
+    a = aux(a, '+-3^+b+-f');
     a ^= Number(c[1]) || 0;
     0 > a && (a = (a & 2147483647) + 2147483648);
     c = a % 1000000;

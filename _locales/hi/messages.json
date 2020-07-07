@@ -1,127 +1,96 @@
 {
   "extensionName": {
-    "message": "वेब पृष्ठों का अनुवाद करें",
-    "description": "एक्सटेंशन नाम"
+    "message": "वेब पृष्ठों का अनुवाद करें"
   },
   "extensionDescription": {
-    "message": "Google अनुवाद का उपयोग करके अपने वर्तमान पृष्ठ का अनुवाद करें",
-    "description": "विस्तार का description"
+    "message": "Google अनुवाद का उपयोग करके अपने वर्तमान पृष्ठ का अनुवाद करें"
   },
   "pageActionTitle": {
-    "message": "इस पृष्ठ का अनुवाद करें",
-    "description": "पेज एक्शन बटन शीर्षक"
+    "message": "इस पृष्ठ का अनुवाद करें"
   },
   "lblTranslate": {
-    "message": "इस पृष्ठ का अनुवाद करें?",
-    "description": "टैग शीर्षक"
+    "message": "इस पृष्ठ का अनुवाद करें?"
   },
   "lblTranslating": {
-    "message": "अनुवाद ...",
-    "description": "टैग शीर्षक"
+    "message": "अनुवाद ..."
   },
   "lblTranslated": {
-    "message": "अनुवादित",
-    "description": "टैग शीर्षक"
+    "message": "अनुवादित"
   },
   "lblError": {
-    "message": "इस पृष्ठ का अनुवाद नहीं किया जा सका",
-    "description": "टैग शीर्षक"
+    "message": "इस पृष्ठ का अनुवाद नहीं किया जा सका"
   },
   "lblAlwaysTranslate": {
-    "message": "हमेशा से अनुवाद",
-    "description": "चेकबॉक्स शीर्षक"
+    "message": "हमेशा से अनुवाद"
   },
   "lblTargetLanguage": {
-    "message": "लक्ष्य भाषा",
-    "वर्णन": ""
+    "message": "लक्ष्य भाषा"
   },
   "btnTranslate": {
-    "message": "अनुवाद",
-    "description": "अनुवाद बटन पाठ"
+    "message": "अनुवाद"
   },
   "btnOptions": {
-    "message": "विकल्प",
-    "description": "विकल्प बटन पाठ"
+    "message": "विकल्प"
   },
   "btnRestore": {
-    "message": "मूल दिखाएं",
-    "description": "पुनर्स्थापना बटन पाठ"
+    "message": "मूल दिखाएं"
   },
   "btnTryAgain": {
-    "message": "फिर से कोशिश करें",
-    "description": "बटन पाठ को फिर से आज़माएं"
+    "message": "फिर से कोशिश करें"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Google अनुवादक में खोलें",
-    "वर्णन": ""
+    "message": "Google अनुवादक में खोलें"
   },
   "btnDonate": {
-    "message": "दान",
-    "वर्णन": ""
+    "message": "दान"
   },
   "btnNeverTranslate": {
-    "message": "इस साइट का अनुवाद कभी न करें",
-    "वर्णन": ""
+    "message": "इस साइट का अनुवाद कभी न करें"
   },
   "btnChangeLanguages": {
-    "message": "भाषा बदलें",
-    "वर्णन": ""
+    "message": "भाषा बदलें"
   },
   "btnMobileOriginal": {
-    "message": "मूल",
-    "वर्णन": ""
+    "message": "मूल"
   },
   "btnMobileTranslated": {
-    "message": "अनुवादित",
-    "वर्णन": ""
+    "message": "अनुवादित"
   },
   "btnMobileNeverTranslate": {
-    "message": "इस साइट का अनुवाद कभी न करें",
-    "वर्णन": ""
+    "message": "इस साइट का अनुवाद कभी न करें"
   },
   "btnMobileDonate": {
-    "message": "दान",
-    "वर्णन": ""
+    "message": "दान"
   },
   "optionsNeverTranslate": {
-    "message": "इन साइटों का अनुवाद कभी न करें",
-    "वर्णन": ""
+    "message": "इन साइटों का अनुवाद कभी न करें"
   },
   "optionsAlwaysTranslate": {
-    "message": "इन भाषाओं का स्वचालित रूप से अनुवाद करें",
-    "वर्णन": ""
+    "message": "इन भाषाओं का स्वचालित रूप से अनुवाद करें"
   },
   "optionPopupConfig": {
-    "message": "मोबाइल पॉपअप दिखाएं",
-    "वर्णन": ""
+    "message": "मोबाइल पॉपअप दिखाएं"
   },
   "optionPopupAuto": {
-    "message": "स्वचालित रूप से",
-    "वर्णन": ""
+    "message": "स्वचालित रूप से"
   },
   "optionPopupThreeFingers": {
-    "message": "जब मैं स्क्रीन पर तीन उंगलियां छूता हूं",
-    "वर्णन": ""
+    "message": "जब मैं स्क्रीन पर तीन उंगलियां छूता हूं"
   },
   "lblTranslationEngine": {
-    "message": "अनुवाद इंजन",
-    "description": ""
+    "message": "अनुवाद इंजन"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "यैंडेक्स अनुवाद में खोलें",
-    "descrição": ""
+    "message": "यैंडेक्स अनुवाद में खोलें"
   },
   "lblOthers": {
-    "message": "अन्य",
-    "description": ""
+    "message": "अन्य"
   },
   "btnMoreOptions": {
-    "message": "अधिक विकल्प",
-    "description": ""
+    "message": "अधिक विकल्प"
   },
   "lblPlsDonate": {
-    "message": "एक दान के साथ डेवलपर की मदद करें",
-    "description": ""
+    "message": "एक दान के साथ डेवलपर की मदद करें"
   },
   "msgTranslateFor": {
     "message": "अनुवाद करने के लिए"

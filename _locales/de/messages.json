@@ -1,127 +1,96 @@
 {
     "extensionName": {
-        "message": "Webseiten übersetzen",
-        "description": "Nebenstellenname"
+        "message": "Webseiten übersetzen"
     },
     "extensionDescription": {
-        "message": "Übersetzen Sie Ihre aktuelle Seite mit Google Translate",
-        "description": "Beschreibung der Erweiterung"
+        "message": "Übersetzen Sie Ihre aktuelle Seite mit Google Translate"
     },
     "pageActionTitle": {
-        "message": "Diese Seite übersetzen",
-        "description": "Titel der Seitenaktionsschaltfläche"
+        "message": "Diese Seite übersetzen"
     },
     "lblTranslate": {
-        "message": "Diese Seite übersetzen?",
-        "description": "Tag title"
+        "message": "Diese Seite übersetzen?"
     },
     "lblTranslating": {
-        "message": "Übersetzen ...",
-        "description": "Tag title"
+        "message": "Übersetzen ..."
     },
     "lblTranslated": {
-        "message": "Translated",
-        "description": "Tag title"
+        "message": "Translated"
     },
     "lblError": {
-        "message": "Diese Seite konnte nicht übersetzt werden",
-        "description": "Tag title"
+        "message": "Diese Seite konnte nicht übersetzt werden"
     },
     "lblAlwaysTranslate": {
-        "message": "Immer übersetzen von",
-        "description": "Checkbox title"
+        "message": "Immer übersetzen von"
     },
     "lblTargetLanguage": {
-        "message": "Zielsprache",
-        "description": ""
+        "message": "Zielsprache"
     },
     "btnTranslate": {
-        "message": "Translate",
-        "description": "Schaltflächentext übersetzen"
+        "message": "Translate"
     },
     "btnOptions": {
-        "message": "Options",
-        "description": "Text der Optionsschaltfläche"
+        "message": "Options"
     },
     "btnRestore": {
-        "message": "Original anzeigen",
-        "description": "Schaltflächentext wiederherstellen"
+        "message": "Original anzeigen"
     },
     "btnTryAgain": {
-        "message": "Versuchen Sie es erneut",
-        "description": "Versuchen Sie den Schaltflächentext erneut"
+        "message": "Versuchen Sie es erneut"
     },
     "btnOpenOnGoogleTranslate": {
-        "message": "In Google Übersetzer öffnen",
-        "description": ""
+        "message": "In Google Übersetzer öffnen"
     },
     "btnDonate": {
-        "message": "Donate",
-        "description": ""
+        "message": "Donate"
     },
     "btnNeverTranslate": {
-        "message": "Übersetze diese Seite niemals",
-        "description": ""
+        "message": "Übersetze diese Seite niemals"
     },
     "btnChangeLanguages": {
-        "message": "Sprachen wechseln",
-        "description": ""
+        "message": "Sprachen wechseln"
     },
     "btnMobileOriginal": {
-        "message": "Original",
-        "description": ""
+        "message": "Original"
     },
     "btnMobileTranslated": {
-        "message": "Translated",
-        "description": ""
+        "message": "Translated"
     },
     "btnMobileNeverTranslate": {
-        "message": "Übersetze diese Seite niemals",
-        "description": ""
+        "message": "Übersetze diese Seite niemals"
     },
     "btnMobileDonate": {
-        "message": "Donate",
-        "description": ""
+        "message": "Donate"
     },
     "optionsNeverTranslate": {
-        "message": "Übersetze diese Seiten niemals",
-        "description": ""
+        "message": "Übersetze diese Seiten niemals"
     },
     "optionsAlwaysTranslate": {
-        "message": "Diese Sprachen automatisch übersetzen",
-        "description": ""
+        "message": "Diese Sprachen automatisch übersetzen"
     },
     "optionPopupConfig": {
-      "message": "Mobiles Popup anzeigen",
-      "description": ""
+      "message": "Mobiles Popup anzeigen"
     },
     "optionPopupAuto": {
-      "message": "Automatisch",
-      "description": ""
+      "message": "Automatisch"
     },
     "optionPopupThreeFingers": {
-      "message": "Wenn ich drei Finger auf dem Bildschirm berühre",
-      "description": ""
+      "message": "Wenn ich drei Finger auf dem Bildschirm berühre"
     },
     "lblTranslationEngine": {
-      "message": "Übersetzungsmaschine",
-      "description": ""
+      "message": "Übersetzungsmaschine"
     },
     "msgOpenOnYandexTranslator": {
-      "message": "Öffnen Sie in Yandex übersetzen",
-      "descrição": ""
+      "message": "Öffnen Sie in Yandex übersetzen"
     },
     "lblOthers": {
-      "message": "Andere",
-      "description": ""
+      "message": "Andere"
     },
     "btnMoreOptions": {
-      "message": "Mehr Optionen",
-      "description": ""
+      "message": "Mehr Optionen"
     },
     "lblPlsDonate": {
-      "message": "Helfen Sie dem Entwickler mit einer Spende",
-      "description": ""
+      "message": "Helfen Sie dem Entwickler mit einer Spende"
     },
     "msgTranslateFor": {
       "message": "Übersetzen ins"

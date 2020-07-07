@@ -1,127 +1,96 @@
 {
   "extensionName": {
-    "message": "翻译网页",
-    "description": "扩展名"
+    "message": "翻译网页"
   },
   "extensionDescription": {
-    "message": "使用Google翻译翻译当前页面",
-    "description": "扩展名描述"
+    "message": "使用Google翻译翻译当前页面"
   },
   "pageActionTitle": {
-    "message": "翻译此页面",
-    "description": "页面操作按钮标题"
+    "message": "翻译此页面"
   },
   "lblTranslate": {
-    "message": "翻译此页面？",
-    "description": "标签标题"
+    "message": "翻译此页面？"
   },
   "lblTranslating": {
-    "message": "翻译中...",
-    "description": "标签标题"
+    "message": "翻译中..."
   },
   "lblTranslated": {
-    "message": "翻译",
-    "description": "标签标题"
+    "message": "翻译"
   },
   "lblError": {
-    "message": "该页面无法翻译",
-    "description": "标签标题"
+    "message": "该页面无法翻译"
   },
   "lblAlwaysTranslate": {
-    "message": "总是翻译自",
-    "description": "复选框标题"
+    "message": "总是翻译自"
   },
   "lblTargetLanguage": {
-    "message": "目标语言",
-    "description": ""
+    "message": "目标语言"
   },
   "btnTranslate": {
-    "message": "翻译",
-    "description": "翻译按钮文字"
+    "message": "翻译"
   },
   "btnOptions": {
-    "message": "选项",
-    "description": "选项按钮文字"
+    "message": "选项"
   },
   "btnRestore": {
-    "message": "显示原文",
-    "description": "还原按钮文本"
+    "message": "显示原文"
   },
   "btnTryAgain": {
-    "message": "再试一次",
-    "description": "再次尝试按钮文本"
+    "message": "再试一次"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "在谷歌翻译器中打开",
-    "description": ""
+    "message": "在谷歌翻译器中打开"
   },
   "btnDonate": {
-    "message": "捐赠",
-    "description": ""
+    "message": "捐赠"
   },
   "btnNeverTranslate": {
-    "message": "切勿翻译本网站",
-    "description": ""
+    "message": "切勿翻译本网站"
   },
   "btnChangeLanguages": {
-    "message": "更改语言",
-    "description": ""
+    "message": "更改语言"
   },
   "btnMobileOriginal": {
-    "message": "原始",
-    "description": ""
+    "message": "原始"
   },
   "btnMobileTranslated": {
-    "message": "翻译",
-    "description": ""
+    "message": "翻译"
   },
   "btnMobileNeverTranslate": {
-    "message": "切勿翻译本网站",
-    "description": ""
+    "message": "切勿翻译本网站"
   },
   "btnMobileDonate": {
-    "message": "捐赠",
-    "description": ""
+    "message": "捐赠"
   },
   "optionsNeverTranslate": {
-    "message": "从不翻译这些网站",
-    "description": ""
+    "message": "从不翻译这些网站"
   },
   "optionsAlwaysTranslate": {
-    "message": "自动翻译这些语言",
-    "description": ""
+    "message": "自动翻译这些语言"
   },
   "optionPopupConfig": {
-    "message": "显示移动弹出窗口",
-    "description": ""
+    "message": "显示移动弹出窗口"
   },
   "optionPopupAuto": {
-    "message": "自动",
-    "description": ""
+    "message": "自动"
   },
   "optionPopupThreeFingers": {
-    "message": "当我触摸屏幕上的三个手指时",
-    "description": ""
+    "message": "当我触摸屏幕上的三个手指时"
   },
   "lblTranslationEngine": {
-    "message": "翻译引擎",
-    "description": ""
+    "message": "翻译引擎"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "在yandex中打开翻译",
-    "descrição": ""
+    "message": "在yandex中打开翻译"
   },
   "lblOthers": {
-    "message": "其他",
-    "description": ""
+    "message": "其他"
   },
   "btnMoreOptions": {
-    "message": "更多选择",
-    "description": ""
+    "message": "更多选择"
   },
   "lblPlsDonate": {
-    "message": "帮助开发人员捐款",
-    "description": ""
+    "message": "帮助开发人员捐款"
   },
   "msgTranslateFor": {
     "message": "翻译成"

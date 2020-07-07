@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Translate web pages"
+    "message": "Přeložit webové stránky"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Přeložit stránku v reálném čase pomocí Google nebo Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Přeložit tuto stránku"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Přeložit tuto stránku?"
   },
   "lblTranslating": {
-    "message": "Translating..."
+    "message": "Translating ..."
   },
   "lblTranslated": {
     "message": "Translated"
   },
   "lblError": {
-    "message": "It was not possible to translate this page"
+    "message": "Tuto stránku nelze přeložit"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from"
+    "message": "Always translation from"
   },
   "lblTargetLanguage": {
     "message": "Target language"
@@ -33,19 +33,19 @@
     "message": "Options"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Zobrazit originál"
   },
   "btnTryAgain": {
-    "message": "Try Again"
+    "message": "Zkuste to znovu"
   },
   "btnOpenOnGoogleTranslate": {
     "message": "Open in google translator"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Darate"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Nikdy tento web nepřekládat"
   },
   "btnChangeLanguages": {
     "message": "Change languages"
@@ -57,25 +57,25 @@
     "message": "Translated"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Nikdy tento web nepřekládat"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Darate"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Nikdy tyto stránky nepřekládat"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatically translate these languages"
+    "message": "Automaticky přeložit tyto jazyky"
   },
   "optionPopupConfig": {
-    "message": "Show mobile pop-up"
+    "message": "Zobrazit mobilní vyskakovací okno"
   },
   "optionPopupAuto": {
     "message": "Automatically"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Když se dotknu tří prstů na obrazovce"
   },
   "lblTranslationEngine": {
     "message": "Translation engine"
@@ -83,20 +83,20 @@
   "msgOpenOnYandexTranslator": {
     "message": "Open in yandex translate"
   },
-  "lblOthers": {
-    "message": "Others"
+  "lblOther": {
+    "message": "Other"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "Další možnosti"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Pomozte vývojáři s darem"
   },
   "msgTranslateFor": {
-    "message": "Translate for"
+    "message": "Přeložit do"
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Zobrazit možnost překladu stránky v místní nabídce"
   },
   "msgYes": {
     "message": "Yes"

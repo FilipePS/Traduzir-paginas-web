@@ -1,127 +1,96 @@
 {
   "extensionName": {
-    "message": "Traducir páginas web",
-    "description": "Nombre de extensión"
+    "message": "Traducir páginas web"
   },
   "extensionDescription": {
-    "message": "Traduce tu página actual usando Google Translate",
-    "description": "description de la extensión"
+    "message": "Traduce tu página actual usando Google Translate"
   },
   "pageActionTitle": {
-    "message": "Traducir esta página",
-    "description": "Título del botón de acción de página"
+    "message": "Traducir esta página"
   },
   "lblTranslate": {
-    "message": "¿Traducir esta página?",
-    "description": "Título de la etiqueta"
+    "message": "¿Traducir esta página?"
   },
   "lblTranslating": {
-    "message": "Traduciendo...",
-    "description": "Título de la etiqueta"
+    "message": "Traduciendo..."
   },
   "lblTranslated": {
-    "message": "Traducido",
-    "description": "Título de la etiqueta"
+    "message": "Traducido"
   },
   "lblError": {
-    "message": "No fue posible traducir esta página",
-    "description": "Título de la etiqueta"
+    "message": "No fue posible traducir esta página"
   },
   "lblAlwaysTranslate": {
-    "message": "Traducir siempre desde",
-    "description": "Título de la casilla de verificación"
+    "message": "Traducir siempre desde"
   },
   "lblTargetLanguage": {
-    "message": "Idioma de destino",
-    "description": ""
+    "message": "Idioma de destino"
   },
   "btnTranslate": {
-    "message": "Traducir",
-    "description": "Texto del botón Traducir"
+    "message": "Traducir"
   },
   "btnOptions": {
-    "message": "Opciones",
-    "description": "Texto del botón Opciones"
+    "message": "Opciones"
   },
   "btnRestore": {
-    "message": "Mostrar original",
-    "description": "Restaurar texto del botón"
+    "message": "Mostrar original"
   },
   "btnTryAgain": {
-    "message": "Inténtalo de nuevo",
-    "description": "Texto del botón Intentar de nuevo"
+    "message": "Inténtalo de nuevo"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Abrir en traductor de google",
-    "description": ""
+    "message": "Abrir en traductor de google"
   },
   "btnDonate": {
-    "message": "Donar",
-    "description": ""
+    "message": "Donar"
   },
   "btnNeverTranslate": {
-    "message": "Nunca traduzca este sitio",
-    "description": ""
+    "message": "Nunca traduzca este sitio"
   },
   "btnChangeLanguages": {
-    "message": "Cambiar idiomas",
-    "description": ""
+    "message": "Cambiar idiomas"
   },
   "btnMobileOriginal": {
-    "message": "Original",
-    "description": ""
+    "message": "Original"
   },
   "btnMobileTranslated": {
-    "message": "Traducido",
-    "description": ""
+    "message": "Traducido"
   },
   "btnMobileNeverTranslate": {
-    "message": "Nunca traduzca este sitio",
-    "description": ""
+    "message": "Nunca traduzca este sitio"
   },
   "btnMobileDonate": {
-    "message": "Donar",
-    "description": ""
+    "message": "Donar"
   },
   "optionsNeverTranslate": {
-    "message": "Nunca traduzca estos sitios",
-    "description": ""
+    "message": "Nunca traduzca estos sitios"
   },
   "optionsAlwaysTranslate": {
-    "message": "Traducir automáticamente estos idiomas",
-    "description": ""
+    "message": "Traducir automáticamente estos idiomas"
   },
   "optionPopupConfig": {
-    "message": "Mostrar ventana emergente móvil",
-    "description": ""
+    "message": "Mostrar ventana emergente móvil"
   },
   "optionPopupAuto": {
-    "message": "Automáticamente",
-    "description": ""
+    "message": "Automáticamente"
   },
   "optionPopupThreeFingers": {
-    "message": "Cuando toco tres dedos en la pantalla",
-    "description": ""
+    "message": "Cuando toco tres dedos en la pantalla"
   },
   "lblTranslationEngine": {
-    "message": "Motor de traducción",
-    "description": ""
+    "message": "Motor de traducción"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Abrir en yandex translate",
-    "descrição": ""
+    "message": "Abrir en yandex translate"
   },
   "lblOthers": {
-    "message": "Otros",
-    "description": ""
+    "message": "Otros"
   },
   "btnMoreOptions": {
-    "message": "Mas opciones",
-    "description": ""
+    "message": "Mas opciones"
   },
   "lblPlsDonate": {
-    "message": "Ayuda al desarrollador con una donación",
-    "description": ""
+    "message": "Ayuda al desarrollador con una donación"
   },
   "msgTranslateFor": {
     "message": "Traducir a"
