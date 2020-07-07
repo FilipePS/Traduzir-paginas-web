@@ -3,28 +3,28 @@
     "message": "Traducir páginas web"
   },
   "extensionDescription": {
-    "message": "Traduce tu página actual usando Google Translate"
+    "message": "Traduce tu página en tiempo real usando Google o Yandex."
   },
   "pageActionTitle": {
-    "message": "Traducir esta página"
+    "message": "Traduzca esta pagina"
   },
   "lblTranslate": {
-    "message": "¿Traducir esta página?"
+    "message": "¿Traduzca esta pagina?"
   },
   "lblTranslating": {
-    "message": "Traduciendo..."
+    "message": "Traduciendo ..."
   },
   "lblTranslated": {
     "message": "Traducido"
   },
   "lblError": {
-    "message": "No fue posible traducir esta página"
+    "message": "Esta página no pudo ser traducida"
   },
   "lblAlwaysTranslate": {
-    "message": "Traducir siempre desde"
+    "message": "Siempre traduce de"
   },
   "lblTargetLanguage": {
-    "message": "Idioma de destino"
+    "message": "Lengua de llegada"
   },
   "btnReset": {
     "message": "Reiniciar"
@@ -33,7 +33,7 @@
     "message": "Traducir"
   },
   "btnOptions": {
-    "message": "Opciones"
+    "message": "opciones"
   },
   "btnRestore": {
     "message": "Mostrar original"
@@ -48,7 +48,7 @@
     "message": "Donar"
   },
   "btnNeverTranslate": {
-    "message": "Nunca traduzca este sitio"
+    "message": "Nunca traducir este sitio"
   },
   "btnChangeLanguages": {
     "message": "Cambiar idiomas"
@@ -60,7 +60,7 @@
     "message": "Traducido"
   },
   "btnMobileNeverTranslate": {
-    "message": "Nunca traduzca este sitio"
+    "message": "Nunca traducir este sitio"
   },
   "btnMobileDonate": {
     "message": "Donar"
@@ -72,7 +72,7 @@
     "message": "Traducir automáticamente estos idiomas"
   },
   "optionPopupConfig": {
-    "message": "Mostrar ventana emergente móvil"
+    "message": "Mostrar la ventana emergente móvil"
   },
   "optionPopupAuto": {
     "message": "Automáticamente"

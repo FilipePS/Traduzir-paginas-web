@@ -3,7 +3,7 @@
     "message": "翻译网页"
   },
   "extensionDescription": {
-    "message": "使用Google翻译翻译当前页面"
+    "message": "使用Google或Yandex实时翻译您的页面。"
   },
   "pageActionTitle": {
     "message": "翻译此页面"
@@ -15,13 +15,13 @@
     "message": "翻译中..."
   },
   "lblTranslated": {
-    "message": "翻译"
+    "message": "已翻译"
   },
   "lblError": {
-    "message": "该页面无法翻译"
+    "message": "此页面无法翻译"
   },
   "lblAlwaysTranslate": {
-    "message": "总是翻译自"
+    "message": "一律翻译自"
   },
   "lblTargetLanguage": {
     "message": "目标语言"
@@ -42,40 +42,40 @@
     "message": "再试一次"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "在谷歌翻译器中打开"
+    "message": "在Google翻译器中打开"
   },
   "btnDonate": {
-    "message": "捐赠"
+    "message": "捐"
   },
   "btnNeverTranslate": {
-    "message": "切勿翻译本网站"
+    "message": "永远不要翻译这个网站"
   },
   "btnChangeLanguages": {
-    "message": "更改语言"
+    "message": "变更语言"
   },
   "btnMobileOriginal": {
-    "message": "原始"
+    "message": "原版的"
   },
   "btnMobileTranslated": {
-    "message": "翻译"
+    "message": "已翻译"
   },
   "btnMobileNeverTranslate": {
-    "message": "切勿翻译本网站"
+    "message": "永远不要翻译这个网站"
   },
   "btnMobileDonate": {
-    "message": "捐赠"
+    "message": "捐"
   },
   "optionsNeverTranslate": {
-    "message": "从不翻译这些网站"
+    "message": "永远不要翻译这些网站"
   },
   "optionsAlwaysTranslate": {
     "message": "自动翻译这些语言"
   },
   "optionPopupConfig": {
-    "message": "显示移动弹出窗口"
+    "message": "显示手机弹出窗口"
   },
   "optionPopupAuto": {
-    "message": "自动"
+    "message": "自动地"
   },
   "optionPopupThreeFingers": {
     "message": "当我触摸屏幕上的三个手指时"
@@ -90,7 +90,7 @@
     "message": "其他"
   },
   "btnMoreOptions": {
-    "message": "更多选择"
+    "message": "更多的选择"
   },
   "lblPlsDonate": {
     "message": "帮助开发人员捐款"

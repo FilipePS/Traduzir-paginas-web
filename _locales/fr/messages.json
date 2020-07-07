@@ -3,7 +3,7 @@
     "message": "Traduire des pages Web"
   },
   "extensionDescription": {
-    "message": "Traduire votre page actuelle à l'aide de Google Translate"
+    "message": "Traduisez votre page en temps réel à l'aide de Google ou Yandex."
   },
   "pageActionTitle": {
     "message": "Traduire cette page"
@@ -21,7 +21,7 @@
     "message": "Cette page n'a pas pu être traduite"
   },
   "lblAlwaysTranslate": {
-    "message": "Toujours traduire à partir de"
+    "message": "Toujours traduire de"
   },
   "lblTargetLanguage": {
     "message": "Langue cible"
@@ -33,7 +33,7 @@
     "message": "Traduire"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "les options"
   },
   "btnRestore": {
     "message": "Afficher l'original"
@@ -42,7 +42,7 @@
     "message": "Réessayer"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Ouvrir dans le traducteur google"
+    "message": "Ouvrir dans Google Translator"
   },
   "btnDonate": {
     "message": "Faire un don"
@@ -66,13 +66,13 @@
     "message": "Faire un don"
   },
   "optionsNeverTranslate": {
-    "message": "Ne jamais traduire ces sites"
+    "message": "Ne traduisez jamais ces sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "Traduire automatiquement ces langues"
+    "message": "Traduisez automatiquement ces langues"
   },
   "optionPopupConfig": {
-    "message": "Afficher la fenêtre contextuelle mobile"
+    "message": "Afficher le popup mobile"
   },
   "optionPopupAuto": {
     "message": "Automatiquement"

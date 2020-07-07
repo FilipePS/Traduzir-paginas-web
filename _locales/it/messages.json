@@ -1,9 +1,9 @@
 {
   "extensionName": {
-    "message": "Traduci pagine web"
+    "message": "Traduci le pagine web"
   },
   "extensionDescription": {
-    "message": "Traduci la tua pagina corrente usando Google Translate"
+    "message": "Traduci la tua pagina in tempo reale utilizzando Google o Yandex."
   },
   "pageActionTitle": {
     "message": "Traduci questa pagina"
@@ -15,10 +15,10 @@
     "message": "Traduzione in corso ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "tradotto"
   },
   "lblError": {
-    "message": "Impossibile tradurre questa pagina"
+    "message": "Questa pagina non può essere tradotta"
   },
   "lblAlwaysTranslate": {
     "message": "Traduci sempre da"
@@ -30,40 +30,40 @@
     "message": "Ripristina"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Tradurre"
   },
   "btnOptions": {
-    "message": "Opzioni"
+    "message": "opzioni"
   },
   "btnRestore": {
-    "message": "Mostra originale"
+    "message": "Spettacolo originale"
   },
   "btnTryAgain": {
     "message": "Riprova"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Apri in traduttore google"
+    "message": "Apri in traduttore Google"
   },
   "btnDonate": {
-    "message": "Dona"
+    "message": "Donare"
   },
   "btnNeverTranslate": {
-    "message": "Non tradurre mai questo sito"
+    "message": "Mai tradurre questo sito"
   },
   "btnChangeLanguages": {
     "message": "Cambia lingua"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Originale"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "tradotto"
   },
   "btnMobileNeverTranslate": {
-    "message": "Non tradurre mai questo sito"
+    "message": "Mai tradurre questo sito"
   },
   "btnMobileDonate": {
-    "message": "Dona"
+    "message": "Donare"
   },
   "optionsNeverTranslate": {
     "message": "Non tradurre mai questi siti"
@@ -72,10 +72,10 @@
     "message": "Traduci automaticamente queste lingue"
   },
   "optionPopupConfig": {
-    "message": "Mostra pop-up mobile"
+    "message": "Mostra il popup mobile"
   },
   "optionPopupAuto": {
-    "message": "automaticamente"
+    "message": "Automaticamente"
   },
   "optionPopupThreeFingers": {
     "message": "Quando tocco tre dita sullo schermo"

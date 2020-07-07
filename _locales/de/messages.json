@@ -1,110 +1,110 @@
 {
-    "extensionName": {
-        "message": "Webseiten übersetzen"
-    },
-    "extensionDescription": {
-        "message": "Übersetzen Sie Ihre aktuelle Seite mit Google Translate"
-    },
-    "pageActionTitle": {
-        "message": "Diese Seite übersetzen"
-    },
-    "lblTranslate": {
-        "message": "Diese Seite übersetzen?"
-    },
-    "lblTranslating": {
-        "message": "Übersetzen ..."
-    },
-    "lblTranslated": {
-        "message": "Translated"
-    },
-    "lblError": {
-        "message": "Diese Seite konnte nicht übersetzt werden"
-    },
-    "lblAlwaysTranslate": {
-        "message": "Immer übersetzen von"
-    },
-    "lblTargetLanguage": {
-        "message": "Zielsprache"
-    },
-    "btnReset": {
-      "message": "Zurücksetzen"
-    },
-    "btnTranslate": {
-        "message": "Translate"
-    },
-    "btnOptions": {
-        "message": "Options"
-    },
-    "btnRestore": {
-        "message": "Original anzeigen"
-    },
-    "btnTryAgain": {
-        "message": "Versuchen Sie es erneut"
-    },
-    "btnOpenOnGoogleTranslate": {
-        "message": "In Google Übersetzer öffnen"
-    },
-    "btnDonate": {
-        "message": "Donate"
-    },
-    "btnNeverTranslate": {
-        "message": "Übersetze diese Seite niemals"
-    },
-    "btnChangeLanguages": {
-        "message": "Sprachen wechseln"
-    },
-    "btnMobileOriginal": {
-        "message": "Original"
-    },
-    "btnMobileTranslated": {
-        "message": "Translated"
-    },
-    "btnMobileNeverTranslate": {
-        "message": "Übersetze diese Seite niemals"
-    },
-    "btnMobileDonate": {
-        "message": "Donate"
-    },
-    "optionsNeverTranslate": {
-        "message": "Übersetze diese Seiten niemals"
-    },
-    "optionsAlwaysTranslate": {
-        "message": "Diese Sprachen automatisch übersetzen"
-    },
-    "optionPopupConfig": {
-      "message": "Mobiles Popup anzeigen"
-    },
-    "optionPopupAuto": {
-      "message": "Automatisch"
-    },
-    "optionPopupThreeFingers": {
-      "message": "Wenn ich drei Finger auf dem Bildschirm berühre"
-    },
-    "lblTranslationEngine": {
-      "message": "Übersetzungsmaschine"
-    },
-    "msgOpenOnYandexTranslator": {
-      "message": "Öffnen Sie in Yandex übersetzen"
-    },
-    "lblOthers": {
-      "message": "Andere"
-    },
-    "btnMoreOptions": {
-      "message": "Mehr Optionen"
-    },
-    "lblPlsDonate": {
-      "message": "Helfen Sie dem Entwickler mit einer Spende"
-    },
-    "msgTranslateFor": {
-      "message": "Übersetzen ins"
-    },
-    "lblShowContextMenu": {
-      "message": "Zeigen Sie die Option zum Übersetzen der Seite im Kontextmenü an"
-    },
-    "msgYes": {
-      "message": "Ja"
-    },
-    "msgNo": {
-      "message": "Nein"
-    }
+  "extensionName": {
+    "message": "Webseiten übersetzen"
+  },
+  "extensionDescription": {
+    "message": "Übersetzen Sie Ihre Seite in Echtzeit mit Google oder Yandex."
+  },
+  "pageActionTitle": {
+    "message": "Übersetze diese Seite"
+  },
+  "lblTranslate": {
+    "message": "Übersetze diese Seite?"
+  },
+  "lblTranslating": {
+    "message": "Übersetzen ..."
+  },
+  "lblTranslated": {
+    "message": "Übersetzt"
+  },
+  "lblError": {
+    "message": "Diese Seite konnte nicht übersetzt werden"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Immer übersetzen von"
+  },
+  "lblTargetLanguage": {
+    "message": "Zielsprache"
+  },
+  "btnReset": {
+    "message": "Zurücksetzen"
+  },
+  "btnTranslate": {
+    "message": "Übersetzen"
+  },
+  "btnOptions": {
+    "message": "Optionen"
+  },
+  "btnRestore": {
+    "message": "Original zeigen"
+  },
+  "btnTryAgain": {
+    "message": "Versuch es noch einmal"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "In Google Übersetzer öffnen"
+  },
+  "btnDonate": {
+    "message": "Spenden"
+  },
+  "btnNeverTranslate": {
+    "message": "Diese Seite nie übersetzen"
+  },
+  "btnChangeLanguages": {
+    "message": "Sprachen wechseln"
+  },
+  "btnMobileOriginal": {
+    "message": "Original"
+  },
+  "btnMobileTranslated": {
+    "message": "Übersetzt"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Diese Seite nie übersetzen"
+  },
+  "btnMobileDonate": {
+    "message": "Spenden"
+  },
+  "optionsNeverTranslate": {
+    "message": "Übersetzen Sie diese Seiten niemals"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Übersetzen Sie diese Sprachen automatisch"
+  },
+  "optionPopupConfig": {
+    "message": "Zeigen Sie das mobile Popup an"
+  },
+  "optionPopupAuto": {
+    "message": "Automatisch"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Wenn ich drei Finger auf dem Bildschirm berühre"
+  },
+  "lblTranslationEngine": {
+    "message": "Übersetzungsmaschine"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Öffnen Sie in Yandex übersetzen"
+  },
+  "lblOthers": {
+    "message": "Andere"
+  },
+  "btnMoreOptions": {
+    "message": "Mehr Optionen"
+  },
+  "lblPlsDonate": {
+    "message": "Helfen Sie dem Entwickler mit einer Spende"
+  },
+  "msgTranslateFor": {
+    "message": "Übersetzen ins"
+  },
+  "lblShowContextMenu": {
+    "message": "Zeigen Sie die Option zum Übersetzen der Seite im Kontextmenü an"
+  },
+  "msgYes": {
+    "message": "Ja"
+  },
+  "msgNo": {
+    "message": "Nein"
+  }
 }

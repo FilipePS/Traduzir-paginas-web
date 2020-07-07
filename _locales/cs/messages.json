@@ -3,7 +3,7 @@
     "message": "Přeložit webové stránky"
   },
   "extensionDescription": {
-    "message": "Přeložit stránku v reálném čase pomocí Google nebo Yandex."
+    "message": "Přeložte svou stránku v reálném čase pomocí Google nebo Yandex."
   },
   "pageActionTitle": {
     "message": "Přeložit tuto stránku"
@@ -12,58 +12,58 @@
     "message": "Přeložit tuto stránku?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Překlady ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Přeloženo"
   },
   "lblError": {
     "message": "Tuto stránku nelze přeložit"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translation from"
+    "message": "Vždy překládat z"
   },
   "lblTargetLanguage": {
-    "message": "Target language"
+    "message": "Cílový jazyk"
   },
   "btnReset": {
     "message": "Resetovat"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "přeložit"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "možnosti"
   },
   "btnRestore": {
-    "message": "Zobrazit originál"
+    "message": "Ukázat originál"
   },
   "btnTryAgain": {
-    "message": "Zkuste to znovu"
+    "message": "Zkus to znovu"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Otevřít v google překladači"
   },
   "btnDonate": {
-    "message": "Darate"
+    "message": "Darovat"
   },
   "btnNeverTranslate": {
-    "message": "Nikdy tento web nepřekládat"
+    "message": "Nikdy nepřekládejte tento web"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Změnit jazyky"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Originál"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Přeloženo"
   },
   "btnMobileNeverTranslate": {
-    "message": "Nikdy tento web nepřekládat"
+    "message": "Nikdy nepřekládejte tento web"
   },
   "btnMobileDonate": {
-    "message": "Darate"
+    "message": "Darovat"
   },
   "optionsNeverTranslate": {
     "message": "Nikdy tyto stránky nepřekládat"
@@ -75,22 +75,22 @@
     "message": "Zobrazit mobilní vyskakovací okno"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Automaticky"
   },
   "optionPopupThreeFingers": {
     "message": "Když se dotknu tří prstů na obrazovce"
   },
   "lblTranslationEngine": {
-    "message": "Translation engine"
+    "message": "Překladový motor"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Otevřeno v yandexovém překladu"
   },
-  "lblOther": {
-    "message": "Other"
+  "lblOthers": {
+    "message": "Ostatní"
   },
   "btnMoreOptions": {
-    "message": "Další možnosti"
+    "message": "Více možností"
   },
   "lblPlsDonate": {
     "message": "Pomozte vývojáři s darem"
@@ -99,12 +99,12 @@
     "message": "Přeložit do"
   },
   "lblShowContextMenu": {
-    "message": "Zobrazit možnost překladu stránky v místní nabídce"
+    "message": "V místní nabídce se zobrazí možnost překladu stránky"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Ano"
   },
   "msgNo": {
-    "message": "No"
+    "message": "Ne"
   }
 }

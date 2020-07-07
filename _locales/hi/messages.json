@@ -3,19 +3,19 @@
     "message": "वेब पृष्ठों का अनुवाद करें"
   },
   "extensionDescription": {
-    "message": "Google अनुवाद का उपयोग करके अपने वर्तमान पृष्ठ का अनुवाद करें"
+    "message": "Google या Yandex का उपयोग करके वास्तविक समय में अपने पृष्ठ का अनुवाद करें।"
   },
   "pageActionTitle": {
-    "message": "इस पृष्ठ का अनुवाद करें"
+    "message": "इस पेज का अनुवाद करें"
   },
   "lblTranslate": {
-    "message": "इस पृष्ठ का अनुवाद करें?"
+    "message": "इस पेज का अनुवाद करें?"
   },
   "lblTranslating": {
-    "message": "अनुवाद ..."
+    "message": "अनुवाद हो रहा है ..."
   },
   "lblTranslated": {
-    "message": "अनुवादित"
+    "message": "अनूदित"
   },
   "lblError": {
     "message": "इस पृष्ठ का अनुवाद नहीं किया जा सका"
@@ -30,40 +30,40 @@
     "message": "रीसेट"
   },
   "btnTranslate": {
-    "message": "अनुवाद"
+    "message": "अनुवाद करना"
   },
   "btnOptions": {
     "message": "विकल्प"
   },
   "btnRestore": {
-    "message": "मूल दिखाएं"
+    "message": "मूल दिखाएँ"
   },
   "btnTryAgain": {
-    "message": "फिर से कोशिश करें"
+    "message": "पुनः प्रयास करें"
   },
   "btnOpenOnGoogleTranslate": {
     "message": "Google अनुवादक में खोलें"
   },
   "btnDonate": {
-    "message": "दान"
+    "message": "दान करना"
   },
   "btnNeverTranslate": {
-    "message": "इस साइट का अनुवाद कभी न करें"
+    "message": "इस साइट का अनुवाद कभी मत करो"
   },
   "btnChangeLanguages": {
-    "message": "भाषा बदलें"
+    "message": "भाषाएं बदलें"
   },
   "btnMobileOriginal": {
     "message": "मूल"
   },
   "btnMobileTranslated": {
-    "message": "अनुवादित"
+    "message": "अनूदित"
   },
   "btnMobileNeverTranslate": {
-    "message": "इस साइट का अनुवाद कभी न करें"
+    "message": "इस साइट का अनुवाद कभी मत करो"
   },
   "btnMobileDonate": {
-    "message": "दान"
+    "message": "दान करना"
   },
   "optionsNeverTranslate": {
     "message": "इन साइटों का अनुवाद कभी न करें"
@@ -75,7 +75,7 @@
     "message": "मोबाइल पॉपअप दिखाएं"
   },
   "optionPopupAuto": {
-    "message": "स्वचालित रूप से"
+    "message": "खुद ब खुद"
   },
   "optionPopupThreeFingers": {
     "message": "जब मैं स्क्रीन पर तीन उंगलियां छूता हूं"

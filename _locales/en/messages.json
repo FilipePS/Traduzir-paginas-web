@@ -12,13 +12,13 @@
     "message": "Translate this page?"
   },
   "lblTranslating": {
-    "message": "Translating..."
+    "message": "Translating ..."
   },
   "lblTranslated": {
     "message": "Translated"
   },
   "lblError": {
-    "message": "It was not possible to translate this page"
+    "message": "This page could not be translated"
   },
   "lblAlwaysTranslate": {
     "message": "Always translate from"
@@ -33,13 +33,13 @@
     "message": "Translate"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "options"
   },
   "btnRestore": {
     "message": "Show original"
   },
   "btnTryAgain": {
-    "message": "Try Again"
+    "message": "Try again"
   },
   "btnOpenOnGoogleTranslate": {
     "message": "Open in google translator"
@@ -72,7 +72,7 @@
     "message": "Automatically translate these languages"
   },
   "optionPopupConfig": {
-    "message": "Show mobile pop-up"
+    "message": "Show the mobile popup"
   },
   "optionPopupAuto": {
     "message": "Automatically"
@@ -96,7 +96,7 @@
     "message": "Help the developer with a donation"
   },
   "msgTranslateFor": {
-    "message": "Translate for"
+    "message": "Translate to"
   },
   "lblShowContextMenu": {
     "message": "Show the option to translate the page in the context menu"
