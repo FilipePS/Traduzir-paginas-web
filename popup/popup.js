@@ -314,11 +314,14 @@ btnOptions.addEventListener("change", () => {
                 chrome.tabs.create({url: "https://translate.google.com/translate?u=" + encodeURIComponent(pageUrl)})
             }
             break
+        case "moreOptions":
+            chrome.runtime.openOptionsPage()
+            break
         case "donate":
             chrome.tabs.create({url: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url"})
             break
-        case "moreOptions":
-            chrome.runtime.openOptionsPage()
+        case "patreon":
+            chrome.tabs.create({url: "https://www.patreon.com/filipeps"})
             break
         default:
     }
