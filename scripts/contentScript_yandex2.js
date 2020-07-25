@@ -9,6 +9,82 @@ var status = "prompt"
 var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'B', 'BIG', 'BDO', 'B', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
 var htmlTagsNoTranslate = ['CODE', 'TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
 
+var translateNewNodesTimer = null
+var newNodesToTranslate = []
+var removedNodes = []
+
+function translateNewNodes() {
+    newNodesToTranslate.forEach(ntt => {
+        if (removedNodes.indexOf(ntt) != -1) return;
+        var translateNodes = getTranslateNodes(ntt)
+
+        var indexesToRemove = []
+        for (let i in translateNodes) {
+            for (let nodeInfo of translateNodes[i]) {
+                if (nodesTranslated.indexOf(nodeInfo.node) == -1) {
+                    nodesTranslated.push({node: nodeInfo.node, original: nodeInfo.node.textContent})
+                } else {
+                    indexesToRemove(i)
+                }
+            }
+        }
+        indexesToRemove.forEach(idx => {
+            translateNodes.splice(idx, 1)
+        })
+
+        var nodesStrings = getNodesStrings(translateNodes)
+        var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
+
+        for (let i in requestsStrings) {
+            translateHtml(requestsStrings[i], prevTargetLanguage).then(results => {
+                if (status == "finish") {
+                    translateResults(i, results, translateNodes, requestsSum)
+                }
+            })
+        }
+    })
+    newNodesToTranslate = []
+    removedNodes = []
+}
+
+var mutationObserver = new MutationObserver(function(mutations) {
+    var nodesToTranslate = []
+    
+    mutations.forEach(mutation => {
+        Array.from(mutation.addedNodes).forEach(addedNode => {
+            if (htmlTagsNoTranslate.indexOf(addedNode.nodeName) == -1) {
+                if (htmlTagsInlineText.indexOf(addedNode.nodeName) == -1) {
+                    nodesToTranslate.push(addedNode)
+                }
+            }
+        })
+
+        Array.from(mutation.removedNodes).forEach(removedNode => {
+            removedNodes.push(removedNode)
+        })
+    })
+
+    nodesToTranslate.forEach(nnt => {
+        if (newNodesToTranslate.indexOf(nnt) == -1) {
+            newNodesToTranslate.push(nnt)
+        }
+    })
+})
+
+function enableMutatinObserver() {
+    disableMutatinObserver()
+    translateNewNodesTimer = setInterval(translateNewNodes, 1500)
+    mutationObserver.observe(document.body, { childList: true, subtree: true })
+}
+
+function disableMutatinObserver() {
+    clearInterval(translateNewNodesTimer)
+    newNodesToTranslate = []
+    removedNodes = []
+    mutationObserver.disconnect()
+    mutationObserver.takeRecords()
+}
+
 function escapeHtml(unsafe) {
     return unsafe
         .replace(/\&/g, "&amp;")
@@ -161,6 +237,7 @@ function translateResults(i, results, translateNodes, requestsSum) {
             node.textContent = resultArray[k]
         }
     }
+    mutationObserver.takeRecords()
 }
 
 function translate()
@@ -190,10 +267,12 @@ function translate()
             })
         }
     })
+    enableMutatinObserver()
 }
 
 function restore()
 {
+    disableMutatinObserver()
     status = "prompt"
 
     nodesTranslated.forEach(nodeInfo => {
