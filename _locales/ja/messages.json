@@ -1,0 +1,119 @@
+{
+  "extensionName": {
+    "message": "ウェブページを翻訳"
+  },
+  "extensionDescription": {
+    "message": "GoogleやYandexを使ってリアルタイムでページを翻訳します。"
+  },
+  "pageActionTitle": {
+    "message": "このページを翻訳"
+  },
+  "lblTranslate": {
+    "message": "このページを翻訳しますか?"
+  },
+  "lblTranslating": {
+    "message": "翻訳..."
+  },
+  "lblTranslated": {
+    "message": "翻訳済み"
+  },
+  "lblError": {
+    "message": "このページは翻訳できませんでした"
+  },
+  "lblAlwaysTranslate": {
+    "message": "常にこの言語から翻訳する:"
+  },
+  "lblTargetLanguage": {
+    "message": "翻訳先の言語"
+  },
+  "btnReset": {
+    "message": "リセット"
+  },
+  "btnTranslate": {
+    "message": "翻訳"
+  },
+  "btnOptions": {
+    "message": "オプション"
+  },
+  "btnRestore": {
+    "message": "原文を表示"
+  },
+  "btnTryAgain": {
+    "message": "再試行"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Google翻訳で開く"
+  },
+  "btnDonate": {
+    "message": "寄付"
+  },
+  "btnNeverTranslate": {
+    "message": "このサイトを翻訳しない"
+  },
+  "btnChangeLanguages": {
+    "message": "言語を変更"
+  },
+  "btnMobileOriginal": {
+    "message": "元の"
+  },
+  "btnMobileTranslated": {
+    "message": "翻訳済み"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "このサイトを翻訳しない"
+  },
+  "btnMobileDonate": {
+    "message": "寄付"
+  },
+  "optionsNeverTranslate": {
+    "message": "翻訳しないサイト"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "自動的に翻訳する言語"
+  },
+  "optionPopupConfig": {
+    "message": "モバイルポップアップを表示"
+  },
+  "optionPopupAuto": {
+    "message": "自動的に"
+  },
+  "optionPopupThreeFingers": {
+    "message": "画面上で3本の指をタッチすると"
+  },
+  "lblTranslationEngine": {
+    "message": "翻訳エンジン"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Yandex翻訳で開く"
+  },
+  "lblOthers": {
+    "message": "その他"
+  },
+  "btnMoreOptions": {
+    "message": "他の設定"
+  },
+  "lblPlsDonate": {
+    "message": "寄付で開発者を支援する"
+  },
+  "msgTranslateFor": {
+    "message": "に翻訳"
+  },
+  "lblShowContextMenu": {
+    "message": "コンテキストメニューにページを翻訳するオプションを表示"
+  },
+  "msgYes": {
+    "message": "はい"
+  },
+  "msgNo": {
+    "message": "いいえ"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "新しい翻訳アルゴリズムを使用しますか？"
+  },
+  "msgYesRecommended": {
+    "message": "はい（推奨）"
+  },
+  "msgNoUseWidgets": {
+    "message": "いいえ（ウィジェットを使用）"
+  }
+}

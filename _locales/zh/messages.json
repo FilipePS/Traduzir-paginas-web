@@ -51,7 +51,7 @@
     "message": "永远不要翻译这个网站"
   },
   "btnChangeLanguages": {
-    "message": "变更语言"
+    "message": "更改语言"
   },
   "btnMobileOriginal": {
     "message": "原版的"
@@ -63,7 +63,7 @@
     "message": "永远不要翻译这个网站"
   },
   "btnMobileDonate": {
-    "message": "捐"
+    "message": "捐赠"
   },
   "optionsNeverTranslate": {
     "message": "永远不要翻译这些网站"
@@ -87,13 +87,13 @@
     "message": "在yandex中打开翻译"
   },
   "lblOthers": {
-    "message": "其他"
+    "message": "其它"
   },
   "btnMoreOptions": {
-    "message": "更多的选择"
+    "message": "更多选项"
   },
   "lblPlsDonate": {
-    "message": "帮助开发人员捐款"
+    "message": "用捐款帮助开发者"
   },
   "msgTranslateFor": {
     "message": "翻译成"
@@ -105,7 +105,7 @@
     "message": "是"
   },
   "msgNo": {
-    "message": "没有"
+    "message": "否"
   },
   "lblUseNewAlgorithm": {
     "message": "使用新的翻译算法？"
