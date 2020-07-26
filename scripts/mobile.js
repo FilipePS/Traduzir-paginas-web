@@ -45,6 +45,12 @@ chrome.storage.local.get("neverTranslateSites").then(onGot => {
     }
 
     if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
+        chrome.runtime.sendMessage({action: "getShowPopupConfig"}, showPopupConfig => {
+            if (showPopupConfig == "threeFingersOnTheScreen") {
+                injectPopup()
+            }
+        })
+
         var pageText = document.body.innerText
         var pageTextLength = pageText.length
         var middleIdx = Math.floor(pageTextLength / 2)
@@ -110,8 +116,13 @@ function readFile(_path, _cb){
     })
 };
 
+var popupIsInjected = false
+
 function injectPopup()
 {
+    if (popupIsInjected) return;
+    popupIsInjected = true
+
     const element = document.createElement("div")
     element.setAttribute("translate", "no")
     element.classList.add("notranslate")
