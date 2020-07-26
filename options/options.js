@@ -77,6 +77,10 @@ selectUseNewAlgorithm.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setUseNewAlgorithm", useNewAlgorithm: selectUseNewAlgorithm.value})
 })
 
+chrome.runtime.sendMessage({action: "getShowContextMenu"}, showContextMenu => {
+    selectShowContextMenu.value = showContextMenu
+})
+
 chrome.runtime.sendMessage({action: "getUseNewAlgorithm"}, useNewAlgorithm => {
     selectUseNewAlgorithm.value = useNewAlgorithm
 })

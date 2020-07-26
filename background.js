@@ -281,6 +281,8 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             chrome.storage.local.set({showContextMenu})
             updateContextMenu()
         }
+    } else if (request.action == "getShowContextMenu") {
+        sendResponse(showContextMenu)
     } else if (request.action == "setUseNewAlgorithm") {
         if (request.useNewAlgorithm) {
             useNewAlgorithm = request.useNewAlgorithm
@@ -295,7 +297,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
 var showContextMenu = "yes"
 chrome.storage.local.get("showContextMenu").then(onGot => {
     if (onGot.showContextMenu) {
-        showContextMenu = onGot.targetLanguage
+        showContextMenu = onGot.showContextMenu
     }
     updateContextMenu()
 })
