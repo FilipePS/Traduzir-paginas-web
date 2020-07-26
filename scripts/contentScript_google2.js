@@ -316,6 +316,10 @@ function translate()
 {
     restore()
     chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+        if (targetLanguage == "zh") {
+            targetLanguage = "zh-CN"
+        }
+
         if (prevTargetLanguage && prevTargetLanguage != targetLanguage) {
             translatedStrings = []
         }

@@ -1355,6 +1355,8 @@ var languages = {
       }
 }
 
+languages["zh"] = languages["zh-CN"]
+
 function codeToLanguage(pageLanguageCode, interfaceLanguageCode) {
     if (pageLanguageCode.toLowerCase() != "zh-cn" && pageLanguageCode.toLowerCase() != "zh-tw") {
         pageLanguageCode = pageLanguageCode.split("-")[0]
