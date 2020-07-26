@@ -15,6 +15,7 @@ main {
 }
 
 button {
+    min-width: 80px;
     margin-left: 5px;
 }
 
