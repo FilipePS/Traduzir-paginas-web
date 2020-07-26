@@ -1,0 +1,6 @@
+Translate Web Pages does not collect any data.
+The only communication is with Google (translate.google.com and translate.googleapis.com) and Yandex (translate.yandex.net) server.
+To detect the language of the page on mobile devices, 600 characters are sent to Google.
+To translate, all content on the page is sent to Google or Yandex servers.
+The source code is available on <a href="https://github.com/FilipePS/Traduzir-paginas-web">Github</a>.
+If you choose to use Google and Yandex widgets instead of my algorithm. These widgets can collect various data.
