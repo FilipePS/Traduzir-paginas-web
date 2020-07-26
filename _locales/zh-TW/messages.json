@@ -1,0 +1,119 @@
+{
+  "extensionName": {
+    "message": "翻譯網頁"
+  },
+  "extensionDescription": {
+    "message": "使用Google或Yandex實時翻譯您的頁面。"
+  },
+  "pageActionTitle": {
+    "message": "翻譯此頁面"
+  },
+  "lblTranslate": {
+    "message": "翻譯此頁面？"
+  },
+  "lblTranslating": {
+    "message": "翻譯..."
+  },
+  "lblTranslated": {
+    "message": "已翻譯"
+  },
+  "lblError": {
+    "message": "此頁面無法翻譯"
+  },
+  "lblAlwaysTranslate": {
+    "message": "一律翻譯自"
+  },
+  "lblTargetLanguage": {
+    "message": "目標語言"
+  },
+  "btnReset": {
+    "message": "重啟"
+  },
+  "btnTranslate": {
+    "message": "翻譯"
+  },
+  "btnOptions": {
+    "message": "選項"
+  },
+  "btnRestore": {
+    "message": "顯示原圖"
+  },
+  "btnTryAgain": {
+    "message": "再試一次"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "在Google翻譯器中打開"
+  },
+  "btnDonate": {
+    "message": "只是"
+  },
+  "btnNeverTranslate": {
+    "message": "永遠不要翻譯這個網站"
+  },
+  "btnChangeLanguages": {
+    "message": "變更語言"
+  },
+  "btnMobileOriginal": {
+    "message": "原版的"
+  },
+  "btnMobileTranslated": {
+    "message": "已翻譯"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "永遠不要翻譯這個網站"
+  },
+  "btnMobileDonate": {
+    "message": "只是"
+  },
+  "optionsNeverTranslate": {
+    "message": "永遠不要翻譯這些網站"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "自動翻譯這些語言"
+  },
+  "optionPopupConfig": {
+    "message": "顯示手機彈出窗口"
+  },
+  "optionPopupAuto": {
+    "message": "自動地"
+  },
+  "optionPopupThreeFingers": {
+    "message": "當我觸摸屏幕上的三個手指時"
+  },
+  "lblTranslationEngine": {
+    "message": "翻譯引擎"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "在yandex中打開翻譯"
+  },
+  "lblOthers": {
+    "message": "其他"
+  },
+  "btnMoreOptions": {
+    "message": "更多的選擇"
+  },
+  "lblPlsDonate": {
+    "message": "幫助開發人員捐款"
+  },
+  "msgTranslateFor": {
+    "message": "翻譯成"
+  },
+  "lblShowContextMenu": {
+    "message": "在上下文菜單中顯示翻譯頁面的選項"
+  },
+  "msgYes": {
+    "message": "是"
+  },
+  "msgNo": {
+    "message": "沒有"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "使用新的翻譯算法？"
+  },
+  "msgYesRecommended": {
+    "message": "是（推薦）"
+  },
+  "msgNoUseWidgets": {
+    "message": "否（使用小部件）"
+  }
+}
