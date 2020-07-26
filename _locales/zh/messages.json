@@ -106,5 +106,14 @@
   },
   "msgNo": {
     "message": "没有"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "使用新的翻译算法？"
+  },
+  "msgYesRecommended": {
+    "message": "是（推荐）"
+  },
+  "msgNoUseWidgets": {
+    "message": "否（使用小部件）"
   }
 }

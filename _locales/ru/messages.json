@@ -106,5 +106,14 @@
   },
   "msgNo": {
     "message": "Нет"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Использовать новый алгоритм перевода?"
+  },
+  "msgYesRecommended": {
+    "message": "Да (рекомендуется)"
+  },
+  "msgNoUseWidgets": {
+    "message": "Нет (используйте виджеты)"
   }
 }

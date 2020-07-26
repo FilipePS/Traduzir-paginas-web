@@ -106,5 +106,14 @@
   },
   "msgNo": {
     "message": "Ne"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Použít nový překladový algoritmus?"
+  },
+  "msgYesRecommended": {
+    "message": "Ano (doporučeno)"
+  },
+  "msgNoUseWidgets": {
+    "message": "Ne (používat widgety)"
   }
 }

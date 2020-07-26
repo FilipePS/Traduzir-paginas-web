@@ -106,5 +106,14 @@
   },
   "msgNo": {
     "message": "नहीं"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "नए अनुवाद एल्गोरिथ्म का उपयोग करें?"
+  },
+  "msgYesRecommended": {
+    "message": "हाँ (अनुशंसित)"
+  },
+  "msgNoUseWidgets": {
+    "message": "नहीं (विजेट का उपयोग करें)"
   }
 }

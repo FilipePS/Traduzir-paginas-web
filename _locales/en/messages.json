@@ -106,5 +106,14 @@
   },
   "msgNo": {
     "message": "No"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Use the new translation algorithm?"
+  },
+  "msgYesRecommended": {
+    "message": "Yes (recommended)"
+  },
+  "msgNoUseWidgets": {
+    "message": "No (use widgets)"
   }
 }
