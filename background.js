@@ -334,6 +334,15 @@ if (targetLanguage.toLowerCase() != "zh-cn" && targetLanguage.toLowerCase() != "
 chrome.storage.local.get("targetLanguage").then(onGot => {
     if (onGot.targetLanguage) {
         targetLanguage = onGot.targetLanguage
+
+        if (targetLanguage == "zh") {
+            if (chrome.i18n.getUILanguage() == "zh-TW") {
+                targetLanguage == "zh-TW"
+            } else {
+                targetLanguage == "zh-CN"
+            }
+        }
+
         if (targetLanguage.toLowerCase() != "zh-cn" && targetLanguage.toLowerCase() != "zh-tw") {
             targetLanguage = targetLanguage.split("-")[0]
         }
@@ -411,7 +420,7 @@ chrome.runtime.onInstalled.addListener(details => {
             })
         })
         chrome.runtime.openOptionsPage()
-    } else if (details.reason == "update" && details.previousVersion < "5.0") {
+    } else if (details.reason == "update" && details.previousVersion < "6.1") {
         chrome.runtime.openOptionsPage()
     }
 })
