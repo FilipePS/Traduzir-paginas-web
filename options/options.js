@@ -83,7 +83,11 @@ chrome.runtime.sendMessage({action: "getUseNewAlgorithm"}, useNewAlgorithm => {
 
 // fill language list
 ;(function() {
-    var langs = languages[chrome.i18n.getUILanguage().split("-")[0]]
+    var uilanguage = chrome.i18n.getUILanguage()
+    if (uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw") {
+        uilanguage = uilanguage.split("-")[0]
+    }
+    var langs = languages[uilanguage]
     if (!langs) {
         langs = languages["en"]
     }
@@ -99,6 +103,7 @@ chrome.runtime.sendMessage({action: "getUseNewAlgorithm"}, useNewAlgorithm => {
     })
 
     langsSorted.forEach(value => {
+        if (value[0] == "zh") return;
         var option = document.createElement("option")
         option.value = value[0]
         option.textContent = value[1]

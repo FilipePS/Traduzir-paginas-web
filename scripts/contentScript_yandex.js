@@ -40,6 +40,9 @@ function translate()
     restore()
     ifTranslateInjected(() => {
         chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+            if (targetLanguage.indexOf("zh-") != -1) {
+                targetLanguage = "zh"
+            }
             document.querySelectorAll("#yt-widget form input[type='radio']").forEach(value => { 
                 if (value.value == targetLanguage) {
                     value.checked = true
@@ -132,7 +135,7 @@ chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
                 alwaysTranslateLangs = []
             }
             var pageLang = detectedLanguage
-            if (pageLang && alwaysTranslateLangs.indexOf(pageLang.split("-")[0]) != -1) {
+            if (pageLang && alwaysTranslateLangs.indexOf(pageLang) != -1) {
                 var neverTranslateSites = onGot.neverTranslateSites
                 if (!neverTranslateSites) {
                     neverTranslateSites = []

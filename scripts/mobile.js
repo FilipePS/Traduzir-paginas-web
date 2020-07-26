@@ -296,6 +296,7 @@ function injectPopup()
         ;(function() {
             chrome.runtime.sendMessage({action: "getLangs"}, langs => {
                 langs.forEach(value => {
+                    if (value[0] == "zh") return;
                     var a = document.createElement("a")
                     a.setAttribute("href", "#")
                     a.setAttribute("value", value[0])

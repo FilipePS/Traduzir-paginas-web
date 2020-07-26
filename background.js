@@ -178,6 +178,9 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
         if (request.lang) {
             targetLanguage = request.lang
+            if (targetLanguage.toLowerCase() != "zh-cn" && targetLanguage.toLowerCase() != "zh-tw") {
+                targetLanguage = targetLanguage.split("-")[0]
+            }
             chrome.storage.local.set({targetLanguage})
             updateContextMenu()
         }
@@ -224,8 +227,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         setTimeout(() => {
             chrome.tabs.detectLanguage(sender.tab.id, codeLang => {
                 if (codeLang && codeLang != "und") {
-                    codeLang = codeLang.split('-')[0]
-                    sendResponse(codeLang)
+                    sendResponse(codeLang.split("-")[0])
                 } else {
                     sendResponse(null)
                 }
@@ -235,6 +237,9 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     } else if (request.action == "setTargetLanguage") {
         if (request.lang) {
             targetLanguage = request.lang
+            if (targetLanguage.toLowerCase() != "zh-cn" && targetLanguage.toLowerCase() != "zh-tw") {
+                targetLanguage = targetLanguage.split("-")[0]
+            }
             chrome.storage.local.set({targetLanguage})
             updateContextMenu()
         }
@@ -296,7 +301,10 @@ chrome.storage.local.get("showContextMenu").then(onGot => {
 })
 
 function updateContextMenu() {
-    var uilanguage = chrome.i18n.getUILanguage().split("-")[0]
+    var uilanguage = chrome.i18n.getUILanguage()
+    if (uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw") {
+        uilanguage = uilanguage.split("-")[0]
+    }
     var contextMenuTile = chrome.i18n.getMessage("msgTranslateFor") + " "
     if (languages[uilanguage]) {
         contextMenuTile += languages[uilanguage][targetLanguage]
@@ -317,11 +325,16 @@ function updateContextMenu() {
 }
 
 // get target language saved
-var targetLanguage = chrome.i18n.getUILanguage().split("-")[0]
+var targetLanguage = chrome.i18n.getUILanguage()
+if (targetLanguage.toLowerCase() != "zh-cn" && targetLanguage.toLowerCase() != "zh-tw") {
+    targetLanguage = targetLanguage.split("-")[0]
+}
 chrome.storage.local.get("targetLanguage").then(onGot => {
-    var neverTranslateSites = onGot.targetLanguage
     if (onGot.targetLanguage) {
         targetLanguage = onGot.targetLanguage
+        if (targetLanguage.toLowerCase() != "zh-cn" && targetLanguage.toLowerCase() != "zh-tw") {
+            targetLanguage = targetLanguage.split("-")[0]
+        }
     }
     updateContextMenu()
 })
@@ -329,7 +342,11 @@ chrome.storage.local.get("targetLanguage").then(onGot => {
 // listLangs
 var langs = []
 ;(function() {
-    var langsObj = languages[chrome.i18n.getUILanguage().split("-")[0]]
+    var uilanguage = chrome.i18n.getUILanguage()
+    if (uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw") {
+        uilanguage = uilanguage.split("-")[0]
+    }
+    var langsObj = languages[uilanguage]
     if (!langsObj) {
         langsObj = languages["en"]
     }

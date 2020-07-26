@@ -77,10 +77,6 @@ function translate()
 {
     ifTranslateInjected(() => {
         chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
-            if (targetLanguage == "zh") {
-                targetLanguage = "zh-CN"
-            }
-
             var eIframe = document.getElementById(":1.container")
             var eBtnTranslate = eIframe.contentWindow.document.getElementById(":1.confirm")
             var eTargetLanguage = document.querySelector("#twp_google_translate_element select")
@@ -218,7 +214,7 @@ chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
                 alwaysTranslateLangs = []
             }
             var pageLang = detectedLanguage
-            if (pageLang && alwaysTranslateLangs.indexOf(pageLang.split("-")[0]) != -1) {
+            if (pageLang && alwaysTranslateLangs.indexOf(pageLang) != -1) {
                 var neverTranslateSites = onGot.neverTranslateSites
                 if (!neverTranslateSites) {
                     neverTranslateSites = []

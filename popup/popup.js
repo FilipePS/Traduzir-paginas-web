@@ -63,7 +63,11 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
 
 // fill language list
 ;(function() {
-    var langs = languages[chrome.i18n.getUILanguage().split("-")[0]]
+    var uilanguage = chrome.i18n.getUILanguage()
+    if (uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw") {
+        uilanguage = uilanguage.split("-")[0]
+    }
+    var langs = languages[uilanguage]
     if (!langs) {
         langs = languages["en"]
     }
@@ -79,6 +83,7 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
     })
 
     langsSorted.forEach(value => {
+        if (value[0] == "zh") return;
         var option = document.createElement("option")
         option.value = value[0]
         option.textContent = value[1]
@@ -192,7 +197,6 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     // get page language
     chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, codeLang => {
         if (codeLang) {
-            codeLang = codeLang.split('-')[0]
             globalCodeLang = codeLang
 
             // show always translate checkbox
