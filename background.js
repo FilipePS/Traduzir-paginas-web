@@ -99,24 +99,36 @@ function disableAutoTranslate(lang)
 
 // register content script of translation engine
 var registeredContentScript = null
-async function changeTranslationEngine(translationEngine)
+async function changeTranslationEngine()
 {
     if (registeredContentScript) {
         registeredContentScript.unregister()
         registeredContentScript = null
     }
     if (translationEngine == "google") {
+        var file
+        if (useNewAlgorithm == "yes") {
+            file = "scripts/contentScript_google2.js"
+        } else {
+            file = "scripts/contentScript_google.js"
+        }
         registeredContentScript = await chrome.contentScripts.register({
             matches: ["<all_urls>"],
             allFrames: true,
-            js: [{file: "scripts/contentScript_google2.js"}],
+            js: [{file: file}],
             runAt: "document_end"
         });
     } else if (translationEngine == "yandex") {
+        var file
+        if (useNewAlgorithm == "yes") {
+            file = "scripts/contentScript_yandex2.js"
+        } else {
+            file = "scripts/contentScript_yandex.js"
+        }
         registeredContentScript = await chrome.contentScripts.register({
             matches: ["<all_urls>"],
             allFrames: true,
-            js: [{file: "scripts/contentScript_yandex2.js"}],
+            js: [{file: file}],
             runAt: "document_end"
         });     
     }
@@ -241,7 +253,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         if (request.translationEngine) {
             translationEngine = request.translationEngine
             chrome.storage.local.set({translationEngine})
-            changeTranslationEngine(translationEngine)
+            changeTranslationEngine()
         }       
     } else if (request.action == "getTranslationEngine") {
         sendResponse(translationEngine)
@@ -254,7 +266,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             translationEngine = "google"
         }
         chrome.storage.local.set({translationEngine})
-        changeTranslationEngine(translationEngine)
+        changeTranslationEngine()
     } else if (request.action == "getGoogleTranslateTKK") {
         sendResponse(googleTranslateTKK)
     }
@@ -264,6 +276,14 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             chrome.storage.local.set({showContextMenu})
             updateContextMenu()
         }
+    } else if (request.action == "setUseNewAlgorithm") {
+        if (request.useNewAlgorithm) {
+            useNewAlgorithm = request.useNewAlgorithm
+            chrome.storage.local.set({useNewAlgorithm})
+            changeTranslationEngine()
+        }
+    } else if (request.action == "getUseNewAlgorithm") {
+        sendResponse(useNewAlgorithm)
     }
 })
 
@@ -325,12 +345,20 @@ var langs = []
 
 // get translationEngine engine config
 var translationEngine = "google"
-chrome.storage.local.get("translationEngine").then(onGot => {
+var useNewAlgorithm = "yes"
+
+chrome.storage.local.get("translationEngine").then(async onGot => {
     if (onGot.translationEngine) {
         translationEngine = onGot.translationEngine
     }
 
-    changeTranslationEngine(translationEngine)
+    await chrome.storage.local.get("useNewAlgorithm").then(onGot => {
+        if (onGot.useNewAlgorithm) {
+            useNewAlgorithm = onGot.useNewAlgorithm
+        }
+    })
+
+    changeTranslationEngine()
 })
 
 // get show popup config

@@ -49,6 +49,8 @@ const neverTranslateList = document.getElementById("neverTranslateList")
 const lblAlwaysTranslate = document.getElementById("lblAlwaysTranslate")
 const alwaysTranslateListButton = document.getElementById("alwaysTranslateListButton")
 const alwaysTranslateList = document.getElementById("alwaysTranslateList")
+const lblUseNewAlgorithm = document.getElementById("lblUseNewAlgorithm")
+const selectUseNewAlgorithm = document.getElementById("selectUseNewAlgorithm")
 
 lblShowContextMenu.textContent = chrome.i18n.getMessage("lblShowContextMenu")
 lblPlsDonate.textContent = chrome.i18n.getMessage("lblPlsDonate")
@@ -58,14 +60,25 @@ lblPopupConfig.textContent = chrome.i18n.getMessage("optionPopupConfig")
 lblOthers.textContent = chrome.i18n.getMessage("lblOthers")
 lblNeverTranslate.textContent = chrome.i18n.getMessage("optionsNeverTranslate")
 lblAlwaysTranslate.textContent = chrome.i18n.getMessage("optionsAlwaysTranslate")
+lblUseNewAlgorithm.textContent = chrome.i18n.getMessage("lblUseNewAlgorithm")
 
 document.querySelector("#selectShowContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
 document.querySelector("#selectShowContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
 document.querySelector("#selectPopupConfig option[value='auto']").textContent = chrome.i18n.getMessage("optionPopupAuto")
 document.querySelector("#selectPopupConfig option[value='threeFingersOnTheScreen']").textContent = chrome.i18n.getMessage("optionPopupThreeFingers")
+document.querySelector("#selectUseNewAlgorithm option[value='yes']").textContent = chrome.i18n.getMessage("msgYesRecommended")
+document.querySelector("#selectUseNewAlgorithm option[value='no']").textContent = chrome.i18n.getMessage("msgNoUseWidgets")
 
 selectShowContextMenu.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setShowContextMenu", showContextMenu: selectShowContextMenu.value})
+})
+
+selectUseNewAlgorithm.addEventListener("change", () => {
+    chrome.runtime.sendMessage({action: "setUseNewAlgorithm", useNewAlgorithm: selectUseNewAlgorithm.value})
+})
+
+chrome.runtime.sendMessage({action: "getUseNewAlgorithm"}, useNewAlgorithm => {
+    selectUseNewAlgorithm.value = useNewAlgorithm
 })
 
 // fill language list
