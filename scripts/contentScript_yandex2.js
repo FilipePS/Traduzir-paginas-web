@@ -240,6 +240,74 @@ function translateResults(i, results, translateNodes, requestsSum) {
     mutationObserver.takeRecords()
 }
 
+var translatedAttributes = []
+
+function translateAttributes(targetLanguage) {
+    restoreAttributes()
+
+    var placeholdersElements = Array.from(document.querySelectorAll('input[placeholder], textarea[placeholder]'))
+    var altElements = Array.from(document.querySelectorAll('area[alt], img[alt], input[type="image"][alt]'))
+    var valueElements = Array.from(document.querySelectorAll('input[type="button"], input[type="submit"]'))
+    var titleElements = Array.from(document.querySelectorAll("body [title]"))
+
+    placeholdersElements.forEach(e => {
+        var txt = e.getAttribute("placeholder")
+        if (txt && txt.trim()) {
+            translatedAttributes.push([e, txt, "placeholder"])
+        }
+    })
+
+    altElements.forEach(e => {
+        var txt = e.getAttribute("alt")
+        if (txt && txt.trim()) {
+            translatedAttributes.push([e, txt, "alt"])
+        }
+    })
+
+    valueElements.forEach(e => {
+        if (e.getAttribute("type") == "submit" && e.getAttribute("name")) return;
+        
+        var txt = e.getAttribute("value")
+        if (txt && txt.trim()) {
+            translatedAttributes.push([e, txt, "value"])
+        }
+    })
+
+    titleElements.forEach(e => {
+        var txt = e.getAttribute("title")
+        if (txt && txt.trim()) {
+            translatedAttributes.push([e, txt, "title"])
+        }
+    })
+
+    var attributesStrings = []
+
+    translatedAttributes.forEach(taInfo => {
+        attributesStrings.push(taInfo[1].trim())
+    })
+
+    attributesStrings = attributesStrings.map(str => escapeHtml(str))
+    var [requestsStrings, requestsSum] = getRequestStrings(attributesStrings)
+
+    for (let i in requestsStrings) {
+        translateHtml(requestsStrings[i], targetLanguage).then(results => {
+            for (let j in results) {
+                var text = unescapeHtml(results[j])
+                var taInfo = translatedAttributes[parseInt(requestsSum[i]) + parseInt(j)]
+                taInfo[0].setAttribute(taInfo[2], text)
+            }
+            mutationObserver.takeRecords()
+        })
+    }
+}
+
+function restoreAttributes() {
+    translatedAttributes.forEach(taInfo => {
+        taInfo[0].setAttribute(taInfo[2], taInfo[1])
+    })
+    translatedAttributes = []
+}
+
 function translate()
 {
     restore()
@@ -269,6 +337,8 @@ function translate()
                 translateResults(i, results, translateNodes, requestsSum)
             })
         }
+
+        translateAttributes(targetLanguage)
     })
 }
 
@@ -282,6 +352,8 @@ function restore()
         nodeInfo.node.textContent = nodeInfo.original
     })
     nodesTranslated = []
+
+    restoreAttributes()
 }
 
 function getStatus()
