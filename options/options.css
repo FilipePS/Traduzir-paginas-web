@@ -1,3 +1,12 @@
+body {
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+a, button {
+  white-space: pre-wrap !important;
+}
+
 i {
     border: solid black;
     border-width: 0 3px 3px 0;
