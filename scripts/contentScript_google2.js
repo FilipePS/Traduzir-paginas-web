@@ -155,11 +155,10 @@ function translateHtml(params, targetLanguage) {
             requestBody += "&q=" + encodeURIComponent(str)
         }
     }
-    
+
     if (stringsToTranslateInfo.length > 0) {
         var tk = calcHash(stringsToTranslateInfo.map(value => value.original).join(''), googleTranslateTKK)
-        
-        fetch("https://translate.googleapis.com/translate_a/t?anno=3&client=te&format=html&v=1.0&sl=auto&tl=" + targetLanguage + "&tk=" + tk, {
+        fetch("https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=" + targetLanguage + "&tk=" + tk, {
             "credentials": "omit",
             "headers": {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -343,17 +342,18 @@ function translate()
                 countRequestsTranslated++
                 if (countRequestsTranslated == requestsStrings.length) {
                     status = "finish"
+                    enableMutatinObserver()
                 }
                 translateResults(i, results, translateNodes, requestsSum)
             })
         }
     })
-    enableMutatinObserver()
 }
 
 function restore()
 {
     disableMutatinObserver()
+
     status = "prompt"
     nodesTranslated.forEach(nodeInfo => {
         nodeInfo.node.textContent = nodeInfo.original

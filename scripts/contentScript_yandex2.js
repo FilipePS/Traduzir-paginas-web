@@ -259,23 +259,23 @@ function translate()
         var nodesStrings = getNodesStrings(translateNodes)
         var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
         
-
         for (let i in requestsStrings) {
             translateHtml(requestsStrings[i], targetLanguage).then(results => {
                 countRequestsTranslated++
                 if (countRequestsTranslated == requestsStrings.length) {
                     status = "finish"
+                    enableMutatinObserver()
                 }
                 translateResults(i, results, translateNodes, requestsSum)
             })
         }
     })
-    enableMutatinObserver()
 }
 
 function restore()
 {
     disableMutatinObserver()
+
     status = "prompt"
 
     nodesTranslated.forEach(nodeInfo => {
