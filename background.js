@@ -263,7 +263,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     } else if (request.action == "getTranslationEngine") {
         sendResponse(translationEngine)
     } else if (request.action == "openOptionsPage") {
-        chrome.runtime.openOptionsPage()
+        chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
     } else if (request.action == "swapEngineTranslator") {
         if (translationEngine == "google") {
             translationEngine = "yandex"
@@ -399,7 +399,6 @@ chrome.storage.local.get("showPopupConfig").then(onGot => {
 
 // show options page
 chrome.runtime.onInstalled.addListener(details => {
-    var thisVersion = chrome.runtime.getManifest().version
     if (details.reason == "install") {
         // execute contentScript on Extension Install
         chrome.tabs.query({}).then(tabs => {
@@ -419,9 +418,7 @@ chrome.runtime.onInstalled.addListener(details => {
                 }
             })
         })
-        chrome.runtime.openOptionsPage()
-    } else if (details.reason == "update" && details.previousVersion < "6.1") {
-        chrome.runtime.openOptionsPage()
+        chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
     }
 })
 

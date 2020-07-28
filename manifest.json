@@ -21,14 +21,18 @@
     ],
 
     "web_accessible_resources": [
+        "options/options.html",
+        "options/options.css",
+        "options/options.js",
         "icons/google-translate-32.png",
         "icons/yandex-translate-32.png",
         "icons/swap-32.png"
     ],
 
     "options_ui": {
-        "browser_style": false,
-        "page": "options/options.html"
+        "page": "options/options.html",
+        "open_in_tab": false,
+        "browser_style": false
     },
 
     "page_action": {
