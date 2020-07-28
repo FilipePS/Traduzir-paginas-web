@@ -9,16 +9,16 @@
     "message": "このページを翻訳"
   },
   "lblTranslate": {
-    "message": "このページを翻訳しますか?"
+    "message": "このページを翻訳しますか？"
   },
   "lblTranslating": {
-    "message": "翻訳..."
+    "message": "翻訳中..."
   },
   "lblTranslated": {
     "message": "翻訳済み"
   },
   "lblError": {
-    "message": "このページは翻訳できませんでした"
+    "message": "ページを翻訳できませんでした"
   },
   "lblAlwaysTranslate": {
     "message": "常にこの言語から翻訳する:"
@@ -54,7 +54,7 @@
     "message": "言語を変更"
   },
   "btnMobileOriginal": {
-    "message": "元の"
+    "message": "原文"
   },
   "btnMobileTranslated": {
     "message": "翻訳済み"
@@ -72,13 +72,13 @@
     "message": "自動的に翻訳する言語"
   },
   "optionPopupConfig": {
-    "message": "モバイルポップアップを表示"
+    "message": "モバイルで翻訳ポップアップを表示"
   },
   "optionPopupAuto": {
-    "message": "自動的に"
+    "message": "自動"
   },
   "optionPopupThreeFingers": {
-    "message": "画面上で3本の指をタッチすると"
+    "message": "画面を3本指でタップしたとき"
   },
   "lblTranslationEngine": {
     "message": "翻訳エンジン"
@@ -96,7 +96,7 @@
     "message": "寄付で開発者を支援する"
   },
   "msgTranslateFor": {
-    "message": "に翻訳"
+    "message": "以下に翻訳:"
   },
   "lblShowContextMenu": {
     "message": "コンテキストメニューにページを翻訳するオプションを表示"
@@ -108,7 +108,7 @@
     "message": "いいえ"
   },
   "lblUseNewAlgorithm": {
-    "message": "新しい翻訳アルゴリズムを使用しますか？"
+    "message": "新しい翻訳アルゴリズムを使用"
   },
   "msgYesRecommended": {
     "message": "はい（推奨）"
