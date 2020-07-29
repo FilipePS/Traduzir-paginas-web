@@ -441,12 +441,14 @@ function translate()
 
         for (let i in requestsStrings) {
             translateHtml(requestsStrings[i], targetLanguage).then(results => {
-                countRequestsTranslated++
-                if (countRequestsTranslated == requestsStrings.length) {
-                    status = "finish"
-                    enableMutatinObserver()
+                if (status == "progress") {
+                    countRequestsTranslated++
+                    if (countRequestsTranslated == requestsStrings.length) {
+                        status = "finish"
+                        enableMutatinObserver()
+                    }
+                    translateResults(i, results, translateNodes, requestsSum)
                 }
-                translateResults(i, results, translateNodes, requestsSum)
             })
         }
 
