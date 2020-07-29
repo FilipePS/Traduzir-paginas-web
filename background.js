@@ -185,7 +185,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             updateContextMenu()
         }
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, response => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}).then(response => {
                 if (response) {
                     removeSiteFromBlackList(response)
                 }
@@ -198,7 +198,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         })
     } else if (request.action == "getStatus") {
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, response => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, {frameId: 0}).then(response => {
                 sendResponse(response)
             })
         })
@@ -213,7 +213,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
     } else if (request.action == "neverTranslateThisSite") {
         chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}).then((response) => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}).then(response => {
                 if (response) {
                     addSiteToBlackList(response)
                 }
@@ -443,7 +443,7 @@ if (isMobile.any()) {
 if (typeof chrome.contextMenus != 'undefined') {
     chrome.contextMenus.onClicked.addListener((info, tab) => {
         chrome.pageAction.openPopup()
-        chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, response => {
+        chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, {frameId: 0}).then(response => {
             if (response) {
                 removeSiteFromBlackList(response)
             }

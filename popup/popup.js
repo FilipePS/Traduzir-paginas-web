@@ -186,7 +186,7 @@ var globalCodeLang = null
 chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     // auto show the correct section in the popup
     let updateTranslateStatus = () => {
-        chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, response => {
+        chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, {frameId: 0}).then(response => {
             if (typeof response == "string") {
                 showPopupSection(response)
             }
@@ -195,7 +195,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     }
 
     // get page language
-    chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, codeLang => {
+    chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, {frameId: 0}).then(codeLang => {
         if (codeLang) {
             globalCodeLang = codeLang
 
