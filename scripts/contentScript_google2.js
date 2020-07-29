@@ -364,6 +364,7 @@ function translateAttributes(targetLanguage) {
 
     for (let i in requestsStrings) {
         translateHtml(requestsStrings[i], targetLanguage).then(results => {
+            if (status == "prompt" || status == "error") return;
             for (let j in results) {
                 var resultSentences = []
                 var idx = 0

@@ -293,6 +293,7 @@ function translateAttributes(targetLanguage) {
 
     for (let i in requestsStrings) {
         translateHtml(requestsStrings[i], targetLanguage).then(results => {
+            if (status == "prompt" || status == "error") return;
             for (let j in results) {
                 var text = unescapeHtml(results[j])
                 var taInfo = translatedAttributes[parseInt(requestsSum[i]) + parseInt(j)]
