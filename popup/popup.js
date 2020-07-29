@@ -186,11 +186,11 @@ var globalCodeLang = null
 chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     // auto show the correct section in the popup
     let updateTranslateStatus = () => {
+        setTimeout(updateTranslateStatus, 100)
         chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, {frameId: 0}).then(response => {
             if (typeof response == "string") {
                 showPopupSection(response)
             }
-            setTimeout(updateTranslateStatus, 100)
         })
     }
 
