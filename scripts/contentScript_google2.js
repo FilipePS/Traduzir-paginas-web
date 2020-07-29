@@ -545,3 +545,12 @@ chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
     }
 })
 //*/
+
+// auto translate new iframes
+setTimeout(() => {
+    chrome.runtime.sendMessage({action: "getStatus"}).then(mainFrameStatus => {
+        if (status == "prompt" && (mainFrameStatus == "progress" || mainFrameStatus == "finish")) {
+            translate()
+        }
+    })
+}, 500)
