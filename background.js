@@ -229,10 +229,19 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
                 if (codeLang && codeLang != "und") {
                     sendResponse(codeLang.split("-")[0])
                 } else {
-                    sendResponse(null)
+                    setTimeout(() => {
+                        chrome.tabs.detectLanguage(sender.tab.id, codeLang => {
+                            if (codeLang && codeLang != "und") {
+                                sendResponse(codeLang.split("-")[0])
+                            } else {
+                                sendResponse(null)
+                            }
+                        })
+                    }, 1400)
                 }
             })
-        }, 100);
+        }, 120)
+
         return true
     } else if (request.action == "setTargetLanguage") {
         if (request.lang) {

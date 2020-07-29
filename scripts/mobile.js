@@ -51,46 +51,48 @@ chrome.storage.local.get("neverTranslateSites").then(onGot => {
             }
         })
 
-        var pageText = document.body.innerText
-        var pageTextLength = pageText.length
-        var middleIdx = Math.floor(pageTextLength / 2)
-        if (pageTextLength <= 200) {
-            googleDetectLanguage(pageText, (lang) => {
-                if (lang) {
-                    if (lang.split("-")[0] != navigatorLang) {
-                        injectPopup()
-                    }
-                } else {
-                    if (navigatorLang !== langAttribute) {
-                        injectPopup()
-                    }
-                }
-            })
-        } else {
-            googleDetectLanguage(pageText.substring(middleIdx, middleIdx + 200), (lang) => {
-                if (lang) {
-                    if (lang.split("-")[0] != navigatorLang) {
-                        injectPopup()
+        setTimeout(() => {
+            var pageText = document.body.innerText
+            var pageTextLength = pageText.length
+            var middleIdx = Math.floor(pageTextLength / 2)
+            if (pageTextLength <= 200) {
+                googleDetectLanguage(pageText, (lang) => {
+                    if (lang) {
+                        if (lang.split("-")[0] != navigatorLang) {
+                            injectPopup()
+                        }
                     } else {
-                        googleDetectLanguage(pageText.substring(0, 200), (lang) => {
-                            if (lang.split("-")[0] != navigatorLang) {
-                                injectPopup()
-                            } else {
-                                googleDetectLanguage(pageText.substring(pageTextLength - 200, pageTextLength), (lang) => {
-                                    if (lang.split("-")[0] != navigatorLang) {
-                                        injectPopup()
-                                    }               
-                                })
-                            }                 
-                        })
+                        if (navigatorLang !== langAttribute) {
+                            injectPopup()
+                        }
                     }
-                } else {
-                    if (navigatorLang !== langAttribute) {
-                        injectPopup()
+                })
+            } else {
+                googleDetectLanguage(pageText.substring(middleIdx, middleIdx + 200), (lang) => {
+                    if (lang) {
+                        if (lang.split("-")[0] != navigatorLang) {
+                            injectPopup()
+                        } else {
+                            googleDetectLanguage(pageText.substring(0, 200), (lang) => {
+                                if (lang.split("-")[0] != navigatorLang) {
+                                    injectPopup()
+                                } else {
+                                    googleDetectLanguage(pageText.substring(pageTextLength - 200, pageTextLength), (lang) => {
+                                        if (lang.split("-")[0] != navigatorLang) {
+                                            injectPopup()
+                                        }               
+                                    })
+                                }                 
+                            })
+                        }
+                    } else {
+                        if (navigatorLang !== langAttribute) {
+                            injectPopup()
+                        }
                     }
-                }
-            })   
-        }
+                })
+            }
+        }, 120)
     }
 })
 
