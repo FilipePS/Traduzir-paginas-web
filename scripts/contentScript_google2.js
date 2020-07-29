@@ -336,10 +336,12 @@ function translateAttributes(targetLanguage) {
     })
 
     valueElements.forEach(e => {
-        if (e.getAttribute("type") == "submit" && e.getAttribute("name")) return;
+        if (e.type == "submit" && e.getAttribute("name")) return;
         
         var txt = e.getAttribute("value")
-        if (txt && txt.trim()) {
+        if (e.type == "submit" && !txt) {
+            translatedAttributes.push([e, "Submit Query", "value"])
+        } else if (txt && txt.trim()) {
             translatedAttributes.push([e, txt, "value"])
         }
     })
