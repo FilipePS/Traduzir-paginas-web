@@ -129,7 +129,7 @@ function injectPopup()
     element.setAttribute("translate", "no")
     element.classList.add("notranslate")
     element.style = `
-        z-index: 100001;
+        z-index: 1000000000;
         position: fixed;
         left: 0;
         bottom: 0;
