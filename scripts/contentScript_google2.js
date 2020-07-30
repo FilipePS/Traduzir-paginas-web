@@ -336,8 +336,6 @@ function translateAttributes(targetLanguage) {
     })
 
     valueElements.forEach(e => {
-        if (e.type == "submit" && e.getAttribute("name")) return;
-        
         var txt = e.getAttribute("value")
         if (e.type == "submit" && !txt) {
             translatedAttributes.push([e, "Submit Query", "value"])
@@ -414,6 +412,60 @@ function restoreAttributes() {
     translatedAttributes = []
 }
 
+var originalPageTitle = null
+
+function translatePageTitle(targetLanguage) {
+    if (document.title.trim().length < 1) return;
+    originalPageTitle = document.title
+
+    translateHtml(['<a i="0">' + escapeHtml(originalPageTitle.trim()) + '</a>'], targetLanguage).then(results => {
+        if (status == "prompt" || status == "error") return;
+        var j = 0
+        var resultSentences = []
+        var idx = 0
+        while (true) {
+            var sentenceStartIndex = results[j].indexOf("<b>", idx)
+            if (sentenceStartIndex == -1) break;
+            
+            var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
+            
+            if (sentenceFinalIndex == -1) {
+                resultSentences.push(results[j].slice(sentenceStartIndex + 3))
+                break
+            } else {
+                resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
+            }
+            idx = sentenceFinalIndex
+        }
+
+        var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
+
+        var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
+        var indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=['"]{1}\s*\>)/g))).filter(value => !isNaN(value))
+
+        resultArray = resultArray.map(value => {
+            var resultStartAtIndex = value.indexOf('>')
+            return value.slice(resultStartAtIndex + 1)
+        })
+
+        var text = ""
+        for (let k in resultArray) {
+            text += unescapeHtml(resultArray[k]) + " "
+        }
+
+        document.title = text
+
+        mutationObserver.takeRecords()
+    })
+}
+
+function restorePageTitle() {
+    if (originalPageTitle !== null) {
+        document.title = originalPageTitle
+    }
+    originalPageTitle = null
+}
+
 function translate()
 {
     restore()
@@ -454,6 +506,7 @@ function translate()
         }
 
         translateAttributes(targetLanguage)
+        translatePageTitle(targetLanguage)
     })
 }
 
@@ -468,6 +521,7 @@ function restore()
     nodesTranslated = []
 
     restoreAttributes()
+    restorePageTitle()
 }
 
 function getStatus()

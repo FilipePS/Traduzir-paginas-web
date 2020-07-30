@@ -265,8 +265,6 @@ function translateAttributes(targetLanguage) {
     })
 
     valueElements.forEach(e => {
-        if (e.type == "submit" && e.getAttribute("name")) return;
-  
         var txt = e.getAttribute("value")
         if (e.type == "submit" && !txt) {
             translatedAttributes.push([e, "Submit Query", "value"])
@@ -311,6 +309,28 @@ function restoreAttributes() {
     translatedAttributes = []
 }
 
+var originalPageTitle = null
+
+function translatePageTitle(targetLanguage) {
+    if (document.title.trim().length < 1) return;
+    originalPageTitle = document.title
+
+    translateHtml([escapeHtml(originalPageTitle.trim())], targetLanguage).then(results => {
+        if (status == "prompt" || status == "error") return;
+
+        document.title = unescapeHtml(results[0])
+
+        mutationObserver.takeRecords()
+    })
+}
+
+function restorePageTitle() {
+    if (originalPageTitle !== null) {
+        document.title = originalPageTitle
+    }
+    originalPageTitle = null
+}
+
 function translate()
 {
     restore()
@@ -344,6 +364,7 @@ function translate()
         }
 
         translateAttributes(targetLanguage)
+        translatePageTitle(targetLanguage)
     })
 }
 
@@ -359,6 +380,7 @@ function restore()
     nodesTranslated = []
 
     restoreAttributes()
+    restorePageTitle()
 }
 
 function getStatus()
