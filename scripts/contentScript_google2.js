@@ -21,7 +21,7 @@ var removedNodes = []
 function translateNewNodes() {
     newNodesToTranslate.forEach(ntt => {
         if (removedNodes.indexOf(ntt) != -1) return;
-        var translateNodes = getTranslateNodes(ntt)
+        var translateNodes = getTranslateNodes(ntt).map(tni => tni.nodesInfo)
 
         var indexesToRemove = []
         for (let i in translateNodes) {
@@ -189,7 +189,7 @@ function translateHtml(params, targetLanguage) {
             stringsToTranslateInfo.forEach((value, index) => {
                 stringsToTranslateInfo[index].status = "error"
             })
-            console.log(e)
+            console.error(e)
         })
     }
 
@@ -213,26 +213,42 @@ function translateHtml(params, targetLanguage) {
 }
 
 function getTranslateNodes(element) {
-    var translateNodes = [[]]
+    var translateNodes = [{isTranslated: false, parent: null, nodesInfo: []}]
     var index = 0
-    var getAllNodes = function (element) {
+    var minDeep = null
+    var getAllNodes = function (element, deep) {
         if (element.nodeType == 1) {
-            if (translateNodes[index].length > 0 && htmlTagsInlineText.indexOf(element.nodeName) == -1) {
-                translateNodes.push([])
+            if (translateNodes[index].nodesInfo.length > 0 && htmlTagsInlineText.indexOf(element.nodeName) == -1) {
+                translateNodes.push({isTranslated: false, parent: null, nodesInfo: []})
                 index++
+                minDeep = null
             }
             if (htmlTagsNoTranslate.indexOf(element.nodeName) == -1) {
                 Array.from(element.childNodes).forEach(value => {
-                    getAllNodes(value)
+                    getAllNodes(value, deep + 1)
                 })
             }
         } else if (element.nodeType == 3) {
             if (element.textContent.trim().length > 0) {
-                translateNodes[index].push({node: element, textContent: element.textContent})
+                if (minDeep) {
+                    if (deep < minDeep) {
+                        minDeep = deep
+                        translateNodes[index].parent = element.parentNode
+                    }
+                } else {
+                    minDeep = deep
+                    translateNodes[index].parent = element.parentNode               
+                }
+                translateNodes[index].nodesInfo.push({node: element, textContent: element.textContent})
             }
         }
     }
-    getAllNodes(element)
+    getAllNodes(element, 0)
+
+    if (translateNodes.length > 0 && translateNodes[translateNodes.length-1].nodesInfo.length == 0) {
+        translateNodes.pop()
+    }
+
     return translateNodes
 }
 
@@ -435,16 +451,8 @@ function translate()
         
         translateNodes = getTranslateNodes(document.body)
 
-        translateNodes = translateNodes.filter(tn => tn.length > 0).map(tn => {
-            return {
-                tn: tn,
-                isTranslated: false,
-                parent: tn[0].node.parentNode
-            }
-        })
-
         for (let i in translateNodes) {
-            for (let nodeInfo of translateNodes[i].tn) {
+            for (let nodeInfo of translateNodes[i].nodesInfo) {
                 nodesTranslated.push({node: nodeInfo.node, original: nodeInfo.node.textContent})
             }
         }
@@ -475,99 +483,100 @@ function restore()
 }
 
 function translateDynamically() {
-    if (status == "finish" && translateNodes) {
-        var nodesToTranslates = []
-        translateNodes.forEach(tni => {
-            if (!tni.isTranslated) {
-                var rect = tni.parent.getBoundingClientRect()
-                if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
-                    tni.isTranslated = true
-                    nodesToTranslates.push(tni.tn)
-                }
-            }
-
-        })
-
-        if (nodesToTranslates.length > 0) {
-            var nodesStrings = getNodesStrings(nodesToTranslates)
-            var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
-
-            for (let i in requestsStrings) {
-                translateHtml(requestsStrings[i], prevTargetLanguage).then(results => {
-                    if (status == "finish" && translateNodes) {
-                        translateResults(i, results, nodesToTranslates, requestsSum)
-                    }
-                })
-            } 
-        }
-
-
-        ;(function() {
-            var attributesToTranslate = []
-            var attributesStrings = []
-            
-            translatedAttributes.forEach(taInfo => {
-                if (!taInfo[3]) {
-                    var rect = taInfo[0].getBoundingClientRect()
+    try {
+        if (status == "finish" && translateNodes) {
+            var nodesToTranslates = []
+            translateNodes.forEach(tni => {
+                if (!tni.isTranslated) {
+                    var rect = tni.parent.getBoundingClientRect()
                     if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
-                        attributesToTranslate.push(taInfo)
-                        attributesStrings.push(taInfo[1].trim())
-                        taInfo[3] = true
+                        tni.isTranslated = true
+                        nodesToTranslates.push(tni.nodesInfo)
                     }
                 }
             })
-            if (attributesToTranslate.length > 0) {
-                attributesStrings = attributesStrings.map(str => '<a i="0">' + escapeHtml(str) + '</a>')
-                var [requestsStrings, requestsSum] = getRequestStrings(attributesStrings)
-            
+
+            if (nodesToTranslates.length > 0) {
+                var nodesStrings = getNodesStrings(nodesToTranslates)
+                var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
+
                 for (let i in requestsStrings) {
                     translateHtml(requestsStrings[i], prevTargetLanguage).then(results => {
-                        if (status != "finish") return;
-                        for (let j in results) {
-                            var resultSentences = []
-                            var idx = 0
-                            while (true) {
-                                var sentenceStartIndex = results[j].indexOf("<b>", idx)
-                                if (sentenceStartIndex == -1) break;
-                                
-                                var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
-                                
-                                if (sentenceFinalIndex == -1) {
-                                    resultSentences.push(results[j].slice(sentenceStartIndex + 3))
-                                    break
-                                } else {
-                                    resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
-                                }
-                                idx = sentenceFinalIndex
-                            }
-                    
-                            var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
-                    
-                            var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
-                            var indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=['"]{1}\s*\>)/g))).filter(value => !isNaN(value))
-                    
-                            resultArray = resultArray.map(value => {
-                                var resultStartAtIndex = value.indexOf('>')
-                                return value.slice(resultStartAtIndex + 1)
-                            })
-            
-                            var text = ""
-                            for (let k in resultArray) {
-                                text += unescapeHtml(resultArray[k]) + " "
-                            }
-            
-                            var taInfo = attributesToTranslate[parseInt(requestsSum[i]) + parseInt(j)]
-                            taInfo[0].setAttribute(taInfo[2], text)
-            
-                            mutationObserver.takeRecords()
+                        if (status == "finish" && translateNodes) {
+                            translateResults(i, results, nodesToTranslates, requestsSum)
                         }
                     })
-                }
+                } 
             }
-        })();
-    }
 
-    setTimeout(translateDynamically, 500)
+
+            ;(function() {
+                var attributesToTranslate = []
+                var attributesStrings = []
+                
+                translatedAttributes.forEach(taInfo => {
+                    if (!taInfo[3]) {
+                        var rect = taInfo[0].getBoundingClientRect()
+                        if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
+                            attributesToTranslate.push(taInfo)
+                            attributesStrings.push(taInfo[1].trim())
+                            taInfo[3] = true
+                        }
+                    }
+                })
+                if (attributesToTranslate.length > 0) {
+                    attributesStrings = attributesStrings.map(str => '<a i="0">' + escapeHtml(str) + '</a>')
+                    var [requestsStrings, requestsSum] = getRequestStrings(attributesStrings)
+                
+                    for (let i in requestsStrings) {
+                        translateHtml(requestsStrings[i], prevTargetLanguage).then(results => {
+                            if (status != "finish") return;
+                            for (let j in results) {
+                                var resultSentences = []
+                                var idx = 0
+                                while (true) {
+                                    var sentenceStartIndex = results[j].indexOf("<b>", idx)
+                                    if (sentenceStartIndex == -1) break;
+                                    
+                                    var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
+                                    
+                                    if (sentenceFinalIndex == -1) {
+                                        resultSentences.push(results[j].slice(sentenceStartIndex + 3))
+                                        break
+                                    } else {
+                                        resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
+                                    }
+                                    idx = sentenceFinalIndex
+                                }
+                        
+                                var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
+                        
+                                var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
+                                var indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=['"]{1}\s*\>)/g))).filter(value => !isNaN(value))
+                        
+                                resultArray = resultArray.map(value => {
+                                    var resultStartAtIndex = value.indexOf('>')
+                                    return value.slice(resultStartAtIndex + 1)
+                                })
+                
+                                var text = ""
+                                for (let k in resultArray) {
+                                    text += unescapeHtml(resultArray[k]) + " "
+                                }
+                
+                                var taInfo = attributesToTranslate[parseInt(requestsSum[i]) + parseInt(j)]
+                                taInfo[0].setAttribute(taInfo[2], text)
+                
+                                mutationObserver.takeRecords()
+                            }
+                        })
+                    }
+                }
+            })();
+        }
+    } finally {
+        setTimeout(translateDynamically, 500)
+    }
 }
 translateDynamically()
 
@@ -594,7 +603,7 @@ function getPageLanguage()
 //*
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
-        try {translate()} catch(e) {console.log(e)}
+        translate()
     } else if (request.action == "Restore") {
         restore()
     } else if (request.action == "getStatus") {
@@ -656,3 +665,195 @@ setTimeout(() => {
         }
     })
 }, 500)
+
+
+
+var gTargetLanguage = null
+chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+    if (targetLanguage == "zh") {
+        targetLanguage = "zh-CN"
+    }
+    gTargetLanguage = targetLanguage
+})
+
+;(function() {
+    var othersInlineElements = ['BR', 'CODE', 'IMG', 'OUTPUT', 'TIME', 'VAR']
+
+    var div = document.createElement('div')
+    div.setAttribute('style', `background-color: rgba(50, 50, 50, 0.8); border-radius: 12px; border-color: black; position: fixed; top: 10px; left: 10px; padding: 12px; min-width: 50px; max-width: 500px; text-align: center; color: white; pointer-events: none; user-select: none; display: none; z-index: 1000000000`)
+
+    document.body.appendChild(div)
+
+    var oldTarget = null
+    window.addEventListener('mousemove', e => {
+        if (e.target == div) {
+            oldTarget = e.target
+            div.style.display = "none"
+            return
+        }
+
+        var target = e.target
+
+        if (target.nodeName == "INPUT") {
+
+        } else {
+            do {
+                if (htmlTagsNoTranslate.indexOf(target.nodeName) != -1) {
+                    oldTarget = target
+                    div.style.display = "none"
+                    return
+                }
+                if (htmlTagsInlineText.indexOf(target.nodeName) == -1 && othersInlineElements.indexOf(target.nodeName) == -1) {
+                    break
+                }
+                target = target.parentNode
+            } while (target && target != document.body)
+
+            if (!target || !target.innerText) {
+                oldTarget = target
+                div.style.display = "none"
+                return
+            }
+
+            var childNodes = Array.from(target.childNodes)
+        
+            for (let node of childNodes) {
+                if (htmlTagsInlineText.indexOf(node.nodeName) == -1 && othersInlineElements.indexOf(node.nodeName) == -1) {
+                    oldTarget = target
+                    div.style.display = "none"
+                    return     
+                }
+            }
+        }
+
+        if (oldTarget != target) {
+            oldTarget = target
+
+            function trim (s, c) {
+                if (c === "]") c = "\\]";
+                if (c === "\\") c = "\\\\";
+                return s.replace(new RegExp(
+                "^[" + c + "]+|[" + c + "]+$", "g"
+                ), "");
+            }
+
+            var text = ""
+            if (target.nodeName == "INPUT") {
+                var inputType = target.type
+                if (inputType == "submit" && !target.getAttribute("value")) {
+                    text = "Submit Query"
+                } else if (inputType == "button" || inputType == "submit") {
+                    text = target.value
+                } else if (target.getAttribute("placeholder")) {
+                    text = target.getAttribute("placeholder")
+                }
+            } else {
+                text = trim(target.innerText.trim(), "\n")
+            }
+
+            if (text.length > 1) {
+                var requests = []
+                var idx = 0
+                do {
+                    var index = text.indexOf("\n", idx)
+                    if (index != -1) {
+                        if (index - idx <= 800) {
+                            var subtext = text.substring(idx, index).trim()
+                            if (subtext) {
+                                requests.push(subtext)
+                            }
+                            idx = index + 1
+                            continue
+                        }
+                    }
+                    var subtext = text.substring(idx).trim()
+                    if (text.length <= 800) {
+                        requests.push(subtext)
+                        break
+                    }
+                    var subtext = text.substring(idx, idx + 800).trim()
+                    index = subtext.lastIndexOf(" ")
+                    if (index != -1) {
+                        var subtext = subtext.substring(0, index).trim()
+                        if (subtext) {
+                            requests.push(subtext)
+                        }
+                        idx = idx + index + 1
+                        continue
+                    } else {
+                        if (subtext) {
+                            requests.push(subtext)
+                        }
+                        idx = idx + 800 + 1
+                    }
+                } while (idx < text.length)
+
+                translateHtml(requests.map(str => '<a i="0">' + escapeHtml(str) + '</a>'), gTargetLanguage).then(results => {
+                    if (target != oldTarget) return;
+                    text = ""
+                    for (let j in results) {
+                        var resultSentences = []
+                        var idx = 0
+                        
+                        while (true) {
+                            var sentenceStartIndex = results[j].indexOf("<b>", idx)
+                            if (sentenceStartIndex == -1) break;
+                            
+                            var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
+                            
+                            if (sentenceFinalIndex == -1) {
+                                resultSentences.push(results[j].slice(sentenceStartIndex + 3))
+                                break
+                            } else {
+                                resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
+                            }
+                            idx = sentenceFinalIndex
+                        }
+                
+                        var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
+                
+                        var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
+
+                        resultArray = resultArray.map(value => {
+                            var resultStartAtIndex = value.indexOf('>')
+                            return value.slice(resultStartAtIndex + 1)
+                        })
+                
+                        for (let k in resultArray) {
+                            text += unescapeHtml(resultArray[k]) + " "
+                        }
+                    }
+
+                    div.style.display = "block"
+
+                    div.style.maxWidth = window.innerWidth
+                    div.textContent = text
+                    
+                    var divStyle = getComputedStyle(div)
+                    if (!divStyle) {return}
+                    
+                    var top = (e.clientY + 25)
+                    top = Math.min(top, window.innerHeight - parseInt(divStyle.height) - 12)
+                    top = Math.max(top, 0)
+                    div.style.top  = Math.floor(top) + "px"
+                    
+                    var left = (e.clientX - (parseInt(divStyle.width) / 2))
+                    left = Math.min(left, window.innerWidth - parseInt(divStyle.width) - 12)
+                    left = Math.max(left, 0)
+                    div.style.left =  Math.floor(left) + "px"
+                })
+            } else {
+                div.style.display = "none"
+            }
+        }
+    })
+
+
+    document.addEventListener('blur', () => {
+        div.style.display = "none"
+    })
+
+    document.addEventListener('focus', () => {
+        div.style.display = "block"
+    })
+})();

@@ -21,7 +21,7 @@ var removedNodes = []
 function translateNewNodes() {
     newNodesToTranslate.forEach(ntt => {
         if (removedNodes.indexOf(ntt) != -1) return;
-        var translateNodes = getTranslateNodes(ntt)
+        var translateNodes = getTranslateNodes(ntt).map(tni => tni.nodesInfo)
 
         var indexesToRemove = []
         for (let i in translateNodes) {
@@ -152,7 +152,7 @@ function translateHtml(params, targetLanguage) {
                 stringsToTranslateInfo[index].status = "error"
                 stringsToTranslateInfo[index].translated = value
             })
-            console.log(e)
+            console.error(e)
         }) 
     }
 
@@ -176,26 +176,42 @@ function translateHtml(params, targetLanguage) {
 }
 
 function getTranslateNodes(element) {
-    var translateNodes = [[]]
+    var translateNodes = [{isTranslated: false, parent: null, nodesInfo: []}]
     var index = 0
-    var getAllNodes = function (element) {
+    var minDeep = null
+    var getAllNodes = function (element, deep) {
         if (element.nodeType == 1) {
-            if (translateNodes[index].length > 0 && htmlTagsInlineText.indexOf(element.nodeName) == -1) {
-                translateNodes.push([])
+            if (translateNodes[index].nodesInfo.length > 0 && htmlTagsInlineText.indexOf(element.nodeName) == -1) {
+                translateNodes.push({isTranslated: false, parent: null, nodesInfo: []})
                 index++
+                minDeep = null
             }
             if (htmlTagsNoTranslate.indexOf(element.nodeName) == -1) {
                 Array.from(element.childNodes).forEach(value => {
-                    getAllNodes(value)
+                    getAllNodes(value, deep + 1)
                 })
             }
         } else if (element.nodeType == 3) {
             if (element.textContent.trim().length > 0) {
-                translateNodes[index].push({node: element, textContent: element.textContent})
+                if (minDeep) {
+                    if (deep < minDeep) {
+                        minDeep = deep
+                        translateNodes[index].parent = element.parentNode
+                    }
+                } else {
+                    minDeep = deep
+                    translateNodes[index].parent = element.parentNode               
+                }
+                translateNodes[index].nodesInfo.push({node: element, textContent: element.textContent})
             }
         }
     }
-    getAllNodes(element)
+    getAllNodes(element, 0)
+
+    if (translateNodes.length > 0 && translateNodes[translateNodes.length-1].nodesInfo.length == 0) {
+        translateNodes.pop()
+    }
+
     return translateNodes
 }
 
@@ -331,16 +347,8 @@ function translate()
         
         translateNodes = getTranslateNodes(document.body)
 
-        translateNodes = translateNodes.filter(tn => tn.length > 0).map(tn => {
-            return {
-                tn: tn,
-                isTranslated: false,
-                parent: tn[0].node.parentNode
-            }
-        })
-
         for (let i in translateNodes) {
-            for (let nodeInfo of translateNodes[i].tn) {
+            for (let nodeInfo of translateNodes[i].nodesInfo) {
                 nodesTranslated.push({node: nodeInfo.node, original: nodeInfo.node.textContent})
             }
         }
@@ -372,67 +380,69 @@ function restore()
 }
 
 function translateDynamically() {
-    if (status == "finish" && translateNodes) {
-        var nodesToTranslates = []
-        translateNodes.forEach(tni => {
-            if (!tni.isTranslated) {
-                var rect = tni.parent.getBoundingClientRect()
-                if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
-                    tni.isTranslated = true
-                    nodesToTranslates.push(tni.tn)
-                }
-            }
-
-        })
-
-        if (nodesToTranslates.length > 0) {
-            var nodesStrings = getNodesStrings(nodesToTranslates)
-            var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
-
-            for (let i in requestsStrings) {
-                translateHtml(requestsStrings[i], prevTargetLanguage).then(results => {
-                    if (status == "finish" && translateNodes) {
-                        translateResults(i, results, nodesToTranslates, requestsSum)
-                    }
-                })
-            } 
-        }
-
-
-        ;(function() {
-            var attributesToTranslate = []
-            var attributesStrings = []
-            
-            translatedAttributes.forEach(taInfo => {
-                if (!taInfo[3]) {
-                    var rect = taInfo[0].getBoundingClientRect()
+    try {
+        if (status == "finish" && translateNodes) {
+            var nodesToTranslates = []
+            translateNodes.forEach(tni => {
+                if (!tni.isTranslated) {
+                    var rect = tni.parent.getBoundingClientRect()
                     if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
-                        attributesToTranslate.push(taInfo)
-                        attributesStrings.push(taInfo[1].trim())
-                        taInfo[3] = true
+                        tni.isTranslated = true
+                        nodesToTranslates.push(tni.nodesInfo)
                     }
                 }
             })
-            if (attributesToTranslate.length > 0) {
-                attributesStrings = attributesStrings.map(str => escapeHtml(str))
-                var [requestsStrings, requestsSum] = getRequestStrings(attributesStrings)
-            
+
+            if (nodesToTranslates.length > 0) {
+                var nodesStrings = getNodesStrings(nodesToTranslates)
+                var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
+
                 for (let i in requestsStrings) {
                     translateHtml(requestsStrings[i], prevTargetLanguage).then(results => {
-                        if (status != "finish") return;
-                        for (let j in results) {
-                            var text = unescapeHtml(results[j])
-                            var taInfo = attributesToTranslate[parseInt(requestsSum[i]) + parseInt(j)]
-                            taInfo[0].setAttribute(taInfo[2], text)
+                        if (status == "finish" && translateNodes) {
+                            translateResults(i, results, nodesToTranslates, requestsSum)
                         }
-                        mutationObserver.takeRecords()
                     })
-                }
+                } 
             }
-        })();
+
+
+            ;(function() {
+                var attributesToTranslate = []
+                var attributesStrings = []
+                
+                translatedAttributes.forEach(taInfo => {
+                    if (!taInfo[3]) {
+                        var rect = taInfo[0].getBoundingClientRect()
+                        if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
+                            attributesToTranslate.push(taInfo)
+                            attributesStrings.push(taInfo[1].trim())
+                            taInfo[3] = true
+                        }
+                    }
+                })
+                if (attributesToTranslate.length > 0) {
+                    attributesStrings = attributesStrings.map(str => escapeHtml(str))
+                    var [requestsStrings, requestsSum] = getRequestStrings(attributesStrings)
+                
+                    for (let i in requestsStrings) {
+                        translateHtml(requestsStrings[i], prevTargetLanguage).then(results => {
+                            if (status != "finish") return;
+                            for (let j in results) {
+                                var text = unescapeHtml(results[j])
+                                var taInfo = attributesToTranslate[parseInt(requestsSum[i]) + parseInt(j)]
+                                taInfo[0].setAttribute(taInfo[2], text)
+                            }
+                            mutationObserver.takeRecords()
+                        })
+                    }
+                }
+            })();
+        }
+    } finally {
+        setTimeout(translateDynamically, 500)
     }
 
-    setTimeout(translateDynamically, 500)
 }
 translateDynamically()
 
@@ -459,7 +469,7 @@ function getPageLanguage()
 //*
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.action == "Translate") {    
-        try {translate()}catch(e){console.log(e)}
+        translate()
     } else if (request.action == "Restore") {
         restore()
     } else if (request.action == "getStatus") {
