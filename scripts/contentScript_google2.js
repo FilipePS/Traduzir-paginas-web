@@ -2,12 +2,17 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+var translateNodes = null
+
 var prevTargetLanguage = null
 var translatedStrings = []
 var nodesTranslated = []
 var status = "prompt"
 var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'B', 'BIG', 'BDO', 'B', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
 var htmlTagsNoTranslate = ['CODE', 'TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
+
+var originalPageTitle = null
+var translatedAttributes = []
 
 var translateNewNodesTimer = null
 var newNodesToTranslate = []
@@ -311,8 +316,6 @@ function translateResults(i, results, translateNodes, requestsSum) {
     mutationObserver.takeRecords()
 }
 
-var translatedAttributes = []
-
 function translateAttributes(targetLanguage) {
     restoreAttributes()
 
@@ -351,58 +354,9 @@ function translateAttributes(targetLanguage) {
         }
     })
 
-    var attributesStrings = []
-
     translatedAttributes.forEach(taInfo => {
-        attributesStrings.push(taInfo[1].trim())
+        taInfo.push(false)
     })
-
-    attributesStrings = attributesStrings.map(str => '<a i="0">' + escapeHtml(str) + '</a>')
-    var [requestsStrings, requestsSum] = getRequestStrings(attributesStrings)
-
-    for (let i in requestsStrings) {
-        translateHtml(requestsStrings[i], targetLanguage).then(results => {
-            if (status == "prompt" || status == "error") return;
-            for (let j in results) {
-                var resultSentences = []
-                var idx = 0
-                while (true) {
-                    var sentenceStartIndex = results[j].indexOf("<b>", idx)
-                    if (sentenceStartIndex == -1) break;
-                    
-                    var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
-                    
-                    if (sentenceFinalIndex == -1) {
-                        resultSentences.push(results[j].slice(sentenceStartIndex + 3))
-                        break
-                    } else {
-                        resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
-                    }
-                    idx = sentenceFinalIndex
-                }
-        
-                var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
-        
-                var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
-                var indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=['"]{1}\s*\>)/g))).filter(value => !isNaN(value))
-        
-                resultArray = resultArray.map(value => {
-                    var resultStartAtIndex = value.indexOf('>')
-                    return value.slice(resultStartAtIndex + 1)
-                })
-
-                var text = ""
-                for (let k in resultArray) {
-                    text += unescapeHtml(resultArray[k]) + " "
-                }
-
-                var taInfo = translatedAttributes[parseInt(requestsSum[i]) + parseInt(j)]
-                taInfo[0].setAttribute(taInfo[2], text)
-
-                mutationObserver.takeRecords()
-            }
-        })
-    }
 }
 
 function restoreAttributes() {
@@ -411,8 +365,6 @@ function restoreAttributes() {
     })
     translatedAttributes = []
 }
-
-var originalPageTitle = null
 
 function translatePageTitle(targetLanguage) {
     if (document.title.trim().length < 1) return;
@@ -479,34 +431,30 @@ function translate()
         }
         prevTargetLanguage = targetLanguage
 
-        countRequestsTranslated = 0
         status = "progress"
         
-        var translateNodes = getTranslateNodes(document.body)
-        var nodesStrings = getNodesStrings(translateNodes)
-        var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
+        translateNodes = getTranslateNodes(document.body)
+
+        translateNodes = translateNodes.filter(tn => tn.length > 0).map(tn => {
+            return {
+                tn: tn,
+                isTranslated: false,
+                parent: tn[0].node.parentNode
+            }
+        })
 
         for (let i in translateNodes) {
-            for (let nodeInfo of translateNodes[i]) {
+            for (let nodeInfo of translateNodes[i].tn) {
                 nodesTranslated.push({node: nodeInfo.node, original: nodeInfo.node.textContent})
             }
         }
 
-        for (let i in requestsStrings) {
-            translateHtml(requestsStrings[i], targetLanguage).then(results => {
-                if (status == "progress") {
-                    countRequestsTranslated++
-                    if (countRequestsTranslated == requestsStrings.length) {
-                        status = "finish"
-                        enableMutatinObserver()
-                    }
-                    translateResults(i, results, translateNodes, requestsSum)
-                }
-            })
-        }
+        status = "finish"
 
         translateAttributes(targetLanguage)
         translatePageTitle(targetLanguage)
+        
+        enableMutatinObserver()
     })
 }
 
@@ -522,7 +470,106 @@ function restore()
 
     restoreAttributes()
     restorePageTitle()
+
+    translateNodes = null
 }
+
+function translateDynamically() {
+    if (status == "finish" && translateNodes) {
+        var nodesToTranslates = []
+        translateNodes.forEach(tni => {
+            if (!tni.isTranslated) {
+                var rect = tni.parent.getBoundingClientRect()
+                if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
+                    tni.isTranslated = true
+                    nodesToTranslates.push(tni.tn)
+                }
+            }
+
+        })
+
+        if (nodesToTranslates.length > 0) {
+            var nodesStrings = getNodesStrings(nodesToTranslates)
+            var [requestsStrings, requestsSum] = getRequestStrings(nodesStrings)
+
+            for (let i in requestsStrings) {
+                translateHtml(requestsStrings[i], prevTargetLanguage).then(results => {
+                    if (status == "finish" && translateNodes) {
+                        translateResults(i, results, nodesToTranslates, requestsSum)
+                    }
+                })
+            } 
+        }
+
+
+        ;(function() {
+            var attributesToTranslate = []
+            var attributesStrings = []
+            
+            translatedAttributes.forEach(taInfo => {
+                if (!taInfo[3]) {
+                    var rect = taInfo[0].getBoundingClientRect()
+                    if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
+                        attributesToTranslate.push(taInfo)
+                        attributesStrings.push(taInfo[1].trim())
+                        taInfo[3] = true
+                    }
+                }
+            })
+            if (attributesToTranslate.length > 0) {
+                attributesStrings = attributesStrings.map(str => '<a i="0">' + escapeHtml(str) + '</a>')
+                var [requestsStrings, requestsSum] = getRequestStrings(attributesStrings)
+            
+                for (let i in requestsStrings) {
+                    translateHtml(requestsStrings[i], prevTargetLanguage).then(results => {
+                        if (status != "finish") return;
+                        for (let j in results) {
+                            var resultSentences = []
+                            var idx = 0
+                            while (true) {
+                                var sentenceStartIndex = results[j].indexOf("<b>", idx)
+                                if (sentenceStartIndex == -1) break;
+                                
+                                var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
+                                
+                                if (sentenceFinalIndex == -1) {
+                                    resultSentences.push(results[j].slice(sentenceStartIndex + 3))
+                                    break
+                                } else {
+                                    resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
+                                }
+                                idx = sentenceFinalIndex
+                            }
+                    
+                            var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
+                    
+                            var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
+                            var indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=['"]{1}\s*\>)/g))).filter(value => !isNaN(value))
+                    
+                            resultArray = resultArray.map(value => {
+                                var resultStartAtIndex = value.indexOf('>')
+                                return value.slice(resultStartAtIndex + 1)
+                            })
+            
+                            var text = ""
+                            for (let k in resultArray) {
+                                text += unescapeHtml(resultArray[k]) + " "
+                            }
+            
+                            var taInfo = attributesToTranslate[parseInt(requestsSum[i]) + parseInt(j)]
+                            taInfo[0].setAttribute(taInfo[2], text)
+            
+                            mutationObserver.takeRecords()
+                        }
+                    })
+                }
+            }
+        })();
+    }
+
+    setTimeout(translateDynamically, 500)
+}
+translateDynamically()
 
 function getStatus()
 {
