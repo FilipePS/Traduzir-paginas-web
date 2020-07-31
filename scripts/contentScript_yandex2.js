@@ -8,7 +8,7 @@ var prevTargetLanguage = null
 var translatedStrings = []
 var nodesTranslated = []
 var status = "prompt"
-var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'B', 'BIG', 'BDO', 'B', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
+var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BIG', 'BDO', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
 var htmlTagsNoTranslate = ['CODE', 'TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
 
 var originalPageTitle = null

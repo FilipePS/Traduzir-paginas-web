@@ -8,7 +8,7 @@ var prevTargetLanguage = null
 var translatedStrings = []
 var nodesTranslated = []
 var status = "prompt"
-var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'B', 'BIG', 'BDO', 'B', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
+var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BIG', 'BDO', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
 var htmlTagsNoTranslate = ['CODE', 'TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
 
 var originalPageTitle = null
@@ -667,193 +667,383 @@ setTimeout(() => {
 }, 500)
 
 
+/*
+var gTargetLanguage = null
+chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+    if (targetLanguage == "zh") {
+        targetLanguage = "zh-CN"
+    }
+    gTargetLanguage = targetLanguage
+})
 
-// var gTargetLanguage = null
-// chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
-//     if (targetLanguage == "zh") {
-//         targetLanguage = "zh-CN"
-//     }
-//     gTargetLanguage = targetLanguage
-// })
+;(function() {
+    var othersInlineElements = ['BR', 'IMG', 'OUTPUT', 'TIME', 'VAR']
 
-// ;(function() {
-//     var othersInlineElements = ['BR', 'CODE', 'IMG', 'OUTPUT', 'TIME', 'VAR']
+    var element = document.createElement('div')
+    element.setAttribute('style', `pointer-events: none; user-select: none; display: none;`)
 
-//     var div = document.createElement('div')
-//     div.setAttribute('style', `background-color: rgba(50, 50, 50, 0.8); border-radius: 12px; border-color: black; position: fixed; top: 10px; left: 10px; padding: 12px; min-width: 50px; max-width: 500px; text-align: center; color: white; pointer-events: none; user-select: none; display: none; z-index: 1000000000`)
+    var shadowRoot = element.attachShadow({mode: "closed"})
 
-//     document.body.appendChild(div)
+    shadowRoot.innerHTML = `
+        <style>
+        div {
+            animation : none;
+            animation-delay : 0;
+            animation-direction : normal;
+            animation-duration : 0;
+            animation-fill-mode : none;
+            animation-iteration-count : 1;
+            animation-name : none;
+            animation-play-state : running;
+            animation-timing-function : ease;
+            backface-visibility : visible;
+            background : 0;
+            background-attachment : scroll;
+            background-clip : border-box;
+            background-color : transparent;
+            background-image : none;
+            background-origin : padding-box;
+            background-position : 0 0;
+            background-position-x : 0;
+            background-position-y : 0;
+            background-repeat : repeat;
+            background-size : auto auto;
+            border : 0;
+            border-style : none;
+            border-width : medium;
+            border-color : inherit;
+            border-bottom : 0;
+            border-bottom-color : inherit;
+            border-bottom-left-radius : 0;
+            border-bottom-right-radius : 0;
+            border-bottom-style : none;
+            border-bottom-width : medium;
+            border-collapse : separate;
+            border-image : none;
+            border-left : 0;
+            border-left-color : inherit;
+            border-left-style : none;
+            border-left-width : medium;
+            border-radius : 0;
+            border-right : 0;
+            border-right-color : inherit;
+            border-right-style : none;
+            border-right-width : medium;
+            border-spacing : 0;
+            border-top : 0;
+            border-top-color : inherit;
+            border-top-left-radius : 0;
+            border-top-right-radius : 0;
+            border-top-style : none;
+            border-top-width : medium;
+            bottom : auto;
+            box-shadow : none;
+            box-sizing : content-box;
+            caption-side : top;
+            clear : none;
+            clip : auto;
+            color : inherit;
+            columns : auto;
+            column-count : auto;
+            column-fill : balance;
+            column-gap : normal;
+            column-rule : medium none currentColor;
+            column-rule-color : currentColor;
+            column-rule-style : none;
+            column-rule-width : none;
+            column-span : 1;
+            column-width : auto;
+            content : normal;
+            counter-increment : none;
+            counter-reset : none;
+            cursor : auto;
+            direction : ltr;
+            display : inline;
+            empty-cells : show;
+            float : none;
+            font : normal;
+            font-family : inherit;
+            font-size : medium;
+            font-style : normal;
+            font-variant : normal;
+            font-weight : normal;
+            height : auto;
+            hyphens : none;
+            left : auto;
+            letter-spacing : normal;
+            line-height : normal;
+            list-style : none;
+            list-style-image : none;
+            list-style-position : outside;
+            list-style-type : disc;
+            margin : 0;
+            margin-bottom : 0;
+            margin-left : 0;
+            margin-right : 0;
+            margin-top : 0;
+            max-height : none;
+            max-width : none;
+            min-height : 0;
+            min-width : 0;
+            opacity : 1;
+            orphans : 0;
+            outline : 0;
+            outline-color : invert;
+            outline-style : none;
+            outline-width : medium;
+            overflow : visible;
+            overflow-x : visible;
+            overflow-y : visible;
+            padding : 0;
+            padding-bottom : 0;
+            padding-left : 0;
+            padding-right : 0;
+            padding-top : 0;
+            page-break-after : auto;
+            page-break-before : auto;
+            page-break-inside : auto;
+            perspective : none;
+            perspective-origin : 50% 50%;
+            position : static;
+            right : auto;
+            tab-size : 8;
+            table-layout : auto;
+            text-align : inherit;
+            text-align-last : auto;
+            text-decoration : none;
+            text-decoration-color : inherit;
+            text-decoration-line : none;
+            text-decoration-style : solid;
+            text-indent : 0;
+            text-shadow : none;
+            text-transform : none;
+            top : auto;
+            transform : none;
+            transform-style : flat;
+            transition : none;
+            transition-delay : 0s;
+            transition-duration : 0s;
+            transition-property : none;
+            transition-timing-function : ease;
+            unicode-bidi : normal;
+            vertical-align : baseline;
+            visibility : visible;
+            white-space : normal;
+            widows : 0;
+            width : auto;
+            word-spacing : normal;
+            z-index : auto;
+        }
 
-//     var oldTarget = null
-//     window.addEventListener('mousemove', e => {
-//         if (e.target == div) {
-//             oldTarget = e.target
-//             div.style.display = "none"
-//             return
-//         }
+        div {
+            background-color: rgba(50, 50, 50, 0.8);
+            border-radius: 12px;
+            border-color: black;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 12px;
+            min-width: 50px;
+            max-width: 500px;
+            text-align: center;
+            color: white;
+            pointer-events: none;
+            user-select: none;
+            z-index: 1000000000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            line-height: normal;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        </style>
 
-//         var target = e.target
+        <div id="output"></div>
+    `
 
-//         if (target.nodeName == "INPUT") {
+    document.body.appendChild(element)
 
-//         } else {
-//             do {
-//                 if (htmlTagsNoTranslate.indexOf(target.nodeName) != -1) {
-//                     oldTarget = target
-//                     div.style.display = "none"
-//                     return
-//                 }
-//                 if (htmlTagsInlineText.indexOf(target.nodeName) == -1 && othersInlineElements.indexOf(target.nodeName) == -1) {
-//                     break
-//                 }
-//                 target = target.parentNode
-//             } while (target && target != document.body)
+    const eOutput = shadowRoot.getElementById("output")
 
-//             if (!target || !target.innerText) {
-//                 oldTarget = target
-//                 div.style.display = "none"
-//                 return
-//             }
+    var oldTarget = null
+    window.addEventListener('mousemove', e => {
+        if (e.target == element) {
+            oldTarget = e.target
+            element.style.display = "none"
+            return
+        }
 
-//             var childNodes = Array.from(target.childNodes)
+        var target = e.target
+
+        if (target.nodeName == "INPUT") {
+
+        } else {
+            do {
+                if (htmlTagsNoTranslate.indexOf(target.nodeName) != -1) {
+                    oldTarget = target
+                    element.style.display = "none"
+                    return
+                }
+                if (htmlTagsInlineText.indexOf(target.nodeName) == -1 && othersInlineElements.indexOf(target.nodeName) == -1) {
+                    break
+                }
+                target = target.parentNode
+            } while (target && target != document.body)
+
+            if (!target || !target.innerText) {
+                oldTarget = target
+                element.style.display = "none"
+                return
+            }
+
+            var childNodes = Array.from(target.childNodes)
         
-//             for (let node of childNodes) {
-//                 if (htmlTagsInlineText.indexOf(node.nodeName) == -1 && othersInlineElements.indexOf(node.nodeName) == -1) {
-//                     oldTarget = target
-//                     div.style.display = "none"
-//                     return     
-//                 }
-//             }
-//         }
+            for (let node of childNodes) {
+                if (htmlTagsInlineText.indexOf(node.nodeName) == -1 && othersInlineElements.indexOf(node.nodeName) == -1) {
+                    oldTarget = target
+                    element.style.display = "none"
+                    return     
+                }
+            }
+        }
 
-//         if (oldTarget != target) {
-//             oldTarget = target
+        if (oldTarget != target) {
+            oldTarget = target
 
-//             function trim (s, c) {
-//                 if (c === "]") c = "\\]";
-//                 if (c === "\\") c = "\\\\";
-//                 return s.replace(new RegExp(
-//                 "^[" + c + "]+|[" + c + "]+$", "g"
-//                 ), "");
-//             }
+            function trim (s, c) {
+                if (c === "]") c = "\\]";
+                if (c === "\\") c = "\\\\";
+                return s.replace(new RegExp(
+                "^[" + c + "]+|[" + c + "]+$", "g"
+                ), "");
+            }
 
-//             var text = ""
-//             if (target.nodeName == "INPUT") {
-//                 var inputType = target.type
-//                 if (inputType == "submit" && !target.getAttribute("value")) {
-//                     text = "Submit Query"
-//                 } else if (inputType == "button" || inputType == "submit") {
-//                     text = target.value
-//                 } else if (target.getAttribute("placeholder")) {
-//                     text = target.getAttribute("placeholder")
-//                 }
-//             } else {
-//                 text = trim(target.innerText.trim(), "\n")
-//             }
+            var text = ""
+            if (target.nodeName == "INPUT") {
+                var inputType = target.type
+                if (inputType == "submit" && !target.getAttribute("value")) {
+                    text = "Submit Query"
+                } else if (inputType == "button" || inputType == "submit") {
+                    text = target.value
+                } else if (target.getAttribute("placeholder")) {
+                    text = target.getAttribute("placeholder")
+                }
+            } else {
+                text = trim(target.innerText.trim(), "\n")
+            }
 
-//             if (text.length > 1) {
-//                 var requests = []
-//                 var idx = 0
-//                 do {
-//                     var index = text.indexOf("\n", idx)
-//                     if (index != -1) {
-//                         if (index - idx <= 800) {
-//                             var subtext = text.substring(idx, index).trim()
-//                             if (subtext) {
-//                                 requests.push(subtext)
-//                             }
-//                             idx = index + 1
-//                             continue
-//                         }
-//                     }
-//                     var subtext = text.substring(idx).trim()
-//                     if (text.length <= 800) {
-//                         requests.push(subtext)
-//                         break
-//                     }
-//                     var subtext = text.substring(idx, idx + 800).trim()
-//                     index = subtext.lastIndexOf(" ")
-//                     if (index != -1) {
-//                         var subtext = subtext.substring(0, index).trim()
-//                         if (subtext) {
-//                             requests.push(subtext)
-//                         }
-//                         idx = idx + index + 1
-//                         continue
-//                     } else {
-//                         if (subtext) {
-//                             requests.push(subtext)
-//                         }
-//                         idx = idx + 800 + 1
-//                     }
-//                 } while (idx < text.length)
+            if (text.length > 1) {
+                var requests = []
+                var idx = 0
+                do {
+                    var index = text.indexOf("\n", idx)
+                    if (index != -1) {
+                        if (index - idx <= 800) {
+                            var subtext = text.substring(idx, index).trim()
+                            if (subtext) {
+                                requests.push(subtext)
+                            }
+                            idx = index + 1
+                            continue
+                        }
+                    }
+                    var subtext = text.substring(idx).trim()
+                    if (text.length <= 800) {
+                        requests.push(subtext)
+                        break
+                    }
+                    var subtext = text.substring(idx, idx + 800).trim()
+                    index = subtext.lastIndexOf(" ")
+                    if (index != -1) {
+                        var subtext = subtext.substring(0, index).trim()
+                        if (subtext) {
+                            requests.push(subtext)
+                        }
+                        idx = idx + index + 1
+                        continue
+                    } else {
+                        if (subtext) {
+                            requests.push(subtext)
+                        }
+                        idx = idx + 800 + 1
+                    }
+                } while (idx < text.length)
 
-//                 translateHtml(requests.map(str => '<a i="0">' + escapeHtml(str) + '</a>'), gTargetLanguage).then(results => {
-//                     if (target != oldTarget) return;
-//                     text = ""
-//                     for (let j in results) {
-//                         var resultSentences = []
-//                         var idx = 0
+                translateHtml(requests.map(str => '<a i="0">' + escapeHtml(str) + '</a>'), gTargetLanguage).then(results => {
+                    if (target != oldTarget) return;
+                    text = ""
+                    for (let j in results) {
+                        var resultSentences = []
+                        var idx = 0
                         
-//                         while (true) {
-//                             var sentenceStartIndex = results[j].indexOf("<b>", idx)
-//                             if (sentenceStartIndex == -1) break;
+                        while (true) {
+                            var sentenceStartIndex = results[j].indexOf("<b>", idx)
+                            if (sentenceStartIndex == -1) break;
                             
-//                             var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
+                            var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
                             
-//                             if (sentenceFinalIndex == -1) {
-//                                 resultSentences.push(results[j].slice(sentenceStartIndex + 3))
-//                                 break
-//                             } else {
-//                                 resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
-//                             }
-//                             idx = sentenceFinalIndex
-//                         }
+                            if (sentenceFinalIndex == -1) {
+                                resultSentences.push(results[j].slice(sentenceStartIndex + 3))
+                                break
+                            } else {
+                                resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
+                            }
+                            idx = sentenceFinalIndex
+                        }
                 
-//                         var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
+                        var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
                 
-//                         var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
+                        var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
 
-//                         resultArray = resultArray.map(value => {
-//                             var resultStartAtIndex = value.indexOf('>')
-//                             return value.slice(resultStartAtIndex + 1)
-//                         })
+                        resultArray = resultArray.map(value => {
+                            var resultStartAtIndex = value.indexOf('>')
+                            return value.slice(resultStartAtIndex + 1)
+                        })
                 
-//                         for (let k in resultArray) {
-//                             text += unescapeHtml(resultArray[k]) + " "
-//                         }
-//                     }
+                        for (let k in resultArray) {
+                            text += unescapeHtml(resultArray[k]) + " "
+                        }
+                    }
 
-//                     div.style.display = "block"
+                    element.style.display = "block"
 
-//                     div.style.maxWidth = window.innerWidth
-//                     div.textContent = text
+                    eOutput.style.maxWidth = Math.min(parseInt(window.innerWidth), 500) + "px"
+                    eOutput.textContent = text
                     
-//                     var divStyle = getComputedStyle(div)
-//                     if (!divStyle) {return}
+                    var eOutputStyle = getComputedStyle(eOutput)
+                    if (!eOutputStyle) {
+                        element.style.display = "none"
+                        return;
+                    }
                     
-//                     var top = (e.clientY + 25)
-//                     top = Math.min(top, window.innerHeight - parseInt(divStyle.height) - 12)
-//                     top = Math.max(top, 0)
-//                     div.style.top  = Math.floor(top) + "px"
+                    var top = (e.clientY + 25)
+                    top = Math.min(top, window.innerHeight - parseInt(eOutputStyle.height) - 12)
+                    top = Math.max(top, 0)
+                    eOutput.style.top  = Math.floor(top) + "px"
                     
-//                     var left = (e.clientX - (parseInt(divStyle.width) / 2))
-//                     left = Math.min(left, window.innerWidth - parseInt(divStyle.width) - 12)
-//                     left = Math.max(left, 0)
-//                     div.style.left =  Math.floor(left) + "px"
-//                 })
-//             } else {
-//                 div.style.display = "none"
-//             }
-//         }
-//     })
+                    var left = (e.clientX - (parseInt(eOutputStyle.width) / 2))
+                    left = Math.min(left, window.innerWidth - parseInt(eOutputStyle.width) - 12)
+                    left = Math.max(left, 0)
+                    eOutput.style.left =  Math.floor(left) + "px"
+                })
+            } else {
+                element.style.display = "none"
+            }
+        }
+    })
+
+    document.addEventListener('visibilitychange', () => {
+        element.style.display = "none"
+    })
 
 
-//     document.addEventListener('blur', () => {
-//         div.style.display = "none"
-//     })
+    document.addEventListener('blur', () => {
+        element.style.display = "none"
+    })
 
-//     document.addEventListener('focus', () => {
-//         div.style.display = "block"
-//     })
-// })();
+    document.addEventListener('focus', () => {
+        element.style.display = "block"
+    })
+})();
+*/
