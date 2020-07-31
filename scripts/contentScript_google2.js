@@ -668,192 +668,192 @@ setTimeout(() => {
 
 
 
-var gTargetLanguage = null
-chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
-    if (targetLanguage == "zh") {
-        targetLanguage = "zh-CN"
-    }
-    gTargetLanguage = targetLanguage
-})
+// var gTargetLanguage = null
+// chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+//     if (targetLanguage == "zh") {
+//         targetLanguage = "zh-CN"
+//     }
+//     gTargetLanguage = targetLanguage
+// })
 
-;(function() {
-    var othersInlineElements = ['BR', 'CODE', 'IMG', 'OUTPUT', 'TIME', 'VAR']
+// ;(function() {
+//     var othersInlineElements = ['BR', 'CODE', 'IMG', 'OUTPUT', 'TIME', 'VAR']
 
-    var div = document.createElement('div')
-    div.setAttribute('style', `background-color: rgba(50, 50, 50, 0.8); border-radius: 12px; border-color: black; position: fixed; top: 10px; left: 10px; padding: 12px; min-width: 50px; max-width: 500px; text-align: center; color: white; pointer-events: none; user-select: none; display: none; z-index: 1000000000`)
+//     var div = document.createElement('div')
+//     div.setAttribute('style', `background-color: rgba(50, 50, 50, 0.8); border-radius: 12px; border-color: black; position: fixed; top: 10px; left: 10px; padding: 12px; min-width: 50px; max-width: 500px; text-align: center; color: white; pointer-events: none; user-select: none; display: none; z-index: 1000000000`)
 
-    document.body.appendChild(div)
+//     document.body.appendChild(div)
 
-    var oldTarget = null
-    window.addEventListener('mousemove', e => {
-        if (e.target == div) {
-            oldTarget = e.target
-            div.style.display = "none"
-            return
-        }
+//     var oldTarget = null
+//     window.addEventListener('mousemove', e => {
+//         if (e.target == div) {
+//             oldTarget = e.target
+//             div.style.display = "none"
+//             return
+//         }
 
-        var target = e.target
+//         var target = e.target
 
-        if (target.nodeName == "INPUT") {
+//         if (target.nodeName == "INPUT") {
 
-        } else {
-            do {
-                if (htmlTagsNoTranslate.indexOf(target.nodeName) != -1) {
-                    oldTarget = target
-                    div.style.display = "none"
-                    return
-                }
-                if (htmlTagsInlineText.indexOf(target.nodeName) == -1 && othersInlineElements.indexOf(target.nodeName) == -1) {
-                    break
-                }
-                target = target.parentNode
-            } while (target && target != document.body)
+//         } else {
+//             do {
+//                 if (htmlTagsNoTranslate.indexOf(target.nodeName) != -1) {
+//                     oldTarget = target
+//                     div.style.display = "none"
+//                     return
+//                 }
+//                 if (htmlTagsInlineText.indexOf(target.nodeName) == -1 && othersInlineElements.indexOf(target.nodeName) == -1) {
+//                     break
+//                 }
+//                 target = target.parentNode
+//             } while (target && target != document.body)
 
-            if (!target || !target.innerText) {
-                oldTarget = target
-                div.style.display = "none"
-                return
-            }
+//             if (!target || !target.innerText) {
+//                 oldTarget = target
+//                 div.style.display = "none"
+//                 return
+//             }
 
-            var childNodes = Array.from(target.childNodes)
+//             var childNodes = Array.from(target.childNodes)
         
-            for (let node of childNodes) {
-                if (htmlTagsInlineText.indexOf(node.nodeName) == -1 && othersInlineElements.indexOf(node.nodeName) == -1) {
-                    oldTarget = target
-                    div.style.display = "none"
-                    return     
-                }
-            }
-        }
+//             for (let node of childNodes) {
+//                 if (htmlTagsInlineText.indexOf(node.nodeName) == -1 && othersInlineElements.indexOf(node.nodeName) == -1) {
+//                     oldTarget = target
+//                     div.style.display = "none"
+//                     return     
+//                 }
+//             }
+//         }
 
-        if (oldTarget != target) {
-            oldTarget = target
+//         if (oldTarget != target) {
+//             oldTarget = target
 
-            function trim (s, c) {
-                if (c === "]") c = "\\]";
-                if (c === "\\") c = "\\\\";
-                return s.replace(new RegExp(
-                "^[" + c + "]+|[" + c + "]+$", "g"
-                ), "");
-            }
+//             function trim (s, c) {
+//                 if (c === "]") c = "\\]";
+//                 if (c === "\\") c = "\\\\";
+//                 return s.replace(new RegExp(
+//                 "^[" + c + "]+|[" + c + "]+$", "g"
+//                 ), "");
+//             }
 
-            var text = ""
-            if (target.nodeName == "INPUT") {
-                var inputType = target.type
-                if (inputType == "submit" && !target.getAttribute("value")) {
-                    text = "Submit Query"
-                } else if (inputType == "button" || inputType == "submit") {
-                    text = target.value
-                } else if (target.getAttribute("placeholder")) {
-                    text = target.getAttribute("placeholder")
-                }
-            } else {
-                text = trim(target.innerText.trim(), "\n")
-            }
+//             var text = ""
+//             if (target.nodeName == "INPUT") {
+//                 var inputType = target.type
+//                 if (inputType == "submit" && !target.getAttribute("value")) {
+//                     text = "Submit Query"
+//                 } else if (inputType == "button" || inputType == "submit") {
+//                     text = target.value
+//                 } else if (target.getAttribute("placeholder")) {
+//                     text = target.getAttribute("placeholder")
+//                 }
+//             } else {
+//                 text = trim(target.innerText.trim(), "\n")
+//             }
 
-            if (text.length > 1) {
-                var requests = []
-                var idx = 0
-                do {
-                    var index = text.indexOf("\n", idx)
-                    if (index != -1) {
-                        if (index - idx <= 800) {
-                            var subtext = text.substring(idx, index).trim()
-                            if (subtext) {
-                                requests.push(subtext)
-                            }
-                            idx = index + 1
-                            continue
-                        }
-                    }
-                    var subtext = text.substring(idx).trim()
-                    if (text.length <= 800) {
-                        requests.push(subtext)
-                        break
-                    }
-                    var subtext = text.substring(idx, idx + 800).trim()
-                    index = subtext.lastIndexOf(" ")
-                    if (index != -1) {
-                        var subtext = subtext.substring(0, index).trim()
-                        if (subtext) {
-                            requests.push(subtext)
-                        }
-                        idx = idx + index + 1
-                        continue
-                    } else {
-                        if (subtext) {
-                            requests.push(subtext)
-                        }
-                        idx = idx + 800 + 1
-                    }
-                } while (idx < text.length)
+//             if (text.length > 1) {
+//                 var requests = []
+//                 var idx = 0
+//                 do {
+//                     var index = text.indexOf("\n", idx)
+//                     if (index != -1) {
+//                         if (index - idx <= 800) {
+//                             var subtext = text.substring(idx, index).trim()
+//                             if (subtext) {
+//                                 requests.push(subtext)
+//                             }
+//                             idx = index + 1
+//                             continue
+//                         }
+//                     }
+//                     var subtext = text.substring(idx).trim()
+//                     if (text.length <= 800) {
+//                         requests.push(subtext)
+//                         break
+//                     }
+//                     var subtext = text.substring(idx, idx + 800).trim()
+//                     index = subtext.lastIndexOf(" ")
+//                     if (index != -1) {
+//                         var subtext = subtext.substring(0, index).trim()
+//                         if (subtext) {
+//                             requests.push(subtext)
+//                         }
+//                         idx = idx + index + 1
+//                         continue
+//                     } else {
+//                         if (subtext) {
+//                             requests.push(subtext)
+//                         }
+//                         idx = idx + 800 + 1
+//                     }
+//                 } while (idx < text.length)
 
-                translateHtml(requests.map(str => '<a i="0">' + escapeHtml(str) + '</a>'), gTargetLanguage).then(results => {
-                    if (target != oldTarget) return;
-                    text = ""
-                    for (let j in results) {
-                        var resultSentences = []
-                        var idx = 0
+//                 translateHtml(requests.map(str => '<a i="0">' + escapeHtml(str) + '</a>'), gTargetLanguage).then(results => {
+//                     if (target != oldTarget) return;
+//                     text = ""
+//                     for (let j in results) {
+//                         var resultSentences = []
+//                         var idx = 0
                         
-                        while (true) {
-                            var sentenceStartIndex = results[j].indexOf("<b>", idx)
-                            if (sentenceStartIndex == -1) break;
+//                         while (true) {
+//                             var sentenceStartIndex = results[j].indexOf("<b>", idx)
+//                             if (sentenceStartIndex == -1) break;
                             
-                            var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
+//                             var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
                             
-                            if (sentenceFinalIndex == -1) {
-                                resultSentences.push(results[j].slice(sentenceStartIndex + 3))
-                                break
-                            } else {
-                                resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
-                            }
-                            idx = sentenceFinalIndex
-                        }
+//                             if (sentenceFinalIndex == -1) {
+//                                 resultSentences.push(results[j].slice(sentenceStartIndex + 3))
+//                                 break
+//                             } else {
+//                                 resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
+//                             }
+//                             idx = sentenceFinalIndex
+//                         }
                 
-                        var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
+//                         var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
                 
-                        var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
+//                         var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
 
-                        resultArray = resultArray.map(value => {
-                            var resultStartAtIndex = value.indexOf('>')
-                            return value.slice(resultStartAtIndex + 1)
-                        })
+//                         resultArray = resultArray.map(value => {
+//                             var resultStartAtIndex = value.indexOf('>')
+//                             return value.slice(resultStartAtIndex + 1)
+//                         })
                 
-                        for (let k in resultArray) {
-                            text += unescapeHtml(resultArray[k]) + " "
-                        }
-                    }
+//                         for (let k in resultArray) {
+//                             text += unescapeHtml(resultArray[k]) + " "
+//                         }
+//                     }
 
-                    div.style.display = "block"
+//                     div.style.display = "block"
 
-                    div.style.maxWidth = window.innerWidth
-                    div.textContent = text
+//                     div.style.maxWidth = window.innerWidth
+//                     div.textContent = text
                     
-                    var divStyle = getComputedStyle(div)
-                    if (!divStyle) {return}
+//                     var divStyle = getComputedStyle(div)
+//                     if (!divStyle) {return}
                     
-                    var top = (e.clientY + 25)
-                    top = Math.min(top, window.innerHeight - parseInt(divStyle.height) - 12)
-                    top = Math.max(top, 0)
-                    div.style.top  = Math.floor(top) + "px"
+//                     var top = (e.clientY + 25)
+//                     top = Math.min(top, window.innerHeight - parseInt(divStyle.height) - 12)
+//                     top = Math.max(top, 0)
+//                     div.style.top  = Math.floor(top) + "px"
                     
-                    var left = (e.clientX - (parseInt(divStyle.width) / 2))
-                    left = Math.min(left, window.innerWidth - parseInt(divStyle.width) - 12)
-                    left = Math.max(left, 0)
-                    div.style.left =  Math.floor(left) + "px"
-                })
-            } else {
-                div.style.display = "none"
-            }
-        }
-    })
+//                     var left = (e.clientX - (parseInt(divStyle.width) / 2))
+//                     left = Math.min(left, window.innerWidth - parseInt(divStyle.width) - 12)
+//                     left = Math.max(left, 0)
+//                     div.style.left =  Math.floor(left) + "px"
+//                 })
+//             } else {
+//                 div.style.display = "none"
+//             }
+//         }
+//     })
 
 
-    document.addEventListener('blur', () => {
-        div.style.display = "none"
-    })
+//     document.addEventListener('blur', () => {
+//         div.style.display = "none"
+//     })
 
-    document.addEventListener('focus', () => {
-        div.style.display = "block"
-    })
-})();
+//     document.addEventListener('focus', () => {
+//         div.style.display = "block"
+//     })
+// })();
