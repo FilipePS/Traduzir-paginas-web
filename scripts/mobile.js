@@ -114,7 +114,7 @@ function readFile(_path, _cb){
     })
 
     .catch( e => {
-        console.log(e)
+        console.error(e)
     })
 };
 

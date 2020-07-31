@@ -145,12 +145,11 @@ function captureGoogleTranslateTKK() {
             var result = new RegExp(/\s*tkk\s*\:\s*['"][0-9\.]+(?=['"])/i).exec(responseText)
             if (result) {
                 result = new RegExp(/[0-9\.]+/i).exec(result)
-                // console.log(result)
                 return result[0]
             }
         })
         .catch(e => {
-            console.log(e)
+            console.error(e)
         })
 }
 
