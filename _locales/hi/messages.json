@@ -115,5 +115,8 @@
   },
   "msgNoUseWidgets": {
     "message": "नहीं (विजेट का उपयोग करें)"
+  },
+  "optionsPageTitle": {
+    "message": "वेब पेज का अनुवाद करें - विकल्प"
   }
 }

@@ -115,5 +115,8 @@
   },
   "msgNoUseWidgets": {
     "message": "No (usar widgets)"
+  },
+  "optionsPageTitle": {
+    "message": "Traducir páginas web - Opciones"
   }
 }

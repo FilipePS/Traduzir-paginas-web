@@ -115,5 +115,8 @@
   },
   "msgNoUseWidgets": {
     "message": "いいえ（ウィジェットを使用）"
+  },
+  "optionsPageTitle": {
+    "message": "Webページの翻訳-オプション"
   }
 }

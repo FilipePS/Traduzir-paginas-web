@@ -52,6 +52,8 @@ const alwaysTranslateList = document.getElementById("alwaysTranslateList")
 const lblUseNewAlgorithm = document.getElementById("lblUseNewAlgorithm")
 const selectUseNewAlgorithm = document.getElementById("selectUseNewAlgorithm")
 
+document.title = chrome.i18n.getMessage("optionsPageTitle")
+
 lblShowContextMenu.textContent = chrome.i18n.getMessage("lblShowContextMenu")
 lblPlsDonate.textContent = chrome.i18n.getMessage("lblPlsDonate")
 lblTargetLanguage.textContent = chrome.i18n.getMessage("lblTargetLanguage")

@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Translate web pages"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
     "message": "Translate your page in real time using Google or Yandex."
@@ -33,7 +33,7 @@
     "message": "Translate"
   },
   "btnOptions": {
-    "message": "options"
+    "message": "Options"
   },
   "btnRestore": {
     "message": "Show original"
@@ -115,5 +115,8 @@
   },
   "msgNoUseWidgets": {
     "message": "No (use widgets)"
+  },
+  "optionsPageTitle": {
+    "message": "Translate Web Pages - Options"
   }
 }

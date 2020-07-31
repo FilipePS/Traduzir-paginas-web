@@ -115,5 +115,8 @@
   },
   "msgNoUseWidgets": {
     "message": "Nein (Widgets verwenden)"
+  },
+  "optionsPageTitle": {
+    "message": "Webseiten übersetzen - Optionen"
   }
 }

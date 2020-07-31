@@ -115,5 +115,8 @@
   },
   "msgNoUseWidgets": {
     "message": "否（使用小部件）"
+  },
+  "optionsPageTitle": {
+    "message": "翻譯網頁-選項"
   }
 }

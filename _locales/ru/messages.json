@@ -115,5 +115,8 @@
   },
   "msgNoUseWidgets": {
     "message": "Нет (используйте виджеты)"
+  },
+  "optionsPageTitle": {
+    "message": "Перевести веб-страницы - параметры"
   }
 }

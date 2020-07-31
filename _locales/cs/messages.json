@@ -115,5 +115,8 @@
   },
   "msgNoUseWidgets": {
     "message": "Ne (používat widgety)"
+  },
+  "optionsPageTitle": {
+    "message": "Přeložit webové stránky - možnosti"
   }
 }
