@@ -8,8 +8,9 @@ var prevTargetLanguage = null
 var translatedStrings = []
 var nodesTranslated = []
 var status = "prompt"
-var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BIG', 'BDO', 'CITE', 'DFN', 'EM', 'I', 'INST', 'KBD', 'TT', 'Q', 'SAMP', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP']
-var htmlTagsNoTranslate = ['CODE', 'TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
+var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BDO', 'BIG', 'CITE', 'DFN', 'EM', 'I', 'LABEL', 'Q', 'S', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U', 'TT', 'VAR']
+var htmlTagsInlineIgnore = ['BR', 'CODE', 'KBD', 'WBR'] // and input if type is submit or button
+var htmlTagsNoTranslate = ['TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
 
 var originalPageTitle = null
 var translatedAttributes = []
@@ -59,7 +60,9 @@ var mutationObserver = new MutationObserver(function(mutations) {
         Array.from(mutation.addedNodes).forEach(addedNode => {
             if (htmlTagsNoTranslate.indexOf(addedNode.nodeName) == -1) {
                 if (htmlTagsInlineText.indexOf(addedNode.nodeName) == -1) {
-                    nodesToTranslate.push(addedNode)
+                    if (htmlTagsInlineIgnore.indexOf(addedNode.nodeName) == -1) {
+                        nodesToTranslate.push(addedNode) 
+                    }
                 }
             }
         })
@@ -178,35 +181,32 @@ function translateHtml(params, targetLanguage) {
 function getTranslateNodes(element) {
     var translateNodes = [{isTranslated: false, parent: null, nodesInfo: []}]
     var index = 0
-    var minDeep = null
-    var getAllNodes = function (element, deep) {
-        if (element.nodeType == 1) {
+    
+    var getAllNodes = function (element) {
+        if (element.nodeType == 1 && htmlTagsInlineIgnore.indexOf(element.nodeName) == -1) {
             if (translateNodes[index].nodesInfo.length > 0 && htmlTagsInlineText.indexOf(element.nodeName) == -1) {
                 translateNodes.push({isTranslated: false, parent: null, nodesInfo: []})
                 index++
-                minDeep = null
             }
             if (htmlTagsNoTranslate.indexOf(element.nodeName) == -1) {
                 Array.from(element.childNodes).forEach(value => {
-                    getAllNodes(value, deep + 1)
+                    getAllNodes(value)
                 })
             }
         } else if (element.nodeType == 3) {
             if (element.textContent.trim().length > 0) {
-                if (minDeep) {
-                    if (deep < minDeep) {
-                        minDeep = deep
-                        translateNodes[index].parent = element.parentNode
+                if (!translateNodes[index].parent) {
+                    var temp = element.parentNode
+                    while (temp && temp != document.body && (htmlTagsInlineText.indexOf(temp.nodeName) != -1 || htmlTagsInlineIgnore.indexOf(temp.nodeName) != -1)) {
+                        temp = temp.parentNode
                     }
-                } else {
-                    minDeep = deep
-                    translateNodes[index].parent = element.parentNode               
+                    translateNodes[index].parent = temp
                 }
                 translateNodes[index].nodesInfo.push({node: element, textContent: element.textContent})
             }
         }
     }
-    getAllNodes(element, 0)
+    getAllNodes(element)
 
     if (translateNodes.length > 0 && translateNodes[translateNodes.length-1].nodesInfo.length == 0) {
         translateNodes.pop()
