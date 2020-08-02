@@ -1,0 +1,122 @@
+{
+    "extensionName": {
+      "message": "Webpagina's vertalen"
+    },
+    "extensionDescription": {
+      "message": "Vertaal uw pagina in realtime met Google of Yandex."
+    },
+    "pageActionTitle": {
+      "message": "Vertaal deze pagina"
+    },
+    "lblTranslate": {
+      "message": "Vertaal deze pagina?"
+    },
+    "lblTranslating": {
+      "message": "Vertalen ..."
+    },
+    "lblTranslated": {
+      "message": "Vertaald"
+    },
+    "lblError": {
+      "message": "Deze pagina kon niet worden vertaald"
+    },
+    "lblAlwaysTranslate": {
+      "message": "Vertaal altijd van"
+    },
+    "lblTargetLanguage": {
+      "message": "Doel taal"
+    },
+    "btnReset": {
+      "message": "Reset"
+    },
+    "btnTranslate": {
+      "message": "Vertalen"
+    },
+    "btnOptions": {
+      "message": "opties"
+    },
+    "btnRestore": {
+      "message": "Toon origineel"
+    },
+    "btnTryAgain": {
+      "message": "Probeer het opnieuw"
+    },
+    "btnOpenOnGoogleTranslate": {
+      "message": "Openen in google vertaler"
+    },
+    "btnDonate": {
+      "message": "Alleen maar"
+    },
+    "btnNeverTranslate": {
+      "message": "Vertaal deze website nooit"
+    },
+    "btnChangeLanguages": {
+      "message": "Verander talen"
+    },
+    "btnMobileOriginal": {
+      "message": "Origineel"
+    },
+    "btnMobileTranslated": {
+      "message": "Vertaald"
+    },
+    "btnMobileNeverTranslate": {
+      "message": "Vertaal deze website nooit"
+    },
+    "btnMobileDonate": {
+      "message": "Alleen maar"
+    },
+    "optionsNeverTranslate": {
+      "message": "Vertaal deze sites nooit"
+    },
+    "optionsAlwaysTranslate": {
+      "message": "Vertaal deze talen automatisch"
+    },
+    "optionPopupConfig": {
+      "message": "Toon de mobiele pop-up"
+    },
+    "optionPopupAuto": {
+      "message": "Automatisch"
+    },
+    "optionPopupThreeFingers": {
+      "message": "Als ik drie vingers op het scherm aanraak"
+    },
+    "lblTranslationEngine": {
+      "message": "Vertaalmachine"
+    },
+    "msgOpenOnYandexTranslator": {
+      "message": "Openen in yandex vertalen"
+    },
+    "lblOthers": {
+      "message": "Anderen"
+    },
+    "btnMoreOptions": {
+      "message": "Meer opties"
+    },
+    "lblPlsDonate": {
+      "message": "Help de ontwikkelaar met een donatie"
+    },
+    "msgTranslateFor": {
+      "message": "Vertalen naar"
+    },
+    "lblShowContextMenu": {
+      "message": "Geef de optie weer om de pagina te vertalen in het contextmenu"
+    },
+    "msgYes": {
+      "message": "Ja"
+    },
+    "msgNo": {
+      "message": "Nee"
+    },
+    "lblUseNewAlgorithm": {
+      "message": "Het nieuwe vertaalalgoritme gebruiken?"
+    },
+    "msgYesRecommended": {
+      "message": "Ja (aanbevolen)"
+    },
+    "msgNoUseWidgets": {
+      "message": "Nee (gebruik widgets)"
+    },
+    "optionsPageTitle": {
+      "message": "Webpagina's vertalen - Opties"
+    }
+  }
