@@ -25,6 +25,7 @@ const btnReset = document.getElementById("btnReset")
 const btnTranslate = document.getElementById("btnTranslate")
 const btnRestore = document.getElementById("btnRestore")
 const btnTryAgain = document.getElementById("btnTryAgain")
+const btnOptionsDiv = document.getElementById("btnOptionsDiv")
 const btnOptions = document.getElementById("btnOptions")
 
 // translate interface
@@ -40,6 +41,9 @@ btnTranslate.textContent = chrome.i18n.getMessage("btnTranslate")
 btnRestore.textContent = chrome.i18n.getMessage("btnRestore")
 btnTryAgain.textContent = chrome.i18n.getMessage("btnTryAgain")
 
+document.querySelector("#btnOptionB").textContent = chrome.i18n.getMessage("btnOptions")
+document.querySelector("#btnOptionB").innerHTML += ' <i class="arrow down"></i>'
+document.querySelector("#btnOptions option[value='options']").textContent = chrome.i18n.getMessage("btnOptions")
 document.querySelector("#btnOptions option[value='options']").textContent = chrome.i18n.getMessage("btnOptions")
 document.querySelector("#btnOptions option[value='neverTranslateThisSite']").textContent = chrome.i18n.getMessage("btnNeverTranslate")
 document.querySelector("#btnOptions option[value='changeLanguage']").textContent = chrome.i18n.getMessage("btnChangeLanguages")
@@ -47,6 +51,9 @@ document.querySelector("#btnOptions option[value='openInGoogleTranslate']").text
 document.querySelector("#btnOptions option[value='donate']").textContent = chrome.i18n.getMessage("btnDonate")
 document.querySelector("#btnOptions option[value='donate']").innerHTML += " &#10084;";
 document.querySelector("#btnOptions option[value='moreOptions']").textContent = chrome.i18n.getMessage("btnMoreOptions");
+
+var cStyle = getComputedStyle(document.querySelector("#btnOptionB"))
+btnOptions.style.width = (parseInt(cStyle.width) + 0) + "px"
 
 // get translation engine
 var gTranslationEngine = "google"
@@ -116,7 +123,7 @@ function showPopupSection(status)
         btnTranslate.style.display = "inline"
         btnRestore.style.display = "none"
         btnTryAgain.style.display = "none"
-        btnOptions.style.display = "none"
+        btnOptionsDiv.style.display = "none"
     } else {
         lblTargetLanguage.style.display = "none"
         selectTargetLanguage.style.display = "none"
@@ -132,7 +139,7 @@ function showPopupSection(status)
                 btnTranslate.style.display = "none"
                 btnRestore.style.display = "inline"
                 btnTryAgain.style.display = "none"
-                btnOptions.style.display = "inline"
+                btnOptionsDiv.style.display = "inline"
                 break;
             case "progress":
                 lblTranslate.style.display = "none"
@@ -144,7 +151,7 @@ function showPopupSection(status)
                 btnTranslate.style.display = "none"
                 btnRestore.style.display = "inline"
                 btnTryAgain.style.display = "none"
-                btnOptions.style.display = "none"
+                btnOptionsDiv.style.display = "none"
 
                 if (btnRestore.className.indexOf("w3-disabled") == -1) {
                     btnRestore.className += " w3-disabled";
@@ -160,7 +167,7 @@ function showPopupSection(status)
                 btnTranslate.style.display = "none"
                 btnRestore.style.display = "none"
                 btnTryAgain.style.display = "inline"
-                btnOptions.style.display = "none"
+                btnOptionsDiv.style.display = "none"
                 break;
             case "prompt":
             case "unknown":
@@ -174,7 +181,7 @@ function showPopupSection(status)
                 btnTranslate.style.display = "inline"
                 btnRestore.style.display = "none"
                 btnTryAgain.style.display = "none"
-                btnOptions.style.display = "inline"
+                btnOptionsDiv.style.display = "inline"
                 break;
         }
     }
