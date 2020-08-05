@@ -1,1 +1,0 @@
-melhorar detecção de idioma

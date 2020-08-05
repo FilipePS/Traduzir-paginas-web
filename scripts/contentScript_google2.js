@@ -93,31 +93,68 @@ function disableMutatinObserver() {
     mutationObserver.takeRecords()
 }
 
-function aux(a, b) {
-    for (var c = 0; c < b.length - 2; c += 3) {
-        var d = b.charAt(c + 2);
-        d = 'a' <= d ? d.charCodeAt(0) - 87 : Number(d);
-        d = '+' == b.charAt(c + 1) ? a >>> d : a << d;
-        a = '+' == b.charAt(c) ? a + d & 4294967295 : a ^ d
+function shiftLeftOrRightThenSumOrXor(num, optString) {
+    for (var i = 0; i < optString.length - 2; i += 3) {
+        var acc = optString.charAt(i + 2);
+        if ('a' <= acc) {
+            acc = acc.charCodeAt(0) - 87;
+        } else {
+            acc = Number(acc);
+        }
+        if (optString.charAt(i + 1) == '+') {
+            acc = num >>> acc
+        } else {
+            acc = num << acc
+        }
+        if (optString.charAt(i) == '+') {
+            num += acc & 4294967295;
+        } else {
+            num ^= acc;
+        }
     }
-    return a
+    return num
 }
 
-function calcHash(a, b) {
-    var c = b.split('.');
-    b = Number(c[0]) || 0;
-    for (var d = [], e = 0, f = 0; f < a.length; f++) {
-        var h = a.charCodeAt(f);
-        128 > h ? d[e++] = h : (2048 > h ? d[e++] = h >> 6 | 192 : (55296 == (h & 64512) && f + 1 < a.length && 56320 == (a.charCodeAt(f + 1) & 64512) ? (h = 65536 + ((h & 1023) << 10) + (a.charCodeAt(++f) & 1023), d[e++] = h >> 18 | 240, d[e++] = h >> 12 & 63 | 128) : d[e++] = h >> 12 | 224, d[e++] = h >> 6 & 63 | 128), d[e++] = h & 63 | 128)
+function calcHash(query, windowTkk) {
+    var tkkSplited = windowTkk.split('.');
+    var tkkIndex = Number(tkkSplited[0]) || 0;
+    var tkkKey = Number(tkkSplited[1]) || 0
+
+    var bytesArray = []
+    var idx = 0
+    for (var i = 0; i < query.length; i++) {
+        var charCode = query.charCodeAt(i);
+        if (128 > charCode) {
+            bytesArray[idx++] = charCode;
+        } else {
+            if (2048 > charCode) {
+                bytesArray[idx++] = charCode >> 6 | 192;
+            } else {
+                if (55296 == (charCode & 64512) && i + 1 < query.length && 56320 == (query.charCodeAt(i + 1) & 64512)) {
+                    charCode = 65536 + ((charCode & 1023) << 10) + (query.charCodeAt(++i) & 1023);
+                    bytesArray[idx++] = charCode >> 18 | 240;
+                    bytesArray[idx++] = charCode >> 12 & 63 | 128;
+                } else {
+                    bytesArray[idx++] = charCode >> 12 | 224;
+                    bytesArray[idx++] = charCode >> 6 & 63 | 128;
+                }
+            }
+            bytesArray[idx++] = charCode & 63 | 128;
+        }
     }
-    a = b;
-    for (e = 0; e < d.length; e++) a += d[e],
-        a = aux(a, '+-a^+6');
-    a = aux(a, '+-3^+b+-f');
-    a ^= Number(c[1]) || 0;
-    0 > a && (a = (a & 2147483647) + 2147483648);
-    c = a % 1000000;
-    return c.toString() + '.' + (c ^ b)
+
+    var encondingRound = tkkIndex;
+    for (var i = 0; i < bytesArray.length; i++) {
+        encondingRound += bytesArray[i];
+        encondingRound = shiftLeftOrRightThenSumOrXor(encondingRound, '+-a^+6');
+    }
+    encondingRound = shiftLeftOrRightThenSumOrXor(encondingRound, '+-3^+b+-f');
+    encondingRound ^= tkkKey;
+    if (encondingRound <= 0) {
+        encondingRound = (encondingRound & 2147483647) + 2147483648;
+    }
+    var normalizedResult  = encondingRound % 1000000;
+    return normalizedResult .toString() + '.' + (normalizedResult  ^ tkkIndex)
 }
 
 var googleTranslateTKK = null
@@ -659,7 +696,7 @@ chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
 
 // auto translate new iframes
 setTimeout(() => {
-    chrome.runtime.sendMessage({action: "getStatus"}).then(mainFrameStatus => {
+    chrome.runtime.sendMessage({action: "getMainFrameStatus"}).then(mainFrameStatus => {
         if (status == "prompt" && (mainFrameStatus == "progress" || mainFrameStatus == "finish")) {
             translate()
         }

@@ -195,11 +195,9 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "Restore"})
         })
-    } else if (request.action == "getStatus") {
-        chrome.tabs.query({currentWindow: true, active: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, {frameId: 0}).then(response => {
-                sendResponse(response)
-            })
+    } else if (request.action == "getMainFrameStatus") {
+        chrome.tabs.sendMessage(sender.tab.id, {action: "getStatus"}, {frameId: 0}).then(response => {
+            sendResponse(response)
         })
         return true
     } else if (request.action == "enableAutoTranslate") {

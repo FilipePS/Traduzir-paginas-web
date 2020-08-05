@@ -521,7 +521,7 @@ chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
 
 // auto translate new iframes
 setTimeout(() => {
-    chrome.runtime.sendMessage({action: "getStatus"}).then(mainFrameStatus => {
+    chrome.runtime.sendMessage({action: "getMainFrameStatus"}).then(mainFrameStatus => {
         if (status == "prompt" && (mainFrameStatus == "progress" || mainFrameStatus == "finish")) {
             translate()
         }
