@@ -1,0 +1,122 @@
+{
+  "extensionName": {
+    "message": "Käännä verkkosivut"
+  },
+  "extensionDescription": {
+    "message": "Käännä verkkosivu lennossa Googlella tai Yandexilla."
+  },
+  "pageActionTitle": {
+    "message": "Käännä tämä sivu"
+  },
+  "lblTranslate": {
+    "message": "Käännetäänkö sivu?"
+  },
+  "lblTranslating": {
+    "message": "Käännetään..."
+  },
+  "lblTranslated": {
+    "message": "Käännetty"
+  },
+  "lblError": {
+    "message": "Sivua ei voitu kääntää"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Käännä aina kielestä"
+  },
+  "lblTargetLanguage": {
+    "message": "Kohdekieli"
+  },
+  "btnReset": {
+    "message": "Nollaa"
+  },
+  "btnTranslate": {
+    "message": "Käännä"
+  },
+  "btnOptions": {
+    "message": "Valinnat"
+  },
+  "btnRestore": {
+    "message": "Näytä alkuperäinen"
+  },
+  "btnTryAgain": {
+    "message": "Yritä uudestaan"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Avaa Google kääntäjässä"
+  },
+  "btnDonate": {
+    "message": "Lahjoita"
+  },
+  "btnNeverTranslate": {
+    "message": "Älä käännä tätä sivua"
+  },
+  "btnChangeLanguages": {
+    "message": "Vaihda kieliä"
+  },
+  "btnMobileOriginal": {
+    "message": "Alkuperäinen"
+  },
+  "btnMobileTranslated": {
+    "message": "Käännetty"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Älä käännä tätä sivua"
+  },
+  "btnMobileDonate": {
+    "message": "Lahjoita"
+  },
+  "optionsNeverTranslate": {
+    "message": "Älä käännä näitä sivuja"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Käännä nämä sivut automaattisesti"
+  },
+  "optionPopupConfig": {
+    "message": "Näytä työkalupalkki mobiiliversiossa"
+  },
+  "optionPopupAuto": {
+    "message": "Automaattisesti"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Kolmen sormen kosketuksella"
+  },
+  "lblTranslationEngine": {
+    "message": "Käännösohjelma"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Avaa Yandex translatessa"
+  },
+  "lblOthers": {
+    "message": "Muut"
+  },
+  "btnMoreOptions": {
+    "message": "Lisää asetuksia"
+  },
+  "lblPlsDonate": {
+    "message": "Auta kehittäjää tekemällä lahjoitus"
+  },
+  "msgTranslateFor": {
+    "message": "Käännä kielelle:"
+  },
+  "lblShowContextMenu": {
+    "message": "Näytä valinta kääntämiselle pikavalikossa"
+  },
+  "msgYes": {
+    "message": "Kyllä"
+  },
+  "msgNo": {
+    "message": "Ei"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Käytä uutta käännösalgorytmiä?"
+  },
+  "msgYesRecommended": {
+    "message": "Kyllä (Suositellaan)"
+  },
+  "msgNoUseWidgets": {
+    "message": "Ei (käytä pienoisohjelmaa)"
+  },
+  "optionsPageTitle": {
+    "message": "Käännä verkkosivut - Asetukset"
+  }
+}

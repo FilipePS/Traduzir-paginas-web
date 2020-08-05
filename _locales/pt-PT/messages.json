@@ -1,0 +1,122 @@
+{
+  "extensionName": {
+    "message": "Traduzir Páginas Web"
+  },
+  "extensionDescription": {
+    "message": "Traduza sua página em tempo real usando o Google ou Yandex."
+  },
+  "pageActionTitle": {
+    "message": "Traduzir esta página"
+  },
+  "lblTranslate": {
+    "message": "Traduzir esta página?"
+  },
+  "lblTranslating": {
+    "message": "Traduzindo..."
+  },
+  "lblTranslated": {
+    "message": "Traduzido"
+  },
+  "lblError": {
+    "message": "Esta página não pôde ser traduzida"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Traduzir sempre do"
+  },
+  "lblTargetLanguage": {
+    "message": "Idioma de destino"
+  },
+  "btnReset": {
+    "message": "Redefinir"
+  },
+  "btnTranslate": {
+    "message": "Traduzir"
+  },
+  "btnOptions": {
+    "message": "Opções"
+  },
+  "btnRestore": {
+    "message": "Mostrar original"
+  },
+  "btnTryAgain": {
+    "message": "Tente novamente"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Abrir no google tradutor"
+  },
+  "btnDonate": {
+    "message": "Doar"
+  },
+  "btnNeverTranslate": {
+    "message": "Nunca traduzir este sítio"
+  },
+  "btnChangeLanguages": {
+    "message": "Alterar idiomas"
+  },
+  "btnMobileOriginal": {
+    "message": "Original"
+  },
+  "btnMobileTranslated": {
+    "message": "Traduzido"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Nunca traduzir este sítio"
+  },
+  "btnMobileDonate": {
+    "message": "Doar"
+  },
+  "optionsNeverTranslate": {
+    "message": "Nunca traduzir estes sítios"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Traduzir automaticamente estes idiomas"
+  },
+  "optionPopupConfig": {
+    "message": "Mostrar o popup mobile"
+  },
+  "optionPopupAuto": {
+    "message": "Automaticamente"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Quando eu tocar três dedos no ecrã"
+  },
+  "lblTranslationEngine": {
+    "message": "Motor de tradução"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Abrir no yandex translate"
+  },
+  "lblOthers": {
+    "message": "Outros"
+  },
+  "btnMoreOptions": {
+    "message": "Mais opções"
+  },
+  "lblPlsDonate": {
+    "message": "Ajude o desenvolvedor com uma doação"
+  },
+  "msgTranslateFor": {
+    "message": "Traduzir pro"
+  },
+  "lblShowContextMenu": {
+    "message": "Mostrar a opção de traduzir a pagina no menu de contexto"
+  },
+  "msgYes": {
+    "message": "Sim"
+  },
+  "msgNo": {
+    "message": "Não"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Usar o novo algoritmo de tradução?"
+  },
+  "msgYesRecommended": {
+    "message": "Sim (recomendado)"
+  },
+  "msgNoUseWidgets": {
+    "message": "Não (use widgets)"
+  },
+  "optionsPageTitle": {
+    "message": "Traduzir Páginas Web - Opções"
+  }
+}

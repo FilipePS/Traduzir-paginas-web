@@ -1,0 +1,122 @@
+{
+  "extensionName": {
+    "message": "Prevedi web stranice"
+  },
+  "extensionDescription": {
+    "message": "Prevedi svoju stranicu u stvarnom vremenu pomoću Googlea ili Yandexa."
+  },
+  "pageActionTitle": {
+    "message": "Prevedi ovu stranicu"
+  },
+  "lblTranslate": {
+    "message": "Prevesti ovu stranicu?"
+  },
+  "lblTranslating": {
+    "message": "Prevođenje ..."
+  },
+  "lblTranslated": {
+    "message": "prevedeno"
+  },
+  "lblError": {
+    "message": "Ova se stranica ne može prevesti"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Uvijek prevedi s"
+  },
+  "lblTargetLanguage": {
+    "message": "Ciljani jezik"
+  },
+  "btnReset": {
+    "message": "Reset"
+  },
+  "btnTranslate": {
+    "message": "Prevedi"
+  },
+  "btnOptions": {
+    "message": "opcije"
+  },
+  "btnRestore": {
+    "message": "Prikaži original"
+  },
+  "btnTryAgain": {
+    "message": "Pokušajte ponovo"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Otvori u google prevoditelju"
+  },
+  "btnDonate": {
+    "message": "Samo"
+  },
+  "btnNeverTranslate": {
+    "message": "Nikada nemojte prevoditi ovu web stranicu"
+  },
+  "btnChangeLanguages": {
+    "message": "Promjena jezika"
+  },
+  "btnMobileOriginal": {
+    "message": "Izvornik"
+  },
+  "btnMobileTranslated": {
+    "message": "prevedeno"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Nikada nemojte prevoditi ovu web stranicu"
+  },
+  "btnMobileDonate": {
+    "message": "Samo"
+  },
+  "optionsNeverTranslate": {
+    "message": "Nikada nemojte prevoditi ove stranice"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Automatski prevedi ove jezike"
+  },
+  "optionPopupConfig": {
+    "message": "Pokažite skočni prozor za mobilne uređaje"
+  },
+  "optionPopupAuto": {
+    "message": "automatsko"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Kad dodirnem tri prsta po zaslonu"
+  },
+  "lblTranslationEngine": {
+    "message": "Prevoditeljski motor"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Otvori u prijevodu yandex"
+  },
+  "lblOthers": {
+    "message": "Drugi"
+  },
+  "btnMoreOptions": {
+    "message": "Više mogućnosti"
+  },
+  "lblPlsDonate": {
+    "message": "Pomozite programeru donacijom"
+  },
+  "msgTranslateFor": {
+    "message": "Prevedi na"
+  },
+  "lblShowContextMenu": {
+    "message": "Pokažite mogućnost prevođenja stranice u kontekstni izbornik"
+  },
+  "msgYes": {
+    "message": "Da"
+  },
+  "msgNo": {
+    "message": "Ne"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Koristite novi algoritam prijevoda?"
+  },
+  "msgYesRecommended": {
+    "message": "Da (preporučeno)"
+  },
+  "msgNoUseWidgets": {
+    "message": "Ne (koristite widgete)"
+  },
+  "optionsPageTitle": {
+    "message": "Prevedi web stranice - Opcije"
+  }
+}
