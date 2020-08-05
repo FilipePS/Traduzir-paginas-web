@@ -663,6 +663,12 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         if (request.googleTranslateTKK) {
             googleTranslateTKK = request.googleTranslateTKK
         }
+    } else if (request.action == "toggle-translation") {
+        if (status == "prompt" || status == "error") {
+            translate()
+        } else {
+            restore()
+        }
     }
 })
 

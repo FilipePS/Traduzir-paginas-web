@@ -425,7 +425,7 @@ chrome.runtime.onInstalled.addListener(details => {
             })
         })
         chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
-    } else if (details.reason == "update") {
+    } else if (details.reason == "update" && chrome.runtime.getManifest().version != details.previousVersion) {
         chrome.tabs.create({url: "https://filipeps.github.io/Traduzir-paginas-web/release_notes/"})
     }
 })
@@ -450,3 +450,12 @@ if (typeof chrome.contextMenus != 'undefined') {
         chrome.tabs.sendMessage(tab.id, {action: "Translate"})
     })
 }
+
+
+chrome.commands.onCommand.addListener(command => {
+    if (command === "toggle-translation") {
+        chrome.tabs.query({currentWindow: true, active: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "toggle-translation"})
+        })
+    }
+})
