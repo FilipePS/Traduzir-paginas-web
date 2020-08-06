@@ -1,7 +1,7 @@
 if (typeof browser !== 'undefined') {
     chrome = browser
 }
-
+/*
 var googleTranslateIsInjected = false
 var googleTranslateIsLoaded = false
 var hideGoolgleTranslatorBar = true
@@ -232,3 +232,4 @@ chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
         })
     }
 })
+//*/

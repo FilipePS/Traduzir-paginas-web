@@ -417,17 +417,17 @@ function injectContentScripts(tabId) {
     var file
 
     if (translationEngine == "google") {
-        if (useNewAlgorithm == "yes") {
+        // if (useNewAlgorithm == "yes") {
             file = "scripts/contentScript_google2.js"
-        } else {
-            file = "scripts/contentScript_google.js"
-        }
+        // } else {
+            // file = "scripts/contentScript_google.js"
+        // }
     } else if (translationEngine == "yandex") {
-        if (useNewAlgorithm == "yes") {
+        // if (useNewAlgorithm == "yes") {
             file = "scripts/contentScript_yandex2.js"
-        } else {
-            file = "scripts/contentScript_yandex.js"
-        }
+        // } else {
+        //     file = "scripts/contentScript_yandex.js"
+        // }
     }
 
     chrome.tabs.executeScript(tabId, {

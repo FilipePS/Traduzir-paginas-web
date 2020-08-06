@@ -1,7 +1,7 @@
 if (typeof browser !== 'undefined') {
     chrome = browser
 }
-
+/*
 var yandexTranslateIsInjected = false
 var yandexTranslateIsLoaded = false
 var hideYandexElement = true
@@ -149,3 +149,4 @@ chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
         })
     }
 })
+//*/
