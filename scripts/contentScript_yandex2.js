@@ -488,6 +488,12 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
         foo()
         return true
+    } else if (request.action == "toggle-translation") {
+        if (status == "prompt" || status == "error") {
+            translate()
+        } else {
+            restore()
+        }
     }
 })
 
