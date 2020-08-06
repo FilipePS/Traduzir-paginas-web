@@ -194,7 +194,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     // auto show the correct section in the popup
     let updateTranslateStatus = () => {
         setTimeout(updateTranslateStatus, 100)
-        chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, {frameId: 0}).then(response => {
+        chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, {frameId: 0}, response => {
             if (typeof response == "string") {
                 showPopupSection(response)
             }
@@ -202,13 +202,13 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     }
 
     // get page language
-    chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, {frameId: 0}).then(codeLang => {
+    chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, {frameId: 0}, codeLang => {
         if (codeLang) {
             globalCodeLang = codeLang
 
             // show always translate checkbox
             showAlwaysTranslateCheckbox = true
-            chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
+            chrome.storage.local.get("alwaysTranslateLangs", onGot => {
                 var alwaysTranslateLangs = onGot.alwaysTranslateLangs
                 if (!alwaysTranslateLangs) {
                     alwaysTranslateLangs = []

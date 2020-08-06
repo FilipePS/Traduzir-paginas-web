@@ -168,7 +168,7 @@ function removeA(arr) {
 
 function removeSiteFromBlackList(url)
 {
-    chrome.storage.local.get("neverTranslateSites").then(onGot => {
+    chrome.storage.local.get("neverTranslateSites", onGot => {
         var neverTranslateSites = onGot.neverTranslateSites
         if (!neverTranslateSites) {
             neverTranslateSites = []
@@ -181,7 +181,7 @@ function removeSiteFromBlackList(url)
 
 function disableAutoTranslate(lang)
 {
-    chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
+    chrome.storage.local.get("alwaysTranslateLangs", onGot => {
         var alwaysTranslateLangs = onGot.alwaysTranslateLangs
         if (!alwaysTranslateLangs) {
             alwaysTranslateLangs = []
@@ -192,7 +192,7 @@ function disableAutoTranslate(lang)
     })   
 }
 
-chrome.storage.local.get("neverTranslateSites").then(onGot => {
+chrome.storage.local.get("neverTranslateSites", onGot => {
     var neverTranslateSites = onGot.neverTranslateSites
     if (!neverTranslateSites) {
         neverTranslateSites = []
@@ -219,7 +219,7 @@ chrome.storage.local.get("neverTranslateSites").then(onGot => {
     })
 })
 
-chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
+chrome.storage.local.get("alwaysTranslateLangs", onGot => {
     var alwaysTranslateLangs = onGot.alwaysTranslateLangs
     if (!alwaysTranslateLangs) {
         alwaysTranslateLangs = []

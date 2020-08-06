@@ -38,7 +38,7 @@ function removeA(arr) {
 // add site never translate
 function addSiteToBlackList(url)
 {
-    chrome.storage.local.get("neverTranslateSites").then(onGot => {
+    chrome.storage.local.get("neverTranslateSites", onGot => {
         var neverTranslateSites = onGot.neverTranslateSites
         if (!neverTranslateSites) {
             neverTranslateSites = []
@@ -55,7 +55,7 @@ function addSiteToBlackList(url)
 // remove site never translate
 function removeSiteFromBlackList(url)
 {
-    chrome.storage.local.get("neverTranslateSites").then(onGot => {
+    chrome.storage.local.get("neverTranslateSites", onGot => {
         var neverTranslateSites = onGot.neverTranslateSites
         if (!neverTranslateSites) {
             neverTranslateSites = []
@@ -69,7 +69,7 @@ function removeSiteFromBlackList(url)
 // enable auto translate for a language
 function enableAutoTranslate(lang)
 {
-    chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
+    chrome.storage.local.get("alwaysTranslateLangs", onGot => {
         var alwaysTranslateLangs = onGot.alwaysTranslateLangs
         if (!alwaysTranslateLangs) {
             alwaysTranslateLangs = []
@@ -86,7 +86,7 @@ function enableAutoTranslate(lang)
 // disable auto translate for a language
 function disableAutoTranslate(lang)
 {
-    chrome.storage.local.get("alwaysTranslateLangs").then(onGot => {
+    chrome.storage.local.get("alwaysTranslateLangs", onGot => {
         var alwaysTranslateLangs = onGot.alwaysTranslateLangs
         if (!alwaysTranslateLangs) {
             alwaysTranslateLangs = []
@@ -95,43 +95,6 @@ function disableAutoTranslate(lang)
         removeA(alwaysTranslateLangs, lang)
         chrome.storage.local.set({alwaysTranslateLangs})
     })   
-}
-
-// register content script of translation engine
-var registeredContentScript = null
-async function changeTranslationEngine()
-{
-    if (registeredContentScript) {
-        registeredContentScript.unregister()
-        registeredContentScript = null
-    }
-    if (translationEngine == "google") {
-        var file
-        if (useNewAlgorithm == "yes") {
-            file = "scripts/contentScript_google2.js"
-        } else {
-            file = "scripts/contentScript_google.js"
-        }
-        registeredContentScript = await chrome.contentScripts.register({
-            matches: ["<all_urls>"],
-            allFrames: true,
-            js: [{file: file}],
-            runAt: "document_end"
-        });
-    } else if (translationEngine == "yandex") {
-        var file
-        if (useNewAlgorithm == "yes") {
-            file = "scripts/contentScript_yandex2.js"
-        } else {
-            file = "scripts/contentScript_yandex.js"
-        }
-        registeredContentScript = await chrome.contentScripts.register({
-            matches: ["<all_urls>"],
-            allFrames: true,
-            js: [{file: file}],
-            runAt: "document_end"
-        });     
-    }
 }
 
 function captureGoogleTranslateTKK() {
@@ -163,7 +126,7 @@ setInterval(() => {
         if (tkk) {
             googleTranslateTKK = tkk
 
-            chrome.tabs.query({}).then(tabs => {
+            chrome.tabs.query({}, tabs => {
                 tabs.forEach(tab => {
                     chrome.tabs.sendMessage(tab.id, {action: "updateGoogleTranslateTKK", googleTranslateTKK: googleTranslateTKK})
                 })
@@ -184,7 +147,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             updateContextMenu()
         }
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}).then(response => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}, response => {
                 if (response) {
                     removeSiteFromBlackList(response)
                 }
@@ -196,7 +159,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "Restore"})
         })
     } else if (request.action == "getMainFrameStatus") {
-        chrome.tabs.sendMessage(sender.tab.id, {action: "getStatus"}, {frameId: 0}).then(response => {
+        chrome.tabs.sendMessage(sender.tab.id, {action: "getStatus"}, {frameId: 0}, response => {
             sendResponse(response)
         })
         return true
@@ -210,7 +173,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
     } else if (request.action == "neverTranslateThisSite") {
         chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}).then(response => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}, response => {
                 if (response) {
                     addSiteToBlackList(response)
                 }
@@ -264,7 +227,6 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         if (request.translationEngine) {
             translationEngine = request.translationEngine
             chrome.storage.local.set({translationEngine})
-            changeTranslationEngine()
         }       
     } else if (request.action == "getTranslationEngine") {
         sendResponse(translationEngine)
@@ -277,7 +239,6 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             translationEngine = "google"
         }
         chrome.storage.local.set({translationEngine})
-        changeTranslationEngine()
     } else if (request.action == "getGoogleTranslateTKK") {
         sendResponse(googleTranslateTKK)
     }
@@ -293,7 +254,6 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         if (request.useNewAlgorithm) {
             useNewAlgorithm = request.useNewAlgorithm
             chrome.storage.local.set({useNewAlgorithm})
-            changeTranslationEngine()
         }
     } else if (request.action == "getUseNewAlgorithm") {
         sendResponse(useNewAlgorithm)
@@ -301,7 +261,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
 })
 
 var showContextMenu = "yes"
-chrome.storage.local.get("showContextMenu").then(onGot => {
+chrome.storage.local.get("showContextMenu", onGot => {
     if (onGot.showContextMenu) {
         showContextMenu = onGot.showContextMenu
     }
@@ -337,7 +297,7 @@ var targetLanguage = chrome.i18n.getUILanguage()
 if (targetLanguage.toLowerCase() != "zh-cn" && targetLanguage.toLowerCase() != "zh-tw") {
     targetLanguage = targetLanguage.split("-")[0]
 }
-chrome.storage.local.get("targetLanguage").then(onGot => {
+chrome.storage.local.get("targetLanguage", onGot => {
     if (onGot.targetLanguage) {
         targetLanguage = onGot.targetLanguage
 
@@ -381,23 +341,21 @@ var langs = []
 var translationEngine = "google"
 var useNewAlgorithm = "yes"
 
-chrome.storage.local.get("translationEngine").then(async onGot => {
+chrome.storage.local.get("translationEngine", async onGot => {
     if (onGot.translationEngine) {
         translationEngine = onGot.translationEngine
     }
 
-    await chrome.storage.local.get("useNewAlgorithm").then(onGot => {
+    await chrome.storage.local.get("useNewAlgorithm", onGot => {
         if (onGot.useNewAlgorithm) {
             useNewAlgorithm = onGot.useNewAlgorithm
         }
     })
-
-    changeTranslationEngine()
 })
 
 // get show popup config
 var showPopupConfig = "auto"
-chrome.storage.local.get("showPopupConfig").then(onGot => {
+chrome.storage.local.get("showPopupConfig", onGot => {
     if (onGot.showPopupConfig) {
         showPopupConfig = onGot.showPopupConfig
     }
@@ -407,16 +365,15 @@ chrome.storage.local.get("showPopupConfig").then(onGot => {
 chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == "install") {
         // execute contentScript on Extension Install
-        chrome.tabs.query({}).then(tabs => {
+        chrome.tabs.query({}, tabs => {
             tabs.forEach(tab => {
                 if (tab.status == "complete") {
-                    function injectScript() {
+                    var attempts = 0
+                    function injectScript(tabId) {
+                        attempts++
                         if (googleTranslateTKK) {
-                            chrome.tabs.executeScript(tab.id, {file: "/scripts/contentScript_google2.js", allFrames: true})
-                            if (isMobile.any()) {
-                                chrome.tabs.executeScript(tab.id, {file: "/scripts/mobile.js", allFrames: false})
-                            }
-                        } else {
+                            injectContentScripts(tab.id)
+                        } else if (attempts < 5) {
                             setTimeout(injectScript, 500)
                         }
                     }
@@ -430,27 +387,17 @@ chrome.runtime.onInstalled.addListener(details => {
     }
 })
 
-// popup for mobile
-if (isMobile.any()) {
-    chrome.contentScripts.register({
-        "js": [{file: "/scripts/mobile.js"}],
-        "matches": ["<all_urls>"],
-        "runAt": "document_end"
-    })
-}
-
 if (typeof chrome.contextMenus != 'undefined') {
     chrome.contextMenus.onClicked.addListener((info, tab) => {
-        chrome.pageAction.openPopup()
-        chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, {frameId: 0}).then(response => {
+        chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, {frameId: 0}, response => {
             if (response) {
                 removeSiteFromBlackList(response)
             }
         })
         chrome.tabs.sendMessage(tab.id, {action: "Translate"})
+        chrome.browserAction.openPopup() // firefox only
     })
 }
-
 
 chrome.commands.onCommand.addListener(command => {
     if (command === "toggle-translation") {
@@ -459,3 +406,39 @@ chrome.commands.onCommand.addListener(command => {
         })
     }
 })
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    if (changeInfo.status == "complete") {
+        injectContentScripts(tabId)
+    }
+})
+
+function injectContentScripts(tabId) {
+    var file
+
+    if (translationEngine == "google") {
+        if (useNewAlgorithm == "yes") {
+            file = "scripts/contentScript_google2.js"
+        } else {
+            file = "scripts/contentScript_google.js"
+        }
+    } else if (translationEngine == "yandex") {
+        if (useNewAlgorithm == "yes") {
+            file = "scripts/contentScript_yandex2.js"
+        } else {
+            file = "scripts/contentScript_yandex.js"
+        }
+    }
+
+    chrome.tabs.executeScript(tabId, {
+        file: file,
+        allFrames: true
+    })
+
+    if (isMobile.any()) {
+        chrome.tabs.executeScript(tabId, {
+            file: "/scripts/mobile.js",
+            allFrames: false
+        })
+    }
+}

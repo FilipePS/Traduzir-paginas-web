@@ -44,11 +44,8 @@
         "browser_style": false
     },
 
-    "page_action": {
+    "browser_action": {
         "browser_style": false,
-        "show_matches": [
-            "<all_urls>"
-        ],
         "default_icon": {
             "16": "icons/google-translate-16.png",
             "24": "icons/google-translate-24.png",

@@ -129,7 +129,7 @@ chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
 
     // auto translate pages
     if (detectedLanguage) {
-        chrome.storage.local.get(["alwaysTranslateLangs", "neverTranslateSites"]).then(onGot => {
+        chrome.storage.local.get(["alwaysTranslateLangs", "neverTranslateSites"], onGot => {
             var alwaysTranslateLangs = onGot.alwaysTranslateLangs
             if (!alwaysTranslateLangs) {
                 alwaysTranslateLangs = []
