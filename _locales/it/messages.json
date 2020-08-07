@@ -15,7 +15,7 @@
     "message": "Traduzione in corso ..."
   },
   "lblTranslated": {
-    "message": "tradotto"
+    "message": "Tradotto"
   },
   "lblError": {
     "message": "Questa pagina non può essere tradotta"
@@ -30,25 +30,25 @@
     "message": "Ripristina"
   },
   "btnTranslate": {
-    "message": "Tradurre"
+    "message": "Traduci"
   },
   "btnOptions": {
-    "message": "opzioni"
+    "message": "Opzioni"
   },
   "btnRestore": {
-    "message": "Spettacolo originale"
+    "message": "Mostra originale"
   },
   "btnTryAgain": {
     "message": "Riprova"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Apri in traduttore Google"
+    "message": "Apri in Google Translate"
   },
   "btnDonate": {
-    "message": "Donare"
+    "message": "Dona"
   },
   "btnNeverTranslate": {
-    "message": "Mai tradurre questo sito"
+    "message": "Non tradurre mai questo sito"
   },
   "btnChangeLanguages": {
     "message": "Cambia lingua"
@@ -57,13 +57,13 @@
     "message": "Originale"
   },
   "btnMobileTranslated": {
-    "message": "tradotto"
+    "message": "Tradotto"
   },
   "btnMobileNeverTranslate": {
-    "message": "Mai tradurre questo sito"
+    "message": "Non tradurre mai questo sito"
   },
   "btnMobileDonate": {
-    "message": "Donare"
+    "message": "Dona"
   },
   "optionsNeverTranslate": {
     "message": "Non tradurre mai questi siti"
@@ -72,7 +72,7 @@
     "message": "Traduci automaticamente queste lingue"
   },
   "optionPopupConfig": {
-    "message": "Mostra il popup mobile"
+    "message": "Mostra il popup"
   },
   "optionPopupAuto": {
     "message": "Automaticamente"
@@ -84,10 +84,10 @@
     "message": "Motore di traduzione"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Apri in yandex translate"
+    "message": "Apri in Yandex Translate"
   },
   "lblOthers": {
-    "message": "Altri"
+    "message": "Altro"
   },
   "btnMoreOptions": {
     "message": "Più opzioni"
@@ -102,13 +102,13 @@
     "message": "Mostra l'opzione per tradurre la pagina nel menu contestuale"
   },
   "msgYes": {
-    "message": "sì"
+    "message": "Sì"
   },
   "msgNo": {
     "message": "No"
   },
   "lblUseNewAlgorithm": {
-    "message": "Utilizzare il nuovo algoritmo di traduzione?"
+    "message": "Vuoi usare il nuovo algoritmo di traduzione?"
   },
   "msgYesRecommended": {
     "message": "Sì (consigliato)"

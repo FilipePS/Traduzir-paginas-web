@@ -1,0 +1,122 @@
+{
+  "extensionName": {
+    "message": "Web Sayfalarını Çevir"
+  },
+  "extensionDescription": {
+    "message": "Sayfanızı Google veya Yandex'i kullanarak gerçek zamanlı olarak çevirin."
+  },
+  "pageActionTitle": {
+    "message": "Bu sayfayı çevir"
+  },
+  "lblTranslate": {
+    "message": "Bu sayfa çevirilsin mi?"
+  },
+  "lblTranslating": {
+    "message": "Çeviriliyor ..."
+  },
+  "lblTranslated": {
+    "message": "Çevirildi"
+  },
+  "lblError": {
+    "message": "Bu sayfa çevirilemedi"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Her zaman çevir"
+  },
+  "lblTargetLanguage": {
+    "message": "Hedef dil"
+  },
+  "btnReset": {
+    "message": "Sıfırla"
+  },
+  "btnTranslate": {
+    "message": "Çevir"
+  },
+  "btnOptions": {
+    "message": "Seçenekler"
+  },
+  "btnRestore": {
+    "message": "Orijinali göster"
+  },
+  "btnTryAgain": {
+    "message": "Yeniden deneyin"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Google çeviri'de aç"
+  },
+  "btnDonate": {
+    "message": "Bağış yap"
+  },
+  "btnNeverTranslate": {
+    "message": "Bu siteyi asla çevirme"
+  },
+  "btnChangeLanguages": {
+    "message": "Dil değiştir"
+  },
+  "btnMobileOriginal": {
+    "message": "Orijinal"
+  },
+  "btnMobileTranslated": {
+    "message": "Çevrilmiş"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Bu siteyi asla çevirme"
+  },
+  "btnMobileDonate": {
+    "message": "Bağış yap"
+  },
+  "optionsNeverTranslate": {
+    "message": "Bu siteleri asla çevirme"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Bu dilleri otomatik olarak çevir"
+  },
+  "optionPopupConfig": {
+    "message": "Mobil açılır pencereyi göster"
+  },
+  "optionPopupAuto": {
+    "message": "Otomatik olarak"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Ekrana üç parmağımla dokunduğumda"
+  },
+  "lblTranslationEngine": {
+    "message": "Çeviri motoru"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Yandex çeviri'de aç"
+  },
+  "lblOthers": {
+    "message": "Diğerleri"
+  },
+  "btnMoreOptions": {
+    "message": "Daha fazla seçenek"
+  },
+  "lblPlsDonate": {
+    "message": "Geliştiriciye bağış yap"
+  },
+  "msgTranslateFor": {
+    "message": "Şu dile çevir"
+  },
+  "lblShowContextMenu": {
+    "message": "Bağlam menüsünde sayfayı çevirme seçeneğini göster"
+  },
+  "msgYes": {
+    "message": "Evet"
+  },
+  "msgNo": {
+    "message": "Hayır"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Yeni çeviri algoritması kullanılsın mı?"
+  },
+  "msgYesRecommended": {
+    "message": "Evet (önerilen)"
+  },
+  "msgNoUseWidgets": {
+    "message": "Hayır (widget'ları kullan)"
+  },
+  "optionsPageTitle": {
+    "message": "Web Sayfalarını Çevir - Seçenekler"
+  }
+}
