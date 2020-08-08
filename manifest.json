@@ -3,7 +3,7 @@
     "manifest_version": 2,
     "default_locale": "en",
     "name": "__MSG_extensionName__",
-    "version": "9982",
+    "version": "6.7",
 
     "description": "__MSG_extensionDescription__",
 
@@ -51,8 +51,7 @@
             "24": "icons/google-translate-24.png",
             "32": "icons/google-translate-32.png"
         },
-        "default_title": "__MSG_pageActionTitle__",
-        "default_popup": "popup/popup.html"
+        "default_title": "__MSG_pageActionTitle__"
     },
 
     "content_scripts": [{

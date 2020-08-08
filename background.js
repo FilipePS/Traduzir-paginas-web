@@ -398,6 +398,14 @@ if (typeof chrome.contextMenus != 'undefined') {
     })
 }
 
+if (isMobile.any()) {
+    chrome.browserAction.onClicked.addListener(tab => {
+        chrome.tabs.sendMessage(tab.id, {action: "showMobilePopup"}, {frameId: 0})
+    })
+} else {
+    chrome.browserAction.setPopup({popup: "popup/popup.html"})
+}
+
 chrome.commands.onCommand.addListener(command => {
     if (command === "toggle-translation") {
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
