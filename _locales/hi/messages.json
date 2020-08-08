@@ -118,5 +118,14 @@
   },
   "optionsPageTitle": {
     "message": "वेब पेज का अनुवाद करें - विकल्प"
+  },
+  "optionPopupjustWhenIClickTranlateThisSite": {
+    "message": "Only when I click \"Translate this site\""
+  },
+  "msgEmptyListNeverTranslateSites": {
+    "message": "You have not added any sites to this list."
+  },
+  "msgEmptyListAlwaysTranslateLanguages": {
+    "message": "You have not added any languages to this list."
   }
 }

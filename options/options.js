@@ -68,8 +68,12 @@ document.querySelector("#selectShowContextMenu option[value='yes']").textContent
 document.querySelector("#selectShowContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
 document.querySelector("#selectPopupConfig option[value='auto']").textContent = chrome.i18n.getMessage("optionPopupAuto")
 document.querySelector("#selectPopupConfig option[value='threeFingersOnTheScreen']").textContent = chrome.i18n.getMessage("optionPopupThreeFingers")
+document.querySelector("#selectPopupConfig option[value='justWhenIClickTranlateThisSite']").textContent = chrome.i18n.getMessage("optionPopupjustWhenIClickTranlateThisSite")
 document.querySelector("#selectUseNewAlgorithm option[value='yes']").textContent = chrome.i18n.getMessage("msgYesRecommended")
 document.querySelector("#selectUseNewAlgorithm option[value='no']").textContent = chrome.i18n.getMessage("msgNoUseWidgets")
+
+neverTranslateList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListNeverTranslateSites"))
+alwaysTranslateList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListAlwaysTranslateLanguages"))
 
 selectShowContextMenu.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setShowContextMenu", showContextMenu: selectShowContextMenu.value})

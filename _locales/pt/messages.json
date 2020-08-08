@@ -118,5 +118,14 @@
   },
   "optionsPageTitle": {
     "message": "Traduzir Páginas Web - Opções"
+  },
+  "optionPopupjustWhenIClickTranlateThisSite": {
+    "message": "Apenas quando eu clicar em \"Traduzir este site\""
+  },
+  "msgEmptyListNeverTranslateSites": {
+    "message": "Você não adicionou nenhum site a esta lista."
+  },
+  "msgEmptyListAlwaysTranslateLanguages": {
+    "message": "Você não adicionou nenhum idioma a esta lista."
   }
 }
