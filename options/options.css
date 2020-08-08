@@ -33,3 +33,7 @@ i {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
+ul:empty:after {
+  content: attr(placeholder);
+}
