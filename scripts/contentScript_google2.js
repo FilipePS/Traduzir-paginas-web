@@ -105,9 +105,9 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
                 acc = Number(acc);
             }
             if (optString.charAt(i + 1) == '+') {
-                acc = num >>> acc
+                acc = num >>> acc;
             } else {
-                acc = num << acc
+                acc = num << acc;
             }
             if (optString.charAt(i) == '+') {
                 num += acc & 4294967295;
@@ -115,18 +115,15 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
                 num ^= acc;
             }
         }
-        return num
+        return num;
     }
 
-    function calcHash(query, windowTkk) {
-        var tkkSplited = windowTkk.split('.');
-        var tkkIndex = Number(tkkSplited[0]) || 0;
-        var tkkKey = Number(tkkSplited[1]) || 0
-
-        var bytesArray = []
-        var idx = 0
+    function transformQuery(query) {
+        var bytesArray = [];
+        var idx = [];
         for (var i = 0; i < query.length; i++) {
             var charCode = query.charCodeAt(i);
+
             if (128 > charCode) {
                 bytesArray[idx++] = charCode;
             } else {
@@ -139,25 +136,37 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
                         bytesArray[idx++] = charCode >> 12 & 63 | 128;
                     } else {
                         bytesArray[idx++] = charCode >> 12 | 224;
-                        bytesArray[idx++] = charCode >> 6 & 63 | 128;
                     }
+                    bytesArray[idx++] = charCode >> 6 & 63 | 128;
                 }
                 bytesArray[idx++] = charCode & 63 | 128;
             }
-        }
 
+        }
+        return bytesArray;
+    }
+    
+    function calcHash(query, windowTkk) {
+        var tkkSplited = windowTkk.split('.');
+        var tkkIndex = Number(tkkSplited[0]) || 0;
+        var tkkKey = Number(tkkSplited[1]) || 0;
+    
+        var bytesArray = transformQuery(query);
+    
         var encondingRound = tkkIndex;
         for (var i = 0; i < bytesArray.length; i++) {
             encondingRound += bytesArray[i];
             encondingRound = shiftLeftOrRightThenSumOrXor(encondingRound, '+-a^+6');
         }
         encondingRound = shiftLeftOrRightThenSumOrXor(encondingRound, '+-3^+b+-f');
+        
         encondingRound ^= tkkKey;
         if (encondingRound <= 0) {
             encondingRound = (encondingRound & 2147483647) + 2147483648;
         }
+
         var normalizedResult  = encondingRound % 1000000;
-        return normalizedResult .toString() + '.' + (normalizedResult  ^ tkkIndex)
+        return normalizedResult .toString() + '.' + (normalizedResult  ^ tkkIndex);
     }
 
     var googleTranslateTKK = null
