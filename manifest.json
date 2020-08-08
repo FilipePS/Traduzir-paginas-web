@@ -3,7 +3,7 @@
     "manifest_version": 2,
     "default_locale": "en",
     "name": "__MSG_extensionName__",
-    "version": "6.7",
+    "version": "9982",
 
     "description": "__MSG_extensionDescription__",
 
@@ -54,6 +54,20 @@
         "default_title": "__MSG_pageActionTitle__",
         "default_popup": "popup/popup.html"
     },
+
+    "content_scripts": [{
+            "matches": ["<all_urls>"],
+            "run_at": "document_end",
+            "all_frames": true,
+            "js": ["scripts/contentScript_google2.js", "scripts/contentScript_yandex2.js"]
+        },
+        {
+            "matches": ["<all_urls>"],
+            "run_at": "document_end",
+            "all_frames": false,
+            "js": ["scripts/mobile.js"]
+        }
+    ],
 
     "background": {
         "scripts": ["languages.js", "background.js"]

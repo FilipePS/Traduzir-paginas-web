@@ -116,9 +116,18 @@ function captureGoogleTranslateTKK() {
         })
 }
 
-var googleTranslateTKK = null
-captureGoogleTranslateTKK().then(tkk => {
-    googleTranslateTKK = tkk
+var googleTranslateTKK = undefined
+captureGoogleTranslateTKK()
+.then(tkk => {
+    if (tkk) {
+        googleTranslateTKK = tkk
+    } else {
+        googleTranslateTKK = null
+    }
+})
+.catch(e => {
+    googleTranslateTKK = null
+    console.error(e)
 })
 
 setInterval(() => {
@@ -240,7 +249,15 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
         chrome.storage.local.set({translationEngine})
     } else if (request.action == "getGoogleTranslateTKK") {
-        sendResponse(googleTranslateTKK)
+        function waitGogleTranslateTKK() {
+            if (typeof googleTranslateTKK != "undefined") {
+                sendResponse(googleTranslateTKK)
+            } else {
+                setTimeout(waitGogleTranslateTKK, 500)
+            }
+        }
+        waitGogleTranslateTKK()
+        return true
     }
     else if (request.action == "setShowContextMenu") {
         if (request.showContextMenu) {
@@ -361,26 +378,8 @@ chrome.storage.local.get("showPopupConfig", onGot => {
     }
 })
 
-// show options page
 chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == "install") {
-        // execute contentScript on Extension Install
-        chrome.tabs.query({}, tabs => {
-            tabs.forEach(tab => {
-                if (tab.status == "complete") {
-                    var attempts = 0
-                    function injectScript(tabId) {
-                        attempts++
-                        if (googleTranslateTKK) {
-                            injectContentScripts(tab.id)
-                        } else if (attempts < 5) {
-                            setTimeout(injectScript, 500)
-                        }
-                    }
-                    injectScript()
-                }
-            })
-        })
         chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
     } else if (details.reason == "update" && chrome.runtime.getManifest().version != details.previousVersion) {
         chrome.tabs.create({url: "https://filipeps.github.io/Traduzir-paginas-web/release_notes/"})
@@ -406,39 +405,3 @@ chrome.commands.onCommand.addListener(command => {
         })
     }
 })
-
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (changeInfo.status == "complete") {
-        injectContentScripts(tabId)
-    }
-})
-
-function injectContentScripts(tabId) {
-    var file
-
-    if (translationEngine == "google") {
-        // if (useNewAlgorithm == "yes") {
-            file = "scripts/contentScript_google2.js"
-        // } else {
-            // file = "scripts/contentScript_google.js"
-        // }
-    } else if (translationEngine == "yandex") {
-        // if (useNewAlgorithm == "yes") {
-            file = "scripts/contentScript_yandex2.js"
-        // } else {
-        //     file = "scripts/contentScript_yandex.js"
-        // }
-    }
-
-    chrome.tabs.executeScript(tabId, {
-        file: file,
-        allFrames: true
-    })
-
-    if (isMobile.any()) {
-        chrome.tabs.executeScript(tabId, {
-            file: "/scripts/mobile.js",
-            allFrames: false
-        })
-    }
-}
