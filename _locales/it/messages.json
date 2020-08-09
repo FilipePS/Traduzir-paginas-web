@@ -1,18 +1,18 @@
 {
   "extensionName": {
-    "message": "Traduci le pagine web"
+    "message": "Traduttore pagine web"
   },
   "extensionDescription": {
-    "message": "Traduci la tua pagina in tempo reale utilizzando Google o Yandex."
+    "message": "Traduci le pagine web in tempo reale utilizzando Google o Yandex."
   },
   "pageActionTitle": {
     "message": "Traduci questa pagina"
   },
   "lblTranslate": {
-    "message": "Traduci questa pagina?"
+    "message": "Tradurre questa pagina?"
   },
   "lblTranslating": {
-    "message": "Traduzione in corso ..."
+    "message": "Traduzione in corso…"
   },
   "lblTranslated": {
     "message": "Tradotto"
@@ -45,7 +45,7 @@
     "message": "Apri in Google Translate"
   },
   "btnDonate": {
-    "message": "Dona"
+    "message": "Fai una donazione"
   },
   "btnNeverTranslate": {
     "message": "Non tradurre mai questo sito"
@@ -90,7 +90,7 @@
     "message": "Altro"
   },
   "btnMoreOptions": {
-    "message": "Più opzioni"
+    "message": "Altre opzioni"
   },
   "lblPlsDonate": {
     "message": "Aiuta lo sviluppatore con una donazione"
@@ -99,7 +99,7 @@
     "message": "Traduci in"
   },
   "lblShowContextMenu": {
-    "message": "Mostra l'opzione per tradurre la pagina nel menu contestuale"
+    "message": "Mostra opzione per tradurre la pagina nel menu contestuale"
   },
   "msgYes": {
     "message": "Sì"
@@ -108,7 +108,7 @@
     "message": "No"
   },
   "lblUseNewAlgorithm": {
-    "message": "Vuoi usare il nuovo algoritmo di traduzione?"
+    "message": "Utilizzare il nuovo algoritmo di traduzione?"
   },
   "msgYesRecommended": {
     "message": "Sì (consigliato)"
@@ -117,15 +117,15 @@
     "message": "No (usa i widget)"
   },
   "optionsPageTitle": {
-    "message": "Traduci pagine Web - Opzioni"
+    "message": "Traduzione pagine web - Opzioni"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Solo quando faccio clic su “Traduci questo sito”"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Non hai aggiunto questo sito ad alcuna lista."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Non hai aggiunto alcuna lingua a questa lista."
   }
 }
