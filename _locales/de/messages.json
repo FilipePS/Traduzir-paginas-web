@@ -33,7 +33,7 @@
     "message": "Übersetzen"
   },
   "btnOptions": {
-    "message": "Optionen"
+    "message": "Einstellungen"
   },
   "btnRestore": {
     "message": "Original zeigen"
@@ -120,12 +120,12 @@
     "message": "Webseiten übersetzen - Optionen"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Nur wenn ich auf \"Diese Webseite übersetzen\" klicke"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Du hast noch keine Webseiten zu dieser Liste hinzugefügt."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Du hast noch keine Sprachen zu dieser Liste hinzugefügt."
   }
 }

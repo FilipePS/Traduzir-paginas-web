@@ -120,12 +120,12 @@
     "message": "ウェブページを翻訳 - 設定"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "「このサイトを翻訳」をクリックした時のみ"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "このリストにサイトを追加していません"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "このリストに言語を追加していません"
   }
 }
