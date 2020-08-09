@@ -56,11 +56,15 @@
 
     "content_scripts": [{
             "matches": ["<all_urls>"],
+            "run_at": "document_start",
+            "all_frames": true,
+            "js": ["scripts/backgroundFetch.js"]
+        }, {
+            "matches": ["<all_urls>"],
             "run_at": "document_end",
             "all_frames": true,
             "js": ["scripts/contentScript_google2.js", "scripts/contentScript_yandex2.js"]
-        },
-        {
+        }, {
             "matches": ["<all_urls>"],
             "run_at": "document_end",
             "all_frames": false,

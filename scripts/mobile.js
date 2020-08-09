@@ -197,14 +197,14 @@ function callIfIsMobile() {
             let url = "https://translate.google.com/translate_a/single?client=gtx&sl=auto"
             text = text.trim().substring(0, 200)
     
-            fetch(url, {
+            backgroundFetchText(url, {
                 credentials: "omit",
                 referrerPolicy: "no-referrer",
+                mode: "no-cors",
                 method: "post",
                 headers: {'Content-Type':'application/x-www-form-urlencoded'},
                 body: "q=" + encodeURIComponent(text)
             })
-            .then(data => data.text())
             .then(data => {
                 if (data && (data = JSON.parse(data)) && data[2]) {
                     callback(data[2])

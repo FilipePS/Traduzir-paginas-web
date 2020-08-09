@@ -215,17 +215,16 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
 
         if (stringsToTranslateInfo.length > 0) {
             var tk = calcHash(stringsToTranslateInfo.map(value => value.original).join(''), googleTranslateTKK)
-            fetch("https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=" + targetLanguage + "&tk=" + tk, {
+            backgroundFetchJson("https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=" + targetLanguage + "&tk=" + tk, {
                 "credentials": "omit",
                 "headers": {
                     "Content-Type": "application/x-www-form-urlencoded"
                 },
                 "body": requestBody,
                 "method": "POST",
-                "mode": "cors",
+                "mode": "no-cors",
                 "referrerPolicy": "no-referrer"
             })
-            .then(response => response.json())
             .then(responseJson => {
                 if (typeof responseJson[0] == "string") {
                     responseJson = [responseJson[0]]

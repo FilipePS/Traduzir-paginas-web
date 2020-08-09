@@ -135,17 +135,16 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
         }
 
         if (stringsToTranslateInfo.length > 0) {
-            fetch("https://translate.yandex.net/api/v1/tr.json/translate", {
+            backgroundFetchJson("https://translate.yandex.net/api/v1/tr.json/translate", {
                 "credentials": "omit",
                 "headers": {
                     "Content-Type": "application/x-www-form-urlencoded"
                 },
                 "body": requestBody,
                 "method": "POST",
-                "mode": "cors",
+                "mode": "no-cors",
                 "referrerPolicy": "no-referrer"
             })
-            .then(response => response.json())
             .then(responseJson => {
                 responseJson.text.forEach((value, index) => {
                     stringsToTranslateInfo[index].status = "complete"

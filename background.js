@@ -101,7 +101,7 @@ function captureGoogleTranslateTKK() {
     return fetch("https://translate.google.com", {
             "credentials": "omit",
             "method": "GET",
-            "mode": "cors",
+            "mode": "no-cors",
             "referrerPolicy": "no-referrer"
         })
         .then(response => response.text())
@@ -275,6 +275,28 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
     } else if (request.action == "getUseNewAlgorithm") {
         sendResponse(useNewAlgorithm)
+    } else if (request.action == "backgroundFetchJson") {
+        fetch(request.url, request.options)
+        .then(response => response.json())
+        .then(response => {
+            sendResponse(response)
+        })
+        .catch(e => {
+            sendResponse(null)
+            console.error(e)
+        })
+        return true
+    } else if (request.action == "backgroundFetchText") {
+        fetch(request.url, request.options)
+        .then(response => response.text())
+        .then(response => {
+            sendResponse(response)
+        })
+        .catch(e => {
+            sendResponse(null)
+            console.error(e)
+        })
+        return true
     }
 })
 
