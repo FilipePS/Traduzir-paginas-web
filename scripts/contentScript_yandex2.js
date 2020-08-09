@@ -185,7 +185,8 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
         var index = 0
         
         var getAllNodes = function (element) {
-            if (element.nodeType == 1 && htmlTagsInlineIgnore.indexOf(element.nodeName) == -1) {
+            if (element.nodeType == 1 && htmlTagsInlineIgnore.indexOf(element.nodeName) == -1
+            && !element.classList.contains("notranslate")) {
                 if (translateNodes[index].nodesInfo.length > 0 && htmlTagsInlineText.indexOf(element.nodeName) == -1) {
                     translateNodes.push({isTranslated: false, parent: null, nodesInfo: []})
                     index++
