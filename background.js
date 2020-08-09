@@ -405,7 +405,7 @@ chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == "install") {
         chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
     } else if (details.reason == "update" && chrome.runtime.getManifest().version != details.previousVersion) {
-        chrome.tabs.create({url: "https://filipeps.github.io/Traduzir-paginas-web/release_notes/"})
+        // chrome.tabs.create({url: "https://filipeps.github.io/Traduzir-paginas-web/release_notes/"})
     }
 })
 
