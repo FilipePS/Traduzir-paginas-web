@@ -101,7 +101,8 @@ function captureGoogleTranslateTKK() {
     return fetch("https://translate.google.com", {
             "credentials": "omit",
             "method": "GET",
-            "mode": "cors"
+            "mode": "cors",
+            "referrerPolicy": "no-referrer"
         })
         .then(response => response.text())
         .then(responseText => {

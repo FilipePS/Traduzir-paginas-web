@@ -199,6 +199,7 @@ function callIfIsMobile() {
     
             fetch(url, {
                 credentials: "omit",
+                referrerPolicy: "no-referrer",
                 method: "post",
                 headers: {'Content-Type':'application/x-www-form-urlencoded'},
                 body: "q=" + encodeURIComponent(text)

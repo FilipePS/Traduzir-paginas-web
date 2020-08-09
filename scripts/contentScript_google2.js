@@ -222,7 +222,8 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
                 },
                 "body": requestBody,
                 "method": "POST",
-                "mode": "cors"
+                "mode": "cors",
+                "referrerPolicy": "no-referrer"
             })
             .then(response => response.json())
             .then(responseJson => {
