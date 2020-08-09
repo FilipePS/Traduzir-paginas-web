@@ -120,12 +120,12 @@
     "message": "Prevedi web stranice - Opcije"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Samo kada kliknem na \"Prevedi ovu stranicu\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Još niste dodali stranice na ovaj popis."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Još niste dodali jezike na ovaj popis."
   }
 }
