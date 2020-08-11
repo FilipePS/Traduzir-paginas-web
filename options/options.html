@@ -14,32 +14,32 @@
     </div>
     <div class="w3-container">
         <h3 id="lblTargetLanguage">Target language</h3>
-        <select id="selectTargetLanguage" class="w3-select w3-border w3-round"></select>
+        <select id="selectTargetLanguage" class="w3-select w3-border w3-round" size></select>
     </div>
     <div class="w3-container">
         <h3 id="lblTranslationEngine">Translation engine</h3>
-        <select id="selectTranslationEngine" class="w3-select w3-border w3-round">
+        <select id="selectTranslationEngine" class="w3-select w3-border w3-round" size>
             <option value="google">Google</option>
             <option value="yandex">Yandex</option>
         </select>
     </div>
     <div class="w3-container" style="display: none;">
         <h3 id="lblUseNewAlgorithm">Use the new translation algorithm?</h3>
-        <select id="selectUseNewAlgorithm" class="w3-select w3-border w3-round">
+        <select id="selectUseNewAlgorithm" class="w3-select w3-border w3-round" size>
             <option value="yes">Yes (recommended)</option>
             <option value="no">No (Use widgets)</option>
         </select>
     </div>
     <div class="w3-container desktop-only">
         <h3 id="lblShowContextMenu">Show the option to translate the page in the context menu</h3>
-        <select id="selectShowContextMenu" class="w3-select w3-border w3-round">
+        <select id="selectShowContextMenu" class="w3-select w3-border w3-round" size>
             <option value="yes">Yes</option>
             <option value="no">No</option>
         </select>
     </div>
     <div class="w3-container mobile-only">
         <h3 id="lblPopupConfig">Show the mobile popup</h3>
-        <select id="selectPopupConfig" class="w3-select w3-border w3-round">
+        <select id="selectPopupConfig" class="w3-select w3-border w3-round" size>
             <option value="auto" selected>Automatically</option>
             <option value="threeFingersOnTheScreen">When I touch three fingers on the screen</option>
             <option value="justWhenIClickTranlateThisSite">Only when I click "Translate this site"</option>
@@ -54,7 +54,7 @@
     </div>
     <br>
     <div class="w3-container">
-        <button id="alwaysTranslateListButton" class="w3-button w3-round w3-light-grey w3-border"><span id="lblAlwaysTranslate">Automatically translate these languages</span> <i class="arrow down"></i></button>
+        <button id="alwaysTranslateListButton" class="w3-button w3-round w3-light-grey w3-border desktop-only"><span id="lblAlwaysTranslate">Automatically translate these languages</span> <i class="arrow down"></i></button>
         <ul id="alwaysTranslateList" placeholder="You have not added any languages to this list." class="w3-ul w3-card-4 w3-margin-top" style="display: none;"></ul>
     </div>
     <br>

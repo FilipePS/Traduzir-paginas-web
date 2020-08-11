@@ -37,3 +37,32 @@ i {
 ul:empty:after {
   content: attr(placeholder);
 }
+
+body {
+  padding: 10px;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  * {
+    scrollbar-color: #202324 #454a4d;
+  }
+  
+  body {
+    color: #e8e6e3 !important;
+    background-color: #181a1b !important;
+    border: 1px solid #454a4d;
+  }
+  
+  
+  #selectTargetLanguage, #neverTranslateListButton, #alwaysTranslateListButton, #selectTranslationEngine, #selectShowContextMenu, select, option {
+    color: #e8e6e3 !important;
+    background-color: #181a1b !important;
+    border: 1px solid #305c80 !important;
+  }
+  
+}
