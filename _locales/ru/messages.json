@@ -120,12 +120,12 @@
     "message": "Перевести веб-страницы — параметры"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Только при нажатии \"Перевести этот сайт\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Вы не добавили ни один сайт в этот список."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Вы не добавили ни один язык в этот список."
   }
 }
