@@ -10,7 +10,8 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
     var prevTargetLanguage = null
     var translatedStrings = []
     var nodesTranslated = []
-    var status = "prompt"
+    var status
+    setStatus("prompt")
     var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BDO', 'BIG', 'CITE', 'DFN', 'EM', 'I', 'LABEL', 'Q', 'S', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U', 'TT', 'VAR']
     var htmlTagsInlineIgnore = ['BR', 'CODE', 'KBD', 'WBR'] // and input if type is submit or button
     var htmlTagsNoTranslate = ['TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
@@ -497,7 +498,7 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
             }
             prevTargetLanguage = targetLanguage
 
-            status = "progress"
+            setStatus("progress")
             
             translateNodes = getTranslateNodes(document.body)
 
@@ -507,7 +508,7 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
                 }
             }
 
-            status = "finish"
+            setStatus("finish")
 
             translateAttributes(targetLanguage)
             translatePageTitle(targetLanguage)
@@ -520,7 +521,7 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
     {
         disableMutatinObserver()
 
-        status = "prompt"
+        setStatus("prompt")
         nodesTranslated.forEach(nodeInfo => {
             nodeInfo.node.textContent = nodeInfo.original
         })
@@ -629,6 +630,13 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
         }
     }
     translateDynamically()
+
+    function setStatus(_status)
+    {
+        status = _status
+
+        chrome.runtime.sendMessage({action: "updateStatus", status: status})
+    }
 
     function getStatus()
     {
