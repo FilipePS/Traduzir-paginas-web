@@ -417,7 +417,6 @@ if (typeof chrome.contextMenus != 'undefined') {
             }
         })
         chrome.tabs.sendMessage(tab.id, {action: "Translate"})
-        chrome.browserAction.openPopup() // firefox only
     })
 }
 
