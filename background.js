@@ -112,38 +112,42 @@ function captureGoogleTranslateTKK() {
                 return result[0]
             }
         })
-        .catch(e => {
-            console.error(e)
-        })
 }
 
 var googleTranslateTKK = undefined
-captureGoogleTranslateTKK()
-.then(tkk => {
-    if (tkk) {
-        googleTranslateTKK = tkk
-    } else {
-        googleTranslateTKK = null
-    }
-})
-.catch(e => {
-    googleTranslateTKK = null
-    console.error(e)
-})
-
-setInterval(() => {
-    captureGoogleTranslateTKK().then(tkk => {
+function updateGoogleTranslateTKK() {
+    return captureGoogleTranslateTKK()
+    .then(tkk => {
         if (tkk) {
             googleTranslateTKK = tkk
-
+        
             chrome.tabs.query({}, tabs => {
                 tabs.forEach(tab => {
                     chrome.tabs.sendMessage(tab.id, {action: "updateGoogleTranslateTKK", googleTranslateTKK: googleTranslateTKK})
                 })
             })
+        } else {
+            throw "Tkk invalid";
         }
-    })    
-}, 30 * 1000 * 60)
+    })
+}
+
+updateGoogleTranslateTKK()
+.catch(e => {
+    googleTranslateTKK = null
+    console.error(e)
+
+    function foo() {
+        updateGoogleTranslateTKK()
+        .catch(e => {
+            console.error(e)
+            setTimeout(foo, 10000)
+        })
+    }
+    setTimeout(foo, 10000)
+})
+
+setInterval(updateGoogleTranslateTKK, 30 * 1000 * 60)
 
 // process messages
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
