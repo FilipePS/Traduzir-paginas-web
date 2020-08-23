@@ -120,12 +120,12 @@
     "message": "Käännä verkkosivut - Asetukset"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Vain, jos klikkaan \"Käännä tämä sivusto\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Et ole lisännyt yhtään kieltä tähän luetteloon."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Et ole lisännyt yhtään kieltä tähän luetteloon."
   }
 }
