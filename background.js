@@ -66,6 +66,35 @@ function removeSiteFromBlackList(url)
     })   
 }
 
+function addSiteToWhiteList(url) 
+{
+    chrome.storage.local.get("alwaysTranslateSites", onGot => {
+        var alwaysTranslateSites = onGot.alwaysTranslateSites
+        if (!alwaysTranslateSites) {
+            alwaysTranslateSites = []
+        }
+
+        if (alwaysTranslateSites.indexOf(url) == -1) {
+            alwaysTranslateSites.push(url)
+        }
+
+        chrome.storage.local.set({alwaysTranslateSites})
+    })
+}
+
+function removeSiteFromWhiteList(url)
+{
+    chrome.storage.local.get("alwaysTranslateSites", onGot => {
+        var alwaysTranslateSites = onGot.alwaysTranslateSites
+        if (!alwaysTranslateSites) {
+            alwaysTranslateSites = []
+        }
+
+        removeA(alwaysTranslateSites, url)
+        chrome.storage.local.set({alwaysTranslateSites})
+    })   
+}
+
 // enable auto translate for a language
 function enableAutoTranslate(lang)
 {
@@ -190,6 +219,16 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}, response => {
                 if (response) {
                     addSiteToBlackList(response)
+                    removeSiteFromWhiteList(response)
+                }
+            })
+        })
+    } else if (request.action == "alwaysTranslateThisSite") {
+        chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}, response => {
+                if (response) {
+                    addSiteToWhiteList(response)
+                    removeSiteFromBlackList(response)
                 }
             })
         })

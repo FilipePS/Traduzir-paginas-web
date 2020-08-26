@@ -46,6 +46,7 @@ document.querySelector("#btnOptionB").innerHTML += ' <i class="arrow down"></i>'
 document.querySelector("#btnOptions option[value='options']").textContent = chrome.i18n.getMessage("btnOptions")
 document.querySelector("#btnOptions option[value='options']").textContent = chrome.i18n.getMessage("btnOptions")
 document.querySelector("#btnOptions option[value='neverTranslateThisSite']").textContent = chrome.i18n.getMessage("btnNeverTranslate")
+document.querySelector("#btnOptions option[value='alwaysTranslateThisSite']").textContent = chrome.i18n.getMessage("btnAlwaysTranslate")
 document.querySelector("#btnOptions option[value='changeLanguage']").textContent = chrome.i18n.getMessage("btnChangeLanguages")
 document.querySelector("#btnOptions option[value='openInGoogleTranslate']").textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
 document.querySelector("#btnOptions option[value='donate']").textContent = chrome.i18n.getMessage("btnDonate")
@@ -313,6 +314,9 @@ btnOptions.addEventListener("change", () => {
     switch (btnOptions.value) {
         case "neverTranslateThisSite":
             chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
+            break
+        case "alwaysTranslateThisSite":
+            chrome.runtime.sendMessage({action: "alwaysTranslateThisSite"})
             break
         case "changeLanguage":
             showSelectTargetLanguage = true

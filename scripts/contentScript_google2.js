@@ -698,26 +698,33 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
     chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
         detectedLanguage = lang
 
-        // auto translate pages
-        if (detectedLanguage) {
-            chrome.storage.local.get(["alwaysTranslateLangs", "neverTranslateSites"], onGot => {
-                var alwaysTranslateLangs = onGot.alwaysTranslateLangs
-                if (!alwaysTranslateLangs) {
-                    alwaysTranslateLangs = []
-                }
-                var pageLang = detectedLanguage
-                if (pageLang && alwaysTranslateLangs.indexOf(pageLang) != -1) {
-                    var neverTranslateSites = onGot.neverTranslateSites
-                    if (!neverTranslateSites) {
-                        neverTranslateSites = []
+        chrome.storage.local.get(["alwaysTranslateLangs", "alwaysTranslateSites", "neverTranslateSites"], onGot => {
+            var alwaysTranslateSites = onGot.alwaysTranslateSites
+            if (!alwaysTranslateSites) {
+                alwaysTranslateSites = []
+            }
+            if (alwaysTranslateSites.indexOf(window.location.hostname) == -1) {
+                if (detectedLanguage) {
+                    var alwaysTranslateLangs = onGot.alwaysTranslateLangs
+                    if (!alwaysTranslateLangs) {
+                        alwaysTranslateLangs = []
                     }
-
-                    if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
-                        translate()
+                    var pageLang = detectedLanguage
+                    if (pageLang && alwaysTranslateLangs.indexOf(pageLang) != -1) {
+                        var neverTranslateSites = onGot.neverTranslateSites
+                        if (!neverTranslateSites) {
+                            neverTranslateSites = []
+                        }
+    
+                        if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
+                            translate()
+                        }
                     }
                 }
-            })
-        }
+            } else {
+                translate()
+            }
+        })
     })
     //*/
 

@@ -127,5 +127,11 @@
   },
   "msgEmptyListAlwaysTranslateLanguages": {
     "message": "You have not added any languages to this list."
+  },
+  "btnAlwaysTranslate": {
+    "message": "Always translate this site"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Always translate these sites"
   }
 }
