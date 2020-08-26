@@ -1807,7 +1807,7 @@ var languages = {
     },
 
     "tr": {
-        "en": "Türk",
+        "en": "ingilizce",
         "tr": "Türkçe",
         "af": "Afrika Dili",
         "de": "Almanca",
