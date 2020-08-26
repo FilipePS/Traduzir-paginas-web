@@ -18,7 +18,7 @@
     "message": "翻訳済み"
   },
   "lblError": {
-    "message": "ページを翻訳できませんでした"
+    "message": "ページを翻訳に失敗しました"
   },
   "lblAlwaysTranslate": {
     "message": "常にこの言語から翻訳する:"
@@ -90,22 +90,22 @@
     "message": "その他"
   },
   "btnMoreOptions": {
-    "message": "その他の設定"
+    "message": "拡張機能の設定"
   },
   "lblPlsDonate": {
-    "message": "寄付して開発者を支援する"
+    "message": "開発者に寄付する"
   },
   "msgTranslateFor": {
     "message": "以下に翻訳:"
   },
   "lblShowContextMenu": {
-    "message": "コンテキストメニューにページを翻訳するオプションを表示"
+    "message": "コンテキストメニューに「ページを翻訳する」を表示"
   },
   "msgYes": {
-    "message": "はい"
+    "message": "有効"
   },
   "msgNo": {
-    "message": "いいえ"
+    "message": "無効"
   },
   "lblUseNewAlgorithm": {
     "message": "新しい翻訳アルゴリズムを使用"
@@ -123,9 +123,9 @@
     "message": "「このサイトを翻訳」をクリックした時のみ"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "このリストにサイトを追加していません"
+    "message": "まだサイトが追加されていません。"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "このリストに言語を追加していません"
+    "message": "まだ言語が追加されていません"
   }
 }
