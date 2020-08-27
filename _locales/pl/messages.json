@@ -120,12 +120,24 @@
         "message": "Przetłumacz strony internetowe - Opcje"
     },
     "optionPopupjustWhenIClickTranlateThisSite": {
-      "message": "Only when I click \"Translate this site\""
+        "message": "Only when I click \"Translate this site\""
     },
     "msgEmptyListNeverTranslateSites": {
-      "message": "You have not added any sites to this list."
+        "message": "You have not added any sites to this list."
     },
     "msgEmptyListAlwaysTranslateLanguages": {
-      "message": "You have not added any languages to this list."
+        "message": "You have not added any languages to this list."
+    },
+    "btnAlwaysTranslate": {
+        "message": "Always translate this site"
+    },
+    "lblAlwaysTranslateSites": {
+        "message": "Always translate these sites"
+    },
+    "msgHelpDevelopment": {
+        "message": "Help maintain the development of this extension with an anonymous donation."
+    },
+    "msgDonateWithPaypal": {
+        "message": "Donate with PayPal"
     }
 }
