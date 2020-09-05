@@ -4,6 +4,7 @@ if (typeof browser !== 'undefined') {
 
 // get elements
 const btnClose = document.getElementById("btnClose")
+const divIconTranslateContainer = document.getElementById("divIconTranslateContainer")
 const divIconTranslate = document.getElementById("divIconTranslate")
 const iconTranslate = document.getElementById("iconTranslate")
 
@@ -28,6 +29,10 @@ const btnTryAgain = document.getElementById("btnTryAgain")
 const btnOptionsDiv = document.getElementById("btnOptionsDiv")
 const btnOptions = document.getElementById("btnOptions")
 
+const divDonate = document.getElementById("divDonate")
+const msgHelpDevelopment = document.getElementById("msgHelpDevelopment")
+const btnDonateWithPaypal = document.getElementById("btnDonateWithPaypal")
+
 // translate interface
 lblTranslate.textContent = chrome.i18n.getMessage("lblTranslate")
 lblTranslating.textContent = chrome.i18n.getMessage("lblTranslating")
@@ -46,14 +51,42 @@ document.querySelector("#btnOptionB").innerHTML += ' <i class="arrow down"></i>'
 document.querySelector("#btnOptions option[value='options']").textContent = chrome.i18n.getMessage("btnOptions")
 document.querySelector("#btnOptions option[value='options']").textContent = chrome.i18n.getMessage("btnOptions")
 document.querySelector("#btnOptions option[value='neverTranslateThisSite']").textContent = chrome.i18n.getMessage("btnNeverTranslate")
+document.querySelector("#btnOptions option[value='alwaysTranslateThisSite']").textContent = chrome.i18n.getMessage("btnAlwaysTranslate")
 document.querySelector("#btnOptions option[value='changeLanguage']").textContent = chrome.i18n.getMessage("btnChangeLanguages")
 document.querySelector("#btnOptions option[value='openInGoogleTranslate']").textContent = chrome.i18n.getMessage("btnOpenOnGoogleTranslate")
 document.querySelector("#btnOptions option[value='donate']").textContent = chrome.i18n.getMessage("btnDonate")
 document.querySelector("#btnOptions option[value='donate']").innerHTML += " &#10084;";
 document.querySelector("#btnOptions option[value='moreOptions']").textContent = chrome.i18n.getMessage("btnMoreOptions");
 
+msgHelpDevelopment.textContent = chrome.i18n.getMessage("msgHelpDevelopment")
+btnDonateWithPaypal.textContent = chrome.i18n.getMessage("msgDonateWithPaypal")
+
 var cStyle = getComputedStyle(document.querySelector("#btnOptionB"))
 btnOptions.style.width = (parseInt(cStyle.width) + 0) + "px"
+
+chrome.storage.local.get("lastDonationRequestTime", onGot => {
+    var lastDonationRequestTime = onGot.lastDonationRequestTime
+    var showDonationRequestPopup = false
+    if (lastDonationRequestTime) {
+        var date = new Date();
+        date.setDate(date.getDate() - 7)
+        if (date.getTime() > lastDonationRequestTime) {
+            showDonationRequestPopup = true
+            lastDonationRequestTime = Date.now()
+            chrome.storage.local.set({lastDonationRequestTime})
+        }
+    } else {
+        lastDonationRequestTime = Date.now()
+        chrome.storage.local.set({lastDonationRequestTime})
+    }
+
+    if (showDonationRequestPopup) {
+        setTimeout(() => {
+            divDonate.style.maxWidth = getComputedStyle(document.querySelector("main")).width
+            divDonate.style.display = "block"
+        }, 120)
+    }
+})
 
 // get translation engine
 var gTranslationEngine = "google"
@@ -125,6 +158,7 @@ function showPopupSection(status)
         btnTryAgain.style.display = "none"
         btnOptionsDiv.style.display = "none"
     } else {
+        divIconTranslateContainer.style.display = "none"
         lblTargetLanguage.style.display = "none"
         selectTargetLanguage.style.display = "none"
         btnReset.style.display = "none"
@@ -168,6 +202,8 @@ function showPopupSection(status)
                 btnRestore.style.display = "none"
                 btnTryAgain.style.display = "inline"
                 btnOptionsDiv.style.display = "none"
+
+                divIconTranslateContainer.style.display = "block"
                 break;
             case "prompt":
             case "unknown":
@@ -182,6 +218,8 @@ function showPopupSection(status)
                 btnRestore.style.display = "none"
                 btnTryAgain.style.display = "none"
                 btnOptionsDiv.style.display = "inline"
+
+                divIconTranslateContainer.style.display = "block"
                 break;
         }
     }
@@ -313,6 +351,9 @@ btnOptions.addEventListener("change", () => {
     switch (btnOptions.value) {
         case "neverTranslateThisSite":
             chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
+            break
+        case "alwaysTranslateThisSite":
+            chrome.runtime.sendMessage({action: "alwaysTranslateThisSite"})
             break
         case "changeLanguage":
             showSelectTargetLanguage = true

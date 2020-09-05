@@ -14,6 +14,15 @@ main {
     margin-top: 10px;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    flex: 1;
+}
+
 button {
     min-width: 80px;
     margin-left: 5px;
@@ -103,4 +112,8 @@ option {
         background-color: #181a1b !important;
         border: 1px solid #454a4d !important;
     }
+}
+
+#divIconTranslate > img {
+    padding: 0;
 }

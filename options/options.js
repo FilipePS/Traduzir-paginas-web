@@ -51,6 +51,9 @@ const alwaysTranslateListButton = document.getElementById("alwaysTranslateListBu
 const alwaysTranslateList = document.getElementById("alwaysTranslateList")
 const lblUseNewAlgorithm = document.getElementById("lblUseNewAlgorithm")
 const selectUseNewAlgorithm = document.getElementById("selectUseNewAlgorithm")
+const alwaysTranslateSitesListButton = document.getElementById("alwaysTranslateSitesListButton")
+const lblAlwaysTranslateSites = document.getElementById("lblAlwaysTranslateSites")
+const alwaysTranslateSitesList = document.getElementById("alwaysTranslateSitesList")
 
 document.title = chrome.i18n.getMessage("optionsPageTitle")
 
@@ -63,6 +66,7 @@ lblOthers.textContent = chrome.i18n.getMessage("lblOthers")
 lblNeverTranslate.textContent = chrome.i18n.getMessage("optionsNeverTranslate")
 lblAlwaysTranslate.textContent = chrome.i18n.getMessage("optionsAlwaysTranslate")
 lblUseNewAlgorithm.textContent = chrome.i18n.getMessage("lblUseNewAlgorithm")
+lblAlwaysTranslateSites.textContent = chrome.i18n.getMessage("lblAlwaysTranslateSites")
 
 document.querySelector("#selectShowContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
 document.querySelector("#selectShowContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
@@ -73,6 +77,7 @@ document.querySelector("#selectUseNewAlgorithm option[value='yes']").textContent
 document.querySelector("#selectUseNewAlgorithm option[value='no']").textContent = chrome.i18n.getMessage("msgNoUseWidgets")
 
 neverTranslateList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListNeverTranslateSites"))
+alwaysTranslateSitesList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListNeverTranslateSites"))
 alwaysTranslateList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListAlwaysTranslateLanguages"))
 
 selectShowContextMenu.addEventListener("change", () => {
@@ -157,6 +162,7 @@ function toggleList(x)
     }
 }
 neverTranslateListButton.addEventListener("click", () => toggleList(neverTranslateList))
+alwaysTranslateSitesListButton.addEventListener("click", () => toggleList(alwaysTranslateSitesList))
 alwaysTranslateListButton.addEventListener("click", () => toggleList(alwaysTranslateList))
 
 function removeA(arr) {
@@ -180,6 +186,19 @@ function removeSiteFromBlackList(url)
 
         removeA(neverTranslateSites, url)
         chrome.storage.local.set({neverTranslateSites})
+    })   
+}
+
+function removeSiteFromWhiteList(url)
+{
+    chrome.storage.local.get("alwaysTranslateSites", onGot => {
+        var alwaysTranslateSites = onGot.alwaysTranslateSites
+        if (!alwaysTranslateSites) {
+            alwaysTranslateSites = []
+        }
+
+        removeA(alwaysTranslateSites, url)
+        chrome.storage.local.set({alwaysTranslateSites})
     })   
 }
 
@@ -220,6 +239,33 @@ chrome.storage.local.get("neverTranslateSites", onGot => {
         li.appendChild(close)
         
         neverTranslateList.appendChild(li)
+    })
+})
+
+chrome.storage.local.get("alwaysTranslateSites", onGot => {
+    var alwaysTranslateSites = onGot.alwaysTranslateSites
+    if (!alwaysTranslateSites) {
+        alwaysTranslateSites = []
+    }
+    alwaysTranslateSites.sort()
+
+    alwaysTranslateSites.forEach(value => {
+        let li = document.createElement("li")
+        li.setAttribute("class", "w3-display-container")
+        li.innerText = value
+
+        let close = document.createElement("span")
+        close.setAttribute("class", "w3-button w3-transparent w3-display-right")
+        close.innerHTML = "&times;"
+
+        close.addEventListener("click", () => {
+            li.style.display = "none"
+            removeSiteFromWhiteList(value)
+        })
+
+        li.appendChild(close)
+        
+        alwaysTranslateSitesList.appendChild(li)
     })
 })
 
