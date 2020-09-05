@@ -303,15 +303,48 @@ function callIfIsMobile() {
             z-index: 1000000000;
             position: fixed;
             left: 0;
+            right: 0;
             bottom: 0;
             background-color: white;
             box-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
-            width: 100%;
             height: 50px;
             user-select: none;
             display: none;
         `
-    
+/*
+        var dpr = window.devicePixelRatio
+
+        var el = element
+        
+        function f() {
+             el.style.scale = dpr / window.devicePixelRatio
+          el.style.left = "0px"
+          el.style.right = "0px"
+          el.style.bottom = "0px"
+          
+          var dX = ((parseFloat(getComputedStyle(el).width) * window.devicePixelRatio) - parseFloat(getComputedStyle(el).width)) / 2
+            
+          var dY = ((50 * (window.devicePixelRatio)) - 50) / (window.devicePixelRatio * 2)
+
+          //el.style.left  = -dX + "px"
+          ///el.style.right = -dX + "px"
+          //el.style.bottom = -dY + "px" 
+        }
+        var oldwidth = null
+        function foo() {
+            if (oldwidth) {
+            if (oldwidth != window.innerWidth) {
+              f()
+            }
+            oldwidth = window.innerWidth
+          } else {
+            oldwidth = window.innerWidth
+            f()
+          }
+            requestAnimationFrame(foo)
+        }
+        requestAnimationFrame(foo)        
+  */  
         const shadowRoot = element.attachShadow({mode: 'closed'})
     
         shadowRoot.innerHTML = htmlMobile
