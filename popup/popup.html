@@ -10,12 +10,7 @@
 <body>
     <main>
     <span id="btnClose" class="w3-button w3-display-topright w3-circle w3-large">&times;</span>
-    <div class="w3-display-bottomleft">
-        <div id='divIconTranslate' style="position: relative;">
-            <img id='iconTranslate' src="/icons/google-translate-32.png" class="w3-btn w3-hover-none">
-            <img id='iconSwap' src="/icons/swap-32.png" class="w3-btn w3-hover-none">
-        </div>
-    </div>
+
     <label id="lblTranslate" class="" style="margin-right: 30px;">Translate this page?</label>
     <label id="lblTranslating" class="" style="margin-right: 30px;">Translating...</label>
     <label id="lblTranslated" class="" style="margin-right: 30px;">Translated</label>
@@ -27,25 +22,39 @@
         <label id="lblAlwaysTranslate" for="cbAlwaysTranslate" class="w3-small">Always translate from</label>
     </div>
     <select id="selectTargetLanguage" class="w3-select w3-padding-small w3-border w3-round w3-text-blue" size></select>
-    <div class="containerRight" style="margin-left: 80px;">
-        <button id="btnReset" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Reset</button>
-        <button id="btnTranslate" class="w3-btn w3-padding-small w3-round w3-blue">Translate</button>
-        <button id="btnRestore" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Show original</button>
-        <button id="btnTryAgain" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Try Again</button>
-        <div id="btnOptionsDiv" style="position: relative; margin-left: 5px;">
-            <select id="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue" style="display: inline;" size>
-                <option value="options" selected disabled hidden>Options</option>
-                <option value="changeLanguage">Change languages</option>
-                <option value="neverTranslateThisSite">Never translate this site</option>
-                <option value="openInGoogleTranslate">Open in google translate</option>
-                <option value="moreOptions">More options</option>
-                <option value="donate">Donate &#10084;</option>
-                <option value="patreon" hidden>Patreon</option>
-            </select>
-            <div id="btnOptionB" style="display: inline; position: absolute; top: 0; left: 0; background-color: white; padding: inherit" class="pointerIgnore w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</div>
+    <div class="flex-container">
+        <div id="divIconTranslateContainer" style="margin-left: 5px; margin-right: 25px;">
+            <div id='divIconTranslate' style="position: relative;">
+                <img id='iconTranslate' src="/icons/google-translate-32.png" class="w3-btn w3-hover-none">
+                <img id='iconSwap' src="/icons/swap-32.png" class="w3-btn w3-hover-none">
+            </div>
+        </div>
+
+        <div style="margin-left: auto;">
+            <button id="btnReset" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Reset</button>
+            <button id="btnTranslate" class="w3-btn w3-padding-small w3-round w3-blue">Translate</button>
+            <button id="btnRestore" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Show original</button>
+            <button id="btnTryAgain" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue">Try Again</button>
+            <div id="btnOptionsDiv" style="position: relative; margin-left: 5px;">
+                <select id="btnOptions" class="w3-btn w3-padding-small w3-border w3-round w3-text-blue" style="display: inline;" size>
+                    <option value="options" selected disabled hidden>Options</option>
+                    <option value="changeLanguage">Change languages</option>
+                    <option value="alwaysTranslateThisSite">Always translate this site</option>
+                    <option value="neverTranslateThisSite">Never translate this site</option>
+                    <option value="openInGoogleTranslate">Open in google translate</option>
+                    <option value="moreOptions">More options</option>
+                    <option value="donate">Donate &#10084;</option>
+                    <option value="patreon" hidden>Patreon</option>
+                </select>
+                <div id="btnOptionB" style="display: inline; position: absolute; top: -6px; left: 0; background-color: white" class="pointerIgnore w3-btn w3-padding-small w3-border w3-round w3-text-blue">Options</div>
+            </div>
         </div>
     </div>
     </main>
+    <div id="divDonate" class="w3-border w3-border-blue w3-margin w3-padding w3-round" style="max-width: 270px; margin: auto; display: none;">
+        <div id="msgHelpDevelopment">Help maintain the development of this extension with an anonymous donation.</div>
+        <a id="btnDonateWithPaypal" class="w3-btn w3-blue w3-round w3-block" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7QZXUNZYB75Q2&source=url">Donate with PayPal</a>
+    </div>
     <script src="popup.js"></script>
 </body>
 </html>

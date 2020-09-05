@@ -127,5 +127,17 @@
   },
   "msgEmptyListAlwaysTranslateLanguages": {
     "message": "Você não adicionou nenhum idioma a esta lista."
+  },
+  "btnAlwaysTranslate": {
+    "message": "Sempre traduzir este site"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Sempre traduzir esses sites"
+  },
+  "msgHelpDevelopment": {
+    "message": "Ajude a manter o desenvolvimento desta extensão com uma doação anônima."
+  },
+  "msgDonateWithPaypal": {
+    "message": "Doe com o PayPal"
   }
 }

@@ -1,123 +1,123 @@
 {
   "extensionName": {
-    "message": "Traduire des pages Web"
+    "message": "תרגום דפי אינטרנט"
   },
   "extensionDescription": {
-    "message": "Traduisez votre page en temps réel à l'aide de Google ou Yandex."
+    "message": "תרגום דפי האינטרנט בזמן אמת באמצעות גוגל או יאנדקס."
   },
   "pageActionTitle": {
-    "message": "Traduire cette page"
+    "message": "תרגם דף זה"
   },
   "lblTranslate": {
-    "message": "Traduire cette page?"
+    "message": "לתרגם את הדף הזה?"
   },
   "lblTranslating": {
-    "message": "Traduction en cours ..."
+    "message": "מתרגם ..."
   },
   "lblTranslated": {
-    "message": "Traduit"
+    "message": "תורגם"
   },
   "lblError": {
-    "message": "Cette page n'a pas pu être traduite"
+    "message": "לא ניתן לתרגם דף זה"
   },
   "lblAlwaysTranslate": {
-    "message": "Toujours traduire de"
+    "message": "תרגם תמיד מ"
   },
   "lblTargetLanguage": {
-    "message": "Langue cible"
+    "message": "תרגם ל"
   },
   "btnReset": {
-    "message": "Réinitialiser"
+    "message": "איפוס"
   },
   "btnTranslate": {
-    "message": "Traduire"
+    "message": "תרגם"
   },
   "btnOptions": {
-    "message": "les options"
+    "message": "אפשרויות"
   },
   "btnRestore": {
-    "message": "Afficher l'original"
+    "message": "הצג את המקור"
   },
   "btnTryAgain": {
-    "message": "Réessayer"
+    "message": "נסה שנית"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Ouvrir dans Google Translator"
+    "message": "פתח בגוגל תרגום"
   },
   "btnDonate": {
-    "message": "Faire un don"
+    "message": "תרומה"
   },
   "btnNeverTranslate": {
-    "message": "Ne jamais traduire ce site"
+    "message": "לעולם אל תתרגם דף זה"
   },
   "btnChangeLanguages": {
-    "message": "Changer de langue"
+    "message": "שינוי שפות"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "מקורי"
   },
   "btnMobileTranslated": {
-    "message": "Traduit"
+    "message": "תורגם"
   },
   "btnMobileNeverTranslate": {
-    "message": "Ne jamais traduire ce site"
+    "message": "לעולם אל תתרגם דף זה"
   },
   "btnMobileDonate": {
-    "message": "Faire un don"
+    "message": "תרומה"
   },
   "optionsNeverTranslate": {
-    "message": "Ne traduisez jamais ces sites"
+    "message": "לעולם אל תתרגם דפים אלו"
   },
   "optionsAlwaysTranslate": {
-    "message": "Traduisez automatiquement ces langues"
+    "message": "תרגם אוטומטית שפות אלו"
   },
   "optionPopupConfig": {
-    "message": "Afficher le popup mobile"
+    "message": "Show the mobile popup"
   },
   "optionPopupAuto": {
-    "message": "Automatiquement"
+    "message": "אוטומטית"
   },
   "optionPopupThreeFingers": {
-    "message": "Quand je touche trois doigts sur l'écran"
+    "message": "בלחיצה על המסך עם שלוש אצבעות"
   },
   "lblTranslationEngine": {
-    "message": "Moteur de traduction"
+    "message": "מנוע תרגום"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Ouvrir en yandex traduire"
+    "message": "פתח ביאנדקס תרגום"
   },
   "lblOthers": {
-    "message": "Autres"
+    "message": "שונות"
   },
   "btnMoreOptions": {
-    "message": "Plus d'options"
+    "message": "אפשרויות נוספות"
   },
   "lblPlsDonate": {
-    "message": "Aidez le développeur avec un don"
+    "message": "תרמו ועזרו למפתח"
   },
   "msgTranslateFor": {
-    "message": "Traduire en"
+    "message": "תרגם ל"
   },
   "lblShowContextMenu": {
-    "message": "Afficher l'option de traduire la page dans le menu contextuel"
+    "message": "Show the option to translate the page in the context menu"
   },
   "msgYes": {
-    "message": "Oui"
+    "message": "כן"
   },
   "msgNo": {
-    "message": "Non"
+    "message": "לא"
   },
   "lblUseNewAlgorithm": {
-    "message": "Utilisez le nouvel algorithme de traduction?"
+    "message": "להשתמש באלגוריתם תרגום החדש?"
   },
   "msgYesRecommended": {
-    "message": "Oui (recommandé)"
+    "message": "כן (מומלץ)"
   },
   "msgNoUseWidgets": {
-    "message": "Non (utiliser des widgets)"
+    "message": "No (use widgets)"
   },
   "optionsPageTitle": {
-    "message": "Traduire des pages Web - Options"
+    "message": "Translate Web Pages - Options"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
     "message": "Only when I click \"Translate this site\""

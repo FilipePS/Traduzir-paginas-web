@@ -127,5 +127,17 @@
   },
   "msgEmptyListAlwaysTranslateLanguages": {
     "message": "まだ言語が追加されていません"
+  },
+  "btnAlwaysTranslate": {
+    "message": "Always translate this site"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Always translate these sites"
+  },
+  "msgHelpDevelopment": {
+    "message": "Help maintain the development of this extension with an anonymous donation."
+  },
+  "msgDonateWithPaypal": {
+    "message": "Donate with PayPal"
   }
 }
