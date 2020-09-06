@@ -129,15 +129,15 @@
     "message": "Вы не добавили ни один язык в этот список."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Всегда переводить этот сайт"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Всегда переводить эти сайты"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "Помогите поддержать разработку этого расширения анонимным пожертвованием."
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Сделать пожертвование через PayPal"
   }
 }
