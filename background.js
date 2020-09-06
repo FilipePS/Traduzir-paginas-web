@@ -514,12 +514,24 @@ if (typeof chrome.contextMenus != 'undefined') {
     })
 }
 
-if (isMobile.any()) {
-    chrome.browserAction.onClicked.addListener(tab => {
-        chrome.tabs.sendMessage(tab.id, {action: "showMobilePopup"}, {frameId: 0})
-    })
-} else {
-    chrome.browserAction.setPopup({popup: "popup/popup.html"})
+if (chrome.pageAction) {
+    if (isMobile.any()) {
+        chrome.tabs.query({}, tabs => {
+            tabs.forEach(tab => {
+                chrome.pageAction.setPopup({tabId: tab.id,popup: ""})
+            })
+        })
+
+        chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+            if (changeInfo.status == "complete") {
+                chrome.pageAction.setPopup({tabId: tabId, popup: ""})
+            }
+        })
+
+        chrome.pageAction.onClicked.addListener(tab => {
+            chrome.tabs.sendMessage(tab.id, {action: "showMobilePopup"}, {frameId: 0})
+        })
+    }
 }
 
 chrome.commands.onCommand.addListener(command => {

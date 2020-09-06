@@ -2,6 +2,10 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
+if (!navigator.userAgent.includes("Firefox")) {
+    document.body.style.minWidth = "300px"
+}
+
 // get elements
 const btnClose = document.getElementById("btnClose")
 const divIconTranslateContainer = document.getElementById("divIconTranslateContainer")
