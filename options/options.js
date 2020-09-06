@@ -250,6 +250,14 @@ selectDarkMode.addEventListener("change", () => {
     }
 })
 
+chrome.storage.local.get("showReleaseNotes", onGot => {
+    if (onGot.showReleaseNotes) {
+        selectShowReleaseNotes.value = onGot.showReleaseNotes
+    } else {
+        selectShowReleaseNotes.value = "yes"
+    }
+})
+
 selectShowReleaseNotes.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setShowReleaseNotes", showReleaseNotes: selectShowReleaseNotes.value})
 })

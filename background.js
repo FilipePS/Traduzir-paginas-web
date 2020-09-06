@@ -351,9 +351,15 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     } else if (request.action == "setDarkMode") {
         if (request.darkMode) {
             darkMode = request.darkMode
+            chrome.storage.local.set({darkMode})
         }
     } else if (request.action == "getDarkMode") {
         sendResponse(darkMode)
+    } else if (request.action == "setShowReleaseNotes") {
+        if (request.showReleaseNotes) {
+            var showReleaseNotes = request.showReleaseNotes
+            chrome.storage.local.set({showReleaseNotes})
+        }
     }
 })
 
@@ -474,7 +480,11 @@ chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == "install") {
         chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
     } else if (details.reason == "update" && chrome.runtime.getManifest().version != details.previousVersion) {
-        chrome.tabs.create({url: "https://filipeps.github.io/Traduzir-paginas-web/release_notes/"})
+        chrome.storage.local.get("showReleaseNotes", onGot => {
+            if (onGot.showReleaseNotes != "no") {
+                chrome.tabs.create({url: "https://filipeps.github.io/Traduzir-paginas-web/release_notes/"})
+            }
+        })
     }
 })
 
