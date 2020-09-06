@@ -54,6 +54,10 @@ const selectUseNewAlgorithm = document.getElementById("selectUseNewAlgorithm")
 const alwaysTranslateSitesListButton = document.getElementById("alwaysTranslateSitesListButton")
 const lblAlwaysTranslateSites = document.getElementById("lblAlwaysTranslateSites")
 const alwaysTranslateSitesList = document.getElementById("alwaysTranslateSitesList")
+const lblDarkMode = document.getElementById("lblDarkMode")
+const selectDarkMode = document.getElementById("selectDarkMode")
+const lblShowReleaseNotes = document.getElementById("lblShowReleaseNotes")
+const selectShowReleaseNotes = document.getElementById("selectShowReleaseNotes")
 
 document.title = chrome.i18n.getMessage("optionsPageTitle")
 
@@ -67,6 +71,8 @@ lblNeverTranslate.textContent = chrome.i18n.getMessage("optionsNeverTranslate")
 lblAlwaysTranslate.textContent = chrome.i18n.getMessage("optionsAlwaysTranslate")
 lblUseNewAlgorithm.textContent = chrome.i18n.getMessage("lblUseNewAlgorithm")
 lblAlwaysTranslateSites.textContent = chrome.i18n.getMessage("lblAlwaysTranslateSites")
+//lblDarkMode.textContent = chrome.i18n.getMessage("lblDarkMode")
+//lblShowReleaseNotes.textContent = chrome.i18n.getMessage("lblShowReleaseNotes")
 
 document.querySelector("#selectShowContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
 document.querySelector("#selectShowContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
@@ -152,6 +158,101 @@ selectPopupConfig.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setShowPopupConfig", showPopupConfig: selectPopupConfig.value})
 })
 
+function enableDarkMode() {
+    if (!document.getElementById("darkModeElement")) {
+        var el = document.createElement("style")
+        el.setAttribute("id", "darkModeElement")
+        el.setAttribute("rel", "stylesheet")
+        el.textContent = `
+        * {
+            scrollbar-color: #202324 #454a4d;
+        }
+        
+        body {
+            color: #e8e6e3 !important;
+            background-color: #181a1b !important;
+            border: 1px solid #454a4d;
+        }
+        
+        
+        #selectTargetLanguage,
+        #neverTranslateListButton,
+        #alwaysTranslateSitesListButton,
+        #alwaysTranslateListButton,
+        #selectTranslationEngine,
+        #selectShowContextMenu,
+        select,
+        option {
+            color: #e8e6e3 !important;
+            background-color: #181a1b !important;
+            border: 1px solid #305c80 !important;
+        }
+        `
+        document.head.appendChild(el)
+    }
+}
+
+function disableDarkMode() {
+    if (document.getElementById("darkModeElement")) {
+        document.getElementById("darkModeElement").remove()
+    }
+}
+
+var autoDarkMode = true
+
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (autoDarkMode) {
+        if (matchMedia("(prefers-color-scheme: dark)").matches) {
+            enableDarkMode()
+        } else {
+            disableDarkMode()
+        }       
+    }
+})
+
+chrome.runtime.sendMessage({action: "getDarkMode"}, darkMode => {
+    autoDarkMode = false
+    if (darkMode == "auto") {
+        autoDarkMode = true
+        if (matchMedia("(prefers-color-scheme: dark)").matches) {
+            enableDarkMode()
+        } else {
+            disableDarkMode()
+        }
+    } else if (darkMode == "yes") {
+        enableDarkMode()
+    } else {
+        disableDarkMode()
+    }
+
+    selectDarkMode.value = darkMode
+})
+
+selectDarkMode.addEventListener("change", () => {
+    chrome.runtime.sendMessage({action: "setDarkMode", darkMode: selectDarkMode.value})
+
+    autoDarkMode = false
+    switch (selectDarkMode.value) {
+        case "auto":
+            autoDarkMode = true
+            if (matchMedia("(prefers-color-scheme: dark)").matches) {
+                enableDarkMode()
+            } else {
+                disableDarkMode()
+            }
+            break
+        case "yes":
+            enableDarkMode()
+            break
+        case "no":
+            disableDarkMode()
+            break
+    }
+})
+
+selectShowReleaseNotes.addEventListener("change", () => {
+    chrome.runtime.sendMessage({action: "setShowReleaseNotes", showReleaseNotes: selectShowReleaseNotes.value})
+})
 
 function toggleList(x)
 {

@@ -64,6 +64,58 @@ btnDonateWithPaypal.textContent = chrome.i18n.getMessage("msgDonateWithPaypal")
 var cStyle = getComputedStyle(document.querySelector("#btnOptionB"))
 btnOptions.style.width = (parseInt(cStyle.width) + 0) + "px"
 
+function enableDarkMode() {
+    if (!document.getElementById("darkModeElement")) {
+        var el = document.createElement("style")
+        el.setAttribute("id", "darkModeElement")
+        el.setAttribute("rel", "stylesheet")
+        el.textContent = `
+        * {
+            scrollbar-color: #202324 #454a4d;
+        }
+        
+        body {
+            color: #e8e6e3 !important;
+            background-color: #181a1b !important;
+            border: 1px solid #454a4d;
+        }
+        
+        #btnClose:hover {
+            background-color: #454a4d !important;
+        }
+        
+        #selectTargetLanguage, select, option, #btnReset, #btnRestore, #btnTryAgain, #btnOptionB {
+            color: #55a9ed !important;
+            background-color: #181a1b !important;
+            border: 1px solid #454a4d !important;
+        }
+        `
+        document.head.appendChild(el)
+    }
+}
+
+function disableDarkMode() {
+    if (document.getElementById("darkModeElement")) {
+        document.getElementById("darkModeElement").remove()
+    }
+}
+
+chrome.runtime.sendMessage({action: "getDarkMode"}, darkMode => {
+    if (darkMode == "auto") {
+        if (matchMedia("(prefers-color-scheme: dark)").matches) {
+            enableDarkMode()
+        } else {
+            disableDarkMode()
+        }
+    } else if (darkMode == "yes") {
+        enableDarkMode()
+    } else {
+        disableDarkMode()
+    }
+
+    selectDarkMode.value = darkMode
+})
+
 chrome.storage.local.get("lastDonationRequestTime", onGot => {
     var lastDonationRequestTime = onGot.lastDonationRequestTime
     var showDonationRequestPopup = false

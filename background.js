@@ -348,6 +348,19 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             }
             translationStatus = request.status
         }
+    } else if (request.action == "setDarkMode") {
+        if (request.darkMode) {
+            darkMode = request.darkMode
+        }
+    } else if (request.action == "getDarkMode") {
+        sendResponse(darkMode)
+    }
+})
+
+var darkMode = "auto"
+chrome.storage.local.get("darkMode", onGot => {
+    if (onGot.darkMode) {
+        darkMode = onGot.darkMode
     }
 })
 
