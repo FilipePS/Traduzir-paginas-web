@@ -129,15 +129,15 @@
     "message": "Você não adicionou nenhum idioma a esta lista."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Sempre traduzir este site"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Sempre traduzir estes sites"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "Ajude a manter o desenvolvimento desta extensão com uma doação anônima."
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Doe com o PayPal"
   }
 }

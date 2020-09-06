@@ -129,15 +129,15 @@
     "message": "Bu listeye herhangi bir dil eklemediniz."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Bu siteyi asla çevirme"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Bu siteleri asla çevirme"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "Anonim bir bağışla bu uzantının geliştirilmesine yardımcı olun."
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "PayPal ile bağış yapın"
   }
 }

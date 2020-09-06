@@ -129,15 +129,15 @@
     "message": "Et ole lisännyt yhtään kieltä tähän luetteloon."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Älä käännä tätä sivua"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Älä käännä tätä sivua"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "Auta ylläpitämään tämän laajennuksen kehittämistä anonyymillä luovutuksella."
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Lahjoita PayPal avulla"
   }
 }

@@ -72,7 +72,7 @@
     "message": "תרגם אוטומטית שפות אלו"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "הראה את חלון הקופץ לנייד"
   },
   "optionPopupAuto": {
     "message": "אוטומטית"
@@ -99,7 +99,7 @@
     "message": "תרגם ל"
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "הראה את האפשרות לתרגם את הדף בתפריט ההקשר"
   },
   "msgYes": {
     "message": "כן"
@@ -114,30 +114,30 @@
     "message": "כן (מומלץ)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "לא (השתמש ביישומונים)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "תרגם דפי אינטרנט - אפשרויות"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "רק כשאני לוחץ על \"תרגם אתר זה\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "לא הוספת אתרים לרשימה זו."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "לא הוספת שפות לרשימה זו."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "תרגם תמיד אתר זה"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "תרגם תמיד אתרים אלה"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "עזור לשמור על התפתחות הרחבה זו באמצעות תרומה אנונימית."
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "תרום באמצעות PayPal"
   }
 }

@@ -18,7 +18,7 @@
     "message": "翻訳済み"
   },
   "lblError": {
-    "message": "ページの翻訳に失敗しました"
+    "message": "ページを翻訳できませんでした"
   },
   "lblAlwaysTranslate": {
     "message": "常にこの言語から翻訳する:"
@@ -123,10 +123,10 @@
     "message": "「このサイトを翻訳」をクリックした時のみ"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "まだサイトが何もこのリストに追加されていません。"
+    "message": "まだサイトが追加されていません"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "まだ言語が何もこのリストに追加されていません"
+    "message": "まだ言語が追加されていません"
   },
   "btnAlwaysTranslate": {
     "message": "このサイトを常に翻訳する"
@@ -135,10 +135,9 @@
     "message": "常に翻訳するサイト"
   },
   "msgHelpDevelopment": {
-
-    "message": "匿名の寄付でこの拡張機能の開発を維持するのを助ける"
+    "message": "匿名の寄付でこの拡張機能の開発を支援します。"
   },
   "msgDonateWithPaypal": {
-    "message": "PayPalで寄付する"
+    "message": "PayPalで寄付"
   }
 }

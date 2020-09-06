@@ -33,7 +33,7 @@
     "message": "Traducir"
   },
   "btnOptions": {
-    "message": "opciones"
+    "message": "Opciones"
   },
   "btnRestore": {
     "message": "Mostrar original"
@@ -120,24 +120,24 @@
     "message": "Traducir páginas web - Opciones"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Sólo cuando haga clic en \"Traducir este sitio\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "No ha añadido ningún sitio a esta lista."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "No ha añadido ningún sitio a esta lista."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Nunca traducir este sitio"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Nunca traduzca estos sitios"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "Ayuda a mantener el desarrollo de esta extensión con una donación anónima."
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Donar con PayPal"
   }
 }

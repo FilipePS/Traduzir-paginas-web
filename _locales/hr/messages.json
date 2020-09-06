@@ -129,15 +129,15 @@
     "message": "Još niste dodali jezike na ovaj popis."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Nikada ne prevoditi ovu web stranicu"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Nikada ne prevoditi ovu web stranicu"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "Pomozite održati razvoj ovog proširenja anonimnom donacijom."
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Donirajte putem PayPal"
   }
 }

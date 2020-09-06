@@ -120,24 +120,24 @@
     "message": "वेब पेज का अनुवाद करें - विकल्प"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "केवल जब मैं \"इस साइट का अनुवाद करता हूं\" पर क्लिक करता हूं"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "आपने इस सूची में कोई साइट नहीं जोड़ी है।"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "आपने इस सूची में कोई भी भाषा नहीं जोड़ी है।"
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "हमेशा इस साइट का अनुवाद करें"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "हमेशा इस साइट का अनुवाद करें"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "एक अनाम दान के साथ इस विस्तार के विकास को बनाए रखने में मदद करें।"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "पेपैल के साथ दान करें"
   }
 }

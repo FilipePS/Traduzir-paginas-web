@@ -120,24 +120,24 @@
     "message": "翻译网页-选项"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "仅当我点击\"翻译这个站点\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "您尚未添加任何站点到此列表。"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "您还没有添加任何语言到此列表。"
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "总是翻译此站点"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "总是翻译这些站点"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "通过匿名捐款帮助保持扩展的发展。"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "使用PayPal捐款"
   }
 }

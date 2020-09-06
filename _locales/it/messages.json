@@ -1,21 +1,21 @@
 {
   "extensionName": {
-    "message": "Traduttore pagine web"
+    "message": "Traduci pagine Web"
   },
   "extensionDescription": {
-    "message": "Traduci le pagine web in tempo reale utilizzando Google o Yandex."
+    "message": "Traduci la tua pagina in tempo reale utilizzando Google o Yandex."
   },
   "pageActionTitle": {
     "message": "Traduci questa pagina"
   },
   "lblTranslate": {
-    "message": "Tradurre questa pagina?"
+    "message": "Traduci questa pagina?"
   },
   "lblTranslating": {
-    "message": "Traduzione in corso…"
+    "message": "Traduzione in corso ..."
   },
   "lblTranslated": {
-    "message": "Tradotto"
+    "message": "tradotto"
   },
   "lblError": {
     "message": "Questa pagina non può essere tradotta"
@@ -30,25 +30,25 @@
     "message": "Ripristina"
   },
   "btnTranslate": {
-    "message": "Traduci"
+    "message": "Tradurre"
   },
   "btnOptions": {
     "message": "Opzioni"
   },
   "btnRestore": {
-    "message": "Mostra originale"
+    "message": "Spettacolo originale"
   },
   "btnTryAgain": {
     "message": "Riprova"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Apri in Google Translate"
+    "message": "Apri in traduttore Google"
   },
   "btnDonate": {
-    "message": "Fai una donazione"
+    "message": "Donare"
   },
   "btnNeverTranslate": {
-    "message": "Non tradurre mai questo sito"
+    "message": "Mai tradurre questo sito"
   },
   "btnChangeLanguages": {
     "message": "Cambia lingua"
@@ -57,13 +57,13 @@
     "message": "Originale"
   },
   "btnMobileTranslated": {
-    "message": "Tradotto"
+    "message": "tradotto"
   },
   "btnMobileNeverTranslate": {
-    "message": "Non tradurre mai questo sito"
+    "message": "Mai tradurre questo sito"
   },
   "btnMobileDonate": {
-    "message": "Dona"
+    "message": "Donare"
   },
   "optionsNeverTranslate": {
     "message": "Non tradurre mai questi siti"
@@ -72,7 +72,7 @@
     "message": "Traduci automaticamente queste lingue"
   },
   "optionPopupConfig": {
-    "message": "Mostra il popup"
+    "message": "Mostra il popup mobile"
   },
   "optionPopupAuto": {
     "message": "Automaticamente"
@@ -84,13 +84,13 @@
     "message": "Motore di traduzione"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Apri in Yandex Translate"
+    "message": "Apri in yandex translate"
   },
   "lblOthers": {
-    "message": "Altro"
+    "message": "Altri"
   },
   "btnMoreOptions": {
-    "message": "Altre opzioni"
+    "message": "Più opzioni"
   },
   "lblPlsDonate": {
     "message": "Aiuta lo sviluppatore con una donazione"
@@ -99,10 +99,10 @@
     "message": "Traduci in"
   },
   "lblShowContextMenu": {
-    "message": "Mostra opzione per tradurre la pagina nel menu contestuale"
+    "message": "Mostra l'opzione per tradurre la pagina nel menu contestuale"
   },
   "msgYes": {
-    "message": "Sì"
+    "message": "sì"
   },
   "msgNo": {
     "message": "No"
@@ -117,27 +117,27 @@
     "message": "No (usa i widget)"
   },
   "optionsPageTitle": {
-    "message": "Traduzione pagine web - Opzioni"
+    "message": "Traduci Pagine Web - Opzioni"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Solo quando faccio clic su “Traduci questo sito”"
+    "message": "Solo quando clicco su \"Traduci questo sito\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Non hai aggiunto questo sito ad alcuna lista."
+    "message": "Non hai aggiunto nessun sito a questo elenco."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Non hai aggiunto alcuna lingua a questa lista."
+    "message": "Non hai aggiunto nessun sito a questo elenco."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Mai tradurre questo sito"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Mai tradurre questo sito"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "Aiuta a mantenere lo sviluppo di questa estensione con una donazione anonima."
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Dona con PayPal"
   }
 }

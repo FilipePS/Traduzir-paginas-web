@@ -33,7 +33,7 @@
     "message": "přeložit"
   },
   "btnOptions": {
-    "message": "možnosti"
+    "message": "Možnosti"
   },
   "btnRestore": {
     "message": "Ukázat originál"
@@ -117,27 +117,27 @@
     "message": "Ne (používat widgety)"
   },
   "optionsPageTitle": {
-    "message": "Přeložit webové stránky - možnosti"
+    "message": "Přeložit webové stránky - Možnosti"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Pouze po kliknutí na tlačítko \"Přeložit tuto stránku\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Do tohoto seznamu jste nepřidali žádný úkol."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Do tohoto seznamu jste nepřidali žádný úkol."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Nikdy nepřekládejte tento web"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Nikdy nepřekládejte tento web"
   },
   "msgHelpDevelopment": {
-    "message": "Help maintain the development of this extension with an anonymous donation."
+    "message": "Pomozte udržet vývoj tohoto rozšíření s anonymním příspěvkem."
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Podpořit přes PayPal"
   }
 }
