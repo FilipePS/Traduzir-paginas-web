@@ -549,4 +549,28 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
             }
         })
     }, 500)
+
+    var gTargetLanguage = null
+    chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+        if (targetLanguage == "zh") {
+            targetLanguage = "zh-CN"
+        }
+        gTargetLanguage = targetLanguage
+    })
+
+
+    window.translateSingleText = function(text, targetLanguage=gTargetLanguage) {
+        return translateHtml([escapeHtml(text)], targetLanguage)
+        .then(results => {
+            text = ""
+            for (let j in results) {
+                var resultArray = results[j].split('<wbr>').map(value => unescapeHtml(value))
+                for (let k in resultArray) {
+                    text += resultArray[k]
+                }
+            }
+            return text
+        })
+    }
+
 })

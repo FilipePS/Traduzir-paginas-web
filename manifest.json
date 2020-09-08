@@ -62,7 +62,7 @@
             "matches": ["<all_urls>"],
             "run_at": "document_end",
             "all_frames": true,
-            "js": ["scripts/contentScript_google2.js", "scripts/contentScript_yandex2.js"]
+            "js": ["scripts/contentScript_google2.js", "scripts/contentScript_yandex2.js", "scripts/translateSelected.js"]
         }, {
             "matches": ["<all_urls>"],
             "run_at": "document_end",

@@ -737,6 +737,54 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
         })
     }, 500)
 
+    var gTargetLanguage = null
+    chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+        if (targetLanguage == "zh") {
+            targetLanguage = "zh-CN"
+        }
+        gTargetLanguage = targetLanguage
+    })
+
+
+    window.translateSingleText = function(text, targetLanguage=gTargetLanguage) {
+        return translateHtml(['<a i="0">' + escapeHtml(text) + '</a>'], targetLanguage)
+        .then(results => {
+            text = ""
+            for (let j in results) {
+                var resultSentences = []
+                var idx = 0
+                
+                while (true) {
+                    var sentenceStartIndex = results[j].indexOf("<b>", idx)
+                    if (sentenceStartIndex == -1) break;
+                    
+                    var sentenceFinalIndex = results[j].indexOf("<i>", sentenceStartIndex)
+                    
+                    if (sentenceFinalIndex == -1) {
+                        resultSentences.push(results[j].slice(sentenceStartIndex + 3))
+                        break
+                    } else {
+                        resultSentences.push(results[j].slice(sentenceStartIndex + 3, sentenceFinalIndex))
+                    }
+                    idx = sentenceFinalIndex
+                }
+        
+                var result = resultSentences.length > 0 ? resultSentences.join('') : results[j]
+        
+                var resultArray = result.match(/\<a\s+i\s*\=\s*['"]{1}[0-9]+['"]{1}\s*\>[^\<\>]*(?=\<\/a\>)/g)
+
+                resultArray = resultArray.map(value => {
+                    var resultStartAtIndex = value.indexOf('>')
+                    return value.slice(resultStartAtIndex + 1)
+                })
+        
+                for (let k in resultArray) {
+                    text += unescapeHtml(resultArray[k]) + " "
+                }
+            }
+            return text
+        })
+    }
 
     /*
     var gTargetLanguage = null
