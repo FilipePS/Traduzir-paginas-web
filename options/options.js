@@ -58,6 +58,8 @@ const lblDarkMode = document.getElementById("lblDarkMode")
 const selectDarkMode = document.getElementById("selectDarkMode")
 const lblShowReleaseNotes = document.getElementById("lblShowReleaseNotes")
 const selectShowReleaseNotes = document.getElementById("selectShowReleaseNotes")
+const lblShowTranslateSelectedButton = document.getElementById("lblShowTranslateSelectedButton")
+const selectShowTranslateSelectedButton = document.getElementById("selectShowTranslateSelectedButton")
 
 document.title = chrome.i18n.getMessage("optionsPageTitle")
 
@@ -73,6 +75,7 @@ lblUseNewAlgorithm.textContent = chrome.i18n.getMessage("lblUseNewAlgorithm")
 lblAlwaysTranslateSites.textContent = chrome.i18n.getMessage("lblAlwaysTranslateSites")
 //lblDarkMode.textContent = chrome.i18n.getMessage("lblDarkMode")
 //lblShowReleaseNotes.textContent = chrome.i18n.getMessage("lblShowReleaseNotes")
+//lblShowTranslateSelectedButton.textContent = chrome.i18n.getMessage("lblShowTranslateSelectedButton")
 
 document.querySelector("#selectShowContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
 document.querySelector("#selectShowContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
@@ -260,6 +263,19 @@ chrome.storage.local.get("showReleaseNotes", onGot => {
 
 selectShowReleaseNotes.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setShowReleaseNotes", showReleaseNotes: selectShowReleaseNotes.value})
+})
+
+chrome.storage.local.get("showTranslateSelectedButton", onGot => {
+    if (onGot.showTranslateSelectedButton) {
+        selectShowTranslateSelectedButton.value = onGot.showTranslateSelectedButton
+    } else {
+        selectShowTranslateSelectedButton.value = "yes"
+    }
+})
+
+selectShowTranslateSelectedButton.addEventListener("change", () => {
+    var showTranslateSelectedButton = selectShowTranslateSelectedButton.value
+    chrome.storage.local.set({showTranslateSelectedButton})
 })
 
 function toggleList(x)
