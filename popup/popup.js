@@ -116,8 +116,6 @@ chrome.runtime.sendMessage({action: "getDarkMode"}, darkMode => {
     } else {
         disableDarkMode()
     }
-
-    selectDarkMode.value = darkMode
 })
 
 chrome.storage.local.get("lastDonationRequestTime", onGot => {
