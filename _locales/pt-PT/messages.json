@@ -139,5 +139,17 @@
   },
   "msgDonateWithPaypal": {
     "message": "Doe com o PayPal"
+  },
+  "lblDarkMode": {
+    "message": "Modo escuro"
+  },
+  "lblShowReleaseNotes": {
+    "message": "Mostrar notas da verão quando atualizar"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "Mostrar o botão para traduzir o texto selecionado"
+  },
+  "msgAutomatic": {
+    "message": "Automático"
   }
 }
