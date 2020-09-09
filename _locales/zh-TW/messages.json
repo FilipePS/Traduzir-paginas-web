@@ -141,15 +141,15 @@
     "message": "透過 PayPal 來贊助我"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "夜間模式"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "更新時顯示發行說明"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "顯示按鈕以翻譯所選文本"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "自動"
   }
 }

@@ -141,15 +141,15 @@
     "message": "Faire un don avec PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Mode sombre"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Afficher les notes de version lors de la mise à jour"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Afficher le bouton pour traduire le texte sélectionné"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automatique"
   }
 }

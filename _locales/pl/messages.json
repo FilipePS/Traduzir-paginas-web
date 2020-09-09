@@ -144,12 +144,12 @@
     "message": "Dark Mode"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Pokaż informacje o wydaniu podczas aktualizacji"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Pokaż przycisk, aby przetłumaczyć wybrany tekst"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automatycznie"
   }
 }

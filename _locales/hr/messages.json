@@ -141,15 +141,15 @@
     "message": "Donirajte putem PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Tamni način"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Prikazujte napomene o izdanju prilikom ažuriranja"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Pokažite gumb za prijevod odabranog teksta"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automatski"
   }
 }

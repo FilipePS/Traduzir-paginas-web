@@ -141,15 +141,15 @@
     "message": "Сделать пожертвование через PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Темный режим"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Открывать заметки о релизе при обновлении"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Отображать кнопку для перевода выделенного текста"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Автоматически"
   }
 }

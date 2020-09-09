@@ -141,15 +141,15 @@
     "message": "תרום באמצעות PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "מצב כהה"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "הראה הערות שחרור בעת העדכון"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "הראה את הלחצן לתרגום הטקסט שנבחר"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "אוֹטוֹמָטִי"
   }
 }

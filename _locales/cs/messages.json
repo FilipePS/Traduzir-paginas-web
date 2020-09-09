@@ -141,15 +141,15 @@
     "message": "Podpořit přes PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Tmavý režim"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Zobrazit poznámky k vydání při aktualizaci"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Zobrazit tlačítko pro překlad vybraného textu"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automatický"
   }
 }

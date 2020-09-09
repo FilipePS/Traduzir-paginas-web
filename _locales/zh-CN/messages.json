@@ -141,15 +141,15 @@
     "message": "使用PayPal捐款"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "夜間模式"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "更新时显示发布笔记"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "显示要翻译选中文本的按钮"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "自动"
   }
 }

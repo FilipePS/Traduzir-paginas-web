@@ -141,15 +141,15 @@
     "message": "PayPal ile bağış yapın"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Karanlık Mod"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Güncelleme sırasında sürüm notlarını göster"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Seçili metni çevirmek için düğmeyi göster"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Otomatik"
   }
 }

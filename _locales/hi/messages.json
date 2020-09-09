@@ -141,15 +141,15 @@
     "message": "पेपैल के साथ दान करें"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "अंधेरा मोड"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "अद्यतन करते समय रिलीज़ नोट दिखाएं"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "चयनित पाठ का अनुवाद करने के लिए बटन दिखाएं"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "स्वचालित"
   }
 }

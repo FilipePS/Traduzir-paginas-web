@@ -141,15 +141,15 @@
     "message": "Doneer met PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Donkere modus"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Toon release notities tijdens het bijwerken"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Toon de knop om de geselecteerde tekst te vertalen"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automatisch"
   }
 }

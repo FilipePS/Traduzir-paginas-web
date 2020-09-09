@@ -141,15 +141,15 @@
     "message": "Lahjoita PayPal avulla"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Tumma tila"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Näytä julkaisutiedot päivitettäessä"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Näytä painike valitun tekstin kääntämiseksi"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automaattinen"
   }
 }

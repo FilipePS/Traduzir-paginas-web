@@ -141,15 +141,15 @@
     "message": "PayPalで寄付"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "ダークモード"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "拡張機能が更新されたときにリリースノートを表示"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "選択したテキストを翻訳するボタンを表示"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "自動"
   }
 }
