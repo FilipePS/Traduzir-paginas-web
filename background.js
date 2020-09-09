@@ -521,15 +521,13 @@ if (typeof chrome.contextMenus != 'undefined') {
 if (isMobile.any()) {
     chrome.tabs.query({}, tabs => {
         tabs.forEach(tab => {
-            chrome.pageAction.setPopup({tabId: tab.id,popup: ""})
-            chrome.pageAction.setIcon({tabId: tab.id, path: "icons/google-translate-32.png"})
+            chrome.pageAction.hide(tab.id)
         })
     })
 
     chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-        if (changeInfo.status == "complete") {
-            chrome.pageAction.setPopup({tabId: tabId, popup: ""})
-            chrome.pageAction.setIcon({tabId: tabId, path: "icons/google-translate-32.png"})
+        if (changeInfo.status == "loading") {
+            chrome.pageAction.hide(tabId)
         }
     })
     
@@ -537,7 +535,7 @@ if (isMobile.any()) {
         chrome.tabs.sendMessage(tab.id, {action: "showMobilePopup"}, {frameId: 0})
     })
 } else {
-    chrome.browserAction.setPopup({popup: "icons/google-translate-32.png"})
+    chrome.browserAction.setPopup({popup: "popup/popup.html"})
     if (chrome.pageAction) {
         chrome.tabs.query({}, tabs => {
             var path = ""
