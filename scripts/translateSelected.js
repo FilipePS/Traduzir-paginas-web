@@ -115,7 +115,9 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
         onDown(e)
     })
 
+    var isTouchSelection = false
     document.addEventListener("touchstart", e => {
+        isTouchSelection = true
         onDown(e)
     })
 
@@ -156,11 +158,13 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
     function onUp(e) {
         if (e.target == element) return;
 
+        var clientX = e.clientX || e.changedTouches[0].clientX
+        var clientY = e.clientY || e.changedTouches[0].clientY
+
         if (document.getSelection().toString().trim()) {
-            readSelection()
             //selTextButton.classList.remove("show")
-            selTextButton.style.top = e.clientY - 20 + "px"
-            selTextButton.style.left = e.clientX + 10 + "px"
+            selTextButton.style.top = clientY - 20 + "px"
+            selTextButton.style.left = clientX + 10 + "px"
             //selTextButton.classList.add("show")
             selTextButton.style.display = "block"
         } else {
@@ -172,11 +176,21 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
     
     document.addEventListener("mouseup", e => {
         if (e.button != 0) return;
+        if (e.target == element) return;
+        readSelection()
         setTimeout(()=>onUp(e), 120)
     })
 
     document.addEventListener("touchend", e => {
+        if (e.target == element) return;
+        readSelection()
         setTimeout(()=>onUp(e), 120)
+    })
+
+    document.addEventListener("selectionchange", e => {
+        if (isTouchSelection) {
+            readSelection()
+        }
     })
 
     chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
