@@ -119,19 +119,45 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
         onDown(e)
     })
 
+    function getSelectionText() {
+        var text = "";
+        var activeEl = document.activeElement;
+        var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+        if (
+          (activeElTagName == "textarea") || (activeElTagName == "input" &&
+          /^(?:text|search|password|tel|url)$/i.test(activeEl.type)) &&
+          (typeof activeEl.selectionStart == "number")
+        ) {
+            text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
+        } else if (window.getSelection) {
+            text = window.getSelection().toString();
+        }
+        return text;
+    }
+
+    function readSelection() {
+        var selection = document.getSelection()
+        var focusNode = selection.focusNode
+        if (focusNode.nodeType == 3) {
+            focusNode = focusNode.parentNode
+        } else if (focusNode.nodeType != 1) {
+            return;
+        }
+        var rect = focusNode.getBoundingClientRect()
+        gSelectionInfo = {
+            text: getSelectionText(),
+            top: rect.top,
+            left: rect.left,
+            bottom: rect.bottom,
+            right: rect.right
+        }
+    }
+
     function onUp(e) {
         if (e.target == element) return;
 
         if (document.getSelection().toString().trim()) {
-            var selection = document.getSelection()
-            var rect = selection.focusNode.parentNode.getBoundingClientRect()
-            gSelectionInfo = {
-                text: selection.toString().trim(),
-                top: rect.top,
-                left: rect.left,
-                bottom: rect.bottom,
-                right: rect.right
-            }
+            readSelection()
             //selTextButton.classList.remove("show")
             selTextButton.style.top = e.clientY - 20 + "px"
             selTextButton.style.left = e.clientX + 10 + "px"
@@ -155,6 +181,7 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
 
     chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         if (request.action == "TranslateSelectedText") {
+            readSelection()
             translateSelText()
         }
     })
