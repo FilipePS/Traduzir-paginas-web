@@ -55,7 +55,7 @@
 
     "page_action": {
         "browser_style": false,
-        "default_icon": "icons/translate-light.svg",
+        "default_icon": "icons/google-translate-32.png",
         "show_matches": ["<all_urls>"],
         "default_title": "__MSG_pageActionTitle__",
         "default_popup": "popup/popup.html"
