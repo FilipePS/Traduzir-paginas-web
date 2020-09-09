@@ -514,26 +514,27 @@ if (typeof chrome.contextMenus != 'undefined') {
     })
 }
 
-if (chrome.pageAction) {
-    if (isMobile.any()) {
-        chrome.tabs.query({}, tabs => {
-            tabs.forEach(tab => {
-                chrome.pageAction.setPopup({tabId: tab.id,popup: ""})
-                chrome.pageAction.setIcon({tabId: tab.id, path: "icons/google-translate-32.png"})
-            })
+if (isMobile.any()) {
+    chrome.tabs.query({}, tabs => {
+        tabs.forEach(tab => {
+            chrome.pageAction.setPopup({tabId: tab.id,popup: ""})
+            chrome.pageAction.setIcon({tabId: tab.id, path: "icons/google-translate-32.png"})
         })
+    })
 
-        chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-            if (changeInfo.status == "complete") {
-                chrome.pageAction.setPopup({tabId: tabId, popup: ""})
-                chrome.pageAction.setIcon({tabId: tabId, path: "icons/google-translate-32.png"})
-            }
-        })
-        
-        chrome.pageAction.onClicked.addListener(tab => {
-            chrome.tabs.sendMessage(tab.id, {action: "showMobilePopup"}, {frameId: 0})
-        })
-    } else {
+    chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+        if (changeInfo.status == "complete") {
+            chrome.pageAction.setPopup({tabId: tabId, popup: ""})
+            chrome.pageAction.setIcon({tabId: tabId, path: "icons/google-translate-32.png"})
+        }
+    })
+    
+    chrome.browserAction.onClicked.addListener(tab => {
+        chrome.tabs.sendMessage(tab.id, {action: "showMobilePopup"}, {frameId: 0})
+    })
+} else {
+    chrome.browserAction.setPopup({popup: "icons/google-translate-32.png"})
+    if (chrome.pageAction) {
         chrome.tabs.query({}, tabs => {
             var path = ""
             if (matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -543,6 +544,7 @@ if (chrome.pageAction) {
             }
             tabs.forEach(tab => {
                 chrome.pageAction.setIcon({tabId: tab.id, path: path})
+                chrome.pageAction.show(tab.id)
             })
         })
 
@@ -555,6 +557,7 @@ if (chrome.pageAction) {
                     path = "icons/translate-light.svg"
                 }
                 chrome.pageAction.setIcon({tabId: tabId, path: path})
+                chrome.pageAction.show(tabId)
             }
         })
         
