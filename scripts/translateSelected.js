@@ -2,9 +2,13 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
-chrome.storage.local.get("showTranslateSelectedButton", onGot => {
-    if (onGot.showTranslateSelectedButton === "no") return;
-
+(function() {
+    var showTranslateSelectedButton = "yes"
+    chrome.storage.local.get("showTranslateSelectedButton", onGot => {
+        if (onGot.showTranslateSelectedButton) {
+            showTranslateSelectedButton = onGot.showTranslateSelectedButton 
+        }
+    })
 
     var element = document.createElement("div")
     var shadowRoot = element.attachShadow({mode: "closed"})
@@ -166,7 +170,9 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
             selTextButton.style.top = clientY - 20 + "px"
             selTextButton.style.left = clientX + 10 + "px"
             //selTextButton.classList.add("show")
-            selTextButton.style.display = "block"
+            if (showTranslateSelectedButton == "yes") {
+                selTextButton.style.display = "block"
+            }
         } else {
             gSelectionInfo = null
             selTextButton.style.display = "none"
@@ -199,4 +205,4 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
             translateSelText()
         }
     })
-})
+})()
