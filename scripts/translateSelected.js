@@ -25,8 +25,8 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
                 position: fixed;
                 background-repeat: no-repeat;
                 background-size: cover;
-                width: 20px;
-                height: 20px;
+                width: 22px;
+                height: 22px;
                 top: 0px;
                 left: 0px;
                 cursor: pointer;
@@ -97,28 +97,44 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
             selTextButton.style.display = "none"
         }
     })
-    
-    document.addEventListener("mousedown", e => {
+
+    function onDown(e) {
         if (e.target != element) {
             selTextDiv.style.display = "none"
+            selTextButton.style.display = "none"
         }
+    }
+    
+    document.addEventListener("mousedown", e => {
+        onDown(e)
     })
-    
-    document.addEventListener("mouseup", e => {
-        if (e.button != 0) return;
+
+    document.addEventListener("touchstart", e => {
+        onDown(e)
+    })
+
+    function onUp(e) {
         if (e.target == element) return;
-    
         var seltext = document.getSelection().toString().trim()
         if (seltext) {
             gSelText = seltext
             //selTextButton.classList.remove("show")
-            selTextButton.style.top = e.clientY - 24 + "px"
-            selTextButton.style.left = e.clientX + 8 + "px"
+            selTextButton.style.top = e.clientY - 20 + "px"
+            selTextButton.style.left = e.clientX + 10 + "px"
             //selTextButton.classList.add("show")
             selTextButton.style.display = "block"
         } else {
             selTextButton.style.display = "none"
             //selTextButton.classList.remove("show")
         }
-    })    
+    }
+    
+    document.addEventListener("mouseup", e => {
+        if (e.button != 0) return;
+        setTimeout(()=>onUp(e), 120)
+    })
+
+    document.addEventListener("touchend", e => {
+        setTimeout(()=>onUp(e), 120)
+    })
 })
