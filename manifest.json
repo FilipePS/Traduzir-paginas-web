@@ -45,6 +45,14 @@
         "chrome_style": false
     },
 
+    "browser_action": {
+        "browser_style": false,
+        "chrome_style": false,
+        "default_icon": "icons/google-translate-32.png",
+        "default_title": "__MSG_pageActionTitle__",
+        "default_popup": "popup/popup.html"
+    },
+
     "page_action": {
         "browser_style": false,
         "default_icon": "icons/translate-light.svg",
