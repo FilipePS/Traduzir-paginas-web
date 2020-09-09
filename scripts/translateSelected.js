@@ -12,11 +12,11 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
     shadowRoot.innerHTML = `
         <style>
             div {
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: 'Helvetica', 'Arial', sans-serif;
                 font-style: normal;
                 font-variant: normal;
                 line-height: normal;
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: 500;
             }
     
@@ -70,32 +70,38 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
     
     selTextButton.style.backgroundImage = "url(" + chrome.runtime.getURL("icons/google-translate-32.png") + ")"
     
-    var gSelText = ""
-    selTextButton.addEventListener("click", e => {
-        if (gSelText) {
-            translateSingleText(gSelText)
+    var gSelectionInfo = null
+    function translateSelText() {
+        if (gSelectionInfo) {
+            translateSingleText(gSelectionInfo.text)
             .then(result => {
-                selTextDiv.style.top = e.clientY + 15 + "px"
-                selTextDiv.style.left = e.clientX + "px"
+                var eTop = gSelectionInfo.bottom
+                var eLeft = gSelectionInfo.left
+
+                selTextDiv.style.top = eTop + 5 + "px"
+                selTextDiv.style.left = eLeft + "px"
                 selTextDiv.textContent = result
                 selTextDiv.style.display = "block"
     
                 var height = parseInt(selTextDiv.offsetHeight)
-                var top = e.clientY + 15
+                var top = eTop + 5
                 top = Math.max(0, top)
                 top = Math.min(window.innerHeight - height, top)
     
                 var width = parseInt(selTextDiv.offsetWidth)
-                var left = parseInt(e.clientX - width / 2)
+                var left = parseInt(eLeft /*- width / 2*/)
                 left = Math.max(0, left)
                 left = Math.min(window.innerWidth - width, left)
     
                 selTextDiv.style.top = top + "px";
                 selTextDiv.style.left = left + "px"
             })
-    
-            selTextButton.style.display = "none"
         }
+    }
+
+    selTextButton.addEventListener("click", e => {
+        translateSelText()
+        selTextButton.style.display = "none"
     })
 
     function onDown(e) {
@@ -115,15 +121,24 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
 
     function onUp(e) {
         if (e.target == element) return;
-        var seltext = document.getSelection().toString().trim()
-        if (seltext) {
-            gSelText = seltext
+
+        if (document.getSelection().toString().trim()) {
+            var selection = document.getSelection()
+            var rect = selection.focusNode.parentNode.getBoundingClientRect()
+            gSelectionInfo = {
+                text: selection.toString().trim(),
+                top: rect.top,
+                left: rect.left,
+                bottom: rect.bottom,
+                right: rect.right
+            }
             //selTextButton.classList.remove("show")
             selTextButton.style.top = e.clientY - 20 + "px"
             selTextButton.style.left = e.clientX + 10 + "px"
             //selTextButton.classList.add("show")
             selTextButton.style.display = "block"
         } else {
+            gSelectionInfo = null
             selTextButton.style.display = "none"
             //selTextButton.classList.remove("show")
         }
@@ -136,5 +151,11 @@ chrome.storage.local.get("showTranslateSelectedButton", onGot => {
 
     document.addEventListener("touchend", e => {
         setTimeout(()=>onUp(e), 120)
+    })
+
+    chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
+        if (request.action == "TranslateSelectedText") {
+            translateSelText()
+        }
     })
 })

@@ -381,26 +381,26 @@ chrome.storage.local.get("showContextMenu", onGot => {
 var translationStatus = "prompt"
 function updateContextMenu(hideNow = false) {
     if (translationStatus != "prompt") {
-        var contextMenuTile = chrome.i18n.getMessage("btnRestore")
+        var contextMenuTitle = chrome.i18n.getMessage("btnRestore")
     } else {
         var uilanguage = chrome.i18n.getUILanguage()
         if (uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw") {
             uilanguage = uilanguage.split("-")[0]
         }
-        var contextMenuTile = chrome.i18n.getMessage("msgTranslateFor") + " "
+        var contextMenuTitle = chrome.i18n.getMessage("msgTranslateFor") + " "
         if (languages[uilanguage]) {
-            contextMenuTile += languages[uilanguage][targetLanguage]
+            contextMenuTitle += languages[uilanguage][targetLanguage]
         } else {
-            contextMenuTile += languages['en'][targetLanguage]
+            contextMenuTitle += languages['en'][targetLanguage]
         }
     }
     if (typeof chrome.contextMenus != 'undefined') {
-        chrome.contextMenus.removeAll()
+        chrome.contextMenus.remove("translate-web-page")
         if (showContextMenu == "yes" && !hideNow) {
             chrome.contextMenus.create({
                 id: "translate-web-page",
                 documentUrlPatterns: ["*://*/*"],
-                title: contextMenuTile,
+                title: contextMenuTitle,
                 contexts: ["page", "frame"]
             })
         }
@@ -490,15 +490,19 @@ chrome.runtime.onInstalled.addListener(details => {
 
 if (typeof chrome.contextMenus != 'undefined') {
     chrome.contextMenus.onClicked.addListener((info, tab) => {
-        if (translationStatus == "progress" || translationStatus == "finish") {
-            chrome.tabs.sendMessage(tab.id, {action: "Restore"})
-        } else {
-            chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, {frameId: 0}, response => {
-                if (response) {
-                    removeSiteFromBlackList(response)
-                }
-            })
-            chrome.tabs.sendMessage(tab.id, {action: "Translate"})
+        if (info.menuItemId == "translate-web-page") {
+            if (translationStatus == "progress" || translationStatus == "finish") {
+                chrome.tabs.sendMessage(tab.id, {action: "Restore"})
+            } else {
+                chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, {frameId: 0}, response => {
+                    if (response) {
+                        removeSiteFromBlackList(response)
+                    }
+                })
+                chrome.tabs.sendMessage(tab.id, {action: "Translate"})
+            }
+        } else if (info.menuItemId == "translate-selected-text") {
+            chrome.tabs.sendMessage(tab.id, {action: "TranslateSelectedText"})
         }
     })
 
@@ -576,6 +580,13 @@ if (isMobile.any()) {
         })
     }
 }
+
+chrome.contextMenus.create({
+    id: "translate-selected-text",
+    documentUrlPatterns: ["*://*/*"],
+    title: "Translate selected text",
+    contexts: ["selection"]
+})
 
 chrome.commands.onCommand.addListener(command => {
     if (command === "toggle-translation") {
