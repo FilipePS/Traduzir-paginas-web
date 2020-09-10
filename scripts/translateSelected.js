@@ -3,6 +3,27 @@ if (typeof browser !== 'undefined') {
 }
 
 (function() {
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
     var showTranslateSelectedButton = "yes"
     chrome.storage.local.get("showTranslateSelectedButton", onGot => {
         if (onGot.showTranslateSelectedButton) {
@@ -74,6 +95,11 @@ if (typeof browser !== 'undefined') {
     
     selTextButton.style.backgroundImage = "url(" + chrome.runtime.getURL("icons/google-translate-32.png") + ")"
     
+    if (isMobile.any()) {
+        selTextButton.style.width = "30px"
+        selTextButton.style.height = "30px"
+    }
+
     var gSelectionInfo = null
     function translateSelText() {
         if (gSelectionInfo) {
