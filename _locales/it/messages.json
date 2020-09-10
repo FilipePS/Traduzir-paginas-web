@@ -151,5 +151,8 @@
   },
   "msgAutomatic": {
     "message": "Automatico"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Traduci testo selezionato"
   }
 }

@@ -582,7 +582,7 @@ if (isMobile.any()) {
 chrome.contextMenus.create({
     id: "translate-selected-text",
     documentUrlPatterns: ["*://*/*"],
-    title: "Translate selected text",
+    title: chrome.i18n.getMessage("msgTranslateSelectedText"),
     contexts: ["selection"]
 })
 

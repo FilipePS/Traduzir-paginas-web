@@ -151,5 +151,8 @@
   },
   "msgAutomatic": {
     "message": "אוֹטוֹמָטִי"
+  },
+  "msgTranslateSelectedText": {
+    "message": "תרגם טקסט נבחר"
   }
 }

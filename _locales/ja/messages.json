@@ -151,5 +151,8 @@
   },
   "msgAutomatic": {
     "message": "自動"
+  },
+  "msgTranslateSelectedText": {
+    "message": "選択したテキストを翻訳"
   }
 }

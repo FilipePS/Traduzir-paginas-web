@@ -151,5 +151,8 @@
   },
   "msgAutomatic": {
     "message": "Automatický"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Přeložit označený text"
   }
 }

@@ -151,5 +151,8 @@
   },
   "msgAutomatic": {
     "message": "Автоматически"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Выделенный текст"
   }
 }

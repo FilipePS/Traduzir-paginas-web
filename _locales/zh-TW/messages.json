@@ -151,5 +151,8 @@
   },
   "msgAutomatic": {
     "message": "自動"
+  },
+  "msgTranslateSelectedText": {
+    "message": "翻譯選取文字"
   }
 }

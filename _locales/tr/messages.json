@@ -151,5 +151,8 @@
   },
   "msgAutomatic": {
     "message": "Otomatik"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Seçilen metni çevir"
   }
 }

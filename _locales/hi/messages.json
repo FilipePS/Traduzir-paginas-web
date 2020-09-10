@@ -151,5 +151,8 @@
   },
   "msgAutomatic": {
     "message": "स्वचालित"
+  },
+  "msgTranslateSelectedText": {
+    "message": "चयनित विषय को अनूदित करें"
   }
 }

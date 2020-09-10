@@ -151,5 +151,8 @@
   },
   "msgAutomatic": {
     "message": "Automatski"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Prevedi obilježeni tekst"
   }
 }

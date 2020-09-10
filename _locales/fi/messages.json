@@ -151,5 +151,8 @@
   },
   "msgAutomatic": {
     "message": "Automaattinen"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Käännä valittu teksti"
   }
 }
