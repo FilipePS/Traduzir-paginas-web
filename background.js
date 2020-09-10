@@ -540,16 +540,16 @@ if (isMobile.any()) {
         var themeColorPopupText = null
         chrome.theme.getCurrent().then(theme => {
             themeColorPopupText = null
-            if (theme.colors && theme.colors.popup_text) {
-                themeColorPopupText = theme.colors.popup_text
+            if (theme.colors && (theme.colors.toolbar_field_text || theme.colors.popup_text)) {
+                themeColorPopupText = theme.colors.toolbar_field_text || theme.colors.popup_text
             }
             updateIconInAllTabs()
         })
 
         chrome.theme.onUpdated.addListener(updateInfo => {
             themeColorPopupText = null
-            if (updateInfo.theme.colors && updateInfo.theme.colors.popup_text) {
-                themeColorPopupText = updateInfo.theme.colors.popup_text
+            if (updateInfo.theme.colors && (updateInfo.theme.colors.toolbar_field_text || updateInfo.theme.colors.popup_text)) {
+                themeColorPopupText = updateInfo.theme.colors.toolbar_field_text || updateInfo.theme.colors.popup_text
             }
             updateIconInAllTabs()
         })
