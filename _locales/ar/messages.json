@@ -1,0 +1,158 @@
+{
+  "extensionName": {
+    "message": "ترجمة صفحات الويب"
+  },
+  "extensionDescription": {
+    "message": "ترجم صفحتك في الوقت الفعلي باستخدام Google أو Yandex."
+  },
+  "pageActionTitle": {
+    "message": "ترجم هذه الصفحة"
+  },
+  "lblTranslate": {
+    "message": "ترجم هذه الصفحة؟"
+  },
+  "lblTranslating": {
+    "message": "جار الترجمة ..."
+  },
+  "lblTranslated": {
+    "message": "تمت الترجمة"
+  },
+  "lblError": {
+    "message": "هذه الصفحة لا يمكن ترجمتها"
+  },
+  "lblAlwaysTranslate": {
+    "message": "الترجمة دائمًا من"
+  },
+  "lblTargetLanguage": {
+    "message": "اللغة المراد الترجمة لها"
+  },
+  "btnReset": {
+    "message": "إعادة تعيين"
+  },
+  "btnTranslate": {
+    "message": "ترجم"
+  },
+  "btnOptions": {
+    "message": "خيارات"
+  },
+  "btnRestore": {
+    "message": "إظهار النص الأصلي"
+  },
+  "btnTryAgain": {
+    "message": "حاول مجددًا"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "فتح في مترجم جوجل"
+  },
+  "btnDonate": {
+    "message": "تبرع"
+  },
+  "btnNeverTranslate": {
+    "message": "لا تترجم هذا الموقع ابدًا"
+  },
+  "btnChangeLanguages": {
+    "message": "تغيير اللغات"
+  },
+  "btnMobileOriginal": {
+    "message": "الأصلي"
+  },
+  "btnMobileTranslated": {
+    "message": "تمت الترجمة"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "لا تترجم هذا الموقع ابدًا"
+  },
+  "btnMobileDonate": {
+    "message": "تبرع"
+  },
+  "optionsNeverTranslate": {
+    "message": "لا تترجم هذه المواقع أبدًا"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "ترجمة هذه اللغات تلقائيًا"
+  },
+  "optionPopupConfig": {
+    "message": "إظهار النافذة المنبثقة للجوال"
+  },
+  "optionPopupAuto": {
+    "message": "تلقائيًا"
+  },
+  "optionPopupThreeFingers": {
+    "message": "عندما ألمس الشاشة بثلاث أصابع"
+  },
+  "lblTranslationEngine": {
+    "message": "محرك الترجمة"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "فتح في ترجمة yandex"
+  },
+  "lblOthers": {
+    "message": "أخرى"
+  },
+  "btnMoreOptions": {
+    "message": "المزيد من الخيارات"
+  },
+  "lblPlsDonate": {
+    "message": "مساعدة المطور بالتبرع"
+  },
+  "msgTranslateFor": {
+    "message": "ترجمة إلى"
+  },
+  "lblShowContextMenu": {
+    "message": "اعرض خيار ترجمة الصفحة في قائمة السياق"
+  },
+  "msgYes": {
+    "message": "نعم"
+  },
+  "msgNo": {
+    "message": "لا"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "استخدم خوارزمية الترجمة الجديدة؟"
+  },
+  "msgYesRecommended": {
+    "message": "نعم (موصى به)"
+  },
+  "msgNoUseWidgets": {
+    "message": "لا (استخدم widgets)"
+  },
+  "optionsPageTitle": {
+    "message": "ترجمة صفحات الويب - خيارات"
+  },
+  "optionPopupjustWhenIClickTranlateThisSite": {
+    "message": "فقط عندما أنقر على \"ترجم هذا الموقع\""
+  },
+  "msgEmptyListNeverTranslateSites": {
+    "message": "لم تقم بإضافة أي مواقع إلى هذه القائمة."
+  },
+  "msgEmptyListAlwaysTranslateLanguages": {
+    "message": "لم تقم بإضافة أي لغات إلى هذه القائمة."
+  },
+  "btnAlwaysTranslate": {
+    "message": "ترجمة هذا الموقع دائمًا"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "ترجمة هذه المواقع دائمًا"
+  },
+  "msgHelpDevelopment": {
+    "message": "ساعد في الحفاظ على تطوير هذا الامتداد من خلال تبرع مجهول."
+  },
+  "msgDonateWithPaypal": {
+    "message": "تبرع بواسطة PayPal"
+  },
+  "lblDarkMode": {
+    "message": "الوضع المظلم"
+  },
+  "lblShowReleaseNotes": {
+    "message": "إظهار ملاحظات الإصدار عند التحديث"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "أظهر الزر لترجمة النص المحدد"
+  },
+  "msgAutomatic": {
+    "message": "تلقائي"
+  },
+  "msgTranslateSelectedText": {
+    "message": "ترجمة النص المحدد"
+  }
+}
