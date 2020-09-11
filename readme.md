@@ -16,3 +16,7 @@
 ### Access the Firefox [extension page](https://addons.mozilla.org/firefox/addon/traduzir-paginas-web/).
 
 ### Open [website](https://filipeps.github.io/Traduzir-paginas-web/).
+
+## Thanks to the Patrons
++ 英世 中村
++ Sage Nameless
