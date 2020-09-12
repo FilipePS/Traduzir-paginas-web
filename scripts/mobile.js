@@ -462,7 +462,8 @@ function callIfIsMobile() {
             translate()
         })
     
-        btnMenu.addEventListener("click", () => {
+        btnMenu.addEventListener("click", e => {
+            e.stopPropagation()
             menu.style.display = "block"
             menuSelectLanguage.style.display = "none";
         })
@@ -495,7 +496,8 @@ function callIfIsMobile() {
         })
     
         var aSelected = null
-        btnChangeLanguages.addEventListener("click", () => {
+        btnChangeLanguages.addEventListener("click", e => {
+            e.stopPropagation()
             menuSelectLanguage.style.display = "block"
             aSelected = shadowRoot.querySelector("#menuSelectLanguage a[value='" + lang + "']")
             aSelected.style.backgroundColor = "#ccc"
