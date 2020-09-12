@@ -360,6 +360,14 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             var showReleaseNotes = request.showReleaseNotes
             chrome.storage.local.set({showReleaseNotes})
         }
+    } else if (request.action == "setShowTranslateSelectedContextMenu") {
+        if (request.showTranslateSelectedContextMenu) {
+            showTranslateSelectedContextMenu = request.showTranslateSelectedContextMenu
+            chrome.storage.local.set({showTranslateSelectedContextMenu})
+            updateTranslateSelectedContextMenu()
+        }
+    } else if (request.action == "getShowTranslateSelectedContextMenu") {
+        sendResponse(showTranslateSelectedContextMenu)
     }
 })
 
@@ -369,6 +377,28 @@ chrome.storage.local.get("darkMode", onGot => {
         darkMode = onGot.darkMode
     }
 })
+
+var showTranslateSelectedContextMenu = "yes"
+chrome.storage.local.get("showTranslateSelectedContextMenu", onGot => {
+    if (onGot.showTranslateSelectedContextMenu) {
+        showTranslateSelectedContextMenu = onGot.showTranslateSelectedContextMenu
+    }
+    updateTranslateSelectedContextMenu()
+})
+
+function updateTranslateSelectedContextMenu(hideNow = false) {
+    if (typeof chrome.contextMenus != 'undefined') {
+        chrome.contextMenus.remove("translate-selected-text")
+        if (showTranslateSelectedContextMenu == "yes" && !hideNow) {
+            chrome.contextMenus.create({
+                id: "translate-selected-text",
+                documentUrlPatterns: ["*://*/*"],
+                title: chrome.i18n.getMessage("msgTranslateSelectedText"),
+                contexts: ["selection"]
+            })
+        }
+    }   
+}
 
 var showContextMenu = "yes"
 chrome.storage.local.get("showContextMenu", onGot => {
@@ -511,8 +541,10 @@ if (typeof chrome.contextMenus != 'undefined') {
             if (status) {
                 translationStatus = status
                 updateContextMenu()
+                updateTranslateSelectedContextMenu()
             } else {
                 updateContextMenu(true)
+                updateTranslateSelectedContextMenu(true)
             }
         })
     })
@@ -554,7 +586,7 @@ if (isMobile.any()) {
             updateIconInAllTabs()
         })
 
-        var darkMode = false
+        let darkMode = false
         matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
             if (matchMedia("(prefers-color-scheme: dark)").matches) {
                 darkMode = true
@@ -610,13 +642,6 @@ if (isMobile.any()) {
         })
     }
 }
-
-chrome.contextMenus.create({
-    id: "translate-selected-text",
-    documentUrlPatterns: ["*://*/*"],
-    title: chrome.i18n.getMessage("msgTranslateSelectedText"),
-    contexts: ["selection"]
-})
 
 chrome.commands.onCommand.addListener(command => {
     if (command === "toggle-translation") {

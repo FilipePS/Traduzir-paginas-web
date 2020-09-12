@@ -60,6 +60,8 @@ const lblShowReleaseNotes = document.getElementById("lblShowReleaseNotes")
 const selectShowReleaseNotes = document.getElementById("selectShowReleaseNotes")
 const lblShowTranslateSelectedButton = document.getElementById("lblShowTranslateSelectedButton")
 const selectShowTranslateSelectedButton = document.getElementById("selectShowTranslateSelectedButton")
+const lblShowTranslateSelectedContextMenu = document.getElementById("lblShowTranslateSelectedContextMenu")
+const selectShowTranslateSelectedContextMenu = document.getElementById("selectShowTranslateSelectedContextMenu")
 
 document.title = chrome.i18n.getMessage("optionsPageTitle")
 
@@ -76,6 +78,7 @@ lblAlwaysTranslateSites.textContent = chrome.i18n.getMessage("lblAlwaysTranslate
 lblDarkMode.textContent = chrome.i18n.getMessage("lblDarkMode")
 lblShowReleaseNotes.textContent = chrome.i18n.getMessage("lblShowReleaseNotes")
 lblShowTranslateSelectedButton.textContent = chrome.i18n.getMessage("lblShowTranslateSelectedButton")
+//lblShowTranslateSelectedContextMenu.textContent = chrome.i18n.getMessage("lblShowTranslateSelectedContextMenu")
 
 document.querySelector("#selectShowContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
 document.querySelector("#selectShowContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
@@ -92,11 +95,17 @@ document.querySelector("#selectShowTranslateSelectedButton option[value='yes']")
 document.querySelector("#selectShowTranslateSelectedButton option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
 document.querySelector("#selectShowReleaseNotes option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
 document.querySelector("#selectShowReleaseNotes option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
+document.querySelector("#selectShowTranslateSelectedContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
+document.querySelector("#selectShowTranslateSelectedContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
 
 
 neverTranslateList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListNeverTranslateSites"))
 alwaysTranslateSitesList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListNeverTranslateSites"))
 alwaysTranslateList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListAlwaysTranslateLanguages"))
+
+selectShowTranslateSelectedContextMenu.addEventListener("change", () => {
+    chrome.runtime.sendMessage({action: "setShowTranslateSelectedContextMenu", showTranslateSelectedContextMenu: selectShowTranslateSelectedContextMenu.value})
+})
 
 selectShowContextMenu.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setShowContextMenu", showContextMenu: selectShowContextMenu.value})
@@ -104,6 +113,10 @@ selectShowContextMenu.addEventListener("change", () => {
 
 selectUseNewAlgorithm.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setUseNewAlgorithm", useNewAlgorithm: selectUseNewAlgorithm.value})
+})
+
+chrome.runtime.sendMessage({action: "getShowTranslateSelectedContextMenu"}, showTranslateSelectedContextMenu => {
+    selectShowTranslateSelectedContextMenu.value = showTranslateSelectedContextMenu
 })
 
 chrome.runtime.sendMessage({action: "getShowContextMenu"}, showContextMenu => {
@@ -236,7 +249,6 @@ chrome.runtime.sendMessage({action: "getDarkMode"}, darkMode => {
     } else {
         disableDarkMode()
     }
-
     selectDarkMode.value = darkMode
 })
 
