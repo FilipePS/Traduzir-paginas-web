@@ -512,7 +512,27 @@ chrome.runtime.onInstalled.addListener(details => {
     } else if (details.reason == "update" && chrome.runtime.getManifest().version != details.previousVersion) {
         chrome.storage.local.get("showReleaseNotes", onGot => {
             if (onGot.showReleaseNotes != "no") {
-                chrome.tabs.create({url: "https://filipeps.github.io/Traduzir-paginas-web/release_notes/"})
+                chrome.storage.local.get("lastTimeShowingReleaseNotes", onGot => {
+                    var lastTimeShowingReleaseNotes = onGot.lastTimeShowingReleaseNotes
+                    let showReleaseNotes = false
+                    if (lastTimeShowingReleaseNotes) {
+                        var date = new Date();
+                        date.setDate(date.getDate() - 21)
+                        if (date.getTime() > lastTimeShowingReleaseNotes) {
+                            showReleaseNotes = true
+                            lastTimeShowingReleaseNotes = Date.now()
+                            chrome.storage.local.set({lastTimeShowingReleaseNotes})
+                        }
+                    } else {
+                        showReleaseNotes = true
+                        lastTimeShowingReleaseNotes = Date.now()
+                        chrome.storage.local.set({lastTimeShowingReleaseNotes})
+                    }
+                
+                    if (showReleaseNotes) {
+                        chrome.tabs.create({url: "https://filipeps.github.io/Traduzir-paginas-web/release_notes/"})
+                    }
+                })
             }
         })
     }
