@@ -201,11 +201,17 @@ function enableDarkMode() {
         
         
         #selectTargetLanguage,
+        #selectTranslationEngine,
+        #selectDarkMode,
+        #selectUseNewAlgorithm,
+        #selectShowTranslateSelectedButton,
+        #selectShowTranslateSelectedContextMenu,
+        #selectShowContextMenu,
+        #selectPopupConfig,
+        #selectShowReleaseNotes,
         #neverTranslateListButton,
         #alwaysTranslateSitesListButton,
         #alwaysTranslateListButton,
-        #selectTranslationEngine,
-        #selectShowContextMenu,
         select,
         option {
             color: #e8e6e3 !important;
