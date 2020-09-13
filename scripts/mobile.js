@@ -350,6 +350,58 @@ function callIfIsMobile() {
         shadowRoot.innerHTML = htmlMobile
     
         document.body.appendChild(element)
+
+        var gDarkMode = false
+
+        function enableDarkMode() {
+            gDarkMode = true
+            if (!shadowRoot.getElementById("darkModeElement")) {
+                var el = document.createElement("style")
+                el.setAttribute("id", "darkModeElement")
+                el.setAttribute("rel", "stylesheet")
+                el.textContent = `
+                div, button, select, option {
+                    color: #e8e6e3;
+                    background-color: #181a1b !important;
+                }
+            
+                a {
+                    color: #e8e6e3 !important;
+                    background-color: #181a1b;
+                }
+            
+                .dropup-content a:hover {
+                    background-color: #454a4d;
+                }
+            
+                .menuDot {
+                    background-color: #e8e6e3 !important;
+                }
+                `
+                shadowRoot.appendChild(el)
+            }
+        }
+        
+        function disableDarkMode() {
+            gDarkMode = false
+            if (shadowRoot.getElementById("darkModeElement")) {
+                shadowRoot.getElementById("darkModeElement").remove()
+            }
+        }
+        
+        chrome.runtime.sendMessage({action: "getDarkMode"}, darkMode => {
+            if (darkMode == "auto") {
+                if (matchMedia("(prefers-color-scheme: dark)").matches) {
+                    enableDarkMode()
+                } else {
+                    disableDarkMode()
+                }
+            } else if (darkMode == "yes") {
+                enableDarkMode()
+            } else {
+                disableDarkMode()
+            }
+        })
     
         let neverTranslateThisSite = false
         prevPageY = window.pageYOffset + 50
@@ -426,7 +478,7 @@ function callIfIsMobile() {
         btnOriginal.addEventListener("click", () => {
             chrome.runtime.sendMessage({action: "Restore"})
             btnOriginal.style.color = "#2196F3"
-            btnTranslate.style.color = "black"
+            btnTranslate.style.color = null
         })
     
         var lang = null
@@ -437,7 +489,7 @@ function callIfIsMobile() {
         function translate()
         {
             chrome.runtime.sendMessage({action: "Translate", lang: lang})
-            btnOriginal.style.color = "black"
+            btnOriginal.style.color = null
             btnTranslate.style.color = "#2196F3"
             btnTranslate.style.display = "none"
             spin.style.display = "block"
@@ -500,7 +552,11 @@ function callIfIsMobile() {
             e.stopPropagation()
             menuSelectLanguage.style.display = "block"
             aSelected = shadowRoot.querySelector("#menuSelectLanguage a[value='" + lang + "']")
-            aSelected.style.backgroundColor = "#ccc"
+            if (gDarkMode) {
+                aSelected.style.backgroundColor = "#454a4d"
+            } else {
+                aSelected.style.backgroundColor = "#ccc"
+            }
             menuSelectLanguage.scrollTop = aSelected.offsetTop
         })
     
