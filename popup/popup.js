@@ -296,6 +296,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     // get page language
     chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, {frameId: 0}, codeLang => {
         if (codeLang) {
+            document.querySelector("#btnOptions option[value='neverTranslateThisLanguage']").removeAttribute("hidden")
             globalCodeLang = codeLang
 
             // show always translate checkbox
@@ -405,9 +406,14 @@ btnOptions.addEventListener("change", () => {
     switch (btnOptions.value) {
         case "neverTranslateThisSite":
             chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
+            window.close()
             break
         case "alwaysTranslateThisSite":
             chrome.runtime.sendMessage({action: "alwaysTranslateThisSite"})
+            break
+        case "neverTranslateThisLanguage":
+            chrome.runtime.sendMessage({action: "neverTranslateThisLanguage", lang: globalCodeLang})
+            window.close()
             break
         case "changeLanguage":
             showSelectTargetLanguage = true

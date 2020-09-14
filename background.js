@@ -126,6 +126,33 @@ function disableAutoTranslate(lang)
     })   
 }
 
+function addLangToNeverTranslate(lang) {
+    chrome.storage.local.get("neverTranslateThisLanguages", onGot => {
+        var neverTranslateThisLanguages = onGot.neverTranslateThisLanguages
+        if (!neverTranslateThisLanguages) {
+            neverTranslateThisLanguages = []
+        }
+
+        if (neverTranslateThisLanguages.indexOf(lang) == -1) {
+            neverTranslateThisLanguages.push(lang)
+        }
+
+        chrome.storage.local.set({neverTranslateThisLanguages})
+    })
+}
+
+function removeLangFromNeverTranslate(lang) {
+    chrome.storage.local.get("neverTranslateThisLanguages", onGot => {
+        var neverTranslateThisLanguages = onGot.neverTranslateThisLanguages
+        if (!neverTranslateThisLanguages) {
+            neverTranslateThisLanguages = []
+        }
+
+        removeA(neverTranslateThisLanguages, lang)
+        chrome.storage.local.set({neverTranslateThisLanguages})
+    })  
+}
+
 function captureGoogleTranslateTKK() {
     return fetch("https://translate.google.com", {
             "credentials": "omit",
@@ -193,6 +220,11 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}, response => {
                 if (response) {
                     removeSiteFromBlackList(response)
+                }
+            })
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, {frameId: 0}, response => {
+                if (response) {
+                    removeLangFromNeverTranslate(response)
                 }
             })
             chrome.tabs.sendMessage(tabs[0].id, {action: "Translate"})
@@ -368,6 +400,10 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
     } else if (request.action == "getShowTranslateSelectedContextMenu") {
         sendResponse(showTranslateSelectedContextMenu)
+    } else if (request.action == "neverTranslateThisLanguage") {
+        if (request.lang) {
+            addLangToNeverTranslate(request.lang)
+        }
     }
 })
 
@@ -547,6 +583,11 @@ if (typeof chrome.contextMenus != 'undefined') {
                 chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, {frameId: 0}, response => {
                     if (response) {
                         removeSiteFromBlackList(response)
+                    }
+                })
+                chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, {frameId: 0}, response => {
+                    if (response) {
+                        removeLangFromNeverTranslate(response)
                     }
                 })
                 chrome.tabs.sendMessage(tab.id, {action: "Translate"})

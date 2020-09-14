@@ -171,13 +171,14 @@ function callIfIsMobile() {
         <button id="spin" class="item button" style="display: none">
             <div class="loader button" style="margin: 0 auto;"></div>
         </button>
-        <button id="btnMenu" class="item2" style="width: 40px; max-width: 40px">
+        <button id="btnMenu" class="item2" style="width: 50px; max-width: 50px">
             <div class="dropup">
                 <div id="menu" class="dropup-content">
-                    <a id="btnChangeLanguages" href="#">Change languages</a>
-                    <a id="btnNeverTranslate" href="#">Never translate this site</a>
+                    <a id="btnChangeLanguages">Change languages</a>
+                    <a id="btnNeverTranslate">Never translate this site</a>
+                    <a id="neverTranslateThisLanguage" display="none">Never translate this language</a>
                     <a id="btnDonate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url" target="_blank" value="btnDonate" rel="noopener noreferrer">Donate &#10084;</a>
-                    <a id="btnMoreOptions" href="#">More options</a>
+                    <a id="btnMoreOptions">More options</a>
                 </div>
             </div>
             <div class="dropup">
@@ -247,7 +248,7 @@ function callIfIsMobile() {
                             googleDetectLanguage(pageText, (lang) => {
                                 if (lang) {
                                     if (lang.split("-")[0] != navigatorLang) {
-                                        injectPopup()
+                                        injectPopup(lang.split("-")[0])
                                     }
                                 } else {
                                     if (navigatorLang !== langAttribute) {
@@ -259,15 +260,15 @@ function callIfIsMobile() {
                             googleDetectLanguage(pageText.substring(middleIdx, middleIdx + 200), (lang) => {
                                 if (lang) {
                                     if (lang.split("-")[0] != navigatorLang) {
-                                        injectPopup()
+                                        injectPopup(lang.split("-")[0])
                                     } else {
                                         googleDetectLanguage(pageText.substring(0, 200), (lang) => {
                                             if (lang.split("-")[0] != navigatorLang) {
-                                                injectPopup()
+                                                injectPopup(lang.split("-")[0])
                                             } else {
                                                 googleDetectLanguage(pageText.substring(pageTextLength - 200, pageTextLength), (lang) => {
                                                     if (lang.split("-")[0] != navigatorLang) {
-                                                        injectPopup()
+                                                        injectPopup(lang.split("-")[0])
                                                     }               
                                                 })
                                             }                 
@@ -291,10 +292,11 @@ function callIfIsMobile() {
     var element = null
     var prevPageY = window.pageYOffset + 50
     
-    function injectPopup()
+    function injectPopup(detectedLang = null)
     {
         if (popupIsInjected) return;
         popupIsInjected = true
+        window.detectedLanguage = detectedLang
     
         element = document.createElement("div")
         element.setAttribute("translate", "no")
@@ -351,6 +353,10 @@ function callIfIsMobile() {
     
         document.body.appendChild(element)
 
+        if (detectedLang) {
+            shadowRoot.getElementById('neverTranslateThisLanguage').style.display = "block"
+        }
+
         var gDarkMode = false
 
         function enableDarkMode() {
@@ -403,14 +409,13 @@ function callIfIsMobile() {
             }
         })
     
-        let neverTranslateThisSite = false
         prevPageY = window.pageYOffset + 50
     
         chrome.runtime.sendMessage({action: "getShowPopupConfig"}, showPopupConfig => {
             if (showPopupConfig == "threeFingersOnTheScreen") {
                 element.style.display = "none"
                 window.addEventListener("touchstart", (e) => {
-                    if (e.touches.length == 3 && !neverTranslateThisSite) {
+                    if (e.touches.length == 3) {
                         element.style.display = "block"
                     }
                 })
@@ -452,6 +457,7 @@ function callIfIsMobile() {
         const btnDonate = shadowRoot.getElementById("btnDonate")
         const btnMoreOptions = shadowRoot.getElementById("btnMoreOptions")
         const btnClose = shadowRoot.getElementById("btnClose")
+        const neverTranslateThisLanguage = shadowRoot.getElementById("neverTranslateThisLanguage")
     
         btnOriginal.textContent = chrome.i18n.getMessage("btnMobileOriginal")
         btnTranslate.textContent = chrome.i18n.getMessage("btnMobileTranslated")
@@ -460,6 +466,7 @@ function callIfIsMobile() {
         btnDonate.textContent = chrome.i18n.getMessage("btnMobileDonate")
         btnDonate.innerHTML += " &#10084;"
         btnMoreOptions.textContent = chrome.i18n.getMessage("btnMoreOptions")
+        //neverTranslateThisLanguage.textContent = chrome.i18n.getMessage("neverTranslateThisLanguage")
     
         // set translation engine icon
         chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine => {
@@ -542,7 +549,6 @@ function callIfIsMobile() {
     
         btnNeverTranslate.addEventListener("click", () => {
             chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
-            neverTranslateThisSite = true
             hidePopup = true
             element.style.display = "none"
         })
@@ -565,6 +571,13 @@ function callIfIsMobile() {
         })
     
         btnClose.addEventListener("click", () => {
+            hidePopup = true
+            element.style.display = "none"
+        })
+
+        neverTranslateThisLanguage.addEventListener("click", () => {
+            console.log(detectedLang)
+            chrome.runtime.sendMessage({action: "neverTranslateThisLanguage", lang: detectedLang})
             hidePopup = true
             element.style.display = "none"
         })

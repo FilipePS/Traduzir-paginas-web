@@ -62,6 +62,9 @@ const lblShowTranslateSelectedButton = document.getElementById("lblShowTranslate
 const selectShowTranslateSelectedButton = document.getElementById("selectShowTranslateSelectedButton")
 const lblShowTranslateSelectedContextMenu = document.getElementById("lblShowTranslateSelectedContextMenu")
 const selectShowTranslateSelectedContextMenu = document.getElementById("selectShowTranslateSelectedContextMenu")
+const neverTranslateLangsListButton = document.getElementById("neverTranslateLangsListButton")
+const lblNeverTranslateLangs = document.getElementById("lblNeverTranslateLangs")
+const neverTranslateLangsList = document.getElementById("neverTranslateLangsList")
 
 document.title = chrome.i18n.getMessage("optionsPageTitle")
 
@@ -79,6 +82,7 @@ lblDarkMode.textContent = chrome.i18n.getMessage("lblDarkMode")
 lblShowReleaseNotes.textContent = chrome.i18n.getMessage("lblShowReleaseNotes")
 lblShowTranslateSelectedButton.textContent = chrome.i18n.getMessage("lblShowTranslateSelectedButton")
 //lblShowTranslateSelectedContextMenu.textContent = chrome.i18n.getMessage("lblShowTranslateSelectedContextMenu")
+//lblNeverTranslateLangs.textContent = chrome.i18n.getMessage("lblNeverTranslateLangs")
 
 document.querySelector("#selectShowContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
 document.querySelector("#selectShowContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
@@ -102,6 +106,7 @@ document.querySelector("#selectShowTranslateSelectedContextMenu option[value='no
 neverTranslateList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListNeverTranslateSites"))
 alwaysTranslateSitesList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListNeverTranslateSites"))
 alwaysTranslateList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListAlwaysTranslateLanguages"))
+neverTranslateLangsList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListAlwaysTranslateLanguages"))
 
 selectShowTranslateSelectedContextMenu.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setShowTranslateSelectedContextMenu", showTranslateSelectedContextMenu: selectShowTranslateSelectedContextMenu.value})
@@ -316,6 +321,7 @@ function toggleList(x)
 neverTranslateListButton.addEventListener("click", () => toggleList(neverTranslateList))
 alwaysTranslateSitesListButton.addEventListener("click", () => toggleList(alwaysTranslateSitesList))
 alwaysTranslateListButton.addEventListener("click", () => toggleList(alwaysTranslateList))
+neverTranslateLangsListButton.addEventListener("click", () => toggleList(neverTranslateLangsList))
 
 function removeA(arr) {
     var what, a = arguments, L = a.length, ax;
@@ -365,6 +371,18 @@ function disableAutoTranslate(lang)
         removeA(alwaysTranslateLangs, lang)
         chrome.storage.local.set({alwaysTranslateLangs})
     })   
+}
+
+function removeLangFromNeverTranslate(lang) {
+    chrome.storage.local.get("neverTranslateThisLanguages", onGot => {
+        var neverTranslateThisLanguages = onGot.neverTranslateThisLanguages
+        if (!neverTranslateThisLanguages) {
+            neverTranslateThisLanguages = []
+        }
+
+        removeA(neverTranslateThisLanguages, lang)
+        chrome.storage.local.set({neverTranslateThisLanguages})
+    })  
 }
 
 chrome.storage.local.get("neverTranslateSites", onGot => {
@@ -452,5 +470,39 @@ chrome.storage.local.get("alwaysTranslateLangs", onGot => {
         li.appendChild(close)
         
         alwaysTranslateList.appendChild(li)
+    })
+})
+
+chrome.storage.local.get("neverTranslateThisLanguages", onGot => {
+    var neverTranslateThisLanguages = onGot.neverTranslateThisLanguages
+    if (!neverTranslateThisLanguages) {
+        neverTranslateThisLanguages = []
+    }
+    neverTranslateThisLanguages.sort()
+
+    var interfaceLanguage = chrome.i18n.getUILanguage()
+
+    neverTranslateThisLanguages.forEach(value => {
+        var language = codeToLanguage(value, interfaceLanguage)
+        if (!language) {
+            language = "\"" + value + "\""
+        }
+
+        let li = document.createElement("li")
+        li.setAttribute("class", "w3-display-container")
+        li.innerText = language
+
+        let close = document.createElement("span")
+        close.setAttribute("class", "w3-button w3-transparent w3-display-right")
+        close.innerHTML = "&times;"
+
+        close.addEventListener("click", () => {
+            li.style.display = "none"
+            removeLangFromNeverTranslate(value)
+        })
+
+        li.appendChild(close)
+        
+        neverTranslateLangsList.appendChild(li)
     })
 })
