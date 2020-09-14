@@ -25,12 +25,39 @@ if (typeof browser !== 'undefined') {
     };
 
     var showTranslateSelectedButton = "yes"
-    chrome.storage.local.get("showTranslateSelectedButton", onGot => {
+    var translateThisSite = true
+    var translateThisLanguage = true
+    chrome.storage.local.get(["showTranslateSelectedButton", "neverTranslateSites", "neverTranslateThisLanguages"], onGot => {
         if (onGot.showTranslateSelectedButton) {
             showTranslateSelectedButton = onGot.showTranslateSelectedButton 
         }
-    })
 
+        var neverTranslateSites = onGot.neverTranslateSites
+        if (!neverTranslateSites) {
+            neverTranslateSites = []
+        }
+
+        if (neverTranslateSites.indexOf(window.location.hostname) != -1) {
+            translateThisSite = false
+        }
+
+        var neverTranslateThisLanguages = onGot.neverTranslateThisLanguages
+        if (!neverTranslateThisLanguages) {
+            neverTranslateThisLanguages = []
+        }
+
+        function foo() {
+            if (typeof window.detectedLanguage != "undefined") {
+                if (neverTranslateThisLanguages.indexOf(window.detectedLanguage) != -1) {
+                    translateThisLanguage = false
+                }
+            } else {
+                setTimeout(foo, 500)
+            }
+        }
+        foo()
+    })
+    
     var element = document.createElement("div")
     var shadowRoot = element.attachShadow({mode: "closed"})
     
@@ -196,7 +223,7 @@ if (typeof browser !== 'undefined') {
             selTextButton.style.top = clientY - 20 + "px"
             selTextButton.style.left = clientX + 10 + "px"
             //selTextButton.classList.add("show")
-            if (showTranslateSelectedButton == "yes") {
+            if (showTranslateSelectedButton == "yes" && translateThisSite && translateThisLanguage) {
                 selTextButton.style.display = "block"
             }
         } else {
