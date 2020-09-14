@@ -1,0 +1,158 @@
+{
+  "extensionName": {
+    "message": "Prevedite spletne strani"
+  },
+  "extensionDescription": {
+    "message": "Prevedite svojo spletno stran v realnem času z uporabo storitve Google ali Yandex."
+  },
+  "pageActionTitle": {
+    "message": "Prevedi to stran"
+  },
+  "lblTranslate": {
+    "message": "Prevedem to stran?"
+  },
+  "lblTranslating": {
+    "message": "Prevajanje ..."
+  },
+  "lblTranslated": {
+    "message": "Prevedeno"
+  },
+  "lblError": {
+    "message": "Te strani ni bilo mogoče prevesti"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Vedno prevedi od"
+  },
+  "lblTargetLanguage": {
+    "message": "Ciljni jezik"
+  },
+  "btnReset": {
+    "message": "Ponastavi"
+  },
+  "btnTranslate": {
+    "message": "Prevedi"
+  },
+  "btnOptions": {
+    "message": "Možnosti"
+  },
+  "btnRestore": {
+    "message": "Pokaži izvirnik"
+  },
+  "btnTryAgain": {
+    "message": "Poskusi znova"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Odpri v Google prevajalniku"
+  },
+  "btnDonate": {
+    "message": "Doniraj"
+  },
+  "btnNeverTranslate": {
+    "message": "Nikoli ne prevedi te strani"
+  },
+  "btnChangeLanguages": {
+    "message": "Spremeni jezike"
+  },
+  "btnMobileOriginal": {
+    "message": "Izvirnik"
+  },
+  "btnMobileTranslated": {
+    "message": "Prevedeno"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Nikoli ne prevedi te strani"
+  },
+  "btnMobileDonate": {
+    "message": "Doniraj"
+  },
+  "optionsNeverTranslate": {
+    "message": "Nikoli ne prevedi teh strani"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Samodejno prevedi te jezike"
+  },
+  "optionPopupConfig": {
+    "message": "Pokaži mobilno pojavno okno"
+  },
+  "optionPopupAuto": {
+    "message": "Samodejno"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Ko se s tremi prsti dotaknem zaslona"
+  },
+  "lblTranslationEngine": {
+    "message": "Pogon za prevajanje"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Odpri v Yandex prevajalniku"
+  },
+  "lblOthers": {
+    "message": "Ostali"
+  },
+  "btnMoreOptions": {
+    "message": "Več možnosti"
+  },
+  "lblPlsDonate": {
+    "message": "Pomagaj razvijalcu z donacijo"
+  },
+  "msgTranslateFor": {
+    "message": "Prevedi v"
+  },
+  "lblShowContextMenu": {
+    "message": "Prikaži možnost, da prevedeš stran v kontekstnem meniju"
+  },
+  "msgYes": {
+    "message": "Da"
+  },
+  "msgNo": {
+    "message": "Ne"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Uporabimo nov algoritem za prevajanje?"
+  },
+  "msgYesRecommended": {
+    "message": "Da (priporočeno)"
+  },
+  "msgNoUseWidgets": {
+    "message": "Ne (uporabi gradnike)"
+  },
+  "optionsPageTitle": {
+    "message": "Prevedi spletne strani - možnosti"
+  },
+  "optionPopupjustWhenIClickTranlateThisSite": {
+    "message": "Le ko kliknem \"prevedi to stran\""
+  },
+  "msgEmptyListNeverTranslateSites": {
+    "message": "Niste dodali nobene strani na ta seznam."
+  },
+  "msgEmptyListAlwaysTranslateLanguages": {
+    "message": "Niste dodali nobenega jezika na ta seznam."
+  },
+  "btnAlwaysTranslate": {
+    "message": "Vedno prevedi to stran"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Vedno prevedi te strani"
+  },
+  "msgHelpDevelopment": {
+    "message": "Pomagaj razvoju te razširitve prek anonimne donacije."
+  },
+  "msgDonateWithPaypal": {
+    "message": "Donacija preko Paypala"
+  },
+  "lblDarkMode": {
+    "message": "Temni način"
+  },
+  "lblShowReleaseNotes": {
+    "message": "Pokaži opombe ob izdaji med posodobitvijo"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "Pokaži gumb za prevod izbranega besedila"
+  },
+  "msgAutomatic": {
+    "message": "Samodejno"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Prevedi izbrano besedilo"
+  }
+}
