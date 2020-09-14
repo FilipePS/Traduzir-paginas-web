@@ -30,15 +30,16 @@ if (typeof browser !== 'undefined') {
         if (onGot.showTranslateSelectedButton) {
             showTranslateSelectedButton = onGot.showTranslateSelectedButton 
         }
+        updateEventListener()
     })
 
     chrome.storage.onChanged.addListener(changes => {
-        if (changes.showTranslateSelectedButton) {
-            showTranslateSelectedButton = changes.showTranslateSelectedButton.newValue
-            if (showTranslateSelectedButton != "yes" && selTextButton) {
-                selTextButton.style.display = "none"
-            }
+        if (!changes.showTranslateSelectedButton) return
+        showTranslateSelectedButton = changes.showTranslateSelectedButton.newValue
+        if (showTranslateSelectedButton != "yes" && selTextButton) {
+            selTextButton.style.display = "none"
         }
+        updateEventListener()
     })
 
     var element, selTextButton, selTextDiv
@@ -170,6 +171,7 @@ if (typeof browser !== 'undefined') {
         if (e.target != element) {
             selTextDiv.style.display = "none"
             selTextButton.style.display = "none"
+            destroy()
         }
     }
     
@@ -217,8 +219,6 @@ if (typeof browser !== 'undefined') {
     function onUp(e) {
         if (showTranslateSelectedButton != "yes") {
             return destroy()
-        } else {
-            init()
         }
         if (e.target == element) return;
 
@@ -226,39 +226,49 @@ if (typeof browser !== 'undefined') {
         var clientY = e.clientY || e.changedTouches[0].clientY
 
         if (document.getSelection().toString().trim()) {
+            init()
             //selTextButton.classList.remove("show")
             selTextButton.style.top = clientY - 20 + "px"
             selTextButton.style.left = clientX + 10 + "px"
             //selTextButton.classList.add("show")
 
             selTextButton.style.display = "block"
-        } else {
-            gSelectionInfo = null
-            selTextButton.style.display = "none"
-            //selTextButton.classList.remove("show")
-            destroy()
         }
     }
     
-    document.addEventListener("mouseup", e => {
+    function onMouseup(e) {
         if (e.button != 0) return;
         if (e.target == element) return;
         readSelection()
         setTimeout(()=>onUp(e), 120)
-    })
+    }
 
-    if (isAnyMobile) {
-        document.addEventListener("touchend", e => {
-            if (e.target == element) return;
+    function onTouchend(e) {
+        if (e.target == element) return;
+        readSelection()
+        setTimeout(()=>onUp(e), 120)
+    }
+
+    function onSelectionchange(e) {
+        if (isTouchSelection) {
             readSelection()
-            setTimeout(()=>onUp(e), 120)
-        })
+        }
+    }
 
-        document.addEventListener("selectionchange", e => {
-            if (isTouchSelection) {
-                readSelection()
+    function updateEventListener() {
+        if (showTranslateSelectedButton == "yes") {
+            document.addEventListener("mouseup", onMouseup)
+            if (isAnyMobile) {
+                document.addEventListener("touchend", onTouchend)
+                document.addEventListener("selectionchange", onSelectionchange)
             }
-        })
+        } else {
+            document.removeEventListener("mouseup", onMouseup)
+            if (isAnyMobile) {
+                document.removeEventListener("touchend", onTouchend)
+                document.removeEventListener("selectionchange", onSelectionchange)
+            }
+        }
     }
 
     chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
