@@ -199,7 +199,7 @@ function callIfIsMobile() {
             text = text.trim().substring(0, 200)
     
             backgroundFetchText(url, {
-                credentials: "omit",
+                credentials: "include",
                 referrerPolicy: "no-referrer",
                 mode: "no-cors",
                 method: "post",
@@ -236,6 +236,22 @@ function callIfIsMobile() {
         }
     
         if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
+            let injectPopup2 = function(lang = null) {
+                if (lang) {
+                    chrome.storage.local.get("neverTranslateThisLanguages", onGot => {
+                        var neverTranslateThisLanguages = onGot.neverTranslateThisLanguages
+                        if (!neverTranslateThisLanguages) {
+                            neverTranslateThisLanguages = []
+                        }
+                    
+                        if (neverTranslateThisLanguages.indexOf(lang) == -1) {
+                            injectPopup(lang)
+                        }
+                    })
+                } else {
+                    injectPopup(lang)
+                }
+            }
             chrome.runtime.sendMessage({action: "getShowPopupConfig"}, showPopupConfig => {
                 if (showPopupConfig == "threeFingersOnTheScreen") {
                     injectPopup()
@@ -248,11 +264,11 @@ function callIfIsMobile() {
                             googleDetectLanguage(pageText, (lang) => {
                                 if (lang) {
                                     if (lang.split("-")[0] != navigatorLang) {
-                                        injectPopup(lang.split("-")[0])
+                                        injectPopup2(lang.split("-")[0])
                                     }
                                 } else {
                                     if (navigatorLang !== langAttribute) {
-                                        injectPopup()
+                                        injectPopup2()
                                     }
                                 }
                             })
@@ -260,15 +276,15 @@ function callIfIsMobile() {
                             googleDetectLanguage(pageText.substring(middleIdx, middleIdx + 200), (lang) => {
                                 if (lang) {
                                     if (lang.split("-")[0] != navigatorLang) {
-                                        injectPopup(lang.split("-")[0])
+                                        injectPopup2(lang.split("-")[0])
                                     } else {
                                         googleDetectLanguage(pageText.substring(0, 200), (lang) => {
                                             if (lang.split("-")[0] != navigatorLang) {
-                                                injectPopup(lang.split("-")[0])
+                                                injectPopup2(lang.split("-")[0])
                                             } else {
                                                 googleDetectLanguage(pageText.substring(pageTextLength - 200, pageTextLength), (lang) => {
                                                     if (lang.split("-")[0] != navigatorLang) {
-                                                        injectPopup(lang.split("-")[0])
+                                                        injectPopup2(lang.split("-")[0])
                                                     }               
                                                 })
                                             }                 
@@ -276,7 +292,7 @@ function callIfIsMobile() {
                                     }
                                 } else {
                                     if (navigatorLang !== langAttribute) {
-                                        injectPopup()
+                                        injectPopup2()
                                     }
                                 }
                             })
