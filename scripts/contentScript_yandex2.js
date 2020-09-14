@@ -509,7 +509,7 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
     // detect language
     window.detectedLanguage = undefined
     chrome.runtime.sendMessage({action: "detectLanguage"}, lang => {
-        detectedLanguage = lang || null
+        window.detectedLanguage = lang || null
 
         chrome.storage.local.get(["alwaysTranslateLangs", "alwaysTranslateSites", "neverTranslateSites"], onGot => {
             var alwaysTranslateSites = onGot.alwaysTranslateSites

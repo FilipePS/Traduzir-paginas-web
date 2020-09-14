@@ -26,20 +26,77 @@ if (typeof browser !== 'undefined') {
     var isAnyMobile = isMobile.any()
 
     var showTranslateSelectedButton = "yes"
-    chrome.storage.local.get("showTranslateSelectedButton", onGot => {
+    var translateThisSite = true
+    var translateThisLanguage = true
+    chrome.storage.local.get(["showTranslateSelectedButton", "neverTranslateSites", "neverTranslateThisLanguages"], onGot => {
         if (onGot.showTranslateSelectedButton) {
             showTranslateSelectedButton = onGot.showTranslateSelectedButton 
         }
+
+        var neverTranslateSites = onGot.neverTranslateSites
+        if (!neverTranslateSites) {
+            neverTranslateSites = []
+        }
+
+        if (neverTranslateSites.indexOf(window.location.hostname) != -1) {
+            translateThisSite = false
+        }
+
+        var neverTranslateThisLanguages = onGot.neverTranslateThisLanguages
+        if (!neverTranslateThisLanguages) {
+            neverTranslateThisLanguages = []
+        }
+
+        function foo() {
+            if (typeof window.detectedLanguage != "undefined") {
+                if (neverTranslateThisLanguages.indexOf(window.detectedLanguage) != -1) {
+                    translateThisLanguage = false
+                }
+            } else {
+                setTimeout(foo, 500)
+            }
+        }
+        foo()
+        
         updateEventListener()
     })
 
     chrome.storage.onChanged.addListener(changes => {
-        if (!changes.showTranslateSelectedButton) return
-        showTranslateSelectedButton = changes.showTranslateSelectedButton.newValue
-        if (showTranslateSelectedButton != "yes" && selTextButton) {
-            selTextButton.style.display = "none"
+        if (changes.showTranslateSelectedButton) {
+            showTranslateSelectedButton = changes.showTranslateSelectedButton.newValue
+            if (showTranslateSelectedButton != "yes" && selTextButton) {
+                selTextButton.style.display = "none"
+            }
+            updateEventListener()
         }
-        updateEventListener()
+        
+        if (changes.neverTranslateSites) {
+            var neverTranslateSites = changes.neverTranslateSites.newValue
+            if (!neverTranslateSites) {
+                neverTranslateSites = []
+            }
+    
+            if (neverTranslateSites.indexOf(window.location.hostname) == -1) {
+                translateThisSite = true
+            } else {
+                translateThisSite = false
+            }
+            updateEventListener()
+        }
+        
+        if (changes.neverTranslateThisLanguages && typeof window.detectedLanguage != "undefined") {
+            var neverTranslateThisLanguages = changes.neverTranslateThisLanguages.newValue
+            if (!neverTranslateThisLanguages) {
+                neverTranslateThisLanguages = []
+            }
+
+            if (neverTranslateThisLanguages.indexOf(window.detectedLanguage) == -1) {
+                translateThisLanguage = true
+            } else {
+                translateThisLanguage = false
+            }
+            updateEventListener()
+        }
     })
 
     var element, selTextButton, selTextDiv
@@ -256,7 +313,7 @@ if (typeof browser !== 'undefined') {
     }
 
     function updateEventListener() {
-        if (showTranslateSelectedButton == "yes") {
+        if (showTranslateSelectedButton == "yes" && translateThisSite && translateThisLanguage) {
             document.addEventListener("mouseup", onMouseup)
             if (isAnyMobile) {
                 document.addEventListener("touchend", onTouchend)

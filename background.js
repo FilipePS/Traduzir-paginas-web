@@ -585,7 +585,7 @@ if (typeof chrome.contextMenus != 'undefined') {
                         removeSiteFromBlackList(response)
                     }
                 })
-                chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, {frameId: 0}, response => {
+                chrome.tabs.sendMessage(tab.id, {action: "getDetectedLanguage"}, {frameId: 0}, response => {
                     if (response) {
                         removeLangFromNeverTranslate(response)
                     }
