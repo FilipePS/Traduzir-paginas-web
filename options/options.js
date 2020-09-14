@@ -81,8 +81,8 @@ lblAlwaysTranslateSites.textContent = chrome.i18n.getMessage("lblAlwaysTranslate
 lblDarkMode.textContent = chrome.i18n.getMessage("lblDarkMode")
 lblShowReleaseNotes.textContent = chrome.i18n.getMessage("lblShowReleaseNotes")
 lblShowTranslateSelectedButton.textContent = chrome.i18n.getMessage("lblShowTranslateSelectedButton")
-//lblShowTranslateSelectedContextMenu.textContent = chrome.i18n.getMessage("lblShowTranslateSelectedContextMenu")
-//lblNeverTranslateLangs.textContent = chrome.i18n.getMessage("lblNeverTranslateLangs")
+lblShowTranslateSelectedContextMenu.textContent = chrome.i18n.getMessage("lblShowTranslateSelectedContextMenu")
+lblNeverTranslateLangs.textContent = chrome.i18n.getMessage("lblNeverTranslateLangs")
 
 document.querySelector("#selectShowContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
 document.querySelector("#selectShowContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")

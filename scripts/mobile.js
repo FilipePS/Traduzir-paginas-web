@@ -482,7 +482,7 @@ function callIfIsMobile() {
         btnDonate.textContent = chrome.i18n.getMessage("btnMobileDonate")
         btnDonate.innerHTML += " &#10084;"
         btnMoreOptions.textContent = chrome.i18n.getMessage("btnMoreOptions")
-        //neverTranslateThisLanguage.textContent = chrome.i18n.getMessage("neverTranslateThisLanguage")
+        neverTranslateThisLanguage.textContent = chrome.i18n.getMessage("btnNeverTranslateThisLanguage")
     
         // set translation engine icon
         chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine => {

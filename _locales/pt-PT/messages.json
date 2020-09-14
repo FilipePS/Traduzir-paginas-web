@@ -154,5 +154,17 @@
   },
   "msgTranslateSelectedText": {
     "message": "Traduzir o Texto Selecionado"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "Mostrar a opção de traduzir o texto seleccionado no menu de contexto"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "Nunca traduza esses idiomas"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "Nunca traduza este idioma"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "Mostrar o texto original ao passar o mouse"
   }
 }

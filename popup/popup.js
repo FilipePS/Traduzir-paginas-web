@@ -61,6 +61,7 @@ document.querySelector("#btnOptions option[value='openInGoogleTranslate']").text
 document.querySelector("#btnOptions option[value='donate']").textContent = chrome.i18n.getMessage("btnDonate")
 document.querySelector("#btnOptions option[value='donate']").innerHTML += " &#10084;";
 document.querySelector("#btnOptions option[value='moreOptions']").textContent = chrome.i18n.getMessage("btnMoreOptions");
+document.querySelector("#btnOptions option[value='neverTranslateThisLanguage']").textContent = chrome.i18n.getMessage("btnNeverTranslateThisLanguage");
 
 msgHelpDevelopment.textContent = chrome.i18n.getMessage("msgHelpDevelopment")
 btnDonateWithPaypal.textContent = chrome.i18n.getMessage("msgDonateWithPaypal")
