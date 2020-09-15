@@ -388,6 +388,20 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         if (request.lang) {
             addLangToNeverTranslate(request.lang)
         }
+    } else if (request.action == "setShowOriginalTextWhenHovering") {
+        if (request.showOriginalTextWhenHovering) {
+            showOriginalTextWhenHovering = request.showOriginalTextWhenHovering
+            chrome.storage.local.set({showOriginalTextWhenHovering})
+        }
+    } else if (request.action == "getShowOriginalTextWhenHovering") {
+        sendResponse(showOriginalTextWhenHovering)
+    }
+})
+
+var showOriginalTextWhenHovering = "yes"
+chrome.storage.local.get("showOriginalTextWhenHovering", onGot => {
+    if (onGot.showOriginalTextWhenHovering) {
+        showOriginalTextWhenHovering = onGot.showOriginalTextWhenHovering
     }
 })
 

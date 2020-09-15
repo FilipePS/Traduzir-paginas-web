@@ -368,6 +368,7 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
 
     function restore()
     {
+        try {window.restoreShowOriginal()} catch (e) {console.error(e)}
         disableMutatinObserver()
 
         setStatus("prompt")
@@ -393,6 +394,9 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
                         if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
                             tni.isTranslated = true
                             nodesToTranslates.push(tni.nodesInfo)
+                            if (tni.nodesInfo.length > 0 && window.saveToShowOriginal) {
+                                window.saveToShowOriginal(tni.nodesInfo[0].node)
+                            }
                         }
                     }
                 })

@@ -198,8 +198,8 @@ if (typeof browser !== 'undefined') {
                 var eTop = gSelectionInfo.bottom
                 var eLeft = gSelectionInfo.left
 
-                selTextDiv.style.top = eTop + 5 + "px"
-                selTextDiv.style.left = eLeft + "px"
+                selTextDiv.style.top = "0px"
+                selTextDiv.style.left = "0px"
                 selTextDiv.textContent = result
                 selTextDiv.style.display = "block"
     
@@ -213,7 +213,7 @@ if (typeof browser !== 'undefined') {
                 left = Math.max(0, left)
                 left = Math.min(window.innerWidth - width, left)
     
-                selTextDiv.style.top = top + "px";
+                selTextDiv.style.top = top + "px"
                 selTextDiv.style.left = left + "px"
             })
         }

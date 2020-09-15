@@ -65,6 +65,8 @@ const selectShowTranslateSelectedContextMenu = document.getElementById("selectSh
 const neverTranslateLangsListButton = document.getElementById("neverTranslateLangsListButton")
 const lblNeverTranslateLangs = document.getElementById("lblNeverTranslateLangs")
 const neverTranslateLangsList = document.getElementById("neverTranslateLangsList")
+const lblShowOriginalTextWhenHovering = document.getElementById("lblShowOriginalTextWhenHovering")
+const selectShowOriginalTextWhenHovering = document.getElementById("selectShowOriginalTextWhenHovering")
 
 document.title = chrome.i18n.getMessage("optionsPageTitle")
 
@@ -83,6 +85,7 @@ lblShowReleaseNotes.textContent = chrome.i18n.getMessage("lblShowReleaseNotes")
 lblShowTranslateSelectedButton.textContent = chrome.i18n.getMessage("lblShowTranslateSelectedButton")
 lblShowTranslateSelectedContextMenu.textContent = chrome.i18n.getMessage("lblShowTranslateSelectedContextMenu")
 lblNeverTranslateLangs.textContent = chrome.i18n.getMessage("lblNeverTranslateLangs")
+lblShowOriginalTextWhenHovering.textContent = chrome.i18n.getMessage("lblShowOriginalTextWhenHovering")
 
 document.querySelector("#selectShowContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
 document.querySelector("#selectShowContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
@@ -101,12 +104,22 @@ document.querySelector("#selectShowReleaseNotes option[value='yes']").textConten
 document.querySelector("#selectShowReleaseNotes option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
 document.querySelector("#selectShowTranslateSelectedContextMenu option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
 document.querySelector("#selectShowTranslateSelectedContextMenu option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
+document.querySelector("#selectShowOriginalTextWhenHovering option[value='yes']").textContent = chrome.i18n.getMessage("msgYes")
+document.querySelector("#selectShowOriginalTextWhenHovering option[value='no']").textContent = chrome.i18n.getMessage("msgNo")
 
 
 neverTranslateList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListNeverTranslateSites"))
 alwaysTranslateSitesList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListNeverTranslateSites"))
 alwaysTranslateList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListAlwaysTranslateLanguages"))
 neverTranslateLangsList.setAttribute("placeholder", chrome.i18n.getMessage("msgEmptyListAlwaysTranslateLanguages"))
+
+chrome.runtime.sendMessage({action: "getShowOriginalTextWhenHovering"}, showOriginalTextWhenHovering => {
+    selectShowOriginalTextWhenHovering.value = showOriginalTextWhenHovering
+})
+
+selectShowOriginalTextWhenHovering.addEventListener("change", () => {
+    chrome.runtime.sendMessage({action: "setShowOriginalTextWhenHovering", showOriginalTextWhenHovering: selectShowOriginalTextWhenHovering.value})
+})
 
 selectShowTranslateSelectedContextMenu.addEventListener("change", () => {
     chrome.runtime.sendMessage({action: "setShowTranslateSelectedContextMenu", showTranslateSelectedContextMenu: selectShowTranslateSelectedContextMenu.value})
