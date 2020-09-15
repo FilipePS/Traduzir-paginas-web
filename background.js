@@ -158,7 +158,8 @@ function removeLangFromNeverTranslate(lang) {
     })  
 }
 
-function captureGoogleTranslateTKK() {
+var googleTranslateTKK = undefined
+function updateGoogleTranslateTKK() {
     return fetch("https://translate.google.com", {
             "credentials": "omit",
             "method": "GET",
@@ -170,45 +171,19 @@ function captureGoogleTranslateTKK() {
             var result = new RegExp(/\s*tkk\s*\:\s*['"][0-9\.]+(?=['"])/i).exec(responseText)
             if (result) {
                 result = new RegExp(/[0-9\.]+/i).exec(result)
-                return result[0]
+                googleTranslateTKK = result[0]
+        
+                chrome.tabs.query({}, tabs => {
+                    tabs.forEach(tab => {
+                        chrome.tabs.sendMessage(tab.id, {action: "updateGoogleTranslateTKK", googleTranslateTKK}, checkedLastError)
+                    })
+                })
+                return googleTranslateTKK
+            } else {
+                throw "Tkk invalid";
             }
         })
 }
-
-var googleTranslateTKK = undefined
-function updateGoogleTranslateTKK() {
-    return captureGoogleTranslateTKK()
-    .then(tkk => {
-        if (tkk) {
-            googleTranslateTKK = tkk
-        
-            chrome.tabs.query({}, tabs => {
-                tabs.forEach(tab => {
-                    chrome.tabs.sendMessage(tab.id, {action: "updateGoogleTranslateTKK", googleTranslateTKK: googleTranslateTKK}, checkedLastError)
-                })
-            })
-        } else {
-            throw "Tkk invalid";
-        }
-    })
-}
-
-updateGoogleTranslateTKK()
-.catch(e => {
-    googleTranslateTKK = null
-    console.error(e)
-
-    function foo() {
-        updateGoogleTranslateTKK()
-        .catch(e => {
-            console.error(e)
-            setTimeout(foo, 10000)
-        })
-    }
-    setTimeout(foo, 10000)
-})
-
-setInterval(updateGoogleTranslateTKK, 30 * 1000 * 60)
 
 // process messages
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
@@ -336,15 +311,13 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
         chrome.storage.local.set({translationEngine})
     } else if (request.action == "getGoogleTranslateTKK") {
-        function waitGogleTranslateTKK() {
-            if (typeof googleTranslateTKK != "undefined") {
-                sendResponse(googleTranslateTKK)
-            } else {
-                setTimeout(waitGogleTranslateTKK, 500)
-            }
-        }
-        waitGogleTranslateTKK()
-        return true
+        sendResponse(googleTranslateTKK)
+        return googleTranslateTKK
+    } else if (request.action == "updateGoogleTranslateTKK") {
+        return updateGoogleTranslateTKK(tkk => {
+            sendResponse(tkk)
+            return tkk;
+        })
     }
     else if (request.action == "setShowContextMenu") {
         if (request.showContextMenu) {
