@@ -175,6 +175,18 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
         googleTranslateTKK = gtTKK
     })
 
+    var promiseUpdateGoogleTranslateTKK;
+    function updateGoogleTranslateTKK() {
+        if (!promiseUpdateGoogleTranslateTKK) {
+            promiseUpdateGoogleTranslateTKK = new Promise(resolve => {
+                chrome.runtime.sendMessage({action: "updateGoogleTranslateTKK"}, gtTKK => {
+                    resolve(gtTKK)
+                })
+            })
+        }
+        return promiseUpdateGoogleTranslateTKK
+    }
+
     function escapeHtml(unsafe) {
         return unsafe
             .replace(/\&/g, "&amp;")
@@ -215,35 +227,49 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
         }
 
         if (stringsToTranslateInfo.length > 0) {
-            var tk = calcHash(stringsToTranslateInfo.map(value => value.original).join(''), googleTranslateTKK)
-            backgroundFetchJson("https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=" + targetLanguage + "&tk=" + tk, {
-                "credentials": "omit",
-                "headers": {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                "body": requestBody,
-                "method": "POST",
-                "mode": "no-cors",
-                "referrerPolicy": "no-referrer"
-            })
-            .then(responseJson => {
-                if (typeof responseJson[0] == "string") {
-                    responseJson = [responseJson[0]]
-                } else {
-                    responseJson = responseJson.map(value => value[0])
+            var translating = async function(retryCount = 0) {
+                if (!googleTranslateTKK) {
+                    googleTranslateTKK = await updateGoogleTranslateTKK()
                 }
+                var tk = calcHash(stringsToTranslateInfo.map(value => value.original).join(''), googleTranslateTKK)
+                backgroundFetchJson("https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=" + targetLanguage + "&tk=" + tk, {
+                    "credentials": "omit",
+                    "headers": {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    "body": requestBody,
+                    "method": "POST",
+                    "mode": "no-cors",
+                    "referrerPolicy": "no-referrer"
+                })
+                .then(responseJson => {
+                    if (typeof responseJson[0] == "string") {
+                        responseJson = [responseJson[0]]
+                    } else {
+                        responseJson = responseJson.map(value => value[0])
+                    }
 
-                responseJson.forEach((value, index) => {
-                    stringsToTranslateInfo[index].status = "complete"
-                    stringsToTranslateInfo[index].translated = value
+                    responseJson.forEach((value, index) => {
+                        stringsToTranslateInfo[index].status = "complete"
+                        stringsToTranslateInfo[index].translated = value
+                    })
                 })
-            })
-            .catch(e => {
-                stringsToTranslateInfo.forEach((value, index) => {
-                    stringsToTranslateInfo[index].status = "error"
+                .catch(e => {
+                    promiseUpdateGoogleTranslateTKK = null
+                    googleTranslateTKK = null
+
+                    // Try again.
+                    if (retryCount < 1) {
+                        translating(++retryCount)
+                    } else {
+                        stringsToTranslateInfo.forEach((value, index) => {
+                            stringsToTranslateInfo[index].status = "error"
+                        })
+                        console.error(e)
+                    }
                 })
-                console.error(e)
-            })
+            }
+            translating();
         }
 
         return new Promise(resolve => {

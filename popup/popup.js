@@ -69,6 +69,11 @@ btnDonateWithPaypal.textContent = chrome.i18n.getMessage("msgDonateWithPaypal")
 var cStyle = getComputedStyle(document.querySelector("#btnOptionB"))
 btnOptions.style.width = (parseInt(cStyle.width) + 0) + "px"
 
+// Avoid outputting the error message "Receiving end does not exist" in the Console.
+function checkedLastError() {
+    chrome.runtime.lastError
+}
+
 function enableDarkMode() {
     if (!document.getElementById("darkModeElement")) {
         var el = document.createElement("style")
@@ -288,6 +293,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
     let updateTranslateStatus = () => {
         setTimeout(updateTranslateStatus, 100)
         chrome.tabs.sendMessage(tabs[0].id, {action: "getStatus"}, {frameId: 0}, response => {
+            checkedLastError()
             if (typeof response == "string") {
                 showPopupSection(response)
             }
@@ -296,6 +302,7 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
 
     // get page language
     chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, {frameId: 0}, codeLang => {
+        checkedLastError()
         if (codeLang) {
             document.querySelector("#btnOptions option[value='neverTranslateThisLanguage']").removeAttribute("hidden")
             globalCodeLang = codeLang
@@ -339,7 +346,7 @@ btnClose.addEventListener("click", () => {
 
 // swap translator engine
 divIconTranslate.addEventListener("click", () => {
-    chrome.runtime.sendMessage({action: "swapEngineTranslator"})
+    chrome.runtime.sendMessage({action: "swapEngineTranslator"}, checkedLastError)
     if (iconTranslate.getAttribute("src") == "/icons/google-translate-32.png") {
         iconTranslate.setAttribute("src", "/icons/yandex-translate-32.png")
     } else {
@@ -354,7 +361,7 @@ divIconTranslate.addEventListener("click", () => {
 // disable auto translate for a language
 cbAlwaysTranslate.addEventListener("change", (e) => {
     if (!e.target.checked && globalCodeLang) {
-        chrome.runtime.sendMessage({action: "disableAutoTranslate", lang: globalCodeLang})
+        chrome.runtime.sendMessage({action: "disableAutoTranslate", lang: globalCodeLang}, checkedLastError)
     }
 })
 
@@ -362,13 +369,13 @@ cbAlwaysTranslate.addEventListener("change", (e) => {
 function translate()
 {
     showSelectTargetLanguage = false
-    chrome.runtime.sendMessage({action: "Translate", lang: selectTargetLanguage.value})
+    chrome.runtime.sendMessage({action: "Translate", lang: selectTargetLanguage.value}, checkedLastError)
 
     if (globalCodeLang) {
         if (cbAlwaysTranslate.checked) {
-            chrome.runtime.sendMessage({action: "enableAutoTranslate", lang: globalCodeLang})
+            chrome.runtime.sendMessage({action: "enableAutoTranslate", lang: globalCodeLang}, checkedLastError)
         } else {
-            chrome.runtime.sendMessage({action: "disableAutoTranslate", lang: globalCodeLang})
+            chrome.runtime.sendMessage({action: "disableAutoTranslate", lang: globalCodeLang}, checkedLastError)
         }
     }
 
@@ -378,6 +385,7 @@ function translate()
 // reset language in select
 btnReset.addEventListener("click", () => {
     chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
+        checkedLastError()
         selectTargetLanguage.value = targetLanguage
     })
 })
@@ -389,7 +397,7 @@ btnTranslate.addEventListener("click", () => {
 
 // show original text
 btnRestore.addEventListener("click", () => {
-    chrome.runtime.sendMessage({action: "Restore"})
+    chrome.runtime.sendMessage({action: "Restore"}, checkedLastError)
 })
 
 // try to translate again
@@ -406,14 +414,14 @@ chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
 btnOptions.addEventListener("change", () => {
     switch (btnOptions.value) {
         case "neverTranslateThisSite":
-            chrome.runtime.sendMessage({action: "neverTranslateThisSite"})
+            chrome.runtime.sendMessage({action: "neverTranslateThisSite"}, checkedLastError)
             window.close()
             break
         case "alwaysTranslateThisSite":
-            chrome.runtime.sendMessage({action: "alwaysTranslateThisSite"})
+            chrome.runtime.sendMessage({action: "alwaysTranslateThisSite"}, checkedLastError)
             break
         case "neverTranslateThisLanguage":
-            chrome.runtime.sendMessage({action: "neverTranslateThisLanguage", lang: globalCodeLang})
+            chrome.runtime.sendMessage({action: "neverTranslateThisLanguage", lang: globalCodeLang}, checkedLastError)
             window.close()
             break
         case "changeLanguage":

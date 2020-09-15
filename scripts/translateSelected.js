@@ -145,6 +145,7 @@ if (typeof browser !== 'undefined') {
                   top: 0px;
                   left: 0px;
                   padding: 16px;
+                  color: #000;
                   background-color: white;
                   border: 1px solid lightGrey;
                   overflow: auto;
@@ -259,7 +260,7 @@ if (typeof browser !== 'undefined') {
         var selection = document.getSelection()
         var focusNode = selection.focusNode
         if (focusNode.nodeType == 3) {
-            focusNode = focusNode.parentNode
+            focusNode = selection.getRangeAt(0);
         } else if (focusNode.nodeType != 1) {
             return;
         }

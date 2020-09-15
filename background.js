@@ -23,6 +23,11 @@ var isMobile = {
     }
 };
 
+// Avoid outputting the error message "Receiving end does not exist" in the Console.
+function checkedLastError() {
+    chrome.runtime.lastError
+}
+
 // remove element by value
 function removeA(arr) {
     var what, a = arguments, L = a.length, ax;
@@ -153,7 +158,8 @@ function removeLangFromNeverTranslate(lang) {
     })  
 }
 
-function captureGoogleTranslateTKK() {
+var googleTranslateTKK = undefined
+function updateGoogleTranslateTKK() {
     return fetch("https://translate.google.com", {
             "credentials": "omit",
             "method": "GET",
@@ -165,45 +171,19 @@ function captureGoogleTranslateTKK() {
             var result = new RegExp(/\s*tkk\s*\:\s*['"][0-9\.]+(?=['"])/i).exec(responseText)
             if (result) {
                 result = new RegExp(/[0-9\.]+/i).exec(result)
-                return result[0]
+                googleTranslateTKK = result[0]
+        
+                chrome.tabs.query({}, tabs => {
+                    tabs.forEach(tab => {
+                        chrome.tabs.sendMessage(tab.id, {action: "updateGoogleTranslateTKK", googleTranslateTKK}, checkedLastError)
+                    })
+                })
+                return googleTranslateTKK
+            } else {
+                throw "Tkk invalid";
             }
         })
 }
-
-var googleTranslateTKK = undefined
-function updateGoogleTranslateTKK() {
-    return captureGoogleTranslateTKK()
-    .then(tkk => {
-        if (tkk) {
-            googleTranslateTKK = tkk
-        
-            chrome.tabs.query({}, tabs => {
-                tabs.forEach(tab => {
-                    chrome.tabs.sendMessage(tab.id, {action: "updateGoogleTranslateTKK", googleTranslateTKK: googleTranslateTKK})
-                })
-            })
-        } else {
-            throw "Tkk invalid";
-        }
-    })
-}
-
-updateGoogleTranslateTKK()
-.catch(e => {
-    googleTranslateTKK = null
-    console.error(e)
-
-    function foo() {
-        updateGoogleTranslateTKK()
-        .catch(e => {
-            console.error(e)
-            setTimeout(foo, 10000)
-        })
-    }
-    setTimeout(foo, 10000)
-})
-
-setInterval(updateGoogleTranslateTKK, 30 * 1000 * 60)
 
 // process messages
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
@@ -218,23 +198,27 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}, response => {
+                checkedLastError()
                 if (response) {
                     removeSiteFromBlackList(response)
                 }
             })
             chrome.tabs.sendMessage(tabs[0].id, {action: "getDetectedLanguage"}, {frameId: 0}, response => {
+                checkedLastError()
                 if (response) {
                     removeLangFromNeverTranslate(response)
                 }
             })
-            chrome.tabs.sendMessage(tabs[0].id, {action: "Translate"})
+            chrome.tabs.sendMessage(tabs[0].id, {action: "Translate"}, checkedLastError)
         })
     } else if (request.action == "Restore") {
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
+            checkedLastError()
             chrome.tabs.sendMessage(tabs[0].id, {action: "Restore"})
         })
     } else if (request.action == "getMainFrameStatus") {
         chrome.tabs.sendMessage(sender.tab.id, {action: "getStatus"}, {frameId: 0}, response => {
+            checkedLastError()
             sendResponse(response)
         })
         return true
@@ -249,6 +233,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     } else if (request.action == "neverTranslateThisSite") {
         chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}, response => {
+                checkedLastError()
                 if (response) {
                     addSiteToBlackList(response)
                     removeSiteFromWhiteList(response)
@@ -258,6 +243,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     } else if (request.action == "alwaysTranslateThisSite") {
         chrome.tabs.query({ currentWindow: true, active: true}, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, {action: "getHostname"}, {frameId: 0}, response => {
+                checkedLastError()
                 if (response) {
                     addSiteToWhiteList(response)
                     removeSiteFromBlackList(response)
@@ -266,7 +252,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         })
     } else if (request.action == "showGoogleBar") {
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, request)
+            chrome.tabs.sendMessage(tabs[0].id, request, checkedLastError)
         })
     } else if (request.action == "detectLanguage") {
         setTimeout(() => {
@@ -325,15 +311,13 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         }
         chrome.storage.local.set({translationEngine})
     } else if (request.action == "getGoogleTranslateTKK") {
-        function waitGogleTranslateTKK() {
-            if (typeof googleTranslateTKK != "undefined") {
-                sendResponse(googleTranslateTKK)
-            } else {
-                setTimeout(waitGogleTranslateTKK, 500)
-            }
-        }
-        waitGogleTranslateTKK()
-        return true
+        sendResponse(googleTranslateTKK)
+        return googleTranslateTKK
+    } else if (request.action == "updateGoogleTranslateTKK") {
+        return updateGoogleTranslateTKK(tkk => {
+            sendResponse(tkk)
+            return tkk;
+        })
     }
     else if (request.action == "setShowContextMenu") {
         if (request.showContextMenu) {
@@ -578,27 +562,30 @@ if (typeof chrome.contextMenus != 'undefined') {
     chrome.contextMenus.onClicked.addListener((info, tab) => {
         if (info.menuItemId == "translate-web-page") {
             if (translationStatus == "progress" || translationStatus == "finish") {
-                chrome.tabs.sendMessage(tab.id, {action: "Restore"})
+                chrome.tabs.sendMessage(tab.id, {action: "Restore"}, checkedLastError)
             } else {
                 chrome.tabs.sendMessage(tab.id, {action: "getHostname"}, {frameId: 0}, response => {
+                    checkedLastError()
                     if (response) {
                         removeSiteFromBlackList(response)
                     }
                 })
                 chrome.tabs.sendMessage(tab.id, {action: "getDetectedLanguage"}, {frameId: 0}, response => {
+                    checkedLastError()
                     if (response) {
                         removeLangFromNeverTranslate(response)
                     }
                 })
-                chrome.tabs.sendMessage(tab.id, {action: "Translate"})
+                chrome.tabs.sendMessage(tab.id, {action: "Translate"}, checkedLastError)
             }
         } else if (info.menuItemId == "translate-selected-text") {
-            chrome.tabs.sendMessage(tab.id, {action: "TranslateSelectedText"})
+            chrome.tabs.sendMessage(tab.id, {action: "TranslateSelectedText"}, checkedLastError)
         }
     })
 
     chrome.tabs.onActivated.addListener(activeInfo => {
         chrome.tabs.sendMessage(activeInfo.tabId, {action: "getStatus"}, {frameId: 0}, status => {
+            checkedLastError()
             if (status) {
                 translationStatus = status
                 updateContextMenu()
@@ -625,7 +612,7 @@ if (isMobile.any()) {
     })
     
     chrome.browserAction.onClicked.addListener(tab => {
-        chrome.tabs.sendMessage(tab.id, {action: "showMobilePopup"}, {frameId: 0})
+        chrome.tabs.sendMessage(tab.id, {action: "showMobilePopup"}, {frameId: 0}, checkedLastError)
     })
 } else {
     chrome.browserAction.setPopup({popup: "popup/popup.html"})
@@ -707,7 +694,7 @@ if (isMobile.any()) {
 chrome.commands.onCommand.addListener(command => {
     if (command === "toggle-translation") {
         chrome.tabs.query({currentWindow: true, active: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "toggle-translation"})
+            chrome.tabs.sendMessage(tabs[0].id, {action: "toggle-translation"}, checkedLastError)
         })
     }
 })
