@@ -129,7 +129,7 @@ chrome.storage.local.get("lastDonationRequestTime", onGot => {
     var showDonationRequestPopup = false
     if (lastDonationRequestTime) {
         var date = new Date();
-        date.setDate(date.getDate() - 21)
+        date.setDate(date.getDate() - 15)
         if (date.getTime() > lastDonationRequestTime) {
             showDonationRequestPopup = true
             lastDonationRequestTime = Date.now()
