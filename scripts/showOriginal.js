@@ -41,23 +41,12 @@ chrome.storage.local.get("showOriginalTextWhenHovering", onGot => {
         elementsOriginalText = []
     }
 
-    var focusElement = null
     var timeOutHandler = null
     function onMouseEnter(e) {
         if (e.target == element) return;
-        if (timeOutHandler) {
-            clearTimeout(timeOutHandler)
-            timeOutHandler = null
-        }
         var node = e.target
         
         var elementInfo = elementsOriginalText.find(a => a.node == node)
-        if (focusElement == elementInfo.node) {
-            return
-        } else {
-            originalTextDiv.style.display = "none"
-        }
-        focusElement = elementInfo.node
 
         if (elementInfo) {
             timeOutHandler = setTimeout(() => {
@@ -67,7 +56,12 @@ chrome.storage.local.get("showOriginalTextWhenHovering", onGot => {
     }
 
     function onMouseOut(e) {
-        //originalTextDiv.style.display = "none"
+        if (timeOutHandler) {
+            clearTimeout(timeOutHandler)
+            timeOutHandler = null
+        }
+        if (e.relatedTarget == element) return;
+        originalTextDiv.style.display = "none"
     }
 
     document.addEventListener("mousedown", e => {
