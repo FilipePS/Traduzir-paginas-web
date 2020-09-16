@@ -178,9 +178,20 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
     var promiseUpdateGoogleTranslateTKK;
     function updateGoogleTranslateTKK() {
         if (!promiseUpdateGoogleTranslateTKK) {
-            promiseUpdateGoogleTranslateTKK = new Promise(resolve => {
+            promiseUpdateGoogleTranslateTKK = new Promise((resolve, reject) => {
+                var _reject = () => {
+                    promiseUpdateGoogleTranslateTKK = null
+                    googleTranslateTKK = null
+                    reject()
+                }
+                var timeout = setTimeout(_reject, 5000)
                 chrome.runtime.sendMessage({action: "updateGoogleTranslateTKK"}, gtTKK => {
-                    resolve(gtTKK)
+                    clearTimeout(timeout)
+                    if (gtTKK) {
+                        resolve(gtTKK)
+                    } else {
+                        _reject()
+                    }
                 })
             })
         }
@@ -227,22 +238,42 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
         }
 
         if (stringsToTranslateInfo.length > 0) {
-            var translating = async function(retryCount = 0) {
-                if (!googleTranslateTKK) {
-                    googleTranslateTKK = await updateGoogleTranslateTKK()
-                }
-                var tk = calcHash(stringsToTranslateInfo.map(value => value.original).join(''), googleTranslateTKK)
-                backgroundFetchJson("https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=" + targetLanguage + "&tk=" + tk, {
-                    "credentials": "omit",
-                    "headers": {
-                        "Content-Type": "application/x-www-form-urlencoded"
-                    },
-                    "body": requestBody,
-                    "method": "POST",
-                    "mode": "no-cors",
-                    "referrerPolicy": "no-referrer"
+            var translating = function(retryCount = 0) {
+                return new Promise((resolve, reject) => {
+                    if (!googleTranslateTKK) {
+                        updateGoogleTranslateTKK().then(gtTKK => {
+                            googleTranslateTKK = gtTKK
+                            resolve()
+                        }, reject)
+                    } else {
+                        resolve()
+                    }
+                }).then(() => {
+                    var tk = calcHash(stringsToTranslateInfo.map(value => value.original).join(''), googleTranslateTKK)
+                    return backgroundFetchJson("https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=" + targetLanguage + "&tk=" + tk, {
+                        "credentials": "omit",
+                        "headers": {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        "body": requestBody,
+                        "method": "POST",
+                        "mode": "no-cors",
+                        "referrerPolicy": "no-referrer"
+                    })
                 })
                 .then(responseJson => {
+                    if (responseJson === null) {
+                        if (promiseUpdateGoogleTranslateTKK) {
+                            promiseUpdateGoogleTranslateTKK.then(() => {
+                                promiseUpdateGoogleTranslateTKK = null
+                            }, () => {
+                                promiseUpdateGoogleTranslateTKK = null
+                            })
+                        }
+                        googleTranslateTKK = null
+                        return Promise.reject("response is null!");
+                    }
+
                     if (typeof responseJson[0] == "string") {
                         responseJson = [responseJson[0]]
                     } else {
@@ -255,12 +286,9 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
                     })
                 })
                 .catch(e => {
-                    promiseUpdateGoogleTranslateTKK = null
-                    googleTranslateTKK = null
-
                     // Try again.
                     if (retryCount < 1) {
-                        translating(++retryCount)
+                        return translating(++retryCount)
                     } else {
                         stringsToTranslateInfo.forEach((value, index) => {
                             stringsToTranslateInfo[index].status = "error"
@@ -767,16 +795,9 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
         })
     }, 500)
 
-    var gTargetLanguage = null
-    chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
-        if (targetLanguage == "zh") {
-            targetLanguage = "zh-CN"
-        }
-        gTargetLanguage = targetLanguage
-    })
 
-
-    window.translateSingleText = function(text, targetLanguage=gTargetLanguage) {
+    window.translateSingleText = function(text, targetLanguage) {
+        if (!targetLanguage) return Promise.resolve()
         return translateHtml(['<a i="0">' + escapeHtml(text) + '</a>'], targetLanguage)
         .then(results => {
             text = ""

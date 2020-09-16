@@ -554,16 +554,12 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
         })
     }, 500)
 
-    var gTargetLanguage = null
-    chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
-        if (targetLanguage == "zh") {
-            targetLanguage = "zh-CN"
+
+    window.translateSingleText = function(text, targetLanguage) {
+        if (!targetLanguage) return Promise.resolve()
+        if (targetLanguage.indexOf("zh-") != -1) {
+            targetLanguage = "zh"
         }
-        gTargetLanguage = targetLanguage
-    })
-
-
-    window.translateSingleText = function(text, targetLanguage=gTargetLanguage) {
         return translateHtml([escapeHtml(text)], targetLanguage)
         .then(results => {
             text = ""

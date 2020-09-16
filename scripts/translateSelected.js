@@ -28,7 +28,8 @@ if (typeof browser !== 'undefined') {
     var showTranslateSelectedButton = "yes"
     var translateThisSite = true
     var translateThisLanguage = true
-    chrome.storage.local.get(["showTranslateSelectedButton", "neverTranslateSites", "neverTranslateThisLanguages"], onGot => {
+    var targetLanguage = ""
+    chrome.storage.local.get(["showTranslateSelectedButton", "neverTranslateSites", "neverTranslateThisLanguages", "targetLanguage"], onGot => {
         if (onGot.showTranslateSelectedButton) {
             showTranslateSelectedButton = onGot.showTranslateSelectedButton 
         }
@@ -45,6 +46,24 @@ if (typeof browser !== 'undefined') {
         var neverTranslateThisLanguages = onGot.neverTranslateThisLanguages
         if (!neverTranslateThisLanguages) {
             neverTranslateThisLanguages = []
+        }
+
+        if (onGot.targetLanguage) {
+            targetLanguage = onGot.targetLanguage
+        } else {
+            targetLanguage = onGot.targetLanguage
+
+            if (targetLanguage == "zh") {
+                if (chrome.i18n.getUILanguage() == "zh-TW") {
+                    targetLanguage == "zh-TW"
+                } else {
+                    targetLanguage == "zh-CN"
+                }
+            }
+    
+            if (targetLanguage.toLowerCase() != "zh-cn" && targetLanguage.toLowerCase() != "zh-tw") {
+                targetLanguage = targetLanguage.split("-")[0]
+            }
         }
 
         function foo() {
@@ -68,6 +87,10 @@ if (typeof browser !== 'undefined') {
                 selTextButton.style.display = "none"
             }
             updateEventListener()
+        }
+
+        if (changes.targetLanguage) {
+            targetLanguage = changes.targetLanguage.newValue
         }
         
         if (changes.neverTranslateSites) {
@@ -192,8 +215,9 @@ if (typeof browser !== 'undefined') {
     var gSelectionInfo = null
     function translateSelText() {
         if (gSelectionInfo) {
-            translateSingleText(gSelectionInfo.text)
+            translateSingleText(gSelectionInfo.text, targetLanguage)
             .then(result => {
+                if(!result) return
                 init()
                 var eTop = gSelectionInfo.bottom
                 var eLeft = gSelectionInfo.left
