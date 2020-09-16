@@ -3,7 +3,7 @@
     "message": "翻译网页"
   },
   "extensionDescription": {
-    "message": "使用Google或Yandex实时翻译您的页面。"
+    "message": "使用 Google 或 Yandex 实时翻译您的页面。"
   },
   "pageActionTitle": {
     "message": "翻译此页面"
@@ -27,7 +27,7 @@
     "message": "目标语言"
   },
   "btnReset": {
-    "message": "重启"
+    "message": "重置"
   },
   "btnTranslate": {
     "message": "翻译"
@@ -42,10 +42,10 @@
     "message": "再试一次"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "在Google翻译器中打开"
+    "message": "在 Google 翻译中打开"
   },
   "btnDonate": {
-    "message": "捐"
+    "message": "捐赠"
   },
   "btnNeverTranslate": {
     "message": "永远不要翻译这个网站"
@@ -66,7 +66,7 @@
     "message": "捐赠"
   },
   "optionsNeverTranslate": {
-    "message": "永远不要翻译这些网站"
+    "message": "永远不要翻译这些站点"
   },
   "optionsAlwaysTranslate": {
     "message": "自动翻译这些语言"
@@ -84,7 +84,7 @@
     "message": "翻译引擎"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "在yandex中打开翻译"
+    "message": "在 Yandex 中打开翻译"
   },
   "lblOthers": {
     "message": "其它"
@@ -138,13 +138,13 @@
     "message": "通过匿名捐款帮助保持扩展的发展。"
   },
   "msgDonateWithPaypal": {
-    "message": "使用PayPal捐款"
+    "message": "使用 PayPal 捐款"
   },
   "lblDarkMode": {
-    "message": "夜間模式"
+    "message": "深色模式"
   },
   "lblShowReleaseNotes": {
-    "message": "更新时显示发布笔记"
+    "message": "更新时显示发行说明"
   },
   "lblShowTranslateSelectedButton": {
     "message": "显示要翻译选中文本的按钮"
@@ -153,18 +153,18 @@
     "message": "自动"
   },
   "msgTranslateSelectedText": {
-    "message": "Přeložit označený text"
+    "message": "翻译选中的文本"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "在上下文菜单中显示翻译选中的文本的选项"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "永远不要翻译这些语言"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "永远不要翻译这种语言"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "悬停显示原文"
   }
 }
