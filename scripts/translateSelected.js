@@ -51,7 +51,7 @@ if (typeof browser !== 'undefined') {
         if (onGot.targetLanguage) {
             targetLanguage = onGot.targetLanguage
         } else {
-            targetLanguage = onGot.targetLanguage
+            targetLanguage = chrome.i18n.getUILanguage()
 
             if (targetLanguage == "zh") {
                 if (chrome.i18n.getUILanguage() == "zh-TW") {
