@@ -767,16 +767,9 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
         })
     }, 500)
 
-    var gTargetLanguage = null
-    chrome.runtime.sendMessage({action: "getTargetLanguage"}, targetLanguage => {
-        if (targetLanguage == "zh") {
-            targetLanguage = "zh-CN"
-        }
-        gTargetLanguage = targetLanguage
-    })
 
-
-    window.translateSingleText = function(text, targetLanguage=gTargetLanguage) {
+    window.translateSingleText = function(text, targetLanguage) {
+        if (!targetLanguage) return Promise.resolve()
         return translateHtml(['<a i="0">' + escapeHtml(text) + '</a>'], targetLanguage)
         .then(results => {
             text = ""
