@@ -49,10 +49,20 @@ if (typeof browser !== 'undefined') {
         }
 
         if (onGot.targetLanguage) {
-            if (onGot.targetLanguage == "zh") {
-                targetLanguage = "zh-CN"
-            } else {
-                targetLanguage = onGot.targetLanguage
+            targetLanguage = onGot.targetLanguage
+        } else {
+            targetLanguage = onGot.targetLanguage
+
+            if (targetLanguage == "zh") {
+                if (chrome.i18n.getUILanguage() == "zh-TW") {
+                    targetLanguage == "zh-TW"
+                } else {
+                    targetLanguage == "zh-CN"
+                }
+            }
+    
+            if (targetLanguage.toLowerCase() != "zh-cn" && targetLanguage.toLowerCase() != "zh-tw") {
+                targetLanguage = targetLanguage.split("-")[0]
             }
         }
 

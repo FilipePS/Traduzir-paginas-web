@@ -557,6 +557,9 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
 
     window.translateSingleText = function(text, targetLanguage) {
         if (!targetLanguage) return Promise.resolve()
+        if (targetLanguage.indexOf("zh-") != -1) {
+            targetLanguage = "zh"
+        }
         return translateHtml([escapeHtml(text)], targetLanguage)
         .then(results => {
             text = ""
