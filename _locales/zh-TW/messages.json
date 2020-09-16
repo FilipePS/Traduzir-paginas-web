@@ -3,7 +3,7 @@
     "message": "翻譯網頁"
   },
   "extensionDescription": {
-    "message": "使用Google或Yandex實時翻譯您的頁面。"
+    "message": "使用 Google 或 Yandex 實時翻譯您的頁面。"
   },
   "pageActionTitle": {
     "message": "翻譯此頁面"
@@ -27,7 +27,7 @@
     "message": "目標語言"
   },
   "btnReset": {
-    "message": "重啟"
+    "message": "重置"
   },
   "btnTranslate": {
     "message": "翻譯"
@@ -42,10 +42,10 @@
     "message": "再試一次"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "在Google翻譯器中打開"
+    "message": "在 Google 翻譯中打開"
   },
   "btnDonate": {
-    "message": "只是"
+    "message": "捐贈"
   },
   "btnNeverTranslate": {
     "message": "永遠不要翻譯這個網站"
@@ -63,7 +63,7 @@
     "message": "永遠不要翻譯這個網站"
   },
   "btnMobileDonate": {
-    "message": "只是"
+    "message": "捐贈"
   },
   "optionsNeverTranslate": {
     "message": "永遠不要翻譯這些網站"
@@ -84,10 +84,10 @@
     "message": "翻譯引擎"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "在yandex中打開翻譯"
+    "message": "在 Yandex 中打開翻譯"
   },
   "lblOthers": {
-    "message": "其他"
+    "message": "其它"
   },
   "btnMoreOptions": {
     "message": "更多的選擇"
@@ -99,7 +99,7 @@
     "message": "翻譯成"
   },
   "lblShowContextMenu": {
-    "message": "在上下文菜單中顯示翻譯頁面的選項"
+    "message": "在上下文選單中顯示翻譯頁面的選單項"
   },
   "msgYes": {
     "message": "是"
@@ -156,15 +156,15 @@
     "message": "翻譯選取文字"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "在上下文選單中顯示翻譯選取文字的選單項"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "永遠不要翻譯這些語言"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "永遠不要翻譯這種語言"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "懸停顯示原文"
   }
 }
