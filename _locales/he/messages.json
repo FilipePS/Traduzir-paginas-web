@@ -156,15 +156,15 @@
     "message": "תרגם טקסט נבחר"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "הראה את האפשרות לתרגם את הדף בתפריט ההקשר"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "לעולם אל תתרגם דפים אלו"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "לעולם אל תתרגם דפים אלו"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "הראה טקסט מקורי בעת ריחוף"
   }
 }

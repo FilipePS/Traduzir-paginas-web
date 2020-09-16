@@ -156,15 +156,15 @@
     "message": "選択したテキストを翻訳"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "コンテキストメニューに「選択したテキストを翻訳」を表示"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "翻訳しない言語"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "この言語を翻訳しない"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "マウスオーバー時に原文を表示"
   }
 }

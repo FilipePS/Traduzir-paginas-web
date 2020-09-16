@@ -156,15 +156,15 @@
     "message": "Käännä valittu teksti"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Näytä valinta kääntämiselle pikavalikossa"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Älä käännä näitä sivuja"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Älä käännä tätä sivua"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Näytä alkuperäinen teksti kun leijuu"
   }
 }

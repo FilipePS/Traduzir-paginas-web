@@ -156,15 +156,15 @@
     "message": "Выделенный текст"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Показать возможность перевода выделенного текста в контекстном меню"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Никогда не переводить эти языки"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Никогда не переводить этот язык"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Показывать исходный текст при наведении"
   }
 }

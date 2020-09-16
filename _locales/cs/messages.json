@@ -156,15 +156,15 @@
     "message": "Přeložit označený text"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "V místní nabídce se zobrazí možnost překladu stránky"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Nikdy tyto stránky nepřekládat"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Nikdy tyto stránky nepřekládat"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Zobrazit původní text při najetí"
   }
 }

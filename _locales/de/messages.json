@@ -156,15 +156,15 @@
     "message": "Markierten Text übersetzen"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Zeigen Sie die Option zum Übersetzen der Seite im Kontextmenü an"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Übersetzen Sie diese Seiten niemals"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Übersetzen Sie diese Seiten niemals"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Originaltext beim Herfahren anzeigen"
   }
 }

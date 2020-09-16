@@ -156,15 +156,15 @@
     "message": "Prevedi obilježeni tekst"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Pokaži mogućnost prevođenja stranice u kontekstnom izborniku"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Nikada ne prevoditi ove web stranice"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Nikada ne prevoditi ovu web stranicu"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Prikaži izvorni tekst prilikom lebdenja"
   }
 }

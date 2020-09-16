@@ -156,15 +156,15 @@
     "message": "Prevedi izbrano besedilo"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "V kontekstnem meniju pokažite možnost prevajanja izbranega besedila"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Nikoli ne prevajajte teh jezikov"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Nikoli ne prevajajte tega jezika"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Med lebdenjem pokaži izvirno besedilo"
   }
 }

@@ -156,15 +156,15 @@
     "message": "Traduire le texte sélectionné"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Afficher l'option pour traduire la page dans le menu contextuel"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Ne jamais traduire ces sites"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Ne jamais traduire ce site"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Afficher le texte original lors du survol"
   }
 }

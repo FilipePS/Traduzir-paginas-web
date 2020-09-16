@@ -156,15 +156,15 @@
     "message": "चयनित विषय को अनूदित करें"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "संदर्भ मेनू में पृष्ठ का अनुवाद करने का विकल्प दिखाएं"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "इन साइटों का अनुवाद कभी न करें"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "इस साइट का अनुवाद कभी मत करो"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "मँडराते समय मूल पाठ दिखाएँ"
   }
 }

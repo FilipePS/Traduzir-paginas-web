@@ -156,15 +156,15 @@
     "message": "Vertaal de geselecteerde tekst"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Geef de optie weer om de pagina te vertalen in het contextmenu"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Vertaal deze sites nooit"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Vertaal deze sites nooit"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Toon originele tekst bij zweven"
   }
 }

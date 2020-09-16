@@ -156,15 +156,15 @@
     "message": "Seçilen metni çevir"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Bağlam menüsünde sayfayı çevirme seçeneğini göster"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Bu siteleri asla çevirme"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Bu siteleri asla çevirme"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Fareyle üzerine gelindiğinde orijinal metni göster"
   }
 }

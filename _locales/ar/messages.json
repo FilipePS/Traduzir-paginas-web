@@ -156,15 +156,15 @@
     "message": "ترجمة النص المحدد"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "اعرض خيار ترجمة الصفحة في قائمة السياق"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "لا تترجم هذه المواقع أبدًا"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "لا تترجم هذه المواقع أبدًا"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "إظهار النص الأصلي عند تحويله"
   }
 }
