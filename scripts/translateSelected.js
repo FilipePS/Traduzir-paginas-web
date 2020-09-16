@@ -310,8 +310,12 @@ if (typeof browser !== 'undefined') {
         if (document.getSelection().toString().trim()) {
             init()
             //selTextButton.classList.remove("show")
+            if (isAnyMobile) {
+                selTextButton.style.left = window.innerWidth - 35 + "px"
+            } else {
+                selTextButton.style.left = clientX + 10 + "px"
+            }
             selTextButton.style.top = clientY - 20 + "px"
-            selTextButton.style.left = clientX + 10 + "px"
             //selTextButton.classList.add("show")
 
             selTextButton.style.display = "block"
