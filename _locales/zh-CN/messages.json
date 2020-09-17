@@ -156,7 +156,7 @@
     "message": "翻译选中的文本"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "在上下文菜单中显示翻译选中的文本的菜单项"
+    "message": "在上下文菜单中显示翻译选中文本的菜单项"
   },
   "lblNeverTranslateLangs": {
     "message": "永远不要翻译这些语言"
