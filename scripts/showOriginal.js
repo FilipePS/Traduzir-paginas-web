@@ -2,8 +2,7 @@ if (typeof browser !== 'undefined') {
     chrome = browser
 }
 
-chrome.storage.local.get("showOriginalTextWhenHovering", onGot => {
-    if (onGot.showOriginalTextWhenHovering === "no") return;
+(function() {
     var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
@@ -26,12 +25,35 @@ chrome.storage.local.get("showOriginalTextWhenHovering", onGot => {
     };
     if (isMobile.any()) return;
 
+    chrome.storage.local.get("showOriginalTextWhenHovering", onGot => {
+        if (onGot.showOriginalTextWhenHovering === "no") return;
+        window.saveToShowOriginal = saveToShowOriginal
+        window.restoreShowOriginal = restoreShowOriginal
+    })
+
+    chrome.storage.onChanged.addListener(changes => {
+        if (changes.showOriginalTextWhenHovering) {
+            if (changes.showOriginalTextWhenHovering.newValue != "yes") {
+                destroy()
+                delete window.saveToShowOriginal
+                delete window.restoreShowOriginal
+            } else {
+                init()
+                window.saveToShowOriginal = saveToShowOriginal
+                window.restoreShowOriginal = restoreShowOriginal
+            }
+        }
+    })
+
     var htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BDO', 'BIG', 'CITE', 'DFN', 'EM', 'I', 'LABEL', 'Q', 'S', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U', 'TT', 'VAR']
     var htmlTagsInlineIgnore = ['BR', 'CODE', 'KBD', 'WBR'] // and input if type is submit or button
 
     var elementsOriginalText = []
 
-    window.saveToShowOriginal = function(node) {
+    function saveToShowOriginal(node) {
+        if (!element) {
+            init()
+        }
         do {
             if (node.nodeType == 1 && node != document.body) {
                 if (htmlTagsInlineText.indexOf(node.nodeName) == -1 && htmlTagsInlineIgnore.indexOf(node.nodeName) == -1) {
@@ -54,55 +76,62 @@ chrome.storage.local.get("showOriginalTextWhenHovering", onGot => {
         }
     }
 
-    window.restoreShowOriginal = function() {
+    function restoreShowOriginal() {
         elementsOriginalText.forEach(a => {
             a.node.removeEventListener("mouseenter", onMouseEnter)
             a.node.removeEventListener("mouseout", onMouseOut)
         })
         elementsOriginalText = []
+        destroy()
     }
 
+    var currentElementInfo = null
     var timeOutHandler = null
     function onMouseEnter(e) {
         if (e.target == element) return;
         var node = e.target
         
-        var elementInfo = elementsOriginalText.find(a => a.node == node)
+        var elementInfo = currentElementInfo || elementsOriginalText.find(a => a.node == node)
 
         if (elementInfo) {
+            clearTimeout(timeOutHandler)
             timeOutHandler = setTimeout(() => {
                 showOriginalText(elementInfo)
+                currentElementInfo = elementInfo
             }, 1300)
         }
     }
 
     function onMouseOut(e) {
+        if (!(currentElementInfo && !currentElementInfo.node.contains(e.relatedTarget)) && (
+            e.target.contains(e.relatedTarget) || e.relatedTarget.contains(e.target)
+        )) return
         if (timeOutHandler) {
             clearTimeout(timeOutHandler)
             timeOutHandler = null
         }
         if (e.relatedTarget == element) return;
         originalTextDiv.style.display = "none"
+        currentElementInfo = null
     }
 
-    document.addEventListener("mousedown", e => {
-        if (e.target == element) return;
-        originalTextDiv.style.display = "none"
-    })
-
     var mousePos = {x:0, y:0}
-    document.addEventListener("mousemove", e => {
+    function onMouseMove(e) {
         mousePos.x = e.clientX
         mousePos.y = e.clientY
-    })
+    }
+
+    function onMouseDown(e) {
+        if (e.target == element) return;
+        originalTextDiv.style.display = "none"
+    }
 
     var element = null
-    var shadowRoot = null
     var originalTextDiv = null
     function init() {
         if (element) return
         element = document.createElement("div")
-        shadowRoot = element.attachShadow({mode: "closed"})
+        var shadowRoot = element.attachShadow({mode: "closed"})
 
         shadowRoot.innerHTML = `
         <style>
@@ -143,23 +172,34 @@ chrome.storage.local.get("showOriginalTextWhenHovering", onGot => {
         document.body.appendChild(element)
 
         originalTextDiv = shadowRoot.getElementById("originalTextDiv")
+
+        document.addEventListener("mousemove", onMouseMove)
+        document.addEventListener("mousedown", onMouseDown)
     }
-    init()
+
+    function destroy() {
+        if (!element) return
+        document.removeEventListener("mousemove", onMouseMove)
+        document.removeEventListener("mousedown", onMouseDown)
+        element.remove()
+        element = originalTextDiv = null
+        currentElementInfo = null
+    }
 
     function showOriginalText(elementInfo) {
-        if (!shadowRoot) return;
+        if (!element) return;
 
-        originalTextDiv.textContent = elementInfo.textContent
-        originalTextDiv.style.top = "0px"
-        originalTextDiv.style.left = "0px"
-        originalTextDiv.style.display = "block"
+        if (!currentElementInfo) {
+            originalTextDiv.textContent = elementInfo.textContent
+            originalTextDiv.style.display = "block"
+        }
 
-        var height = parseInt(originalTextDiv.offsetHeight)
-        var top = mousePos.y + 5
+        var height = originalTextDiv.offsetHeight
+        var top = mousePos.y + 10
         top = Math.max(0, top)
         top = Math.min(window.innerHeight - height, top)
 
-        var width = parseInt(originalTextDiv.offsetWidth)
+        var width = originalTextDiv.offsetWidth
         var left = parseInt(mousePos.x /*- width / 2*/)
         left = Math.max(0, left)
         left = Math.min(window.innerWidth - width, left)
@@ -167,4 +207,4 @@ chrome.storage.local.get("showOriginalTextWhenHovering", onGot => {
         originalTextDiv.style.top = top + "px"
         originalTextDiv.style.left = left + "px"
     }
-})
+})()
