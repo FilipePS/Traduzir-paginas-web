@@ -573,7 +573,9 @@ chrome.runtime.sendMessage({action: "getTranslationEngine"}, translationEngine =
 
     function restore()
     {
-        try {window.restoreShowOriginal()} catch (e) {console.error(e)}
+        if(typeof window.restoreShowOriginal == "function"){
+            window.restoreShowOriginal()
+        }
         disableMutatinObserver()
 
         setStatus("prompt")
