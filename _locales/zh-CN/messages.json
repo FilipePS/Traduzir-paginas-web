@@ -18,10 +18,10 @@
     "message": "已翻译"
   },
   "lblError": {
-    "message": "此页面无法翻译"
+    "message": "无法翻译此页面"
   },
   "lblAlwaysTranslate": {
-    "message": "一律翻译自"
+    "message": "始终翻译 - "
   },
   "lblTargetLanguage": {
     "message": "目标语言"
@@ -39,7 +39,7 @@
     "message": "显示原文"
   },
   "btnTryAgain": {
-    "message": "再试一次"
+    "message": "重试"
   },
   "btnOpenOnGoogleTranslate": {
     "message": "在 Google 翻译中打开"
@@ -48,37 +48,37 @@
     "message": "捐赠"
   },
   "btnNeverTranslate": {
-    "message": "永远不要翻译这个网站"
+    "message": "永不翻译此网站"
   },
   "btnChangeLanguages": {
     "message": "更改语言"
   },
   "btnMobileOriginal": {
-    "message": "原版的"
+    "message": "原文"
   },
   "btnMobileTranslated": {
-    "message": "已翻译"
+    "message": "译文"
   },
   "btnMobileNeverTranslate": {
-    "message": "永远不要翻译这个网站"
+    "message": "永不翻译此网站"
   },
   "btnMobileDonate": {
     "message": "捐赠"
   },
   "optionsNeverTranslate": {
-    "message": "永远不要翻译这些站点"
+    "message": "永不翻译这些网站"
   },
   "optionsAlwaysTranslate": {
     "message": "自动翻译这些语言"
   },
   "optionPopupConfig": {
-    "message": "显示手机弹出窗口"
+    "message": "显示底部翻译栏"
   },
   "optionPopupAuto": {
-    "message": "自动地"
+    "message": "自动"
   },
   "optionPopupThreeFingers": {
-    "message": "当我触摸屏幕上的三个手指时"
+    "message": "当我三指轻触屏幕时"
   },
   "lblTranslationEngine": {
     "message": "翻译引擎"
@@ -87,19 +87,19 @@
     "message": "在 Yandex 中打开翻译"
   },
   "lblOthers": {
-    "message": "其它"
+    "message": "其他"
   },
   "btnMoreOptions": {
     "message": "更多选项"
   },
   "lblPlsDonate": {
-    "message": "用捐款帮助开发者"
+    "message": "通过捐款帮助开发者"
   },
   "msgTranslateFor": {
-    "message": "翻译成"
+    "message": "翻译为"
   },
   "lblShowContextMenu": {
-    "message": "在上下文菜单中显示翻译页面的菜单项"
+    "message": "在右键菜单中显示翻译页面的选项"
   },
   "msgYes": {
     "message": "是"
@@ -114,55 +114,55 @@
     "message": "是（推荐）"
   },
   "msgNoUseWidgets": {
-    "message": "否（使用小部件）"
+    "message": "否（使用微件）"
   },
   "optionsPageTitle": {
-    "message": "翻译网页-选项"
+    "message": "翻译网页 - 选项"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "仅当我点击\"翻译这个站点\""
+    "message": "当我点按\"翻译此网站\"时"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "您尚未添加任何站点到此列表。"
+    "message": "您尚未将任何网站添加至此列表。"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "您还没有添加任何语言到此列表。"
+    "message": "您尚未将任何语言添加至此列表。"
   },
   "btnAlwaysTranslate": {
-    "message": "总是翻译此站点"
+    "message": "总是翻译此网站"
   },
   "lblAlwaysTranslateSites": {
-    "message": "总是翻译这些站点"
+    "message": "总是翻译这些网站"
   },
   "msgHelpDevelopment": {
-    "message": "通过匿名捐款帮助保持扩展的发展。"
+    "message": "通过匿名捐款支持此扩展的开发。"
   },
   "msgDonateWithPaypal": {
-    "message": "使用 PayPal 捐款"
+    "message": "PayPal 捐款"
   },
   "lblDarkMode": {
     "message": "深色模式"
   },
   "lblShowReleaseNotes": {
-    "message": "更新时显示发行说明"
+    "message": "更新后显示发行说明"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "显示要翻译选中文本的按钮"
+    "message": "显示翻译选中文本的按钮"
   },
   "msgAutomatic": {
     "message": "自动"
   },
   "msgTranslateSelectedText": {
-    "message": "翻译选中的文本"
+    "message": "翻译选中文本"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "在上下文菜单中显示翻译选中文本的菜单项"
+    "message": "在右键菜单中显示翻译选中文本的选项"
   },
   "lblNeverTranslateLangs": {
-    "message": "永远不要翻译这些语言"
+    "message": "永不翻译这些语言"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "永远不要翻译这种语言"
+    "message": "永不翻译此语言"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "悬停显示原文"
