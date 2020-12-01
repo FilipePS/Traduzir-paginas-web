@@ -160,8 +160,7 @@ function removeLangFromNeverTranslate(lang) {
 
 var googleTranslateTKK = undefined
 function updateGoogleTranslateTKK() {
-    var url = "zh-cn" == navigator.language.toLowerCase() ?
-        "https://translate.google.cn" : "https://translate.google.com"
+    var url = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
     return fetch(url, {
             "credentials": "omit",
             "method": "GET",
@@ -170,7 +169,7 @@ function updateGoogleTranslateTKK() {
         })
         .then(response => response.text())
         .then(responseText => {
-            var result = new RegExp(/\s*tkk\s*\:\s*['"][0-9\.]+(?=['"])/i).exec(responseText)
+            var result = new RegExp(/tkk\=\'[0-9]+\.[0-9]+\'/i).exec(responseText)
             if (result) {
                 result = new RegExp(/[0-9\.]+/i).exec(result)
                 googleTranslateTKK = result[0]
