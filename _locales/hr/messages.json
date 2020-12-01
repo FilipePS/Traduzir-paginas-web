@@ -129,16 +129,16 @@
     "message": "Još niste dodali jezike na ovaj popis."
   },
   "btnAlwaysTranslate": {
-    "message": "Nikada ne prevoditi ovu web stranicu"
+    "message": "Uvijek prevodi ovu stranicu"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Nikada ne prevoditi ovu web stranicu"
+    "message": "Uvijek prevodi ove stranice"
   },
   "msgHelpDevelopment": {
     "message": "Pomozite održati razvoj ovog proširenja anonimnom donacijom."
   },
   "msgDonateWithPaypal": {
-    "message": "Donirajte putem PayPal"
+    "message": "Donirajte putem PayPala"
   },
   "lblDarkMode": {
     "message": "Tamni način"
@@ -147,22 +147,22 @@
     "message": "Prikazujte napomene o izdanju prilikom ažuriranja"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Pokažite gumb za prijevod odabranog teksta"
+    "message": "Pokažite gumb za prijevod označenog teksta"
   },
   "msgAutomatic": {
     "message": "Automatski"
   },
   "msgTranslateSelectedText": {
-    "message": "Prevedi obilježeni tekst"
+    "message": "Prevedi označeni tekst"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Pokaži mogućnost prevođenja stranice u kontekstnom izborniku"
+    "message": "Pokaži mogućnost prevođenja označenog teksta u kontekstnom izborniku"
   },
   "lblNeverTranslateLangs": {
-    "message": "Nikada ne prevoditi ove web stranice"
+    "message": "Nikada ne prevodi ove jezike"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Nikada ne prevoditi ovu web stranicu"
+    "message": "Nikada ne prevodi ovaj jezik"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Prikaži izvorni tekst prilikom lebdenja"

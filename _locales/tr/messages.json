@@ -51,7 +51,7 @@
     "message": "Bu siteyi asla çevirme"
   },
   "btnChangeLanguages": {
-    "message": "Dil değiştir"
+    "message": "Dilleri değiştir"
   },
   "btnMobileOriginal": {
     "message": "Orijinal"
@@ -90,7 +90,7 @@
     "message": "Diğerleri"
   },
   "btnMoreOptions": {
-    "message": "Daha fazla seçenek"
+    "message": "Diğer seçenekler"
   },
   "lblPlsDonate": {
     "message": "Geliştiriciye bağış yap"
@@ -99,7 +99,7 @@
     "message": "Şu dile çevir"
   },
   "lblShowContextMenu": {
-    "message": "Bağlam menüsünde sayfayı çevirme seçeneğini göster"
+    "message": "İçerik menüsünde sayfayı çevirme seçeneğini göster"
   },
   "msgYes": {
     "message": "Evet"
@@ -114,7 +114,7 @@
     "message": "Evet (önerilen)"
   },
   "msgNoUseWidgets": {
-    "message": "Hayır (widget'ları kullan)"
+    "message": "Hayır (pencere araçları kullan)"
   },
   "optionsPageTitle": {
     "message": "Web Sayfalarını Çevir - Seçenekler"
@@ -129,10 +129,10 @@
     "message": "Bu listeye herhangi bir dil eklemediniz."
   },
   "btnAlwaysTranslate": {
-    "message": "Bu siteyi asla çevirme"
+    "message": "Bu siteyi her zaman çevir"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Bu siteleri asla çevirme"
+    "message": "Bu siteleri her zaman çevir"
   },
   "msgHelpDevelopment": {
     "message": "Anonim bir bağışla bu uzantının geliştirilmesine yardımcı olun."
@@ -147,7 +147,7 @@
     "message": "Güncelleme sırasında sürüm notlarını göster"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Seçili metni çevirmek için düğmeyi göster"
+    "message": "Seçili metni çevirmek için butonu göster"
   },
   "msgAutomatic": {
     "message": "Otomatik"
@@ -156,13 +156,13 @@
     "message": "Seçilen metni çevir"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Bağlam menüsünde sayfayı çevirme seçeneğini göster"
+    "message": "İçerik menüsünde seçili metni çevirme seçeneğini göster"
   },
   "lblNeverTranslateLangs": {
-    "message": "Bu siteleri asla çevirme"
+    "message": "Bu dilleri asla çevirme"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Bu siteleri asla çevirme"
+    "message": "Bu dili asla çevirme"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Fareyle üzerine gelindiğinde orijinal metni göster"

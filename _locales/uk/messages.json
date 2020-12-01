@@ -1,0 +1,170 @@
+{
+  "extensionName": {
+    "message": "Translate Web Pages"
+  },
+  "extensionDescription": {
+    "message": "Перекладіть свою сторінку в реальному часі за допомогою Google або Yandex."
+  },
+  "pageActionTitle": {
+    "message": "Перекласти цю сторінку"
+  },
+  "lblTranslate": {
+    "message": "Перекласти цю сторінку?"
+  },
+  "lblTranslating": {
+    "message": "Перекладається..."
+  },
+  "lblTranslated": {
+    "message": "Перекладено"
+  },
+  "lblError": {
+    "message": "Цю сторінку не вдалося перекласти"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Завжди перекладати з"
+  },
+  "lblTargetLanguage": {
+    "message": "Цільова мова"
+  },
+  "btnReset": {
+    "message": "Скинути"
+  },
+  "btnTranslate": {
+    "message": "Перекласти"
+  },
+  "btnOptions": {
+    "message": "Опції"
+  },
+  "btnRestore": {
+    "message": "Показати оригінал"
+  },
+  "btnTryAgain": {
+    "message": "Спробувати знову"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Відкрити в перекладачі Google"
+  },
+  "btnDonate": {
+    "message": "Матеріально подякувати"
+  },
+  "btnNeverTranslate": {
+    "message": "Ніколи не перекладати цей сайт"
+  },
+  "btnChangeLanguages": {
+    "message": "Змінити мову"
+  },
+  "btnMobileOriginal": {
+    "message": "Оригінал"
+  },
+  "btnMobileTranslated": {
+    "message": "Перекладено"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Ніколи не перекладати цей сайт"
+  },
+  "btnMobileDonate": {
+    "message": "Матеріально подякувати"
+  },
+  "optionsNeverTranslate": {
+    "message": "Ніколи не перекладати цей сайт"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Автоматично перекладати ці мови"
+  },
+  "optionPopupConfig": {
+    "message": "Показати спливаюче вікно для мобільних пристроїв"
+  },
+  "optionPopupAuto": {
+    "message": "Автоматично"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Коли я торкаюся трьома пальцями на екрані"
+  },
+  "lblTranslationEngine": {
+    "message": "Двигун перекладу"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Відкрити в перекладі Yandex"
+  },
+  "lblOthers": {
+    "message": "Інші"
+  },
+  "btnMoreOptions": {
+    "message": "Більше опцій"
+  },
+  "lblPlsDonate": {
+    "message": "Матеріально подякувати розробнику"
+  },
+  "msgTranslateFor": {
+    "message": "Перекласти вказаною мовою"
+  },
+  "lblShowContextMenu": {
+    "message": "Показувати опцію для перекладу сторінки в контекстному меню"
+  },
+  "msgYes": {
+    "message": "Так"
+  },
+  "msgNo": {
+    "message": "Ні"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Використовувати новий алгоритм перекладу?"
+  },
+  "msgYesRecommended": {
+    "message": "Так (рекомендується)"
+  },
+  "msgNoUseWidgets": {
+    "message": "Ні (використовувати віджети)"
+  },
+  "optionsPageTitle": {
+    "message": "Translate Web Pages - Параметри"
+  },
+  "optionPopupjustWhenIClickTranlateThisSite": {
+    "message": "Лише коли я натисну кнопку \"Перекласти цей сайт\""
+  },
+  "msgEmptyListNeverTranslateSites": {
+    "message": "Ви не додали жодного веб-сайту до цього списку."
+  },
+  "msgEmptyListAlwaysTranslateLanguages": {
+    "message": "Ви не додали жодної мови до цього списку."
+  },
+  "btnAlwaysTranslate": {
+    "message": "Завжди перекладати цей сайт"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Завжди перекладати ці сайти"
+  },
+  "msgHelpDevelopment": {
+    "message": "Матеріально підтримати анонімним внеском розвиток цього розширення."
+  },
+  "msgDonateWithPaypal": {
+    "message": "Зробити пожертву через PayPal"
+  },
+  "lblDarkMode": {
+    "message": "Темний режим"
+  },
+  "lblShowReleaseNotes": {
+    "message": "Показувати нотатки щодо випуску під час оновлення"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "Відображати кнопку для перекладу виділеного тексту"
+  },
+  "msgAutomatic": {
+    "message": "Автоматичний"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Перекласти виділений текст"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "Показувати опцію для перекладу сторінки в контекстному меню"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "Ніколи не перекладати ці мови"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "Ніколи не перекладайте цю мову"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "Показувати оригінал під час наведення курсор"
+  }
+}

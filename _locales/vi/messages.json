@@ -1,0 +1,170 @@
+{
+  "extensionName": {
+    "message": "Dịch trang Web"
+  },
+  "extensionDescription": {
+    "message": "Dịch trang của bạn trong thời gian thực sử dụng Google hoặc Yandex."
+  },
+  "pageActionTitle": {
+    "message": "Dịch trang này"
+  },
+  "lblTranslate": {
+    "message": "Dịch trang này?"
+  },
+  "lblTranslating": {
+    "message": "Đang dịch..."
+  },
+  "lblTranslated": {
+    "message": "Đã dịch"
+  },
+  "lblError": {
+    "message": "Không thể dịch trang này"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Luôn dịch từ"
+  },
+  "lblTargetLanguage": {
+    "message": "Ngôn ngữ đích"
+  },
+  "btnReset": {
+    "message": "Đặt lại"
+  },
+  "btnTranslate": {
+    "message": "Dịch"
+  },
+  "btnOptions": {
+    "message": "Tùy chọn"
+  },
+  "btnRestore": {
+    "message": "Hiển thị bản gốc"
+  },
+  "btnTryAgain": {
+    "message": "Thử lại"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Mở trong Google Translate"
+  },
+  "btnDonate": {
+    "message": "Ủng hộ"
+  },
+  "btnNeverTranslate": {
+    "message": "Không bao giờ dịch trang này"
+  },
+  "btnChangeLanguages": {
+    "message": "Thay đổi ngôn ngữ"
+  },
+  "btnMobileOriginal": {
+    "message": "Gốc"
+  },
+  "btnMobileTranslated": {
+    "message": "Đã dịch"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Không bao giờ dịch trang này"
+  },
+  "btnMobileDonate": {
+    "message": "Ủng hộ"
+  },
+  "optionsNeverTranslate": {
+    "message": "Không bao giờ dịch các trang này"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Luôn dịch các trang này"
+  },
+  "optionPopupConfig": {
+    "message": "Hiển thị cửa sổ bật lên trên di động"
+  },
+  "optionPopupAuto": {
+    "message": "Tự động"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Khi tôi chạm 3 ngón tay trên màn hình"
+  },
+  "lblTranslationEngine": {
+    "message": "Công cụ dịch"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Mở trong Yandex Translate"
+  },
+  "lblOthers": {
+    "message": "Khác"
+  },
+  "btnMoreOptions": {
+    "message": "Tùy chọn khác"
+  },
+  "lblPlsDonate": {
+    "message": "Giúp đỡ nhà phát triển bằng cách ủng hộ"
+  },
+  "msgTranslateFor": {
+    "message": "Dịch sang"
+  },
+  "lblShowContextMenu": {
+    "message": "Hiển thị tùy chọn dịch trang trong menu ngữ cảnh"
+  },
+  "msgYes": {
+    "message": "Đồng ý"
+  },
+  "msgNo": {
+    "message": "Không"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Sử dụng thuật toán dịch mới?"
+  },
+  "msgYesRecommended": {
+    "message": "Đồng ý (khuyến nghị)"
+  },
+  "msgNoUseWidgets": {
+    "message": "Không (sử dụng widget)"
+  },
+  "optionsPageTitle": {
+    "message": "Dịch trang Web - Tùy chọn"
+  },
+  "optionPopupjustWhenIClickTranlateThisSite": {
+    "message": "Chỉ khi tôi nhấn \"Dịch trang này\""
+  },
+  "msgEmptyListNeverTranslateSites": {
+    "message": "Bạn chưa thêm bất kỳ trang web nào vào danh sách này."
+  },
+  "msgEmptyListAlwaysTranslateLanguages": {
+    "message": "Bạn chưa thêm bất kỳ ngôn ngữ nào vào danh sách này."
+  },
+  "btnAlwaysTranslate": {
+    "message": "Luôn dịch trang này"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Luôn dịch những trang này"
+  },
+  "msgHelpDevelopment": {
+    "message": "Giúp duy trì sự phát triển của tiện ích mở rộng này bằng một khoản ủng hộ ẩn danh."
+  },
+  "msgDonateWithPaypal": {
+    "message": "Ủng hộ qua PayPal"
+  },
+  "lblDarkMode": {
+    "message": "Chế độ tối"
+  },
+  "lblShowReleaseNotes": {
+    "message": "Hiển thị ghi chú phát hành khi cập nhật"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "Hiển thị nút để dịch văn bản được chọn"
+  },
+  "msgAutomatic": {
+    "message": "Tự động"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Dịch văn bản đã chọn"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "Hiển thị tùy chọn để dịch văn bản được chọn trong menu ngữ cảnh"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "Không bao giờ dịch các ngôn ngữ này"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "Không bao giờ dịch ngôn ngữ này"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "Hiển thị văn bản gốc khi di chuột đến nó"
+  }
+}

@@ -21,7 +21,7 @@
     "message": "Te strani ni bilo mogoče prevesti"
   },
   "lblAlwaysTranslate": {
-    "message": "Vedno prevedi od"
+    "message": "Vedno prevedi iz"
   },
   "lblTargetLanguage": {
     "message": "Ciljni jezik"
@@ -156,7 +156,7 @@
     "message": "Prevedi izbrano besedilo"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "V kontekstnem meniju pokažite možnost prevajanja izbranega besedila"
+    "message": "Pokaži možnost prevoda izbranega besedila v kontekstnem meniju"
   },
   "lblNeverTranslateLangs": {
     "message": "Nikoli ne prevajajte teh jezikov"
