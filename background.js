@@ -160,7 +160,9 @@ function removeLangFromNeverTranslate(lang) {
 
 var googleTranslateTKK = undefined
 function updateGoogleTranslateTKK() {
-    var url = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    var url = `https://translate.google.${
+        "zh-cn" == navigator.language.toLowerCase() ? "cn" : "com"
+    }/translate_a/element.js?cb=googleTranslateElementInit`
     return fetch(url, {
             "credentials": "omit",
             "method": "GET",

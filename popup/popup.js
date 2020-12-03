@@ -432,7 +432,9 @@ btnOptions.addEventListener("change", () => {
             if (gTranslationEngine == "yandex") {
                 chrome.tabs.create({url: "https://translate.yandex.com/translate?url=" + encodeURIComponent(pageUrl)})
             } else { // google
-                chrome.tabs.create({url: "https://translate.google.com/translate?u=" + encodeURIComponent(pageUrl)})
+                chrome.tabs.create({url: `https://translate.google.${
+                    "zh-cn" == navigator.language.toLowerCase() ? "cn" : "com"
+                }/translate?u=` + encodeURIComponent(pageUrl)})
             }
             break
         case "moreOptions":
