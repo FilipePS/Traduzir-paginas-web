@@ -1355,7 +1355,7 @@ var languages = {
     },
 
     "pl": {
-        "en": "język angielski",
+        "en": "angielski",
         "pl": "polski",
         "af": "afrikaans",
         "sq": "albański",
