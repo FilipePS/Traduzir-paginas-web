@@ -163,13 +163,12 @@ function updateGoogleTranslateTKK() {
     var url = `https://translate.google.${
         "zh-cn" == navigator.language.toLowerCase() ? "cn" : "com"
     }/translate_a/element.js?cb=googleTranslateElementInit`
-    return fetch(url, {
+    return backgroundFetchText(url, {
             "credentials": "omit",
             "method": "GET",
             "mode": "no-cors",
             "referrerPolicy": "no-referrer"
         })
-        .then(response => response.text())
         .then(responseText => {
             var result = new RegExp(/tkk\=\'[0-9]+\.[0-9]+\'/i).exec(responseText)
             if (result) {
@@ -187,6 +186,24 @@ function updateGoogleTranslateTKK() {
             }
         })
 }
+
+var isMobileAny = isMobile.any()
+var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
+function backgroundFetchJson(url, options) {
+    if (isMobileAny && isChrome && options && options.mode === "no-cors") {
+        options.mode = "cors"
+    }
+    return fetch(url, options).then(response => response.json())
+}
+
+function backgroundFetchText(url, options) {
+    if (isMobileAny && isChrome && options && options.mode === "no-cors") {
+        options.mode = "cors"
+    }
+    return fetch(url, options).then(response => response.text())
+}
+
 
 // process messages
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
@@ -338,8 +355,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     } else if (request.action == "getUseNewAlgorithm") {
         sendResponse(useNewAlgorithm)
     } else if (request.action == "backgroundFetchJson") {
-        fetch(request.url, request.options)
-        .then(response => response.json())
+        backgroundFetchJson(request.url, request.options)
         .then(response => {
             sendResponse(response)
         })
@@ -349,8 +365,7 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
         })
         return true
     } else if (request.action == "backgroundFetchText") {
-        fetch(request.url, request.options)
-        .then(response => response.text())
+        backgroundFetchText(request.url, request.options)
         .then(response => {
             sendResponse(response)
         })
