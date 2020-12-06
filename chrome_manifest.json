@@ -1,11 +1,11 @@
 {
-
     "manifest_version": 2,
     "default_locale": "en",
     "name": "__MSG_extensionName__",
-    "version": "7.7",
-
     "description": "__MSG_extensionDescription__",
+    "version": "7.7",
+    "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
+
 
     "commands": {
         "toggle-translation": {
