@@ -164,6 +164,7 @@ function callIfIsMobile() {
     
     </style>
     
+    <div id='element' style="z-index: 1000000000;position: fixed;left: 0;right: 0;bottom: 0;background-color: white;box-shadow: 0px 0px 4px rgba(0, 0, 0, 1);height: 50px;user-select: none;">
     <div style="display:flex; align-items: center; margin: 0 auto; vertical-align: middle; padding-left: 10px">
         <img id="iconTranslate" style="max-width: 38px; max-height: 38px;">
         <button id="btnOriginal" class="item button" style="color: #2196F3">Original</button>
@@ -189,6 +190,7 @@ function callIfIsMobile() {
             <div class="menuDot"></div>
         </button>
         <button id="btnClose" class="item" style="width: 40px; max-width: 40px">&times;</button>
+    </div>
     </div>
     `
     
@@ -315,20 +317,7 @@ function callIfIsMobile() {
         window.detectedLanguage = detectedLang
     
         element = document.createElement("div")
-        element.setAttribute("translate", "no")
-        element.classList.add("notranslate")
-        element.style = `
-            z-index: 1000000000;
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: white;
-            box-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
-            height: 50px;
-            user-select: none;
-            display: none;
-        `
+
 /*
         var dpr = window.devicePixelRatio
 
@@ -368,6 +357,8 @@ function callIfIsMobile() {
         shadowRoot.innerHTML = htmlMobile
     
         document.body.appendChild(element)
+
+        element = shadowRoot.getElementById('element')
 
         if (detectedLang) {
             shadowRoot.getElementById('neverTranslateThisLanguage').style.display = "block"
