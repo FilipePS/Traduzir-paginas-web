@@ -304,8 +304,8 @@ if (typeof browser !== 'undefined') {
         }
         if (e.target == element) return;
 
-        var clientX = e.clientX || e.changedTouches[0].clientX
-        var clientY = e.clientY || e.changedTouches[0].clientY
+        var clientX = Math.max((typeof e.clientX === 'undefined' ? 0 : e.clientX), (typeof e.changedTouches === 'undefined' ? 0 : e.changedTouches[0].clientX));
+        var clientY = Math.max((typeof e.clientY === 'undefined' ? 0 : e.clientY), (typeof e.changedTouches === 'undefined' ? 0 : e.changedTouches[0].clientY));
 
         if (document.getSelection().toString().trim()) {
             init()
