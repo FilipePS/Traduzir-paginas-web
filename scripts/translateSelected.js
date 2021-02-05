@@ -283,6 +283,9 @@ if (typeof browser !== 'undefined') {
     function readSelection() {
         var selection = document.getSelection()
         var focusNode = selection.focusNode
+        if (focusNode === null) {
+            return;
+        }
         if (focusNode.nodeType == 3) {
             focusNode = selection.getRangeAt(0);
         } else if (focusNode.nodeType != 1) {
