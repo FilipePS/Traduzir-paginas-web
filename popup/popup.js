@@ -441,7 +441,7 @@ btnOptions.addEventListener("change", () => {
             chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
             break
         case "donate":
-            chrome.tabs.create({url: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url"})
+            chrome.tabs.create({url: "https://www.patreon.com/filipeps"})
             break
         case "patreon":
             chrome.tabs.create({url: "https://www.patreon.com/filipeps"})

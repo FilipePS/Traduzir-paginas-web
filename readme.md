@@ -11,7 +11,7 @@
 
 ### To collaborate with the translation of the interface use [Crowdin](https://crowdin.com/project/translate-web-pages).
 
-### To make a donation use [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url) or [Patreon](https://www.patreon.com/filipeps).
+### To make a donation use [Patreon](https://www.patreon.com/filipeps).
 
 ### Access the Firefox [extension page](https://addons.mozilla.org/firefox/addon/traduzir-paginas-web/).
 

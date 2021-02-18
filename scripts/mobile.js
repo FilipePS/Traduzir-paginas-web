@@ -178,7 +178,7 @@ function callIfIsMobile() {
                     <a id="btnChangeLanguages">Change languages</a>
                     <a id="btnNeverTranslate">Never translate this site</a>
                     <a id="neverTranslateThisLanguage" display="none">Never translate this language</a>
-                    <a id="btnDonate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N4Q7ACFV3GK2U&source=url" target="_blank" value="btnDonate" rel="noopener noreferrer">Donate &#10084;</a>
+                    <a id="btnDonate" href="https://www.patreon.com/filipeps" target="_blank" value="btnDonate" rel="noopener noreferrer">Donate &#10084;</a>
                     <a id="btnMoreOptions">More options</a>
                 </div>
             </div>
