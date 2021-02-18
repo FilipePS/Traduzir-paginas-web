@@ -18,5 +18,8 @@
 ### Open [website](https://filipeps.github.io/Traduzir-paginas-web/).
 
 ## Thanks to the Patrons
-+ 英世 中村
++ 2 kojix
++ Vadim
++ rifter
++ Dima Kompot
 + Sage Nameless
