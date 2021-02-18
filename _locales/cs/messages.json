@@ -81,7 +81,7 @@
     "message": "Když se dotknu tří prstů na obrazovce"
   },
   "lblTranslationEngine": {
-    "message": "Překladový motor"
+    "message": "Překladová služba"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Otevřeno v yandexovém překladu"
@@ -93,7 +93,7 @@
     "message": "Více možností"
   },
   "lblPlsDonate": {
-    "message": "Pomozte vývojáři s darem"
+    "message": "Pomozte vývojáři darem"
   },
   "msgTranslateFor": {
     "message": "Přeložit do"
@@ -129,13 +129,13 @@
     "message": "Do tohoto seznamu jste nepřidali žádný úkol."
   },
   "btnAlwaysTranslate": {
-    "message": "Nikdy nepřekládejte tento web"
+    "message": "Nikdy nepřekládejte tuto stránku"
   },
   "lblAlwaysTranslateSites": {
     "message": "Nikdy nepřekládejte tento web"
   },
   "msgHelpDevelopment": {
-    "message": "Pomozte udržet vývoj tohoto rozšíření s anonymním příspěvkem."
+    "message": "Pomozte udržet vývoj tohoto rozšíření pomocí anonymního příspěvku."
   },
   "msgDonateWithPaypal": {
     "message": "Podpořit přes PayPal"
@@ -159,10 +159,10 @@
     "message": "V místní nabídce se zobrazí možnost překladu stránky"
   },
   "lblNeverTranslateLangs": {
-    "message": "Nikdy tyto stránky nepřekládat"
+    "message": "Tento jazyk nikdy nepřekládat"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Nikdy tyto stránky nepřekládat"
+    "message": "Tyto jazyky nikdy nepřekládat"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Zobrazit původní text při najetí"
