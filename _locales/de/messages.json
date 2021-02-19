@@ -9,7 +9,7 @@
     "message": "Übersetze diese Seite"
   },
   "lblTranslate": {
-    "message": "Übersetze diese Seite?"
+    "message": "Diese Seite übersetzen?"
   },
   "lblTranslating": {
     "message": "Übersetzen ..."
@@ -36,10 +36,10 @@
     "message": "Einstellungen"
   },
   "btnRestore": {
-    "message": "Original zeigen"
+    "message": "Original anzeigen"
   },
   "btnTryAgain": {
-    "message": "Versuch es noch einmal"
+    "message": "Erneut versuchen"
   },
   "btnOpenOnGoogleTranslate": {
     "message": "In Google Übersetzer öffnen"
@@ -66,40 +66,40 @@
     "message": "Spenden"
   },
   "optionsNeverTranslate": {
-    "message": "Übersetzen Sie diese Seiten niemals"
+    "message": "Diese Seiten nie übersetzen"
   },
   "optionsAlwaysTranslate": {
-    "message": "Übersetzen Sie diese Sprachen automatisch"
+    "message": "Diese Sprachen automatisch übersetzen"
   },
   "optionPopupConfig": {
-    "message": "Zeigen Sie das mobile Popup an"
+    "message": "Mobiles Popup anzeigen"
   },
   "optionPopupAuto": {
     "message": "Automatisch"
   },
   "optionPopupThreeFingers": {
-    "message": "Wenn ich drei Finger auf dem Bildschirm berühre"
+    "message": "Wenn ich den Bildschirm mit drei Fingern berühre"
   },
   "lblTranslationEngine": {
-    "message": "Übersetzungsmaschine"
+    "message": "Übersetzungs-Engine"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Öffnen Sie in Yandex übersetzen"
+    "message": "In yandex translate öffnen"
   },
   "lblOthers": {
     "message": "Andere"
   },
   "btnMoreOptions": {
-    "message": "Mehr Optionen"
+    "message": "Weitere Optionen"
   },
   "lblPlsDonate": {
     "message": "Helfen Sie dem Entwickler mit einer Spende"
   },
   "msgTranslateFor": {
-    "message": "Übersetzen ins"
+    "message": "Übersetzen in"
   },
   "lblShowContextMenu": {
-    "message": "Zeigen Sie die Option zum Übersetzen der Seite im Kontextmenü an"
+    "message": "Die Option zum Übersetzen der Seite im Kontextmenü anzeigen"
   },
   "msgYes": {
     "message": "Ja"
@@ -108,7 +108,7 @@
     "message": "Nein"
   },
   "lblUseNewAlgorithm": {
-    "message": "Verwenden Sie den neuen Übersetzungsalgorithmus?"
+    "message": "Den neuen Übersetzungsalgorithmus verwenden?"
   },
   "msgYesRecommended": {
     "message": "Ja (empfohlen)"
@@ -129,13 +129,13 @@
     "message": "Du hast noch keine Sprachen zu dieser Liste hinzugefügt."
   },
   "btnAlwaysTranslate": {
-    "message": "Diese Seite nie übersetzen"
+    "message": "Diese Seite immer übersetzen"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Diese Seite nie übersetzen"
+    "message": "Diese Seiten immer übersetzen"
   },
   "msgHelpDevelopment": {
-    "message": "Helfen Sie die Entwicklung dieser Erweiterung mit einer anonymen Spende beizubehalten."
+    "message": "Helfen Sie die Entwicklung dieser Erweiterung mit einer anonymen Spende aufrechtzuerhalten."
   },
   "msgDonateWithPaypal": {
     "message": "Spenden mit PayPal"
@@ -147,7 +147,7 @@
     "message": "Versionshinweise beim Aktualisieren anzeigen"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Schaltfläche anzeigen, um den ausgewählten Text zu übersetzen"
+    "message": "Schaltfläche zur Übersetzung des ausgewählten Textes anzeigen"
   },
   "msgAutomatic": {
     "message": "Automatisch"
@@ -156,15 +156,15 @@
     "message": "Markierten Text übersetzen"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Zeigen Sie die Option zum Übersetzen der Seite im Kontextmenü an"
+    "message": "Die Option zum Übersetzen des Ausgewählten Textes im Kontextmenü anzeigen"
   },
   "lblNeverTranslateLangs": {
-    "message": "Übersetzen Sie diese Seiten niemals"
+    "message": "Diese Sprachen niemals übersetzen"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Übersetzen Sie diese Seiten niemals"
+    "message": "Diese Sprache nie übersetzen"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Originaltext beim Herfahren anzeigen"
+    "message": "Originaltext beim Darüberfahren anzeigen"
   }
 }

@@ -3,7 +3,7 @@
     "message": "翻譯網頁"
   },
   "extensionDescription": {
-    "message": "使用 Google 或 Yandex 實時翻譯您的頁面。"
+    "message": "使用Google或Yandex即時翻譯您的網頁。"
   },
   "pageActionTitle": {
     "message": "翻譯此頁面"
@@ -12,7 +12,7 @@
     "message": "翻譯此頁面？"
   },
   "lblTranslating": {
-    "message": "翻譯..."
+    "message": "翻譯中..."
   },
   "lblTranslated": {
     "message": "已翻譯"
@@ -36,16 +36,16 @@
     "message": "選項"
   },
   "btnRestore": {
-    "message": "顯示原圖"
+    "message": "顯示原文"
   },
   "btnTryAgain": {
     "message": "再試一次"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "在 Google 翻譯中打開"
+    "message": "在Google翻譯中打開"
   },
   "btnDonate": {
-    "message": "捐贈"
+    "message": "贊助"
   },
   "btnNeverTranslate": {
     "message": "永遠不要翻譯這個網站"
@@ -54,7 +54,7 @@
     "message": "變更語言"
   },
   "btnMobileOriginal": {
-    "message": "原版的"
+    "message": "原文"
   },
   "btnMobileTranslated": {
     "message": "已翻譯"
@@ -63,7 +63,7 @@
     "message": "永遠不要翻譯這個網站"
   },
   "btnMobileDonate": {
-    "message": "捐贈"
+    "message": "贊助"
   },
   "optionsNeverTranslate": {
     "message": "永遠不要翻譯這些網站"
@@ -78,34 +78,34 @@
     "message": "自動地"
   },
   "optionPopupThreeFingers": {
-    "message": "當我觸摸屏幕上的三個手指時"
+    "message": "當我以三隻手指觸控時。"
   },
   "lblTranslationEngine": {
     "message": "翻譯引擎"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "在 Yandex 中打開翻譯"
+    "message": "在Yandex翻譯中打開"
   },
   "lblOthers": {
-    "message": "其它"
+    "message": "其他"
   },
   "btnMoreOptions": {
-    "message": "更多的選擇"
+    "message": "更多選項"
   },
   "lblPlsDonate": {
-    "message": "幫助開發人員捐款"
+    "message": "贊助開發者"
   },
   "msgTranslateFor": {
     "message": "翻譯成"
   },
   "lblShowContextMenu": {
-    "message": "在上下文選單中顯示翻譯頁面的選單項"
+    "message": "在選單中顯示翻譯頁面的選項"
   },
   "msgYes": {
     "message": "是"
   },
   "msgNo": {
-    "message": "沒有"
+    "message": "否"
   },
   "lblUseNewAlgorithm": {
     "message": "使用新的翻譯算法？"
@@ -120,13 +120,13 @@
     "message": "翻譯網頁-選項"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "僅當我單擊“翻譯此網站”時"
+    "message": "當我選擇“翻譯此網頁”時"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "您尚未將任何站點添加到此列表。"
+    "message": "您尚未將任何網頁添加到此列表。"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "您尚未向此列表添加任何語言。"
+    "message": "您尚未添加任何語言至此清單。"
   },
   "btnAlwaysTranslate": {
     "message": "一律翻譯這個網站"
@@ -135,19 +135,19 @@
     "message": "始終翻譯這些網站"
   },
   "msgHelpDevelopment": {
-    "message": "通過匿名捐款幫助維護此擴展程序的開發。"
+    "message": "通過匿名捐款幫助維護此擴充功能。"
   },
   "msgDonateWithPaypal": {
-    "message": "透過 PayPal 來贊助我"
+    "message": "透過 PayPal 贊助"
   },
   "lblDarkMode": {
     "message": "夜間模式"
   },
   "lblShowReleaseNotes": {
-    "message": "更新時顯示發行說明"
+    "message": "更新時顯示更新日誌"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "顯示按鈕以翻譯所選文本"
+    "message": "在選中文字旁顯示翻譯按鈕"
   },
   "msgAutomatic": {
     "message": "自動"
@@ -156,15 +156,15 @@
     "message": "翻譯選取文字"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "在上下文選單中顯示翻譯選取文字的選單項"
+    "message": "在上下文選單中顯示翻譯頁面的選項"
   },
   "lblNeverTranslateLangs": {
     "message": "永遠不要翻譯這些語言"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "永遠不要翻譯這種語言"
+    "message": "永遠不要翻譯這個語言"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "懸停顯示原文"
+    "message": "懸停時顯示原文"
   }
 }

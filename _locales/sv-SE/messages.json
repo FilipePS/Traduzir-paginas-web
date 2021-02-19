@@ -1,0 +1,170 @@
+{
+  "extensionName": {
+    "message": "Översätt Webbsida"
+  },
+  "extensionDescription": {
+    "message": "Översätt webbplatser i realtid med hjälp av Google eller Yandex."
+  },
+  "pageActionTitle": {
+    "message": "Översätt denna sida"
+  },
+  "lblTranslate": {
+    "message": "Översätt denna sida?"
+  },
+  "lblTranslating": {
+    "message": "Översätter ..."
+  },
+  "lblTranslated": {
+    "message": "Översatt"
+  },
+  "lblError": {
+    "message": "Denna sida kunde inte översättas"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Översätt alltid från"
+  },
+  "lblTargetLanguage": {
+    "message": "Översätt till"
+  },
+  "btnReset": {
+    "message": "Återställ"
+  },
+  "btnTranslate": {
+    "message": "Översätt"
+  },
+  "btnOptions": {
+    "message": "Alternativ"
+  },
+  "btnRestore": {
+    "message": "Visa original"
+  },
+  "btnTryAgain": {
+    "message": "Försök igen"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Öppna i Google Translate"
+  },
+  "btnDonate": {
+    "message": "Donera"
+  },
+  "btnNeverTranslate": {
+    "message": "Översätt aldrig denna webbplats"
+  },
+  "btnChangeLanguages": {
+    "message": "Byt språk"
+  },
+  "btnMobileOriginal": {
+    "message": "Original"
+  },
+  "btnMobileTranslated": {
+    "message": "Översatt"
+  },
+  "btnMobileNeverTranslate": {
+    "message": "Översätt aldrig denna webbplats"
+  },
+  "btnMobileDonate": {
+    "message": "Donera"
+  },
+  "optionsNeverTranslate": {
+    "message": "Översätt aldrig dessa webbplatser"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Översätt automatiskt dessa språk"
+  },
+  "optionPopupConfig": {
+    "message": "Visa den mobila popup-skärmen"
+  },
+  "optionPopupAuto": {
+    "message": "Automatiskt"
+  },
+  "optionPopupThreeFingers": {
+    "message": "När jag trycker på skärmen med tre fingrar"
+  },
+  "lblTranslationEngine": {
+    "message": "Översättningsmotor"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Öppna i Yandex Translate"
+  },
+  "lblOthers": {
+    "message": "Övriga"
+  },
+  "btnMoreOptions": {
+    "message": "Fler alternativ"
+  },
+  "lblPlsDonate": {
+    "message": "Hjälp utvecklaren med en donation"
+  },
+  "msgTranslateFor": {
+    "message": "Översätt till"
+  },
+  "lblShowContextMenu": {
+    "message": "Visa alternativet att översätta sidan i snabbmenyn"
+  },
+  "msgYes": {
+    "message": "Ja"
+  },
+  "msgNo": {
+    "message": "Nej"
+  },
+  "lblUseNewAlgorithm": {
+    "message": "Använd den nya översättningsalgoritmen?"
+  },
+  "msgYesRecommended": {
+    "message": "Ja (rekommenderas)"
+  },
+  "msgNoUseWidgets": {
+    "message": "Nej (använd widget)"
+  },
+  "optionsPageTitle": {
+    "message": "Översätt webbplatser - Alternativ"
+  },
+  "optionPopupjustWhenIClickTranlateThisSite": {
+    "message": "Endast när jag klickar på \"Översätt denna webbplats\""
+  },
+  "msgEmptyListNeverTranslateSites": {
+    "message": "Du har inte lagt till några webbplatser i denna lista."
+  },
+  "msgEmptyListAlwaysTranslateLanguages": {
+    "message": "Du har inte lagt till några språk i denna lista."
+  },
+  "btnAlwaysTranslate": {
+    "message": "Översätt alltid denna webbplats"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Översätt alltid dessa webbplatser"
+  },
+  "msgHelpDevelopment": {
+    "message": "Hjälp till att bibehålla utvecklingen av denna utökning genom en anonym donation."
+  },
+  "msgDonateWithPaypal": {
+    "message": "Donera via PayPal"
+  },
+  "lblDarkMode": {
+    "message": "Mörkt läge"
+  },
+  "lblShowReleaseNotes": {
+    "message": "Visa versionsfakta vid uppdatering"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "Visa knappen för att översätta markerad text"
+  },
+  "msgAutomatic": {
+    "message": "Automatisk"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Översätt markerad text"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "Visa alternativet för att översätta markerad text i snabbmenyn"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "Översätt aldrig dessa språk"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "Översätt aldrig detta språk"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "Visa originalspråket när du håller muspekaren över texten"
+  }
+}
