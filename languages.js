@@ -2258,17 +2258,48 @@ var languages = {
 
 languages["zh"] = languages["zh-CN"]
 
-function codeToLanguage(pageLanguageCode, interfaceLanguageCode) {
-    if (pageLanguageCode.toLowerCase() != "zh-cn" && pageLanguageCode.toLowerCase() != "zh-tw") {
-        pageLanguageCode = pageLanguageCode.split("-")[0]
+function codeToLanguage(langCode) {
+    let uiLanguage = chrome.i18n.getUILanguage()
+    uiLanguage = fixLanguageCode(uiLanguage)
+    langCode = fixLanguageCode(langCode)
+
+    if (!languages[uiLanguage]) {
+        uiLanguage = "en"
     }
-    if (interfaceLanguageCode.toLowerCase() != "zh-cn" && interfaceLanguageCode.toLowerCase() != "zh-tw") {
-        interfaceLanguageCode = interfaceLanguageCode.split("-")[0]
+    
+    return languages[uiLanguage][langCode]
+}
+
+function fixLanguageCode(langCode) {
+    if (typeof langCode !== "string") return;
+
+    const langCodeSplitted = langCode.trim().split("-")
+    if (langCodeSplitted.length === 0) return;
+    langCodeSplitted[0] = langCodeSplitted[0].toLowerCase()
+
+    let fixedLangCode = null
+
+    if (langCodeSplitted[0] === "zh" && typeof langCodeSplitted[1] !== "undefined") {
+        langCodeSplitted[1] = langCodeSplitted[1].toUpperCase()
+        if (langCodeSplitted[1] === "CN" || langCodeSplitted[1] === "TW") {
+            fixedLangCode = langCode.trim()
+        }
     }
 
-    if (!languages[interfaceLanguageCode]) {
-        interfaceLanguageCode = "en"
+    if (!fixedLangCode) {
+        fixedLangCode = langCodeSplitted[0]
     }
 
-    return languages[interfaceLanguageCode][pageLanguageCode]
+    return fixedLangCode
+}
+
+function checkLanguageCode(langCode) {
+    langCode = fixLanguageCode(langCode)
+    if (typeof langCode !== "string") return;
+
+    for (const lang in languages["en"]) {
+        if (lang === langCode) {
+            return langCode
+        }
+    }
 }

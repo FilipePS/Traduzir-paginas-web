@@ -562,6 +562,7 @@ chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == "install") {
         chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
     } else if (details.reason == "update" && chrome.runtime.getManifest().version != details.previousVersion) {
+        //*
         chrome.storage.local.get("showReleaseNotes", onGot => {
             if (onGot.showReleaseNotes != "no") {
                 chrome.storage.local.get("lastTimeShowingReleaseNotes", onGot => {
@@ -587,6 +588,7 @@ chrome.runtime.onInstalled.addListener(details => {
                 })
             }
         })
+        //*/
     }
 })
 
