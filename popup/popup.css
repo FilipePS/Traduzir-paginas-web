@@ -1,95 +1,97 @@
 body {
     user-select: none;
-    /* min-width: 300px; */
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    padding: 10px;
+    font-size: 0.8em;
 }
 
-main {
+.w3-bar button {
+    width: 50% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.w3-buttonSelected {
+    background-color: #2196F3;
+}
+
+.margin10 {
     margin: 10px;
 }
 
-.containerRight {
-    display:flex;
-    justify-content: flex-end;
-    margin-top: 10px;
+#mdiv {
+    width: 14px;
+    height: 14px;
 }
 
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    margin: 0;
-    margin-top: 10px;
-    flex: 1;
-}
-
-button {
-    min-width: 80px;
+.mdiv {
+    height: 14px;
+    width: 2px;
     margin-left: 5px;
-}
-
-#btnClose {
-    font-weight: bold;
-    margin-right: 5px;
-    margin-top: 5px;
-    padding: 0 8px;
-}
-
-#divOptionsList {
-    position: static;
-}
-
-#lblTranslating, #lblTranslated, #lblError,
-#btnRestore, #btnTryAgain {
-    display: none;
-}
-
-.arrow-down {
-    border: solid #2196F3;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
+    background-color: black;
     transform: rotate(45deg);
+    Z-index: 1;
 }
 
-option {
-    color: black;
+.md {
+    height: 14px;
+    width: 2px;
+    background-color: black;
+    transform: rotate(90deg);
+    Z-index: 2;
 }
 
-#divIconTranslate:hover #iconTranslate {
-    opacity: 0.6;
+#btnClose,
+#btnMenu {
+    border-radius: 50%;
+    position: relative;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.menuDot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-image:
+        radial-gradient(black 2px, transparent 2px),
+        radial-gradient(black 2px, transparent 2px),
+        radial-gradient(black 2px, transparent 2px);
+    background-position:
+        center -5px,
+        center center,
+        center 5px;
 }
 
 #iconSwap {
-    position: absolute; bottom: 0; left: 0;
     display: none;
-    opacity: 0.8;
 }
 
 #divIconTranslate:hover #iconSwap {
     display: block;
 }
 
-#btnOptions option{
-    font-size: small;
-    font-weight: normal;
+#divIconTranslate:hover #iconTranslate {
+    opacity: 0.6;
 }
 
-.pointerIgnore {
-    pointer-events: none;
-}
-
-.arrow {
-    border: solid #2196F3;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-}
-
-.down {
-    transform: rotate(45deg);
-}
-
-#divIconTranslate > img {
+#divIconTranslate>img {
     padding: 0;
+}
+
+#btnOptions {
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#divMenu {
+    border-radius: 50%;
 }
