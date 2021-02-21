@@ -146,4 +146,14 @@ var twpConfig = {}
     twpConfig.removeLangFromNeverTranslate = function (lang) {
         removeFromArray("neverTranslateLangs", lang)
     }
+
+    twpConfig.setTargetLanguage = function (lang) {
+        const targetLanguages = twpConfig.get("targetLanguages")
+        lang = twpLang.checkLanguageCode(lang)
+        if (lang && targetLanguages.indexOf(lang) === -1) {
+            targetLanguages.unshift(lang)
+            targetLanguages.pop()
+            twpConfig.set("targetLanguages", targetLanguages)
+        }
+    }
 }
