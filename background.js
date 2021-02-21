@@ -470,10 +470,10 @@ function updateContextMenu(hideNow = false) {
             uilanguage = uilanguage.split("-")[0]
         }
         var contextMenuTitle = chrome.i18n.getMessage("msgTranslateFor") + " "
-        if (languages[uilanguage]) {
-            contextMenuTitle += languages[uilanguage][targetLanguage]
+        if (twpLang.languages[uilanguage]) {
+            contextMenuTitle += twpLang.languages[uilanguage][targetLanguage]
         } else {
-            contextMenuTitle += languages['en'][targetLanguage]
+            contextMenuTitle += twpLang.languages['en'][targetLanguage]
         }
     }
     if (typeof chrome.contextMenus != 'undefined') {
@@ -520,9 +520,9 @@ var langs = []
     if (uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw") {
         uilanguage = uilanguage.split("-")[0]
     }
-    var langsObj = languages[uilanguage]
+    var langsObj = twpLang.languages[uilanguage]
     if (!langsObj) {
-        langsObj = languages["en"]
+        langsObj = twpLang.languages["en"]
     }
 
     for (var i in langsObj) {

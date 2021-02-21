@@ -9,6 +9,10 @@ var twpConfig = {}
     const defaultConfig = {
         pageTranslatorService: "google",
         targetLanguages: [], // "en", "es", "de"
+        alwaysTranslateSites: [],
+        neverTranslateSites: [],
+        alwaysTranslateLangs: [],
+        neverTranslateLangs: [],
         showTranslatePageContextMenu: true,
         showTranslateSelectedContextMenu: true,
         showOriginalTextWhenHovering: true,
@@ -63,7 +67,7 @@ var twpConfig = {}
             }
 
             for (let lang of acceptedLanguages) {
-                lang = checkLanguageCode(fixLanguageCode(lang))
+                lang = twpLang.checkLanguageCode(lang)
                 if (lang && config.targetLanguages.indexOf(lang) === -1) {
                     config.targetLanguages.push(lang)
                 }
@@ -88,4 +92,58 @@ var twpConfig = {}
             onReadyObservers = []
         })
     })
+
+    function addInArray(configName, value) {
+        const array = twpConfig.get(configName)
+        if (array.indexOf(value) === -1) {
+            array.push(value)
+            twpConfig.set(configName, array)
+        }
+    }
+
+    function removeFromArray(configName, value) {
+        const array = twpConfig.get(configName)
+        const index = array.indexOf(value)
+        if (index > -1) {
+            array.splice(index, 1)
+            twpConfig.set(configName, array)
+        }
+    }
+
+    twpConfig.addSiteToAlwaysTranslate = function (hostname) {
+        addInArray("alwaysTranslateSites", hostname)
+        removeFromArray("neverTranslateSites", hostname)
+    }
+    twpConfig.removeSiteFromAlwaysTranslate = function (hostname) {
+        removeFromArray("alwaysTranslateSites", hostname)
+    }
+    twpConfig.addSiteToNeverTranslate = function (hostname) {
+        addInArray("neverTranslateSites", hostname)
+        removeFromArray("alwaysTranslateSites", hostname)
+    }
+    twpConfig.removeSiteFromNeverTranslate = function (hostname) {
+        removeFromArray("neverTranslateSites", hostname)
+    }
+    twpConfig.addLangToAlwaysTranslate = function (lang, hostname) {
+        addInArray("alwaysTranslateLangs", lang)
+        removeFromArray("neverTranslateLangs", lang)
+
+        if (hostname) {
+            removeFromArray("neverTranslateSites", hostname)
+        }
+    }
+    twpConfig.removeLangFromAlwaysTranslate = function (lang) {
+        removeFromArray("alwaysTranslateLangs", lang)
+    }
+    twpConfig.addLangToNeverTranslate = function (lang, hostname) {
+        addInArray("neverTranslateLangs", lang)
+        removeFromArray("alwaysTranslateLangs", lang)
+
+        if (hostname) {
+            removeFromArray("alwaysTranslateSites", hostname)
+        }
+    }
+    twpConfig.removeLangFromNeverTranslate = function (lang) {
+        removeFromArray("neverTranslateLangs", lang)
+    }
 }
