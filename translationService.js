@@ -234,10 +234,11 @@ var translationService = {}
         }
 
         const sourceArray = sourceArray3d.map(sourceArray => {
-            return sourceArray
-                .map(value => escapeHTML(value))
-                .map((value, index) => "<a i=" + index + ">" + value + "</a>")
-                .join("")
+            sourceArray = sourceArray.map(value => escapeHTML(value))
+            if (sourceArray.length > 1) {
+                sourceArray = sourceArray.map((value, index) => "<a i=" + index + ">" + value + "</a>")
+            }
+            return sourceArray.join("")
         })
 
         const requestBody = ""
@@ -277,7 +278,7 @@ var translationService = {}
                 let resultArray = result.match(/\<a\si\=[0-9]\>[^\<\>]*(?=\<\/a\>)/g)
 
                 let indexes
-                if (resultArray.length > 0) {
+                if (resultArray && resultArray.length > 0) {
                     indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=\>)/g))).filter(value => !isNaN(value))
                     resultArray = resultArray.map(value => {
                         var resultStartAtIndex = value.indexOf('>')
@@ -313,7 +314,7 @@ var translationService = {}
 
         return translationService.google.translateHTML(sourceArray.map(value => [value]), targetLanguage)
         .then(results => {
-            return results[0]
+            return results
         })
     }
 
@@ -360,7 +361,7 @@ var translationService = {}
 
         return translationService.yandex.translateHTML(sourceArray.map(value => [value]), targetLanguage)
         .then(results => {
-            return results[0]
+            return results
         })
     }
 
