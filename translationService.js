@@ -1,6 +1,7 @@
 "use strict";
 
 //TODO dividir em varios requests
+//TODO Especificar o source lang com page no idioma do paragrafo (dividindo as requests)
 
 var translationService = {}
 
@@ -174,7 +175,7 @@ var translationService = {}
                     responseJson = response.text
                 } else {
                     if (typeof response[0] == "string") {
-                        responseJson = [response[0]]
+                        responseJson = response
                     } else {
                         responseJson = response.map(value => value[0])
                     }
@@ -290,10 +291,14 @@ var translationService = {}
                 resultArray = resultArray.map(value => unescapeHTML(value))
 
                 const finalResulArray = []
-                for (const index of indexes) {
-                    finalResulArray.push(resultArray[index])
+                for (const j in indexes) {
+                    if (finalResulArray[indexes[j]]) {
+                        finalResulArray[indexes[j]] += " " + resultArray[j]
+                    } else {
+                        finalResulArray.push(resultArray[j])
+                    }
                 }
-
+                
                 resultArray3d.push(finalResulArray)
             }
 
