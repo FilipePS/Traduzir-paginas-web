@@ -1,5 +1,9 @@
 "use strict";
 
+//TODO adiiconar tradução de atributos, titulos e shadowRoot
+//TODO adicionar tradução de texto seleciondo, e ao passar o mouse (popup)
+//TODO mostrar texto original ao passar o mouse
+
 var pageTranslator = {}
 
 twpConfig.onReady(function() {
@@ -11,7 +15,7 @@ twpConfig.onReady(function() {
     let originalPageLanguage = "und"
     let currentPageLanguage = "und"
     let pageLanguageState = "original"
-    let currentTargetLanguage = "en"
+    let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
     let fooCount = 0
 
@@ -162,15 +166,40 @@ twpConfig.onReady(function() {
             sendResponse(pageLanguageState)
         } else if (request.action === "getCurrentPageTranslatorService") {
             sendResponse(currentPageTranslatorService)
-        } else if (request.action == "swapTranslationService") {
+        } else if (request.action === "swapTranslationService") {
             if (currentPageTranslatorService === "google") {
                 currentPageTranslatorService = "yandex"
             } else {
                 currentPageTranslatorService = "google"
             }
-            if (pageLanguageState == "translated") {
+            if (pageLanguageState === "translated") {
                 pageTranslator.translatePage()
             }
         }
     })
+
+    if (chrome.i18n.detectLanguage) {
+        chrome.i18n.detectLanguage(document.body.innerText, result => {
+            for (const langInfo of result.languages) {
+                const langCode = twpLang.checkLanguageCode(langInfo.language)
+                if (langCode) {
+                    originalPageLanguage = langCode
+                }
+
+                if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
+                    if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
+                        pageTranslator.translatePage()
+                    } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                        pageTranslator.translatePage()
+                    }
+                }
+                break
+            }
+            console.log(result)
+        })
+    } else {
+        if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+            pageTranslator.translatePage()
+        }
+    }
 })
