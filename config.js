@@ -156,6 +156,19 @@ var twpConfig = {}
         const targetLanguages = twpConfig.get("targetLanguages")
         lang = twpLang.checkLanguageCode(lang)
         if (lang && targetLanguages.indexOf(lang) === -1) {
+            twpConfig.addTargetLanguage(lang)
+        } else {
+            const index = targetLanguages.indexOf(lang)
+            targetLanguages.splice(index, 1)
+            targetLanguages.unshift(lang)
+            twpConfig.set("targetLanguages", targetLanguages)
+        }
+    }
+
+    twpConfig.addTargetLanguage = function (lang) {
+        const targetLanguages = twpConfig.get("targetLanguages")
+        lang = twpLang.checkLanguageCode(lang)
+        if (lang && targetLanguages.indexOf(lang) === -1) {
             targetLanguages.unshift(lang)
             targetLanguages.pop()
             twpConfig.set("targetLanguages", targetLanguages)

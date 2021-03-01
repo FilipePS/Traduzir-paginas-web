@@ -22,6 +22,7 @@ twpConfig.onReady(function () {
                 currentPageLanguageState = "original"
             } else {
                 currentPageLanguageState = "translated"
+                twpConfig.setTargetLanguage(event.target.value)
             }
 
             chrome.tabs.query({active: true, currentWindow: true}, tabs => {
