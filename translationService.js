@@ -264,7 +264,7 @@ var translationService = {}
                     const sentenceFinalIndex = result.indexOf("<i>", sentenceStartIndex)
                     
                     if (sentenceFinalIndex === -1) {
-                        resultSentences.push(result.slice(sentenceStartIndex + 3))
+                        sentences.push(result.slice(sentenceStartIndex + 3))
                         break
                     } else {
                         sentences.push(result.slice(sentenceStartIndex + 3, sentenceFinalIndex))
@@ -272,7 +272,7 @@ var translationService = {}
                     idx = sentenceFinalIndex
                 }
     
-                result = sentences.length > 0 ? sentences.join("") : result
+                result = sentences.length > 0 ? sentences.join(" ") : result
                 let resultArray = result.match(/\<a\si\=[0-9]\>[^\<\>]*(?=\<\/a\>)/g)
 
                 let indexes
@@ -358,4 +358,29 @@ var translationService = {}
             return results[0]
         })
     }
+
+
+    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+        if (request.action === "translateHTML") {
+            let translateHTML
+            if (request.translationService === "yandex") {
+                translateHTML = translationService.yandex.translateHTML
+            } else {
+                translateHTML = translationService.google.translateHTML
+            }
+
+            translateHTML(request.sourceArray3d, request.targetLanguage)
+            .then(results => {
+                sendResponse(results)
+            })
+            .catch(e => {
+                sendResponse()
+            })
+
+            return true
+        } else if (request.action === "translateText") {
+
+            return true
+        }
+    })
 }

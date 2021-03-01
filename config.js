@@ -21,12 +21,16 @@ var twpConfig = {}
         showReleaseNotes: true,
     }
 
+    let onReadyResolvePromise
+    const onReadyPromise = new Promise(resolve => onReadyResolvePromise = resolve)
+
     twpConfig.onReady = function (callback) {
         if (config) {
             callback()
         } else {
             onReadyObservers.push(callback)
         }
+        return onReadyPromise
     }
 
     twpConfig.get = function (name) {
@@ -90,6 +94,7 @@ var twpConfig = {}
             
             onReadyObservers.forEach(callback => callback())
             onReadyObservers = []
+            onReadyResolvePromise()
         })
     })
 

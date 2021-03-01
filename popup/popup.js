@@ -4,6 +4,7 @@ var $ = document.querySelector.bind(document)
 
 twpConfig.onReady(function () {
     let originalPageLanguage = "und"
+    let currentPageLanguage = "und"
     let currentPageLanguageState = "original"
     let currentPageTranslatorService = "google"
 
@@ -15,6 +16,13 @@ twpConfig.onReady(function () {
                 button.classList.remove("w3-buttonSelected")
             })
             event.target.classList.add("w3-buttonSelected")
+
+            currentPageLanguage = event.target.value
+            if (currentPageLanguage === "original") {
+                currentPageLanguageState = "original"
+            } else {
+                currentPageLanguageState = "translated"
+            }
 
             chrome.tabs.query({active: true, currentWindow: true}, tabs => {
                 chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: event.target.value})
@@ -36,6 +44,13 @@ twpConfig.onReady(function () {
             if (pageLanguage && (pageLanguage = twpLang.checkLanguageCode(pageLanguage))) {
                 originalPageLanguage = pageLanguage
                 twpButtons[0].textContent = twpLang.codeToLanguage(originalPageLanguage)
+            }
+        })
+
+        chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageLanguage"}, {frameId: 0}, pageLanguage => {
+            if (pageLanguage) {
+                currentPageLanguage = pageLanguage
+                updateInterface()
             }
         })
 
@@ -65,7 +80,7 @@ twpConfig.onReady(function () {
 
         twpButtons.forEach(button => {
             button.classList.remove("w3-buttonSelected")
-            if (button.value === currentPageLanguageState) {
+            if (button.value === currentPageLanguageState || button.value === currentPageLanguage) {
                 button.classList.add("w3-buttonSelected")
             }
         })
@@ -131,11 +146,18 @@ twpConfig.onReady(function () {
     })
     
     $("#divIconTranslate").addEventListener("click", () => {
+        chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {action: "swapTranslationService"})
+        })
+
         if (currentPageTranslatorService === "google") {
             currentPageTranslatorService = "yandex"
         } else {
             currentPageTranslatorService = "google"
         }
+
+        twpConfig.set("pageTranslatorService", currentPageTranslatorService)
+
         updateInterface()
     })    
     
