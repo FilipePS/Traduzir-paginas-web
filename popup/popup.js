@@ -81,7 +81,8 @@ twpConfig.onReady(function () {
 
         twpButtons.forEach(button => {
             button.classList.remove("w3-buttonSelected")
-            if (button.value === currentPageLanguageState || button.value === currentPageLanguage) {
+            if ((currentPageLanguageState !== "translated" && button.value === "original") 
+            || (currentPageLanguageState === "translated" && button.value === currentPageLanguage)) {
                 button.classList.add("w3-buttonSelected")
             }
         })
