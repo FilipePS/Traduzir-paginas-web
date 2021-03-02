@@ -26,6 +26,18 @@ twpConfig.onReady(function() {
 
     let attributesToTranslate = []
 
+    pageTranslator.getHTMLTagsInlineText = function () {
+        return htmlTagsInlineText
+    }
+
+    pageTranslator.getHTMLTagsInlineIgnore  = function () {
+        return TagsInlineIgnore 
+    }
+
+    pageTranslator.getHTMLTagsNoTranslate = function () {
+        return htmlTagsNoTranslate
+    }
+
     function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
         return new Promise((resolve, reject) => {
             chrome.runtime.sendMessage({
@@ -260,14 +272,17 @@ twpConfig.onReady(function() {
 
     pageTranslator.translatePage = function (targetLanguage) {
         fooCount++
+        pageTranslator.restorePage()
+        showOriginal.enable()
 
         if (targetLanguage) {
             currentTargetLanguage = targetLanguage
         }
 
-        pageTranslator.restorePage()
         nodesToTranslate = getNodesToTranslate()
         attributesToTranslate = getAttributesToTranslate()
+
+        nodesToTranslate.forEach(nti => showOriginal.add(nti.parent))
 
         pageLanguageState = "translated"
         currentPageLanguage = currentTargetLanguage
@@ -277,6 +292,8 @@ twpConfig.onReady(function() {
 
     pageTranslator.restorePage = function () {
         fooCount++
+        showOriginal.disable()
+
         pageLanguageState = "original"
         currentPageLanguage = originalPageLanguage
 
