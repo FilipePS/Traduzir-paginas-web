@@ -104,48 +104,48 @@ var showOriginal = {}
 
     showOriginal.enable = function () {
         if (plataformInfo.isMobile.any) return;
+        if (divElement) return;
 
-        if (!divElement) {
-            divElement = document.createElement("div")
-            divElement.style = "all: initial"
-            divElement.classList.add("notranslate")
-            
-            shadowRoot = divElement.attachShadow({mode: "closed"})
-            shadowRoot.innerHTML = `
-                <style>
-                    #originalText {
-                        font-family: 'Helvetica', 'Arial', sans-serif;
-                        font-style: normal;
-                        font-variant: normal;
-                        line-height: normal;
-                        font-size: 14px;
-                        font-weight: 500;
+        divElement = document.createElement("div")
+        divElement.style = "all: initial"
+        divElement.classList.add("notranslate")
+        
+        shadowRoot = divElement.attachShadow({mode: "closed"})
+        shadowRoot.innerHTML = `
+            <style>
+                #originalText {
+                    all: initial;
+                    font-family: 'Helvetica', 'Arial', sans-serif;
+                    font-style: normal;
+                    font-variant: normal;
+                    line-height: normal;
+                    font-size: 14px;
+                    font-weight: 500;
 
-                        z-index: 2147483647;
-                        position: fixed;
-                        border-radius: 5px;
-                        max-width: 280px;
-                        max-height: 250px;
-                        top: 0px;
-                        left: 0px;
-                        background-color: white;
-                        color: black;
-                        border: 1px solid lightGrey;
-                        overflow: auto;
-                        padding: 16px;
-                        visible: true;
-                        display: block;
-                        opacity: 1;
-                    }
-                </style>
-                <div id="originalText">Ola</div>
-            `
+                    z-index: 2147483647;
+                    position: fixed;
+                    border-radius: 5px;
+                    max-width: 280px;
+                    max-height: 250px;
+                    top: 0px;
+                    left: 0px;
+                    background-color: white;
+                    color: black;
+                    border: 1px solid lightGrey;
+                    overflow: auto;
+                    padding: 16px;
+                    visible: true;
+                    display: block;
+                    opacity: 1;
+                }
+            </style>
+            <div id="originalText"></div>
+        `
 
-            divElement.addEventListener("mouseout", onMouseOut)
+        divElement.addEventListener("mouseout", onMouseOut)
 
-            document.addEventListener("mousemove", onMouseMove)
-            document.addEventListener("mousedown", onMouseDown)
-        }
+        document.addEventListener("mousemove", onMouseMove)
+        document.addEventListener("mousedown", onMouseDown)
     }
 
     showOriginal.disable = function () {

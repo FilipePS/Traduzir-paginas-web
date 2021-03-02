@@ -58,7 +58,7 @@
             "matches": ["<all_urls>"],
             "run_at": "document_end",
             "all_frames": true,
-            "js": ["languages.js", "config.js", "showOriginal.js", "pageTranslator.js"]
+            "js": ["plataformInfo.js", "languages.js", "config.js", "showOriginal.js", "pageTranslator.js", "translateSelected.js"]
         }, {
             "matches": ["<all_urls>"],
             "run_at": "document_end",

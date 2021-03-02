@@ -2,9 +2,47 @@
 
 //TODO adiiconar tradução de shadowRoot
 //TODO adicionar tradução de texto seleciondo, e ao passar o mouse (popup)
-//TODO mostrar texto original ao passar o mouse
 //TODO adicionar tradução de elementos criados dinamicamente
 //TODO adicionar tradução de iframe criado dinamicamente
+
+function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
+    return new Promise((resolve, reject) => {
+        chrome.runtime.sendMessage({
+            action: "translateHTML",
+            translationService,
+            targetLanguage,
+            sourceArray3d
+        }, response => {
+            resolve(response)
+        })
+    })
+}
+
+function backgroundTranslateText(translationService, targetLanguage, sourceArray) {
+    return new Promise((resolve, reject) => {
+        chrome.runtime.sendMessage({
+            action: "translateText",
+            translationService,
+            targetLanguage,
+            sourceArray
+        }, response => {
+            resolve(response)
+        })
+    })
+}
+
+function backgroundTranslateSingleText(translationService, targetLanguage, source) {
+    return new Promise((resolve, reject) => {
+        chrome.runtime.sendMessage({
+            action: "translateSingleText",
+            translationService,
+            targetLanguage,
+            source
+        }, response => {
+            resolve(response)
+        })
+    })
+}
 
 var pageTranslator = {}
 
@@ -25,57 +63,6 @@ twpConfig.onReady(function() {
     let translatedPageTitle
 
     let attributesToTranslate = []
-
-    pageTranslator.getHTMLTagsInlineText = function () {
-        return htmlTagsInlineText
-    }
-
-    pageTranslator.getHTMLTagsInlineIgnore  = function () {
-        return TagsInlineIgnore 
-    }
-
-    pageTranslator.getHTMLTagsNoTranslate = function () {
-        return htmlTagsNoTranslate
-    }
-
-    function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
-        return new Promise((resolve, reject) => {
-            chrome.runtime.sendMessage({
-                action: "translateHTML",
-                translationService,
-                targetLanguage,
-                sourceArray3d
-            }, response => {
-                resolve(response)
-            })
-        })
-    }
-
-    function backgroundTranslateText(translationService, targetLanguage, sourceArray) {
-        return new Promise((resolve, reject) => {
-            chrome.runtime.sendMessage({
-                action: "translateText",
-                translationService,
-                targetLanguage,
-                sourceArray
-            }, response => {
-                resolve(response)
-            })
-        })
-    }
-
-    function backgroundTranslateSingleText(translationService, targetLanguage, source) {
-        return new Promise((resolve, reject) => {
-            chrome.runtime.sendMessage({
-                action: "translateSingleText",
-                translationService,
-                targetLanguage,
-                source
-            }, response => {
-                resolve(response)
-            })
-        })
-    }
 
     function getNodesToTranslate(root=document.body) {
         const nodesToTranslate = [{isTranslated: false, parent: null, nodesInfo: []}]
@@ -349,6 +336,12 @@ twpConfig.onReady(function() {
         }
     })
 
+    const observers = []
+
+    pageTranslator.onGetOriginalPageLanguage = function (callback) {
+        observers.push(callback)
+    }
+
     if (chrome.i18n.detectLanguage) {
         chrome.i18n.detectLanguage(document.body.innerText, result => {
             for (const langInfo of result.languages) {
@@ -366,10 +359,13 @@ twpConfig.onReady(function() {
                 }
                 break
             }
+
+            observers.forEach(callback => callback(originalPageLanguage))
         })
     } else {
         if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
             pageTranslator.translatePage()
         }
+        observers.forEach(callback => callback("und"))
     }
 })

@@ -13,12 +13,12 @@ var twpConfig = {}
         neverTranslateSites: [],
         alwaysTranslateLangs: [],
         neverTranslateLangs: [],
-        showTranslatePageContextMenu: true,
-        showTranslateSelectedContextMenu: true,
-        showOriginalTextWhenHovering: true,
-        showTranslateSelectedButton: true,
+        showTranslatePageContextMenu: "yes",
+        showTranslateSelectedContextMenu: "yes",
+        showOriginalTextWhenHovering: "yes",
+        showTranslateSelectedButton: "yes",
         darkMode: "auto",
-        showReleaseNotes: true,
+        showReleaseNotes: "yes",
     }
 
     let onReadyResolvePromise

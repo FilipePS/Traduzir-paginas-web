@@ -1,5 +1,7 @@
 "use strict";
 //TODO usar md5, ou outro
+//TODO implementar o cache usando indexeddb
+
 var translationCache = {}
 
 {
