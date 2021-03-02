@@ -83,6 +83,8 @@ var showOriginal = {}
     }
 
     showOriginal.add = function (node) {
+        if (plataformInfo.isMobile.any) return;
+
         if (node && nodesToShowOriginal.indexOf(node) === -1) {
             nodesToShowOriginal.push({node: node, original: node.textContent})
             node.addEventListener("mouseenter", onMouseEnter)
@@ -91,6 +93,8 @@ var showOriginal = {}
     }
 
     showOriginal.removeAll = function () {
+        if (plataformInfo.isMobile.any) return;
+
         nodesToShowOriginal.forEach(nodeInf => {
             nodeInf.node.removeEventListener("mouseenter", onMouseEnter)
             nodeInf.node.removeEventListener("mouseout", onMouseOut)
@@ -99,6 +103,8 @@ var showOriginal = {}
     }
 
     showOriginal.enable = function () {
+        if (plataformInfo.isMobile.any) return;
+
         if (!divElement) {
             divElement = document.createElement("div")
             divElement.style = "all: initial"
@@ -143,6 +149,8 @@ var showOriginal = {}
     }
 
     showOriginal.disable = function () {
+        if (plataformInfo.isMobile.any) return;
+        
         if (divElement) {
             hideOriginalText()
             divElement.remove()
