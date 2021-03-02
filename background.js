@@ -416,6 +416,17 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     }
 })
 
+//new
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === "getMainFramePageLanguageState") {
+        chrome.tabs.sendMessage(sender.tab.id, {action: "getCurrentPageLanguageState"}, {frameId: 0}, pageLanguageState => {
+            sendResponse(pageLanguageState)
+        })
+
+        return true
+    }
+})
+
 var showOriginalTextWhenHovering = "yes"
 chrome.storage.local.get("showOriginalTextWhenHovering", onGot => {
     if (onGot.showOriginalTextWhenHovering) {

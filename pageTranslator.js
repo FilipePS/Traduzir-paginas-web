@@ -3,7 +3,7 @@
 //TODO adiiconar tradução de shadowRoot
 //TODO adicionar tradução ao passar o mouse (popup)
 //TODO adicionar tradução de elementos criados dinamicamente
-//TODO adicionar tradução de iframe criado dinamicamente
+//TODO Só traduzir quando a aba estiver ativa
 
 function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
     return new Promise((resolve, reject) => {
@@ -336,10 +336,15 @@ twpConfig.onReady(function() {
         }
     })
 
+    let alreadyGotTheLanguage = false
     const observers = []
 
     pageTranslator.onGetOriginalPageLanguage = function (callback) {
-        observers.push(callback)
+        if (alreadyGotTheLanguage) {
+            callback(originalPageLanguage)
+        } else {
+            observers.push(callback)
+        }
     }
 
     if (chrome.i18n.detectLanguage) {
@@ -361,11 +366,21 @@ twpConfig.onReady(function() {
             }
 
             observers.forEach(callback => callback(originalPageLanguage))
+            alreadyGotTheLanguage = true
         })
     } else {
         if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
             pageTranslator.translatePage()
         }
         observers.forEach(callback => callback("und"))
+        alreadyGotTheLanguage = true
     }
+
+    pageTranslator.onGetOriginalPageLanguage(function () {
+        chrome.runtime.sendMessage({action: "getMainFramePageLanguageState"}, response => {
+            if (response === "translated" && pageLanguageState === "original") {
+                pageTranslator.translatePage()
+            }
+        })
+    })
 })
