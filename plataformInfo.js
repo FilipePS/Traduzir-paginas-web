@@ -9,6 +9,9 @@ var plataformInfo = {}
         iOS: navigator.userAgent.match(/iPhone|iPad|iPod/i),
         Opera: navigator.userAgent.match(/Opera Mini/i),
         Windows: navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i),
-        any: isMobile.Android || isMobile.BlackBerry || isMobile.iOS || isMobile.Opera || isMobile.Windows
+        any: this.Android || this.BlackBerry || this.iOS || this.Opera || this.Windows,
+    }
+    plataformInfo.isDesktop = {
+        any: !plataformInfo.isMobile.any
     }
 }
