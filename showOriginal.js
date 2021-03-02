@@ -4,7 +4,15 @@
 
 var showOriginal = {}
 
-{
+twpConfig.onReady(function () {
+    let showOriginalTextWhenHovering = twpConfig.get("showOriginalTextWhenHovering")
+    twpConfig.onChanged(function (name, newValue) {
+        if (name === "showOriginalTextWhenHovering") {
+            showOriginalTextWhenHovering = newValue
+            showOriginal.enable()
+        }
+    })
+
     let originalTextIsShowing = false
     let divElement
     let shadowRoot
@@ -93,8 +101,6 @@ var showOriginal = {}
     }
 
     showOriginal.removeAll = function () {
-        if (plataformInfo.isMobile.any) return;
-
         nodesToShowOriginal.forEach(nodeInf => {
             nodeInf.node.removeEventListener("mouseenter", onMouseEnter)
             nodeInf.node.removeEventListener("mouseout", onMouseOut)
@@ -104,6 +110,7 @@ var showOriginal = {}
 
     showOriginal.enable = function () {
         if (plataformInfo.isMobile.any) return;
+        if (showOriginalTextWhenHovering !== "yes") return;
         if (divElement) return;
 
         divElement = document.createElement("div")
@@ -149,8 +156,6 @@ var showOriginal = {}
     }
 
     showOriginal.disable = function () {
-        if (plataformInfo.isMobile.any) return;
-        
         if (divElement) {
             hideOriginalText()
             divElement.remove()
@@ -163,4 +168,4 @@ var showOriginal = {}
         document.removeEventListener("mousemove", onMouseMove)
         document.removeEventListener("mousedown", onMouseDown)
     }
-}
+})

@@ -1,7 +1,7 @@
 "use strict";
 
 //TODO adiiconar tradução de shadowRoot
-//TODO adicionar tradução de texto seleciondo, e ao passar o mouse (popup)
+//TODO adicionar tradução ao passar o mouse (popup)
 //TODO adicionar tradução de elementos criados dinamicamente
 //TODO adicionar tradução de iframe criado dinamicamente
 
