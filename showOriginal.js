@@ -1,8 +1,11 @@
 "use strict";
 
+//TODO mostrar o texto original apenas da frase sobre o mouse
+
 var showOriginal = {}
 
 {
+    let originalTextIsShowing = false
     let divElement
     let shadowRoot
     let currentNodeOverMouse
@@ -19,19 +22,19 @@ var showOriginal = {}
     function onMouseDown(e) {
         if (!divElement) return;
         if (e.target === divElement) return;
-        divElement.remove()
+        hideOriginalText()
     }
 
     function showOriginalText(node) {
         if (!divElement) return;
+        hideOriginalText()
 
         const nodeInf = nodesToShowOriginal.find(nodeInf => nodeInf.node === node)
         if (nodeInf) {
             const eOriginalText = shadowRoot.getElementById("originalText")
-
-            divElement.remove()
             eOriginalText.textContent = nodeInf.original
             document.body.appendChild(divElement)
+            originalTextIsShowing = true
 
             const height = eOriginalText.offsetHeight
             let top = mousePos.y + 10
@@ -48,6 +51,17 @@ var showOriginal = {}
         }
     }
 
+    function hideOriginalText() {
+        if (divElement) {
+            divElement.remove()
+            originalTextIsShowing = false
+        }
+    }
+
+    function isShowingOriginalText() {
+        return originalTextIsShowing
+    }
+
     function onMouseEnter(e) {
         if (!divElement) return;
         if (currentNodeOverMouse && e.target === currentNodeOverMouse) return;
@@ -58,12 +72,14 @@ var showOriginal = {}
 
     function onMouseOut(e) {
         if (!divElement) return;
+        if (!isShowingOriginalText()) return;
+        
         if (e.target === currentNodeOverMouse && e.relatedTarget === divElement) return;
         if (e.target === divElement && e.relatedTarget === currentNodeOverMouse) return;
 
         currentNodeOverMouse = null
         if (timeoutHandler) clearTimeout(timeoutHandler);
-        divElement.remove()
+        hideOriginalText()
     }
 
     showOriginal.add = function (node) {
@@ -85,7 +101,8 @@ var showOriginal = {}
     showOriginal.enable = function () {
         if (!divElement) {
             divElement = document.createElement("div")
-            divElement.style = "all: initial"         
+            divElement.style = "all: initial"
+            divElement.classList.add("notranslate")
             
             shadowRoot = divElement.attachShadow({mode: "closed"})
             shadowRoot.innerHTML = `
@@ -118,6 +135,8 @@ var showOriginal = {}
                 <div id="originalText">Ola</div>
             `
 
+            divElement.addEventListener("mouseout", onMouseOut)
+
             document.addEventListener("mousemove", onMouseMove)
             document.addEventListener("mousedown", onMouseDown)
         }
@@ -125,6 +144,7 @@ var showOriginal = {}
 
     showOriginal.disable = function () {
         if (divElement) {
+            hideOriginalText()
             divElement.remove()
             divElement = null
             shadowRoot = null
