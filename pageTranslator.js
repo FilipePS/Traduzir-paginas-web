@@ -1,8 +1,10 @@
 "use strict";
 
-//TODO adiiconar tradução de atributos, titulos e shadowRoot
+//TODO adiiconar tradução de shadowRoot
 //TODO adicionar tradução de texto seleciondo, e ao passar o mouse (popup)
 //TODO mostrar texto original ao passar o mouse
+//TODO adicionar tradução de elementos criados dinamicamente
+//TODO adicionar tradução de iframe criado dinamicamente
 
 var pageTranslator = {}
 
@@ -19,6 +21,11 @@ twpConfig.onReady(function() {
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
     let fooCount = 0
 
+    let originalPageTitle
+    let translatedPageTitle
+
+    let attributesToTranslate = []
+
     function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
         return new Promise((resolve, reject) => {
             chrome.runtime.sendMessage({
@@ -26,6 +33,32 @@ twpConfig.onReady(function() {
                 translationService,
                 targetLanguage,
                 sourceArray3d
+            }, response => {
+                resolve(response)
+            })
+        })
+    }
+
+    function backgroundTranslateText(translationService, targetLanguage, sourceArray) {
+        return new Promise((resolve, reject) => {
+            chrome.runtime.sendMessage({
+                action: "translateText",
+                translationService,
+                targetLanguage,
+                sourceArray
+            }, response => {
+                resolve(response)
+            })
+        })
+    }
+
+    function backgroundTranslateSingleText(translationService, targetLanguage, source) {
+        return new Promise((resolve, reject) => {
+            chrome.runtime.sendMessage({
+                action: "translateSingleText",
+                translationService,
+                targetLanguage,
+                source
             }, response => {
                 resolve(response)
             })
@@ -54,7 +87,7 @@ twpConfig.onReady(function() {
             } else if (element.nodeType == 3) {
                 if (element.textContent.trim().length > 0) {
                     if (!nodesToTranslate[index].parent) {
-                        var temp = element.parentNode
+                        let temp = element.parentNode
                         while (temp && temp != document.body && (htmlTagsInlineText.indexOf(temp.nodeName) != -1 || htmlTagsInlineIgnore.indexOf(temp.nodeName) != -1)) {
                             temp = temp.parentNode
                         }
@@ -73,6 +106,67 @@ twpConfig.onReady(function() {
         return nodesToTranslate
     }
 
+    function getAttributesToTranslate(root=document.body) {
+        const attributesToTranslate = []
+
+        const placeholdersElements = root.querySelectorAll('input[placeholder], textarea[placeholder]')
+        const altElements = root.querySelectorAll('area[alt], img[alt], input[type="image"][alt]')
+        const valueElements = root.querySelectorAll('input[type="button"], input[type="submit"]')
+        const titleElements = root.querySelectorAll("body [title]")
+
+        placeholdersElements.forEach(e => {
+            const txt = e.getAttribute("placeholder")
+            if (txt && txt.trim()) {
+                attributesToTranslate.push({
+                    node: e,
+                    original: txt,
+                    attrName: "placeholder"
+                })
+            }
+        })
+
+        altElements.forEach(e => {
+            const txt = e.getAttribute("alt")
+            if (txt && txt.trim()) {
+                attributesToTranslate.push({
+                    node: e,
+                    original: txt,
+                    attrName: "alt"
+                })
+            }
+        })
+
+        valueElements.forEach(e => {
+            const txt = e.getAttribute("value")
+            if (e.type == "submit" && !txt) {
+                attributesToTranslate.push({
+                    node: e,
+                    original: "Submit Query",
+                    attrName: "value"
+                })
+            } else if (txt && txt.trim()) {
+                attributesToTranslate.push({
+                    node: e,
+                    original: txt,
+                    attrName: "value"
+                })
+            }
+        })
+
+        titleElements.forEach(e => {
+            const txt = e.getAttribute("title")
+            if (txt && txt.trim()) {
+                attributesToTranslate.push({
+                    node: e,
+                    original: txt,
+                    attrName: "title"
+                })
+            }
+        })
+
+        return attributesToTranslate
+    }
+
     function translateResults(nodesToTranslatesNow, results) {
         for (const i in nodesToTranslatesNow) {
             for (const j in nodesToTranslatesNow[i]) {
@@ -81,18 +175,37 @@ twpConfig.onReady(function() {
         }
     }
 
+    function translateAttributes(attributesToTranslateNow, results) {
+        for (const i in attributesToTranslateNow) {
+            const ati = attributesToTranslateNow[i]
+            ati.node.setAttribute(ati.attrName, results[i])
+        }
+    }
+
     function translateDynamically() {
         try {
             if (nodesToTranslate) {
                 ;(function () {
                     const currentFooCount = fooCount
+
                     const nodesToTranslatesNow = []
                     nodesToTranslate.forEach(nti => {
                         if (!nti.isTranslated) {
-                            var rect = nti.parent.getBoundingClientRect()
+                            const rect = nti.parent.getBoundingClientRect()
                             if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
                                 nti.isTranslated = true
                                 nodesToTranslatesNow.push(nti.nodesInfo)
+                            }
+                        }
+                    })
+
+                    const attributesToTranslateNow = []
+                    attributesToTranslate.forEach(ati => {
+                        if (!ati.isTranslated) {
+                            const rect = ati.node.getBoundingClientRect()
+                            if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
+                                ati.isTranslated = true
+                                attributesToTranslateNow.push(ati)
                             }
                         }
                     })
@@ -109,6 +222,19 @@ twpConfig.onReady(function() {
                             }
                         })
                     }
+
+                    if (attributesToTranslateNow.length > 0) {
+                        backgroundTranslateText(
+                            currentPageTranslatorService,
+                            currentTargetLanguage,
+                            attributesToTranslateNow.map(ati => ati.original)
+                        )
+                        .then(results => {
+                            if (pageLanguageState === "translated" && currentFooCount === fooCount) {
+                                translateAttributes(attributesToTranslateNow, results)
+                            }
+                        })
+                    }
                 })()
             }
         } catch (e) {
@@ -119,6 +245,19 @@ twpConfig.onReady(function() {
     }
     translateDynamically()
 
+    function translatePageTitle() {
+        if (document.title.trim().length < 1) return;
+        originalPageTitle = document.title
+
+        backgroundTranslateSingleText(currentPageTranslatorService, currentTargetLanguage, originalPageTitle)
+        .then(result => {
+            if (result) {
+                document.title = result
+                translatedPageTitle = result
+            }
+        })
+    }
+
     pageTranslator.translatePage = function (targetLanguage) {
         fooCount++
 
@@ -128,16 +267,24 @@ twpConfig.onReady(function() {
 
         pageTranslator.restorePage()
         nodesToTranslate = getNodesToTranslate()
+        attributesToTranslate = getAttributesToTranslate()
 
         pageLanguageState = "translated"
         currentPageLanguage = currentTargetLanguage
+
+        translatePageTitle()
     }
 
     pageTranslator.restorePage = function () {
         fooCount++
-
         pageLanguageState = "original"
         currentPageLanguage = originalPageLanguage
+
+        if (translatedPageTitle && translatedPageTitle == document.title) {
+            document.title = originalPageTitle
+        }
+        translatedPageTitle = null
+        originalPageTitle = null
 
         for (const nti of nodesToTranslate) {
             if (nti.isTranslated) {
@@ -147,6 +294,13 @@ twpConfig.onReady(function() {
             }
         }
         nodesToTranslate = []
+
+        for (const ati of attributesToTranslate) {
+            if (ati.isTranslated) {
+                ati.node.setAttribute(ati.attrName, ati.original)
+            }
+        }
+        attributesToTranslate = []
     }
 
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -195,7 +349,6 @@ twpConfig.onReady(function() {
                 }
                 break
             }
-            console.log(result)
         })
     } else {
         if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {

@@ -313,9 +313,11 @@ var translationService = {}
         }
 
         return translationService.google.translateHTML(sourceArray.map(value => [value]), targetLanguage)
-        .then(results => {
-            return results
-        })
+    }
+
+    translationService.google.translateSingleText = function (source, targetLanguage) {
+        return translationService.google.translateText([source], targetLanguage)
+        .then(results => results[0])
     }
 
     translationService.yandex.translateHTML = function (sourceArray3d, targetLanguage) {
@@ -360,9 +362,11 @@ var translationService = {}
         }
 
         return translationService.yandex.translateHTML(sourceArray.map(value => [value]), targetLanguage)
-        .then(results => {
-            return results
-        })
+    }
+
+    translationService.yandex.translateSingleText = function (source, targetLanguage) {
+        return translationService.yandex.translateText([source], targetLanguage)
+        .then(results => results[0])
     }
 
 
@@ -385,8 +389,39 @@ var translationService = {}
 
             return true
         } else if (request.action === "translateText") {
+            let translateText
+            if (request.translationService === "yandex") {
+                translateText = translationService.yandex.translateText
+            } else {
+                translateText = translationService.google.translateText
+            }
+
+            translateText(request.sourceArray, request.targetLanguage)
+            .then(results => {
+                sendResponse(results)
+            })
+            .catch(e => {
+                sendResponse()
+            })
 
             return true
+        } else if (request.action === "translateSingleText") {
+            let translateSingleText
+            if (request.translationService === "yandex") {
+                translateSingleText = translationService.yandex.translateSingleText
+            } else {
+                translateSingleText = translationService.google.translateSingleText
+            }
+
+            translateSingleText(request.source, request.targetLanguage)
+            .then(result => {
+                sendResponse(result)
+            })
+            .catch(e => {
+                sendResponse()
+            })
+
+            return true          
         }
     })
 }
