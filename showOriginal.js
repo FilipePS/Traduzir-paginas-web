@@ -152,6 +152,9 @@ twpConfig.onReady(function () {
 
         document.addEventListener("mousemove", onMouseMove)
         document.addEventListener("mousedown", onMouseDown)
+
+        document.addEventListener("blur", hideOriginalText)
+        document.addEventListener("visibilitychange", hideOriginalText)
     }
 
     showOriginal.disable = function () {
@@ -166,5 +169,8 @@ twpConfig.onReady(function () {
 
         document.removeEventListener("mousemove", onMouseMove)
         document.removeEventListener("mousedown", onMouseDown)
+
+        document.removeEventListener("blur", hideOriginalText)
+        document.removeEventListener("visibilitychange", hideOriginalText)
     }
 })

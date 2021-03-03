@@ -1,5 +1,7 @@
 "use strict";
 
+// TODO verificar se o navegador pode deletar objectstorage especificos
+
 var translationCache = {}
 
 {

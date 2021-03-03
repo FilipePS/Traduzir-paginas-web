@@ -259,12 +259,20 @@ twpConfig.onReady(function() {
     function updateEventListener() {
         if (showTranslateSelectedButton == "yes" && translateThisSite && translateThisLanguage) {
             document.addEventListener("mouseup", onMouseup)
+
+            document.addEventListener("blur", destroy)
+            document.addEventListener("visibilitychange", destroy)
+
             if (plataformInfo.isMobile.any) {
                 document.addEventListener("touchend", onTouchend)
                 document.addEventListener("selectionchange", onSelectionchange)
             }
         } else {
             document.removeEventListener("mouseup", onMouseup)
+
+            document.removeEventListener("blur", destroy)
+            document.removeEventListener("visibilitychange", destroy)
+
             if (plataformInfo.isMobile.any) {
                 document.removeEventListener("touchend", onTouchend)
                 document.removeEventListener("selectionchange", onSelectionchange)
