@@ -2,7 +2,6 @@
 
 //TODO adiiconar tradução de shadowRoot
 //TODO adicionar tradução ao passar o mouse (popup)
-//TODO adicionar tradução de elementos criados dinamicamente
 //TODO Só traduzir quando a aba estiver ativa
 
 function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
@@ -63,6 +62,91 @@ twpConfig.onReady(function() {
     let translatedPageTitle
 
     let attributesToTranslate = []
+
+    let translateNewNodesTimerHandler
+    let newNodes = []
+    let removedNodes = []
+
+    function translateNewNodes() {
+        const currentFooCount = fooCount
+
+        newNodes.forEach(nn => {
+            if (removedNodes.indexOf(nn) != -1) return;
+            
+            let newNodesToTranslate = getNodesToTranslate(nn)
+            
+            const indexesToRemove = []
+            for (const i in nodesToTranslate) {
+                if (nodesToTranslate[i].isTranslated) continue;
+                const nodesInfo = nodesToTranslate[i].nodesInfo
+                for (const j in newNodesToTranslate) {
+                    if (newNodesToTranslate[j].nodesInfo.some(value => nodesInfo.indexOf(value) >= 0)) {
+                        indexesToRemove.push(j)
+                    }
+                }
+            }
+            
+            indexesToRemove.forEach(idx => {
+                newNodesToTranslate.splice(idx, 1)
+            })
+
+            newNodesToTranslate = newNodesToTranslate.map(nti => nti.nodesInfo)
+
+            backgroundTranslateHTML(
+                currentPageTranslatorService,
+                currentTargetLanguage,
+                newNodesToTranslate.map(nti => nti.map(value => value.original))
+            )
+            .then(results => {
+                if (pageLanguageState === "translated" && currentFooCount === fooCount) {
+                    translateResults(newNodesToTranslate, results)
+                }
+            })
+        })
+
+        newNodes = []
+        removedNodes = []
+    }
+
+    const mutationObserver = new MutationObserver(function(mutations) {
+        const nodesToTranslate = []
+        
+        mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(addedNode => {
+                if (htmlTagsNoTranslate.indexOf(addedNode.nodeName) == -1) {
+                    if (htmlTagsInlineText.indexOf(addedNode.nodeName) == -1) {
+                        if (htmlTagsInlineIgnore.indexOf(addedNode.nodeName) == -1) {
+                            nodesToTranslate.push(addedNode) 
+                        }
+                    }
+                }
+            })
+
+            mutation.removedNodes.forEach(removedNode => {
+                removedNodes.push(removedNode)
+            })
+        })
+        
+        nodesToTranslate.forEach(nnt => {
+            if (newNodes.indexOf(nnt) == -1) {
+                newNodes.push(nnt)
+            }
+        })
+    })
+
+    function enableMutatinObserver() {
+        disableMutatinObserver()
+        translateNewNodesTimerHandler = setInterval(translateNewNodes, 1700)
+        mutationObserver.observe(document.body, { childList: true, subtree: true })
+    }
+
+    function disableMutatinObserver() {
+        clearInterval(translateNewNodesTimerHandler)
+        newNodes = []
+        removedNodes = []
+        mutationObserver.disconnect()
+        mutationObserver.takeRecords()
+    }
 
     function getNodesToTranslate(root=document.body) {
         const nodesToTranslate = [{isTranslated: false, parent: null, nodesInfo: []}]
@@ -239,7 +323,7 @@ twpConfig.onReady(function() {
         } catch (e) {
             console.error(e)
         } finally {
-            setTimeout(translateDynamically, 500)
+            setTimeout(translateDynamically, 600)
         }
     }
     translateDynamically()
@@ -275,11 +359,14 @@ twpConfig.onReady(function() {
         currentPageLanguage = currentTargetLanguage
 
         translatePageTitle()
+
+        enableMutatinObserver()
     }
 
     pageTranslator.restorePage = function () {
         fooCount++
         showOriginal.disable()
+        disableMutatinObserver()
 
         pageLanguageState = "original"
         currentPageLanguage = originalPageLanguage
