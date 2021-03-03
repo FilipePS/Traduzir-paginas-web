@@ -108,6 +108,8 @@ twpConfig.onReady(function () {
     }
 
     showOriginal.enable = function () {
+        showOriginal.disable()
+        
         if (plataformInfo.isMobile.any) return;
         if (showOriginalTextWhenHovering !== "yes") return;
         if (divElement) return;

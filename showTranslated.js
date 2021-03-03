@@ -3,12 +3,40 @@
 var showTranslated = {}
 
 twpConfig.onReady(function () {
+    let originalPageLanguage = "und"
+    let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
+    let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
+    let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
+    let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
     let showTranslatedTextWhenHovering = twpConfig.get("showTranslatedTextWhenHovering")
+
     twpConfig.onChanged(function (name, newValue) {
-        if (name === "showTranslatedTextWhenHovering") {
-            showTranslatedTextWhenHovering = newValue
-            showTranslated.enable()
+        switch (name) {
+            case "pageTranslatorService":
+                currentPageTranslatorService = newValue
+                break
+            case "targetLanguages":
+                currentTargetLanguage = newValue
+                break
+            case "neverTranslateSites":
+                translateThisSite = newValue.indexOf(location.hostname) === -1
+                showTranslated.enable()
+                break
+            case "neverTranslateLangs":
+                translateThisLanguage = newValue.indexOf(originalPageLanguage) === -1
+                showTranslated.enable()
+                break
+            case "showTranslatedTextWhenHovering":
+                showTranslatedTextWhenHovering = newValue
+                showTranslated.enable()
+                break
         }
+    })
+
+    pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
+        originalPageLanguage = pagelanguage
+        translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
+        showTranslated.enable()
     })
 
     const htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BDO', 'BIG', 'CITE', 'DFN', 'EM', 'I', 'LABEL', 'Q', 'S', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U', 'TT', 'VAR']
@@ -94,7 +122,7 @@ twpConfig.onReady(function () {
         
         if (!text || text.length < 1) return;
 
-        backgroundTranslateSingleText("google", "pt", text)
+        backgroundTranslateSingleText(currentPageTranslatorService, currentTargetLanguage, text)
         .then(result => {
             if (!divElement) return;
             hideTranslatedText()
@@ -126,8 +154,10 @@ twpConfig.onReady(function () {
     }
 
     showTranslated.enable = function () {
+        showTranslated.disable()
+    
         if (plataformInfo.isMobile.any) return;
-        if (showTranslatedTextWhenHovering !== "yes") return;
+        if (showTranslatedTextWhenHovering !== "yes" || !translateThisSite || !translateThisLanguage) return;
         if (divElement) return;
 
         divElement = document.createElement("div")
