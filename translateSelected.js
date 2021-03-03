@@ -227,11 +227,12 @@ twpConfig.onReady(function() {
         if (document.getSelection().toString().trim()) {
             init()
             if (plataformInfo.isMobile.any) {
-                selTextButton.style.left = window.innerWidth - 35 + "px"
+                selTextButton.style.left = window.innerWidth - 45 + "px"
+                selTextButton.style.top = clientY - 30 + "px"
             } else {
-                selTextButton.style.left = clientX + 10 + "px"
+                selTextButton.style.left = clientX + 20 + "px"
+                selTextButton.style.top = clientY - 30 + "px"
             }
-            selTextButton.style.top = clientY - 20 + "px"
 
             selTextButton.style.display = "block"
         }
