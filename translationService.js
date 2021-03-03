@@ -308,6 +308,7 @@ var translationService = {}
                     indexes = [0]
                 }
 
+                resultArray = resultArray.map(value => value.replace(/\<\/b\>/g, ""))
                 resultArray = resultArray.map(value => unescapeHTML(value))
 
                 const finalResulArray = []

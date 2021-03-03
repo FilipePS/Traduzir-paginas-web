@@ -1,7 +1,6 @@
 "use strict";
 
 //TODO adiiconar tradução de shadowRoot
-//TODO adicionar tradução ao passar o mouse (popup)
 //TODO adicionar hotkeys
 
 function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
