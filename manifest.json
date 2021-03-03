@@ -68,6 +68,6 @@
     ],
 
     "background": {
-        "scripts": ["languages.js", "translationCache.js", "translationService.js", "config.js", "background.js"]
+        "scripts": ["plataformInfo.js", "languages.js", "translationCache.js", "translationService.js", "config.js", "background.js"]
     }
 }

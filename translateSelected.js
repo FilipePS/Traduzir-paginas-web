@@ -272,4 +272,11 @@ twpConfig.onReady(function() {
         }
     }
     updateEventListener()
+
+    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+        if (request.action === "TranslateSelectedText") {
+            readSelection()
+            translateSelText()
+        }
+    })
 })

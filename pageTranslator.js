@@ -365,6 +365,7 @@ twpConfig.onReady(function() {
         nodesToTranslate.forEach(nti => showOriginal.add(nti.parent))
 
         pageLanguageState = "translated"
+        chrome.runtime.sendMessage({action: "setPageLanguageState", pageLanguageState})
         currentPageLanguage = currentTargetLanguage
 
         translatePageTitle()
@@ -378,6 +379,7 @@ twpConfig.onReady(function() {
         disableMutatinObserver()
 
         pageLanguageState = "original"
+        chrome.runtime.sendMessage({action: "setPageLanguageState", pageLanguageState})
         currentPageLanguage = originalPageLanguage
 
         if (translatedPageTitle && translatedPageTitle == document.title) {
