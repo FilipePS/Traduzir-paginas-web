@@ -433,34 +433,38 @@ twpConfig.onReady(function() {
             observers.push(callback)
         }
     }
-
-    if (chrome.i18n.detectLanguage) {
-        chrome.i18n.detectLanguage(document.body.innerText, result => {
-            for (const langInfo of result.languages) {
-                const langCode = twpLang.checkLanguageCode(langInfo.language)
-                if (langCode) {
-                    originalPageLanguage = langCode
-                }
-
-                if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
-                    if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
-                        pageTranslator.translatePage()
-                    } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
-                        pageTranslator.translatePage()
-                    }
-                }
-                break
-            }
-
-            observers.forEach(callback => callback(originalPageLanguage))
-            alreadyGotTheLanguage = true
-        })
-    } else {
-        if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
-            pageTranslator.translatePage()
-        }
+    if (chrome.extension.inIncognitoContext) {
         observers.forEach(callback => callback("und"))
         alreadyGotTheLanguage = true
+    } else {
+        if (chrome.i18n.detectLanguage) {
+            chrome.i18n.detectLanguage(document.body.innerText, result => {
+                for (const langInfo of result.languages) {
+                    const langCode = twpLang.checkLanguageCode(langInfo.language)
+                    if (langCode) {
+                        originalPageLanguage = langCode
+                    }
+    
+                    if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
+                        if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
+                            pageTranslator.translatePage()
+                        } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                            pageTranslator.translatePage()
+                        }
+                    }
+                    break
+                }
+    
+                observers.forEach(callback => callback(originalPageLanguage))
+                alreadyGotTheLanguage = true
+            })
+        } else {
+            if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                pageTranslator.translatePage()
+            }
+            observers.forEach(callback => callback("und"))
+            alreadyGotTheLanguage = true
+        }
     }
 
     pageTranslator.onGetOriginalPageLanguage(function () {
