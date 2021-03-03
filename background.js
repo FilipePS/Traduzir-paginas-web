@@ -1,3 +1,5 @@
+"use strict";
+
 //TODO abrir pagina de opções sem precisar abrir novas abas
 
 /*
