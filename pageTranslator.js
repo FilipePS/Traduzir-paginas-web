@@ -350,6 +350,12 @@ twpConfig.onReady(function() {
         })
     }
 
+    const pageLanguageStateObservers = []
+
+    pageTranslator.onPageLanguageStateChange = function (callback) {
+        pageLanguageStateObservers.push(callback)
+    }
+
     pageTranslator.translatePage = function (targetLanguage) {
         fooCount++
         pageTranslator.restorePage()
@@ -366,6 +372,7 @@ twpConfig.onReady(function() {
 
         pageLanguageState = "translated"
         chrome.runtime.sendMessage({action: "setPageLanguageState", pageLanguageState})
+        pageLanguageStateObservers.forEach(callback => callback(pageLanguageState))
         currentPageLanguage = currentTargetLanguage
 
         translatePageTitle()
@@ -380,6 +387,7 @@ twpConfig.onReady(function() {
 
         pageLanguageState = "original"
         chrome.runtime.sendMessage({action: "setPageLanguageState", pageLanguageState})
+        pageLanguageStateObservers.forEach(callback => callback(pageLanguageState))
         currentPageLanguage = originalPageLanguage
 
         if (translatedPageTitle && translatedPageTitle == document.title) {
