@@ -120,7 +120,7 @@ var translationService = {}
     translationService.google = {}
     translationService.yandex = {}
 
-    function translateHTML(translationService, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress) {
+    function translateHTML(translationService, targetLanguage, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress) {
         const thisTranslationProgress = []
         const externalTranslationProgress = []
 
@@ -244,6 +244,7 @@ var translationService = {}
         const requestBody = ""
         return translateHTML(
             "google",
+            targetLanguage,
             "https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=" + targetLanguage + "&tk=",
             sourceArray,
             requestBody,
@@ -334,6 +335,7 @@ var translationService = {}
         const requestBody = "srv=tr-url-widget&format=html&lang=" + targetLanguage
         return translateHTML(
             "yandex",
+            targetLanguage,
             "https://translate.yandex.net/api/v1/tr.json/translate",
             sourceArray,
             requestBody,
