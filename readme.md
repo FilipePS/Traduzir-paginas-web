@@ -18,6 +18,7 @@
 ### Open [website](https://filipeps.github.io/Traduzir-paginas-web/).
 
 ## Thanks to the Patrons
++ EWi2M5UR
 + 2 kojix
 + Vadim
 + rifter
