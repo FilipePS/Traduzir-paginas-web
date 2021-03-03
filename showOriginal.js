@@ -64,6 +64,7 @@ twpConfig.onReady(function () {
             divElement.remove()
             originalTextIsShowing = false
         }
+        clearTimeout(timeoutHandler)
     }
 
     function isShowingOriginalText() {
@@ -85,8 +86,6 @@ twpConfig.onReady(function () {
         if (e.target === currentNodeOverMouse && e.relatedTarget === divElement) return;
         if (e.target === divElement && e.relatedTarget === currentNodeOverMouse) return;
 
-        currentNodeOverMouse = null
-        if (timeoutHandler) clearTimeout(timeoutHandler);
         hideOriginalText()
     }
 

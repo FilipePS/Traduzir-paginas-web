@@ -1,5 +1,7 @@
 "use strict";
 
+//TODO desativar o botão caso a pagina esteja traduzida
+
 var translateSelected = {}
 
 twpConfig.onReady(function() {
