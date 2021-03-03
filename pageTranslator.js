@@ -2,6 +2,7 @@
 
 //TODO adiiconar tradução de shadowRoot
 //TODO adicionar tradução ao passar o mouse (popup)
+//TODO adicionar hotkeys
 
 function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
     return new Promise((resolve, reject) => {
@@ -426,6 +427,12 @@ twpConfig.onReady(function() {
                 currentPageTranslatorService = "google"
             }
             if (pageLanguageState === "translated") {
+                pageTranslator.translatePage()
+            }
+        } else if (request.action === "toggle-translation") {
+            if (pageLanguageState === "translated") {
+                pageTranslator.restorePage()
+            } else {
                 pageTranslator.translatePage()
             }
         }
