@@ -156,10 +156,11 @@ twpConfig.onReady(function() {
         })
     } else {
         chrome.browserAction.setPopup({popup: "popup/popup.html"})
-        /*
-        if (chrome.pageAction) {
-            var themeColorPopupText = null
-            chrome.theme.getCurrent().then(theme => {
+
+        //TODO veriricar porque chrome.theme.getCurrent não funciona, apenas browser.theme.getCurrent
+        if (chrome.pageAction && browser) {
+            let themeColorPopupText = null
+            browser.theme.getCurrent().then(theme => {
                 themeColorPopupText = null
                 if (theme.colors && (theme.colors.toolbar_field_text || theme.colors.popup_text)) {
                     themeColorPopupText = theme.colors.toolbar_field_text || theme.colors.popup_text
@@ -176,6 +177,13 @@ twpConfig.onReady(function() {
             })
     
             let darkMode = false
+            if (matchMedia("(prefers-color-scheme: dark)").matches) {
+                darkMode = true
+            } else {
+                darkMode = false
+            }
+            updateIconInAllTabs()
+
             matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
                 if (matchMedia("(prefers-color-scheme: dark)").matches) {
                     darkMode = true
@@ -230,7 +238,6 @@ twpConfig.onReady(function() {
                 }
             })
         }
-        //*/
     }
 })
 
