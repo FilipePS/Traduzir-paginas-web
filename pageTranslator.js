@@ -2,7 +2,6 @@
 
 //TODO adiiconar tradução de shadowRoot
 //TODO adicionar tradução ao passar o mouse (popup)
-//TODO Só traduzir quando a aba estiver ativa
 
 function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
     return new Promise((resolve, reject) => {
@@ -147,6 +146,15 @@ twpConfig.onReady(function() {
         mutationObserver.disconnect()
         mutationObserver.takeRecords()
     }
+
+    const handleVisibilityChange = function () {
+        if (document.visibilityState == "visible" && pageLanguageState === "translated") {
+            enableMutatinObserver()
+        } else if (document.visibilityState == "hidden") {
+            disableMutatinObserver()
+        }
+    }
+    document.addEventListener("visibilitychange", handleVisibilityChange, false)
 
     function getNodesToTranslate(root=document.body) {
         const nodesToTranslate = [{isTranslated: false, parent: null, nodesInfo: []}]
@@ -437,33 +445,50 @@ twpConfig.onReady(function() {
         observers.forEach(callback => callback("und"))
         alreadyGotTheLanguage = true
     } else {
-        if (chrome.i18n.detectLanguage) {
-            chrome.i18n.detectLanguage(document.body.innerText, result => {
-                for (const langInfo of result.languages) {
-                    const langCode = twpLang.checkLanguageCode(langInfo.language)
-                    if (langCode) {
-                        originalPageLanguage = langCode
-                    }
-    
-                    if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
-                        if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
-                            pageTranslator.translatePage()
-                        } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
-                            pageTranslator.translatePage()
+        const foo = function () {
+            if (chrome.i18n.detectLanguage) {
+                chrome.i18n.detectLanguage(document.body.innerText, result => {
+                    for (const langInfo of result.languages) {
+                        const langCode = twpLang.checkLanguageCode(langInfo.language)
+                        if (langCode) {
+                            originalPageLanguage = langCode
                         }
+                        if (pageLanguageState === "original") {
+                            if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
+                                if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
+                                    pageTranslator.translatePage()
+                                } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                                    pageTranslator.translatePage()
+                                }
+                            }
+                        }
+                        break
                     }
-                    break
+        
+                    observers.forEach(callback => callback(originalPageLanguage))
+                    alreadyGotTheLanguage = true
+                })
+            } else {
+                if (pageLanguageState === "original") {
+                    if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                        pageTranslator.translatePage()
+                    }
                 }
-    
-                observers.forEach(callback => callback(originalPageLanguage))
+                observers.forEach(callback => callback("und"))
                 alreadyGotTheLanguage = true
-            })
-        } else {
-            if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
-                pageTranslator.translatePage()
             }
-            observers.forEach(callback => callback("und"))
-            alreadyGotTheLanguage = true
+        }
+
+        if (document.visibilityState == "visible") {
+            foo()
+        } else {
+            const handleVisibilityChange = function () {
+                if (document.visibilityState == "visible") {
+                    document.removeEventListener("visibilitychange", handleVisibilityChange)
+                    foo()
+                }
+            }
+            document.addEventListener("visibilitychange", handleVisibilityChange, false)
         }
     }
 
