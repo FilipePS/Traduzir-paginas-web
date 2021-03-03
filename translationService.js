@@ -120,7 +120,7 @@ var translationService = {}
     translationService.google = {}
     translationService.yandex = {}
 
-    function translateHTML(translationService, targetLanguage, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress) {
+    async function translateHTML(translationService, targetLanguage, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress) {
         const thisTranslationProgress = []
         const externalTranslationProgress = []
 
@@ -129,7 +129,12 @@ var translationService = {}
             if (transInfo) {
                 thisTranslationProgress.push(transInfo)
             } else {
-                const translated = translationCache.get(translationService, str, targetLanguage)
+                let translated
+                try {
+                    translated = await translationCache.get(translationService, str, targetLanguage)
+                } catch (e) {
+                    console.error(e)
+                }
                 let newTransInfo
                 if (translated) {
                     newTransInfo = {
@@ -186,6 +191,13 @@ var translationService = {}
                         if (responseJson[index]) {
                             etp.status = "complete"
                             etp.translated = responseJson[index]
+                            
+                            try {
+                                //TODO ERRO AQUI FAZ DA LENTIDAO
+                                translationCache.set(translationService, etp.source, etp.translated, targetLanguage)
+                            } catch (e) {
+                                console.error(e)
+                            }
                         } else {
                             etp.status = "error"
                         }
@@ -204,7 +216,7 @@ var translationService = {}
             })
         }
 
-        return new Promise((resolve, reject) => {
+        const promise =  new Promise((resolve, reject) => {
             let iterationsCount = 0
             function waitForTranslationFinish() {
                 let isTranslating = false
@@ -226,6 +238,12 @@ var translationService = {}
             }
             waitForTranslationFinish()
         })
+
+        try {
+            return await promise
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     translationService.google.translateHTML = function (sourceArray3d, targetLanguage) {
