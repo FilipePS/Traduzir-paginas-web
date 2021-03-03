@@ -45,6 +45,29 @@ twpConfig.onReady(function () {
     function translateThisNode(node) {
         if (!divElement) return;
         hideTranslatedText()
+        
+        let hasChildNodeBlock = function (node) {
+            let foo = function (node) {
+                if (htmlTagsInlineText.indexOf(node.nodeName) === -1 && htmlTagsInlineIgnore.indexOf(node.nodeName) === -1) {
+                    return true
+                }
+
+                for (const child of node.childNodes) {
+                    if (foo(child)) {
+                        return true
+                    }
+                }
+            }
+            for (const child of node.childNodes) {
+                if (foo(child)) {
+                    return true
+                }
+            }
+        }
+        
+        if (htmlTagsInlineText.indexOf(node.nodeName) === -1 && htmlTagsInlineIgnore.indexOf(node.nodeName) === -1) {
+            if (hasChildNodeBlock(node)) return;
+        }
 
         let text
         if (node.nodeName === "INPUT" || node.nodeName === "TEXTAREA") {
