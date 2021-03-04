@@ -114,7 +114,7 @@ twpConfig.onReady(function () {
             text = node.innerText
         }
         
-        if (!text || text.length < 1) return;
+        if (!text || text.length < 1 || text > 1000) return;
 
         backgroundTranslateSingleText(currentPageTranslatorService, currentTargetLanguage, text)
         .then(result => {
