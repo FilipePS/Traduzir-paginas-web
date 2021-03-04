@@ -31,7 +31,8 @@
     "web_accessible_resources": [
         "icons/google-translate-32.png",
         "icons/yandex-translate-32.png",
-        "icons/swap-32.png"
+        "icons/swap-32.png",
+        "pagePopupMobile.html"
     ],
 
     "options_ui": {
@@ -63,7 +64,7 @@
             "matches": ["<all_urls>"],
             "run_at": "document_end",
             "all_frames": false,
-            "js": ["scripts/mobile.js"]
+            "js": ["mobile.js"]
         }
     ],
 

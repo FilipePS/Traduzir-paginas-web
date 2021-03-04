@@ -41,6 +41,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         return true
     } else if (request.action === "setPageLanguageState") {
         updateContextMenu(request.pageLanguageState)
+    } else if (request.action === "translatePage") {
+        chrome.tabs.sendMessage(sender.tab.id, {action: "translatePage"})
+    } else if (request.action === "restorePage") {
+        chrome.tabs.sendMessage(sender.tab.id, {action: "restorePage"})
+    } else if (request.action === "swapTranslationService") {
+        chrome.tabs.sendMessage(sender.tab.id, {action: "swapTranslationService"})
+    } else if (request.action === "closePagePopupMobile") {
+        chrome.tabs.sendMessage(sender.tab.id, {action: "closePagePopupMobile"})
     }
 })
 
