@@ -457,55 +457,56 @@ twpConfig.onReady(function() {
             observers.push(callback)
         }
     }
-    if (chrome.extension.inIncognitoContext) {
-        observers.forEach(callback => callback("und"))
-        alreadyGotTheLanguage = true
-    } else {
-        const foo = function () {
-            if (chrome.i18n.detectLanguage) {
-                chrome.i18n.detectLanguage(document.body.innerText, result => {
-                    for (const langInfo of result.languages) {
-                        const langCode = twpLang.checkLanguageCode(langInfo.language)
-                        if (langCode) {
-                            originalPageLanguage = langCode
-                        }
-                        if (pageLanguageState === "original") {
-                            if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
-                                if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
-                                    pageTranslator.translatePage()
-                                } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
-                                    pageTranslator.translatePage()
-                                }
+
+    const detectPageLanguage = function () {
+        if (chrome.i18n.detectLanguage) {
+            chrome.i18n.detectLanguage(document.body.innerText, result => {
+                for (const langInfo of result.languages) {
+                    const langCode = twpLang.checkLanguageCode(langInfo.language)
+                    if (langCode) {
+                        originalPageLanguage = langCode
+                    }
+                    if (pageLanguageState === "original") {
+                        if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
+                            if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
+                                pageTranslator.translatePage()
+                            } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                                pageTranslator.translatePage()
                             }
                         }
-                        break
                     }
-        
-                    observers.forEach(callback => callback(originalPageLanguage))
-                    alreadyGotTheLanguage = true
-                })
-            } else {
-                if (pageLanguageState === "original") {
-                    if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
-                        pageTranslator.translatePage()
-                    }
+                    break
                 }
-                observers.forEach(callback => callback("und"))
+    
+                observers.forEach(callback => callback(originalPageLanguage))
                 alreadyGotTheLanguage = true
+            })
+        } else {
+            if (pageLanguageState === "original") {
+                if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                    pageTranslator.translatePage()
+                }
             }
+            observers.forEach(callback => callback("und"))
+            alreadyGotTheLanguage = true
         }
+    }
 
+    if (chrome.i18n.detectLanguage || !chrome.extension.inIncognitoContext) {
         if (document.visibilityState == "visible") {
-            foo()
+            detectPageLanguage()
         } else {
             const handleVisibilityChange = function () {
                 if (document.visibilityState == "visible") {
                     document.removeEventListener("visibilitychange", handleVisibilityChange)
-                    foo()
+                    detectPageLanguage()
                 }
             }
             document.addEventListener("visibilitychange", handleVisibilityChange, false)
-        }
+        }   
+    } else {
+        observers.forEach(callback => callback("und"))
+        alreadyGotTheLanguage = true
     }
 
     pageTranslator.onGetOriginalPageLanguage(function () {
