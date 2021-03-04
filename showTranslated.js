@@ -33,12 +33,6 @@ twpConfig.onReady(function () {
         }
     })
 
-    pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
-        originalPageLanguage = pagelanguage
-        translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
-        showTranslated.enable()
-    })
-
     const htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BDO', 'BIG', 'CITE', 'DFN', 'EM', 'I', 'LABEL', 'Q', 'S', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U', 'TT', 'VAR']
     const htmlTagsInlineIgnore = ['BR', 'CODE', 'KBD', 'WBR', 'PRE'] // and input if type is submit or button
     const htmlTagsNoTranslate = ['TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
@@ -219,6 +213,12 @@ twpConfig.onReady(function () {
     }
 
     showTranslated.enable()
+
+    pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
+        originalPageLanguage = pagelanguage
+        translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
+        showTranslated.enable()
+    })
     
     pageTranslator.onPageLanguageStateChange(pageLanguageState => {
         if (pageLanguageState === "translated") {
