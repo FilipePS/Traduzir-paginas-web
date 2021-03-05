@@ -56,7 +56,7 @@
             "matches": ["<all_urls>"],
             "run_at": "document_end",
             "all_frames": false,
-            "js": ["scripts/mobile.js"]
+            "js": ["popupMobile.js"]
         }
     ],
 
