@@ -412,6 +412,17 @@ twpConfig.onReady(function() {
         attributesToTranslate = []
     }
 
+    pageTranslator.swapTranslationService = function () {
+        if (currentPageTranslatorService === "google") {
+            currentPageTranslatorService = "yandex"
+        } else {
+            currentPageTranslatorService = "google"
+        }
+        if (pageLanguageState === "translated") {
+            pageTranslator.translatePage()
+        }
+    }
+
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "translatePage") {
             if (request.targetLanguage === "original") {
@@ -430,14 +441,7 @@ twpConfig.onReady(function() {
         } else if (request.action === "getCurrentPageTranslatorService") {
             sendResponse(currentPageTranslatorService)
         } else if (request.action === "swapTranslationService") {
-            if (currentPageTranslatorService === "google") {
-                currentPageTranslatorService = "yandex"
-            } else {
-                currentPageTranslatorService = "google"
-            }
-            if (pageLanguageState === "translated") {
-                pageTranslator.translatePage()
-            }
+            pageTranslator.swapTranslationService()
         } else if (request.action === "toggle-translation") {
             if (pageLanguageState === "translated") {
                 pageTranslator.restorePage()
@@ -466,7 +470,7 @@ twpConfig.onReady(function() {
                     if (langCode) {
                         originalPageLanguage = langCode
                     }
-                    if (pageLanguageState === "original") {
+                    if (pageLanguageState === "original" && !plataformInfo.isMobile.any) {
                         if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
                             if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
                                 pageTranslator.translatePage()
@@ -482,7 +486,7 @@ twpConfig.onReady(function() {
                 alreadyGotTheLanguage = true
             })
         } else {
-            if (pageLanguageState === "original") {
+            if (pageLanguageState === "original" && !plataformInfo.isMobile.any) {
                 if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
                     pageTranslator.translatePage()
                 }

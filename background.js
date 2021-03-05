@@ -41,14 +41,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         return true
     } else if (request.action === "setPageLanguageState") {
         updateContextMenu(request.pageLanguageState)
-    } else if (request.action === "translatePage") {
-        chrome.tabs.sendMessage(sender.tab.id, {action: "translatePage"})
-    } else if (request.action === "restorePage") {
-        chrome.tabs.sendMessage(sender.tab.id, {action: "restorePage"})
-    } else if (request.action === "swapTranslationService") {
-        chrome.tabs.sendMessage(sender.tab.id, {action: "swapTranslationService"})
-    } else if (request.action === "closePagePopupMobile") {
-        chrome.tabs.sendMessage(sender.tab.id, {action: "closePagePopupMobile"})
+    } else if (request.action === "openOptionsPage") {
+        chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
     }
 })
 
@@ -162,7 +156,7 @@ twpConfig.onReady(function() {
         })
         
         chrome.browserAction.onClicked.addListener(tab => {
-            chrome.tabs.sendMessage(tab.id, {action: "showMobilePopup"}, {frameId: 0})
+            chrome.tabs.sendMessage(tab.id, {action: "showPopupMobile"}, {frameId: 0})
         })
     } else {
         chrome.browserAction.setPopup({popup: "popup/popup.html"})

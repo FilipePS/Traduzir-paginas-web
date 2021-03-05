@@ -18,6 +18,7 @@ var twpConfig = {}
         showOriginalTextWhenHovering: "yes",
         showTranslatedTextWhenHovering: "yes",
         showTranslateSelectedButton: "yes",
+        showPopupMobile: "yes",
         darkMode: "auto",
         showReleaseNotes: "yes",
     }
