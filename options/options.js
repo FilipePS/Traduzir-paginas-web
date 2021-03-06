@@ -5,7 +5,7 @@ var $ = document.querySelector.bind(document)
 twpConfig.onReady(function () {
     function hashchange() {
         const hash = location.hash || "#languages"
-        const divs = [$("#languages"), $("#sites"), $("#translations"), $("#style"), $("#hotkeys"), $("#donation"), $("#release_notes")]
+        const divs = [$("#languages"), $("#sites"), $("#translations"), $("#style"), $("#hotkeys"), $("#others"), $("#donation"), $("#release_notes")]
         divs.forEach(element => {
             element.style.display = "none"
         })
@@ -16,6 +16,18 @@ twpConfig.onReady(function () {
 
         $(hash).style.display = "block"
         $('a[href="' + hash + '"]').classList.add("w3-light-grey")
+
+        let text
+        if (hash === "#donation") {
+            text = chrome.i18n.getMessage("lblMakeDonation")
+        } else if (hash === "#release_notes") {
+            text = chrome.i18n.getMessage("lblReleaseNotes")
+        } else {
+            text = chrome.i18n.getMessage("lblSettings")
+        }
+        if (text) {
+            $("#itemSelectedName").textContent = text
+        }
     }
     hashchange()
     window.addEventListener("hashchange", hashchange)

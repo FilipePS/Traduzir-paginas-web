@@ -166,5 +166,53 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Show original text when hovering"
+  },
+  "msgLanguages": {
+    "message": "Languages"
+  },
+  "msgSites": {
+    "message": "Sites"
+  },
+  "msgTranslations": {
+    "message": "Translations"
+  },
+  "msgStyle": {
+    "message": "Style"
+  },
+  "msgHotkeys": {
+    "message": "Hotkeys"
+  },
+  "lblMakeDonation": {
+    "message": "Make a donation"
+  },
+  "lblReleaseNotes": {
+    "message": "Release Notes"
+  },
+  "lblReport": {
+    "message": "Report a problem"
+  },
+  "lblSettings": {
+    "message": "Settings"
+  },
+  "lblAdd": {
+    "message": "Add"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Show translated text when hovering"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Keyboard shortcuts"
+  },
+  "msgToTranslateSites": {
+    "message": "To translate the site"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Thank you for using this extension."
+  },
+  "msgIWillBeGrateful": {
+    "message": "I will be grateful if you can make a donation."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Always translate this language"
   }
 }

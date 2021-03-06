@@ -166,5 +166,53 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Mostrar o texto original ao passar o mouse"
+  },
+  "msgLanguages": {
+    "message": "Idiomas"
+  },
+  "msgSites": {
+    "message": "Sites"
+  },
+  "msgTranslations": {
+    "message": "Traduções"
+  },
+  "msgStyle": {
+    "message": "Estilo"
+  },
+  "msgHotkeys": {
+    "message": "Atalhos"
+  },
+  "lblMakeDonation": {
+    "message": "Faça uma doação"
+  },
+  "lblReleaseNotes": {
+    "message": "Notas da versão"
+  },
+  "lblReport": {
+    "message": "Reportar um problema"
+  },
+  "lblSettings": {
+    "message": "Configurações"
+  },
+  "lblAdd": {
+    "message": "Adicionar"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Mostrar tradução ao passar o mouse"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Atalhos do teclado"
+  },
+  "msgToTranslateSites": {
+    "message": "Para traduzir o site"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Obrigado por usar esta extensão."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Ficarei grato se você puder fazer uma doação."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Sempre traduzir este idioma"
   }
 }

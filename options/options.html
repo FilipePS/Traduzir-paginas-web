@@ -15,21 +15,22 @@
             <h3 class="w3-wide"><b data-i18n="extensionName">Translate Web Pages</b></h3>
         </div>
         <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-            <a href="#languages" class="w3-bar-item w3-button">Languages</a>
-            <a href="#sites" class="w3-bar-item w3-button">Sites</a>
-            <a href="#translations" class="w3-bar-item w3-button">Translations</a>
-            <a href="#style" class="w3-bar-item w3-button">Style</a>
-            <a href="#hotkeys" class="w3-bar-item w3-button">Hotkeys</a>
+            <a href="#languages" class="w3-bar-item w3-button" data-i18n="msgLanguages">Languages</a>
+            <a href="#sites" class="w3-bar-item w3-button" data-i18n="msgSites">Sites</a>
+            <a href="#translations" class="w3-bar-item w3-button" data-i18n="msgTranslations">Translations</a>
+            <a href="#style" class="w3-bar-item w3-button" data-i18n="msgStyle">Style</a>
+            <a href="#hotkeys" class="w3-bar-item w3-button" data-i18n="msgHotkeys">Hotkeys</a>
+            <a href="#others" class="w3-bar-item w3-button" data-i18n="lblOthers">Others</a>
         </div>
-        <b><a href="#donation" class="w3-bar-item w3-button w3-padding">Make a donation</a></b>
-        <a href="#release_notes" class="w3-bar-item w3-button w3-padding">Release Notes</a>
+        <b><a href="#donation" class="w3-bar-item w3-button w3-padding" data-i18n="lblMakeDonation">Make a donation</a></b>
+        <a href="#release_notes" class="w3-bar-item w3-button w3-padding" data-i18n="lblReleaseNotes">Release Notes</a>
         <a href="https://github.com/FilipePS/Traduzir-paginas-web/issues" target="blank"
-            class="w3-bar-item w3-button w3-padding">Report a problem</a>
+            class="w3-bar-item w3-button w3-padding" data-i18n="lblReport">Report a problem</a>
     </nav>
 
     <div class="w3-main" style="margin-left: 300px">
         <header class="w3-container w3-xlarge">
-            <p id="itemSelectedName">Settings</p>
+            <p id="itemSelectedName" data-i18n="lblSettings">Settings</p>
         </header>
 
         <div>
@@ -56,7 +57,7 @@
                     </div>
                     <div class="w3-display-right">
                         <div style="position: relative;">
-                            <button class="w3-button w3-blue w3-round w3-margin-right add">Add</button>
+                            <button class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add</button>
                             <select id="addToNeverTranslateLangs" class="add">
                                 <option value="" selected disabled hidden></option>
                             </select>
@@ -71,7 +72,7 @@
                     </div>
                     <div class="w3-display-right">
                         <div style="position: relative;">
-                            <button class="w3-button w3-blue w3-round w3-margin-right add">Add</button>
+                            <button class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add</button>
                             <select id="addToAlwaysTranslateLangs" class="add">
                                 <option value="" selected disabled hidden></option>
                             </select>
@@ -88,7 +89,7 @@
                     </div>
                     <div class="w3-display-right">
                         <button id="addToAlwaysTranslateSites"
-                            class="w3-button w3-blue w3-round w3-margin-right add">Add</button>
+                            class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add</button>
                     </div>
                 </div>
                 <ul id="alwaysTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
@@ -99,7 +100,7 @@
                     </div>
                     <div class="w3-display-right">
                         <button id="addToNeverTranslateSites"
-                            class="w3-button w3-blue w3-round w3-margin-right add">Add</button>
+                            class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add</button>
                     </div>
                 </div>
                 <ul id="neverTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
@@ -118,7 +119,7 @@
                     <option value="no" data-i18n="msgNo">No</option>
                 </select>
                 <br>
-                <p><b>Show translated text when hovering </b></p>
+                <p><b data-i18n="lblShowTranslatedWhenHovering">Show translated text when hovering</b></p>
                 <select id="showTranslateSelectedContextMenu" class="w3-select w3-margin">
                     <option value="yes" data-i18n="msgYes">Yes</option>
                     <option value="no" data-i18n="msgNo">No</option>
@@ -141,19 +142,27 @@
             </div>
 
             <div id="hotkeys" class="w3-container">
-                <p><b>Keyboard shortcuts</b></p>
+                <p><b data-i18n="lblKeyboardShortcuts">Keyboard shortcuts</b></p>
                 <ul class="w3-ul">
                     <li class="w3-row w3"><span><kbd>Alt</kbd> + <kbd>T</kbd></span>
-                        <span>To translate the site</span></li>
+                        <span data-i18n="msgToTranslateSites">To translate the site</span></li>
                 </ul>
+            </div>
+
+            <div id="others" class="w3-container">
+                <p><b data-i18n="lblShowReleaseNotes">Show release notes when updating</b></p>
+                <select id="showReleaseNotes" class="w3-select w3-margin">
+                    <option value="yes" data-i18n="msgYes">Yes</option>
+                    <option value="no" data-i18n="msgNo">No</option>
+                </select>
             </div>
         </div>
 
         <div>
             <div id="donation" class="w3-container">
                 <div class="w3-light-blue w3-padding w3-round">
-                    <p>Thank you for using this extension.</p>
-                    <p>I will be grateful if you can make a donation.</p>
+                    <p data-i18n="msgThanksForUseExtension">Thank you for using this extension.</p>
+                    <p data-i18n="msgIWillBeGrateful">I will be grateful if you can make a donation.</p>
                     <a href="https://www.patreon.com/filipeps" target="blank"><img src="/icons/patreon.png"
                             alt="Become a patreon" width="200px"></a>
                     <br><br>
