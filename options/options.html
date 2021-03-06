@@ -1,110 +1,107 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Translate Web Pages - Options</title>
-    <link rel="stylesheet" href="/w3css/4/w3.css">
-    <link rel="stylesheet" href="options.css">
-    <script src="/languages.js"></script>
-</head>
-<body>
-    <div class="w3-container">
-        <a id="lblPlsDonate" class="w3-btn w3-border w3-border-blue w3-round w3-large w3-block" href="https://www.patreon.com/filipeps" target="_blank">Help the developer with a donation</a>
-    </div>
-    <div class="w3-container">
-        <h3 id="lblTargetLanguage">Target language</h3>
-        <select id="selectTargetLanguage" class="w3-select w3-border w3-round" size></select>
-    </div>
-    <div class="w3-container">
-        <h3 id="lblTranslationEngine">Translation engine</h3>
-        <select id="selectTranslationEngine" class="w3-select w3-border w3-round" size>
-            <option value="google">Google</option>
-            <option value="yandex">Yandex</option>
-        </select>
-    </div>
-    <div class="w3-container">
-        <h3 id="lblDarkMode">Dark Mode</h3>
-        <select id="selectDarkMode" class="w3-select w3-border w3-round" size>
-            <option value="auto" selected>Automatic</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
-    </div>
-    <div class="w3-container desktop-only">
-        <h3 id="lblShowOriginalTextWhenHovering">Show original text when hovering</h3>
-        <select id="selectShowOriginalTextWhenHovering" class="w3-select w3-border w3-round" size>
-            <option value="yes" selected>Yes</option>
-            <option value="no">No</option>
-        </select>
-    </div>
-    <div class="w3-container" style="display: none;">
-        <h3 id="lblUseNewAlgorithm">Use the new translation algorithm?</h3>
-        <select id="selectUseNewAlgorithm" class="w3-select w3-border w3-round" size>
-            <option value="yes" selected>Yes (recommended)</option>
-            <option value="no">No (Use widgets)</option>
-        </select>
-    </div>
-    <div class="w3-container">
-        <h3 id="lblShowTranslateSelectedButton">Show the button to translate the selected text</h3>
-        <select id="selectShowTranslateSelectedButton" class="w3-select w3-border w3-round" size>
-            <option value="yes" selected>Yes</option>
-            <option value="no">No</option>
-        </select>
-    </div>
-    <div class="w3-container desktop-only">
-        <h3 id="lblShowTranslateSelectedContextMenu">Show the option to translate the selected text in the context menu</h3>
-        <select id="selectShowTranslateSelectedContextMenu" class="w3-select w3-border w3-round" size>
-            <option value="yes" selected>Yes</option>
-            <option value="no">No</option>
-        </select>
-    </div>
-    <div class="w3-container desktop-only">
-        <h3 id="lblShowContextMenu">Show the option to translate the page in the context menu</h3>
-        <select id="selectShowContextMenu" class="w3-select w3-border w3-round" size>
-            <option value="yes" selected>Yes</option>
-            <option value="no">No</option>
-        </select>
-    </div>
-    <div class="w3-container mobile-only">
-        <h3 id="lblPopupConfig">Show the mobile popup</h3>
-        <select id="selectPopupConfig" class="w3-select w3-border w3-round" size>
-            <option value="auto" selected>Automatically</option>
-            <option value="threeFingersOnTheScreen">When I touch three fingers on the screen</option>
-            <option value="justWhenIClickTranlateThisSite">Only when I click "Translate this site"</option>
-        </select>
-    </div>
-    <div class="w3-container">
-        <h3 id="lblShowReleaseNotes">Show release notes when updating</h3>
-        <select id="selectShowReleaseNotes" class="w3-select w3-border w3-round" size>
-            <option value="yes" selected>Yes</option>
-            <option value="no">No</option>
-        </select>
-    </div>
-    <div class="w3-container">
-        <h3 id="lblOthers">Others</h3>
-    </div>
-    <div class="w3-container">
-        <button id="neverTranslateListButton" class="w3-button w3-round w3-light-grey w3-border"><span id="lblNeverTranslate">Never translate this sites</span> <i class="arrow down"></i></button>
-        <ul id="neverTranslateList" placeholder="You have not added any sites to this list." class="w3-ul w3-card-4 w3-margin-top" style="display: none;"></ul>
-    </div>
-    <br>
-    <div class="w3-container">
-        <button id="alwaysTranslateSitesListButton" class="w3-button w3-round w3-light-grey w3-border desktop-only"><span id="lblAlwaysTranslateSites">Always translate this sites</span> <i class="arrow down"></i></button>
-        <ul id="alwaysTranslateSitesList" placeholder="You have not added any sites to this list." class="w3-ul w3-card-4 w3-margin-top" style="display: none;"></ul>
-    </div>
-    <br>
-    <div class="w3-container">
-        <button id="neverTranslateLangsListButton" class="w3-button w3-round w3-light-grey w3-border"><span id="lblNeverTranslateLangs">Never translate these languages</span> <i class="arrow down"></i></button>
-        <ul id="neverTranslateLangsList" placeholder="You have not added any languages to this list." class="w3-ul w3-card-4 w3-margin-top" style="display: none;"></ul>
-    </div>
-    <br>
-    <div class="w3-container">
-        <button id="alwaysTranslateListButton" class="w3-button w3-round w3-light-grey w3-border desktop-only"><span id="lblAlwaysTranslate">Automatically translate these languages</span> <i class="arrow down"></i></button>
-        <ul id="alwaysTranslateList" placeholder="You have not added any languages to this list." class="w3-ul w3-card-4 w3-margin-top" style="display: none;"></ul>
-    </div>
-    <br>
+<title>Translate Web Pages</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/w3css/4/w3.css">
+<style>
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    }
 
+    .list {
+        overflow: auto;
+        max-height: 250px;
+    }
+
+    #addToNeverTranslateLangs, #addToAlwaysTranslateLangs {
+        appearance: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .add {
+        width: 100px;
+        height: 35px;
+    }
+</style>
+
+<body class="w3-content" style="max-width:1200px">
+    <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3; width:300px">
+        <div class="w3-container w3-display-container w3-padding-16">
+            <h3 class="w3-wide"><b>Translate Web Pages</b></h3>
+        </div>
+        <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+            <a href="#languages" class="w3-bar-item w3-button">Languages</a>
+            <a href="#sites" class="w3-bar-item w3-button">Sites</a>
+            <a href="#translations" class="w3-bar-item w3-button">Translations</a>
+            <a href="#appearance" class="w3-bar-item w3-button">Style</a>
+            <a href="#hotkeys" class="w3-bar-item w3-button">Hotkeys</a>
+        </div>
+        <a href="#donation" class="w3-bar-item w3-button w3-padding">Make a donation</a>
+        <a href="#release_notes" class="w3-bar-item w3-button w3-padding">Release Notes</a>
+        <a href="#report" class="w3-bar-item w3-button w3-padding">Report a problem</a>
+    </nav>
+
+    <div class="w3-main" style="margin-left: 300px">
+        <header class="w3-container w3-xlarge">
+            <p id="itemSelectedName">Settings</p>
+        </header>
+
+        <div id="settings">
+            <div id="languages">
+                <p><b>Target languages</b></p>
+                <ul class="w3-ul">
+                    <li class="w3-row">
+                        <p class="w3-half">Target language 1</p>
+                        <select id="targetLanguage1" class="w3-select w3-half w3-border w3-round"></select>
+                    </li>
+                    <li class="w3-row">
+                        <p class="w3-half">Target language 2</p>
+                        <select id="targetLanguage2" class="w3-select w3-half w3-border w3-round"></select>
+                    </li>
+                    <li class="w3-row">
+                        <p class="w3-half">Target language 3</p>
+                        <select id="targetLanguage3" class="w3-select w3-half w3-border w3-round"></select>
+                    </li>
+                </ul>
+
+                <div class="w3-display-container w3-padding w3-margin-top">
+                    <div class="w3-display-left">
+                        <p><b>Never translate these languages</b></p>
+                    </div>
+                    <div class="w3-display-right">
+                        <div style="position: relative;">
+                            <button class="w3-button w3-blue w3-round w3-margin-right add">Add</button>
+                            <select id="addToNeverTranslateLangs" class="add"></select>
+                        </div>
+                    </div>
+                </div>
+                <ul id="neverTranslateLangs" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+
+                <div class="w3-display-container w3-padding w3-margin-top">
+                    <div class="w3-display-left">
+                        <p><b>Always translate these languages</b></p>
+                    </div>
+                    <div class="w3-display-right">
+                        <div style="position: relative;">
+                            <button class="w3-button w3-blue w3-round w3-margin-right add">Add</button>
+                            <select id="addToAlwaysTranslateLangs" class="add"></select>
+                        </div>
+                    </div>
+                </div>
+                <ul id="alwaysTranslateLangs" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="/plataformInfo.js"></script>
+    <script src="/languages.js"></script>
+    <script src="/config.js"></script>
     <script src="options.js"></script>
 </body>
+
 </html>
