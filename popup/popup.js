@@ -201,7 +201,7 @@ twpConfig.onReady(function () {
                     chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
                     break
                 case "donate":
-                    chrome.tabs.create({url: "https://www.patreon.com/filipeps"})
+                    chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html#donation")})
                     break
                 default:
                     break

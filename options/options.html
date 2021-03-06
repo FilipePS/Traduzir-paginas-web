@@ -21,7 +21,7 @@
             <a href="#style" class="w3-bar-item w3-button">Style</a>
             <a href="#hotkeys" class="w3-bar-item w3-button">Hotkeys</a>
         </div>
-        <a href="#donation" class="w3-bar-item w3-button w3-padding">Make a donation</a>
+        <b><a href="#donation" class="w3-bar-item w3-button w3-padding">Make a donation</a></b>
         <a href="#release_notes" class="w3-bar-item w3-button w3-padding">Release Notes</a>
         <a href="https://github.com/FilipePS/Traduzir-paginas-web/issues" target="blank"
             class="w3-bar-item w3-button w3-padding">Report a problem</a>
@@ -151,7 +151,50 @@
 
         <div>
             <div id="donation" class="w3-container">
+                <div class="w3-light-blue w3-padding w3-round">
+                    <p>Thank you for using this extension.</p>
+                    <p>I will be grateful if you can make a donation.</p>
+                    <a href="https://www.patreon.com/filipeps" target="blank"><img src="/icons/patreon.png"
+                            alt="Become a patreon" width="200px"></a>
+                    <br><br>
+                    <form action="https://www.coinpayments.net/index.php" method="post" target="blank">
+                        <input type="hidden" name="cmd" value="_donate">
+                        <input type="hidden" name="reset" value="1">
+                        <input type="hidden" name="merchant" value="c1d8fe2f52abea27ac1e160150272540">
+                        <input type="hidden" name="item_name" value="Translate Web Pages">
+                        <input type="hidden" name="currency" value="USD">
+                        <input type="hidden" name="amountf" value="10.00000000">
+                        <input type="hidden" name="allow_amount" value="1">
+                        <input type="hidden" name="want_shipping" value="0">
+                        <input type="hidden" name="allow_extra" value="1">
+                        <input type="image" src="/icons/coinpayments.png" alt="CoinPayments.net">
+                    </form>
+                    <p>Bitcoin: <code>3QYYHGKMxZYHPFdaURB8qqRafMcjzFJy4g</code></p>
 
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="black">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="UKVQDPTUB5HTG">
+                        <table>
+                            <tr>
+                                <td><input type="hidden" name="on0" value="Donate With Paypal">Donate With Paypal</td>
+                            </tr>
+                            <tr>
+                                <td><select name="os0">
+                                        <option value="Maximum">50,00 BRL</option>
+                                        <option value="Pizza" selected>30,00 BRL</option>
+                                        <option value="Lunch">15,00 BRL</option>
+                                        <option value="Coffe">5,00 BRL</option>
+                                    </select> </td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="currency_code" value="BRL">
+                        <input type="image" src="/icons/btn_donate_LG.webp"
+                            border="0" name="submit"
+                            alt="PayPal">
+                        <img alt="" border="0" src="/icons/pixel.gif" width="1"
+                            height="1">
+                    </form>
+                </div>
             </div>
 
             <div id="release_notes" class="w3-container">
@@ -159,11 +202,11 @@
                     <h4>7.7</h4>
                     <ul>
                         <li>Fixed</li>
-                            <ul>
-                                <li>HTML tags with editable content are no longer translated</li>
-                                <li>Google translation working in China</li>
-                                <li>Dark mode on the settings page</li>
-                            </ul>
+                        <ul>
+                            <li>HTML tags with editable content are no longer translated</li>
+                            <li>Google translation working in China</li>
+                            <li>Dark mode on the settings page</li>
+                        </ul>
                         <li>Improved interface translations for
                             <ul>
                                 <li>Vietnamese</li>
@@ -204,7 +247,8 @@
                         <li>Show original text when hovering</li>
                         <li>Added option to never translate a language</li>
                         <li>Now the release notes page will appear at most once every 3 weeks</li>
-                        <li>When a website has the url or language set to never be translated, the mobile popup and the button for translating selected text will not appear</li>
+                        <li>When a website has the url or language set to never be translated, the mobile popup and the
+                            button for translating selected text will not appear</li>
                         <li>Added option to hide the button to translate the selected text from the context menu</li>
                         <li>Dark mode added for mobile popup</li>
                         <li>Updated interface translations</li>
@@ -269,7 +313,8 @@
                 <section>
                     <h4>6.8</h4>
                     <ul>
-                        <li>Removed translation using widgets. <i>Reason: widgets load external scripts, which goes against Firefox's extension policy</i></li>
+                        <li>Removed translation using widgets. <i>Reason: widgets load external scripts, which goes
+                                against Firefox's extension policy</i></li>
                         <li>Added the "Translate this site" button on Firefox Mobile</li>
                         <li>Change popup layout for desktop</li>
                         <li>Updated interface translations</li>
