@@ -255,7 +255,7 @@ twpConfig.onReady(function () {
 
             const menuSelectLanguage = getElemById("menuSelectLanguage")
             langsSorted.forEach(value => {
-                if (value[0] == "zh") return;
+                if (value[0] === "zh" || value[0] === "un" || value[0] === "und") return;
                 const a = document.createElement("a")
                 a.setAttribute("value", value[0])
                 a.textContent = value[1]

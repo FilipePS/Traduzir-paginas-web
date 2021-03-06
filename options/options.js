@@ -52,7 +52,7 @@ twpConfig.onReady(function () {
         })
 
         langsSorted.forEach(value => {
-            if (value[0] === "zh") return;
+            if (value[0] === "zh" || value[0] === "un" || value[0] === "und") return;
             const option = document.createElement("option")
             option.value = value[0]
             option.textContent = value[1]
