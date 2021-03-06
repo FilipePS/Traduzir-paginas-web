@@ -135,7 +135,7 @@
     "message": "Vedno prevedi te strani"
   },
   "msgHelpDevelopment": {
-    "message": "Pomagaj razvoju te razširitve prek anonimne donacije."
+    "message": "Pomagaj razvoju te razširitve preko anonimne donacije."
   },
   "msgDonateWithPaypal": {
     "message": "Donacija preko Paypala"
@@ -159,7 +159,7 @@
     "message": "Pokaži možnost prevoda izbranega besedila v kontekstnem meniju"
   },
   "lblNeverTranslateLangs": {
-    "message": "Nikoli ne prevajajte teh jezikov"
+    "message": "Nikoli ne prevajaj teh jezikov"
   },
   "btnNeverTranslateThisLanguage": {
     "message": "Nikoli ne prevajajte tega jezika"
