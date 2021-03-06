@@ -318,10 +318,10 @@ twpConfig.onReady(function () {
     }
     $("#showOriginalTextWhenHovering").value = twpConfig.get("showOriginalTextWhenHovering")
 
-    $("#showTranslateSelectedContextMenu").onchange = e => {
-        twpConfig.set("showTranslateSelectedContextMenu", e.target.value)
+    $("#showTranslatedTextWhenHovering").onchange = e => {
+        twpConfig.set("showTranslatedTextWhenHovering", e.target.value)
     }
-    $("#showTranslateSelectedContextMenu").value = twpConfig.get("showTranslateSelectedContextMenu")
+    $("#showTranslatedTextWhenHovering").value = twpConfig.get("showTranslatedTextWhenHovering")
 
     $("#showTranslateSelectedButton").onchange = e => {
         twpConfig.set("showTranslateSelectedButton", e.target.value)
