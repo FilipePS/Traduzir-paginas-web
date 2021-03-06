@@ -94,6 +94,8 @@ chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == "install") {
         chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
     } else if (details.reason == "update" && chrome.runtime.getManifest().version != details.previousVersion) {
+        if (plataformInfo.isMobile.any) return;
+        
         twpConfig.onReady(function () {
             if (twpConfig.get("showReleaseNotes") !== "yes") return;
 
