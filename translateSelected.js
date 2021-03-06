@@ -79,6 +79,48 @@ twpConfig.onReady(function() {
             <div id="selTextTranslated"></div>
         `
 
+        function enableDarkMode() {
+            if (!shadowRoot.getElementById("darkModeElement")) {
+                var el = document.createElement("style")
+                el.setAttribute("id", "darkModeElement")
+                el.setAttribute("rel", "stylesheet")
+                el.textContent = `
+                    * {
+                        scrollbar-color: #202324 #454a4d;
+                    }
+                    #selTextTranslated {
+                        color: white !important;
+                        background-color: #181a1b !important;
+                    }
+                `
+                shadowRoot.appendChild(el)
+            }
+        }
+        
+        function disableDarkMode() {
+            if (shadowRoot.getElementById("#darkModeElement")) {
+                shadowRoot.getElementById("#darkModeElement").remove()
+            }
+        }
+        
+        switch(twpConfig.get("darkMode")) {
+            case "auto":
+                if (matchMedia("(prefers-color-scheme: dark)").matches) {
+                    enableDarkMode()
+                } else {
+                    disableDarkMode()
+                }
+                break
+            case "yes":
+                enableDarkMode()
+                break
+            case "no":
+                disableDarkMode()
+                break
+            default:
+                break
+        }
+
         selTextButton = shadowRoot.getElementById("selTextButton")
         selTextTranslated = shadowRoot.getElementById("selTextTranslated")
 
