@@ -32,8 +32,8 @@
             <p id="itemSelectedName">Settings</p>
         </header>
 
-        <div id="settings">
-            <div id="languages">
+        <div>
+            <div id="languages" class="w3-container">
                 <p><b data-i18n="btnChangeLanguages">Target languages</b></p>
                 <ul class="w3-ul">
                     <li class="w3-row">
@@ -81,7 +81,7 @@
                 <ul id="alwaysTranslateLangs" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
             </div>
 
-            <div id="sites">
+            <div id="sites" class="w3-container">
                 <div class="w3-display-container w3-padding w3-margin-top">
                     <div class="w3-display-left">
                         <p><b data-i18n="lblAlwaysTranslateSites">Always translate these sites</b></p>
@@ -105,42 +105,42 @@
                 <ul id="neverTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
             </div>
 
-            <div id="translations">
+            <div id="translations" class="w3-container">
                 <p><b data-i18n="lblTranslationEngine">Translation service</b></p>
-                <select id="pageTranslatorService" class="w3-input w3-margin">
+                <select id="pageTranslatorService" class="w3-select w3-margin">
                     <option value="google">Google</option>
                     <option value="yandex">Yandex</option>
                 </select>
                 <br>
                 <p><b data-i18n="lblShowOriginalTextWhenHovering">Show original text when hovering</b></p>
-                <select id="showOriginalTextWhenHovering" class="w3-input w3-margin">
+                <select id="showOriginalTextWhenHovering" class="w3-select w3-margin">
                     <option value="yes" data-i18n="msgYes">Yes</option>
                     <option value="no" data-i18n="msgNo">No</option>
                 </select>
                 <br>
                 <p><b>Show translated text when hovering </b></p>
-                <select id="showTranslateSelectedContextMenu" class="w3-input w3-margin">
+                <select id="showTranslateSelectedContextMenu" class="w3-select w3-margin">
                     <option value="yes" data-i18n="msgYes">Yes</option>
                     <option value="no" data-i18n="msgNo">No</option>
                 </select>
                 <br>
                 <p><b data-i18n="lblShowTranslateSelectedButton">Show the button to translate the selected text</b></p>
-                <select id="showTranslateSelectedButton" class="w3-input w3-margin">
+                <select id="showTranslateSelectedButton" class="w3-select w3-margin">
                     <option value="yes" data-i18n="msgYes">Yes</option>
                     <option value="no" data-i18n="msgNo">No</option>
                 </select>
             </div>
 
-            <div id="style">
+            <div id="style" class="w3-container">
                 <p><b data-i18n="lblDarkMode">Dark mode</b></p>
-                <select id="darkMode" class="w3-input w3-margin">
+                <select id="darkMode" class="w3-select w3-margin">
                     <option value="auto" data-i18n="msgAutomatic">Automatic</option>
                     <option value="yes" data-i18n="msgYes">Yes</option>
                     <option value="no" data-i18n="msgNo">No</option>
                 </select>
             </div>
 
-            <div id="hotkeys">
+            <div id="hotkeys" class="w3-container">
                 <p><b>Keyboard shortcuts</b></p>
                 <ul class="w3-ul">
                     <li class="w3-row w3"><span><kbd>Alt</kbd> + <kbd>T</kbd></span>
@@ -150,12 +150,189 @@
         </div>
 
         <div>
-            <div id="donation">
+            <div id="donation" class="w3-container">
 
             </div>
 
-            <div id="release_notes">
-
+            <div id="release_notes" class="w3-container">
+                <section>
+                    <h4>7.7</h4>
+                    <ul>
+                        <li>Fixed</li>
+                            <ul>
+                                <li>HTML tags with editable content are no longer translated</li>
+                                <li>Google translation working in China</li>
+                                <li>Dark mode on the settings page</li>
+                            </ul>
+                        <li>Improved interface translations for
+                            <ul>
+                                <li>Vietnamese</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>7.6</h4>
+                    <ul>
+                        <li>Fixed bug that the extension stops translating with Google</li>
+                        <li>Added interface translation for
+                            <ul>
+                                <li>Vietnamese</li>
+                                <li>Ukrainian</li>
+                            </ul>
+                        </li>
+                        <li>Improved interface translations for
+                            <ul>
+                                <li>Chinese Simplified</li>
+                                <li>Croatian</li>
+                                <li>Turkish</li>
+                                <li>Slovenian</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>7.5</h4>
+                    <ul>
+                        <li>Updated interface translations</li>
+                        <li>Fixed some bugs</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>7.4</h4>
+                    <ul>
+                        <li>Show original text when hovering</li>
+                        <li>Added option to never translate a language</li>
+                        <li>Now the release notes page will appear at most once every 3 weeks</li>
+                        <li>When a website has the url or language set to never be translated, the mobile popup and the button for translating selected text will not appear</li>
+                        <li>Added option to hide the button to translate the selected text from the context menu</li>
+                        <li>Dark mode added for mobile popup</li>
+                        <li>Updated interface translations</li>
+                        <li>Fixed several bugs</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>7.3.x</h4>
+                    <ul>
+                        <li>Fixed button colors in the address bar</li>
+                        <li>Added option to translate selected text through the context menu</li>
+                        <li>Increased button size to translate selected text for mobile devices</li>
+                        <li>Updated translations</li>
+                        <li>Fixed some bugs</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>7.3</h4>
+                    <ul>
+                        <li>Added the toolbar button again</li>
+                        <li>Fixed some bugs</li>
+                        <li>Updated interface translations</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>7.2</h4>
+                    <ul>
+                        <li>Added a button to translate the selected text</li>
+                        <li>Option to switch between dark and light mode</li>
+                        <li>Option to hide the version notes page when updating</li>
+                        <li>Removed toolbar icon</li>
+                        <li>Change the style of the address bar icon</li>
+                        <li>Fixed some bugs</li>
+                        <li>Updated interface translations</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>7.1</h4>
+                    <ul>
+                        <li>Added the option "Always translate this site" in the popup</li>
+                        <li>Fixed some bugs</li>
+                        <li>Updated interface translations</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>7.0</h4>
+                    <ul>
+                        <li>Added dark mode</li>
+                        <li>Added button to show original page in the context menu</li>
+                        <li>Updated interface translations</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>6.9</h4>
+                    <ul>
+                        <li>The button to open the popup was placed in the address bar again</li>
+                        <li>Elements with the class "notranslate" are now not translated</li>
+                        <li>Improved privacy</li>
+                        <li>Updated interface translations</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>6.8</h4>
+                    <ul>
+                        <li>Removed translation using widgets. <i>Reason: widgets load external scripts, which goes against Firefox's extension policy</i></li>
+                        <li>Added the "Translate this site" button on Firefox Mobile</li>
+                        <li>Change popup layout for desktop</li>
+                        <li>Updated interface translations</li>
+                        <li>Fixed several bugs</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>6.7</h4>
+                    <ul>
+                        <li>Fixed some bugs</li>
+                        <li>Added translation of the interface to new languages</li>
+                        <li>Added the shortcut "Alt + T" to translate the page</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>6.6</h4>
+                    <ul>
+                        <li>Added interface translation for Dutch</li>
+                        <li>Improve the translation algorithm</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>6.5</h4>
+                    <ul>
+                        <li>Fixed some bugs</li>
+                        <li>Updated interface translations</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>6.3</h4>
+                    <ul>
+                        <li>Now the translations are super fast</li>
+                        <li>The title of the sites are translated</li>
+                        <li>Polish interface translation added</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>6.2</h4>
+                    <ul>
+                        <li>Added translation for html attributes</li>
+                        <li>Dynamically created 'iframes' are now automatically translated</li>
+                        <li>Improved language detection</li>
+                        <li>Updated interface translation</li>
+                        <li>Fixed several bugs</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>6.1</h4>
+                    <ul>
+                        <li>Support for translating sites into Traditional Chinese (zh-TW)</li>
+                        <li>Added interface translation for Japanese and Traditional Chinese</li>
+                        <li>Updated some interface translations</li>
+                        <li>Fixed some bugs</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>6.0</h4>
+                    <ul>
+                        <li>Added translation for dynamically created elements</li>
+                        <li>Added option to use widgets instead of the new algorithm</li>
+                        <li>Improved language detection on mobile devices</li>
+                    </ul>
+                </section>
             </div>
         </div>
     </div>
