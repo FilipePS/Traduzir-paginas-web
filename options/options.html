@@ -14,7 +14,8 @@
         max-height: 250px;
     }
 
-    #addToNeverTranslateLangs, #addToAlwaysTranslateLangs {
+    #addToNeverTranslateLangs,
+    #addToAlwaysTranslateLangs {
         appearance: none;
         position: absolute;
         top: 0;
@@ -43,7 +44,8 @@
         </div>
         <a href="#donation" class="w3-bar-item w3-button w3-padding">Make a donation</a>
         <a href="#release_notes" class="w3-bar-item w3-button w3-padding">Release Notes</a>
-        <a href="#report" class="w3-bar-item w3-button w3-padding">Report a problem</a>
+        <a href="https://github.com/FilipePS/Traduzir-paginas-web/issues" target="blank"
+            class="w3-bar-item w3-button w3-padding">Report a problem</a>
     </nav>
 
     <div class="w3-main" style="margin-left: 300px">
@@ -53,30 +55,32 @@
 
         <div id="settings">
             <div id="languages">
-                <p><b>Target languages</b></p>
+                <p><b data-i18n="btnChangeLanguages">Target languages</b></p>
                 <ul class="w3-ul">
                     <li class="w3-row">
-                        <p class="w3-half">Target language 1</p>
+                        <p class="w3-half"><span data-i18n="lblTargetLanguage">Target language</span> 1</p>
                         <select id="targetLanguage1" class="w3-select w3-half w3-border w3-round"></select>
                     </li>
                     <li class="w3-row">
-                        <p class="w3-half">Target language 2</p>
+                        <p class="w3-half"><span data-i18n="lblTargetLanguage">Target language</span> 2</p>
                         <select id="targetLanguage2" class="w3-select w3-half w3-border w3-round"></select>
                     </li>
                     <li class="w3-row">
-                        <p class="w3-half">Target language 3</p>
+                        <p class="w3-half"><span data-i18n="lblTargetLanguage">Target language</span> 3</p>
                         <select id="targetLanguage3" class="w3-select w3-half w3-border w3-round"></select>
                     </li>
                 </ul>
 
                 <div class="w3-display-container w3-padding w3-margin-top">
                     <div class="w3-display-left">
-                        <p><b>Never translate these languages</b></p>
+                        <p><b data-i18n="lblNeverTranslateLangs">Never translate these languages</b></p>
                     </div>
                     <div class="w3-display-right">
                         <div style="position: relative;">
                             <button class="w3-button w3-blue w3-round w3-margin-right add">Add</button>
-                            <select id="addToNeverTranslateLangs" class="add"></select>
+                            <select id="addToNeverTranslateLangs" class="add">
+                                <option value="" selected disabled hidden></option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -84,16 +88,64 @@
 
                 <div class="w3-display-container w3-padding w3-margin-top">
                     <div class="w3-display-left">
-                        <p><b>Always translate these languages</b></p>
+                        <p><b data-i18n="optionsAlwaysTranslate">Always translate these languages</b></p>
                     </div>
                     <div class="w3-display-right">
                         <div style="position: relative;">
                             <button class="w3-button w3-blue w3-round w3-margin-right add">Add</button>
-                            <select id="addToAlwaysTranslateLangs" class="add"></select>
+                            <select id="addToAlwaysTranslateLangs" class="add">
+                                <option value="" selected disabled hidden></option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <ul id="alwaysTranslateLangs" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+            </div>
+
+            <div id="sites">
+                <div class="w3-display-container w3-padding w3-margin-top">
+                    <div class="w3-display-left">
+                        <p><b data-i18n="lblAlwaysTranslateSites">Always translate these sites</b></p>
+                    </div>
+                    <div class="w3-display-right">
+                        <button id="addToAlwaysTranslateSites"
+                            class="w3-button w3-blue w3-round w3-margin-right add">Add</button>
+                    </div>
+                </div>
+                <ul id="alwaysTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+
+                <div class="w3-display-container w3-padding w3-margin-top">
+                    <div class="w3-display-left">
+                        <p><b data-i18n="optionsNeverTranslate">Never translate these sites</b></p>
+                    </div>
+                    <div class="w3-display-right">
+                        <button id="addToNeverTranslateSites"
+                            class="w3-button w3-blue w3-round w3-margin-right add">Add</button>
+                    </div>
+                </div>
+                <ul id="neverTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+            </div>
+
+            <div id="translations">
+
+            </div>
+
+            <div id="appearance">
+
+            </div>
+
+            <div id="hotkeys">
+
+            </div>
+        </div>
+
+        <div>
+            <div id="donation">
+
+            </div>
+
+            <div id="release_notes">
+
             </div>
         </div>
     </div>
@@ -101,6 +153,7 @@
     <script src="/plataformInfo.js"></script>
     <script src="/languages.js"></script>
     <script src="/config.js"></script>
+    <script src="/i18n.js"></script>
     <script src="options.js"></script>
 </body>
 
