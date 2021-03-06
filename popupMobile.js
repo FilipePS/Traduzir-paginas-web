@@ -3,6 +3,8 @@
 var popupMobile = {}
 
 twpConfig.onReady(function () {
+    if (!plataformInfo.isMobile.any) return;
+
     const htmlMobile = `
     <style>
         .item {

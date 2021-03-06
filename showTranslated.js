@@ -3,6 +3,8 @@
 var showTranslated = {}
 
 twpConfig.onReady(function () {
+    if (plataformInfo.isMobile.any) return;
+
     let originalPageLanguage = "und"
     let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
