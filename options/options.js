@@ -279,3 +279,5 @@ twpConfig.onReady(function () {
     }
     $("#darkMode").value = twpConfig.get("darkMode")
 })
+
+window.scrollTo({top: 0})

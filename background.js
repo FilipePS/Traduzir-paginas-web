@@ -114,7 +114,7 @@ chrome.runtime.onInstalled.addListener(details => {
             }
         
             if (showReleaseNotes) {
-                chrome.tabs.create({url: "https://filipeps.github.io/Traduzir-paginas-web/release_notes/"})
+                chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html#release_notes")})
             }
         })
     }
