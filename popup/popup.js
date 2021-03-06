@@ -175,7 +175,7 @@ twpConfig.onReady(function () {
             const hostname = new URL(tabs[0].url).hostname
             switch (btnOptions.value) {
                 case "changeLanguage":
-                    location = chrome.runtime.getURL("popup/popup-change-language.html")
+                    location = chrome.runtime.getURL("popup-change-language.html")
                     break
                 case "alwaysTranslateThisSite":
                     twpConfig.addSiteToAlwaysTranslate(hostname)

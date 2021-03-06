@@ -19,7 +19,7 @@ btnTranslate.addEventListener("click", () => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: targetLanguage})
     })
 
-    location = chrome.runtime.getURL("popup/popup.html")
+    location = chrome.runtime.getURL("popup.html")
 })
 
 // fill language list

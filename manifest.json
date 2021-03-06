@@ -16,9 +16,9 @@
     },
 
     "icons": {
-        "32": "icons/google-translate-32.png",
-        "64": "icons/google-translate-64.png",
-        "128": "icons/google-translate-128.png"
+        "32": "/icons/google-translate-32.png",
+        "64": "/icons/google-translate-64.png",
+        "128": "/icons/google-translate-128.png"
     },
 
     "permissions": [
@@ -29,28 +29,28 @@
     ],
 
     "web_accessible_resources": [
-        "icons/google-translate-32.png",
-        "icons/yandex-translate-32.png",
-        "icons/swap-32.png"
+        "/icons/google-translate-32.png",
+        "/icons/yandex-translate-32.png",
+        "/icons/swap-32.png"
     ],
 
     "options_ui": {
-        "page": "options/options.html",
+        "page": "/options/options.html",
         "open_in_tab": false,
         "browser_style": false
     },
 
     "browser_action": {
         "browser_style": false,
-        "default_icon": "icons/google-translate-32.png",
+        "default_icon": "/icons/google-translate-32.png",
         "default_title": "__MSG_pageActionTitle__"
     },
 
     "page_action": {
         "browser_style": false,
-        "default_icon": "icons/google-translate-32.png",
+        "default_icon": "/icons/google-translate-32.png",
         "default_title": "__MSG_pageActionTitle__",
-        "default_popup": "popup/popup.html"
+        "default_popup": "/popup/popup.html"
     },
 
     "content_scripts": [
@@ -58,16 +58,16 @@
             "matches": ["<all_urls>"],
             "run_at": "document_end",
             "all_frames": true,
-            "js": ["plataformInfo.js", "languages.js", "config.js", "showOriginal.js", "pageTranslator.js", "translateSelected.js", "showTranslated.js"]
+            "js": ["/lib/plataformInfo.js", "/lib/languages.js", "/lib/config.js", "/contentScript/showOriginal.js", "/contentScript/pageTranslator.js", "/contentScript/translateSelected.js", "/contentScript/showTranslated.js"]
         }, {
             "matches": ["<all_urls>"],
             "run_at": "document_end",
             "all_frames": false,
-            "js": ["popupMobile.js"]
+            "js": ["/contentScript/popupMobile.js"]
         }
     ],
 
     "background": {
-        "scripts": ["plataformInfo.js", "languages.js", "translationCache.js", "translationService.js", "config.js", "background.js"]
+        "scripts": ["/lib/plataformInfo.js", "/lib/languages.js", "/background/translationCache.js", "/background/translationService.js", "/lib/config.js", "/background/background.js"]
     }
 }
