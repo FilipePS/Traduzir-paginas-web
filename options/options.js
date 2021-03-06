@@ -239,4 +239,25 @@ twpConfig.onReady(function () {
 
         twpConfig.addSiteToNeverTranslate(hostname)
     }
+
+    // translations options
+    $("#pageTranslatorService").onchange = e => {
+        twpConfig.set("pageTranslatorService", e.target.value)
+    }
+    $("#pageTranslatorService").value = twpConfig.get("pageTranslatorService")
+
+    $("#showOriginalTextWhenHovering").onchange = e => {
+        twpConfig.set("showOriginalTextWhenHovering", e.target.value)
+    }
+    $("#showOriginalTextWhenHovering").value = twpConfig.get("showOriginalTextWhenHovering")
+
+    $("#showTranslateSelectedContextMenu").onchange = e => {
+        twpConfig.set("showTranslateSelectedContextMenu", e.target.value)
+    }
+    $("#showTranslateSelectedContextMenu").value = twpConfig.get("showTranslateSelectedContextMenu")
+
+    $("#showTranslateSelectedButton").onchange = e => {
+        twpConfig.set("showTranslateSelectedButton", e.target.value)
+    }
+    $("#showTranslateSelectedButton").value = twpConfig.get("showTranslateSelectedButton")
 })

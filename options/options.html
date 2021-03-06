@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Translate Web Pages</title>
+<title data-i18n="extensionName">Translate Web Pages</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/w3css/4/w3.css">
@@ -33,7 +33,7 @@
 <body class="w3-content" style="max-width:1200px">
     <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3; width:300px">
         <div class="w3-container w3-display-container w3-padding-16">
-            <h3 class="w3-wide"><b>Translate Web Pages</b></h3>
+            <h3 class="w3-wide"><b data-i18n="extensionName">Translate Web Pages</b></h3>
         </div>
         <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
             <a href="#languages" class="w3-bar-item w3-button">Languages</a>
@@ -70,7 +70,7 @@
                         <select id="targetLanguage3" class="w3-select w3-half w3-border w3-round"></select>
                     </li>
                 </ul>
-
+                <br>
                 <div class="w3-display-container w3-padding w3-margin-top">
                     <div class="w3-display-left">
                         <p><b data-i18n="lblNeverTranslateLangs">Never translate these languages</b></p>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <ul id="neverTranslateLangs" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
-
+                <br>
                 <div class="w3-display-container w3-padding w3-margin-top">
                     <div class="w3-display-left">
                         <p><b data-i18n="optionsAlwaysTranslate">Always translate these languages</b></p>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <ul id="alwaysTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
-
+                <br>
                 <div class="w3-display-container w3-padding w3-margin-top">
                     <div class="w3-display-left">
                         <p><b data-i18n="optionsNeverTranslate">Never translate these sites</b></p>
@@ -127,7 +127,29 @@
             </div>
 
             <div id="translations">
-
+                <p><b data-i18n="lblTranslationEngine">Translation service</b></p>
+                <select id="pageTranslatorService" class="w3-input w3-margin">
+                    <option value="google">Google</option>
+                    <option value="yandex">Yandex</option>
+                </select>
+                <br>
+                <p><b data-i18n="lblShowOriginalTextWhenHovering">Show original text when hovering</b></p>
+                <select id="showOriginalTextWhenHovering" class="w3-input w3-margin">
+                    <option value="yes" data-i18n="msgYes">Yes</option>
+                    <option value="no" data-i18n="msgNo">No</option>
+                </select>
+                <br>
+                <p><b>Show translated text when hovering </b></p>
+                <select id="showTranslateSelectedContextMenu" class="w3-input w3-margin">
+                    <option value="yes" data-i18n="msgYes">Yes</option>
+                    <option value="no" data-i18n="msgNo">No</option>
+                </select>
+                <br>
+                <p><b data-i18n="lblShowTranslateSelectedButton">Show the button to translate the selected text</b></p>
+                <select id="showTranslateSelectedButton" class="w3-input w3-margin">
+                    <option value="yes" data-i18n="msgYes">Yes</option>
+                    <option value="no" data-i18n="msgNo">No</option>
+                </select>
             </div>
 
             <div id="appearance">
