@@ -50,3 +50,61 @@ btnTranslate.addEventListener("click", () => {
         selectTargetLanguage.appendChild(option)
     })
 })()
+
+twpConfig.onReady(function() {
+    function enableDarkMode() {
+        if (!$("#darkModeElement")) {
+            var el = document.createElement("style")
+            el.setAttribute("id", "darkModeElement")
+            el.setAttribute("rel", "stylesheet")
+            el.textContent = `
+            * {
+                scrollbar-color: #202324 #454a4d;
+            }
+            
+            body {
+                color: white !important;
+                background-color: #181a1b !important;
+            }
+
+            .mdiv, .md {
+                background-color: white;
+            }
+            
+            #btnClose:hover {
+                background-color: #454a4d !important;
+            }
+            
+            select {
+                color: white !important;
+                background-color: #181a1b !important;
+            }
+            `
+            document.head.appendChild(el)
+        }
+    }
+    
+    function disableDarkMode() {
+        if ($("#darkModeElement")) {
+            $("#darkModeElement").remove()
+        }
+    }
+    
+    switch(twpConfig.get("darkMode")) {
+        case "auto":
+            if (matchMedia("(prefers-color-scheme: dark)").matches) {
+                enableDarkMode()
+            } else {
+                disableDarkMode()
+            }
+            break
+        case "yes":
+            enableDarkMode()
+            break
+        case "no":
+            disableDarkMode()
+            break
+        default:
+            break
+    }
+})

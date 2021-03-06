@@ -67,6 +67,61 @@ twpConfig.onReady(function () {
     fillLanguageList($("#addToNeverTranslateLangs"))
     fillLanguageList($("#addToAlwaysTranslateLangs"))
 
+    function enableDarkMode() {
+        if (!$("#darkModeElement")) {
+            var el = document.createElement("style")
+            el.setAttribute("id", "darkModeElement")
+            el.setAttribute("rel", "stylesheet")
+            el.textContent = `
+            * {
+                scrollbar-color: #202324 #454a4d;
+            }
+
+            #donation * {
+                background-color: #87CEEB !important;
+            }
+
+            #donation select {
+                color: black !important;
+                background-color: white !important;
+            }
+
+            html *, nav {
+                color: white !important;
+                background-color: #181a1b !important;
+            }
+            `
+            document.head.appendChild(el)
+        }
+    }
+    
+    function disableDarkMode() {
+        if ($("#darkModeElement")) {
+            $("#darkModeElement").remove()
+        }
+    }
+    
+    function updateDarkMode() {
+        switch(twpConfig.get("darkMode")) {
+            case "auto":
+                if (matchMedia("(prefers-color-scheme: dark)").matches) {
+                    enableDarkMode()
+                } else {
+                    disableDarkMode()
+                }
+                break
+            case "yes":
+                enableDarkMode()
+                break
+            case "no":
+                disableDarkMode()
+                break
+            default:
+                break
+        }
+    }
+    updateDarkMode()
+
 
     // target languages
 
@@ -276,6 +331,7 @@ twpConfig.onReady(function () {
     // style options
     $("#darkMode").onchange = e => {
         twpConfig.set("darkMode", e.target.value)
+        updateDarkMode()
     }
     $("#darkMode").value = twpConfig.get("darkMode")
 })

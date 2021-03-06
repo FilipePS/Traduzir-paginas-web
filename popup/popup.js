@@ -95,24 +95,29 @@ twpConfig.onReady(function () {
             el.setAttribute("id", "darkModeElement")
             el.setAttribute("rel", "stylesheet")
             el.textContent = `
-            * {
-                scrollbar-color: #202324 #454a4d;
-            }
-            
             body {
-                color: #e8e6e3 !important;
+                color: white !important;
                 background-color: #181a1b !important;
-                border: 1px solid #454a4d;
             }
             
-            #btnClose:hover {
+            .mdiv, .md {
+                background-color: white;
+            }
+
+            .menuDot {
+                background-image:
+                    radial-gradient(white 2px, transparent 2px),
+                    radial-gradient(white 2px, transparent 2px),
+                    radial-gradient(white 2px, transparent 2px);
+            }
+
+            #btnClose:hover, #divMenu:hover {
                 background-color: #454a4d !important;
             }
             
-            #selectTargetLanguage, select, option, #btnReset, #btnRestore, #btnTryAgain, #btnOptionB {
-                color: #55a9ed !important;
+            select {
+                color: white !important;
                 background-color: #181a1b !important;
-                border: 1px solid #454a4d !important;
             }
             `
             document.head.appendChild(el)
