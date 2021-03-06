@@ -5,7 +5,7 @@ var $ = document.querySelector.bind(document)
 twpConfig.onReady(function () {
     function hashchange() {
         const hash = location.hash || "#languages"
-        const divs = [$("#languages"), $("#sites"), $("#translations"), $("#appearance"), $("#hotkeys"), $("#donation"), $("#release_notes")]
+        const divs = [$("#languages"), $("#sites"), $("#translations"), $("#style"), $("#hotkeys"), $("#donation"), $("#release_notes")]
         divs.forEach(element => {
             element.style.display = "none"
         })
@@ -260,4 +260,10 @@ twpConfig.onReady(function () {
         twpConfig.set("showTranslateSelectedButton", e.target.value)
     }
     $("#showTranslateSelectedButton").value = twpConfig.get("showTranslateSelectedButton")
+
+    // style options
+    $("#darkMode").onchange = e => {
+        twpConfig.set("darkMode", e.target.value)
+    }
+    $("#darkMode").value = twpConfig.get("darkMode")
 })
