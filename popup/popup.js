@@ -6,7 +6,7 @@ twpConfig.onReady(function () {
     let originalPageLanguage = "und"
     let currentPageLanguage = "und"
     let currentPageLanguageState = "original"
-    let currentPageTranslatorService = "google"
+    let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
 
     const twpButtons =  document.querySelectorAll("button")
 
