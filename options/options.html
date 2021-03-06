@@ -1,34 +1,13 @@
 <!DOCTYPE html>
 <html>
-<title data-i18n="extensionName">Translate Web Pages</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/w3css/4/w3.css">
-<style>
-    body {
-        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    }
 
-    .list {
-        overflow: auto;
-        max-height: 250px;
-    }
-
-    #addToNeverTranslateLangs,
-    #addToAlwaysTranslateLangs {
-        appearance: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        cursor: pointer;
-    }
-
-    .add {
-        width: 100px;
-        height: 35px;
-    }
-</style>
+<head>
+    <title data-i18n="extensionName">Translate Web Pages</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/w3css/4/w3.css">
+    <link rel="stylesheet" href="options.css">
+</head>
 
 <body class="w3-content" style="max-width:1200px">
     <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3; width:300px">
@@ -162,7 +141,11 @@
             </div>
 
             <div id="hotkeys">
-
+                <p><b>Keyboard shortcuts</b></p>
+                <ul class="w3-ul">
+                    <li class="w3-row w3"><span><kbd>Alt</kbd> + <kbd>T</kbd></span>
+                        <span>To translate the site</span></li>
+                </ul>
             </div>
         </div>
 
