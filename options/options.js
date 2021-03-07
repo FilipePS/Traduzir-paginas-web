@@ -3,6 +3,19 @@
 var $ = document.querySelector.bind(document)
 
 twpConfig.onReady(function () {
+    let sideBarIsVisible = false
+    $("#btnOpenMenu").onclick = e => {
+        $("#menuContainer").classList.toggle("change")
+
+        if (sideBarIsVisible) {
+            $("#sideBar").style.display = "none"
+            sideBarIsVisible = false
+        } else {
+            $("#sideBar").style.display = "block"
+            sideBarIsVisible = true
+        }
+    }
+
     function hashchange() {
         const hash = location.hash || "#languages"
         const divs = [$("#languages"), $("#sites"), $("#translations"), $("#style"), $("#hotkeys"), $("#others"), $("#donation"), $("#release_notes")]
@@ -27,6 +40,11 @@ twpConfig.onReady(function () {
         }
         if (text) {
             $("#itemSelectedName").textContent = text
+        }
+
+        if (sideBarIsVisible) {
+            $("#sideBar").style.display = "none"
+            sideBarIsVisible = false
         }
     }
     hashchange()
@@ -122,18 +140,6 @@ twpConfig.onReady(function () {
     }
     updateDarkMode()
 
-    let sideBarIsVisible = false
-    $("#btnOpenMenu").onclick = e => {
-        $("#menuContainer").classList.toggle("change")
-
-        if (sideBarIsVisible) {
-            $("#sideBar").style.display = "none"
-            sideBarIsVisible = false
-        } else {
-            $("#sideBar").style.display = "block"
-            sideBarIsVisible = true
-        }
-    }
 
     // target languages
 
