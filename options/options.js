@@ -94,15 +94,15 @@ twpConfig.onReady(function () {
             document.head.appendChild(el)
         }
     }
-    
+
     function disableDarkMode() {
         if ($("#darkModeElement")) {
             $("#darkModeElement").remove()
         }
     }
-    
+
     function updateDarkMode() {
-        switch(twpConfig.get("darkMode")) {
+        switch (twpConfig.get("darkMode")) {
             case "auto":
                 if (matchMedia("(prefers-color-scheme: dark)").matches) {
                     enableDarkMode()
@@ -346,6 +346,20 @@ twpConfig.onReady(function () {
         updateDarkMode()
     }
     $("#darkMode").value = twpConfig.get("darkMode")
+
+    // others options
+    $("#showReleaseNotes").onchange = e => {
+        twpConfig.set("showReleaseNotes", e.target.value)
+    }
+    $("#showReleaseNotes").value = twpConfig.get("showReleaseNotes")
+    
+    $("#showPopupMobile").onchange = e => {
+        twpConfig.set("showPopupMobile", e.target.value)
+    }
+    $("#showPopupMobile").value = twpConfig.get("showPopupMobile")
+
 })
 
-window.scrollTo({top: 0})
+window.scrollTo({
+    top: 0
+})

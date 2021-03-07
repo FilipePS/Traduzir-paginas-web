@@ -346,9 +346,17 @@ twpConfig.onReady(function () {
         document.removeEventListener("click", hideMenu)
     }
 
+    if (showPopupMobile !== "no") {
+        window.addEventListener("touchstart", (e) => {
+            if (e.touches.length == 3) {
+                popupMobile.show(true)
+            }
+        })
+    }
+
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "showPopupMobile") {
-            popupMobile.show()
+            popupMobile.show(true)
         }
     })
 
