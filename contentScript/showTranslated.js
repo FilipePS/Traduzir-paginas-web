@@ -153,6 +153,7 @@ twpConfig.onReady(function () {
         showTranslated.disable()
     
         if (plataformInfo.isMobile.any) return;
+        if (originalPageLanguage === currentTargetLanguage) return;
         if (showTranslatedTextWhenHovering !== "yes" || !translateThisSite || !translateThisLanguage) return;
         if (divElement) return;
 
@@ -255,8 +256,6 @@ twpConfig.onReady(function () {
         document.removeEventListener("blur", hideTranslatedText)
         document.removeEventListener("visibilitychange", hideTranslatedText)
     }
-
-    showTranslated.enable()
 
     pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
         originalPageLanguage = pagelanguage
