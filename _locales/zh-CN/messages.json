@@ -21,7 +21,7 @@
     "message": "无法翻译此页面"
   },
   "lblAlwaysTranslate": {
-    "message": "始终翻译 - "
+    "message": "总是翻译 - "
   },
   "lblTargetLanguage": {
     "message": "目标语言"
@@ -45,7 +45,7 @@
     "message": "在 Google 翻译中打开"
   },
   "btnDonate": {
-    "message": "捐赠"
+    "message": "捐助支持"
   },
   "btnNeverTranslate": {
     "message": "永不翻译此网站"
@@ -63,7 +63,7 @@
     "message": "永不翻译此网站"
   },
   "btnMobileDonate": {
-    "message": "捐赠"
+    "message": "捐助支持"
   },
   "optionsNeverTranslate": {
     "message": "永不翻译这些网站"
@@ -166,5 +166,53 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "悬停显示原文"
+  },
+  "msgLanguages": {
+    "message": "语言"
+  },
+  "msgSites": {
+    "message": "网站"
+  },
+  "msgTranslations": {
+    "message": "翻译"
+  },
+  "msgStyle": {
+    "message": "样式"
+  },
+  "msgHotkeys": {
+    "message": "热键"
+  },
+  "lblMakeDonation": {
+    "message": "捐助支持"
+  },
+  "lblReleaseNotes": {
+    "message": "发行说明"
+  },
+  "lblReport": {
+    "message": "反馈问题"
+  },
+  "lblSettings": {
+    "message": "设置"
+  },
+  "lblAdd": {
+    "message": "添加"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "悬停显示译文"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "键盘快捷键"
+  },
+  "msgToTranslateSites": {
+    "message": "翻译该网站"
+  },
+  "msgThanksForUseExtension": {
+    "message": "感谢您使用此扩展。"
+  },
+  "msgIWillBeGrateful": {
+    "message": "若您能够提供捐助，我将不胜感激。"
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "总是翻译此语言"
   }
 }
