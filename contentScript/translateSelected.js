@@ -300,7 +300,7 @@ twpConfig.onReady(function() {
     }
 
     function updateEventListener() {
-        if (showTranslateSelectedButton == "yes" && translateThisSite && translateThisLanguage) {
+        if (showTranslateSelectedButton == "yes" && translateThisSite && translateThisLanguage && originalPageLanguage !== currentTargetLanguage) {
             document.addEventListener("mouseup", onMouseup)
 
             document.addEventListener("blur", destroy)
