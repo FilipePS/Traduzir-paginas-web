@@ -263,7 +263,7 @@ var translationService = {}
         return translateHTML(
             "google",
             targetLanguage,
-            `https://translate.googleapis.${"zh-cn" === navigator.language.toLowerCase() ? "cn" : "com"}/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=` + targetLanguage + "&tk=",
+            `https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=` + targetLanguage + "&tk=",
             sourceArray,
             requestBody,
             "q",
