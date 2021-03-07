@@ -166,5 +166,53 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Fareyle üzerine gelindiğinde orijinal metni göster"
+  },
+  "msgLanguages": {
+    "message": "Diller"
+  },
+  "msgSites": {
+    "message": "Siteler"
+  },
+  "msgTranslations": {
+    "message": "Çeviriler"
+  },
+  "msgStyle": {
+    "message": "Stil"
+  },
+  "msgHotkeys": {
+    "message": "Kısayol tuşları"
+  },
+  "lblMakeDonation": {
+    "message": "Bağış Yap"
+  },
+  "lblReleaseNotes": {
+    "message": "Sürüm notları"
+  },
+  "lblReport": {
+    "message": "Sorun bildir"
+  },
+  "lblSettings": {
+    "message": "Ayarlar"
+  },
+  "lblAdd": {
+    "message": "Ekle"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Fareyle üzerine gelindiğinde orijinal metni göster"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Klavye kısayolları"
+  },
+  "msgToTranslateSites": {
+    "message": "To translate the site"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Bu uzantıyı kullandığınız için teşekkür ederiz."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Bağış yapabilirseniz minnettar olacağım."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Bu dili her zaman çevir"
   }
 }

@@ -166,5 +166,53 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Arată textul original cînd pui săgeata pe el"
+  },
+  "msgLanguages": {
+    "message": "Limbi"
+  },
+  "msgSites": {
+    "message": "Situri"
+  },
+  "msgTranslations": {
+    "message": "Traduceri"
+  },
+  "msgStyle": {
+    "message": "Fond negru"
+  },
+  "msgHotkeys": {
+    "message": "Taste rapide"
+  },
+  "lblMakeDonation": {
+    "message": "Fă o donație"
+  },
+  "lblReleaseNotes": {
+    "message": "Note despre Versiune"
+  },
+  "lblReport": {
+    "message": "Raportează o problemă"
+  },
+  "lblSettings": {
+    "message": "Preferințe"
+  },
+  "lblAdd": {
+    "message": "Adaugă"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Arată textul tradus cînd pui săgeata pe el"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Comenzi rapide"
+  },
+  "msgToTranslateSites": {
+    "message": "Pentru a traduce situl"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Vă mulțumim pentru utilizarea acestei extensii."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Voi fi recunoscător dacă poți face o donație."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Tradu mereu această limbă"
   }
 }

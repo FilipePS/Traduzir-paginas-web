@@ -166,5 +166,53 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Показывать исходный текст при наведении"
+  },
+  "msgLanguages": {
+    "message": "Языки"
+  },
+  "msgSites": {
+    "message": "Сайты"
+  },
+  "msgTranslations": {
+    "message": "Переводы"
+  },
+  "msgStyle": {
+    "message": "Тема"
+  },
+  "msgHotkeys": {
+    "message": "Клавиши быстрого доступа"
+  },
+  "lblMakeDonation": {
+    "message": "Пожертвовать"
+  },
+  "lblReleaseNotes": {
+    "message": "Примечания к выпуску"
+  },
+  "lblReport": {
+    "message": "Сообщить о проблеме"
+  },
+  "lblSettings": {
+    "message": "Настройки"
+  },
+  "lblAdd": {
+    "message": "Добавить"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Показывать переведенный текст при наведении"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Горячие клавиши"
+  },
+  "msgToTranslateSites": {
+    "message": "Чтобы перевести сайт,"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Спасибо, что используете это расширение"
+  },
+  "msgIWillBeGrateful": {
+    "message": "Буду признателен, если сделаете пожертвование"
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Всегда переводить с этого языка"
   }
 }

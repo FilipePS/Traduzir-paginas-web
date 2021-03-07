@@ -166,5 +166,53 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Mostra il testo originale quando passi la freccia sopra"
+  },
+  "msgLanguages": {
+    "message": "Lingue"
+  },
+  "msgSites": {
+    "message": "Siti"
+  },
+  "msgTranslations": {
+    "message": "Traduzioni"
+  },
+  "msgStyle": {
+    "message": "Modalità scura"
+  },
+  "msgHotkeys": {
+    "message": "Scorciatoie"
+  },
+  "lblMakeDonation": {
+    "message": "Fai una donazione"
+  },
+  "lblReleaseNotes": {
+    "message": "Note di Rilascio"
+  },
+  "lblReport": {
+    "message": "Segnala un problema"
+  },
+  "lblSettings": {
+    "message": "Preferenze"
+  },
+  "lblAdd": {
+    "message": "Aggiungi"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Mostra il testo tradotto quando passi la freccia sopra"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Scorciatoie da tastiera"
+  },
+  "msgToTranslateSites": {
+    "message": "Per tradurre il sito"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Grazie per aver scelto questa estensione."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Ti sarò grato se potrai fare una donazione."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Traduci sempre questa lingua"
   }
 }
