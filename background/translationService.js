@@ -294,7 +294,7 @@ var translationService = {}
                 }
     
                 result = sentences.length > 0 ? sentences.join(" ") : result
-                let resultArray = result.match(/\<a\si\=[0-9]\>[^\<\>]*(?=\<\/a\>)/g)
+                let resultArray = result.match(/\<a\si\=[0-9]+\>[^\<\>]*(?=\<\/a\>)/g)
 
                 let indexes
                 if (resultArray && resultArray.length > 0) {
