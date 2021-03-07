@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="options.css">
 </head>
 
-<body class="w3-content" style="max-width:1200px">
-    <nav class="w3-sidebar w3-bar-block w3-collapse w3-top" style="z-index:3; width:300px">
+<body class="w3-content" style="max-width:1200px;">
+    <nav class="w3-sidebar w3-bar-block w3-collapse w3-top" style="z-index:3; width:300px" id="sideBar">
         <div class="w3-container w3-display-container w3-padding-16">
             <h3 class="w3-wide"><b data-i18n="extensionName">Translate Web Pages</b></h3>
         </div>
@@ -22,11 +22,25 @@
             <a href="#hotkeys" class="w3-bar-item w3-button" data-i18n="msgHotkeys">Hotkeys</a>
             <a href="#others" class="w3-bar-item w3-button" data-i18n="lblOthers">Others</a>
         </div>
-        <b><a href="#donation" class="w3-bar-item w3-button w3-padding" data-i18n="lblMakeDonation">Make a donation</a></b>
+        <b><a href="#donation" class="w3-bar-item w3-button w3-padding" data-i18n="lblMakeDonation">Make a
+                donation</a></b>
         <a href="#release_notes" class="w3-bar-item w3-button w3-padding" data-i18n="lblReleaseNotes">Release Notes</a>
         <a href="https://github.com/FilipePS/Traduzir-paginas-web/issues" target="blank"
             class="w3-bar-item w3-button w3-padding" data-i18n="lblReport">Report a problem</a>
     </nav>
+
+    <header class="w3-bar w3-top w3-black w3-hide-large w3-xlarge" id="header">
+        <div class="w3-bar-item w3-padding-20 w3-wide" data-i18n="extensionName">Translate Web Pages</div>
+        <a class="w3-bar-item w3-button w3-padding-24 w3-right" id="btnOpenMenu">
+            <div class="menu-container" id="menuContainer">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+            </div>
+        </a>
+    </header>
 
     <div class="w3-main" style="margin-left: 300px">
         <header class="w3-container w3-xlarge">
@@ -57,7 +71,8 @@
                     </div>
                     <div class="w3-display-right">
                         <div style="position: relative;">
-                            <button class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add</button>
+                            <button class="w3-button w3-blue w3-round w3-margin-right add"
+                                data-i18n="lblAdd">Add</button>
                             <select id="addToNeverTranslateLangs" class="add">
                                 <option value="" selected disabled hidden></option>
                             </select>
@@ -72,7 +87,8 @@
                     </div>
                     <div class="w3-display-right">
                         <div style="position: relative;">
-                            <button class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add</button>
+                            <button class="w3-button w3-blue w3-round w3-margin-right add"
+                                data-i18n="lblAdd">Add</button>
                             <select id="addToAlwaysTranslateLangs" class="add">
                                 <option value="" selected disabled hidden></option>
                             </select>
@@ -88,8 +104,8 @@
                         <p><b data-i18n="lblAlwaysTranslateSites">Always translate these sites</b></p>
                     </div>
                     <div class="w3-display-right">
-                        <button id="addToAlwaysTranslateSites"
-                            class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add</button>
+                        <button id="addToAlwaysTranslateSites" class="w3-button w3-blue w3-round w3-margin-right add"
+                            data-i18n="lblAdd">Add</button>
                     </div>
                 </div>
                 <ul id="alwaysTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
@@ -99,8 +115,8 @@
                         <p><b data-i18n="optionsNeverTranslate">Never translate these sites</b></p>
                     </div>
                     <div class="w3-display-right">
-                        <button id="addToNeverTranslateSites"
-                            class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add</button>
+                        <button id="addToNeverTranslateSites" class="w3-button w3-blue w3-round w3-margin-right add"
+                            data-i18n="lblAdd">Add</button>
                     </div>
                 </div>
                 <ul id="neverTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
@@ -197,11 +213,8 @@
                             </tr>
                         </table>
                         <input type="hidden" name="currency_code" value="BRL">
-                        <input type="image" src="/icons/btn_donate_LG.webp"
-                            border="0" name="submit"
-                            alt="PayPal">
-                        <img alt="" border="0" src="/icons/pixel.gif" width="1"
-                            height="1">
+                        <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal">
+                        <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1">
                     </form>
                 </div>
             </div>
@@ -211,7 +224,8 @@
                     <h4>8.0.2</h4>
                     <ul>
                         <li>Do not translate when hovering if the page language is the same as the target language</li>
-                        <li>Do not show the button to translate the selected text if the page language is the same as the target language.</li>
+                        <li>Do not show the button to translate the selected text if the page language is the same as
+                            the target language.</li>
                     </ul>
                 </section>
                 <section>
@@ -228,7 +242,8 @@
                                 <li>new design</li>
                                 <li>show translated text when hovering</li>
                                 <li>shortcut keys to translate the page</li>
-                                <li>save the translations to allow you to translate the pages even without internet (it will only work on pages that you have already translated 1 time)</li>
+                                <li>save the translations to allow you to translate the pages even without internet (it
+                                    will only work on pages that you have already translated 1 time)</li>
                                 <li>Switch the translation service without having to reload the page</li>
                                 <li>dark mode for the popups that appear on the pages</li>
                             </ul>

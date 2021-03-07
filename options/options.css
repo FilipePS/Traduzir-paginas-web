@@ -35,3 +35,62 @@ kbd {
   padding: 2px 4px;
   white-space: nowrap;
 }
+
+.menu-container{
+  cursor:pointer;
+}
+
+.bar1{
+  height:5px;
+  width:40px;
+  background-color:#fff !important;
+  border-radius:12px;
+  transition:400ms ease all;
+}
+.bar2{
+  height:5px;
+  width:40px;
+  background-color:#fff !important;
+  border-radius:12px;
+  transition:400ms ease all;
+  margin-top:3px;
+}
+.bar3{
+  height:5px;
+  width:40px;
+  background-color:#fff !important;
+  border-radius:12px;
+  transition:400ms ease all;
+  margin-top:3px;
+}
+.bar4{
+  height:5px;
+  width:40px;
+  background-color:#fff !important;
+  border-radius:12px;
+  transition:400ms ease all;
+  margin-top:-13px;
+}
+.bar5{
+  height:5px;
+  width:40px;
+  background-color:#fff !important;
+  border-radius:12px;
+  transition:400ms ease all;
+  margin-top:-5px;
+}
+.change .bar1{
+  opacity:0;
+}
+.change .bar2{
+  opacity:0;
+}
+.change .bar3{
+  opacity:0;
+}
+.change .bar4{
+  transform:rotate(45deg);
+}
+.change .bar5{
+  transform:rotate(-45deg);
+}

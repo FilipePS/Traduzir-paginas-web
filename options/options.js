@@ -86,7 +86,7 @@ twpConfig.onReady(function () {
                 background-color: white !important;
             }
 
-            html *, nav {
+            html *, nav, #header {
                 color: white !important;
                 background-color: #181a1b !important;
             }
@@ -122,6 +122,18 @@ twpConfig.onReady(function () {
     }
     updateDarkMode()
 
+    let sideBarIsVisible = false
+    $("#btnOpenMenu").onclick = e => {
+        $("#menuContainer").classList.toggle("change")
+
+        if (sideBarIsVisible) {
+            $("#sideBar").style.display = "none"
+            sideBarIsVisible = false
+        } else {
+            $("#sideBar").style.display = "block"
+            sideBarIsVisible = true
+        }
+    }
 
     // target languages
 
