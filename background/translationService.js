@@ -316,7 +316,7 @@ var translationService = {}
                     if (finalResulArray[indexes[j]]) {
                         finalResulArray[indexes[j]] += " " + resultArray[j]
                     } else {
-                        finalResulArray.push(resultArray[j])
+                        finalResulArray[indexes[j]] = resultArray[j]
                     }
                 }
                 
