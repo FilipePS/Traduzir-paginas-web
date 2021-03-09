@@ -480,6 +480,7 @@ twpConfig.onReady(function() {
     const detectPageLanguage = function () {
         if (chrome.i18n.detectLanguage) {
             chrome.i18n.detectLanguage(document.body.innerText, result => {
+                // TODO verificar o valor de result no firefox mobile
                 for (const langInfo of result.languages) {
                     const langCode = twpLang.checkLanguageCode(langInfo.language)
                     if (langCode) {

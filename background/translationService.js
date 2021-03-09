@@ -246,10 +246,75 @@ var translationService = {}
         }
     }
 
-    translationService.google.translateHTML = function (sourceArray3d, targetLanguage) {
+    // nao funciona bem por problemas em detectar o idioma do texto
+    async function fixSouceArray(sourceArray3d) {
+        const newSourceArray3d = []
+        const fixIndexesMap = []
+        
+        for (const i in sourceArray3d) {
+            newSourceArray3d.push([])
+            fixIndexesMap.push(parseInt(i))
+
+            const sourceArray = sourceArray3d[i]
+            let prevDetectedLanguage = null
+            for (const j in sourceArray) {
+                const text = sourceArray[j]
+                const detectedLanguage = await new Promise(resolve => {
+                    chrome.i18n.detectLanguage(text, result => {
+                        if (result && result.languages && result.languages.length > 0) {
+                            resolve(result.languages[Object.keys(result.languages)[0]].language)
+                        } else {
+                            resolve(null)
+                        }
+                    })
+                })
+                if (detectedLanguage && prevDetectedLanguage && detectedLanguage !== prevDetectedLanguage && newSourceArray3d[newSourceArray3d.length-1].length > 0) {
+                    newSourceArray3d.push([text])
+                    fixIndexesMap.push(parseInt(i))
+                } else {
+                    newSourceArray3d[newSourceArray3d.length-1].push(text)
+                }
+                prevDetectedLanguage = detectedLanguage
+            }
+        }
+        
+        return [newSourceArray3d, fixIndexesMap]
+    }
+
+    function fixResultArray(resultArray3d, fixIndexesMap) {
+        const newResultArray3d = []
+        
+        let idx = 0
+        for (const index of fixIndexesMap) {
+            if (!newResultArray3d[index]) {
+                newResultArray3d[index] = []
+            }
+            if (resultArray3d[idx]) {
+                for (const text of resultArray3d[idx]) {
+                    newResultArray3d[index].push(text)
+                }
+                idx++
+            } else {
+                console.error("resultArray is undefined")
+                break
+            }
+        }
+
+        if (newResultArray3d[newResultArray3d.length-1].length < 1) {
+            newResultArray3d.pop()
+        }
+
+        return newResultArray3d
+    }
+
+    // async para fix
+    translationService.google.translateHTML = function (_sourceArray3d, targetLanguage) {
         if (targetLanguage == "zh") {
             targetLanguage = "zh-CN"
         }
+
+        //const [sourceArray3d, fixIndexesMap] = await fixSouceArray(_sourceArray3d)
+        const sourceArray3d = _sourceArray3d
 
         const sourceArray = sourceArray3d.map(sourceArray => {
             sourceArray = sourceArray.map(value => escapeHTML(value))
@@ -322,7 +387,8 @@ var translationService = {}
                 
                 resultArray3d.push(finalResulArray)
             }
-
+            
+            //return fixResultArray(resultArray3d, fixIndexesMap)
             return resultArray3d
         })
     }
