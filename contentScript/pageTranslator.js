@@ -261,7 +261,9 @@ twpConfig.onReady(function() {
     function translateResults(nodesToTranslatesNow, results) {
         for (const i in nodesToTranslatesNow) {
             for (const j in nodesToTranslatesNow[i]) {
-                nodesToTranslatesNow[i][j].node.textContent = results[i][j] + " "
+                if (results[i][j]) {
+                    nodesToTranslatesNow[i][j].node.textContent = results[i][j] + " "
+                }
             }
         }
     }
