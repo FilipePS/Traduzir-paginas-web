@@ -481,21 +481,23 @@ twpConfig.onReady(function() {
         if (chrome.i18n.detectLanguage) {
             chrome.i18n.detectLanguage(document.body.innerText, result => {
                 // TODO verificar o valor de result no firefox mobile
-                for (const langInfo of result.languages) {
-                    const langCode = twpLang.checkLanguageCode(langInfo.language)
-                    if (langCode) {
-                        originalPageLanguage = langCode
-                    }
-                    if (pageLanguageState === "original" && !plataformInfo.isMobile.any) {
-                        if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
-                            if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
-                                pageTranslator.translatePage()
-                            } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
-                                pageTranslator.translatePage()
+                if (result) {
+                    for (const langInfo of result.languages) {
+                        const langCode = twpLang.checkLanguageCode(langInfo.language)
+                        if (langCode) {
+                            originalPageLanguage = langCode
+                        }
+                        if (pageLanguageState === "original" && !plataformInfo.isMobile.any) {
+                            if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
+                                if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
+                                    pageTranslator.translatePage()
+                                } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                                    pageTranslator.translatePage()
+                                }
                             }
                         }
+                        break
                     }
-                    break
                 }
     
                 observers.forEach(callback => callback(originalPageLanguage))
@@ -512,21 +514,16 @@ twpConfig.onReady(function() {
         }
     }
 
-    if (chrome.i18n.detectLanguage || !chrome.extension.inIncognitoContext) {
-        if (document.visibilityState == "visible") {
-            detectPageLanguage()
-        } else {
-            const handleVisibilityChange = function () {
-                if (document.visibilityState == "visible") {
-                    document.removeEventListener("visibilitychange", handleVisibilityChange)
-                    detectPageLanguage()
-                }
-            }
-            document.addEventListener("visibilitychange", handleVisibilityChange, false)
-        }   
+    if (document.visibilityState == "visible") {
+        detectPageLanguage()
     } else {
-        observers.forEach(callback => callback("und"))
-        alreadyGotTheLanguage = true
+        const handleVisibilityChange = function () {
+            if (document.visibilityState == "visible") {
+                document.removeEventListener("visibilitychange", handleVisibilityChange)
+                detectPageLanguage()
+            }
+        }
+        document.addEventListener("visibilitychange", handleVisibilityChange, false)
     }
 
     pageTranslator.onGetOriginalPageLanguage(function () {
