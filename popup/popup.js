@@ -84,6 +84,13 @@ twpConfig.onReady(function () {
                 button.classList.add("w3-buttonSelected")
             }
         })
+        
+        if (originalPageLanguage !== "und") {
+            const text = chrome.i18n.getMessage("lblAlwaysTranslate")
+            $("#cbAlwaysTranslateThisLang").checked = twpConfig.get("alwaysTranslateLangs").indexOf(originalPageLanguage) !== -1
+            $("#lblAlwaysTranslateThisLang").textContent = (text ? text : "Always translate from") + " " + twpLang.codeToLanguage(originalPageLanguage)
+            $("#divAlwaysTranslateThisLang").style.display = "block"
+        }
     }
     updateInterface()
     
@@ -164,7 +171,18 @@ twpConfig.onReady(function () {
         twpConfig.set("pageTranslatorService", currentPageTranslatorService)
 
         updateInterface()
-    })    
+    })
+
+    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+        $("#cbAlwaysTranslateThisLang").addEventListener("change", e => {
+            const hostname = new URL(tabs[0].url).hostname
+            if (e.target.checked) {
+                twpConfig.addLangToAlwaysTranslate(originalPageLanguage, hostname)
+            } else {
+                twpConfig.removeLangFromAlwaysTranslate(originalPageLanguage)
+            }
+        })
+    })
     
     $("#btnOptions").addEventListener("change", event => {
         const btnOptions = event.target
