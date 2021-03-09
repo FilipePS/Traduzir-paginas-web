@@ -38,13 +38,13 @@ twpConfig.onReady(function () {
         button.textContent = twpLang.codeToLanguage(targetLanguages[i-1])
     }
 
-    twpButtons[0].textContent = twpLang.codeToLanguage("und")
+    //twpButtons[0].textContent = twpLang.codeToLanguage("und")
 
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "getOriginalPageLanguage"}, {frameId: 0}, pageLanguage => {
             if (pageLanguage && (pageLanguage = twpLang.checkLanguageCode(pageLanguage))) {
                 originalPageLanguage = pageLanguage
-                twpButtons[0].textContent = twpLang.codeToLanguage(originalPageLanguage)
+                //twpButtons[0].textContent = twpLang.codeToLanguage(originalPageLanguage)
             }
         })
 
