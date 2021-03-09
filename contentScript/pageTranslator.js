@@ -161,20 +161,33 @@ twpConfig.onReady(function() {
         let index = 0
         
         const getAllNodes = function (element) {
-            if (element.nodeType == 1 
-            && htmlTagsInlineIgnore.indexOf(element.nodeName) == -1
-            && !element.classList.contains("notranslate")
-            && element.getAttribute("translate") !== "no"
-            && !element.isContentEditable) {
-                if (nodesToTranslate[index].nodesInfo.length > 0 && htmlTagsInlineText.indexOf(element.nodeName) == -1) {
-                    nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
-                    index++
+            if (element.nodeType == 1) {
+                if (htmlTagsInlineIgnore.indexOf(element.nodeName) !== -1
+                || htmlTagsNoTranslate.indexOf(element.nodeName) !== -1
+                || element.classList.contains("notranslate")
+                || element.getAttribute("translate") === "no"
+                || element.isContentEditable) {
+                    if (nodesToTranslate[index].nodesInfo.length > 0) {
+                        nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
+                        index++
+                    }
+                    return
                 }
-                if (htmlTagsNoTranslate.indexOf(element.nodeName) == -1) {
-                    Array.from(element.childNodes).forEach(value => {
+                Array.from(element.childNodes).forEach(value => {
+                    if (htmlTagsInlineText.indexOf(value.nodeName) == -1) {
+                        if (nodesToTranslate[index].nodesInfo.length > 0) {
+                            nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
+                            index++ 
+                        }
                         getAllNodes(value)
-                    })
-                }
+                        if (nodesToTranslate[index].nodesInfo.length > 0) {
+                            nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
+                            index++ 
+                        }
+                    } else {
+                        getAllNodes(value)
+                    }
+                })
             } else if (element.nodeType == 3) {
                 if (element.textContent.trim().length > 0) {
                     if (!nodesToTranslate[index].parent) {
@@ -193,7 +206,7 @@ twpConfig.onReady(function() {
         if (nodesToTranslate.length > 0 && nodesToTranslate[nodesToTranslate.length-1].nodesInfo.length == 0) {
             nodesToTranslate.pop()
         }
-
+        
         return nodesToTranslate
     }
 
