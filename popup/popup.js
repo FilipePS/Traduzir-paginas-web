@@ -26,7 +26,7 @@ twpConfig.onReady(function () {
             }
 
             chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-                chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: event.target.value})
+                chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: event.target.value || "original"})
             })
         })
     })

@@ -95,3 +95,7 @@ body {
 #divMenu {
     border-radius: 50%;
 }
+
+button span {
+    pointer-events: none;
+}
