@@ -122,7 +122,7 @@ var translationService = {}
 
     async function translateHTML(translationService, targetLanguage, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress) {
         const thisTranslationProgress = []
-        const externalTranslationProgress = []
+        const requests = []
 
         for (const str of sourceArray) {
             const transInfo = translationProgress.find(value => value.source === str)
@@ -148,8 +148,14 @@ var translationService = {}
                         translated: null,
                         status: "translating"
                     }
-                    externalTranslationProgress.push(newTransInfo)
-                    requestBody += "&" + textParamName + "=" + encodeURIComponent(str)
+                    
+                    if (requests.length < 1 || requests[requests.length-1].requestBody.length > 800) {
+                        requests.push({requestBody, fullSource: "", transInfos: []})
+                    }
+
+                    requests[requests.length-1].requestBody += "&" + textParamName + "=" + encodeURIComponent(str)
+                    requests[requests.length-1].fullSource += str
+                    requests[requests.length-1].transInfos.push(newTransInfo)
                 }
 
                 translationProgress.push(newTransInfo)
@@ -157,63 +163,65 @@ var translationService = {}
             }
         }
 
-        let tk = ""
-        if (translationService === "google") {
-            tk = calcHash(externalTranslationProgress.map(value => value.source).join(''), googleTranslateTKK)
-        }
-
-        if (externalTranslationProgress.length > 0) {
-            fetch(translationServiceURL + tk, {
-                "credentials": "omit",
-                "headers": {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                "body": requestBody,
-                "method": "POST",
-                "mode": "no-cors",
-                "referrerPolicy": "no-referrer"
-            })
-            .then(response => response.json())
-            .then(response => {
-                let responseJson
-                if (translationService === "yandex") {
-                    responseJson = response.text
-                } else {
-                    if (typeof response[0] == "string") {
-                        responseJson = response
-                    } else {
-                        responseJson = response.map(value => value[0])
-                    }
+        if (requests.length > 0) {
+            for (const idx in requests) {
+                let tk = ""
+                if (translationService === "google") {
+                    tk = calcHash(requests[idx].fullSource, googleTranslateTKK)
                 }
 
-                externalTranslationProgress.forEach((etp, index) => {
-                    try {
-                        if (responseJson[index]) {
-                            etp.status = "complete"
-                            etp.translated = responseJson[index]
-                            
-                            try {
-                                //TODO ERRO AQUI FAZ DA LENTIDAO
-                                translationCache.set(translationService, etp.source, etp.translated, targetLanguage)
-                            } catch (e) {
-                                console.error(e)
-                            }
+                fetch(translationServiceURL + tk, {
+                    "credentials": "omit",
+                    "headers": {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    "body": requests[idx].requestBody,
+                    "method": "POST",
+                    "mode": "no-cors",
+                    "referrerPolicy": "no-referrer"
+                })
+                .then(response => response.json())
+                .then(response => {
+                    let responseJson
+                    if (translationService === "yandex") {
+                        responseJson = response.text
+                    } else {
+                        if (typeof response[0] == "string") {
+                            responseJson = response
                         } else {
-                            etp.status = "error"
+                            responseJson = response.map(value => value[0])
                         }
-                    } catch (e) {
-                        etp.status = "error"
-                        console.error(e)
                     }
+
+                    requests[idx].transInfos.forEach((transInfo, index) => {
+                        try {
+                            if (responseJson[index]) {
+                                transInfo.status = "complete"
+                                transInfo.translated = responseJson[index]
+                                
+                                try {
+                                    //TODO ERRO AQUI FAZ DA LENTIDAO
+                                    translationCache.set(translationService, transInfo.source, transInfo.translated, targetLanguage)
+                                } catch (e) {
+                                    console.error(e)
+                                }
+                            } else {
+                                transInfo.status = "error"
+                            }
+                        } catch (e) {
+                            transInfo.status = "error"
+                            console.error(e)
+                        }
+                    })
+                    return responseJson
                 })
-                return responseJson
-            })
-            .catch(e => {
-                externalTranslationProgress.forEach(etp => {
-                    etp.status = "error"
+                .catch(e => {
+                    requests[idx].transInfos.forEach(transInfo => {
+                        transInfo.status = "error"
+                    })
+                    console.error(e)
                 })
-                console.error(e)
-            })
+            }
         }
 
         const promise =  new Promise((resolve, reject) => {
