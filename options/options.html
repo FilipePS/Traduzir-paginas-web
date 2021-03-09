@@ -122,6 +122,17 @@
                     </div>
                 </div>
                 <ul id="neverTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+                <br>
+                <div class="w3-display-container w3-padding w3-margin-top">
+                    <div class="w3-display-left">
+                        <p><b data-i18n="lblShowTranslatedHoveringSites">Show translated text when hovering on these sites</b></p>
+                    </div>
+                    <div class="w3-display-right">
+                        <button id="addSiteToTranslateWhenHovering" class="w3-button w3-blue w3-round w3-margin-right add"
+                            data-i18n="lblAdd">Add</button>
+                    </div>
+                </div>
+                <ul id="sitesToTranslateWhenHovering" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
             </div>
 
             <div id="translations" class="w3-container">
@@ -133,12 +144,6 @@
                 <br>
                 <p><b data-i18n="lblShowOriginalTextWhenHovering">Show original text when hovering</b></p>
                 <select id="showOriginalTextWhenHovering" class="w3-select w3-margin">
-                    <option value="yes" data-i18n="msgYes">Yes</option>
-                    <option value="no" data-i18n="msgNo">No</option>
-                </select>
-                <br>
-                <p><b data-i18n="lblShowTranslatedWhenHovering">Show translated text when hovering</b></p>
-                <select id="showTranslatedTextWhenHovering" class="w3-select w3-margin">
                     <option value="yes" data-i18n="msgYes">Yes</option>
                     <option value="no" data-i18n="msgNo">No</option>
                 </select>

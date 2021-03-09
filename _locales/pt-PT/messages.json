@@ -214,5 +214,8 @@
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Sempre traduzir este idioma"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Mostrar texto traduzido ao passar o mouse sobre esses sites"
   }
 }

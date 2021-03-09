@@ -325,6 +325,46 @@ twpConfig.onReady(function () {
         twpConfig.addSiteToNeverTranslate(hostname)
     }
 
+    // sitesToTranslateWhenHovering
+
+    function createNodeToSitesToTranslateWhenHoveringList(hostname) {
+        const li = document.createElement("li")
+        li.setAttribute("class", "w3-display-container")
+        li.value = hostname
+        li.textContent = hostname
+
+        const close = document.createElement("span")
+        close.setAttribute("class", "w3-button w3-transparent w3-display-right")
+        close.innerHTML = "&times;"
+
+        close.onclick = e => {
+            e.preventDefault()
+
+            twpConfig.removeSiteFromTranslateWhenHovering(hostname)
+            li.remove()
+        }
+
+        li.appendChild(close)
+
+        return li
+    }
+
+    const sitesToTranslateWhenHovering = twpConfig.get("sitesToTranslateWhenHovering")
+    sitesToTranslateWhenHovering.forEach(hostname => {
+        const li = createNodeToSitesToTranslateWhenHoveringList(hostname)
+        $("#sitesToTranslateWhenHovering").appendChild(li)
+    })
+
+    $("#addSiteToTranslateWhenHovering").onclick = e => {
+        const hostname = prompt("Enter the site hostname", "www.site.com")
+        if (!hostname) return;
+
+        const li = createNodeToSitesToTranslateWhenHoveringList(hostname)
+        $("#sitesToTranslateWhenHovering").appendChild(li)
+
+        twpConfig.addSiteToTranslateWhenHovering(hostname)
+    }
+
     // translations options
     $("#pageTranslatorService").onchange = e => {
         twpConfig.set("pageTranslatorService", e.target.value)
@@ -335,11 +375,6 @@ twpConfig.onReady(function () {
         twpConfig.set("showOriginalTextWhenHovering", e.target.value)
     }
     $("#showOriginalTextWhenHovering").value = twpConfig.get("showOriginalTextWhenHovering")
-
-    $("#showTranslatedTextWhenHovering").onchange = e => {
-        twpConfig.set("showTranslatedTextWhenHovering", e.target.value)
-    }
-    $("#showTranslatedTextWhenHovering").value = twpConfig.get("showTranslatedTextWhenHovering")
 
     $("#showTranslateSelectedButton").onchange = e => {
         twpConfig.set("showTranslateSelectedButton", e.target.value)

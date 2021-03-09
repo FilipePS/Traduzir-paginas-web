@@ -8,9 +8,7 @@ twpConfig.onReady(function () {
     let originalPageLanguage = "und"
     let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
-    let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
-    let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
-    let showTranslatedTextWhenHovering = twpConfig.get("showTranslatedTextWhenHovering")
+    let showTranslatedTextWhenHovering = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
 
     twpConfig.onChanged(function (name, newValue) {
         switch (name) {
@@ -20,16 +18,8 @@ twpConfig.onReady(function () {
             case "targetLanguages":
                 currentTargetLanguage = newValue
                 break
-            case "neverTranslateSites":
-                translateThisSite = newValue.indexOf(location.hostname) === -1
-                showTranslated.enable()
-                break
-            case "neverTranslateLangs":
-                translateThisLanguage = newValue.indexOf(originalPageLanguage) === -1
-                showTranslated.enable()
-                break
-            case "showTranslatedTextWhenHovering":
-                showTranslatedTextWhenHovering = newValue
+            case "sitesToTranslateWhenHovering":
+                showTranslatedTextWhenHovering = newValue.indexOf(location.hostname) !== -1
                 showTranslated.enable()
                 break
         }
@@ -153,8 +143,7 @@ twpConfig.onReady(function () {
         showTranslated.disable()
     
         if (plataformInfo.isMobile.any) return;
-        if (originalPageLanguage === currentTargetLanguage) return;
-        if (showTranslatedTextWhenHovering !== "yes" || !translateThisSite || !translateThisLanguage) return;
+        if (!showTranslatedTextWhenHovering) return;
         if (divElement) return;
 
         divElement = document.createElement("div")
@@ -259,7 +248,6 @@ twpConfig.onReady(function () {
 
     pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
         originalPageLanguage = pagelanguage
-        translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
         showTranslated.enable()
     })
     

@@ -182,6 +182,18 @@ twpConfig.onReady(function () {
                 twpConfig.removeLangFromAlwaysTranslate(originalPageLanguage)
             }
         })
+
+        $("#cbShowTranslatedWhenHovering").addEventListener("change", e => {
+            const hostname = new URL(tabs[0].url).hostname
+            if (e.target.checked) {
+                twpConfig.addSiteToTranslateWhenHovering(hostname)
+            } else {
+                twpConfig.removeSiteFromTranslateWhenHovering(hostname)
+            }
+        })
+        
+        const hostname = new URL(tabs[0].url).hostname
+        $("#cbShowTranslatedWhenHovering").checked = twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) !== -1
     })
     
     $("#btnOptions").addEventListener("change", event => {
