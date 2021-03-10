@@ -160,18 +160,26 @@ twpConfig.onReady(function() {
         const nodesToTranslate = [{isTranslated: false, parent: null, nodesInfo: []}]
         let index = 0
         
-        const getAllNodes = function (element) {
-            if (element.nodeType == 1) {
-                if (htmlTagsInlineIgnore.indexOf(element.nodeName) !== -1
-                || htmlTagsNoTranslate.indexOf(element.nodeName) !== -1
-                || element.classList.contains("notranslate")
-                || element.getAttribute("translate") === "no"
-                || element.isContentEditable) {
-                    if (nodesToTranslate[index].nodesInfo.length > 0) {
-                        nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
-                        index++
+        const getAllNodes = function (_element) {
+            let element
+            if (_element.shadowRoot) {
+                element = _element.shadowRoot
+            } else {
+                element = _element
+            }
+            if (element.nodeType == 1 || element.nodeType == 11) {
+                if (element.nodeType == 1) {
+                    if (htmlTagsInlineIgnore.indexOf(element.nodeName) !== -1
+                    || htmlTagsNoTranslate.indexOf(element.nodeName) !== -1
+                    || element.classList.contains("notranslate")
+                    || element.getAttribute("translate") === "no"
+                    || element.isContentEditable) {
+                        if (nodesToTranslate[index].nodesInfo.length > 0) {
+                            nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
+                            index++
+                        }
+                        return
                     }
-                    return
                 }
                 Array.from(element.childNodes).forEach(value => {
                     if (htmlTagsInlineText.indexOf(value.nodeName) == -1) {
@@ -192,7 +200,7 @@ twpConfig.onReady(function() {
                 if (element.textContent.trim().length > 0) {
                     if (!nodesToTranslate[index].parent) {
                         let temp = element.parentNode
-                        while (temp && temp != document.body && (htmlTagsInlineText.indexOf(temp.nodeName) != -1 || htmlTagsInlineIgnore.indexOf(temp.nodeName) != -1)) {
+                        while (temp && temp != root && (htmlTagsInlineText.indexOf(temp.nodeName) != -1 || htmlTagsInlineIgnore.indexOf(temp.nodeName) != -1)) {
                             temp = temp.parentNode
                         }
                         nodesToTranslate[index].parent = temp
