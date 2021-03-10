@@ -222,6 +222,58 @@ twpConfig.onReady(function () {
 
         chrome.i18n.translateDocument(shadowRoot)
 
+        function enableDarkMode() {
+            if (!shadowRoot.getElementById("darkModeElement")) {
+                const el = document.createElement("style")
+                el.setAttribute("id", "darkModeElement")
+                el.setAttribute("rel", "stylesheet")
+                el.textContent = `
+                div, button, select, option {
+                    color: #e8e6e3;
+                    background-color: #181a1b !important;
+                }
+            
+                a {
+                    color: #e8e6e3 !important;
+                    background-color: #181a1b;
+                }
+            
+                .dropup-content a:hover {
+                    background-color: #454a4d;
+                }
+            
+                .menuDot {
+                    background-color: #e8e6e3 !important;
+                }
+                `
+                shadowRoot.appendChild(el)
+            }
+        }
+        
+        function disableDarkMode() {
+            if (shadowRoot.getElementById("#darkModeElement")) {
+                shadowRoot.getElementById("#darkModeElement").remove()
+            }
+        }
+        
+        switch(twpConfig.get("darkMode")) {
+            case "auto":
+                if (matchMedia("(prefers-color-scheme: dark)").matches) {
+                    enableDarkMode()
+                } else {
+                    disableDarkMode()
+                }
+                break
+            case "yes":
+                enableDarkMode()
+                break
+            case "no":
+                disableDarkMode()
+                break
+            default:
+                break
+        }
+
         getElemById = shadowRoot.getElementById.bind(shadowRoot)
 
         function translatePage(targetLanguage=currentTargetLanguage) {

@@ -152,7 +152,7 @@ twpConfig.onReady(function () {
 
         function enableDarkMode() {
             if (!shadowRoot.getElementById("darkModeElement")) {
-                var el = document.createElement("style")
+                const el = document.createElement("style")
                 el.setAttribute("id", "darkModeElement")
                 el.setAttribute("rel", "stylesheet")
                 el.textContent = `
