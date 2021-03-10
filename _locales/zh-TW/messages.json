@@ -166,5 +166,56 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "懸停時顯示原文"
+  },
+  "msgLanguages": {
+    "message": "語言"
+  },
+  "msgSites": {
+    "message": "網站"
+  },
+  "msgTranslations": {
+    "message": "翻譯"
+  },
+  "msgStyle": {
+    "message": "樣式"
+  },
+  "msgHotkeys": {
+    "message": "快捷鍵"
+  },
+  "lblMakeDonation": {
+    "message": "捐款"
+  },
+  "lblReleaseNotes": {
+    "message": "版本資訊"
+  },
+  "lblReport": {
+    "message": "回報問題"
+  },
+  "lblSettings": {
+    "message": "設定"
+  },
+  "lblAdd": {
+    "message": "新增"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "懸停在文字上時顯示翻譯文本"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "鍵盤快捷鍵"
+  },
+  "msgToTranslateSites": {
+    "message": "翻譯這個網站"
+  },
+  "msgThanksForUseExtension": {
+    "message": "感謝您使用這個擴充套件"
+  },
+  "msgIWillBeGrateful": {
+    "message": "如果您有能力捐款，我將感激不盡。"
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "始終翻譯這個語言"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Show translated text when hovering on these sites"
   }
 }

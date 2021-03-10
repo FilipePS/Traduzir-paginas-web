@@ -42,7 +42,7 @@
     "message": "Yeniden deneyin"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Google çeviri'de aç"
+    "message": "Google Çeviri'de aç"
   },
   "btnDonate": {
     "message": "Bağış yap"
@@ -204,7 +204,7 @@
     "message": "Klavye kısayolları"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Bu sayfayı çevirmek için"
   },
   "msgThanksForUseExtension": {
     "message": "Bu uzantıyı kullandığınız için teşekkür ederiz."
@@ -214,5 +214,8 @@
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Bu dili her zaman çevir"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Show translated text when hovering on these sites"
   }
 }

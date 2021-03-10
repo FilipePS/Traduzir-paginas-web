@@ -166,5 +166,56 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Originaltext beim Darüberfahren anzeigen"
+  },
+  "msgLanguages": {
+    "message": "Sprachen"
+  },
+  "msgSites": {
+    "message": "Seiten"
+  },
+  "msgTranslations": {
+    "message": "Übersetzungen"
+  },
+  "msgStyle": {
+    "message": "Stil"
+  },
+  "msgHotkeys": {
+    "message": "Tastenkombinationen"
+  },
+  "lblMakeDonation": {
+    "message": "Spenden"
+  },
+  "lblReleaseNotes": {
+    "message": "Release Notes"
+  },
+  "lblReport": {
+    "message": "Ein Problem melden"
+  },
+  "lblSettings": {
+    "message": "Einstellungen"
+  },
+  "lblAdd": {
+    "message": "Add"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Übersetzten Text beim Hovern anzeigen"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Tastaturkurzbefehle"
+  },
+  "msgToTranslateSites": {
+    "message": "Um die Seite zu übersetzen"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Vielen Dank, dass Sie diese Erweiterung verwenden."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Für eine Spende wäre ich Ihnen dankbar."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Immer diese Sprache übersetzen"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Show translated text when hovering on these sites"
   }
 }

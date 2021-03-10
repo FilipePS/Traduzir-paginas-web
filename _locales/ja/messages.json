@@ -166,5 +166,56 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "マウスオーバー時に原文を表示"
+  },
+  "msgLanguages": {
+    "message": "言語"
+  },
+  "msgSites": {
+    "message": "サイト"
+  },
+  "msgTranslations": {
+    "message": "翻訳"
+  },
+  "msgStyle": {
+    "message": "外観"
+  },
+  "msgHotkeys": {
+    "message": "ショートカット"
+  },
+  "lblMakeDonation": {
+    "message": "寄付する"
+  },
+  "lblReleaseNotes": {
+    "message": "リリースノート"
+  },
+  "lblReport": {
+    "message": "問題の報告"
+  },
+  "lblSettings": {
+    "message": "設定"
+  },
+  "lblAdd": {
+    "message": "追加"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "マウスオーバーしたテキストを翻訳する"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "キーボードショートカット"
+  },
+  "msgToTranslateSites": {
+    "message": "でサイトを翻訳"
+  },
+  "msgThanksForUseExtension": {
+    "message": "この拡張機能をご利用いただきありがとうございます。"
+  },
+  "msgIWillBeGrateful": {
+    "message": "もしご寄付いただければ、本当に感謝いたします。"
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "この言語を常に翻訳する"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Show translated text when hovering on these sites"
   }
 }

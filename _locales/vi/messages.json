@@ -166,5 +166,56 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Hiển thị văn bản gốc khi di chuột đến nó"
+  },
+  "msgLanguages": {
+    "message": "Ngôn ngữ"
+  },
+  "msgSites": {
+    "message": "Trang web"
+  },
+  "msgTranslations": {
+    "message": "Dịch"
+  },
+  "msgStyle": {
+    "message": "Hiển thị"
+  },
+  "msgHotkeys": {
+    "message": "Phím tắt"
+  },
+  "lblMakeDonation": {
+    "message": "Quyên góp"
+  },
+  "lblReleaseNotes": {
+    "message": "Ghi chú phát hành"
+  },
+  "lblReport": {
+    "message": "Báo cáo sự cố"
+  },
+  "lblSettings": {
+    "message": "Cài đặt"
+  },
+  "lblAdd": {
+    "message": "Thêm"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Hiển thị văn bản đã dịch khi di chuột đến nó"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Phím tắt bàn phím"
+  },
+  "msgToTranslateSites": {
+    "message": "Để dịch trang web"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Cảm ơn bạn đã sử dụng tiện ích này."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Tôi sẽ biết ơn nếu bạn có thể đóng góp."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Luôn dịch trang web này"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Show translated text when hovering on these sites"
   }
 }
