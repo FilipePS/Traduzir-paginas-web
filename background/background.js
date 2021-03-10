@@ -133,7 +133,8 @@ if (typeof chrome.contextMenus !== "undefined") {
     })
 
     chrome.tabs.onActivated.addListener(activeInfo => {
-        chrome.tabs.sendMessage(activeInfo.tabId, {action: "getMainFramePageLanguageState"}, {frameId: 0}, pageLanguageState => {
+        updateContextMenu()
+        chrome.tabs.sendMessage(activeInfo.tabId, {action: "getCurrentPageLanguageState"}, {frameId: 0}, pageLanguageState => {
             if (pageLanguageState) {
                 twpConfig.onReady(function() {
                     updateContextMenu(pageLanguageState)
