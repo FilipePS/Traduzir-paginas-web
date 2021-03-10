@@ -175,7 +175,7 @@ twpConfig.onReady(function () {
     let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
     let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
-    let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
+    let translateThisLanguage = false
     let showPopupMobile = twpConfig.get("showPopupMobile")
 
     twpConfig.onChanged(function (name, newValue) {
@@ -185,7 +185,7 @@ twpConfig.onReady(function () {
                 popupMobile.show()
                 break
             case "neverTranslateLangs":
-                translateThisLanguage = newValue.indexOf(originalPageLanguage) === -1
+                translateThisLanguage = originalPageLanguage === "und" || (currentTargetLanguage !== originalPageLanguage && newValue.indexOf(originalPageLanguage) === -1)
                 popupMobile.show()
                 break
             case "showPopupMobile":
@@ -363,8 +363,15 @@ twpConfig.onReady(function () {
     })
 
     pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
-        originalPageLanguage = pagelanguage
-        translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
+        if (true || pagelanguage === "und") {
+            const lang = twpLang.checkLanguageCode(document.documentElement.lang)
+            if (lang) {
+                originalPageLanguage = pagelanguage
+            }
+        } else {
+            originalPageLanguage = pagelanguage
+        }
+        translateThisLanguage = originalPageLanguage === "und" || (currentTargetLanguage !== originalPageLanguage && twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1)
         popupMobile.show()
     })
 
