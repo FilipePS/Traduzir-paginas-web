@@ -63,7 +63,7 @@
             "matches": ["<all_urls>"],
             "run_at": "document_end",
             "all_frames": false,
-            "js": ["/contentScript/popupMobile.js"]
+            "js": ["/lib/i18n.js", "/contentScript/popupMobile.js"]
         }
     ],
 

@@ -144,19 +144,19 @@ twpConfig.onReady(function () {
     <div id='element' style="z-index: 1000000000;position: fixed;left: 0;right: 0;bottom: 0;background-color: white;box-shadow: 0px 0px 4px rgba(0, 0, 0, 1);height: 50px;user-select: none;">
     <div style="display:flex; align-items: center; margin: 0 auto; vertical-align: middle; padding-left: 10px">
         <img id="iconTranslate" style="max-width: 38px; max-height: 38px;">
-        <button id="btnOriginal" class="item button" style="color: #2196F3">Original</button>
-        <button id="btnTranslate" class="item button">Translated</button>
+        <button id="btnOriginal" class="item button" style="color: #2196F3" data-i18n="btnMobileOriginal">Original</button>
+        <button id="btnTranslate" class="item button" data-i18n="lblTranslated">Translated</button>
         <button id="spin" class="item button" style="display: none">
             <div class="loader button" style="margin: 0 auto;"></div>
         </button>
         <button id="btnMenu" class="item2" style="width: 50px; max-width: 50px">
             <div class="dropup">
                 <div id="menu" class="dropup-content">
-                    <a id="btnChangeLanguages">Change languages</a>
-                    <a id="btnNeverTranslate">Never translate this site</a>
-                    <a id="neverTranslateThisLanguage" display="none">Never translate this language</a>
-                    <a id="btnDonate" href="https://www.patreon.com/filipeps" target="_blank" rel="noopener noreferrer">Donate &#10084;</a>
-                    <a id="btnMoreOptions">More options</a>
+                    <a id="btnChangeLanguages" data-i18n="btnChangeLanguages">Change languages</a>
+                    <a id="btnNeverTranslate" data-i18n="btnNeverTranslate">Never translate this site</a>
+                    <a id="neverTranslateThisLanguage" data-i18n="btnNeverTranslateThisLanguage" display="none">Never translate this language</a>
+                    <a id="btnDonate" data-i18n="btnDonate" href="https://www.patreon.com/filipeps" target="_blank" rel="noopener noreferrer">Donate &#10084;</a>
+                    <a id="btnMoreOptions" data-i18n="btnMoreOptions">More options</a>
                 </div>
             </div>
             <div class="dropup">
@@ -219,6 +219,8 @@ twpConfig.onReady(function () {
         shadowRoot.innerHTML = htmlMobile
 
         document.body.appendChild(divElement)
+
+        chrome.i18n.translateDocument(shadowRoot)
 
         getElemById = shadowRoot.getElementById.bind(shadowRoot)
 
