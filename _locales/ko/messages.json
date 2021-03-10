@@ -166,5 +166,53 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "마우스를 가져다 대면 원본 텍스트 표시"
+  },
+  "msgLanguages": {
+    "message": "언어"
+  },
+  "msgSites": {
+    "message": "사이트"
+  },
+  "msgTranslations": {
+    "message": "번역"
+  },
+  "msgStyle": {
+    "message": "스타일"
+  },
+  "msgHotkeys": {
+    "message": "단축키"
+  },
+  "lblMakeDonation": {
+    "message": "기부하기"
+  },
+  "lblReleaseNotes": {
+    "message": "릴리즈 노트"
+  },
+  "lblReport": {
+    "message": "문제 보고하기"
+  },
+  "lblSettings": {
+    "message": "설정"
+  },
+  "lblAdd": {
+    "message": "추가"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "마우스를 가져다 대면 번역된 텍스트 표시"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "키보드 단축키"
+  },
+  "msgToTranslateSites": {
+    "message": "사이트 번역"
+  },
+  "msgThanksForUseExtension": {
+    "message": "이 확장 기능을 사용해주셔서 감사합니다."
+  },
+  "msgIWillBeGrateful": {
+    "message": "기부해 주시면 감사하겠습니다."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "이 언어 항상 번역"
   }
 }

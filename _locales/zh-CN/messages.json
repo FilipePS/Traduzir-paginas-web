@@ -21,7 +21,7 @@
     "message": "无法翻译此页面"
   },
   "lblAlwaysTranslate": {
-    "message": "始终翻译 - "
+    "message": "总是翻译 - "
   },
   "lblTargetLanguage": {
     "message": "目标语言"
@@ -214,5 +214,8 @@
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "总是翻译此语言"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "在这些网站悬停显示译文"
   }
 }
