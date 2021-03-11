@@ -147,7 +147,7 @@
     "message": "부가 기능 업데이트 시 릴리즈 노트 표시"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "선택한 텍스트 번역 버튼 표시"
+    "message": "선택한 텍스트에 번역 버튼 표시"
   },
   "msgAutomatic": {
     "message": "자동"
@@ -214,5 +214,17 @@
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "이 언어 항상 번역"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "마우스를 가져다 대면 번역된 텍스트를 표시할 사이트 목록"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "사이트가 번역되면 팝업 아이콘을 파란색으로 표시"
+  },
+  "more": {
+    "message": "더보기"
+  },
+  "less": {
+    "message": "간단히"
   }
 }
