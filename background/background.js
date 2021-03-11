@@ -166,6 +166,8 @@ twpConfig.onReady(function() {
 
         //TODO veriricar porque chrome.theme.getCurrent não funciona, apenas browser.theme.getCurrent
         if (chrome.pageAction && browser) {
+            let pageLanguageState = "original"
+
             let themeColorPopupText = null
             browser.theme.getCurrent().then(theme => {
                 themeColorPopupText = null
@@ -215,9 +217,17 @@ twpConfig.onReady(function() {
                 if (themeColorPopupText) {
                     svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, themeColorPopupText))
                 } else if (darkMode) {
-                    svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, "white"))
+                    if (pageLanguageState === "translated" && twpConfig.get("popupBlueWhenSiteIsTranslated") === "yes") {
+                        svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, "#77f"))
+                    } else {
+                        svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, "white"))
+                    }
                 } else {
-                    svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, "black"))
+                    if (pageLanguageState === "translated" && twpConfig.get("popupBlueWhenSiteIsTranslated") === "yes") {
+                        svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, "#22f"))
+                    } else {
+                        svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, "black"))
+                    }
                 }
     
                 const b64Start = 'data:image/svg+xml;base64,';
@@ -242,6 +252,24 @@ twpConfig.onReady(function() {
             chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                 if (changeInfo.status == "loading") {
                     updateIcon(tabId)
+                }
+            })
+
+            chrome.tabs.onActivated.addListener(activeInfo => {
+                pageLanguageState = "original"
+                updateIcon(activeInfo.tabId)
+                chrome.tabs.sendMessage(activeInfo.tabId, {action: "getCurrentPageLanguageState"}, {frameId: 0}, _pageLanguageState => {
+                    if (_pageLanguageState) {
+                        pageLanguageState = _pageLanguageState
+                        updateIcon(activeInfo.tabId)
+                    }
+                })
+            })
+
+            chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+                if (request.action === "setPageLanguageState") {
+                    pageLanguageState = request.pageLanguageState
+                    updateIcon(sender.tab.id)
                 }
             })
         }

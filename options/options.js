@@ -388,6 +388,11 @@ twpConfig.onReady(function () {
     }
     $("#darkMode").value = twpConfig.get("darkMode")
 
+    $("#popupBlueWhenSiteIsTranslated").onchange = e => {
+        twpConfig.set("popupBlueWhenSiteIsTranslated", e.target.value)
+    }
+    $("#popupBlueWhenSiteIsTranslated").value = twpConfig.get("popupBlueWhenSiteIsTranslated")
+
     // others options
     $("#showReleaseNotes").onchange = e => {
         twpConfig.set("showReleaseNotes", e.target.value)

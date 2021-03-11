@@ -217,5 +217,8 @@
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Mostrar texto traduzido ao passar o mouse sobre esses sites"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Deixe o ícone pop-up azul quando o site for traduzido"
   }
 }
