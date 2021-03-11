@@ -220,5 +220,11 @@
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Deixe o ícone pop-up azul quando o site for traduzido"
+  },
+  "more": {
+    "message": "Mais"
+  },
+  "less": {
+    "message": "Menos"
   }
 }

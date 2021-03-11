@@ -15,7 +15,7 @@
         <button class="w3-bar-item w3-button w3-ripple w3-hover-light-blue" style="border-radius: 0px 5px 0px 0px;"
             value="en">English</button>
     </div>
-    <div class="w3-bar" style="width: 280px;">
+    <div class="w3-bar" style="width: 280px;" data-popupPanelSection="2">
         <button class="w3-bar-item w3-button w3-ripple w3-hover-light-blue" style="border-radius: 0px 0px 0px 5px;"
             value="es">Spanish</button>
         <button class="w3-bar-item w3-button w3-ripple w3-hover-light-blue" style="border-radius: 0px 0px 5px 0px;"
@@ -24,17 +24,34 @@
 
     <div class="w3-container w3-margin-top" style="font-weight: 500">
         <div id="divAlwaysTranslateThisLang" style="display: none;">
-            <input type="checkbox" id="cbAlwaysTranslateThisLang">
+            <input type="checkbox" class="w3-check" id="cbAlwaysTranslateThisLang">
             <label id="lblAlwaysTranslateThisLang" for="cbAlwaysTranslateThisLang" data-i18n="lblAlwaysTranslate">Always translate from</label>
         </div>
-        <input type="checkbox" id="cbAlwaysTranslateThisSite">
-        <label for="cbAlwaysTranslateThisSite" data-i18n="btnAlwaysTranslate">Always translate this site</label>
-        <hr>
-        <input type="checkbox" id="cbShowOriginalWhenHovering">
-        <label for="cbShowOriginalWhenHovering" data-i18n="lblShowOriginalTextWhenHovering">Show original text when hovering</label>
-        <br>
-        <input type="checkbox" id="cbShowTranslatedWhenHovering">
-        <label for="cbShowTranslatedWhenHovering" data-i18n="lblShowTranslatedWhenHovering">Show translated text when hovering</label>
+        <div data-popupPanelSection="1">
+            <input type="checkbox" class="w3-check" data-i18n="cbAlwaysTranslateThisSite">
+            <label for="cbAlwaysTranslateThisSite" data-i18n="btnAlwaysTranslate">Always translate this site</label>
+        </div>
+        <div data-popupPanelSection="3">
+            <hr>
+        </div>
+        <div data-popupPanelSection="3">
+            <input type="checkbox" class="w3-check" id="cbShowOriginalWhenHovering">
+            <label for="cbShowOriginalWhenHovering" data-i18n="lblShowOriginalTextWhenHovering">Show original text when hovering</label>
+        </div>
+        <div data-popupPanelSection="4">
+            <input type="checkbox" class="w3-check" id="cbShowTranslatedWhenHovering">
+            <label for="cbShowTranslatedWhenHovering" data-i18n="lblShowTranslatedWhenHovering">Show translated text when hovering</label>
+        </div>
+    </div>
+    </div>
+
+    <div id="moreOrLess" style="height: 32px;">
+        <div id="more" class="w3-display-bottomleft w3-hover-light-grey" style="padding: 8px 60px 8px 20px; font-weight: 500;">
+            <span data-i18n="more">More</span>&nbsp;&nbsp;&nbsp;<i class="arrow down"></i>
+        </div>
+        <div id="less" class="w3-display-bottomright w3-hover-light-grey" style="padding: 8px 20px 8px 60px; font-weight: 500;">
+            <i class="arrow up"></i>&nbsp;&nbsp;&nbsp;<span data-i18n="less">Less</span>
+        </div>
     </div>
 
     <div class="w3-display-topright margin10">

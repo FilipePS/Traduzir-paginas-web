@@ -99,3 +99,30 @@ body {
 button span {
     pointer-events: none;
 }
+
+input,
+label,
+#more,
+#less {
+    cursor: pointer;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.up {
+    transform: rotate(-135deg) translate(0, -3px);
+}
+
+.down {
+    transform: rotate(45deg) translate(0, -3px);
+}

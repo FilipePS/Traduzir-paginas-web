@@ -3,6 +3,45 @@
 var $ = document.querySelector.bind(document)
 
 twpConfig.onReady(function () {
+    let popupPanelSection = twpConfig.get("popupPanelSection")
+    function updatePopupSection() {
+        document.querySelectorAll("[data-popupPanelSection]").forEach(node => {
+            const nodePopupPanelSection = parseInt(node.getAttribute("data-popupPanelSection"))
+            if (isNaN(nodePopupPanelSection)) return
+    
+            if (nodePopupPanelSection > popupPanelSection) {
+                node.style.display = "none"
+            } else {
+                node.style.display = "block"
+            }
+        })
+
+        $("#more").style.display = "block"
+        $("#less").style.display = "block"
+
+        if (popupPanelSection >= 4) {
+            $("#more").style.display = "none"
+        } else if (popupPanelSection <= 0) {
+            $("#less").style.display = "none"
+        }
+    }
+    updatePopupSection()
+
+    $("#more").onclick = e => {
+        if (popupPanelSection < 4) {
+            popupPanelSection++
+            updatePopupSection()
+        }
+        twpConfig.set("popupPanelSection", popupPanelSection)
+    }
+    $("#less").onclick = e => {
+        if (popupPanelSection > 0) {
+            popupPanelSection--
+            updatePopupSection()
+        }
+        twpConfig.set("popupPanelSection", popupPanelSection)
+    }
+
     let originalPageLanguage = "und"
     let currentPageLanguage = "und"
     let currentPageLanguageState = "original"
