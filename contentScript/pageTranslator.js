@@ -160,13 +160,7 @@ twpConfig.onReady(function() {
         const nodesToTranslate = [{isTranslated: false, parent: null, nodesInfo: []}]
         let index = 0
         
-        const getAllNodes = function (_element) {
-            let element
-            if (_element.shadowRoot) {
-                element = _element.shadowRoot
-            } else {
-                element = _element
-            }
+        const getAllNodes = function (element) {
             if (element.nodeType == 1 || element.nodeType == 11) {
                 if (element.nodeType == 1) {
                     if (htmlTagsInlineIgnore.indexOf(element.nodeName) !== -1
@@ -181,7 +175,7 @@ twpConfig.onReady(function() {
                         return
                     }
                 }
-                Array.from(element.childNodes).forEach(value => {
+                Array.from(element.shadowRoot ? element.shadowRoot.childNodes : element.childNodes).forEach(value => {
                     if (htmlTagsInlineText.indexOf(value.nodeName) == -1) {
                         if (nodesToTranslate[index].nodesInfo.length > 0) {
                             nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
