@@ -183,6 +183,14 @@ twpConfig.onReady(function () {
             }
         })
 
+        $("#cbShowOriginalWhenHovering").addEventListener("change", e => {
+            if (e.target.checked) {
+                twpConfig.set("showOriginalTextWhenHovering", "yes")
+            } else {
+                twpConfig.set("showOriginalTextWhenHovering", "no")
+            }
+        })
+
         $("#cbShowTranslatedWhenHovering").addEventListener("change", e => {
             const hostname = new URL(tabs[0].url).hostname
             if (e.target.checked) {
@@ -191,6 +199,9 @@ twpConfig.onReady(function () {
                 twpConfig.removeSiteFromTranslateWhenHovering(hostname)
             }
         })
+
+        
+        $("#cbShowOriginalWhenHovering").checked = twpConfig.get("showOriginalTextWhenHovering") == "yes" ? true : false
         
         const hostname = new URL(tabs[0].url).hostname
         $("#cbShowTranslatedWhenHovering").checked = twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) !== -1
