@@ -58,7 +58,6 @@ twpConfig.onReady(function() {
     let fooCount = 0
 
     let originalPageTitle
-    let translatedPageTitle
 
     let attributesToTranslate = []
 
@@ -361,7 +360,6 @@ twpConfig.onReady(function() {
         .then(result => {
             if (result) {
                 document.title = result
-                translatedPageTitle = result
             }
         })
     }
@@ -406,10 +404,9 @@ twpConfig.onReady(function() {
         pageLanguageStateObservers.forEach(callback => callback(pageLanguageState))
         currentPageLanguage = originalPageLanguage
 
-        if (translatedPageTitle && translatedPageTitle == document.title) {
+        if (originalPageTitle) {
             document.title = originalPageTitle
         }
-        translatedPageTitle = null
         originalPageTitle = null
 
         for (const nti of nodesToTranslate) {
