@@ -32,9 +32,16 @@ function updateGoogleTranslateTKK() {
         })
 }
 //*/
+
+// Avoid outputting the error message "Receiving end does not exist" in the Console.
+function checkedLastError() {
+    chrome.runtime.lastError
+}
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "getMainFramePageLanguageState") {
         chrome.tabs.sendMessage(sender.tab.id, {action: "getCurrentPageLanguageState"}, {frameId: 0}, pageLanguageState => {
+            checkedLastError()
             sendResponse(pageLanguageState)
         })
 
@@ -126,15 +133,16 @@ if (typeof chrome.contextMenus !== "undefined") {
     chrome.contextMenus.onClicked.addListener((info, tab) => {
         if (info.menuItemId == "translate-web-page") {
             //TODO forçar tradução em vez de alternar
-            chrome.tabs.sendMessage(tab.id, {action: "toggle-translation"})
+            chrome.tabs.sendMessage(tab.id, {action: "toggle-translation"}, checkedLastError)
         } else if (info.menuItemId == "translate-selected-text") {
-            chrome.tabs.sendMessage(tab.id, {action: "TranslateSelectedText"})
+            chrome.tabs.sendMessage(tab.id, {action: "TranslateSelectedText"}, checkedLastError)
         }
     })
 
     chrome.tabs.onActivated.addListener(activeInfo => {
         updateContextMenu()
         chrome.tabs.sendMessage(activeInfo.tabId, {action: "getCurrentPageLanguageState"}, {frameId: 0}, pageLanguageState => {
+            checkedLastError()
             if (pageLanguageState) {
                 twpConfig.onReady(function() {
                     updateContextMenu(pageLanguageState)
@@ -159,7 +167,7 @@ twpConfig.onReady(function() {
         })
         
         chrome.browserAction.onClicked.addListener(tab => {
-            chrome.tabs.sendMessage(tab.id, {action: "showPopupMobile"}, {frameId: 0})
+            chrome.tabs.sendMessage(tab.id, {action: "showPopupMobile"}, {frameId: 0}, checkedLastError)
         })
     } else {
         chrome.browserAction.setPopup({popup: "popup/popup.html"})
@@ -259,6 +267,7 @@ twpConfig.onReady(function() {
                 pageLanguageState = "original"
                 updateIcon(activeInfo.tabId)
                 chrome.tabs.sendMessage(activeInfo.tabId, {action: "getCurrentPageLanguageState"}, {frameId: 0}, _pageLanguageState => {
+                    checkedLastError()
                     if (_pageLanguageState) {
                         pageLanguageState = _pageLanguageState
                         updateIcon(activeInfo.tabId)
@@ -280,7 +289,7 @@ if (typeof chrome.commands !== "undefined") {
     chrome.commands.onCommand.addListener(command => {
         if (command === "toggle-translation") {
             chrome.tabs.query({currentWindow: true, active: true}, tabs => {
-                chrome.tabs.sendMessage(tabs[0].id, {action: "toggle-translation"})
+                chrome.tabs.sendMessage(tabs[0].id, {action: "toggle-translation"}, checkedLastError)
             })
         }
     })
