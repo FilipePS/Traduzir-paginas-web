@@ -5,6 +5,7 @@ var showTranslated = {}
 twpConfig.onReady(function () {
     if (plataformInfo.isMobile.any) return;
 
+    let pageLanguageState = "original"
     let originalPageLanguage = "und"
     let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
@@ -142,6 +143,7 @@ twpConfig.onReady(function () {
     showTranslated.enable = function () {
         showTranslated.disable()
     
+        if (pageLanguageState == "translated") return;
         if (plataformInfo.isMobile.any) return;
         if (!showTranslatedTextWhenHovering) return;
         if (divElement) return;
@@ -251,11 +253,8 @@ twpConfig.onReady(function () {
         showTranslated.enable()
     })
     
-    pageTranslator.onPageLanguageStateChange(pageLanguageState => {
-        if (pageLanguageState === "translated") {
-            showTranslated.disable()
-        } else {
-            showTranslated.enable()
-        }
+    pageTranslator.onPageLanguageStateChange(_pageLanguageState => {
+        pageLanguageState = _pageLanguageState
+        showTranslated.enable()
     })
 })
