@@ -522,17 +522,19 @@ twpConfig.onReady(function() {
         }
     }
 
-    if (document.visibilityState == "visible") {
-        detectPageLanguage()
-    } else {
-        const handleVisibilityChange = function () {
-            if (document.visibilityState == "visible") {
-                document.removeEventListener("visibilitychange", handleVisibilityChange)
-                detectPageLanguage()
+    setTimeout(function () {
+        if (document.visibilityState == "visible") {
+            detectPageLanguage()
+        } else {
+            const handleVisibilityChange = function () {
+                if (document.visibilityState == "visible") {
+                    document.removeEventListener("visibilitychange", handleVisibilityChange)
+                    detectPageLanguage()
+                }
             }
+            document.addEventListener("visibilitychange", handleVisibilityChange, false)
         }
-        document.addEventListener("visibilitychange", handleVisibilityChange, false)
-    }
+    }, 100)
 
     pageTranslator.onGetOriginalPageLanguage(function () {
         chrome.runtime.sendMessage({action: "getMainFramePageLanguageState"}, response => {
