@@ -9,7 +9,7 @@ twpConfig.onReady(function () {
     twpConfig.onChanged(function (name, newValue) {
         if (name === "showOriginalTextWhenHovering") {
             showOriginalTextWhenHovering = newValue
-            showOriginal.enable()
+            showOriginal.enable(true)
         }
     })
 
@@ -107,8 +107,8 @@ twpConfig.onReady(function () {
         nodesToShowOriginal = []
     }
 
-    showOriginal.enable = function () {
-        showOriginal.disable()
+    showOriginal.enable = function (dontDeleteNodesToShowOriginal=false) {
+        showOriginal.disable(dontDeleteNodesToShowOriginal)
         
         if (plataformInfo.isMobile.any) return;
         if (showOriginalTextWhenHovering !== "yes") return;
@@ -201,7 +201,7 @@ twpConfig.onReady(function () {
         document.addEventListener("visibilitychange", hideOriginalText)
     }
 
-    showOriginal.disable = function () {
+    showOriginal.disable = function (dontDeleteNodesToShowOriginal=false) {
         if (divElement) {
             hideOriginalText()
             divElement.remove()
@@ -209,7 +209,9 @@ twpConfig.onReady(function () {
             shadowRoot = null
         }
 
-        showOriginal.removeAll()
+        if (!dontDeleteNodesToShowOriginal)  {
+            showOriginal.removeAll()
+        }
 
         document.removeEventListener("mousemove", onMouseMove)
         document.removeEventListener("mousedown", onMouseDown)
