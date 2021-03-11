@@ -21,7 +21,7 @@
     "message": "此頁面無法翻譯"
   },
   "lblAlwaysTranslate": {
-    "message": "一律翻譯自"
+    "message": "一律翻譯至"
   },
   "lblTargetLanguage": {
     "message": "目標語言"
@@ -72,7 +72,7 @@
     "message": "自動翻譯這些語言"
   },
   "optionPopupConfig": {
-    "message": "顯示手機彈出窗口"
+    "message": "顯示手機跳出視窗"
   },
   "optionPopupAuto": {
     "message": "自動地"
@@ -108,7 +108,7 @@
     "message": "否"
   },
   "lblUseNewAlgorithm": {
-    "message": "使用新的翻譯算法？"
+    "message": "使用新的翻譯演算法？"
   },
   "msgYesRecommended": {
     "message": "是（推薦）"
@@ -141,7 +141,7 @@
     "message": "透過 PayPal 贊助"
   },
   "lblDarkMode": {
-    "message": "夜間模式"
+    "message": "黑暗模式"
   },
   "lblShowReleaseNotes": {
     "message": "更新時顯示更新日誌"
@@ -216,6 +216,9 @@
     "message": "始終翻譯這個語言"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "在這些網站上懸停時顯示翻譯文本"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "將網站翻譯時的彈出式圖示變為藍色"
   }
 }

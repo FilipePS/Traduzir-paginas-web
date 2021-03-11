@@ -217,5 +217,8 @@
   },
   "lblShowTranslatedHoveringSites": {
     "message": "在这些网站悬停显示译文"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "若网站已翻译，则将弹窗中目标语言背景变为蓝色"
   }
 }
