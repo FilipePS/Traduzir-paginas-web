@@ -216,6 +216,9 @@
     "message": "この言語を常に翻訳する"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "マウスオーバーしたテキストを翻訳するサイト"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Make the pop-up icon blue when the site is translated"
   }
 }

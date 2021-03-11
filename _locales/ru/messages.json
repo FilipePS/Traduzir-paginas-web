@@ -214,5 +214,11 @@
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Всегда переводить с этого языка"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Показывать переведенный текст при наведении курсора на этих сайтах"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Make the pop-up icon blue when the site is translated"
   }
 }

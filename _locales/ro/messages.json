@@ -214,5 +214,11 @@
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Tradu mereu această limbă"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Arată textul tradus cînd pui săgeata pe aceste situri"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Make the pop-up icon blue when the site is translated"
   }
 }

@@ -214,5 +214,11 @@
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Traduci sempre questa lingua"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Mostra il testo tradotto quando passi la freccia su questi siti"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Make the pop-up icon blue when the site is translated"
   }
 }
