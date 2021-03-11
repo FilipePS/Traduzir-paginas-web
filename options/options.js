@@ -101,11 +101,11 @@ twpConfig.onReady(function () {
 
             #donation select {
                 color: black !important;
-                background-color: white !important;
+                background-color: rgb(231, 230, 228) !important;
             }
 
             html *, nav, #header {
-                color: white !important;
+                color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
             }
             `

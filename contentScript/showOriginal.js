@@ -139,7 +139,7 @@ twpConfig.onReady(function () {
                     left: 0px;
                     background-color: white;
                     color: black;
-                    border: 1px solid lightGrey;
+                    border: 1px solid grey;
                     overflow: auto;
                     padding: 16px;
                     visible: true;
@@ -160,7 +160,7 @@ twpConfig.onReady(function () {
                         scrollbar-color: #202324 #454a4d;
                     }
                     #originalText {
-                        color: white !important;
+                        color: rgb(231, 230, 228) !important;
                         background-color: #181a1b !important;
                     }
                 `

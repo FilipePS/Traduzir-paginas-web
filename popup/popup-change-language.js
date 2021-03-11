@@ -63,12 +63,12 @@ twpConfig.onReady(function() {
             }
             
             body {
-                color: white !important;
+                color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
             }
 
             .mdiv, .md {
-                background-color: white;
+                background-color: rgb(231, 230, 228);
             }
             
             #btnClose:hover {
@@ -76,7 +76,7 @@ twpConfig.onReady(function() {
             }
             
             select {
-                color: white !important;
+                color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
             }
             `

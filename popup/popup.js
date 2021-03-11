@@ -101,19 +101,19 @@ twpConfig.onReady(function () {
             el.setAttribute("rel", "stylesheet")
             el.textContent = `
             body {
-                color: white !important;
+                color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
             }
             
             .mdiv, .md {
-                background-color: white;
+                background-color: rgb(231, 230, 228);
             }
 
             .menuDot {
                 background-image:
-                    radial-gradient(white 2px, transparent 2px),
-                    radial-gradient(white 2px, transparent 2px),
-                    radial-gradient(white 2px, transparent 2px);
+                    radial-gradient(rgb(231, 230, 228) 2px, transparent 2px),
+                    radial-gradient(rgb(231, 230, 228) 2px, transparent 2px),
+                    radial-gradient(rgb(231, 230, 228) 2px, transparent 2px);
             }
 
             #btnClose:hover, #divMenu:hover {
@@ -121,7 +121,7 @@ twpConfig.onReady(function () {
             }
             
             select {
-                color: white !important;
+                color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
             }
             `

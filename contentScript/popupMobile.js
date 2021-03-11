@@ -229,12 +229,12 @@ twpConfig.onReady(function () {
                 el.setAttribute("rel", "stylesheet")
                 el.textContent = `
                 div, button, select, option {
-                    color: #e8e6e3;
+                    color: rgb(231, 230, 228);
                     background-color: #181a1b !important;
                 }
             
                 a {
-                    color: #e8e6e3 !important;
+                    color: rgb(231, 230, 228) !important;
                     background-color: #181a1b;
                 }
             
@@ -243,7 +243,7 @@ twpConfig.onReady(function () {
                 }
             
                 .menuDot {
-                    background-color: #e8e6e3 !important;
+                    background-color: rgb(231, 230, 228) !important;
                 }
                 `
                 shadowRoot.appendChild(el)
