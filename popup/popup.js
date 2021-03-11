@@ -183,6 +183,15 @@ twpConfig.onReady(function () {
             }
         })
 
+        $("#cbAlwaysTranslateThisSite").addEventListener("change", e => {
+            const hostname = new URL(tabs[0].url).hostname
+            if (e.target.checked) {
+                twpConfig.addSiteToAlwaysTranslate(hostname)
+            } else {
+                twpConfig.removeSiteFromAlwaysTranslate(hostname)
+            }
+        })
+
         $("#cbShowOriginalWhenHovering").addEventListener("change", e => {
             if (e.target.checked) {
                 twpConfig.set("showOriginalTextWhenHovering", "yes")
@@ -200,10 +209,10 @@ twpConfig.onReady(function () {
             }
         })
 
-        
         $("#cbShowOriginalWhenHovering").checked = twpConfig.get("showOriginalTextWhenHovering") == "yes" ? true : false
         
         const hostname = new URL(tabs[0].url).hostname
+        $("#cbAlwaysTranslateThisSite").checked = twpConfig.get("alwaysTranslateSites").indexOf(hostname) !== -1
         $("#cbShowTranslatedWhenHovering").checked = twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) !== -1
     })
     
