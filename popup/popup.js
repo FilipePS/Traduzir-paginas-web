@@ -144,7 +144,7 @@ twpConfig.onReady(function () {
                 background-color: #181a1b !important;
             }
             
-            .mdiv, .md {
+            .mdiv, .md, {
                 background-color: rgb(231, 230, 228);
             }
 
@@ -162,6 +162,14 @@ twpConfig.onReady(function () {
             select {
                 color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
+            }
+
+            hr {
+                border-color: #666;
+            }
+
+            .arrow {
+                border-color: rgb(231, 230, 228);
             }
             `
             document.head.appendChild(el)
