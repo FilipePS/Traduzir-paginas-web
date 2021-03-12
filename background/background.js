@@ -150,6 +150,12 @@ if (typeof chrome.contextMenus !== "undefined") {
             }
         })
     })
+
+    chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+        if (tab.active && changeInfo.status == "loading") {
+            updateContextMenu()
+        }
+    })
 }
 
 twpConfig.onReady(function() {
@@ -259,6 +265,7 @@ twpConfig.onReady(function() {
     
             chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                 if (changeInfo.status == "loading") {
+                    pageLanguageState = "original"
                     updateIcon(tabId)
                 }
             })
