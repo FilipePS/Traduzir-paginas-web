@@ -404,6 +404,16 @@ twpConfig.onReady(function () {
     }
     $("#showPopupMobile").value = twpConfig.get("showPopupMobile")
 
+    $("#showTranslatePageContextMenu").onchange = e => {
+        twpConfig.set("showTranslatePageContextMenu", e.target.value)
+    }
+    $("#showTranslatePageContextMenu").value = twpConfig.get("showTranslatePageContextMenu")
+
+    $("#showTranslateSelectedContextMenu").onchange = e => {
+        twpConfig.set("showTranslateSelectedContextMenu", e.target.value)
+    }
+    $("#showTranslateSelectedContextMenu").value = twpConfig.get("showTranslateSelectedContextMenu")
+
 })
 
 window.scrollTo({

@@ -305,4 +305,12 @@ if (typeof chrome.commands !== "undefined") {
 twpConfig.onReady(function () {
     updateContextMenu()
     updateTranslateSelectedContextMenu()
+
+    twpConfig.onChanged((name, newvalue) => {
+        switch (name) {
+            case "showTranslateSelectedContextMenu":
+                updateTranslateSelectedContextMenu()
+                break
+        }
+    })
 })
