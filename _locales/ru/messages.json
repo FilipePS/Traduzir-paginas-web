@@ -219,7 +219,7 @@
     "message": "Показывать переведенный текст при наведении курсора на этих сайтах"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Когда сайт переведен, окрашивать значок расширения синим"
   },
   "more": {
     "message": "Больше"

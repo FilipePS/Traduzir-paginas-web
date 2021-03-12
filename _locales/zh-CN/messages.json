@@ -15,7 +15,7 @@
     "message": "翻译中..."
   },
   "lblTranslated": {
-    "message": "已翻译"
+    "message": "译文"
   },
   "lblError": {
     "message": "无法翻译此页面"
@@ -220,5 +220,11 @@
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "若网站已翻译，则将弹窗中目标语言背景变为蓝色"
+  },
+  "more": {
+    "message": "更多"
+  },
+  "less": {
+    "message": "更少"
   }
 }

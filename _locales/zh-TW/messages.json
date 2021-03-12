@@ -220,5 +220,11 @@
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "將網站翻譯時的彈出式圖示變為藍色"
+  },
+  "more": {
+    "message": "更多"
+  },
+  "less": {
+    "message": "更少"
   }
 }
