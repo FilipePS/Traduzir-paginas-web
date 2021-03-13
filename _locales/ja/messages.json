@@ -219,6 +219,12 @@
     "message": "マウスオーバーしたテキストを翻訳するサイト"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "サイトを翻訳した時にポップアップアイコンを青くする"
+  },
+  "more": {
+    "message": "増やす"
+  },
+  "less": {
+    "message": "減らす"
   }
 }
