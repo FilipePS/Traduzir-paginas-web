@@ -250,5 +250,8 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Não traduzir o texto selecionado"
+  },
+  "msgUseOldPopup": {
+    "message": "Usar popup antigo"
   }
 }

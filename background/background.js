@@ -178,7 +178,23 @@ twpConfig.onReady(function() {
             chrome.tabs.sendMessage(tab.id, {action: "showPopupMobile"}, {frameId: 0}, checkedLastError)
         })
     } else {
-        chrome.browserAction.setPopup({popup: "popup/popup.html"})
+        if (twpConfig.get("useOldPopup") === "yes") {
+            chrome.browserAction.setPopup({popup: "popup/old-popup.html"})
+        } else {
+            chrome.browserAction.setPopup({popup: "popup/popup.html"})
+        }
+
+        twpConfig.onChanged((name, newvalue) => {
+            switch (name) {
+                case "useOldPopup":
+                    if (newvalue === "yes") {
+                        chrome.browserAction.setPopup({popup: "popup/old-popup.html"})
+                    } else {
+                        chrome.browserAction.setPopup({popup: "popup/popup.html"})
+                    }
+                    break
+            }
+        })
 
         //TODO veriricar porque chrome.theme.getCurrent não funciona, apenas browser.theme.getCurrent
         if (chrome.pageAction && browser) {
@@ -253,6 +269,11 @@ twpConfig.onReady(function() {
             }
     
             function updateIcon(tabId) {
+                if (twpConfig.get("useOldPopup") === "yes") {
+                    chrome.pageAction.setPopup({tabId: tabId, popup: "popup/old-popup.html"})
+                } else {
+                    chrome.pageAction.setPopup({tabId: tabId, popup: "popup/popup.html"})
+                }
                 chrome.pageAction.setIcon({tabId: tabId, path: getSVGIcon()})
                 chrome.pageAction.show(tabId)
             }
@@ -288,6 +309,14 @@ twpConfig.onReady(function() {
                 if (request.action === "setPageLanguageState") {
                     pageLanguageState = request.pageLanguageState
                     updateIcon(sender.tab.id)
+                }
+            })
+
+            twpConfig.onChanged((name, newvalue) => {
+                switch (name) {
+                    case "useOldPopup":
+                        updateIconInAllTabs()
+                        break
                 }
             })
         }
