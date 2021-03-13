@@ -226,5 +226,17 @@
   },
   "less": {
     "message": "Less"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Do not show if the page language is the target language"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Do not show if the page language is unknown"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Do not show if the selected text language is the target language"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Do not show if the selected text language is unknown"
   }
 }

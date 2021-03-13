@@ -381,6 +381,26 @@ twpConfig.onReady(function () {
     }
     $("#showTranslateSelectedButton").value = twpConfig.get("showTranslateSelectedButton")
 
+    $("#dontShowIfPageLangIsTargetLang").onchange = e => {
+        twpConfig.set("dontShowIfPageLangIsTargetLang", e.target.checked ? "yes" : "no")
+    }
+    $("#dontShowIfPageLangIsTargetLang").checked = twpConfig.get("dontShowIfPageLangIsTargetLang") === "yes" ? true : false
+
+    $("#dontShowIfPageLangIsUnknown").onchange = e => {
+        twpConfig.set("dontShowIfPageLangIsUnknown", e.target.checked ? "yes" : "no")
+    }
+    $("#dontShowIfPageLangIsUnknown").checked = twpConfig.get("dontShowIfPageLangIsUnknown") === "yes" ? true : false
+
+    $("#dontShowIfSelectedTextIsTargetLang").onchange = e => {
+        twpConfig.set("dontShowIfSelectedTextIsTargetLang", e.target.checked ? "yes" : "no")
+    }
+    $("#dontShowIfSelectedTextIsTargetLang").checked = twpConfig.get("dontShowIfSelectedTextIsTargetLang") === "yes" ? true : false
+
+    $("#dontShowIfSelectedTextIsUnknown").onchange = e => {
+        twpConfig.set("dontShowIfSelectedTextIsUnknown", e.target.checked ? "yes" : "no")
+    }
+    $("#dontShowIfSelectedTextIsUnknown").checked = twpConfig.get("dontShowIfSelectedTextIsUnknown") === "yes" ? true : false
+
     // style options
     $("#darkMode").onchange = e => {
         twpConfig.set("darkMode", e.target.value)

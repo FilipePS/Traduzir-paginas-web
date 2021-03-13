@@ -15,12 +15,35 @@ twpConfig.onReady(function() {
     let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
     let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
     let showTranslateSelectedButton = twpConfig.get("showTranslateSelectedButton")
+    let dontShowIfPageLangIsTargetLang = twpConfig.get("dontShowIfPageLangIsTargetLang")
+    let dontShowIfPageLangIsUnknown = twpConfig.get("dontShowIfPageLangIsUnknown")
+    let dontShowIfSelectedTextIsTargetLang = twpConfig.get("dontShowIfSelectedTextIsTargetLang")
+    let dontShowIfSelectedTextIsUnknown = twpConfig.get("dontShowIfSelectedTextIsUnknown")
 
     pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
         originalPageLanguage = pagelanguage
         translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
         updateEventListener()
     })
+
+    async function detectTextLanguage(text) {
+        if (!chrome.i18n.detectLanguage) return "und"
+
+        return await new Promise(resolve => {
+          chrome.i18n.detectLanguage(text, result => {
+            if (!result) return resolve("und")
+
+            for (const langInfo of result.languages) {
+              const langCode = twpLang.checkLanguageCode(langInfo.language)
+              if (langCode) {
+                return resolve(langCode)
+              }
+            }
+            
+            return resolve("und")
+          })
+        })
+      }
 
     function init() {
         destroy()
@@ -168,6 +191,20 @@ twpConfig.onReady(function() {
                 showTranslateSelectedButton = newValue
                 updateEventListener()
                 break
+            case "dontShowIfPageLangIsTargetLang":
+                dontShowIfPageLangIsTargetLang = newValue
+                updateEventListener()
+                break
+            case "dontShowIfPageLangIsUnknown":
+                dontShowIfPageLangIsUnknown = newValue
+                updateEventListener()
+                break
+            case "dontShowIfSelectedTextIsTargetLang":
+                dontShowIfSelectedTextIsTargetLang = newValue
+                break
+            case "dontShowIfSelectedTextIsUnknown":
+                dontShowIfSelectedTextIsUnknown = newValue
+                break
         }
     })
 
@@ -260,13 +297,20 @@ twpConfig.onReady(function() {
         }
     }
 
-    function onUp(e) {
+    async function onUp(e) {
         if (e.target == divElement) return;
 
         const clientX = Math.max((typeof e.clientX === 'undefined' ? 0 : e.clientX), (typeof e.changedTouches === 'undefined' ? 0 : e.changedTouches[0].clientX));
         const clientY = Math.max((typeof e.clientY === 'undefined' ? 0 : e.clientY), (typeof e.changedTouches === 'undefined' ? 0 : e.changedTouches[0].clientY));
 
-        if (document.getSelection().toString().trim()) {
+        const selectedText = document.getSelection().toString().trim()
+        if (!selectedText) return;
+        let detectedLanguage = await detectTextLanguage(selectedText)
+        if (!detectedLanguage) detectedLanguage = "und";
+
+        if (((dontShowIfSelectedTextIsTargetLang == "yes" && detectedLanguage !== currentTargetLanguage) || dontShowIfSelectedTextIsTargetLang != "yes")
+        && ((dontShowIfSelectedTextIsUnknown == "yes" && detectedLanguage !== "und") || dontShowIfSelectedTextIsUnknown != "yes")
+        ) {
             init()
             if (plataformInfo.isMobile.any) {
                 selTextButton.style.left = window.innerWidth - 45 + "px"
@@ -300,7 +344,10 @@ twpConfig.onReady(function() {
     }
 
     function updateEventListener() {
-        if (showTranslateSelectedButton == "yes" && translateThisSite && translateThisLanguage && originalPageLanguage !== currentTargetLanguage) {
+        if (showTranslateSelectedButton == "yes" && translateThisSite && translateThisLanguage
+        && ((dontShowIfPageLangIsTargetLang == "yes" && originalPageLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes")
+        && ((dontShowIfPageLangIsUnknown == "yes" && originalPageLanguage !== "und") || dontShowIfPageLangIsUnknown != "yes")
+        ) {
             document.addEventListener("mouseup", onMouseup)
 
             document.addEventListener("blur", destroy)
