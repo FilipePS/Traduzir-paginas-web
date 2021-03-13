@@ -238,5 +238,11 @@
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "Do not show if the selected text language is unknown"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Show translation when hovering over this site"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Show translation when hovering over websites in"
   }
 }

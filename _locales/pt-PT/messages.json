@@ -238,5 +238,11 @@
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "Não mostrar se o idioma do texto selecionado for desconhecido"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Mostrar tradução ao passar o mouse sobre este site"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Mostrar tradução ao passar o mouse sobre sites em"
   }
 }
