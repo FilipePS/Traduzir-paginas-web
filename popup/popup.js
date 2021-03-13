@@ -129,6 +129,14 @@ twpConfig.onReady(function () {
             $("#cbAlwaysTranslateThisLang").checked = twpConfig.get("alwaysTranslateLangs").indexOf(originalPageLanguage) !== -1
             $("#lblAlwaysTranslateThisLang").textContent = (text ? text : "Always translate from") + " " + twpLang.codeToLanguage(originalPageLanguage)
             $("#divAlwaysTranslateThisLang").style.display = "block"
+
+            const neverTranslateLangText = chrome.i18n.getMessage("btnNeverTranslateThisLanguage")
+            if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
+                $("option[data-i18n=btnNeverTranslateThisLanguage").textContent = neverTranslateLangText ? neverTranslateLangText : "Never translate this language"
+            } else {
+                $("option[data-i18n=btnNeverTranslateThisLanguage").textContent = neverTranslateLangText ? "✔ " + neverTranslateLangText : "✔ Never translate this language"
+            }
+            $("option[data-i18n=btnNeverTranslateThisLanguage").style.display = "block"
         }
     }
     updateInterface()
@@ -276,14 +284,22 @@ twpConfig.onReady(function () {
                     twpConfig.addSiteToAlwaysTranslate(hostname)
                     break
                 case "neverTranslateThisSite":
-                    twpConfig.addSiteToNeverTranslate(hostname)
+                    if (twpConfig.get("neverTranslateSites").indexOf(hostname) === -1) {
+                        twpConfig.addSiteToNeverTranslate(hostname)
+                    } else {
+                        twpConfig.removeSiteFromNeverTranslate(hostname)
+                    }
                     window.close()
                     break
                 case "alwaysTranslateThisLanguage":
                     twpConfig.addLangToAlwaysTranslate(originalPageLanguage, hostname)
                     break
                 case "neverTranslateThisLanguage":
-                    twpConfig.addLangToNeverTranslate(originalPageLanguage, hostname)
+                    if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
+                        twpConfig.addLangToNeverTranslate(originalPageLanguage)
+                    } else {
+                        twpConfig.removeLangFromNeverTranslate(originalPageLanguage)
+                    }
                     window.close()
                     break
                 case "translateInExternalSite":
@@ -308,5 +324,17 @@ twpConfig.onReady(function () {
             }
             btnOptions.value = "options"
         })
-    })  
+    })
+
+    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+        const hostname = new URL(tabs[0].url).hostname
+        const text = chrome.i18n.getMessage("btnNeverTranslate")
+        if (twpConfig.get("neverTranslateSites").indexOf(hostname) === -1) {
+            $("option[data-i18n=btnNeverTranslate").textContent = text ? text : "Never translate this site"
+        } else {
+            $("option[data-i18n=btnNeverTranslate").textContent = text ? "✔ " + text : "✔ Never translate this site"
+        }
+
+        $('option[data-i18n=btnDonate]').innerHTML += " &#10084;"
+    })
 })
