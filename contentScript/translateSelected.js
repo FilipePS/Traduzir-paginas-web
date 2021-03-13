@@ -328,7 +328,7 @@ twpConfig.onReady(function() {
             init()
             if (plataformInfo.isMobile.any) {
                 selTextButton.style.left = window.innerWidth - 45 + "px"
-                selTextButton.style.top = clientY - 30 + "px"
+                selTextButton.style.top = clientY + "px"
             } else {
                 selTextButton.style.left = clientX + 20 + "px"
                 selTextButton.style.top = clientY - 30 + "px"
