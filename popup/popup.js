@@ -19,7 +19,7 @@ twpConfig.onReady(function () {
         $("#more").style.display = "block"
         $("#less").style.display = "block"
 
-        if (popupPanelSection >= 4) {
+        if (popupPanelSection >= 5) {
             $("#more").style.display = "none"
         } else if (popupPanelSection <= 0) {
             $("#less").style.display = "none"
@@ -28,7 +28,7 @@ twpConfig.onReady(function () {
     updatePopupSection()
 
     $("#more").onclick = e => {
-        if (popupPanelSection < 4) {
+        if (popupPanelSection < 5) {
             popupPanelSection++
             updatePopupSection()
         }
@@ -247,6 +247,14 @@ twpConfig.onReady(function () {
             }
         })
 
+        $("#cbShowTranslateSelectedButton").addEventListener("change", e => {
+            if (e.target.checked) {
+                twpConfig.set("showTranslateSelectedButton", "yes")
+            } else {
+                twpConfig.set("showTranslateSelectedButton", "no")
+            }
+        })
+
         $("#cbShowOriginalWhenHovering").addEventListener("change", e => {
             if (e.target.checked) {
                 twpConfig.set("showOriginalTextWhenHovering", "yes")
@@ -255,7 +263,7 @@ twpConfig.onReady(function () {
             }
         })
 
-        $("#cbShowTranslatedWhenHovering").addEventListener("change", e => {
+        $("#cbShowTranslatedWhenHoveringThisSite").addEventListener("change", e => {
             const hostname = new URL(tabs[0].url).hostname
             if (e.target.checked) {
                 twpConfig.addSiteToTranslateWhenHovering(hostname)
@@ -264,11 +272,12 @@ twpConfig.onReady(function () {
             }
         })
 
+        $("#cbShowTranslateSelectedButton").checked = twpConfig.get("showTranslateSelectedButton") == "yes" ? true : false
         $("#cbShowOriginalWhenHovering").checked = twpConfig.get("showOriginalTextWhenHovering") == "yes" ? true : false
         
         const hostname = new URL(tabs[0].url).hostname
         $("#cbAlwaysTranslateThisSite").checked = twpConfig.get("alwaysTranslateSites").indexOf(hostname) !== -1
-        $("#cbShowTranslatedWhenHovering").checked = twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) !== -1
+        $("#cbShowTranslatedWhenHoveringThisSite").checked = twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) !== -1
     })
     
     $("#btnOptions").addEventListener("change", event => {
