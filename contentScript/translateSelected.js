@@ -267,7 +267,7 @@ twpConfig.onReady(function() {
         const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
         if (
           (activeElTagName == "textarea") || (activeElTagName == "input" &&
-          /^(?:text|search|password|tel|url)$/i.test(activeEl.type)) &&
+          /^(?:text|search)$/i.test(activeEl.type)) &&
           (typeof activeEl.selectionStart == "number")
         ) {
             text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
@@ -278,22 +278,36 @@ twpConfig.onReady(function() {
     }
 
     function readSelection() {
-        const selection = document.getSelection()
-        let focusNode = selection.focusNode
-        if (!focusNode) return;
+        gSelectionInfo = null
 
-        if (focusNode.nodeType == 3) {
-            focusNode = selection.getRangeAt(0);
-        } else if (focusNode.nodeType != 1) {
-            return;
-        }
-        const rect = focusNode.getBoundingClientRect()
-        gSelectionInfo = {
-            text: getSelectionText(),
-            top: rect.top,
-            left: rect.left,
-            bottom: rect.bottom,
-            right: rect.right
+        const activeEl = document.activeElement;
+        const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+        if (
+          (activeElTagName == "textarea") || (activeElTagName == "input" &&
+          /^(?:text|search)$/i.test(activeEl.type)) &&
+          (typeof activeEl.selectionStart == "number")
+        ) {
+            const text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
+            const rect = activeEl.getBoundingClientRect()
+            gSelectionInfo = {
+                text: text,
+                top: rect.top,
+                left: rect.left,
+                bottom: rect.bottom,
+                right: rect.right
+            }
+        } else if (window.getSelection) {
+            const selection = window.getSelection()
+
+            const text = selection.toString();
+            const rect = selection.getRangeAt(0).getBoundingClientRect()
+            gSelectionInfo = {
+                text: text,
+                top: rect.top,
+                left: rect.left,
+                bottom: rect.bottom,
+                right: rect.right
+            }
         }
     }
 
@@ -303,8 +317,8 @@ twpConfig.onReady(function() {
         const clientX = Math.max((typeof e.clientX === 'undefined' ? 0 : e.clientX), (typeof e.changedTouches === 'undefined' ? 0 : e.changedTouches[0].clientX));
         const clientY = Math.max((typeof e.clientY === 'undefined' ? 0 : e.clientY), (typeof e.changedTouches === 'undefined' ? 0 : e.changedTouches[0].clientY));
 
-        const selectedText = document.getSelection().toString().trim()
-        if (!selectedText) return;
+        const selectedText = getSelectionText().trim()
+        if (!selectedText || selectedText.length < 1) return;
         let detectedLanguage = await detectTextLanguage(selectedText)
         if (!detectedLanguage) detectedLanguage = "und";
 
