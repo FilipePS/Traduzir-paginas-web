@@ -219,6 +219,33 @@
     "message": "Mostra il testo tradotto quando passi la freccia su questi siti"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Rendi blu l'icona quando il sito è tradotto"
+  },
+  "more": {
+    "message": "Altro"
+  },
+  "less": {
+    "message": "Meno"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Non mostrare se la lingua della pagina è la lingua di destinazione"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Non mostrare se la lingua della pagina è sconosciuta"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Non mostrare se la lingua del testo selezionato è la lingua di destinazione"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Non mostrare se la lingua del testo selezionato è sconosciuta"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Mostrare la traduzione quando passi la freccia su questo sito"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Mostrare la traduzione quando passi la freccia sui siti web in"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Mostrare il testo tradotto quando passi la freccia sui siti con queste lingue"
   }
 }

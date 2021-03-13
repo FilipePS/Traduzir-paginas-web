@@ -219,6 +219,33 @@
     "message": "Arată textul tradus cînd pui săgeata pe aceste situri"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Fă simbolul albastru cînd situl este tradus"
+  },
+  "more": {
+    "message": "Mult"
+  },
+  "less": {
+    "message": "Puțin"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Nu arăta dacă limba paginii este limba de destinație"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Nu arăta dacă limba paginii este necunoscută"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Nu arăta dacă limba textului selecționat e limba de destinație"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Nu arăta dacă limba textului selecționat e necunoscută"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Arată traducerea cînd pui săgeata pe acest sit"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Arată traducerea cînd pui săgeata pe situri web în"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Arată textul tradus cînd pui săgeata pe situri care au aceste limbi"
   }
 }
