@@ -244,5 +244,8 @@
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Show translation when hovering over websites in"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Show translated text when hovering over sites with these languages"
   }
 }

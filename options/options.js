@@ -84,6 +84,7 @@ twpConfig.onReady(function () {
 
     fillLanguageList($("#addToNeverTranslateLangs"))
     fillLanguageList($("#addToAlwaysTranslateLangs"))
+    fillLanguageList($("#addLangToTranslateWhenHovering"))
 
     function enableDarkMode() {
         if (!$("#darkModeElement")) {
@@ -243,6 +244,46 @@ twpConfig.onReady(function () {
         $("#alwaysTranslateLangs").appendChild(li)
 
         twpConfig.addLangToAlwaysTranslate(langCode)
+    }
+
+    // langsToTranslateWhenHovering
+
+    function createNodeToLangsToTranslateWhenHoveringList(langCode, langName) {
+        const li = document.createElement("li")
+        li.setAttribute("class", "w3-display-container")
+        li.value = langCode
+        li.textContent = langName
+
+        const close = document.createElement("span")
+        close.setAttribute("class", "w3-button w3-transparent w3-display-right")
+        close.innerHTML = "&times;"
+
+        close.onclick = e => {
+            e.preventDefault()
+
+            twpConfig.removeLangFromTranslateWhenHovering(langCode)
+            li.remove()
+        }
+
+        li.appendChild(close)
+
+        return li
+    }
+
+    const langsToTranslateWhenHovering = twpConfig.get("langsToTranslateWhenHovering")
+    langsToTranslateWhenHovering.forEach(langCode => {
+        const langName = twpLang.codeToLanguage(langCode)
+        const li = createNodeToLangsToTranslateWhenHoveringList(langCode, langName)
+        $("#langsToTranslateWhenHovering").appendChild(li)
+    })
+
+    $("#addLangToTranslateWhenHovering").onchange = e => {
+        const langCode = e.target.value
+        const langName = twpLang.codeToLanguage(langCode)
+        const li = createNodeToLangsToTranslateWhenHoveringList(langCode, langName)
+        $("#langsToTranslateWhenHovering").appendChild(li)
+
+        twpConfig.addLangToTranslateWhenHovering(langCode)
     }
 
     // Always translate these Sites
@@ -418,7 +459,7 @@ twpConfig.onReady(function () {
         twpConfig.set("showReleaseNotes", e.target.value)
     }
     $("#showReleaseNotes").value = twpConfig.get("showReleaseNotes")
-    
+
     $("#showPopupMobile").onchange = e => {
         twpConfig.set("showPopupMobile", e.target.value)
     }

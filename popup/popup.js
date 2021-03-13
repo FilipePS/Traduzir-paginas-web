@@ -19,7 +19,7 @@ twpConfig.onReady(function () {
         $("#more").style.display = "block"
         $("#less").style.display = "block"
 
-        if (popupPanelSection >= 5) {
+        if (popupPanelSection >= 6) {
             $("#more").style.display = "none"
         } else if (popupPanelSection <= 0) {
             $("#less").style.display = "none"
@@ -28,7 +28,7 @@ twpConfig.onReady(function () {
     updatePopupSection()
 
     $("#more").onclick = e => {
-        if (popupPanelSection < 5) {
+        if (popupPanelSection < 6) {
             popupPanelSection++
             updatePopupSection()
         }
@@ -125,10 +125,15 @@ twpConfig.onReady(function () {
         })
         
         if (originalPageLanguage !== "und") {
-            const text = chrome.i18n.getMessage("lblAlwaysTranslate")
+            const alwaysTranslateText = chrome.i18n.getMessage("lblAlwaysTranslate")
             $("#cbAlwaysTranslateThisLang").checked = twpConfig.get("alwaysTranslateLangs").indexOf(originalPageLanguage) !== -1
-            $("#lblAlwaysTranslateThisLang").textContent = (text ? text : "Always translate from") + " " + twpLang.codeToLanguage(originalPageLanguage)
+            $("#lblAlwaysTranslateThisLang").textContent = (alwaysTranslateText ? alwaysTranslateText : "Always translate from") + " " + twpLang.codeToLanguage(originalPageLanguage)
             $("#divAlwaysTranslateThisLang").style.display = "block"
+
+            const translatedWhenHoveringThisLangText = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisLang") ? chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisLang") : "Show translation when hovering over websites in"
+            $("#cbShowTranslatedWhenHoveringThisLang").checked = twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) !== -1
+            $("#lblShowTranslatedWhenHoveringThisLang").textContent = translatedWhenHoveringThisLangText + " " + twpLang.codeToLanguage(originalPageLanguage)
+            $("#divShowTranslatedWhenHoveringThisLang").style.display = "block"
 
             const neverTranslateLangText = chrome.i18n.getMessage("btnNeverTranslateThisLanguage")
             if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
@@ -272,6 +277,14 @@ twpConfig.onReady(function () {
             }
         })
 
+        $("#cbShowTranslatedWhenHoveringThisLang").addEventListener("change", e => {
+            if (e.target.checked) {
+                twpConfig.addLangToTranslateWhenHovering(originalPageLanguage)
+            } else {
+                twpConfig.removeLangFromTranslateWhenHovering(originalPageLanguage)
+            }     
+        })
+
         $("#cbShowTranslateSelectedButton").checked = twpConfig.get("showTranslateSelectedButton") == "yes" ? true : false
         $("#cbShowOriginalWhenHovering").checked = twpConfig.get("showOriginalTextWhenHovering") == "yes" ? true : false
         
@@ -305,7 +318,7 @@ twpConfig.onReady(function () {
                     break
                 case "neverTranslateThisLanguage":
                     if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
-                        twpConfig.addLangToNeverTranslate(originalPageLanguage)
+                        twpConfig.addLangToNeverTranslate(originalPageLanguage, hostname)
                     } else {
                         twpConfig.removeLangFromNeverTranslate(originalPageLanguage)
                     }

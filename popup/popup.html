@@ -9,7 +9,7 @@
 </head>
 
 <body style="width: 360px;">
-    <div class="w3-bar" style="width: 280px;">
+    <div class="w3-bar" style="width: 280px;" data-popupPanelSection="0">
         <button class="w3-bar-item w3-button w3-ripple w3-hover-light-blue w3-buttonSelected" style="border-radius: 5px 0px 0px 0px; position: relative;"
             value="original"><span data-i18n="btnMobileOriginal">Original</span><span style="font-size: 9px; position: absolute; bottom: 0; left: 5px" class="w3-text-grey">Unknown</span></button>
         <button class="w3-bar-item w3-button w3-ripple w3-hover-light-blue" style="border-radius: 0px 5px 0px 0px;"
@@ -23,9 +23,11 @@
     </div>
 
     <div class="w3-container w3-margin-top" style="font-weight: 500">
-        <div id="divAlwaysTranslateThisLang" style="display: none;">
-            <input type="checkbox" class="w3-check" id="cbAlwaysTranslateThisLang">
-            <label id="lblAlwaysTranslateThisLang" for="cbAlwaysTranslateThisLang" data-i18n="lblAlwaysTranslate">Always translate from</label>
+        <div data-popupPanelSection="0">
+            <div id="divAlwaysTranslateThisLang" style="display: none;">
+                <input type="checkbox" class="w3-check" id="cbAlwaysTranslateThisLang">
+                <label id="lblAlwaysTranslateThisLang" for="cbAlwaysTranslateThisLang" data-i18n="lblAlwaysTranslate">Always translate from</label>
+            </div>
         </div>
         <div data-popupPanelSection="1">
             <input type="checkbox" class="w3-check" id="cbAlwaysTranslateThisSite">
@@ -48,6 +50,12 @@
         <div data-popupPanelSection="5">
             <input type="checkbox" class="w3-check" id="cbShowTranslatedWhenHoveringThisSite">
             <label for="cbShowTranslatedWhenHoveringThisSite" data-i18n="lblShowTranslatedWhenHoveringThisSite">Show translation when hovering over this site</label>
+        </div>
+        <div data-popupPanelSection="6">
+            <div id="divShowTranslatedWhenHoveringThisLang" style="display: none;">
+                <input type="checkbox" class="w3-check" id="cbShowTranslatedWhenHoveringThisLang">
+                <label id="lblShowTranslatedWhenHoveringThisLang" for="cbShowTranslatedWhenHoveringThisLang" data-i18n="lblShowTranslatedWhenHoveringThisLang">Show translation when hovering over websites in</label>
+            </div>
         </div>
     </div>
     </div>

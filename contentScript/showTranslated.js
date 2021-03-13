@@ -9,7 +9,8 @@ twpConfig.onReady(function () {
     let originalPageLanguage = "und"
     let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
-    let showTranslatedTextWhenHovering = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
+    let showTranslatedTextWhenHoveringThisSite = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
+    let showTranslatedTextWhenHoveringThisLang = false
 
     twpConfig.onChanged(function (name, newValue) {
         switch (name) {
@@ -20,7 +21,11 @@ twpConfig.onReady(function () {
                 currentTargetLanguage = newValue
                 break
             case "sitesToTranslateWhenHovering":
-                showTranslatedTextWhenHovering = newValue.indexOf(location.hostname) !== -1
+                showTranslatedTextWhenHoveringThisSite = newValue.indexOf(location.hostname) !== -1
+                showTranslated.enable()
+                break
+            case "langsToTranslateWhenHovering":
+                showTranslatedTextWhenHoveringThisLang = newValue.indexOf(originalPageLanguage) !== -1
                 showTranslated.enable()
                 break
         }
@@ -145,7 +150,7 @@ twpConfig.onReady(function () {
     
         if (pageLanguageState == "translated") return;
         if (plataformInfo.isMobile.any) return;
-        if (!showTranslatedTextWhenHovering) return;
+        if (!showTranslatedTextWhenHoveringThisSite && !showTranslatedTextWhenHoveringThisLang) return;
         if (divElement) return;
 
         divElement = document.createElement("div")
@@ -250,6 +255,7 @@ twpConfig.onReady(function () {
 
     pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
         originalPageLanguage = pagelanguage
+        showTranslatedTextWhenHoveringThisLang = twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) !== -1
         showTranslated.enable()
     })
     
