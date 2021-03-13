@@ -226,5 +226,17 @@
   },
   "less": {
     "message": "更少"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "若页面语言与目标语言一致，则不显示"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "若页面语言未知，则不显示"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "若选中文本语言与目标语言一致，则不显示"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "若选中文本语言未知，则不显示"
   }
 }

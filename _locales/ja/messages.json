@@ -226,5 +226,17 @@
   },
   "less": {
     "message": "減らす"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "ページの言語が翻訳先言語と同じ場合は表示しない"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "ページの言語が不明な場合は表示しない"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "選択したテキストの言語が翻訳先言語と同じ場合は表示しない"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "選択したテキストの言語が不明な場合は表示しない"
   }
 }
