@@ -13,7 +13,7 @@ btnClose.addEventListener("click", () => {
 btnTranslate.addEventListener("click", () => {
     const targetLanguage = selectTargetLanguage.value
 
-    twpConfig.addTargetLanguage(targetLanguage)
+    twpConfig.setTargetLanguage(targetLanguage)
 
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: targetLanguage})
