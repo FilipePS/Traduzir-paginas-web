@@ -386,6 +386,11 @@ twpConfig.onReady(function () {
             chrome.runtime.sendMessage({action: "openOptionsPage"})
         }
 
+        getElemById("btnDonate").onclick = e => {
+            e.preventDefault()
+            chrome.runtime.sendMessage({action: "openDonationPage"})
+        }
+
         document.addEventListener("blur", hideMenu)
         document.addEventListener("click", hideMenu)
 
