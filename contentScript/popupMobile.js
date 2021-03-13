@@ -153,6 +153,7 @@ twpConfig.onReady(function () {
             <div class="dropup">
                 <div id="menu" class="dropup-content">
                     <a id="btnChangeLanguages" data-i18n="btnChangeLanguages">Change languages</a>
+                    <a id="btnTranslateSelectedText" data-i18n="msgTranslateSelectedText">Translate selected text</a>
                     <a id="btnNeverTranslate" data-i18n="btnNeverTranslate">Never translate this site</a>
                     <a id="neverTranslateThisLanguage" data-i18n="btnNeverTranslateThisLanguage" display="none">Never translate this language</a>
                     <a id="btnMoreOptions" data-i18n="btnMoreOptions">More options</a>
@@ -372,6 +373,18 @@ twpConfig.onReady(function () {
             getElemById("menu").style.display = "none"
         }
 
+        getElemById("btnTranslateSelectedText").onclick = e => {
+            if (twpConfig.get("showTranslateSelectedButton") === "yes") {
+                twpConfig.set("showTranslateSelectedButton", "no")
+                getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgTranslateSelectedText") ? chrome.i18n.getMessage("msgTranslateSelectedText") : "Translate selected text"
+            } else {
+                twpConfig.set("showTranslateSelectedButton", "yes")
+                getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgNoTranslateSelectedText") ? chrome.i18n.getMessage("msgNoTranslateSelectedText") : "Do not translate selected text"
+            }
+            getElemById("menu").style.display = "none"
+            e.stopPropagation()
+        }
+
         getElemById("btnNeverTranslate").onclick = e => {
             twpConfig.addSiteToNeverTranslate(location.hostname)
             popupMobile.hide()
@@ -393,6 +406,12 @@ twpConfig.onReady(function () {
 
         document.addEventListener("blur", hideMenu)
         document.addEventListener("click", hideMenu)
+
+        if (twpConfig.get("showTranslateSelectedButton") === "yes") {
+            getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgNoTranslateSelectedText") ? chrome.i18n.getMessage("msgNoTranslateSelectedText") : "Do not translate selected text"
+        } else {
+            getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgTranslateSelectedText") ? chrome.i18n.getMessage("msgTranslateSelectedText") : "Translate selected text"
+        }
 
         getElemById("btnDonate").innerHTML += " &#10084;"
     }

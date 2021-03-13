@@ -247,5 +247,8 @@
   },
   "lblShowTranslatedHoveringLangs": {
     "message": "Mostrar texto traduzido ao passar o mouse sobre sites com estes idiomas"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Não traduzir o texto selecionado"
   }
 }

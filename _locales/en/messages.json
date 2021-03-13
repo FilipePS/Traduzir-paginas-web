@@ -247,5 +247,8 @@
   },
   "lblShowTranslatedHoveringLangs": {
     "message": "Show translated text when hovering over sites with these languages"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Do not translate selected text"
   }
 }
