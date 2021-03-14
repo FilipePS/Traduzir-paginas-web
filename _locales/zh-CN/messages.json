@@ -247,5 +247,11 @@
   },
   "lblShowTranslatedHoveringLangs": {
     "message": "在这些语言的网站悬停显示翻译"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "不要翻译选中文本"
+  },
+  "msgUseOldPopup": {
+    "message": "使用旧版弹窗"
   }
 }

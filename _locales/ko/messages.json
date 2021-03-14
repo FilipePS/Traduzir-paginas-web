@@ -226,5 +226,32 @@
   },
   "less": {
     "message": "간단히"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "페이지의 언어가 대상 언어와 같으면 표시 안 함"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "페이지의 언어를 알 수 없으면 표시 안 함"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "선택한 텍스트의 언어가 대상 언어와 같으면 표시 안 함"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "선택한 텍스트의 언어를 알 수 없으면 표시 안 함"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "이 사이트에 마우스를 가져다 대면 번역 표시"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "다음 언어의 웹사이트에 마우스를 가져다 대면 번역 표시:"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "마우스를 가져다 대면 번역된 텍스트를 표시할 사이트의 언어 목록"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "선택한 텍스트를 번역 안 함"
+  },
+  "msgUseOldPopup": {
+    "message": "이전 팝업 사용"
   }
 }
