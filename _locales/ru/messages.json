@@ -226,5 +226,32 @@
   },
   "less": {
     "message": "Меньше"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Do not show if the page language is the target language"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Не показывать, если язык страницы неизвестен"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Не показывать, является ли выбранный язык текста языком перевода"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Не показывать, если выбранный язык текста неизвестен"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Показывать перевод при наведении на этом сайте"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Показывать перевод при наведении на сайтах на"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Показывать переведенный текст при наведении на сайты на этих языках"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Не переводить выделенный текст"
+  },
+  "msgUseOldPopup": {
+    "message": "Использовать старый вариант всплывающего меню"
   }
 }
