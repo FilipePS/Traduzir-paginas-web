@@ -168,8 +168,9 @@ twpConfig.onReady(function () {
                     radial-gradient(rgb(231, 230, 228) 2px, transparent 2px);
             }
 
-            #btnClose:hover, #divMenu:hover {
+            #btnSwitchInterfaces:hover, #divMenu:hover {
                 background-color: #454a4d !important;
+                color: rgb(231, 230, 228) !important;
             }
             
             select {
@@ -213,8 +214,9 @@ twpConfig.onReady(function () {
             break
     }
     
-    $("#btnClose").addEventListener("click", () => {
-        window.close()
+    $("#btnSwitchInterfaces").addEventListener("click", () => {
+        twpConfig.set("useOldPopup", "yes")
+        window.location = "old-popup.html"
     })
     
     $("#divIconTranslate").addEventListener("click", () => {

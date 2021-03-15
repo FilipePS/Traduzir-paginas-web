@@ -8,7 +8,7 @@ twpConfig.onReady(function () {
     }
 
     // get elements
-    const btnClose = document.getElementById("btnClose")
+    const btnSwitchInterfaces = document.getElementById("btnSwitchInterfaces")
     const divIconTranslateContainer = document.getElementById("divIconTranslateContainer")
     const divIconTranslate = document.getElementById("divIconTranslate")
     const iconTranslate = document.getElementById("iconTranslate")
@@ -65,8 +65,9 @@ twpConfig.onReady(function () {
                 border: 1px solid #454a4d;
             }
             
-            #btnClose:hover {
+            #btnSwitchInterfaces:hover {
                 background-color: #454a4d !important;
+                color: rgb(231, 230, 228) !important;
             }
             
             #selectTargetLanguage, select, option, #btnReset, #btnRestore, #btnTryAgain, #btnOptionB {
@@ -266,8 +267,9 @@ twpConfig.onReady(function () {
         updateInterface()
     }
 
-    $("#btnClose").addEventListener("click", () => {
-        window.close()
+    $("#btnSwitchInterfaces").addEventListener("click", () => {
+        twpConfig.set("useOldPopup", "no")
+        window.location = "popup.html"
     })
     
     $("#divIconTranslate").addEventListener("click", () => {
