@@ -226,5 +226,32 @@
   },
   "less": {
     "message": "更少"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "如果頁面語言是要翻譯目標語言，則不顯示。"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "如果頁面語言未知，則不要顯示。"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "如果選定的文字語言是目標語言，則不顯示。"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "如果選擇的文字語言未知，則不顯示。"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "懸停在此網站上時顯示翻譯"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "懸停在網站上時顯示翻譯"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "當懸停在使用這些語言的網站上時，顯示翻譯文本。"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "不要翻譯選定的文字"
+  },
+  "msgUseOldPopup": {
+    "message": "使用舊的彈出式視窗"
   }
 }

@@ -238,5 +238,20 @@
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "選択したテキストの言語が不明な場合は表示しない"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "このサイトでマウスオーバーしたテキストを翻訳する"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "この言語のサイトでマウスオーバーしたテキストを翻訳する:"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "この言語のサイトでマウスオーバーしたテキストを翻訳"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "選択したテキストを翻訳しない"
+  },
+  "msgUseOldPopup": {
+    "message": "古いポップアップを使用"
   }
 }

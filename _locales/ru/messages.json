@@ -165,7 +165,7 @@
     "message": "Никогда не переводить этот язык"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Показывать исходный текст при наведении"
+    "message": "При наведении курсора показывать исходный текст"
   },
   "msgLanguages": {
     "message": "Языки"
@@ -198,7 +198,7 @@
     "message": "Добавить"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Показывать переведенный текст при наведении"
+    "message": "При наведении курсора показывать переведенный текст"
   },
   "lblKeyboardShortcuts": {
     "message": "Горячие клавиши"
@@ -216,7 +216,7 @@
     "message": "Всегда переводить с этого языка"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Показывать переведенный текст при наведении курсора на этих сайтах"
+    "message": "При наведении курсора на этих сайтах показывать переведенный текст"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Когда сайт переведен, окрашивать значок расширения синим"
@@ -228,7 +228,7 @@
     "message": "Меньше"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Не показывать, является ли язык страницы является языком перевода"
   },
   "dontShowIfPageLangIsUnknown": {
     "message": "Не показывать, если язык страницы неизвестен"
@@ -240,13 +240,13 @@
     "message": "Не показывать, если выбранный язык текста неизвестен"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Показывать перевод при наведении на этом сайте"
+    "message": "При наведении курсора на этом сайте показывать перевод"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Показывать перевод при наведении на сайтах на"
+    "message": "При наведении курсора показывать перевод, если сайт на"
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Показывать переведенный текст при наведении на сайты на этих языках"
+    "message": "При наведении курсора показывать переведенный текст на сайтах на этих языках"
   },
   "msgNoTranslateSelectedText": {
     "message": "Не переводить выделенный текст"
