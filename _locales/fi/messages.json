@@ -134,9 +134,6 @@
   "lblAlwaysTranslateSites": {
     "message": "Älä käännä tätä sivua"
   },
-  "msgHelpDevelopment": {
-    "message": "Auta ylläpitämään tämän laajennuksen kehittämistä anonyymillä luovutuksella."
-  },
   "msgDonateWithPaypal": {
     "message": "Lahjoita PayPal avulla"
   },
@@ -166,5 +163,92 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Näytä alkuperäinen teksti kun leijuu"
+  },
+  "msgLanguages": {
+    "message": "Kieli (kielet"
+  },
+  "msgSites": {
+    "message": "Sivustot"
+  },
+  "msgTranslations": {
+    "message": "Käännökset"
+  },
+  "msgStyle": {
+    "message": "Tyyli"
+  },
+  "msgHotkeys": {
+    "message": "Pikanäppäimet"
+  },
+  "lblMakeDonation": {
+    "message": "Tee lahjoitus"
+  },
+  "lblReleaseNotes": {
+    "message": "Julkaisutiedot"
+  },
+  "lblReport": {
+    "message": "Ilmoita ongelmasta"
+  },
+  "lblSettings": {
+    "message": "asetukset"
+  },
+  "lblAdd": {
+    "message": "Lisätä"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Näytä käännetty teksti leijuu"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Pikanäppäimet"
+  },
+  "msgToTranslateSites": {
+    "message": "Sivuston kääntäminen"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Kiitos tämän laajennuksen käytöstä."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Olen kiitollinen, jos voit tehdä lahjoituksen."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Käännä tämä kieli aina"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Näytä käännetty teksti, kun leijutat näillä sivustoilla"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Tee ponnahdusikkuna siniseksi, kun sivusto käännetään"
+  },
+  "more": {
+    "message": "Lisää"
+  },
+  "less": {
+    "message": "Vähemmän"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Älä näytä, onko sivun kieli kohdekieli"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Älä näytä, jos sivun kieltä ei tunneta"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Älä näytä, onko valittu kieli kohdekieli"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Älä näytä, jos valittua tekstikieltä ei tunneta"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Näytä käännös, kun viet hiiren osoitteen tämän sivuston päälle"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Näytä käännös, kun viet hiiren osoitteen verkkosivustojen päälle"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Näytä käännetty teksti, kun siirrät hiiren osoitteen näiden kielien kanssa"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Älä käännä valittua tekstiä"
+  },
+  "msgUseOldPopup": {
+    "message": "Käytä vanhaa ponnahdusikkunaa"
   }
 }

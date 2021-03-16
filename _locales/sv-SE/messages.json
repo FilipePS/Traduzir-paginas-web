@@ -134,9 +134,6 @@
   "lblAlwaysTranslateSites": {
     "message": "Översätt alltid dessa webbplatser"
   },
-  "msgHelpDevelopment": {
-    "message": "Hjälp till att bibehålla utvecklingen av denna utökning genom en anonym donation."
-  },
   "msgDonateWithPaypal": {
     "message": "Donera via PayPal"
   },
@@ -166,5 +163,92 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Visa originalspråket när du håller muspekaren över texten"
+  },
+  "msgLanguages": {
+    "message": "språk"
+  },
+  "msgSites": {
+    "message": "Webbplatser"
+  },
+  "msgTranslations": {
+    "message": "Översättningar"
+  },
+  "msgStyle": {
+    "message": "Stil"
+  },
+  "msgHotkeys": {
+    "message": "Snabbtangenter"
+  },
+  "lblMakeDonation": {
+    "message": "Donera"
+  },
+  "lblReleaseNotes": {
+    "message": "Utgivningsanmärkningar"
+  },
+  "lblReport": {
+    "message": "Rapportera ett problem"
+  },
+  "lblSettings": {
+    "message": "inställningar"
+  },
+  "lblAdd": {
+    "message": "Lägg till"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Visa översatt text när du svävar"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Tangentbordsgenvägar"
+  },
+  "msgToTranslateSites": {
+    "message": "Att översätta webbplatsen"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Tack för att du använder det här tillägget."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Jag är tacksam om du kan göra en donation."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Översätt alltid detta språk"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Visa översatt text när du svävar på dessa webbplatser"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Gör popup-ikonen blå när webbplatsen översätts"
+  },
+  "more": {
+    "message": "Mer"
+  },
+  "less": {
+    "message": "Mindre"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Visa inte om sidans språk är målspråket"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Visa inte om sidans språk är okänt"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Visa inte om det valda textspråket är målspråket"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Visa inte om det valda textspråket är okänt"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Visa översättning när du svävar över den här webbplatsen"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Visa översättning när du svävar över webbplatser i"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Visa översatt text när du svävar över webbplatser med dessa språk"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Översätt inte markerad text"
+  },
+  "msgUseOldPopup": {
+    "message": "Använd gammal popup"
   }
 }

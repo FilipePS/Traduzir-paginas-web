@@ -134,9 +134,6 @@
   "lblAlwaysTranslateSites": {
     "message": "Zawsze tłumacz te strony"
   },
-  "msgHelpDevelopment": {
-    "message": "Pomóż utrzymać rozwój tego rozszerzenia dzięki anonimowej darowiźnie."
-  },
   "msgDonateWithPaypal": {
     "message": "Wspomóż przy pomocy PayPal"
   },
@@ -166,5 +163,92 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Pokaż oryginalny tekst po najechaniu kursorem"
+  },
+  "msgLanguages": {
+    "message": "Języki"
+  },
+  "msgSites": {
+    "message": "Witryny"
+  },
+  "msgTranslations": {
+    "message": "Tłumaczenia"
+  },
+  "msgStyle": {
+    "message": "Styl"
+  },
+  "msgHotkeys": {
+    "message": "Skróty klawiszowe"
+  },
+  "lblMakeDonation": {
+    "message": "Wesprzyj nas"
+  },
+  "lblReleaseNotes": {
+    "message": "Informacje o wydaniu"
+  },
+  "lblReport": {
+    "message": "Zgłoś problem"
+  },
+  "lblSettings": {
+    "message": "Ustawienia"
+  },
+  "lblAdd": {
+    "message": "Dodaj"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Pokaż przetłumaczony tekst po najechaniu kursorem"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Skróty klawiszowe"
+  },
+  "msgToTranslateSites": {
+    "message": "Aby przetłumaczyć witrynę"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Dziękujemy za skorzystanie z tego rozszerzenia."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Będę wdzięczny, jeśli możesz przekazać darowiznę."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Zawsze tłumacz ten język"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Pokaż przetłumaczony tekst po najechaniu kursorem na te witryny"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Ustaw niebieską ikonę wyskakującego okienka po przetłumaczeniu witryny"
+  },
+  "more": {
+    "message": "Jeszcze"
+  },
+  "less": {
+    "message": "Mniej"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Nie pokazuj, jeśli język strony jest językiem docelowym"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Nie pokazuj, jeśli język strony jest nieznany"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Nie pokazuj, czy wybrany język tekstu jest językiem docelowym"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Nie pokazuj, jeśli wybrany język tekstu jest nieznany"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Pokaż tłumaczenie po najechaniu kursorem na tę witrynę"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Pokaż tłumaczenie po najechaniu kursorem myszy na witryny w formacie"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Pokaż przetłumaczony tekst, umieszczając wskaźnik myszy na witrynach z tymi językami"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Nie tłumacz zaznaczonego tekstu"
+  },
+  "msgUseOldPopup": {
+    "message": "Użyj starego wyskakującego okienka"
   }
 }

@@ -134,9 +134,6 @@
   "lblAlwaysTranslateSites": {
     "message": "Nunca traduzca estos sitios"
   },
-  "msgHelpDevelopment": {
-    "message": "Ayuda a mantener el desarrollo de esta extensión con una donación anónima."
-  },
   "msgDonateWithPaypal": {
     "message": "Donar con PayPal"
   },
@@ -166,5 +163,92 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Mostrar texto original al pasar el cursor"
+  },
+  "msgLanguages": {
+    "message": "Idiomas"
+  },
+  "msgSites": {
+    "message": "Sitios"
+  },
+  "msgTranslations": {
+    "message": "Traducciones"
+  },
+  "msgStyle": {
+    "message": "Estilo"
+  },
+  "msgHotkeys": {
+    "message": "Teclas de acceso rápido"
+  },
+  "lblMakeDonation": {
+    "message": "Haz una donación"
+  },
+  "lblReleaseNotes": {
+    "message": "Notas de lanzamiento"
+  },
+  "lblReport": {
+    "message": "Informar de un problema"
+  },
+  "lblSettings": {
+    "message": "Ajustes"
+  },
+  "lblAdd": {
+    "message": "Agregar"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Mostrar texto traducido al pasar el cursor"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Atajos de teclado"
+  },
+  "msgToTranslateSites": {
+    "message": "Para traducir el sitio"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Gracias por usar esta extensión."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Estaré agradecido si puedes hacer una donación."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Traduce siempre este idioma"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Mostrar texto traducido al desplazarse por estos sitios"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Hacer que el icono emergente sea azul cuando se traduzca el sitio"
+  },
+  "more": {
+    "message": "Más"
+  },
+  "less": {
+    "message": "Menos"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "No mostrar si el idioma de la página es el idioma de destino"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "No mostrar si se desconoce el idioma de la página"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "No mostrar si el idioma de texto seleccionado es el idioma de destino"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "No mostrar si se desconoce el idioma del texto seleccionado"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Mostrar traducción al pasar el cursor sobre este sitio"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Mostrar traducción al pasar el cursor sobre sitios web en"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Mostrar texto traducido al pasar el cursor sobre sitios con estos idiomas"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "No traducir el texto seleccionado"
+  },
+  "msgUseOldPopup": {
+    "message": "Usar ventana emergente antigua"
   }
 }

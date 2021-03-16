@@ -134,9 +134,6 @@
   "lblAlwaysTranslateSites": {
     "message": "Vertaal deze website nooit"
   },
-  "msgHelpDevelopment": {
-    "message": "Help de ontwikkeling van deze extensie te behouden met een anonieme donatie."
-  },
   "msgDonateWithPaypal": {
     "message": "Doneer met PayPal"
   },
@@ -166,5 +163,92 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Toon originele tekst bij zweven"
+  },
+  "msgLanguages": {
+    "message": "Talen"
+  },
+  "msgSites": {
+    "message": "Sites"
+  },
+  "msgTranslations": {
+    "message": "Vertalingen"
+  },
+  "msgStyle": {
+    "message": "Stijl"
+  },
+  "msgHotkeys": {
+    "message": "Sneltoetsen"
+  },
+  "lblMakeDonation": {
+    "message": "Doe een gift"
+  },
+  "lblReleaseNotes": {
+    "message": "Release-opmerkingen"
+  },
+  "lblReport": {
+    "message": "Meld een probleem"
+  },
+  "lblSettings": {
+    "message": "Instellingen"
+  },
+  "lblAdd": {
+    "message": "Toevoegen"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Toon vertaalde tekst bij zweven"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Toetsenbord sneltoetsen"
+  },
+  "msgToTranslateSites": {
+    "message": "Om de site te vertalen"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Bedankt voor het gebruik van deze extensie."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Ik zal u dankbaar zijn als u een donatie kunt doen."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Vertaal deze taal altijd"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Toon vertaalde tekst wanneer u op deze sites zweeft"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Maak het pop-uppictogram blauw wanneer de site wordt vertaald"
+  },
+  "more": {
+    "message": "Meer"
+  },
+  "less": {
+    "message": "Minder"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Laat niet zien of de paginataal de doeltaal is"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Niet weergeven als de paginataal onbekend is"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Laat niet zien of de geselecteerde teksttaal de doeltaal is"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Niet weergeven als de geselecteerde teksttaal onbekend is"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Toon vertaling wanneer u met de muis over deze site beweegt"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Toon vertaling wanneer u de muisaanwijzer over websites beweegt in"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Toon vertaalde tekst wanneer u de muisaanwijzer over sites met deze talen beweegt"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Vertaal geselecteerde tekst niet"
+  },
+  "msgUseOldPopup": {
+    "message": "Gebruik oude pop-up"
   }
 }

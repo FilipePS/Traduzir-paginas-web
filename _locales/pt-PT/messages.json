@@ -134,9 +134,6 @@
   "lblAlwaysTranslateSites": {
     "message": "Sempre traduzir estes sites"
   },
-  "msgHelpDevelopment": {
-    "message": "Ajude a manter o desenvolvimento desta extensão com uma doação anônima."
-  },
   "msgDonateWithPaypal": {
     "message": "Doe com o PayPal"
   },

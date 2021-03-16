@@ -134,9 +134,6 @@
   "lblAlwaysTranslateSites": {
     "message": "हमेशा इस साइट का अनुवाद करें"
   },
-  "msgHelpDevelopment": {
-    "message": "एक अनाम दान के साथ इस विस्तार के विकास को बनाए रखने में मदद करें।"
-  },
   "msgDonateWithPaypal": {
     "message": "पेपैल के साथ दान करें"
   },
@@ -166,5 +163,92 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "मँडराते समय मूल पाठ दिखाएँ"
+  },
+  "msgLanguages": {
+    "message": "बोली"
+  },
+  "msgSites": {
+    "message": "साइटों"
+  },
+  "msgTranslations": {
+    "message": "अनुवाद"
+  },
+  "msgStyle": {
+    "message": "अंदाज"
+  },
+  "msgHotkeys": {
+    "message": "हॉटकी"
+  },
+  "lblMakeDonation": {
+    "message": "एक दान करें"
+  },
+  "lblReleaseNotes": {
+    "message": "रिलीज नोट्स"
+  },
+  "lblReport": {
+    "message": "समस्या के बारे में बताएं"
+  },
+  "lblSettings": {
+    "message": "समायोजन"
+  },
+  "lblAdd": {
+    "message": "जोड़ना"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "मँडराते समय अनुवादित पाठ दिखाएं"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "कुंजीपटल अल्प मार्ग"
+  },
+  "msgToTranslateSites": {
+    "message": "साइट का अनुवाद करने के लिए"
+  },
+  "msgThanksForUseExtension": {
+    "message": "इस एक्सटेंशन का उपयोग करने के लिए धन्यवाद।"
+  },
+  "msgIWillBeGrateful": {
+    "message": "यदि आप दान कर सकते हैं तो मैं आभारी रहूंगा।"
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "हमेशा इस भाषा का अनुवाद करें"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "इन साइटों पर मँडराते समय अनुवादित पाठ दिखाएं"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "साइट का अनुवाद करने पर पॉप-अप आइकन नीला करें"
+  },
+  "more": {
+    "message": "अधिक"
+  },
+  "less": {
+    "message": "कम"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "यह न दिखाएं कि क्या पृष्ठ भाषा लक्ष्य भाषा है"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "यदि पृष्ठ भाषा अज्ञात है, तो न दिखाएं"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "यह न दिखाएं कि चयनित पाठ भाषा लक्ष्य भाषा है या नहीं"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "यदि चयनित पाठ भाषा अज्ञात है, तो यह न दिखाएं"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "इस साइट पर मँडराते समय अनुवाद दिखाएं"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "वेबसाइटों पर मँडराते समय अनुवाद दिखाएं"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "इन भाषाओं वाली साइटों पर मँडराते समय अनुवादित पाठ दिखाएं"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "चयनित पाठ का अनुवाद न करें"
+  },
+  "msgUseOldPopup": {
+    "message": "पुराने पॉपअप का उपयोग करें"
   }
 }

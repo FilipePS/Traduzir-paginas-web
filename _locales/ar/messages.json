@@ -134,9 +134,6 @@
   "lblAlwaysTranslateSites": {
     "message": "ترجمة هذه المواقع دائمًا"
   },
-  "msgHelpDevelopment": {
-    "message": "ساعد في الحفاظ على تطوير هذا الامتداد من خلال تبرع مجهول."
-  },
   "msgDonateWithPaypal": {
     "message": "تبرع بواسطة PayPal"
   },
@@ -166,5 +163,92 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "إظهار النص الأصلي عند تحويله"
+  },
+  "msgLanguages": {
+    "message": "اللغات"
+  },
+  "msgSites": {
+    "message": "المواقع"
+  },
+  "msgTranslations": {
+    "message": "الترجمات"
+  },
+  "msgStyle": {
+    "message": "أسلوب"
+  },
+  "msgHotkeys": {
+    "message": "مفاتيح التشغيل السريع"
+  },
+  "lblMakeDonation": {
+    "message": "التبرع"
+  },
+  "lblReleaseNotes": {
+    "message": "ملاحظات الإصدار"
+  },
+  "lblReport": {
+    "message": "الإبلاغ عن مشكلة"
+  },
+  "lblSettings": {
+    "message": "إعدادات"
+  },
+  "lblAdd": {
+    "message": "يضيف"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "إظهار النص المترجم عند التمرير"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "اختصارات لوحة المفاتيح"
+  },
+  "msgToTranslateSites": {
+    "message": "لترجمة الموقع"
+  },
+  "msgThanksForUseExtension": {
+    "message": "شكرا لك على استخدام هذا الامتداد."
+  },
+  "msgIWillBeGrateful": {
+    "message": "سأكون ممتنًا إذا أمكنك التبرع."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "دائما ترجمة هذه اللغة"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "إظهار النص المترجم عند التمرير فوق هذه المواقع"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "اجعل الأيقونة المنبثقة زرقاء عند ترجمة الموقع"
+  },
+  "more": {
+    "message": "أكثر"
+  },
+  "less": {
+    "message": "أقل"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "لا تعرض ما إذا كانت لغة الصفحة هي اللغة الهدف"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "لا تظهر إذا كانت لغة الصفحة غير معروفة"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "لا تظهر إذا كانت لغة النص المحددة هي اللغة الهدف"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "لا تظهر إذا كانت لغة النص المحددة غير معروفة"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "إظهار الترجمة عند التمرير فوق هذا الموقع"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "إظهار الترجمة عند التمرير فوق مواقع الويب بتنسيق"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "إظهار النص المترجم عند التمرير فوق مواقع بهذه اللغات"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "لا تترجم النص المحدد"
+  },
+  "msgUseOldPopup": {
+    "message": "استخدم النوافذ المنبثقة القديمة"
   }
 }

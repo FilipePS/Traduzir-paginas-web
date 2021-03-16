@@ -134,9 +134,6 @@
   "lblAlwaysTranslateSites": {
     "message": "Uvijek prevodi ove stranice"
   },
-  "msgHelpDevelopment": {
-    "message": "Pomozite održati razvoj ovog proširenja anonimnom donacijom."
-  },
   "msgDonateWithPaypal": {
     "message": "Donirajte putem PayPala"
   },
@@ -166,5 +163,92 @@
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Prikaži izvorni tekst prilikom lebdenja"
+  },
+  "msgLanguages": {
+    "message": "Jezici"
+  },
+  "msgSites": {
+    "message": "Stranice"
+  },
+  "msgTranslations": {
+    "message": "Prijevodi"
+  },
+  "msgStyle": {
+    "message": "Stil"
+  },
+  "msgHotkeys": {
+    "message": "Prečaci"
+  },
+  "lblMakeDonation": {
+    "message": "Donirati"
+  },
+  "lblReleaseNotes": {
+    "message": "Napomene o izdanju"
+  },
+  "lblReport": {
+    "message": "Prijavi problem"
+  },
+  "lblSettings": {
+    "message": "Postavke"
+  },
+  "lblAdd": {
+    "message": "Dodati"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Prikaži prevedeni tekst prilikom lebdenja"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Tipkovni prečaci"
+  },
+  "msgToTranslateSites": {
+    "message": "Za prijevod stranice"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Zahvaljujemo na korištenju ovog proširenja."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Bit ću vam zahvalan ako možete dati donaciju."
+  },
+  "btnAlwaysTranslateThisLanguage": {
+    "message": "Uvijek prevedi ovaj jezik"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Prikažite prevedeni tekst kada lebdite na ovim web mjestima"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Neka ikona skočnog prozora bude plava kada se stranica prevede"
+  },
+  "more": {
+    "message": "Više"
+  },
+  "less": {
+    "message": "Manje"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Ne prikazujte je li jezik stranice ciljni jezik"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Ne prikazuj ako je jezik stranice nepoznat"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Ne prikazuj je li odabrani jezik teksta ciljni jezik"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Ne prikazuj ako je odabrani jezik teksta nepoznat"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Pokažite prijevod kad zadržite pokazivač iznad ove web stranice"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Prikaži prijevod pri zadržavanju pokazivača iznad web mjesta u"
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Prikažite prevedeni tekst kada lebdite iznad web lokacija s tim jezicima"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Ne prevodi odabrani tekst"
+  },
+  "msgUseOldPopup": {
+    "message": "Koristite stari skočni prozor"
   }
 }
