@@ -425,11 +425,11 @@ var translationService = {}
                 .join("<wbr>")
         })
 
-        const requestBody = "srv=tr-url-widget&format=html&lang=" + targetLanguage
+        const requestBody = "format=html&lang=" + targetLanguage
         return translateHTML(
             "yandex",
             targetLanguage,
-            "https://translate.yandex.net/api/v1/tr.json/translate",
+            "https://translate.yandex.net/api/v1/tr.json/translate?srv=tr-url-widget",
             sourceArray,
             requestBody,
             "text",
