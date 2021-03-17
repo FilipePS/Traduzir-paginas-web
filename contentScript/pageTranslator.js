@@ -65,6 +65,8 @@ twpConfig.onReady(function() {
     let newNodes = []
     let removedNodes = []
 
+    let nodesToRestore = []
+
     function translateNewNodes() {
         const currentFooCount = fooCount
 
@@ -276,10 +278,13 @@ twpConfig.onReady(function() {
         for (const i in nodesToTranslatesNow) {
             for (const j in nodesToTranslatesNow[i]) {
                 if (results[i][j]) {
+                    nodesToRestore.push({node: nodesToTranslatesNow[i][j].node, original: nodesToTranslatesNow[i][j].node.textContent})
                     nodesToTranslatesNow[i][j].node.textContent = results[i][j] + " "
                 }
             }
         }
+
+        mutationObserver.takeRecords()
     }
 
     function translateAttributes(attributesToTranslateNow, results) {
@@ -396,6 +401,8 @@ twpConfig.onReady(function() {
 
     pageTranslator.restorePage = function () {
         fooCount++
+        nodesToTranslate = []
+        
         showOriginal.disable()
         disableMutatinObserver()
 
@@ -409,14 +416,11 @@ twpConfig.onReady(function() {
         }
         originalPageTitle = null
 
-        for (const nti of nodesToTranslate) {
-            if (nti.isTranslated) {
-                for (const ninf of nti.nodesInfo) {
-                    ninf.node.textContent = ninf.original
-                }
-            }
+
+        for (const ntr of nodesToRestore) {
+            ntr.node.textContent = ntr.original
         }
-        nodesToTranslate = []
+        nodesToRestore = []
 
         for (const ati of attributesToTranslate) {
             if (ati.isTranslated) {
