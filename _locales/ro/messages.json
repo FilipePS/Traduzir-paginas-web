@@ -174,7 +174,7 @@
     "message": "Traduceri"
   },
   "msgStyle": {
-    "message": "Fond negru"
+    "message": "Aspect"
   },
   "msgHotkeys": {
     "message": "Taste rapide"
@@ -246,9 +246,9 @@
     "message": "Arată textul tradus cînd pui săgeata pe situri care au aceste limbi"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Nu traduceți textul selectat"
+    "message": "Nu traduce textul selecționat"
   },
   "msgUseOldPopup": {
-    "message": "Folosiți pop-up vechi"
+    "message": "Folosește vechea fereastră pentru tradus pagina"
   }
 }

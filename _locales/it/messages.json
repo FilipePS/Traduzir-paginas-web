@@ -174,7 +174,7 @@
     "message": "Traduzioni"
   },
   "msgStyle": {
-    "message": "Modalità scura"
+    "message": "Aspetto"
   },
   "msgHotkeys": {
     "message": "Scorciatoie"
@@ -249,6 +249,6 @@
     "message": "Non tradurre il testo selezionato"
   },
   "msgUseOldPopup": {
-    "message": "Usa il vecchio popup"
+    "message": "Usa la vecchia finestra a comparsa"
   }
 }
