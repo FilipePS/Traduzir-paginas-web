@@ -133,8 +133,8 @@ twpConfig.onReady(function () {
                     z-index: 2147483647;
                     position: fixed;
                     border-radius: 5px;
-                    max-width: 280px;
-                    max-height: 250px;
+                    max-width: 360px;
+                    max-height: 260px;
                     top: 0px;
                     left: 0px;
                     background-color: white;
