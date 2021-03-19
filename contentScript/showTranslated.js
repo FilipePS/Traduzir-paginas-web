@@ -18,7 +18,7 @@ twpConfig.onReady(function () {
                 currentPageTranslatorService = newValue
                 break
             case "targetLanguages":
-                currentTargetLanguage = newValue
+                currentTargetLanguage = newValue[0]
                 break
             case "sitesToTranslateWhenHovering":
                 showTranslatedTextWhenHoveringThisSite = newValue.indexOf(location.hostname) !== -1
