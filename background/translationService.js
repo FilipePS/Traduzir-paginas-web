@@ -406,12 +406,12 @@ var translationService = {}
         })
     }
 
-    translationService.google.translateText = function (sourceArray, targetLanguage) {
+    translationService.google.translateText = async function (sourceArray, targetLanguage) {
         if (targetLanguage == "zh") {
             targetLanguage = "zh-CN"
         }
 
-        return translationService.google.translateHTML(sourceArray.map(value => [value]), targetLanguage, true)
+        return (await translationService.google.translateHTML(sourceArray.map(value => [value]), targetLanguage, true)).map(value => value[0])
     }
 
     translationService.google.translateSingleText = function (source, targetLanguage) {
@@ -456,12 +456,12 @@ var translationService = {}
         })
     }
 
-    translationService.yandex.translateText = function (sourceArray, targetLanguage) {
+    translationService.yandex.translateText = async function (sourceArray, targetLanguage) {
         if (targetLanguage.indexOf("zh-") !== -1) {
             targetLanguage = "zh"
         }
 
-        return translationService.yandex.translateHTML(sourceArray.map(value => [value]), targetLanguage)
+        return (await translationService.yandex.translateHTML(sourceArray.map(value => [value]), targetLanguage)).map(value => value[0])
     }
 
     translationService.yandex.translateSingleText = function (source, targetLanguage) {
