@@ -86,6 +86,7 @@ twpConfig.onReady(function() {
                     max-width: 360px;
                     max-height: 260px;
                     overflow: auto;
+                    white-space: pre-wrap;
                 }
 
                 #eButtonTransSelText {

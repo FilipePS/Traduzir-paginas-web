@@ -316,7 +316,7 @@ var translationService = {}
     }
 
     // async para fix
-    translationService.google.translateHTML = function (_sourceArray3d, targetLanguage) {
+    translationService.google.translateHTML = function (_sourceArray3d, targetLanguage, preseveTextFormat=false) {
         if (targetLanguage == "zh") {
             targetLanguage = "zh-CN"
         }
@@ -328,6 +328,9 @@ var translationService = {}
             sourceArray = sourceArray.map(value => escapeHTML(value))
             if (sourceArray.length > 1) {
                 sourceArray = sourceArray.map((value, index) => "<a i=" + index + ">" + value + "</a>")
+            }
+            if (preseveTextFormat) {
+                return "<pre>" + sourceArray.join("") + "</pre>"
             }
             return sourceArray.join("")
         })
@@ -341,6 +344,7 @@ var translationService = {}
             requestBody,
             "q",
             getTranslationInProgress("google", targetLanguage)
+            
         )
         .then(thisTranslationProgress => {
             const results = thisTranslationProgress.map(value => value.translated)
@@ -348,6 +352,7 @@ var translationService = {}
             
             for (let i in results) {
                 let result = results[i]
+                result = result.replace("<pre>", "").replace("</pre>", "")
                 const sentences = []
 
                 let idx = 0
@@ -406,7 +411,7 @@ var translationService = {}
             targetLanguage = "zh-CN"
         }
 
-        return translationService.google.translateHTML(sourceArray.map(value => [value]), targetLanguage)
+        return translationService.google.translateHTML(sourceArray.map(value => [value]), targetLanguage, true)
     }
 
     translationService.google.translateSingleText = function (source, targetLanguage) {

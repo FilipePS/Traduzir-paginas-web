@@ -184,6 +184,7 @@ twpConfig.onReady(function () {
                     visible: true;
                     display: block;
                     opacity: 1;
+                    white-space: pre-wrap;
                 }
             </style>
             <div id="translatedText"></div>
