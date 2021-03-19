@@ -250,5 +250,11 @@
   },
   "msgUseOldPopup": {
     "message": "Use old popup"
+  },
+  "btnListen": {
+    "message": "Listen"
+  },
+  "btnStopListening": {
+    "message": "Stop listening"
   }
 }

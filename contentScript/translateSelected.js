@@ -297,7 +297,41 @@ twpConfig.onReady(function() {
             e.target.classList.add("selected")
         }
 
+        const eListen = shadowRoot.getElementById("listen")
+        let audio = null
+        eListen.onclick = () => {
+            const msgListen = chrome.i18n.getMessage("btnListen") ? chrome.i18n.getMessage("btnListen") : "Listen"
+            const msgStopListening = chrome.i18n.getMessage("btnStopListening") ? chrome.i18n.getMessage("btnStopListening") : "Stop listening"
+
+            eListen.classList.remove("selected")
+            eListen.setAttribute("title", msgStopListening)
+
+            if (audio) {
+                if (audio.duration > 0 && !audio.paused) {
+                    audio.pause()
+                    audio.currentTime = 0
+                    eListen.setAttribute("title", msgListen)
+                } else {
+                    audio.play()
+                    eListen.classList.add("selected")
+                }
+            } else {
+                chrome.runtime.sendMessage({action: "textToSpeech", text: eSelTextTrans.textContent, targetLanguage: currentTargetLanguage}, result => {
+                    if (!result) return;
+                    audio = new Audio(result)
+                    audio.play()
+                    audio.onended = e => {
+                        eListen.classList.remove("selected")
+                        eListen.setAttribute("title", msgListen)
+                    }
+                })
+                eListen.classList.add("selected")
+            }
+        }
+
         document.body.appendChild(divElement)
+
+        chrome.i18n.translateDocument(shadowRoot)
 
         if (plataformInfo.isMobile.any) {
             eButtonTransSelText.style.width = "30px"
