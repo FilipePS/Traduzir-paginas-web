@@ -2,7 +2,7 @@
 
 var $ = document.querySelector.bind(document)
 
-const btnTranslate = $("#btnTranslate")
+const btnApply = $("#btnApply")
 const btnClose = $("#btnClose")
 const selectTargetLanguage = $("select")
 
@@ -10,14 +10,10 @@ btnClose.addEventListener("click", () => {
     window.close()
 })
 
-btnTranslate.addEventListener("click", () => {
+btnApply.addEventListener("click", () => {
     const targetLanguage = selectTargetLanguage.value
 
     twpConfig.setTargetLanguage(targetLanguage)
-
-    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-        chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: targetLanguage})
-    })
 
     location = chrome.runtime.getURL("/popup/popup.html")
 })

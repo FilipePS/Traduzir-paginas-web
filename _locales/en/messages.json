@@ -256,5 +256,8 @@
   },
   "btnStopListening": {
     "message": "Stop listening"
+  },
+  "btnApply": {
+    "message": "Apply"
   }
 }
