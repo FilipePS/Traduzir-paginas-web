@@ -352,7 +352,11 @@ var translationService = {}
             
             for (let i in results) {
                 let result = results[i]
-                result = result.replace("<pre>", "").replace("</pre>", "")
+                if (result.indexOf("<pre") !== -1) {
+                    result = result.replace("</pre>", "")
+                    const index = result.indexOf(">")
+                    result = result.slice(index + 1)
+                }
                 const sentences = []
 
                 let idx = 0
