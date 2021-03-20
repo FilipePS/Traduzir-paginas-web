@@ -67,19 +67,31 @@ twpConfig.onReady(function () {
         hideTranslatedText()
     }
 
+    let audioDataUrl = null
+    let isPlayingAudio = false
+    function stopAudio() {
+        if (isPlayingAudio) {
+            chrome.runtime.sendMessage({action: "stopAudio"})
+        }
+        isPlayingAudio = false 
+    }
+
+    window.addEventListener("beforeunload", e => {
+        stopAudio()
+        audioDataUrl = null
+    })
+
     let prevNode = null
     function translateThisNode(node, usePrevNode=false) {
         if (!divElement) return;
         hideTranslatedText()
+ 
+        stopAudio()
+        audioDataUrl = null
         
         if (usePrevNode && prevNode) {
             node = prevNode
         } else {
-            if (audio) {
-                audio.pause()
-                audio = null
-            }
-
             const eListen = shadowRoot.getElementById("listen")
             eListen.classList.remove("selected")
         }
@@ -168,7 +180,6 @@ twpConfig.onReady(function () {
         clearTimeout(timeoutHandler)
     }
 
-    let audio = null
     showTranslated.enable = function () {
         showTranslated.disable()
     
@@ -420,24 +431,30 @@ twpConfig.onReady(function () {
             eListen.classList.remove("selected")
             eListen.setAttribute("title", msgStopListening)
 
-            if (audio) {
-                if (audio.duration > 0 && !audio.paused) {
-                    audio.pause()
-                    audio.currentTime = 0
+            if (audioDataUrl) {
+                if (isPlayingAudio) {
+                    stopAudio()
                     eListen.setAttribute("title", msgListen)
                 } else {
-                    audio.play()
+                    isPlayingAudio = true
+                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrl}, () => {
+                        eListen.classList.remove("selected")
+                        eListen.setAttribute("title", msgListen)
+                    })
                     eListen.classList.add("selected")
                 }
             } else {
+                stopAudio()
+                isPlayingAudio = true
                 chrome.runtime.sendMessage({action: "textToSpeech", text: eTextTranslated.textContent, targetLanguage: currentTargetLanguage}, result => {
                     if (!result) return;
-                    audio = new Audio(result)
-                    audio.play()
-                    audio.onended = e => {
+
+                    audioDataUrl = result
+                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrl}, () => {
+                        isPlayingAudio = false
                         eListen.classList.remove("selected")
                         eListen.setAttribute("title", msgListen)
-                    }
+                    })
                 })
                 eListen.classList.add("selected")
             }
@@ -464,10 +481,9 @@ twpConfig.onReady(function () {
     }
 
     showTranslated.disable = function () {
-        if (audio) {
-            audio.pause()
-            audio = null
-        }
+        stopAudio()
+        audioDataUrl = null
+
         if (divElement) {
             hideTranslatedText()
             divElement.remove()

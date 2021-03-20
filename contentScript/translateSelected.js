@@ -47,7 +47,15 @@ twpConfig.onReady(function() {
         })
       }
 
-    let audio = null
+    let audioDataUrl = null
+    let isPlayingAudio = false
+    function stopAudio() {
+        if (isPlayingAudio) {
+            chrome.runtime.sendMessage({action: "stopAudio"})
+        }
+        isPlayingAudio = false 
+    }
+
     function init() {
         destroy()
 
@@ -307,24 +315,30 @@ twpConfig.onReady(function() {
             eListen.classList.remove("selected")
             eListen.setAttribute("title", msgStopListening)
 
-            if (audio) {
-                if (audio.duration > 0 && !audio.paused) {
-                    audio.pause()
-                    audio.currentTime = 0
+            if (audioDataUrl) {
+                if (isPlayingAudio) {
+                    stopAudio()
                     eListen.setAttribute("title", msgListen)
                 } else {
-                    audio.play()
+                    isPlayingAudio = true
+                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrl}, () => {
+                        eListen.classList.remove("selected")
+                        eListen.setAttribute("title", msgListen)
+                    })
                     eListen.classList.add("selected")
                 }
             } else {
+                stopAudio()
+                isPlayingAudio = true
                 chrome.runtime.sendMessage({action: "textToSpeech", text: eSelTextTrans.textContent, targetLanguage: currentTargetLanguage}, result => {
                     if (!result) return;
-                    audio = new Audio(result)
-                    audio.play()
-                    audio.onended = e => {
+
+                    audioDataUrl = result
+                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrl}, () => {
+                        isPlayingAudio = false
                         eListen.classList.remove("selected")
                         eListen.setAttribute("title", msgListen)
-                    }
+                    })
                 })
                 eListen.classList.add("selected")
             }
@@ -362,10 +376,8 @@ twpConfig.onReady(function() {
     }
 
     function destroy() {
-        if (audio) {
-            audio.pause()
-            audio = null
-        }
+        stopAudio()
+        audioDataUrl = null
         if (!divElement) return;
 
         eButtonTransSelText.removeEventListener("click", onClick)
