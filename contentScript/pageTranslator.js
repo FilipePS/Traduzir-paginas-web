@@ -490,7 +490,7 @@ twpConfig.onReady(function() {
                         if (langCode) {
                             originalPageLanguage = langCode
                         }
-                        if (pageLanguageState === "original" && !plataformInfo.isMobile.any) {
+                        if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
                             if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
                                 if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
                                     pageTranslator.translatePage()
@@ -507,7 +507,7 @@ twpConfig.onReady(function() {
                 alreadyGotTheLanguage = true
             })
         } else {
-            if (pageLanguageState === "original" && !plataformInfo.isMobile.any) {
+            if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
                 if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
                     pageTranslator.translatePage()
                 }
