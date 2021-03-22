@@ -53,7 +53,7 @@ twpConfig.onReady(function() {
     let originalPageLanguage = "und"
     let currentPageLanguage = "und"
     let pageLanguageState = "original"
-    let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
+    let currentTargetLanguage = twpConfig.get("targetLanguage")
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
     let fooCount = 0
 

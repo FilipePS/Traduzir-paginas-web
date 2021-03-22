@@ -8,7 +8,7 @@ twpConfig.onReady(function () {
     let pageLanguageState = "original"
     let originalPageLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
-    let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
+    let currentTargetLanguage = twpConfig.get("targetLanguage")
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
     let showTranslatedTextWhenHoveringThisSite = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
     let showTranslatedTextWhenHoveringThisLang = false
@@ -20,8 +20,9 @@ twpConfig.onReady(function () {
                 break
             case "targetLanguages":
                 currentTargetLanguages = newValue
-                currentTargetLanguage = newValue[0]
                 break
+            case "targetLanguage":
+                currentTargetLanguage = newValue
             case "sitesToTranslateWhenHovering":
                 showTranslatedTextWhenHoveringThisSite = newValue.indexOf(location.hostname) !== -1
                 showTranslated.enable()

@@ -12,7 +12,7 @@ twpConfig.onReady(function() {
 
     let originalPageLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
-    let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
+    let currentTargetLanguage = twpConfig.get("targetLanguage")
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
     let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
     let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
@@ -395,8 +395,10 @@ twpConfig.onReady(function() {
                 currentPageTranslatorService = newValue
                 break
             case "targetLanguages":
-                currentTargetLanguage = newValue[0]
                 currentTargetLanguages = newValue
+                break
+            case "targetLanguage":
+                currentTargetLanguage = newValue
                 break
             case "neverTranslateSites":
                 translateThisSite = newValue.indexOf(location.hostname) === -1

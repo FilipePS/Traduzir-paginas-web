@@ -74,7 +74,7 @@ function updateContextMenu(pageLanguageState="original") {
     if (pageLanguageState === "translated") {
         contextMenuTitle = chrome.i18n.getMessage("btnRestore")
     } else {
-        const targetLanguage = twpConfig.get("targetLanguages")[0]
+        const targetLanguage = twpConfig.get("targetLanguage")
         let uilanguage = chrome.i18n.getUILanguage()
         if (uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw") {
             uilanguage = uilanguage.split("-")[0]

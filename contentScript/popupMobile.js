@@ -173,7 +173,7 @@ twpConfig.onReady(function () {
     `
 
     let originalPageLanguage = "und"
-    let currentTargetLanguage = twpConfig.get("targetLanguages")[0]
+    let currentTargetLanguage = twpConfig.get("targetLanguage")
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
     let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
     let translateThisLanguage = false

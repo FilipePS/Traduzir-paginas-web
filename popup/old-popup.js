@@ -102,7 +102,6 @@ twpConfig.onReady(function () {
     let currentPageLanguage = "und"
     let currentPageLanguageState = "original"
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
-    let targetLanguages = twpConfig.get("targetLanguages")
 
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "getOriginalPageLanguage"}, {frameId: 0}, pageLanguage => {
