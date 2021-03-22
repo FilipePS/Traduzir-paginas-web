@@ -153,16 +153,19 @@ twpConfig.onReady(function () {
     $("#targetLanguage1").onchange = e => {
         targetLanguages[0] = e.target.value
         twpConfig.set("targetLanguages", targetLanguages)
+        twpConfig.set("targetLanguage", e.target.value)
     }
 
     $("#targetLanguage2").onchange = e => {
         targetLanguages[1] = e.target.value
         twpConfig.set("targetLanguages", targetLanguages)
+        twpConfig.set("targetLanguage", e.target.value)
     }
 
     $("#targetLanguage3").onchange = e => {
         targetLanguages[2] = e.target.value
         twpConfig.set("targetLanguages", targetLanguages)
+        twpConfig.set("targetLanguage", e.target.value)
     }
 
 
