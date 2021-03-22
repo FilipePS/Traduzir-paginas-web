@@ -250,5 +250,23 @@
   },
   "msgUseOldPopup": {
     "message": "使用旧版弹窗"
+  },
+  "btnListen": {
+    "message": "朗读"
+  },
+  "btnStopListening": {
+    "message": "停止朗读"
+  },
+  "btnApply": {
+    "message": "应用"
+  },
+  "swapTranslationService": {
+    "message": "Switch between translation services"
+  },
+  "swapPopup": {
+    "message": "Switch between the old interface and the new one"
+  },
+  "helpSwapInterface": {
+    "message": "Click this button to switch between the old and the new interface."
   }
 }

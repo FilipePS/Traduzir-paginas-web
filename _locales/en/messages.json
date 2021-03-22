@@ -265,5 +265,8 @@
   },
   "swapPopup": {
     "message": "Switch between the old interface and the new one"
+  },
+  "helpSwapInterface": {
+    "message": "Click this button to switch between the old and the new interface."
   }
 }
