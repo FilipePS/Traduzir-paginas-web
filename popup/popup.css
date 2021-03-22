@@ -136,13 +136,14 @@ hr {
     box-sizing: border-box;
     position: relative;
     display: block;
-    transform: scale(var(--ggs,1));
+    transform: scale(var(--ggs, 1));
     box-shadow:
         -2px 2px 0,
         2px -2px 0;
     width: 6px;
     height: 2px
 }
+
 .gg-swap::after,
 .gg-swap::before {
     content: "";
@@ -154,13 +155,69 @@ hr {
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent
 }
+
 .gg-swap::before {
     border-left: 3px solid;
     top: -4px;
     right: -4px
 }
+
 .gg-swap::after {
     border-right: 3px solid;
     bottom: -4px;
     left: -4px
+}
+
+#helpSwapInterface {
+    position: fixed;
+    top: 40px;
+    right: 4px;
+    background-color: #88f;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 200px;
+    border: 2px solid black;
+    font-weight: 500;
+}
+
+#helpSwapInterface span:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid black;
+    border-right: 10px solid transparent;
+    right: 8px;
+    top: -12px;
+}
+
+.gg-close {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 40px
+}
+.gg-close::after,
+.gg-close::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    top: 8px;
+    left: 1px
+}
+.gg-close::after {
+    transform: rotate(-45deg)
 }
