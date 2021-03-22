@@ -120,7 +120,7 @@ var translationService = {}
     translationService.google = {}
     translationService.yandex = {}
 
-    async function translateHTML(translationService, targetLanguage, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress) {
+    async function translateHTML(translationService, targetLanguage, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress, dontSaveInCache=false) {
         const thisTranslationProgress = []
         const requests = []
 
@@ -199,11 +199,13 @@ var translationService = {}
                                 transInfo.status = "complete"
                                 transInfo.translated = responseJson[index]
                                 
-                                try {
-                                    //TODO ERRO AQUI FAZ DA LENTIDAO
-                                    translationCache.set(translationService, transInfo.source, transInfo.translated, targetLanguage)
-                                } catch (e) {
-                                    console.error(e)
+                                if (!dontSaveInCache) {
+                                    try {
+                                        //TODO ERRO AQUI FAZ DA LENTIDAO
+                                        translationCache.set(translationService, transInfo.source, transInfo.translated, targetLanguage)
+                                    } catch (e) {
+                                        console.error(e)
+                                    }
                                 }
                             } else {
                                 transInfo.status = "error"
@@ -316,7 +318,7 @@ var translationService = {}
     }
 
     // async para fix
-    translationService.google.translateHTML = function (_sourceArray3d, targetLanguage, preseveTextFormat=false) {
+    translationService.google.translateHTML = function (_sourceArray3d, targetLanguage, dontSaveInCache=false, preseveTextFormat=false) {
         if (targetLanguage == "zh") {
             targetLanguage = "zh-CN"
         }
@@ -343,8 +345,8 @@ var translationService = {}
             sourceArray,
             requestBody,
             "q",
-            getTranslationInProgress("google", targetLanguage)
-            
+            getTranslationInProgress("google", targetLanguage),
+            dontSaveInCache
         )
         .then(thisTranslationProgress => {
             const results = thisTranslationProgress.map(value => value.translated)
@@ -410,20 +412,20 @@ var translationService = {}
         })
     }
 
-    translationService.google.translateText = async function (sourceArray, targetLanguage) {
+    translationService.google.translateText = async function (sourceArray, targetLanguage, dontSaveInCache=false) {
         if (targetLanguage == "zh") {
             targetLanguage = "zh-CN"
         }
 
-        return (await translationService.google.translateHTML(sourceArray.map(value => [value]), targetLanguage, true)).map(value => value[0])
+        return (await translationService.google.translateHTML(sourceArray.map(value => [value]), targetLanguage, dontSaveInCache, true)).map(value => value[0])
     }
 
-    translationService.google.translateSingleText = function (source, targetLanguage) {
-        return translationService.google.translateText([source], targetLanguage)
+    translationService.google.translateSingleText = function (source, targetLanguage, dontSaveInCache=false) {
+        return translationService.google.translateText([source], targetLanguage, dontSaveInCache)
         .then(results => results[0])
     }
 
-    translationService.yandex.translateHTML = function (sourceArray3d, targetLanguage) {
+    translationService.yandex.translateHTML = function (sourceArray3d, targetLanguage, dontSaveInCache=false) {
         if (targetLanguage.indexOf("zh-") !== -1) {
             targetLanguage = "zh"
         }
@@ -442,7 +444,8 @@ var translationService = {}
             sourceArray,
             requestBody,
             "text",
-            getTranslationInProgress("yandex", targetLanguage)
+            getTranslationInProgress("yandex", targetLanguage),
+            dontSaveInCache
         )
         .then(thisTranslationProgress => {
             const results = thisTranslationProgress.map(value => value.translated)
@@ -460,16 +463,16 @@ var translationService = {}
         })
     }
 
-    translationService.yandex.translateText = async function (sourceArray, targetLanguage) {
+    translationService.yandex.translateText = async function (sourceArray, targetLanguage, dontSaveInCache=false) {
         if (targetLanguage.indexOf("zh-") !== -1) {
             targetLanguage = "zh"
         }
 
-        return (await translationService.yandex.translateHTML(sourceArray.map(value => [value]), targetLanguage)).map(value => value[0])
+        return (await translationService.yandex.translateHTML(sourceArray.map(value => [value]), targetLanguage, dontSaveInCache)).map(value => value[0])
     }
 
-    translationService.yandex.translateSingleText = function (source, targetLanguage) {
-        return translationService.yandex.translateText([source], targetLanguage)
+    translationService.yandex.translateSingleText = function (source, targetLanguage, dontSaveInCache=false) {
+        return translationService.yandex.translateText([source], targetLanguage, dontSaveInCache)
         .then(results => results[0])
     }
 
@@ -483,7 +486,7 @@ var translationService = {}
                 translateHTML = translationService.google.translateHTML
             }
 
-            translateHTML(request.sourceArray3d, request.targetLanguage)
+            translateHTML(request.sourceArray3d, request.targetLanguage, sender.tab.incognito)
             .then(results => {
                 sendResponse(results)
             })
@@ -500,7 +503,7 @@ var translationService = {}
                 translateText = translationService.google.translateText
             }
 
-            translateText(request.sourceArray, request.targetLanguage)
+            translateText(request.sourceArray, request.targetLanguage, sender.tab.incognito)
             .then(results => {
                 sendResponse(results)
             })
@@ -517,7 +520,7 @@ var translationService = {}
                 translateSingleText = translationService.google.translateSingleText
             }
 
-            translateSingleText(request.source, request.targetLanguage)
+            translateSingleText(request.source, request.targetLanguage, sender.tab.incognito)
             .then(result => {
                 sendResponse(result)
             })
