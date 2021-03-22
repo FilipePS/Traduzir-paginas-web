@@ -106,12 +106,14 @@ twpConfig.onReady(function () {
 
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "getOriginalPageLanguage"}, {frameId: 0}, pageLanguage => {
+            checkedLastError()
             if (pageLanguage && (pageLanguage = twpLang.checkLanguageCode(pageLanguage))) {
                 originalPageLanguage = pageLanguage
             }
         })
 
         chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageLanguage"}, {frameId: 0}, pageLanguage => {
+            checkedLastError()
             if (pageLanguage) {
                 currentPageLanguage = pageLanguage
                 updateInterface()
@@ -119,6 +121,7 @@ twpConfig.onReady(function () {
         })
 
         chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageLanguageState"}, {frameId: 0}, pageLanguageState => {
+            checkedLastError()
             if (pageLanguageState) {
                 currentPageLanguageState = pageLanguageState
                 updateInterface()
@@ -126,6 +129,7 @@ twpConfig.onReady(function () {
         })
 
         chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageTranslatorService"}, {frameId: 0}, pageTranslatorService => {
+            checkedLastError()
             if (pageTranslatorService) {
                 currentPageTranslatorService = pageTranslatorService
                 updateInterface()
@@ -250,7 +254,7 @@ twpConfig.onReady(function () {
         currentPageLanguageState = "translated"
 
         chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage"})
+            chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage"}, checkedLastError)
         })
 
         showSelectTargetLanguage = false
@@ -261,7 +265,7 @@ twpConfig.onReady(function () {
         currentPageLanguageState = "original"
 
         chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "restorePage"})
+            chrome.tabs.sendMessage(tabs[0].id, {action: "restorePage"}, checkedLastError)
         })
 
         updateInterface()
@@ -274,7 +278,7 @@ twpConfig.onReady(function () {
     
     $("#divIconTranslate").addEventListener("click", () => {
         chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "swapTranslationService"})
+            chrome.tabs.sendMessage(tabs[0].id, {action: "swapTranslationService"}, checkedLastError)
         })
 
         if (currentPageTranslatorService === "google") {

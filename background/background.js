@@ -57,7 +57,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 function updateTranslateSelectedContextMenu() {
     if (typeof chrome.contextMenus !== "undefined") {
-        chrome.contextMenus.remove("translate-selected-text")
+        chrome.contextMenus.remove("translate-selected-text", checkedLastError)
         if (twpConfig.get("showTranslateSelectedContextMenu") === "yes") {
             chrome.contextMenus.create({
                 id: "translate-selected-text",
@@ -87,7 +87,7 @@ function updateContextMenu(pageLanguageState="original") {
         }
     }
     if (typeof chrome.contextMenus != 'undefined') {
-        chrome.contextMenus.remove("translate-web-page")
+        chrome.contextMenus.remove("translate-web-page", checkedLastError)
         if (twpConfig.get("showTranslatePageContextMenu") == "yes") {
             chrome.contextMenus.create({
                 id: "translate-web-page",

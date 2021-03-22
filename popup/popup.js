@@ -27,6 +27,11 @@ twpConfig.onReady(function () {
     }
     updatePopupSection()
 
+    // Avoid outputting the error message "Receiving end does not exist" in the Console.
+    function checkedLastError() {
+        chrome.runtime.lastError
+    }
+
     $("#more").onclick = e => {
         if (popupPanelSection < 6) {
             popupPanelSection++
@@ -65,7 +70,7 @@ twpConfig.onReady(function () {
             }
 
             chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-                chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: event.target.value || "original"})
+                chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: event.target.value || "original"}, checkedLastError)
             })
         })
     })
@@ -79,6 +84,7 @@ twpConfig.onReady(function () {
 
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "getOriginalPageLanguage"}, {frameId: 0}, pageLanguage => {
+            checkedLastError()
             if (pageLanguage && (pageLanguage = twpLang.checkLanguageCode(pageLanguage))) {
                 originalPageLanguage = pageLanguage
                 twpButtons[0].childNodes[1].textContent = twpLang.codeToLanguage(originalPageLanguage)
@@ -86,6 +92,7 @@ twpConfig.onReady(function () {
         })
 
         chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageLanguage"}, {frameId: 0}, pageLanguage => {
+            checkedLastError()
             if (pageLanguage) {
                 currentPageLanguage = pageLanguage
                 updateInterface()
@@ -93,6 +100,7 @@ twpConfig.onReady(function () {
         })
 
         chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageLanguageState"}, {frameId: 0}, pageLanguageState => {
+            checkedLastError()
             if (pageLanguageState) {
                 currentPageLanguageState = pageLanguageState
                 updateInterface()
@@ -100,6 +108,7 @@ twpConfig.onReady(function () {
         })
 
         chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageTranslatorService"}, {frameId: 0}, pageTranslatorService => {
+            checkedLastError()
             if (pageTranslatorService) {
                 currentPageTranslatorService = pageTranslatorService
                 updateInterface()
@@ -221,7 +230,7 @@ twpConfig.onReady(function () {
     
     $("#divIconTranslate").addEventListener("click", () => {
         chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "swapTranslationService"})
+            chrome.tabs.sendMessage(tabs[0].id, {action: "swapTranslationService"}, checkedLastError)
         })
 
         if (currentPageTranslatorService === "google") {
