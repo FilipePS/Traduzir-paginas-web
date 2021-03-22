@@ -261,12 +261,12 @@
     "message": "应用"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "切换翻译服务"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "切换新旧界面"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "点击此按钮即可切换新旧界面"
   }
 }
