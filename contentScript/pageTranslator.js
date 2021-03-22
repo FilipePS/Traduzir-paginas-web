@@ -491,7 +491,7 @@ twpConfig.onReady(function() {
                             originalPageLanguage = langCode
                         }
                         if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
-                            if (twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
+                            if (location.hostname && twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
                                 if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
                                     pageTranslator.translatePage()
                                 } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
@@ -508,7 +508,7 @@ twpConfig.onReady(function() {
             })
         } else {
             if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
-                if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                if (location.hostname && twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
                     pageTranslator.translatePage()
                 }
             }
