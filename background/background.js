@@ -142,7 +142,9 @@ if (typeof chrome.contextMenus !== "undefined") {
     })
 
     chrome.tabs.onActivated.addListener(activeInfo => {
-        updateContextMenu()
+        twpConfig.onReady(function() {
+            updateContextMenu()
+        })
         chrome.tabs.sendMessage(activeInfo.tabId, {action: "getCurrentPageLanguageState"}, {frameId: 0}, pageLanguageState => {
             checkedLastError()
             if (pageLanguageState) {
@@ -155,7 +157,9 @@ if (typeof chrome.contextMenus !== "undefined") {
 
     chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         if (tab.active && changeInfo.status == "loading") {
-            updateContextMenu()
+            twpConfig.onReady(function() {
+                updateContextMenu()
+            })
         }
     })
 }
