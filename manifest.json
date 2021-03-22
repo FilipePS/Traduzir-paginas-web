@@ -6,6 +6,13 @@
     "version": "8.6.1",
     "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
 
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "translatewebpages@addon",
+            "strict_min_version": "57.0"
+        }
+    },
+	
     "commands": {
         "toggle-translation": {
             "suggested_key": {
