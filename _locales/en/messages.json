@@ -259,5 +259,11 @@
   },
   "btnApply": {
     "message": "Apply"
+  },
+  "swapTranslationService": {
+    "message": "Switch between translation services"
+  },
+  "swapPopup": {
+    "message": "Switch between the old interface and the new one"
   }
 }
