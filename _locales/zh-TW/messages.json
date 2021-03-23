@@ -80,9 +80,6 @@
   "optionPopupThreeFingers": {
     "message": "當我以三隻手指觸控時。"
   },
-  "lblTranslationEngine": {
-    "message": "翻譯引擎"
-  },
   "msgOpenOnYandexTranslator": {
     "message": "在Yandex翻譯中打開"
   },

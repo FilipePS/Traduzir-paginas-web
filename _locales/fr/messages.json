@@ -80,9 +80,6 @@
   "optionPopupThreeFingers": {
     "message": "Quand je touche trois doigts sur l'écran"
   },
-  "lblTranslationEngine": {
-    "message": "Moteur de traduction"
-  },
   "msgOpenOnYandexTranslator": {
     "message": "Ouvrir avec Yandex traduction"
   },

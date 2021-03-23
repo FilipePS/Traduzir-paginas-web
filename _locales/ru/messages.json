@@ -80,9 +80,6 @@
   "optionPopupThreeFingers": {
     "message": "Когда я касаюсь экрана тремя пальцами"
   },
-  "lblTranslationEngine": {
-    "message": "Система перевода"
-  },
   "msgOpenOnYandexTranslator": {
     "message": "Открыть в Яндекс.Переводчик"
   },

@@ -80,9 +80,6 @@
   "optionPopupThreeFingers": {
     "message": "화면을 손가락 세 개로 터치했을 때"
   },
-  "lblTranslationEngine": {
-    "message": "번역 엔진"
-  },
   "msgOpenOnYandexTranslator": {
     "message": "Yandex Translate로 열기"
   },

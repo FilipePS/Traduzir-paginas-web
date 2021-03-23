@@ -80,9 +80,6 @@
   "optionPopupThreeFingers": {
     "message": "When I touch three fingers on the screen"
   },
-  "lblTranslationEngine": {
-    "message": "Translation engine"
-  },
   "msgOpenOnYandexTranslator": {
     "message": "Open in yandex translate"
   },
@@ -268,5 +265,8 @@
   },
   "helpSwapInterface": {
     "message": "Click this button to switch between the old and the new interface."
+  },
+  "lblTranslationService": {
+    "message": "Translation service"
   }
 }
