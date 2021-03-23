@@ -244,8 +244,5 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "選択したテキストを翻訳しない"
-  },
-  "msgUseOldPopup": {
-    "message": "古いポップアップを使用"
   }
 }

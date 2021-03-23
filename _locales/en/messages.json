@@ -245,9 +245,6 @@
   "msgNoTranslateSelectedText": {
     "message": "Do not translate selected text"
   },
-  "msgUseOldPopup": {
-    "message": "Use old popup"
-  },
   "btnListen": {
     "message": "Listen"
   },
@@ -268,5 +265,8 @@
   },
   "lblTranslationService": {
     "message": "Translation service"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Use the old popup interface"
   }
 }

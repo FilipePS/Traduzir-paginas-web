@@ -244,8 +244,5 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "선택한 텍스트를 번역 안 함"
-  },
-  "msgUseOldPopup": {
-    "message": "이전 팝업 사용"
   }
 }

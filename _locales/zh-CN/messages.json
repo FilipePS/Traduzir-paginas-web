@@ -245,9 +245,6 @@
   "msgNoTranslateSelectedText": {
     "message": "不要翻译选中文本"
   },
-  "msgUseOldPopup": {
-    "message": "使用旧版弹窗"
-  },
   "btnListen": {
     "message": "朗读"
   },

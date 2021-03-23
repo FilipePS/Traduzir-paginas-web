@@ -245,9 +245,6 @@
   "msgNoTranslateSelectedText": {
     "message": "Не переводить выделенный текст"
   },
-  "msgUseOldPopup": {
-    "message": "Использовать старый вариант всплывающего меню"
-  },
   "btnListen": {
     "message": "Прослушать"
   },

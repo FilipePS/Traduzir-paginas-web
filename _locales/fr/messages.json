@@ -244,8 +244,5 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Ne pas traduire le texte sélectionné"
-  },
-  "msgUseOldPopup": {
-    "message": "Utiliser l'ancienne fenêtre contextuelle"
   }
 }
