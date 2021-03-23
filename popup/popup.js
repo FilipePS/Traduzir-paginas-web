@@ -229,6 +229,11 @@ twpConfig.onReady(function () {
     
     $("#btnSwitchInterfaces").addEventListener("click", () => {
         twpConfig.set("useOldPopup", "yes")
+
+        if ($("#helpSwapInterface").style.display === "block") {
+            twpConfig.set("dontShowHelpSwapInterface", "yes")
+        }
+
         window.location = "old-popup.html"
     })
     
