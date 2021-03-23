@@ -383,6 +383,7 @@ twpConfig.onReady(function () {
     $("#btnCloseHelpSwapInterface").onclick = e => {
         $("#helpSwapInterface").style.display = "none"
         twpConfig.set("dontShowHelpSwapInterface", "yes")
+        document.body.style.minHeight = null
     }
 
     const installDateTime = twpConfig.get("installDateTime")
@@ -409,6 +410,7 @@ twpConfig.onReady(function () {
         
             if (showHelpSwapInterface) {
                 $("#helpSwapInterface").style.display = "block"
+                document.body.style.minHeight = "150px"
             }
         }
     }
