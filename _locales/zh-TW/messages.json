@@ -258,12 +258,15 @@
     "message": "套用"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "在翻譯服務之間切換"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "在舊介面和新介面之間切換"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "點擊這個按鈕可以在新舊介面之間切換。"
+  },
+  "lblTranslationService": {
+    "message": "翻譯服務"
   }
 }

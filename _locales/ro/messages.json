@@ -247,5 +247,26 @@
   },
   "msgUseOldPopup": {
     "message": "Folosește vechea fereastră pentru tradus pagina"
+  },
+  "btnListen": {
+    "message": "Ascultă"
+  },
+  "btnStopListening": {
+    "message": "Nu mai asculta"
+  },
+  "btnApply": {
+    "message": "Aplică"
+  },
+  "swapTranslationService": {
+    "message": "Schimbă serviciul de traducere"
+  },
+  "swapPopup": {
+    "message": "Alege între interfața veche și cea nouă"
+  },
+  "helpSwapInterface": {
+    "message": "Clic pe acest buton pentru a alege între interfața veche și cea nouă."
+  },
+  "lblTranslationService": {
+    "message": "Serviciu de traducere"
   }
 }

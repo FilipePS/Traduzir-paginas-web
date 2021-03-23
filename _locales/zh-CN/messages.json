@@ -265,5 +265,8 @@
   },
   "helpSwapInterface": {
     "message": "点击此按钮即可切换新旧界面"
+  },
+  "lblTranslationService": {
+    "message": "翻译服务"
   }
 }

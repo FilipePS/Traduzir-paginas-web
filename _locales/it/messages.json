@@ -247,5 +247,26 @@
   },
   "msgUseOldPopup": {
     "message": "Usa la vecchia finestra a comparsa"
+  },
+  "btnListen": {
+    "message": "Ascolta"
+  },
+  "btnStopListening": {
+    "message": "Ferma l'ascolto"
+  },
+  "btnApply": {
+    "message": "Applica"
+  },
+  "swapTranslationService": {
+    "message": "Scegli il servizio di traduzione"
+  },
+  "swapPopup": {
+    "message": "Scegli tra la vecchia interfaccia a quella nuova"
+  },
+  "helpSwapInterface": {
+    "message": "Clic su questo pulsante per scegliere tra la vecchia e la nuova interfaccia."
+  },
+  "lblTranslationService": {
+    "message": "Servizio di traduzione"
   }
 }
