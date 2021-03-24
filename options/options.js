@@ -420,10 +420,24 @@ twpConfig.onReady(function () {
     }
     $("#showOriginalTextWhenHovering").value = twpConfig.get("showOriginalTextWhenHovering")
 
+    function enableOrDisableTranslateSelectedAdvancedOptions(value) {
+        if (value === "no") {
+            document.querySelectorAll("#translateSelectedAdvancedOptions input").forEach(input => {
+                input.setAttribute("disabled", "")
+            })
+        } else {
+            document.querySelectorAll("#translateSelectedAdvancedOptions input").forEach(input => {
+                input.removeAttribute("disabled")
+            })      
+        }
+    }
+
     $("#showTranslateSelectedButton").onchange = e => {
         twpConfig.set("showTranslateSelectedButton", e.target.value)
+        enableOrDisableTranslateSelectedAdvancedOptions(e.target.value)
     }
     $("#showTranslateSelectedButton").value = twpConfig.get("showTranslateSelectedButton")
+    enableOrDisableTranslateSelectedAdvancedOptions(twpConfig.get("showTranslateSelectedButton"))
 
     $("#dontShowIfPageLangIsTargetLang").onchange = e => {
         twpConfig.set("dontShowIfPageLangIsTargetLang", e.target.checked ? "yes" : "no")
