@@ -8,8 +8,8 @@
 
     "browser_specific_settings": {
         "gecko": {
-            "id": "translatewebpages@addon",
-            "strict_min_version": "57.0"
+            "id": "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}",
+            "strict_min_version": "63.0"
         }
     },
 	
