@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "चयनित पाठ का अनुवाद न करें"
+  },
+  "btnListen": {
+    "message": "बात सुनो"
+  },
+  "btnStopListening": {
+    "message": "सुनना बंद करो"
+  },
+  "btnApply": {
+    "message": "लागू"
+  },
+  "swapTranslationService": {
+    "message": "अनुवाद सेवाओं के बीच स्विच करें"
+  },
+  "swapPopup": {
+    "message": "पुराने इंटरफ़ेस और नए के बीच स्विच करें"
+  },
+  "helpSwapInterface": {
+    "message": "पुराने और नए इंटरफ़ेस के बीच स्विच करने के लिए इस बटन पर क्लिक करें।"
+  },
+  "lblTranslationService": {
+    "message": "अनुवाद सेवा"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "पुराने पॉपअप इंटरफ़ेस का उपयोग करें"
   }
 }

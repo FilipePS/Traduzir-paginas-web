@@ -265,5 +265,8 @@
   },
   "lblTranslationService": {
     "message": "翻译服务"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "使用旧的弹出界面"
   }
 }

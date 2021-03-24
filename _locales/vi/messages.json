@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Không dịch văn bản đã chọn"
+  },
+  "btnListen": {
+    "message": "Nghe"
+  },
+  "btnStopListening": {
+    "message": "Ngừng lắng nghe"
+  },
+  "btnApply": {
+    "message": "Ứng dụng"
+  },
+  "swapTranslationService": {
+    "message": "Chuyển đổi giữa các dịch vụ dịch thuật"
+  },
+  "swapPopup": {
+    "message": "Chuyển đổi giữa giao diện cũ và giao diện mới"
+  },
+  "helpSwapInterface": {
+    "message": "Nhấp vào nút này để chuyển đổi giữa giao diện cũ và mới."
+  },
+  "lblTranslationService": {
+    "message": "Dịch vụ dịch thuật"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Sử dụng giao diện bật lên cũ"
   }
 }

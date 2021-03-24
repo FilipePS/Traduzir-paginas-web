@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Älä käännä valittua tekstiä"
+  },
+  "btnListen": {
+    "message": "Kuunnella"
+  },
+  "btnStopListening": {
+    "message": "Lopeta kuuntelu"
+  },
+  "btnApply": {
+    "message": "Käytä"
+  },
+  "swapTranslationService": {
+    "message": "Vaihda käännöspalveluiden välillä"
+  },
+  "swapPopup": {
+    "message": "Vaihda vanhan käyttöliittymän ja uuden välillä"
+  },
+  "helpSwapInterface": {
+    "message": "Napsauta tätä painiketta vaihtaaksesi vanhan ja uuden käyttöliittymän välillä."
+  },
+  "lblTranslationService": {
+    "message": "Käännöspalvelu"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Käytä vanhaa ponnahdusikkunaa"
   }
 }

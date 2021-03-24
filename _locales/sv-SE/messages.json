@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Översätt inte markerad text"
+  },
+  "btnListen": {
+    "message": "Lyssna"
+  },
+  "btnStopListening": {
+    "message": "Sluta lyssna"
+  },
+  "btnApply": {
+    "message": "Tillämpa"
+  },
+  "swapTranslationService": {
+    "message": "Växla mellan översättningstjänster"
+  },
+  "swapPopup": {
+    "message": "Växla mellan det gamla gränssnittet och det nya"
+  },
+  "helpSwapInterface": {
+    "message": "Klicka på den här knappen för att växla mellan det gamla och det nya gränssnittet."
+  },
+  "lblTranslationService": {
+    "message": "Översättningstjänst"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Använd det gamla popup-gränssnittet"
   }
 }

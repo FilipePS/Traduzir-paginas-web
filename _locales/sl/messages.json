@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Ne prevajajte izbranega besedila"
+  },
+  "btnListen": {
+    "message": "Poslušaj"
+  },
+  "btnStopListening": {
+    "message": "Nehajte poslušati"
+  },
+  "btnApply": {
+    "message": "Prijavite se"
+  },
+  "swapTranslationService": {
+    "message": "Preklapljanje med prevajalskimi storitvami"
+  },
+  "swapPopup": {
+    "message": "Preklopite med starim in novim vmesnikom"
+  },
+  "helpSwapInterface": {
+    "message": "Kliknite ta gumb za preklop med starim in novim vmesnikom."
+  },
+  "lblTranslationService": {
+    "message": "Prevajalska služba"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Uporabite stari pojavni vmesnik"
   }
 }

@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Nepřeložit vybraný text"
+  },
+  "btnListen": {
+    "message": "Poslouchat"
+  },
+  "btnStopListening": {
+    "message": "Přestaň poslouchat"
+  },
+  "btnApply": {
+    "message": "Aplikovat"
+  },
+  "swapTranslationService": {
+    "message": "Přepínání mezi překladatelskými službami"
+  },
+  "swapPopup": {
+    "message": "Přepínání mezi starým a novým rozhraním"
+  },
+  "helpSwapInterface": {
+    "message": "Kliknutím na toto tlačítko přepnete mezi starým a novým rozhraním."
+  },
+  "lblTranslationService": {
+    "message": "Překladatelská služba"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Použijte staré vyskakovací rozhraní"
   }
 }

@@ -265,5 +265,8 @@
   },
   "lblTranslationService": {
     "message": "Система перевода"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Используйте старый всплывающий интерфейс"
   }
 }

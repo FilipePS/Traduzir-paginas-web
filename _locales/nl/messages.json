@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Vertaal geselecteerde tekst niet"
+  },
+  "btnListen": {
+    "message": "Luister"
+  },
+  "btnStopListening": {
+    "message": "Stop met luisteren"
+  },
+  "btnApply": {
+    "message": "Van toepassing zijn"
+  },
+  "swapTranslationService": {
+    "message": "Schakel tussen vertaaldiensten"
+  },
+  "swapPopup": {
+    "message": "Schakel tussen de oude interface en de nieuwe"
+  },
+  "helpSwapInterface": {
+    "message": "Klik op deze knop om te wisselen tussen de oude en de nieuwe interface."
+  },
+  "lblTranslationService": {
+    "message": "Vertaaldienst"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Gebruik de oude pop-upinterface"
   }
 }

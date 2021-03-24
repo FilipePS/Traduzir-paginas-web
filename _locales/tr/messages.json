@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Seçili metni çevirme"
+  },
+  "btnListen": {
+    "message": "Dinle"
+  },
+  "btnStopListening": {
+    "message": "Dinlemeyi bırak"
+  },
+  "btnApply": {
+    "message": "Uygulamak"
+  },
+  "swapTranslationService": {
+    "message": "Çeviri hizmetleri arasında geçiş yapın"
+  },
+  "swapPopup": {
+    "message": "Eski arayüz ile yenisi arasında geçiş yapın"
+  },
+  "helpSwapInterface": {
+    "message": "Eski ve yeni arayüz arasında geçiş yapmak için bu düğmeye tıklayın."
+  },
+  "lblTranslationService": {
+    "message": "Çeviri servisi"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Eski açılır pencere arayüzünü kullanın"
   }
 }

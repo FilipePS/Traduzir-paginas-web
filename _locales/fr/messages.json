@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Ne pas traduire le texte sélectionné"
+  },
+  "btnListen": {
+    "message": "Ecoutez"
+  },
+  "btnStopListening": {
+    "message": "Arrêtez d'écouter"
+  },
+  "btnApply": {
+    "message": "Appliquer"
+  },
+  "swapTranslationService": {
+    "message": "Basculer entre les services de traduction"
+  },
+  "swapPopup": {
+    "message": "Basculer entre l'ancienne interface et la nouvelle"
+  },
+  "helpSwapInterface": {
+    "message": "Cliquez sur ce bouton pour basculer entre l'ancienne et la nouvelle interface."
+  },
+  "lblTranslationService": {
+    "message": "Service de traduction"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Utilisez l'ancienne interface contextuelle"
   }
 }

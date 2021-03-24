@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "لا تترجم النص المحدد"
+  },
+  "btnListen": {
+    "message": "استمع"
+  },
+  "btnStopListening": {
+    "message": "توقف عن الاستماع"
+  },
+  "btnApply": {
+    "message": "يتقدم"
+  },
+  "swapTranslationService": {
+    "message": "التبديل بين خدمات الترجمة"
+  },
+  "swapPopup": {
+    "message": "التبديل بين الواجهة القديمة والجديدة"
+  },
+  "helpSwapInterface": {
+    "message": "انقر فوق هذا الزر للتبديل بين الواجهة القديمة والواجهة الجديدة."
+  },
+  "lblTranslationService": {
+    "message": "خدمة الترجمة"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "استخدم الواجهة المنبثقة القديمة"
   }
 }

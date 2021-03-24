@@ -265,5 +265,8 @@
   },
   "lblTranslationService": {
     "message": "Servizio di traduzione"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Usa la vecchia interfaccia popup"
   }
 }

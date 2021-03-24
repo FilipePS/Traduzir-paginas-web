@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "Не перекладати вибраний текст"
+  },
+  "btnListen": {
+    "message": "Слухай"
+  },
+  "btnStopListening": {
+    "message": "Перестань слухати"
+  },
+  "btnApply": {
+    "message": "Подати заявку"
+  },
+  "swapTranslationService": {
+    "message": "Переключення між перекладацькими службами"
+  },
+  "swapPopup": {
+    "message": "Переключіться між старим та новим інтерфейсом"
+  },
+  "helpSwapInterface": {
+    "message": "Клацніть на цю кнопку, щоб переключитися між старим та новим інтерфейсом."
+  },
+  "lblTranslationService": {
+    "message": "Послуга перекладу"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "Використовуйте старий спливаючий інтерфейс"
   }
 }

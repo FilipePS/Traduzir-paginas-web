@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "선택한 텍스트를 번역 안 함"
+  },
+  "btnListen": {
+    "message": "들리다"
+  },
+  "btnStopListening": {
+    "message": "듣기 중지"
+  },
+  "btnApply": {
+    "message": "대다"
+  },
+  "swapTranslationService": {
+    "message": "번역 서비스 간 전환"
+  },
+  "swapPopup": {
+    "message": "이전 인터페이스와 새 인터페이스 간 전환"
+  },
+  "helpSwapInterface": {
+    "message": "이전 인터페이스와 새 인터페이스 사이를 전환하려면이 버튼을 클릭하십시오."
+  },
+  "lblTranslationService": {
+    "message": "번역 서비스"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "이전 팝업 인터페이스 사용"
   }
 }

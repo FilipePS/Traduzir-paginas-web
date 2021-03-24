@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "選択したテキストを翻訳しない"
+  },
+  "btnListen": {
+    "message": "聴く"
+  },
+  "btnStopListening": {
+    "message": "聞くのをやめなさい"
+  },
+  "btnApply": {
+    "message": "適用する"
+  },
+  "swapTranslationService": {
+    "message": "翻訳サービスを切り替える"
+  },
+  "swapPopup": {
+    "message": "古いインターフェースと新しいインターフェースを切り替えます"
+  },
+  "helpSwapInterface": {
+    "message": "このボタンをクリックして、古いインターフェースと新しいインターフェースを切り替えます。"
+  },
+  "lblTranslationService": {
+    "message": "翻訳サービス"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "古いポップアップインターフェースを使用する"
   }
 }

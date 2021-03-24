@@ -244,5 +244,29 @@
   },
   "msgNoTranslateSelectedText": {
     "message": "אל תתרגם את הטקסט שנבחר"
+  },
+  "btnListen": {
+    "message": "להקשיב"
+  },
+  "btnStopListening": {
+    "message": "תפסיק להקשיב"
+  },
+  "btnApply": {
+    "message": "להגיש מועמדות"
+  },
+  "swapTranslationService": {
+    "message": "מעבר בין שירותי תרגום"
+  },
+  "swapPopup": {
+    "message": "עבור בין הממשק הישן לחדש"
+  },
+  "helpSwapInterface": {
+    "message": "לחץ על כפתור זה כדי לעבור בין הממשק הישן לחדש."
+  },
+  "lblTranslationService": {
+    "message": "שירות תרגום"
+  },
+  "msgUseOldPopupInterface": {
+    "message": "השתמש בממשק הקופץ הישן"
   }
 }
