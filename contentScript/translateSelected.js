@@ -45,9 +45,9 @@ twpConfig.onReady(function() {
             return resolve("und")
           })
         })
-      }
+    }
 
-    let audioDataUrl = null
+    let audioDataUrls = null
     let isPlayingAudio = false
     function stopAudio() {
         if (isPlayingAudio) {
@@ -315,13 +315,13 @@ twpConfig.onReady(function() {
             eListen.classList.remove("selected")
             eListen.setAttribute("title", msgStopListening)
 
-            if (audioDataUrl) {
+            if (audioDataUrls) {
                 if (isPlayingAudio) {
                     stopAudio()
                     eListen.setAttribute("title", msgListen)
                 } else {
                     isPlayingAudio = true
-                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrl}, () => {
+                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrls}, () => {
                         eListen.classList.remove("selected")
                         eListen.setAttribute("title", msgListen)
                     })
@@ -333,8 +333,8 @@ twpConfig.onReady(function() {
                 chrome.runtime.sendMessage({action: "textToSpeech", text: eSelTextTrans.textContent, targetLanguage: currentTargetLanguage}, result => {
                     if (!result) return;
 
-                    audioDataUrl = result
-                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrl}, () => {
+                    audioDataUrls = result
+                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrls}, () => {
                         isPlayingAudio = false
                         eListen.classList.remove("selected")
                         eListen.setAttribute("title", msgListen)
@@ -377,7 +377,7 @@ twpConfig.onReady(function() {
 
     function destroy() {
         stopAudio()
-        audioDataUrl = null
+        audioDataUrls = null
         if (!divElement) return;
 
         eButtonTransSelText.removeEventListener("click", onClick)

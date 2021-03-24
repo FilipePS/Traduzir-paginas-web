@@ -58,7 +58,7 @@ twpConfig.onReady(function () {
 
         hideTranslatedText()
         if (e.buttons === 0) {
-            timeoutHandler = setTimeout(translateThisNode, 1200, e.target)
+            timeoutHandler = setTimeout(translateThisNode, 1250, e.target)
         }
     }
 
@@ -68,7 +68,7 @@ twpConfig.onReady(function () {
         hideTranslatedText()
     }
 
-    let audioDataUrl = null
+    let audioDataUrls = null
     let isPlayingAudio = false
     function stopAudio() {
         if (isPlayingAudio) {
@@ -79,7 +79,7 @@ twpConfig.onReady(function () {
 
     window.addEventListener("beforeunload", e => {
         stopAudio()
-        audioDataUrl = null
+        audioDataUrls = null
     })
 
     let prevNode = null
@@ -88,7 +88,7 @@ twpConfig.onReady(function () {
         hideTranslatedText()
  
         stopAudio()
-        audioDataUrl = null
+        audioDataUrls = null
         
         if (usePrevNode && prevNode) {
             node = prevNode
@@ -432,13 +432,13 @@ twpConfig.onReady(function () {
             eListen.classList.remove("selected")
             eListen.setAttribute("title", msgStopListening)
 
-            if (audioDataUrl) {
+            if (audioDataUrls) {
                 if (isPlayingAudio) {
                     stopAudio()
                     eListen.setAttribute("title", msgListen)
                 } else {
                     isPlayingAudio = true
-                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrl}, () => {
+                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrls}, () => {
                         eListen.classList.remove("selected")
                         eListen.setAttribute("title", msgListen)
                     })
@@ -450,8 +450,8 @@ twpConfig.onReady(function () {
                 chrome.runtime.sendMessage({action: "textToSpeech", text: eTextTranslated.textContent, targetLanguage: currentTargetLanguage}, result => {
                     if (!result) return;
 
-                    audioDataUrl = result
-                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrl}, () => {
+                    audioDataUrls = result
+                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrls}, () => {
                         isPlayingAudio = false
                         eListen.classList.remove("selected")
                         eListen.setAttribute("title", msgListen)
@@ -483,7 +483,7 @@ twpConfig.onReady(function () {
 
     showTranslated.disable = function () {
         stopAudio()
-        audioDataUrl = null
+        audioDataUrls = null
 
         if (divElement) {
             hideTranslatedText()

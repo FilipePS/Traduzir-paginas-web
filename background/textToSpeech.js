@@ -26,10 +26,28 @@ var textToSpeech = {}
         })
     }
 
-    let audio = null
+    let audios = []
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "textToSpeech") {
-            textToSpeech.google(request.text, request.targetLanguage)
+            const splited = request.text.split(" ")
+            const promises = []
+
+            let requestString = ""
+            for (let txt of splited) {
+                txt += " "
+                if (requestString.length + txt.length < 170) {
+                    requestString += txt
+                } else {
+                    promises.push(textToSpeech.google(requestString, request.targetLanguage))
+                    requestString = txt
+                }
+            }
+            if (requestString) {
+                promises.push(textToSpeech.google(requestString, request.targetLanguage))
+                requestString = ""  
+            }
+
+            Promise.all(promises)
             .then(result => {
                 sendResponse(result)
             })
@@ -40,21 +58,43 @@ var textToSpeech = {}
 
             return true
         } else if (request.action === "playAudio") {
-            if (audio) {
-                audio.pause()
+            audios.forEach(audio => audio.pause())
+            audios = []
+
+            const promises = []
+            let audioIndex = 0
+            request.audioDataUrls.forEach(audioDataUrl => {
+                const audio = new Audio(audioDataUrl)
+                promises.push(new Promise(resolve => {
+                    audio.onended = audio.onpause = e => {
+                        resolve()
+                        if (audios[audioIndex] && !audios.some(audio => !audio.paused)) {
+                            audios[audioIndex].play()
+                            audioIndex++
+                        }
+                    }
+                }))
+                audios.push(audio)
+            })
+            
+            if (audios[audioIndex]) {
+                audios[audioIndex].play()
+                audioIndex++
             }
-            audio = new Audio(request.audioDataUrl)
-            audio.play()
-            audio.onended = audio.onpause = e => {
+
+            Promise.all(promises)
+            .then(r => {
+                sendResponse(r)
+            })
+            .catch(e => {
+                console.error(e)
                 sendResponse()
-            }
+            })
 
             return true
         } else if (request.action === "stopAudio") {
-            if (audio) {
-                audio.pause()
-                audio = null
-            }
+            audios.forEach(audio => audio.pause())
+            audios = []
         }
     })
 }
