@@ -170,18 +170,13 @@ var translationService = {}
                     tk = calcHash(requests[idx].fullSource, googleTranslateTKK)
                 }
 
-                fetch(translationServiceURL + tk, {
-                    "credentials": "omit",
-                    "headers": {
-                        "Content-Type": "application/x-www-form-urlencoded"
-                    },
-                    "body": requests[idx].requestBody,
-                    "method": "POST",
-                    "mode": "no-cors",
-                    "referrerPolicy": "no-referrer"
-                })
-                .then(response => response.json())
-                .then(response => {
+                const http = new XMLHttpRequest
+                http.open("POST", translationServiceURL + tk)
+                http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+                http.responseType = "json"
+                http.send(requests[idx].requestBody)
+                http.onload = e => {
+                    const response = http.response
                     let responseJson
                     if (translationService === "yandex") {
                         responseJson = response.text
@@ -216,13 +211,13 @@ var translationService = {}
                         }
                     })
                     return responseJson
-                })
-                .catch(e => {
+                }
+                http.onerror = e => {
                     requests[idx].transInfos.forEach(transInfo => {
                         transInfo.status = "error"
                     })
                     console.error(e)
-                })
+                }
             }
         }
 
