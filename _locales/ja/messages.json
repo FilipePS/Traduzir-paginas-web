@@ -249,16 +249,16 @@
     "message": "聴く"
   },
   "btnStopListening": {
-    "message": "聞くのをやめなさい"
+    "message": "停止"
   },
   "btnApply": {
-    "message": "適用する"
+    "message": "適用"
   },
   "swapTranslationService": {
     "message": "翻訳サービスを切り替える"
   },
   "swapPopup": {
-    "message": "古いインターフェースと新しいインターフェースを切り替えます"
+    "message": "古いインターフェースと新しいインターフェースを切り替える"
   },
   "helpSwapInterface": {
     "message": "このボタンをクリックして、古いインターフェースと新しいインターフェースを切り替えます。"
@@ -267,6 +267,9 @@
     "message": "翻訳サービス"
   },
   "msgUseOldPopupInterface": {
-    "message": "古いポップアップインターフェースを使用する"
+    "message": "古いポップアップインターフェースを使用"
+  },
+  "lblTranslateInterface": {
+    "message": "インターフェースを翻訳"
   }
 }
