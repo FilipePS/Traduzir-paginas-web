@@ -222,22 +222,20 @@ twpConfig.onReady(function() {
                   <path fill="$(fill);" fill-opacity="$(fill-opacity);" d="M444.075 241h-45v-15c0-8.284-6.716-15-15-15-8.284 0-15 6.716-15 15v15h-45c-8.284 0-15 6.716-15 15 0 8.284 6.716 15 15 15h87.14c-4.772 14.185-15.02 30.996-26.939 47.174a323.331 323.331 0 0 1-7.547-10.609c-4.659-6.851-13.988-8.628-20.838-3.969-6.85 4.658-8.627 13.988-3.969 20.839 4.208 6.189 8.62 12.211 13.017 17.919-7.496 8.694-14.885 16.57-21.369 22.94-5.913 5.802-6.003 15.299-.2 21.212 5.777 5.889 15.273 6.027 21.211.201.517-.508 8.698-8.566 19.624-20.937 10.663 12.2 18.645 20.218 19.264 20.837 5.855 5.855 15.35 5.858 21.208.002 5.858-5.855 5.861-15.352.007-21.212-.157-.157-9.34-9.392-21.059-23.059 21.233-27.448 34.18-51.357 38.663-71.338h1.786c8.284 0 15-6.716 15-15 0-8.284-6.715-15-14.999-15z"/>
                 </g>
               </svg>
-                `.replace(/\$\(fill\-opacity\)\;/g, '0.5')
+                `
     
                 let svg64
-                if (themeColorPopupText) {
-                    svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, themeColorPopupText))
-                } else if (darkMode) {
-                    if (pageLanguageState === "translated" && twpConfig.get("popupBlueWhenSiteIsTranslated") === "yes") {
-                        svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, "#77f"))
-                    } else {
-                        svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, "white"))
-                    }
+                if (pageLanguageState === "translated" && twpConfig.get("popupBlueWhenSiteIsTranslated") === "yes") {
+                    svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "1.0")
+                    svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#45a1ff"))
                 } else {
-                    if (pageLanguageState === "translated" && twpConfig.get("popupBlueWhenSiteIsTranslated") === "yes") {
-                        svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, "#22f"))
+                    svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "0.5")
+                    if (themeColorPopupText) {
+                        svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorPopupText))
+                    } else if (darkMode) {
+                        svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "white"))
                     } else {
-                        svg64 = btoa(svgXml.replace(/\$\(fill\)\;/g, "black"))
+                        svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "black"))
                     }
                 }
     
