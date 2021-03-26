@@ -268,5 +268,8 @@
   },
   "msgUseOldPopupInterface": {
     "message": "Use the old popup interface"
+  },
+  "lblTranslateInterface": {
+    "message": "Translate the interface"
   }
 }
