@@ -2,37 +2,6 @@
 
 //TODO abrir pagina de opções sem precisar abrir novas abas
 
-/*
-var googleTranslateTKK = undefined
-function updateGoogleTranslateTKK() {
-    var url = `https://translate.google.${
-        "zh-cn" == navigator.language.toLowerCase() ? "cn" : "com"
-    }/translate_a/element.js?cb=googleTranslateElementInit`
-    return backgroundFetchText(url, {
-            "credentials": "omit",
-            "method": "GET",
-            "mode": "no-cors",
-            "referrerPolicy": "no-referrer"
-        })
-        .then(responseText => {
-            var result = new RegExp(/tkk\=\'[0-9]+\.[0-9]+\'/i).exec(responseText)
-            if (result) {
-                result = new RegExp(/[0-9\.]+/i).exec(result)
-                googleTranslateTKK = result[0]
-        
-                chrome.tabs.query({}, tabs => {
-                    tabs.forEach(tab => {
-                        chrome.tabs.sendMessage(tab.id, {action: "updateGoogleTranslateTKK", googleTranslateTKK})
-                    })
-                })
-                return googleTranslateTKK
-            } else {
-                throw "Tkk invalid";
-            }
-        })
-}
-//*/
-
 // Avoid outputting the error message "Receiving end does not exist" in the Console.
 function checkedLastError() {
     chrome.runtime.lastError
