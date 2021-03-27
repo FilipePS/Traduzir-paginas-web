@@ -176,21 +176,27 @@ twpConfig.onReady(function() {
                         return
                     }
                 }
-                Array.from(element.shadowRoot ? element.shadowRoot.childNodes : element.childNodes).forEach(value => {
-                    if (htmlTagsInlineText.indexOf(value.nodeName) == -1) {
-                        if (nodesToTranslate[index].nodesInfo.length > 0) {
-                            nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
-                            index++ 
+                function getAllChilds(childNodes) {
+                    Array.from(childNodes).forEach(value => {
+                        if (htmlTagsInlineText.indexOf(value.nodeName) == -1) {
+                            if (nodesToTranslate[index].nodesInfo.length > 0) {
+                                nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
+                                index++ 
+                            }
+                            getAllNodes(value)
+                            if (nodesToTranslate[index].nodesInfo.length > 0) {
+                                nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
+                                index++ 
+                            }
+                        } else {
+                            getAllNodes(value)
                         }
-                        getAllNodes(value)
-                        if (nodesToTranslate[index].nodesInfo.length > 0) {
-                            nodesToTranslate.push({isTranslated: false, parent: null, nodesInfo: []})
-                            index++ 
-                        }
-                    } else {
-                        getAllNodes(value)
-                    }
-                })
+                    })
+                }
+                getAllChilds(element.childNodes)
+                if (element.shadowRoot) {
+                    getAllChilds(element.shadowRoot.childNodes)
+                }
             } else if (element.nodeType == 3) {
                 if (element.textContent.trim().length > 0) {
                     if (!nodesToTranslate[index].parent) {
