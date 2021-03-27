@@ -198,6 +198,9 @@ twpConfig.onReady(function() {
                         while (temp && temp != root && (htmlTagsInlineText.indexOf(temp.nodeName) != -1 || htmlTagsInlineIgnore.indexOf(temp.nodeName) != -1)) {
                             temp = temp.parentNode
                         }
+                        if (temp && temp.nodeType === 11) {
+                            temp = temp.host
+                        }
                         nodesToTranslate[index].parent = temp
                     }
                     nodesToTranslate[index].nodesInfo.push({node: element, original: element.textContent})
@@ -351,9 +354,8 @@ twpConfig.onReady(function() {
             }
         } catch (e) {
             console.error(e)
-        } finally {
-            setTimeout(translateDynamically, 600)
         }
+        setTimeout(translateDynamically, 600)
     }
     translateDynamically()
 
