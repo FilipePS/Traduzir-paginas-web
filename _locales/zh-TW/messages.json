@@ -267,6 +267,9 @@
     "message": "翻譯服務"
   },
   "msgUseOldPopupInterface": {
-    "message": "使用舊的彈出界面"
+    "message": "使用舊的彈出式介面"
+  },
+  "lblTranslateInterface": {
+    "message": "翻譯介面"
   }
 }

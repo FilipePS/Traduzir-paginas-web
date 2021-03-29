@@ -268,5 +268,8 @@
   },
   "msgUseOldPopupInterface": {
     "message": "使用旧的弹出界面"
+  },
+  "lblTranslateInterface": {
+    "message": "翻译界面"
   }
 }
