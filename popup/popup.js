@@ -311,6 +311,13 @@ twpConfig.onReady(function () {
         const hostname = new URL(tabs[0].url).hostname
         $("#cbAlwaysTranslateThisSite").checked = twpConfig.get("alwaysTranslateSites").indexOf(hostname) !== -1
         $("#cbShowTranslatedWhenHoveringThisSite").checked = twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) !== -1
+
+        const text = chrome.i18n.getMessage("msgTranslateSelectedText")
+        if (twpConfig.get("showTranslateSelectedButton") !== "yes") {
+            $("option[data-i18n=msgTranslateSelectedText").textContent = text ? text : "Translate selected text"
+        } else {
+            $("option[data-i18n=msgTranslateSelectedText").textContent = text ? "✔ " + text : "✔ Translate selected text"
+        }
     })
     
     $("#btnOptions").addEventListener("change", event => {
@@ -323,7 +330,12 @@ twpConfig.onReady(function () {
                     location = chrome.runtime.getURL("/popup/popup-change-language.html")
                     break
                 case "alwaysTranslateThisSite":
-                    twpConfig.addSiteToAlwaysTranslate(hostname)
+                    if (twpConfig.get("alwaysTranslateSites").indexOf(hostname) === -1) {
+                        twpConfig.addSiteToAlwaysTranslate(hostname)
+                    } else {
+                        twpConfig.removeSiteFromAlwaysTranslate(hostname)
+                    }
+                    window.close()
                     break
                 case "neverTranslateThisSite":
                     if (twpConfig.get("neverTranslateSites").indexOf(hostname) === -1) {
@@ -334,13 +346,26 @@ twpConfig.onReady(function () {
                     window.close()
                     break
                 case "alwaysTranslateThisLanguage":
-                    twpConfig.addLangToAlwaysTranslate(originalPageLanguage, hostname)
+                    if (twpConfig.get("alwaysTranslateLangs").indexOf(originalPageLanguage) === -1) {
+                        twpConfig.addLangToAlwaysTranslate(originalPageLanguage, hostname)
+                    } else {
+                        twpConfig.removeLangFromAlwaysTranslate(originalPageLanguage)
+                    }
+                    window.close()
                     break
                 case "neverTranslateThisLanguage":
                     if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
                         twpConfig.addLangToNeverTranslate(originalPageLanguage, hostname)
                     } else {
                         twpConfig.removeLangFromNeverTranslate(originalPageLanguage)
+                    }
+                    window.close()
+                    break
+                case "showTranslateSelectedButton":
+                    if (twpConfig.get("showTranslateSelectedButton") === "yes") {
+                        twpConfig.set("showTranslateSelectedButton", "no")
+                    } else {
+                        twpConfig.set("showTranslateSelectedButton", "yes")
                     }
                     window.close()
                     break
@@ -370,11 +395,18 @@ twpConfig.onReady(function () {
 
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
         const hostname = new URL(tabs[0].url).hostname
-        const text = chrome.i18n.getMessage("btnNeverTranslate")
+        const textNever = chrome.i18n.getMessage("btnNeverTranslate")
         if (twpConfig.get("neverTranslateSites").indexOf(hostname) === -1) {
-            $("option[data-i18n=btnNeverTranslate").textContent = text ? text : "Never translate this site"
+            $("option[data-i18n=btnNeverTranslate").textContent = textNever ? textNever : "Never translate this site"
         } else {
-            $("option[data-i18n=btnNeverTranslate").textContent = text ? "✔ " + text : "✔ Never translate this site"
+            $("option[data-i18n=btnNeverTranslate").textContent = textNever ? "✔ " + textNever : "✔ Never translate this site"
+        }
+
+        const textAlways = chrome.i18n.getMessage("btnAlwaysTranslate")
+        if (twpConfig.get("alwaysTranslateSites").indexOf(hostname) === -1) {
+            $("option[data-i18n=btnAlwaysTranslate").textContent = textAlways ? textAlways : "Always translate this site"
+        } else {
+            $("option[data-i18n=btnAlwaysTranslate").textContent = textAlways ? "✔ " + textAlways : "✔ Always translate this site"
         }
 
         $('option[data-i18n=btnDonate]').innerHTML += " &#10084;"
