@@ -481,7 +481,7 @@ var translationService = {}
                 translateHTML = translationService.google.translateHTML
             }
 
-            translateHTML(request.sourceArray3d, request.targetLanguage, sender.tab.incognito)
+            translateHTML(request.sourceArray3d, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
             .then(results => {
                 sendResponse(results)
             })
@@ -498,7 +498,7 @@ var translationService = {}
                 translateText = translationService.google.translateText
             }
 
-            translateText(request.sourceArray, request.targetLanguage, sender.tab.incognito)
+            translateText(request.sourceArray, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
             .then(results => {
                 sendResponse(results)
             })
@@ -515,7 +515,7 @@ var translationService = {}
                 translateSingleText = translationService.google.translateSingleText
             }
 
-            translateSingleText(request.source, request.targetLanguage, sender.tab.incognito)
+            translateSingleText(request.source, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
             .then(result => {
                 sendResponse(result)
             })
