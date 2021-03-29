@@ -318,12 +318,7 @@ twpConfig.onReady(function () {
                     } else {
                         twpConfig.removeSiteFromAlwaysTranslate(hostname)
                     }
-                    const btnAlwaysTranslateText = chrome.i18n.getMessage("btnAlwaysTranslate")
-                    if (twpConfig.get("alwaysTranslateSites").indexOf(hostname) === -1) {
-                        $("option[data-i18n=btnAlwaysTranslate").textContent = btnAlwaysTranslateText ? btnAlwaysTranslateText : "Always translate this site"
-                    } else {
-                        $("option[data-i18n=btnAlwaysTranslate").textContent = btnAlwaysTranslateText ? "✔ " + btnAlwaysTranslateText : "✔ Always translate this site"
-                    }
+                    window.close()
                     break
                 case "neverTranslateThisSite":
                     if (twpConfig.get("neverTranslateSites").indexOf(hostname) === -1) {
@@ -341,6 +336,14 @@ twpConfig.onReady(function () {
                         twpConfig.addLangToNeverTranslate(originalPageLanguage, hostname)
                     } else {
                         twpConfig.removeLangFromNeverTranslate(originalPageLanguage)
+                    }
+                    window.close()
+                    break
+                case "showTranslateSelectedButton":
+                    if (twpConfig.get("showTranslateSelectedButton") === "yes") {
+                        twpConfig.set("showTranslateSelectedButton", "no")
+                    } else {
+                        twpConfig.set("showTranslateSelectedButton", "yes")
                     }
                     window.close()
                     break
@@ -385,4 +388,11 @@ twpConfig.onReady(function () {
             $("option[data-i18n=btnAlwaysTranslate").textContent = btnAlwaysTranslateText ? "✔ " + btnAlwaysTranslateText : "✔ Always translate this site"
         }
     })
+
+    const text = chrome.i18n.getMessage("msgTranslateSelectedText")
+    if (twpConfig.get("showTranslateSelectedButton") !== "yes") {
+        $("option[data-i18n=msgTranslateSelectedText").textContent = text ? text : "Translate selected text"
+    } else {
+        $("option[data-i18n=msgTranslateSelectedText").textContent = text ? "✔ " + text : "✔ Translate selected text"
+    }
 })
