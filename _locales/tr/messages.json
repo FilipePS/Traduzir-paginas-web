@@ -268,5 +268,8 @@
   },
   "msgUseOldPopupInterface": {
     "message": "Eski açılır pencere arayüzünü kullanın"
+  },
+  "lblTranslateInterface": {
+    "message": "Arayüzü çevirin"
   }
 }

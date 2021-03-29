@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Перевести веб-страницы"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
     "message": "Переводите страницу в режиме реального времени с помощью Google или Яндекс."
@@ -268,5 +268,8 @@
   },
   "msgUseOldPopupInterface": {
     "message": "Использовать старое всплывающее меню"
+  },
+  "lblTranslateInterface": {
+    "message": "Перевести интерфейс"
   }
 }

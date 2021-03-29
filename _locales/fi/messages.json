@@ -126,13 +126,13 @@
     "message": "Et ole lisännyt yhtään kieltä tähän luetteloon."
   },
   "btnAlwaysTranslate": {
-    "message": "Älä käännä tätä sivua"
+    "message": "Käännä tämä sivusto aina"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Älä käännä tätä sivua"
+    "message": "Käännä nämä sivustot aina"
   },
   "msgDonateWithPaypal": {
-    "message": "Lahjoita PayPal avulla"
+    "message": "Lahjoita PayPalin kautta"
   },
   "lblDarkMode": {
     "message": "Tumma tila"
@@ -141,7 +141,7 @@
     "message": "Näytä julkaisutiedot päivitettäessä"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Näytä painike valitun tekstin kääntämiseksi"
+    "message": "Näytä painike, jolla voit kääntää valitun tekstin"
   },
   "msgAutomatic": {
     "message": "Automaattinen"
@@ -153,16 +153,16 @@
     "message": "Näytä valinta kääntämiselle pikavalikossa"
   },
   "lblNeverTranslateLangs": {
-    "message": "Älä käännä näitä sivuja"
+    "message": "Älä koskaan käännä näitä sivustoja"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Älä käännä tätä sivua"
+    "message": "Älä koskaan käännä tätä sivua"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Näytä alkuperäinen teksti kun leijuu"
+    "message": "Näytä alkuperäinen teksti osoitinaktivoinnilla"
   },
   "msgLanguages": {
-    "message": "Kieli (kielet"
+    "message": "Kielet"
   },
   "msgSites": {
     "message": "Sivustot"
@@ -186,13 +186,13 @@
     "message": "Ilmoita ongelmasta"
   },
   "lblSettings": {
-    "message": "asetukset"
+    "message": "Asetukset"
   },
   "lblAdd": {
-    "message": "Lisätä"
+    "message": "Lisää"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Näytä käännetty teksti leijuu"
+    "message": "Näytä käännetty teksti osoitinaktivoinnilla"
   },
   "lblKeyboardShortcuts": {
     "message": "Pikanäppäimet"
@@ -201,7 +201,7 @@
     "message": "Sivuston kääntäminen"
   },
   "msgThanksForUseExtension": {
-    "message": "Kiitos tämän laajennuksen käytöstä."
+    "message": "Kiitos, että käytät tätä laajennusta."
   },
   "msgIWillBeGrateful": {
     "message": "Olen kiitollinen, jos voit tehdä lahjoituksen."
@@ -210,10 +210,10 @@
     "message": "Käännä tämä kieli aina"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Näytä käännetty teksti, kun leijutat näillä sivustoilla"
+    "message": "Näytä käännetty teksti, kun käytät osoitinaktivointia näillä sivustoilla"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Tee ponnahdusikkuna siniseksi, kun sivusto käännetään"
+    "message": "Muuta työkalupalkin ikoni siniseksi, kun sivusto on käännetty"
   },
   "more": {
     "message": "Lisää"
@@ -222,31 +222,31 @@
     "message": "Vähemmän"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Älä näytä, onko sivun kieli kohdekieli"
+    "message": "Älä näytä, jos sivuston kieli on kohdekieli"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Älä näytä, jos sivun kieltä ei tunneta"
+    "message": "Älä näytä, jos sivuston kieltä ei pystytä tunnistamaan"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Älä näytä, onko valittu kieli kohdekieli"
+    "message": "Älä näytä, jos valitun tekstin kieli on kohdekieli"
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "Älä näytä, jos valittua tekstikieltä ei tunneta"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Näytä käännös, kun viet hiiren osoitteen tämän sivuston päälle"
+    "message": "Näytä käännökset osoitinaktivoinnilla tällä sivustolla"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Näytä käännös, kun viet hiiren osoitteen verkkosivustojen päälle"
+    "message": "Näytä käännökset osoitinaktivoinnilla kielellä"
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Näytä käännetty teksti, kun siirrät hiiren osoitteen näiden kielien kanssa"
+    "message": "Näytä käännetty teksti osoitinaktivoinnilla näillä kielillä"
   },
   "msgNoTranslateSelectedText": {
     "message": "Älä käännä valittua tekstiä"
   },
   "btnListen": {
-    "message": "Kuunnella"
+    "message": "Kuuntele"
   },
   "btnStopListening": {
     "message": "Lopeta kuuntelu"
@@ -258,7 +258,7 @@
     "message": "Vaihda käännöspalveluiden välillä"
   },
   "swapPopup": {
-    "message": "Vaihda vanhan käyttöliittymän ja uuden välillä"
+    "message": "Vaihda vanhan ja uuden käyttöliittymän välillä"
   },
   "helpSwapInterface": {
     "message": "Napsauta tätä painiketta vaihtaaksesi vanhan ja uuden käyttöliittymän välillä."
@@ -267,6 +267,9 @@
     "message": "Käännöspalvelu"
   },
   "msgUseOldPopupInterface": {
-    "message": "Käytä vanhaa ponnahdusikkunaa"
+    "message": "Käytä vanhaa ponnahdusikkunan käyttöliittymää"
+  },
+  "lblTranslateInterface": {
+    "message": "Auta käyttöliittymän kääntämisessä"
   }
 }
