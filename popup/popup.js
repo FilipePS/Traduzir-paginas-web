@@ -16,6 +16,17 @@ twpConfig.onReady(function () {
             }
         })
 
+        document.querySelectorAll("[data-popupPanelSection2]").forEach(node => {
+            const nodePopupPanelSection2 = parseInt(node.getAttribute("data-popupPanelSection2"))
+            if (isNaN(nodePopupPanelSection2)) return
+    
+            if (nodePopupPanelSection2 <= popupPanelSection) {
+                node.style.display = "none"
+            } else {
+                node.style.display = "block"
+            }
+        })
+
         $("#more").style.display = "block"
         $("#less").style.display = "block"
 
