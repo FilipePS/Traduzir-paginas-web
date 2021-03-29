@@ -98,12 +98,6 @@ chrome.runtime.onInstalled.addListener(details => {
             }
         })
     }
-
-    twpConfig.onReady(function () {
-        if (!twpConfig.get("installDateTime")) {
-            twpConfig.set("installDateTime", Date.now())
-        }
-    })
 })
 
 if (typeof chrome.contextMenus !== "undefined") {
@@ -321,4 +315,8 @@ twpConfig.onReady(function () {
                 break
         }
     })
+
+    if (!twpConfig.get("installDateTime")) {
+        twpConfig.set("installDateTime", Date.now())
+    }
 })
