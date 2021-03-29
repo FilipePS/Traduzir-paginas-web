@@ -3,7 +3,7 @@
     "default_locale": "en",
     "name": "__MSG_extensionName__",
     "description": "__MSG_extensionDescription__",
-    "version": "8.7",
+    "version": "8.8",
     "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
 
     "commands": {
