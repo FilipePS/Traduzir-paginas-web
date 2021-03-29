@@ -232,6 +232,7 @@ twpConfig.onReady(function () {
                     padding: 3px;
                     list-style-type: none;
                     overflow: hidden;
+                    user-select: none;
                 }
 
                 li {
@@ -414,13 +415,13 @@ twpConfig.onReady(function () {
                     currentTargetLanguage = langCode
                     translateThisNode(null, true)
                 }
+
+                shadowRoot.querySelectorAll("#setTargetLanguage li").forEach(li => {
+                    li.classList.remove("selected")
+                })
+    
+                e.target.classList.add("selected")
             }
-
-            shadowRoot.querySelectorAll("#setTargetLanguage li").forEach(li => {
-                li.classList.remove("selected")
-            })
-
-            e.target.classList.add("selected")
         }
 
         const eListen = shadowRoot.getElementById("listen")
