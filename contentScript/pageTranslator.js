@@ -68,46 +68,34 @@ twpConfig.onReady(function() {
     let nodesToRestore = []
 
     function translateNewNodes() {
-        const currentFooCount = fooCount
+        try {
+            newNodes.forEach(nn => {
+                if (removedNodes.indexOf(nn) != -1) return;
+                
+                let newNodesToTranslate = getNodesToTranslate(nn)
+    
+                for (const i in newNodesToTranslate) {
+                    const newNodesInfo = newNodesToTranslate[i].nodesInfo
+                    let finded = false
 
-        newNodes.forEach(nn => {
-            if (removedNodes.indexOf(nn) != -1) return;
-            
-            let newNodesToTranslate = getNodesToTranslate(nn)
-            
-            const indexesToRemove = []
-            for (const i in nodesToTranslate) {
-                if (nodesToTranslate[i].isTranslated) continue;
-                const nodesInfo = nodesToTranslate[i].nodesInfo
-                for (const j in newNodesToTranslate) {
-                    if (newNodesToTranslate[j].nodesInfo.some(value => nodesInfo.indexOf(value) >= 0)) {
-                        indexesToRemove.push(j)
+                    for (const ntt of nodesToTranslate) {
+                        if (ntt.nodesInfo.some(v1 => newNodesInfo.some(v2 => v1.node === v2.node))) {
+                            finded = true
+                        }
+                    }
+
+                    if (!finded) {
+                        showOriginal.add(newNodesToTranslate[i].parent)
+                        nodesToTranslate.push(newNodesToTranslate[i])
                     }
                 }
-            }
-            
-            indexesToRemove.forEach(idx => {
-                newNodesToTranslate.splice(idx, 1)
             })
-
-            
-            newNodesToTranslate.forEach(nti => showOriginal.add(nti.parent))
-            newNodesToTranslate = newNodesToTranslate.map(nti => nti.nodesInfo)
-
-            backgroundTranslateHTML(
-                currentPageTranslatorService,
-                currentTargetLanguage,
-                newNodesToTranslate.map(nti => nti.map(value => value.original))
-            )
-            .then(results => {
-                if (pageLanguageState === "translated" && currentFooCount === fooCount) {
-                    translateResults(newNodesToTranslate, results)
-                }
-            })
-        })
-
-        newNodes = []
-        removedNodes = []
+        } catch (e) {
+            console.error(e)
+        } finally {
+            newNodes = []
+            removedNodes = []
+        }
     }
 
     const mutationObserver = new MutationObserver(function(mutations) {
@@ -138,7 +126,7 @@ twpConfig.onReady(function() {
 
     function enableMutatinObserver() {
         disableMutatinObserver()
-        translateNewNodesTimerHandler = setInterval(translateNewNodes, 1700)
+        translateNewNodesTimerHandler = setInterval(translateNewNodes, 2000)
         mutationObserver.observe(document.body, { childList: true, subtree: true })
     }
 
@@ -289,8 +277,9 @@ twpConfig.onReady(function() {
         for (const i in nodesToTranslatesNow) {
             for (const j in nodesToTranslatesNow[i]) {
                 if (results[i][j]) {
-                    nodesToRestore.push({node: nodesToTranslatesNow[i][j].node, original: nodesToTranslatesNow[i][j].node.textContent})
-                    nodesToTranslatesNow[i][j].node.textContent = results[i][j] + " "
+                    const nodeInfo = nodesToTranslatesNow[i][j]
+                    nodesToRestore.push({node: nodeInfo.node, original: nodeInfo.node.textContent})
+                    nodeInfo.node.textContent = results[i][j] + " "
                 }
             }
         }
