@@ -85,7 +85,7 @@ twpConfig.onReady(function () {
     let prevNode = null
     function translateThisNode(node, usePrevNode=false) {
         if (!divElement) return;
-        hideTranslatedText()
+        //hideTranslatedText()
  
         stopAudio()
         audioDataUrls = null
@@ -171,6 +171,9 @@ twpConfig.onReady(function () {
                 eDivResult.style.top = top + "px"
                 eDivResult.style.left = left + "px"
             }
+        })
+        .catch(e => {
+            hideTranslatedText()
         })
     }
 
