@@ -90,6 +90,8 @@ twpConfig.onReady(function() {
                 newNodesToTranslate.splice(idx, 1)
             })
 
+            
+            newNodesToTranslate.forEach(nti => showOriginal.add(nti.parent))
             newNodesToTranslate = newNodesToTranslate.map(nti => nti.nodesInfo)
 
             backgroundTranslateHTML(
