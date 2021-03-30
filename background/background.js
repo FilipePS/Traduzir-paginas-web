@@ -106,7 +106,31 @@ if (typeof chrome.contextMenus !== "undefined") {
             //TODO forçar tradução em vez de alternar
             chrome.tabs.sendMessage(tab.id, {action: "toggle-translation"}, checkedLastError)
         } else if (info.menuItemId == "translate-selected-text") {
-            chrome.tabs.sendMessage(tab.id, {action: "TranslateSelectedText"}, checkedLastError)
+            // chrome.tabs.sendMessage(tab.id, {action: "TranslateSelectedText", selectionText: info.selectionText}, response => {
+            //     checkedLastError()
+            //     if (response) return; // contextScript exists
+            // })
+
+            if (chrome.pageAction) {
+                chrome.pageAction.setPopup({popup: "popup/popup-translate-text.html#text=" + encodeURIComponent(info.selectionText), tabId: tab.id})
+                chrome.pageAction.openPopup()
+    
+                if (twpConfig.get("useOldPopup") === "yes") {
+                    chrome.pageAction.setPopup({popup: "popup/old-popup.html", tabId: tab.id})
+                } else {
+                    chrome.pageAction.setPopup({popup: "popup/popup.html", tabId: tab.id})
+                }
+            } else {
+                //TODO a merda do chrome não suporte openPopup
+                // chrome.browserAction.setPopup({popup: "popup/popup-translate-text.html#text=" + encodeURIComponent(info.selectionText)})
+                // chrome.browserAction.openPopup()
+    
+                // if (twpConfig.get("useOldPopup") === "yes") {
+                //     chrome.browserAction.setPopup({popup: "popup/old-popup.html"})
+                // } else {
+                //     chrome.browserAction.setPopup({popup: "popup/popup.html"})
+                // }
+            }
         }
     })
 
