@@ -30,7 +30,6 @@ function updateTranslateSelectedContextMenu() {
         if (twpConfig.get("showTranslateSelectedContextMenu") === "yes") {
             chrome.contextMenus.create({
                 id: "translate-selected-text",
-                documentUrlPatterns: ["*://*/*"],
                 title: chrome.i18n.getMessage("msgTranslateSelectedText"),
                 contexts: ["selection"]
             })
@@ -60,7 +59,6 @@ function updateContextMenu(pageLanguageState="original") {
         if (twpConfig.get("showTranslatePageContextMenu") == "yes") {
             chrome.contextMenus.create({
                 id: "translate-web-page",
-                documentUrlPatterns: ["*://*/*"],
                 title: contextMenuTitle,
                 contexts: ["page", "frame"]
             })
