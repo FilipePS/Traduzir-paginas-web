@@ -1,9 +1,9 @@
 {
   "extensionName": {
-    "message": "Prevedite spletne strani"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Prevedite svojo spletno stran v realnem času z uporabo storitve Google ali Yandex."
+    "message": "Prevedite spletne strani v realnem času z uporabo storitev Google ali Yandex."
   },
   "pageActionTitle": {
     "message": "Prevedi to stran"
@@ -267,6 +267,9 @@
     "message": "Prevajalska služba"
   },
   "msgUseOldPopupInterface": {
-    "message": "Uporabite stari pojavni vmesnik"
+    "message": "Uporabite starejši pojavni vmesnik"
+  },
+  "lblTranslateInterface": {
+    "message": "Prevedite uporabniški vmesnik"
   }
 }
