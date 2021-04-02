@@ -29,7 +29,7 @@ twpConfig.onReady(function () {
             * {
                 scrollbar-color: #202324 #454a4d;
             }
-            #eDivResult {
+            body {
                 color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
             }
@@ -44,7 +44,7 @@ twpConfig.onReady(function () {
                 background-color: #454a4d !important;
             }
             `
-            document.appendChild(el)
+            document.body.appendChild(el)
             document.querySelector("#listen svg").style = "fill: rgb(231, 230, 228)"
         }
     }
