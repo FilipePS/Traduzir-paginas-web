@@ -177,7 +177,7 @@
     "message": "Prečaci"
   },
   "lblMakeDonation": {
-    "message": "Donirati"
+    "message": "Doniraj"
   },
   "lblReleaseNotes": {
     "message": "Napomene o izdanju"
@@ -189,13 +189,13 @@
     "message": "Postavke"
   },
   "lblAdd": {
-    "message": "Dodati"
+    "message": "Dodaj"
   },
   "lblShowTranslatedWhenHovering": {
     "message": "Prikaži prevedeni tekst prilikom lebdenja"
   },
   "lblKeyboardShortcuts": {
-    "message": "Tipkovni prečaci"
+    "message": "Tipkovnički prečaci"
   },
   "msgToTranslateSites": {
     "message": "Za prijevod stranice"
@@ -210,7 +210,7 @@
     "message": "Uvijek prevedi ovaj jezik"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Prikažite prevedeni tekst kada lebdite na ovim web mjestima"
+    "message": "Prikaži prevedeni tekst prilikom lebdenja na ovim web stranicama"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Neka ikona skočnog prozora bude plava kada se stranica prevede"
@@ -222,51 +222,54 @@
     "message": "Manje"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Ne prikazujte je li jezik stranice ciljni jezik"
+    "message": "Ne prikazuj ako je jezik stranice ciljni jezik"
   },
   "dontShowIfPageLangIsUnknown": {
     "message": "Ne prikazuj ako je jezik stranice nepoznat"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Ne prikazuj je li odabrani jezik teksta ciljni jezik"
+    "message": "Ne prikazuj ako je jezik odabranog teksta ciljni jezik"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Ne prikazuj ako je odabrani jezik teksta nepoznat"
+    "message": "Ne prikazuj ako je jezik odabranog teksta nepoznat"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Pokažite prijevod kad zadržite pokazivač iznad ove web stranice"
+    "message": "Pokaži prijevod prilikom lebdenja nad ovom stranicom"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Prikaži prijevod pri zadržavanju pokazivača iznad web mjesta u"
+    "message": "Prikaži prijevod prilikom lebdenja nad web stranicama na"
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Prikažite prevedeni tekst kada lebdite iznad web lokacija s tim jezicima"
+    "message": "Prikaži prevedeni tekst prilikom lebdenja nad stranicama s ovim jezicima"
   },
   "msgNoTranslateSelectedText": {
     "message": "Ne prevodi odabrani tekst"
   },
   "btnListen": {
-    "message": "Slušati"
+    "message": "Slušaj"
   },
   "btnStopListening": {
     "message": "Prestani slušati"
   },
   "btnApply": {
-    "message": "Prijavite se"
+    "message": "Primijeni"
   },
   "swapTranslationService": {
-    "message": "Prebacivanje između prevoditeljskih usluga"
+    "message": "Prebaci između prevoditeljskih servisa"
   },
   "swapPopup": {
-    "message": "Prebacivanje između starog i novog sučelja"
+    "message": "Prebaci između starog i novog sučelja"
   },
   "helpSwapInterface": {
     "message": "Kliknite ovaj gumb za prebacivanje između starog i novog sučelja."
   },
   "lblTranslationService": {
-    "message": "Usluga prevođenja"
+    "message": "Prevoditeljski servis"
   },
   "msgUseOldPopupInterface": {
     "message": "Upotrijebite staro skočno sučelje"
+  },
+  "lblTranslateInterface": {
+    "message": "Prevedi sučelje"
   }
 }
