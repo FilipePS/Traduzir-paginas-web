@@ -616,8 +616,6 @@ twpConfig.onReady(function() {
         if (request.action === "TranslateSelectedText") {
             readSelection()
             translateSelText()
-            
-            sendResponse(true)
         }
     })
 })

@@ -99,12 +99,14 @@ chrome.runtime.onInstalled.addListener(details => {
 })
 
 if (typeof chrome.contextMenus !== "undefined") {
+    const tabHasContentScript = {}
+
     chrome.contextMenus.onClicked.addListener((info, tab) => {
         if (info.menuItemId == "translate-web-page") {
             //TODO forçar tradução em vez de alternar
             chrome.tabs.sendMessage(tab.id, {action: "toggle-translation"}, checkedLastError)
         } else if (info.menuItemId == "translate-selected-text") {
-            if (chrome.pageAction) {
+            if (chrome.pageAction && chrome.pageAction.openPopup && (!tabHasContentScript[tab.id] || tab.isInReaderMode)) {
                 chrome.pageAction.setPopup({popup: "popup/popup-translate-text.html#text=" + encodeURIComponent(info.selectionText), tabId: tab.id})
                 chrome.pageAction.openPopup()
     
@@ -139,7 +141,29 @@ if (typeof chrome.contextMenus !== "undefined") {
             twpConfig.onReady(function() {
                 updateContextMenu()
             })
+        } else if (changeInfo.status == "complete") {
+            chrome.tabs.sendMessage(tabId, {action: "contentScriptIsInjected"}, {frameId: 0}, response => {
+                checkedLastError()
+                if (response) {
+                    tabHasContentScript[tabId] = true
+                }
+            })
         }
+    })
+
+    chrome.tabs.onRemoved.addListener((tabId, removeInfo) => {
+        delete tabHasContentScript[tabId]
+    })
+
+    chrome.tabs.query({}, tabs => {
+        tabs.forEach(tab => {
+            chrome.tabs.sendMessage(tab.id, {action: "contentScriptIsInjected"}, {frameId: 0}, response => {
+                checkedLastError()
+                if (response) {
+                    tabHasContentScript[tab.id] = true
+                }
+            })
+        })
     })
 }
 
