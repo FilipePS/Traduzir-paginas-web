@@ -78,7 +78,7 @@
     "message": "Automáticamente"
   },
   "optionPopupThreeFingers": {
-    "message": "Cuando toco tres dedos en la pantalla"
+    "message": "Al tocar con tres dedos la pantalla"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Abrir en traductor de yandex"
@@ -126,7 +126,7 @@
     "message": "No has añadido ningún sitio a esta lista."
   },
   "btnAlwaysTranslate": {
-    "message": "Nunca traducir este sitio"
+    "message": "Siempre traducir este sitio"
   },
   "lblAlwaysTranslateSites": {
     "message": "Traducir siempre estos sitios"

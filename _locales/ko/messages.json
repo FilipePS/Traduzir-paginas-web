@@ -108,7 +108,7 @@
     "message": "새 번역 알고리즘을 사용하시겠습니까?"
   },
   "msgYesRecommended": {
-    "message": "예 (권장)"
+    "message": "네 (권장)"
   },
   "msgNoUseWidgets": {
     "message": "아니오 (위젯 사용)"
@@ -141,7 +141,7 @@
     "message": "부가 기능 업데이트 시 릴리즈 노트 표시"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "선택한 텍스트에 번역 버튼 표시"
+    "message": "선택한 텍스트 번역 버튼 표시"
   },
   "msgAutomatic": {
     "message": "자동"
@@ -268,5 +268,8 @@
   },
   "msgUseOldPopupInterface": {
     "message": "이전 팝업 인터페이스 사용"
+  },
+  "lblTranslateInterface": {
+    "message": "인터페이스 번역"
   }
 }

@@ -126,10 +126,10 @@
     "message": "Do tohoto seznamu jste nepřidali žádný úkol."
   },
   "btnAlwaysTranslate": {
-    "message": "Nikdy nepřekládejte tuto stránku"
+    "message": "Tuto stránku vždy překládejte"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Nikdy nepřekládejte tento web"
+    "message": "Tyto stránky vždy překládejte"
   },
   "msgDonateWithPaypal": {
     "message": "Podpořit přes PayPal"

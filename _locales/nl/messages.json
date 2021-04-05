@@ -48,7 +48,7 @@
     "message": "Alleen maar"
   },
   "btnNeverTranslate": {
-    "message": "Vertaal deze website nooit"
+    "message": "Deze site nooit vertalen"
   },
   "btnChangeLanguages": {
     "message": "Verander talen"
@@ -60,7 +60,7 @@
     "message": "Vertaald"
   },
   "btnMobileNeverTranslate": {
-    "message": "Vertaal deze website nooit"
+    "message": "Deze site nooit vertalen"
   },
   "btnMobileDonate": {
     "message": "Alleen maar"
@@ -126,10 +126,10 @@
     "message": "U heeft geen sites toegevoegd aan deze lijst."
   },
   "btnAlwaysTranslate": {
-    "message": "Vertaal deze website nooit"
+    "message": "Vertaal deze site altijd"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Vertaal deze website nooit"
+    "message": "Vertaal deze sites altijd"
   },
   "msgDonateWithPaypal": {
     "message": "Doneer met PayPal"
@@ -153,10 +153,10 @@
     "message": "Geef de optie weer om de pagina te vertalen in het contextmenu"
   },
   "lblNeverTranslateLangs": {
-    "message": "Vertaal deze sites nooit"
+    "message": "Vertaal deze talen nooit"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Vertaal deze sites nooit"
+    "message": "Vertaal deze taal nooit"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Toon originele tekst bij zweven"
