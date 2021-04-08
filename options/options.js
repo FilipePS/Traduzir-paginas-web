@@ -43,6 +43,7 @@ twpConfig.onReady(function () {
         }
 
         if (sideBarIsVisible) {
+            $("#menuContainer").classList.toggle("change")
             $("#sideBar").style.display = "none"
             sideBarIsVisible = false
         }
