@@ -83,7 +83,7 @@ twpConfig.onReady(function() {
                     background-color: white;
                     color: black;
                     border: 1px solid grey;
-                    visible: true;
+                    visibility: visible;
                     opacity: 1;
                     display: none;
                 }
@@ -109,7 +109,7 @@ twpConfig.onReady(function() {
                     top: 0px;
                     left: 0px;
                     cursor: pointer;
-                    visible: true;
+                    visibility: visible;
                     opacity: 1;
                     display: none;
                 }

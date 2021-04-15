@@ -142,7 +142,7 @@ twpConfig.onReady(function () {
                     border: 1px solid grey;
                     overflow: auto;
                     padding: 16px;
-                    visible: true;
+                    visibility: visible;
                     display: block;
                     opacity: 1;
                     white-space: pre-wrap;
