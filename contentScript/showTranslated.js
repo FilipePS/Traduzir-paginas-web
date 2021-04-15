@@ -44,6 +44,10 @@ twpConfig.onReady(function () {
     let currentNodeOverMouse
     let timeoutHandler
 
+    function onScroll(e) {
+        clearTimeout(timeoutHandler)
+    }
+
     const mousePos = {x: 0, y: 0}
 
     function onMouseMove(e) {
@@ -379,6 +383,8 @@ twpConfig.onReady(function () {
             default:
                 break
         }
+
+        window.addEventListener("scroll", onScroll)
         
         window.addEventListener("mousemove", onMouseMove)
         window.addEventListener("mousedown", onMouseDown)
@@ -496,6 +502,8 @@ twpConfig.onReady(function () {
             shadowRoot = null
             eTextTranslated = null
         }
+
+        window.removeEventListener("scroll", onScroll)
 
         window.removeEventListener("mousemove", onMouseMove)
         window.removeEventListener("mousedown", onMouseDown)
