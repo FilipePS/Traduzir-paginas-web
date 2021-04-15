@@ -399,6 +399,7 @@ twpConfig.onReady(function () {
 
         sGoogle.onclick = () => {
             currentTextTranslatorService = "google"
+            twpConfig.set("textTranslatorService", "google")
             translateThisNode(null, true)
 
             sGoogle.classList.remove("selected")
@@ -408,6 +409,7 @@ twpConfig.onReady(function () {
         }
         sYandex.onclick = () => {
             currentTextTranslatorService = "yandex"
+            twpConfig.set("textTranslatorService", "yandex")
             translateThisNode(null, true)
 
             sGoogle.classList.remove("selected")
