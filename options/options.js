@@ -416,6 +416,11 @@ twpConfig.onReady(function () {
     }
     $("#pageTranslatorService").value = twpConfig.get("pageTranslatorService")
 
+    $("#textTranslatorService").onchange = e => {
+        twpConfig.set("textTranslatorService", e.target.value)
+    }
+    $("#textTranslatorService").value = twpConfig.get("textTranslatorService")
+
     $("#showOriginalTextWhenHovering").onchange = e => {
         twpConfig.set("showOriginalTextWhenHovering", e.target.value)
     }

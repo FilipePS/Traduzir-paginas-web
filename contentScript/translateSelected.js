@@ -13,7 +13,7 @@ twpConfig.onReady(function() {
     let originalPageLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
     let currentTargetLanguage = twpConfig.get("targetLanguage")
-    let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
+    let currentTextTranslatorService = twpConfig.get("textTranslatorService")
     let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
     let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
     let showTranslateSelectedButton = twpConfig.get("showTranslateSelectedButton")
@@ -273,7 +273,7 @@ twpConfig.onReady(function() {
         const sYandex = shadowRoot.getElementById("sYandex")
 
         sGoogle.onclick = () => {
-            currentPageTranslatorService = "google"
+            currentTextTranslatorService = "google"
             translateSelText(true)
 
             sGoogle.classList.remove("selected")
@@ -282,7 +282,7 @@ twpConfig.onReady(function() {
             sGoogle.classList.add("selected")
         }
         sYandex.onclick = () => {
-            currentPageTranslatorService = "yandex"
+            currentTextTranslatorService = "yandex"
             translateSelText(true)
 
             sGoogle.classList.remove("selected")
@@ -369,7 +369,7 @@ twpConfig.onReady(function() {
             targetLanguageButtons[i].setAttribute("title", twpLang.codeToLanguage(currentTargetLanguages[i]))
         }
 
-        if (currentPageTranslatorService === "yandex") {
+        if (currentTextTranslatorService === "yandex") {
             sYandex.classList.add("selected")
         } else {
             sGoogle.classList.add("selected")
@@ -392,8 +392,8 @@ twpConfig.onReady(function() {
 
     twpConfig.onChanged(function (name, newValue) {
         switch (name) {
-            case "pageTranslatorService":
-                currentPageTranslatorService = newValue
+            case "textTranslatorService":
+                currentTextTranslatorService = newValue
                 break
             case "targetLanguages":
                 currentTargetLanguages = newValue
@@ -440,7 +440,7 @@ twpConfig.onReady(function() {
             return
         }
 
-        backgroundTranslateSingleText(currentPageTranslatorService, currentTargetLanguage, prevSelectionInfo.text)
+        backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, prevSelectionInfo.text)
         .then(result => {
             if(!result) return
             init()

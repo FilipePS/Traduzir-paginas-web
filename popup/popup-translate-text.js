@@ -18,7 +18,7 @@ twpConfig.onReady(function () {
 
     let currentTargetLanguages = twpConfig.get("targetLanguages")
     let currentTargetLanguage = twpConfig.get("targetLanguage")
-    let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
+    let currentTextTranslatorService = twpConfig.get("textTranslatorService")
 
     function enableDarkMode() {
         if (!document.getElementById("darkModeElement")) {
@@ -89,8 +89,8 @@ twpConfig.onReady(function () {
     const sYandex = document.getElementById("sYandex")
 
     sGoogle.onclick = () => {
-        currentPageTranslatorService = "google"
-        twpConfig.set("pageTranslatorService", "google")
+        currentTextTranslatorService = "google"
+        twpConfig.set("textTranslatorService", "google")
         translateText()
 
         sGoogle.classList.remove("selected")
@@ -99,8 +99,8 @@ twpConfig.onReady(function () {
         sGoogle.classList.add("selected")
     }
     sYandex.onclick = () => {
-        currentPageTranslatorService = "yandex"
-        twpConfig.set("pageTranslatorService", "yandex")
+        currentTextTranslatorService = "yandex"
+        twpConfig.set("textTranslatorService", "yandex")
         translateText()
 
         sGoogle.classList.remove("selected")
@@ -176,7 +176,7 @@ twpConfig.onReady(function () {
         targetLanguageButtons[i].setAttribute("title", twpLang.codeToLanguage(currentTargetLanguages[i]))
     }
 
-    if (currentPageTranslatorService === "yandex") {
+    if (currentTextTranslatorService === "yandex") {
         sYandex.classList.add("selected")
     } else {
         sGoogle.classList.add("selected")
@@ -190,7 +190,7 @@ twpConfig.onReady(function () {
         stopAudio()
         audioDataUrls = null
 
-        backgroundTranslateSingleText(currentPageTranslatorService, currentTargetLanguage, sourceText)
+        backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, sourceText)
         .then(result => {
             eTextTranslated.textContent = result
         })

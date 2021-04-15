@@ -9,14 +9,14 @@ twpConfig.onReady(function () {
     let originalPageLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
     let currentTargetLanguage = twpConfig.get("targetLanguage")
-    let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
+    let currentTextTranslatorService = twpConfig.get("textTranslatorService")
     let showTranslatedTextWhenHoveringThisSite = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
     let showTranslatedTextWhenHoveringThisLang = false
 
     twpConfig.onChanged(function (name, newValue) {
         switch (name) {
-            case "pageTranslatorService":
-                currentPageTranslatorService = newValue
+            case "textTranslatorService":
+                currentTextTranslatorService = newValue
                 break
             case "targetLanguages":
                 currentTargetLanguages = newValue
@@ -146,7 +146,7 @@ twpConfig.onReady(function () {
         
         if (!text || text.length < 1 || text > 1000) return;
 
-        backgroundTranslateSingleText(currentPageTranslatorService, currentTargetLanguage, text)
+        backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, text)
         .then(result => {
             if (!divElement) return;
             hideTranslatedText()
@@ -392,7 +392,7 @@ twpConfig.onReady(function () {
         const sYandex = shadowRoot.getElementById("sYandex")
 
         sGoogle.onclick = () => {
-            currentPageTranslatorService = "google"
+            currentTextTranslatorService = "google"
             translateThisNode(null, true)
 
             sGoogle.classList.remove("selected")
@@ -401,7 +401,7 @@ twpConfig.onReady(function () {
             sGoogle.classList.add("selected")
         }
         sYandex.onclick = () => {
-            currentPageTranslatorService = "yandex"
+            currentTextTranslatorService = "yandex"
             translateThisNode(null, true)
 
             sGoogle.classList.remove("selected")
@@ -478,7 +478,7 @@ twpConfig.onReady(function () {
             targetLanguageButtons[i].setAttribute("title", twpLang.codeToLanguage(currentTargetLanguages[i]))
         }
 
-        if (currentPageTranslatorService === "yandex") {
+        if (currentTextTranslatorService === "yandex") {
             sYandex.classList.add("selected")
         } else {
             sGoogle.classList.add("selected")
