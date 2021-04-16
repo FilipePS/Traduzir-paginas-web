@@ -119,6 +119,7 @@ var translationService = {}
 
     translationService.google = {}
     translationService.yandex = {}
+    translationService.deepl = {}
 
     async function translateHTML(translationService, targetLanguage, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress, dontSaveInCache = false) {
         const thisTranslationProgress = []
@@ -476,6 +477,54 @@ var translationService = {}
             .then(results => results[0])
     }
 
+    translationService.deepl.translateSingleText = function (source, targetlanguage, dontSaveInCache = false) {
+        return new Promise((resolve, reject) => {
+            const request = {
+                "jsonrpc": "2.0",
+                "method": "LMT_handle_jobs",
+                "params": {
+                    "jobs": [{
+                        "kind": "default",
+                        "raw_en_sentence": source,
+                        "raw_en_context_before": [],
+                        "raw_en_context_after": [],
+                        "preferred_num_beams": 4
+                    }],
+                    "lang": {
+                        "user_preferred_langs": [targetlanguage.toUpperCase(), "EN"],
+                        "target_lang": targetlanguage.toUpperCase()
+                    },
+                    "priority": -1,
+                    "commonJobParams": { },
+                    "timestamp": Date.now()
+                },
+                "id": 0
+            }
+    
+            const http = new XMLHttpRequest
+            http.open("POST", "https://www2.deepl.com/jsonrpc")
+            http.setRequestHeader("Content-Type", "application/json")
+            http.responseType = "json"
+    
+            http.send(JSON.stringify(request).replace(`"method":`, `"method": `))
+    
+            http.onload = e => {
+                const response = http.response
+                try {
+                    const translated = response.result.translations[0].beams[0].postprocessed_sentence
+                    resolve(translated)
+                } catch (e) {
+                    reject(e)
+                }
+            }
+    
+            http.onerror = e => {
+                console.error(e)
+                reject(e)
+            }
+        })
+    }
+
 
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "translateHTML") {
@@ -514,12 +563,14 @@ var translationService = {}
             return true
         } else if (request.action === "translateSingleText") {
             let translateSingleText
-            if (request.translationService === "yandex") {
+            if (request.translationService === "deepl") {
+                translateSingleText = translationService.deepl.translateSingleText
+            } else if (request.translationService === "yandex") {
                 translateSingleText = translationService.yandex.translateSingleText
             } else {
                 translateSingleText = translationService.google.translateSingleText
             }
-
+            
             translateSingleText(request.source, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
                 .then(result => {
                     sendResponse(result)
