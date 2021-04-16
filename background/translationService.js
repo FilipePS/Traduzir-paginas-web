@@ -75,35 +75,35 @@ var translationService = {}
         }
         return bytesArray;
     }
-    
+
     function calcHash(query, windowTkk) {
         var tkkSplited = windowTkk.split('.');
         var tkkIndex = Number(tkkSplited[0]) || 0;
         var tkkKey = Number(tkkSplited[1]) || 0;
-    
+
         var bytesArray = transformQuery(query);
-    
+
         var encondingRound = tkkIndex;
         for (var i = 0; i < bytesArray.length; i++) {
             encondingRound += bytesArray[i];
             encondingRound = shiftLeftOrRightThenSumOrXor(encondingRound, '+-a^+6');
         }
         encondingRound = shiftLeftOrRightThenSumOrXor(encondingRound, '+-3^+b+-f');
-        
+
         encondingRound ^= tkkKey;
         if (encondingRound <= 0) {
             encondingRound = (encondingRound & 2147483647) + 2147483648;
         }
 
-        var normalizedResult  = encondingRound % 1000000;
-        return normalizedResult .toString() + '.' + (normalizedResult  ^ tkkIndex);
+        var normalizedResult = encondingRound % 1000000;
+        return normalizedResult.toString() + '.' + (normalizedResult ^ tkkIndex);
     }
 
     const googleTranslationInProgress = {}
     const yandexTranslationInProgress = {}
 
     function getTranslationInProgress(translationService, targetLanguage) {
-        let translationInProgress 
+        let translationInProgress
         if (translationService === "yandex") {
             translationInProgress = yandexTranslationInProgress
         } else {
@@ -120,7 +120,7 @@ var translationService = {}
     translationService.google = {}
     translationService.yandex = {}
 
-    async function translateHTML(translationService, targetLanguage, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress, dontSaveInCache=false) {
+    async function translateHTML(translationService, targetLanguage, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress, dontSaveInCache = false) {
         const thisTranslationProgress = []
         const requests = []
 
@@ -148,14 +148,18 @@ var translationService = {}
                         translated: null,
                         status: "translating"
                     }
-                    
-                    if (requests.length < 1 || requests[requests.length-1].requestBody.length > 800) {
-                        requests.push({requestBody, fullSource: "", transInfos: []})
+
+                    if (requests.length < 1 || requests[requests.length - 1].requestBody.length > 800) {
+                        requests.push({
+                            requestBody,
+                            fullSource: "",
+                            transInfos: []
+                        })
                     }
 
-                    requests[requests.length-1].requestBody += "&" + textParamName + "=" + encodeURIComponent(str)
-                    requests[requests.length-1].fullSource += str
-                    requests[requests.length-1].transInfos.push(newTransInfo)
+                    requests[requests.length - 1].requestBody += "&" + textParamName + "=" + encodeURIComponent(str)
+                    requests[requests.length - 1].fullSource += str
+                    requests[requests.length - 1].transInfos.push(newTransInfo)
                 }
 
                 translationProgress.push(newTransInfo)
@@ -193,7 +197,7 @@ var translationService = {}
                             if (responseJson[index]) {
                                 transInfo.status = "complete"
                                 transInfo.translated = responseJson[index]
-                                
+
                                 if (!dontSaveInCache) {
                                     try {
                                         //TODO ERRO AQUI FAZ DA LENTIDAO
@@ -221,8 +225,9 @@ var translationService = {}
             }
         }
 
-        const promise =  new Promise((resolve, reject) => {
+        const promise = new Promise((resolve, reject) => {
             let iterationsCount = 0
+
             function waitForTranslationFinish() {
                 let isTranslating = false
                 for (let info of thisTranslationProgress) {
@@ -255,7 +260,7 @@ var translationService = {}
     async function fixSouceArray(sourceArray3d) {
         const newSourceArray3d = []
         const fixIndexesMap = []
-        
+
         for (const i in sourceArray3d) {
             newSourceArray3d.push([])
             fixIndexesMap.push(parseInt(i))
@@ -273,22 +278,22 @@ var translationService = {}
                         }
                     })
                 })
-                if (detectedLanguage && prevDetectedLanguage && detectedLanguage !== prevDetectedLanguage && newSourceArray3d[newSourceArray3d.length-1].length > 0) {
+                if (detectedLanguage && prevDetectedLanguage && detectedLanguage !== prevDetectedLanguage && newSourceArray3d[newSourceArray3d.length - 1].length > 0) {
                     newSourceArray3d.push([text])
                     fixIndexesMap.push(parseInt(i))
                 } else {
-                    newSourceArray3d[newSourceArray3d.length-1].push(text)
+                    newSourceArray3d[newSourceArray3d.length - 1].push(text)
                 }
                 prevDetectedLanguage = detectedLanguage
             }
         }
-        
+
         return [newSourceArray3d, fixIndexesMap]
     }
 
     function fixResultArray(resultArray3d, fixIndexesMap) {
         const newResultArray3d = []
-        
+
         let idx = 0
         for (const index of fixIndexesMap) {
             if (!newResultArray3d[index]) {
@@ -305,7 +310,7 @@ var translationService = {}
             }
         }
 
-        if (newResultArray3d[newResultArray3d.length-1].length < 1) {
+        if (newResultArray3d[newResultArray3d.length - 1].length < 1) {
             newResultArray3d.pop()
         }
 
@@ -313,7 +318,7 @@ var translationService = {}
     }
 
     // async para fix
-    translationService.google.translateHTML = function (_sourceArray3d, targetLanguage, dontSaveInCache=false, preseveTextFormat=false) {
+    translationService.google.translateHTML = function (_sourceArray3d, targetLanguage, dontSaveInCache = false, preseveTextFormat = false) {
         if (targetLanguage == "zh") {
             targetLanguage = "zh-CN"
         }
@@ -334,80 +339,80 @@ var translationService = {}
 
         const requestBody = ""
         return translateHTML(
-            "google",
-            targetLanguage,
-            `https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=` + targetLanguage + "&tk=",
-            sourceArray,
-            requestBody,
-            "q",
-            getTranslationInProgress("google", targetLanguage),
-            dontSaveInCache
-        )
-        .then(thisTranslationProgress => {
-            const results = thisTranslationProgress.map(value => value.translated)
-            const resultArray3d = []
-            
-            for (let i in results) {
-                let result = results[i]
-                if (result.indexOf("<pre") !== -1) {
-                    result = result.replace("</pre>", "")
-                    const index = result.indexOf(">")
-                    result = result.slice(index + 1)
-                }
-                const sentences = []
+                "google",
+                targetLanguage,
+                `https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto&tl=` + targetLanguage + "&tk=",
+                sourceArray,
+                requestBody,
+                "q",
+                getTranslationInProgress("google", targetLanguage),
+                dontSaveInCache
+            )
+            .then(thisTranslationProgress => {
+                const results = thisTranslationProgress.map(value => value.translated)
+                const resultArray3d = []
 
-                let idx = 0
-                while (true) {
-                    const sentenceStartIndex = result.indexOf("<b>", idx)
-                    if (sentenceStartIndex === -1) break;
-                    
-                    const sentenceFinalIndex = result.indexOf("<i>", sentenceStartIndex)
-                    
-                    if (sentenceFinalIndex === -1) {
-                        sentences.push(result.slice(sentenceStartIndex + 3))
-                        break
-                    } else {
-                        sentences.push(result.slice(sentenceStartIndex + 3, sentenceFinalIndex))
+                for (let i in results) {
+                    let result = results[i]
+                    if (result.indexOf("<pre") !== -1) {
+                        result = result.replace("</pre>", "")
+                        const index = result.indexOf(">")
+                        result = result.slice(index + 1)
                     }
-                    idx = sentenceFinalIndex
-                }
-    
-                result = sentences.length > 0 ? sentences.join(" ") : result
-                let resultArray = result.match(/\<a\si\=[0-9]+\>[^\<\>]*(?=\<\/a\>)/g)
+                    const sentences = []
 
-                let indexes
-                if (resultArray && resultArray.length > 0) {
-                    indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=\>)/g))).filter(value => !isNaN(value))
-                    resultArray = resultArray.map(value => {
-                        var resultStartAtIndex = value.indexOf('>')
-                        return value.slice(resultStartAtIndex + 1)
-                    })
-                } else {
-                    resultArray = [result]
-                    indexes = [0]
-                }
+                    let idx = 0
+                    while (true) {
+                        const sentenceStartIndex = result.indexOf("<b>", idx)
+                        if (sentenceStartIndex === -1) break;
 
-                resultArray = resultArray.map(value => value.replace(/\<\/b\>/g, ""))
-                resultArray = resultArray.map(value => unescapeHTML(value))
+                        const sentenceFinalIndex = result.indexOf("<i>", sentenceStartIndex)
 
-                const finalResulArray = []
-                for (const j in indexes) {
-                    if (finalResulArray[indexes[j]]) {
-                        finalResulArray[indexes[j]] += " " + resultArray[j]
-                    } else {
-                        finalResulArray[indexes[j]] = resultArray[j]
+                        if (sentenceFinalIndex === -1) {
+                            sentences.push(result.slice(sentenceStartIndex + 3))
+                            break
+                        } else {
+                            sentences.push(result.slice(sentenceStartIndex + 3, sentenceFinalIndex))
+                        }
+                        idx = sentenceFinalIndex
                     }
+
+                    result = sentences.length > 0 ? sentences.join(" ") : result
+                    let resultArray = result.match(/\<a\si\=[0-9]+\>[^\<\>]*(?=\<\/a\>)/g)
+
+                    let indexes
+                    if (resultArray && resultArray.length > 0) {
+                        indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=\>)/g))).filter(value => !isNaN(value))
+                        resultArray = resultArray.map(value => {
+                            var resultStartAtIndex = value.indexOf('>')
+                            return value.slice(resultStartAtIndex + 1)
+                        })
+                    } else {
+                        resultArray = [result]
+                        indexes = [0]
+                    }
+
+                    resultArray = resultArray.map(value => value.replace(/\<\/b\>/g, ""))
+                    resultArray = resultArray.map(value => unescapeHTML(value))
+
+                    const finalResulArray = []
+                    for (const j in indexes) {
+                        if (finalResulArray[indexes[j]]) {
+                            finalResulArray[indexes[j]] += " " + resultArray[j]
+                        } else {
+                            finalResulArray[indexes[j]] = resultArray[j]
+                        }
+                    }
+
+                    resultArray3d.push(finalResulArray)
                 }
-                
-                resultArray3d.push(finalResulArray)
-            }
-            
-            //return fixResultArray(resultArray3d, fixIndexesMap)
-            return resultArray3d
-        })
+
+                //return fixResultArray(resultArray3d, fixIndexesMap)
+                return resultArray3d
+            })
     }
 
-    translationService.google.translateText = async function (sourceArray, targetLanguage, dontSaveInCache=false) {
+    translationService.google.translateText = async function (sourceArray, targetLanguage, dontSaveInCache = false) {
         if (targetLanguage == "zh") {
             targetLanguage = "zh-CN"
         }
@@ -415,12 +420,12 @@ var translationService = {}
         return (await translationService.google.translateHTML(sourceArray.map(value => [value]), targetLanguage, dontSaveInCache, true)).map(value => value[0])
     }
 
-    translationService.google.translateSingleText = function (source, targetLanguage, dontSaveInCache=false) {
+    translationService.google.translateSingleText = function (source, targetLanguage, dontSaveInCache = false) {
         return translationService.google.translateText([source], targetLanguage, dontSaveInCache)
-        .then(results => results[0])
+            .then(results => results[0])
     }
 
-    translationService.yandex.translateHTML = function (sourceArray3d, targetLanguage, dontSaveInCache=false) {
+    translationService.yandex.translateHTML = function (sourceArray3d, targetLanguage, dontSaveInCache = false) {
         if (targetLanguage.indexOf("zh-") !== -1) {
             targetLanguage = "zh"
         }
@@ -433,32 +438,32 @@ var translationService = {}
 
         const requestBody = "format=html&lang=" + targetLanguage
         return translateHTML(
-            "yandex",
-            targetLanguage,
-            "https://translate.yandex.net/api/v1/tr.json/translate?srv=tr-url-widget",
-            sourceArray,
-            requestBody,
-            "text",
-            getTranslationInProgress("yandex", targetLanguage),
-            dontSaveInCache
-        )
-        .then(thisTranslationProgress => {
-            const results = thisTranslationProgress.map(value => value.translated)
+                "yandex",
+                targetLanguage,
+                "https://translate.yandex.net/api/v1/tr.json/translate?srv=tr-url-widget",
+                sourceArray,
+                requestBody,
+                "text",
+                getTranslationInProgress("yandex", targetLanguage),
+                dontSaveInCache
+            )
+            .then(thisTranslationProgress => {
+                const results = thisTranslationProgress.map(value => value.translated)
 
-            const resultArray3d = []
-            for (const result of results) {
-                resultArray3d.push(
-                    result
-                    .split("<wbr>")
-                    .map(value => unescapeHTML(value))
-                )
-            }
+                const resultArray3d = []
+                for (const result of results) {
+                    resultArray3d.push(
+                        result
+                        .split("<wbr>")
+                        .map(value => unescapeHTML(value))
+                    )
+                }
 
-            return resultArray3d
-        })
+                return resultArray3d
+            })
     }
 
-    translationService.yandex.translateText = async function (sourceArray, targetLanguage, dontSaveInCache=false) {
+    translationService.yandex.translateText = async function (sourceArray, targetLanguage, dontSaveInCache = false) {
         if (targetLanguage.indexOf("zh-") !== -1) {
             targetLanguage = "zh"
         }
@@ -466,9 +471,9 @@ var translationService = {}
         return (await translationService.yandex.translateHTML(sourceArray.map(value => [value]), targetLanguage, dontSaveInCache)).map(value => value[0])
     }
 
-    translationService.yandex.translateSingleText = function (source, targetLanguage, dontSaveInCache=false) {
+    translationService.yandex.translateSingleText = function (source, targetLanguage, dontSaveInCache = false) {
         return translationService.yandex.translateText([source], targetLanguage, dontSaveInCache)
-        .then(results => results[0])
+            .then(results => results[0])
     }
 
 
@@ -482,12 +487,12 @@ var translationService = {}
             }
 
             translateHTML(request.sourceArray3d, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
-            .then(results => {
-                sendResponse(results)
-            })
-            .catch(e => {
-                sendResponse()
-            })
+                .then(results => {
+                    sendResponse(results)
+                })
+                .catch(e => {
+                    sendResponse()
+                })
 
             return true
         } else if (request.action === "translateText") {
@@ -499,12 +504,12 @@ var translationService = {}
             }
 
             translateText(request.sourceArray, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
-            .then(results => {
-                sendResponse(results)
-            })
-            .catch(e => {
-                sendResponse()
-            })
+                .then(results => {
+                    sendResponse(results)
+                })
+                .catch(e => {
+                    sendResponse()
+                })
 
             return true
         } else if (request.action === "translateSingleText") {
@@ -516,14 +521,14 @@ var translationService = {}
             }
 
             translateSingleText(request.source, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
-            .then(result => {
-                sendResponse(result)
-            })
-            .catch(e => {
-                sendResponse()
-            })
+                .then(result => {
+                    sendResponse(result)
+                })
+                .catch(e => {
+                    sendResponse()
+                })
 
-            return true          
+            return true
         }
     })
 }
