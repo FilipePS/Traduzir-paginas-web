@@ -1,8 +1,5 @@
 "use strict";
 
-//TODO adiiconar tradução de shadowRoot
-//TODO adicionar hotkeys
-
 function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
     return new Promise((resolve, reject) => {
         chrome.runtime.sendMessage({
