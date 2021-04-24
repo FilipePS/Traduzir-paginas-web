@@ -485,7 +485,6 @@ twpConfig.onReady(function() {
 
         backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, prevSelectionInfo.text)
         .then(result => {
-            if(!result) return
             init()
             const eTop = prevSelectionInfo.bottom
             const eLeft = prevSelectionInfo.left
