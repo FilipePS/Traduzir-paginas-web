@@ -14,6 +14,7 @@ twpConfig.onReady(function() {
     let currentTargetLanguages = twpConfig.get("targetLanguages")
     let currentTargetLanguage = twpConfig.get("targetLanguage")
     let currentTextTranslatorService = twpConfig.get("textTranslatorService")
+    let awaysTranslateThisSite = twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1
     let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
     let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
     let showTranslateSelectedButton = twpConfig.get("showTranslateSelectedButton")
@@ -444,6 +445,10 @@ twpConfig.onReady(function() {
             case "targetLanguage":
                 currentTargetLanguage = newValue
                 break
+            case "alwaysTranslateSites":
+                awaysTranslateThisSite = newValue.indexOf(location.hostname) !== -1
+                updateEventListener()
+                break    
             case "neverTranslateSites":
                 translateThisSite = newValue.indexOf(location.hostname) === -1
                 updateEventListener() 
@@ -627,7 +632,7 @@ twpConfig.onReady(function() {
     }
 
     function updateEventListener() {
-        if (showTranslateSelectedButton == "yes" && translateThisSite && translateThisLanguage
+        if (showTranslateSelectedButton == "yes" && (awaysTranslateThisSite || (translateThisSite && translateThisLanguage))
         && ((dontShowIfPageLangIsTargetLang == "yes" && originalPageLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes")
         && ((dontShowIfPageLangIsUnknown == "yes" && originalPageLanguage !== "und") || dontShowIfPageLangIsUnknown != "yes")
         ) {

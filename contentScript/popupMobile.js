@@ -175,12 +175,17 @@ twpConfig.onReady(function () {
     let originalPageLanguage = "und"
     let currentTargetLanguage = twpConfig.get("targetLanguage")
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
+    let awaysTranslateThisSite = twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1
     let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
     let translateThisLanguage = false
     let showPopupMobile = twpConfig.get("showPopupMobile")
 
     twpConfig.onChanged(function (name, newValue) {
         switch (name) {
+            case "alwaysTranslateSites":
+                awaysTranslateThisSite = newValue.indexOf(location.hostname) !== -1
+                popupMobile.show()
+                break
             case "neverTranslateSites":
                 translateThisSite = newValue.indexOf(location.hostname) === -1
                 popupMobile.show()
@@ -210,7 +215,7 @@ twpConfig.onReady(function () {
     popupMobile.show = function (forceShow=false) {
         popupMobile.hide()
 
-        if (!forceShow && (!translateThisSite || !translateThisLanguage || showPopupMobile !== "yes")) return;
+        if (!forceShow && ((!awaysTranslateThisSite && (!translateThisSite || !translateThisLanguage)) || showPopupMobile !== "yes")) return;
 
         divElement = document.createElement("div")
         divElement.style = "all: initial"
