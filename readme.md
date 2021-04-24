@@ -18,6 +18,8 @@
 ### Open [website](https://filipeps.github.io/Traduzir-paginas-web/).
 
 ## Thanks to the Patrons
++ László Dr. Gerő
++ Mohammad El Musleh
 + Lani
 + Christos
 + EWi2M5UR
