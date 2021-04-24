@@ -504,6 +504,11 @@ twpConfig.onReady(function () {
     }
     $("#showTranslateSelectedContextMenu").value = twpConfig.get("showTranslateSelectedContextMenu")
 
+    $("#showButtonInTheAddressBar").onchange = e => {
+        twpConfig.set("showButtonInTheAddressBar", e.target.value)
+    }
+    $("#showButtonInTheAddressBar").value = twpConfig.get("showButtonInTheAddressBar")
+
 })
 
 window.scrollTo({

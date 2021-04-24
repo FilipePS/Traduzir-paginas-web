@@ -280,7 +280,12 @@ twpConfig.onReady(function() {
                     chrome.pageAction.setPopup({tabId: tabId, popup: "popup/popup.html"})
                 }
                 chrome.pageAction.setIcon({tabId: tabId, path: getSVGIcon()})
-                chrome.pageAction.show(tabId)
+
+                if (twpConfig.get("showButtonInTheAddressBar") == "no") {
+                    chrome.pageAction.hide(tabId)
+                } else {
+                    chrome.pageAction.show(tabId)
+                }
             }
     
             function updateIconInAllTabs() {
@@ -320,6 +325,9 @@ twpConfig.onReady(function() {
             twpConfig.onChanged((name, newvalue) => {
                 switch (name) {
                     case "useOldPopup":
+                        updateIconInAllTabs()
+                        break
+                    case "showButtonInTheAddressBar":
                         updateIconInAllTabs()
                         break
                 }
