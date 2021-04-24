@@ -81,6 +81,7 @@
     ],
 
     "background": {
+        "persistent": true,
         "scripts": ["/lib/plataformInfo.js", "/lib/languages.js", "/background/translationCache.js", "/background/translationService.js", "/background/textToSpeech.js", "/lib/config.js", "/background/background.js"]
     }
 }
