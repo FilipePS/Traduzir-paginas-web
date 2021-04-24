@@ -2,4 +2,5 @@ Translate Web Pages does not collect any data.
 The only communication is with Google (translate.google.com and translate.googleapis.com) and Yandex (translate.yandex.net) server.
 These translation services (Google and Yandex) can collect data to improve their services.
 To translate, all content on the page is sent to Google or Yandex servers.
+For text to speech (tts) the text will be sent to Google.
 The source code is available on <a href="https://github.com/FilipePS/Traduzir-paginas-web">Github</a>.
