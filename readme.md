@@ -18,6 +18,7 @@
 ### Open [website](https://filipeps.github.io/Traduzir-paginas-web/).
 
 ## Thanks to the Patrons
++ Henry Henderson
 + László Dr. Gerő
 + Mohammad El Musleh
 + Lani
