@@ -271,5 +271,38 @@
   },
   "lblTranslateInterface": {
     "message": "Traduzir a interface"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Mostrar botão na barra de endereço"
+  },
+  "lblPageTranslationService": {
+    "message": "Serviço de tradução de páginas"
+  },
+  "lblTextTranslationService": {
+    "message": "Serviço de tradução de textos"
+  },
+  "msgStorage": {
+    "message": "Armazenamento"
+  },
+  "lblTranslationCache": {
+    "message": "Cache de tradução"
+  },
+  "lblStorageUsed": {
+    "message": "Armazenamento usado:"
+  },
+  "deleteTranslationCache": {
+    "message": "Excluir cache de tradução"
+  },
+  "lblPersonalSettings": {
+    "message": "Configurações pessoais"
+  },
+  "backupToFile": {
+    "message": "Backup para arquivo"
+  },
+  "restoreFromFile": {
+    "message": "Restaurar do arquivo"
+  },
+  "resetToDefault": {
+    "message": "Redefinir as configurações para o padrão"
   }
 }
