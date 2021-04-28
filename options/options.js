@@ -483,6 +483,22 @@ twpConfig.onReady(function () {
     }
     $("#popupBlueWhenSiteIsTranslated").value = twpConfig.get("popupBlueWhenSiteIsTranslated")
 
+    // storage options
+    $("#backupToFile").onclick = e => {
+        const config = twpConfig.export()
+
+        const element = document.createElement('a')
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(config, null, 4)))
+        element.setAttribute('download', 'twp-backup_' + new Date().toISOString().replace(/T/, '_').replace(/\..+/, '').replace(/\:/g, ".") + ".txt")
+      
+        element.style.display = 'none'
+        document.body.appendChild(element)
+      
+        element.click()
+      
+        document.body.removeChild(element)
+    }
+
     // others options
     $("#showReleaseNotes").onchange = e => {
         twpConfig.set("showReleaseNotes", e.target.value)
