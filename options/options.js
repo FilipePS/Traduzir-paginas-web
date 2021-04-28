@@ -18,7 +18,7 @@ twpConfig.onReady(function () {
 
     function hashchange() {
         const hash = location.hash || "#languages"
-        const divs = [$("#languages"), $("#sites"), $("#translations"), $("#style"), $("#hotkeys"), $("#others"), $("#donation"), $("#release_notes")]
+        const divs = [$("#languages"), $("#sites"), $("#translations"), $("#style"), $("#hotkeys"), $("#storage"), $("#others"), $("#donation"), $("#release_notes")]
         divs.forEach(element => {
             element.style.display = "none"
         })
