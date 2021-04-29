@@ -271,5 +271,38 @@
   },
   "lblTranslateInterface": {
     "message": "インターフェースを翻訳"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "アドレスバーにボタンを表示"
+  },
+  "lblPageTranslationService": {
+    "message": "ページの翻訳に使用する翻訳サービス"
+  },
+  "lblTextTranslationService": {
+    "message": "テキストの翻訳に使用する翻訳サービス"
+  },
+  "msgStorage": {
+    "message": "ストレージ"
+  },
+  "lblTranslationCache": {
+    "message": "翻訳キャッシュ"
+  },
+  "lblStorageUsed": {
+    "message": "使用している容量:"
+  },
+  "deleteTranslationCache": {
+    "message": "翻訳キャッシュを削除"
+  },
+  "lblPersonalSettings": {
+    "message": "個人設定"
+  },
+  "backupToFile": {
+    "message": "ファイルにバックアップ"
+  },
+  "restoreFromFile": {
+    "message": "ファイルから復元"
+  },
+  "resetToDefault": {
+    "message": "初期設定に戻す"
   }
 }

@@ -271,5 +271,38 @@
   },
   "lblTranslateInterface": {
     "message": "Arayüzü çevirin"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Adres çubuğunda düğmeyi göster"
+  },
+  "lblPageTranslationService": {
+    "message": "Sayfa çeviri servisi"
+  },
+  "lblTextTranslationService": {
+    "message": "Yazı çeviri servisi"
+  },
+  "msgStorage": {
+    "message": "Depolama"
+  },
+  "lblTranslationCache": {
+    "message": "Çeviri önbelleği"
+  },
+  "lblStorageUsed": {
+    "message": "Kullanılan depolama alanı:"
+  },
+  "deleteTranslationCache": {
+    "message": "Çeviri önbelleğini temizle"
+  },
+  "lblPersonalSettings": {
+    "message": "Kişisel ayarlar"
+  },
+  "backupToFile": {
+    "message": "Dosyaya yedekle"
+  },
+  "restoreFromFile": {
+    "message": "Dosyadan geri yükle"
+  },
+  "resetToDefault": {
+    "message": "Varsayılan ayarları geri yükle"
   }
 }
