@@ -87,6 +87,7 @@ twpConfig.onReady(function () {
 
     const sGoogle = document.getElementById("sGoogle")
     const sYandex = document.getElementById("sYandex")
+    const sDeepL = document.getElementById("sDeepL")
 
     sGoogle.onclick = () => {
         currentTextTranslatorService = "google"
@@ -95,6 +96,7 @@ twpConfig.onReady(function () {
 
         sGoogle.classList.remove("selected")
         sYandex.classList.remove("selected")
+        sDeepL.classList.remove("selected")
 
         sGoogle.classList.add("selected")
     }
@@ -105,8 +107,20 @@ twpConfig.onReady(function () {
 
         sGoogle.classList.remove("selected")
         sYandex.classList.remove("selected")
+        sDeepL.classList.remove("selected")
 
         sYandex.classList.add("selected")
+    }
+    sDeepL.onclick = () => {
+        currentTextTranslatorService = "deepl"
+        twpConfig.set("textTranslatorService", "deepl")
+        translateSelText(true)
+
+        sGoogle.classList.remove("selected")
+        sYandex.classList.remove("selected")
+        sDeepL.classList.remove("selected")
+
+        sDeepL.classList.add("selected")
     }
 
     const setTargetLanguage = document.getElementById("setTargetLanguage")
@@ -178,9 +192,28 @@ twpConfig.onReady(function () {
 
     if (currentTextTranslatorService === "yandex") {
         sYandex.classList.add("selected")
+    } else if (currentTextTranslatorService == "deepl") {
+        sDeepL.classList.add("selected")
     } else {
         sGoogle.classList.add("selected")
     }
+
+    if (twpConfig.get("enableDeepL") === "yes") {
+        sDeepL.removeAttribute("hidden")
+    } else {
+        sDeepL.setAttribute("hidden", "")
+    }
+    twpConfig.onChanged((name, newvalue) => {
+        switch (name) {
+            case "enableDeepL":
+                if (newvalue === "yes") {
+                    sDeepL.removeAttribute("hidden")
+                } else {
+                    sDeepL.setAttribute("hidden", "")
+                }
+                break
+        }
+    })
 
 
 

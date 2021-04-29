@@ -197,6 +197,7 @@ twpConfig.onReady(function() {
                     <ul>
                         <li title="Google" id="sGoogle">g</li>
                         <li title="Yandex" id="sYandex">y</li>
+                        <li title="DeepL" id="sDeepL" hidden>d</li>
                         <li style="padding-top: 6px; padding-bottom: 2px;" title="Listen" data-i18n-title="btnListen" id="listen">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             width="14px" height="12px" viewBox="0 0 93.038 93.038" style="enable-background:new 0 0 93.038 93.038;"
@@ -313,6 +314,7 @@ twpConfig.onReady(function() {
         
         const sGoogle = shadowRoot.getElementById("sGoogle")
         const sYandex = shadowRoot.getElementById("sYandex")
+        const sDeepL = shadowRoot.getElementById("sDeepL")
 
         sGoogle.onclick = () => {
             currentTextTranslatorService = "google"
@@ -321,6 +323,7 @@ twpConfig.onReady(function() {
 
             sGoogle.classList.remove("selected")
             sYandex.classList.remove("selected")
+            sDeepL.classList.remove("selected")
 
             sGoogle.classList.add("selected")
         }
@@ -331,8 +334,20 @@ twpConfig.onReady(function() {
 
             sGoogle.classList.remove("selected")
             sYandex.classList.remove("selected")
+            sDeepL.classList.remove("selected")
 
             sYandex.classList.add("selected")
+        }
+        sDeepL.onclick = () => {
+            currentTextTranslatorService = "deepl"
+            twpConfig.set("textTranslatorService", "deepl")
+            translateSelText(true)
+
+            sGoogle.classList.remove("selected")
+            sYandex.classList.remove("selected")
+            sDeepL.classList.remove("selected")
+
+            sDeepL.classList.add("selected")
         }
 
         const setTargetLanguage = shadowRoot.getElementById("setTargetLanguage")
@@ -415,9 +430,28 @@ twpConfig.onReady(function() {
 
         if (currentTextTranslatorService === "yandex") {
             sYandex.classList.add("selected")
+        } else if (currentTextTranslatorService == "deepl") {
+            sDeepL.classList.add("selected")
         } else {
             sGoogle.classList.add("selected")
         }
+
+        if (twpConfig.get("enableDeepL") === "yes") {
+            sDeepL.removeAttribute("hidden")
+        } else {
+            sDeepL.setAttribute("hidden", "")
+        }
+        twpConfig.onChanged((name, newvalue) => {
+            switch (name) {
+                case "enableDeepL":
+                    if (newvalue === "yes") {
+                        sDeepL.removeAttribute("hidden")
+                    } else {
+                        sDeepL.setAttribute("hidden", "")
+                    }
+                    break
+            }
+        })
     }
 
     function destroy() {

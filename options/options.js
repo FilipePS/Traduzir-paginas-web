@@ -433,6 +433,30 @@ twpConfig.onReady(function () {
     }
     $("#showOriginalTextWhenHovering").value = twpConfig.get("showOriginalTextWhenHovering")
 
+    $("#enableDeepL").onchange = e => {
+        twpConfig.set("enableDeepL", e.target.value)
+    }
+    $("#enableDeepL").value = twpConfig.get("enableDeepL")
+
+    if (twpConfig.get("enableDeepL") === "yes") {
+        $('#textTranslatorService option[value="deepl"]').removeAttribute("hidden")
+    } else {
+        $('#textTranslatorService option[value="deepl"]').setAttribute("hidden", "")
+    }
+    twpConfig.onChanged((name, newvalue) => {
+        switch (name) {
+            case "enableDeepL":
+                if (newvalue === "yes") {
+                    $('#textTranslatorService option[value="deepl"]').removeAttribute("hidden")
+                } else {
+                    twpConfig.set("textTranslatorService", "google")
+                    $("#textTranslatorService").value = "google"
+                    $('#textTranslatorService option[value="deepl"]').setAttribute("hidden", "")
+                }
+                break
+        }
+    })
+
     function enableOrDisableTranslateSelectedAdvancedOptions(value) {
         if (value === "no") {
             document.querySelectorAll("#translateSelectedAdvancedOptions input").forEach(input => {
