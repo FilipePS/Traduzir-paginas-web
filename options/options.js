@@ -484,6 +484,12 @@ twpConfig.onReady(function () {
     $("#popupBlueWhenSiteIsTranslated").value = twpConfig.get("popupBlueWhenSiteIsTranslated")
 
     // storage options
+    $("#deleteTranslationCache").onclick = e => {
+        if (confirm("Do you want to delete the translation cache?")) {
+            chrome.runtime.sendMessage({action: "deleteTranslationCache"})
+        }
+    }
+
     $("#backupToFile").onclick = e => {
         const config = twpConfig.export()
 
@@ -562,6 +568,9 @@ twpConfig.onReady(function () {
     }
     $("#showButtonInTheAddressBar").value = twpConfig.get("showButtonInTheAddressBar")
 
+    chrome.runtime.sendMessage({action: "getCacheSize"}, result => {
+        $("#storageUsed").textContent = result
+    })
 })
 
 window.scrollTo({

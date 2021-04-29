@@ -5,6 +5,80 @@
 var translationCache = {}
 
 {
+    function getTableSize (db, dbName) {
+        return new Promise((resolve, reject) => {
+            if (db == null) {
+                return reject()
+            }
+            let size = 0
+            const transaction = db.transaction([dbName])
+                .objectStore(dbName)
+                .openCursor()
+
+            transaction.onsuccess = function (event) {
+                const cursor = event.target.result
+                if (cursor) {
+                    const storedObject = cursor.value
+                    const json = JSON.stringify(storedObject)
+                    size += json.length
+                    cursor.continue()
+                } else {
+                    resolve(size)
+                }
+            }.bind(this)
+            transaction.onerror = function (err) {
+                reject("error in " + dbName + ": " + err)
+            }
+        })
+    }
+
+    function getDatabaseSize (dbName) {
+        return new Promise(resolve => {
+            const request = indexedDB.open(dbName)
+            let db
+            request.onerror = function (event) {
+                console.error(event)
+            }
+            request.onsuccess = function (event) {
+                db = event.target.result
+                let tableNames = [...db.objectStoreNames]
+                ;(function (tableNames, db) {
+                    const tableSizeGetters = tableNames
+                        .reduce((acc, tableName) => {
+                            acc.push(getTableSize(db, tableName))
+                            return acc
+                        }, [])
+    
+                    Promise.all(tableSizeGetters)
+                        .then(sizes => {
+                            const total = sizes.reduce(function (acc, val) {
+                                return acc + val;
+                            }, 0)
+                            resolve(total)
+                        })
+                        .catch(e => {
+                            console.error(e)
+                            reject()
+                        })
+                })(tableNames, db);
+            }
+        })
+    }
+
+    function humanReadableSize (bytes) {
+        const thresh = 1024
+        if (Math.abs(bytes) < thresh) {
+            return bytes + ' B'
+        }
+        const units = ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+        let u = -1
+        do {
+            bytes /= thresh
+            ++u
+        } while (Math.abs(bytes) >= thresh && u < units.length - 1)
+        return bytes.toFixed(1) + ' ' + units[u]
+    }
+
     async function stringToSHA1String(message) {
         const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
         const hashBuffer = await crypto.subtle.digest('SHA-1', msgUint8); // hash the message
@@ -206,4 +280,23 @@ var translationCache = {}
 
     openIndexeddb("googleCache", 1)
     openIndexeddb("yandexCache", 1)
+
+
+    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+        if (request.action === "getCacheSize") {
+            Promise.all([getDatabaseSize("googleCache"), getDatabaseSize("yandexCache")])
+            .then(results => {
+                sendResponse(humanReadableSize(results.reduce((total, num) => total + num)))
+            })
+            .catch(e => {
+                sendResponse(humanReadableSize(0))
+            })
+            return true
+        } else if (request.action === "deleteTranslationCache") {
+            indexedDB.deleteDatabase("googleCache")
+            indexedDB.deleteDatabase("yandexCache")
+
+            chrome.runtime.reload()
+        }
+    })
 }
