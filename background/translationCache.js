@@ -6,9 +6,9 @@ var translationCache = {}
 
 {
     async function stringToSHA1String(message) {
-        const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
-        const hashBuffer = await crypto.subtle.digest('SHA-1', msgUint8);           // hash the message
-        const hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+        const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
+        const hashBuffer = await crypto.subtle.digest('SHA-1', msgUint8); // hash the message
+        const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
         const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
         return hashHex;
     }
@@ -64,11 +64,13 @@ var translationCache = {}
             console.error("Error opening the database, switching to non-database mode", event)
         }
 
-        request.onupgradeneeded = function(event) {
+        request.onupgradeneeded = function (event) {
             const db = this.result
-          
+
             for (const langCode in twpLang.languages["en"]) {
-                db.createObjectStore(langCode, { keyPath: "key" })
+                db.createObjectStore(langCode, {
+                    keyPath: "key"
+                })
             }
         }
 
@@ -81,15 +83,15 @@ var translationCache = {}
                 reject()
                 return
             }
-        
+
             const objectStore = db.transaction([objectName], "readonly").objectStore(objectName)
             const request = objectStore.get(keyPath)
-            
+
             request.onerror = function (event) {
                 console.error(event)
                 reject(event)
             }
-    
+
             request.onsuccess = function (event) {
                 const result = request.result
                 resolve(result)
@@ -103,15 +105,15 @@ var translationCache = {}
                 reject()
                 return
             }
-        
+
             const objectStore = db.transaction([objectName], "readwrite").objectStore(objectName)
             const request = objectStore.add(data)
-    
+
             request.onerror = function (event) {
                 console.error(event)
                 reject(event)
             }
-    
+
             request.onsuccess = function (event) {
                 resolve(this.result)
             }
@@ -136,7 +138,7 @@ var translationCache = {}
         const db = getDB(translationService)
         if (db) {
             try {
-                const transInfo =  await queryInDB(db, targetLanguage, await stringToSHA1String(source))
+                const transInfo = await queryInDB(db, targetLanguage, await stringToSHA1String(source))
                 if (transInfo) {
                     translations.push(transInfo)
                     return transInfo.translated
@@ -172,13 +174,20 @@ var translationCache = {}
             cache[targetLanguage] = translations
         }
 
-        translations.push({source, translated})
+        translations.push({
+            source,
+            translated
+        })
 
         const db = getDB(translationService)
 
         if (db) {
             try {
-                addInDb(db, targetLanguage, {key: await stringToSHA1String(source), source, translated})
+                addInDb(db, targetLanguage, {
+                    key: await stringToSHA1String(source),
+                    source,
+                    translated
+                })
             } catch (e) {
                 console.error(e)
             }
@@ -194,7 +203,7 @@ var translationCache = {}
     translationCache.yandex.set = function (source, translated, targetLanguage) {
         return translationCache.set("yandex", source, translated, targetLanguage)
     }
-    
+
     openIndexeddb("googleCache", 1)
     openIndexeddb("yandexCache", 1)
 }
