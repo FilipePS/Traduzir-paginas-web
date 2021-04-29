@@ -485,7 +485,8 @@ twpConfig.onReady(function () {
 
     // storage options
     $("#deleteTranslationCache").onclick = e => {
-        if (confirm("Do you want to delete the translation cache?")) {
+        const text = chrome.i18n.getMessage("doYouWantToDeleteTranslationCache")
+        if (confirm(text ? text : "Do you want to delete the translation cache?")) {
             chrome.runtime.sendMessage({action: "deleteTranslationCache"})
         }
     }
@@ -518,13 +519,15 @@ twpConfig.onReady(function () {
             const reader = new FileReader()
             reader.onload = function () {
                 try {
-                    if (confirm("Do you want to overwrite all existing settings using the backup data?")) {
-                        const text = reader.result
-                        const config = JSON.parse(text)
+                    const config = JSON.parse(reader.result)
+                    
+                    const text = chrome.i18n.getMessage("doYouWantOverwriteAllSettings")
+                    if (confirm(text ? text : "Do you want to overwrite all existing settings using the backup data?")) {
                         twpConfig.import(config)
                     }
                 } catch (e) {
-                    alert("The file appears to be corrupted")
+                    const text = chrome.i18n.getMessage("fileIsCorrupted")
+                    alert(text ? text : "The file appears to be corrupted")
                     console.error(e)
                 }
             }
@@ -537,7 +540,8 @@ twpConfig.onReady(function () {
         document.body.removeChild(element)
     }
     $("#resetToDefault").onclick = e => {
-        if (confirm("Do you want to restore the extension to its default settings?")) {
+        const text = chrome.i18n.getMessage("doYouWantRestoreSettings")
+        if (confirm(text ? text : "Do you want to restore the extension to its default settings?")) {
             twpConfig.restoreToDefault()
         }
     }

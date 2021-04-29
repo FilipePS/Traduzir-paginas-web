@@ -303,6 +303,18 @@
     "message": "Restaurar do arquivo"
   },
   "resetToDefault": {
-    "message": "Redefinir as configurações para o padrão"
+    "message": "Restaurar configurações padrão"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Deseja deletar o cache de tradução?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Deseja substituir todas as configurações existentes usando os dados do backup?"
+  },
+  "fileIsCorrupted": {
+    "message": "O arquivo parece estar corrompido"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Deseja restaurar a extensão para as configurações padrão?"
   }
 }
