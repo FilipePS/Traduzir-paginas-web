@@ -498,6 +498,43 @@ twpConfig.onReady(function () {
       
         document.body.removeChild(element)
     }
+    $("#restoreFromFile").onclick = e => {
+        const element = document.createElement('input')
+        element.setAttribute('type', 'file')
+        element.setAttribute('accept', 'text/plain')
+      
+        element.style.display = 'none'
+        document.body.appendChild(element)
+
+        element.oninput = e => {
+            const input = e.target
+
+            const reader = new FileReader()
+            reader.onload = function () {
+                try {
+                    if (confirm("Do you want to overwrite all existing settings using the backup data?")) {
+                        const text = reader.result
+                        const config = JSON.parse(text)
+                        twpConfig.import(config)
+                    }
+                } catch (e) {
+                    alert("The file appears to be corrupted")
+                    console.error(e)
+                }
+            }
+
+            reader.readAsText(input.files[0])
+        }
+      
+        element.click()
+      
+        document.body.removeChild(element)
+    }
+    $("#resetToDefault").onclick = e => {
+        if (confirm("Do you want to restore the extension to its default settings?")) {
+            twpConfig.restoreToDefault()
+        }
+    }
 
     // others options
     $("#showReleaseNotes").onchange = e => {
