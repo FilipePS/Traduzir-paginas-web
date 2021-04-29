@@ -271,5 +271,50 @@
   },
   "lblTranslateInterface": {
     "message": "翻译界面"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "在地址栏中显示按钮"
+  },
+  "lblPageTranslationService": {
+    "message": "页面翻译服务"
+  },
+  "lblTextTranslationService": {
+    "message": "文本翻译服务"
+  },
+  "msgStorage": {
+    "message": "存储"
+  },
+  "lblTranslationCache": {
+    "message": "翻译缓存"
+  },
+  "lblStorageUsed": {
+    "message": "已用存储空间："
+  },
+  "deleteTranslationCache": {
+    "message": "删除翻译缓存"
+  },
+  "lblPersonalSettings": {
+    "message": "个人设置"
+  },
+  "backupToFile": {
+    "message": "备份至文件"
+  },
+  "restoreFromFile": {
+    "message": "从文件恢复"
+  },
+  "resetToDefault": {
+    "message": "恢复默认设置"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "要删除翻译缓存吗？"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "要使用备份数据覆盖当前所有设置吗？"
+  },
+  "fileIsCorrupted": {
+    "message": "该文件似乎已损坏"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "要恢复扩展至默认设置吗？"
   }
 }

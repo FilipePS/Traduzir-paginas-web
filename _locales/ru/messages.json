@@ -271,5 +271,50 @@
   },
   "lblTranslateInterface": {
     "message": "Перевести интерфейс"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Show button in the address bar"
+  },
+  "lblPageTranslationService": {
+    "message": "Page translation service"
+  },
+  "lblTextTranslationService": {
+    "message": "Text Translation Service"
+  },
+  "msgStorage": {
+    "message": "Storage"
+  },
+  "lblTranslationCache": {
+    "message": "Кеш перевода"
+  },
+  "lblStorageUsed": {
+    "message": "Storage used:"
+  },
+  "deleteTranslationCache": {
+    "message": "Удалить кэш перевода"
+  },
+  "lblPersonalSettings": {
+    "message": "Personal settings"
+  },
+  "backupToFile": {
+    "message": "Backup to file"
+  },
+  "restoreFromFile": {
+    "message": "Восстановить из файла"
+  },
+  "resetToDefault": {
+    "message": "Восстановить настройки по умолчанию"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Вы хотите удалить кеш перевода?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Перезаписать все существующие настройки, используя данные резервной копии?"
+  },
+  "fileIsCorrupted": {
+    "message": "Файл поврежден"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Восстановить настройки расширения по умолчанию?"
   }
 }
