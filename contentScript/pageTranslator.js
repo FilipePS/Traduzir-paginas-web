@@ -354,6 +354,13 @@ twpConfig.onReady(function() {
     translateDynamically()
 
     function translatePageTitle() {
+        const title = document.querySelector("title");
+        if (title && (
+            title.classList.contains("notranslate") ||
+            title.getAttribute("translate") === "no"
+        )) {
+            return;
+        }
         if (document.title.trim().length < 1) return;
         originalPageTitle = document.title
 
