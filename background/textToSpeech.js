@@ -76,6 +76,10 @@ var textToSpeech = {}
                 }))
                 audios.push(audio)
             })
+
+            twpConfig.onReady(function () {
+                audios.forEach(audio => audio.playbackRate = twpConfig.get("ttsSpeed"))
+            })
             
             if (audios[audioIndex]) {
                 audios[audioIndex].play()
@@ -96,5 +100,15 @@ var textToSpeech = {}
             audios.forEach(audio => audio.pause())
             audios = []
         }
+    })
+
+    twpConfig.onReady(function() {
+        twpConfig.onChanged((name, newvalue) => {
+            switch (name) {
+                case "ttsSpeed":    
+                    audios.forEach(audio => audio.playbackRate = newvalue)
+                    break
+            }
+        })
     })
 }

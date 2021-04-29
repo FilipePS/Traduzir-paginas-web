@@ -421,6 +421,13 @@ twpConfig.onReady(function () {
     }
     $("#textTranslatorService").value = twpConfig.get("textTranslatorService")
 
+    $("#ttsSpeed").oninput = e => {
+        twpConfig.set("ttsSpeed", e.target.value)
+        $("#displayTtsSpeed").textContent = e.target.value
+    }
+    $("#ttsSpeed").value = twpConfig.get("ttsSpeed")
+    $("#displayTtsSpeed").textContent = twpConfig.get("ttsSpeed")
+
     $("#showOriginalTextWhenHovering").onchange = e => {
         twpConfig.set("showOriginalTextWhenHovering", e.target.value)
     }
