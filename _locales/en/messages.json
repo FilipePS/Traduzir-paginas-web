@@ -316,5 +316,11 @@
   },
   "doYouWantRestoreSettings": {
     "message": "Do you want to restore the extension to its default settings?"
+  },
+  "lblTtsSpeed": {
+    "message": "Text-to-speech audio speed"
+  },
+  "lblEnableDeepL": {
+    "message": "Enable DeepL as a text translation service"
   }
 }
