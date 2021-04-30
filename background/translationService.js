@@ -99,6 +99,54 @@ var translationService = {}
         return normalizedResult.toString() + '.' + (normalizedResult ^ tkkIndex);
     }
 
+    let lastYandexRequestSIDTime = null
+    let yandexTranslateSID = null
+    let yandexSIDNotFound = false
+    function getYandexSID() {
+        return new Promise(resolve => {
+            let updateYandexSid = false
+            if (lastYandexRequestSIDTime) {
+                const date = new Date();
+                if (yandexTranslateSID) {
+                    date.setHours(date.getHours() - 12)
+                } else if (yandexSIDNotFound) {
+                    date.setMinutes(date.getMinutes() - 30)
+                } else {
+                    date.setMinutes(date.getMinutes() - 2)
+                }
+                if (date.getTime() > lastYandexRequestSIDTime) {
+                    updateYandexSid = true
+                }
+            } else {
+                updateYandexSid = true
+            }
+            
+            if (updateYandexSid) {
+                lastYandexRequestSIDTime = Date.now()
+
+                const http = new XMLHttpRequest
+                http.open("GET", "https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=es&widgetTheme=light&autoMode=false")
+                http.send()
+                http.onload = e => {
+                    const result = http.responseText.match(/sid\:\s\'[0-9a-f\.]+/)
+                    if (result && result[0] && result[0].length > 7) {
+                        yandexTranslateSID = result[0].substring(6)
+                        yandexSIDNotFound = false
+                    } else {
+                        yandexSIDNotFound = true
+                    }
+                    resolve()
+                }
+                http.onerror = e => {
+                    console.error(e)
+                    resolve()
+                }
+            } else {
+                resolve()
+            }
+        })
+    }
+
     const googleTranslationInProgress = {}
     const yandexTranslationInProgress = {}
 
@@ -176,10 +224,18 @@ var translationService = {}
                 }
 
                 const http = new XMLHttpRequest
-                http.open("POST", translationServiceURL + tk)
-                http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-                http.responseType = "json"
-                http.send(requests[idx].requestBody)
+                if (translationService === "google") {
+                    http.open("POST", translationServiceURL + tk)
+                    http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+                    http.responseType = "json"
+                    http.send(requests[idx].requestBody) 
+                } else {
+                    http.open("GET", translationServiceURL + requests[idx].requestBody)
+                    http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+                    http.responseType = "json"
+                    http.send(requests[idx].requestBody)
+                }
+
                 http.onload = e => {
                     const response = http.response
                     let responseJson
@@ -426,7 +482,9 @@ var translationService = {}
             .then(results => results[0])
     }
 
-    translationService.yandex.translateHTML = function (sourceArray3d, targetLanguage, dontSaveInCache = false) {
+    translationService.yandex.translateHTML = async function (sourceArray3d, targetLanguage, dontSaveInCache = false) {
+        await getYandexSID()
+
         if (targetLanguage.indexOf("zh-") !== -1) {
             targetLanguage = "zh"
         }
@@ -438,10 +496,10 @@ var translationService = {}
         })
 
         const requestBody = "format=html&lang=" + targetLanguage
-        return translateHTML(
+        return await translateHTML(
                 "yandex",
                 targetLanguage,
-                "https://translate.yandex.net/api/v1/tr.json/translate?srv=tr-url-widget",
+                "https://translate.yandex.net/api/v1/tr.json/translate?srv=tr-url-widget&id=" + yandexTranslateSID + "-0-0&",
                 sourceArray,
                 requestBody,
                 "text",
