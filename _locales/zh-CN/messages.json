@@ -316,5 +316,11 @@
   },
   "doYouWantRestoreSettings": {
     "message": "要恢复扩展至默认设置吗？"
+  },
+  "lblTtsSpeed": {
+    "message": "文字转语音的语速"
+  },
+  "lblEnableDeepL": {
+    "message": "启用基于 DeepL 的文本翻译服务"
   }
 }
