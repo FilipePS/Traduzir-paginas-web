@@ -217,7 +217,15 @@ twpConfig.onReady(function() {
         const valueElements = root.querySelectorAll('input[type="button"], input[type="submit"]')
         const titleElements = root.querySelectorAll("body [title]")
 
+        function hasNoTranslate(elem) {
+            if (elem && (elem.classList.contains("notranslate") || elem.getAttribute("translate") === "no")) {
+                return true
+            }
+        }
+
         placeholdersElements.forEach(e => {
+            if (hasNoTranslate(e)) return;
+
             const txt = e.getAttribute("placeholder")
             if (txt && txt.trim()) {
                 attributesToTranslate.push({
@@ -229,6 +237,8 @@ twpConfig.onReady(function() {
         })
 
         altElements.forEach(e => {
+            if (hasNoTranslate(e)) return;
+
             const txt = e.getAttribute("alt")
             if (txt && txt.trim()) {
                 attributesToTranslate.push({
@@ -240,6 +250,8 @@ twpConfig.onReady(function() {
         })
 
         valueElements.forEach(e => {
+            if (hasNoTranslate(e)) return;
+            
             const txt = e.getAttribute("value")
             if (e.type == "submit" && !txt) {
                 attributesToTranslate.push({
@@ -257,6 +269,8 @@ twpConfig.onReady(function() {
         })
 
         titleElements.forEach(e => {
+            if (hasNoTranslate(e)) return;
+            
             const txt = e.getAttribute("title")
             if (txt && txt.trim()) {
                 attributesToTranslate.push({
