@@ -46,6 +46,11 @@ twpConfig.onReady(function() {
     const htmlTagsInlineIgnore = ['BR', 'CODE', 'KBD', 'WBR', 'PRE'] // and input if type is submit or button
     const htmlTagsNoTranslate = ['TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
 
+    //TODO FOO
+    if (twpConfig.get("useOldPopup") == "yes" || twpConfig.get("popupPanelSection") <= 1) {
+        twpConfig.set("targetLanguage", twpConfig.get("targetLanguages")[0])
+    }
+
     let nodesToTranslate = []
     let originalPageLanguage = "und"
     let currentPageLanguage = "und"

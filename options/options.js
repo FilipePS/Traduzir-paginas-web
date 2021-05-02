@@ -154,19 +154,25 @@ twpConfig.onReady(function () {
     $("#targetLanguage1").onchange = e => {
         targetLanguages[0] = e.target.value
         twpConfig.set("targetLanguages", targetLanguages)
-        twpConfig.set("targetLanguage", e.target.value)
+        if (targetLanguages.indexOf(twpConfig.get("targetLanguage")) == -1) {
+            twpConfig.set("targetLanguage", targetLanguages[0])
+        }
     }
 
     $("#targetLanguage2").onchange = e => {
         targetLanguages[1] = e.target.value
         twpConfig.set("targetLanguages", targetLanguages)
-        twpConfig.set("targetLanguage", e.target.value)
+        if (targetLanguages.indexOf(twpConfig.get("targetLanguage")) == -1) {
+            twpConfig.set("targetLanguage", targetLanguages[0])
+        }
     }
 
     $("#targetLanguage3").onchange = e => {
         targetLanguages[2] = e.target.value
         twpConfig.set("targetLanguages", targetLanguages)
-        twpConfig.set("targetLanguage", e.target.value)
+        if (targetLanguages.indexOf(twpConfig.get("targetLanguage")) == -1) {
+            twpConfig.set("targetLanguage", targetLanguages[0])
+        }
     }
 
 
