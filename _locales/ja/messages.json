@@ -304,5 +304,23 @@
   },
   "resetToDefault": {
     "message": "初期設定に戻す"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "翻訳キャッシュを削除しますか？"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "バックアップファイルの設定を読み込みますか？現在の設定はすべて上書きされます。"
+  },
+  "fileIsCorrupted": {
+    "message": "ファイルが破損しているようです。"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "拡張機能を初期設定に戻しますか？"
+  },
+  "lblTtsSpeed": {
+    "message": "音声読み上げの速度"
+  },
+  "lblEnableDeepL": {
+    "message": "テキストの翻訳サービスとしてDeepLを追加"
   }
 }

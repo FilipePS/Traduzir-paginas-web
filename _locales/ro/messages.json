@@ -186,7 +186,7 @@
     "message": "Raportează o problemă"
   },
   "lblSettings": {
-    "message": "Preferințe"
+    "message": "Reglări"
   },
   "lblAdd": {
     "message": "Adaugă"
@@ -271,5 +271,56 @@
   },
   "lblTranslateInterface": {
     "message": "Tradu interfața"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Arată butonul în banda adresei web"
+  },
+  "lblPageTranslationService": {
+    "message": "Serviciul de traducere a paginii"
+  },
+  "lblTextTranslationService": {
+    "message": "Serviciul de traducere a textului"
+  },
+  "msgStorage": {
+    "message": "Stocare"
+  },
+  "lblTranslationCache": {
+    "message": "Memoria cache a traducerii"
+  },
+  "lblStorageUsed": {
+    "message": "Spațiu de stocare utilizat:"
+  },
+  "deleteTranslationCache": {
+    "message": "Șterge memoria cache a traducerii"
+  },
+  "lblPersonalSettings": {
+    "message": "Reglări personale"
+  },
+  "backupToFile": {
+    "message": "Fă o copie de rezervă"
+  },
+  "restoreFromFile": {
+    "message": "Restabilește din copia de rezervă"
+  },
+  "resetToDefault": {
+    "message": "Restabilește reglările inițiale"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Vrei să ștergi memoria cache a traducerii?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Vrei să schimbi preferințele actuale cu cele din copia de rezervă?"
+  },
+  "fileIsCorrupted": {
+    "message": "Fișierul pare a fi deteriorat"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Vrei să restabilești reglările inițiale ale extensiei?"
+  },
+  "lblTtsSpeed": {
+    "message": "Viteză audio text-în-vorbire"
+  },
+  "lblEnableDeepL": {
+    "message": "Activează DeepL ca serviciu de traducere a textului"
   }
 }

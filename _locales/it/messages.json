@@ -186,7 +186,7 @@
     "message": "Segnala un problema"
   },
   "lblSettings": {
-    "message": "Preferenze"
+    "message": "Impostazioni"
   },
   "lblAdd": {
     "message": "Aggiungi"
@@ -271,5 +271,56 @@
   },
   "lblTranslateInterface": {
     "message": "Traduci l'interfaccia"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Mostra il pulsante nella barra degli indirizzi"
+  },
+  "lblPageTranslationService": {
+    "message": "Servizio di traduzione della pagina"
+  },
+  "lblTextTranslationService": {
+    "message": "Servizio di traduzione del testo"
+  },
+  "msgStorage": {
+    "message": "Memoria"
+  },
+  "lblTranslationCache": {
+    "message": "Cache di traduzione"
+  },
+  "lblStorageUsed": {
+    "message": "Memoria usata:"
+  },
+  "deleteTranslationCache": {
+    "message": "Elimina la cache di traduzione"
+  },
+  "lblPersonalSettings": {
+    "message": "Impostazioni personali"
+  },
+  "backupToFile": {
+    "message": "Crea file di backup"
+  },
+  "restoreFromFile": {
+    "message": "Ripristina da un file"
+  },
+  "resetToDefault": {
+    "message": "Ripristina le impostazioni predefinite"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Vuoi eliminare la cache della traduzione?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Vuoi sovrascrivere tutte le impostazioni esistenti utilizzando i dati di backup?"
+  },
+  "fileIsCorrupted": {
+    "message": "Il file sembra essere danneggiato"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Vuoi ripristinare l'estensione alle sue impostazioni predefinite?"
+  },
+  "lblTtsSpeed": {
+    "message": "Velocità audio della pronuncia"
+  },
+  "lblEnableDeepL": {
+    "message": "Abilita DeepL come servizio di traduzione del testo"
   }
 }
