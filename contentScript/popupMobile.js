@@ -287,7 +287,7 @@ twpConfig.onReady(function () {
             getElemById("menu").style.display = "none"
 
             if (targetLanguage !== currentTargetLanguage) {
-                twpConfig.setTargetLanguage(currentTargetLanguage)
+                twpConfig.setTargetLanguage(targetLanguage)
             }
             pageTranslator.translatePage(targetLanguage)
  
