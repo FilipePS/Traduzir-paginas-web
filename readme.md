@@ -22,7 +22,6 @@
 + László Dr. Gerő
 + Mohammad El Musleh
 + Lani
-+ Christos
 + EWi2M5UR
 + 2 kojix
 + Vadim
