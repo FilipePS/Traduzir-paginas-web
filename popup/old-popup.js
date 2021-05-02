@@ -49,6 +49,37 @@ twpConfig.onReady(function () {
         chrome.runtime.lastError
     }
 
+    // fill language list
+    ;(function() {
+        let uilanguage = chrome.i18n.getUILanguage()
+        uilanguage = twpLang.fixLanguageCode(uilanguage)
+
+        let langs = twpLang.languages[uilanguage]
+        if (!langs) {
+            langs = twpLang.languages["en"]
+        }
+
+        const langsSorted = []
+
+        for (const i in langs) {
+            langsSorted.push([i, langs[i]])
+        }
+
+        langsSorted.sort(function(a, b) {
+            return a[1].localeCompare(b[1]);
+        })
+
+        langsSorted.forEach(value => {
+            if (value[0] === "zh" || value[0] === "un" || value[0] === "und") return;
+            const option = document.createElement("option")
+            option.value = value[0]
+            option.textContent = value[1]
+            selectTargetLanguage.appendChild(option)
+        })
+    })()
+    selectTargetLanguage.value = twpConfig.get("targetLanguages")[0]
+
+
     function enableDarkMode() {
         if (!document.getElementById("darkModeElement")) {
             const el = document.createElement("style")
@@ -253,7 +284,8 @@ twpConfig.onReady(function () {
         currentPageLanguageState = "translated"
 
         chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage"}, checkedLastError)
+            twpConfig.setTargetLanguage(selectTargetLanguage.value)
+            chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: selectTargetLanguage.value}, checkedLastError)
         })
 
         showSelectTargetLanguage = false
