@@ -304,5 +304,23 @@
   },
   "resetToDefault": {
     "message": "Varsayılan ayarları geri yükle"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Çeviri önbelleğini silmek istiyor musunuz?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Yedekleme verilerini kullanarak mevcut tüm ayarların üzerine yazmak istiyor musunuz?"
+  },
+  "fileIsCorrupted": {
+    "message": "Dosya bozuk görünüyor"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Uzantıyı varsayılan ayarlarına geri yüklemek istiyor musunuz?"
+  },
+  "lblTtsSpeed": {
+    "message": "Metin okuma ses hızı"
+  },
+  "lblEnableDeepL": {
+    "message": "DeepL'yi bir metin çeviri hizmeti olarak etkinleştir"
   }
 }
