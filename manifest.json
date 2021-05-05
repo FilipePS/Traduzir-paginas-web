@@ -14,11 +14,11 @@
     },
 	
     "commands": {
-        "toggle-translation": {
+        "hotkey-toggle-translation": {
             "suggested_key": {
                 "default": "Alt+T"
             },
-            "description": "Switch between the translated and the original page."
+            "description": "Switch between the translated and the original page"
         }
     },
 

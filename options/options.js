@@ -520,6 +520,132 @@ twpConfig.onReady(function () {
     }
     $("#popupBlueWhenSiteIsTranslated").value = twpConfig.get("popupBlueWhenSiteIsTranslated")
 
+    // hotkeys options
+    const defaultShortcuts = {}
+    for (const name of Object.keys(chrome.runtime.getManifest().commands || {})) {
+        const info = chrome.runtime.getManifest().commands[name]
+        if (info.suggested_key && info.suggested_key.default) {
+            defaultShortcuts[name] = info.suggested_key.default
+        } else {
+            defaultShortcuts[name] = ""
+        }
+    }
+
+    function addHotkey(hotkeyname) {
+        const input = $(`#${hotkeyname} [name="input"]`)
+        const error = $(`#${hotkeyname} [name="error"]`)
+        const removeKey = $(`#${hotkeyname} [name="removeKey"]`)
+        const resetKey = $(`#${hotkeyname} [name="resetKey"]`)
+
+        input.value = twpConfig.get("hotkeys")[hotkeyname]
+
+        function setError(errorname) {
+            const text = chrome.i18n.getMessage("hotkeyError_" + errorname)
+            switch (errorname) {
+                case "ctrlOrAlt":
+                    error.textContent = text ? text : "Include Ctrl or Alt"
+                    break
+                case "letter":
+                    error.textContent = text ? text : "Type a letter"
+                    break
+                case "invalid":
+                    error.textContent = text ? text : "Invalid combination"
+                    break
+                default:
+                    error.textContent = ""
+                    break
+            }
+        }
+
+        function getKeyString(e) {
+            let result = ""
+            if (e.ctrlKey) {
+                result += "Ctrl+"
+            }
+            if (e.altKey) {
+                result += "Alt+"
+            }
+            if (e.shiftKey) {
+                result += "Shift+"
+            }
+            if (e.key.length == 1 && e.key.match(/[a-zA-Z]/)) {
+                result += e.key.toUpperCase()
+            }
+
+            return result
+        }
+
+        function setShortcut(name, keystring) {
+            const hotkeys = twpConfig.get("hotkeys")
+            hotkeys[hotkeyname] = keystring
+            twpConfig.set("hotkeys", hotkeys)
+            browser.commands.update({
+                name: name,
+                shortcut: keystring
+            })
+        }
+
+        function onkeychange(e) {
+            input.value = getKeyString(e)
+
+            if (e.Key == "Tab") {
+                return
+            }
+            if (e.key == "Escape") {
+                input.blur()
+                return
+            }
+            if (e.key == "Backspace" || e.key == "Delete") {
+                setShortcut(hotkeyname, getKeyString(e))
+                input.blur()
+                return
+            }
+            if (!e.ctrlKey && !e.altKey) {
+                setError("ctrlOrAlt")
+                return
+            }
+            if (e.ctrlKey && e.altKey && e.shiftKey) {
+                setError("invalid")
+                return
+            }
+            e.preventDefault()
+            if (e.key.length !== 1 || !e.key.match(/[a-zA-Z]/)) {
+                setError("letter")
+                return
+            }
+            
+            setShortcut(hotkeyname, getKeyString(e))
+            input.blur()
+
+            setError("none")
+        }
+
+        input.onkeydown = e => onkeychange(e)
+        input.onkeyup = e => onkeychange(e)
+
+        input.onfocus = e => {
+            input.value = ""
+            setError("")
+        }
+
+        input.onblur = e => {
+            input.value = twpConfig.get("hotkeys")[hotkeyname]
+            setError("")
+        }
+
+        removeKey.onclick = e => {
+            input.value = ""
+            setShortcut(hotkeyname, "")
+        }
+
+        resetKey.onclick = e => {
+            input.value = defaultShortcuts[hotkeyname]
+            setShortcut(hotkeyname, defaultShortcuts[hotkeyname])
+        }
+    }
+
+    addHotkey("hotkey-toggle-translation")
+
     // storage options
     $("#deleteTranslationCache").onclick = e => {
         const text = chrome.i18n.getMessage("doYouWantToDeleteTranslationCache")
