@@ -531,11 +531,27 @@ twpConfig.onReady(function () {
         }
     }
 
-    function addHotkey(hotkeyname) {
-        const input = $(`#${hotkeyname} [name="input"]`)
-        const error = $(`#${hotkeyname} [name="error"]`)
-        const removeKey = $(`#${hotkeyname} [name="removeKey"]`)
-        const resetKey = $(`#${hotkeyname} [name="resetKey"]`)
+    function addHotkey(hotkeyname, description) {
+        const li = document.createElement("li")
+        li.classList.add("shortcut-row")
+        li.setAttribute("id", hotkeyname)
+        li.innerHTML = `
+        <div>${description}</div>
+        <div class="shortcut-input-options">
+            <div style="position: relative;">
+                <input name="input" class="w3-input w3-border shortcut-input" type="text" readonly placeholder="Enter a shortcut" data-i18n-placeholder="enterShortcut">
+                <p name="error" class="shortcut-error" style="position: absolute;"></p>
+            </div>
+            <div class="w3-hover-light-grey shortcut-button" name="removeKey"><i class="gg-trash"></i></div>
+            <div class="w3-hover-light-grey shortcut-button" name="resetKey"><i class="gg-sync"></i></div>
+        </div>  
+        `
+        $("#hotkeys ul").appendChild(li)
+
+        const input = li.querySelector(`[name="input"]`)
+        const error = li.querySelector(`[name="error"]`)
+        const removeKey = li.querySelector(`[name="removeKey"]`)
+        const resetKey = li.querySelector(`[name="resetKey"]`)
 
         input.value = twpConfig.get("hotkeys")[hotkeyname]
         if (input.value) {
@@ -655,7 +671,11 @@ twpConfig.onReady(function () {
         }
     }
 
-    addHotkey("hotkey-toggle-translation")
+    chrome.commands.getAll(results => {
+        for (const result of results) {
+            addHotkey(result.name, result.description)
+        }
+    })
 
     // storage options
     $("#deleteTranslationCache").onclick = e => {
