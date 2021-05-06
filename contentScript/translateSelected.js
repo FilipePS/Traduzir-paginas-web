@@ -9,6 +9,8 @@ twpConfig.onReady(function() {
     let eButtonTransSelText
     let eDivResult
     let eSelTextTrans
+    let eOrigText
+    let eOrigTextDiv
 
     let originalPageLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
@@ -128,13 +130,17 @@ twpConfig.onReady(function() {
                     display: none;
                 }
 
-                #eSelTextTrans {
+                #eSelTextTrans, #eOrigText {
                     padding: 14px;
                     font-size: 16px;
                     max-width: 360px;
                     max-height: 260px;
                     overflow: auto;
                     white-space: pre-wrap;
+                }
+
+                #eOrigText {
+                    outline: none;
                 }
 
                 #eButtonTransSelText {
@@ -176,6 +182,20 @@ twpConfig.onReady(function() {
                     background-color: #ccc;
                 }
 
+                #moreOrLess {
+                    margin: 6px;
+                    cursor: pointer;
+                    text-align: center;
+                    padding: 4px 6px;
+                    border-radius: 6px;
+                    box-shadow: 0 0 2px 0px #999;
+                    max-height: 16px;
+                }
+
+                #moreOrLess:hover {
+                    background-color: #ccc;
+                }
+
                 hr {
                     border: 1px solid #ddd;
                 }
@@ -183,9 +203,28 @@ twpConfig.onReady(function() {
                 .selected {
                     background-color: #ccc;
                 }
+
+                .arrow {
+                    border: solid black;
+                    border-width: 0 1px 1px 0;
+                    display: inline-block;
+                    padding: 3px;
+                }
+                
+                .up {
+                    transform: rotate(-135deg) translate(-5px, -5px);
+                }
+                
+                .down {
+                    transform: rotate(45deg) translate(2px, 2px);
+                }
             </style>
             <div id="eButtonTransSelText"></div>
             <div id="eDivResult">
+                <div id="eOrigTextDiv" style="display: none">
+                    <div id="eOrigText" contentEditable="true"></div>
+                    <hr>
+                </div>
                 <div id="eSelTextTrans"></div>
                 <hr>
                 <div style="display: flex; justify-content: space-between; flex-direction:row;" id="drag">
@@ -194,6 +233,7 @@ twpConfig.onReady(function() {
                         <li value="es" title="Spanish">es</li>
                         <li value="de" title="German">de</li>
                     </ul>
+                    <div id="moreOrLess" style="margin-left: 10px; margin-right: 10px"><i class="arrow up" id="more"></i><i class="arrow down" id="less" style="display: none"></i></div>
                     <ul>
                         <li title="Google" id="sGoogle">g</li>
                         <li title="Yandex" id="sYandex">y</li>
@@ -311,15 +351,35 @@ twpConfig.onReady(function() {
         eButtonTransSelText = shadowRoot.getElementById("eButtonTransSelText")
         eDivResult = shadowRoot.getElementById("eDivResult")
         eSelTextTrans = shadowRoot.getElementById("eSelTextTrans")
+        eOrigText = shadowRoot.getElementById("eOrigText")
+        eOrigTextDiv = shadowRoot.getElementById("eOrigTextDiv")
+
+        const eMoreOrLess = shadowRoot.getElementById("moreOrLess")
+        const eMore = shadowRoot.getElementById("more")
+        const eLess = shadowRoot.getElementById("less")
         
         const sGoogle = shadowRoot.getElementById("sGoogle")
         const sYandex = shadowRoot.getElementById("sYandex")
         const sDeepL = shadowRoot.getElementById("sDeepL")
 
+        let translateNewInputTimerHandler
+        eOrigText.oninput = () => {
+            clearTimeout(translateNewInputTimerHandler)
+            translateNewInputTimerHandler = setTimeout(translateNewInput, 1000)
+        }
+
+        eMoreOrLess.onclick = () => {
+            if (twpConfig.get("expandPanelTranslateSelectedText") === "no") {
+                twpConfig.set("expandPanelTranslateSelectedText", "yes")
+            } else {
+                twpConfig.set("expandPanelTranslateSelectedText", "no")
+            }
+        }
+
         sGoogle.onclick = () => {
             currentTextTranslatorService = "google"
             twpConfig.set("textTranslatorService", "google")
-            translateSelText(true)
+            translateNewInput()
 
             sGoogle.classList.remove("selected")
             sYandex.classList.remove("selected")
@@ -330,7 +390,7 @@ twpConfig.onReady(function() {
         sYandex.onclick = () => {
             currentTextTranslatorService = "yandex"
             twpConfig.set("textTranslatorService", "yandex")
-            translateSelText(true)
+            translateNewInput()
 
             sGoogle.classList.remove("selected")
             sYandex.classList.remove("selected")
@@ -341,7 +401,7 @@ twpConfig.onReady(function() {
         sDeepL.onclick = () => {
             currentTextTranslatorService = "deepl"
             twpConfig.set("textTranslatorService", "deepl")
-            translateSelText(true)
+            translateNewInput()
 
             sGoogle.classList.remove("selected")
             sYandex.classList.remove("selected")
@@ -356,7 +416,7 @@ twpConfig.onReady(function() {
                 const langCode = twpLang.checkLanguageCode(e.target.getAttribute("value"))
                 if (langCode) {
                     currentTargetLanguage = langCode
-                    translateSelText(true)
+                    translateNewInput()
                 }
 
                 shadowRoot.querySelectorAll("#setTargetLanguage li").forEach(li => {
@@ -441,6 +501,19 @@ twpConfig.onReady(function() {
         } else {
             sDeepL.setAttribute("hidden", "")
         }
+        if (twpConfig.get("expandPanelTranslateSelectedText") === "yes") {
+            eOrigTextDiv.style.display = "block"
+            eMore.style.display = "none"
+            eLess.style.display = "block"
+            const text = chrome.i18n.getMessage("less")
+            eMoreOrLess.setAttribute("title", text ? text : "Less")
+        } else {
+            eOrigTextDiv.style.display = "none"
+            eMore.style.display = "block"
+            eLess.style.display = "none"
+            const text = chrome.i18n.getMessage("more")
+            eMoreOrLess.setAttribute("title", text ? text : "More")
+        }
         twpConfig.onChanged((name, newvalue) => {
             switch (name) {
                 case "enableDeepL":
@@ -448,6 +521,21 @@ twpConfig.onReady(function() {
                         sDeepL.removeAttribute("hidden")
                     } else {
                         sDeepL.setAttribute("hidden", "")
+                    }
+                    break
+                case "expandPanelTranslateSelectedText":
+                    if (newvalue === "yes") {
+                        eOrigTextDiv.style.display = "block"
+                        eMore.style.display = "none"
+                        eLess.style.display = "block"
+                        const text = chrome.i18n.getMessage("less")
+                        eMoreOrLess.setAttribute("title", text ? text : "Less")
+                    } else {
+                        eOrigTextDiv.style.display = "none"
+                        eMore.style.display = "block"
+                        eLess.style.display = "none"
+                        const text = chrome.i18n.getMessage("more")
+                        eMoreOrLess.setAttribute("title", text ? text : "More")
                     }
                     break
             }
@@ -512,25 +600,24 @@ twpConfig.onReady(function() {
         }
     })
 
-    let gSelectionInfo
-    let prevSelectionInfo
+    function translateNewInput(isNewSelection=false) {
+        stopAudio()
+        audioDataUrls = null
 
-    function translateSelText(usePrevSelectionInfo=false) {
-        if (!usePrevSelectionInfo && gSelectionInfo) {
-            prevSelectionInfo = gSelectionInfo
-        } else if (!(usePrevSelectionInfo && prevSelectionInfo)) {
-            return
-        }
-
-        backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, prevSelectionInfo.text)
+        backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent)
         .then(result => {
-            init()
+            if (isNewSelection) {
+                init()
+            }
             const eTop = prevSelectionInfo.bottom
             const eLeft = prevSelectionInfo.left
 
             eDivResult.style.top = "0px"
             eDivResult.style.left = "0px"
             eSelTextTrans.textContent = result
+            if (isNewSelection) {
+                eOrigText.textContent = prevSelectionInfo.text
+            }
             eDivResult.style.display = "block"
 
             const height = parseInt(eDivResult.offsetHeight)
@@ -546,6 +633,21 @@ twpConfig.onReady(function() {
             eDivResult.style.top = top + "px"
             eDivResult.style.left = left + "px"
         })
+    }
+
+    let gSelectionInfo
+    let prevSelectionInfo
+
+    function translateSelText(usePrevSelectionInfo=false) {
+        if (!usePrevSelectionInfo && gSelectionInfo) {
+            prevSelectionInfo = gSelectionInfo
+        } else if (!(usePrevSelectionInfo && prevSelectionInfo)) {
+            return
+        }
+
+        eOrigText.textContent = prevSelectionInfo.text
+
+        translateNewInput(true)
     }
 
 
