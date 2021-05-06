@@ -98,6 +98,17 @@ twpConfig.onReady(function() {
         }
     }
 
+    function setCaretAtEnd() {
+        const el = eOrigText
+        const range = document.createRange()
+        const sel = window.getSelection()
+        range.setStart(el, 1)
+        range.collapse(true)
+        sel.removeAllRanges()
+        sel.addRange(range)
+        el.focus()
+    }
+
     function init() {
         destroy()
 
@@ -374,6 +385,8 @@ twpConfig.onReady(function() {
             } else {
                 twpConfig.set("expandPanelTranslateSelectedText", "no")
             }
+
+            setCaretAtEnd()
         }
 
         sGoogle.onclick = () => {
@@ -615,10 +628,11 @@ twpConfig.onReady(function() {
             eDivResult.style.top = "0px"
             eDivResult.style.left = "0px"
             eSelTextTrans.textContent = result
+            eDivResult.style.display = "block"
             if (isNewSelection) {
                 eOrigText.textContent = prevSelectionInfo.text
+                setCaretAtEnd()
             }
-            eDivResult.style.display = "block"
 
             const height = parseInt(eDivResult.offsetHeight)
             let top = eTop + 5
