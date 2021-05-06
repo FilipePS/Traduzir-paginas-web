@@ -28,7 +28,7 @@
         },
         "hotkey-swap-page-translation-service": {
             "suggested_key": {
-                "default": "Ctrl+Alt+A"
+                "default": "Ctrl+Alt+Q"
             },
             "description": "__MSG_swapTranslationService__"
         },
