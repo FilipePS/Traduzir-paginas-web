@@ -26,6 +26,12 @@
             },
             "description": "Translate selected text"
         },
+        "hotkey-swap-page-translation-service": {
+            "suggested_key": {
+                "default": "Ctrl+Alt+A"
+            },
+            "description": "Switch between translation services"
+        },
         "hotkey-show-original": {
             "suggested_key": {
                 "default": "Alt+0"

@@ -346,6 +346,19 @@ if (typeof chrome.commands !== "undefined") {
             chrome.tabs.query({currentWindow: true, active: true}, tabs => {
                 chrome.tabs.sendMessage(tabs[0].id, {action: "TranslateSelectedText"}, checkedLastError)
             })
+        } else if (command === "hotkey-swap-page-translation-service") {
+            chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+                chrome.tabs.sendMessage(tabs[0].id, {action: "swapTranslationService"}, checkedLastError)
+            })
+    
+            let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
+            if (currentPageTranslatorService === "google") {
+                currentPageTranslatorService = "yandex"
+            } else {
+                currentPageTranslatorService = "google"
+            }
+    
+            twpConfig.set("pageTranslatorService", currentPageTranslatorService)
         } else if (command === "hotkey-show-original") {
             chrome.tabs.query({active: true, currentWindow: true}, tabs => {
                 chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: "original"}, checkedLastError)
