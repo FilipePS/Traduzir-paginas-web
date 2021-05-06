@@ -337,5 +337,11 @@
   },
   "lblSwitchTranslatedAndOriginal": {
     "message": "Alternar entre a página traduzida e a página original"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Restaurar página para o original"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Traduza a página para o idioma de destino"
   }
 }

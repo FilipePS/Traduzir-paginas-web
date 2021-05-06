@@ -18,43 +18,43 @@
             "suggested_key": {
                 "default": "Ctrl+Alt+T"
             },
-            "description": "Switch between the translated and the original page"
+            "description": "__MSG_lblSwitchTranslatedAndOriginal__"
         },
         "hotkey-translate-selected-text": {
             "suggested_key": {
                 "default": "Ctrl+Alt+S"
             },
-            "description": "Translate selected text"
+            "description": "__MSG_msgTranslateSelectedText__"
         },
         "hotkey-swap-page-translation-service": {
             "suggested_key": {
                 "default": "Ctrl+Alt+A"
             },
-            "description": "Switch between translation services"
+            "description": "__MSG_swapTranslationService__"
         },
         "hotkey-show-original": {
             "suggested_key": {
                 "default": "Alt+0"
             },
-            "description": "Restore page to original"
+            "description": "__MSG_lblRestorePageToOriginal__"
         },
         "hotkey-translate-page-1": {
             "suggested_key": {
                 "default": "Alt+1"
             },
-            "description": "Translate the page to the target language 1"
+            "description": "__MSG_lblTranslatePageToTargetLanguage__ 1"
         },
         "hotkey-translate-page-2": {
             "suggested_key": {
                 "default": "Alt+2"
             },
-            "description": "Translate the page to the target language 2"
+            "description": "__MSG_lblTranslatePageToTargetLanguage__ 2"
         },
         "hotkey-translate-page-3": {
             "suggested_key": {
                 "default": "Alt+3"
             },
-            "description": "Translate the page to the target language 3"
+            "description": "__MSG_lblTranslatePageToTargetLanguage__ 3"
         }
     },
 

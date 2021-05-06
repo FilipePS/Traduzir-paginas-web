@@ -337,5 +337,11 @@
   },
   "lblSwitchTranslatedAndOriginal": {
     "message": "Switch between the translated and the original page"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Restore page to original"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Translate the page to the target language"
   }
 }
