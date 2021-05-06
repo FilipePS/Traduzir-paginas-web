@@ -100,7 +100,7 @@ var translationService = {}
     }
 
     let lastYandexRequestSIDTime = null
-    let yandexTranslateSID = null
+    var yandexTranslateSID = null
     let yandexSIDNotFound = false
     function getYandexSID() {
         return new Promise(resolve => {
@@ -484,6 +484,7 @@ var translationService = {}
 
     translationService.yandex.translateHTML = async function (sourceArray3d, targetLanguage, dontSaveInCache = false) {
         await getYandexSID()
+        if (!yandexTranslateSID) return
 
         if (targetLanguage.indexOf("zh-") !== -1) {
             targetLanguage = "zh"
