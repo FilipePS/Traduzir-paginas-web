@@ -342,6 +342,10 @@ if (typeof chrome.commands !== "undefined") {
             chrome.tabs.query({currentWindow: true, active: true}, tabs => {
                 chrome.tabs.sendMessage(tabs[0].id, {action: "toggle-translation"}, checkedLastError)
             })
+        } else if (command === "hotkey-translate-selected-text") {
+            chrome.tabs.query({currentWindow: true, active: true}, tabs => {
+                chrome.tabs.sendMessage(tabs[0].id, {action: "TranslateSelectedText"}, checkedLastError)
+            })
         }
     })
 }

@@ -19,6 +19,12 @@
                 "default": "Alt+T"
             },
             "description": "Switch between the translated and the original page"
+        },
+        "hotkey-translate-selected-text": {
+            "suggested_key": {
+                "default": "Ctrl+Alt+S"
+            },
+            "description": "Translate selected text"
         }
     },
 
