@@ -538,6 +538,11 @@ twpConfig.onReady(function () {
         const resetKey = $(`#${hotkeyname} [name="resetKey"]`)
 
         input.value = twpConfig.get("hotkeys")[hotkeyname]
+        if (input.value) {
+            resetKey.style.display = "none"
+        } else {
+            removeKey.style.display = "none"
+        }
 
         function setError(errorname) {
             const text = chrome.i18n.getMessage("hotkeyError_" + errorname)
@@ -636,11 +641,17 @@ twpConfig.onReady(function () {
         removeKey.onclick = e => {
             input.value = ""
             setShortcut(hotkeyname, "")
+
+            removeKey.style.display = "none"
+            resetKey.style.display = "block"
         }
 
         resetKey.onclick = e => {
             input.value = defaultShortcuts[hotkeyname]
             setShortcut(hotkeyname, defaultShortcuts[hotkeyname])
+
+            removeKey.style.display = "block"
+            resetKey.style.display = "none"
         }
     }
 

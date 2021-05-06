@@ -209,6 +209,7 @@ kbd {
 }
 
 .shortcut-button {
+  height: 38px;
   display: block;
   margin-left: 10px;
   padding: 10px;
