@@ -322,5 +322,20 @@
   },
   "lblEnableDeepL": {
     "message": "Habilitar DeepL como um serviço de tradução de texto"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Incluir Ctrl ou Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Digite uma letra"
+  },
+  "hotkeyError_invalid": {
+    "message": "Combinação inválida"
+  },
+  "enterShortcut": {
+    "message": "Digite um atalho"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Alternar entre a página traduzida e a página original"
   }
 }
