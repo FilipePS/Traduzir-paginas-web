@@ -346,6 +346,25 @@ if (typeof chrome.commands !== "undefined") {
             chrome.tabs.query({currentWindow: true, active: true}, tabs => {
                 chrome.tabs.sendMessage(tabs[0].id, {action: "TranslateSelectedText"}, checkedLastError)
             })
+        } else if (command === "hotkey-show-original") {
+            chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+                chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: "original"}, checkedLastError)
+            })
+        } else if (command === "hotkey-translate-page-1") {
+            chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+                twpConfig.setTargetLanguage(twpConfig.get("targetLanguages")[0])
+                chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: twpConfig.get("targetLanguages")[0]}, checkedLastError)
+            })
+        } else if (command === "hotkey-translate-page-2") {
+            chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+                twpConfig.setTargetLanguage(twpConfig.get("targetLanguages")[1])
+                chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: twpConfig.get("targetLanguages")[1]}, checkedLastError)
+            })
+        } else if (command === "hotkey-translate-page-3") {
+            chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+                twpConfig.setTargetLanguage(twpConfig.get("targetLanguages")[2])
+                chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: twpConfig.get("targetLanguages")[2]}, checkedLastError)
+            })
         }
     })
 }

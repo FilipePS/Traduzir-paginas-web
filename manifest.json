@@ -16,7 +16,7 @@
     "commands": {
         "hotkey-toggle-translation": {
             "suggested_key": {
-                "default": "Alt+T"
+                "default": "Ctrl+Alt+T"
             },
             "description": "Switch between the translated and the original page"
         },
@@ -25,6 +25,30 @@
                 "default": "Ctrl+Alt+S"
             },
             "description": "Translate selected text"
+        },
+        "hotkey-show-original": {
+            "suggested_key": {
+                "default": "Alt+0"
+            },
+            "description": "Restore page to original"
+        },
+        "hotkey-translate-page-1": {
+            "suggested_key": {
+                "default": "Alt+1"
+            },
+            "description": "Translate the page to the target language 1"
+        },
+        "hotkey-translate-page-2": {
+            "suggested_key": {
+                "default": "Alt+2"
+            },
+            "description": "Translate the page to the target language 2"
+        },
+        "hotkey-translate-page-3": {
+            "suggested_key": {
+                "default": "Alt+3"
+            },
+            "description": "Translate the page to the target language 3"
         }
     },
 
