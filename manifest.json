@@ -102,7 +102,7 @@
             "run_at": "document_start",
             "all_frames": false,
             "js": ["/contentScript/checkScriptIsInjected.js"]
-        }, 
+        },
         {
             "matches": ["<all_urls>"],
             "run_at": "document_end",
