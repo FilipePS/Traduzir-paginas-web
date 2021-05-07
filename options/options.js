@@ -532,6 +532,10 @@ twpConfig.onReady(function () {
     }
 
     function addHotkey(hotkeyname, description) {
+        if (hotkeyname === "_execute_browser_action" && !description) {
+            description = "Enable the extension"
+        }
+
         const li = document.createElement("li")
         li.classList.add("shortcut-row")
         li.setAttribute("id", hotkeyname)
