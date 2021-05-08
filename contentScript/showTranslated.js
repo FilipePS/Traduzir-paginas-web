@@ -9,14 +9,14 @@ twpConfig.onReady(function () {
     let originalPageLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
     let currentTargetLanguage = twpConfig.get("targetLanguage")
-    let currentTextTranslatorService = twpConfig.get("textTranslatorService")
+    let currentTextTranslatorService = twpConfig.get("textTranslatorService") === "deepl" ? "google" : twpConfig.get("textTranslatorService")
     let showTranslatedTextWhenHoveringThisSite = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
     let showTranslatedTextWhenHoveringThisLang = false
 
     twpConfig.onChanged(function (name, newValue) {
         switch (name) {
             case "textTranslatorService":
-                currentTextTranslatorService = newValue
+                currentTextTranslatorService = newValue === "deepl" ? "google" : newValue
                 break
             case "targetLanguages":
                 currentTargetLanguages = newValue
@@ -463,9 +463,10 @@ twpConfig.onReady(function () {
             sYandex.classList.add("selected")
         }
         sDeepL.onclick = () => {
-            currentTextTranslatorService = "yandex"
-            twpConfig.set("textTranslatorService", "yandex")
-            translateSelText(true)
+            currentTextTranslatorService = "deepl"
+            twpConfig.set("textTranslatorService", "deepl")
+            translateThisNode(null, true)
+
 
             sGoogle.classList.remove("selected")
             sYandex.classList.remove("selected")
@@ -550,19 +551,19 @@ twpConfig.onReady(function () {
             sGoogle.classList.add("selected")
         }
         
-        if (twpConfig.get("enableDeepL") === "yes") {
-            sDeepL.removeAttribute("hidden")
-        } else {
-            sDeepL.setAttribute("hidden", "")
-        }
+        // if (twpConfig.get("enableDeepL") === "yes") {
+        //     sDeepL.removeAttribute("hidden")
+        // } else {
+        //     sDeepL.setAttribute("hidden", "")
+        // }
         twpConfig.onChanged((name, newvalue) => {
             switch (name) {
                 case "enableDeepL":
-                    if (newvalue === "yes") {
-                        sDeepL.removeAttribute("hidden")
-                    } else {
-                        sDeepL.setAttribute("hidden", "")
-                    }
+                    // if (newvalue === "yes") {
+                    //     sDeepL.removeAttribute("hidden")
+                    // } else {
+                    //     sDeepL.setAttribute("hidden", "")
+                    // }
                     break
             }
         })
