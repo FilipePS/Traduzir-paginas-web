@@ -303,7 +303,7 @@
     "message": "从文件恢复"
   },
   "resetToDefault": {
-    "message": "恢复默认设置"
+    "message": "初始化设置"
   },
   "doYouWantToDeleteTranslationCache": {
     "message": "要删除翻译缓存吗？"
@@ -322,5 +322,26 @@
   },
   "lblEnableDeepL": {
     "message": "启用基于 DeepL 的文本翻译服务"
+  },
+  "enterShortcut": {
+    "message": "输入一个快捷键"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "包含 Ctrl 或 Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "输入一个字母"
+  },
+  "hotkeyError_invalid": {
+    "message": "无效的组合键"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "在页面的译文和原文间切换"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "恢复页面为原文"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "翻译页面为目标语言"
   }
 }

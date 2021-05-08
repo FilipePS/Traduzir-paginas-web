@@ -271,5 +271,77 @@
   },
   "lblTranslateInterface": {
     "message": "翻譯介面"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "在網址列顯示按鈕"
+  },
+  "lblPageTranslationService": {
+    "message": "網頁翻譯服務"
+  },
+  "lblTextTranslationService": {
+    "message": "文字翻譯服務"
+  },
+  "msgStorage": {
+    "message": "儲存空間"
+  },
+  "lblTranslationCache": {
+    "message": "翻譯快取"
+  },
+  "lblStorageUsed": {
+    "message": "已使用的儲存空間："
+  },
+  "deleteTranslationCache": {
+    "message": "清除翻譯快取"
+  },
+  "lblPersonalSettings": {
+    "message": "個人設定"
+  },
+  "backupToFile": {
+    "message": "備份至檔案"
+  },
+  "restoreFromFile": {
+    "message": "從檔案還原"
+  },
+  "resetToDefault": {
+    "message": "還原至預設設定"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "您要刪除翻譯快取嗎？"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "您要使用備份資料覆蓋所有目前的設定嗎？"
+  },
+  "fileIsCorrupted": {
+    "message": "這個檔案似乎已毀損"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "您要將擴充功能設定重設成預設嗎?"
+  },
+  "lblTtsSpeed": {
+    "message": "文字轉語音速度"
+  },
+  "lblEnableDeepL": {
+    "message": "Enable DeepL as a text translation service"
+  },
+  "enterShortcut": {
+    "message": "Enter a shortcut"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Include Ctrl or Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Type a letter"
+  },
+  "hotkeyError_invalid": {
+    "message": "Invalid combination"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Switch between the translated and the original page"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Restore page to original"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Translate the page to the target language"
   }
 }
