@@ -25,11 +25,11 @@ twpConfig.onReady(function () {
                 currentTargetLanguage = newValue
             case "sitesToTranslateWhenHovering":
                 showTranslatedTextWhenHoveringThisSite = newValue.indexOf(location.hostname) !== -1
-                showTranslated.enable()
+                updateEventListener()
                 break
             case "langsToTranslateWhenHovering":
                 showTranslatedTextWhenHoveringThisLang = newValue.indexOf(originalPageLanguage) !== -1
-                showTranslated.enable()
+                updateEventListener()
                 break
         }
     })
@@ -54,22 +54,20 @@ twpConfig.onReady(function () {
         mousePos.x = e.clientX
         mousePos.y = e.clientY
 
-        if (!divElement) return;
         if (e.target === divElement) return;
 
         if (e.target === currentNodeOverMouse) return;
         currentNodeOverMouse = e.target
 
-        hideTranslatedText()
+        destroy()
         if (e.buttons === 0) {
             timeoutHandler = setTimeout(translateThisNode, 1250, e.target)
         }
     }
 
     function onMouseDown(e) {
-        if (!divElement) return;
         if (e.target === divElement) return;
-        hideTranslatedText()
+        destroy()
     }
 
     let audioDataUrls = null
@@ -88,17 +86,11 @@ twpConfig.onReady(function () {
 
     let prevNode = null
     function translateThisNode(node, usePrevNode=false) {
-        if (!divElement) return;
-        //hideTranslatedText()
- 
         stopAudio()
         audioDataUrls = null
         
         if (usePrevNode && prevNode) {
             node = prevNode
-        } else {
-            const eListen = shadowRoot.getElementById("listen")
-            eListen.classList.remove("selected")
         }
         prevNode = node
 
@@ -152,12 +144,12 @@ twpConfig.onReady(function () {
 
         backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, text)
         .then(result => {
-            if (!divElement) return;
-            hideTranslatedText()
+            if (!usePrevNode) {
+                init()
+            }
 
             const eTextTranslated = shadowRoot.getElementById("eTextTranslated")
             eTextTranslated.textContent = result
-            document.body.appendChild(divElement)
             
             const eDivResult = shadowRoot.getElementById("eDivResult")
 
@@ -177,15 +169,8 @@ twpConfig.onReady(function () {
             }
         })
         .catch(e => {
-            hideTranslatedText()
+            destroy()
         })
-    }
-
-    function hideTranslatedText() {
-        if (divElement) {
-            divElement.remove()
-        }
-        clearTimeout(timeoutHandler)
     }
 
     function dragElement(elmnt, elmnt2) {
@@ -227,13 +212,8 @@ twpConfig.onReady(function () {
         }
     }
 
-    showTranslated.enable = function () {
-        showTranslated.disable()
-    
-        if (pageLanguageState == "translated") return;
-        if (plataformInfo.isMobile.any) return;
-        if (!showTranslatedTextWhenHoveringThisSite && !showTranslatedTextWhenHoveringThisLang) return;
-        if (divElement) return;
+    function init() {
+        destroy()
 
         divElement = document.createElement("div")
         divElement.style = "all: initial"
@@ -426,14 +406,6 @@ twpConfig.onReady(function () {
                 break
         }
 
-        window.addEventListener("scroll", onScroll)
-        
-        window.addEventListener("mousemove", onMouseMove)
-        window.addEventListener("mousedown", onMouseDown)
-
-        document.addEventListener("blur", hideTranslatedText)
-        document.addEventListener("visibilitychange", hideTranslatedText)
-
         eTextTranslated = shadowRoot.getElementById("eTextTranslated")
 
         const sGoogle = shadowRoot.getElementById("sGoogle")
@@ -493,7 +465,6 @@ twpConfig.onReady(function () {
         }
 
         const eListen = shadowRoot.getElementById("listen")
-        eListen.classList.remove("selected")
         eListen.onclick = () => {
             const msgListen = chrome.i18n.getMessage("btnListen") ? chrome.i18n.getMessage("btnListen") : "Listen"
             const msgStopListening = chrome.i18n.getMessage("btnStopListening") ? chrome.i18n.getMessage("btnStopListening") : "Stop listening"
@@ -529,6 +500,8 @@ twpConfig.onReady(function () {
                 eListen.classList.add("selected")
             }
         }
+
+        document.body.appendChild(divElement)
 
         chrome.i18n.translateDocument(shadowRoot)
 
@@ -569,35 +542,47 @@ twpConfig.onReady(function () {
         })
     }
 
-    showTranslated.disable = function () {
+    function destroy() {
         stopAudio()
         audioDataUrls = null
+        
+        clearTimeout(timeoutHandler)
 
         if (divElement) {
-            hideTranslatedText()
             divElement.remove()
-            divElement = null
-            shadowRoot = null
-            eTextTranslated = null
+            divElement = shadowRoot = eTextTranslated = null
         }
-
-        window.removeEventListener("scroll", onScroll)
-
-        window.removeEventListener("mousemove", onMouseMove)
-        window.removeEventListener("mousedown", onMouseDown)
-
-        document.removeEventListener("blur", hideTranslatedText)
-        document.removeEventListener("visibilitychange", hideTranslatedText)
     }
+
+    function updateEventListener() {
+        if (plataformInfo.isMobile.any || pageLanguageState == "translated" || (!showTranslatedTextWhenHoveringThisSite && !showTranslatedTextWhenHoveringThisLang)) {
+            window.removeEventListener("scroll", onScroll)
+
+            window.removeEventListener("mousemove", onMouseMove)
+            window.removeEventListener("mousedown", onMouseDown)
+    
+            document.removeEventListener("blur", destroy)
+            document.removeEventListener("visibilitychange", destroy)
+        } else {
+            window.addEventListener("scroll", onScroll)
+        
+            window.addEventListener("mousemove", onMouseMove)
+            window.addEventListener("mousedown", onMouseDown)
+    
+            document.addEventListener("blur", destroy)
+            document.addEventListener("visibilitychange", destroy)
+        }
+    }
+    updateEventListener()
 
     pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
         originalPageLanguage = pagelanguage
         showTranslatedTextWhenHoveringThisLang = twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) !== -1
-        showTranslated.enable()
+        updateEventListener()
     })
     
     pageTranslator.onPageLanguageStateChange(_pageLanguageState => {
         pageLanguageState = _pageLanguageState
-        showTranslated.enable()
+        updateEventListener()
     })
 })
