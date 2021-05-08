@@ -12,6 +12,9 @@
                 if (deepl_currentTargetLanguage && deepl_currentTargetLanguage.split("-")[0].toLowerCase() !== targetlanguage) {
                     document.querySelector(`button[dl-test="translator-target-lang-btn"]`).click()
                     document.querySelector(`button[dl-test|="translator-lang-option-${targetlanguage}"]`).click()
+                } else if (target_textarea.value && text === source_textarea.value) {
+                    resolve(target_textarea.value)
+                    return
                 }
             } catch (e) {
                 console.error(e)
