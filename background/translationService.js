@@ -545,18 +545,18 @@ var translationService = {}
                     checkedLastError()
                     if (tab) {
                         //chrome.tabs.update(tab.id, {active: true})
-                        chrome.tabs.sendMessage(tab.id, {action: "translateTextWithDeepL", text: source}, {frameId: 0}, response => {
+                        chrome.tabs.sendMessage(tab.id, {action: "translateTextWithDeepL", text: source, targetlanguage}, {frameId: 0}, response => {
                             resolve(response)
                         })
                     } else {
-                        chrome.tabs.create({url: "https://www.deepl.com/#!!!" + encodeURIComponent(source)}, tab => {
+                        chrome.tabs.create({url: `https://www.deepl.com/#!${targetlanguage}!#${encodeURIComponent(source)}`}, tab => {
                             DeepLTab = tab
                         })
                         resolve("")
                     }
                 })
             } else {
-                chrome.tabs.create({url: "https://www.deepl.com/#!!!" + encodeURIComponent(source)}, tab => {
+                chrome.tabs.create({url: `https://www.deepl.com/#!${targetlanguage}!#${encodeURIComponent(source)}`}, tab => {
                     DeepLTab = tab
                 })
                 resolve("")
