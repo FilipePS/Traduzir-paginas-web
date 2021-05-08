@@ -536,7 +536,34 @@ var translationService = {}
             .then(results => results[0])
     }
 
+    var DeepLTab = null
     translationService.deepl.translateSingleText = function (source, targetlanguage, dontSaveInCache = false) {
+        //*
+        return new Promise(resolve => {
+            if (DeepLTab) {
+                chrome.tabs.get(DeepLTab.id, tab => {
+                    checkedLastError()
+                    if (tab) {
+                        //chrome.tabs.update(tab.id, {active: true})
+                        chrome.tabs.sendMessage(tab.id, {action: "translateTextWithDeepL", text: source}, {frameId: 0}, response => {
+                            resolve(response)
+                        })
+                    } else {
+                        chrome.tabs.create({url: "https://www.deepl.com/#!!!" + encodeURIComponent(source)}, tab => {
+                            DeepLTab = tab
+                        })
+                        resolve("")
+                    }
+                })
+            } else {
+                chrome.tabs.create({url: "https://www.deepl.com/#!!!" + encodeURIComponent(source)}, tab => {
+                    DeepLTab = tab
+                })
+                resolve("")
+            }
+        })
+        //*/
+        /*
         return new Promise((resolve, reject) => {
             const request = {
                 "jsonrpc": "2.0",
@@ -582,6 +609,7 @@ var translationService = {}
                 reject(e)
             }
         })
+        //*/
     }
 
 
