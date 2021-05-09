@@ -581,6 +581,8 @@ twpConfig.onReady(function () {
     
             document.removeEventListener("blur", destroy)
             document.removeEventListener("visibilitychange", destroy)
+
+            destroy()
         } else {
             window.addEventListener("scroll", onScroll)
         
