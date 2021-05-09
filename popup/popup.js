@@ -155,6 +155,13 @@ twpConfig.onReady(function () {
             $("#lblShowTranslatedWhenHoveringThisLang").textContent = translatedWhenHoveringThisLangText + " " + twpLang.codeToLanguage(originalPageLanguage)
             $("#divShowTranslatedWhenHoveringThisLang").style.display = "block"
 
+            if (twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) === -1) {
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = translatedWhenHoveringThisLangText + " " + twpLang.codeToLanguage(originalPageLanguage)
+            } else {
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = "✔ " + translatedWhenHoveringThisLangText + " " + twpLang.codeToLanguage(originalPageLanguage)
+            }
+            $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").removeAttribute("hidden")
+
             const neverTranslateLangText = chrome.i18n.getMessage("btnNeverTranslateThisLanguage")
             if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
                 $("option[data-i18n=btnNeverTranslateThisLanguage]").textContent = neverTranslateLangText ? neverTranslateLangText : "Never translate this language"
@@ -323,11 +330,29 @@ twpConfig.onReady(function () {
         $("#cbAlwaysTranslateThisSite").checked = twpConfig.get("alwaysTranslateSites").indexOf(hostname) !== -1
         $("#cbShowTranslatedWhenHoveringThisSite").checked = twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) !== -1
 
-        const text = chrome.i18n.getMessage("msgTranslateSelectedText")
-        if (twpConfig.get("showTranslateSelectedButton") !== "yes") {
-            $("option[data-i18n=msgTranslateSelectedText]").textContent = text ? text : "Translate selected text"
-        } else {
-            $("option[data-i18n=msgTranslateSelectedText]").textContent = text ? "✔ " + text : "✔ Translate selected text"
+        {
+            const text = chrome.i18n.getMessage("lblShowTranslateSelectedButton")
+            if (twpConfig.get("showTranslateSelectedButton") !== "yes") {
+                $("option[data-i18n=lblShowTranslateSelectedButton]").textContent = text ? text : "Show the button to translate the selected text"
+            } else {
+                $("option[data-i18n=lblShowTranslateSelectedButton]").textContent = text ? "✔ " + text : "✔ Show the button to translate the selected text"
+            }
+        }
+        {
+            const text = chrome.i18n.getMessage("lblShowOriginalTextWhenHovering")
+            if (twpConfig.get("showOriginalTextWhenHovering") !== "yes") {
+                $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent = text ? text : "Show original text when hovering"
+            } else {
+                $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent = text ? "✔ " + text : "✔ Show original text when hovering"
+            }
+        }
+        {
+            const text = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisSite")
+            if (twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) === -1) {
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = text ? text : "Show translation when hovering over this site"
+            } else {
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = text ? "✔ " + text : "✔ Show translation when hovering over this site"
+            }
         }
     })
     
@@ -378,6 +403,30 @@ twpConfig.onReady(function () {
                     } else {
                         twpConfig.set("showTranslateSelectedButton", "yes")
                     }
+                    window.close()
+                    break
+                case "showOriginalTextWhenHovering":
+                    if (twpConfig.get("showOriginalTextWhenHovering") === "yes") {
+                        twpConfig.set("showOriginalTextWhenHovering", "no")
+                    } else {
+                        twpConfig.set("showOriginalTextWhenHovering", "yes")
+                    }
+                    window.close()
+                    break
+                case "showTranslatedWhenHoveringThisSite":
+                    if (twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) === -1) {
+                        twpConfig.addSiteToTranslateWhenHovering(hostname)
+                    } else {
+                        twpConfig.removeSiteFromTranslateWhenHovering(hostname)
+                    }
+                    window.close()
+                    break
+                case "showTranslatedWhenHoveringThisLang":
+                    if (twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) === -1) {
+                        twpConfig.addLangToTranslateWhenHovering(originalPageLanguage)
+                    } else {
+                        twpConfig.removeLangFromTranslateWhenHovering(originalPageLanguage)
+                    }  
                     window.close()
                     break
                 case "translateInExternalSite":

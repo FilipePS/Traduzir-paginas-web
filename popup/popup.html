@@ -94,14 +94,18 @@
                 style="position: relative;">
                 <div class="menuDot"></div>
             </div>
-            <select id="btnOptions">
+            <select id="btnOptions" style="font-weight: 500; font-size: small;">
                 <option value="options" selected disabled hidden>Options</option>
                 <option data-i18n="btnChangeLanguages" value="changeLanguage">Change languages</option>
-                <option data-i18n="btnNeverTranslateThisLanguage" value="neverTranslateThisLanguage"
-                    style="display: none;">Never translate this language</option>
+                <option data-i18n="btnNeverTranslateThisLanguage" value="neverTranslateThisLanguage" style="display: none;">Never translate this language</option>
                 <option data-i18n="btnNeverTranslate" value="neverTranslateThisSite">Never translate this site</option>
                 <option data-i18n="btnAlwaysTranslate" value="alwaysTranslateThisSite" data-popupPanelSection2="1">Always translate this site</option>
-                <option data-i18n="msgTranslateSelectedText" value="showTranslateSelectedButton" data-popupPanelSection2="3">Translate selected text</option>
+                <optgroup label="" data-popupPanelSection2="6"></optgroup>
+                <option data-i18n="lblShowTranslateSelectedButton" value="showTranslateSelectedButton" data-popupPanelSection2="3">Show the button to translate the selected text</option>
+                <option data-i18n="lblShowOriginalTextWhenHovering" value="showOriginalTextWhenHovering" data-popupPanelSection2="4">Show original text when hovering</option>
+                <option data-i18n="lblShowTranslatedWhenHoveringThisSite" value="showTranslatedWhenHoveringThisSite" data-popupPanelSection2="5">Show translation when hovering over this site</option>
+                <option data-i18n="lblShowTranslatedWhenHoveringThisLang" value="showTranslatedWhenHoveringThisLang" data-popupPanelSection2="6" hidden>Show translation when hovering over websites in</option>
+                <optgroup label="" data-popupPanelSection2="6"></optgroup>
                 <option data-i18n="btnOpenOnGoogleTranslate" value="translateInExternalSite">Open in google translate</option>
                 <option data-i18n="btnMoreOptions" value="moreOptions">More options</option>
                 <option data-i18n="btnDonate" value="donate">Donate</option>

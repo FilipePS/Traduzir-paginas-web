@@ -184,6 +184,14 @@ twpConfig.onReady(function () {
             $("#cbAlwaysTranslateThisLang").checked = twpConfig.get("alwaysTranslateLangs").indexOf(originalPageLanguage) !== -1
             $("#lblAlwaysTranslateThisLang").textContent = (alwaysTranslateText ? alwaysTranslateText : "Always translate from") + " " + twpLang.codeToLanguage(originalPageLanguage)
             $("#divAlwaysTranslateThisLang").style.display = "block"
+            
+            const translatedWhenHoveringThisLangText = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisLang") ? chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisLang") : "Show translation when hovering over websites in"
+            if (twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) === -1) {
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = translatedWhenHoveringThisLangText + " " + twpLang.codeToLanguage(originalPageLanguage)
+            } else {
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = "✔ " + translatedWhenHoveringThisLangText + " " + twpLang.codeToLanguage(originalPageLanguage)
+            }
+            $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").removeAttribute("hidden")
 
             const neverTranslateLangText = chrome.i18n.getMessage("btnNeverTranslateThisLanguage")
             if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
@@ -379,6 +387,30 @@ twpConfig.onReady(function () {
                     }
                     window.close()
                     break
+                case "showOriginalTextWhenHovering":
+                    if (twpConfig.get("showOriginalTextWhenHovering") === "yes") {
+                        twpConfig.set("showOriginalTextWhenHovering", "no")
+                    } else {
+                        twpConfig.set("showOriginalTextWhenHovering", "yes")
+                    }
+                    window.close()
+                    break
+                case "showTranslatedWhenHoveringThisSite":
+                    if (twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) === -1) {
+                        twpConfig.addSiteToTranslateWhenHovering(hostname)
+                    } else {
+                        twpConfig.removeSiteFromTranslateWhenHovering(hostname)
+                    }
+                    window.close()
+                    break
+                case "showTranslatedWhenHoveringThisLang":
+                    if (twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) === -1) {
+                        twpConfig.addLangToTranslateWhenHovering(originalPageLanguage)
+                    } else {
+                        twpConfig.removeLangFromTranslateWhenHovering(originalPageLanguage)
+                    }  
+                    window.close()
+                    break
                 case "translateInExternalSite":
                     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
                         if (currentPageTranslatorService === "yandex") {
@@ -419,12 +451,30 @@ twpConfig.onReady(function () {
         } else {
             $("option[data-i18n=btnAlwaysTranslate]").textContent = btnAlwaysTranslateText ? "✔ " + btnAlwaysTranslateText : "✔ Always translate this site"
         }
-    })
 
-    const text = chrome.i18n.getMessage("msgTranslateSelectedText")
-    if (twpConfig.get("showTranslateSelectedButton") !== "yes") {
-        $("option[data-i18n=msgTranslateSelectedText]").textContent = text ? text : "Translate selected text"
-    } else {
-        $("option[data-i18n=msgTranslateSelectedText]").textContent = text ? "✔ " + text : "✔ Translate selected text"
-    }
+        {
+            const text = chrome.i18n.getMessage("lblShowTranslateSelectedButton")
+            if (twpConfig.get("showTranslateSelectedButton") !== "yes") {
+                $("option[data-i18n=lblShowTranslateSelectedButton]").textContent = text ? text : "Show the button to translate the selected text"
+            } else {
+                $("option[data-i18n=lblShowTranslateSelectedButton]").textContent = text ? "✔ " + text : "✔ Show the button to translate the selected text"
+            }
+        }
+        {
+            const text = chrome.i18n.getMessage("lblShowOriginalTextWhenHovering")
+            if (twpConfig.get("showOriginalTextWhenHovering") !== "yes") {
+                $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent = text ? text : "Show original text when hovering"
+            } else {
+                $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent = text ? "✔ " + text : "✔ Show original text when hovering"
+            }
+        }
+        {
+            const text = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisSite")
+            if (twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) === -1) {
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = text ? text : "Show translation when hovering over this site"
+            } else {
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = text ? "✔ " + text : "✔ Show translation when hovering over this site"
+            }
+        }
+    })
 })
