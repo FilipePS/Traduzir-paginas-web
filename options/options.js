@@ -157,6 +157,9 @@ twpConfig.onReady(function () {
         if (targetLanguages.indexOf(twpConfig.get("targetLanguage")) == -1) {
             twpConfig.set("targetLanguage", targetLanguages[0])
         }
+        if (targetLanguages.indexOf(twpConfig.get("targetLanguageTextTranslation")) == -1) {
+            twpConfig.set("targetLanguageTextTranslation", targetLanguages[0])
+        }
     }
 
     $("#targetLanguage2").onchange = e => {
@@ -165,6 +168,9 @@ twpConfig.onReady(function () {
         if (targetLanguages.indexOf(twpConfig.get("targetLanguage")) == -1) {
             twpConfig.set("targetLanguage", targetLanguages[0])
         }
+        if (targetLanguages.indexOf(twpConfig.get("targetLanguageTextTranslation")) == -1) {
+            twpConfig.set("targetLanguageTextTranslation", targetLanguages[0])
+        }
     }
 
     $("#targetLanguage3").onchange = e => {
@@ -172,6 +178,9 @@ twpConfig.onReady(function () {
         twpConfig.set("targetLanguages", targetLanguages)
         if (targetLanguages.indexOf(twpConfig.get("targetLanguage")) == -1) {
             twpConfig.set("targetLanguage", targetLanguages[0])
+        }
+        if (targetLanguages.indexOf(twpConfig.get("targetLanguageTextTranslation")) == -1) {
+            twpConfig.set("targetLanguageTextTranslation", targetLanguages[0])
         }
     }
 

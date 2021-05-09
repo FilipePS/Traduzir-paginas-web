@@ -8,7 +8,7 @@ twpConfig.onReady(function () {
     let pageLanguageState = "original"
     let originalPageLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
-    let currentTargetLanguage = twpConfig.get("targetLanguage")
+    let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
     let currentTextTranslatorService = twpConfig.get("textTranslatorService") === "deepl" ? "google" : twpConfig.get("textTranslatorService")
     let showTranslatedTextWhenHoveringThisSite = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
     let showTranslatedTextWhenHoveringThisLang = false
@@ -21,7 +21,7 @@ twpConfig.onReady(function () {
             case "targetLanguages":
                 currentTargetLanguages = newValue
                 break
-            case "targetLanguage":
+            case "targetLanguageTextTranslation":
                 currentTargetLanguage = newValue
                 break
             case "sitesToTranslateWhenHovering":
@@ -471,6 +471,7 @@ twpConfig.onReady(function () {
                 const langCode = twpLang.checkLanguageCode(e.target.getAttribute("value"))
                 if (langCode) {
                     currentTargetLanguage = langCode
+                    twpConfig.setTargetLanguageTextTranslation(langCode)
                     translateThisNode(null, true)
                 }
 

@@ -14,7 +14,7 @@ twpConfig.onReady(function() {
 
     let originalPageLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
-    let currentTargetLanguage = twpConfig.get("targetLanguage")
+    let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
     let currentTextTranslatorService = twpConfig.get("textTranslatorService")
     let awaysTranslateThisSite = twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1
     let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
@@ -429,6 +429,7 @@ twpConfig.onReady(function() {
                 const langCode = twpLang.checkLanguageCode(e.target.getAttribute("value"))
                 if (langCode) {
                     currentTargetLanguage = langCode
+                    twpConfig.setTargetLanguageTextTranslation(langCode)
                     translateNewInput()
                 }
 
@@ -577,7 +578,7 @@ twpConfig.onReady(function() {
             case "targetLanguages":
                 currentTargetLanguages = newValue
                 break
-            case "targetLanguage":
+            case "targetLanguageTextTranslation":
                 currentTargetLanguage = newValue
                 break
             case "alwaysTranslateSites":

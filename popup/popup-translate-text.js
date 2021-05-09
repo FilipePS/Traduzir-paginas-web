@@ -129,7 +129,7 @@ twpConfig.onReady(function () {
             const langCode = twpLang.checkLanguageCode(e.target.getAttribute("value"))
             if (langCode) {
                 currentTargetLanguage = langCode
-                twpConfig.set("targetLanguage", langCode)
+                twpConfig.setTargetLanguageTextTranslation(langCode)
                 translateText()
             }
 

@@ -13,7 +13,7 @@ btnClose.addEventListener("click", () => {
 btnApply.addEventListener("click", () => {
     const targetLanguage = selectTargetLanguage.value
 
-    twpConfig.setTargetLanguage(targetLanguage)
+    twpConfig.setTargetLanguage(targetLanguage, true)
 
     location = chrome.runtime.getURL("/popup/popup.html")
 })
