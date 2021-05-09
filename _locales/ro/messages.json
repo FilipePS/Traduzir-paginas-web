@@ -322,5 +322,26 @@
   },
   "lblEnableDeepL": {
     "message": "Activează DeepL ca serviciu de traducere a textului"
+  },
+  "enterShortcut": {
+    "message": "Adaugă o comandă rapidă"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Include Ctrl sau Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Scrie o literă"
+  },
+  "hotkeyError_invalid": {
+    "message": "Combinație incorectă"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Schimbă între pagina tradusă și cea originală"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Revino la pagina originală"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Tradu pagina în limba dorită"
   }
 }

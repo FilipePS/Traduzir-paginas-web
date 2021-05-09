@@ -322,5 +322,26 @@
   },
   "lblEnableDeepL": {
     "message": "Abilita DeepL come servizio di traduzione del testo"
+  },
+  "enterShortcut": {
+    "message": "Inserisci una scorciatoia"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Includi Ctrl o Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Scrivi una lettera"
+  },
+  "hotkeyError_invalid": {
+    "message": "Combinazione non valida"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Passa tra la pagina tradotta e quella originale"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Torna alla pagina originale"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Traduci la pagina nella lingua di destinazione"
   }
 }
