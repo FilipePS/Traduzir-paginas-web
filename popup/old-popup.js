@@ -187,11 +187,11 @@ twpConfig.onReady(function () {
 
             const neverTranslateLangText = chrome.i18n.getMessage("btnNeverTranslateThisLanguage")
             if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
-                $("option[data-i18n=btnNeverTranslateThisLanguage").textContent = neverTranslateLangText ? neverTranslateLangText : "Never translate this language"
+                $("option[data-i18n=btnNeverTranslateThisLanguage]").textContent = neverTranslateLangText ? neverTranslateLangText : "Never translate this language"
             } else {
-                $("option[data-i18n=btnNeverTranslateThisLanguage").textContent = neverTranslateLangText ? "✔ " + neverTranslateLangText : "✔ Never translate this language"
+                $("option[data-i18n=btnNeverTranslateThisLanguage]").textContent = neverTranslateLangText ? "✔ " + neverTranslateLangText : "✔ Never translate this language"
             }
-            $("option[data-i18n=btnNeverTranslateThisLanguage").style.display = "block"
+            $("option[data-i18n=btnNeverTranslateThisLanguage]").style.display = "block"
             
             showAlwaysTranslateCheckbox = true
         }
@@ -408,23 +408,23 @@ twpConfig.onReady(function () {
 
         const btnNeverTranslateText = chrome.i18n.getMessage("btnNeverTranslate")
         if (twpConfig.get("neverTranslateSites").indexOf(hostname) === -1) {
-            $("option[data-i18n=btnNeverTranslate").textContent = btnNeverTranslateText ? btnNeverTranslateText : "Never translate this site"
+            $("option[data-i18n=btnNeverTranslate]").textContent = btnNeverTranslateText ? btnNeverTranslateText : "Never translate this site"
         } else {
-            $("option[data-i18n=btnNeverTranslate").textContent = btnNeverTranslateText ? "✔ " + btnNeverTranslateText : "✔ Never translate this site"
+            $("option[data-i18n=btnNeverTranslate]").textContent = btnNeverTranslateText ? "✔ " + btnNeverTranslateText : "✔ Never translate this site"
         }
 
         const btnAlwaysTranslateText = chrome.i18n.getMessage("btnAlwaysTranslate")
         if (twpConfig.get("alwaysTranslateSites").indexOf(hostname) === -1) {
-            $("option[data-i18n=btnAlwaysTranslate").textContent = btnAlwaysTranslateText ? btnAlwaysTranslateText : "Always translate this site"
+            $("option[data-i18n=btnAlwaysTranslate]").textContent = btnAlwaysTranslateText ? btnAlwaysTranslateText : "Always translate this site"
         } else {
-            $("option[data-i18n=btnAlwaysTranslate").textContent = btnAlwaysTranslateText ? "✔ " + btnAlwaysTranslateText : "✔ Always translate this site"
+            $("option[data-i18n=btnAlwaysTranslate]").textContent = btnAlwaysTranslateText ? "✔ " + btnAlwaysTranslateText : "✔ Always translate this site"
         }
     })
 
     const text = chrome.i18n.getMessage("msgTranslateSelectedText")
     if (twpConfig.get("showTranslateSelectedButton") !== "yes") {
-        $("option[data-i18n=msgTranslateSelectedText").textContent = text ? text : "Translate selected text"
+        $("option[data-i18n=msgTranslateSelectedText]").textContent = text ? text : "Translate selected text"
     } else {
-        $("option[data-i18n=msgTranslateSelectedText").textContent = text ? "✔ " + text : "✔ Translate selected text"
+        $("option[data-i18n=msgTranslateSelectedText]").textContent = text ? "✔ " + text : "✔ Translate selected text"
     }
 })
