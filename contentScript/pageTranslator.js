@@ -43,8 +43,25 @@ var pageTranslator = {}
 
 twpConfig.onReady(function() {
     const htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BDO', 'BIG', 'CITE', 'DFN', 'EM', 'I', 'LABEL', 'Q', 'S', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U', 'TT', 'VAR']
-    const htmlTagsInlineIgnore = ['BR', 'CODE', 'KBD', 'WBR', 'PRE'] // and input if type is submit or button
+    const htmlTagsInlineIgnore = ['BR', 'CODE', 'KBD', 'WBR'] // and input if type is submit or button, and pre depending on settings
     const htmlTagsNoTranslate = ['TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA']
+
+    if (twpConfig.get('translateTag_pre') !== 'yes') {
+        htmlTagsInlineIgnore.push('PRE')
+    }
+    twpConfig.onChanged((name, newvalue) => {
+        switch (name) {
+            case "translateTag_pre":
+                const index = htmlTagsInlineIgnore.indexOf('PRE')
+                if (index !== -1) {
+                    htmlTagsInlineIgnore.splice(index, 1)
+                }
+                if (newvalue !== 'yes') {
+                    htmlTagsInlineIgnore.push('PRE')
+                }
+                break
+        }
+    })
 
     //TODO FOO
     if (twpConfig.get("useOldPopup") == "yes" || twpConfig.get("popupPanelSection") <= 1) {
