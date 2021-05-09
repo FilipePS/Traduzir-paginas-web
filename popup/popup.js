@@ -96,8 +96,8 @@ twpConfig.onReady(function () {
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "getOriginalPageLanguage"}, {frameId: 0}, pageLanguage => {
             checkedLastError()
-            if (pageLanguage && (pageLanguage = twpLang.checkLanguageCode(pageLanguage))) {
-                originalPageLanguage = pageLanguage
+            if (!pageLanguage || (pageLanguage = twpLang.checkLanguageCode(pageLanguage))) {
+                originalPageLanguage = pageLanguage || "und"
                 twpButtons[0].childNodes[1].textContent = twpLang.codeToLanguage(originalPageLanguage)
             }
         })
