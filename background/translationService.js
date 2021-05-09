@@ -388,10 +388,10 @@ var translationService = {}
             if (sourceArray.length > 1) {
                 sourceArray = sourceArray.map((value, index) => "<a i=" + index + ">" + value + "</a>")
             }
-            if (preseveTextFormat) {
+            //if (preseveTextFormat) {
                 return "<pre>" + sourceArray.join("") + "</pre>"
-            }
-            return sourceArray.join("")
+            //}
+            //return sourceArray.join("")
         })
 
         const requestBody = ""
