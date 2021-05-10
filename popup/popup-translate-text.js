@@ -17,7 +17,7 @@ twpConfig.onReady(function () {
     }
 
     let currentTargetLanguages = twpConfig.get("targetLanguages")
-    let currentTargetLanguage = twpConfig.get("targetLanguage")
+    let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
     let currentTextTranslatorService = twpConfig.get("textTranslatorService")
 
     function enableDarkMode() {
@@ -83,11 +83,31 @@ twpConfig.onReady(function () {
         isPlayingAudio = false 
     }
 
+
+    const eOrigText = document.getElementById("eOrigText")
+    const eOrigTextDiv = document.getElementById("eOrigTextDiv")
     const eTextTranslated = document.getElementById("eTextTranslated")
 
     const sGoogle = document.getElementById("sGoogle")
     const sYandex = document.getElementById("sYandex")
     const sDeepL = document.getElementById("sDeepL")
+
+    function setCaretAtEnd() {
+        const el = eOrigText
+        const range = document.createRange()
+        const sel = window.getSelection()
+        range.setStart(el, 1)
+        range.collapse(true)
+        sel.removeAllRanges()
+        sel.addRange(range)
+        el.focus()
+    }
+
+    let translateNewInputTimerHandler
+    eOrigText.oninput = () => {
+        clearTimeout(translateNewInputTimerHandler)
+        translateNewInputTimerHandler = setTimeout(translateText, 1000)
+    }
 
     sGoogle.onclick = () => {
         currentTextTranslatorService = "google"
@@ -114,7 +134,7 @@ twpConfig.onReady(function () {
     sDeepL.onclick = () => {
         currentTextTranslatorService = "deepl"
         twpConfig.set("textTranslatorService", "deepl")
-        translateSelText(true)
+        translateText()
 
         sGoogle.classList.remove("selected")
         sYandex.classList.remove("selected")
@@ -216,14 +236,11 @@ twpConfig.onReady(function () {
     })
 
 
-
-    let sourceText = ""
-
     function translateText() {
         stopAudio()
         audioDataUrls = null
 
-        backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, sourceText)
+        backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent)
         .then(result => {
             eTextTranslated.textContent = result
         })
@@ -236,7 +253,8 @@ twpConfig.onReady(function () {
     }, {})
     
     if (params["text"]) {
-        sourceText = params["text"]
+        eOrigText.textContent = params["text"]
+        setCaretAtEnd()
         translateText()
     }
 })

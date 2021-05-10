@@ -233,7 +233,7 @@ twpConfig.onReady(function() {
             <div id="eButtonTransSelText"></div>
             <div id="eDivResult">
                 <div id="eOrigTextDiv" style="display: none">
-                    <div id="eOrigText" contentEditable="true"></div>
+                    <div id="eOrigText" contentEditable="true" spellcheck="false"></div>
                     <hr>
                 </div>
                 <div id="eSelTextTrans"></div>

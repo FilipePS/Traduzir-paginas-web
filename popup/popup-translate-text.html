@@ -7,13 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        #eTextTranslated {
+        #eTextTranslated, #eOrigText {
             padding: 14px;
             font-size: 16px;
             max-width: 360px;
             max-height: 260px;
             overflow: auto;
             white-space: pre-wrap;
+        }
+
+        #eOrigText {
+            outline: none;
         }
 
         ul {
@@ -50,6 +54,10 @@
 
 <body>
     <div>
+        <div id="eOrigTextDiv">
+            <div id="eOrigText" contentEditable="true" spellcheck="false"></div>
+            <hr>
+        </div>
         <div id="eTextTranslated"></div>
         <hr>
         <div style="display: flex; justify-content: space-between; flex-direction:row;">
