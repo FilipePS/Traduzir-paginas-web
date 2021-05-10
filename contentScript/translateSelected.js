@@ -321,12 +321,16 @@ twpConfig.onReady(function() {
                     hr {
                         border-color: #666;
                     }
-                    li:hover {
+                    li:hover, #moreOrLess:hover {
                         color: rgb(231, 230, 228) !important;
                         background-color: #454a4d !important;
                     }
                     .selected {
                         background-color: #454a4d !important;
+                    }
+                    .arrow {
+                        border: solid rgb(231, 230, 228);
+                        border-width: 0 1px 1px 0;
                     }
                 `
                 shadowRoot.appendChild(el)
