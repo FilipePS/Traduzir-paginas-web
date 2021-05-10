@@ -233,10 +233,10 @@ twpConfig.onReady(function() {
             <div id="eButtonTransSelText"></div>
             <div id="eDivResult">
                 <div id="eOrigTextDiv" style="display: none">
-                    <div id="eOrigText" contentEditable="true" spellcheck="false"></div>
+                    <div id="eOrigText" contentEditable="true" spellcheck="false" dir="auto"></div>
                     <hr>
                 </div>
-                <div id="eSelTextTrans"></div>
+                <div id="eSelTextTrans" dir="auto"></div>
                 <hr>
                 <div style="display: flex; justify-content: space-between; flex-direction:row;" id="drag">
                     <ul id="setTargetLanguage">
@@ -629,6 +629,12 @@ twpConfig.onReady(function() {
             }
             const eTop = prevSelectionInfo.bottom
             const eLeft = prevSelectionInfo.left
+
+            if (twpLang.isRtlLanguage(currentTargetLanguage)) {
+                eSelTextTrans.setAttribute("dir", "rtl")
+            } else {
+                eSelTextTrans.setAttribute("dir", "ltr")
+            }
 
             eDivResult.style.top = "0px"
             eDivResult.style.left = "0px"

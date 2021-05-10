@@ -242,6 +242,11 @@ twpConfig.onReady(function () {
 
         backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent)
         .then(result => {
+            if (twpLang.isRtlLanguage(currentTargetLanguage)) {
+                eTextTranslated.setAttribute("dir", "rtl")
+            } else {
+                eTextTranslated.setAttribute("dir", "ltr")
+            }
             eTextTranslated.textContent = result
         })
     }

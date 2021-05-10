@@ -167,6 +167,11 @@ twpConfig.onReady(function () {
             }
 
             const eTextTranslated = shadowRoot.getElementById("eTextTranslated")
+            if (twpLang.isRtlLanguage(currentTargetLanguage)) {
+                eTextTranslated.setAttribute("dir", "rtl")
+            } else {
+                eTextTranslated.setAttribute("dir", "ltr")
+            }
             eTextTranslated.textContent = result
             
             const eDivResult = shadowRoot.getElementById("eDivResult")
@@ -302,7 +307,7 @@ twpConfig.onReady(function () {
                 }
             </style>
             <div id="eDivResult">
-                <div id="eTextTranslated"></div>
+                <div id="eTextTranslated" dir="auto"></div>
                 <hr>
                 <div style="display: flex; justify-content: space-between; flex-direction:row;" id="drag">
                     <ul id="setTargetLanguage">

@@ -148,7 +148,7 @@ twpConfig.onReady(function () {
                     white-space: pre-wrap;
                 }
             </style>
-            <div id="originalText"></div>
+            <div id="originalText" dir="auto"></div>
         `
 
         function enableDarkMode() {
