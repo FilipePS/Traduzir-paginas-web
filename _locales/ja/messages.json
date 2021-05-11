@@ -322,5 +322,29 @@
   },
   "lblEnableDeepL": {
     "message": "テキストの翻訳サービスとしてDeepLを追加"
+  },
+  "enterShortcut": {
+    "message": "ショートカットを入力"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "CtrlキーかAltキーを含めてください"
+  },
+  "hotkeyError_letter": {
+    "message": "文字を入力してください"
+  },
+  "hotkeyError_invalid": {
+    "message": "使用できない組み合わせです"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "翻訳と原文を切り替える"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "ページを原文に戻す"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "ページを翻訳先の言語に翻訳"
+  },
+  "lblTranslateTag_pre": {
+    "message": "このタグを翻訳する:"
   }
 }

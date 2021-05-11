@@ -42,7 +42,7 @@
     "message": "다시 시도"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Google 번역으로 열기"
+    "message": "Google 번역에서 열기"
   },
   "btnDonate": {
     "message": "기부"
@@ -81,7 +81,7 @@
     "message": "화면을 손가락 세 개로 터치했을 때"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Yandex Translate로 열기"
+    "message": "Yandex Translate에서 열기"
   },
   "lblOthers": {
     "message": "기타"
@@ -108,7 +108,7 @@
     "message": "새 번역 알고리즘을 사용하시겠습니까?"
   },
   "msgYesRecommended": {
-    "message": "네 (권장)"
+    "message": "예 (권장)"
   },
   "msgNoUseWidgets": {
     "message": "아니오 (위젯 사용)"
@@ -138,10 +138,10 @@
     "message": "야간 모드"
   },
   "lblShowReleaseNotes": {
-    "message": "부가 기능 업데이트 시 릴리즈 노트 표시"
+    "message": "부가 기능 업데이트 시 릴리즈 정보 표시"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "선택한 텍스트 번역 버튼 표시"
+    "message": "선택한 텍스트에 번역 버튼 표시"
   },
   "msgAutomatic": {
     "message": "자동"
@@ -180,7 +180,7 @@
     "message": "기부하기"
   },
   "lblReleaseNotes": {
-    "message": "릴리즈 노트"
+    "message": "릴리스 정보"
   },
   "lblReport": {
     "message": "문제 보고하기"
