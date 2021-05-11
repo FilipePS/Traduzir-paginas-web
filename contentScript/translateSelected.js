@@ -823,6 +823,7 @@ twpConfig.onReady(function() {
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "TranslateSelectedText") {
             readSelection()
+            init()
             translateSelText()
         }
     })
