@@ -607,8 +607,10 @@ twpConfig.onReady(function () {
             if (e.shiftKey) {
                 result += "Shift+"
             }
-            if (e.key.length == 1 && e.key.match(/[a-zA-Z]/)) {
-                result += e.key.toUpperCase()
+            if (e.code.match(/Key([A-Z])/)) {
+                result += e.code.match(/Key([A-Z])/)[1]
+            } else if (e.code.match(/Digit([0-9])/)) {
+                result += e.code.match(/Digit([0-9])/)[1]
             }
 
             return result
@@ -648,7 +650,7 @@ twpConfig.onReady(function () {
                 return
             }
             e.preventDefault()
-            if (e.key.length !== 1 || !e.key.match(/[a-zA-Z]/)) {
+            if (!e.code.match(/Key([A-Z])/) && !e.code.match(/Digit([0-9])/)) {
                 setError("letter")
                 return
             }
