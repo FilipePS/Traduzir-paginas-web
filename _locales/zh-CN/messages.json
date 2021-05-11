@@ -343,5 +343,8 @@
   },
   "lblTranslatePageToTargetLanguage": {
     "message": "翻译页面为目标语言"
+  },
+  "lblTranslateTag_pre": {
+    "message": "允许翻译标签"
   }
 }

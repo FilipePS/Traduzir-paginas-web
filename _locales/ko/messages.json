@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "웹 페이지 번역기"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
     "message": "보고 계신 페이지를 실시간으로 Google이나 Yandex를 사용하여 번역합니다."
@@ -246,13 +246,13 @@
     "message": "선택한 텍스트를 번역 안 함"
   },
   "btnListen": {
-    "message": "들리다"
+    "message": "듣기"
   },
   "btnStopListening": {
     "message": "듣기 중지"
   },
   "btnApply": {
-    "message": "대다"
+    "message": "적용"
   },
   "swapTranslationService": {
     "message": "번역 서비스 간 전환"
@@ -261,7 +261,7 @@
     "message": "이전 인터페이스와 새 인터페이스 간 전환"
   },
   "helpSwapInterface": {
-    "message": "이전 인터페이스와 새 인터페이스 사이를 전환하려면이 버튼을 클릭하십시오."
+    "message": "이전 인터페이스와 새 인터페이스 간에 전환하려면 이 버튼을 클릭하세요."
   },
   "lblTranslationService": {
     "message": "번역 서비스"
@@ -271,5 +271,80 @@
   },
   "lblTranslateInterface": {
     "message": "인터페이스 번역"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "주소 표시줄에 버튼 표시"
+  },
+  "lblPageTranslationService": {
+    "message": "페이지 번역 서비스"
+  },
+  "lblTextTranslationService": {
+    "message": "텍스트 번역 서비스"
+  },
+  "msgStorage": {
+    "message": "저장소"
+  },
+  "lblTranslationCache": {
+    "message": "번역 캐시"
+  },
+  "lblStorageUsed": {
+    "message": "사용한 저장용량:"
+  },
+  "deleteTranslationCache": {
+    "message": "번역 캐시 삭제"
+  },
+  "lblPersonalSettings": {
+    "message": "개인 설정"
+  },
+  "backupToFile": {
+    "message": "파일로 백업"
+  },
+  "restoreFromFile": {
+    "message": "파일에서 복원"
+  },
+  "resetToDefault": {
+    "message": "기본 설정 복원"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "번역 캐시를 삭제하시겠습니까?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "백업 데이터를 사용하여 모든 기존 설정을 덮어쓰시겠습니까?"
+  },
+  "fileIsCorrupted": {
+    "message": "파일이 손상된 것 같습니다"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "확장 기능을 기본 설정으로 복원하시겠습니까?"
+  },
+  "lblTtsSpeed": {
+    "message": "텍스트 음성 변환 오디오 속도"
+  },
+  "lblEnableDeepL": {
+    "message": "텍스트 번역 서비스로 DeepL 활성화"
+  },
+  "enterShortcut": {
+    "message": "단축키 입력"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Ctrl 또는 Alt 포함"
+  },
+  "hotkeyError_letter": {
+    "message": "문자 입력"
+  },
+  "hotkeyError_invalid": {
+    "message": "잘못된 조합"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "번역된 페이지와 원본 페이지 간 전환"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "페이지를 원본으로 복원"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "페이지를 대상 언어로 번역"
+  },
+  "lblTranslateTag_pre": {
+    "message": "태그 번역 사용"
   }
 }
