@@ -691,11 +691,13 @@ twpConfig.onReady(function () {
         }
     }
 
-    chrome.commands.getAll(results => {
-        for (const result of results) {
-            addHotkey(result.name, result.description)
-        }
-    })
+    if (typeof chrome.commands !== "undefined") {
+        chrome.commands.getAll(results => {
+            for (const result of results) {
+                addHotkey(result.name, result.description)
+            }
+        })
+    }
 
     // storage options
     $("#deleteTranslationCache").onclick = e => {
