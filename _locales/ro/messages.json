@@ -343,5 +343,8 @@
   },
   "lblTranslatePageToTargetLanguage": {
     "message": "Tradu pagina în limba dorită"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Activează traducerea etichetei"
   }
 }

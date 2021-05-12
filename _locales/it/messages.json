@@ -343,5 +343,8 @@
   },
   "lblTranslatePageToTargetLanguage": {
     "message": "Traduci la pagina nella lingua di destinazione"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Abilita la traduzione per l'etichetta"
   }
 }
