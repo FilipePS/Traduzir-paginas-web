@@ -268,5 +268,83 @@
   },
   "msgUseOldPopupInterface": {
     "message": "استخدم الواجهة المنبثقة القديمة"
+  },
+  "lblTranslateInterface": {
+    "message": "ترجمة الواجهة"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "إظهار الزر في شريط العنوان"
+  },
+  "lblPageTranslationService": {
+    "message": "خدمة ترجمة الصفحة"
+  },
+  "lblTextTranslationService": {
+    "message": "خدمة ترجمة النص"
+  },
+  "msgStorage": {
+    "message": "التخزين"
+  },
+  "lblTranslationCache": {
+    "message": "ذاكرة التخزين المؤقت للترجمة"
+  },
+  "lblStorageUsed": {
+    "message": "التخزين المستخدم:"
+  },
+  "deleteTranslationCache": {
+    "message": "حذف ذاكرة التخزين المؤقت للترجمة"
+  },
+  "lblPersonalSettings": {
+    "message": "الإعدادات الشخصية"
+  },
+  "backupToFile": {
+    "message": "النسخ الاحتياطي إلى الملف"
+  },
+  "restoreFromFile": {
+    "message": "استعادة من ملف"
+  },
+  "resetToDefault": {
+    "message": "استعادة الإعدادات الافتراضية"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "هل تريد حذف ذاكرة التخزين المؤقت للترجمة؟"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "هل تريد الكتابة فوق كافة الإعدادات الحالية باستخدام بيانات النسخ الاحتياطي؟"
+  },
+  "fileIsCorrupted": {
+    "message": "يبدو أن الملف تالف"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "هل تريد استعادة الملحق إلى الإعدادات الافتراضية؟"
+  },
+  "lblTtsSpeed": {
+    "message": "سرعة صوت تحويل النص إلى كلام"
+  },
+  "lblEnableDeepL": {
+    "message": "تمكين DeepL كخدمة ترجمة نصية"
+  },
+  "enterShortcut": {
+    "message": "أدخل الاختصار"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "تضمين Ctrl أو Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "اكتب حرف"
+  },
+  "hotkeyError_invalid": {
+    "message": "مجموعة غير صالحة"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "التبديل بين الصفحة المترجمة والصفحة الأصلية"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "استعادة الصفحة الأصلية"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "ترجمة الصفحة إلى اللغة المستهدفة"
+  },
+  "lblTranslateTag_pre": {
+    "message": "تفعيل الترجمة للوسم"
   }
 }
