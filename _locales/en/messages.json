@@ -324,7 +324,7 @@
     "message": "Enable DeepL as a text translation service"
   },
   "enterShortcut": {
-    "message": "Enter a shortcut"
+    "message": "Type a shortcut"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "Include Ctrl or Alt"
