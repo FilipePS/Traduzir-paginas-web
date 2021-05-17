@@ -273,31 +273,31 @@
     "message": "Перевести интерфейс"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Показать кнопку в адресной строке"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Сервис перевода страниц"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Сервис перевода текста"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Хранилище"
   },
   "lblTranslationCache": {
     "message": "Кеш перевода"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Занято:"
   },
   "deleteTranslationCache": {
     "message": "Удалить кэш перевода"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Персональные настройки"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Экспортировать в файл"
   },
   "restoreFromFile": {
     "message": "Восстановить из файла"
@@ -316,5 +316,35 @@
   },
   "doYouWantRestoreSettings": {
     "message": "Восстановить настройки расширения по умолчанию?"
+  },
+  "lblTtsSpeed": {
+    "message": "Скорость преобразования текста в речь"
+  },
+  "lblEnableDeepL": {
+    "message": "Включить DeepL как сервис перевода текста"
+  },
+  "enterShortcut": {
+    "message": "Введите комбинацию"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Добавьте Ctrl или Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Введите букву"
+  },
+  "hotkeyError_invalid": {
+    "message": "Неверная комбинация"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Переключаться между переведенной и исходной страницами"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Восстановить исходный язык страницы"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Перевести страницу на целевой язык"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Включить перевод тега"
   }
 }
