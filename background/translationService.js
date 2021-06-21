@@ -228,7 +228,7 @@ var translationService = {}
                     http.open("POST", translationServiceURL + tk)
                     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
                     http.responseType = "json"
-                    http.send(requests[idx].requestBody) 
+                    http.send(requests[idx].requestBody)
                 } else {
                     http.open("GET", translationServiceURL + requests[idx].requestBody)
                     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
@@ -375,7 +375,7 @@ var translationService = {}
     }
 
     // async para fix
-    translationService.google.translateHTML = function (_sourceArray3d, targetLanguage, dontSaveInCache = false, preseveTextFormat = false) {
+    translationService.google.translateHTML = function (_sourceArray3d, targetLanguage, dontSaveInCache = false, preseveTextFormat = false, dontSortResults = false) {
         if (targetLanguage == "zh") {
             targetLanguage = "zh-CN"
         }
@@ -437,31 +437,51 @@ var translationService = {}
                     result = sentences.length > 0 ? sentences.join(" ") : result
                     let resultArray = result.match(/\<a\si\=[0-9]+\>[^\<\>]*(?=\<\/a\>)/g)
 
-                    let indexes
-                    if (resultArray && resultArray.length > 0) {
-                        indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=\>)/g))).filter(value => !isNaN(value))
-                        resultArray = resultArray.map(value => {
-                            var resultStartAtIndex = value.indexOf('>')
-                            return value.slice(resultStartAtIndex + 1)
-                        })
-                    } else {
-                        resultArray = [result]
-                        indexes = [0]
-                    }
+                    if (dontSortResults) {
+                        // Should not sort the <a i={number}> of Google Translate result
+                        // Instead of it, join the texts without sorting
+                        // https://github.com/FilipePS/Traduzir-paginas-web/issues/163
 
-                    resultArray = resultArray.map(value => value.replace(/\<\/b\>/g, ""))
-                    resultArray = resultArray.map(value => unescapeHTML(value))
-
-                    const finalResulArray = []
-                    for (const j in indexes) {
-                        if (finalResulArray[indexes[j]]) {
-                            finalResulArray[indexes[j]] += " " + resultArray[j]
+                        if (resultArray && resultArray.length > 0) {
+                            resultArray = resultArray.map(value => {
+                                var resultStartAtIndex = value.indexOf('>')
+                                return value.slice(resultStartAtIndex + 1)
+                            })
                         } else {
-                            finalResulArray[indexes[j]] = resultArray[j]
+                            resultArray = [result]
                         }
-                    }
 
-                    resultArray3d.push(finalResulArray)
+                        resultArray = resultArray.map(value => value.replace(/\<\/b\>/g, ""))
+                        resultArray = resultArray.map(value => unescapeHTML(value))
+                        
+                        resultArray3d.push(resultArray)
+                    } else {
+                        let indexes
+                        if (resultArray && resultArray.length > 0) {
+                            indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=\>)/g))).filter(value => !isNaN(value))
+                            resultArray = resultArray.map(value => {
+                                var resultStartAtIndex = value.indexOf('>')
+                                return value.slice(resultStartAtIndex + 1)
+                            })
+                        } else {
+                            resultArray = [result]
+                            indexes = [0]
+                        }
+    
+                        resultArray = resultArray.map(value => value.replace(/\<\/b\>/g, ""))
+                        resultArray = resultArray.map(value => unescapeHTML(value))
+    
+                        const finalResulArray = []
+                        for (const j in indexes) {
+                            if (finalResulArray[indexes[j]]) {
+                                finalResulArray[indexes[j]] += " " + resultArray[j]
+                            } else {
+                                finalResulArray[indexes[j]] = resultArray[j]
+                            }
+                        }
+    
+                        resultArray3d.push(finalResulArray)
+                    }
                 }
 
                 //return fixResultArray(resultArray3d, fixIndexesMap)
@@ -622,7 +642,7 @@ var translationService = {}
                 translateHTML = translationService.google.translateHTML
             }
 
-            translateHTML(request.sourceArray3d, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
+            translateHTML(request.sourceArray3d, request.targetLanguage, sender.tab ? sender.tab.incognito : false, true, request.dontSortResults)
                 .then(results => {
                     sendResponse(results)
                 })
