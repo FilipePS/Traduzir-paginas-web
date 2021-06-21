@@ -1,12 +1,13 @@
 "use strict";
 
-function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d) {
+function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d, dontSortResults) {
     return new Promise((resolve, reject) => {
         chrome.runtime.sendMessage({
             action: "translateHTML",
             translationService,
             targetLanguage,
-            sourceArray3d
+            sourceArray3d,
+            dontSortResults
         }, response => {
             resolve(response)
         })
@@ -74,6 +75,7 @@ twpConfig.onReady(function() {
     let pageLanguageState = "original"
     let currentTargetLanguage = twpConfig.get("targetLanguage")
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
+    let dontSortResults = twpConfig.get("dontSortResults") == "yes" ? true : false
     let fooCount = 0
     
     let originalPageTitle
@@ -309,20 +311,32 @@ twpConfig.onReady(function() {
     }
     
     function translateResults(nodesToTranslatesNow, results) {
-        for (let i = 0; i < results.length; i++) {
-            for (let j = 0; j < results[i].length; j++) {
-                if (nodesToTranslatesNow[i][j]) {
-                    const nodeInfo = nodesToTranslatesNow[i][j]
-                    nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent })
-                    nodeInfo.node.textContent = results[i][j] + " "
-                    // In some case, results items count is over original node count
-                    // Rest results append to last node
-                    if (nodesToTranslatesNow[i].length - 1 === j && results[i].length > j) {
-                        const restResults = results[i].slice(j + 1);
-                        nodeInfo.node.textContent += restResults.join(" ");
+        if (dontSortResults) {
+            for (let i = 0; i < results.length; i++) {
+                for (let j = 0; j < results[i].length; j++) {
+                    if (nodesToTranslatesNow[i][j]) {
+                        const nodeInfo = nodesToTranslatesNow[i][j]
+                        nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent })
+                        nodeInfo.node.textContent = results[i][j] + " "
+                        // In some case, results items count is over original node count
+                        // Rest results append to last node
+                        if (nodesToTranslatesNow[i].length - 1 === j && results[i].length > j) {
+                            const restResults = results[i].slice(j + 1);
+                            nodeInfo.node.textContent += restResults.join(" ");
+                        }
                     }
                 }
             }
+        } else {
+            for (const i in nodesToTranslatesNow) {
+                for (const j in nodesToTranslatesNow[i]) {
+                    if (results[i][j]) {
+                        const nodeInfo = nodesToTranslatesNow[i][j]
+                        nodesToRestore.push({node: nodeInfo.node, original: nodeInfo.node.textContent})
+                        nodeInfo.node.textContent = results[i][j] + " "
+                    }
+                }
+            }    
         }
         mutationObserver.takeRecords()
     }
@@ -366,7 +380,8 @@ twpConfig.onReady(function() {
                         backgroundTranslateHTML(
                             currentPageTranslatorService,
                             currentTargetLanguage,
-                            nodesToTranslatesNow.map(nti => nti.map(value => value.original))
+                            nodesToTranslatesNow.map(nti => nti.map(value => value.original)),
+                            dontSortResults
                         )
                             .then(results => {
                                 if (pageLanguageState === "translated" && currentFooCount === fooCount) {
@@ -426,6 +441,8 @@ twpConfig.onReady(function() {
         fooCount++
         pageTranslator.restorePage()
         showOriginal.enable()
+
+        dontSortResults = twpConfig.get("dontSortResults") == "yes" ? true : false
         
         if (targetLanguage) {
             currentTargetLanguage = targetLanguage

@@ -458,6 +458,11 @@ twpConfig.onReady(function () {
     }
     $("#enableDeepL").value = twpConfig.get("enableDeepL")
 
+    $("#dontSortResults").onchange = e => {
+        twpConfig.set("dontSortResults", e.target.value)
+    }
+    $("#dontSortResults").value = twpConfig.get("dontSortResults")
+
     if (twpConfig.get("enableDeepL") === "yes") {
         $('#textTranslatorService option[value="deepl"]').removeAttribute("hidden")
     } else {
