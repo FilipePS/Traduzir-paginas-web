@@ -106,7 +106,7 @@ twpConfig.onReady(function () {
     let translateNewInputTimerHandler
     eOrigText.oninput = () => {
         clearTimeout(translateNewInputTimerHandler)
-        translateNewInputTimerHandler = setTimeout(translateText, 1000)
+        translateNewInputTimerHandler = setTimeout(translateText, 800)
     }
 
     sGoogle.onclick = () => {

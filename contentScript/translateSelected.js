@@ -380,7 +380,7 @@ twpConfig.onReady(function() {
         let translateNewInputTimerHandler
         eOrigText.oninput = () => {
             clearTimeout(translateNewInputTimerHandler)
-            translateNewInputTimerHandler = setTimeout(translateNewInput, 1000)
+            translateNewInputTimerHandler = setTimeout(translateNewInput, 800)
         }
 
         eMoreOrLess.onclick = () => {
