@@ -21,7 +21,7 @@
     "message": "Tuto stránku nelze přeložit"
   },
   "lblAlwaysTranslate": {
-    "message": "Vždy překládat z"
+    "message": "Vždy překládat jazyk"
   },
   "lblTargetLanguage": {
     "message": "Cílový jazyk"
@@ -30,7 +30,7 @@
     "message": "Resetovat"
   },
   "btnTranslate": {
-    "message": "přeložit"
+    "message": "Přeložit"
   },
   "btnOptions": {
     "message": "Možnosti"
@@ -42,13 +42,13 @@
     "message": "Zkus to znovu"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Otevřít v google překladači"
+    "message": "Otevřít v Překladači Google"
   },
   "btnDonate": {
-    "message": "Darovat"
+    "message": "Přispět"
   },
   "btnNeverTranslate": {
-    "message": "Nikdy nepřekládejte tento web"
+    "message": "Nikdy nepřekládat tento web"
   },
   "btnChangeLanguages": {
     "message": "Změnit jazyky"
@@ -60,10 +60,10 @@
     "message": "Přeloženo"
   },
   "btnMobileNeverTranslate": {
-    "message": "Nikdy nepřekládejte tento web"
+    "message": "Nikdy nepřekládat tento web"
   },
   "btnMobileDonate": {
-    "message": "Darovat"
+    "message": "Přispět"
   },
   "optionsNeverTranslate": {
     "message": "Nikdy tyto stránky nepřekládat"
@@ -126,7 +126,7 @@
     "message": "Do tohoto seznamu jste nepřidali žádný úkol."
   },
   "btnAlwaysTranslate": {
-    "message": "Tuto stránku vždy překládejte"
+    "message": "Vždy překládat tuto stránku"
   },
   "lblAlwaysTranslateSites": {
     "message": "Tyto stránky vždy překládejte"
@@ -268,5 +268,83 @@
   },
   "msgUseOldPopupInterface": {
     "message": "Použijte staré vyskakovací rozhraní"
+  },
+  "lblTranslateInterface": {
+    "message": "Přeložte rozhraní"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Zobrazit tlačítko v adresním řádku"
+  },
+  "lblPageTranslationService": {
+    "message": "Služba na překlad stránek"
+  },
+  "lblTextTranslationService": {
+    "message": "Služba na překlad textu"
+  },
+  "msgStorage": {
+    "message": "Úložiště"
+  },
+  "lblTranslationCache": {
+    "message": "Vyrovnávací paměť překladače"
+  },
+  "lblStorageUsed": {
+    "message": "Využití úložiště:"
+  },
+  "deleteTranslationCache": {
+    "message": "Vymazat vyrovnávací paměť"
+  },
+  "lblPersonalSettings": {
+    "message": "Osobní nastavení"
+  },
+  "backupToFile": {
+    "message": "Zálohovat do souboru"
+  },
+  "restoreFromFile": {
+    "message": "Obnovit ze souboru"
+  },
+  "resetToDefault": {
+    "message": "Obnovit výchozí nastavení"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Chcete vymazat vyrovnávací paměť překladače?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Chcete přepsat všechna existující nastavení pomocí záložních dat?"
+  },
+  "fileIsCorrupted": {
+    "message": "Soubor se zdá být poškozen"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Chcete obnovit rozšíření do výchozího nastavení?"
+  },
+  "lblTtsSpeed": {
+    "message": "Rychlost audia textu na řeč"
+  },
+  "lblEnableDeepL": {
+    "message": "Povolit DeepL jako textovou překladatelskou službu"
+  },
+  "enterShortcut": {
+    "message": "Stiskněte zkratku"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Zahrnout Ctrl nebo Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Zadejte písmeno"
+  },
+  "hotkeyError_invalid": {
+    "message": "Neplatná kombinace"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Přepínání mezi přeloženou a původní stránkou"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Obnovit stránku na původní"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Přeložit stránku do cílového jazyka"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Povolit překlad štítku"
   }
 }

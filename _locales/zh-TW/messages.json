@@ -321,27 +321,30 @@
     "message": "文字轉語音速度"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "啟用DeepL作為一種文字翻譯服務"
   },
   "enterShortcut": {
-    "message": "Enter a shortcut"
+    "message": "輸入快捷鍵"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "包括 Ctrl 鍵 或 Alt 鍵"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "請輸入文字"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "無效組合"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "在翻譯後的頁面和原始頁面之間進行切換"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "將頁面恢復到原始狀態"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "將頁面翻譯成目標語言"
+  },
+  "lblTranslateTag_pre": {
+    "message": "啟用該標籤的翻譯"
   }
 }

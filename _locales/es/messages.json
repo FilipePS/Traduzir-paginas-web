@@ -271,5 +271,80 @@
   },
   "lblTranslateInterface": {
     "message": "Traducir la interfaz"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Mostrar botón en la barra de direcciones"
+  },
+  "lblPageTranslationService": {
+    "message": "Page translation service"
+  },
+  "lblTextTranslationService": {
+    "message": "Text Translation Service"
+  },
+  "msgStorage": {
+    "message": "Almacenamiento"
+  },
+  "lblTranslationCache": {
+    "message": "Caché de traducciones"
+  },
+  "lblStorageUsed": {
+    "message": "Almacenamiento utilizado:"
+  },
+  "deleteTranslationCache": {
+    "message": "Eliminar caché de traducciones"
+  },
+  "lblPersonalSettings": {
+    "message": "Personal settings"
+  },
+  "backupToFile": {
+    "message": "Backup to file"
+  },
+  "restoreFromFile": {
+    "message": "Restore from file"
+  },
+  "resetToDefault": {
+    "message": "Restore default settings"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Do you want to delete the translation cache?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Do you want to overwrite all existing settings using the backup data?"
+  },
+  "fileIsCorrupted": {
+    "message": "The file appears to be corrupted"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Do you want to restore the extension to its default settings?"
+  },
+  "lblTtsSpeed": {
+    "message": "Text-to-speech audio speed"
+  },
+  "lblEnableDeepL": {
+    "message": "Enable DeepL as a text translation service"
+  },
+  "enterShortcut": {
+    "message": "Type a shortcut"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Include Ctrl or Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Type a letter"
+  },
+  "hotkeyError_invalid": {
+    "message": "Invalid combination"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Switch between the translated and the original page"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Restore page to original"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Translate the page to the target language"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Enable translation for the tag"
   }
 }

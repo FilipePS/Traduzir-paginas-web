@@ -268,5 +268,83 @@
   },
   "msgUseOldPopupInterface": {
     "message": "Sử dụng giao diện bật lên cũ"
+  },
+  "lblTranslateInterface": {
+    "message": "Dịch giao diện"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Hiển thị nút trên thanh địa chỉ"
+  },
+  "lblPageTranslationService": {
+    "message": "Dịch vụ dịch trang"
+  },
+  "lblTextTranslationService": {
+    "message": "Dịch vụ dịch văn bản"
+  },
+  "msgStorage": {
+    "message": "Lưu trữ"
+  },
+  "lblTranslationCache": {
+    "message": "Bộ nhớ đệm dịch"
+  },
+  "lblStorageUsed": {
+    "message": "Bộ nhớ đã sử dụng: "
+  },
+  "deleteTranslationCache": {
+    "message": "Xóa bộ nhớ dịch đệm"
+  },
+  "lblPersonalSettings": {
+    "message": "Thiết lập cá nhân"
+  },
+  "backupToFile": {
+    "message": "Sao lưu tệp"
+  },
+  "restoreFromFile": {
+    "message": "Khôi phục từ tệp"
+  },
+  "resetToDefault": {
+    "message": "Khôi phục cài đặt gốc"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Bạn có muốn xóa bộ nhớ dịch đệm không?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Bạn có muốn ghi đè tất cả các cài đặt hiện có bằng cách sử dụng dữ liệu sao lưu không?"
+  },
+  "fileIsCorrupted": {
+    "message": "Tệp dường như bị hỏng"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Bạn có muốn khôi phục lại cài đặt ban đầu không?"
+  },
+  "lblTtsSpeed": {
+    "message": "Tốc độ âm thanh chuyển văn bản thành giọng nói"
+  },
+  "lblEnableDeepL": {
+    "message": "Bật DeepL làm dịch vụ dịch văn bản"
+  },
+  "enterShortcut": {
+    "message": "Nhập một phím tắt"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Bao gồm phím Ctrl hoặc Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Gõ một lá thư"
+  },
+  "hotkeyError_invalid": {
+    "message": "Kết hợp không hợp lệ"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Chuyển đổi giữa trang đã dịch và trang gốc"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Khôi phục ngôn ngữ ban đầu"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Dịch trang sang ngôn ngữ nhắm tới"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Bật dịch cho trang này"
   }
 }

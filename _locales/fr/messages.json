@@ -51,7 +51,7 @@
     "message": "Ne jamais traduire ce site"
   },
   "btnChangeLanguages": {
-    "message": "Changer de langue"
+    "message": "Changer la langue"
   },
   "btnMobileOriginal": {
     "message": "Original"
@@ -271,5 +271,80 @@
   },
   "lblTranslateInterface": {
     "message": "Traduire l'interface"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Afficher le bouton dans la barre d'adresse"
+  },
+  "lblPageTranslationService": {
+    "message": "Service de traduction de pages"
+  },
+  "lblTextTranslationService": {
+    "message": "Service de traduction de texte"
+  },
+  "msgStorage": {
+    "message": "Stockage"
+  },
+  "lblTranslationCache": {
+    "message": "Cache de traduction"
+  },
+  "lblStorageUsed": {
+    "message": "Stockage utilisé :"
+  },
+  "deleteTranslationCache": {
+    "message": "Supprimer le cache de traduction"
+  },
+  "lblPersonalSettings": {
+    "message": "Paramètres personnels"
+  },
+  "backupToFile": {
+    "message": "Sauvegarder dans un fichier"
+  },
+  "restoreFromFile": {
+    "message": "Restaurer à partir d'un fichier"
+  },
+  "resetToDefault": {
+    "message": "Restaurer les réglages par défaut"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Voulez-vous supprimer le cache de traduction ?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Voulez-vous écraser tous les paramètres existants en utilisant les données de sauvegarde ?"
+  },
+  "fileIsCorrupted": {
+    "message": "Le fichier semble être corrompu"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Voulez-vous réstaurer les paramètres par défaut de l'extension ?"
+  },
+  "lblTtsSpeed": {
+    "message": "Vitesse de la synthèse vocale"
+  },
+  "lblEnableDeepL": {
+    "message": "Activer DeepL comme service de traduction de texte"
+  },
+  "enterShortcut": {
+    "message": "Tapez un raccourci"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Inclure Ctrl ou Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Tapez une lettre"
+  },
+  "hotkeyError_invalid": {
+    "message": "Combinaison invalide"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Basculer entre la page traduite et la page d'origine"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Restaurer la page d'origine"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Traduire la page dans la langue cible"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Activer la traduction pour le tag"
   }
 }

@@ -48,7 +48,7 @@
     "message": "Donare"
   },
   "btnNeverTranslate": {
-    "message": "Mai tradurre questo sito"
+    "message": "Non tradurre mai questo sito"
   },
   "btnChangeLanguages": {
     "message": "Cambia lingua"
@@ -60,7 +60,7 @@
     "message": "Tradotto"
   },
   "btnMobileNeverTranslate": {
-    "message": "Mai tradurre questo sito"
+    "message": "Non tradurre mai questo sito"
   },
   "btnMobileDonate": {
     "message": "Donare"
@@ -234,13 +234,13 @@
     "message": "Non mostrare se la lingua del testo selezionato è sconosciuta"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Mostrare la traduzione quando passi la freccia su questo sito"
+    "message": "Mostra la traduzione quando passi la freccia su questo sito"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Mostrare la traduzione quando passi la freccia sui siti web in"
+    "message": "Mostra la traduzione quando passi la freccia sui siti web in"
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Mostrare il testo tradotto quando passi la freccia sui siti con queste lingue"
+    "message": "Mostra il testo tradotto quando passi la freccia sui siti con queste lingue"
   },
   "msgNoTranslateSelectedText": {
     "message": "Non tradurre il testo selezionato"
