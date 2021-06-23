@@ -147,8 +147,11 @@ twpConfig.onReady(function() {
     
     function enableMutatinObserver() {
         disableMutatinObserver()
-        translateNewNodesTimerHandler = setInterval(translateNewNodes, 2000)
-        mutationObserver.observe(document.body, { childList: true, subtree: true })
+
+        if (twpConfig.get("translateDynamicallyCreatedContent") == "yes") {
+            translateNewNodesTimerHandler = setInterval(translateNewNodes, 2000)
+            mutationObserver.observe(document.body, { childList: true, subtree: true })
+        }
     }
     
     function disableMutatinObserver() {
