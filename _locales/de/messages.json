@@ -3,7 +3,7 @@
     "message": "Webseiten übersetzen"
   },
   "extensionDescription": {
-    "message": "Übersetzen Sie Ihre Seite in Echtzeit mit Google oder Yandex."
+    "message": "Übersetzen Sie mit Google oder Yandex Webseiten in Echtzeit."
   },
   "pageActionTitle": {
     "message": "Übersetze diese Seite"
@@ -174,7 +174,7 @@
     "message": "Stil"
   },
   "msgHotkeys": {
-    "message": "Tastenkombinationen"
+    "message": "Tastenkürzel"
   },
   "lblMakeDonation": {
     "message": "Spenden"
@@ -207,7 +207,7 @@
     "message": "Für eine Spende wäre ich Ihnen dankbar."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Immer diese Sprache übersetzen"
+    "message": "Diese Sprache immer übersetzen"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Übersetzten Text beim Hovern auf diesen Seiten anzeigen"
@@ -237,7 +237,7 @@
     "message": "Übersetzung beim Hovern auf dieser Seite anzeigen"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Übersetzung beim Hovern über Seiten in folgenden Sprachen anzeigen"
+    "message": "Übersetzung beim Hovern über Seiten in folgenden Sprachen anzeigen: "
   },
   "lblShowTranslatedHoveringLangs": {
     "message": "Übersetzten Text beim Hovern über Seiten mit diesen Sprachen anzeigen"
@@ -246,19 +246,19 @@
     "message": "Markierten Text nicht übersetzen"
   },
   "btnListen": {
-    "message": "Hör mal zu"
+    "message": "Zuhören"
   },
   "btnStopListening": {
-    "message": "Hör auf zuzuhören"
+    "message": "Zuhören stoppen"
   },
   "btnApply": {
     "message": "Anwenden"
   },
   "swapTranslationService": {
-    "message": "Wechseln Sie zwischen Übersetzungsdiensten"
+    "message": "Zwischen Übersetzungsdiensten wechseln"
   },
   "swapPopup": {
-    "message": "Wechseln Sie zwischen der alten und der neuen Schnittstelle"
+    "message": "Zwischen der alten und der neuen Oberfläche wechseln"
   },
   "helpSwapInterface": {
     "message": "Klicken Sie auf diese Schaltfläche, um zwischen der alten und der neuen Benutzeroberfläche zu wechseln."
@@ -267,6 +267,84 @@
     "message": "Übersetzungsdienst"
   },
   "msgUseOldPopupInterface": {
-    "message": "Verwenden Sie die alte Popup-Oberfläche"
+    "message": "Die alte Popup-Oberfläche verwenden"
+  },
+  "lblTranslateInterface": {
+    "message": "Die Benutzeroberfläche übersetzen"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Button in der Adressleiste anzeigen"
+  },
+  "lblPageTranslationService": {
+    "message": "Seitenübersetzungsdienst"
+  },
+  "lblTextTranslationService": {
+    "message": "Textübersetzungsdienst"
+  },
+  "msgStorage": {
+    "message": "Speicher"
+  },
+  "lblTranslationCache": {
+    "message": "Übersetzungscache"
+  },
+  "lblStorageUsed": {
+    "message": "Speichernutzung:"
+  },
+  "deleteTranslationCache": {
+    "message": "Übersetzungscache löschen"
+  },
+  "lblPersonalSettings": {
+    "message": "Persönliche Einstellungen"
+  },
+  "backupToFile": {
+    "message": "Backup in eine Datei"
+  },
+  "restoreFromFile": {
+    "message": "Wiederherstellen aus einer Datei"
+  },
+  "resetToDefault": {
+    "message": "Standardeinstellungen wiederherstellen"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Möchten Sie den Übersetzungscache löschen?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Möchten Sie alle vorhandenen Einstellungen mit den Backup-Daten überschreiben?"
+  },
+  "fileIsCorrupted": {
+    "message": "Die Datei scheint beschädigt zu sein"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Wollen Sie die Erweiterung auf ihre Standardeinstellungen zurücksetzen?"
+  },
+  "lblTtsSpeed": {
+    "message": "Sprachausgabegeschwindigkeit"
+  },
+  "lblEnableDeepL": {
+    "message": "DeepL als Textübersetzungsdienst aktivieren"
+  },
+  "enterShortcut": {
+    "message": "Tastenkürzel eingeben"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Strg oder Alt einschließen"
+  },
+  "hotkeyError_letter": {
+    "message": "Gebe einen Buchstaben ein"
+  },
+  "hotkeyError_invalid": {
+    "message": "Ungültige Kombination"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Zwischen übersetzter und ursprünglicher Seite wechseln"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Seite auf Original zurücksetzen"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Die Seite in die Zielsprache übersetzen"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Übersetzung für den Tag aktivieren"
   }
 }

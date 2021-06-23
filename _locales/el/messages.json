@@ -168,183 +168,183 @@
     "message": "Ιστοσελίδες"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "Μεταφράσεις"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "Τύπος"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Πλήκτρα συντόμευσης"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "Κάντε μια δωρεά"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Σημειώσεις έκδοσης"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "Αναφορά προβλήματος"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "Ρυθμίσεις"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "Προσθήκη"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Εμφάνιση μεταφρασμένου κειμένου όταν αιωρείται"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Συντομεύσεις πληκτρολογίου"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Για μετάφραση την ιστοσελίδα"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Σας ευχαριστούμε που χρησιμοποιείτε αυτήν την επέκταση."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Θα είμαι ευγνώμων αν μπορείτε να κάνετε μια δωρεά."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Πάντα μετάφραση αυτής της γλώσσας"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Εμφάνιση μεταφρασμένου κειμένου όταν αιωρείται σε αυτούς τους ιστότοπους"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Κάντε το αναδυόμενο εικονίδιο μπλε όταν μεταφράζεται η ιστοσελίδα"
   },
   "more": {
-    "message": "More"
+    "message": "Περισσότερα"
   },
   "less": {
-    "message": "Less"
+    "message": "Λιγότερα"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Να μην εμφανίζεται αν η γλώσσα σελίδας είναι η γλώσσα προορισμού"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "Να μην εμφανίζεται αν η γλώσσα της σελίδας είναι άγνωστη"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Να μην εμφανίζεται αν η επιλεγμένη γλώσσα κειμένου είναι η γλώσσα προορισμού"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Να μην εμφανίζεται αν η επιλεγμένη γλώσσα κειμένου είναι άγνωστη"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Εμφάνιση μετάφρασης όταν αιωρείται πάνω σε αυτόν τον ιστότοπο"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in"
+    "message": "Εμφάνιση μετάφρασης όταν αιωρείται πάνω από ιστότοπους"
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Εμφάνιση μεταφρασμένου κειμένου όταν αιωρείται πάνω από ιστότοπους με αυτές τις γλώσσες"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Χωρίς μετάφραση επιλεγμένου κειμένου"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Ακρόαση"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Διακοπή ακρόασης"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Εφαρμογή"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Εναλλαγή μεταξύ υπηρεσιών μετάφρασης"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Εναλλαγή μεταξύ παλιάς εμφάνισης και νέας"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "Κλικ στο κουμπί για εναλλαγή μεταξύ παλιάς και νέας εμφάνισης."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Υπηρεσία Μετάφρασης"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Χρήση της παλιάς αναδυόμενης επιφάνειας"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Μετάφραση περιβάλλοντος"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Εμφάνιση κουμπιού στη γραμμή διευθύνσεων"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Υπηρεσία μετάφρασης σελίδας"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Υπηρεσία Μετάφρασης Κειμένου"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Χώρος αποθήκευσης"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Cache μετάφρασης"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Αποθ. χώρος σε χρήση:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Διαγραφή cache μετάφρασης"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Προσωπικές ρυθμίσεις"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Αντίγραφο σε αρχείο"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Επαναφορά από αρχείο"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Επαναφορά αρχικών ρυθμίσεων"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Θέλετε να διαγράψετε την cache μετάφρασης;"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Θέλετε να αντικαταστήσετε όλες τις υπάρχουσες ρυθμίσεις χρησιμοποιώντας τα δεδομένα αντιγράφου;"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Το αρχείο φαίνεται να είναι κατεστραμμένο"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Θέλετε να επαναφέρετε την επέκταση στις αρχικές ρυθμίσεις;"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Ταχύτητα ήχου κειμένου σε ομιλία"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "Ενεργοποίηση DeepL ως υπηρεσία μετάφρασης κειμένου"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Πληκτρολογήστε μια συντόμευση"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Συμπερίληψη Ctrl ή Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Πληκτρολογήστε ένα γράμμα"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Μη έγκυρος συνδυασμός"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Εναλλαγή μεταξύ μεταφρασμένης και αρχικής σελίδας"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Επαναφορά σελίδας στην αρχική"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Μετάφραση της σελίδας στη γλώσσα προορισμού"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag"
+    "message": "Ενεργοποίηση μετάφρασης για την ετικέτα"
   }
 }

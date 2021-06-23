@@ -213,10 +213,10 @@
     "message": "Hiển thị văn bản đã dịch khi di chuột qua các trang web này"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Đặt biểu tượng bật lên thành màu xanh lam khi trang web được dịch"
+    "message": "Chuyển biểu tượng sang màu xanh lam khi trang web được dịch"
   },
   "more": {
-    "message": "Hơn"
+    "message": "Nhiều hơn"
   },
   "less": {
     "message": "Ít hơn"
@@ -240,7 +240,7 @@
     "message": "Hiển thị bản dịch khi di chuột qua các trang web trong"
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Hiển thị văn bản đã dịch khi di chuột qua các trang web có các ngôn ngữ này"
+    "message": "Hiển thị văn bản đã dịch khi di chuột qua các trang web có ngôn ngữ này"
   },
   "msgNoTranslateSelectedText": {
     "message": "Không dịch văn bản đã chọn"
@@ -249,10 +249,10 @@
     "message": "Nghe"
   },
   "btnStopListening": {
-    "message": "Ngừng lắng nghe"
+    "message": "Dừng nghe"
   },
   "btnApply": {
-    "message": "Ứng dụng"
+    "message": "Áp dụng"
   },
   "swapTranslationService": {
     "message": "Chuyển đổi giữa các dịch vụ dịch thuật"
