@@ -282,13 +282,18 @@ var translationCache = {}
     openIndexeddb("yandexCache", 1)
 
 
+    var promiseCalculatingStorage = null
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "getCacheSize") {
-            Promise.all([getDatabaseSize("googleCache"), getDatabaseSize("yandexCache")])
-            .then(results => {
+            if (!promiseCalculatingStorage) {
+                promiseCalculatingStorage = Promise.all([getDatabaseSize("googleCache"), getDatabaseSize("yandexCache")])
+            }
+
+            promiseCalculatingStorage.then(results => {
+                promiseCalculatingStorage = null
                 sendResponse(humanReadableSize(results.reduce((total, num) => total + num)))
-            })
-            .catch(e => {
+            }).catch(e => {
+                promiseCalculatingStorage = null
                 sendResponse(humanReadableSize(0))
             })
             return true

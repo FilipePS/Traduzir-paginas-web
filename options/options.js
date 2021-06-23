@@ -798,9 +798,16 @@ twpConfig.onReady(function () {
     }
     $("#showButtonInTheAddressBar").value = twpConfig.get("showButtonInTheAddressBar")
 
-    chrome.runtime.sendMessage({action: "getCacheSize"}, result => {
-        $("#storageUsed").textContent = result
-    })
+    $("#btnCalculateStorage").style.display = "inline-block"
+    $("#storageUsed").style.display = "none"
+    $("#btnCalculateStorage").onclick = e => {
+        $("#btnCalculateStorage").style.display = "none"
+
+        chrome.runtime.sendMessage({action: "getCacheSize"}, result => {
+            $("#storageUsed").textContent = result
+            $("#storageUsed").style.display = "inline-block"
+        })
+    }
 })
 
 window.scrollTo({
