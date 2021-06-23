@@ -326,28 +326,47 @@
                         <input type="hidden" name="allow_extra" value="1">
                         <input type="image" src="/icons/coinpayments.png" alt="CoinPayments.net">
                     </form>
-                    <p>Bitcoin: <code>3QYYHGKMxZYHPFdaURB8qqRafMcjzFJy4g</code></p>
 
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="black">
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="UKVQDPTUB5HTG">
-                        <table>
-                            <tr>
-                                <td><input type="hidden" name="on0" value="Donate With Paypal">Donate With Paypal</td>
-                            </tr>
-                            <tr>
-                                <td><select name="os0">
-                                        <option value="Maximum">50,00 BRL</option>
-                                        <option value="Pizza" selected>30,00 BRL</option>
-                                        <option value="Lunch">15,00 BRL</option>
-                                        <option value="Coffe">5,00 BRL</option>
-                                    </select> </td>
-                            </tr>
-                        </table>
-                        <input type="hidden" name="currency_code" value="BRL">
-                        <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal">
-                        <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1">
-                    </form>
+                    <div style="margin-top: 20px; display: inline-block;" data-i18n="donateWithPayPal">Donate With PayPal</div>
+                    <select id="currency" style="margin-left: 8px;">
+                        <option value="USD">USD</option>
+                        <option value="BRL">BRL</option>
+                    </select>
+                    <div id="donateInUSD">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="444D6GGXCM2A8">
+                            <table>
+                            <tr><td><input type="hidden" name="on0" value="Donate With Paypal"></td></tr><tr><td><select name="os0">
+                                <option value="Maximum">20,00 USD</option>
+                                <option value="Pizza">10,00 USD</option>
+                                <option value="Lunch" selected>5,00 USD</option>
+                                <option value="Coffe">3,00 USD</option>
+                            </select> </td></tr>
+                            </table>
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal">
+                            <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1">
+                        </form>
+                    </div>
+
+                    <div id="donateInBRL">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="UKVQDPTUB5HTG">
+                            <table>
+                            <tr><td><input type="hidden" name="on0" value="Doar com o Paypal"></td></tr><tr><td><select name="os0">
+                                <option value="Maximum">50,00 BRL</option>
+                                <option value="Pizza">30,00 BRL</option>
+                                <option value="Lunch" selected>15,00 BRL</option>
+                                <option value="Coffe">5,00 BRL</option>
+                            </select> </td></tr>
+                            </table>
+                            <input type="hidden" name="currency_code" value="BRL">
+                            <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal">
+                            <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1">
+                        </form>
+                    </div>
                 </div>
             </div>
 
