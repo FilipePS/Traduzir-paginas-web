@@ -117,7 +117,7 @@ var translationCache = {}
             case "googleCache":
                 googleDB = db
                 break
-            case "googleCache":
+            case "yandexCache":
                 yandexDB = db
                 break
             default:
