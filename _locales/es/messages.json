@@ -54,7 +54,7 @@
     "message": "Reintentar"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Abrir en traductor de google"
+    "message": "Abrir en el traductor de Google"
   },
   "btnDonate": {
     "message": "Donar"
@@ -192,13 +192,13 @@
     "message": "Estilo"
   },
   "msgHotkeys": {
-    "message": "Teclas de acceso rápido"
+    "message": "Teclas de atajo"
   },
   "lblMakeDonation": {
     "message": "Hacer una donación"
   },
   "lblReleaseNotes": {
-    "message": "Notas de lanzamiento"
+    "message": "Notas de la versión"
   },
   "lblReport": {
     "message": "Informar de un problema"
@@ -213,7 +213,7 @@
     "message": "Mostrar texto traducido al pasar el cursor"
   },
   "lblKeyboardShortcuts": {
-    "message": "Atajos de teclado"
+    "message": "Atajos del teclado"
   },
   "msgToTranslateSites": {
     "message": "Para traducir el sitio"
@@ -222,13 +222,13 @@
     "message": "Gracias por usar esta extensión."
   },
   "msgIWillBeGrateful": {
-    "message": "Estaré agradecido si puedes hacer una donación."
+    "message": "Estaré agradecido si puede hacer una donación."
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Traducir siempre este idioma"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Mostrar texto traducido al desplazarse por estos sitios"
+    "message": "Mostrar texto traducido al pasar el cursor por estos sitios"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Hacer que el icono emergente sea azul cuando se traduzca el sitio"
@@ -240,13 +240,13 @@
     "message": "Menos"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "No mostrar si el idioma de la página es el idioma de destino"
+    "message": "No mostrar si el idioma de la página es el idioma objetivo"
   },
   "dontShowIfPageLangIsUnknown": {
     "message": "No mostrar si se desconoce el idioma de la página"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "No mostrar si el idioma de texto seleccionado es el idioma de destino"
+    "message": "No mostrar si el idioma del texto seleccionado es el idioma objetivo"
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "No mostrar si se desconoce el idioma del texto seleccionado"
@@ -255,7 +255,7 @@
     "message": "Mostrar traducción al pasar el cursor sobre este sitio"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Mostrar traducción al pasar el cursor sobre sitios web en",
+    "message": "Mostrar traducción al pasar el cursor sobre sitios web en $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -291,7 +291,7 @@
     "message": "Servicio de traducción"
   },
   "msgUseOldPopupInterface": {
-    "message": "Utilice la antigua interfaz emergente"
+    "message": "Usar la antigua interfaz emergente"
   },
   "lblTranslateInterface": {
     "message": "Traducir la interfaz"
@@ -312,7 +312,7 @@
     "message": "Caché de traducciones"
   },
   "lblStorageUsed": {
-    "message": "Almacenamiento utilizado:"
+    "message": "Almacenamiento en uso:"
   },
   "deleteTranslationCache": {
     "message": "Eliminar caché de traducciones"
@@ -369,7 +369,7 @@
     "message": "Traducir la página al idioma objetivo"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag",
+    "message": "Activar traducción para la etiqueta $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
