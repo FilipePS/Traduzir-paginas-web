@@ -1,326 +1,391 @@
 {
   "extensionName": {
-    "message": "Web Sayfalarını Çevir"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Sayfanızı Google, Yandex veya Bing'i kullanarak gerçek zamanlı olarak çevirin."
+    "message": "Translate your page in real time using Google or Yandex."
   },
   "pageActionTitle": {
-    "message": "Bu sayfayı çevir"
+    "message": "Translate this page"
   },
   "lblTranslate": {
-    "message": "Bu sayfa çevirilsin mi?"
+    "message": "Translate this page?"
   },
   "lblTranslating": {
-    "message": "Çeviriliyor ..."
+    "message": "Translating ..."
   },
   "lblTranslated": {
-    "message": "Çevirildi"
+    "message": "Translated"
   },
   "lblError": {
-    "message": "Bu sayfa çevirilemedi"
+    "message": "This page could not be translated"
   },
   "lblAlwaysTranslate": {
-    "message": "Her zaman çevir"
+    "message": "Always translate from $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblTargetLanguage": {
-    "message": "Hedef dil"
+    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "btnReset": {
-    "message": "Sıfırla"
+    "message": "Reset"
   },
   "btnTranslate": {
-    "message": "Çevir"
+    "message": "Translate"
   },
   "btnOptions": {
-    "message": "Seçenekler"
+    "message": "Options"
   },
   "btnRestore": {
-    "message": "Orijinali göster"
+    "message": "Show original"
   },
   "btnTryAgain": {
-    "message": "Yeniden deneyin"
+    "message": "Try again"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Google Çeviri'de aç"
+    "message": "Open in google translator"
   },
   "btnDonate": {
-    "message": "Bağış yap"
+    "message": "Donate"
   },
   "btnNeverTranslate": {
-    "message": "Bu siteyi asla çevirme"
+    "message": "Never translate this site"
   },
   "btnChangeLanguages": {
-    "message": "Dilleri değiştir"
+    "message": "Change languages"
   },
   "btnMobileOriginal": {
-    "message": "Orijinal"
+    "message": "Original"
   },
   "btnMobileTranslated": {
-    "message": "Çevrilmiş"
+    "message": "Translated"
   },
   "btnMobileNeverTranslate": {
-    "message": "Bu siteyi asla çevirme"
+    "message": "Never translate this site"
   },
   "btnMobileDonate": {
-    "message": "Bağış yap"
+    "message": "Donate"
   },
   "optionsNeverTranslate": {
-    "message": "Bu siteleri asla çevirme"
+    "message": "Never translate these sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "Bu dilleri otomatik olarak çevir"
+    "message": "Automatically translate these languages"
   },
   "optionPopupConfig": {
-    "message": "Mobil açılır pencereyi göster"
+    "message": "Show the mobile popup"
   },
   "optionPopupAuto": {
-    "message": "Otomatik olarak"
+    "message": "Automatically"
   },
   "optionPopupThreeFingers": {
-    "message": "Ekrana üç parmağımla dokunduğumda"
+    "message": "When I touch three fingers on the screen"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Yandex çeviri'de aç"
+    "message": "Open in yandex translate"
   },
   "lblOthers": {
-    "message": "Diğerleri"
+    "message": "Others"
   },
   "btnMoreOptions": {
-    "message": "Diğer seçenekler"
+    "message": "More options"
   },
   "lblPlsDonate": {
-    "message": "Geliştiriciye bağış yap"
+    "message": "Help the developer with a donation"
   },
   "msgTranslateFor": {
-    "message": "Şu dile çevir"
+    "message": "Translate to $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblShowContextMenu": {
-    "message": "İçerik menüsünde sayfayı çevirme seçeneğini göster"
+    "message": "Show the option to translate the page in the context menu"
   },
   "msgYes": {
-    "message": "Evet"
+    "message": "Yes"
   },
   "msgNo": {
-    "message": "Hayır"
+    "message": "No"
   },
   "lblUseNewAlgorithm": {
-    "message": "Yeni çeviri algoritması kullanılsın mı?"
+    "message": "Use the new translation algorithm?"
   },
   "msgYesRecommended": {
-    "message": "Evet (önerilen)"
+    "message": "Yes (recommended)"
   },
   "msgNoUseWidgets": {
-    "message": "Hayır (pencere araçları kullan)"
+    "message": "No (use widgets)"
   },
   "optionsPageTitle": {
-    "message": "Web Sayfalarını Çevir - Seçenekler"
+    "message": "Translate Web Pages - Options"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Sadece \"Bu Siteyi Çevir\" butonuna tıkladığımda"
+    "message": "Only when I click \"Translate this site\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Bu listeye herhangi bir site eklemediniz."
+    "message": "You have not added any sites to this list."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Bu listeye herhangi bir dil eklemediniz."
+    "message": "You have not added any languages to this list."
   },
   "btnAlwaysTranslate": {
-    "message": "Bu siteyi her zaman çevir"
+    "message": "Always translate this site"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Bu siteleri her zaman çevir"
+    "message": "Always translate these sites"
   },
   "msgDonateWithPaypal": {
-    "message": "PayPal ile bağış yapın"
+    "message": "Donate with PayPal"
   },
   "lblDarkMode": {
-    "message": "Karanlık Mod"
+    "message": "Dark Mode"
   },
   "lblShowReleaseNotes": {
-    "message": "Güncelleme sırasında sürüm notlarını göster"
+    "message": "Show release notes when updating"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Seçili metni çevirmek için butonu göster"
+    "message": "Show the button to translate the selected text"
   },
   "msgAutomatic": {
-    "message": "Otomatik"
+    "message": "Automatic"
   },
   "msgTranslateSelectedText": {
-    "message": "Seçilen metni çevir"
+    "message": "Translate selected text"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "İçerik menüsünde seçili metni çevirme seçeneğini göster"
+    "message": "Show the option to translate the selected text in the context menu"
   },
   "lblNeverTranslateLangs": {
-    "message": "Bu dilleri asla çevirme"
+    "message": "Never translate these languages"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Bu dili asla çevirme"
+    "message": "Never translate this language"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Fareyle üzerine gelindiğinde orijinal metni göster"
+    "message": "Show original text when hovering"
   },
   "msgLanguages": {
-    "message": "Diller"
+    "message": "Languages"
   },
   "msgSites": {
-    "message": "Siteler"
+    "message": "Sites"
   },
   "msgTranslations": {
-    "message": "Çeviriler"
+    "message": "Translations"
   },
   "msgStyle": {
-    "message": "Stil"
+    "message": "Style"
   },
   "msgHotkeys": {
-    "message": "Kısayol tuşları"
+    "message": "Hotkeys"
   },
   "lblMakeDonation": {
-    "message": "Bağış Yap"
+    "message": "Make a donation"
   },
   "lblReleaseNotes": {
-    "message": "Sürüm notları"
+    "message": "Release Notes"
   },
   "lblReport": {
-    "message": "Sorun bildir"
+    "message": "Report a problem"
   },
   "lblSettings": {
-    "message": "Ayarlar"
+    "message": "Settings"
   },
   "lblAdd": {
-    "message": "Ekle"
+    "message": "Add"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Fareyle üzerine gelindiğinde orijinal metni göster"
+    "message": "Show translated text when hovering"
   },
   "lblKeyboardShortcuts": {
-    "message": "Klavye kısayolları"
+    "message": "Keyboard shortcuts"
   },
   "msgToTranslateSites": {
-    "message": "Bu sayfayı çevirmek için"
+    "message": "To translate the site"
   },
   "msgThanksForUseExtension": {
-    "message": "Bu uzantıyı kullandığınız için teşekkür ederiz."
+    "message": "Thank you for using this extension."
   },
   "msgIWillBeGrateful": {
-    "message": "Bağış yapabilirseniz minnettar olacağım."
+    "message": "I will be grateful if you can make a donation."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Bu dili her zaman çevir"
+    "message": "Always translate this language"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Bu sitelerde gezinirken çevrilmiş metni göster"
+    "message": "Show translated text when hovering on these sites"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Site çevrildiğinde pop-up simgesini mavi yapın"
+    "message": "Make the pop-up icon blue when the site is translated"
   },
   "more": {
-    "message": "Daha"
+    "message": "More"
   },
   "less": {
-    "message": "Az"
+    "message": "Less"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Sayfa dilinin hedef dil olup olmadığını gösterme"
+    "message": "Do not show if the page language is the target language"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Sayfa dili bilinmiyorsa gösterme"
+    "message": "Do not show if the page language is unknown"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Seçili metin dili hedef dil ise gösterme"
+    "message": "Do not show if the selected text language is the target language"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Seçili metin dili bilinmiyorsa gösterme"
+    "message": "Do not show if the selected text language is unknown"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Bu sitenin üzerine geldiğinizde çeviriyi göster"
+    "message": "Show translation when hovering over this site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Web sitelerinin üzerine geldiğinizde çeviriyi göster"
+    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Bu dillerin olduğu sitelerin üzerine gelindiğinde çevrilmiş metni göster"
+    "message": "Show translated text when hovering over sites with these languages"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Seçili metni çevirme"
+    "message": "Do not translate selected text"
   },
   "btnListen": {
-    "message": "Dinle"
+    "message": "Listen"
   },
   "btnStopListening": {
-    "message": "Dinlemeyi bırak"
+    "message": "Stop listening"
   },
   "btnApply": {
-    "message": "Uygula"
+    "message": "Apply"
   },
   "swapTranslationService": {
-    "message": "Çeviri hizmetleri arasında geçiş yapın"
+    "message": "Switch between translation services"
   },
   "swapPopup": {
-    "message": "Eski arayüz ile yenisi arasında geçiş yapın"
+    "message": "Switch between the old interface and the new one"
   },
   "helpSwapInterface": {
-    "message": "Eski ve yeni arayüz arasında geçiş yapmak için bu düğmeye tıklayın."
+    "message": "Click this button to switch between the old and the new interface."
   },
   "lblTranslationService": {
-    "message": "Çeviri servisi"
+    "message": "Translation service"
   },
   "msgUseOldPopupInterface": {
-    "message": "Eski açılır pencere arayüzünü kullanın"
+    "message": "Use the old popup interface"
   },
   "lblTranslateInterface": {
-    "message": "Arayüzü çevirin"
+    "message": "Translate the interface"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Adres çubuğunda düğmeyi göster"
+    "message": "Show button in the address bar"
   },
   "lblPageTranslationService": {
-    "message": "Sayfa çeviri servisi"
+    "message": "Page translation service"
   },
   "lblTextTranslationService": {
-    "message": "Yazı çeviri servisi"
+    "message": "Text Translation Service"
   },
   "msgStorage": {
-    "message": "Depolama"
+    "message": "Storage"
   },
   "lblTranslationCache": {
-    "message": "Çeviri önbelleği"
+    "message": "Translation cache"
   },
   "lblStorageUsed": {
-    "message": "Kullanılan depolama alanı:"
+    "message": "Storage used:"
   },
   "deleteTranslationCache": {
-    "message": "Çeviri önbelleğini temizle"
+    "message": "Delete translation cache"
   },
   "lblPersonalSettings": {
-    "message": "Kişisel ayarlar"
+    "message": "Personal settings"
   },
   "backupToFile": {
-    "message": "Dosyaya yedekle"
+    "message": "Backup to file"
   },
   "restoreFromFile": {
-    "message": "Dosyadan geri yükle"
+    "message": "Restore from file"
   },
   "resetToDefault": {
-    "message": "Varsayılan ayarları geri yükle"
+    "message": "Restore default settings"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Çeviri önbelleğini silmek istiyor musunuz?"
+    "message": "Do you want to delete the translation cache?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Yedekleme verilerini kullanarak mevcut tüm ayarların üzerine yazmak istiyor musunuz?"
+    "message": "Do you want to overwrite all existing settings using the backup data?"
   },
   "fileIsCorrupted": {
-    "message": "Dosya bozuk görünüyor"
+    "message": "The file appears to be corrupted"
   },
   "doYouWantRestoreSettings": {
-    "message": "Uzantıyı varsayılan ayarlarına geri yüklemek istiyor musunuz?"
+    "message": "Do you want to restore the extension to its default settings?"
   },
   "lblTtsSpeed": {
-    "message": "Metin okuma ses hızı"
+    "message": "Text-to-speech audio speed"
   },
   "lblEnableDeepL": {
-    "message": "DeepL'yi bir metin çeviri hizmeti olarak etkinleştir"
+    "message": "Enable DeepL as a text translation service"
+  },
+  "enterShortcut": {
+    "message": "Type a shortcut"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Include Ctrl or Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Type a letter"
+  },
+  "hotkeyError_invalid": {
+    "message": "Invalid combination"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Switch between the translated and the original page"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Restore page to original"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Translate the page to the target language"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "Do not sort the google translate results"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "Translate dynamically created content"
+  },
+  "calculatestorage": {
+    "message": "Calculate"
+  },
+  "donatewithpaypal": {
+    "message": "Donate With PayPal"
   }
 }

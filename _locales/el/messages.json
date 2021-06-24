@@ -1,350 +1,391 @@
 {
   "extensionName": {
-    "message": "Μετάφραση ιστοσελίδων"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Μετάφραση της σελίδας σε πραγματικό χρόνο με χρήση το Google ή το Yandex."
+    "message": "Translate your page in real time using Google or Yandex."
   },
   "pageActionTitle": {
-    "message": "Μετάφραση αυτής της σελίδας"
+    "message": "Translate this page"
   },
   "lblTranslate": {
-    "message": "Μετάφραση αυτής της σελίδας;"
+    "message": "Translate this page?"
   },
   "lblTranslating": {
-    "message": "Μεταφράζεται ..."
+    "message": "Translating ..."
   },
   "lblTranslated": {
-    "message": "Μεταφρασμένη"
+    "message": "Translated"
   },
   "lblError": {
-    "message": "Αυτή η σελίδα δεν μπόρεσε να μεταφραστεί"
+    "message": "This page could not be translated"
   },
   "lblAlwaysTranslate": {
-    "message": "Πάντα μετάφραση από"
+    "message": "Always translate from $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblTargetLanguage": {
-    "message": "Γλώσσα προορισμού"
+    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "btnReset": {
-    "message": "Επαναφορά"
+    "message": "Reset"
   },
   "btnTranslate": {
-    "message": "Μετάφραση"
+    "message": "Translate"
   },
   "btnOptions": {
-    "message": "Επιλογές"
+    "message": "Options"
   },
   "btnRestore": {
-    "message": "Εμφάνιση αρχικού"
+    "message": "Show original"
   },
   "btnTryAgain": {
-    "message": "Προσπάθησε ξανά"
+    "message": "Try again"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Χρήση της μετάφρασης Google"
+    "message": "Open in google translator"
   },
   "btnDonate": {
-    "message": "Δωρεά"
+    "message": "Donate"
   },
   "btnNeverTranslate": {
-    "message": "Ποτέ μην μεταφράζεται αυτός ο ιστότοπος"
+    "message": "Never translate this site"
   },
   "btnChangeLanguages": {
-    "message": "Αλλαγή γλώσσας"
+    "message": "Change languages"
   },
   "btnMobileOriginal": {
-    "message": "Αρχικό"
+    "message": "Original"
   },
   "btnMobileTranslated": {
-    "message": "Μεταφρασμένη"
+    "message": "Translated"
   },
   "btnMobileNeverTranslate": {
-    "message": "Ποτέ μην μεταφράζεται αυτός ο ιστότοπος"
+    "message": "Never translate this site"
   },
   "btnMobileDonate": {
-    "message": "Δωρεά"
+    "message": "Donate"
   },
   "optionsNeverTranslate": {
-    "message": "Ποτέ μην μεταφράζεται αυτός ο ιστότοπος"
+    "message": "Never translate these sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "Αυτόματη μετάφραση αυτών των γλωσσών"
+    "message": "Automatically translate these languages"
   },
   "optionPopupConfig": {
-    "message": "Προβολή αναδυόμενου κινητού παραθύρου"
+    "message": "Show the mobile popup"
   },
   "optionPopupAuto": {
-    "message": "Αυτόματα"
+    "message": "Automatically"
   },
   "optionPopupThreeFingers": {
-    "message": "Όταν αγγίζω τρία δάχτυλα στην οθόνη"
+    "message": "When I touch three fingers on the screen"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Άνοιγμα σε μετάφραση Yandex"
+    "message": "Open in yandex translate"
   },
   "lblOthers": {
-    "message": "Άλλα"
+    "message": "Others"
   },
   "btnMoreOptions": {
-    "message": "Περισσότερες επιλογές"
+    "message": "More options"
   },
   "lblPlsDonate": {
-    "message": "Βοηθήστε τον προγραμματιστή με μια δωρεά"
+    "message": "Help the developer with a donation"
   },
   "msgTranslateFor": {
-    "message": "Μετάφραση σε"
+    "message": "Translate to $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblShowContextMenu": {
-    "message": "Εμφάνιση επιλογής μετάφρασης της σελίδας στο σχετικό μενού"
+    "message": "Show the option to translate the page in the context menu"
   },
   "msgYes": {
-    "message": "Ναι"
+    "message": "Yes"
   },
   "msgNo": {
-    "message": "Όχι"
+    "message": "No"
   },
   "lblUseNewAlgorithm": {
-    "message": "Χρήση του νέου αλγορίθμου μετάφρασης;"
+    "message": "Use the new translation algorithm?"
   },
   "msgYesRecommended": {
-    "message": "Ναι (προτείνεται)"
+    "message": "Yes (recommended)"
   },
   "msgNoUseWidgets": {
-    "message": "Όχι (χρήση widget)"
+    "message": "No (use widgets)"
   },
   "optionsPageTitle": {
-    "message": "Μετάφραση Ιστοσελίδων - Επιλογές"
+    "message": "Translate Web Pages - Options"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Μόνο όταν κάνω κλικ \"Μετάφραση αυτού του ιστότοπου\""
+    "message": "Only when I click \"Translate this site\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Δεν έχετε προσθέσει ιστοσελίδες σε αυτή τη λίστα."
+    "message": "You have not added any sites to this list."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Δεν έχετε προσθέσει καμία γλώσσα σε αυτήν τη λίστα."
+    "message": "You have not added any languages to this list."
   },
   "btnAlwaysTranslate": {
-    "message": "Πάντα μετάφραση αυτής της ιστοσελίδας"
+    "message": "Always translate this site"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Πάντα μετάφραση αυτών τών ιστοσελίδών"
+    "message": "Always translate these sites"
   },
   "msgDonateWithPaypal": {
-    "message": "Δωρεά μέσω PayPal"
+    "message": "Donate with PayPal"
   },
   "lblDarkMode": {
-    "message": "Σκοτεινή Λειτουργία"
+    "message": "Dark Mode"
   },
   "lblShowReleaseNotes": {
-    "message": "Εμφάνιση σημειώσεων έκδοσης όταν ενημερώνεται"
+    "message": "Show release notes when updating"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Εμφάνιση κουμπιού για μετάφραση του επιλεγμένου κειμένου"
+    "message": "Show the button to translate the selected text"
   },
   "msgAutomatic": {
-    "message": "Αυτόματα"
+    "message": "Automatic"
   },
   "msgTranslateSelectedText": {
-    "message": "Μετάφραση επιλεγμένου κειμένου"
+    "message": "Translate selected text"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Εμφάνιση επιλογής για μετάφραση του επιλεγμένου κειμένου στο σχετικό μενού"
+    "message": "Show the option to translate the selected text in the context menu"
   },
   "lblNeverTranslateLangs": {
-    "message": "Ποτέ μετάφραση αυτών των γλωσσών"
+    "message": "Never translate these languages"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Ποτέ μετάφραση αυτής της γλώσσας"
+    "message": "Never translate this language"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Εμφάνιση αρχικού κειμένου όταν αιωρείται"
+    "message": "Show original text when hovering"
   },
   "msgLanguages": {
-    "message": "Γλώσσες"
+    "message": "Languages"
   },
   "msgSites": {
-    "message": "Ιστοσελίδες"
+    "message": "Sites"
   },
   "msgTranslations": {
-    "message": "Μεταφράσεις"
+    "message": "Translations"
   },
   "msgStyle": {
-    "message": "Τύπος"
+    "message": "Style"
   },
   "msgHotkeys": {
-    "message": "Πλήκτρα συντόμευσης"
+    "message": "Hotkeys"
   },
   "lblMakeDonation": {
-    "message": "Κάντε μια δωρεά"
+    "message": "Make a donation"
   },
   "lblReleaseNotes": {
-    "message": "Σημειώσεις έκδοσης"
+    "message": "Release Notes"
   },
   "lblReport": {
-    "message": "Αναφορά προβλήματος"
+    "message": "Report a problem"
   },
   "lblSettings": {
-    "message": "Ρυθμίσεις"
+    "message": "Settings"
   },
   "lblAdd": {
-    "message": "Προσθήκη"
+    "message": "Add"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Εμφάνιση μεταφρασμένου κειμένου όταν αιωρείται"
+    "message": "Show translated text when hovering"
   },
   "lblKeyboardShortcuts": {
-    "message": "Συντομεύσεις πληκτρολογίου"
+    "message": "Keyboard shortcuts"
   },
   "msgToTranslateSites": {
-    "message": "Για μετάφραση την ιστοσελίδα"
+    "message": "To translate the site"
   },
   "msgThanksForUseExtension": {
-    "message": "Σας ευχαριστούμε που χρησιμοποιείτε αυτήν την επέκταση."
+    "message": "Thank you for using this extension."
   },
   "msgIWillBeGrateful": {
-    "message": "Θα είμαι ευγνώμων αν μπορείτε να κάνετε μια δωρεά."
+    "message": "I will be grateful if you can make a donation."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Πάντα μετάφραση αυτής της γλώσσας"
+    "message": "Always translate this language"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Εμφάνιση μεταφρασμένου κειμένου όταν αιωρείται σε αυτούς τους ιστότοπους"
+    "message": "Show translated text when hovering on these sites"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Κάντε το αναδυόμενο εικονίδιο μπλε όταν μεταφράζεται η ιστοσελίδα"
+    "message": "Make the pop-up icon blue when the site is translated"
   },
   "more": {
-    "message": "Περισσότερα"
+    "message": "More"
   },
   "less": {
-    "message": "Λιγότερα"
+    "message": "Less"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Να μην εμφανίζεται αν η γλώσσα σελίδας είναι η γλώσσα προορισμού"
+    "message": "Do not show if the page language is the target language"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Να μην εμφανίζεται αν η γλώσσα της σελίδας είναι άγνωστη"
+    "message": "Do not show if the page language is unknown"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Να μην εμφανίζεται αν η επιλεγμένη γλώσσα κειμένου είναι η γλώσσα προορισμού"
+    "message": "Do not show if the selected text language is the target language"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Να μην εμφανίζεται αν η επιλεγμένη γλώσσα κειμένου είναι άγνωστη"
+    "message": "Do not show if the selected text language is unknown"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Εμφάνιση μετάφρασης όταν αιωρείται πάνω σε αυτόν τον ιστότοπο"
+    "message": "Show translation when hovering over this site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Εμφάνιση μετάφρασης όταν αιωρείται πάνω από ιστότοπους"
+    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Εμφάνιση μεταφρασμένου κειμένου όταν αιωρείται πάνω από ιστότοπους με αυτές τις γλώσσες"
+    "message": "Show translated text when hovering over sites with these languages"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Χωρίς μετάφραση επιλεγμένου κειμένου"
+    "message": "Do not translate selected text"
   },
   "btnListen": {
-    "message": "Ακρόαση"
+    "message": "Listen"
   },
   "btnStopListening": {
-    "message": "Διακοπή ακρόασης"
+    "message": "Stop listening"
   },
   "btnApply": {
-    "message": "Εφαρμογή"
+    "message": "Apply"
   },
   "swapTranslationService": {
-    "message": "Εναλλαγή μεταξύ υπηρεσιών μετάφρασης"
+    "message": "Switch between translation services"
   },
   "swapPopup": {
-    "message": "Εναλλαγή μεταξύ παλιάς εμφάνισης και νέας"
+    "message": "Switch between the old interface and the new one"
   },
   "helpSwapInterface": {
-    "message": "Κλικ στο κουμπί για εναλλαγή μεταξύ παλιάς και νέας εμφάνισης."
+    "message": "Click this button to switch between the old and the new interface."
   },
   "lblTranslationService": {
-    "message": "Υπηρεσία Μετάφρασης"
+    "message": "Translation service"
   },
   "msgUseOldPopupInterface": {
-    "message": "Χρήση της παλιάς αναδυόμενης επιφάνειας"
+    "message": "Use the old popup interface"
   },
   "lblTranslateInterface": {
-    "message": "Μετάφραση περιβάλλοντος"
+    "message": "Translate the interface"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Εμφάνιση κουμπιού στη γραμμή διευθύνσεων"
+    "message": "Show button in the address bar"
   },
   "lblPageTranslationService": {
-    "message": "Υπηρεσία μετάφρασης σελίδας"
+    "message": "Page translation service"
   },
   "lblTextTranslationService": {
-    "message": "Υπηρεσία Μετάφρασης Κειμένου"
+    "message": "Text Translation Service"
   },
   "msgStorage": {
-    "message": "Χώρος αποθήκευσης"
+    "message": "Storage"
   },
   "lblTranslationCache": {
-    "message": "Cache μετάφρασης"
+    "message": "Translation cache"
   },
   "lblStorageUsed": {
-    "message": "Αποθ. χώρος σε χρήση:"
+    "message": "Storage used:"
   },
   "deleteTranslationCache": {
-    "message": "Διαγραφή cache μετάφρασης"
+    "message": "Delete translation cache"
   },
   "lblPersonalSettings": {
-    "message": "Προσωπικές ρυθμίσεις"
+    "message": "Personal settings"
   },
   "backupToFile": {
-    "message": "Αντίγραφο σε αρχείο"
+    "message": "Backup to file"
   },
   "restoreFromFile": {
-    "message": "Επαναφορά από αρχείο"
+    "message": "Restore from file"
   },
   "resetToDefault": {
-    "message": "Επαναφορά αρχικών ρυθμίσεων"
+    "message": "Restore default settings"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Θέλετε να διαγράψετε την cache μετάφρασης;"
+    "message": "Do you want to delete the translation cache?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Θέλετε να αντικαταστήσετε όλες τις υπάρχουσες ρυθμίσεις χρησιμοποιώντας τα δεδομένα αντιγράφου;"
+    "message": "Do you want to overwrite all existing settings using the backup data?"
   },
   "fileIsCorrupted": {
-    "message": "Το αρχείο φαίνεται να είναι κατεστραμμένο"
+    "message": "The file appears to be corrupted"
   },
   "doYouWantRestoreSettings": {
-    "message": "Θέλετε να επαναφέρετε την επέκταση στις αρχικές ρυθμίσεις;"
+    "message": "Do you want to restore the extension to its default settings?"
   },
   "lblTtsSpeed": {
-    "message": "Ταχύτητα ήχου κειμένου σε ομιλία"
+    "message": "Text-to-speech audio speed"
   },
   "lblEnableDeepL": {
-    "message": "Ενεργοποίηση DeepL ως υπηρεσία μετάφρασης κειμένου"
+    "message": "Enable DeepL as a text translation service"
   },
   "enterShortcut": {
-    "message": "Πληκτρολογήστε μια συντόμευση"
+    "message": "Type a shortcut"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Συμπερίληψη Ctrl ή Alt"
+    "message": "Include Ctrl or Alt"
   },
   "hotkeyError_letter": {
-    "message": "Πληκτρολογήστε ένα γράμμα"
+    "message": "Type a letter"
   },
   "hotkeyError_invalid": {
-    "message": "Μη έγκυρος συνδυασμός"
+    "message": "Invalid combination"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Εναλλαγή μεταξύ μεταφρασμένης και αρχικής σελίδας"
+    "message": "Switch between the translated and the original page"
   },
   "lblRestorePageToOriginal": {
-    "message": "Επαναφορά σελίδας στην αρχική"
+    "message": "Restore page to original"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Μετάφραση της σελίδας στη γλώσσα προορισμού"
+    "message": "Translate the page to the target language"
   },
   "lblTranslateTag_pre": {
-    "message": "Ενεργοποίηση μετάφρασης για την ετικέτα"
+    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "Do not sort the google translate results"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "Translate dynamically created content"
+  },
+  "calculatestorage": {
+    "message": "Calculate"
+  },
+  "donatewithpaypal": {
+    "message": "Donate With PayPal"
   }
 }

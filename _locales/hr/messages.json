@@ -1,275 +1,391 @@
 {
   "extensionName": {
-    "message": "Prevedi web stranice"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Prevedite svoju stranicu u stvarnom vremenu pomoću Googlea ili Yandexa."
+    "message": "Translate your page in real time using Google or Yandex."
   },
   "pageActionTitle": {
-    "message": "Prevedi ovu stranicu"
+    "message": "Translate this page"
   },
   "lblTranslate": {
-    "message": "Prevesti ovu stranicu?"
+    "message": "Translate this page?"
   },
   "lblTranslating": {
-    "message": "Prevođenje ..."
+    "message": "Translating ..."
   },
   "lblTranslated": {
-    "message": "Prevedeno"
+    "message": "Translated"
   },
   "lblError": {
-    "message": "Ova stranica ne može se prevesti"
+    "message": "This page could not be translated"
   },
   "lblAlwaysTranslate": {
-    "message": "Uvijek prevedi s"
+    "message": "Always translate from $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblTargetLanguage": {
-    "message": "Ciljani jezik"
+    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "btnReset": {
-    "message": "Resetiraj"
+    "message": "Reset"
   },
   "btnTranslate": {
-    "message": "Prevedi"
+    "message": "Translate"
   },
   "btnOptions": {
-    "message": "Opcije"
+    "message": "Options"
   },
   "btnRestore": {
-    "message": "Prikaži izvornik"
+    "message": "Show original"
   },
   "btnTryAgain": {
-    "message": "Pokušaj ponovo"
+    "message": "Try again"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Otvori u Google prevoditelju"
+    "message": "Open in google translator"
   },
   "btnDonate": {
-    "message": "Doniraj"
+    "message": "Donate"
   },
   "btnNeverTranslate": {
-    "message": "Nikada ne prevoditi ovu web stranicu"
+    "message": "Never translate this site"
   },
   "btnChangeLanguages": {
-    "message": "Promijeni jezik"
+    "message": "Change languages"
   },
   "btnMobileOriginal": {
-    "message": "Izvornik"
+    "message": "Original"
   },
   "btnMobileTranslated": {
-    "message": "Prevedeno"
+    "message": "Translated"
   },
   "btnMobileNeverTranslate": {
-    "message": "Nikada ne prevoditi ovu web stranicu"
+    "message": "Never translate this site"
   },
   "btnMobileDonate": {
-    "message": "Doniraj"
+    "message": "Donate"
   },
   "optionsNeverTranslate": {
-    "message": "Nikada ne prevoditi ove web stranice"
+    "message": "Never translate these sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatski prevedi ove jezike"
+    "message": "Automatically translate these languages"
   },
   "optionPopupConfig": {
-    "message": "Pokažite skočni prozor za mobilne uređaje"
+    "message": "Show the mobile popup"
   },
   "optionPopupAuto": {
-    "message": "Automatsko"
+    "message": "Automatically"
   },
   "optionPopupThreeFingers": {
-    "message": "Kad dodirnem zaslon s tri prsta"
+    "message": "When I touch three fingers on the screen"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Otvori u Yandex prevoditelju"
+    "message": "Open in yandex translate"
   },
   "lblOthers": {
-    "message": "Ostali"
+    "message": "Others"
   },
   "btnMoreOptions": {
-    "message": "Više mogućnosti"
+    "message": "More options"
   },
   "lblPlsDonate": {
-    "message": "Pomozite programeru donacijom"
+    "message": "Help the developer with a donation"
   },
   "msgTranslateFor": {
-    "message": "Prevedi na"
+    "message": "Translate to $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblShowContextMenu": {
-    "message": "Pokaži mogućnost prevođenja stranice u kontekstnom izborniku"
+    "message": "Show the option to translate the page in the context menu"
   },
   "msgYes": {
-    "message": "Da"
+    "message": "Yes"
   },
   "msgNo": {
-    "message": "Ne"
+    "message": "No"
   },
   "lblUseNewAlgorithm": {
-    "message": "Koristiti novi algoritam prijevoda?"
+    "message": "Use the new translation algorithm?"
   },
   "msgYesRecommended": {
-    "message": "Da (preporučeno)"
+    "message": "Yes (recommended)"
   },
   "msgNoUseWidgets": {
-    "message": "Ne (koristite widgete)"
+    "message": "No (use widgets)"
   },
   "optionsPageTitle": {
-    "message": "Prevedi web stranice - Opcije"
+    "message": "Translate Web Pages - Options"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Samo kada kliknem na \"Prevedi ovu stranicu\""
+    "message": "Only when I click \"Translate this site\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Još niste dodali stranice na ovaj popis."
+    "message": "You have not added any sites to this list."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Još niste dodali jezike na ovaj popis."
+    "message": "You have not added any languages to this list."
   },
   "btnAlwaysTranslate": {
-    "message": "Uvijek prevodi ovu stranicu"
+    "message": "Always translate this site"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Uvijek prevodi ove stranice"
+    "message": "Always translate these sites"
   },
   "msgDonateWithPaypal": {
-    "message": "Donirajte putem PayPala"
+    "message": "Donate with PayPal"
   },
   "lblDarkMode": {
-    "message": "Tamni način"
+    "message": "Dark Mode"
   },
   "lblShowReleaseNotes": {
-    "message": "Prikazujte napomene o izdanju prilikom ažuriranja"
+    "message": "Show release notes when updating"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Pokažite gumb za prijevod označenog teksta"
+    "message": "Show the button to translate the selected text"
   },
   "msgAutomatic": {
-    "message": "Automatski"
+    "message": "Automatic"
   },
   "msgTranslateSelectedText": {
-    "message": "Prevedi označeni tekst"
+    "message": "Translate selected text"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Pokaži mogućnost prevođenja označenog teksta u kontekstnom izborniku"
+    "message": "Show the option to translate the selected text in the context menu"
   },
   "lblNeverTranslateLangs": {
-    "message": "Nikada ne prevodi ove jezike"
+    "message": "Never translate these languages"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Nikada ne prevodi ovaj jezik"
+    "message": "Never translate this language"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Prikaži izvorni tekst prilikom lebdenja"
+    "message": "Show original text when hovering"
   },
   "msgLanguages": {
-    "message": "Jezici"
+    "message": "Languages"
   },
   "msgSites": {
-    "message": "Stranice"
+    "message": "Sites"
   },
   "msgTranslations": {
-    "message": "Prijevodi"
+    "message": "Translations"
   },
   "msgStyle": {
-    "message": "Stil"
+    "message": "Style"
   },
   "msgHotkeys": {
-    "message": "Prečaci"
+    "message": "Hotkeys"
   },
   "lblMakeDonation": {
-    "message": "Doniraj"
+    "message": "Make a donation"
   },
   "lblReleaseNotes": {
-    "message": "Napomene o izdanju"
+    "message": "Release Notes"
   },
   "lblReport": {
-    "message": "Prijavi problem"
+    "message": "Report a problem"
   },
   "lblSettings": {
-    "message": "Postavke"
+    "message": "Settings"
   },
   "lblAdd": {
-    "message": "Dodaj"
+    "message": "Add"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Prikaži prevedeni tekst prilikom lebdenja"
+    "message": "Show translated text when hovering"
   },
   "lblKeyboardShortcuts": {
-    "message": "Tipkovnički prečaci"
+    "message": "Keyboard shortcuts"
   },
   "msgToTranslateSites": {
-    "message": "Za prijevod stranice"
+    "message": "To translate the site"
   },
   "msgThanksForUseExtension": {
-    "message": "Zahvaljujemo na korištenju ovog proširenja."
+    "message": "Thank you for using this extension."
   },
   "msgIWillBeGrateful": {
-    "message": "Bit ću vam zahvalan ako možete dati donaciju."
+    "message": "I will be grateful if you can make a donation."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Uvijek prevedi ovaj jezik"
+    "message": "Always translate this language"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Prikaži prevedeni tekst prilikom lebdenja na ovim web stranicama"
+    "message": "Show translated text when hovering on these sites"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Neka ikona skočnog prozora bude plava kada se stranica prevede"
+    "message": "Make the pop-up icon blue when the site is translated"
   },
   "more": {
-    "message": "Više"
+    "message": "More"
   },
   "less": {
-    "message": "Manje"
+    "message": "Less"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Ne prikazuj ako je jezik stranice ciljni jezik"
+    "message": "Do not show if the page language is the target language"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Ne prikazuj ako je jezik stranice nepoznat"
+    "message": "Do not show if the page language is unknown"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Ne prikazuj ako je jezik odabranog teksta ciljni jezik"
+    "message": "Do not show if the selected text language is the target language"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Ne prikazuj ako je jezik odabranog teksta nepoznat"
+    "message": "Do not show if the selected text language is unknown"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Pokaži prijevod prilikom lebdenja nad ovom stranicom"
+    "message": "Show translation when hovering over this site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Prikaži prijevod prilikom lebdenja nad web stranicama na"
+    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Prikaži prevedeni tekst prilikom lebdenja nad stranicama s ovim jezicima"
+    "message": "Show translated text when hovering over sites with these languages"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Ne prevodi odabrani tekst"
+    "message": "Do not translate selected text"
   },
   "btnListen": {
-    "message": "Slušaj"
+    "message": "Listen"
   },
   "btnStopListening": {
-    "message": "Prestani slušati"
+    "message": "Stop listening"
   },
   "btnApply": {
-    "message": "Primijeni"
+    "message": "Apply"
   },
   "swapTranslationService": {
-    "message": "Prebaci između prevoditeljskih servisa"
+    "message": "Switch between translation services"
   },
   "swapPopup": {
-    "message": "Prebaci između starog i novog sučelja"
+    "message": "Switch between the old interface and the new one"
   },
   "helpSwapInterface": {
-    "message": "Kliknite ovaj gumb za prebacivanje između starog i novog sučelja."
+    "message": "Click this button to switch between the old and the new interface."
   },
   "lblTranslationService": {
-    "message": "Prevoditeljski servis"
+    "message": "Translation service"
   },
   "msgUseOldPopupInterface": {
-    "message": "Upotrijebite staro skočno sučelje"
+    "message": "Use the old popup interface"
   },
   "lblTranslateInterface": {
-    "message": "Prevedi sučelje"
+    "message": "Translate the interface"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Show button in the address bar"
+  },
+  "lblPageTranslationService": {
+    "message": "Page translation service"
+  },
+  "lblTextTranslationService": {
+    "message": "Text Translation Service"
+  },
+  "msgStorage": {
+    "message": "Storage"
+  },
+  "lblTranslationCache": {
+    "message": "Translation cache"
+  },
+  "lblStorageUsed": {
+    "message": "Storage used:"
+  },
+  "deleteTranslationCache": {
+    "message": "Delete translation cache"
+  },
+  "lblPersonalSettings": {
+    "message": "Personal settings"
+  },
+  "backupToFile": {
+    "message": "Backup to file"
+  },
+  "restoreFromFile": {
+    "message": "Restore from file"
+  },
+  "resetToDefault": {
+    "message": "Restore default settings"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Do you want to delete the translation cache?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Do you want to overwrite all existing settings using the backup data?"
+  },
+  "fileIsCorrupted": {
+    "message": "The file appears to be corrupted"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Do you want to restore the extension to its default settings?"
+  },
+  "lblTtsSpeed": {
+    "message": "Text-to-speech audio speed"
+  },
+  "lblEnableDeepL": {
+    "message": "Enable DeepL as a text translation service"
+  },
+  "enterShortcut": {
+    "message": "Type a shortcut"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Include Ctrl or Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Type a letter"
+  },
+  "hotkeyError_invalid": {
+    "message": "Invalid combination"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Switch between the translated and the original page"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Restore page to original"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Translate the page to the target language"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "Do not sort the google translate results"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "Translate dynamically created content"
+  },
+  "calculatestorage": {
+    "message": "Calculate"
+  },
+  "donatewithpaypal": {
+    "message": "Donate With PayPal"
   }
 }
