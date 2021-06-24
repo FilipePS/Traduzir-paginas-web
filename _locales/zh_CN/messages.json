@@ -1,24 +1,24 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "翻译网页"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "使用 Google 或 Yandex 实时翻译您的页面。"
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "翻译此页面"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "翻译此页面？"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "翻译中..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "译文"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "无法翻译此页面"
   },
   "lblAlwaysTranslate": {
     "message": "Always translate from $LANGUAGE_NAME$",
@@ -39,70 +39,70 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "重置"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "翻译"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "选项"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "显示原文"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "重试"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "在 Google 翻译中打开"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "捐助支持"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "永不翻译此网站"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "更改语言"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "原文"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "译文"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "永不翻译此网站"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "捐助支持"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "永不翻译这些网站"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatically translate these languages"
+    "message": "自动翻译这些语言"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "显示底部翻译栏"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "自动"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "当我三指轻触屏幕时"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "在 Yandex 中打开翻译"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "其他"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "更多选项"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "通过捐款帮助开发者"
   },
   "msgTranslateFor": {
     "message": "Translate to $LANGUAGE_NAME$",
@@ -114,145 +114,145 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "在右键菜单中显示翻译页面的选项"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "是"
   },
   "msgNo": {
-    "message": "No"
+    "message": "否"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "使用新的翻译算法？"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "是（推荐）"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "否（使用微件）"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "翻译网页 - 选项"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "当我点按\"翻译此网站\"时"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "您尚未将任何网站添加至此列表。"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "您尚未将任何语言添加至此列表。"
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "总是翻译此网站"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "总是翻译这些网站"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "PayPal 捐款"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "深色模式"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "更新后显示发行说明"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "显示翻译选中文本的按钮"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "自动"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "翻译选中文本"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "在右键菜单中显示翻译选中文本的选项"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "永不翻译这些语言"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "永不翻译此语言"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "悬停显示原文"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "语言"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "网站"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "翻译"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "样式"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "热键"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "捐助支持"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "发行说明"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "反馈问题"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "设置"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "添加"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "悬停显示译文"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "键盘快捷键"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "翻译该网站"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "感谢您使用此扩展。"
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "若您能够提供捐助，我将不胜感激。"
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "总是翻译此语言"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "在这些网站悬停显示译文"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "若网站已翻译，则将地址栏中图标变为蓝色"
   },
   "more": {
-    "message": "More"
+    "message": "更多"
   },
   "less": {
-    "message": "Less"
+    "message": "更少"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "若页面语言与目标语言一致，则不显示"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "若页面语言未知，则不显示"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "若选中文本语言与目标语言一致，则不显示"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "若选中文本语言未知，则不显示"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "在此网站悬停显示译文"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
@@ -264,109 +264,109 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "在这些语言的网站悬停显示翻译"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "不要翻译选中文本"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "朗读"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "停止朗读"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "应用"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "切换翻译服务"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "切换新旧界面"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "点击此按钮即可切换新旧界面"
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "翻译服务"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "使用旧的弹出界面"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "翻译界面"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "在地址栏中显示按钮"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "页面翻译服务"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "文本翻译服务"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "存储"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "翻译缓存"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "已用存储空间："
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "删除翻译缓存"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "个人设置"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "备份至文件"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "从文件恢复"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "初始化设置"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "要删除翻译缓存吗？"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "要使用备份数据覆盖当前所有设置吗？"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "该文件似乎已损坏"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "要恢复扩展至默认设置吗？"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "文字转语音的语速"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "启用基于 DeepL 的文本翻译服务"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "输入一个快捷键"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "包含 Ctrl 或 Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "输入一个字母"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "无效的组合键"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "在页面的译文和原文间切换"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "恢复页面为原文"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "翻译页面为目标语言"
   },
   "lblTranslateTag_pre": {
     "message": "Enable translation for the tag $HTML_TAG_NAME$",
