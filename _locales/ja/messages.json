@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "ウェブページを翻訳"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "GoogleやYandexを使ってリアルタイムでページを翻訳します。"
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "このページを翻訳"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "このページを翻訳しますか？"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "翻訳中..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "翻訳済み"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "ページを翻訳できませんでした"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$のサイトを常に翻訳する",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "翻訳先の言語 $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,73 +39,73 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "リセット"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "翻訳"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "オプション"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "原文を表示"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "再試行"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Google翻訳で開く"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "寄付"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "このサイトを翻訳しない"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "言語を変更"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "原文"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "翻訳済み"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "このサイトを翻訳しない"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "寄付"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "翻訳しないサイト"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatically translate these languages"
+    "message": "自動的に翻訳する言語"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "モバイルで翻訳ポップアップを表示"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "自動"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "画面を3本指でタップしたとき"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Yandex翻訳で開く"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "その他"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "拡張機能の設定"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "開発者に寄付する"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$に翻訳",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,148 +114,148 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "コンテキストメニューに「ページを翻訳する」を表示"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "有効"
   },
   "msgNo": {
-    "message": "No"
+    "message": "無効"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "新しい翻訳アルゴリズムを使用"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "はい（推奨）"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "いいえ（ウィジェットを使用）"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "ウェブページを翻訳 - 設定"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "「このサイトを翻訳」をクリックした時のみ"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "まだサイトが追加されていません"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "まだ言語が追加されていません"
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "このサイトを常に翻訳する"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "常に翻訳するサイト"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "PayPalで寄付"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "ダークモード"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "拡張機能が更新されたときにリリースノートを表示"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "選択したテキストを翻訳するボタンを表示"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "自動"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "選択したテキストを翻訳"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "コンテキストメニューに「選択したテキストを翻訳」を表示"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "翻訳しない言語"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "この言語を翻訳しない"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "マウスオーバー時に原文を表示"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "言語"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "サイト"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "翻訳"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "外観"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "ショートカット"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "寄付する"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "リリースノート"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "問題の報告"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "設定"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "追加"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "マウスオーバーしたテキストを翻訳する"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "キーボードショートカット"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "でサイトを翻訳"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "この拡張機能をご利用いただきありがとうございます。"
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "もしご寄付いただければ、本当に感謝いたします。"
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "この言語を常に翻訳する"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "マウスオーバーしたテキストを翻訳するサイト"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "サイトを翻訳した時にポップアップアイコンを青くする"
   },
   "more": {
-    "message": "More"
+    "message": "増やす"
   },
   "less": {
-    "message": "Less"
+    "message": "減らす"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "ページの言語が翻訳先言語と同じ場合は表示しない"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "ページの言語が不明な場合は表示しない"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "選択したテキストの言語が翻訳先言語と同じ場合は表示しない"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "選択したテキストの言語が不明な場合は表示しない"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "このサイトでマウスオーバーしたテキストを翻訳する"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$のサイトでマウスオーバーしたテキストを翻訳する",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,112 +264,112 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "この言語のサイトでマウスオーバーしたテキストを翻訳"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "選択したテキストを翻訳しない"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "聴く"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "停止"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "適用"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "翻訳サービスを切り替える"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "古いインターフェースと新しいインターフェースを切り替える"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "このボタンで、古いインターフェースと新しいインターフェースを切り替えることができます。"
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "翻訳サービス"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "古いポップアップインターフェースを使用"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "インターフェースを翻訳"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "アドレスバーにボタンを表示"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "ページの翻訳に使用する翻訳サービス"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "テキストの翻訳に使用する翻訳サービス"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "ストレージ"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "翻訳キャッシュ"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "使用している容量:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "翻訳キャッシュを削除"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "個人設定"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "ファイルにバックアップ"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "ファイルから復元"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "初期設定に戻す"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "翻訳キャッシュを削除しますか？"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "バックアップファイルの設定を読み込みますか？現在の設定はすべて上書きされます。"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "ファイルが破損しているようです。"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "拡張機能を初期設定に戻しますか？"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "音声読み上げの速度"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "テキストの翻訳サービスとしてDeepLを追加"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "ショートカットを入力"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "CtrlキーかAltキーを含めてください"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "文字を入力してください"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "使用できない組み合わせです"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "翻訳と原文を切り替える"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "ページを原文に戻す"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "ページを翻訳先の言語に翻訳"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "$HTML_TAG_NAME$タグの内容を翻訳する",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,15 +377,15 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Google翻訳の結果を並べ替えない"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "動的に読み込まれたコンテンツを翻訳"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "計算"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "PayPalで寄付"
   }
 }
