@@ -319,8 +319,9 @@ twpConfig.onReady(function() {
                 for (let j = 0; j < results[i].length; j++) {
                     if (nodesToTranslatesNow[i][j]) {
                         const nodeInfo = nodesToTranslatesNow[i][j]
-                        nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent })
-                        nodeInfo.node.textContent = results[i][j] + " "
+                        const translated = results[i][j] + " "
+                        nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent, translated })
+                        nodeInfo.node.textContent = translated
                         // In some case, results items count is over original node count
                         // Rest results append to last node
                         if (nodesToTranslatesNow[i].length - 1 === j && results[i].length > j) {
@@ -335,8 +336,9 @@ twpConfig.onReady(function() {
                 for (const j in nodesToTranslatesNow[i]) {
                     if (results[i][j]) {
                         const nodeInfo = nodesToTranslatesNow[i][j]
-                        nodesToRestore.push({node: nodeInfo.node, original: nodeInfo.node.textContent})
-                        nodeInfo.node.textContent = results[i][j] + " "
+                        const translated = results[i][j] + " "
+                        nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent, translated })
+                        nodeInfo.node.textContent = translated
                     }
                 }
             }    
@@ -485,10 +487,12 @@ twpConfig.onReady(function() {
         
         
         for (const ntr of nodesToRestore) {
-            ntr.node.textContent = ntr.original
+            if (ntr.node.textContent == ntr.translated) {
+                ntr.node.textContent = ntr.original
+            }
         }
         nodesToRestore = []
-        
+        //TODO não restaurar atributos que foram modificados
         for (const ati of attributesToTranslate) {
             if (ati.isTranslated) {
                 ati.node.setAttribute(ati.attrName, ati.original)
