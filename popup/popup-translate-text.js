@@ -90,6 +90,7 @@ twpConfig.onReady(function () {
 
     const sGoogle = document.getElementById("sGoogle")
     const sYandex = document.getElementById("sYandex")
+    const sBing = document.getElementById("sBing")
     const sDeepL = document.getElementById("sDeepL")
 
     function setCaretAtEnd() {
@@ -116,6 +117,7 @@ twpConfig.onReady(function () {
 
         sGoogle.classList.remove("selected")
         sYandex.classList.remove("selected")
+        sBing.classList.remove("selected")
         sDeepL.classList.remove("selected")
 
         sGoogle.classList.add("selected")
@@ -127,9 +129,22 @@ twpConfig.onReady(function () {
 
         sGoogle.classList.remove("selected")
         sYandex.classList.remove("selected")
+        sBing.classList.remove("selected")
         sDeepL.classList.remove("selected")
 
         sYandex.classList.add("selected")
+    }
+    sBing.onclick = () => {
+        currentTextTranslatorService = "bing"
+        twpConfig.set("textTranslatorService", "bing")
+        translateText()
+
+        sGoogle.classList.remove("selected")
+        sYandex.classList.remove("selected")
+        sBing.classList.remove("selected")
+        sDeepL.classList.remove("selected")
+
+        sBing.classList.add("selected")
     }
     sDeepL.onclick = () => {
         currentTextTranslatorService = "deepl"
@@ -138,6 +153,7 @@ twpConfig.onReady(function () {
 
         sGoogle.classList.remove("selected")
         sYandex.classList.remove("selected")
+        sBing.classList.remove("selected")
         sDeepL.classList.remove("selected")
 
         sDeepL.classList.add("selected")
@@ -214,6 +230,8 @@ twpConfig.onReady(function () {
         sYandex.classList.add("selected")
     } else if (currentTextTranslatorService == "deepl") {
         sDeepL.classList.add("selected")
+    } else if (currentTextTranslatorService == "bing") {
+        sBing.classList.add("selected")
     } else {
         sGoogle.classList.add("selected")
     }

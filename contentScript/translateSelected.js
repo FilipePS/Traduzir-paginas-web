@@ -248,6 +248,7 @@ twpConfig.onReady(function() {
                     <ul>
                         <li title="Google" id="sGoogle">g</li>
                         <li title="Yandex" id="sYandex">y</li>
+                        <li title="Bing" id="sBing">b</li>
                         <li title="DeepL" id="sDeepL" hidden>d</li>
                         <li style="padding-top: 6px; padding-bottom: 2px;" title="Listen" data-i18n-title="btnListen" id="listen">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -375,6 +376,7 @@ twpConfig.onReady(function() {
         
         const sGoogle = shadowRoot.getElementById("sGoogle")
         const sYandex = shadowRoot.getElementById("sYandex")
+        const sBing = shadowRoot.getElementById("sBing")
         const sDeepL = shadowRoot.getElementById("sDeepL")
 
         let translateNewInputTimerHandler
@@ -400,6 +402,7 @@ twpConfig.onReady(function() {
 
             sGoogle.classList.remove("selected")
             sYandex.classList.remove("selected")
+            sBing.classList.remove("selected")
             sDeepL.classList.remove("selected")
 
             sGoogle.classList.add("selected")
@@ -411,9 +414,22 @@ twpConfig.onReady(function() {
 
             sGoogle.classList.remove("selected")
             sYandex.classList.remove("selected")
+            sBing.classList.remove("selected")
             sDeepL.classList.remove("selected")
 
             sYandex.classList.add("selected")
+        }
+        sBing.onclick = () => {
+            currentTextTranslatorService = "bing"
+            twpConfig.set("textTranslatorService", "bing")
+            translateNewInput()
+
+            sGoogle.classList.remove("selected")
+            sYandex.classList.remove("selected")
+            sBing.classList.remove("selected")
+            sDeepL.classList.remove("selected")
+
+            sBing.classList.add("selected")
         }
         sDeepL.onclick = () => {
             currentTextTranslatorService = "deepl"
@@ -422,6 +438,7 @@ twpConfig.onReady(function() {
 
             sGoogle.classList.remove("selected")
             sYandex.classList.remove("selected")
+            sBing.classList.remove("selected")
             sDeepL.classList.remove("selected")
 
             sDeepL.classList.add("selected")
@@ -510,6 +527,8 @@ twpConfig.onReady(function() {
             sYandex.classList.add("selected")
         } else if (currentTextTranslatorService == "deepl") {
             sDeepL.classList.add("selected")
+        } else if (currentTextTranslatorService == "bing") {
+            sBing.classList.add("selected")
         } else {
             sGoogle.classList.add("selected")
         }

@@ -89,16 +89,21 @@ var translationCache = {}
 
     let googleCache = {}
     let yandexCache = {}
+    let bingCache = {}
 
     let googleDB = null
     let yandexDB = null
+    let bingDB = null
 
     translationCache.google = {}
     translationCache.yandex = {}
+    translationCache.bing = {}
 
     function getCache(translationService) {
         if (translationService === "yandex") {
             return yandexCache
+        } else if (translationService === "bing") {
+            return bingCache
         } else {
             return googleCache
         }
@@ -107,6 +112,8 @@ var translationCache = {}
     function getDB(translationService) {
         if (translationService === "yandex") {
             return yandexDB
+        } else if (translationService === "bing") {
+            return bingDB
         } else {
             return googleDB
         }
@@ -120,6 +127,9 @@ var translationCache = {}
             case "yandexCache":
                 yandexDB = db
                 break
+            case "bingCache":
+                bingDB = db
+                break;
             default:
                 break
         }
@@ -233,6 +243,10 @@ var translationCache = {}
         return translationCache.get("yandex", source, targetLanguage)
     }
 
+    translationCache.bing.get = function (source, targetLanguage) {
+        return translationCache.get("bing", source, targetLanguage)
+    }
+
     translationCache.set = async function (translationService, source, translated, targetLanguage) {
         const cache = getCache(translationService)
 
@@ -278,15 +292,20 @@ var translationCache = {}
         return translationCache.set("yandex", source, translated, targetLanguage)
     }
 
+    translationCache.bing.set = function (source, translated, targetLanguage) {
+        return translationCache.set("bing", source, translated, targetLanguage)
+    }
+
     openIndexeddb("googleCache", 1)
     openIndexeddb("yandexCache", 1)
+    openIndexeddb("bingCache", 1)
 
 
     var promiseCalculatingStorage = null
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "getCacheSize") {
             if (!promiseCalculatingStorage) {
-                promiseCalculatingStorage = Promise.all([getDatabaseSize("googleCache"), getDatabaseSize("yandexCache")])
+                promiseCalculatingStorage = Promise.all([getDatabaseSize("googleCache"), getDatabaseSize("yandexCache"), getDatabaseSize("bingCache")])
             }
 
             promiseCalculatingStorage.then(results => {
@@ -300,6 +319,7 @@ var translationCache = {}
         } else if (request.action === "deleteTranslationCache") {
             indexedDB.deleteDatabase("googleCache")
             indexedDB.deleteDatabase("yandexCache")
+            indexedDB.deleteDatabase("bingCache")
 
             chrome.runtime.reload()
         }

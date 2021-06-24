@@ -147,13 +147,69 @@ var translationService = {}
         })
     }
 
+    let lastBingRequestSIDTime = null
+    var bingTranslateSID = null
+    let bingSIDNotFound = false
+    function getBingSID() {
+        return new Promise(resolve => {
+            let updateBingSid = false
+            if (lastBingRequestSIDTime) {
+                const date = new Date();
+                if (bingTranslateSID) {
+                    date.setHours(date.getHours() - 12)
+                } else if (bingSIDNotFound) {
+                    date.setMinutes(date.getMinutes() - 30)
+                } else {
+                    date.setMinutes(date.getMinutes() - 2)
+                }
+                if (date.getTime() > lastBingRequestSIDTime) {
+                    updateBingSid = true
+                }
+            } else {
+                updateBingSid = true
+            }
+            
+            if (updateBingSid) {
+                lastBingRequestSIDTime = Date.now()
+
+                const http = new XMLHttpRequest
+                http.open("GET", "https://www.bing.com/translator")
+                http.send()
+                http.onload = e => {
+                    const result = http.responseText.match(/params_RichTranslateHelper\s=\s\[[^\]]+/)
+                    if (result && result[0] && result[0].length > 50) {
+                        const params_RichTranslateHelper = result[0].substring("params_RichTranslateHelper = [".length).split(",")
+                        if (params_RichTranslateHelper && params_RichTranslateHelper[0] && params_RichTranslateHelper[1] && parseInt(params_RichTranslateHelper[0])) {
+                            bingTranslateSID = `&token=${params_RichTranslateHelper[1].substring(1, params_RichTranslateHelper[1].length-1)}&key=${parseInt(params_RichTranslateHelper[0])}&isAuthv2=false`
+                            bingSIDNotFound = false
+                        } else {
+                            bingSIDNotFound = true
+                        }
+                    } else {
+                        bingSIDNotFound = true
+                    }
+                    resolve()
+                }
+                http.onerror = e => {
+                    console.error(e)
+                    resolve()
+                }
+            } else {
+                resolve()
+            }
+        })
+    }
+    
     const googleTranslationInProgress = {}
     const yandexTranslationInProgress = {}
+    const bingTranslationInProgress = {}
 
     function getTranslationInProgress(translationService, targetLanguage) {
         let translationInProgress
         if (translationService === "yandex") {
             translationInProgress = yandexTranslationInProgress
+        } else if (translationInProgress === "bing") {
+            translationInProgress = bingTranslationInProgress
         } else {
             translationInProgress = googleTranslationInProgress
         }
@@ -167,6 +223,7 @@ var translationService = {}
 
     translationService.google = {}
     translationService.yandex = {}
+    translationService.bing = {}
     translationService.deepl = {}
 
     async function translateHTML(translationService, targetLanguage, translationServiceURL, sourceArray, requestBody, textParamName, translationProgress, dontSaveInCache = false) {
@@ -229,11 +286,16 @@ var translationService = {}
                     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
                     http.responseType = "json"
                     http.send(requests[idx].requestBody)
-                } else {
+                } else if (translationService === "yandex") {
                     http.open("GET", translationServiceURL + requests[idx].requestBody)
                     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
                     http.responseType = "json"
                     http.send(requests[idx].requestBody)
+                } else if (translationService === "bing") {
+                    http.open("POST", "https://www.bing.com/ttranslatev3?isVertical=1")
+                    http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+                    http.responseType = "json"
+                    http.send(`&fromLang=auto-detect${requests[idx].requestBody}&to=${targetLanguage}${bingTranslateSID}`)
                 }
 
                 http.onload = e => {
@@ -241,12 +303,14 @@ var translationService = {}
                     let responseJson
                     if (translationService === "yandex") {
                         responseJson = response.text
-                    } else {
+                    } else if (translationService === "google") {
                         if (typeof response[0] == "string") {
                             responseJson = response
                         } else {
                             responseJson = response.map(value => value[0])
                         }
+                    } else if (translationService === "bing") {
+                        responseJson = [http.response[0].translations[0].text]
                     }
 
                     requests[idx].transInfos.forEach((transInfo, index) => {
@@ -556,6 +620,24 @@ var translationService = {}
             .then(results => results[0])
     }
 
+    translationService.bing.translateSingleText = async function (source, targetLanguage, dontSaveInCache = false) {
+        await getBingSID()
+
+        return await translateHTML(
+            "bing",
+            targetLanguage,
+            "https://www.bing.com/ttranslatev3?isVertical=1",
+            [source],
+            "",
+            "text",
+            getTranslationInProgress("bing", targetLanguage),
+            dontSaveInCache
+        )
+        .then(thisTranslationProgress => {
+            return thisTranslationProgress[0].translated
+        })
+    }
+
     var DeepLTab = null
     translationService.deepl.translateSingleText = function (source, targetlanguage, dontSaveInCache = false) {
         //*
@@ -674,6 +756,8 @@ var translationService = {}
                 translateSingleText = translationService.deepl.translateSingleText
             } else if (request.translationService === "yandex") {
                 translateSingleText = translationService.yandex.translateSingleText
+            } else if (request.translationService === "bing") {
+                translateSingleText = translationService.bing.translateSingleText
             } else {
                 translateSingleText = translationService.google.translateSingleText
             }
