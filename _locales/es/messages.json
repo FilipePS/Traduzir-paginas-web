@@ -105,7 +105,7 @@
     "message": "Ayuda al desarrollador con una donación"
   },
   "msgTranslateFor": {
-    "message": "Traducir a",
+    "message": "Traducir a $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
