@@ -21,10 +21,22 @@
     "message": "Această pagină nu a putut fi tradusă"
   },
   "lblAlwaysTranslate": {
-    "message": "Tradu mereu de la"
+    "message": "Tradu mereu de la",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblTargetLanguage": {
-    "message": "Limba de destinație"
+    "message": "Limba de destinație",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "btnReset": {
     "message": "Restabilește"
@@ -93,7 +105,13 @@
     "message": "Ajută programatorul cu o donație"
   },
   "msgTranslateFor": {
-    "message": "Tradu în"
+    "message": "Tradu în",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblShowContextMenu": {
     "message": "Arată opțiunea de a traduce pagina la clic cu tasta din dreapta"
@@ -237,7 +255,13 @@
     "message": "Arată traducerea cînd pui săgeata pe acest sit"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Arată traducerea cînd pui săgeata pe situri web în"
+    "message": "Arată traducerea cînd pui săgeata pe situri web în",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblShowTranslatedHoveringLangs": {
     "message": "Arată textul tradus cînd pui săgeata pe situri care au aceste limbi"
@@ -345,6 +369,23 @@
     "message": "Tradu pagina în limba dorită"
   },
   "lblTranslateTag_pre": {
-    "message": "Activează traducerea etichetei"
+    "message": "Activează traducerea etichetei",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "Do not sort the google translate results"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "Translate dynamically created content"
+  },
+  "calculatestorage": {
+    "message": "Calculate"
+  },
+  "donatewithpaypal": {
+    "message": "Donate With PayPal"
   }
 }
