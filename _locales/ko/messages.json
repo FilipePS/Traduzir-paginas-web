@@ -3,22 +3,22 @@
     "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "보고 계신 페이지를 실시간으로 Google이나 Yandex를 사용하여 번역합니다."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "이 페이지 번역"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "이 페이지를 번역하시겠습니까?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "번역 중..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "번역됨"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "이 페이지를 번역할 수 없습니다"
   },
   "lblAlwaysTranslate": {
     "message": "Always translate from $LANGUAGE_NAME$",
@@ -39,70 +39,70 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "초기화"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "번역"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "옵션"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "원본 보기"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "다시 시도"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Google 번역에서 열기"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "기부"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "이 사이트 번역 안 함"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "언어 변경"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "원본"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "번역됨"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "이 사이트 번역 안 함"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "기부"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "번역하지 않을 사이트 목록"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatically translate these languages"
+    "message": "항상 자동으로 번역할 언어 목록"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "모바일 팝업 표시"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "자동"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "화면을 손가락 세 개로 터치했을 때"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Yandex Translate에서 열기"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "기타"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "추가 옵션"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "기부하여 개발자 돕기"
   },
   "msgTranslateFor": {
     "message": "Translate to $LANGUAGE_NAME$",
@@ -114,145 +114,145 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "상황에 맞는 메뉴에 페이지 번역 옵션 표시"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "예"
   },
   "msgNo": {
-    "message": "No"
+    "message": "아니오"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "새 번역 알고리즘을 사용하시겠습니까?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "예 (권장)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "아니오 (위젯 사용)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "웹 페이지 번역기 - 옵션"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "\"이 사이트 번역\" 버튼을 클릭했을 때만"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "이 목록에 사이트를 추가하지 않았습니다."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "이 목록에 언어를 추가하지 않았습니다."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "이 사이트 항상 번역"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "항상 자동으로 번역할 사이트 목록"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "PayPal로 기부"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "야간 모드"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "부가 기능 업데이트 시 릴리스 정보 표시"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "선택한 텍스트에 번역 버튼 표시"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "자동"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "선택한 텍스트 번역"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "상황에 맞는 메뉴에 선택한 텍스트 번역 옵션 표시"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "번역하지 않을 언어 목록"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "이 언어 번역 안 함"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "마우스를 가져다 대면 원본 텍스트 표시"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "언어"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "사이트"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "번역"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "스타일"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "단축키"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "기부하기"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "릴리스 정보"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "문제 보고하기"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "설정"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "추가"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "마우스를 가져다 대면 번역된 텍스트 표시"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "키보드 단축키"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "사이트 번역"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "이 확장 기능을 사용해주셔서 감사합니다."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "기부해 주시면 감사하겠습니다."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "이 언어 항상 번역"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "마우스를 가져다 대면 번역된 텍스트를 표시할 사이트 목록"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "사이트가 번역되면 팝업 아이콘을 파란색으로 표시"
   },
   "more": {
-    "message": "More"
+    "message": "더보기"
   },
   "less": {
-    "message": "Less"
+    "message": "간단히"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "페이지의 언어가 대상 언어와 같으면 표시 안 함"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "페이지의 언어를 알 수 없으면 표시 안 함"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "선택한 텍스트의 언어가 대상 언어와 같으면 표시 안 함"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "선택한 텍스트의 언어를 알 수 없으면 표시 안 함"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "이 사이트에 마우스를 가져다 대면 번역 표시"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
@@ -264,109 +264,109 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "마우스를 가져다 대면 번역된 텍스트를 표시할 사이트의 언어 목록"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "선택한 텍스트를 번역 안 함"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "듣기"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "듣기 중지"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "적용"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "번역 서비스 간 전환"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "이전 인터페이스와 새 인터페이스 간 전환"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "이전 인터페이스와 새 인터페이스 간에 전환하려면 이 버튼을 클릭하세요."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "번역 서비스"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "이전 팝업 인터페이스 사용"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "인터페이스 번역"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "주소 표시줄에 버튼 표시"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "페이지 번역 서비스"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "텍스트 번역 서비스"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "저장소"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "번역 캐시"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "사용한 저장용량:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "번역 캐시 삭제"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "개인 설정"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "파일로 백업"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "파일에서 복원"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "기본 설정 복원"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "번역 캐시를 삭제하시겠습니까?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "백업 데이터를 사용하여 모든 기존 설정을 덮어쓰시겠습니까?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "파일이 손상된 것 같습니다"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "확장 기능을 기본 설정으로 복원하시겠습니까?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "텍스트 음성 변환 오디오 속도"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "텍스트 번역 서비스로 DeepL 활성화"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "단축키 입력"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Ctrl 또는 Alt 포함"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "문자 입력"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "잘못된 조합"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "번역된 페이지와 원본 페이지 간 전환"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "페이지를 원본으로 복원"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "페이지를 대상 언어로 번역"
   },
   "lblTranslateTag_pre": {
     "message": "Enable translation for the tag $HTML_TAG_NAME$",
