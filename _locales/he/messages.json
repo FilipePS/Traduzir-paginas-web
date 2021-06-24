@@ -1,24 +1,24 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "תרגום דפי אינטרנט"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "תרגום דפי האינטרנט בזמן אמת באמצעות גוגל או יאנדקס."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "תרגם דף זה"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "לתרגם את הדף הזה?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "מתרגם ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "תורגם"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "לא ניתן לתרגם דף זה"
   },
   "lblAlwaysTranslate": {
     "message": "Always translate from $LANGUAGE_NAME$",
@@ -39,70 +39,70 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "איפוס"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "תרגם"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "אפשרויות"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "הצג את המקור"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "נסה שנית"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "פתח בגוגל תרגום"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "תרומה"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "לעולם אל תתרגם דף זה"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "שינוי שפות"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "מקורי"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "תורגם"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "לעולם אל תתרגם דף זה"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "תרומה"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "לעולם אל תתרגם דפים אלו"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatically translate these languages"
+    "message": "תרגם אוטומטית שפות אלו"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "הראה את חלון הקופץ לנייד"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "אוטומטית"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "בלחיצה על המסך עם שלוש אצבעות"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "פתח ביאנדקס תרגום"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "שונות"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "אפשרויות נוספות"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "תרמו ועזרו למפתח"
   },
   "msgTranslateFor": {
     "message": "Translate to $LANGUAGE_NAME$",
@@ -114,145 +114,145 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "הראה את האפשרות לתרגם את הדף בתפריט ההקשר"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "כן"
   },
   "msgNo": {
-    "message": "No"
+    "message": "לא"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "להשתמש באלגוריתם תרגום החדש?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "כן (מומלץ)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "לא (השתמש ביישומונים)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "תרגם דפי אינטרנט - אפשרויות"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "רק כשאני לוחץ על \"תרגם אתר זה\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "לא הוספת אתרים לרשימה זו."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "לא הוספת שפות לרשימה זו."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "תרגם תמיד אתר זה"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "תרגם תמיד אתרים אלה"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "תרום באמצעות PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "מצב כהה"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "הראה הערות שחרור בעת העדכון"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "הראה את הלחצן לתרגום הטקסט שנבחר"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "אוֹטוֹמָטִי"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "תרגם טקסט נבחר"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "הראה את האפשרות לתרגם את הדף בתפריט ההקשר"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "לעולם אל תתרגם דפים אלו"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "לעולם אל תתרגם דפים אלו"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "הראה טקסט מקורי בעת ריחוף"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "שפות"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "אתרים"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "תרגומים"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "סִגְנוֹן"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "מקשי קיצור"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "לתרום"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "מכתבי שחרור"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "לדווח על בעיה"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "הגדרות"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "לְהוֹסִיף"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "הראה טקסט מתורגם בעת ריחוף"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "קיצורי דרך במקלדת"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "לתרגום האתר"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "תודה על השימוש בתוסף זה."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "אני אהיה אסיר תודה אם תוכל להתרום."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "תרגם תמיד את השפה הזו"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "הראה טקסט מתורגם בעת ריחוף באתרים אלה"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "הפוך את סמל הקופץ לכחול כאשר האתר מתורגם"
   },
   "more": {
-    "message": "More"
+    "message": "יותר"
   },
   "less": {
-    "message": "Less"
+    "message": "פָּחוּת"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "אל תראה אם ​​שפת העמוד היא שפת היעד"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "אל תציג אם שפת העמוד אינה ידועה"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "אל תציג אם שפת הטקסט שנבחרה היא שפת היעד"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "אל תציג אם שפת הטקסט שנבחרה אינה ידועה"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "הראה תרגום בעת ריחוף מעל אתר זה"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
@@ -264,34 +264,34 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "הראה טקסט מתורגם כשאתה מרחף מעל אתרים עם שפות אלה"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "אל תתרגם את הטקסט שנבחר"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "להקשיב"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "תפסיק להקשיב"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "להגיש מועמדות"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "מעבר בין שירותי תרגום"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "עבור בין הממשק הישן לחדש"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "לחץ על כפתור זה כדי לעבור בין הממשק הישן לחדש."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "שירות תרגום"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "השתמש בממשק הקופץ הישן"
   },
   "lblTranslateInterface": {
     "message": "Translate the interface"
