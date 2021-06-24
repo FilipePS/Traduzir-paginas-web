@@ -3,22 +3,22 @@
     "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Перекладіть свою сторінку в реальному часі за допомогою Google або Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Перекласти цю сторінку"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Перекласти цю сторінку?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Перекладається..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Перекладено"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Цю сторінку не вдалося перекласти"
   },
   "lblAlwaysTranslate": {
     "message": "Always translate from $LANGUAGE_NAME$",
@@ -39,70 +39,70 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Скинути"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Перекласти"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Опції"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Показати оригінал"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Спробувати знову"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Відкрити в перекладачі Google"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Матеріально подякувати"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Ніколи не перекладати цей сайт"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Змінити мову"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Оригінал"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Перекладено"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Ніколи не перекладати цей сайт"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Матеріально подякувати"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Ніколи не перекладати цей сайт"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatically translate these languages"
+    "message": "Автоматично перекладати ці мови"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Показати спливаюче вікно для мобільних пристроїв"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Автоматично"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Коли я торкаюся трьома пальцями на екрані"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Відкрити в перекладі Yandex"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Інші"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "Більше опцій"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Матеріально подякувати розробнику"
   },
   "msgTranslateFor": {
     "message": "Translate to $LANGUAGE_NAME$",
@@ -114,145 +114,145 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Показувати опцію для перекладу сторінки в контекстному меню"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Так"
   },
   "msgNo": {
-    "message": "No"
+    "message": "Ні"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "Використовувати новий алгоритм перекладу?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "Так (рекомендується)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "Ні (використовувати віджети)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "Translate Web Pages - Параметри"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Лише коли я натисну кнопку \"Перекласти цей сайт\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Ви не додали жодного веб-сайту до цього списку."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Ви не додали жодної мови до цього списку."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Завжди перекладати цей сайт"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Завжди перекладати ці сайти"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Зробити пожертву через PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Темний режим"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Показувати нотатки щодо випуску під час оновлення"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Відображати кнопку для перекладу виділеного тексту"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Автоматичний"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "Перекласти виділений текст"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Показувати опцію для перекладу сторінки в контекстному меню"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Ніколи не перекладати ці мови"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Ніколи не перекладайте цю мову"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Показувати оригінал під час наведення курсор"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "Мови"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "Сайти"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "Переклади"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "Стиль"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Гарячі клавіші"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "Зробіть пожертву"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Примітки до випуску"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "Повідомити про проблему"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "Налаштування"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "Додати"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Показувати перекладений текст при наведенні курсору"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Гарячі клавіши"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Для перекладу сайту"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Дякуємо за використання цього розширення."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Буду вдячний, якщо ви зробите пожертву."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Завжди перекладайте цю мову"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Показувати перекладений текст при наведенні курсору на цих сайтах"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Зробіть спливаючу піктограму блакитною, коли сайт буде перекладено"
   },
   "more": {
-    "message": "More"
+    "message": "Більше"
   },
   "less": {
-    "message": "Less"
+    "message": "Менше"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Не показувати, якщо мова сторінки є цільовою мовою"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "Не показувати, якщо мова сторінки невідома"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Не показувати, чи вибрана мова тексту є цільовою мовою"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Не показувати, якщо вибрана мова тексту невідома"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Показати переклад під час наведення курсора на цей сайт"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
@@ -264,34 +264,34 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Показувати перекладений текст під час наведення курсора на сайти з цими мовами"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Не перекладати вибраний текст"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Слухай"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Перестань слухати"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Подати заявку"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Переключення між перекладацькими службами"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Переключіться між старим та новим інтерфейсом"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "Клацніть на цю кнопку, щоб переключитися між старим та новим інтерфейсом."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Послуга перекладу"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Використовуйте старий спливаючий інтерфейс"
   },
   "lblTranslateInterface": {
     "message": "Translate the interface"

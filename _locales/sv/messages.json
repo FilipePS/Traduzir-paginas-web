@@ -1,24 +1,24 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Översätt Webbsida"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Översätt webbplatser i realtid med hjälp av Google eller Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Översätt denna sida"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Översätt denna sida?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Översätter ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Översatt"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Denna sida kunde inte översättas"
   },
   "lblAlwaysTranslate": {
     "message": "Always translate from $LANGUAGE_NAME$",
@@ -39,70 +39,70 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Återställ"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Översätt"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Alternativ"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Visa original"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Försök igen"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Öppna i Google Translate"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Donera"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Översätt aldrig denna webbplats"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Byt språk"
   },
   "btnMobileOriginal": {
     "message": "Original"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Översatt"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Översätt aldrig denna webbplats"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Donera"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Översätt aldrig dessa webbplatser"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatically translate these languages"
+    "message": "Översätt automatiskt dessa språk"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Visa den mobila popup-skärmen"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Automatiskt"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "När jag trycker på skärmen med tre fingrar"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Öppna i Yandex Translate"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Övriga"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "Fler alternativ"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Hjälp utvecklaren med en donation"
   },
   "msgTranslateFor": {
     "message": "Translate to $LANGUAGE_NAME$",
@@ -114,145 +114,145 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Visa alternativet att översätta sidan i snabbmenyn"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Ja"
   },
   "msgNo": {
-    "message": "No"
+    "message": "Nej"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "Använd den nya översättningsalgoritmen?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "Ja (rekommenderas)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "Nej (använd widget)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "Översätt webbplatser - Alternativ"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Endast när jag klickar på \"Översätt denna webbplats\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Du har inte lagt till några webbplatser i denna lista."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Du har inte lagt till några språk i denna lista."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Översätt alltid denna webbplats"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Översätt alltid dessa webbplatser"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Donera via PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Mörkt läge"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Visa versionsfakta vid uppdatering"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Visa knappen för att översätta markerad text"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automatisk"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "Översätt markerad text"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Visa alternativet för att översätta markerad text i snabbmenyn"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Översätt aldrig dessa språk"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Översätt aldrig detta språk"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Visa originalspråket när du håller muspekaren över texten"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "språk"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "Webbplatser"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "Översättningar"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "Stil"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Snabbtangenter"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "Donera"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Utgivningsanmärkningar"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "Rapportera ett problem"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "inställningar"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "Lägg till"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Visa översatt text när du svävar"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Tangentbordsgenvägar"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Att översätta webbplatsen"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Tack för att du använder det här tillägget."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Jag är tacksam om du kan göra en donation."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Översätt alltid detta språk"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Visa översatt text när du svävar på dessa webbplatser"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Gör popup-ikonen blå när webbplatsen översätts"
   },
   "more": {
-    "message": "More"
+    "message": "Mer"
   },
   "less": {
-    "message": "Less"
+    "message": "Mindre"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Visa inte om sidans språk är målspråket"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "Visa inte om sidans språk är okänt"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Visa inte om det valda textspråket är målspråket"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Visa inte om det valda textspråket är okänt"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Visa översättning när du svävar över den här webbplatsen"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
@@ -264,34 +264,34 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Visa översatt text när du svävar över webbplatser med dessa språk"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Översätt inte markerad text"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Lyssna"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Sluta lyssna"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Tillämpa"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Växla mellan översättningstjänster"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Växla mellan det gamla gränssnittet och det nya"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "Klicka på den här knappen för att växla mellan det gamla och det nya gränssnittet."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Översättningstjänst"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Använd det gamla popup-gränssnittet"
   },
   "lblTranslateInterface": {
     "message": "Translate the interface"

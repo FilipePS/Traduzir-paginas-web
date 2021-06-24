@@ -3,22 +3,22 @@
     "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Dịch trang của bạn trong thời gian thực sử dụng Google hoặc Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Dịch trang này"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Dịch trang này?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Đang dịch..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Đã dịch"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Không thể dịch trang này"
   },
   "lblAlwaysTranslate": {
     "message": "Always translate from $LANGUAGE_NAME$",
@@ -39,70 +39,70 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Đặt lại"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Dịch"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Tùy chọn"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Hiển thị bản gốc"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Thử lại"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Mở trong Google Translate"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Ủng hộ"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Không bao giờ dịch trang này"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Thay đổi ngôn ngữ"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Gốc"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Đã dịch"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Không bao giờ dịch trang này"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Ủng hộ"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Không bao giờ dịch các trang này"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatically translate these languages"
+    "message": "Luôn dịch những ngôn ngữ này"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Hiển thị cửa sổ bật lên trên di động"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Tự động"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Khi tôi chạm 3 ngón tay trên màn hình"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Mở trong Yandex Translate"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Khác"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "Tùy chọn khác"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Giúp đỡ nhà phát triển bằng cách ủng hộ"
   },
   "msgTranslateFor": {
     "message": "Translate to $LANGUAGE_NAME$",
@@ -114,145 +114,145 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Hiển thị tùy chọn dịch trang trong menu ngữ cảnh"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Đồng ý"
   },
   "msgNo": {
-    "message": "No"
+    "message": "Không"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "Sử dụng thuật toán dịch mới?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "Đồng ý (khuyến nghị)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "Không (sử dụng widget)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "Dịch trang Web - Tùy chọn"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Chỉ khi tôi nhấn \"Dịch trang này\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Bạn chưa thêm bất kỳ trang web nào vào danh sách này."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Bạn chưa thêm bất kỳ ngôn ngữ nào vào danh sách này."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Luôn dịch trang này"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Luôn dịch những trang này"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Ủng hộ qua PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Chế độ tối"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Hiển thị ghi chú phát hành khi cập nhật"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Hiển thị nút để dịch văn bản được chọn"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Tự động"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "Dịch văn bản đã chọn"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Hiển thị tùy chọn để dịch văn bản được chọn trong menu ngữ cảnh"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Không bao giờ dịch các ngôn ngữ này"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Không bao giờ dịch ngôn ngữ này"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Hiển thị văn bản gốc khi di chuột đến nó"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "Ngôn ngữ"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "Trang web"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "Dịch"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "Hiển thị"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Phím tắt"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "Quyên góp"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Ghi chú phát hành"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "Báo cáo sự cố"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "Cài đặt"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "Thêm"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Hiển thị văn bản đã dịch khi di chuột đến nó"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Phím tắt bàn phím"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Để dịch trang web"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Cảm ơn bạn đã sử dụng tiện ích này."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Tôi sẽ biết ơn nếu bạn có thể đóng góp."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Luôn dịch trang web này"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Hiển thị văn bản đã dịch khi di chuột qua các trang web này"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Chuyển biểu tượng sang màu xanh lam khi trang web được dịch"
   },
   "more": {
-    "message": "More"
+    "message": "Nhiều hơn"
   },
   "less": {
-    "message": "Less"
+    "message": "Ít hơn"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Không hiển thị nếu ngôn ngữ trang là ngôn ngữ đích"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "Không hiển thị nếu ngôn ngữ trang không xác định"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Không hiển thị nếu ngôn ngữ văn bản đã chọn là ngôn ngữ đích"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Không hiển thị nếu ngôn ngữ văn bản đã chọn không xác định"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Hiển thị bản dịch khi di chuột qua trang web này"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
@@ -264,109 +264,109 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Hiển thị văn bản đã dịch khi di chuột qua các trang web có ngôn ngữ này"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Không dịch văn bản đã chọn"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Nghe"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Dừng nghe"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Áp dụng"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Chuyển đổi giữa các dịch vụ dịch thuật"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Chuyển đổi giữa giao diện cũ và giao diện mới"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "Nhấp vào nút này để chuyển đổi giữa giao diện cũ và mới."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Dịch vụ dịch thuật"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Sử dụng giao diện bật lên cũ"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Dịch giao diện"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Hiển thị nút trên thanh địa chỉ"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Dịch vụ dịch trang"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Dịch vụ dịch văn bản"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Lưu trữ"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Bộ nhớ đệm dịch"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Bộ nhớ đã sử dụng: "
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Xóa bộ nhớ dịch đệm"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Thiết lập cá nhân"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Sao lưu tệp"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Khôi phục từ tệp"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Khôi phục cài đặt gốc"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Bạn có muốn xóa bộ nhớ dịch đệm không?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Bạn có muốn ghi đè tất cả các cài đặt hiện có bằng cách sử dụng dữ liệu sao lưu không?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Tệp dường như bị hỏng"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Bạn có muốn khôi phục lại cài đặt ban đầu không?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Tốc độ âm thanh chuyển văn bản thành giọng nói"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "Bật DeepL làm dịch vụ dịch văn bản"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Nhập một phím tắt"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Bao gồm phím Ctrl hoặc Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Gõ một lá thư"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Kết hợp không hợp lệ"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Chuyển đổi giữa trang đã dịch và trang gốc"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Khôi phục ngôn ngữ ban đầu"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Dịch trang sang ngôn ngữ nhắm tới"
   },
   "lblTranslateTag_pre": {
     "message": "Enable translation for the tag $HTML_TAG_NAME$",

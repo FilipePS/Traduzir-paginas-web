@@ -1,24 +1,24 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Webpagina's vertalen"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Vertaal uw pagina in realtime met Google of Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Vertaal deze pagina"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Vertaal deze pagina?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Vertalen ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Vertaald"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Deze pagina kon niet worden vertaald"
   },
   "lblAlwaysTranslate": {
     "message": "Always translate from $LANGUAGE_NAME$",
@@ -42,67 +42,67 @@
     "message": "Reset"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Vertalen"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "opties"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Toon origineel"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Probeer het opnieuw"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Openen in google vertaler"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Alleen maar"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Deze site nooit vertalen"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Verander talen"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Origineel"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Vertaald"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Deze site nooit vertalen"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Alleen maar"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Vertaal deze sites nooit"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatically translate these languages"
+    "message": "Vertaal deze talen automatisch"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Toon de mobiele pop-up"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Automatisch"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Als ik drie vingers op het scherm aanraak"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Openen in yandex vertalen"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Anderen"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "Meer opties"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Help de ontwikkelaar met een donatie"
   },
   "msgTranslateFor": {
     "message": "Translate to $LANGUAGE_NAME$",
@@ -114,145 +114,145 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Geef de optie weer om de pagina te vertalen in het contextmenu"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Ja"
   },
   "msgNo": {
-    "message": "No"
+    "message": "Nee"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "Het nieuwe vertaalalgoritme gebruiken?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "Ja (aanbevolen)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "Nee (gebruik widgets)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "Webpagina's vertalen - Opties"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Alleen als ik op \"Vertaal deze site\" klik"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "U heeft geen sites toegevoegd aan deze lijst."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "U heeft geen sites toegevoegd aan deze lijst."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Vertaal deze site altijd"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Vertaal deze sites altijd"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Doneer met PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Donkere modus"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Toon release notities tijdens het bijwerken"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Toon de knop om de geselecteerde tekst te vertalen"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automatisch"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "Vertaal de geselecteerde tekst"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Geef de optie weer om de pagina te vertalen in het contextmenu"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Vertaal deze talen nooit"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Vertaal deze taal nooit"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Toon originele tekst bij zweven"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "Talen"
   },
   "msgSites": {
     "message": "Sites"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "Vertalingen"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "Stijl"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Sneltoetsen"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "Doe een gift"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Release-opmerkingen"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "Meld een probleem"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "Instellingen"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "Toevoegen"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Toon vertaalde tekst bij zweven"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Toetsenbord sneltoetsen"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Om de site te vertalen"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Bedankt voor het gebruik van deze extensie."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Ik zal u dankbaar zijn als u een donatie kunt doen."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Vertaal deze taal altijd"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Toon vertaalde tekst wanneer u op deze sites zweeft"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Maak het pop-uppictogram blauw wanneer de site wordt vertaald"
   },
   "more": {
-    "message": "More"
+    "message": "Meer"
   },
   "less": {
-    "message": "Less"
+    "message": "Minder"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Laat niet zien of de paginataal de doeltaal is"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "Niet weergeven als de paginataal onbekend is"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Laat niet zien of de geselecteerde teksttaal de doeltaal is"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Niet weergeven als de geselecteerde teksttaal onbekend is"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Toon vertaling wanneer u met de muis over deze site beweegt"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
@@ -264,34 +264,34 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Toon vertaalde tekst wanneer u de muisaanwijzer over sites met deze talen beweegt"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Vertaal geselecteerde tekst niet"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Luister"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Stop met luisteren"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Van toepassing zijn"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Schakel tussen vertaaldiensten"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Schakel tussen de oude interface en de nieuwe"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "Klik op deze knop om te wisselen tussen de oude en de nieuwe interface."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Vertaaldienst"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Gebruik de oude pop-upinterface"
   },
   "lblTranslateInterface": {
     "message": "Translate the interface"

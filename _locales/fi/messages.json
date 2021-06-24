@@ -1,24 +1,24 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Käännä verkkosivut"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Käännä verkkosivu lennossa Googlella tai Yandexilla."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Käännä tämä sivu"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Käännetäänkö sivu?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Käännetään..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Käännetty"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Sivua ei voitu kääntää"
   },
   "lblAlwaysTranslate": {
     "message": "Always translate from $LANGUAGE_NAME$",
@@ -39,70 +39,70 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Nollaa"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Käännä"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Valinnat"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Näytä alkuperäinen"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Yritä uudestaan"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Avaa Google kääntäjässä"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Lahjoita"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Älä käännä tätä sivua"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Vaihda kieliä"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Alkuperäinen"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Käännetty"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Älä käännä tätä sivua"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Lahjoita"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Älä käännä näitä sivuja"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatically translate these languages"
+    "message": "Käännä nämä sivut automaattisesti"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Näytä työkalupalkki mobiiliversiossa"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Automaattisesti"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Kolmen sormen kosketuksella"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Avaa Yandex translatessa"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Muut"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "Lisää asetuksia"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Auta kehittäjää tekemällä lahjoitus"
   },
   "msgTranslateFor": {
     "message": "Translate to $LANGUAGE_NAME$",
@@ -114,145 +114,145 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Näytä valinta kääntämiselle pikavalikossa"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Kyllä"
   },
   "msgNo": {
-    "message": "No"
+    "message": "Ei"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "Käytä uutta käännösalgorytmiä?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "Kyllä (Suositellaan)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "Ei (käytä pienoisohjelmaa)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "Käännä verkkosivut - Asetukset"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Vain, jos klikkaan \"Käännä tämä sivusto\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Et ole lisännyt yhtään kieltä tähän luetteloon."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Et ole lisännyt yhtään kieltä tähän luetteloon."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Käännä tämä sivusto aina"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Käännä nämä sivustot aina"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Lahjoita PayPalin kautta"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Tumma tila"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Näytä julkaisutiedot päivitettäessä"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Näytä painike, jolla voit kääntää valitun tekstin"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automaattinen"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "Käännä valittu teksti"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Näytä valinta kääntämiselle pikavalikossa"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Älä koskaan käännä näitä sivustoja"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Älä koskaan käännä tätä sivua"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Näytä alkuperäinen teksti osoitinaktivoinnilla"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "Kielet"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "Sivustot"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "Käännökset"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "Tyyli"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Pikanäppäimet"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "Tee lahjoitus"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Julkaisutiedot"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "Ilmoita ongelmasta"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "Asetukset"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "Lisää"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Näytä käännetty teksti osoitinaktivoinnilla"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Pikanäppäimet"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Sivuston kääntäminen"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Kiitos, että käytät tätä laajennusta."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Olen kiitollinen, jos voit tehdä lahjoituksen."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Käännä tämä kieli aina"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Näytä käännetty teksti, kun käytät osoitinaktivointia näillä sivustoilla"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Muuta työkalupalkin ikoni siniseksi, kun sivusto on käännetty"
   },
   "more": {
-    "message": "More"
+    "message": "Lisää"
   },
   "less": {
-    "message": "Less"
+    "message": "Vähemmän"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Älä näytä, jos sivuston kieli on kohdekieli"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "Älä näytä, jos sivuston kieltä ei pystytä tunnistamaan"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Älä näytä, jos valitun tekstin kieli on kohdekieli"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Älä näytä, jos valittua tekstikieltä ei tunneta"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Näytä käännökset osoitinaktivoinnilla tällä sivustolla"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
@@ -264,37 +264,37 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Näytä käännetty teksti osoitinaktivoinnilla näillä kielillä"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Älä käännä valittua tekstiä"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Kuuntele"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Lopeta kuuntelu"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Käytä"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Vaihda käännöspalveluiden välillä"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Vaihda vanhan ja uuden käyttöliittymän välillä"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "Napsauta tätä painiketta vaihtaaksesi vanhan ja uuden käyttöliittymän välillä."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Käännöspalvelu"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Käytä vanhaa ponnahdusikkunan käyttöliittymää"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Auta käyttöliittymän kääntämisessä"
   },
   "lblButtonInTheAddressBar": {
     "message": "Show button in the address bar"
