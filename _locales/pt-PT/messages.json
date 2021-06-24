@@ -375,5 +375,17 @@
         "content": "<PRE>"
       }
     }
+  },
+  "lbldontsortresults": {
+    "message": "Não ordene os resultados do google tradutor"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "Traduzir conteúdo criado dinamicamente"
+  },
+  "calculatestorage": {
+    "message": "Calcular"
+  },
+  "donatewithpaypal": {
+    "message": "Doe com o PayPal"
   }
 }
