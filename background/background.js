@@ -47,12 +47,14 @@ function updateContextMenu(pageLanguageState="original") {
         if (uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw") {
             uilanguage = uilanguage.split("-")[0]
         }
-        contextMenuTitle = chrome.i18n.getMessage("msgTranslateFor") + " "
+
+        let languageName
         if (twpLang.languages[uilanguage]) {
-            contextMenuTitle += twpLang.languages[uilanguage][targetLanguage]
+            languageName = twpLang.languages[uilanguage][targetLanguage]
         } else {
-            contextMenuTitle += twpLang.languages['en'][targetLanguage]
+            languageName = twpLang.languages['en'][targetLanguage]
         }
+        contextMenuTitle = chrome.i18n.getMessage("msgTranslateFor", languageName)
     }
     if (typeof chrome.contextMenus != 'undefined') {
         chrome.contextMenus.remove("translate-web-page", checkedLastError)

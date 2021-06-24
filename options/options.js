@@ -38,9 +38,7 @@ twpConfig.onReady(function () {
         } else {
             text = chrome.i18n.getMessage("lblSettings")
         }
-        if (text) {
-            $("#itemSelectedName").textContent = text
-        }
+        $("#itemSelectedName").textContent = text
 
         if (sideBarIsVisible) {
             $("#menuContainer").classList.toggle("change")
@@ -711,8 +709,7 @@ twpConfig.onReady(function () {
 
     // storage options
     $("#deleteTranslationCache").onclick = e => {
-        const text = chrome.i18n.getMessage("doYouWantToDeleteTranslationCache")
-        if (confirm(text ? text : "Do you want to delete the translation cache?")) {
+        if (confirm(chrome.i18n.getMessage("doYouWantToDeleteTranslationCache"))) {
             chrome.runtime.sendMessage({action: "deleteTranslationCache"})
         }
     }
@@ -747,13 +744,11 @@ twpConfig.onReady(function () {
                 try {
                     const config = JSON.parse(reader.result)
                     
-                    const text = chrome.i18n.getMessage("doYouWantOverwriteAllSettings")
-                    if (confirm(text ? text : "Do you want to overwrite all existing settings using the backup data?")) {
+                    if (confirm(chrome.i18n.getMessage("doYouWantOverwriteAllSettings"))) {
                         twpConfig.import(config)
                     }
                 } catch (e) {
-                    const text = chrome.i18n.getMessage("fileIsCorrupted")
-                    alert(text ? text : "The file appears to be corrupted")
+                    alert(chrome.i18n.getMessage("fileIsCorrupted"))
                     console.error(e)
                 }
             }
@@ -766,8 +761,7 @@ twpConfig.onReady(function () {
         document.body.removeChild(element)
     }
     $("#resetToDefault").onclick = e => {
-        const text = chrome.i18n.getMessage("doYouWantRestoreSettings")
-        if (confirm(text ? text : "Do you want to restore the extension to its default settings?")) {
+        if (confirm(chrome.i18n.getMessage("doYouWantRestoreSettings"))) {
             twpConfig.restoreToDefault()
         }
     }

@@ -145,28 +145,27 @@ twpConfig.onReady(function () {
         })
         
         if (originalPageLanguage !== "und") {
-            const alwaysTranslateText = chrome.i18n.getMessage("lblAlwaysTranslate")
             $("#cbAlwaysTranslateThisLang").checked = twpConfig.get("alwaysTranslateLangs").indexOf(originalPageLanguage) !== -1
-            $("#lblAlwaysTranslateThisLang").textContent = (alwaysTranslateText ? alwaysTranslateText : "Always translate from") + " " + twpLang.codeToLanguage(originalPageLanguage)
+            $("#lblAlwaysTranslateThisLang").textContent = chrome.i18n.getMessage("lblAlwaysTranslate", twpLang.codeToLanguage(originalPageLanguage))
             $("#divAlwaysTranslateThisLang").style.display = "block"
 
-            const translatedWhenHoveringThisLangText = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisLang") ? chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisLang") : "Show translation when hovering over websites in"
+            const translatedWhenHoveringThisLangText = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisLang", twpLang.codeToLanguage(originalPageLanguage))
             $("#cbShowTranslatedWhenHoveringThisLang").checked = twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) !== -1
-            $("#lblShowTranslatedWhenHoveringThisLang").textContent = translatedWhenHoveringThisLangText + " " + twpLang.codeToLanguage(originalPageLanguage)
+            $("#lblShowTranslatedWhenHoveringThisLang").textContent = translatedWhenHoveringThisLangText
             $("#divShowTranslatedWhenHoveringThisLang").style.display = "block"
 
             if (twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) === -1) {
-                $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = translatedWhenHoveringThisLangText + " " + twpLang.codeToLanguage(originalPageLanguage)
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = translatedWhenHoveringThisLangText
             } else {
-                $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = "✔ " + translatedWhenHoveringThisLangText + " " + twpLang.codeToLanguage(originalPageLanguage)
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = "✔ " + translatedWhenHoveringThisLangText
             }
             $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").removeAttribute("hidden")
 
             const neverTranslateLangText = chrome.i18n.getMessage("btnNeverTranslateThisLanguage")
             if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
-                $("option[data-i18n=btnNeverTranslateThisLanguage]").textContent = neverTranslateLangText ? neverTranslateLangText : "Never translate this language"
+                $("option[data-i18n=btnNeverTranslateThisLanguage]").textContent = neverTranslateLangText
             } else {
-                $("option[data-i18n=btnNeverTranslateThisLanguage]").textContent = neverTranslateLangText ? "✔ " + neverTranslateLangText : "✔ Never translate this language"
+                $("option[data-i18n=btnNeverTranslateThisLanguage]").textContent = "✔ " + neverTranslateLangText
             }
             $("option[data-i18n=btnNeverTranslateThisLanguage]").style.display = "block"
         }
@@ -333,25 +332,25 @@ twpConfig.onReady(function () {
         {
             const text = chrome.i18n.getMessage("lblShowTranslateSelectedButton")
             if (twpConfig.get("showTranslateSelectedButton") !== "yes") {
-                $("option[data-i18n=lblShowTranslateSelectedButton]").textContent = text ? text : "Show the button to translate the selected text"
+                $("option[data-i18n=lblShowTranslateSelectedButton]").textContent = text
             } else {
-                $("option[data-i18n=lblShowTranslateSelectedButton]").textContent = text ? "✔ " + text : "✔ Show the button to translate the selected text"
+                $("option[data-i18n=lblShowTranslateSelectedButton]").textContent = "✔ " + text
             }
         }
         {
             const text = chrome.i18n.getMessage("lblShowOriginalTextWhenHovering")
             if (twpConfig.get("showOriginalTextWhenHovering") !== "yes") {
-                $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent = text ? text : "Show original text when hovering"
+                $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent = text
             } else {
-                $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent = text ? "✔ " + text : "✔ Show original text when hovering"
+                $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent = "✔ " + text
             }
         }
         {
             const text = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisSite")
             if (twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) === -1) {
-                $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = text ? text : "Show translation when hovering over this site"
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = text
             } else {
-                $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = text ? "✔ " + text : "✔ Show translation when hovering over this site"
+                $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = "✔ " + text
             }
         }
     })
@@ -457,16 +456,16 @@ twpConfig.onReady(function () {
         const hostname = new URL(tabs[0].url).hostname
         const textNever = chrome.i18n.getMessage("btnNeverTranslate")
         if (twpConfig.get("neverTranslateSites").indexOf(hostname) === -1) {
-            $("option[data-i18n=btnNeverTranslate]").textContent = textNever ? textNever : "Never translate this site"
+            $("option[data-i18n=btnNeverTranslate]").textContent = textNever
         } else {
-            $("option[data-i18n=btnNeverTranslate]").textContent = textNever ? "✔ " + textNever : "✔ Never translate this site"
+            $("option[data-i18n=btnNeverTranslate]").textContent = "✔ " + textNever
         }
 
         const textAlways = chrome.i18n.getMessage("btnAlwaysTranslate")
         if (twpConfig.get("alwaysTranslateSites").indexOf(hostname) === -1) {
-            $("option[data-i18n=btnAlwaysTranslate]").textContent = textAlways ? textAlways : "Always translate this site"
+            $("option[data-i18n=btnAlwaysTranslate]").textContent = textAlways
         } else {
-            $("option[data-i18n=btnAlwaysTranslate]").textContent = textAlways ? "✔ " + textAlways : "✔ Always translate this site"
+            $("option[data-i18n=btnAlwaysTranslate]").textContent = "✔ " + textAlways
         }
 
         $('option[data-i18n=btnDonate]').innerHTML += " &#10084;"

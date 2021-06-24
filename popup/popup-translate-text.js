@@ -180,8 +180,8 @@ twpConfig.onReady(function () {
     const eListen = document.getElementById("listen")
     eListen.classList.remove("selected")
     eListen.onclick = () => {
-        const msgListen = chrome.i18n.getMessage("btnListen") ? chrome.i18n.getMessage("btnListen") : "Listen"
-        const msgStopListening = chrome.i18n.getMessage("btnStopListening") ? chrome.i18n.getMessage("btnStopListening") : "Stop listening"
+        const msgListen = chrome.i18n.getMessage("btnListen")
+        const msgStopListening = chrome.i18n.getMessage("btnStopListening")
 
         eListen.classList.remove("selected")
         eListen.setAttribute("title", msgStopListening)

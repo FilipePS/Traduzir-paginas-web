@@ -381,10 +381,10 @@ twpConfig.onReady(function () {
         getElemById("btnTranslateSelectedText").onclick = e => {
             if (twpConfig.get("showTranslateSelectedButton") === "yes") {
                 twpConfig.set("showTranslateSelectedButton", "no")
-                getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgTranslateSelectedText") ? chrome.i18n.getMessage("msgTranslateSelectedText") : "Translate selected text"
+                getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgTranslateSelectedText")
             } else {
                 twpConfig.set("showTranslateSelectedButton", "yes")
-                getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgNoTranslateSelectedText") ? chrome.i18n.getMessage("msgNoTranslateSelectedText") : "Do not translate selected text"
+                getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgNoTranslateSelectedText")
             }
             getElemById("menu").style.display = "none"
             e.stopPropagation()
@@ -413,9 +413,9 @@ twpConfig.onReady(function () {
         document.addEventListener("click", hideMenu)
 
         if (twpConfig.get("showTranslateSelectedButton") === "yes") {
-            getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgNoTranslateSelectedText") ? chrome.i18n.getMessage("msgNoTranslateSelectedText") : "Do not translate selected text"
+            getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgNoTranslateSelectedText")
         } else {
-            getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgTranslateSelectedText") ? chrome.i18n.getMessage("msgTranslateSelectedText") : "Translate selected text"
+            getElemById("btnTranslateSelectedText").textContent = chrome.i18n.getMessage("msgTranslateSelectedText")
         }
 
         getElemById("btnDonate").innerHTML += " &#10084;"

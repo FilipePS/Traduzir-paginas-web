@@ -464,8 +464,8 @@ twpConfig.onReady(function() {
 
         const eListen = shadowRoot.getElementById("listen")
         eListen.onclick = () => {
-            const msgListen = chrome.i18n.getMessage("btnListen") ? chrome.i18n.getMessage("btnListen") : "Listen"
-            const msgStopListening = chrome.i18n.getMessage("btnStopListening") ? chrome.i18n.getMessage("btnStopListening") : "Stop listening"
+            const msgListen = chrome.i18n.getMessage("btnListen")
+            const msgStopListening = chrome.i18n.getMessage("btnStopListening")
 
             eListen.classList.remove("selected")
             eListen.setAttribute("title", msgStopListening)
@@ -542,14 +542,12 @@ twpConfig.onReady(function() {
             eOrigTextDiv.style.display = "block"
             eMore.style.display = "none"
             eLess.style.display = "block"
-            const text = chrome.i18n.getMessage("less")
-            eMoreOrLess.setAttribute("title", text ? text : "Less")
+            eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"))
         } else {
             eOrigTextDiv.style.display = "none"
             eMore.style.display = "block"
             eLess.style.display = "none"
-            const text = chrome.i18n.getMessage("more")
-            eMoreOrLess.setAttribute("title", text ? text : "More")
+            eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"))
         }
         twpConfig.onChanged((name, newvalue) => {
             switch (name) {
@@ -565,14 +563,12 @@ twpConfig.onReady(function() {
                         eOrigTextDiv.style.display = "block"
                         eMore.style.display = "none"
                         eLess.style.display = "block"
-                        const text = chrome.i18n.getMessage("less")
-                        eMoreOrLess.setAttribute("title", text ? text : "Less")
+                        eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"))
                     } else {
                         eOrigTextDiv.style.display = "none"
                         eMore.style.display = "block"
                         eLess.style.display = "none"
-                        const text = chrome.i18n.getMessage("more")
-                        eMoreOrLess.setAttribute("title", text ? text : "More")
+                        eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"))
                     }
                     break
             }

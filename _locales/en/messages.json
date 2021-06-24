@@ -21,10 +21,22 @@
     "message": "This page could not be translated"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from"
+    "message": "Always translate from $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblTargetLanguage": {
-    "message": "Target language"
+    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "btnReset": {
     "message": "Reset"
@@ -93,7 +105,13 @@
     "message": "Help the developer with a donation"
   },
   "msgTranslateFor": {
-    "message": "Translate to"
+    "message": "Translate to $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblShowContextMenu": {
     "message": "Show the option to translate the page in the context menu"
@@ -237,7 +255,13 @@
     "message": "Show translation when hovering over this site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in"
+    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "lblShowTranslatedHoveringLangs": {
     "message": "Show translated text when hovering over sites with these languages"
@@ -345,6 +369,11 @@
     "message": "Translate the page to the target language"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag"
+    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
   }
 }
