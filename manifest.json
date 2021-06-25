@@ -34,25 +34,25 @@
         },
         "hotkey-show-original": {
             "suggested_key": {
-                "default": "Ctrl+Alt+0"
+                "default": "Shift+Alt+0"
             },
             "description": "__MSG_lblRestorePageToOriginal__"
         },
         "hotkey-translate-page-1": {
             "suggested_key": {
-                "default": "Ctrl+Alt+1"
+                "default": "Shift+Alt+1"
             },
             "description": "__MSG_lblTranslatePageToTargetLanguage__ 1"
         },
         "hotkey-translate-page-2": {
             "suggested_key": {
-                "default": "Ctrl+Alt+2"
+                "default": "Shift+Alt+2"
             },
             "description": "__MSG_lblTranslatePageToTargetLanguage__ 2"
         },
         "hotkey-translate-page-3": {
             "suggested_key": {
-                "default": "Ctrl+Alt+3"
+                "default": "Shift+Alt+3"
             },
             "description": "__MSG_lblTranslatePageToTargetLanguage__ 3"
         }
