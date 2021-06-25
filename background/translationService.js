@@ -180,7 +180,7 @@ var translationService = {}
                     if (result && result[0] && result[0].length > 50) {
                         const params_RichTranslateHelper = result[0].substring("params_RichTranslateHelper = [".length).split(",")
                         if (params_RichTranslateHelper && params_RichTranslateHelper[0] && params_RichTranslateHelper[1] && parseInt(params_RichTranslateHelper[0])) {
-                            bingTranslateSID = `&token=${params_RichTranslateHelper[1].substring(1, params_RichTranslateHelper[1].length-1)}&key=${parseInt(params_RichTranslateHelper[0])}&isAuthv2=false`
+                            bingTranslateSID = `&token=${params_RichTranslateHelper[1].substring(1, params_RichTranslateHelper[1].length-1)}&key=${parseInt(params_RichTranslateHelper[0])}`
                             bingSIDNotFound = false
                         } else {
                             bingSIDNotFound = true
@@ -621,6 +621,15 @@ var translationService = {}
     }
 
     translationService.bing.translateSingleText = async function (source, targetLanguage, dontSaveInCache = false) {
+        if (targetLanguage == "zh-CN") {
+            targetLanguage = "zh-Hans"
+        } else if (targetLanguage == "zh-TW") {
+            targetLanguage = "zh-Hant"
+        } else if (targetLanguage == "tl") {
+            targetLanguage = "fil"
+        } else if (targetLanguage.indexOf("zh-") !== -1) {
+            targetLanguage = "zh-Hans"
+        }
         await getBingSID()
 
         return await translateHTML(
