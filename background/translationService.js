@@ -102,8 +102,13 @@ var translationService = {}
     let lastYandexRequestSIDTime = null
     var yandexTranslateSID = null
     let yandexSIDNotFound = false
-    function getYandexSID() {
-        return new Promise(resolve => {
+    let yandexGetSidPromise = null
+    async function getYandexSID() {
+        if (yandexGetSidPromise) {
+            return await yandexGetSidPromise
+        }
+
+        yandexGetSidPromise = new Promise(resolve => {
             let updateYandexSid = false
             if (lastYandexRequestSIDTime) {
                 const date = new Date();
@@ -145,13 +150,24 @@ var translationService = {}
                 resolve()
             }
         })
+
+        yandexGetSidPromise.finally(() => {
+            yandexGetSidPromise = null
+        })
+
+        return await yandexGetSidPromise
     }
 
     let lastBingRequestSIDTime = null
     var bingTranslateSID = null
     let bingSIDNotFound = false
-    function getBingSID() {
-        return new Promise(resolve => {
+    let bingGetSidPromise = null
+    async function getBingSID() {
+        if (bingGetSidPromise) {
+            return await bingGetSidPromise
+        }
+
+        bingGetSidPromise = new Promise(resolve => {
             let updateBingSid = false
             if (lastBingRequestSIDTime) {
                 const date = new Date();
@@ -198,6 +214,12 @@ var translationService = {}
                 resolve()
             }
         })
+
+        bingGetSidPromise.finally(() => {
+            bingGetSidPromise = null
+        })
+
+        return await bingGetSidPromise
     }
     
     const googleTranslationInProgress = {}
