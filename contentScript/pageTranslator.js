@@ -551,7 +551,7 @@ twpConfig.onReady(function() {
         } else if (request.action === "autoTranslateBecauseClickedALink") {
             if (twpConfig.get("autoTranslateWhenClickingALink") === "yes") {
                 pageTranslator.onGetOriginalPageLanguage(function () {
-                    if (pageLanguageState === "original") {
+                    if (pageLanguageState === "original" && originalPageLanguage !== currentTargetLanguage && twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
                         pageTranslator.translatePage()
                     }
                 })
