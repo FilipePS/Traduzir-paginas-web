@@ -389,6 +389,6 @@
     "message": "PayPalで寄付"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "現在のサイトと同じドメインに移動するリンクをクリックしたときに自動的に翻訳します"
+    "message": "同じドメイン内でページを移動したとき、移動先のページも自動的に翻訳"
   }
 }
