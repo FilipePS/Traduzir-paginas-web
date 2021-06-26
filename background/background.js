@@ -148,6 +148,8 @@ if (typeof chrome.contextMenus !== "undefined") {
                 checkedLastError()
                 if (response) {
                     tabHasContentScript[tabId] = true
+                } else {
+                    tabHasContentScript[tabId] = false
                 }
             })
         }
