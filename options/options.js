@@ -465,6 +465,11 @@ twpConfig.onReady(function () {
         twpConfig.set("translateDynamicallyCreatedContent", e.target.value)
     }
     $("#translateDynamicallyCreatedContent").value = twpConfig.get("translateDynamicallyCreatedContent")
+ 
+    $("#autoTranslateWhenClickingALink").onchange = e => {
+        twpConfig.set("autoTranslateWhenClickingALink", e.target.value)
+    }
+    $("#autoTranslateWhenClickingALink").value = twpConfig.get("autoTranslateWhenClickingALink")
 
     if (twpConfig.get("enableDeepL") === "yes") {
         $('#textTranslatorService option[value="deepl"]').removeAttribute("hidden")

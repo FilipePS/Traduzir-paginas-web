@@ -512,6 +512,17 @@ twpConfig.onReady(function() {
         }
     }
     
+    let alreadyGotTheLanguage = false
+    const observers = []
+    
+    pageTranslator.onGetOriginalPageLanguage = function (callback) {
+        if (alreadyGotTheLanguage) {
+            callback(originalPageLanguage)
+        } else {
+            observers.push(callback)
+        }
+    }
+    
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "translatePage") {
             if (request.targetLanguage === "original") {
@@ -537,19 +548,16 @@ twpConfig.onReady(function() {
             } else {
                 pageTranslator.translatePage()
             }
+        } else if (request.action === "autoTranslateBecauseClickedALink") {
+            if (twpConfig.get("autoTranslateWhenClickingALink") === "yes") {
+                pageTranslator.onGetOriginalPageLanguage(function () {
+                    if (pageLanguageState === "original") {
+                        pageTranslator.translatePage()
+                    }
+                })
+            }
         }
     })
-    
-    let alreadyGotTheLanguage = false
-    const observers = []
-    
-    pageTranslator.onGetOriginalPageLanguage = function (callback) {
-        if (alreadyGotTheLanguage) {
-            callback(originalPageLanguage)
-        } else {
-            observers.push(callback)
-        }
-    }
     
     const detectPageLanguage = function () {
         if (chrome.i18n.detectLanguage) {

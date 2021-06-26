@@ -402,3 +402,72 @@ twpConfig.onReady(function () {
         twpConfig.set("installDateTime", Date.now())
     }
 })
+
+
+{
+    let activeTabTranslationInfo = {}
+
+    chrome.tabs.onActivated.addListener(activeInfo => {
+        chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+            activeTabTranslationInfo =  {
+                tabId: tabs[0].id,
+                pageLanguageState: "original",
+                url: tabs[0].url
+            }
+            chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageLanguageState"}, {frameId: 0}, pageLanguageState => {
+                activeTabTranslationInfo =  {
+                    tabId: tabs[0].id,
+                    pageLanguageState,
+                    url: tabs[0].url
+                }
+            })
+        })
+    })
+
+    chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+        if (tab.active && changeInfo.status == "loading") {
+        } else if (changeInfo.status == "complete") {
+            activeTabTranslationInfo =  {
+                tabId: tabId,
+                pageLanguageState: "original",
+                url: tab.url
+            }
+        }
+    })
+
+    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+        if (request.action === "setPageLanguageState") {
+            if (sender.tab.active) {
+                activeTabTranslationInfo =  {
+                    tabId: sender.tab.id,
+                    pageLanguageState: request.pageLanguageState,
+                    url: sender.tab.url
+                }
+            }
+        }
+    })
+
+    let sitesToAutoTranslate = {}
+    
+    chrome.webNavigation.onCommitted.addListener(details => {
+        if (details.transitionType === "link" && details.frameId === 0
+        && activeTabTranslationInfo.pageLanguageState === "translated"
+        && new URL(activeTabTranslationInfo.url).host === new URL(details.url).host) {
+            sitesToAutoTranslate[details.tabId] = new URL(details.url).host
+        } else {
+            delete sitesToAutoTranslate[details.tabId]
+        }
+    })
+
+    chrome.webNavigation.onDOMContentLoaded.addListener(details => {
+        if (details.frameId === 0) {
+            const host = new URL(details.url).host
+            if (sitesToAutoTranslate[details.tabId] === host) {
+                setTimeout(() => {
+                    chrome.tabs.sendMessage(details.tabId, {action: "autoTranslateBecauseClickedALink"}, {frameId: 0})
+                }, 500)
+            }
+            delete sitesToAutoTranslate[details.tabId]
+        }
+    })
+}
