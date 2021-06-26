@@ -387,5 +387,8 @@
   },
   "donatewithpaypal": {
     "message": "Doe com o PayPal"
+  },
+  "lblAutoTranslateWhenClickingALink": {
+    "message": "Traduzir automaticamente ao clicar em um link que leva você para o mesmo domínio do site atual"
   }
 }
