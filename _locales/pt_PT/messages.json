@@ -389,6 +389,6 @@
     "message": "Doe com o PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Traduzir automaticamente ao clicar em um link que leva você para o mesmo domínio do site atual"
   }
 }
