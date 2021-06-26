@@ -424,17 +424,6 @@ twpConfig.onReady(function () {
         })
     })
 
-    chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-        if (tab.active && changeInfo.status == "loading") {
-        } else if (changeInfo.status == "complete") {
-            activeTabTranslationInfo =  {
-                tabId: tabId,
-                pageLanguageState: "original",
-                url: tab.url
-            }
-        }
-    })
-
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "setPageLanguageState") {
             if (sender.tab.active) {
@@ -448,6 +437,10 @@ twpConfig.onReady(function () {
     })
 
     let sitesToAutoTranslate = {}
+
+    chrome.tabs.onRemoved.addListener(tabId => {
+        delete sitesToAutoTranslate[tabId]
+    })
     
     chrome.webNavigation.onCommitted.addListener(details => {
         if (details.transitionType === "link" && details.frameId === 0
@@ -465,7 +458,7 @@ twpConfig.onReady(function () {
             if (sitesToAutoTranslate[details.tabId] === host) {
                 setTimeout(() => {
                     chrome.tabs.sendMessage(details.tabId, {action: "autoTranslateBecauseClickedALink"}, {frameId: 0})
-                }, 500)
+                }, 700)
             }
             delete sitesToAutoTranslate[details.tabId]
         }
