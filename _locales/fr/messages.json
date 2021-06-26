@@ -377,16 +377,16 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Ne pas trier les résultats de la traduction Google"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Traduire le contenu créé dynamiquement"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Calculer"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Faire un don avec PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
     "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
