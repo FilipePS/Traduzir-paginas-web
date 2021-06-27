@@ -379,14 +379,17 @@ var translationService = {}
                         break
                     }
                 }
-                if (iterationsCount < 100) {
+                
+                if (++iterationsCount < 100) {
                     if (isTranslating) {
                         setTimeout(waitForTranslationFinish, 100)
                     } else {
                         resolve(thisTranslationProgress)
+                        return
                     }
                 } else {
                     reject()
+                    return
                 }
             }
             waitForTranslationFinish()
