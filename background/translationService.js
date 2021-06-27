@@ -321,43 +321,51 @@ var translationService = {}
                 }
 
                 http.onload = e => {
-                    const response = http.response
-                    let responseJson
-                    if (translationService === "yandex") {
-                        responseJson = response.text
-                    } else if (translationService === "google") {
-                        if (typeof response[0] == "string") {
-                            responseJson = response
-                        } else {
-                            responseJson = response.map(value => value[0])
-                        }
-                    } else if (translationService === "bing") {
-                        responseJson = [http.response[0].translations[0].text]
-                    }
-
-                    requests[idx].transInfos.forEach((transInfo, index) => {
-                        try {
-                            if (responseJson[index]) {
-                                transInfo.status = "complete"
-                                transInfo.translated = responseJson[index]
-
-                                if (!dontSaveInCache) {
-                                    try {
-                                        //TODO ERRO AQUI FAZ DA LENTIDAO
-                                        translationCache.set(translationService, transInfo.source, transInfo.translated, targetLanguage)
-                                    } catch (e) {
-                                        console.error(e)
-                                    }
-                                }
+                    try {
+                        const response = http.response
+                        let responseJson
+                        if (translationService === "yandex") {
+                            responseJson = response.text
+                        } else if (translationService === "google") {
+                            if (typeof response[0] == "string") {
+                                responseJson = response
                             } else {
-                                transInfo.status = "error"
+                                responseJson = response.map(value => value[0])
                             }
-                        } catch (e) {
-                            transInfo.status = "error"
-                            console.error(e)
+                        } else if (translationService === "bing") {
+                            responseJson = [http.response[0].translations[0].text]
                         }
-                    })
-                    return responseJson
+
+                        requests[idx].transInfos.forEach((transInfo, index) => {
+                            try {
+                                if (responseJson[index]) {
+                                    transInfo.status = "complete"
+                                    transInfo.translated = responseJson[index]
+
+                                    if (!dontSaveInCache) {
+                                        try {
+                                            //TODO ERRO AQUI FAZ DA LENTIDAO
+                                            translationCache.set(translationService, transInfo.source, transInfo.translated, targetLanguage)
+                                        } catch (e) {
+                                            console.error(e)
+                                        }
+                                    }
+                                } else {
+                                    transInfo.status = "error"
+                                }
+                            } catch (e) {
+                                transInfo.status = "error"
+                                console.error(e)
+                            }
+                        })
+                        return responseJson
+                    } catch (e) {
+                        console.error(e)
+
+                        requests[idx].transInfos.forEach((transInfo, index) => {
+                            transInfo.status = "error"
+                        })
+                    }
                 }
                 http.onerror = e => {
                     requests[idx].transInfos.forEach(transInfo => {

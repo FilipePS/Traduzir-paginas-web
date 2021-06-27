@@ -12,6 +12,7 @@ twpConfig.onReady(function () {
     let currentTextTranslatorService = twpConfig.get("textTranslatorService") === "deepl" ? "google" : twpConfig.get("textTranslatorService")
     let showTranslatedTextWhenHoveringThisSite = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
     let showTranslatedTextWhenHoveringThisLang = false
+    let fooCount = 0
 
     twpConfig.onChanged(function (name, newValue) {
         switch (name) {
@@ -104,6 +105,9 @@ twpConfig.onReady(function () {
 
     let prevNode = null
     function translateThisNode(node, usePrevNode=false) {
+        fooCount++
+        let currentFooCount = fooCount
+
         stopAudio()
         audioDataUrls = null
         
@@ -162,6 +166,9 @@ twpConfig.onReady(function () {
 
         backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, text)
         .then(result => {
+            if (!result) return;
+            if (currentFooCount !== fooCount) return;
+
             if (!usePrevNode) {
                 init()
             }
@@ -586,6 +593,7 @@ twpConfig.onReady(function () {
     }
 
     function destroy() {
+        fooCount++
         stopAudio()
         audioDataUrls = null
         

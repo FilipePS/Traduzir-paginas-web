@@ -24,6 +24,7 @@ twpConfig.onReady(function() {
     let dontShowIfPageLangIsUnknown = twpConfig.get("dontShowIfPageLangIsUnknown")
     let dontShowIfSelectedTextIsTargetLang = twpConfig.get("dontShowIfSelectedTextIsTargetLang")
     let dontShowIfSelectedTextIsUnknown = twpConfig.get("dontShowIfSelectedTextIsUnknown")
+    let fooCount = 0
 
     pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
         originalPageLanguage = pagelanguage
@@ -576,6 +577,7 @@ twpConfig.onReady(function() {
     }
 
     function destroy() {
+        fooCount++
         stopAudio()
         audioDataUrls = null
         if (!divElement) return;
@@ -634,11 +636,15 @@ twpConfig.onReady(function() {
     })
 
     function translateNewInput(isNewSelection=false) {
+        fooCount++
+        let currentFooCount = fooCount
         stopAudio()
         audioDataUrls = null
 
         backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent)
         .then(result => {
+            if (currentFooCount !== fooCount) return;
+
             if (isNewSelection) {
                 init()
             }
