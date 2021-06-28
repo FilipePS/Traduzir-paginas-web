@@ -386,9 +386,9 @@
     "message": "Calculate"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Пожертвовать через PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Автоматически переводить при нажатии на ссылку, которая ведет на тот же домен, что и текущий сайт"
   }
 }
