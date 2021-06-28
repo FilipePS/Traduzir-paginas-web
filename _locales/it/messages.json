@@ -21,7 +21,7 @@
     "message": "Questa pagina non può essere tradotta"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Traduci sempre da $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Lingua di destinazione $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -105,7 +105,7 @@
     "message": "Aiuta lo sviluppatore con una donazione"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Traduci in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -156,7 +156,7 @@
     "message": "Modalità scura"
   },
   "lblShowReleaseNotes": {
-    "message": "Mostra le note di rilascio durante l'aggiornamento"
+    "message": "Mostra le note di rilascio quando aggiorni"
   },
   "lblShowTranslateSelectedButton": {
     "message": "Mostra il pulsante per tradurre il testo selezionato"
@@ -255,7 +255,7 @@
     "message": "Mostra la traduzione quando passi la freccia su questo sito"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Mostra la traduzione quando passi la freccia sui siti web in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -369,7 +369,7 @@
     "message": "Traduci la pagina nella lingua di destinazione"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Attiva la traduzione per l'etichetta $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,18 +377,18 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Non ordinare i risultati di Google Tradurre"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Traduci contenuti creati dinamicamente"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Calcola"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Dona con PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Traduci automaticamente quando fai clic su un link che ti porta allo stesso dominio del sito corrente"
   }
 }
