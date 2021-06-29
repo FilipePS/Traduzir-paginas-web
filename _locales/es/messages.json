@@ -389,6 +389,6 @@
     "message": "Donar con PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Traducir automáticamente al hacer clic en un enlace que te lleva al mismo dominio que el sitio actual"
   }
 }
