@@ -21,7 +21,7 @@
     "message": "Невозможно перевести страницу"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Всегда переводить с $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -45,7 +45,7 @@
     "message": "Перевести"
   },
   "btnOptions": {
-    "message": "Параметры"
+    "message": "Настройки"
   },
   "btnRestore": {
     "message": "Показать оригинал"
@@ -105,7 +105,7 @@
     "message": "Помочь разработчику пожертвованием"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Перевести на $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "При наведении курсора на этом сайте показывать перевод"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Показывать перевод при наведении курсора, если сайты на $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -380,7 +380,7 @@
     "message": "Не сортировать результаты Google Translate"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Переводить динамически созданный контент"
   },
   "calculatestorage": {
     "message": "Вычислить"
