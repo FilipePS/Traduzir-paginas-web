@@ -21,7 +21,7 @@
     "message": "Αυτή η σελίδα δεν μπόρεσε να μεταφραστεί"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Πάντα μετάφραση από $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Γλώσσα προορισμού $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -105,7 +105,7 @@
     "message": "Βοηθήστε τον προγραμματιστή με μια δωρεά"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Μετάφραση σε $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Εμφάνιση μετάφρασης όταν αιωρείται πάνω σε αυτόν τον ιστότοπο"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Εμφάνιση μετάφρασης όταν τοποθετείτε το δείκτη σε ιστότοπους σε $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -369,7 +369,7 @@
     "message": "Μετάφραση της σελίδας στη γλώσσα προορισμού"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Ενεργοποίηση μετάφρασης για την ετικέτα $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,18 +377,18 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Χωρίς ταξινόμηση αποτελεσμάτων μετάφρασης Google"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Δυναμική μετάφραση περιεχομένου"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Υπολογισμός"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Δωρεά με PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Αυτόματη μετάφραση με κλικ σε σύνδεσμο θα μεταφέρει στον ίδιο τομέα με τον τρέχοντα ιστότοπο"
   }
 }
