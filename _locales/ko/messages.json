@@ -380,13 +380,13 @@
     "message": "Do not sort the google translate results"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "동적으로 생성된 콘텐츠 번역"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "계산"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "PayPal로 기부"
   },
   "lblAutoTranslateWhenClickingALink": {
     "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
