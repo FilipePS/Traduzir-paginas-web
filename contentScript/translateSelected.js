@@ -161,7 +161,7 @@ twpConfig.onReady(function() {
                     position: fixed;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    background-image: url(${chrome.runtime.getURL("/icons/google-translate-32.png")});
+                    background-image: url(${chrome.runtime.getURL("/icons/icon-32.png")});
                     width: 22px;
                     height: 22px;
                     top: 0px;
