@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Hedef dil $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -348,7 +348,7 @@
     "message": "DeepL'yi bir metin çeviri hizmeti olarak etkinleştir"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Bir kısayol yazın"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "Include Ctrl or Alt"
@@ -383,7 +383,7 @@
     "message": "Translate dynamically created content"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Hesapla"
   },
   "donatewithpaypal": {
     "message": "Donate With PayPal"
