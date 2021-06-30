@@ -21,7 +21,7 @@
     "message": "Bu sayfa çevirilemedi"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Her zaman $LANGUAGE_NAME$ dilinden çevir",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -105,7 +105,7 @@
     "message": "Geliştiriciye bağış yap"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$ diline çevir",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Bu sitenin üzerine geldiğinizde çeviriyi göster"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$ dilindeki web sitelerinin üzerine gelindiğinde çeviriyi göster",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -348,28 +348,28 @@
     "message": "DeepL'yi bir metin çeviri hizmeti olarak etkinleştir"
   },
   "enterShortcut": {
-    "message": "Bir kısayol yazın"
+    "message": "Kısayol yazın"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Ctrl veya Alt tuşunu dahil edin"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Harf yazın"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Geçersiz kombinasyon"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Çevrilmiş sayfa ile orijinal sayfa arasında geçiş yap"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Orjinal sayfayı geri yükle"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Sayfayı hedef dile çevir"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "$HTML_TAG_NAME$ etiketi için çeviriyi etkinleştir",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,18 +377,18 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Google çeviri sonuçlarını sıralamayın"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Dinamik olarak oluşturulan içeriği çevir"
   },
   "calculatestorage": {
     "message": "Hesapla"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Paypal ile Bağış Yap"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Mevcut siteden aynı siteye götüren bir bağlantıya tıkladığınızda otomatik olarak çevirin"
   }
 }
