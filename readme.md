@@ -1,21 +1,23 @@
 # Translate Web Pages
 
-## Translate your page in real time using Google or Yandex.
-
-### To install the extension on a browser other than Firefox follow these steps:
-1. Download the source code.
-2. Delete the file *manifest.json*.
-3. Rename the file *chrome_manifest.json* to *manifest.json*.
-4. Save the file.
+## Translate your page in real time using Google or Yandex
 
 
-### To collaborate with the translation of the interface use [Crowdin](https://crowdin.com/project/translate-web-pages).
+### How to install the extension in Firefox
+1. For desktop download directly from [Mozilla Addons](https://addons.mozilla.org/firefox/addon/traduzir-paginas-web/)
+2. For mobile see [this tutorial](https://www.ghacks.net/2020/10/01/you-can-now-install-any-add-on-in-firefox-nightly-for-android-but-it-is-complicated/)
 
-### To make a donation use [Patreon](https://www.patreon.com/filipeps).
+### How to install on Chromium based browsers
+1. Download [this file](), or any [other version](https://github.com/FilipePS/Traduzir-paginas-web/releases)
+2. Extract the zip file
+3. Open your browser's extension manager
+4. Activate developer mode
+5. Load the extension with the option "Load unpacked"
+6. Alternatively, if your browser supports it, install directly from [this crx file]()
 
-### Access the Firefox [extension page](https://addons.mozilla.org/firefox/addon/traduzir-paginas-web/).
+### To collaborate with the translation of the interface use [Crowdin](https://crowdin.com/project/translate-web-pages)
 
-### Open [website](https://filipeps.github.io/Traduzir-paginas-web/).
+### To make a donation use [Patreon](https://www.patreon.com/filipeps)
 
 ## Thanks to the Patrons
 + Henry Henderson
