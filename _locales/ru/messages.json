@@ -377,13 +377,13 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Не сортировать результаты Google Translate"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Translate dynamically created content"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Вычислить"
   },
   "donatewithpaypal": {
     "message": "Пожертвовать через PayPal"
