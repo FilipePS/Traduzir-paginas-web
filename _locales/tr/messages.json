@@ -21,7 +21,7 @@
     "message": "Bu sayfa çevirilemedi"
   },
   "lblAlwaysTranslate": {
-    "message": "Her zaman $LANGUAGE_NAME$ dilinden çevir",
+    "message": "$LANGUAGE_NAME$ dilini her zaman çevir",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,7 +114,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "İçerik menüsünde sayfayı çevirme seçeneğini göster"
+    "message": "Sağ tık menüsünde sayfayı çevirme seçeneğini göster"
   },
   "msgYes": {
     "message": "Evet"
@@ -165,10 +165,10 @@
     "message": "Otomatik"
   },
   "msgTranslateSelectedText": {
-    "message": "Seçilen metni çevir"
+    "message": "Seçili metni çevir"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "İçerik menüsünde seçili metni çevirme seçeneğini göster"
+    "message": "Sağ tık menüsünde seçili metni çevirme seçeneğini göster"
   },
   "lblNeverTranslateLangs": {
     "message": "Bu dilleri asla çevirme"
@@ -189,7 +189,7 @@
     "message": "Çeviriler"
   },
   "msgStyle": {
-    "message": "Stil"
+    "message": "Görünüm"
   },
   "msgHotkeys": {
     "message": "Kısayol tuşları"
@@ -234,10 +234,10 @@
     "message": "Site çevrildiğinde pop-up simgesini mavi yapın"
   },
   "more": {
-    "message": "Daha"
+    "message": "Daha fazla"
   },
   "less": {
-    "message": "Az"
+    "message": "Daha az"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Sayfa dilinin hedef dil olup olmadığını gösterme"
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Bu dillerin olduğu sitelerin üzerine gelindiğinde çevrilmiş metni göster"
+    "message": "Bu dilleri kullanan sitelerin üzerine gelindiğinde çevrilmiş metni göster"
   },
   "msgNoTranslateSelectedText": {
     "message": "Seçili metni çevirme"
@@ -288,7 +288,7 @@
     "message": "Eski ve yeni arayüz arasında geçiş yapmak için bu düğmeye tıklayın."
   },
   "lblTranslationService": {
-    "message": "Çeviri servisi"
+    "message": "Çeviri hizmeti"
   },
   "msgUseOldPopupInterface": {
     "message": "Eski açılır pencere arayüzünü kullanın"
@@ -300,10 +300,10 @@
     "message": "Adres çubuğunda düğmeyi göster"
   },
   "lblPageTranslationService": {
-    "message": "Sayfa çeviri servisi"
+    "message": "Sayfa çeviri hizmeti"
   },
   "lblTextTranslationService": {
-    "message": "Yazı çeviri servisi"
+    "message": "Metin Çeviri Hizmeti"
   },
   "msgStorage": {
     "message": "Depolama"
@@ -312,7 +312,7 @@
     "message": "Çeviri önbelleği"
   },
   "lblStorageUsed": {
-    "message": "Kullanılan depolama alanı:"
+    "message": "Kullanılan depolama:"
   },
   "deleteTranslationCache": {
     "message": "Çeviri önbelleğini temizle"
@@ -386,7 +386,7 @@
     "message": "Hesapla"
   },
   "donatewithpaypal": {
-    "message": "Paypal ile Bağış Yap"
+    "message": "PayPal ile Bağış Yap"
   },
   "lblAutoTranslateWhenClickingALink": {
     "message": "Mevcut siteden aynı siteye götüren bir bağlantıya tıkladığınızda otomatik olarak çevirin"
