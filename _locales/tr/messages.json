@@ -21,7 +21,7 @@
     "message": "Bu sayfa çevirilemedi"
   },
   "lblAlwaysTranslate": {
-    "message": "Her zaman $LANGUAGE_NAME$ dilinden çevir",
+    "message": "$LANGUAGE_NAME$ dilini her zaman çevir",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,7 +114,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "İçerik menüsünde sayfayı çevirme seçeneğini göster"
+    "message": "Sağ tık menüsünde sayfayı çevirme seçeneğini göster"
   },
   "msgYes": {
     "message": "Evet"
@@ -168,7 +168,7 @@
     "message": "Seçili metni çevir"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "İçerik menüsünde seçili metni çevirme seçeneğini göster"
+    "message": "Sağ tık menüsünde seçili metni çevirme seçeneğini göster"
   },
   "lblNeverTranslateLangs": {
     "message": "Bu dilleri asla çevirme"
@@ -198,7 +198,7 @@
     "message": "Bağış Yap"
   },
   "lblReleaseNotes": {
-    "message": "Sürüm Notları"
+    "message": "Sürüm notları"
   },
   "lblReport": {
     "message": "Sorun bildir"
@@ -234,10 +234,10 @@
     "message": "Site çevrildiğinde pop-up simgesini mavi yapın"
   },
   "more": {
-    "message": "Daha"
+    "message": "Daha fazla"
   },
   "less": {
-    "message": "Az"
+    "message": "Daha az"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Sayfa dilinin hedef dil olup olmadığını gösterme"
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Bu dillerin olduğu sitelerin üzerine gelindiğinde çevrilmiş metni göster"
+    "message": "Bu dilleri kullanan sitelerin üzerine gelindiğinde çevrilmiş metni göster"
   },
   "msgNoTranslateSelectedText": {
     "message": "Seçili metni çevirme"
