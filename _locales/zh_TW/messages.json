@@ -1,9 +1,9 @@
 {
   "extensionName": {
-    "message": "翻譯網頁"
+    "message": "網頁翻譯器"
   },
   "extensionDescription": {
-    "message": "使用Google或Yandex即時翻譯您的網頁。"
+    "message": "使用Google或Yandex即時翻譯你的網頁。"
   },
   "pageActionTitle": {
     "message": "翻譯此頁面"
