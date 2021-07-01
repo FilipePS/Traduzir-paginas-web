@@ -386,7 +386,7 @@
     "message": "Hesapla"
   },
   "donatewithpaypal": {
-    "message": "Paypal ile Bağış Yap"
+    "message": "PayPal ile Bağış Yap"
   },
   "lblAutoTranslateWhenClickingALink": {
     "message": "Mevcut siteden aynı siteye götüren bir bağlantıya tıkladığınızda otomatik olarak çevirin"
