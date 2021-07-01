@@ -21,7 +21,7 @@
     "message": "此頁面無法翻譯"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "始終從 $LANGUAGE_NAME$ 翻譯",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "目標語言 $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -105,7 +105,7 @@
     "message": "贊助開發者"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "翻譯至 $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "懸停在此網站上時顯示翻譯"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "懸停在 $LANGUAGE_NAME$ 網站上時顯示翻譯",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -369,7 +369,7 @@
     "message": "將頁面翻譯成目標語言"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "為標籤 $HTML_TAG_NAME$ 啟用翻譯",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,18 +377,18 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "不要對 Google 翻譯的結果進行排序"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "翻譯動態建立的內容"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "計算"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "透過 PayPal 贊助我"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "當點擊一個帶你到與目前網站相同的域名的連結時，自動進行翻譯"
   }
 }
