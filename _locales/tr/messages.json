@@ -165,7 +165,7 @@
     "message": "Otomatik"
   },
   "msgTranslateSelectedText": {
-    "message": "Seçilen metni çevir"
+    "message": "Seçili metni çevir"
   },
   "lblShowTranslateSelectedContextMenu": {
     "message": "İçerik menüsünde seçili metni çevirme seçeneğini göster"
@@ -189,7 +189,7 @@
     "message": "Çeviriler"
   },
   "msgStyle": {
-    "message": "Stil"
+    "message": "Görünüm"
   },
   "msgHotkeys": {
     "message": "Kısayol tuşları"
@@ -198,7 +198,7 @@
     "message": "Bağış Yap"
   },
   "lblReleaseNotes": {
-    "message": "Sürüm notları"
+    "message": "Sürüm Notları"
   },
   "lblReport": {
     "message": "Sorun bildir"
@@ -288,7 +288,7 @@
     "message": "Eski ve yeni arayüz arasında geçiş yapmak için bu düğmeye tıklayın."
   },
   "lblTranslationService": {
-    "message": "Çeviri servisi"
+    "message": "Çeviri hizmeti"
   },
   "msgUseOldPopupInterface": {
     "message": "Eski açılır pencere arayüzünü kullanın"
@@ -300,10 +300,10 @@
     "message": "Adres çubuğunda düğmeyi göster"
   },
   "lblPageTranslationService": {
-    "message": "Sayfa çeviri servisi"
+    "message": "Sayfa çeviri hizmeti"
   },
   "lblTextTranslationService": {
-    "message": "Yazı çeviri servisi"
+    "message": "Metin Çeviri Hizmeti"
   },
   "msgStorage": {
     "message": "Depolama"
@@ -312,7 +312,7 @@
     "message": "Çeviri önbelleği"
   },
   "lblStorageUsed": {
-    "message": "Kullanılan depolama alanı:"
+    "message": "Kullanılan depolama:"
   },
   "deleteTranslationCache": {
     "message": "Çeviri önbelleğini temizle"
