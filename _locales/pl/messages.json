@@ -3,25 +3,25 @@
     "message": "Przetłumacz strony internetowe"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Przetłumacz swoją stronę w czasie rzeczywistym za pomocą Google lub Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Przetłumacz tę stronę"
   },
   "lblTranslate": {
     "message": "Przetłumaczyć tę stronę?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Trwa tłumaczenie ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Przetłumaczone"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Nie udało się przetłumaczyć tę stronę"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Zawsze tłumacz z języka: $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Język docelowy $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -48,13 +48,13 @@
     "message": "Opcje"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Pokaż oryginał"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Spróbuj ponownie"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Otwórz w Tłumaczu Google"
   },
   "btnDonate": {
     "message": "Wesprzyj"
@@ -105,7 +105,7 @@
     "message": "Pomóż deweloperowi przekazując darowiznę"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Przetłumacz na język $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Pokaż tłumaczenie po najechaniu kursorem na tę witrynę"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Pokaż tłumaczenie po najechaniu kursorem myszy na witryny w języku: $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Pokaż przetłumaczony tekst, umieszczając wskaźnik myszy na witrynach z tymi językami"
+    "message": "Pokaż przetłumaczony tekst przy najechaniu kursorem na strony z poniższymi językami"
   },
   "msgNoTranslateSelectedText": {
     "message": "Nie tłumacz zaznaczonego tekstu"
@@ -294,82 +294,82 @@
     "message": "Użyj starego interfejsu wyskakującego okna"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Pomóż w tłumaczeniu interfejsu"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Pokaż przycisk na pasku adresu"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Usługa tłumaczenia stron internetowych"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Usługa tłumaczenia tekstu"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Pamięć"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Pamięć podręczna tłumaczeń"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Użyto pamięci:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Wyczyść pamięć podręczną tłumaczeń"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Ustawienia osobiste"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Zapisz kopię zapasową do pliku"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Przywróć kopię zapasową z pliku"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Przywróć ustawienia domyślne"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Czy na pewno chcesz usunąć pamięć podręczną tłumaczeń?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Czy chcesz nadpisać wszystkie ustawienia danymi kopii zapasowej?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Plik jest uszkodzony"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Czy na pewno chcesz zresetować rozszerzenie do ustawień fabrycznych?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Prędkość dźwięku tekstu na mowę"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "Włącz DeepL jako usługę tłumaczenia tekstu"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Wprowadź skrót klawiszowy"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Uwzględnij Ctrl lub Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Wprowadź literę"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Nieprawidłowa kombinacja"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Przełącz między przetłumaczoną i oryginalną stroną"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Przywróć stronę do oryginalnej"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Tłumacz stronę na język docelowy"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Włącz tłumaczenie tagu $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,18 +377,18 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Nie sortuj wyników Tłumacza Google"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Tłumacz treści, które dynamicznie się zmieniają"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Oblicz"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Wspomóż przy pomocy PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Tłumacz automatycznie po kliknięciu na link, który prowadzi do tej samej domeny co bieżąca strona"
   }
 }
