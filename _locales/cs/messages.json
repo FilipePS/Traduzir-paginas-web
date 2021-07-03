@@ -21,7 +21,7 @@
     "message": "Tuto stránku nelze přeložit"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Vždy přeložit z $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Cílový jazyk $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -105,7 +105,7 @@
     "message": "Pomozte vývojáři darem"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Přeložit do $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Zobrazit překlad, když umístíte ukazatel myši na tento web"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Zobrazit překlad při přejetí myší přes webové stránky v $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -369,7 +369,7 @@
     "message": "Přeložit stránku do cílového jazyka"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Povolit překlad pro tag $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -380,15 +380,15 @@
     "message": "Do not sort the google translate results"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Přeložit dynamicky vytvořený obsah"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Spočítat"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Podpořit přes PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Automaticky přeložit při kliknutí na odkaz, který vás přesune na stejnou doménu jako aktuální web"
   }
 }
