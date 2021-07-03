@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Przetłumacz strony internetowe"
   },
   "extensionDescription": {
     "message": "Translate your page in real time using Google or Yandex."
@@ -72,19 +72,19 @@
     "message": "Przetłumaczony"
   },
   "btnMobileNeverTranslate": {
-    "message": "Nigdy nie tłumacz tej strony"
+    "message": "Nigdy nie tłumacz tej witryny"
   },
   "btnMobileDonate": {
     "message": "Wesprzyj"
   },
   "optionsNeverTranslate": {
-    "message": "Nigdy nie tłumacz tych stron"
+    "message": "Nigdy nie tłumacz tych witryn"
   },
   "optionsAlwaysTranslate": {
     "message": "Tłumacz automatycznie te języki"
   },
   "optionPopupConfig": {
-    "message": "Pokaż wyskakujące okienko mobilne"
+    "message": "Pokaż wyskakujące okienko komórkowe"
   },
   "optionPopupAuto": {
     "message": "Automatycznie"
@@ -141,13 +141,13 @@
     "message": "Nie dodano żadnych stron do tej listy."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Nie dodano żadnych stron do tej listy."
+    "message": "Nie dodano żadnych języków do tej listy."
   },
   "btnAlwaysTranslate": {
-    "message": "Zawsze tłumacz tę stronę"
+    "message": "Zawsze tłumacz tę witrynę"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Zawsze tłumacz te strony"
+    "message": "Zawsze tłumacz te witryny"
   },
   "msgDonateWithPaypal": {
     "message": "Wspomóż przy pomocy PayPal"
@@ -159,7 +159,7 @@
     "message": "Pokaż informacje o wydaniu podczas aktualizacji"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Pokaż przycisk, aby przetłumaczyć wybrany tekst"
+    "message": "Pokaż przycisk, aby przetłumaczyć zaznaczony tekst"
   },
   "msgAutomatic": {
     "message": "Automatycznie"
@@ -174,7 +174,7 @@
     "message": "Nigdy nie tłumacz tych języków"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Nigdy nie tłumacz tego języka"
+    "message": "Nigdy nie tłumacz z tego języka"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Pokaż oryginalny tekst po najechaniu kursorem"
@@ -225,7 +225,7 @@
     "message": "Będę wdzięczny, jeśli możesz przekazać darowiznę."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Zawsze tłumacz ten język"
+    "message": "Zawsze tłumacz z tego języka"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Pokaż przetłumaczony tekst po najechaniu kursorem na te witryny"
@@ -246,10 +246,10 @@
     "message": "Nie pokazuj, jeśli język strony jest nieznany"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Nie pokazuj, czy wybrany język tekstu jest językiem docelowym"
+    "message": "Nie pokazuj, jeśli język zaznaczonego tekstu jest językiem docelowym"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Nie pokazuj, jeśli wybrany język tekstu jest nieznany"
+    "message": "Nie pokazuj, jeśli język zaznaczonego tekstu jest nieznany"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Pokaż tłumaczenie po najechaniu kursorem na tę witrynę"
@@ -270,19 +270,19 @@
     "message": "Nie tłumacz zaznaczonego tekstu"
   },
   "btnListen": {
-    "message": "słuchać"
+    "message": "Słuchaj"
   },
   "btnStopListening": {
-    "message": "Przestań słuchać"
+    "message": "Zatrzymaj"
   },
   "btnApply": {
-    "message": "Zastosować"
+    "message": "Zastosuj"
   },
   "swapTranslationService": {
-    "message": "Przełączaj się między usługami tłumaczeniowymi"
+    "message": "Przełącz między usługami tłumaczeniowymi"
   },
   "swapPopup": {
-    "message": "Przełączaj się między starym a nowym interfejsem"
+    "message": "Przełącz między starym a nowym interfejsem"
   },
   "helpSwapInterface": {
     "message": "Kliknij ten przycisk, aby przełączyć się między starym i nowym interfejsem."
@@ -291,7 +291,7 @@
     "message": "Serwis tłumaczeń"
   },
   "msgUseOldPopupInterface": {
-    "message": "Użyj starego interfejsu wyskakującego"
+    "message": "Użyj starego interfejsu wyskakującego okna"
   },
   "lblTranslateInterface": {
     "message": "Translate the interface"
