@@ -51,7 +51,7 @@
     "message": "Orijinali göster"
   },
   "btnTryAgain": {
-    "message": "Yeniden deneyin"
+    "message": "Yeniden dene"
   },
   "btnOpenOnGoogleTranslate": {
     "message": "Google Çeviri'de aç"
@@ -150,7 +150,7 @@
     "message": "Bu siteleri her zaman çevir"
   },
   "msgDonateWithPaypal": {
-    "message": "PayPal ile bağış yapın"
+    "message": "PayPal ile bağış yap"
   },
   "lblDarkMode": {
     "message": "Karanlık Mod"
