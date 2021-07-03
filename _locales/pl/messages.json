@@ -1,12 +1,12 @@
 {
   "extensionName": {
-    "message": "Przetłumacz strony internetowe"
+    "message": "Tłumacz strony internetowe"
   },
   "extensionDescription": {
     "message": "Przetłumacz swoją stronę w czasie rzeczywistym za pomocą Google lub Yandex."
   },
   "pageActionTitle": {
-    "message": "Przetłumacz tę stronę"
+    "message": "Tłumacz tę stronę"
   },
   "lblTranslate": {
     "message": "Przetłumaczyć tę stronę?"
@@ -177,7 +177,7 @@
     "message": "Nigdy nie tłumacz z tego języka"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Pokaż oryginalny tekst po najechaniu kursorem"
+    "message": "Pokaż oryginalny tekst po najechaniu wskaźnikiem"
   },
   "msgLanguages": {
     "message": "Języki"
@@ -210,7 +210,7 @@
     "message": "Dodaj"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Pokaż przetłumaczony tekst po najechaniu kursorem"
+    "message": "Pokaż przetłumaczony tekst po najechaniu wskaźnikiem"
   },
   "lblKeyboardShortcuts": {
     "message": "Skróty klawiszowe"
@@ -228,7 +228,7 @@
     "message": "Zawsze tłumacz z tego języka"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Pokaż przetłumaczony tekst po najechaniu kursorem na te witryny"
+    "message": "Pokaż przetłumaczony tekst po najechaniu wskaźnikiem na te witryny"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Ustaw niebieską ikonę wyskakującego okienka po przetłumaczeniu witryny"
@@ -252,10 +252,10 @@
     "message": "Nie pokazuj, jeśli język zaznaczonego tekstu jest nieznany"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Pokaż tłumaczenie po najechaniu kursorem na tę witrynę"
+    "message": "Pokaż tłumaczenie po najechaniu wskaźnikiem na tę witrynę"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Pokaż tłumaczenie po najechaniu kursorem myszy na witryny w języku: $LANGUAGE_NAME$",
+    "message": "Pokaż tłumaczenie po najechaniu wskaźnikiem na witryny w języku: $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Pokaż przetłumaczony tekst przy najechaniu kursorem na strony z poniższymi językami"
+    "message": "Pokaż przetłumaczony tekst przy najechaniu wskaźnikiem na strony z poniższymi językami"
   },
   "msgNoTranslateSelectedText": {
     "message": "Nie tłumacz zaznaczonego tekstu"
@@ -279,7 +279,7 @@
     "message": "Zastosuj"
   },
   "swapTranslationService": {
-    "message": "Przełącz między usługami tłumaczeniowymi"
+    "message": "Przełącz usługę tłumaczenia"
   },
   "swapPopup": {
     "message": "Przełącz między starym a nowym interfejsem"
@@ -288,7 +288,7 @@
     "message": "Kliknij ten przycisk, aby przełączyć się między starym i nowym interfejsem."
   },
   "lblTranslationService": {
-    "message": "Serwis tłumaczeń"
+    "message": "Usługa tłumaczenia"
   },
   "msgUseOldPopupInterface": {
     "message": "Użyj starego interfejsu wyskakującego okna"
@@ -354,10 +354,10 @@
     "message": "Uwzględnij Ctrl lub Alt"
   },
   "hotkeyError_letter": {
-    "message": "Wprowadź literę"
+    "message": "Wpisz literę"
   },
   "hotkeyError_invalid": {
-    "message": "Nieprawidłowa kombinacja"
+    "message": "Nieprawidłowy skrót"
   },
   "lblSwitchTranslatedAndOriginal": {
     "message": "Przełącz między przetłumaczoną i oryginalną stroną"
