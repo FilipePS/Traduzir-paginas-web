@@ -389,6 +389,6 @@
     "message": "PayPal 捐款"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "若点击链接所访问的网站与当前域名相同，则自动翻译"
   }
 }
