@@ -339,7 +339,7 @@
     "message": "Схоже, файл пошкоджено"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Ви дійсно бажаєте відновити типові налаштування розширення?"
   },
   "lblTtsSpeed": {
     "message": "Text-to-speech audio speed"
@@ -383,7 +383,7 @@
     "message": "Translate dynamically created content"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Підрахувати"
   },
   "donatewithpaypal": {
     "message": "Donate With PayPal"
