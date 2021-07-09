@@ -306,40 +306,40 @@
     "message": "Text Translation Service"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Сховище"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Кеш перекладів"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Використано пам'яті:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Видалити кеш перекладів"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Особисті налаштування"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Резервне копіювання до файлу"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Відновити з файлу"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Відновити типові налаштування"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Ви дійсно бажаєте видалити кеш перекладів?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Ви бажаєте перезаписати всі існуючі налаштування, використовуючи резервні дані?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Схоже, файл пошкоджено"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Ви дійсно бажаєте відновити типові налаштування розширення?"
   },
   "lblTtsSpeed": {
     "message": "Text-to-speech audio speed"
@@ -383,7 +383,7 @@
     "message": "Translate dynamically created content"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Підрахувати"
   },
   "donatewithpaypal": {
     "message": "Donate With PayPal"
