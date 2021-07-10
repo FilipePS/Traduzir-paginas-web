@@ -72,9 +72,8 @@ chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == "install") {
         chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
     } else if (details.reason == "update" && chrome.runtime.getManifest().version != details.previousVersion) {
-        if (plataformInfo.isMobile.any) return;
-        
-        twpConfig.onReady(function () {
+        twpConfig.onReady(function () { 
+            if (plataformInfo.isMobile.any) return;
             if (twpConfig.get("showReleaseNotes") !== "yes") return;
 
             let lastTimeShowingReleaseNotes = twpConfig.get("lastTimeShowingReleaseNotes")
@@ -95,6 +94,15 @@ chrome.runtime.onInstalled.addListener(details => {
         
             if (showReleaseNotes) {
                 chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html#release_notes")})
+            }
+        })
+    }
+    if (details.reason == "update" && (details.previousVersion == "9.0.4" || details.previousVersion == "9.1")) {
+        chrome.storage.local.get("translateDynamicallyCreatedContent", onGot => {
+            if (!onGot.translateDynamicallyCreatedContent) {
+                twpConfig.onReady(function() {
+                    twpConfig.set("translateDynamicallyCreatedContent", "yes")
+                })   
             }
         })
     }
