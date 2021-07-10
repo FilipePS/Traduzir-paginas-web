@@ -68,7 +68,10 @@
         "<all_urls>",
         "storage",
         "activeTab",
-        "contextMenus",
+        "contextMenus"
+    ],
+
+    "optional_permissions": [
         "webNavigation"
     ],
 

@@ -467,7 +467,19 @@ twpConfig.onReady(function () {
     $("#translateDynamicallyCreatedContent").value = twpConfig.get("translateDynamicallyCreatedContent")
  
     $("#autoTranslateWhenClickingALink").onchange = e => {
-        twpConfig.set("autoTranslateWhenClickingALink", e.target.value)
+        if (e.target.value == "yes") {
+            chrome.permissions.request({permissions: ["webNavigation"]}, granted => {
+                if (granted) {
+                    twpConfig.set("autoTranslateWhenClickingALink", "yes")
+                } else {
+                    twpConfig.set("autoTranslateWhenClickingALink", "no")
+                    e.target.value = "no"
+                }
+            })
+        } else {
+            twpConfig.set("autoTranslateWhenClickingALink", "no")
+            chrome.permissions.remove({permissions: ["webNavigation"]})
+        }
     }
     $("#autoTranslateWhenClickingALink").value = twpConfig.get("autoTranslateWhenClickingALink")
 

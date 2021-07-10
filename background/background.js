@@ -102,7 +102,7 @@ chrome.runtime.onInstalled.addListener(details => {
             if (!onGot.translateDynamicallyCreatedContent) {
                 twpConfig.onReady(function() {
                     twpConfig.set("translateDynamicallyCreatedContent", "yes")
-                })   
+                })
             }
         })
     }
@@ -411,11 +411,10 @@ twpConfig.onReady(function () {
     }
 })
 
-
-{
+twpConfig.onReady(function () {
     let activeTabTranslationInfo = {}
 
-    chrome.tabs.onActivated.addListener(activeInfo => {
+    function tabsOnActivated(activeInfo) {
         chrome.tabs.query({active: true, currentWindow: true}, tabs => {
             activeTabTranslationInfo =  {
                 tabId: tabs[0].id,
@@ -430,9 +429,15 @@ twpConfig.onReady(function () {
                 }
             })
         })
-    })
+    }
+    
+    let sitesToAutoTranslate = {}
 
-    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    function tabsOnRemoved(tabId) {
+        delete sitesToAutoTranslate[tabId]
+    }
+
+    function runtimeOnMessage(request, sender, sendResponse) {
         if (request.action === "setPageLanguageState") {
             if (sender.tab.active) {
                 activeTabTranslationInfo =  {
@@ -442,15 +447,9 @@ twpConfig.onReady(function () {
                 }
             }
         }
-    })
+    }
 
-    let sitesToAutoTranslate = {}
-
-    chrome.tabs.onRemoved.addListener(tabId => {
-        delete sitesToAutoTranslate[tabId]
-    })
-    
-    chrome.webNavigation.onCommitted.addListener(details => {
+    function webNavigationOnCommitted(details) {
         if (details.transitionType === "link" && details.frameId === 0
         && activeTabTranslationInfo.pageLanguageState === "translated"
         && new URL(activeTabTranslationInfo.url).host === new URL(details.url).host) {
@@ -458,9 +457,9 @@ twpConfig.onReady(function () {
         } else {
             delete sitesToAutoTranslate[details.tabId]
         }
-    })
+    }
 
-    chrome.webNavigation.onDOMContentLoaded.addListener(details => {
+    function webNavigationOnDOMContentLoaded(details) {
         if (details.frameId === 0) {
             const host = new URL(details.url).host
             if (sitesToAutoTranslate[details.tabId] === host) {
@@ -470,5 +469,48 @@ twpConfig.onReady(function () {
             }
             delete sitesToAutoTranslate[details.tabId]
         }
+    }
+
+    function enableTranslationOnClickingALink() {
+        disableTranslationOnClickingALink()
+        if (!chrome.webNavigation) return;
+
+        chrome.tabs.onActivated.addListener(tabsOnActivated)
+        chrome.tabs.onRemoved.addListener(tabsOnRemoved)
+        chrome.runtime.onMessage.addListener(runtimeOnMessage)
+        chrome.webNavigation.onCommitted.addListener(webNavigationOnCommitted)
+        chrome.webNavigation.onDOMContentLoaded.addListener(webNavigationOnDOMContentLoaded)
+    }
+
+    function disableTranslationOnClickingALink() {
+        activeTabTranslationInfo = {}
+        sitesToAutoTranslate = {}
+        chrome.tabs.onActivated.removeListener(tabsOnActivated)
+        chrome.tabs.onRemoved.removeListener(tabsOnRemoved)
+        chrome.runtime.onMessage.removeListener(runtimeOnMessage)
+        chrome.webNavigation.onCommitted.removeListener(webNavigationOnCommitted)
+        chrome.webNavigation.onDOMContentLoaded.removeListener(webNavigationOnDOMContentLoaded)  
+    }
+
+    twpConfig.onChanged((name, newvalue) => {
+        if (name === "autoTranslateWhenClickingALink") {
+            if (newvalue == "yes") {
+                enableTranslationOnClickingALink()
+            } else {
+                disableTranslationOnClickingALink()
+            }
+        }
     })
-}
+
+    chrome.permissions.onRemoved.addListener(permissions => {
+        if (permissions.permissions.indexOf("webNavigation") !== -1) {
+            twpConfig.set("autoTranslateWhenClickingALink", "no")
+        }
+    })
+
+    chrome.permissions.contains({permissions: ["webNavigation"]}, hasPermissions => {
+        if (!hasPermissions) {
+            twpConfig.set("autoTranslateWhenClickingALink", "no")
+        }
+    })
+})
