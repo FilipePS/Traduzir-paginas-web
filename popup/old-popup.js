@@ -292,9 +292,10 @@ twpConfig.onReady(function () {
 
         chrome.tabs.query({active: true, currentWindow: true}, tabs => {
             if (twpConfig.get("targetLanguage") !== selectTargetLanguage.value) {
-                twpConfig.setTargetLanguageTextTranslation(selectTargetLanguage.value)
+                twpConfig.setTargetLanguage(selectTargetLanguage.value, true)
+            } else {
+                twpConfig.setTargetLanguage(selectTargetLanguage.value)
             }
-            twpConfig.setTargetLanguage(selectTargetLanguage.value)
             chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: selectTargetLanguage.value}, checkedLastError)
         })
 
