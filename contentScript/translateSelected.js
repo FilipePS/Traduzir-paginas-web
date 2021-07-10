@@ -591,6 +591,12 @@ twpConfig.onReady(function() {
         divElement = eButtonTransSelText = eDivResult = null
     }
 
+    function destroyIfButtonIsShowing(e) {
+        if (eButtonTransSelText && e.target !== divElement && eButtonTransSelText.style.display === "block") {
+            destroy()
+        }
+    }
+
     twpConfig.onChanged(function (name, newValue) {
         switch (name) {
             case "textTranslatorService":
@@ -823,6 +829,10 @@ twpConfig.onReady(function() {
             document.addEventListener("blur", destroy)
             document.addEventListener("visibilitychange", destroy)
 
+            document.addEventListener("keydown", destroyIfButtonIsShowing)
+            document.addEventListener("mousedown", destroyIfButtonIsShowing)
+            document.addEventListener("wheel", destroyIfButtonIsShowing)
+
             if (plataformInfo.isMobile.any) {
                 document.addEventListener("touchend", onTouchend)
                 document.addEventListener("selectionchange", onSelectionchange)
@@ -832,6 +842,10 @@ twpConfig.onReady(function() {
 
             document.removeEventListener("blur", destroy)
             document.removeEventListener("visibilitychange", destroy)
+
+            document.removeEventListener("keydown", destroyIfButtonIsShowing)
+            document.removeEventListener("mousedown", destroyIfButtonIsShowing)
+            document.removeEventListener("wheel", destroyIfButtonIsShowing)
 
             if (plataformInfo.isMobile.any) {
                 document.removeEventListener("touchend", onTouchend)
