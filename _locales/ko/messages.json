@@ -162,7 +162,7 @@
     "message": "선택한 텍스트에 번역 버튼 표시"
   },
   "msgAutomatic": {
-    "message": "자동적 인"
+    "message": "자동"
   },
   "msgTranslateSelectedText": {
     "message": "선택한 텍스트 번역"
