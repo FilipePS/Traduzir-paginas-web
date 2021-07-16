@@ -21,7 +21,7 @@
     "message": "Deze pagina kon niet worden vertaald"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Altijd vertalen vanuit $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Doeltaal $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -105,7 +105,7 @@
     "message": "Help de ontwikkelaar met een donatie"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Vertaal naar $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Toon vertaling wanneer u met de muis over deze site beweegt"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Toon vertaling bij het hoveren over websites in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -294,34 +294,34 @@
     "message": "Gebruik de oude pop-upinterface"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Vertaal de interface"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Toon knop in de adresbalk"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Pagina vertaaldienst"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Tekst vertaaldienst"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Opslag"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Vertaling cache"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Gebruikte opslag:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Verwijder vertaling cache"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Persoonlijke instellingen"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Back-up naar bestand"
   },
   "restoreFromFile": {
     "message": "Restore from file"
