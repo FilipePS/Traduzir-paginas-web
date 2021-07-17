@@ -21,7 +21,7 @@
     "message": "Deze pagina kon niet worden vertaald"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Altijd vertalen vanuit $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Doeltaal $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -105,7 +105,7 @@
     "message": "Help de ontwikkelaar met een donatie"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Vertaal naar $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Toon vertaling wanneer u met de muis over deze site beweegt"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Toon vertaling bij het hoveren over websites in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -294,82 +294,82 @@
     "message": "Gebruik de oude pop-upinterface"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Vertaal de interface"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Toon knop in de adresbalk"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Pagina vertaaldienst"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Tekst vertaaldienst"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Opslag"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Vertaling cache"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Gebruikte opslag:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Verwijder vertaling cache"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Persoonlijke instellingen"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Back-up naar bestand"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Herstellen vanuit bestand"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Herstel standaardinstellingen"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Wilt u de vertaling cache verwijderen?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Wilt u alle bestaande instellingen overschrijven met de back-upgegevens?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Het bestand lijkt corrupt te zijn"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Wilt u de extensie herstellen naar de standaardinstellingen?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Tekst-naar-spraak audiosnelheid"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "Schakel DeepL in als een tekst vertaaldienst"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Typ een sneltoets"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Voeg Ctrl of Alt toe"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Typ een letter"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Ongeldige combinatie"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Schakel tussen de vertaalde en de originele pagina"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Pagina herstellen naar origineel"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Vertaal de pagina naar de doeltaal"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Vertaling inschakelen voor de tag $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,18 +377,18 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "De google translate resultaten niet sorteren"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Vertaal dynamisch gecreëerde inhoud"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Bereken"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Doneer Met PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Automatisch vertalen wanneer u op een link klikt die u naar hetzelfde domein brengt als de huidige site"
   }
 }
