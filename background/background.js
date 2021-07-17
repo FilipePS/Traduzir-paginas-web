@@ -488,8 +488,13 @@ twpConfig.onReady(function () {
         chrome.tabs.onActivated.removeListener(tabsOnActivated)
         chrome.tabs.onRemoved.removeListener(tabsOnRemoved)
         chrome.runtime.onMessage.removeListener(runtimeOnMessage)
-        chrome.webNavigation.onCommitted.removeListener(webNavigationOnCommitted)
-        chrome.webNavigation.onDOMContentLoaded.removeListener(webNavigationOnDOMContentLoaded)  
+
+        if (chrome.webNavigation) {
+            chrome.webNavigation.onCommitted.removeListener(webNavigationOnCommitted)
+            chrome.webNavigation.onDOMContentLoaded.removeListener(webNavigationOnDOMContentLoaded) 
+        } else {
+            console.warn("No webNavigation permission")
+        }
     }
 
     twpConfig.onChanged((name, newvalue) => {

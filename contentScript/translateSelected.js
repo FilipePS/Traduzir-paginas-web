@@ -760,15 +760,16 @@ twpConfig.onReady(function() {
             }
         } else if (window.getSelection) {
             const selection = window.getSelection()
-
-            const text = selection.toString();
-            const rect = selection.getRangeAt(0).getBoundingClientRect()
-            gSelectionInfo = {
-                text: text,
-                top: rect.top,
-                left: rect.left,
-                bottom: rect.bottom,
-                right: rect.right
+            if (selection.type == "Range") {
+                const text = selection.toString();
+                const rect = selection.getRangeAt(0).getBoundingClientRect()
+                gSelectionInfo = {
+                    text: text,
+                    top: rect.top,
+                    left: rect.left,
+                    bottom: rect.bottom,
+                    right: rect.right
+                }
             }
         }
     }
