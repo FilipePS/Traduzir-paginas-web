@@ -97,15 +97,6 @@ chrome.runtime.onInstalled.addListener(details => {
             }
         })
     }
-    if (details.reason == "update" && (details.previousVersion == "9.0.4" || details.previousVersion == "9.1")) {
-        chrome.storage.local.get("translateDynamicallyCreatedContent", onGot => {
-            if (!onGot.translateDynamicallyCreatedContent) {
-                twpConfig.onReady(function() {
-                    twpConfig.set("translateDynamicallyCreatedContent", "yes")
-                })
-            }
-        })
-    }
 })
 
 if (typeof chrome.contextMenus !== "undefined") {
