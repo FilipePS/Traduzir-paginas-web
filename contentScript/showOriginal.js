@@ -120,34 +120,7 @@ twpConfig.onReady(function () {
         
         shadowRoot = divElement.attachShadow({mode: "closed"})
         shadowRoot.innerHTML = `
-            <style>
-                #originalText {
-                    all: initial;
-                    font-family: 'Helvetica', 'Arial', sans-serif;
-                    font-style: normal;
-                    font-variant: normal;
-                    line-height: normal;
-                    font-size: 14px;
-                    font-weight: 500;
-
-                    z-index: 2147483647;
-                    position: fixed;
-                    border-radius: 5px;
-                    max-width: 360px;
-                    max-height: 260px;
-                    top: 0px;
-                    left: 0px;
-                    background-color: white;
-                    color: black;
-                    border: 1px solid grey;
-                    overflow: auto;
-                    padding: 16px;
-                    visibility: visible;
-                    display: block;
-                    opacity: 1;
-                    white-space: pre-wrap;
-                }
-            </style>
+            <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/showOriginal.css")}">
             <div id="originalText" dir="auto"></div>
         `
 

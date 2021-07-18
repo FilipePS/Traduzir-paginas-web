@@ -6,150 +6,17 @@ twpConfig.onReady(function () {
     if (!plataformInfo.isMobile.any) return;
 
     const htmlMobile = `
-    <style>
-        .item {
-            flex: 1;
-            text-align: center;
-            vertical-align: middle;
-            font-family: "Arial";
-            font-weight: 600;
-            height: 50px;
-            font-size: 22px;
-            background-color: white;
-            border: none;
-            cursor: pointer;
-        }
+    <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/popupMobile.css")}">
     
-        .item2 {
-            flex: 1;
-            text-align: center;
-            vertical-align: middle;
-            height: 50px;
-            background-color: white;
-            border: none;
-            cursor: pointer;      
-        }
-    
-        .button:focus {
-            outline: none;
-            animation: btn-color 0.8s forwards linear;
-        }
-    
-        .button::-moz-focus-inner, .item2::-moz-focus-inner {
-            border: 0;
-        }
-    
-        .item2:focus {
-            border: 0;
-        }
-    
-        .button:active {
-            background-color: #bbb;
-        }
-    
-        @keyframes btn-color {
-            0% {
-                background: white;
-            }
-    
-            50% {
-                background: #ddd;
-            }
-    
-            100% {
-                background: white;
-            }
-        }
-    
-        .loader {
-            border: 4px solid #eee;
-            border-radius: 50%;
-            border-top: 5px solid #2196F3;
-            width: 28px;
-            height: 28px;
-            animation: spin 1.5s linear infinite;
-        }
-    
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-    
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    
-        .menuDot {
-            width: 4px;
-            height: 4px;
-            background-color: black;
-            margin: 4px auto;
-            border-radius: 50%;
-        }
-    
-        #menu {
-            box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
-            font-family: "Arial";
-            font-size: 16px;
-        }
-    
-        #menuSelectLanguage {
-            position: fixed;
-            height: calc(100% - 20px);
-            overflow: scroll;
-            box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
-            font-family: "Arial";
-            font-size: 16px;
-        }
-    
-        .dropup {
-            position: absolute;
-            right: 1px;
-        }
-    
-        .dropup-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            width: 250px;
-            bottom: 10px;
-            right: 0;
-            z-index: 1000000001;
-        }
-    
-        .dropup-content a {
-            color: black;
-            padding: 6px;
-            text-decoration: none;
-            display: block;
-        }
-    
-        .dropup-content a:hover {background-color: #ccc}
-    
-        .dropup:hover .dropup-content {
-            display: block;
-        }
-    
-        .dropup:hover .dropbtn {
-            background-color: #2980B9;
-        }
-    
-        #iconTranslate {
-            cursor: pointer;
-        }
-    
-    </style>
-    
-    <div id='element' style="z-index: 1000000000;position: fixed;left: 0;right: 0;bottom: 0;background-color: white;box-shadow: 0px 0px 4px rgba(0, 0, 0, 1);height: 50px;user-select: none;">
-    <div style="display:flex; align-items: center; margin: 0 auto; vertical-align: middle; padding-left: 10px">
-        <img id="iconTranslate" style="max-width: 38px; max-height: 38px;">
-        <button id="btnOriginal" class="item button" style="color: #2196F3" data-i18n="btnMobileOriginal">Original</button>
+    <div id='element'>
+    <div id='main'>
+        <img id="iconTranslate">
+        <button id="btnOriginal" class="item button" data-i18n="btnMobileOriginal">Original</button>
         <button id="btnTranslate" class="item button" data-i18n="lblTranslated">Translated</button>
-        <button id="spin" class="item button" style="display: none">
-            <div class="loader button" style="margin: 0 auto;"></div>
+        <button id="spin" class="item button">
+            <div class="loader button"></div>
         </button>
-        <button id="btnMenu" class="item2" style="width: 50px; max-width: 50px">
+        <button id="btnMenu" class="item2">
             <div class="dropup">
                 <div id="menu" class="dropup-content">
                     <a id="btnChangeLanguages" data-i18n="btnChangeLanguages">Change languages</a>
@@ -167,7 +34,7 @@ twpConfig.onReady(function () {
             <div class="menuDot"></div>
             <div class="menuDot"></div>
         </button>
-        <button id="btnClose" class="item" style="width: 40px; max-width: 40px">&times;</button>
+        <button id="btnClose" class="item">&times;</button>
     </div>
     </div>
     `

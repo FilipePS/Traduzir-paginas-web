@@ -119,142 +119,31 @@ twpConfig.onReady(function() {
 
         const shadowRoot = divElement.attachShadow({mode: "closed"})
         shadowRoot.innerHTML = `
-            <style>
-                #eDivResult {
-                    all: initial;
-                    font-family: 'Helvetica', 'Arial', sans-serif;
-                    font-style: normal;
-                    font-variant: normal;
-                    line-height: normal;
-                    font-size: 12px;
-                    font-weight: 500;
+            <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/translateSelected.css")}">
 
-                    z-index: 2147483647;
-                    position: fixed;
-                    border-radius: 5px;
-                    top: 0px;
-                    left: 0px;
-                    background-color: white;
-                    color: black;
-                    border: 1px solid grey;
-                    visibility: visible;
-                    opacity: 1;
-                    display: none;
-                }
-
-                #eSelTextTrans, #eOrigText {
-                    padding: 14px;
-                    font-size: 16px;
-                    max-width: 360px;
-                    max-height: 260px;
-                    overflow: auto;
-                    white-space: pre-wrap;
-                }
-
-                #eOrigText {
-                    outline: none;
-                }
-
-                #eButtonTransSelText {
-                    all: initial;
-                    z-index: 2147483647;
-                    position: fixed;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-image: url(${chrome.runtime.getURL("/icons/icon-32.png")});
-                    width: 22px;
-                    height: 22px;
-                    top: 0px;
-                    left: 0px;
-                    cursor: pointer;
-                    visibility: visible;
-                    opacity: 1;
-                    display: none;
-                }
-
-                ul {
-                    margin: 0px;
-                    padding: 3px;
-                    list-style-type: none;
-                    overflow: hidden;
-                    user-select: none;
-                }
-
-                li {
-                    margin: 3px;
-                    float: left;
-                    cursor: pointer;
-                    text-align: center;
-                    padding: 4px 6px;
-                    border-radius: 6px;
-                    box-shadow: 0 0 2px 0px #999;
-                }
-
-                li:hover {
-                    background-color: #ccc;
-                }
-
-                #moreOrLess {
-                    margin: 6px;
-                    cursor: pointer;
-                    text-align: center;
-                    padding: 4px 6px;
-                    border-radius: 6px;
-                    box-shadow: 0 0 2px 0px #999;
-                    max-height: 16px;
-                }
-
-                #moreOrLess:hover {
-                    background-color: #ccc;
-                }
-
-                hr {
-                    border: 1px solid #ddd;
-                }
-
-                .selected {
-                    background-color: #ccc;
-                }
-
-                .arrow {
-                    border: solid black;
-                    border-width: 0 1px 1px 0;
-                    display: inline-block;
-                    padding: 3px;
-                }
-                
-                .up {
-                    transform: rotate(-135deg) translate(-5px, -5px);
-                }
-                
-                .down {
-                    transform: rotate(45deg) translate(2px, 2px);
-                }
-            </style>
             <div id="eButtonTransSelText"></div>
             <div id="eDivResult">
-                <div id="eOrigTextDiv" style="display: none">
+                <div id="eOrigTextDiv">
                     <div id="eOrigText" contentEditable="true" spellcheck="false" dir="auto"></div>
                     <hr>
                 </div>
                 <div id="eSelTextTrans" dir="auto"></div>
                 <hr>
-                <div style="display: flex; justify-content: space-between; flex-direction:row;" id="drag">
+                <div id="drag">
                     <ul id="setTargetLanguage">
                         <li value="en" title="English">en</li>
                         <li value="es" title="Spanish">es</li>
                         <li value="de" title="German">de</li>
                     </ul>
-                    <div id="moreOrLess" style="margin-left: 10px; margin-right: 10px"><i class="arrow up" id="more"></i><i class="arrow down" id="less" style="display: none"></i></div>
+                    <div id="moreOrLess"><i class="arrow up" id="more"></i><i class="arrow down" id="less"></i></div>
                     <ul>
                         <li title="Google" id="sGoogle">g</li>
                         <li title="Yandex" id="sYandex">y</li>
                         <li title="Bing" id="sBing">b</li>
                         <li title="DeepL" id="sDeepL" hidden>d</li>
-                        <li style="padding-top: 6px; padding-bottom: 2px;" title="Listen" data-i18n-title="btnListen" id="listen">
+                        <li title="Listen" data-i18n-title="btnListen" id="listen">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            width="14px" height="12px" viewBox="0 0 93.038 93.038" style="enable-background:new 0 0 93.038 93.038;"
-                            xml:space="preserve">
+                            width="14px" height="12px" viewBox="0 0 93.038 93.038" xml:space="preserve">
                             <g>
                                 <path d="M46.547,75.521c0,1.639-0.947,3.128-2.429,3.823c-0.573,0.271-1.187,0.402-1.797,0.402c-0.966,0-1.923-0.332-2.696-0.973
                                     l-23.098-19.14H4.225C1.892,59.635,0,57.742,0,55.409V38.576c0-2.334,1.892-4.226,4.225-4.226h12.303l23.098-19.14
