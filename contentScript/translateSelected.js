@@ -269,6 +269,14 @@ twpConfig.onReady(function() {
         const sBing = shadowRoot.getElementById("sBing")
         const sDeepL = shadowRoot.getElementById("sDeepL")
 
+        eOrigText.onkeypress = e => {
+            e.stopPropagation()
+        }
+
+        eOrigText.onkeydown = e => {
+            e.stopPropagation()
+        }
+
         let translateNewInputTimerHandler
         eOrigText.oninput = () => {
             clearTimeout(translateNewInputTimerHandler)
