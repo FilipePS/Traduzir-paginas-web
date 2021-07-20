@@ -25,12 +25,13 @@
             source_textarea.value = text
             source_textarea.dispatchEvent(event)
     
-            function checkresult(oldvalue, count=0) {
-                if (count > 8 || (target_textarea.value && target_textarea.value !== oldvalue)) {
+            const startTime = performance.now()
+            function checkresult(oldvalue) {
+                if ((performance.now() - startTime) > 2400 || (target_textarea.value && target_textarea.value !== oldvalue)) {
                     resolve(target_textarea.value)
                     return
                 }
-                setTimeout(checkresult, 200, oldvalue, ++count)
+                setTimeout(checkresult, 100, oldvalue)
             }
             checkresult(target_textarea.value)
         })
@@ -46,6 +47,7 @@
         translate(text, targetLanguage || "en")
         .then(result => {
             console.log(result)
+            chrome.runtime.sendMessage({action: "DeepL_firstTranslationResult", result})
         })
     }
 

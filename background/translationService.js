@@ -684,6 +684,21 @@ var translationService = {}
     translationService.deepl.translateSingleText = function (source, targetlanguage, dontSaveInCache = false) {
         //*
         return new Promise(resolve => {
+            function waitFirstTranslationResult() {
+                function listener(request, sender, sendResponse) {
+                    if (request.action === "DeepL_firstTranslationResult") {
+                        resolve(request.result)
+                        chrome.runtime.onMessage.removeListener(listener)
+                    }
+                }
+                chrome.runtime.onMessage.addListener(listener)
+
+                setTimeout(() => {
+                    chrome.runtime.onMessage.removeListener(listener)
+                    resolve("")
+                }, 8000)
+            }
+
             if (DeepLTab) {
                 chrome.tabs.get(DeepLTab.id, tab => {
                     checkedLastError()
@@ -695,15 +710,17 @@ var translationService = {}
                     } else {
                         chrome.tabs.create({url: `https://www.deepl.com/#!${targetlanguage}!#${encodeURIComponent(source)}`}, tab => {
                             DeepLTab = tab
+                            waitFirstTranslationResult()
                         })
-                        resolve("")
+                        //resolve("")
                     }
                 })
             } else {
                 chrome.tabs.create({url: `https://www.deepl.com/#!${targetlanguage}!#${encodeURIComponent(source)}`}, tab => {
                     DeepLTab = tab
+                    waitFirstTranslationResult()
                 })
-                resolve("")
+                //resolve("")
             }
         })
         //*/
