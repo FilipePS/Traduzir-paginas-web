@@ -639,8 +639,8 @@ twpConfig.onReady(function() {
         return text;
     }
 
-    function readSelection() {
-        gSelectionInfo = null
+    function readSelection(dontReadIfSelectionDontChange=false) {
+        let newSelectionInfo = null
 
         const activeEl = document.activeElement;
         const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
@@ -651,7 +651,7 @@ twpConfig.onReady(function() {
         ) {
             const text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
             const rect = activeEl.getBoundingClientRect()
-            gSelectionInfo = {
+            newSelectionInfo = {
                 text: text,
                 top: rect.top,
                 left: rect.left,
@@ -663,7 +663,7 @@ twpConfig.onReady(function() {
             if (selection.type == "Range") {
                 const text = selection.toString();
                 const rect = selection.getRangeAt(0).getBoundingClientRect()
-                gSelectionInfo = {
+                newSelectionInfo = {
                     text: text,
                     top: rect.top,
                     left: rect.left,
@@ -672,6 +672,13 @@ twpConfig.onReady(function() {
                 }
             }
         }
+
+        if (dontReadIfSelectionDontChange && gSelectionInfo && newSelectionInfo && gSelectionInfo.text === newSelectionInfo.text) {
+            gSelectionInfo = newSelectionInfo
+            return false
+        }
+        gSelectionInfo = newSelectionInfo
+        return true
     }
 
     async function onUp(e) {
@@ -704,8 +711,9 @@ twpConfig.onReady(function() {
     function onMouseup(e) {
         if (e.button != 0) return;
         if (e.target == divElement) return;
-        readSelection()
-        setTimeout(()=>onUp(e), 120)
+        if (readSelection(true)) {
+            setTimeout(()=>onUp(e), 120)
+        }
     }
 
     function onTouchend(e) {
