@@ -21,7 +21,7 @@
     "message": "לא ניתן לתרגם דף זה"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "תמיד תתרגם מ- $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "השפה שנבחרה היא: $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -105,7 +105,7 @@
     "message": "תרמו ועזרו למפתח"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "תרגם ל: $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "הראה תרגום בעת ריחוף מעל אתר זה"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "הצג תרגום כאשר אני מרחף עם העכבר מעל אתרים ב: $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -294,82 +294,82 @@
     "message": "השתמש בממשק הקופץ הישן"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "תתרגם את הממשק"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "הצג כפתור בשורת הכתובה"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "שירותי תרגום לדף"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "שירותי תרגום לטקסט"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "אחסון"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "תרגום מוטמן"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "אחסון בשימוש:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "מחק תרגום מוטמן"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "הגדרות אישיות"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "גבה לקובץ"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "שחזר מקובץ"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "שחזר הגדרות ברירת מחדל"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "האם ברצונך למחוק התרגום המטומן?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "האם ברצונך לכתוב על כל ההגדרות הקיימים דרך הגיבוי מידע?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "הקובץ נראה כקובץ תקול"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "האם ברצונך לשחזר את התוסף להגדרת ברירת מחדל?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "טקסט-אל-קול מהירות קול"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "אפשר DeepL כמנוע תרגום לטקסט"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "הקלד קיצור דרך"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "הוסף/לחץ Ctrl או Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "כתוב מכתב"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "צירוף לא חוקי"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "החלף בין תרגום אל השפה המקורית"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "שחזר דף זה אל המקור"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "תרגם דף זה לשפה הנבחרת"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "אפשר תרגום עבור $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,18 +377,18 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "אל תציג תוצאות תרגום מאת google"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "תרגום בצורה דינאמית יוצרת תוכן"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "חשב"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "תרומה דרך PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "תרגם באופן אוטומטי ברגע שאתה לוחץ על קישור ונפתח לך דף זהה"
   }
 }
