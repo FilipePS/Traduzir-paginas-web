@@ -724,8 +724,8 @@ twpConfig.onReady(function() {
         ) {
             document.addEventListener("mouseup", onMouseup)
 
-            document.addEventListener("blur", destroy)
-            document.addEventListener("visibilitychange", destroy)
+            document.addEventListener("blur", destroyIfButtonIsShowing)
+            document.addEventListener("visibilitychange", destroyIfButtonIsShowing)
 
             document.addEventListener("keydown", destroyIfButtonIsShowing)
             document.addEventListener("mousedown", destroyIfButtonIsShowing)
@@ -738,8 +738,8 @@ twpConfig.onReady(function() {
         } else {
             document.removeEventListener("mouseup", onMouseup)
 
-            document.removeEventListener("blur", destroy)
-            document.removeEventListener("visibilitychange", destroy)
+            document.removeEventListener("blur", destroyIfButtonIsShowing)
+            document.removeEventListener("visibilitychange", destroyIfButtonIsShowing)
 
             document.removeEventListener("keydown", destroyIfButtonIsShowing)
             document.removeEventListener("mousedown", destroyIfButtonIsShowing)
