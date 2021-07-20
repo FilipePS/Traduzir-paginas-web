@@ -559,28 +559,28 @@ twpConfig.onReady(function() {
             } else {
                 eSelTextTrans.setAttribute("dir", "ltr")
             }
-
-            eDivResult.style.top = "0px"
-            eDivResult.style.left = "0px"
             eSelTextTrans.textContent = result
             eDivResult.style.display = "block"
             if (isNewSelection) {
+                eDivResult.style.top = "0px"
+                eDivResult.style.left = "0px"
                 eOrigText.textContent = prevSelectionInfo.text
+                
                 setCaretAtEnd()
+
+                const height = parseInt(eDivResult.offsetHeight)
+                let top = eTop + 5
+                top = Math.max(0, top)
+                top = Math.min(window.innerHeight - height, top)
+    
+                const width = parseInt(eDivResult.offsetWidth)
+                let left = parseInt(eLeft /*- width / 2*/)
+                left = Math.max(0, left)
+                left = Math.min(window.innerWidth - width, left)
+    
+                eDivResult.style.top = top + "px"
+                eDivResult.style.left = left + "px"
             }
-
-            const height = parseInt(eDivResult.offsetHeight)
-            let top = eTop + 5
-            top = Math.max(0, top)
-            top = Math.min(window.innerHeight - height, top)
-
-            const width = parseInt(eDivResult.offsetWidth)
-            let left = parseInt(eLeft /*- width / 2*/)
-            left = Math.max(0, left)
-            left = Math.min(window.innerWidth - width, left)
-
-            eDivResult.style.top = top + "px"
-            eDivResult.style.left = left + "px"
         })
     }
 
