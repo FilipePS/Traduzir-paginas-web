@@ -113,6 +113,8 @@ twpConfig.onReady(function() {
     function init() {
         destroy()
 
+        window.isTranslatingSelected = true
+
         divElement = document.createElement("div")
         divElement.style = "all: initial"
         divElement.classList.add("notranslate")
@@ -474,6 +476,7 @@ twpConfig.onReady(function() {
     }
 
     function destroy() {
+        window.isTranslatingSelected = false
         fooCount++
         stopAudio()
         audioDataUrls = null

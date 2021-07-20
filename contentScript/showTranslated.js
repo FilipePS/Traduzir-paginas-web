@@ -244,6 +244,7 @@ twpConfig.onReady(function () {
 
     function init() {
         destroy()
+        if (window.isTranslatingSelected) return;
 
         divElement = document.createElement("div")
         divElement.style = "all: initial"

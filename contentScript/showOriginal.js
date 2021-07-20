@@ -34,8 +34,9 @@ twpConfig.onReady(function () {
     }
 
     function showOriginalText(node) {
-        if (!divElement) return;
         hideOriginalText()
+        if (!divElement) return;
+        if (window.isTranslatingSelected) return;
 
         const nodeInf = nodesToShowOriginal.find(nodeInf => nodeInf.node === node)
         if (nodeInf) {
