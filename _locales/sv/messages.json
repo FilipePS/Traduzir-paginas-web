@@ -21,7 +21,7 @@
     "message": "Denna sida kunde inte översättas"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Översätt alltid från $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
