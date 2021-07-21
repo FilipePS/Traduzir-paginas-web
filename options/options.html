@@ -256,8 +256,16 @@
             </div>
 
             <div id="hotkeys" class="w3-container">
+                <button data-i18n="openNativeShortcutManager" id="openNativeShortcutManager" class="w3-btn w3-light-grey w3-round w3-border w3-margin" style="width: 60%; max-width: 650px;">Open native shortcut key manager</button>
+
+                <p><b data-i18n="lblKeyboardShortcutsSpecial">Special keyboard shortcuts</b></p>
+                <ul class="w3-container" style="user-select: none; list-style-type: none;">
+                    <li><label for="translateSelectedWhenPressTwice"><input type="checkbox" id="translateSelectedWhenPressTwice"> <span data-i18n="lblTranslateSelectedWhenPressTwice">Translate selected text when pressing <kbd>Ctrl</kbd> twice</span></label></li>
+                    <li><label for="translateTextOverMousehenPressTwice"><input type="checkbox" id="translateTextOverMousehenPressTwice"> <span data-i18n="lblTranslateTextOverMousehenPressTwice">Translate the text over the mouse when pressing <kbd>Ctrl</kbd> twice</span></label></li>
+                </ul>
+                
                 <p><b data-i18n="lblKeyboardShortcuts">Keyboard shortcuts</b></p>
-                <ul class="w3-container" style="max-width: 680px;"></ul>
+                <ul id="KeyboardShortcuts" class="w3-container" style="max-width: 680px;"></ul>
             </div>
 
             <div id="storage" class="w3-container">

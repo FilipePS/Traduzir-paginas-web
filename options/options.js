@@ -560,6 +560,11 @@ twpConfig.onReady(function () {
     $("#popupBlueWhenSiteIsTranslated").value = twpConfig.get("popupBlueWhenSiteIsTranslated")
 
     // hotkeys options
+
+    $("#openNativeShortcutManager").onclick  = e => {
+        chrome.tabs.create({url: "chrome://extensions/shortcuts"})
+    }
+
     const defaultShortcuts = {}
     for (const name of Object.keys(chrome.runtime.getManifest().commands || {})) {
         const info = chrome.runtime.getManifest().commands[name]
@@ -589,7 +594,7 @@ twpConfig.onReady(function () {
             <div class="w3-hover-light-grey shortcut-button" name="resetKey"><i class="gg-sync"></i></div>
         </div>  
         `
-        $("#hotkeys ul").appendChild(li)
+        $("#KeyboardShortcuts").appendChild(li)
 
         const input = li.querySelector(`[name="input"]`)
         const error = li.querySelector(`[name="error"]`)
@@ -714,6 +719,16 @@ twpConfig.onReady(function () {
             removeKey.style.display = "block"
             resetKey.style.display = "none"
         }
+
+        //*
+        if (typeof browser === "undefined") {
+            input.setAttribute("disabled", "")
+            resetKey.style.display = "none"
+            removeKey.style.display = "none"
+        } else {
+            $("#openNativeShortcutManager").style.display = "none"
+        }
+        // */
     }
 
     if (typeof chrome.commands !== "undefined") {
