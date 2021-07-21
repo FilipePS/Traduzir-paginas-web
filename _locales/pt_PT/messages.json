@@ -392,13 +392,13 @@
     "message": "Traduzir automaticamente ao clicar em um link que leva você para o mesmo domínio do site atual"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Abra o gerenciador de teclas de atalho nativo"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Atalhos de teclado especiais"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Traduza o texto selecionado ao pressionar $SHORTCUT_KEY$ duas vezes",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMousehenPressTwice": {
-    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "message": "Traduza o texto sobre o mouse ao pressionar $SHORTCUT_KEY$ duas vezes",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
