@@ -560,10 +560,24 @@ twpConfig.onReady(function () {
     $("#popupBlueWhenSiteIsTranslated").value = twpConfig.get("popupBlueWhenSiteIsTranslated")
 
     // hotkeys options
+    function escapeHtml(unsafe) {
+        return unsafe
+             .replace(/&/g, "&amp;")
+             .replace(/</g, "&lt;")
+             .replace(/>/g, "&gt;")
+             .replace(/"/g, "&quot;")
+             .replace(/'/g, "&#039;");
+    }
+    $('[data-i18n="lblTranslateSelectedWhenPressTwice"]').innerHTML = $('[data-i18n="lblTranslateSelectedWhenPressTwice"]').innerHTML.replace("[Ctrl]", "<kbd>Ctrl</kbd>")
+    $('[data-i18n="lblTranslateTextOverMousehenPressTwice"]').innerHTML = $('[data-i18n="lblTranslateTextOverMousehenPressTwice"]').innerHTML.replace("[Ctrl]", "<kbd>Ctrl</kbd>")
+
 
     $("#openNativeShortcutManager").onclick  = e => {
         chrome.tabs.create({url: "chrome://extensions/shortcuts"})
     }
+
+    
+
 
     const defaultShortcuts = {}
     for (const name of Object.keys(chrome.runtime.getManifest().commands || {})) {
