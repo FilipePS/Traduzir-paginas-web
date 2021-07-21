@@ -604,10 +604,11 @@ twpConfig.onReady(function() {
         eOrigText.textContent = prevSelectionInfo.text
 
         translateNewInput(true)
+        const currentFooCount = fooCount
         setTimeout(() => {
-            const tmp = fooCount
+            if (currentFooCount !== fooCount) return;
             update_eDivResult(true, eSelTextTrans.textContent)
-            fooCount = tmp
+            fooCount = currentFooCount
         }, 1000)
     }
 
