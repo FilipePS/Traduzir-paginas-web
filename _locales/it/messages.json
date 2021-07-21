@@ -390,5 +390,27 @@
   },
   "lblAutoTranslateWhenClickingALink": {
     "message": "Traduci automaticamente quando fai clic su un link che ti porta allo stesso dominio del sito corrente"
+  },
+  "openNativeShortcutManager": {
+    "message": "Open native shortcut key manager"
+  },
+  "lblKeyboardShortcutsSpecial": {
+    "message": "Special keyboard shortcuts"
+  },
+  "lblTranslateSelectedWhenPressTwice": {
+    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "lblTranslateTextOverMousehenPressTwice": {
+    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
   }
 }
