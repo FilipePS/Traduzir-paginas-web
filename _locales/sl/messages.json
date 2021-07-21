@@ -21,7 +21,7 @@
     "message": "Te strani ni bilo mogoče prevesti"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Vedno prevedi iz $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
