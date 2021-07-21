@@ -21,7 +21,7 @@
     "message": "Цю сторінку не вдалося перекласти"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Завжди перекладати з $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
