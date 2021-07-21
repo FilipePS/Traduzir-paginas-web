@@ -21,7 +21,7 @@
     "message": "Không thể dịch trang này"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Luôn dịch từ $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
