@@ -405,8 +405,8 @@
       }
     }
   },
-  "lblTranslateTextOverMousehenPressTwice": {
-    "message": "Traduza o texto sobre o mouse ao pressionar $SHORTCUT_KEY$ duas vezes",
+  "lblTranslateTextOverMouseWhenPressTwice": {
+    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
