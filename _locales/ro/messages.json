@@ -177,7 +177,7 @@
     "message": "Nu traduce niciodată această limbă"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Arată textul original cînd pui săgeata pe el"
+    "message": "Arată textul original dacă pui săgeata pe el"
   },
   "msgLanguages": {
     "message": "Limbi"
@@ -210,7 +210,7 @@
     "message": "Adaugă"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Arată textul tradus cînd pui săgeata pe el"
+    "message": "Arată textul tradus dacă pui săgeata pe el"
   },
   "lblKeyboardShortcuts": {
     "message": "Comenzi rapide"
