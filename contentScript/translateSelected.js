@@ -541,8 +541,8 @@ twpConfig.onReady(function() {
         }
     })
 
-    function update_eDivResult(isNewSelection=false, result="") {
-        if (isNewSelection || eDivResult.style.display !== "block") {
+    function update_eDivResult(result="") {
+        if (eDivResult.style.display !== "block") {
             init()
         }
         const eTop = prevSelectionInfo.bottom
@@ -554,7 +554,7 @@ twpConfig.onReady(function() {
             eSelTextTrans.setAttribute("dir", "ltr")
         }
         eSelTextTrans.textContent = result
-        if (isNewSelection || eDivResult.style.display !== "block") {
+        if (eDivResult.style.display !== "block") {
             eDivResult.style.display = "block"
             eDivResult.style.top = "0px"
             eDivResult.style.left = "0px"
@@ -577,7 +577,7 @@ twpConfig.onReady(function() {
         }
     }
 
-    function translateNewInput(isNewSelection=false) {
+    function translateNewInput() {
         fooCount++
         let currentFooCount = fooCount
         stopAudio()
@@ -587,7 +587,7 @@ twpConfig.onReady(function() {
         .then(result => {
             if (currentFooCount !== fooCount) return;
             
-            update_eDivResult(isNewSelection, result)
+            update_eDivResult(result)
         })
     }
 
@@ -603,11 +603,11 @@ twpConfig.onReady(function() {
 
         eOrigText.textContent = prevSelectionInfo.text
 
-        translateNewInput(true)
+        translateNewInput()
         const currentFooCount = fooCount
         setTimeout(() => {
             if (currentFooCount !== fooCount) return;
-            update_eDivResult(true, eSelTextTrans.textContent)
+            update_eDivResult(eSelTextTrans.textContent)
             fooCount = currentFooCount
         }, 1000)
     }
