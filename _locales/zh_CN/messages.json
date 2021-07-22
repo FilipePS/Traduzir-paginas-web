@@ -398,15 +398,15 @@
     "message": "特殊键盘快捷键"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "连按两次 $SHORTCUT_KEY$ 键翻译选中文本",
+    "message": "连按两下 $SHORTCUT_KEY$ 键翻译选中文本",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
       }
     }
   },
-  "lblTranslateTextOverMousehenPressTwice": {
-    "message": "连按两次 $SHORTCUT_KEY$ 键翻译鼠标悬停文本",
+  "lblTranslateTextOverMouseWhenPressTwice": {
+    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
