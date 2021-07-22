@@ -348,13 +348,13 @@
     "message": "Abilita DeepL come servizio di traduzione del testo"
   },
   "enterShortcut": {
-    "message": "Inserisci una scorciatoia"
+    "message": "Digita una scorciatoia"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "Includi Ctrl o Alt"
   },
   "hotkeyError_letter": {
-    "message": "Scrivi una lettera"
+    "message": "Digita una lettera"
   },
   "hotkeyError_invalid": {
     "message": "Combinazione non valida"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "message": "Traduci il testo quando passi la freccia sopra e premi due volte $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
