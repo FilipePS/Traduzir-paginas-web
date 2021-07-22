@@ -21,7 +21,7 @@
     "message": "Ova stranica ne može se prevesti"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Uvijek prevodi sa $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -405,7 +405,7 @@
       }
     }
   },
-  "lblTranslateTextOverMousehenPressTwice": {
+  "lblTranslateTextOverMouseWhenPressTwice": {
     "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {

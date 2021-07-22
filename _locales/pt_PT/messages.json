@@ -395,7 +395,7 @@
     "message": "Abra o gerenciador de teclas de atalho nativo"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Atalhos de teclado especiais"
+    "message": "Atalhos do teclado especiais"
   },
   "lblTranslateSelectedWhenPressTwice": {
     "message": "Traduza o texto selecionado ao pressionar $SHORTCUT_KEY$ duas vezes",
@@ -405,7 +405,7 @@
       }
     }
   },
-  "lblTranslateTextOverMousehenPressTwice": {
+  "lblTranslateTextOverMouseWhenPressTwice": {
     "message": "Traduza o texto sobre o mouse ao pressionar $SHORTCUT_KEY$ duas vezes",
     "placeholders": {
       "SHORTCUT_KEY": {

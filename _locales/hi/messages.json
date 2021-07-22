@@ -21,7 +21,7 @@
     "message": "इस पृष्ठ का अनुवाद नहीं किया जा सका"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "हमेशा $LANGUAGE_NAME$ से अनुवाद करें",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -405,7 +405,7 @@
       }
     }
   },
-  "lblTranslateTextOverMousehenPressTwice": {
+  "lblTranslateTextOverMouseWhenPressTwice": {
     "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
