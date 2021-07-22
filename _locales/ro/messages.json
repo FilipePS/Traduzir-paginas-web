@@ -392,13 +392,13 @@
     "message": "Tradu automat cînd faci clic pe o legătură care te duce la același domeniu ca al sitului actual"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Deschide administratorul nativ de taste rapide"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Comenzi rapide speciale"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Tradu textul selecționat la apăsarea de două ori a $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
