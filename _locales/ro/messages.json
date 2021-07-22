@@ -348,13 +348,13 @@
     "message": "Activează DeepL ca serviciu de traducere a textului"
   },
   "enterShortcut": {
-    "message": "Adaugă o comandă rapidă"
+    "message": "Tastează o comandă rapidă"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "Include Ctrl sau Alt"
   },
   "hotkeyError_letter": {
-    "message": "Scrie o literă"
+    "message": "Tastează o literă"
   },
   "hotkeyError_invalid": {
     "message": "Combinație incorectă"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "message": "Tradu textul dacă pui săgeata pe el și apeși de două ori $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
