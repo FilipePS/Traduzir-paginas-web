@@ -392,13 +392,13 @@
     "message": "若点击链接所访问的网站与当前域名相同，则自动翻译"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "打开本地快捷键管理器"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "特殊键盘快捷键"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "连按两次 $SHORTCUT_KEY$ 键翻译选中文本",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMousehenPressTwice": {
-    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "message": "连按两次 $SHORTCUT_KEY$ 键翻译鼠标悬停文本",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
