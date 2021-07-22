@@ -392,13 +392,13 @@
     "message": "Traduci automaticamente quando fai clic su un link che ti porta allo stesso dominio del sito corrente"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Apri il gestore nativo delle scorciatoie"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Scorciatoie speciali da tastiera"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Traduci il testo selezionato premendo due volte $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
