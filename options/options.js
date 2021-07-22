@@ -581,6 +581,11 @@ twpConfig.onReady(function () {
     }
     $("#translateSelectedWhenPressTwice").checked = twpConfig.get("translateSelectedWhenPressTwice") === "yes"
 
+    $("#translateTextOverMousehenPressTwice").onclick = e => {
+        twpConfig.set("translateTextOverMousehenPressTwice", e.target.checked ? "yes" : "no")
+    }
+    $("#translateTextOverMousehenPressTwice").checked = twpConfig.get("translateTextOverMousehenPressTwice") === "yes"
+
 
     const defaultShortcuts = {}
     for (const name of Object.keys(chrome.runtime.getManifest().commands || {})) {

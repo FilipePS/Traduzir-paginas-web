@@ -12,6 +12,7 @@ twpConfig.onReady(function () {
     let currentTextTranslatorService = twpConfig.get("textTranslatorService") === "deepl" ? "google" : twpConfig.get("textTranslatorService")
     let showTranslatedTextWhenHoveringThisSite = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
     let showTranslatedTextWhenHoveringThisLang = false
+    let translateTextOverMousehenPressTwice = twpConfig.get("translateTextOverMousehenPressTwice") === "yes"
     let fooCount = 0
 
     twpConfig.onChanged(function (name, newValue) {
@@ -31,6 +32,10 @@ twpConfig.onReady(function () {
                 break
             case "langsToTranslateWhenHovering":
                 showTranslatedTextWhenHoveringThisLang = newValue.indexOf(originalPageLanguage) !== -1
+                updateEventListener()
+                break
+            case "translateTextOverMousehenPressTwice":
+                translateTextOverMousehenPressTwice = twpConfig.get("translateTextOverMousehenPressTwice") === "yes"
                 updateEventListener()
                 break
         }
@@ -78,9 +83,11 @@ twpConfig.onReady(function () {
         if (e.target === currentNodeOverMouse) return;
         currentNodeOverMouse = e.target
 
-        destroy()
-        if (e.buttons === 0) {
-            timeoutHandler = setTimeout(translateThisNode, 1250, e.target)
+        if (!(!showTranslatedTextWhenHoveringThisSite && !showTranslatedTextWhenHoveringThisLang)) {
+            destroy()
+            if (e.buttons === 0) {
+                timeoutHandler = setTimeout(translateThisNode, 1250, e.target)
+            }
         }
     }
 
@@ -545,8 +552,25 @@ twpConfig.onReady(function () {
         }
     }
 
+    let lastTimePressedCtrl = null
+    function onKeyUp(e) {
+        if (!translateTextOverMousehenPressTwice) return;
+        if (e.key == "Control") {
+            if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 300) {
+                lastTimePressedCtrl = performance.now()
+    
+                const elements = document.querySelectorAll(":hover")
+                if (elements.length > 0) {
+                    destroy()
+                    translateThisNode(elements[elements.length-1])
+                }
+            }
+            lastTimePressedCtrl = performance.now()
+        }
+    }
+
     function updateEventListener() {
-        if (plataformInfo.isMobile.any || pageLanguageState == "translated" || (!showTranslatedTextWhenHoveringThisSite && !showTranslatedTextWhenHoveringThisLang)) {
+        if (plataformInfo.isMobile.any || pageLanguageState == "translated" || !(showTranslatedTextWhenHoveringThisSite || showTranslatedTextWhenHoveringThisLang || translateTextOverMousehenPressTwice)) {
             window.removeEventListener("scroll", onScroll)
 
             window.removeEventListener("mousemove", onMouseMove)
@@ -554,6 +578,8 @@ twpConfig.onReady(function () {
     
             document.removeEventListener("blur", destroy)
             document.removeEventListener("visibilitychange", destroy)
+
+            document.removeEventListener("keyup", onKeyUp)
 
             destroy()
         } else {
@@ -564,6 +590,8 @@ twpConfig.onReady(function () {
     
             document.addEventListener("blur", destroy)
             document.addEventListener("visibilitychange", destroy)
+ 
+            document.addEventListener("keyup", onKeyUp)
         }
     }
     updateEventListener()
