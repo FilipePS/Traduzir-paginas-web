@@ -576,7 +576,7 @@ twpConfig.onReady(function () {
     function onKeyUp(e) {
         if (!translateTextOverMouseWhenPressTwice) return;
         if (e.key == "Control") {
-            if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 300 && !isSelectingText()) {
+            if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 280 && !isSelectingText()) {
                 lastTimePressedCtrl = performance.now()
 
                 const elements = document.querySelectorAll(":hover")

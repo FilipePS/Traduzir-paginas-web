@@ -737,11 +737,31 @@ twpConfig.onReady(function() {
         }
     }
 
+    function isSelectingText() {
+        const activeEl = document.activeElement;
+        const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+        if (
+          (activeElTagName == "textarea") || (activeElTagName == "input" &&
+          /^(?:text|search)$/i.test(activeEl.type)) &&
+          (typeof activeEl.selectionStart == "number")
+        ) {
+            const text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
+            if (text) return true;
+        } else if (window.getSelection) {
+            const selection = window.getSelection()
+            if (selection.type == "Range") {
+                const text = selection.toString();
+                if (text) return true;
+            }
+        }
+        return false
+    }
+
     let lastTimePressedCtrl = null
     function onKeyUp(e) {
         if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
         if (e.key == "Control") {
-            if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 300) {
+            if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 280 && isSelectingText()) {
                 lastTimePressedCtrl = performance.now()
                 readSelection()
                 init()
