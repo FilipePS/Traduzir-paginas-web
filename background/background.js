@@ -21,6 +21,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
     } else if (request.action === "openDonationPage") {
         chrome.tabs.create({url:  chrome.runtime.getURL("/options/options.html#donation")})
+    } else if (request.action === "detectTabLanguage") {
+        try {
+            chrome.tabs.detectLanguage(sender.tab.id, result => sendResponse(result))
+        } catch (e) {
+            console.error(e)
+            sendResponse()
+        }
+        return true
     }
 })
 

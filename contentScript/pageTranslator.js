@@ -560,42 +560,34 @@ twpConfig.onReady(function() {
     })
     
     const detectPageLanguage = function () {
-        if (chrome.i18n.detectLanguage) {
-            chrome.i18n.detectLanguage(document.body.innerText, result => {
-                // TODO verificar o valor de result no firefox mobile
-                if (result) {
-                    for (const langInfo of result.languages) {
-                        const langCode = twpLang.checkLanguageCode(langInfo.language)
-                        if (langCode) {
-                            originalPageLanguage = langCode
+        chrome.runtime.sendMessage({action: "detectTabLanguage"}, result => {
+            result  = result || "und"
+
+            if (result === "und") {
+                observers.forEach(callback => callback("und"))
+                alreadyGotTheLanguage = true
+            } else {
+                const langCode = twpLang.checkLanguageCode(result)
+                if (langCode) {
+                    originalPageLanguage = langCode
+                }
+
+                if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
+                    if (location.hostname && twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
+                        if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
+                            pageTranslator.translatePage()
+                        } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                            pageTranslator.translatePage()
                         }
-                        if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
-                            if (location.hostname && twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
-                                if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
-                                    pageTranslator.translatePage()
-                                } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
-                                    pageTranslator.translatePage()
-                                }
-                            }
-                        }
-                        break
                     }
                 }
-                
+
                 observers.forEach(callback => callback(originalPageLanguage))
                 alreadyGotTheLanguage = true
-            })
-        } else {
-            if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
-                if (location.hostname && twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
-                    pageTranslator.translatePage()
-                }
             }
-            observers.forEach(callback => callback("und"))
-            alreadyGotTheLanguage = true
-        }
+        })
     }
-    
+
     setTimeout(function () {
         if (document.visibilityState == "visible") {
             detectPageLanguage()
@@ -608,7 +600,7 @@ twpConfig.onReady(function() {
             }
             document.addEventListener("visibilitychange", handleVisibilityChange, false)
         }
-    }, 100)
+    }, 120)
     
     pageTranslator.onGetOriginalPageLanguage(function () {
         chrome.runtime.sendMessage({action: "getMainFramePageLanguageState"}, response => {
