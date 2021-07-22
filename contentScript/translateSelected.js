@@ -737,6 +737,21 @@ twpConfig.onReady(function() {
         }
     }
 
+    let lastTimePressedCtrl = null
+    function onKeyUp(e) {
+        if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
+        if (e.key == "Control") {
+            if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 300) {
+                lastTimePressedCtrl = performance.now()
+                readSelection()
+                init()
+                translateSelText()
+            }
+            lastTimePressedCtrl = performance.now()
+        }
+    }
+    document.addEventListener("keyup", onKeyUp)
+
     function updateEventListener() {
         if (showTranslateSelectedButton == "yes" && (awaysTranslateThisSite || (translateThisSite && translateThisLanguage))
         && ((dontShowIfPageLangIsTargetLang == "yes" && originalPageLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes")

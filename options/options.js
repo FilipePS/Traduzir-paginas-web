@@ -576,7 +576,10 @@ twpConfig.onReady(function () {
         chrome.tabs.create({url: "chrome://extensions/shortcuts"})
     }
 
-    
+    $("#translateSelectedWhenPressTwice").onclick = e => {
+        twpConfig.set("translateSelectedWhenPressTwice", e.target.checked ? "yes" : "no")
+    }
+    $("#translateSelectedWhenPressTwice").checked = twpConfig.get("translateSelectedWhenPressTwice") === "yes"
 
 
     const defaultShortcuts = {}
