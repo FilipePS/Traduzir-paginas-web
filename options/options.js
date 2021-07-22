@@ -569,7 +569,7 @@ twpConfig.onReady(function () {
              .replace(/'/g, "&#039;");
     }
     $('[data-i18n="lblTranslateSelectedWhenPressTwice"]').innerHTML = $('[data-i18n="lblTranslateSelectedWhenPressTwice"]').innerHTML.replace("[Ctrl]", "<kbd>Ctrl</kbd>")
-    $('[data-i18n="lblTranslateTextOverMousehenPressTwice"]').innerHTML = $('[data-i18n="lblTranslateTextOverMousehenPressTwice"]').innerHTML.replace("[Ctrl]", "<kbd>Ctrl</kbd>")
+    $('[data-i18n="lblTranslateTextOverMouseWhenPressTwice"]').innerHTML = $('[data-i18n="lblTranslateTextOverMouseWhenPressTwice"]').innerHTML.replace("[Ctrl]", "<kbd>Ctrl</kbd>")
 
 
     $("#openNativeShortcutManager").onclick  = e => {
@@ -581,10 +581,10 @@ twpConfig.onReady(function () {
     }
     $("#translateSelectedWhenPressTwice").checked = twpConfig.get("translateSelectedWhenPressTwice") === "yes"
 
-    $("#translateTextOverMousehenPressTwice").onclick = e => {
-        twpConfig.set("translateTextOverMousehenPressTwice", e.target.checked ? "yes" : "no")
+    $("#translateTextOverMouseWhenPressTwice").onclick = e => {
+        twpConfig.set("translateTextOverMouseWhenPressTwice", e.target.checked ? "yes" : "no")
     }
-    $("#translateTextOverMousehenPressTwice").checked = twpConfig.get("translateTextOverMousehenPressTwice") === "yes"
+    $("#translateTextOverMouseWhenPressTwice").checked = twpConfig.get("translateTextOverMouseWhenPressTwice") === "yes"
 
 
     const defaultShortcuts = {}

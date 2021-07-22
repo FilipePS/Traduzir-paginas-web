@@ -12,7 +12,7 @@ twpConfig.onReady(function () {
     let currentTextTranslatorService = twpConfig.get("textTranslatorService") === "deepl" ? "google" : twpConfig.get("textTranslatorService")
     let showTranslatedTextWhenHoveringThisSite = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
     let showTranslatedTextWhenHoveringThisLang = false
-    let translateTextOverMousehenPressTwice = twpConfig.get("translateTextOverMousehenPressTwice") === "yes"
+    let translateTextOverMouseWhenPressTwice = twpConfig.get("translateTextOverMouseWhenPressTwice") === "yes"
     let fooCount = 0
 
     twpConfig.onChanged(function (name, newValue) {
@@ -34,8 +34,8 @@ twpConfig.onReady(function () {
                 showTranslatedTextWhenHoveringThisLang = newValue.indexOf(originalPageLanguage) !== -1
                 updateEventListener()
                 break
-            case "translateTextOverMousehenPressTwice":
-                translateTextOverMousehenPressTwice = twpConfig.get("translateTextOverMousehenPressTwice") === "yes"
+            case "translateTextOverMouseWhenPressTwice":
+                translateTextOverMouseWhenPressTwice = twpConfig.get("translateTextOverMouseWhenPressTwice") === "yes"
                 updateEventListener()
                 break
         }
@@ -574,7 +574,7 @@ twpConfig.onReady(function () {
 
     let lastTimePressedCtrl = null
     function onKeyUp(e) {
-        if (!translateTextOverMousehenPressTwice) return;
+        if (!translateTextOverMouseWhenPressTwice) return;
         if (e.key == "Control") {
             if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 300 && !isSelectingText()) {
                 lastTimePressedCtrl = performance.now()
@@ -590,7 +590,7 @@ twpConfig.onReady(function () {
     }
 
     function updateEventListener() {
-        if (plataformInfo.isMobile.any || pageLanguageState == "translated" || !(showTranslatedTextWhenHoveringThisSite || showTranslatedTextWhenHoveringThisLang || translateTextOverMousehenPressTwice)) {
+        if (plataformInfo.isMobile.any || pageLanguageState == "translated" || !(showTranslatedTextWhenHoveringThisSite || showTranslatedTextWhenHoveringThisLang || translateTextOverMouseWhenPressTwice)) {
             window.removeEventListener("scroll", onScroll)
 
             window.removeEventListener("mousemove", onMouseMove)
