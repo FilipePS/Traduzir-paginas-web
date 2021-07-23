@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "message": "连按两下 $SHORTCUT_KEY$ 键翻译鼠标悬停文本",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
