@@ -3,6 +3,12 @@
 var $ = document.querySelector.bind(document)
 
 twpConfig.onReady(function () {
+    if (plataformInfo.isMobile.any) {
+        let style = document.createElement("style")
+        style.textContent = ".desktopOnly {display: none !important}"
+        document.head.appendChild(style)
+    }
+
     let sideBarIsVisible = false
     $("#btnOpenMenu").onclick = e => {
         $("#menuContainer").classList.toggle("change")

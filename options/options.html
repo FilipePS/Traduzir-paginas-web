@@ -19,7 +19,7 @@
             <a href="#sites" class="w3-bar-item w3-button" data-i18n="msgSites">Sites</a>
             <a href="#translations" class="w3-bar-item w3-button" data-i18n="msgTranslations">Translations</a>
             <a href="#style" class="w3-bar-item w3-button" data-i18n="msgStyle">Style</a>
-            <a href="#hotkeys" class="w3-bar-item w3-button" data-i18n="msgHotkeys">Hotkeys</a>
+            <a href="#hotkeys" class="w3-bar-item w3-button desktopOnly" data-i18n="msgHotkeys">Hotkeys</a>
             <a href="#storage" class="w3-bar-item w3-button" data-i18n="msgStorage">Storage</a>
             <a href="#others" class="w3-bar-item w3-button" data-i18n="lblOthers">Others</a>
         </div>
@@ -83,52 +83,58 @@
                     </div>
                 </div>
                 <ul id="neverTranslateLangs" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
-                <br>
-                <div class="w3-display-container w3-padding w3-margin-top">
-                    <div class="w3-display-left">
-                        <p><b data-i18n="optionsAlwaysTranslate">Always translate these languages</b></p>
-                    </div>
-                    <div class="w3-display-right">
-                        <div style="position: relative;">
-                            <button class="w3-button w3-blue w3-round w3-margin-right add"
-                                data-i18n="lblAdd">Add</button>
-                            <select id="addToAlwaysTranslateLangs" class="add">
-                                <option value="" selected disabled hidden></option>
-                            </select>
+                <div class="desktopOnly">
+                    <br>
+                    <div class="w3-display-container w3-padding w3-margin-top">
+                        <div class="w3-display-left">
+                            <p><b data-i18n="optionsAlwaysTranslate">Always translate these languages</b></p>
+                        </div>
+                        <div class="w3-display-right">
+                            <div style="position: relative;">
+                                <button class="w3-button w3-blue w3-round w3-margin-right add"
+                                    data-i18n="lblAdd">Add</button>
+                                <select id="addToAlwaysTranslateLangs" class="add">
+                                    <option value="" selected disabled hidden></option>
+                                </select>
+                            </div>
                         </div>
                     </div>
+                    <ul id="alwaysTranslateLangs" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
                 </div>
-                <ul id="alwaysTranslateLangs" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
-                <br>
-                <div class="w3-display-container w3-padding w3-margin-top">
-                    <div class="w3-display-left">
-                        <p><b data-i18n="lblShowTranslatedHoveringLangs">Show translated text when hovering over sites
-                                with these languages</b></p>
-                    </div>
-                    <div class="w3-display-right">
-                        <div style="position: relative;">
-                            <button class="w3-button w3-blue w3-round w3-margin-right add"
-                                data-i18n="lblAdd">Add</button>
-                            <select id="addLangToTranslateWhenHovering" class="add">
-                                <option value="" selected disabled hidden></option>
-                            </select>
+                <div class="desktopOnly">
+                    <br>
+                    <div class="w3-display-container w3-padding w3-margin-top">
+                        <div class="w3-display-left">
+                            <p><b data-i18n="lblShowTranslatedHoveringLangs">Show translated text when hovering over sites
+                                    with these languages</b></p>
+                        </div>
+                        <div class="w3-display-right">
+                            <div style="position: relative;">
+                                <button class="w3-button w3-blue w3-round w3-margin-right add"
+                                    data-i18n="lblAdd">Add</button>
+                                <select id="addLangToTranslateWhenHovering" class="add">
+                                    <option value="" selected disabled hidden></option>
+                                </select>
+                            </div>
                         </div>
                     </div>
+                    <ul id="langsToTranslateWhenHovering" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
                 </div>
-                <ul id="langsToTranslateWhenHovering" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
             </div>
 
             <div id="sites" class="w3-container">
-                <div class="w3-display-container w3-padding w3-margin-top">
-                    <div class="w3-display-left">
-                        <p><b data-i18n="lblAlwaysTranslateSites">Always translate these sites</b></p>
+                <div class="desktopOnly">
+                    <div class="w3-display-container w3-padding w3-margin-top">
+                        <div class="w3-display-left">
+                            <p><b data-i18n="lblAlwaysTranslateSites">Always translate these sites</b></p>
+                        </div>
+                        <div class="w3-display-right">
+                            <button id="addToAlwaysTranslateSites" class="w3-button w3-blue w3-round w3-margin-right add"
+                                data-i18n="lblAdd">Add</button>
+                        </div>
                     </div>
-                    <div class="w3-display-right">
-                        <button id="addToAlwaysTranslateSites" class="w3-button w3-blue w3-round w3-margin-right add"
-                            data-i18n="lblAdd">Add</button>
-                    </div>
+                    <ul id="alwaysTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
                 </div>
-                <ul id="alwaysTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
                 <br>
                 <div class="w3-display-container w3-padding w3-margin-top">
                     <div class="w3-display-left">
@@ -140,18 +146,20 @@
                     </div>
                 </div>
                 <ul id="neverTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
-                <br>
-                <div class="w3-display-container w3-padding w3-margin-top">
-                    <div class="w3-display-left">
-                        <p><b data-i18n="lblShowTranslatedHoveringSites">Show translated text when hovering on these
-                                sites</b></p>
+                <div class="desktopOnly">
+                    <br>
+                    <div class="w3-display-container w3-padding w3-margin-top">
+                        <div class="w3-display-left">
+                            <p><b data-i18n="lblShowTranslatedHoveringSites">Show translated text when hovering on these
+                                    sites</b></p>
+                        </div>
+                        <div class="w3-display-right">
+                            <button id="addSiteToTranslateWhenHovering"
+                                class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add</button>
+                        </div>
                     </div>
-                    <div class="w3-display-right">
-                        <button id="addSiteToTranslateWhenHovering"
-                            class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add</button>
-                    </div>
+                    <ul id="sitesToTranslateWhenHovering" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
                 </div>
-                <ul id="sitesToTranslateWhenHovering" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
             </div>
 
             <div id="translations" class="w3-container">
@@ -201,12 +209,14 @@
                     <label for="dontShowIfSelectedTextIsUnknown" data-i18n="dontShowIfSelectedTextIsUnknown">Do not show
                         if the selected text language is unknown</label>
                 </div>
-                <br>
-                <p><b data-i18n="lblShowOriginalTextWhenHovering">Show original text when hovering</b></p>
-                <select id="showOriginalTextWhenHovering" class="w3-select w3-margin">
-                    <option value="yes" data-i18n="msgYes">Yes</option>
-                    <option value="no" data-i18n="msgNo">No</option>
-                </select>
+                <div class="desktopOnly">
+                    <br>
+                    <p><b data-i18n="lblShowOriginalTextWhenHovering">Show original text when hovering</b></p>
+                    <select id="showOriginalTextWhenHovering" class="w3-select w3-margin">
+                        <option value="yes" data-i18n="msgYes">Yes</option>
+                        <option value="no" data-i18n="msgNo">No</option>
+                    </select>
+                </div>
                 <br>
                 <p><b data-i18n="lblAutoTranslateWhenClickingALink">Automatically translate when clicking on a link that takes you to the same domain as the current site</b></p>
                 <select id="autoTranslateWhenClickingALink" class="w3-select w3-margin">
@@ -234,11 +244,13 @@
             </div>
 
             <div id="style" class="w3-container">
-                <p><b data-i18n="msgUseOldPopupInterface">Use the old popup interface</b></p>
-                <select id="useOldPopup" class="w3-select w3-margin">
-                    <option value="no" data-i18n="msgNo">No</option>
-                    <option value="yes" data-i18n="msgYes">Yes</option>
-                </select>
+                <div class="desktopOnly">
+                    <p><b data-i18n="msgUseOldPopupInterface">Use the old popup interface</b></p>
+                    <select id="useOldPopup" class="w3-select w3-margin">
+                        <option value="no" data-i18n="msgNo">No</option>
+                        <option value="yes" data-i18n="msgYes">Yes</option>
+                    </select>
+                </div>
 
                 <p><b data-i18n="lblDarkMode">Dark mode</b></p>
                 <select id="darkMode" class="w3-select w3-margin">
@@ -247,15 +259,17 @@
                     <option value="no" data-i18n="msgNo">No</option>
                 </select>
 
-                <p><b data-i18n="popupBlueWhenSiteIsTranslated">Make the pop-up icon blue when the site is
-                        translated</b></p>
-                <select id="popupBlueWhenSiteIsTranslated" class="w3-select w3-margin">
-                    <option value="yes" data-i18n="msgYes">Yes</option>
-                    <option value="no" data-i18n="msgNo">No</option>
-                </select>
+                <div class="desktopOnly">
+                    <p><b data-i18n="popupBlueWhenSiteIsTranslated">Make the pop-up icon blue when the site is
+                            translated</b></p>
+                    <select id="popupBlueWhenSiteIsTranslated" class="w3-select w3-margin">
+                        <option value="yes" data-i18n="msgYes">Yes</option>
+                        <option value="no" data-i18n="msgNo">No</option>
+                    </select>
+                </div>
             </div>
 
-            <div id="hotkeys" class="w3-container">
+            <div id="hotkeys" class="w3-container desktopOnly">
                 <button data-i18n="openNativeShortcutManager" id="openNativeShortcutManager" class="w3-btn w3-light-grey w3-round w3-border w3-margin" style="width: 60%; max-width: 650px;">Open native shortcut key manager</button>
 
                 <p><b data-i18n="lblKeyboardShortcutsSpecial">Special keyboard shortcuts</b></p>
@@ -298,25 +312,27 @@
                     <option value="threeFingersOnTheScreen" data-i18n="optionPopupThreeFingers">When I touch three
                         fingers on the screen</option>
                 </select>
-                <br>
-                <p><b data-i18n="lblButtonInTheAddressBar">Show button in the address bar</b></p>
-                <select id="showButtonInTheAddressBar" class="w3-select w3-margin">
-                    <option value="yes" data-i18n="msgYes">Yes</option>
-                    <option value="no" data-i18n="msgNo">No</option>
-                </select>
-                <br>
-                <p><b data-i18n="lblShowContextMenu">Show the option to translate the page in the context menu</b></p>
-                <select id="showTranslatePageContextMenu" class="w3-select w3-margin">
-                    <option value="yes" data-i18n="msgYes">Yes</option>
-                    <option value="no" data-i18n="msgNo">No</option>
-                </select>
-                <br>
-                <p><b data-i18n="lblShowTranslateSelectedContextMenu">Show the option to translate the selected text in
-                        the context menu</b></p>
-                <select id="showTranslateSelectedContextMenu" class="w3-select w3-margin">
-                    <option value="yes" data-i18n="msgYes">Yes</option>
-                    <option value="no" data-i18n="msgNo">No</option>
-                </select>
+                <div class="desktopOnly">
+                    <br>
+                    <p><b data-i18n="lblButtonInTheAddressBar">Show button in the address bar</b></p>
+                    <select id="showButtonInTheAddressBar" class="w3-select w3-margin">
+                        <option value="yes" data-i18n="msgYes">Yes</option>
+                        <option value="no" data-i18n="msgNo">No</option>
+                    </select>
+                    <br>
+                    <p><b data-i18n="lblShowContextMenu">Show the option to translate the page in the context menu</b></p>
+                    <select id="showTranslatePageContextMenu" class="w3-select w3-margin">
+                        <option value="yes" data-i18n="msgYes">Yes</option>
+                        <option value="no" data-i18n="msgNo">No</option>
+                    </select>
+                    <br>
+                    <p><b data-i18n="lblShowTranslateSelectedContextMenu">Show the option to translate the selected text in
+                            the context menu</b></p>
+                    <select id="showTranslateSelectedContextMenu" class="w3-select w3-margin">
+                        <option value="yes" data-i18n="msgYes">Yes</option>
+                        <option value="no" data-i18n="msgNo">No</option>
+                    </select>
+                </div>
             </div>
         </div>
 
