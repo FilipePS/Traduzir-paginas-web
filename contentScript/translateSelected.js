@@ -5,6 +5,14 @@
 var translateSelected = {}
 
 twpConfig.onReady(function() {
+    let styleTextContent = ""
+    fetch(chrome.runtime.getURL("/contentScript/css/translateSelected.css"))
+    .then(response => response.text())
+    .then(response => {
+        styleTextContent = response.replace('/icons/icon-32.png', chrome.runtime.getURL("/icons/icon-32.png"))
+    })
+    .catch(e => console.error(e))
+
     let divElement
     let eButtonTransSelText
     let eDivResult
@@ -121,9 +129,9 @@ twpConfig.onReady(function() {
 
         const shadowRoot = divElement.attachShadow({mode: "closed"})
         shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/translateSelected.css")}">
+        <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/translateSelected.css")}">
 
-            <div id="eButtonTransSelText"></div>
+        <div id="eButtonTransSelText"></div>
             <div id="eDivResult">
                 <div id="eOrigTextDiv">
                     <div id="eOrigText" contentEditable="true" spellcheck="false" dir="auto"></div>
@@ -195,6 +203,12 @@ twpConfig.onReady(function() {
                 </div>
             </div>
         `
+
+        {
+            const style = document.createElement("style")
+            style.textContent = styleTextContent
+            shadowRoot.insertBefore(style, shadowRoot.getElementById("eButtonTransSelText"))
+        }
 
         dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
 

@@ -5,6 +5,12 @@ var showTranslated = {}
 twpConfig.onReady(function () {
     if (plataformInfo.isMobile.any) return;
 
+    let styleTextContent = ""
+    fetch(chrome.runtime.getURL("/contentScript/css/showTranslated.css"))
+    .then(response => response.text())
+    .then(response => styleTextContent = response)
+    .catch(e => console.error(e))
+
     let pageLanguageState = "original"
     let originalPageLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
@@ -259,9 +265,9 @@ twpConfig.onReady(function () {
         
         shadowRoot = divElement.attachShadow({mode: "closed"})
         shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/showTranslated.css")}">
+        <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/showTranslated.css")}">
 
-            <div id="eDivResult">
+        <div id="eDivResult">
                 <div id="eTextTranslated" dir="auto"></div>
                 <hr>
                 <div id="drag">
@@ -327,6 +333,12 @@ twpConfig.onReady(function () {
                 </div>
             </div>
         `
+
+        {
+            const style = document.createElement("style")
+            style.textContent = styleTextContent
+            shadowRoot.insertBefore(style, shadowRoot.getElementById("eDivResult"))
+        }
         
         dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
 

@@ -5,6 +5,20 @@
 var showOriginal = {}
 
 twpConfig.onReady(function () {
+    if (plataformInfo.isMobile.any) {
+        showOriginal.enable = () => {}
+        showOriginal.disable = () => {}
+        showOriginal.add = () => {}
+        showOriginal.removeAll = () => {}
+        return;
+    }
+
+    let styleTextContent = ""
+    fetch(chrome.runtime.getURL("/contentScript/css/showOriginal.css"))
+    .then(response => response.text())
+    .then(response => styleTextContent = response)
+    .catch(e => console.error(e))
+
     let showOriginalTextWhenHovering = twpConfig.get("showOriginalTextWhenHovering")
     twpConfig.onChanged(function (name, newValue) {
         if (name === "showOriginalTextWhenHovering") {
@@ -124,6 +138,12 @@ twpConfig.onReady(function () {
             <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/showOriginal.css")}">
             <div id="originalText" dir="auto"></div>
         `
+
+        {
+            const style = document.createElement("style")
+            style.textContent = styleTextContent
+            shadowRoot.insertBefore(style, shadowRoot.getElementById("originalText"))
+        }
 
         function enableDarkMode() {
             if (!shadowRoot.getElementById("darkModeElement")) {
