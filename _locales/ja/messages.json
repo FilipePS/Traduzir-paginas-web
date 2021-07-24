@@ -392,10 +392,10 @@
     "message": "同じドメイン内でページを移動したとき、移動先のページも自動的に翻訳"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "ブラウザのショートカット設定を開く"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "特別なキーボードショートカット"
   },
   "lblTranslateSelectedWhenPressTwice": {
     "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",

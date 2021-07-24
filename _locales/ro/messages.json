@@ -177,7 +177,7 @@
     "message": "Nu traduce niciodată această limbă"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Arată textul original cînd pui săgeata pe el"
+    "message": "Arată textul original dacă pui săgeata pe el"
   },
   "msgLanguages": {
     "message": "Limbi"
@@ -210,7 +210,7 @@
     "message": "Adaugă"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Arată textul tradus cînd pui săgeata pe el"
+    "message": "Arată textul tradus dacă pui săgeata pe el"
   },
   "lblKeyboardShortcuts": {
     "message": "Comenzi rapide"
@@ -348,13 +348,13 @@
     "message": "Activează DeepL ca serviciu de traducere a textului"
   },
   "enterShortcut": {
-    "message": "Adaugă o comandă rapidă"
+    "message": "Tastează o comandă rapidă"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "Include Ctrl sau Alt"
   },
   "hotkeyError_letter": {
-    "message": "Scrie o literă"
+    "message": "Tastează o literă"
   },
   "hotkeyError_invalid": {
     "message": "Combinație incorectă"
@@ -392,13 +392,13 @@
     "message": "Tradu automat cînd faci clic pe o legătură care te duce la același domeniu ca al sitului actual"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Deschide administratorul nativ de taste rapide"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Comenzi rapide speciale"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Tradu textul selecționat la apăsarea de două ori a $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "message": "Tradu textul dacă pui săgeata pe el și apeși de două ori $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
