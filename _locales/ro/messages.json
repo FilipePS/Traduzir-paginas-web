@@ -90,7 +90,7 @@
     "message": "Automat"
   },
   "optionPopupThreeFingers": {
-    "message": "Cînd ating ecranul cu trei degete"
+    "message": "Dacă ating ecranul cu trei degete"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Deschide în Yandex Translate"
@@ -144,7 +144,7 @@
     "message": "Nu ai adăugat nicio limbă la această listă."
   },
   "btnAlwaysTranslate": {
-    "message": "Tradu întotdeauna acest sit"
+    "message": "Tradu mereu acest sit"
   },
   "lblAlwaysTranslateSites": {
     "message": "Tradu mereu aceste situri"
@@ -252,7 +252,7 @@
     "message": "Nu arăta dacă limba textului selecționat e necunoscută"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Arată traducerea cînd pui săgeata pe acest sit"
+    "message": "Arată traducerea dacă se pune săgeata pe acest sit"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Arată traducerea dacă se pune săgeata pe situri în $LANGUAGE_NAME$",
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Arată textul tradus cînd pui săgeata pe situri care au aceste limbi"
+    "message": "Arată textul tradus dacă se pune săgeata pe situri care au aceste limbi"
   },
   "msgNoTranslateSelectedText": {
     "message": "Nu traduce textul selecționat"
