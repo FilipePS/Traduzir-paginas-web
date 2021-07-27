@@ -210,7 +210,7 @@
     "message": "Ekle"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Fareyle üzerine gelindiğinde orijinal metni göster"
+    "message": "Fareyle üzerine gelindiğinde çevrilen metni göster"
   },
   "lblKeyboardShortcuts": {
     "message": "Klavye kısayolları"
@@ -392,13 +392,13 @@
     "message": "Mevcut siteden aynı siteye götüren bir bağlantıya tıkladığınızda otomatik olarak çevirin"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Yerel kısayol tuş yöneticisini aç"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Özel klavye kısayolları"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ tuşuna iki kez basıldığında seçili metni çevir",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
