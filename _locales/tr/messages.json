@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ tuşuna iki kez basıldığında metni fare üstündeyken çevir",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
