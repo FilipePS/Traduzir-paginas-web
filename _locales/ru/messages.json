@@ -392,7 +392,7 @@
     "message": "Автоматически переводить при нажатии на ссылку, которая ведет на тот же домен, что и текущий сайт"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Откройте встроенный менеджер горячих клавиш"
   },
   "lblKeyboardShortcutsSpecial": {
     "message": "Специальные сочетания клавиш"
