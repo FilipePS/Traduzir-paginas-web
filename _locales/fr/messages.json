@@ -389,16 +389,16 @@
     "message": "Faire un don avec PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Traduire automatiquement en cliquant sur un lien qui vous mène au même domaine que le site actuel"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Ouvrir le gestionnaire de raccourcis natif"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Raccourcis clavier spéciaux"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Traduire le texte sélectionné en appuyant deux fois sur $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "message": "Traduire le texte en glissant votre curseur dessus et en appuyant deux fois sur $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
