@@ -90,7 +90,7 @@
     "message": "Automatiquement"
   },
   "optionPopupThreeFingers": {
-    "message": "Quand je touche trois doigts sur l'écran"
+    "message": "Quand je touche l'écran avec trois doigts"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Ouvrir avec Yandex traduction"
@@ -138,7 +138,7 @@
     "message": "Uniquement quand je clique sur « Traduire ce site »"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Vous n'avez ajouté aucun site à cette liste."
+    "message": "Vous n'avez ajouté aucun site à cette liste pour l'instant."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
     "message": "Vous n'avez ajouté aucune langue à cette liste."
@@ -204,7 +204,7 @@
     "message": "Signaler un problème"
   },
   "lblSettings": {
-    "message": "Réglages"
+    "message": "Paramètres"
   },
   "lblAdd": {
     "message": "Ajouter"
@@ -222,7 +222,7 @@
     "message": "Merci d'utiliser cette extension."
   },
   "msgIWillBeGrateful": {
-    "message": "Je vous serai reconnaissant si vous pouvez faire un don."
+    "message": "Je vous serai reconnaissant si vous pouvez me faire un don."
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Traduisez toujours cette langue"
@@ -369,7 +369,7 @@
     "message": "Traduire la page dans la langue cible"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Activer la traduction pour la balise $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
