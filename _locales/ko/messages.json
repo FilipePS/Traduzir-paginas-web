@@ -392,13 +392,13 @@
     "message": "현재 사이트와 동일한 도메인으로 연결되는 링크를 클릭하면 자동으로 번역"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "브라우저 단축키 설정 열기"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "특수 키보드 단축키"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ 키를 두 번 누르면 번역",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ 키를 두 번 누르면 마우스 아래 텍스트 번역",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
