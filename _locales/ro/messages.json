@@ -90,7 +90,7 @@
     "message": "Automat"
   },
   "optionPopupThreeFingers": {
-    "message": "Cînd ating ecranul cu trei degete"
+    "message": "Dacă ating ecranul cu trei degete"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Deschide în Yandex Translate"
@@ -135,7 +135,7 @@
     "message": "Tradu Pagini Web - Opțiuni"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Numai cînd fac clic pe „Tradu acest sit”"
+    "message": "Numai dacă fac clic pe „Tradu acest sit”"
   },
   "msgEmptyListNeverTranslateSites": {
     "message": "Nu ai adăugat niciun sit la această listă."
@@ -144,7 +144,7 @@
     "message": "Nu ai adăugat nicio limbă la această listă."
   },
   "btnAlwaysTranslate": {
-    "message": "Tradu întotdeauna acest sit"
+    "message": "Tradu mereu acest sit"
   },
   "lblAlwaysTranslateSites": {
     "message": "Tradu mereu aceste situri"
@@ -177,7 +177,7 @@
     "message": "Nu traduce niciodată această limbă"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Arată textul original dacă pui săgeata pe el"
+    "message": "Arată textul original dacă se pune săgeata pe el"
   },
   "msgLanguages": {
     "message": "Limbi"
@@ -210,7 +210,7 @@
     "message": "Adaugă"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Arată textul tradus dacă pui săgeata pe el"
+    "message": "Arată textul tradus dacă se pune săgeata pe el"
   },
   "lblKeyboardShortcuts": {
     "message": "Comenzi rapide"
@@ -228,10 +228,10 @@
     "message": "Tradu mereu această limbă"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Arată textul tradus cînd pui săgeata pe aceste situri"
+    "message": "Arată textul tradus dacă se pune săgeata pe aceste situri"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Fă simbolul albastru cînd situl este tradus"
+    "message": "Fă simbolul albastru dacă situl este tradus"
   },
   "more": {
     "message": "Mult"
@@ -252,10 +252,10 @@
     "message": "Nu arăta dacă limba textului selecționat e necunoscută"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Arată traducerea cînd pui săgeata pe acest sit"
+    "message": "Arată traducerea dacă se pune săgeata pe acest sit"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Arată traducerea cînd pui săgeata pe situri în $LANGUAGE_NAME$",
+    "message": "Arată traducerea dacă se pune săgeata pe situri în $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Arată textul tradus cînd pui săgeata pe situri care au aceste limbi"
+    "message": "Arată textul tradus dacă se pune săgeata pe situri care au aceste limbi"
   },
   "msgNoTranslateSelectedText": {
     "message": "Nu traduce textul selecționat"
@@ -389,7 +389,7 @@
     "message": "Donează cu PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Tradu automat cînd faci clic pe o legătură care te duce la același domeniu ca al sitului actual"
+    "message": "Tradu automat dacă se face clic pe o legătură care duce la același domeniu ca al sitului actual"
   },
   "openNativeShortcutManager": {
     "message": "Deschide administratorul nativ de taste rapide"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Tradu textul dacă pui săgeata pe el și apeși de două ori $SHORTCUT_KEY$",
+    "message": "Tradu textul dacă se pune săgeata pe el și se apasă de două ori $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"

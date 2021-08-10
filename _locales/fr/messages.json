@@ -21,7 +21,7 @@
     "message": "Cette page n'a pas pu être traduite"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Toujours traduire depuis $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Langue cible $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -90,7 +90,7 @@
     "message": "Automatiquement"
   },
   "optionPopupThreeFingers": {
-    "message": "Quand je touche trois doigts sur l'écran"
+    "message": "Quand je touche l'écran avec trois doigts"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Ouvrir avec Yandex traduction"
@@ -105,7 +105,7 @@
     "message": "Aider le développeur avec un don"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Traduire en $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -138,7 +138,7 @@
     "message": "Uniquement quand je clique sur « Traduire ce site »"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Vous n'avez ajouté aucun site à cette liste."
+    "message": "Vous n'avez ajouté aucun site à cette liste pour l'instant."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
     "message": "Vous n'avez ajouté aucune langue à cette liste."
@@ -204,7 +204,7 @@
     "message": "Signaler un problème"
   },
   "lblSettings": {
-    "message": "Réglages"
+    "message": "Paramètres"
   },
   "lblAdd": {
     "message": "Ajouter"
@@ -222,7 +222,7 @@
     "message": "Merci d'utiliser cette extension."
   },
   "msgIWillBeGrateful": {
-    "message": "Je vous serai reconnaissant si vous pouvez faire un don."
+    "message": "Je vous serai reconnaissant si vous pouvez me faire un don."
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Traduisez toujours cette langue"
@@ -255,7 +255,7 @@
     "message": "Afficher la traduction en survolant ce site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Afficher la traduction lors du survol du sites Web en $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -369,7 +369,7 @@
     "message": "Traduire la page dans la langue cible"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Activer la traduction pour la balise $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -389,16 +389,16 @@
     "message": "Faire un don avec PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Traduire automatiquement en cliquant sur un lien qui vous mène au même domaine que le site actuel"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Ouvrir le gestionnaire de raccourcis natif"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Raccourcis clavier spéciaux"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Traduire le texte sélectionné en appuyant deux fois sur $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse when pressing $SHORTCUT_KEY$ twice",
+    "message": "Traduire le texte en glissant votre curseur dessus et en appuyant deux fois sur $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
