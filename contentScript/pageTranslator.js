@@ -319,15 +319,16 @@ twpConfig.onReady(function() {
                 for (let j = 0; j < results[i].length; j++) {
                     if (nodesToTranslatesNow[i][j]) {
                         const nodeInfo = nodesToTranslatesNow[i][j]
-                        const translated = results[i][j] + " "
-                        nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent, translated })
-                        nodeInfo.node.textContent = translated
+                        const original = nodeInfo.node.textContent
+                        nodeInfo.node.textContent = results[i][j] + " "
                         // In some case, results items count is over original node count
                         // Rest results append to last node
                         if (nodesToTranslatesNow[i].length - 1 === j && results[i].length > j) {
                             const restResults = results[i].slice(j + 1);
                             nodeInfo.node.textContent += restResults.join(" ");
                         }
+                        const translated = nodeInfo.node.textContent
+                        nodesToRestore.push({ node: nodeInfo.node, original, translated })
                     }
                 }
             }
