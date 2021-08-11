@@ -398,7 +398,7 @@
     "message": "특수 키보드 단축키"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "$SHORTCUT_KEY$ 키를 두 번 누르면 번역",
+    "message": "$SHORTCUT_KEY$ 키를 두 번 누르면 선택한 텍스트를 번역",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ 키를 두 번 누르면 마우스 커서 아래의 텍스트를 번역",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,9 +414,9 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "주소 표시줄의 버튼을 한 번 클릭하여 페이지를 번역 (팝업을 보려면, 마우스 오른쪽 버튼을 클릭)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "팝업 표시"
   }
 }
