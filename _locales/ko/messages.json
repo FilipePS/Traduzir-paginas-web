@@ -398,7 +398,7 @@
     "message": "특수 키보드 단축키"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "$SHORTCUT_KEY$ 키를 두 번 누르면 번역",
+    "message": "$SHORTCUT_KEY$ 키를 두 번 누르면 선택한 텍스트를 번역",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
