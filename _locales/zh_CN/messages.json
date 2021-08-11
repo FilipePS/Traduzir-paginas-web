@@ -406,11 +406,17 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "连按两下 $SHORTCUT_KEY$ 键翻译鼠标悬停文本",
+    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
       }
     }
+  },
+  "translateClickingOnce": {
+    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+  },
+  "btnShowPopup": {
+    "message": "Show popup"
   }
 }

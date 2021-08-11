@@ -406,11 +406,17 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Traduza o texto sobre o mouse ao pressionar $SHORTCUT_KEY$ duas vezes",
+    "message": "Traduzir o texto sobre o cursor do mouse ao pressionar $SHORTCUT_KEY$ duas vezes",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
       }
     }
+  },
+  "translateClickingOnce": {
+    "message": "Traduza a página clicando uma vez sobre o botão na barra de endereço. (Para ver o popup, clique com o botão direito)"
+  },
+  "btnShowPopup": {
+    "message": "Show popup"
   }
 }
