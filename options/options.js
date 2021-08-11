@@ -852,6 +852,13 @@ twpConfig.onReady(function () {
     }
     $("#showButtonInTheAddressBar").value = twpConfig.get("showButtonInTheAddressBar")
 
+    $("#translateClickingOnce").onchange = e => {
+        twpConfig.set("translateClickingOnce", e.target.value)
+    }
+    $("#translateClickingOnce").value = twpConfig.get("translateClickingOnce")
+
+
+
     $("#btnCalculateStorage").style.display = "inline-block"
     $("#storageUsed").style.display = "none"
     $("#btnCalculateStorage").onclick = e => {

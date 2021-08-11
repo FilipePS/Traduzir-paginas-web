@@ -98,8 +98,7 @@
     "page_action": {
         "browser_style": false,
         "default_icon": "/icons/icon-32.png",
-        "default_title": "__MSG_pageActionTitle__",
-        "default_popup": "/popup/popup.html"
+        "default_title": "__MSG_pageActionTitle__"
     },
 
     "content_scripts": [

@@ -107,7 +107,52 @@ chrome.runtime.onInstalled.addListener(details => {
     }
 })
 
+function resetPageAction(tabId, forceShow=false) {
+    if (twpConfig.get("translateClickingOnce") === "yes" && !forceShow) {
+        chrome.pageAction.setPopup({popup: null, tabId})
+    } else {
+        if (twpConfig.get("useOldPopup") === "yes") {
+            chrome.pageAction.setPopup({popup: "popup/old-popup.html", tabId})
+        } else {
+            chrome.pageAction.setPopup({popup: "popup/popup.html", tabId})
+        }
+    }
+}
+
+function resetBrowserAction(forceShow=false) {
+    if (twpConfig.get("translateClickingOnce") === "yes" && !forceShow) {
+        chrome.browserAction.setPopup({popup: null})
+    } else {
+        if (twpConfig.get("useOldPopup") === "yes") {
+            chrome.browserAction.setPopup({popup: "popup/old-popup.html"})
+        } else {
+            chrome.browserAction.setPopup({popup: "popup/popup.html"})
+        }
+    }
+}
+
 if (typeof chrome.contextMenus !== "undefined") {
+    chrome.contextMenus.create({
+        id: "browserAction-showPopup",
+        title: chrome.i18n.getMessage("btnShowPopup"),
+        contexts: ["browser_action"]
+    })
+    chrome.contextMenus.create({
+        id: "pageAction-showPopup",
+        title: chrome.i18n.getMessage("btnShowPopup"),
+        contexts: ["page_action"]
+    })
+    chrome.contextMenus.create({
+        id: "never-translate",
+        title: chrome.i18n.getMessage("btnNeverTranslate"),
+        contexts: ["browser_action", "page_action"]
+    })
+    chrome.contextMenus.create({
+        id: "more-options",
+        title: chrome.i18n.getMessage("btnMoreOptions"),
+        contexts: ["browser_action", "page_action"]
+    })
+
     const tabHasContentScript = {}
 
     chrome.contextMenus.onClicked.addListener((info, tab) => {
@@ -119,15 +164,28 @@ if (typeof chrome.contextMenus !== "undefined") {
                 chrome.pageAction.setPopup({popup: "popup/popup-translate-text.html#text=" + encodeURIComponent(info.selectionText), tabId: tab.id})
                 chrome.pageAction.openPopup()
     
-                if (twpConfig.get("useOldPopup") === "yes") {
-                    chrome.pageAction.setPopup({popup: "popup/old-popup.html", tabId: tab.id})
-                } else {
-                    chrome.pageAction.setPopup({popup: "popup/popup.html", tabId: tab.id})
-                }
+                resetPageAction(tab.id)
             } else {
                 // a merda do chrome não suporte openPopup
                 chrome.tabs.sendMessage(tab.id, {action: "TranslateSelectedText", selectionText: info.selectionText}, checkedLastError)
             }
+        } else if (info.menuItemId == "browserAction-showPopup") {
+            resetBrowserAction(true)
+
+            chrome.browserAction.openPopup()
+            
+            resetBrowserAction()
+        } else if (info.menuItemId == "pageAction-showPopup") {
+            resetPageAction(tab.id, true)
+
+            chrome.pageAction.openPopup()
+
+            resetPageAction(tab.id)
+        } else if (info.menuItemId == "never-translate") {
+            const hostname = new URL(tab.url).hostname
+            twpConfig.addSiteToNeverTranslate(hostname)
+        } else if (info.menuItemId == "more-options") {
+            chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
         }
     })
 
@@ -196,20 +254,29 @@ twpConfig.onReady(function() {
             chrome.tabs.sendMessage(tab.id, {action: "showPopupMobile"}, {frameId: 0}, checkedLastError)
         })
     } else {
-        if (twpConfig.get("useOldPopup") === "yes") {
-            chrome.browserAction.setPopup({popup: "popup/old-popup.html"})
-        } else {
-            chrome.browserAction.setPopup({popup: "popup/popup.html"})
+        if (chrome.pageAction) {
+            chrome.pageAction.onClicked.addListener(tab => {
+                if (twpConfig.get("translateClickingOnce") ===  "yes") {
+                    chrome.tabs.sendMessage(tab.id, {action: "toggle-translation"}, checkedLastError)
+                }
+            })
+    
         }
+        chrome.browserAction.onClicked.addListener(tab => {
+            if (twpConfig.get("translateClickingOnce") ===  "yes") {
+                chrome.tabs.sendMessage(tab.id, {action: "toggle-translation"}, checkedLastError)
+            }
+        })
+
+        resetBrowserAction()
 
         twpConfig.onChanged((name, newvalue) => {
             switch (name) {
                 case "useOldPopup":
-                    if (newvalue === "yes") {
-                        chrome.browserAction.setPopup({popup: "popup/old-popup.html"})
-                    } else {
-                        chrome.browserAction.setPopup({popup: "popup/popup.html"})
-                    }
+                    resetBrowserAction()
+                    break
+                case "translateClickingOnce":
+                    resetBrowserAction()
                     break
             }
         })
@@ -285,11 +352,7 @@ twpConfig.onReady(function() {
             }
     
             function updateIcon(tabId) {
-                if (twpConfig.get("useOldPopup") === "yes") {
-                    chrome.pageAction.setPopup({tabId: tabId, popup: "popup/old-popup.html"})
-                } else {
-                    chrome.pageAction.setPopup({tabId: tabId, popup: "popup/popup.html"})
-                }
+                resetPageAction(tabId)
                 chrome.pageAction.setIcon({tabId: tabId, path: getSVGIcon()})
 
                 if (twpConfig.get("showButtonInTheAddressBar") == "no") {
