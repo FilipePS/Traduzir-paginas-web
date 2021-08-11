@@ -277,6 +277,9 @@ twpConfig.onReady(function() {
                     break
                 case "translateClickingOnce":
                     resetBrowserAction()
+                    chrome.tabs.query({currentWindow: true, active: true}, tabs => {
+                        resetPageAction(tabs[0].id)
+                    })
                     break
             }
         })
