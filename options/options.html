@@ -408,6 +408,38 @@
 
             <div id="release_notes" class="w3-container">
                 <section>
+                    <h4>9.3</h4>
+                    <ul>
+                        <li>Added: (These features need to be enabled in the settings)
+                            <ul>
+                                <li>Button to open the shortcut key manager in chromium-based browsers</li>
+                                <li>Translate selected text when pressing <b>Ctrl</b> twice</li>
+                                <li>Translate the text over the mouse cursor when pressing <b>Ctrl</b> twice</li>
+                                <li>Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)</li>
+                            </ul>
+                        </li>
+                        <li>Changes:
+                            <ul>
+                                <li>Do not hide the selected text translation panel when switching tabs</li>
+                                <li>Show the panel to translate the selected text, even if there is a translation error</li>
+                                <li>Some settings that are not used on mobile devices have been hidden</li>
+                            </ul>
+                        </li>
+                        <li>Fixed:
+                            <ul>
+                                <li>Problem with <i>CSP</i> when showing translation panel on some sites</li>
+                                <li>When typing text to translate, key events are triggered in the page listeners</li>
+                                <li>Translate selected text button reappears when clicking a scroll bar</li>
+                                <li>The "Show translated when hovering" panel is shown while translating the selected text</li>
+                                <li>Some features don't work sometimes</li>
+                                <li>Some parts of the page are not restored when the <b>Do not sort the google translate results</b> option is enabled.</li>
+                            </ul>
+                        </li>
+                        <li>Updated interface translations</li>
+                        <li>Bug fixes and general improvements</li>
+                    </ul>
+                </section>
+                <section>
                     <h4>9.2</h4>
                     <ul>
                         <li>The <b>webNavigation</b> permission is now optional. If you use the <code>Automatically translate when clicking on a link that takes you to the same domain as the current site</code> option, enable it again in the translation settings.</li>
