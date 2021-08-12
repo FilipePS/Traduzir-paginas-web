@@ -392,13 +392,13 @@
     "message": "當點擊一個帶你到與目前網站相同的域名的連結時，自動進行翻譯"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "開啟原生快捷鍵管理器"
   },
   "lblKeyboardShortcutsSpecial": {
     "message": "Special keyboard shortcuts"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "按兩下 $SHORTCUT_KEY$ 時翻譯所選文字",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
