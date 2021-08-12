@@ -414,9 +414,9 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Tradu pagina dacă se face clic o dată pe simbolul extensiei. (Pentru a vedea fereastra cu opțiuni, clic-dreapta)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Arată fereastra cu opțiuni"
   }
 }
