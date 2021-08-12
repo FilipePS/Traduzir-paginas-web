@@ -1,24 +1,24 @@
 {
   "extensionName": {
-    "message": "Dịch cả trang"
+    "message": "Dịch trang Web"
   },
   "extensionDescription": {
-    "message": "Dịch trang của bạn trong thời gian thực sử dụng Google hoặc Yandex."
+    "message": "Dịch trang của bạn trong thời gian thực sử dụng Google hoặc Yandex. "
   },
   "pageActionTitle": {
-    "message": "Dịch trang này"
+    "message": "Dịch trang này "
   },
   "lblTranslate": {
-    "message": "Dịch trang này?"
+    "message": "Dịch trang này? "
   },
   "lblTranslating": {
-    "message": "Đang dịch..."
+    "message": "Đang dịch... "
   },
   "lblTranslated": {
-    "message": "Đã dịch"
+    "message": "Đã dịch "
   },
   "lblError": {
-    "message": "Không thể dịch trang này"
+    "message": "Không thể dịch trang này "
   },
   "lblAlwaysTranslate": {
     "message": "Luôn dịch từ $LANGUAGE_NAME$",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "$TARGET_LANGUAGE_NUM$$TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,10 +39,10 @@
     }
   },
   "btnReset": {
-    "message": "Đặt lại"
+    "message": "Đặt lại "
   },
   "btnTranslate": {
-    "message": "Dịch"
+    "message": "Dịch "
   },
   "btnOptions": {
     "message": "Tùy chọn"
@@ -105,7 +105,7 @@
     "message": "Giúp đỡ nhà phát triển bằng cách ủng hộ"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -129,16 +129,16 @@
     "message": "Đồng ý (khuyến nghị)"
   },
   "msgNoUseWidgets": {
-    "message": "Không (sử dụng widget)"
+    "message": "Không (sử dụng widget) "
   },
   "optionsPageTitle": {
-    "message": "Dịch trang Web - Tùy chọn"
+    "message": "Dịch trang Web - Tùy chọn "
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Chỉ khi tôi nhấn \"Dịch trang này\""
+    "message": "Chỉ khi tôi nhấn \"Dịch trang này\" "
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Bạn chưa thêm bất kỳ trang web nào vào danh sách này."
+    "message": "Bạn chưa thêm bất kỳ trang web nào vào danh sách này. "
   },
   "msgEmptyListAlwaysTranslateLanguages": {
     "message": "Bạn chưa thêm bất kỳ ngôn ngữ nào vào danh sách này."
@@ -255,7 +255,7 @@
     "message": "Hiển thị bản dịch khi di chuột qua trang web này"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -369,7 +369,7 @@
     "message": "Dịch trang sang ngôn ngữ nhắm tới"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "$ HTML_TAG_NAME $",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Lbldontsortresults"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Lbltranslatedynamicallycreatedcontent"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Calculatestorage"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Donatewithpaypal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "LblAutoTranslateWhenClickingALink"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "OpenNativeShortcutManager"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "LblKeyboardShortcutsSpecial"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,9 +414,9 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "TranslateClickingOnce"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "BtnShowPopup"
   }
 }
