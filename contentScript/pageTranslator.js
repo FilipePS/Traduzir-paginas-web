@@ -106,7 +106,6 @@ twpConfig.onReady(function() {
                     }
                     
                     if (!finded) {
-                        showOriginal.add(newNodesToTranslate[i].parent)
                         nodesToTranslate.push(newNodesToTranslate[i])
                     }
                 }
@@ -147,7 +146,7 @@ twpConfig.onReady(function() {
     
     function enableMutatinObserver() {
         disableMutatinObserver()
-
+        
         if (twpConfig.get("translateDynamicallyCreatedContent") == "yes") {
             translateNewNodesTimerHandler = setInterval(translateNewNodes, 2000)
             mutationObserver.observe(document.body, { childList: true, subtree: true })
@@ -172,9 +171,21 @@ twpConfig.onReady(function() {
     document.addEventListener("visibilitychange", handleVisibilityChange, false)
     
     function getNodesToTranslate(root = document.body) {
+
+        function encapsulateTextNode(node) {
+            const fontNode = document.createElement("font")
+            fontNode.setAttribute("style", "vertical-align: inherit;")
+            fontNode.textContent = node.textContent
+
+            node.replaceWith(fontNode)
+
+            return fontNode
+        }
+        
         const nodesToTranslate = [{ isTranslated: false, parent: null, nodesInfo: [] }]
         let index = 0
-        
+        let currentParagraphSize = 0
+
         const getAllNodes = function (element) {
             if (element.nodeType == 1 || element.nodeType == 11) {
                 if (element.nodeType == 1) {
@@ -184,6 +195,7 @@ twpConfig.onReady(function() {
                         || element.getAttribute("translate") === "no"
                         || element.isContentEditable) {
                         if (nodesToTranslate[index].nodesInfo.length > 0) {
+                            currentParagraphSize = 0
                             nodesToTranslate.push({ isTranslated: false, parent: null, nodesInfo: [] })
                             index++
                         }
@@ -195,11 +207,13 @@ twpConfig.onReady(function() {
                     Array.from(childNodes).forEach(value => {
                         if (htmlTagsInlineText.indexOf(value.nodeName) == -1) {
                             if (nodesToTranslate[index].nodesInfo.length > 0) {
+                                currentParagraphSize = 0
                                 nodesToTranslate.push({ isTranslated: false, parent: null, nodesInfo: [] })
                                 index++
                             }
                             getAllNodes(value)
                             if (nodesToTranslate[index].nodesInfo.length > 0) {
+                                currentParagraphSize = 0
                                 nodesToTranslate.push({ isTranslated: false, parent: null, nodesInfo: [] })
                                 index++
                             }
@@ -225,7 +239,15 @@ twpConfig.onReady(function() {
                         }
                         nodesToTranslate[index].parent = temp
                     }
-                    nodesToTranslate[index].nodesInfo.push({node: element, original: element.textContent})
+                    if (currentParagraphSize > 1000) {
+                        currentParagraphSize = 0
+                        const info = { isTranslated: false, parent: null, nodesInfo: [] }
+                        info.parent =  nodesToTranslate[index].parent
+                        nodesToTranslate.push(info)
+                        index++
+                    }
+                    currentParagraphSize += element.textContent.length
+                    nodesToTranslate[index].nodesInfo.push({node: encapsulateTextNode(element), original: element.textContent})
                 }
             }
         }
@@ -233,6 +255,12 @@ twpConfig.onReady(function() {
         
         if (nodesToTranslate.length > 0 && nodesToTranslate[nodesToTranslate.length-1].nodesInfo.length == 0) {
             nodesToTranslate.pop()
+        }
+        
+        for (const nti of nodesToTranslate) {
+            for (const nodeInfo of nti.nodesInfo) {
+                nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent })
+            }
         }
         
         return nodesToTranslate
@@ -319,7 +347,6 @@ twpConfig.onReady(function() {
                 for (let j = 0; j < results[i].length; j++) {
                     if (nodesToTranslatesNow[i][j]) {
                         const nodeInfo = nodesToTranslatesNow[i][j]
-                        const original = nodeInfo.node.textContent
                         nodeInfo.node.textContent = results[i][j] + " "
                         // In some case, results items count is over original node count
                         // Rest results append to last node
@@ -327,8 +354,7 @@ twpConfig.onReady(function() {
                             const restResults = results[i].slice(j + 1);
                             nodeInfo.node.textContent += restResults.join(" ");
                         }
-                        const translated = nodeInfo.node.textContent
-                        nodesToRestore.push({ node: nodeInfo.node, original, translated })
+                        showOriginal.add(nodeInfo.node)
                     }
                 }
             }
@@ -338,7 +364,7 @@ twpConfig.onReady(function() {
                     if (results[i][j]) {
                         const nodeInfo = nodesToTranslatesNow[i][j]
                         const translated = results[i][j] + " "
-                        nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent, translated })
+                        showOriginal.add(nodeInfo.node)
                         nodeInfo.node.textContent = translated
                     }
                 }
@@ -358,13 +384,21 @@ twpConfig.onReady(function() {
         try {
             if (nodesToTranslate) {
                 ;(function () {
+                    function isInScreen(element) {
+                        const rect = element.getBoundingClientRect()
+                        if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
+                            return true
+                        }
+                        return false
+                    }
+
+
                     const currentFooCount = fooCount
                     
                     const nodesToTranslatesNow = []
                     nodesToTranslate.forEach(nti => {
                         if (!nti.isTranslated) {
-                            const rect = nti.parent.getBoundingClientRect()
-                            if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
+                            if (nti.nodesInfo.length > 0 && (isInScreen(nti.nodesInfo[0].node) || isInScreen(nti.nodesInfo[nti.nodesInfo.length-1].node))) {
                                 nti.isTranslated = true
                                 nodesToTranslatesNow.push(nti.nodesInfo)
                             }
@@ -457,8 +491,6 @@ twpConfig.onReady(function() {
         nodesToTranslate = getNodesToTranslate()
         attributesToTranslate = getAttributesToTranslate()
         
-        nodesToTranslate.forEach(nti => showOriginal.add(nti.parent))
-        
         pageLanguageState = "translated"
         chrome.runtime.sendMessage({ action: "setPageLanguageState", pageLanguageState })
         pageLanguageStateObservers.forEach(callback => callback(pageLanguageState))
@@ -485,12 +517,13 @@ twpConfig.onReady(function() {
             document.title = originalPageTitle
         }
         originalPageTitle = null
-        
-        
+
+
         for (const ntr of nodesToRestore) {
-            if (ntr.node.textContent == ntr.translated) {
-                ntr.node.textContent = ntr.original
-            }
+            ntr.node.replaceWith(ntr.original)
+            // if (ntr.node.textContent == ntr.translated) {
+            //     ntr.node.textContent = ntr.original
+            // }
         }
         nodesToRestore = []
         //TODO não restaurar atributos que foram modificados

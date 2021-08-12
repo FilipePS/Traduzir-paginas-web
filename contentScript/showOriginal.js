@@ -108,7 +108,7 @@ twpConfig.onReady(function () {
         if (plataformInfo.isMobile.any) return;
 
         if (node && nodesToShowOriginal.indexOf(node) === -1) {
-            nodesToShowOriginal.push({node: node, original: node.innerText})
+            nodesToShowOriginal.push({node: node, original: node.textContent})
             node.addEventListener("mouseenter", onMouseEnter)
             node.addEventListener("mouseout", onMouseOut)
         }
