@@ -21,7 +21,7 @@
     "message": "Không thể dịch trang này "
   },
   "lblAlwaysTranslate": {
-    "message": "Luôn dịch từ $LANGUAGE_NAME$",
+    "message": "Luôn dịch từ $LANGUAGE_NAME$ ",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "$TARGET_LANGUAGE_NUM$$TARGET_LANGUAGE_NUM$",
+    "message": "Target language $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -45,10 +45,10 @@
     "message": "Dịch "
   },
   "btnOptions": {
-    "message": "Tùy chọn"
+    "message": "Tùy chọn "
   },
   "btnRestore": {
-    "message": "Hiển thị bản gốc"
+    "message": "Hiển thị bản gốc "
   },
   "btnTryAgain": {
     "message": "Thử lại"
@@ -105,7 +105,7 @@
     "message": "Giúp đỡ nhà phát triển bằng cách ủng hộ"
   },
   "msgTranslateFor": {
-    "message": "$LANGUAGE_NAME$",
+    "message": "Translate to $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Hiển thị bản dịch khi di chuột qua trang web này"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "$LANGUAGE_NAME$",
+    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -369,7 +369,7 @@
     "message": "Dịch trang sang ngôn ngữ nhắm tới"
   },
   "lblTranslateTag_pre": {
-    "message": "$ HTML_TAG_NAME $",
+    "message": "Enable translation for the tag $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Lbldontsortresults"
+    "message": "Do not sort the google translate results"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Lbltranslatedynamicallycreatedcontent"
+    "message": "Translate dynamically created content"
   },
   "calculatestorage": {
-    "message": "Calculatestorage"
+    "message": "Calculate"
   },
   "donatewithpaypal": {
-    "message": "Donatewithpaypal"
+    "message": "Donate With PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "LblAutoTranslateWhenClickingALink"
+    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
   },
   "openNativeShortcutManager": {
-    "message": "OpenNativeShortcutManager"
+    "message": "Open native shortcut key manager"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "LblKeyboardShortcutsSpecial"
+    "message": "Special keyboard shortcuts"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "$SHORTCUT_KEY$",
+    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "$SHORTCUT_KEY$",
+    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,9 +414,9 @@
     }
   },
   "translateClickingOnce": {
-    "message": "TranslateClickingOnce"
+    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
   },
   "btnShowPopup": {
-    "message": "BtnShowPopup"
+    "message": "Show popup"
   }
 }
