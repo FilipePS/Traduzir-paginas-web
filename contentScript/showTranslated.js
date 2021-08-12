@@ -172,10 +172,11 @@ twpConfig.onReady(function () {
             } while (node && node !== document.body)
 
             if (!node) return;
+            if (node.textContent.length > 1000) return;
             text = node.innerText
         }
         
-        if (!text || text.length < 1 || text > 1000) return;
+        if (!text || text.length < 1 || text.length > 1000) return;
 
         backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, text)
         .then(result => {
