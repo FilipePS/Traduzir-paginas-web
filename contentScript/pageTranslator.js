@@ -146,7 +146,7 @@ twpConfig.onReady(function() {
     
     function enableMutatinObserver() {
         disableMutatinObserver()
-        
+
         if (twpConfig.get("translateDynamicallyCreatedContent") == "yes") {
             translateNewNodesTimerHandler = setInterval(translateNewNodes, 2000)
             mutationObserver.observe(document.body, { childList: true, subtree: true })
@@ -171,17 +171,6 @@ twpConfig.onReady(function() {
     document.addEventListener("visibilitychange", handleVisibilityChange, false)
     
     function getNodesToTranslate(root = document.body) {
-
-        function encapsulateTextNode(node) {
-            const fontNode = document.createElement("font")
-            fontNode.setAttribute("style", "vertical-align: inherit;")
-            fontNode.textContent = node.textContent
-
-            node.replaceWith(fontNode)
-
-            return fontNode
-        }
-        
         const nodesToTranslate = [{ isTranslated: false, parent: null, nodesInfo: [] }]
         let index = 0
         let currentParagraphSize = 0
@@ -247,7 +236,7 @@ twpConfig.onReady(function() {
                         index++
                     }
                     currentParagraphSize += element.textContent.length
-                    nodesToTranslate[index].nodesInfo.push({node: encapsulateTextNode(element), original: element.textContent})
+                    nodesToTranslate[index].nodesInfo.push({node: element, original: element.textContent})
                 }
             }
         }
@@ -255,12 +244,6 @@ twpConfig.onReady(function() {
         
         if (nodesToTranslate.length > 0 && nodesToTranslate[nodesToTranslate.length-1].nodesInfo.length == 0) {
             nodesToTranslate.pop()
-        }
-        
-        for (const nti of nodesToTranslate) {
-            for (const nodeInfo of nti.nodesInfo) {
-                nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent })
-            }
         }
         
         return nodesToTranslate
@@ -341,20 +324,36 @@ twpConfig.onReady(function() {
         return attributesToTranslate
     }
     
+    function encapsulateTextNode(node) {
+        const fontNode = document.createElement("font")
+        fontNode.setAttribute("style", "vertical-align: inherit;")
+        fontNode.textContent = node.textContent
+
+        node.replaceWith(fontNode)
+
+        return fontNode
+    }
+
     function translateResults(nodesToTranslatesNow, results) {
         if (dontSortResults) {
             for (let i = 0; i < results.length; i++) {
                 for (let j = 0; j < results[i].length; j++) {
                     if (nodesToTranslatesNow[i][j]) {
                         const nodeInfo = nodesToTranslatesNow[i][j]
-                        nodeInfo.node.textContent = results[i][j] + " "
+                        let translated = results[i][j] + " "
                         // In some case, results items count is over original node count
                         // Rest results append to last node
                         if (nodesToTranslatesNow[i].length - 1 === j && results[i].length > j) {
                             const restResults = results[i].slice(j + 1);
-                            nodeInfo.node.textContent += restResults.join(" ");
+                            translated += restResults.join(" ");
                         }
+
+                        nodeInfo.node = encapsulateTextNode(nodeInfo.node)
+
                         showOriginal.add(nodeInfo.node)
+                        nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent })
+
+                        nodeInfo.node.textContent = translated
                     }
                 }
             }
@@ -364,7 +363,12 @@ twpConfig.onReady(function() {
                     if (results[i][j]) {
                         const nodeInfo = nodesToTranslatesNow[i][j]
                         const translated = results[i][j] + " "
+
+                        nodeInfo.node = encapsulateTextNode(nodeInfo.node)
+
                         showOriginal.add(nodeInfo.node)
+                        nodesToRestore.push({ node: nodeInfo.node, original: nodeInfo.node.textContent })
+
                         nodeInfo.node.textContent = translated
                     }
                 }
@@ -398,7 +402,7 @@ twpConfig.onReady(function() {
                     const nodesToTranslatesNow = []
                     nodesToTranslate.forEach(nti => {
                         if (!nti.isTranslated) {
-                            if (nti.nodesInfo.length > 0 && (isInScreen(nti.nodesInfo[0].node) || isInScreen(nti.nodesInfo[nti.nodesInfo.length-1].node))) {
+                            if (isInScreen(nti.parent)) {
                                 nti.isTranslated = true
                                 nodesToTranslatesNow.push(nti.nodesInfo)
                             }
@@ -408,8 +412,7 @@ twpConfig.onReady(function() {
                     const attributesToTranslateNow = []
                     attributesToTranslate.forEach(ati => {
                         if (!ati.isTranslated) {
-                            const rect = ati.node.getBoundingClientRect()
-                            if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
+                            if (isInScreen(ati.node)) {
                                 ati.isTranslated = true
                                 attributesToTranslateNow.push(ati)
                             }
