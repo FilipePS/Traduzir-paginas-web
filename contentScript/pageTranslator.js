@@ -69,7 +69,8 @@ twpConfig.onReady(function () {
         twpConfig.set("targetLanguage", twpConfig.get("targetLanguages")[0])
     }
 
-    let nodesToTranslate = []
+    // Pieces are a set of nodes separated by inline tags that form a sentence or paragraph.
+    let piecesToTranslate = []
     let originalPageLanguage = "und"
     let currentPageLanguage = "und"
     let pageLanguageState = "original"
@@ -93,20 +94,20 @@ twpConfig.onReady(function () {
             newNodes.forEach(nn => {
                 if (removedNodes.indexOf(nn) != -1) return;
 
-                let newNodesToTranslate = getNodesToTranslate(nn)
+                let newPiecesToTranslate = getPiecesToTranslate(nn)
 
-                for (const i in newNodesToTranslate) {
-                    const newNodesInfo = newNodesToTranslate[i].nodesInfo
+                for (const i in newPiecesToTranslate) {
+                    const newNodes = newPiecesToTranslate[i].nodes
                     let finded = false
 
-                    for (const ntt of nodesToTranslate) {
-                        if (ntt.nodesInfo.some(v1 => newNodesInfo.some(v2 => v1.node === v2.node))) {
+                    for (const ntt of piecesToTranslate) {
+                        if (ntt.nodes.some(n1 => newNodes.some(n2 => n1 === n2))) {
                             finded = true
                         }
                     }
 
                     if (!finded) {
-                        nodesToTranslate.push(newNodesToTranslate[i])
+                        piecesToTranslate.push(newPiecesToTranslate[i])
                     }
                 }
             })
@@ -119,14 +120,14 @@ twpConfig.onReady(function () {
     }
 
     const mutationObserver = new MutationObserver(function (mutations) {
-        const nodesToTranslate = []
+        const piecesToTranslate = []
 
         mutations.forEach(mutation => {
             mutation.addedNodes.forEach(addedNode => {
                 if (htmlTagsNoTranslate.indexOf(addedNode.nodeName) == -1) {
                     if (htmlTagsInlineText.indexOf(addedNode.nodeName) == -1) {
                         if (htmlTagsInlineIgnore.indexOf(addedNode.nodeName) == -1) {
-                            nodesToTranslate.push(addedNode)
+                            piecesToTranslate.push(addedNode)
                         }
                     }
                 }
@@ -137,9 +138,9 @@ twpConfig.onReady(function () {
             })
         })
 
-        nodesToTranslate.forEach(nnt => {
-            if (newNodes.indexOf(nnt) == -1) {
-                newNodes.push(nnt)
+        piecesToTranslate.forEach(ptt => {
+            if (newNodes.indexOf(ptt) == -1) {
+                newNodes.push(ptt)
             }
         })
     })
@@ -173,35 +174,35 @@ twpConfig.onReady(function () {
     }
     document.addEventListener("visibilitychange", handleVisibilityChange, false)
 
-    function getNodesToTranslate(root = document.body) {
-        const nodesToTranslate = [{
+    function getPiecesToTranslate(root = document.body) {
+        const piecesToTranslate = [{
             isTranslated: false,
-            parent: null,
+            parentElement: null,
             topElement: null,
             bottomElement: null,
-            nodesInfo: []
+            nodes: []
         }]
         let index = 0
         let currentParagraphSize = 0
 
-        const getAllNodes = function (element, lastHTMLElement = null) {
-            if (element.nodeType == 1 || element.nodeType == 11) {
-                if (element.nodeType == 1) {
-                    lastHTMLElement = element
+        const getAllNodes = function (node, lastHTMLElement = null) {
+            if (node.nodeType == 1 || node.nodeType == 11) {
+                if (node.nodeType == 1) {
+                    lastHTMLElement = node
 
-                    if (htmlTagsInlineIgnore.indexOf(element.nodeName) !== -1 ||
-                        htmlTagsNoTranslate.indexOf(element.nodeName) !== -1 ||
-                        element.classList.contains("notranslate") ||
-                        element.getAttribute("translate") === "no" ||
-                        element.isContentEditable) {
-                        if (nodesToTranslate[index].nodesInfo.length > 0) {
+                    if (htmlTagsInlineIgnore.indexOf(node.nodeName) !== -1 ||
+                        htmlTagsNoTranslate.indexOf(node.nodeName) !== -1 ||
+                        node.classList.contains("notranslate") ||
+                        node.getAttribute("translate") === "no" ||
+                        node.isContentEditable) {
+                        if (piecesToTranslate[index].nodes.length > 0) {
                             currentParagraphSize = 0
-                            nodesToTranslate.push({
+                            piecesToTranslate.push({
                                 isTranslated: false,
-                                parent: null,
+                                parentElement: null,
                                 topElement: null,
                                 bottomElement: null,
-                                nodesInfo: []
+                                nodes: []
                             })
                             index++
                         }
@@ -210,94 +211,91 @@ twpConfig.onReady(function () {
                 }
 
                 function getAllChilds(childNodes) {
-                    Array.from(childNodes).forEach(value => {
-                        if (value.nodeType == 1) {
-                            lastHTMLElement = value
+                    Array.from(childNodes).forEach(_node => {
+                        if (_node.nodeType == 1) {
+                            lastHTMLElement = _node
                         }
 
-                        if (htmlTagsInlineText.indexOf(value.nodeName) == -1) {
-                            if (nodesToTranslate[index].nodesInfo.length > 0) {
+                        if (htmlTagsInlineText.indexOf(_node.nodeName) == -1) {
+                            if (piecesToTranslate[index].nodes.length > 0) {
                                 currentParagraphSize = 0
-                                nodesToTranslate.push({
+                                piecesToTranslate.push({
                                     isTranslated: false,
-                                    parent: null,
+                                    parentElement: null,
                                     topElement: null,
                                     bottomElement: null,
-                                    nodesInfo: []
+                                    nodes: []
                                 })
                                 index++
 
                             }
 
-                            getAllNodes(value, lastHTMLElement)
+                            getAllNodes(_node, lastHTMLElement)
 
-                            if (nodesToTranslate[index].nodesInfo.length > 0) {
+                            if (piecesToTranslate[index].nodes.length > 0) {
                                 currentParagraphSize = 0
-                                nodesToTranslate.push({
+                                piecesToTranslate.push({
                                     isTranslated: false,
-                                    parent: null,
+                                    parentElement: null,
                                     topElement: null,
                                     bottomElement: null,
-                                    nodesInfo: []
+                                    nodes: []
                                 })
                                 index++
                             }
                         } else {
-                            getAllNodes(value, lastHTMLElement)
+                            getAllNodes(_node, lastHTMLElement)
                         }
                     })
                 }
 
-                getAllChilds(element.childNodes)
-                if (element.shadowRoot) {
-                    getAllChilds(element.shadowRoot.childNodes)
+                getAllChilds(node.childNodes)
+                if (node.shadowRoot) {
+                    getAllChilds(node.shadowRoot.childNodes)
                 }
-            } else if (element.nodeType == 3) {
-                if (element.textContent.trim().length > 0) {
-                    if (!nodesToTranslate[index].parent) {
-                        let temp = element.parentNode
+            } else if (node.nodeType == 3) {
+                if (node.textContent.trim().length > 0) {
+                    if (!piecesToTranslate[index].parentElement) {
+                        let temp = node.parentNode
                         while (temp && temp != root && (htmlTagsInlineText.indexOf(temp.nodeName) != -1 || htmlTagsInlineIgnore.indexOf(temp.nodeName) != -1)) {
                             temp = temp.parentNode
                         }
                         if (temp && temp.nodeType === 11) {
                             temp = temp.host
                         }
-                        nodesToTranslate[index].parent = temp
+                        piecesToTranslate[index].parentElement = temp
                     }
-                    if (!nodesToTranslate[index].topElement) {
-                        nodesToTranslate[index].topElement = lastHTMLElement
+                    if (!piecesToTranslate[index].topElement) {
+                        piecesToTranslate[index].topElement = lastHTMLElement
                     }
                     if (currentParagraphSize > 1000) {
                         currentParagraphSize = 0
-                        nodesToTranslate[index].bottomElement = lastHTMLElement
-                        const info = {
+                        piecesToTranslate[index].bottomElement = lastHTMLElement
+                        const pieceInfo = {
                             isTranslated: false,
-                            parent: null,
+                            parentElement: null,
                             topElement: lastHTMLElement,
                             bottomElement: lastHTMLElement,
-                            nodesInfo: []
+                            nodes: []
                         }
-                        info.parent = nodesToTranslate[index].parent
-                        nodesToTranslate.push(info)
+                        pieceInfo.parentElement = piecesToTranslate[index].parentElement
+                        piecesToTranslate.push(pieceInfo)
                         index++
                     } else {
-                        nodesToTranslate[index].bottomElement = lastHTMLElement
+                        piecesToTranslate[index].bottomElement = lastHTMLElement
                     }
-                    currentParagraphSize += element.textContent.length
-                    nodesToTranslate[index].nodesInfo.push({
-                        node: element,
-                        original: element.textContent
-                    })
+                    currentParagraphSize += node.textContent.length
+                    piecesToTranslate[index].nodes.push(node)
                 }
             }
         }
         getAllNodes(root)
 
-        if (nodesToTranslate.length > 0 && nodesToTranslate[nodesToTranslate.length - 1].nodesInfo.length == 0) {
-            nodesToTranslate.pop()
+        if (piecesToTranslate.length > 0 && piecesToTranslate[piecesToTranslate.length - 1].nodes.length == 0) {
+            piecesToTranslate.pop()
         }
 
-        return nodesToTranslate
+        return piecesToTranslate
     }
 
     function getAttributesToTranslate(root = document.body) {
@@ -385,48 +383,48 @@ twpConfig.onReady(function () {
         return fontNode
     }
 
-    function translateResults(nodesToTranslatesNow, results) {
+    function translateResults(piecesToTranslateNow, results) {
         if (dontSortResults) {
             for (let i = 0; i < results.length; i++) {
                 for (let j = 0; j < results[i].length; j++) {
-                    if (nodesToTranslatesNow[i][j]) {
-                        const nodeInfo = nodesToTranslatesNow[i][j]
+                    if (piecesToTranslateNow[i].nodes[j]) {
+                        const nodes = piecesToTranslateNow[i].nodes
                         let translated = results[i][j] + " "
                         // In some case, results items count is over original node count
                         // Rest results append to last node
-                        if (nodesToTranslatesNow[i].length - 1 === j && results[i].length > j) {
+                        if (piecesToTranslateNow[i].length - 1 === j && results[i].length > j) {
                             const restResults = results[i].slice(j + 1);
                             translated += restResults.join(" ");
                         }
 
-                        nodeInfo.node = encapsulateTextNode(nodeInfo.node)
+                        nodes[j] = encapsulateTextNode(nodes[j])
 
-                        showOriginal.add(nodeInfo.node)
+                        showOriginal.add(nodes[j])
                         nodesToRestore.push({
-                            node: nodeInfo.node,
-                            original: nodeInfo.node.textContent
+                            node: nodes[j],
+                            original: nodes[j].textContent
                         })
 
-                        nodeInfo.node.textContent = translated
+                        nodes[j].textContent = translated
                     }
                 }
             }
         } else {
-            for (const i in nodesToTranslatesNow) {
-                for (const j in nodesToTranslatesNow[i]) {
+            for (const i in piecesToTranslateNow) {
+                for (const j in piecesToTranslateNow[i].nodes) {
                     if (results[i][j]) {
-                        const nodeInfo = nodesToTranslatesNow[i][j]
+                        const nodes = piecesToTranslateNow[i].nodes
                         const translated = results[i][j] + " "
 
-                        nodeInfo.node = encapsulateTextNode(nodeInfo.node)
+                        nodes[j] = encapsulateTextNode(nodes[j])
 
-                        showOriginal.add(nodeInfo.node)
+                        showOriginal.add(nodes[j])
                         nodesToRestore.push({
-                            node: nodeInfo.node,
-                            original: nodeInfo.node.textContent
+                            node: nodes[j],
+                            original: nodes[j].textContent
                         })
 
-                        nodeInfo.node.textContent = translated
+                        nodes[j].textContent = translated
                     }
                 }
             }
@@ -443,7 +441,7 @@ twpConfig.onReady(function () {
 
     function translateDynamically() {
         try {
-            if (nodesToTranslate) {
+            if (piecesToTranslate) {
                 ;
                 (function () {
                     function isInScreen(element) {
@@ -481,12 +479,12 @@ twpConfig.onReady(function () {
 
                     const currentFooCount = fooCount
 
-                    const nodesToTranslatesNow = []
-                    nodesToTranslate.forEach(nti => {
-                        if (!nti.isTranslated) {
-                            if (bottomIsInScreen(nti.topElement) || topIsInScreen(nti.bottomElement)) {
-                                nti.isTranslated = true
-                                nodesToTranslatesNow.push(nti.nodesInfo)
+                    const piecesToTranslateNow = []
+                    piecesToTranslate.forEach(ptt => {
+                        if (!ptt.isTranslated) {
+                            if (bottomIsInScreen(ptt.topElement) || topIsInScreen(ptt.bottomElement)) {
+                                ptt.isTranslated = true
+                                piecesToTranslateNow.push(ptt)
                             }
                         }
                     })
@@ -501,16 +499,16 @@ twpConfig.onReady(function () {
                         }
                     })
 
-                    if (nodesToTranslatesNow.length > 0) {
+                    if (piecesToTranslateNow.length > 0) {
                         backgroundTranslateHTML(
                                 currentPageTranslatorService,
                                 currentTargetLanguage,
-                                nodesToTranslatesNow.map(nti => nti.map(value => value.original)),
+                                piecesToTranslateNow.map(ptt => ptt.nodes.map(node => node.textContent)),
                                 dontSortResults
                             )
                             .then(results => {
                                 if (pageLanguageState === "translated" && currentFooCount === fooCount) {
-                                    translateResults(nodesToTranslatesNow, results)
+                                    translateResults(piecesToTranslateNow, results)
                                 }
                             })
                     }
@@ -573,7 +571,7 @@ twpConfig.onReady(function () {
             currentTargetLanguage = targetLanguage
         }
 
-        nodesToTranslate = getNodesToTranslate()
+        piecesToTranslate = getPiecesToTranslate()
         attributesToTranslate = getAttributesToTranslate()
 
         pageLanguageState = "translated"
@@ -591,7 +589,7 @@ twpConfig.onReady(function () {
 
     pageTranslator.restorePage = function () {
         fooCount++
-        nodesToTranslate = []
+        piecesToTranslate = []
 
         showOriginal.disable()
         disableMutatinObserver()
@@ -612,11 +610,9 @@ twpConfig.onReady(function () {
 
         for (const ntr of nodesToRestore) {
             ntr.node.replaceWith(ntr.original)
-            // if (ntr.node.textContent == ntr.translated) {
-            //     ntr.node.textContent = ntr.original
-            // }
         }
         nodesToRestore = []
+
         //TODO não restaurar atributos que foram modificados
         for (const ati of attributesToTranslate) {
             if (ati.isTranslated) {
