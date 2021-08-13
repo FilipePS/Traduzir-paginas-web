@@ -9,7 +9,7 @@ main {
 }
 
 .containerRight {
-    display:flex;
+    display: flex;
     justify-content: flex-end;
     margin-top: 10px;
 }
@@ -39,8 +39,11 @@ button {
     position: static;
 }
 
-#lblTranslating, #lblTranslated, #lblError,
-#btnRestore, #btnTryAgain {
+#lblTranslating,
+#lblTranslated,
+#lblError,
+#btnRestore,
+#btnTryAgain {
     display: none;
 }
 
@@ -61,7 +64,9 @@ option {
 }
 
 #iconSwap {
-    position: absolute; bottom: 0; left: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: none;
     opacity: 0.8;
 }
@@ -70,7 +75,7 @@ option {
     display: block;
 }
 
-#btnOptions option{
+#btnOptions option {
     font-size: small;
     font-weight: normal;
 }
@@ -90,7 +95,7 @@ option {
     transform: rotate(45deg);
 }
 
-#divIconTranslate > img {
+#divIconTranslate>img {
     padding: 0;
 }
 
@@ -98,13 +103,14 @@ option {
     box-sizing: border-box;
     position: relative;
     display: block;
-    transform: scale(var(--ggs,1));
+    transform: scale(var(--ggs, 1));
     box-shadow:
         -2px 2px 0,
         2px -2px 0;
     width: 6px;
     height: 2px
 }
+
 .gg-swap::after,
 .gg-swap::before {
     content: "";
@@ -116,11 +122,13 @@ option {
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent
 }
+
 .gg-swap::before {
     border-left: 3px solid;
     top: -4px;
     right: -4px
 }
+
 .gg-swap::after {
     border-right: 3px solid;
     bottom: -4px;

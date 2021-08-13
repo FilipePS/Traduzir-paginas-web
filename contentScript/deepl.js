@@ -19,13 +19,14 @@
             } catch (e) {
                 console.error(e)
             }
-    
+
             const event = new Event("change")
-    
+
             source_textarea.value = text
             source_textarea.dispatchEvent(event)
-    
+
             const startTime = performance.now()
+
             function checkresult(oldvalue) {
                 if ((performance.now() - startTime) > 2400 || (target_textarea.value && target_textarea.value !== oldvalue)) {
                     resolve(target_textarea.value)
@@ -43,21 +44,24 @@
 
         targetLanguage = decodeURIComponent(targetLanguage.substring(2))
         text = decodeURIComponent(text)
-        
+
         translate(text, targetLanguage || "en")
-        .then(result => {
-            console.log(result)
-            chrome.runtime.sendMessage({action: "DeepL_firstTranslationResult", result})
-        })
+            .then(result => {
+                console.log(result)
+                chrome.runtime.sendMessage({
+                    action: "DeepL_firstTranslationResult",
+                    result
+                })
+            })
     }
 
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "translateTextWithDeepL") {
             translate(request.text, request.targetlanguage)
-            .then(result => {
-                console.log(result)
-                sendResponse(result)
-            })
+                .then(result => {
+                    console.log(result)
+                    sendResponse(result)
+                })
         }
 
         return true

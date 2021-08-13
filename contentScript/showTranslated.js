@@ -7,9 +7,9 @@ twpConfig.onReady(function () {
 
     let styleTextContent = ""
     fetch(chrome.runtime.getURL("/contentScript/css/showTranslated.css"))
-    .then(response => response.text())
-    .then(response => styleTextContent = response)
-    .catch(e => console.error(e))
+        .then(response => response.text())
+        .then(response => styleTextContent = response)
+        .catch(e => console.error(e))
 
     let pageLanguageState = "original"
     let originalPageLanguage = "und"
@@ -50,7 +50,7 @@ twpConfig.onReady(function () {
     const htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BDO', 'BIG', 'CITE', 'DFN', 'EM', 'I', 'LABEL', 'Q', 'S', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U', 'TT', 'VAR']
     const htmlTagsInlineIgnore = ['BR', 'CODE', 'KBD', 'WBR'] // and input if type is submit or button, and pre depending on settings
     const htmlTagsNoTranslate = ['TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA', 'svg']
-    
+
     if (twpConfig.get('translateTag_pre') !== 'yes') {
         htmlTagsInlineIgnore.push('PRE')
     }
@@ -78,7 +78,10 @@ twpConfig.onReady(function () {
         clearTimeout(timeoutHandler)
     }
 
-    const mousePos = {x: 0, y: 0}
+    const mousePos = {
+        x: 0,
+        y: 0
+    }
 
     function onMouseMove(e) {
         mousePos.x = e.clientX
@@ -104,11 +107,14 @@ twpConfig.onReady(function () {
 
     let audioDataUrls = null
     let isPlayingAudio = false
+
     function stopAudio() {
         if (isPlayingAudio) {
-            chrome.runtime.sendMessage({action: "stopAudio"})
+            chrome.runtime.sendMessage({
+                action: "stopAudio"
+            })
         }
-        isPlayingAudio = false 
+        isPlayingAudio = false
     }
 
     window.addEventListener("beforeunload", e => {
@@ -117,13 +123,14 @@ twpConfig.onReady(function () {
     })
 
     let prevNode = null
-    function translateThisNode(node, usePrevNode=false) {
+
+    function translateThisNode(node, usePrevNode = false) {
         fooCount++
         let currentFooCount = fooCount
 
         stopAudio()
         audioDataUrls = null
-        
+
         if (usePrevNode && prevNode) {
             node = prevNode
         }
@@ -147,7 +154,7 @@ twpConfig.onReady(function () {
                 }
             }
         }
-        
+
         if (htmlTagsInlineText.indexOf(node.nodeName) === -1 && htmlTagsInlineIgnore.indexOf(node.nodeName) === -1) {
             if (hasChildNodeBlock(node)) return;
         }
@@ -175,56 +182,59 @@ twpConfig.onReady(function () {
             if (node.textContent.length > 1000) return;
             text = node.innerText
         }
-        
+
         if (!text || text.length < 1 || text.length > 1000) return;
 
         backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, text)
-        .then(result => {
-            if (!result) return;
-            if (currentFooCount !== fooCount) return;
+            .then(result => {
+                if (!result) return;
+                if (currentFooCount !== fooCount) return;
 
-            if (!usePrevNode) {
-                init()
-            }
+                if (!usePrevNode) {
+                    init()
+                }
 
-            const eTextTranslated = shadowRoot.getElementById("eTextTranslated")
-            if (twpLang.isRtlLanguage(currentTargetLanguage)) {
-                eTextTranslated.setAttribute("dir", "rtl")
-            } else {
-                eTextTranslated.setAttribute("dir", "ltr")
-            }
-            eTextTranslated.textContent = result
-            
-            const eDivResult = shadowRoot.getElementById("eDivResult")
+                const eTextTranslated = shadowRoot.getElementById("eTextTranslated")
+                if (twpLang.isRtlLanguage(currentTargetLanguage)) {
+                    eTextTranslated.setAttribute("dir", "rtl")
+                } else {
+                    eTextTranslated.setAttribute("dir", "ltr")
+                }
+                eTextTranslated.textContent = result
 
-            const height = eDivResult.offsetHeight
-            let top = mousePos.y + 10
-            top = Math.max(0, top)
-            top = Math.min(window.innerHeight - height, top)
-    
-            const width = eDivResult.offsetWidth
-            let left = parseInt(mousePos.x /*- (width / 2) */)
-            left = Math.max(0, left)
-            left = Math.min(window.innerWidth - width, left)
-    
-            if (!usePrevNode) {
-                eDivResult.style.top = top + "px"
-                eDivResult.style.left = left + "px"
-            }
-        })
-        .catch(e => {
-            destroy()
-        })
+                const eDivResult = shadowRoot.getElementById("eDivResult")
+
+                const height = eDivResult.offsetHeight
+                let top = mousePos.y + 10
+                top = Math.max(0, top)
+                top = Math.min(window.innerHeight - height, top)
+
+                const width = eDivResult.offsetWidth
+                let left = parseInt(mousePos.x /*- (width / 2) */ )
+                left = Math.max(0, left)
+                left = Math.min(window.innerWidth - width, left)
+
+                if (!usePrevNode) {
+                    eDivResult.style.top = top + "px"
+                    eDivResult.style.left = left + "px"
+                }
+            })
+            .catch(e => {
+                destroy()
+            })
     }
 
     function dragElement(elmnt, elmnt2) {
-        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        var pos1 = 0,
+            pos2 = 0,
+            pos3 = 0,
+            pos4 = 0;
         if (elmnt2) {
             elmnt2.addEventListener("mousedown", dragMouseDown);
         } else {
             elmnt.addEventListener("mousedown", dragMouseDown);
         }
-      
+
         function dragMouseDown(e) {
             e = e || window.event;
             e.preventDefault();
@@ -235,7 +245,7 @@ twpConfig.onReady(function () {
             // call a function whenever the cursor moves:
             document.addEventListener("mousemove", elementDrag);
         }
-      
+
         function elementDrag(e) {
             e = e || window.event;
             e.preventDefault();
@@ -248,7 +258,7 @@ twpConfig.onReady(function () {
             elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
-      
+
         function closeDragElement() {
             // stop moving when mouse button is released:
             document.removeEventListener("mouseup", closeDragElement);
@@ -263,8 +273,10 @@ twpConfig.onReady(function () {
         divElement = document.createElement("div")
         divElement.style = "all: initial"
         divElement.classList.add("notranslate")
-        
-        shadowRoot = divElement.attachShadow({mode: "closed"})
+
+        shadowRoot = divElement.attachShadow({
+            mode: "closed"
+        })
         shadowRoot.innerHTML = `
         <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/showTranslated.css")}">
 
@@ -340,7 +352,7 @@ twpConfig.onReady(function () {
             style.textContent = styleTextContent
             shadowRoot.insertBefore(style, shadowRoot.getElementById("eDivResult"))
         }
-        
+
         dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
 
         function enableDarkMode() {
@@ -371,15 +383,15 @@ twpConfig.onReady(function () {
                 shadowRoot.querySelector("#listen svg").style = "fill: rgb(231, 230, 228)"
             }
         }
-        
+
         function disableDarkMode() {
             if (shadowRoot.getElementById("#darkModeElement")) {
                 shadowRoot.getElementById("#darkModeElement").remove()
                 shadowRoot.querySelector("#listen svg").style = "fill: black"
             }
         }
-        
-        switch(twpConfig.get("darkMode")) {
+
+        switch (twpConfig.get("darkMode")) {
             case "auto":
                 if (matchMedia("(prefers-color-scheme: dark)").matches) {
                     enableDarkMode()
@@ -467,7 +479,7 @@ twpConfig.onReady(function () {
                 shadowRoot.querySelectorAll("#setTargetLanguage li").forEach(li => {
                     li.classList.remove("selected")
                 })
-    
+
                 e.target.classList.add("selected")
             }
         }
@@ -486,7 +498,10 @@ twpConfig.onReady(function () {
                     eListen.setAttribute("title", msgListen)
                 } else {
                     isPlayingAudio = true
-                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrls}, () => {
+                    chrome.runtime.sendMessage({
+                        action: "playAudio",
+                        audioDataUrls
+                    }, () => {
                         eListen.classList.remove("selected")
                         eListen.setAttribute("title", msgListen)
                     })
@@ -495,11 +510,18 @@ twpConfig.onReady(function () {
             } else {
                 stopAudio()
                 isPlayingAudio = true
-                chrome.runtime.sendMessage({action: "textToSpeech", text: eTextTranslated.textContent, targetLanguage: currentTargetLanguage}, result => {
+                chrome.runtime.sendMessage({
+                    action: "textToSpeech",
+                    text: eTextTranslated.textContent,
+                    targetLanguage: currentTargetLanguage
+                }, result => {
                     if (!result) return;
 
                     audioDataUrls = result
-                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrls}, () => {
+                    chrome.runtime.sendMessage({
+                        action: "playAudio",
+                        audioDataUrls
+                    }, () => {
                         isPlayingAudio = false
                         eListen.classList.remove("selected")
                         eListen.setAttribute("title", msgListen)
@@ -533,7 +555,7 @@ twpConfig.onReady(function () {
         } else {
             sGoogle.classList.add("selected")
         }
-        
+
         // if (twpConfig.get("enableDeepL") === "yes") {
         //     sDeepL.removeAttribute("hidden")
         // } else {
@@ -556,7 +578,7 @@ twpConfig.onReady(function () {
         fooCount++
         stopAudio()
         audioDataUrls = null
-        
+
         clearTimeout(timeoutHandler)
 
         if (divElement) {
@@ -569,9 +591,9 @@ twpConfig.onReady(function () {
         const activeEl = document.activeElement;
         const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
         if (
-          (activeElTagName == "textarea") || (activeElTagName == "input" &&
-          /^(?:text|search)$/i.test(activeEl.type)) &&
-          (typeof activeEl.selectionStart == "number")
+            (activeElTagName == "textarea") || (activeElTagName == "input" &&
+                /^(?:text|search)$/i.test(activeEl.type)) &&
+            (typeof activeEl.selectionStart == "number")
         ) {
             const text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
             if (text) return true;
@@ -586,6 +608,7 @@ twpConfig.onReady(function () {
     }
 
     let lastTimePressedCtrl = null
+
     function onKeyUp(e) {
         if (!translateTextOverMouseWhenPressTwice) return;
         if (e.key == "Control") {
@@ -595,7 +618,7 @@ twpConfig.onReady(function () {
                 const elements = document.querySelectorAll(":hover")
                 if (elements.length > 0) {
                     destroy()
-                    translateThisNode(elements[elements.length-1])
+                    translateThisNode(elements[elements.length - 1])
                 }
             }
             lastTimePressedCtrl = performance.now()
@@ -608,7 +631,7 @@ twpConfig.onReady(function () {
 
             window.removeEventListener("mousemove", onMouseMove)
             window.removeEventListener("mousedown", onMouseDown)
-    
+
             document.removeEventListener("blur", destroy)
             document.removeEventListener("visibilitychange", destroy)
 
@@ -617,13 +640,13 @@ twpConfig.onReady(function () {
             destroy()
         } else {
             window.addEventListener("scroll", onScroll)
-        
+
             window.addEventListener("mousemove", onMouseMove)
             window.addEventListener("mousedown", onMouseDown)
-    
+
             document.addEventListener("blur", destroy)
             document.addEventListener("visibilitychange", destroy)
- 
+
             document.addEventListener("keyup", onKeyUp)
         }
     }
@@ -634,7 +657,7 @@ twpConfig.onReady(function () {
         showTranslatedTextWhenHoveringThisLang = twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) !== -1
         updateEventListener()
     })
-    
+
     pageTranslator.onPageLanguageStateChange(_pageLanguageState => {
         pageLanguageState = _pageLanguageState
         updateEventListener()

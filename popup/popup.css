@@ -198,12 +198,13 @@ hr {
     box-sizing: border-box;
     position: relative;
     display: block;
-    transform: scale(var(--ggs,1));
+    transform: scale(var(--ggs, 1));
     width: 22px;
     height: 22px;
     border: 2px solid transparent;
     border-radius: 40px
 }
+
 .gg-close::after,
 .gg-close::before {
     content: "";
@@ -218,6 +219,7 @@ hr {
     top: 8px;
     left: 1px
 }
+
 .gg-close::after {
     transform: rotate(-45deg)
 }

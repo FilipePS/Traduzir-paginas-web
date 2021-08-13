@@ -12,7 +12,7 @@
             "strict_min_version": "63.0"
         }
     },
-	
+
     "commands": {
         "hotkey-toggle-translation": {
             "suggested_key": {
@@ -101,8 +101,7 @@
         "default_title": "__MSG_pageActionTitle__"
     },
 
-    "content_scripts": [
-        {
+    "content_scripts": [{
             "matches": ["<all_urls>"],
             "run_at": "document_start",
             "all_frames": false,

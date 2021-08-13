@@ -50,7 +50,8 @@ twpConfig.onReady(function () {
     }
 
     // fill language list
-    ;(function() {
+    ;
+    (function () {
         let uilanguage = chrome.i18n.getUILanguage()
         uilanguage = twpLang.fixLanguageCode(uilanguage)
 
@@ -65,7 +66,7 @@ twpConfig.onReady(function () {
             langsSorted.push([i, langs[i]])
         }
 
-        langsSorted.sort(function(a, b) {
+        langsSorted.sort(function (a, b) {
             return a[1].localeCompare(b[1]);
         })
 
@@ -134,15 +135,26 @@ twpConfig.onReady(function () {
     let currentPageLanguageState = "original"
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
 
-    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-        chrome.tabs.sendMessage(tabs[0].id, {action: "getOriginalPageLanguage"}, {frameId: 0}, pageLanguage => {
+    chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    }, tabs => {
+        chrome.tabs.sendMessage(tabs[0].id, {
+            action: "getOriginalPageLanguage"
+        }, {
+            frameId: 0
+        }, pageLanguage => {
             checkedLastError()
             if (pageLanguage && (pageLanguage = twpLang.checkLanguageCode(pageLanguage))) {
                 originalPageLanguage = pageLanguage
             }
         })
 
-        chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageLanguage"}, {frameId: 0}, pageLanguage => {
+        chrome.tabs.sendMessage(tabs[0].id, {
+            action: "getCurrentPageLanguage"
+        }, {
+            frameId: 0
+        }, pageLanguage => {
             checkedLastError()
             if (pageLanguage) {
                 currentPageLanguage = pageLanguage
@@ -150,7 +162,11 @@ twpConfig.onReady(function () {
             }
         })
 
-        chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageLanguageState"}, {frameId: 0}, pageLanguageState => {
+        chrome.tabs.sendMessage(tabs[0].id, {
+            action: "getCurrentPageLanguageState"
+        }, {
+            frameId: 0
+        }, pageLanguageState => {
             checkedLastError()
             if (pageLanguageState) {
                 currentPageLanguageState = pageLanguageState
@@ -158,7 +174,11 @@ twpConfig.onReady(function () {
             }
         })
 
-        chrome.tabs.sendMessage(tabs[0].id, {action: "getCurrentPageTranslatorService"}, {frameId: 0}, pageTranslatorService => {
+        chrome.tabs.sendMessage(tabs[0].id, {
+            action: "getCurrentPageTranslatorService"
+        }, {
+            frameId: 0
+        }, pageTranslatorService => {
             checkedLastError()
             if (pageTranslatorService) {
                 currentPageTranslatorService = pageTranslatorService
@@ -168,6 +188,7 @@ twpConfig.onReady(function () {
     })
 
     let showSelectTargetLanguage = false
+
     function updateInterface() {
         if (currentPageTranslatorService == "yandex") {
             $("#btnOptions option[value='translateInExternalSite']").textContent = chrome.i18n.getMessage("msgOpenOnYandexTranslator")
@@ -183,7 +204,7 @@ twpConfig.onReady(function () {
             $("#cbAlwaysTranslateThisLang").checked = twpConfig.get("alwaysTranslateLangs").indexOf(originalPageLanguage) !== -1
             $("#lblAlwaysTranslateThisLang").textContent = chrome.i18n.getMessage("lblAlwaysTranslate", twpLang.codeToLanguage(originalPageLanguage))
             $("#divAlwaysTranslateThisLang").style.display = "block"
-            
+
             const translatedWhenHoveringThisLangText = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisLang", twpLang.codeToLanguage(originalPageLanguage))
             if (twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) === -1) {
                 $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = translatedWhenHoveringThisLangText
@@ -199,7 +220,7 @@ twpConfig.onReady(function () {
                 $("option[data-i18n=btnNeverTranslateThisLanguage]").textContent = "✔ " + neverTranslateLangText
             }
             $("option[data-i18n=btnNeverTranslateThisLanguage]").style.display = "block"
-            
+
             showAlwaysTranslateCheckbox = true
         }
 
@@ -290,13 +311,19 @@ twpConfig.onReady(function () {
     $("#btnTranslate").onclick = e => {
         currentPageLanguageState = "translated"
 
-        chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+        chrome.tabs.query({
+            active: true,
+            currentWindow: true
+        }, tabs => {
             if (twpConfig.get("targetLanguage") !== selectTargetLanguage.value) {
                 twpConfig.setTargetLanguage(selectTargetLanguage.value, true)
             } else {
                 twpConfig.setTargetLanguage(selectTargetLanguage.value)
             }
-            chrome.tabs.sendMessage(tabs[0].id, {action: "translatePage", targetLanguage: selectTargetLanguage.value}, checkedLastError)
+            chrome.tabs.sendMessage(tabs[0].id, {
+                action: "translatePage",
+                targetLanguage: selectTargetLanguage.value
+            }, checkedLastError)
         })
 
         showSelectTargetLanguage = false
@@ -306,8 +333,13 @@ twpConfig.onReady(function () {
     $("#btnRestore").onclick = e => {
         currentPageLanguageState = "original"
 
-        chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "restorePage"}, checkedLastError)
+        chrome.tabs.query({
+            active: true,
+            currentWindow: true
+        }, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {
+                action: "restorePage"
+            }, checkedLastError)
         })
 
         updateInterface()
@@ -317,10 +349,15 @@ twpConfig.onReady(function () {
         twpConfig.set("useOldPopup", "no")
         window.location = "popup.html"
     })
-    
+
     $("#divIconTranslate").addEventListener("click", () => {
-        chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-            chrome.tabs.sendMessage(tabs[0].id, {action: "swapTranslationService"}, checkedLastError)
+        chrome.tabs.query({
+            active: true,
+            currentWindow: true
+        }, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {
+                action: "swapTranslationService"
+            }, checkedLastError)
         })
 
         if (currentPageTranslatorService === "google") {
@@ -334,7 +371,10 @@ twpConfig.onReady(function () {
         updateInterface()
     })
 
-    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+    chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    }, tabs => {
         $("#cbAlwaysTranslateThisLang").addEventListener("change", e => {
             const hostname = new URL(tabs[0].url).hostname
             if (e.target.checked) {
@@ -348,7 +388,10 @@ twpConfig.onReady(function () {
     $("#btnOptions").addEventListener("change", event => {
         const btnOptions = event.target
 
-        chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+        chrome.tabs.query({
+            active: true,
+            currentWindow: true
+        }, tabs => {
             const hostname = new URL(tabs[0].url).hostname
             switch (btnOptions.value) {
                 case "changeLanguage":
@@ -411,25 +454,36 @@ twpConfig.onReady(function () {
                         twpConfig.addLangToTranslateWhenHovering(originalPageLanguage)
                     } else {
                         twpConfig.removeLangFromTranslateWhenHovering(originalPageLanguage)
-                    }  
+                    }
                     window.close()
                     break
                 case "translateInExternalSite":
-                    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+                    chrome.tabs.query({
+                        active: true,
+                        currentWindow: true
+                    }, tabs => {
                         if (currentPageTranslatorService === "yandex") {
-                            chrome.tabs.create({url: "https://translate.yandex.com/translate?url=" + encodeURIComponent(tabs[0].url)})
+                            chrome.tabs.create({
+                                url: "https://translate.yandex.com/translate?url=" + encodeURIComponent(tabs[0].url)
+                            })
                         } else { // google
-                            chrome.tabs.create({url: `https://translate.google.${
+                            chrome.tabs.create({
+                                url: `https://translate.google.${
                                 "zh-cn" == navigator.language.toLowerCase() ? "cn" : "com"
-                            }/translate?u=` + encodeURIComponent(tabs[0].url)})
+                            }/translate?u=` + encodeURIComponent(tabs[0].url)
+                            })
                         }
                     })
                     break
                 case "moreOptions":
-                    chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html")})
+                    chrome.tabs.create({
+                        url: chrome.runtime.getURL("/options/options.html")
+                    })
                     break
                 case "donate":
-                    chrome.tabs.create({url: chrome.runtime.getURL("/options/options.html#donation")})
+                    chrome.tabs.create({
+                        url: chrome.runtime.getURL("/options/options.html#donation")
+                    })
                     break
                 default:
                     break
@@ -438,7 +492,10 @@ twpConfig.onReady(function () {
         })
     })
 
-    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+    chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    }, tabs => {
         const hostname = new URL(tabs[0].url).hostname
 
         const btnNeverTranslateText = chrome.i18n.getMessage("btnNeverTranslate")
@@ -462,16 +519,14 @@ twpConfig.onReady(function () {
             } else {
                 $("option[data-i18n=lblShowTranslateSelectedButton]").textContent = "✔ " + text
             }
-        }
-        {
+        } {
             const text = chrome.i18n.getMessage("lblShowOriginalTextWhenHovering")
             if (twpConfig.get("showOriginalTextWhenHovering") !== "yes") {
                 $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent = text
             } else {
                 $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent = "✔ " + text
             }
-        }
-        {
+        } {
             const text = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisSite")
             if (twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) === -1) {
                 $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = text

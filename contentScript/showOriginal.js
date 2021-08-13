@@ -15,9 +15,9 @@ twpConfig.onReady(function () {
 
     let styleTextContent = ""
     fetch(chrome.runtime.getURL("/contentScript/css/showOriginal.css"))
-    .then(response => response.text())
-    .then(response => styleTextContent = response)
-    .catch(e => console.error(e))
+        .then(response => response.text())
+        .then(response => styleTextContent = response)
+        .catch(e => console.error(e))
 
     let showOriginalTextWhenHovering = twpConfig.get("showOriginalTextWhenHovering")
     twpConfig.onChanged(function (name, newValue) {
@@ -35,7 +35,11 @@ twpConfig.onReady(function () {
 
     let nodesToShowOriginal = []
 
-    const mousePos = {x: 0, y: 0}
+    const mousePos = {
+        x: 0,
+        y: 0
+    }
+
     function onMouseMove(e) {
         mousePos.x = e.clientX
         mousePos.y = e.clientY
@@ -63,12 +67,12 @@ twpConfig.onReady(function () {
             let top = mousePos.y + 10
             top = Math.max(0, top)
             top = Math.min(window.innerHeight - height, top)
-    
+
             const width = eOriginalText.offsetWidth
-            let left = parseInt(mousePos.x /*- (width / 2) */)
+            let left = parseInt(mousePos.x /*- (width / 2) */ )
             left = Math.max(0, left)
             left = Math.min(window.innerWidth - width, left)
-    
+
             eOriginalText.style.top = top + "px"
             eOriginalText.style.left = left + "px"
         }
@@ -97,7 +101,7 @@ twpConfig.onReady(function () {
     function onMouseOut(e) {
         if (!divElement) return;
         if (!isShowingOriginalText()) return;
-        
+
         if (e.target === currentNodeOverMouse && e.relatedTarget === divElement) return;
         if (e.target === divElement && e.relatedTarget === currentNodeOverMouse) return;
 
@@ -108,7 +112,10 @@ twpConfig.onReady(function () {
         if (plataformInfo.isMobile.any) return;
 
         if (node && nodesToShowOriginal.indexOf(node) === -1) {
-            nodesToShowOriginal.push({node: node, original: node.textContent})
+            nodesToShowOriginal.push({
+                node: node,
+                original: node.textContent
+            })
             node.addEventListener("mouseenter", onMouseEnter)
             node.addEventListener("mouseout", onMouseOut)
         }
@@ -122,9 +129,9 @@ twpConfig.onReady(function () {
         nodesToShowOriginal = []
     }
 
-    showOriginal.enable = function (dontDeleteNodesToShowOriginal=false) {
+    showOriginal.enable = function (dontDeleteNodesToShowOriginal = false) {
         showOriginal.disable(dontDeleteNodesToShowOriginal)
-        
+
         if (plataformInfo.isMobile.any) return;
         if (showOriginalTextWhenHovering !== "yes") return;
         if (divElement) return;
@@ -132,8 +139,10 @@ twpConfig.onReady(function () {
         divElement = document.createElement("div")
         divElement.style = "all: initial"
         divElement.classList.add("notranslate")
-        
-        shadowRoot = divElement.attachShadow({mode: "closed"})
+
+        shadowRoot = divElement.attachShadow({
+            mode: "closed"
+        })
         shadowRoot.innerHTML = `
             <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/showOriginal.css")}">
             <div id="originalText" dir="auto"></div>
@@ -162,14 +171,14 @@ twpConfig.onReady(function () {
                 shadowRoot.appendChild(el)
             }
         }
-        
+
         function disableDarkMode() {
             if (shadowRoot.getElementById("#darkModeElement")) {
                 shadowRoot.getElementById("#darkModeElement").remove()
             }
         }
-        
-        switch(twpConfig.get("darkMode")) {
+
+        switch (twpConfig.get("darkMode")) {
             case "auto":
                 if (matchMedia("(prefers-color-scheme: dark)").matches) {
                     enableDarkMode()
@@ -196,7 +205,7 @@ twpConfig.onReady(function () {
         document.addEventListener("visibilitychange", hideOriginalText)
     }
 
-    showOriginal.disable = function (dontDeleteNodesToShowOriginal=false) {
+    showOriginal.disable = function (dontDeleteNodesToShowOriginal = false) {
         if (divElement) {
             hideOriginalText()
             divElement.remove()
@@ -204,7 +213,7 @@ twpConfig.onReady(function () {
             shadowRoot = null
         }
 
-        if (!dontDeleteNodesToShowOriginal)  {
+        if (!dontDeleteNodesToShowOriginal) {
             showOriginal.removeAll()
         }
 

@@ -125,7 +125,7 @@ var translationService = {}
             } else {
                 updateYandexSid = true
             }
-            
+
             if (updateYandexSid) {
                 lastYandexRequestSIDTime = Date.now()
 
@@ -184,7 +184,7 @@ var translationService = {}
             } else {
                 updateBingSid = true
             }
-            
+
             if (updateBingSid) {
                 lastBingRequestSIDTime = Date.now()
 
@@ -221,7 +221,7 @@ var translationService = {}
 
         return await bingGetSidPromise
     }
-    
+
     const googleTranslationInProgress = {}
     const yandexTranslationInProgress = {}
     const bingTranslationInProgress = {}
@@ -387,7 +387,7 @@ var translationService = {}
                         break
                     }
                 }
-                
+
                 if (++iterationsCount < 100) {
                     if (isTranslating) {
                         setTimeout(waitForTranslationFinish, 100)
@@ -486,7 +486,7 @@ var translationService = {}
                 sourceArray = sourceArray.map((value, index) => "<a i=" + index + ">" + value + "</a>")
             }
             //if (preseveTextFormat) {
-                return "<pre>" + sourceArray.join("") + "</pre>"
+            return "<pre>" + sourceArray.join("") + "</pre>"
             //}
             //return sourceArray.join("")
         })
@@ -550,7 +550,7 @@ var translationService = {}
 
                         resultArray = resultArray.map(value => value.replace(/\<\/b\>/g, ""))
                         resultArray = resultArray.map(value => unescapeHTML(value))
-                        
+
                         resultArray3d.push(resultArray)
                     } else {
                         let indexes
@@ -564,10 +564,10 @@ var translationService = {}
                             resultArray = [result]
                             indexes = [0]
                         }
-    
+
                         resultArray = resultArray.map(value => value.replace(/\<\/b\>/g, ""))
                         resultArray = resultArray.map(value => unescapeHTML(value))
-    
+
                         const finalResulArray = []
                         for (const j in indexes) {
                             if (finalResulArray[indexes[j]]) {
@@ -576,7 +576,7 @@ var translationService = {}
                                 finalResulArray[indexes[j]] = resultArray[j]
                             }
                         }
-    
+
                         resultArray3d.push(finalResulArray)
                     }
                 }
@@ -666,18 +666,18 @@ var translationService = {}
         await getBingSID()
 
         return await translateHTML(
-            "bing",
-            targetLanguage,
-            "https://www.bing.com/ttranslatev3?isVertical=1",
-            [source],
-            "",
-            "text",
-            getTranslationInProgress("bing", targetLanguage),
-            dontSaveInCache
-        )
-        .then(thisTranslationProgress => {
-            return thisTranslationProgress[0].translated
-        })
+                "bing",
+                targetLanguage,
+                "https://www.bing.com/ttranslatev3?isVertical=1",
+                [source],
+                "",
+                "text",
+                getTranslationInProgress("bing", targetLanguage),
+                dontSaveInCache
+            )
+            .then(thisTranslationProgress => {
+                return thisTranslationProgress[0].translated
+            })
     }
 
     var DeepLTab = null
@@ -704,11 +704,19 @@ var translationService = {}
                     checkedLastError()
                     if (tab) {
                         //chrome.tabs.update(tab.id, {active: true})
-                        chrome.tabs.sendMessage(tab.id, {action: "translateTextWithDeepL", text: source, targetlanguage}, {frameId: 0}, response => {
+                        chrome.tabs.sendMessage(tab.id, {
+                            action: "translateTextWithDeepL",
+                            text: source,
+                            targetlanguage
+                        }, {
+                            frameId: 0
+                        }, response => {
                             resolve(response)
                         })
                     } else {
-                        chrome.tabs.create({url: `https://www.deepl.com/#!${targetlanguage}!#${encodeURIComponent(source)}`}, tab => {
+                        chrome.tabs.create({
+                            url: `https://www.deepl.com/#!${targetlanguage}!#${encodeURIComponent(source)}`
+                        }, tab => {
                             DeepLTab = tab
                             waitFirstTranslationResult()
                         })
@@ -716,7 +724,9 @@ var translationService = {}
                     }
                 })
             } else {
-                chrome.tabs.create({url: `https://www.deepl.com/#!${targetlanguage}!#${encodeURIComponent(source)}`}, tab => {
+                chrome.tabs.create({
+                    url: `https://www.deepl.com/#!${targetlanguage}!#${encodeURIComponent(source)}`
+                }, tab => {
                     DeepLTab = tab
                     waitFirstTranslationResult()
                 })
@@ -820,7 +830,7 @@ var translationService = {}
             } else {
                 translateSingleText = translationService.google.translateSingleText
             }
-            
+
             translateSingleText(request.source, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
                 .then(result => {
                     sendResponse(result)

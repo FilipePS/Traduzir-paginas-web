@@ -9,17 +9,17 @@ var textToSpeech = {}
 
             http.onload = e => {
                 const reader = new FileReader();
-                reader.onloadend = function() {
+                reader.onloadend = function () {
                     resolve(reader.result)
                 }
                 reader.readAsDataURL(e.target.response)
             }
-    
+
             http.onerror = e => {
                 console.error(e)
                 reject(e)
             }
-    
+
             http.open("GET", `https://translate.google.com/translate_tts?ie=UTF-8&tl=${targetLanguage}&client=dict-chrome-ex&ttsspeed=0.5&q=` + encodeURIComponent(text))
             http.responseType = "blob"
             http.send()
@@ -44,17 +44,17 @@ var textToSpeech = {}
             }
             if (requestString) {
                 promises.push(textToSpeech.google(requestString, request.targetLanguage))
-                requestString = ""  
+                requestString = ""
             }
 
             Promise.all(promises)
-            .then(result => {
-                sendResponse(result)
-            })
-            .catch(e => {
-                console.error(e)
-                sendResponse()
-            })
+                .then(result => {
+                    sendResponse(result)
+                })
+                .catch(e => {
+                    console.error(e)
+                    sendResponse()
+                })
 
             return true
         } else if (request.action === "playAudio") {
@@ -80,20 +80,20 @@ var textToSpeech = {}
             twpConfig.onReady(function () {
                 audios.forEach(audio => audio.playbackRate = twpConfig.get("ttsSpeed"))
             })
-            
+
             if (audios[audioIndex]) {
                 audios[audioIndex].play()
                 audioIndex++
             }
 
             Promise.all(promises)
-            .then(r => {
-                sendResponse(r)
-            })
-            .catch(e => {
-                console.error(e)
-                sendResponse()
-            })
+                .then(r => {
+                    sendResponse(r)
+                })
+                .catch(e => {
+                    console.error(e)
+                    sendResponse()
+                })
 
             return true
         } else if (request.action === "stopAudio") {
@@ -102,10 +102,10 @@ var textToSpeech = {}
         }
     })
 
-    twpConfig.onReady(function() {
+    twpConfig.onReady(function () {
         twpConfig.onChanged((name, newvalue) => {
             switch (name) {
-                case "ttsSpeed":    
+                case "ttsSpeed":
                     audios.forEach(audio => audio.playbackRate = newvalue)
                     break
             }

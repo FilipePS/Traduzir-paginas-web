@@ -48,15 +48,15 @@ twpConfig.onReady(function () {
             document.querySelector("#listen svg").style = "fill: rgb(231, 230, 228)"
         }
     }
-    
+
     function disableDarkMode() {
         if (document.getElementById("#darkModeElement")) {
             document.getElementById("#darkModeElement").remove()
             document.querySelector("#listen svg").style = "fill: black"
         }
     }
-    
-    switch(twpConfig.get("darkMode")) {
+
+    switch (twpConfig.get("darkMode")) {
         case "auto":
             if (matchMedia("(prefers-color-scheme: dark)").matches) {
                 enableDarkMode()
@@ -76,11 +76,14 @@ twpConfig.onReady(function () {
 
     let audioDataUrls = null
     let isPlayingAudio = false
+
     function stopAudio() {
         if (isPlayingAudio) {
-            chrome.runtime.sendMessage({action: "stopAudio"})
+            chrome.runtime.sendMessage({
+                action: "stopAudio"
+            })
         }
-        isPlayingAudio = false 
+        isPlayingAudio = false
     }
 
 
@@ -192,7 +195,10 @@ twpConfig.onReady(function () {
                 eListen.setAttribute("title", msgListen)
             } else {
                 isPlayingAudio = true
-                chrome.runtime.sendMessage({action: "playAudio", audioDataUrls}, () => {
+                chrome.runtime.sendMessage({
+                    action: "playAudio",
+                    audioDataUrls
+                }, () => {
                     eListen.classList.remove("selected")
                     eListen.setAttribute("title", msgListen)
                 })
@@ -201,11 +207,18 @@ twpConfig.onReady(function () {
         } else {
             stopAudio()
             isPlayingAudio = true
-            chrome.runtime.sendMessage({action: "textToSpeech", text: eTextTranslated.textContent, targetLanguage: currentTargetLanguage}, result => {
+            chrome.runtime.sendMessage({
+                action: "textToSpeech",
+                text: eTextTranslated.textContent,
+                targetLanguage: currentTargetLanguage
+            }, result => {
                 if (!result) return;
 
                 audioDataUrls = result
-                chrome.runtime.sendMessage({action: "playAudio", audioDataUrls}, () => {
+                chrome.runtime.sendMessage({
+                    action: "playAudio",
+                    audioDataUrls
+                }, () => {
                     isPlayingAudio = false
                     eListen.classList.remove("selected")
                     eListen.setAttribute("title", msgListen)
@@ -259,14 +272,14 @@ twpConfig.onReady(function () {
         audioDataUrls = null
 
         backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent)
-        .then(result => {
-            if (twpLang.isRtlLanguage(currentTargetLanguage)) {
-                eTextTranslated.setAttribute("dir", "rtl")
-            } else {
-                eTextTranslated.setAttribute("dir", "ltr")
-            }
-            eTextTranslated.textContent = result
-        })
+            .then(result => {
+                if (twpLang.isRtlLanguage(currentTargetLanguage)) {
+                    eTextTranslated.setAttribute("dir", "rtl")
+                } else {
+                    eTextTranslated.setAttribute("dir", "ltr")
+                }
+                eTextTranslated.textContent = result
+            })
     }
 
     let params = location.hash.substring(1).split("&").reduce((a, b) => {
@@ -274,7 +287,7 @@ twpConfig.onReady(function () {
         a[decodeURIComponent(splited[0])] = decodeURIComponent(splited[1])
         return a
     }, {})
-    
+
     if (params["text"]) {
         eOrigText.textContent = params["text"]
         setCaretAtEnd()

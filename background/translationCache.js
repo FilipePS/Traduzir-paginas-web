@@ -5,7 +5,7 @@
 var translationCache = {}
 
 {
-    function getTableSize (db, dbName) {
+    function getTableSize(db, dbName) {
         return new Promise((resolve, reject) => {
             if (db == null) {
                 return reject()
@@ -32,7 +32,7 @@ var translationCache = {}
         })
     }
 
-    function getDatabaseSize (dbName) {
+    function getDatabaseSize(dbName) {
         return new Promise(resolve => {
             const request = indexedDB.open(dbName)
             let db
@@ -41,14 +41,14 @@ var translationCache = {}
             }
             request.onsuccess = function (event) {
                 db = event.target.result
-                let tableNames = [...db.objectStoreNames]
-                ;(function (tableNames, db) {
+                let tableNames = [...db.objectStoreNames];
+                (function (tableNames, db) {
                     const tableSizeGetters = tableNames
                         .reduce((acc, tableName) => {
                             acc.push(getTableSize(db, tableName))
                             return acc
                         }, [])
-    
+
                     Promise.all(tableSizeGetters)
                         .then(sizes => {
                             const total = sizes.reduce(function (acc, val) {
@@ -65,7 +65,7 @@ var translationCache = {}
         })
     }
 
-    function humanReadableSize (bytes) {
+    function humanReadableSize(bytes) {
         const thresh = 1024
         if (Math.abs(bytes) < thresh) {
             return bytes + ' B'
@@ -74,7 +74,7 @@ var translationCache = {}
         let u = -1
         do {
             bytes /= thresh
-            ++u
+                ++u
         } while (Math.abs(bytes) >= thresh && u < units.length - 1)
         return bytes.toFixed(1) + ' ' + units[u]
     }

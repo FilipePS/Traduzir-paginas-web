@@ -471,10 +471,12 @@ twpConfig.onReady(function () {
         twpConfig.set("translateDynamicallyCreatedContent", e.target.value)
     }
     $("#translateDynamicallyCreatedContent").value = twpConfig.get("translateDynamicallyCreatedContent")
- 
+
     $("#autoTranslateWhenClickingALink").onchange = e => {
         if (e.target.value == "yes") {
-            chrome.permissions.request({permissions: ["webNavigation"]}, granted => {
+            chrome.permissions.request({
+                permissions: ["webNavigation"]
+            }, granted => {
                 if (granted) {
                     twpConfig.set("autoTranslateWhenClickingALink", "yes")
                 } else {
@@ -484,7 +486,9 @@ twpConfig.onReady(function () {
             })
         } else {
             twpConfig.set("autoTranslateWhenClickingALink", "no")
-            chrome.permissions.remove({permissions: ["webNavigation"]})
+            chrome.permissions.remove({
+                permissions: ["webNavigation"]
+            })
         }
     }
     $("#autoTranslateWhenClickingALink").value = twpConfig.get("autoTranslateWhenClickingALink")
@@ -516,7 +520,7 @@ twpConfig.onReady(function () {
         } else {
             document.querySelectorAll("#translateSelectedAdvancedOptions input").forEach(input => {
                 input.removeAttribute("disabled")
-            })      
+            })
         }
     }
 
@@ -568,18 +572,20 @@ twpConfig.onReady(function () {
     // hotkeys options
     function escapeHtml(unsafe) {
         return unsafe
-             .replace(/&/g, "&amp;")
-             .replace(/</g, "&lt;")
-             .replace(/>/g, "&gt;")
-             .replace(/"/g, "&quot;")
-             .replace(/'/g, "&#039;");
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
     }
     $('[data-i18n="lblTranslateSelectedWhenPressTwice"]').innerHTML = $('[data-i18n="lblTranslateSelectedWhenPressTwice"]').innerHTML.replace("[Ctrl]", "<kbd>Ctrl</kbd>")
     $('[data-i18n="lblTranslateTextOverMouseWhenPressTwice"]').innerHTML = $('[data-i18n="lblTranslateTextOverMouseWhenPressTwice"]').innerHTML.replace("[Ctrl]", "<kbd>Ctrl</kbd>")
 
 
-    $("#openNativeShortcutManager").onclick  = e => {
-        chrome.tabs.create({url: "chrome://extensions/shortcuts"})
+    $("#openNativeShortcutManager").onclick = e => {
+        chrome.tabs.create({
+            url: "chrome://extensions/shortcuts"
+        })
     }
 
     $("#translateSelectedWhenPressTwice").onclick = e => {
@@ -712,7 +718,7 @@ twpConfig.onReady(function () {
                 setError("letter")
                 return
             }
-            
+
             setShortcut(hotkeyname, getKeyString(e))
             input.blur()
 
@@ -770,7 +776,9 @@ twpConfig.onReady(function () {
     // storage options
     $("#deleteTranslationCache").onclick = e => {
         if (confirm(chrome.i18n.getMessage("doYouWantToDeleteTranslationCache"))) {
-            chrome.runtime.sendMessage({action: "deleteTranslationCache"})
+            chrome.runtime.sendMessage({
+                action: "deleteTranslationCache"
+            })
         }
     }
 
@@ -780,19 +788,19 @@ twpConfig.onReady(function () {
         const element = document.createElement('a')
         element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(config, null, 4)))
         element.setAttribute('download', 'twp-backup_' + new Date().toISOString().replace(/T/, '_').replace(/\..+/, '').replace(/\:/g, ".") + ".txt")
-      
+
         element.style.display = 'none'
         document.body.appendChild(element)
-      
+
         element.click()
-      
+
         document.body.removeChild(element)
     }
     $("#restoreFromFile").onclick = e => {
         const element = document.createElement('input')
         element.setAttribute('type', 'file')
         element.setAttribute('accept', 'text/plain')
-      
+
         element.style.display = 'none'
         document.body.appendChild(element)
 
@@ -803,7 +811,7 @@ twpConfig.onReady(function () {
             reader.onload = function () {
                 try {
                     const config = JSON.parse(reader.result)
-                    
+
                     if (confirm(chrome.i18n.getMessage("doYouWantOverwriteAllSettings"))) {
                         twpConfig.import(config)
                     }
@@ -815,9 +823,9 @@ twpConfig.onReady(function () {
 
             reader.readAsText(input.files[0])
         }
-      
+
         element.click()
-      
+
         document.body.removeChild(element)
     }
     $("#resetToDefault").onclick = e => {
@@ -864,7 +872,9 @@ twpConfig.onReady(function () {
     $("#btnCalculateStorage").onclick = e => {
         $("#btnCalculateStorage").style.display = "none"
 
-        chrome.runtime.sendMessage({action: "getCacheSize"}, result => {
+        chrome.runtime.sendMessage({
+            action: "getCacheSize"
+        }, result => {
             $("#storageUsed").textContent = result
             $("#storageUsed").style.display = "inline-block"
         })
@@ -873,7 +883,7 @@ twpConfig.onReady(function () {
     if (navigator.language === "pt-BR") {
         $("#currency").value = "BRL"
         $("#donateInUSD").style.display = "none"
-    } else  {
+    } else {
         $("#currency").value = "USD"
         $("#donateInBRL").style.display = "none"
     }
@@ -882,7 +892,7 @@ twpConfig.onReady(function () {
         if (e.target.value === "BRL") {
             $("#donateInUSD").style.display = "none"
             $("#donateInBRL").style.display = "block"
-        } else  {
+        } else {
             $("#donateInUSD").style.display = "block"
             $("#donateInBRL").style.display = "none"
         }

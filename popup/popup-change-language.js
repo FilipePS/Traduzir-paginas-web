@@ -19,7 +19,8 @@ btnApply.addEventListener("click", () => {
 })
 
 // fill language list
-;(function() {
+;
+(function () {
     let uilanguage = chrome.i18n.getUILanguage()
     uilanguage = twpLang.fixLanguageCode(uilanguage)
 
@@ -34,7 +35,7 @@ btnApply.addEventListener("click", () => {
         langsSorted.push([i, langs[i]])
     }
 
-    langsSorted.sort(function(a, b) {
+    langsSorted.sort(function (a, b) {
         return a[1].localeCompare(b[1]);
     })
 
@@ -47,7 +48,7 @@ btnApply.addEventListener("click", () => {
     })
 })()
 
-twpConfig.onReady(function() {
+twpConfig.onReady(function () {
     function enableDarkMode() {
         if (!$("#darkModeElement")) {
             const el = document.createElement("style")
@@ -79,14 +80,14 @@ twpConfig.onReady(function() {
             document.head.appendChild(el)
         }
     }
-    
+
     function disableDarkMode() {
         if ($("#darkModeElement")) {
             $("#darkModeElement").remove()
         }
     }
-    
-    switch(twpConfig.get("darkMode")) {
+
+    switch (twpConfig.get("darkMode")) {
         case "auto":
             if (matchMedia("(prefers-color-scheme: dark)").matches) {
                 enableDarkMode()

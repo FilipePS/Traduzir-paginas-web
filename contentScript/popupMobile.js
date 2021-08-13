@@ -79,7 +79,7 @@ twpConfig.onReady(function () {
         getElemById("menu").style.display = "none"
     }
 
-    popupMobile.show = function (forceShow=false) {
+    popupMobile.show = function (forceShow = false) {
         popupMobile.hide()
 
         if (!forceShow && ((!awaysTranslateThisSite && (!translateThisSite || !translateThisLanguage)) || showPopupMobile !== "yes")) return;
@@ -88,7 +88,9 @@ twpConfig.onReady(function () {
         divElement.style = "all: initial"
         divElement.classList.add("notranslate")
 
-        const shadowRoot = divElement.attachShadow({mode: "closed"})
+        const shadowRoot = divElement.attachShadow({
+            mode: "closed"
+        })
         shadowRoot.innerHTML = htmlMobile
 
         document.body.appendChild(divElement)
@@ -122,14 +124,14 @@ twpConfig.onReady(function () {
                 shadowRoot.appendChild(el)
             }
         }
-        
+
         function disableDarkMode() {
             if (shadowRoot.getElementById("#darkModeElement")) {
                 shadowRoot.getElementById("#darkModeElement").remove()
             }
         }
-        
-        switch(twpConfig.get("darkMode")) {
+
+        switch (twpConfig.get("darkMode")) {
             case "auto":
                 if (matchMedia("(prefers-color-scheme: dark)").matches) {
                     enableDarkMode()
@@ -149,7 +151,7 @@ twpConfig.onReady(function () {
 
         getElemById = shadowRoot.getElementById.bind(shadowRoot)
 
-        function translatePage(targetLanguage=currentTargetLanguage) {
+        function translatePage(targetLanguage = currentTargetLanguage) {
             getElemById("menuSelectLanguage").style.display = "none"
             getElemById("menu").style.display = "none"
 
@@ -157,13 +159,14 @@ twpConfig.onReady(function () {
                 twpConfig.setTargetLanguage(targetLanguage, true)
             }
             pageTranslator.translatePage(targetLanguage)
- 
+
             getElemById("btnOriginal").style.color = null
             getElemById("btnTranslate").style.color = "#2196F3"
         }
 
         // fill language list
-        ;(function() {
+        ;
+        (function () {
             let uilanguage = chrome.i18n.getUILanguage()
             uilanguage = twpLang.fixLanguageCode(uilanguage)
 
@@ -178,7 +181,7 @@ twpConfig.onReady(function () {
                 langsSorted.push([i, langs[i]])
             }
 
-            langsSorted.sort(function(a, b) {
+            langsSorted.sort(function (a, b) {
                 return a[1].localeCompare(b[1]);
             })
 
@@ -268,12 +271,16 @@ twpConfig.onReady(function () {
         }
 
         getElemById("btnMoreOptions").onclick = e => {
-            chrome.runtime.sendMessage({action: "openOptionsPage"})
+            chrome.runtime.sendMessage({
+                action: "openOptionsPage"
+            })
         }
 
         getElemById("btnDonate").onclick = e => {
             e.preventDefault()
-            chrome.runtime.sendMessage({action: "openDonationPage"})
+            chrome.runtime.sendMessage({
+                action: "openDonationPage"
+            })
         }
 
         document.addEventListener("blur", hideMenu)

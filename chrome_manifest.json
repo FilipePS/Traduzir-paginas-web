@@ -64,8 +64,7 @@
         "default_title": "__MSG_pageActionTitle__"
     },
 
-    "content_scripts": [
-        {
+    "content_scripts": [{
             "matches": ["<all_urls>"],
             "run_at": "document_start",
             "all_frames": false,

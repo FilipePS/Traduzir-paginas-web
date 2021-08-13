@@ -4,14 +4,14 @@
 
 var translateSelected = {}
 
-twpConfig.onReady(function() {
+twpConfig.onReady(function () {
     let styleTextContent = ""
     fetch(chrome.runtime.getURL("/contentScript/css/translateSelected.css"))
-    .then(response => response.text())
-    .then(response => {
-        styleTextContent = response.replace('/icons/icon-32.png', chrome.runtime.getURL("/icons/icon-32.png"))
-    })
-    .catch(e => console.error(e))
+        .then(response => response.text())
+        .then(response => {
+            styleTextContent = response.replace('/icons/icon-32.png', chrome.runtime.getURL("/icons/icon-32.png"))
+        })
+        .catch(e => console.error(e))
 
     let divElement
     let eButtonTransSelText
@@ -44,38 +44,44 @@ twpConfig.onReady(function() {
         if (!chrome.i18n.detectLanguage) return "und"
 
         return await new Promise(resolve => {
-          chrome.i18n.detectLanguage(text, result => {
-            if (!result) return resolve("und")
+            chrome.i18n.detectLanguage(text, result => {
+                if (!result) return resolve("und")
 
-            for (const langInfo of result.languages) {
-              const langCode = twpLang.checkLanguageCode(langInfo.language)
-              if (langCode) {
-                return resolve(langCode)
-              }
-            }
-            
-            return resolve("und")
-          })
+                for (const langInfo of result.languages) {
+                    const langCode = twpLang.checkLanguageCode(langInfo.language)
+                    if (langCode) {
+                        return resolve(langCode)
+                    }
+                }
+
+                return resolve("und")
+            })
         })
     }
 
     let audioDataUrls = null
     let isPlayingAudio = false
+
     function stopAudio() {
         if (isPlayingAudio) {
-            chrome.runtime.sendMessage({action: "stopAudio"})
+            chrome.runtime.sendMessage({
+                action: "stopAudio"
+            })
         }
-        isPlayingAudio = false 
+        isPlayingAudio = false
     }
 
     function dragElement(elmnt, elmnt2) {
-        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        var pos1 = 0,
+            pos2 = 0,
+            pos3 = 0,
+            pos4 = 0;
         if (elmnt2) {
             elmnt2.addEventListener("mousedown", dragMouseDown);
         } else {
             elmnt.addEventListener("mousedown", dragMouseDown);
         }
-      
+
         function dragMouseDown(e) {
             e = e || window.event;
             e.preventDefault();
@@ -86,7 +92,7 @@ twpConfig.onReady(function() {
             // call a function whenever the cursor moves:
             document.addEventListener("mousemove", elementDrag);
         }
-      
+
         function elementDrag(e) {
             e = e || window.event;
             e.preventDefault();
@@ -99,7 +105,7 @@ twpConfig.onReady(function() {
             elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
-      
+
         function closeDragElement() {
             // stop moving when mouse button is released:
             document.removeEventListener("mouseup", closeDragElement);
@@ -127,7 +133,9 @@ twpConfig.onReady(function() {
         divElement.style = "all: initial"
         divElement.classList.add("notranslate")
 
-        const shadowRoot = divElement.attachShadow({mode: "closed"})
+        const shadowRoot = divElement.attachShadow({
+            mode: "closed"
+        })
         shadowRoot.innerHTML = `
         <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/translateSelected.css")}">
 
@@ -244,15 +252,15 @@ twpConfig.onReady(function() {
                 shadowRoot.querySelector("#listen svg").style = "fill: rgb(231, 230, 228)"
             }
         }
-        
+
         function disableDarkMode() {
             if (shadowRoot.getElementById("#darkModeElement")) {
                 shadowRoot.getElementById("#darkModeElement").remove()
                 shadowRoot.querySelector("#listen svg").style = "fill: black"
             }
         }
-        
-        switch(twpConfig.get("darkMode")) {
+
+        switch (twpConfig.get("darkMode")) {
             case "auto":
                 if (matchMedia("(prefers-color-scheme: dark)").matches) {
                     enableDarkMode()
@@ -279,7 +287,7 @@ twpConfig.onReady(function() {
         const eMoreOrLess = shadowRoot.getElementById("moreOrLess")
         const eMore = shadowRoot.getElementById("more")
         const eLess = shadowRoot.getElementById("less")
-        
+
         const sGoogle = shadowRoot.getElementById("sGoogle")
         const sYandex = shadowRoot.getElementById("sYandex")
         const sBing = shadowRoot.getElementById("sBing")
@@ -371,7 +379,7 @@ twpConfig.onReady(function() {
                 shadowRoot.querySelectorAll("#setTargetLanguage li").forEach(li => {
                     li.classList.remove("selected")
                 })
-    
+
                 e.target.classList.add("selected")
             }
         }
@@ -390,7 +398,10 @@ twpConfig.onReady(function() {
                     eListen.setAttribute("title", msgListen)
                 } else {
                     isPlayingAudio = true
-                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrls}, () => {
+                    chrome.runtime.sendMessage({
+                        action: "playAudio",
+                        audioDataUrls
+                    }, () => {
                         eListen.classList.remove("selected")
                         eListen.setAttribute("title", msgListen)
                     })
@@ -399,11 +410,18 @@ twpConfig.onReady(function() {
             } else {
                 stopAudio()
                 isPlayingAudio = true
-                chrome.runtime.sendMessage({action: "textToSpeech", text: eSelTextTrans.textContent, targetLanguage: currentTargetLanguage}, result => {
+                chrome.runtime.sendMessage({
+                    action: "textToSpeech",
+                    text: eSelTextTrans.textContent,
+                    targetLanguage: currentTargetLanguage
+                }, result => {
                     if (!result) return;
 
                     audioDataUrls = result
-                    chrome.runtime.sendMessage({action: "playAudio", audioDataUrls}, () => {
+                    chrome.runtime.sendMessage({
+                        action: "playAudio",
+                        audioDataUrls
+                    }, () => {
                         isPlayingAudio = false
                         eListen.classList.remove("selected")
                         eListen.setAttribute("title", msgListen)
@@ -525,10 +543,10 @@ twpConfig.onReady(function() {
             case "alwaysTranslateSites":
                 awaysTranslateThisSite = newValue.indexOf(location.hostname) !== -1
                 updateEventListener()
-                break    
+                break
             case "neverTranslateSites":
                 translateThisSite = newValue.indexOf(location.hostname) === -1
-                updateEventListener() 
+                updateEventListener()
                 break
             case "neverTranslateLangs":
                 translateThisLanguage = newValue.indexOf(originalPageLanguage) === -1
@@ -555,7 +573,7 @@ twpConfig.onReady(function() {
         }
     })
 
-    function update_eDivResult(result="") {
+    function update_eDivResult(result = "") {
         if (eDivResult.style.display !== "block") {
             init()
         }
@@ -573,7 +591,7 @@ twpConfig.onReady(function() {
             eDivResult.style.top = "0px"
             eDivResult.style.left = "0px"
             eOrigText.textContent = prevSelectionInfo.text
-            
+
             setCaretAtEnd()
 
             const height = parseInt(eDivResult.offsetHeight)
@@ -582,7 +600,7 @@ twpConfig.onReady(function() {
             top = Math.min(window.innerHeight - height, top)
 
             const width = parseInt(eDivResult.offsetWidth)
-            let left = parseInt(eLeft /*- width / 2*/)
+            let left = parseInt(eLeft /*- width / 2*/ )
             left = Math.max(0, left)
             left = Math.min(window.innerWidth - width, left)
 
@@ -596,19 +614,19 @@ twpConfig.onReady(function() {
         let currentFooCount = fooCount
         stopAudio()
         audioDataUrls = null
-        
+
         backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent)
-        .then(result => {
-            if (currentFooCount !== fooCount) return;
-            
-            update_eDivResult(result)
-        })
+            .then(result => {
+                if (currentFooCount !== fooCount) return;
+
+                update_eDivResult(result)
+            })
     }
 
     let gSelectionInfo
     let prevSelectionInfo
 
-    function translateSelText(usePrevSelectionInfo=false) {
+    function translateSelText(usePrevSelectionInfo = false) {
         if (!usePrevSelectionInfo && gSelectionInfo) {
             prevSelectionInfo = gSelectionInfo
         } else if (!(usePrevSelectionInfo && prevSelectionInfo)) {
@@ -638,10 +656,11 @@ twpConfig.onReady(function() {
             destroy()
         }
     }
-    
+
 
     let isTouchSelection = false
-    function onTouchstart (e) {
+
+    function onTouchstart(e) {
         isTouchSelection = true
         onDown(e)
     }
@@ -651,9 +670,9 @@ twpConfig.onReady(function() {
         const activeEl = document.activeElement;
         const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
         if (
-          (activeElTagName == "textarea") || (activeElTagName == "input" &&
-          /^(?:text|search)$/i.test(activeEl.type)) &&
-          (typeof activeEl.selectionStart == "number")
+            (activeElTagName == "textarea") || (activeElTagName == "input" &&
+                /^(?:text|search)$/i.test(activeEl.type)) &&
+            (typeof activeEl.selectionStart == "number")
         ) {
             text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
         } else if (window.getSelection) {
@@ -662,15 +681,15 @@ twpConfig.onReady(function() {
         return text;
     }
 
-    function readSelection(dontReadIfSelectionDontChange=false) {
+    function readSelection(dontReadIfSelectionDontChange = false) {
         let newSelectionInfo = null
 
         const activeEl = document.activeElement;
         const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
         if (
-          (activeElTagName == "textarea") || (activeElTagName == "input" &&
-          /^(?:text|search)$/i.test(activeEl.type)) &&
-          (typeof activeEl.selectionStart == "number")
+            (activeElTagName == "textarea") || (activeElTagName == "input" &&
+                /^(?:text|search)$/i.test(activeEl.type)) &&
+            (typeof activeEl.selectionStart == "number")
         ) {
             const text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
             const rect = activeEl.getBoundingClientRect()
@@ -715,8 +734,8 @@ twpConfig.onReady(function() {
         let detectedLanguage = await detectTextLanguage(selectedText)
         if (!detectedLanguage) detectedLanguage = "und";
 
-        if (((dontShowIfSelectedTextIsTargetLang == "yes" && detectedLanguage !== currentTargetLanguage) || dontShowIfSelectedTextIsTargetLang != "yes")
-        && ((dontShowIfSelectedTextIsUnknown == "yes" && detectedLanguage !== "und") || dontShowIfSelectedTextIsUnknown != "yes")
+        if (((dontShowIfSelectedTextIsTargetLang == "yes" && detectedLanguage !== currentTargetLanguage) || dontShowIfSelectedTextIsTargetLang != "yes") &&
+            ((dontShowIfSelectedTextIsUnknown == "yes" && detectedLanguage !== "und") || dontShowIfSelectedTextIsUnknown != "yes")
         ) {
             init()
             if (plataformInfo.isMobile.any) {
@@ -730,19 +749,19 @@ twpConfig.onReady(function() {
             eButtonTransSelText.style.display = "block"
         }
     }
-    
+
     function onMouseup(e) {
         if (e.button != 0) return;
         if (e.target == divElement) return;
         if (readSelection(true)) {
-            setTimeout(()=>onUp(e), 120)
+            setTimeout(() => onUp(e), 120)
         }
     }
 
     function onTouchend(e) {
         if (e.target == divElement) return;
         readSelection()
-        setTimeout(()=>onUp(e), 120)
+        setTimeout(() => onUp(e), 120)
     }
 
     function onSelectionchange(e) {
@@ -755,9 +774,9 @@ twpConfig.onReady(function() {
         const activeEl = document.activeElement;
         const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
         if (
-          (activeElTagName == "textarea") || (activeElTagName == "input" &&
-          /^(?:text|search)$/i.test(activeEl.type)) &&
-          (typeof activeEl.selectionStart == "number")
+            (activeElTagName == "textarea") || (activeElTagName == "input" &&
+                /^(?:text|search)$/i.test(activeEl.type)) &&
+            (typeof activeEl.selectionStart == "number")
         ) {
             const text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
             if (text) return true;
@@ -772,6 +791,7 @@ twpConfig.onReady(function() {
     }
 
     let lastTimePressedCtrl = null
+
     function onKeyUp(e) {
         if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
         if (e.key == "Control") {
@@ -787,9 +807,9 @@ twpConfig.onReady(function() {
     document.addEventListener("keyup", onKeyUp)
 
     function updateEventListener() {
-        if (showTranslateSelectedButton == "yes" && (awaysTranslateThisSite || (translateThisSite && translateThisLanguage))
-        && ((dontShowIfPageLangIsTargetLang == "yes" && originalPageLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes")
-        && ((dontShowIfPageLangIsUnknown == "yes" && originalPageLanguage !== "und") || dontShowIfPageLangIsUnknown != "yes")
+        if (showTranslateSelectedButton == "yes" && (awaysTranslateThisSite || (translateThisSite && translateThisLanguage)) &&
+            ((dontShowIfPageLangIsTargetLang == "yes" && originalPageLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes") &&
+            ((dontShowIfPageLangIsUnknown == "yes" && originalPageLanguage !== "und") || dontShowIfPageLangIsUnknown != "yes")
         ) {
             document.addEventListener("mouseup", onMouseup)
 
