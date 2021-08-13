@@ -146,7 +146,7 @@ twpConfig.onReady(function() {
     
     function enableMutatinObserver() {
         disableMutatinObserver()
-
+        return
         if (twpConfig.get("translateDynamicallyCreatedContent") == "yes") {
             translateNewNodesTimerHandler = setInterval(translateNewNodes, 2000)
             mutationObserver.observe(document.body, { childList: true, subtree: true })
@@ -171,13 +171,15 @@ twpConfig.onReady(function() {
     document.addEventListener("visibilitychange", handleVisibilityChange, false)
     
     function getNodesToTranslate(root = document.body) {
-        const nodesToTranslate = [{ isTranslated: false, parent: null, nodesInfo: [] }]
+        const nodesToTranslate = [{ isTranslated: false, parent: null, topElement: null, bottomElement: null, nodesInfo: [] }]
         let index = 0
         let currentParagraphSize = 0
 
-        const getAllNodes = function (element) {
+        const getAllNodes = function (element, lastHTMLElement=null) {
             if (element.nodeType == 1 || element.nodeType == 11) {
                 if (element.nodeType == 1) {
+                    lastHTMLElement = element
+
                     if (htmlTagsInlineIgnore.indexOf(element.nodeName) !== -1
                         || htmlTagsNoTranslate.indexOf(element.nodeName) !== -1
                         || element.classList.contains("notranslate")
@@ -185,7 +187,7 @@ twpConfig.onReady(function() {
                         || element.isContentEditable) {
                         if (nodesToTranslate[index].nodesInfo.length > 0) {
                             currentParagraphSize = 0
-                            nodesToTranslate.push({ isTranslated: false, parent: null, nodesInfo: [] })
+                            nodesToTranslate.push({ isTranslated: false, parent: null, topElement: null, bottomElement: null, nodesInfo: [] })
                             index++
                         }
                         return
@@ -194,20 +196,27 @@ twpConfig.onReady(function() {
                 
                 function getAllChilds(childNodes) {
                     Array.from(childNodes).forEach(value => {
+                        if (value.nodeType == 1) {
+                            lastHTMLElement = value
+                        }
+
                         if (htmlTagsInlineText.indexOf(value.nodeName) == -1) {
                             if (nodesToTranslate[index].nodesInfo.length > 0) {
                                 currentParagraphSize = 0
-                                nodesToTranslate.push({ isTranslated: false, parent: null, nodesInfo: [] })
+                                nodesToTranslate.push({ isTranslated: false, parent: null, topElement: null, bottomElement: null, nodesInfo: [] })
                                 index++
+
                             }
-                            getAllNodes(value)
+
+                            getAllNodes(value, lastHTMLElement)
+
                             if (nodesToTranslate[index].nodesInfo.length > 0) {
                                 currentParagraphSize = 0
-                                nodesToTranslate.push({ isTranslated: false, parent: null, nodesInfo: [] })
+                                nodesToTranslate.push({ isTranslated: false, parent: null, topElement: null, bottomElement: null, nodesInfo: [] })
                                 index++
                             }
                         } else {
-                            getAllNodes(value)
+                            getAllNodes(value, lastHTMLElement)
                         }
                     })
                 }
@@ -228,12 +237,18 @@ twpConfig.onReady(function() {
                         }
                         nodesToTranslate[index].parent = temp
                     }
+                    if (!nodesToTranslate[index].topElement) {
+                        nodesToTranslate[index].topElement = lastHTMLElement
+                    }
                     if (currentParagraphSize > 1000) {
                         currentParagraphSize = 0
-                        const info = { isTranslated: false, parent: null, nodesInfo: [] }
+                        nodesToTranslate[index].bottomElement = lastHTMLElement
+                        const info = { isTranslated: false, parent: null, topElement: lastHTMLElement, bottomElement: lastHTMLElement, nodesInfo: [] }
                         info.parent =  nodesToTranslate[index].parent
                         nodesToTranslate.push(info)
                         index++
+                    } else {
+                        nodesToTranslate[index].bottomElement = lastHTMLElement
                     }
                     currentParagraphSize += element.textContent.length
                     nodesToTranslate[index].nodesInfo.push({node: element, original: element.textContent})
@@ -396,13 +411,31 @@ twpConfig.onReady(function() {
                         return false
                     }
 
+                    function topIsInScreen(element) {
+                        if (!element) {debugger; return false}
+                        const rect = element.getBoundingClientRect()
+                        if (rect.top >= 0 && rect.top <= window.innerHeight) {
+                            return true
+                        }
+                        return false
+                    }
+
+                    function bottomIsInScreen(element) {
+                        if (!element) {debugger; return false}
+                        const rect = element.getBoundingClientRect()
+                        if (rect.bottom >= 0 && rect.bottom <= window.innerHeight) {
+                            return true
+                        }
+                        return false
+                    }
+
 
                     const currentFooCount = fooCount
                     
                     const nodesToTranslatesNow = []
                     nodesToTranslate.forEach(nti => {
                         if (!nti.isTranslated) {
-                            if (isInScreen(nti.parent)) {
+                            if (bottomIsInScreen(nti.topElement) || topIsInScreen(nti.bottomElement)) {
                                 nti.isTranslated = true
                                 nodesToTranslatesNow.push(nti.nodesInfo)
                             }
