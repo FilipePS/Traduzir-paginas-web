@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Målspråk $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -300,10 +300,10 @@
     "message": "Visa knappen i adressfältet"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Översättningstjänst för webbplatser"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Översättningstjänst för text"
   },
   "msgStorage": {
     "message": "Lagring"
@@ -392,13 +392,13 @@
     "message": "Översätt automatiskt när du klickar på en länk som tar dig till samma domän som den aktuella webbplatsen"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Öppna inbyggd hanterare för tangentbordsgenvägar"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Speciella tangentbordsgenvägar"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Översätt markerad text när du trycker $SHORTCUT_KEY$ två gånger",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Översätt texten över muspekaren när du trycker $SHORTCUT_KEY$ två gånger",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,9 +414,9 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Översätt sidan genom att klicka en gång på knappen i adressfältet. (Högerklicka för att se popup-fönster)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Visa popup-fönster"
   }
 }
