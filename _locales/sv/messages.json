@@ -105,7 +105,7 @@
     "message": "Hjälp utvecklaren med en donation"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Översätt till $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Visa översättning när du svävar över den här webbplatsen"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Visa översättning när du svävar över webbplatser på $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -294,10 +294,10 @@
     "message": "Använd det gamla popup-gränssnittet"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Översätt gränssnittet"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Visa knappen i adressfältet"
   },
   "lblPageTranslationService": {
     "message": "Page translation service"
@@ -306,70 +306,70 @@
     "message": "Text Translation Service"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Lagring"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Översättningscache"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Använt lagringsutrymme:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Rensa översättningscache"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Personliga inställningar"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Säkerhetskopiera till fil"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Återställ från fil"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Återställ standardinställningar"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Vill du ta bort översättningscachen?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Vill du skriva över alla befintliga inställningar med datan från säkerhetskopian?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Filen verkar vara skadad"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Vill du återställa tillägget till standardinställningarna?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Ljudhastighet för text-till-tal"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "Aktivera DeepL som en översättningstjänst för text"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Skriv en genväg"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Inkludera Ctrl eller Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Skriv en bokstav"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Ogiltig kombination"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Växla mellan översättningen och originalsidan"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Återställ sidan till originalet"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Översätt sidan till målspråket"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Aktivera översättning för taggen $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,19 +377,19 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Sortera inte resultaten från Google Översätt"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Översätt dynamiskt skapat innehåll"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Beräkna"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Donera via PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Översätt automatiskt när du klickar på en länk som tar dig till samma domän som den aktuella webbplatsen"
   },
   "openNativeShortcutManager": {
     "message": "Open native shortcut key manager"
