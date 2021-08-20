@@ -417,6 +417,6 @@
     "message": "アドレスバーのボタンで即座にページを翻訳（ポップアップを表示するには右クリック）"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "ポップアップを表示"
   }
 }
