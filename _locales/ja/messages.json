@@ -414,7 +414,7 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "アドレスバーのボタンで即座にページを翻訳（ポップアップを表示するには右クリック）"
   },
   "btnShowPopup": {
     "message": "Show popup"
