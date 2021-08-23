@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Переводить текст над курсором при двойном нажатии $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,9 +414,9 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Переводить страницу по однократному нажатию кнопки в адресной строке. Чтобы увидеть всплывающее окно, щелкните правой кнопкой"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Показывать всплывающее окно"
   }
 }
