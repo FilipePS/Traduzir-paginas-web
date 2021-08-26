@@ -187,7 +187,9 @@ twpConfig.onReady(function () {
 
         const getAllNodes = function (node, lastHTMLElement = null) {
             if (node.nodeType == 1 || node.nodeType == 11) {
-                if (node.nodeType == 1) {
+                if (node.nodeType == 11) {
+                    lastHTMLElement = node.host
+                } else if (node.nodeType == 1) {
                     lastHTMLElement = node
 
                     if (htmlTagsInlineIgnore.indexOf(node.nodeName) !== -1 ||
@@ -197,6 +199,7 @@ twpConfig.onReady(function () {
                         node.isContentEditable) {
                         if (piecesToTranslate[index].nodes.length > 0) {
                             currentParagraphSize = 0
+                            piecesToTranslate[index].bottomElement = lastHTMLElement
                             piecesToTranslate.push({
                                 isTranslated: false,
                                 parentElement: null,
@@ -219,6 +222,7 @@ twpConfig.onReady(function () {
                         if (htmlTagsInlineText.indexOf(_node.nodeName) == -1) {
                             if (piecesToTranslate[index].nodes.length > 0) {
                                 currentParagraphSize = 0
+                                piecesToTranslate[index].bottomElement = lastHTMLElement
                                 piecesToTranslate.push({
                                     isTranslated: false,
                                     parentElement: null,
@@ -234,6 +238,7 @@ twpConfig.onReady(function () {
 
                             if (piecesToTranslate[index].nodes.length > 0) {
                                 currentParagraphSize = 0
+                                piecesToTranslate[index].bottomElement = lastHTMLElement
                                 piecesToTranslate.push({
                                     isTranslated: false,
                                     parentElement: null,
@@ -250,8 +255,14 @@ twpConfig.onReady(function () {
                 }
 
                 getAllChilds(node.childNodes)
+                if (!piecesToTranslate[index].bottomElement) {
+                    piecesToTranslate[index].bottomElement = node
+                }
                 if (node.shadowRoot) {
                     getAllChilds(node.shadowRoot.childNodes)
+                    if (!piecesToTranslate[index].bottomElement) {
+                        piecesToTranslate[index].bottomElement = node
+                    }
                 }
             } else if (node.nodeType == 3) {
                 if (node.textContent.trim().length > 0) {
@@ -268,24 +279,23 @@ twpConfig.onReady(function () {
                     if (!piecesToTranslate[index].topElement) {
                         piecesToTranslate[index].topElement = lastHTMLElement
                     }
-                    if (currentParagraphSize > 1000) {
+                    if (currentParagraphSize > 0) {
                         currentParagraphSize = 0
                         piecesToTranslate[index].bottomElement = lastHTMLElement
                         const pieceInfo = {
                             isTranslated: false,
                             parentElement: null,
                             topElement: lastHTMLElement,
-                            bottomElement: lastHTMLElement,
+                            bottomElement: null,
                             nodes: []
                         }
                         pieceInfo.parentElement = piecesToTranslate[index].parentElement
                         piecesToTranslate.push(pieceInfo)
                         index++
-                    } else {
-                        piecesToTranslate[index].bottomElement = lastHTMLElement
                     }
                     currentParagraphSize += node.textContent.length
                     piecesToTranslate[index].nodes.push(node)
+                    piecesToTranslate[index].bottomElement = null
                 }
             }
         }
