@@ -652,8 +652,8 @@ twpConfig.onReady(function () {
     }
     updateEventListener()
 
-    pageTranslator.onGetOriginalTabLanguage(function (pagelanguage) {
-        originalTabLanguage = pagelanguage
+    pageTranslator.onGetOriginalTabLanguage(function (tabLanguage) {
+        originalTabLanguage = tabLanguage
         showTranslatedTextWhenHoveringThisLang = twpConfig.get("langsToTranslateWhenHovering").indexOf(originalTabLanguage) !== -1
         updateEventListener()
     })

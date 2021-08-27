@@ -34,8 +34,8 @@ twpConfig.onReady(function () {
     let dontShowIfSelectedTextIsUnknown = twpConfig.get("dontShowIfSelectedTextIsUnknown")
     let fooCount = 0
 
-    pageTranslator.onGetOriginalTabLanguage(function (pagelanguage) {
-        originalTabLanguage = pagelanguage
+    pageTranslator.onGetOriginalTabLanguage(function (tabLanguage) {
+        originalTabLanguage = tabLanguage
         translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1
         updateEventListener()
     })

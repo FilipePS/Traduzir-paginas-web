@@ -319,14 +319,14 @@ twpConfig.onReady(function () {
         }
     })
 
-    pageTranslator.onGetOriginalTabLanguage(function (pagelanguage) {
-        if (!pagelanguage || pagelanguage === "und") {
+    pageTranslator.onGetOriginalTabLanguage(function (tabLanguage) {
+        if (!tabLanguage || tabLanguage === "und") {
             const lang = twpLang.checkLanguageCode(document.documentElement.lang)
             if (lang) {
-                originalTabLanguage = pagelanguage
+                originalTabLanguage = tabLanguage
             }
         } else {
-            originalTabLanguage = pagelanguage
+            originalTabLanguage = tabLanguage
         }
         translateThisLanguage = originalTabLanguage === "und" || (currentTargetLanguage !== originalTabLanguage && twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1)
         popupMobile.show()

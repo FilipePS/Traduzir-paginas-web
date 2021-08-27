@@ -108,10 +108,10 @@ twpConfig.onReady(function () {
             action: "getOriginalTabLanguage"
         }, {
             frameId: 0
-        }, pageLanguage => {
+        }, tabLanguage => {
             checkedLastError()
-            if (!pageLanguage || (pageLanguage = twpLang.checkLanguageCode(pageLanguage))) {
-                originalTabLanguage = pageLanguage || "und"
+            if (!tabLanguage || (tabLanguage = twpLang.checkLanguageCode(tabLanguage))) {
+                originalTabLanguage = tabLanguage || "und"
                 twpButtons[0].childNodes[1].textContent = twpLang.codeToLanguage(originalTabLanguage)
             }
         })
