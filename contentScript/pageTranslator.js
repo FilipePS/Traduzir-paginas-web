@@ -480,7 +480,7 @@ twpConfig.onReady(function () {
                 (function () {
                     function isInScreen(element) {
                         const rect = element.getBoundingClientRect()
-                        if ((rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight)) {
+                        if ((rect.top > 0 && rect.top <= window.innerHeight) || (rect.bottom > 0 && rect.bottom <= window.innerHeight)) {
                             return true
                         }
                         return false
@@ -492,7 +492,7 @@ twpConfig.onReady(function () {
                             return false
                         }
                         const rect = element.getBoundingClientRect()
-                        if (rect.top >= 0 && rect.top <= window.innerHeight) {
+                        if (rect.top > 0 && rect.top <= window.innerHeight) {
                             return true
                         }
                         return false
@@ -504,7 +504,7 @@ twpConfig.onReady(function () {
                             return false
                         }
                         const rect = element.getBoundingClientRect()
-                        if (rect.bottom >= 0 && rect.bottom <= window.innerHeight) {
+                        if (rect.bottom > 0 && rect.bottom <= window.innerHeight) {
                             return true
                         }
                         return false
