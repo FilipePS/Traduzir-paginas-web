@@ -2,7 +2,13 @@
 
 var showTranslated = {}
 
-twpConfig.onReady(function () {
+function getTabHostName() {
+    return new Promise(resolve => chrome.runtime.sendMessage({action: "getTabHostName"}, result => resolve(result)))
+}
+
+Promise.all([twpConfig.onReady(), getTabHostName()])
+.then(function (_) {
+    const tabHostName = _[1]
     if (plataformInfo.isMobile.any) return;
 
     let styleTextContent = ""
@@ -16,7 +22,7 @@ twpConfig.onReady(function () {
     let currentTargetLanguages = twpConfig.get("targetLanguages")
     let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
     let currentTextTranslatorService = twpConfig.get("textTranslatorService") === "deepl" ? "google" : twpConfig.get("textTranslatorService")
-    let showTranslatedTextWhenHoveringThisSite = twpConfig.get("sitesToTranslateWhenHovering").indexOf(location.hostname) !== -1
+    let showTranslatedTextWhenHoveringThisSite = twpConfig.get("sitesToTranslateWhenHovering").indexOf(tabHostName) !== -1
     let showTranslatedTextWhenHoveringThisLang = false
     let translateTextOverMouseWhenPressTwice = twpConfig.get("translateTextOverMouseWhenPressTwice") === "yes"
     let fooCount = 0
@@ -33,7 +39,7 @@ twpConfig.onReady(function () {
                 currentTargetLanguage = newValue
                 break
             case "sitesToTranslateWhenHovering":
-                showTranslatedTextWhenHoveringThisSite = newValue.indexOf(location.hostname) !== -1
+                showTranslatedTextWhenHoveringThisSite = newValue.indexOf(tabHostName) !== -1
                 updateEventListener()
                 break
             case "langsToTranslateWhenHovering":

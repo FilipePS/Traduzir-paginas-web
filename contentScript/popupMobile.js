@@ -2,7 +2,13 @@
 
 var popupMobile = {}
 
-twpConfig.onReady(function () {
+function getTabHostName() {
+    return new Promise(resolve => chrome.runtime.sendMessage({action: "getTabHostName"}, result => resolve(result)))
+}
+
+Promise.all([twpConfig.onReady(), getTabHostName()])
+.then(function (_) {
+    const tabHostName = _[1]
     if (!plataformInfo.isMobile.any) return;
 
     const htmlMobile = `
@@ -42,19 +48,19 @@ twpConfig.onReady(function () {
     let originalTabLanguage = "und"
     let currentTargetLanguage = twpConfig.get("targetLanguage")
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
-    let awaysTranslateThisSite = twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1
-    let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
+    let awaysTranslateThisSite = twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !== -1
+    let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1
     let translateThisLanguage = false
     let showPopupMobile = twpConfig.get("showPopupMobile")
 
     twpConfig.onChanged(function (name, newValue) {
         switch (name) {
             case "alwaysTranslateSites":
-                awaysTranslateThisSite = newValue.indexOf(location.hostname) !== -1
+                awaysTranslateThisSite = newValue.indexOf(tabHostName) !== -1
                 popupMobile.show()
                 break
             case "neverTranslateSites":
-                translateThisSite = newValue.indexOf(location.hostname) === -1
+                translateThisSite = newValue.indexOf(tabHostName) === -1
                 popupMobile.show()
                 break
             case "neverTranslateLangs":
@@ -261,7 +267,7 @@ twpConfig.onReady(function () {
         }
 
         getElemById("btnNeverTranslate").onclick = e => {
-            twpConfig.addSiteToNeverTranslate(location.hostname)
+            twpConfig.addSiteToNeverTranslate(tabHostName)
             popupMobile.hide()
         }
 

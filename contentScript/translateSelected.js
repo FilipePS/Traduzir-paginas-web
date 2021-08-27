@@ -4,7 +4,13 @@
 
 var translateSelected = {}
 
-twpConfig.onReady(function () {
+function getTabHostName() {
+    return new Promise(resolve => chrome.runtime.sendMessage({action: "getTabHostName"}, result => resolve(result)))
+}
+
+Promise.all([twpConfig.onReady(), getTabHostName()])
+.then(function (_) {
+    const tabHostName = _[1]
     let styleTextContent = ""
     fetch(chrome.runtime.getURL("/contentScript/css/translateSelected.css"))
         .then(response => response.text())
@@ -24,8 +30,8 @@ twpConfig.onReady(function () {
     let currentTargetLanguages = twpConfig.get("targetLanguages")
     let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
     let currentTextTranslatorService = twpConfig.get("textTranslatorService")
-    let awaysTranslateThisSite = twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1
-    let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
+    let awaysTranslateThisSite = twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !== -1
+    let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1
     let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1
     let showTranslateSelectedButton = twpConfig.get("showTranslateSelectedButton")
     let dontShowIfPageLangIsTargetLang = twpConfig.get("dontShowIfPageLangIsTargetLang")
@@ -541,11 +547,11 @@ twpConfig.onReady(function () {
                 currentTargetLanguage = newValue
                 break
             case "alwaysTranslateSites":
-                awaysTranslateThisSite = newValue.indexOf(location.hostname) !== -1
+                awaysTranslateThisSite = newValue.indexOf(tabHostName) !== -1
                 updateEventListener()
                 break
             case "neverTranslateSites":
-                translateThisSite = newValue.indexOf(location.hostname) === -1
+                translateThisSite = newValue.indexOf(tabHostName) === -1
                 updateEventListener()
                 break
             case "neverTranslateLangs":

@@ -42,7 +42,13 @@ function backgroundTranslateSingleText(translationService, targetLanguage, sourc
 
 var pageTranslator = {}
 
-twpConfig.onReady(function () {
+function getTabHostName() {
+    return new Promise(resolve => chrome.runtime.sendMessage({action: "getTabHostName"}, result => resolve(result)))
+}
+
+Promise.all([twpConfig.onReady(), getTabHostName()])
+.then(function (_) {
+    const tabHostName = _[1]
     const htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BDO', 'BIG', 'CITE', 'DFN', 'EM', 'I', 'LABEL', 'Q', 'S', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U', 'TT', 'VAR']
     const htmlTagsInlineIgnore = ['BR', 'CODE', 'KBD', 'WBR'] // and input if type is submit or button, and pre depending on settings
     const htmlTagsNoTranslate = ['TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA', 'svg'] //TODO verificar porque 'svg' é com letras minúsculas
@@ -734,10 +740,10 @@ twpConfig.onReady(function () {
                     }
         
                     if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
-                        if (location.hostname && twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
+                        if (twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1) {
                             if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
                                 pageTranslator.translatePage()
-                            } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                            } else if (twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !== -1) {
                                 pageTranslator.translatePage()
                             }
                         }
