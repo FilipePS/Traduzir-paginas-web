@@ -309,7 +309,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                     if (!piecesToTranslate[index].topElement) {
                         piecesToTranslate[index].topElement = lastHTMLElement
                     }
-                    if (currentParagraphSize > 0) {
+                    if (currentParagraphSize > 1000) {
                         currentParagraphSize = 0
                         piecesToTranslate[index].bottomElement = lastHTMLElement
                         const pieceInfo = {
