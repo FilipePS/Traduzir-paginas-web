@@ -687,15 +687,13 @@ twpConfig.onReady(function () {
                     }
                 })
             }
-        }
-    })
+        } else if (request.action === "detectedTabLanguage") {
+            if (alreadyGotTheLanguage) {
+                console.warn("Already got the tab language")
+                return
+            }
 
-    const detectPageLanguage = function () {
-        chrome.runtime.sendMessage({
-            action: "detectTabLanguage"
-        }, result => {
-            result = result || "und"
-
+            const result = request.result || "und"
             if (result === "und") {
                 observers.forEach(callback => callback("und"))
                 alreadyGotTheLanguage = true
@@ -718,22 +716,29 @@ twpConfig.onReady(function () {
                 observers.forEach(callback => callback(originalPageLanguage))
                 alreadyGotTheLanguage = true
             }
-        })
-    }
-
-    setTimeout(function () {
-        if (document.visibilityState == "visible") {
-            detectPageLanguage()
-        } else {
-            const handleVisibilityChange = function () {
-                if (document.visibilityState == "visible") {
-                    document.removeEventListener("visibilitychange", handleVisibilityChange)
-                    detectPageLanguage()
-                }
-            }
-            document.addEventListener("visibilitychange", handleVisibilityChange, false)
         }
-    }, 120)
+    })
+
+    // Requests the detection of the tab language in the background 
+    if (window.self === window.top) {
+        setTimeout(function () {
+            if (document.visibilityState == "visible") {
+                chrome.runtime.sendMessage({
+                    action: "detectTabLanguage"
+                })
+            } else {
+                const handleVisibilityChange = function () {
+                    if (document.visibilityState == "visible") {
+                        document.removeEventListener("visibilitychange", handleVisibilityChange)
+                        chrome.runtime.sendMessage({
+                            action: "detectTabLanguage"
+                        })
+                    }
+                }
+                document.addEventListener("visibilitychange", handleVisibilityChange, false)
+            }
+        }, 120)
+    }
 
     pageTranslator.onGetOriginalPageLanguage(function () {
         chrome.runtime.sendMessage({
