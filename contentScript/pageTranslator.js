@@ -625,6 +625,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         translatePageTitle()
 
         enableMutatinObserver()
+
+        translateDynamically()
     }
 
     pageTranslator.restorePage = function () {
