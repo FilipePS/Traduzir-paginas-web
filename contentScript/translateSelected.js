@@ -20,13 +20,13 @@ twpConfig.onReady(function () {
     let eOrigText
     let eOrigTextDiv
 
-    let originalPageLanguage = "und"
+    let originalTabLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
     let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
     let currentTextTranslatorService = twpConfig.get("textTranslatorService")
     let awaysTranslateThisSite = twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1
     let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1
-    let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
+    let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1
     let showTranslateSelectedButton = twpConfig.get("showTranslateSelectedButton")
     let dontShowIfPageLangIsTargetLang = twpConfig.get("dontShowIfPageLangIsTargetLang")
     let dontShowIfPageLangIsUnknown = twpConfig.get("dontShowIfPageLangIsUnknown")
@@ -34,9 +34,9 @@ twpConfig.onReady(function () {
     let dontShowIfSelectedTextIsUnknown = twpConfig.get("dontShowIfSelectedTextIsUnknown")
     let fooCount = 0
 
-    pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
-        originalPageLanguage = pagelanguage
-        translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1
+    pageTranslator.onGetOriginalTabLanguage(function (pagelanguage) {
+        originalTabLanguage = pagelanguage
+        translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1
         updateEventListener()
     })
 
@@ -549,7 +549,7 @@ twpConfig.onReady(function () {
                 updateEventListener()
                 break
             case "neverTranslateLangs":
-                translateThisLanguage = newValue.indexOf(originalPageLanguage) === -1
+                translateThisLanguage = newValue.indexOf(originalTabLanguage) === -1
                 updateEventListener()
                 break
             case "showTranslateSelectedButton":
@@ -808,8 +808,8 @@ twpConfig.onReady(function () {
 
     function updateEventListener() {
         if (showTranslateSelectedButton == "yes" && (awaysTranslateThisSite || (translateThisSite && translateThisLanguage)) &&
-            ((dontShowIfPageLangIsTargetLang == "yes" && originalPageLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes") &&
-            ((dontShowIfPageLangIsUnknown == "yes" && originalPageLanguage !== "und") || dontShowIfPageLangIsUnknown != "yes")
+            ((dontShowIfPageLangIsTargetLang == "yes" && originalTabLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes") &&
+            ((dontShowIfPageLangIsUnknown == "yes" && originalTabLanguage !== "und") || dontShowIfPageLangIsUnknown != "yes")
         ) {
             document.addEventListener("mouseup", onMouseup)
 

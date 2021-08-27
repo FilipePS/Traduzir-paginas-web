@@ -39,7 +39,7 @@ twpConfig.onReady(function () {
     </div>
     `
 
-    let originalPageLanguage = "und"
+    let originalTabLanguage = "und"
     let currentTargetLanguage = twpConfig.get("targetLanguage")
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
     let awaysTranslateThisSite = twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1
@@ -58,7 +58,7 @@ twpConfig.onReady(function () {
                 popupMobile.show()
                 break
             case "neverTranslateLangs":
-                translateThisLanguage = originalPageLanguage === "und" || (currentTargetLanguage !== originalPageLanguage && newValue.indexOf(originalPageLanguage) === -1)
+                translateThisLanguage = originalTabLanguage === "und" || (currentTargetLanguage !== originalTabLanguage && newValue.indexOf(originalTabLanguage) === -1)
                 popupMobile.show()
                 break
             case "showPopupMobile":
@@ -266,7 +266,7 @@ twpConfig.onReady(function () {
         }
 
         getElemById("neverTranslateThisLanguage").onclick = e => {
-            twpConfig.addLangToNeverTranslate(originalPageLanguage)
+            twpConfig.addLangToNeverTranslate(originalTabLanguage)
             popupMobile.hide()
         }
 
@@ -319,16 +319,16 @@ twpConfig.onReady(function () {
         }
     })
 
-    pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
-        if (true || pagelanguage === "und") {
+    pageTranslator.onGetOriginalTabLanguage(function (pagelanguage) {
+        if (!pagelanguage || pagelanguage === "und") {
             const lang = twpLang.checkLanguageCode(document.documentElement.lang)
             if (lang) {
-                originalPageLanguage = pagelanguage
+                originalTabLanguage = pagelanguage
             }
         } else {
-            originalPageLanguage = pagelanguage
+            originalTabLanguage = pagelanguage
         }
-        translateThisLanguage = originalPageLanguage === "und" || (currentTargetLanguage !== originalPageLanguage && twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1)
+        translateThisLanguage = originalTabLanguage === "und" || (currentTargetLanguage !== originalTabLanguage && twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1)
         popupMobile.show()
     })
 

@@ -31,12 +31,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         })
     } else if (request.action === "detectTabLanguage") {
         try {
-            chrome.tabs.detectLanguage(sender.tab.id, result => sendResponse(result))
+            chrome.tabs.detectLanguage(sender.tab.id, result => chrome.tabs.sendMessage(sender.tab.id, {
+                action: "detectedTabLanguage",
+                result
+            }))
         } catch (e) {
             console.error(e)
-            sendResponse()
+            chrome.tabs.sendMessage(sender.tab.id, {
+                action: "detectedTabLanguage",
+                result: "und"
+            })
         }
-        return true
     }
 })
 

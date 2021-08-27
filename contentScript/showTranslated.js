@@ -12,7 +12,7 @@ twpConfig.onReady(function () {
         .catch(e => console.error(e))
 
     let pageLanguageState = "original"
-    let originalPageLanguage = "und"
+    let originalTabLanguage = "und"
     let currentTargetLanguages = twpConfig.get("targetLanguages")
     let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
     let currentTextTranslatorService = twpConfig.get("textTranslatorService") === "deepl" ? "google" : twpConfig.get("textTranslatorService")
@@ -37,7 +37,7 @@ twpConfig.onReady(function () {
                 updateEventListener()
                 break
             case "langsToTranslateWhenHovering":
-                showTranslatedTextWhenHoveringThisLang = newValue.indexOf(originalPageLanguage) !== -1
+                showTranslatedTextWhenHoveringThisLang = newValue.indexOf(originalTabLanguage) !== -1
                 updateEventListener()
                 break
             case "translateTextOverMouseWhenPressTwice":
@@ -652,9 +652,9 @@ twpConfig.onReady(function () {
     }
     updateEventListener()
 
-    pageTranslator.onGetOriginalPageLanguage(function (pagelanguage) {
-        originalPageLanguage = pagelanguage
-        showTranslatedTextWhenHoveringThisLang = twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) !== -1
+    pageTranslator.onGetOriginalTabLanguage(function (pagelanguage) {
+        originalTabLanguage = pagelanguage
+        showTranslatedTextWhenHoveringThisLang = twpConfig.get("langsToTranslateWhenHovering").indexOf(originalTabLanguage) !== -1
         updateEventListener()
     })
 

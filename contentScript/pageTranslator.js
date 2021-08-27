@@ -71,7 +71,7 @@ twpConfig.onReady(function () {
 
     // Pieces are a set of nodes separated by inline tags that form a sentence or paragraph.
     let piecesToTranslate = []
-    let originalPageLanguage = "und"
+    let originalTabLanguage = "und"
     let currentPageLanguage = "und"
     let pageLanguageState = "original"
     let currentTargetLanguage = twpConfig.get("targetLanguage")
@@ -610,7 +610,7 @@ twpConfig.onReady(function () {
             pageLanguageState
         })
         pageLanguageStateObservers.forEach(callback => callback(pageLanguageState))
-        currentPageLanguage = originalPageLanguage
+        currentPageLanguage = originalTabLanguage
 
         if (originalPageTitle) {
             document.title = originalPageTitle
@@ -646,9 +646,9 @@ twpConfig.onReady(function () {
     let alreadyGotTheLanguage = false
     const observers = []
 
-    pageTranslator.onGetOriginalPageLanguage = function (callback) {
+    pageTranslator.onGetOriginalTabLanguage = function (callback) {
         if (alreadyGotTheLanguage) {
-            callback(originalPageLanguage)
+            callback(originalTabLanguage)
         } else {
             observers.push(callback)
         }
@@ -663,8 +663,8 @@ twpConfig.onReady(function () {
             }
         } else if (request.action === "restorePage") {
             pageTranslator.restorePage()
-        } else if (request.action === "getOriginalPageLanguage") {
-            sendResponse(originalPageLanguage)
+        } else if (request.action === "getOriginalTabLanguage") {
+            sendResponse(originalTabLanguage)
         } else if (request.action === "getCurrentPageLanguage") {
             sendResponse(currentPageLanguage)
         } else if (request.action === "getCurrentPageLanguageState") {
@@ -681,8 +681,8 @@ twpConfig.onReady(function () {
             }
         } else if (request.action === "autoTranslateBecauseClickedALink") {
             if (twpConfig.get("autoTranslateWhenClickingALink") === "yes") {
-                pageTranslator.onGetOriginalPageLanguage(function () {
-                    if (pageLanguageState === "original" && originalPageLanguage !== currentTargetLanguage && twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
+                pageTranslator.onGetOriginalTabLanguage(function () {
+                    if (pageLanguageState === "original" && originalTabLanguage !== currentTargetLanguage && twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1) {
                         pageTranslator.translatePage()
                     }
                 })
@@ -700,7 +700,7 @@ twpConfig.onReady(function () {
             } else {
                 const langCode = twpLang.checkLanguageCode(result)
                 if (langCode) {
-                    originalPageLanguage = langCode
+                    originalTabLanguage = langCode
                 }
 
                 if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
@@ -713,7 +713,7 @@ twpConfig.onReady(function () {
                     }
                 }
 
-                observers.forEach(callback => callback(originalPageLanguage))
+                observers.forEach(callback => callback(originalTabLanguage))
                 alreadyGotTheLanguage = true
             }
         }
@@ -740,7 +740,7 @@ twpConfig.onReady(function () {
         }, 120)
     }
 
-    pageTranslator.onGetOriginalPageLanguage(function () {
+    pageTranslator.onGetOriginalTabLanguage(function () {
         chrome.runtime.sendMessage({
             action: "getMainFramePageLanguageState"
         }, response => {

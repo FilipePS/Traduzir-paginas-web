@@ -59,7 +59,7 @@ twpConfig.onReady(function () {
         twpConfig.set("popupPanelSection", popupPanelSection)
     }
 
-    let originalPageLanguage = "und"
+    let originalTabLanguage = "und"
     let currentPageLanguage = "und"
     let currentPageLanguageState = "original"
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
@@ -105,14 +105,14 @@ twpConfig.onReady(function () {
         currentWindow: true
     }, tabs => {
         chrome.tabs.sendMessage(tabs[0].id, {
-            action: "getOriginalPageLanguage"
+            action: "getOriginalTabLanguage"
         }, {
             frameId: 0
         }, pageLanguage => {
             checkedLastError()
             if (!pageLanguage || (pageLanguage = twpLang.checkLanguageCode(pageLanguage))) {
-                originalPageLanguage = pageLanguage || "und"
-                twpButtons[0].childNodes[1].textContent = twpLang.codeToLanguage(originalPageLanguage)
+                originalTabLanguage = pageLanguage || "und"
+                twpButtons[0].childNodes[1].textContent = twpLang.codeToLanguage(originalTabLanguage)
             }
         })
 
@@ -170,17 +170,17 @@ twpConfig.onReady(function () {
             }
         })
 
-        if (originalPageLanguage !== "und") {
-            $("#cbAlwaysTranslateThisLang").checked = twpConfig.get("alwaysTranslateLangs").indexOf(originalPageLanguage) !== -1
-            $("#lblAlwaysTranslateThisLang").textContent = chrome.i18n.getMessage("lblAlwaysTranslate", twpLang.codeToLanguage(originalPageLanguage))
+        if (originalTabLanguage !== "und") {
+            $("#cbAlwaysTranslateThisLang").checked = twpConfig.get("alwaysTranslateLangs").indexOf(originalTabLanguage) !== -1
+            $("#lblAlwaysTranslateThisLang").textContent = chrome.i18n.getMessage("lblAlwaysTranslate", twpLang.codeToLanguage(originalTabLanguage))
             $("#divAlwaysTranslateThisLang").style.display = "block"
 
-            const translatedWhenHoveringThisLangText = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisLang", twpLang.codeToLanguage(originalPageLanguage))
-            $("#cbShowTranslatedWhenHoveringThisLang").checked = twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) !== -1
+            const translatedWhenHoveringThisLangText = chrome.i18n.getMessage("lblShowTranslatedWhenHoveringThisLang", twpLang.codeToLanguage(originalTabLanguage))
+            $("#cbShowTranslatedWhenHoveringThisLang").checked = twpConfig.get("langsToTranslateWhenHovering").indexOf(originalTabLanguage) !== -1
             $("#lblShowTranslatedWhenHoveringThisLang").textContent = translatedWhenHoveringThisLangText
             $("#divShowTranslatedWhenHoveringThisLang").style.display = "block"
 
-            if (twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) === -1) {
+            if (twpConfig.get("langsToTranslateWhenHovering").indexOf(originalTabLanguage) === -1) {
                 $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = translatedWhenHoveringThisLangText
             } else {
                 $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").textContent = "✔ " + translatedWhenHoveringThisLangText
@@ -188,7 +188,7 @@ twpConfig.onReady(function () {
             $("option[data-i18n=lblShowTranslatedWhenHoveringThisLang]").removeAttribute("hidden")
 
             const neverTranslateLangText = chrome.i18n.getMessage("btnNeverTranslateThisLanguage")
-            if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
+            if (twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1) {
                 $("option[data-i18n=btnNeverTranslateThisLanguage]").textContent = neverTranslateLangText
             } else {
                 $("option[data-i18n=btnNeverTranslateThisLanguage]").textContent = "✔ " + neverTranslateLangText
@@ -308,9 +308,9 @@ twpConfig.onReady(function () {
         $("#cbAlwaysTranslateThisLang").addEventListener("change", e => {
             const hostname = new URL(tabs[0].url).hostname
             if (e.target.checked) {
-                twpConfig.addLangToAlwaysTranslate(originalPageLanguage, hostname)
+                twpConfig.addLangToAlwaysTranslate(originalTabLanguage, hostname)
             } else {
-                twpConfig.removeLangFromAlwaysTranslate(originalPageLanguage)
+                twpConfig.removeLangFromAlwaysTranslate(originalTabLanguage)
             }
         })
 
@@ -350,9 +350,9 @@ twpConfig.onReady(function () {
 
         $("#cbShowTranslatedWhenHoveringThisLang").addEventListener("change", e => {
             if (e.target.checked) {
-                twpConfig.addLangToTranslateWhenHovering(originalPageLanguage)
+                twpConfig.addLangToTranslateWhenHovering(originalTabLanguage)
             } else {
-                twpConfig.removeLangFromTranslateWhenHovering(originalPageLanguage)
+                twpConfig.removeLangFromTranslateWhenHovering(originalTabLanguage)
             }
         })
 
@@ -416,18 +416,18 @@ twpConfig.onReady(function () {
                     window.close()
                     break
                 case "alwaysTranslateThisLanguage":
-                    if (twpConfig.get("alwaysTranslateLangs").indexOf(originalPageLanguage) === -1) {
-                        twpConfig.addLangToAlwaysTranslate(originalPageLanguage, hostname)
+                    if (twpConfig.get("alwaysTranslateLangs").indexOf(originalTabLanguage) === -1) {
+                        twpConfig.addLangToAlwaysTranslate(originalTabLanguage, hostname)
                     } else {
-                        twpConfig.removeLangFromAlwaysTranslate(originalPageLanguage)
+                        twpConfig.removeLangFromAlwaysTranslate(originalTabLanguage)
                     }
                     window.close()
                     break
                 case "neverTranslateThisLanguage":
-                    if (twpConfig.get("neverTranslateLangs").indexOf(originalPageLanguage) === -1) {
-                        twpConfig.addLangToNeverTranslate(originalPageLanguage, hostname)
+                    if (twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1) {
+                        twpConfig.addLangToNeverTranslate(originalTabLanguage, hostname)
                     } else {
-                        twpConfig.removeLangFromNeverTranslate(originalPageLanguage)
+                        twpConfig.removeLangFromNeverTranslate(originalTabLanguage)
                     }
                     window.close()
                     break
@@ -456,10 +456,10 @@ twpConfig.onReady(function () {
                     window.close()
                     break
                 case "showTranslatedWhenHoveringThisLang":
-                    if (twpConfig.get("langsToTranslateWhenHovering").indexOf(originalPageLanguage) === -1) {
-                        twpConfig.addLangToTranslateWhenHovering(originalPageLanguage)
+                    if (twpConfig.get("langsToTranslateWhenHovering").indexOf(originalTabLanguage) === -1) {
+                        twpConfig.addLangToTranslateWhenHovering(originalTabLanguage)
                     } else {
-                        twpConfig.removeLangFromTranslateWhenHovering(originalPageLanguage)
+                        twpConfig.removeLangFromTranslateWhenHovering(originalTabLanguage)
                     }
                     window.close()
                     break
