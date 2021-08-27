@@ -165,10 +165,34 @@ twpConfig.onReady(function () {
         mutationObserver.takeRecords()
     }
 
+    let pageIsVisible = document.visibilityState == "visible"
+    new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && document.visibilityState == "visible") {
+                pageIsVisible = true
+            } else {
+                pageIsVisible = false
+            }
+
+            if (pageIsVisible && pageLanguageState === "translated") {
+                enableMutatinObserver()
+            } else {
+                disableMutatinObserver()
+            }
+        }, {
+            root: null
+        })
+        .observe(document.body)
+
     const handleVisibilityChange = function () {
-        if (document.visibilityState == "visible" && pageLanguageState === "translated") {
+        if (document.visibilityState == "visible") {
+            pageIsVisible = true
+        } else {
+            pageIsVisible = false
+        }
+
+        if (pageIsVisible && pageLanguageState === "translated") {
             enableMutatinObserver()
-        } else if (document.visibilityState == "hidden") {
+        } else {
             disableMutatinObserver()
         }
     }
@@ -451,7 +475,7 @@ twpConfig.onReady(function () {
 
     function translateDynamically() {
         try {
-            if (piecesToTranslate) {
+            if (piecesToTranslate && pageIsVisible) {
                 ;
                 (function () {
                     function isInScreen(element) {
