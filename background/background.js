@@ -19,6 +19,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         })
 
         return true
+    } else if (request.action === "getMainFrameTabLanguage") {
+        chrome.tabs.sendMessage(sender.tab.id, {
+            action: "getOriginalTabLanguage"
+        }, {
+            frameId: 0
+        }, tabLanguage => {
+            checkedLastError()
+            sendResponse(tabLanguage)
+        })
+
+        return true
     } else if (request.action === "setPageLanguageState") {
         updateContextMenu(request.pageLanguageState)
     } else if (request.action === "openOptionsPage") {
@@ -31,17 +42,13 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         })
     } else if (request.action === "detectTabLanguage") {
         try {
-            chrome.tabs.detectLanguage(sender.tab.id, result => chrome.tabs.sendMessage(sender.tab.id, {
-                action: "detectedTabLanguage",
-                result
-            }))
+            chrome.tabs.detectLanguage(sender.tab.id, result => sendResponse(result))
         } catch (e) {
             console.error(e)
-            chrome.tabs.sendMessage(sender.tab.id, {
-                action: "detectedTabLanguage",
-                result: "und"
-            })
+            sendResponse("und")
         }
+
+        return true
     }
 })
 

@@ -688,7 +688,10 @@ twpConfig.onReady(function () {
         } else if (request.action === "restorePage") {
             pageTranslator.restorePage()
         } else if (request.action === "getOriginalTabLanguage") {
-            sendResponse(originalTabLanguage)
+            pageTranslator.onGetOriginalTabLanguage(function () {
+                sendResponse(originalTabLanguage)
+            })
+            return true
         } else if (request.action === "getCurrentPageLanguage") {
             sendResponse(currentPageLanguage)
         } else if (request.action === "getCurrentPageLanguageState") {
@@ -711,66 +714,68 @@ twpConfig.onReady(function () {
                     }
                 })
             }
-        } else if (request.action === "detectedTabLanguage") {
-            if (alreadyGotTheLanguage) {
-                console.warn("Already got the tab language")
-                return
-            }
-
-            const result = request.result || "und"
-            if (result === "und") {
-                observers.forEach(callback => callback("und"))
-                alreadyGotTheLanguage = true
-            } else {
-                const langCode = twpLang.checkLanguageCode(result)
-                if (langCode) {
-                    originalTabLanguage = langCode
-                }
-
-                if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
-                    if (location.hostname && twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
-                        if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
-                            pageTranslator.translatePage()
-                        } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
-                            pageTranslator.translatePage()
-                        }
-                    }
-                }
-
-                observers.forEach(callback => callback(originalTabLanguage))
-                alreadyGotTheLanguage = true
-            }
         }
     })
 
     // Requests the detection of the tab language in the background 
-    if (window.self === window.top) {
+    if (window.self === window.top) { // is main frame
+        const onTabVisible = function () {
+            chrome.runtime.sendMessage({
+                action: "detectTabLanguage"
+            })
+            .then(result => {
+                result = result || "und"
+                if (result === "und") {
+                    originalTabLanguage = result
+                } else {
+                    const langCode = twpLang.checkLanguageCode(result)
+                    if (langCode) {
+                        originalTabLanguage = langCode
+                    }
+        
+                    if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
+                        if (location.hostname && twpConfig.get("neverTranslateSites").indexOf(location.hostname) === -1) {
+                            if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
+                                pageTranslator.translatePage()
+                            } else if (twpConfig.get("alwaysTranslateSites").indexOf(location.hostname) !== -1) {
+                                pageTranslator.translatePage()
+                            }
+                        }
+                    }
+                }
+                
+                observers.forEach(callback => callback(originalTabLanguage))
+                alreadyGotTheLanguage = true
+            })
+        }
         setTimeout(function () {
             if (document.visibilityState == "visible") {
-                chrome.runtime.sendMessage({
-                    action: "detectTabLanguage"
-                })
+                onTabVisible()
             } else {
                 const handleVisibilityChange = function () {
                     if (document.visibilityState == "visible") {
                         document.removeEventListener("visibilitychange", handleVisibilityChange)
-                        chrome.runtime.sendMessage({
-                            action: "detectTabLanguage"
-                        })
+                        onTabVisible()
                     }
                 }
                 document.addEventListener("visibilitychange", handleVisibilityChange, false)
             }
         }, 120)
-    }
+    } else { // is subframe (iframe)
+        chrome.runtime.sendMessage({
+            action: "getMainFrameTabLanguage"
+        }, result => {
+            originalTabLanguage = result || "und"
+            observers.forEach(callback => callback(originalTabLanguage))
+            alreadyGotTheLanguage = true
+        })
 
-    pageTranslator.onGetOriginalTabLanguage(function () {
         chrome.runtime.sendMessage({
             action: "getMainFramePageLanguageState"
-        }, response => {
-            if (response === "translated" && pageLanguageState === "original") {
+        }, result => {
+            if (result === "translated" && pageLanguageState === "original") {
                 pageTranslator.translatePage()
             }
         })
-    })
+    }
 })
