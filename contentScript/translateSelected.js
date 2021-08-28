@@ -825,6 +825,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         windowIsInFocus = false
     })
 
+    window.addEventListener("beforeunload", function (e) {
+        destroy()
+    })
+
     function updateEventListener() {
         if (showTranslateSelectedButton == "yes" && (awaysTranslateThisSite || (translateThisSite && translateThisLanguage)) &&
             ((dontShowIfPageLangIsTargetLang == "yes" && originalTabLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes") &&
