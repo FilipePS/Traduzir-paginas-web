@@ -730,8 +730,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         const onTabVisible = function () {
             chrome.runtime.sendMessage({
                 action: "detectTabLanguage"
-            })
-            .then(result => {
+            }, result => {
                 result = result || "und"
                 if (result === "und") {
                     originalTabLanguage = result
