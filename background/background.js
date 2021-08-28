@@ -51,6 +51,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         return true
     } else if (request.action === "getTabHostName") {
         sendResponse(new URL(sender.tab.url).hostname)
+    } else if (request.action === "thisFrameIsInFocus") {
+        chrome.tabs.sendMessage(sender.tab.id, {action: "anotherFrameIsInFocus"}, checkedLastError)
     }
 })
 

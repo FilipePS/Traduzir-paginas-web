@@ -816,6 +816,15 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
     }
     document.addEventListener("keyup", onKeyUp)
 
+    let windowIsInFocus = true
+    window.addEventListener("focus", function (e) {
+        windowIsInFocus = true
+        chrome.runtime.sendMessage({action: "thisFrameIsInFocus"})
+    })
+    window.addEventListener("blur", function (e) {
+        windowIsInFocus = false
+    })
+
     function updateEventListener() {
         if (showTranslateSelectedButton == "yes" && (awaysTranslateThisSite || (translateThisSite && translateThisLanguage)) &&
             ((dontShowIfPageLangIsTargetLang == "yes" && originalTabLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes") &&
@@ -857,6 +866,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             readSelection()
             init()
             translateSelText()
+        } else if (request.action === "anotherFrameIsInFocus")  {
+            if (!windowIsInFocus) {
+                destroy()
+            }
         }
     })
 })
