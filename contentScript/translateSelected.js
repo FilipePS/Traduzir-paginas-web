@@ -756,18 +756,22 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }
     }
 
+    let showButtonTimerHandler = null
+
     function onMouseup(e) {
         if (e.button != 0) return;
         if (e.target == divElement) return;
         if (readSelection(true)) {
-            setTimeout(() => onUp(e), 120)
+            clearTimeout(showButtonTimerHandler)
+            showButtonTimerHandler = setTimeout(() => onUp(e), 150)
         }
     }
 
     function onTouchend(e) {
         if (e.target == divElement) return;
         readSelection()
-        setTimeout(() => onUp(e), 120)
+        clearTimeout(showButtonTimerHandler)
+        showButtonTimerHandler = setTimeout(() => onUp(e), 150)
     }
 
     function onSelectionchange(e) {
