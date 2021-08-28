@@ -712,7 +712,9 @@ twpConfig.onReady(function () {
     chrome.permissions.contains({
         permissions: ["webNavigation"]
     }, hasPermissions => {
-        if (!hasPermissions) {
+        if (hasPermissions && twpConfig.get("autoTranslateWhenClickingALink") === "yes") {
+            enableTranslationOnClickingALink()
+        } else {
             twpConfig.set("autoTranslateWhenClickingALink", "no")
         }
     })
