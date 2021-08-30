@@ -392,13 +392,13 @@
     "message": "Traducir automáticamente al hacer clic en un enlace que te lleva al mismo dominio que el sitio actual"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Abrir el gestor de atajos de teclado nativo"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Atajos de teclado especiales"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Traducir el texto seleccionado pulsando $SHORTCUT_KEY$ dos veces",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Traducir el texto sobre el cursor del ratón pulsando $SHORTCUT_KEY$ dos veces",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,9 +414,9 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Traducir la página pulsando una vez en el botón de la barra de direcciones. (Para ver la ventana emergente, haga clic derecho)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Mostrar ventana emergente"
   }
 }
