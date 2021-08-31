@@ -420,7 +420,7 @@
     "message": "Mostrar popup"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Para traduzir este documento $DOC_TYPE$ é necessário convertê-lo para HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Selecione um serviço para fazer esta conversão"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Baixando o documento..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Enviar documento"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Erro ao baixar o documento"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Este serviço não oferece suporte a arquivos maiores que $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF para HTML"
   }
 }
