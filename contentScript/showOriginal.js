@@ -5,7 +5,7 @@
 var showOriginal = {}
 
 twpConfig.onReady(function () {
-    if (plataformInfo.isMobile.any) {
+    if (platformInfo.isMobile.any) {
         showOriginal.enable = () => {}
         showOriginal.disable = () => {}
         showOriginal.add = () => {}
@@ -109,7 +109,7 @@ twpConfig.onReady(function () {
     }
 
     showOriginal.add = function (node) {
-        if (plataformInfo.isMobile.any) return;
+        if (platformInfo.isMobile.any) return;
 
         if (node && nodesToShowOriginal.indexOf(node) === -1) {
             nodesToShowOriginal.push({
@@ -132,7 +132,7 @@ twpConfig.onReady(function () {
     showOriginal.enable = function (dontDeleteNodesToShowOriginal = false) {
         showOriginal.disable(dontDeleteNodesToShowOriginal)
 
-        if (plataformInfo.isMobile.any) return;
+        if (platformInfo.isMobile.any) return;
         if (showOriginalTextWhenHovering !== "yes") return;
         if (divElement) return;
 

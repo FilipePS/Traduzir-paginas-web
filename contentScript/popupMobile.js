@@ -9,7 +9,7 @@ function getTabHostName() {
 Promise.all([twpConfig.onReady(), getTabHostName()])
 .then(function (_) {
     const tabHostName = _[1]
-    if (!plataformInfo.isMobile.any) return;
+    if (!platformInfo.isMobile.any) return;
 
     const htmlMobile = `
     <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/popupMobile.css")}">

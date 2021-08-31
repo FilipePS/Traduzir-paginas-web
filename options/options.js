@@ -3,7 +3,7 @@
 var $ = document.querySelector.bind(document)
 
 twpConfig.onReady(function () {
-    if (plataformInfo.isMobile.any) {
+    if (platformInfo.isMobile.any) {
         let style = document.createElement("style")
         style.textContent = ".desktopOnly {display: none !important}"
         document.head.appendChild(style)

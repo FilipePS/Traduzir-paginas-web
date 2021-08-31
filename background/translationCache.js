@@ -2,7 +2,7 @@
 
 // TODO verificar se o navegador pode deletar objectstorage especificos
 
-var translationCache = {}
+const translationCache = {};
 
 {
     function getTableSize(db, dbName) {
@@ -15,7 +15,7 @@ var translationCache = {}
                 .objectStore(dbName)
                 .openCursor()
 
-            transaction.onsuccess = function (event) {
+            transaction.onsuccess = event => {
                 const cursor = event.target.result
                 if (cursor) {
                     const storedObject = cursor.value
@@ -25,10 +25,8 @@ var translationCache = {}
                 } else {
                     resolve(size)
                 }
-            }.bind(this)
-            transaction.onerror = function (err) {
-                reject("error in " + dbName + ": " + err)
             }
+            transaction.onerror = err => reject("error in " + dbName + ": " + err)
         })
     }
 
@@ -36,13 +34,11 @@ var translationCache = {}
         return new Promise(resolve => {
             const request = indexedDB.open(dbName)
             let db
-            request.onerror = function (event) {
-                console.error(event)
-            }
-            request.onsuccess = function (event) {
+            request.onerror = event => console.error(event)
+            request.onsuccess = event => {
                 db = event.target.result
-                let tableNames = [...db.objectStoreNames];
-                (function (tableNames, db) {
+                const tableNames = [ ...db.objectStoreNames ];
+                ((tableNames, db) => {
                     const tableSizeGetters = tableNames
                         .reduce((acc, tableName) => {
                             acc.push(getTableSize(db, tableName))
@@ -51,9 +47,7 @@ var translationCache = {}
 
                     Promise.all(tableSizeGetters)
                         .then(sizes => {
-                            const total = sizes.reduce(function (acc, val) {
-                                return acc + val;
-                            }, 0)
+                            const total = sizes.reduce((acc, val) => acc + val, 0)
                             resolve(total)
                         })
                         .catch(e => {
@@ -86,11 +80,11 @@ var translationCache = {}
         const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
         return hashHex;
     }
-
-    let googleCache = {}
-    let yandexCache = {}
-    let bingCache = {}
-
+    
+    const googleCache = {};
+    const yandexCache = {};
+    const bingCache = {};
+    
     let googleDB = null
     let yandexDB = null
     let bingDB = null
@@ -144,10 +138,8 @@ var translationCache = {}
             useDB(name, this.result)
         }
 
-        request.onerror = function (event) {
-            console.error("Error opening the database, switching to non-database mode", event)
-        }
-
+        request.onerror = event => console.error("Error opening the database, switching to non-database mode", event)
+    
         request.onupgradeneeded = function (event) {
             const db = this.result
 
@@ -171,12 +163,12 @@ var translationCache = {}
             const objectStore = db.transaction([objectName], "readonly").objectStore(objectName)
             const request = objectStore.get(keyPath)
 
-            request.onerror = function (event) {
+            request.onerror = event => {
                 console.error(event)
                 reject(event)
             }
-
-            request.onsuccess = function (event) {
+    
+            request.onsuccess = event => {
                 const result = request.result
                 resolve(result)
             }
@@ -193,18 +185,18 @@ var translationCache = {}
             const objectStore = db.transaction([objectName], "readwrite").objectStore(objectName)
             const request = objectStore.add(data)
 
-            request.onerror = function (event) {
+            request.onerror = event => {
                 console.error(event)
                 reject(event)
             }
-
+    
             request.onsuccess = function (event) {
                 resolve(this.result)
             }
         })
     }
 
-    translationCache.get = async function (translationService, source, targetLanguage) {
+    translationCache.get = async (translationService, source, targetLanguage) => {
         const cache = getCache(translationService)
         let translations = cache[targetLanguage]
 
@@ -230,24 +222,17 @@ var translationCache = {}
                 //TODO RETURN AQUI DA LENTIDAO
             } catch (e) {
                 console.error(e)
-                return;
             }
         }
     }
-
-    translationCache.google.get = function (source, targetLanguage) {
-        return translationCache.get("google", source, targetLanguage)
-    }
-
-    translationCache.yandex.get = function (source, targetLanguage) {
-        return translationCache.get("yandex", source, targetLanguage)
-    }
-
-    translationCache.bing.get = function (source, targetLanguage) {
-        return translationCache.get("bing", source, targetLanguage)
-    }
-
-    translationCache.set = async function (translationService, source, translated, targetLanguage) {
+    
+    translationCache.google.get = (source, targetLanguage) => translationCache.get("google", source, targetLanguage)
+    
+    translationCache.yandex.get = (source, targetLanguage) => translationCache.get("yandex", source, targetLanguage)
+    
+    translationCache.bing.get = (source, targetLanguage) => translationCache.get("bing", source, targetLanguage)
+    
+    translationCache.set = async (translationService, source, translated, targetLanguage) => {
         const cache = getCache(translationService)
 
         if (!cache) {
@@ -283,25 +268,19 @@ var translationCache = {}
 
         return true
     }
-
-    translationCache.google.set = function (source, translated, targetLanguage) {
-        return translationCache.set("google", source, translated, targetLanguage)
-    }
-
-    translationCache.yandex.set = function (source, translated, targetLanguage) {
-        return translationCache.set("yandex", source, translated, targetLanguage)
-    }
-
-    translationCache.bing.set = function (source, translated, targetLanguage) {
-        return translationCache.set("bing", source, translated, targetLanguage)
-    }
-
+    
+    translationCache.google.set = (source, translated, targetLanguage) => translationCache.set("google", source, translated, targetLanguage)
+    
+    translationCache.yandex.set = (source, translated, targetLanguage) => translationCache.set("yandex", source, translated, targetLanguage)
+    
+    translationCache.bing.set = (source, translated, targetLanguage) => translationCache.set("bing", source, translated, targetLanguage)
+    
     openIndexeddb("googleCache", 1)
     openIndexeddb("yandexCache", 1)
     openIndexeddb("bingCache", 1)
-
-
-    var promiseCalculatingStorage = null
+    
+    
+    let promiseCalculatingStorage = null;
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "getCacheSize") {
             if (!promiseCalculatingStorage) {
