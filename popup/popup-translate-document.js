@@ -39,7 +39,7 @@ function downloadDocument(url) {
         http.onprogress = e => {
             if (e.lengthComputable) {
                 const percentComplete = (e.loaded / e.total) * 100;
-                progress.textContent = percentComplete + "%"
+                progress.textContent = percentComplete.toFixed(1) + "%"
             }
         }
         http.onload = e => {
