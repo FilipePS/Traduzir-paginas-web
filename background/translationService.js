@@ -92,7 +92,7 @@ const translationService = {};
 
         encondingRound ^= tkkKey;
         if (encondingRound <= 0) {
-            encondingRound += 2147483648;
+            encondingRound = (encondingRound & 2147483647) + 2147483648;
         }
     
         const normalizedResult = encondingRound % 1000000;

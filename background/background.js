@@ -496,9 +496,7 @@ if (typeof chrome.commands !== "undefined") {
             let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
             if (currentPageTranslatorService === "google") {
                 currentPageTranslatorService = "yandex"
-            } else if (currentPageTranslatorService === "yandex") { //I'm not sure in this part
-                currentPageTranslatorService = "bing"
-            } else if (currentPageTranslatorService === "bing") {
+            } else {
                 currentPageTranslatorService = "google"
             }
 

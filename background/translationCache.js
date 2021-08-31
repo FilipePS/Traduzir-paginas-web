@@ -15,7 +15,7 @@ const translationCache = {};
                 .objectStore(dbName)
                 .openCursor()
 
-            transaction.onsuccess = (event => {//I'm not sure
+            transaction.onsuccess = event => {
                 const cursor = event.target.result
                 if (cursor) {
                     const storedObject = cursor.value
@@ -25,7 +25,7 @@ const translationCache = {};
                 } else {
                     resolve(size)
                 }
-            }).bind(this)
+            }
             transaction.onerror = err => reject("error in " + dbName + ": " + err)
         })
     }
