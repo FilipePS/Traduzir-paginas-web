@@ -193,6 +193,11 @@ if (typeof chrome.contextMenus !== "undefined") {
         title: chrome.i18n.getMessage("btnMoreOptions"),
         contexts: ["browser_action", "page_action"]
     })
+    chrome.contextMenus.create({
+        id: "pdf-to-html",
+        title: chrome.i18n.getMessage("msgPDFtoHTML"),
+        contexts: ["browser_action", "page_action"]
+    })
 
     const tabHasContentScript = {}
 
@@ -236,6 +241,10 @@ if (typeof chrome.contextMenus !== "undefined") {
         } else if (info.menuItemId == "more-options") {
             chrome.tabs.create({
                 url: chrome.runtime.getURL("/options/options.html")
+            })
+        } else if (info.menuItemId == "pdf-to-html") {
+            chrome.tabs.create({
+                url: "https://translatewebpages.org/"
             })
         }
     })
