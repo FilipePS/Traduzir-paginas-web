@@ -13,6 +13,15 @@ selectService.onclick = e => {
     chrome.tabs.query({active: true, currentWindow: true}, async tabs => {
         try {
             const service = e.target.dataset.name
+            if (tabs[0].url.startsWith("file:")) {
+                if (service == "google") {
+                    chrome.tabs.create({url: "https://translate.google.com/?op=docs"})
+                } else {
+                    chrome.tabs.create({url: "https://translatewebpages.org/"})
+                }
+                window.close()
+                return
+            }
             const data = await downloadDocument(tabs[0].url)
             convertDocument(service, data)
         } catch (e) {
