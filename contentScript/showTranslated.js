@@ -9,7 +9,7 @@ function getTabHostName() {
 Promise.all([twpConfig.onReady(), getTabHostName()])
 .then(function (_) {
     const tabHostName = _[1]
-    if (plataformInfo.isMobile.any) return;
+    if (platformInfo.isMobile.any) return;
 
     let styleTextContent = ""
     fetch(chrome.runtime.getURL("/contentScript/css/showTranslated.css"))
@@ -632,7 +632,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
     }
 
     function updateEventListener() {
-        if (plataformInfo.isMobile.any || pageLanguageState == "translated" || !(showTranslatedTextWhenHoveringThisSite || showTranslatedTextWhenHoveringThisLang || translateTextOverMouseWhenPressTwice)) {
+        if (platformInfo.isMobile.any || pageLanguageState == "translated" || !(showTranslatedTextWhenHoveringThisSite || showTranslatedTextWhenHoveringThisLang || translateTextOverMouseWhenPressTwice)) {
             window.removeEventListener("scroll", onScroll)
 
             window.removeEventListener("mousemove", onMouseMove)

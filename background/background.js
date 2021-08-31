@@ -76,9 +76,7 @@ function updateContextMenu(pageLanguageState = "original") {
     } else {
         const targetLanguage = twpConfig.get("targetLanguage")
         let uilanguage = chrome.i18n.getUILanguage()
-        if (uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw") {
-            uilanguage = uilanguage.split("-")[0]
-        }
+        uilanguage = uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw" ? uilanguage.split("-")[0] : uilanguage
 
         let languageName
         if (twpLang.languages[uilanguage]) {
@@ -106,8 +104,8 @@ chrome.runtime.onInstalled.addListener(details => {
             url: chrome.runtime.getURL("/options/options.html")
         })
     } else if (details.reason == "update" && chrome.runtime.getManifest().version != details.previousVersion) {
-        twpConfig.onReady(function () {
-            if (plataformInfo.isMobile.any) return;
+        twpConfig.onReady(async () => {
+            if (platformInfo.isMobile.any) return;
             if (twpConfig.get("showReleaseNotes") !== "yes") return;
 
             let lastTimeShowingReleaseNotes = twpConfig.get("lastTimeShowingReleaseNotes")
@@ -243,9 +241,7 @@ if (typeof chrome.contextMenus !== "undefined") {
     })
 
     chrome.tabs.onActivated.addListener(activeInfo => {
-        twpConfig.onReady(function () {
-            updateContextMenu()
-        })
+        twpConfig.onReady(() => updateContextMenu())
         chrome.tabs.sendMessage(activeInfo.tabId, {
             action: "getCurrentPageLanguageState"
         }, {
@@ -253,18 +249,14 @@ if (typeof chrome.contextMenus !== "undefined") {
         }, pageLanguageState => {
             checkedLastError()
             if (pageLanguageState) {
-                twpConfig.onReady(function () {
-                    updateContextMenu(pageLanguageState)
-                })
+                twpConfig.onReady(() => updateContextMenu(pageLanguageState))
             }
         })
     })
 
     chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         if (tab.active && changeInfo.status == "loading") {
-            twpConfig.onReady(function () {
-                updateContextMenu()
-            })
+            twpConfig.onReady(() => updateContextMenu())
         } else if (changeInfo.status == "complete") {
             chrome.tabs.sendMessage(tabId, {
                 action: "contentScriptIsInjected"
@@ -272,11 +264,7 @@ if (typeof chrome.contextMenus !== "undefined") {
                 frameId: 0
             }, response => {
                 checkedLastError()
-                if (response) {
-                    tabHasContentScript[tabId] = true
-                } else {
-                    tabHasContentScript[tabId] = false
-                }
+                tabHasContentScript[tabId] = !!response;
             })
         }
     })
@@ -285,8 +273,8 @@ if (typeof chrome.contextMenus !== "undefined") {
         delete tabHasContentScript[tabId]
     })
 
-    chrome.tabs.query({}, tabs => {
-        tabs.forEach(tab => {
+    chrome.tabs.query({}, tabs =>
+        tabs.forEach(tab =>
             chrome.tabs.sendMessage(tab.id, {
                 action: "contentScriptIsInjected"
             }, {
@@ -296,18 +284,12 @@ if (typeof chrome.contextMenus !== "undefined") {
                 if (response) {
                     tabHasContentScript[tab.id] = true
                 }
-            })
-        })
-    })
+            })))
 }
 
-twpConfig.onReady(function () {
-    if (plataformInfo.isMobile.any) {
-        chrome.tabs.query({}, tabs => {
-            tabs.forEach(tab => {
-                chrome.pageAction.hide(tab.id)
-            })
-        })
+twpConfig.onReady(() => {
+    if (platformInfo.isMobile.any) {
+        chrome.tabs.query({}, tabs => tabs.forEach(tab => chrome.pageAction.hide(tab.id)))
 
         chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             if (changeInfo.status == "loading") {
@@ -382,19 +364,11 @@ twpConfig.onReady(function () {
             })
 
             let darkMode = false
-            if (matchMedia("(prefers-color-scheme: dark)").matches) {
-                darkMode = true
-            } else {
-                darkMode = false
-            }
+            darkMode = matchMedia("(prefers-color-scheme: dark)").matches;
             updateIconInAllTabs()
 
             matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-                if (matchMedia("(prefers-color-scheme: dark)").matches) {
-                    darkMode = true
-                } else {
-                    darkMode = false
-                }
+                darkMode = matchMedia("(prefers-color-scheme: dark)").matches;
                 updateIconInAllTabs()
             })
 
@@ -425,9 +399,7 @@ twpConfig.onReady(function () {
                 }
 
                 const b64Start = 'data:image/svg+xml;base64,';
-                const image64 = b64Start + svg64;
-
-                return image64
+                return b64Start + svg64
             }
 
             function updateIcon(tabId) {
@@ -445,11 +417,8 @@ twpConfig.onReady(function () {
             }
 
             function updateIconInAllTabs() {
-                chrome.tabs.query({}, tabs => {
-                    tabs.forEach(tab => {
-                        updateIcon(tab.id)
-                    })
-                })
+                chrome.tabs.query({}, tabs =>
+                    tabs.forEach(tab => updateIcon(tab.id)))
             }
 
             chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
@@ -511,25 +480,25 @@ if (typeof chrome.commands !== "undefined") {
             chrome.tabs.query({
                 currentWindow: true,
                 active: true
-            }, tabs => {
+            }, tabs =>
                 chrome.tabs.sendMessage(tabs[0].id, {
                     action: "TranslateSelectedText"
-                }, checkedLastError)
-            })
+                }, checkedLastError))
         } else if (command === "hotkey-swap-page-translation-service") {
             chrome.tabs.query({
                 active: true,
                 currentWindow: true
-            }, tabs => {
+            }, tabs =>
                 chrome.tabs.sendMessage(tabs[0].id, {
                     action: "swapTranslationService"
-                }, checkedLastError)
-            })
+                }, checkedLastError))
 
             let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
             if (currentPageTranslatorService === "google") {
                 currentPageTranslatorService = "yandex"
-            } else {
+            } else if (currentPageTranslatorService === "yandex") { //I'm not sure in this part
+                currentPageTranslatorService = "bing"
+            } else if (currentPageTranslatorService === "bing") {
                 currentPageTranslatorService = "google"
             }
 
@@ -538,12 +507,11 @@ if (typeof chrome.commands !== "undefined") {
             chrome.tabs.query({
                 active: true,
                 currentWindow: true
-            }, tabs => {
+            }, tabs =>
                 chrome.tabs.sendMessage(tabs[0].id, {
                     action: "translatePage",
                     targetLanguage: "original"
-                }, checkedLastError)
-            })
+                }, checkedLastError))
         } else if (command === "hotkey-translate-page-1") {
             chrome.tabs.query({
                 active: true,
@@ -581,15 +549,13 @@ if (typeof chrome.commands !== "undefined") {
     })
 }
 
-twpConfig.onReady(function () {
+twpConfig.onReady(async () => {
     updateContextMenu()
     updateTranslateSelectedContextMenu()
 
     twpConfig.onChanged((name, newvalue) => {
-        switch (name) {
-            case "showTranslateSelectedContextMenu":
-                updateTranslateSelectedContextMenu()
-                break
+        if (name === "showTranslateSelectedContextMenu") {
+            updateTranslateSelectedContextMenu()
         }
     })
 
@@ -598,7 +564,7 @@ twpConfig.onReady(function () {
     }
 })
 
-twpConfig.onReady(function () {
+twpConfig.onReady(async () => {
     let activeTabTranslationInfo = {}
 
     function tabsOnActivated(activeInfo) {
@@ -657,13 +623,12 @@ twpConfig.onReady(function () {
         if (details.frameId === 0) {
             const host = new URL(details.url).host
             if (sitesToAutoTranslate[details.tabId] === host) {
-                setTimeout(() => {
+                setTimeout(() =>
                     chrome.tabs.sendMessage(details.tabId, {
                         action: "autoTranslateBecauseClickedALink"
                     }, {
                         frameId: 0
-                    })
-                }, 700)
+                    }), 700)
             }
             delete sitesToAutoTranslate[details.tabId]
         }
