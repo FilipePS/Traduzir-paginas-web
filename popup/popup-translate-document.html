@@ -9,9 +9,9 @@
 </head>
 <body style="max-width: 360px;">
     <section id="sectionSelect">
-        <p class="w3-container w3-round w3-light-grey w3-padding">To translate this document (.pdf) it is necessary to convert it to HTML</p>
+        <p class="w3-container w3-round w3-light-grey w3-padding" data-i18n="msgToTranslateThisDocument" data-i18n-ph-value="(.pdf)">To translate this document (.pdf) it is necessary to convert it to HTML</p>
         <div class="w3-padding w3-center">
-            <span>Select a service to do this conversion</span>
+            <span data-i18n="msgSelectServiceConversion">Select a service to do this conversion</span>
             <ul class="w3-ul w3-margin-top" id="selectService">
                 <li class="w3-button w3-border w3-round" data-name="translatewebpages">translatewebpages.org</li>
                 <li class="w3-button w3-border w3-round" data-name="google" style="margin-top: 5px;">translate.googleusercontent.com</li>
@@ -20,14 +20,14 @@
     </section>
 
     <section id="sectionDownload" style="display: none;">
-        <p class="w3-container w3-round w3-light-grey w3-padding">Downloading the document...</p>
+        <p class="w3-container w3-round w3-light-grey w3-padding" data-i18n="msgDownloadingDocument">Downloading the document...</p>
         <div class="w3-padding w3-center">
             <span id="progress">0%</span>
             <br>
             <span id="error" class="w3-red w3-round" style="display: none;"></span>
             <br>
-            <div id="send" class="w3-button w3-round w3-border" style="display: none;">Send document</div>
-            <div id="tryAgain" class="w3-button w3-round w3-border" style="display: none;">Try again</div>
+            <div id="send" class="w3-button w3-round w3-border" style="display: none;" data-i18n="msgSendDocument">Send document</div>
+            <div id="tryAgain" class="w3-button w3-round w3-border" style="display: none;" data-i18n="btnTryAgain">Try again</div>
         </div>
     </section>
 

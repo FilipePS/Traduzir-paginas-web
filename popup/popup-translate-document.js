@@ -17,7 +17,7 @@ selectService.onclick = e => {
             convertDocument(service, data)
         } catch (e) {
             console.error(e)
-            showError("Error downloading document")
+            showError(chrome.i18n.getMessage("msgErrorDownloadingDocument")) // "Error downloading document"
         }
     })
 }
@@ -61,10 +61,9 @@ function downloadDocument(url) {
 
 function convertDocument(service, data) {
     if (service === "google" && data.byteLength > 1048576) {
-        showError("This service does not support files larger than 10 MB")
+        showError(chrome.i18n.getMessage("msgFileLargerThan", "10 MB")) // "This service does not support files larger than 10 MB"
         return
     }
-
 
     const file = new File([data], "document.pdf",{type:"application/pdf", lastModified: new Date().getTime()});
     const container = new DataTransfer();
