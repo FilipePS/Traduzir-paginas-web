@@ -740,7 +740,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         originalTabLanguage = langCode
                     }
         
-                    if (pageLanguageState === "original" && !plataformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
+                    if (pageLanguageState === "original" && !platformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
                         if (twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1) {
                             if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
                                 pageTranslator.translatePage()

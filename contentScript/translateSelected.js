@@ -441,7 +441,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
         chrome.i18n.translateDocument(shadowRoot)
 
-        if (plataformInfo.isMobile.any) {
+        if (platformInfo.isMobile.any) {
             eButtonTransSelText.style.width = "30px"
             eButtonTransSelText.style.height = "30px"
             document.addEventListener("touchstart", onTouchstart)
@@ -522,7 +522,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
         eButtonTransSelText.removeEventListener("click", onClick)
         document.removeEventListener("mousedown", onDown)
-        if (plataformInfo.isMobile.any) {
+        if (platformInfo.isMobile.any) {
             document.removeEventListener("touchstart", onTouchstart)
         }
         divElement.remove()
@@ -744,7 +744,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             ((dontShowIfSelectedTextIsUnknown == "yes" && detectedLanguage !== "und") || dontShowIfSelectedTextIsUnknown != "yes")
         ) {
             init()
-            if (plataformInfo.isMobile.any) {
+            if (platformInfo.isMobile.any) {
                 eButtonTransSelText.style.left = window.innerWidth - 45 + "px"
                 eButtonTransSelText.style.top = clientY + "px"
             } else {
@@ -843,7 +843,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             document.addEventListener("mousedown", destroyIfButtonIsShowing)
             document.addEventListener("wheel", destroyIfButtonIsShowing)
 
-            if (plataformInfo.isMobile.any) {
+            if (platformInfo.isMobile.any) {
                 document.addEventListener("touchend", onTouchend)
                 document.addEventListener("selectionchange", onSelectionchange)
             }
@@ -857,7 +857,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             document.removeEventListener("mousedown", destroyIfButtonIsShowing)
             document.removeEventListener("wheel", destroyIfButtonIsShowing)
 
-            if (plataformInfo.isMobile.any) {
+            if (platformInfo.isMobile.any) {
                 document.removeEventListener("touchend", onTouchend)
                 document.removeEventListener("selectionchange", onSelectionchange)
             }

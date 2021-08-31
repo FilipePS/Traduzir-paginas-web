@@ -3,11 +3,11 @@
 //TODO dividir em varios requests
 //TODO Especificar o source lang com page no idioma do paragrafo (dividindo as requests)
 
-var translationService = {}
+const translationService = {};
 
 {
-    let googleTranslateTKK = "448487.932609646"
-
+    const googleTranslateTKK = "448487.932609646";
+    
     function escapeHTML(unsafe) {
         return unsafe
             .replace(/\&/g, "&amp;")
@@ -27,8 +27,8 @@ var translationService = {}
     }
 
     function shiftLeftOrRightThenSumOrXor(num, optString) {
-        for (var i = 0; i < optString.length - 2; i += 3) {
-            var acc = optString.charAt(i + 2);
+        for (let i = 0; i < optString.length - 2; i += 3) {
+            let acc = optString.charAt(i + 2);
             if ('a' <= acc) {
                 acc = acc.charCodeAt(0) - 87;
             } else {
@@ -49,11 +49,11 @@ var translationService = {}
     }
 
     function transformQuery(query) {
-        var bytesArray = [];
-        var idx = [];
-        for (var i = 0; i < query.length; i++) {
-            var charCode = query.charCodeAt(i);
-
+        const bytesArray = [];
+        let idx = [];
+        for (let i = 0; i < query.length; i++) {
+            let charCode = query.charCodeAt(i);
+    
             if (128 > charCode) {
                 bytesArray[idx++] = charCode;
             } else {
@@ -77,35 +77,35 @@ var translationService = {}
     }
 
     function calcHash(query, windowTkk) {
-        var tkkSplited = windowTkk.split('.');
-        var tkkIndex = Number(tkkSplited[0]) || 0;
-        var tkkKey = Number(tkkSplited[1]) || 0;
-
-        var bytesArray = transformQuery(query);
-
-        var encondingRound = tkkIndex;
-        for (var i = 0; i < bytesArray.length; i++) {
-            encondingRound += bytesArray[i];
+        const tkkSplited = windowTkk.split('.');
+        const tkkIndex = Number(tkkSplited[0]) || 0;
+        const tkkKey = Number(tkkSplited[1]) || 0;
+    
+        const bytesArray = transformQuery(query);
+    
+        let encondingRound = tkkIndex;
+        for (const item of bytesArray) {
+            encondingRound += item;
             encondingRound = shiftLeftOrRightThenSumOrXor(encondingRound, '+-a^+6');
         }
         encondingRound = shiftLeftOrRightThenSumOrXor(encondingRound, '+-3^+b+-f');
 
         encondingRound ^= tkkKey;
         if (encondingRound <= 0) {
-            encondingRound = (encondingRound & 2147483647) + 2147483648;
+            encondingRound += 2147483648;
         }
-
-        var normalizedResult = encondingRound % 1000000;
+    
+        const normalizedResult = encondingRound % 1000000;
         return normalizedResult.toString() + '.' + (normalizedResult ^ tkkIndex);
     }
 
     let lastYandexRequestSIDTime = null
-    var yandexTranslateSID = null
+    let yandexTranslateSID = null;
     let yandexSIDNotFound = false
     let yandexGetSidPromise = null
     async function getYandexSID() {
         if (yandexGetSidPromise) {
-            return await yandexGetSidPromise
+            return yandexGetSidPromise;
         }
 
         yandexGetSidPromise = new Promise(resolve => {
@@ -159,12 +159,12 @@ var translationService = {}
     }
 
     let lastBingRequestSIDTime = null
-    var bingTranslateSID = null
+    let bingTranslateSID = null;
     let bingSIDNotFound = false
     let bingGetSidPromise = null
     async function getBingSID() {
         if (bingGetSidPromise) {
-            return await bingGetSidPromise
+            return bingGetSidPromise;
         }
 
         bingGetSidPromise = new Promise(resolve => {
@@ -267,7 +267,7 @@ var translationService = {}
                 if (translated) {
                     newTransInfo = {
                         source: str,
-                        translated: translated,
+                        translated,
                         status: "complete"
                     }
                 } else {
@@ -296,10 +296,10 @@ var translationService = {}
         }
 
         if (requests.length > 0) {
-            for (const idx in requests) {
+            for (const request of requests) {
                 let tk = ""
                 if (translationService === "google") {
-                    tk = calcHash(requests[idx].fullSource, googleTranslateTKK)
+                    tk = calcHash(request.fullSource, googleTranslateTKK)
                 }
 
                 const http = new XMLHttpRequest
@@ -307,17 +307,17 @@ var translationService = {}
                     http.open("POST", translationServiceURL + tk)
                     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
                     http.responseType = "json"
-                    http.send(requests[idx].requestBody)
+                    http.send(request.requestBody)
                 } else if (translationService === "yandex") {
-                    http.open("GET", translationServiceURL + requests[idx].requestBody)
+                    http.open("GET", translationServiceURL + request.requestBody)
                     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
                     http.responseType = "json"
-                    http.send(requests[idx].requestBody)
+                    http.send(request.requestBody)
                 } else if (translationService === "bing") {
                     http.open("POST", "https://www.bing.com/ttranslatev3?isVertical=1")
                     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
                     http.responseType = "json"
-                    http.send(`&fromLang=auto-detect${requests[idx].requestBody}&to=${targetLanguage}${bingTranslateSID}`)
+                    http.send(`&fromLang=auto-detect${request.requestBody}&to=${targetLanguage}${bingTranslateSID}`)
                 }
 
                 http.onload = e => {
@@ -336,7 +336,7 @@ var translationService = {}
                             responseJson = [http.response[0].translations[0].text]
                         }
 
-                        requests[idx].transInfos.forEach((transInfo, index) => {
+                        request.transInfos.forEach((transInfo, index) => {
                             try {
                                 if (responseJson[index]) {
                                     transInfo.status = "complete"
@@ -362,13 +362,13 @@ var translationService = {}
                     } catch (e) {
                         console.error(e)
 
-                        requests[idx].transInfos.forEach((transInfo, index) => {
+                        request.transInfos.forEach((transInfo, index) => {
                             transInfo.status = "error"
                         })
                     }
                 }
                 http.onerror = e => {
-                    requests[idx].transInfos.forEach(transInfo => {
+                    request.transInfos.forEach(transInfo => {
                         transInfo.status = "error"
                     })
                     console.error(e)
@@ -381,7 +381,7 @@ var translationService = {}
 
             function waitForTranslationFinish() {
                 let isTranslating = false
-                for (let info of thisTranslationProgress) {
+                for (const info of thisTranslationProgress) {
                     if (info.status === "translating") {
                         isTranslating = true
                         break
@@ -472,15 +472,13 @@ var translationService = {}
     }
 
     // async para fix
-    translationService.google.translateHTML = function (_sourceArray3d, targetLanguage, dontSaveInCache = false, preseveTextFormat = false, dontSortResults = false) {
+    translationService.google.translateHTML = (_sourceArray3d, targetLanguage, dontSaveInCache = false, preseveTextFormat = false, dontSortResults = false) => {
         if (targetLanguage == "zh") {
             targetLanguage = "zh-CN"
         }
 
         //const [sourceArray3d, fixIndexesMap] = await fixSouceArray(_sourceArray3d)
-        const sourceArray3d = _sourceArray3d
-
-        const sourceArray = sourceArray3d.map(sourceArray => {
+        const sourceArray = _sourceArray3d.map(sourceArray => {
             sourceArray = sourceArray.map(value => escapeHTML(value))
             if (sourceArray.length > 1) {
                 sourceArray = sourceArray.map((value, index) => "<a i=" + index + ">" + value + "</a>")
@@ -506,7 +504,7 @@ var translationService = {}
                 const results = thisTranslationProgress.map(value => value.translated)
                 const resultArray3d = []
 
-                for (let i in results) {
+                for (const i in results) {
                     let result = results[i]
                     if (result.indexOf("<pre") !== -1) {
                         result = result.replace("</pre>", "")
@@ -541,7 +539,7 @@ var translationService = {}
 
                         if (resultArray && resultArray.length > 0) {
                             resultArray = resultArray.map(value => {
-                                var resultStartAtIndex = value.indexOf('>')
+                                const resultStartAtIndex = value.indexOf('>');
                                 return value.slice(resultStartAtIndex + 1)
                             })
                         } else {
@@ -557,7 +555,7 @@ var translationService = {}
                         if (resultArray && resultArray.length > 0) {
                             indexes = resultArray.map(value => parseInt(value.match(/[0-9]+(?=\>)/g))).filter(value => !isNaN(value))
                             resultArray = resultArray.map(value => {
-                                var resultStartAtIndex = value.indexOf('>')
+                                const resultStartAtIndex = value.indexOf('>');
                                 return value.slice(resultStartAtIndex + 1)
                             })
                         } else {
@@ -585,21 +583,18 @@ var translationService = {}
                 return resultArray3d
             })
     }
-
-    translationService.google.translateText = async function (sourceArray, targetLanguage, dontSaveInCache = false) {
+    
+    translationService.google.translateText = async (sourceArray, targetLanguage, dontSaveInCache = false) => {
         if (targetLanguage == "zh") {
             targetLanguage = "zh-CN"
         }
 
         return (await translationService.google.translateHTML(sourceArray.map(value => [value]), targetLanguage, dontSaveInCache, true)).map(value => value[0])
     }
-
-    translationService.google.translateSingleText = function (source, targetLanguage, dontSaveInCache = false) {
-        return translationService.google.translateText([source], targetLanguage, dontSaveInCache)
-            .then(results => results[0])
-    }
-
-    translationService.yandex.translateHTML = async function (sourceArray3d, targetLanguage, dontSaveInCache = false) {
+    
+    translationService.google.translateSingleText = (source, targetLanguage, dontSaveInCache = false) => translationService.google.translateText([ source ], targetLanguage, dontSaveInCache).then(results => results[0])
+    
+    translationService.yandex.translateHTML = async (sourceArray3d, targetLanguage, dontSaveInCache = false) => {
         await getYandexSID()
         if (!yandexTranslateSID) return
 
@@ -607,11 +602,8 @@ var translationService = {}
             targetLanguage = "zh"
         }
 
-        const sourceArray = sourceArray3d.map(sourceArray => {
-            return sourceArray
-                .map(value => escapeHTML(value))
-                .join("<wbr>")
-        })
+        const sourceArray = sourceArray3d.map(sourceArray =>
+            sourceArray.map(value => escapeHTML(value)).join("<wbr>"))
 
         const requestBody = "format=html&lang=" + targetLanguage
         return await translateHTML(
@@ -639,21 +631,18 @@ var translationService = {}
                 return resultArray3d
             })
     }
-
-    translationService.yandex.translateText = async function (sourceArray, targetLanguage, dontSaveInCache = false) {
+    
+    translationService.yandex.translateText = async (sourceArray, targetLanguage, dontSaveInCache = false) => {
         if (targetLanguage.indexOf("zh-") !== -1) {
             targetLanguage = "zh"
         }
 
         return (await translationService.yandex.translateHTML(sourceArray.map(value => [value]), targetLanguage, dontSaveInCache)).map(value => value[0])
     }
-
-    translationService.yandex.translateSingleText = function (source, targetLanguage, dontSaveInCache = false) {
-        return translationService.yandex.translateText([source], targetLanguage, dontSaveInCache)
-            .then(results => results[0])
-    }
-
-    translationService.bing.translateSingleText = async function (source, targetLanguage, dontSaveInCache = false) {
+    
+    translationService.yandex.translateSingleText = (source, targetLanguage, dontSaveInCache = false) => translationService.yandex.translateText([ source ], targetLanguage, dontSaveInCache).then(results => results[0])
+    
+    translationService.bing.translateSingleText = async (source, targetLanguage, dontSaveInCache = false) => {
         if (targetLanguage == "zh-CN") {
             targetLanguage = "zh-Hans"
         } else if (targetLanguage == "zh-TW") {
@@ -675,13 +664,11 @@ var translationService = {}
                 getTranslationInProgress("bing", targetLanguage),
                 dontSaveInCache
             )
-            .then(thisTranslationProgress => {
-                return thisTranslationProgress[0].translated
-            })
+            .then(thisTranslationProgress => thisTranslationProgress[0].translated)
     }
-
-    var DeepLTab = null
-    translationService.deepl.translateSingleText = function (source, targetlanguage, dontSaveInCache = false) {
+    
+    let DeepLTab = null;
+    translationService.deepl.translateSingleText = (source, targetlanguage, dontSaveInCache = false) => {
         //*
         return new Promise(resolve => {
             function waitFirstTranslationResult() {
@@ -710,9 +697,7 @@ var translationService = {}
                             targetlanguage
                         }, {
                             frameId: 0
-                        }, response => {
-                            resolve(response)
-                        })
+                        }, response => resolve(response))
                     } else {
                         chrome.tabs.create({
                             url: `https://www.deepl.com/#!${targetlanguage}!#${encodeURIComponent(source)}`
@@ -782,8 +767,8 @@ var translationService = {}
         })
         //*/
     }
-
-
+    
+    
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "translateHTML") {
             let translateHTML
@@ -794,12 +779,8 @@ var translationService = {}
             }
 
             translateHTML(request.sourceArray3d, request.targetLanguage, sender.tab ? sender.tab.incognito : false, true, request.dontSortResults)
-                .then(results => {
-                    sendResponse(results)
-                })
-                .catch(e => {
-                    sendResponse()
-                })
+                .then(results => sendResponse(results))
+                .catch(e => sendResponse())
 
             return true
         } else if (request.action === "translateText") {
@@ -811,12 +792,8 @@ var translationService = {}
             }
 
             translateText(request.sourceArray, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
-                .then(results => {
-                    sendResponse(results)
-                })
-                .catch(e => {
-                    sendResponse()
-                })
+                .then(results => sendResponse(results))
+                .catch(e => sendResponse())
 
             return true
         } else if (request.action === "translateSingleText") {
@@ -832,12 +809,8 @@ var translationService = {}
             }
 
             translateSingleText(request.source, request.targetLanguage, sender.tab ? sender.tab.incognito : false)
-                .then(result => {
-                    sendResponse(result)
-                })
-                .catch(e => {
-                    sendResponse()
-                })
+                .then(result => sendResponse(result))
+                .catch(e => sendResponse())
 
             return true
         }
