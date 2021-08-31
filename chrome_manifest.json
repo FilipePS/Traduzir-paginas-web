@@ -74,7 +74,7 @@
             "matches": ["<all_urls>"],
             "run_at": "document_start",
             "all_frames": true,
-            "js": ["/lib/languages.js", "/lib/config.js", "/lib/plataformInfo.js"]
+            "js": ["/lib/languages.js", "/lib/config.js", "/lib/platformInfo.js"]
         },
         {
             "matches": ["<all_urls>"],
@@ -98,6 +98,6 @@
 
     "background": {
         "persistent": true,
-        "scripts": ["/lib/languages.js", "/lib/config.js", "/lib/plataformInfo.js", "/background/translationCache.js", "/background/translationService.js", "/background/textToSpeech.js", "/background/background.js"]
+        "scripts": ["/lib/languages.js", "/lib/config.js", "/lib/platformInfo.js", "/background/translationCache.js", "/background/translationService.js", "/background/textToSpeech.js", "/background/background.js"]
     }
 }
