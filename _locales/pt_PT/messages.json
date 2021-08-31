@@ -418,5 +418,38 @@
   },
   "btnShowPopup": {
     "message": "Mostrar popup"
+  },
+  "msgToTranslateThisDocument": {
+    "message": "Para traduzir este documento $DOC_TYPE$ é necessário convertê-lo para HTML",
+    "placeholders": {
+      "DOC_TYPE": {
+        "content": "$1",
+        "example": "(.pdf)"
+      }
+    }
+  },
+  "msgSelectServiceConversion": {
+    "message": "Selecione um serviço para fazer esta conversão"
+  },
+  "msgDownloadingDocument": {
+    "message": "Baixando o documento..."
+  },
+  "msgSendDocument": {
+    "message": "Enviar documento"
+  },
+  "msgErrorDownloadingDocument": {
+    "message": "Erro ao baixar o documento"
+  },
+  "msgFileLargerThan": {
+    "message": "Este serviço não oferece suporte a arquivos maiores que $FILE_SIZE$",
+    "placeholders": {
+      "FILE_SIZE": {
+        "content": "$1",
+        "example": "10 MB"
+      }
+    }
+  },
+  "msgPDFtoHTML": {
+    "message": "PDF para HTML"
   }
 }
