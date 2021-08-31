@@ -12,12 +12,12 @@ selectService.onclick = e => {
 
     chrome.tabs.query({active: true, currentWindow: true}, async tabs => {
         try {
+            const service = e.target.dataset.name
             const data = await downloadDocument(tabs[0].url)
-            convertDocument(e.target.dataset.name, data)
+            convertDocument(service, data)
         } catch (e) {
             console.error(e)
-            progress.textContent = "Error downloading document"
-            tryAgain.style.display = "block"
+            showError("Error downloading document")
         }
     })
 }
@@ -25,10 +25,17 @@ selectService.onclick = e => {
 tryAgain.onclick = e => {
     progress.textContent = "0%"
     tryAgain.style.display = "none"
+    error.style.display = "none"
     send.style.display = "none"
 
     sectionDownload.style.display = "none"
     sectionSelect.style.display = "block"
+}
+
+function showError(msg) {
+    error.textContent = msg
+    error.style.display = "block"
+    tryAgain.style.display = "block"
 }
 
 function downloadDocument(url) {
@@ -53,6 +60,12 @@ function downloadDocument(url) {
 }
 
 function convertDocument(service, data) {
+    if (service === "google" && data.byteLength > 1048576) {
+        showError("This service does not support files larger than 10 MB")
+        return
+    }
+
+
     const file = new File([data], "document.pdf",{type:"application/pdf", lastModified: new Date().getTime()});
     const container = new DataTransfer();
     container.items.add(file)
