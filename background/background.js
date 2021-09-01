@@ -152,6 +152,9 @@ chrome.runtime.onInstalled.addListener(details => {
                     url: chrome.runtime.getURL("/options/options.html#release_notes")
                 })
             }
+
+            
+            translationCache.deleteTranslationCache()
         })
     }
 })

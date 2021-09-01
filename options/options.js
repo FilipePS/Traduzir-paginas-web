@@ -777,7 +777,8 @@ twpConfig.onReady(function () {
     $("#deleteTranslationCache").onclick = e => {
         if (confirm(chrome.i18n.getMessage("doYouWantToDeleteTranslationCache"))) {
             chrome.runtime.sendMessage({
-                action: "deleteTranslationCache"
+                action: "deleteTranslationCache",
+                reload: true
             })
         }
     }

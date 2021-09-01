@@ -278,6 +278,43 @@ const translationCache = {};
     openIndexeddb("googleCache", 1)
     openIndexeddb("yandexCache", 1)
     openIndexeddb("bingCache", 1)
+
+
+    function deleteDatabase(name) {
+        return new Promise (resolve => {
+            const DBDeleteRequest = indexedDB.deleteDatabase(name)
+    
+            DBDeleteRequest.onerror = function(event) {
+                console.warn("Error deleting database.")
+                resolve()
+            }
+            
+            DBDeleteRequest.onsuccess = function(event) {
+                console.info("Database deleted successfully")
+                resolve()
+            }
+        })
+    }
+
+    translationCache.deleteTranslationCache = function (reload=false) {
+        if (googleDB) {googleDB.close(); googleDB = null}
+        if (yandexDB) {yandexDB.close(); yandexDB = null}
+        if (bingDB)   {bingDB.close();   bingDB   = null}
+
+        Promise.all([
+            deleteDatabase("googleCache"),
+            deleteDatabase("yandexCache"),
+            deleteDatabase("bingCache")
+        ]).finally(() => {
+            if (reload) {
+                chrome.runtime.reload()
+            } else {
+                openIndexeddb("googleCache", 1)
+                openIndexeddb("yandexCache", 1)
+                openIndexeddb("bingCache", 1)
+            }
+        })
+    }
     
     
     let promiseCalculatingStorage = null;
@@ -296,11 +333,7 @@ const translationCache = {};
             })
             return true
         } else if (request.action === "deleteTranslationCache") {
-            indexedDB.deleteDatabase("googleCache")
-            indexedDB.deleteDatabase("yandexCache")
-            indexedDB.deleteDatabase("bingCache")
-
-            chrome.runtime.reload()
+            translationCache.deleteTranslationCache(request.reload)
         }
     })
 }
