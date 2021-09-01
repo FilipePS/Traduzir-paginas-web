@@ -740,12 +740,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         originalTabLanguage = langCode
                     }
         
-                    if (pageLanguageState === "original" && !platformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
-                        if (twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1) {
-                            if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
-                                pageTranslator.translatePage()
-                            } else if (twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !== -1) {
-                                pageTranslator.translatePage()
+                    if (location.hostname !== "translate.googleusercontent.com" && location.hostname !== "translate.google.com" && location.hostname !== "translate.yandex.com") {
+                        if (pageLanguageState === "original" && !platformInfo.isMobile.any && !chrome.extension.inIncognitoContext) {
+                            if (twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1) {
+                                if (langCode && langCode !== currentTargetLanguage && twpConfig.get("alwaysTranslateLangs").indexOf(langCode) !== -1) {
+                                    pageTranslator.translatePage()
+                                } else if (twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !== -1) {
+                                    pageTranslator.translatePage()
+                                }
                             }
                         }
                     }
