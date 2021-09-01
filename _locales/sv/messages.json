@@ -81,7 +81,7 @@
     "message": "Översätt aldrig dessa webbplatser"
   },
   "optionsAlwaysTranslate": {
-    "message": "Översätt automatiskt dessa språk"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Visa den mobila popup-skärmen"
