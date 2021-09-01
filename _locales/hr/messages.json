@@ -81,7 +81,7 @@
     "message": "Nikada ne prevoditi ove web stranice"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automatski prevedi ove jezike"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Pokažite skočni prozor za mobilne uređaje"

@@ -81,7 +81,7 @@
     "message": "Non tradurre mai questi siti"
   },
   "optionsAlwaysTranslate": {
-    "message": "Traduci automaticamente queste lingue"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Mostra la finestra mobile"

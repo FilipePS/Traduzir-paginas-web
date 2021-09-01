@@ -81,7 +81,7 @@
     "message": "لا تترجم هذه المواقع أبدًا"
   },
   "optionsAlwaysTranslate": {
-    "message": "ترجمة هذه اللغات تلقائيًا"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "إظهار النافذة المنبثقة للجوال"

@@ -81,7 +81,7 @@
     "message": "Nigdy nie tłumacz tych witryn"
   },
   "optionsAlwaysTranslate": {
-    "message": "Tłumacz automatycznie te języki"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Pokaż wyskakujące okienko komórkowe"

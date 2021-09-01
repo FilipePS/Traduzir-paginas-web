@@ -81,7 +81,7 @@
     "message": "Никогда не переводить эти сайты"
   },
   "optionsAlwaysTranslate": {
-    "message": "Автоматически переводить эти языки"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Показывать мобильное всплывающее окно"

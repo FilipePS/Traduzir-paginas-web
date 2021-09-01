@@ -81,7 +81,7 @@
     "message": "Bu siteleri asla çevirme"
   },
   "optionsAlwaysTranslate": {
-    "message": "Bu dilleri otomatik olarak çevir"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Mobil açılır pencereyi göster"

@@ -81,7 +81,7 @@
     "message": "Ποτέ μην μεταφράζεται αυτός ο ιστότοπος"
   },
   "optionsAlwaysTranslate": {
-    "message": "Αυτόματη μετάφραση αυτών των γλωσσών"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Προβολή αναδυόμενου κινητού παραθύρου"

@@ -81,7 +81,7 @@
     "message": "इन साइटों का अनुवाद कभी न करें"
   },
   "optionsAlwaysTranslate": {
-    "message": "इन भाषाओं का स्वचालित रूप से अनुवाद करें"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "मोबाइल पॉपअप दिखाएं"
