@@ -81,7 +81,7 @@
     "message": "翻訳しないサイト"
   },
   "optionsAlwaysTranslate": {
-    "message": "自動的に翻訳する言語"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "モバイルで翻訳ポップアップを表示"
