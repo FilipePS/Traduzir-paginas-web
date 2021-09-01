@@ -81,7 +81,7 @@
     "message": "Vertaal deze sites nooit"
   },
   "optionsAlwaysTranslate": {
-    "message": "Vertaal deze talen automatisch"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Toon de mobiele pop-up"
