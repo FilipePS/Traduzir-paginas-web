@@ -81,7 +81,7 @@
     "message": "永遠不要翻譯這些網站"
   },
   "optionsAlwaysTranslate": {
-    "message": "自動翻譯這些語言"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "顯示手機彈出視窗"
