@@ -20,11 +20,10 @@
 ### To make a donation use [Patreon](https://www.patreon.com/filipeps)
 
 ## Thanks to the Patrons
++ Andrew Gaul
 + Henry Henderson
 + László Dr. Gerő
-+ Mohammad El Musleh
 + Lani
-+ EWi2M5UR
 + 2 kojix
 + Vadim
 + rifter
