@@ -81,7 +81,7 @@
     "message": "永不翻译这些网站"
   },
   "optionsAlwaysTranslate": {
-    "message": "自动翻译这些语言"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "显示底部翻译栏"
