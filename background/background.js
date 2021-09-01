@@ -7,6 +7,24 @@ function checkedLastError() {
     chrome.runtime.lastError
 }
 
+// get mimetype
+var tabToMimeType = {}
+chrome.webRequest.onHeadersReceived.addListener(function(details) {
+    if (details.tabId !== -1) {
+        let contentTypeHeader = null
+        for (const header of details.responseHeaders) {
+            if (header.name.toLowerCase() === 'content-type') {
+                contentTypeHeader = header
+                break
+            }
+        }
+        tabToMimeType[details.tabId] = contentTypeHeader && contentTypeHeader.value.split(';', 1)[0]
+    }
+}, {
+    urls: ['*://*/*'],
+    types: ['main_frame']
+}, ['responseHeaders']);
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "getMainFramePageLanguageState") {
         chrome.tabs.sendMessage(sender.tab.id, {
@@ -53,6 +71,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         sendResponse(new URL(sender.tab.url).hostname)
     } else if (request.action === "thisFrameIsInFocus") {
         chrome.tabs.sendMessage(sender.tab.id, {action: "anotherFrameIsInFocus"}, checkedLastError)
+    } else if (request.action === "getTabMimeType") {
+        chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+            sendResponse(tabToMimeType[tabs[0].id])
+        })
+        return true
     }
 })
 

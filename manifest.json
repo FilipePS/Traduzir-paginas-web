@@ -68,7 +68,8 @@
         "<all_urls>",
         "storage",
         "activeTab",
-        "contextMenus"
+        "contextMenus",
+        "webRequest"
     ],
 
     "optional_permissions": [
