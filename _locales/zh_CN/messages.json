@@ -81,7 +81,7 @@
     "message": "永不翻译这些网站"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "总是翻译这些语言"
   },
   "optionPopupConfig": {
     "message": "显示底部翻译栏"
@@ -420,7 +420,7 @@
     "message": "显示弹出窗口"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "要翻译此文档 $DOC_TYPE$，须将其转换为 HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "选择一项服务进行此转换"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "正在下载文档..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "发送文档"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "下载文档时出错"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "此服务不支持大于 $FILE_SIZE$ 的文件",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF 转 HTML"
   }
 }
