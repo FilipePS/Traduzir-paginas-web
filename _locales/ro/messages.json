@@ -81,7 +81,7 @@
     "message": "Nu traduce niciodată aceste situri"
   },
   "optionsAlwaysTranslate": {
-    "message": "Tradu automat aceste limbi"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Arată fereastra mobilă"
