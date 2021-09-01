@@ -408,6 +408,55 @@
 
             <div id="release_notes" class="w3-container">
                 <section>
+                    <h4>9.4</h4>
+                    <ul>
+                        <li>Added: 
+                            <ul>
+                                <li>PDF Translation
+                                    <ul>
+                                        <li>To translate a PDF it is necessary to convert it into HTML.</li>
+                                        <li>You can convert using one of these services:
+                                            <ul>
+                                                <li><b><em>translatewebpages.org</em></b></li>
+                                                <li><b><em>translate.googleusercontent.com</em></b></li>
+                                            </ul>
+                                        </li>
+                                        <li>Files uploaded to <b><em>translatewebpages.org</em></b> will be deleted in 24 hours.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Changes:
+                            <ul>
+                                <li>Every time the extension updates the translation cache it will be automatically deleted.</li>
+                                <li>Now all translated text nodes will be encapsulated in a FONT element
+                                    <ul>
+                                        <li>This allows the <em>"Show original text when hovering"</em> feature to work on more sites</li>
+                                    </ul>
+                                </li>
+                                <li>Improved: Detection of which texts are being shown on the screen
+                                    <ul>
+                                        <li>Texts in iframes will only be translated when the iframe is visible</li>
+                                    </ul>
+                                </li>
+                                <li>Improved: Translation appears a little faster when starting to translate the page.</li>
+                                <li>Hide text translation panel if you click on an iframe</li>
+                                <li>Stops playing audio if you close the tab</li>
+                            </ul>
+                        </li>
+                        <li>Fixed:
+                            <ul>
+                                <li>Crash issues when translating certain sites</li>
+                                <li>Parts of the page are not restored when using a text marker extension </li>
+                                <li>After restarting the browser the option <em>"AutoTranslateWhenClickingALink"</em> stops working</li>
+                                <li>Sometimes the extension doesn't work</li>
+                            </ul>
+                        </li>
+                        <li>Updated interface translations</li>
+                        <li>Bug fixes and general improvements</li>
+                    </ul>
+                </section>
+                <section>
                     <h4>9.3</h4>
                     <ul>
                         <li>Added: (These features need to be enabled in the settings)
