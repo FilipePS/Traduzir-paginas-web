@@ -81,7 +81,7 @@
     "message": "לעולם אל תתרגם דפים אלו"
   },
   "optionsAlwaysTranslate": {
-    "message": "תרגם אוטומטית שפות אלו"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "הראה את חלון הקופץ לנייד"
