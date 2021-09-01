@@ -81,7 +81,7 @@
     "message": "Älä käännä näitä sivuja"
   },
   "optionsAlwaysTranslate": {
-    "message": "Käännä nämä sivut automaattisesti"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Näytä työkalupalkki mobiiliversiossa"
