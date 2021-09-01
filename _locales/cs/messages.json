@@ -81,7 +81,7 @@
     "message": "Nikdy tyto stránky nepřekládat"
   },
   "optionsAlwaysTranslate": {
-    "message": "Automaticky přeložit tyto jazyky"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Zobrazit mobilní vyskakovací okno"
