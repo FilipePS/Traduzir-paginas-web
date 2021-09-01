@@ -88,3 +88,48 @@ function convertDocument(service, data) {
         window.close()
     }
 }
+
+
+
+$ = document.querySelector.bind(document)
+
+function enableDarkMode() {
+    if (!$("#darkModeElement")) {
+        const el = document.createElement("style")
+        el.setAttribute("id", "darkModeElement")
+        el.setAttribute("rel", "stylesheet")
+        el.textContent = `
+        body {
+            color: rgb(231, 230, 228) !important;
+            background-color: #181a1b !important;
+        }
+        `
+        document.head.appendChild(el)
+    }
+}
+
+function disableDarkMode() {
+    if ($("#darkModeElement")) {
+        $("#darkModeElement").remove()
+    }
+}
+
+twpConfig.onReady(() => {
+    switch (twpConfig.get("darkMode")) {
+        case "auto":
+            if (matchMedia("(prefers-color-scheme: dark)").matches) {
+                enableDarkMode()
+            } else {
+                disableDarkMode()
+            }
+            break
+        case "yes":
+            enableDarkMode()
+            break
+        case "no":
+            disableDarkMode()
+            break
+        default:
+            break
+    }
+})
