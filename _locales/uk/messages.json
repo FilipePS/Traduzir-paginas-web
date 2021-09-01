@@ -81,7 +81,7 @@
     "message": "Ніколи не перекладати цей сайт"
   },
   "optionsAlwaysTranslate": {
-    "message": "Автоматично перекладати ці мови"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
     "message": "Показати спливаюче вікно для мобільних пристроїв"
