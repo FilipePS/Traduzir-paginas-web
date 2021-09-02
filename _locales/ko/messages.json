@@ -81,7 +81,7 @@
     "message": "번역하지 않을 사이트 목록"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "항상 자동으로 번역할 언어 목록"
   },
   "optionPopupConfig": {
     "message": "모바일 팝업 표시"
