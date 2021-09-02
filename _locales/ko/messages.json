@@ -420,7 +420,7 @@
     "message": "팝업 표시"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "이 문서 $DOC_TYPE$를 번역하려면 HTML로 변환해야 합니다",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "변환할 서비스를 선택하세요"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "문서 다운로드 중..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "문서 보내기"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "문서 다운로드 중 오류 발생"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "이 서비스는 $FILE_SIZE$보다 큰 파일은 지원하지 않습니다",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF를 HTML로 변환"
   }
 }
