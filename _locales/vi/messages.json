@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Ngôn ngữ đích $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -105,7 +105,7 @@
     "message": "Giúp đỡ nhà phát triển bằng cách ủng hộ"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Dịch từ $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Hiển thị bản dịch khi di chuột qua trang web này"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Hiển thị bản dịch khi di chuột qua các trang web bằng $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -380,13 +380,13 @@
     "message": "Do not sort the google translate results"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Dịch các nội dung động"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Tính toán"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Ủng hộ qua PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
     "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
@@ -429,16 +429,16 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Chọn một dịch vụ để thực hiện chuyển đổi"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Đang tải về tài liệu..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Gửi tài liệu"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Lỗi khi tải tài liệu"
   },
   "msgFileLargerThan": {
     "message": "This service does not support files larger than $FILE_SIZE$",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF sang HTML"
   }
 }
