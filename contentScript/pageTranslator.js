@@ -172,22 +172,23 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
     }
 
     let pageIsVisible = document.visibilityState == "visible"
-    new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting && document.visibilityState == "visible") {
-                pageIsVisible = true
-            } else {
-                pageIsVisible = false
-            }
+    // isto faz com que partes do youtube não sejam traduzidas
+    // new IntersectionObserver(entries => {
+    //         if (entries[0].isIntersecting && document.visibilityState == "visible") {
+    //             pageIsVisible = true
+    //         } else {
+    //             pageIsVisible = false
+    //         }
 
-            if (pageIsVisible && pageLanguageState === "translated") {
-                enableMutatinObserver()
-            } else {
-                disableMutatinObserver()
-            }
-        }, {
-            root: null
-        })
-        .observe(document.body)
+    //         if (pageIsVisible && pageLanguageState === "translated") {
+    //             enableMutatinObserver()
+    //         } else {
+    //             disableMutatinObserver()
+    //         }
+    //     }, {
+    //         root: null
+    //     })
+    //     .observe(document.body)
 
     const handleVisibilityChange = function () {
         if (document.visibilityState == "visible") {
