@@ -21,7 +21,7 @@
     "message": "이 페이지를 번역할 수 없습니다"
   },
   "lblAlwaysTranslate": {
-    "message": "$LANGUAGE_NAME$을(를) 항상 번역",
+    "message": "$LANGUAGE_NAME$ 언어를 항상 번역",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -420,7 +420,7 @@
     "message": "팝업 표시"
   },
   "msgToTranslateThisDocument": {
-    "message": "이 문서 $DOC_TYPE$를 번역하려면 HTML로 변환해야 합니다",
+    "message": "이 문서$DOC_TYPE$를 번역하려면 HTML로 변환해야 합니다",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
