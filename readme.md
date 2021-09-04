@@ -20,6 +20,7 @@
 ### To make a donation use [Patreon](https://www.patreon.com/filipeps)
 
 ## Thanks to the Patrons
++ Jacek NZ
 + Andrew Gaul
 + Henry Henderson
 + László Dr. Gerő
