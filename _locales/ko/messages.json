@@ -105,7 +105,7 @@
     "message": "기부하여 개발자 돕기"
   },
   "msgTranslateFor": {
-    "message": "$LANGUAGE_NAME$(으)로 번역",
+    "message": "$LANGUAGE_NAME$ 언어로 번역",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
