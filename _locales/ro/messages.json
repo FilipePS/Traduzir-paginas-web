@@ -441,7 +441,7 @@
     "message": "Eroare la descărcarea documentului"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Acest serviciu nu acceptă fișiere mai mari de $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF în HTML"
   }
 }
