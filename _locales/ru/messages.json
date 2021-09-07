@@ -432,16 +432,16 @@
     "message": "Select a service to do this conversion"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Файл скачивается..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Отправить документ"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Ошибка при скачивании документа"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Служба не поддерживает файлы размером более $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF в HTML"
   }
 }
