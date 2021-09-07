@@ -81,7 +81,7 @@
     "message": "Никогда не переводить эти сайты"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Всегда переводить эти языки"
   },
   "optionPopupConfig": {
     "message": "Показывать мобильное всплывающее окно"
@@ -420,7 +420,7 @@
     "message": "Показывать всплывающее окно"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Для перевода документа $DOC_TYPE$ необходимо сконвертировать его в HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,7 +429,7 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Выберите сервис для конвертации"
   },
   "msgDownloadingDocument": {
     "message": "Файл скачивается..."
