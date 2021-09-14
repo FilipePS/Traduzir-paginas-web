@@ -81,7 +81,7 @@
     "message": "Ne jamais traduire ces sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Toujours traduire depuis ces langues"
   },
   "optionPopupConfig": {
     "message": "Afficher le popup mobile"
@@ -420,7 +420,7 @@
     "message": "Afficher la popup"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Pour traduire ce document $DOC_TYPE$, il est nécessaire de le convertir en HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,10 +429,10 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Sélectionnez un service pour effectuer cette conversion"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Téléchargement du document en cours..."
   },
   "msgSendDocument": {
     "message": "Send document"
