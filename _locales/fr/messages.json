@@ -138,7 +138,7 @@
     "message": "Uniquement quand je clique sur \"Traduire ce site\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Vous n'avez ajouté aucun site à cette liste pour l'instant."
+    "message": "Vous n'avez ajouté aucun site à cette liste."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
     "message": "Vous n'avez ajouté aucune langue à cette liste."
@@ -255,7 +255,7 @@
     "message": "Afficher la traduction en survolant ce site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Afficher la traduction lors du survol du sites Web en $LANGUAGE_NAME$",
+    "message": "Afficher la traduction lors du survol de sites Web en $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -389,7 +389,7 @@
     "message": "Faire un don avec PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Traduire automatiquement en cliquant sur un lien qui vous mène au même domaine que le site actuel"
+    "message": "Traduire automatiquement lorsque que vous cliquez sur un lien menant au même domaine que le site actuel"
   },
   "openNativeShortcutManager": {
     "message": "Ouvrir le gestionnaire de raccourcis natif"
