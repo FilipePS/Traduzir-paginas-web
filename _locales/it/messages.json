@@ -417,7 +417,7 @@
     "message": "Traduci la pagina facendo clic una volta sul pulsante nella barra degli indirizzi. (Per vedere il popup, fare clic con il tasto destro)"
   },
   "btnShowPopup": {
-    "message": "Mostra popup"
+    "message": "Mostra finestra opzioni"
   },
   "msgToTranslateThisDocument": {
     "message": "Per tradurre questo documento $DOC_TYPE$ è necessario convertirlo in HTML",
