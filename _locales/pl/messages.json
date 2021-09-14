@@ -81,7 +81,7 @@
     "message": "Nigdy nie tłumacz tych witryn"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Zawsze tłumacz te języki"
   },
   "optionPopupConfig": {
     "message": "Pokaż wyskakujące okienko komórkowe"
@@ -420,7 +420,7 @@
     "message": "Wyświetl wyskakujące okienko"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Aby przetłumaczyć ten dokument $DOC_TYPE$ konieczne jest przekonwertowanie go do HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Wybierz usługę, która wykonuje tę konwersję"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Trwa pobieranie dokumentu..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Wyślij dokument"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Błąd pobierania dokumentu"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Ta usługa nie obsługuje plików większych niż $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF do HTML"
   }
 }

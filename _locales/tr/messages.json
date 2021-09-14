@@ -81,7 +81,7 @@
     "message": "Bu siteleri asla çevirme"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Bu dilleri her zaman çevir"
   },
   "optionPopupConfig": {
     "message": "Mobil açılır pencereyi göster"
@@ -420,7 +420,7 @@
     "message": "Açılır pencereyi göster"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Bu belgeyi $DOC_TYPE$ türüne çevirmek için HTML'e dönüştürmek gerekir",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Bu dönüştürmeyi yapmak için bir hizmet seçin"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Belge indiriliyor..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Belge gönder"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Belge indirilirken hata oluştu"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Bu hizmet, $FILE_SIZE$ boyutundan daha büyük dosyaları desteklemiyor",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF'den HTML'e"
   }
 }

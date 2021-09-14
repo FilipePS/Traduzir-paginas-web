@@ -9,13 +9,13 @@
     "message": "Traduire cette page"
   },
   "lblTranslate": {
-    "message": "Voulez-vous traduire cette page?"
+    "message": "Traduire cette page ?"
   },
   "lblTranslating": {
-    "message": "Traduction en cours ..."
+    "message": "Traduction en cours..."
   },
   "lblTranslated": {
-    "message": "Traduit"
+    "message": "Page traduite"
   },
   "lblError": {
     "message": "Cette page n'a pas pu être traduite"
@@ -81,10 +81,10 @@
     "message": "Ne jamais traduire ces sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Toujours traduire depuis ces langues"
   },
   "optionPopupConfig": {
-    "message": "Afficher le popup mobile"
+    "message": "Afficher la popup sur smartphone"
   },
   "optionPopupAuto": {
     "message": "Automatiquement"
@@ -123,7 +123,7 @@
     "message": "Non"
   },
   "lblUseNewAlgorithm": {
-    "message": "Utiliser le nouvel algorithme de traduction?"
+    "message": "Utiliser le nouvel algorithme de traduction ?"
   },
   "msgYesRecommended": {
     "message": "Oui (recommandé)"
@@ -135,10 +135,10 @@
     "message": "Traduire les pages web - options"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Uniquement quand je clique sur « Traduire ce site »"
+    "message": "Uniquement quand je clique sur \"Traduire ce site\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Vous n'avez ajouté aucun site à cette liste pour l'instant."
+    "message": "Vous n'avez ajouté aucun site à cette liste."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
     "message": "Vous n'avez ajouté aucune langue à cette liste."
@@ -153,13 +153,13 @@
     "message": "Faire un don avec PayPal"
   },
   "lblDarkMode": {
-    "message": "Mode Sombre"
+    "message": "Mode sombre"
   },
   "lblShowReleaseNotes": {
     "message": "Afficher les notes de version lors de la mise à jour"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Afficher le bouton pour traduire le texte sélectionné"
+    "message": "Afficher un bouton pour traduire le texte sélectionné"
   },
   "msgAutomatic": {
     "message": "Automatique"
@@ -192,7 +192,7 @@
     "message": "Style"
   },
   "msgHotkeys": {
-    "message": "Raccourcis clavier"
+    "message": "Raccourcis"
   },
   "lblMakeDonation": {
     "message": "Faire un don"
@@ -246,16 +246,16 @@
     "message": "Ne pas afficher si la langue de la page est inconnue"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Ne pas afficher si la langue du texte sélectionnée est la langue cible"
+    "message": "Ne pas afficher si la langue du texte sélectionné est la langue cible"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Ne pas afficher si la langue du texte sélectionnée est inconnue"
+    "message": "Ne pas afficher si la langue du texte sélectionné est inconnue"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Afficher la traduction en survolant ce site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Afficher la traduction lors du survol du sites Web en $LANGUAGE_NAME$",
+    "message": "Afficher la traduction lors du survol de sites Web en $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Afficher le texte traduit lorsque vous survolez des sites avec ces langues"
+    "message": "Montrer la traduction du texte survolé dans ces langues"
   },
   "msgNoTranslateSelectedText": {
     "message": "Ne pas traduire le texte sélectionné"
@@ -273,7 +273,7 @@
     "message": "Écouter"
   },
   "btnStopListening": {
-    "message": "Arrêter d'écouter"
+    "message": "Arrêter la lecture"
   },
   "btnApply": {
     "message": "Appliquer"
@@ -339,7 +339,7 @@
     "message": "Le fichier semble être corrompu"
   },
   "doYouWantRestoreSettings": {
-    "message": "Voulez-vous réstaurer les paramètres par défaut de l'extension ?"
+    "message": "Voulez-vous restaurer les paramètres par défaut de l'extension ?"
   },
   "lblTtsSpeed": {
     "message": "Vitesse de la synthèse vocale"
@@ -389,7 +389,7 @@
     "message": "Faire un don avec PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Traduire automatiquement en cliquant sur un lien qui vous mène au même domaine que le site actuel"
+    "message": "Traduire automatiquement lorsque que vous cliquez sur un lien menant au même domaine que le site actuel"
   },
   "openNativeShortcutManager": {
     "message": "Ouvrir le gestionnaire de raccourcis natif"
@@ -420,7 +420,7 @@
     "message": "Afficher la popup"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Pour traduire ce document $DOC_TYPE$, il est nécessaire de le convertir en HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Sélectionnez un service pour effectuer cette conversion"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Téléchargement du document en cours..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Envoi du document"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Erreur lors du téléchargement du document"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Ce service ne prend pas en charge les fichiers de plus de $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF à HTML"
   }
 }

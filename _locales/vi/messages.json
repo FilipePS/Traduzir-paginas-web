@@ -369,7 +369,7 @@
     "message": "Dịch trang sang ngôn ngữ nhắm tới"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Bật dịch cho thẻ $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,7 +377,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Không sắp xếp các kết quả của Google Dịch"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Dịch các nội dung động"
@@ -389,16 +389,16 @@
     "message": "Ủng hộ qua PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Tự động dịch khi nhấp vào liên kết đến cùng một tên miền với trang web hiện tại"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Mở trình quản lý phím tắt riêng"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Các phím tắt đặc biệt"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Dịch văn bản đã chọn khi nhấn $SHORTCUT_KEY$ hai lần",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Dịch văn bản ở sau con trỏ chuột khi nhấn $SHORTCUT_KEY$ hai lần",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Dịch trang web bằng cách nhấp một lần vào nút trên thanh địa chỉ. (Để xem cửa sổ bật lên, nhấp chuột phải)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Hiển thị cửa sổ bật lên"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Để dịch tài liệu $DOC_TYPE$, cần phải chuyển đổi nó sang HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -441,7 +441,7 @@
     "message": "Lỗi khi tải tài liệu"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Dịch vụ này không hỗ trợ tập tin lớn hơn $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
