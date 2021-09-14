@@ -433,7 +433,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         let translated = results[i][j] + " "
                         // In some case, results items count is over original node count
                         // Rest results append to last node
-                        if (piecesToTranslateNow[i].length - 1 === j && results[i].length > j) {
+                        if (piecesToTranslateNow[i].nodes.length - 1 === j && results[i].length > j) {
                             const restResults = results[i].slice(j + 1);
                             translated += restResults.join(" ");
                         }
