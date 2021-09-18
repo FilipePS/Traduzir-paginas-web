@@ -1,9 +1,9 @@
 {
   "extensionName": {
-    "message": "Traduzir páginas da web"
+    "message": "Traduzir Páginas Web"
   },
   "extensionDescription": {
-    "message": "Traduza sua página em tempo real usando o Google ou Yandex."
+    "message": "Traduz sua página em tempo real pelo Google ou Yandex."
   },
   "pageActionTitle": {
     "message": "Traduzir esta página"
@@ -12,7 +12,7 @@
     "message": "Traduzir esta página?"
   },
   "lblTranslating": {
-    "message": "Traduzindo..."
+    "message": "Traduzindo…"
   },
   "lblTranslated": {
     "message": "Traduzido"
