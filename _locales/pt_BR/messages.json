@@ -18,10 +18,10 @@
     "message": "Traduzido"
   },
   "lblError": {
-    "message": "Não foi possível traduzir esta página"
+    "message": "Não se pôde traduzir esta página"
   },
   "lblAlwaysTranslate": {
-    "message": "Traduzir sempre do $LANGUAGE_NAME$",
+    "message": "Sempre traduzir do $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Idioma de destino $TARGET_LANGUAGE_NUM$",
+    "message": "Idioma alvo $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,7 +39,7 @@
     }
   },
   "btnReset": {
-    "message": "Resetar"
+    "message": "Redefinir"
   },
   "btnTranslate": {
     "message": "Traduzir"
@@ -63,7 +63,7 @@
     "message": "Nunca traduzir este site"
   },
   "btnChangeLanguages": {
-    "message": "Alterar idiomas"
+    "message": "Mudar idiomas"
   },
   "btnMobileOriginal": {
     "message": "Original"
@@ -78,19 +78,19 @@
     "message": "Doar"
   },
   "optionsNeverTranslate": {
-    "message": "Nunca traduzir esses sites"
+    "message": "Nunca traduzir estes sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "Sempre traduza esses idiomas"
+    "message": "Sempre traduzir estes idiomas"
   },
   "optionPopupConfig": {
-    "message": "Mostrar o popup mobile"
+    "message": "Mostrar a janela móvel"
   },
   "optionPopupAuto": {
-    "message": "Automaticamente"
+    "message": "Automático"
   },
   "optionPopupThreeFingers": {
-    "message": "Quando eu tocar três dedos na tela"
+    "message": "Ao tocar três dedos na tela"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Abrir no yandex translate"
@@ -105,7 +105,7 @@
     "message": "Ajude o desenvolvedor com uma doação"
   },
   "msgTranslateFor": {
-    "message": "Traduzir para o $LANGUAGE_NAME$",
+    "message": "Traduzir para $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,7 +114,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Mostrar a opção de traduzir a pagina no menu de contexto"
+    "message": "Mostrar a opção de traduzir a pagina no menu contextual"
   },
   "msgYes": {
     "message": "Sim"
@@ -135,7 +135,7 @@
     "message": "Traduzir Páginas Web - Opções"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Apenas quando eu clicar em \"Traduzir este site\""
+    "message": "Apenas quando clico em \"Traduzir este site\""
   },
   "msgEmptyListNeverTranslateSites": {
     "message": "Você não adicionou nenhum site a esta lista."
@@ -147,7 +147,7 @@
     "message": "Sempre traduzir este site"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Sempre traduzir esses sites"
+    "message": "Sempre traduzir estes sites"
   },
   "msgDonateWithPaypal": {
     "message": "Doe com o PayPal"
@@ -156,10 +156,10 @@
     "message": "Modo escuro"
   },
   "lblShowReleaseNotes": {
-    "message": "Mostrar notas da verão quando atualizar"
+    "message": "Mostrar notas da versão ao atualizar"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Mostrar o botão para traduzir o texto selecionado"
+    "message": "Mostrar o botão de traduzir o texto selecionado"
   },
   "msgAutomatic": {
     "message": "Automático"
@@ -168,16 +168,16 @@
     "message": "Traduzir o texto selecionado"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Mostrar a opção de traduzir o texto selecionado no menu de contexto"
+    "message": "Mostrar a opção de traduzir o texto selecionado no menu contextual"
   },
   "lblNeverTranslateLangs": {
-    "message": "Nunca traduza esses idiomas"
+    "message": "Nunca traduzir estes idiomas"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Nunca traduza este idioma"
+    "message": "Nunca traduzir este idioma"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Mostrar o texto original ao passar o mouse"
+    "message": "Mostrar texto original ao passar o cursor"
   },
   "msgLanguages": {
     "message": "Idiomas"
@@ -210,7 +210,7 @@
     "message": "Adicionar"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Mostrar tradução ao passar o mouse"
+    "message": "Mostrar texto traduzido ao passar o cursor"
   },
   "lblKeyboardShortcuts": {
     "message": "Atalhos do teclado"
