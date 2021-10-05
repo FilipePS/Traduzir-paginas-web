@@ -105,7 +105,7 @@
     "message": "Auta kehittäjää tekemällä lahjoitus"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Käännä kielelle $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -312,7 +312,7 @@
     "message": "Translation cache"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Käytetty tallennustila:"
   },
   "deleteTranslationCache": {
     "message": "Delete translation cache"
