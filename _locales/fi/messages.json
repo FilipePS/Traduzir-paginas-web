@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Kohdekieli $TARGET_LANGUAGE_NUM$$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -81,7 +81,7 @@
     "message": "Älä käännä näitä sivuja"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Käännä aina nämä kielet"
   },
   "optionPopupConfig": {
     "message": "Näytä työkalupalkki mobiiliversiossa"
