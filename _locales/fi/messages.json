@@ -297,7 +297,7 @@
     "message": "Auta käyttöliittymän kääntämisessä"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Näytä painike osoitepalkissa"
   },
   "lblPageTranslationService": {
     "message": "Page translation service"
@@ -306,31 +306,31 @@
     "message": "Text Translation Service"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Tallennustila"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Käännösvälimuisti"
   },
   "lblStorageUsed": {
     "message": "Käytetty tallennustila:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Poista käännösvälimuisti"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Omat asetukset"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Varmuuskopioi tiedostoon"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Palauta tiedostosta"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Palauta oletusasetukset"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Haluatko poistaa käännösvälimuistin?"
   },
   "doYouWantOverwriteAllSettings": {
     "message": "Do you want to overwrite all existing settings using the backup data?"
@@ -342,7 +342,7 @@
     "message": "Do you want to restore the extension to its default settings?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Tekstistä puheeksi äänen nopeus"
   },
   "lblEnableDeepL": {
     "message": "Enable DeepL as a text translation service"
@@ -354,10 +354,10 @@
     "message": "Include Ctrl or Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Kirjoita kirjain"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Virheellinen yhdistelmä"
   },
   "lblSwitchTranslatedAndOriginal": {
     "message": "Switch between the translated and the original page"
