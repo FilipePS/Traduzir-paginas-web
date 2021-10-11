@@ -81,7 +81,7 @@
     "message": "Ποτέ μην μεταφράζεται αυτός ο ιστότοπος"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Πάντα μετάφραση αυτών των γλωσσών"
   },
   "optionPopupConfig": {
     "message": "Προβολή αναδυόμενου κινητού παραθύρου"
@@ -392,13 +392,13 @@
     "message": "Αυτόματη μετάφραση με κλικ σε σύνδεσμο θα μεταφέρει στον ίδιο τομέα με τον τρέχοντα ιστότοπο"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Άνοιγμα τοπικού διαχειριστή πλήκτρων συντόμευσης"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Ειδικές συντομεύσεις πληκτρολογίου"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Μεταφράστε το επιλεγμένο κείμενο όταν πατήσετε $SHORTCUT_KEY$ δύο φορές",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Μεταφράστε το κείμενο πάνω από το δείκτη του ποντικιού όταν πατήσετε $SHORTCUT_KEY$ δύο φορές",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
