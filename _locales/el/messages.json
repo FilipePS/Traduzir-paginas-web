@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Μεταφράστε τη σελίδα κάνοντας κλικ μία φορά στο κουμπί στη γραμμή διευθύνσεων. (Για να δείτε το αναδυόμενο, δεξί κλικ)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Προβολή αναδυόμενου"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Για να μεταφράσετε αυτό το έγγραφο $DOC_TYPE$ είναι απαραίτητο να το μετατρέψετε σε HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Επιλέξτε μια υπηρεσία για να κάνετε αυτή τη μετατροπή"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Λήψη του εγγράφου..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Αποστολή εγγράφου"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Σφάλμα λήψης εγγράφου"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Η υπηρεσία δεν υποστηρίζει αρχεία μεγαλύτερα από $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF σε HTML"
   }
 }
