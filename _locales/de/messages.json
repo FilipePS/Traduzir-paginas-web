@@ -392,13 +392,13 @@
     "message": "Automatisch übersetzen, wenn Sie auf einen Link klicken, der Sie auf die gleiche Domain bringt wie die aktuelle Seite"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Native Tastenkürzelverwaltung öffnen"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Spezielle Tastenkürzel"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Ausgewählten Text übersetzen, wenn $SHORTCUT_KEY$ zweimal gedrückt wird",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Den Text über dem Mauszeiger übersetzen, wenn $SHORTCUT_KEY$ zweimal gedrückt wird",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -417,10 +417,10 @@
     "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Pop-up anzeigen"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Um dieses Dokument $DOC_TYPE$ zu übersetzen, muss es in HTML konvertiert werden",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Wähle einen Dienst für diese Konvertierung"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Dokument herunterladen..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Dokument senden"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Fehler beim Herunterladen des Dokuments"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Dieser Dienst unterstützt keine Dateien, die größer als $FILE_SIZE$ sind",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF zu HTML"
   }
 }
