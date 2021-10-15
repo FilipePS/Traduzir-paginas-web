@@ -414,7 +414,7 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Die Seite übersetzen, wenn einmal auf den Button in der Adressleiste geklickt wird. (Um das Popup zu sehen, rechts-klicken)"
   },
   "btnShowPopup": {
     "message": "Pop-up anzeigen"
