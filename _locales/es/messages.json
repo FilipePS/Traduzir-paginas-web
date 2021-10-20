@@ -348,7 +348,7 @@
     "message": "Activar DeepL como servicio de traducción de texto"
   },
   "enterShortcut": {
-    "message": "Escriba un acceso directo"
+    "message": "Escriba un atajo"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "Incluya Ctrl o Alt"
