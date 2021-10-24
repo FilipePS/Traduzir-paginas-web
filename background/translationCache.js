@@ -35,10 +35,9 @@ translationCache.bing = {}
 	function getDatabaseSize(dbName) {
 		return new Promise(resolve => {
 			const request = indexedDB.open(dbName)
-			let db
 			request.onerror = event => console.error(event)
 			request.onsuccess = event => {
-				db = event.target.result
+				let db = event.target.result;
 				const tableNames = [ ...db.objectStoreNames ];
 				((tableNames, db) => {
 					const tableSizeGetters = tableNames.reduce((acc, tableName) => {
@@ -51,7 +50,6 @@ translationCache.bing = {}
 						resolve(total)
 					}).catch(e => {
 						console.error(e)
-						reject()
 					})
 				})(tableNames, db);
 			}
@@ -76,8 +74,7 @@ translationCache.bing = {}
 		const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
 		const hashBuffer = await crypto.subtle.digest('SHA-1', msgUint8); // hash the message
 		const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
-		const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
-		return hashHex;
+		return hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
 	}
 	
 	const cache = {}
@@ -123,8 +120,6 @@ translationCache.bing = {}
 			case "bingCache":
 				db.bing = db_
 				break;
-			default:
-				break
 		}
 	}
 	
@@ -139,7 +134,7 @@ translationCache.bing = {}
 		
 		request.onerror = event => console.error("Error opening the database, switching to non-database mode", event)
 		
-		request.onupgradeneeded = function (event) {
+		request.onupgradeneeded = function () {
 			const db = this.result
 			
 			for (const langCode in twpLang.languages["en"]) {
@@ -155,8 +150,7 @@ translationCache.bing = {}
 	function queryInDB(db, objectName, keyPath) {
 		return new Promise((resolve, reject) => {
 			if (!db) {
-				reject()
-				return
+				return reject()
 			}
 			
 			const objectStore = db.transaction([ objectName ], "readonly").objectStore(objectName)
@@ -167,7 +161,7 @@ translationCache.bing = {}
 				reject(event)
 			}
 			
-			request.onsuccess = event => {
+			request.onsuccess = () => {
 				const result = request.result
 				resolve(result)
 			}
@@ -177,8 +171,7 @@ translationCache.bing = {}
 	function addInDb(db, objectName, data) {
 		return new Promise((resolve, reject) => {
 			if (!db) {
-				reject()
-				return
+				return reject()
 			}
 			
 			const objectStore = db.transaction([ objectName ], "readwrite").objectStore(objectName)
@@ -189,7 +182,7 @@ translationCache.bing = {}
 				reject(event)
 			}
 			
-			request.onsuccess = function (event) {
+			request.onsuccess = () => {
 				resolve(this.result)
 			}
 		})
@@ -227,11 +220,10 @@ translationCache.bing = {}
 		const cache = getCache(translationService)
 		if (!cache) return false
 		
-		let translations
 		if (cache[targetLanguage]) {
 			cache[targetLanguage].set(source, translated)
 		} else {
-			translations = new Map()
+			let translations = new Map();
 			translations.set(source, translated)
 			cache[targetLanguage] = translations
 		}
@@ -240,7 +232,7 @@ translationCache.bing = {}
 		
 		if (db) {
 			try {
-				addInDb(db, targetLanguage, {
+				await addInDb(db, targetLanguage, {
 					key: await stringToSHA1String(source),
 					source,
 					translated
@@ -268,12 +260,12 @@ translationCache.bing = {}
 		return new Promise(resolve => {
 			const DBDeleteRequest = indexedDB.deleteDatabase(name)
 			
-			DBDeleteRequest.onerror = event => {
+			DBDeleteRequest.onerror = () => {
 				console.warn("Error deleting database.")
 				resolve()
 			}
 			
-			DBDeleteRequest.onsuccess = event => {
+			DBDeleteRequest.onsuccess = () => {
 				console.info("Database deleted successfully")
 				resolve()
 			}
@@ -320,7 +312,7 @@ translationCache.bing = {}
 			promiseCalculatingStorage.then(results => {
 				promiseCalculatingStorage = null
 				sendResponse(humanReadableSize(results.reduce((total, num) => total + num)))
-			}).catch(e => {
+			}).catch(() => {
 				promiseCalculatingStorage = null
 				sendResponse(humanReadableSize(0))
 			})
