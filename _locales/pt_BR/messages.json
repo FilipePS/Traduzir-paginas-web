@@ -441,7 +441,7 @@
     "message": "Erro ao baixar o documento"
   },
   "msgFileLargerThan": {
-    "message": "Este serviço não oferece suporte a arquivos maiores que $FILE_SIZE$",
+    "message": "Este serviço não aceita arquivos maiores que $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
