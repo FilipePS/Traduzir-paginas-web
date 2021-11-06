@@ -6,10 +6,10 @@
     "message": "صفحه‌ی خود را بی‌درنگ با استفاده از Google یا Yandex ترجمه کنید."
   },
   "pageActionTitle": {
-    "message": "این صفحه را ترجمه کن"
+    "message": "ترجمه این صفحه"
   },
   "lblTranslate": {
-    "message": "این صفحه ترجمه شود؟"
+    "message": "این صفحه ترجمه شود ؟"
   },
   "lblTranslating": {
     "message": "در حال ترجمه ..."
@@ -159,7 +159,7 @@
     "message": "نمایش یادداشت های انتشار هنگام به روز رسانی"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "نمایش دکمه‌ی ترجمه‌ی متن انتخاب شده"
+    "message": "نمایش دکمه‌ ای جهت ترجمه‌ متن انتخاب شده"
   },
   "msgAutomatic": {
     "message": "خودکار"
