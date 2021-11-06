@@ -93,7 +93,7 @@
     "message": "Al tocar con tres dedos la pantalla"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Abrir en traductor de yandex"
+    "message": "Abrir en traductor de Yandex"
   },
   "lblOthers": {
     "message": "Otros"
@@ -132,7 +132,7 @@
     "message": "No (usar widgets)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Opciones"
+    "message": "Traducir páginas web - Opciones"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
     "message": "Sólo cuando haga clic en \"Traducir este sitio\""
@@ -141,10 +141,10 @@
     "message": "No has añadido ningún sitio a esta lista."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "No has añadido ningún sitio a esta lista."
+    "message": "No has añadido ningún idioma a esta lista."
   },
   "btnAlwaysTranslate": {
-    "message": "Siempre traducir este sitio"
+    "message": "Traducir siempre este sitio"
   },
   "lblAlwaysTranslateSites": {
     "message": "Traducir siempre estos sitios"
