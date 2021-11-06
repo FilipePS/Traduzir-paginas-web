@@ -81,7 +81,7 @@
     "message": "Nikdy tyto stránky nepřekládat"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Vždy překládat tyto jazyky"
   },
   "optionPopupConfig": {
     "message": "Zobrazit mobilní vyskakovací okno"
@@ -392,13 +392,13 @@
     "message": "Automaticky přeložit při kliknutí na odkaz, který vás přesune na stejnou doménu jako aktuální web"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Otevřít nativního správce zkratek"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Speciální klávesové zkratky"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Přeložit vybraný text dvojím stisknutím $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Přeložit text přes kurzor myši po dvojím stisknutí $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Stránku přeložíte jedním kliknutím na tlačítko v adresním řádku. (Chcete-li zobrazit vyskakovací okno, klikněte pravým tlačítkem myši)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Zobrazit vyskakovací okno"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Chcete-li přeložit tento dokument $DOC_TYPE$, je nutné jej převést na HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Vyberte službu pro provedení této konverze"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Stahuji dokument..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Odeslat dokument"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Chyba při stahování dokumentu"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Tato služba nepodporuje soubory větší než $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF do HTML"
   }
 }

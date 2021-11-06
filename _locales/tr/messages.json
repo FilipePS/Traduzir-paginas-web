@@ -9,16 +9,16 @@
     "message": "Bu sayfayı çevir"
   },
   "lblTranslate": {
-    "message": "Bu sayfa çevirilsin mi?"
+    "message": "Bu sayfa çevrilsin mi?"
   },
   "lblTranslating": {
-    "message": "Çeviriliyor ..."
+    "message": "Çevriliyor ..."
   },
   "lblTranslated": {
-    "message": "Çevirildi"
+    "message": "Çevrildi"
   },
   "lblError": {
-    "message": "Bu sayfa çevirilemedi"
+    "message": "Bu sayfa çevrilemedi"
   },
   "lblAlwaysTranslate": {
     "message": "$LANGUAGE_NAME$ dilini her zaman çevir",
@@ -48,7 +48,7 @@
     "message": "Seçenekler"
   },
   "btnRestore": {
-    "message": "Orijinali göster"
+    "message": "Orijinalini göster"
   },
   "btnTryAgain": {
     "message": "Yeniden dene"
@@ -87,7 +87,7 @@
     "message": "Mobil açılır pencereyi göster"
   },
   "optionPopupAuto": {
-    "message": "Otomatik olarak"
+    "message": "Otomatikmen"
   },
   "optionPopupThreeFingers": {
     "message": "Ekrana üç parmağımla dokunduğumda"
@@ -99,10 +99,10 @@
     "message": "Diğerleri"
   },
   "btnMoreOptions": {
-    "message": "Diğer seçenekler"
+    "message": "Daha fazla seçenek"
   },
   "lblPlsDonate": {
-    "message": "Geliştiriciye bağış yap"
+    "message": "Geliştiriciye bağış yaparak yardımcı ol"
   },
   "msgTranslateFor": {
     "message": "$LANGUAGE_NAME$ diline çevir",
@@ -129,13 +129,13 @@
     "message": "Evet (önerilen)"
   },
   "msgNoUseWidgets": {
-    "message": "Hayır (pencere araçları kullan)"
+    "message": "Hayır (widgetleri kullan)"
   },
   "optionsPageTitle": {
     "message": "Web Sayfalarını Çevir - Seçenekler"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Sadece \"Bu Siteyi Çevir\" butonuna tıkladığımda"
+    "message": "Sadece \"Bu siteyi çevir\" butonuna tıkladığımda"
   },
   "msgEmptyListNeverTranslateSites": {
     "message": "Bu listeye herhangi bir site eklemediniz."
@@ -177,7 +177,7 @@
     "message": "Bu dili asla çevirme"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Fareyle üzerine gelindiğinde orijinal metni göster"
+    "message": "Üzerine gelindiğinde orijinal metni göster"
   },
   "msgLanguages": {
     "message": "Diller"
@@ -201,7 +201,7 @@
     "message": "Sürüm notları"
   },
   "lblReport": {
-    "message": "Sorun bildir"
+    "message": "Bir sorun bildir"
   },
   "lblSettings": {
     "message": "Ayarlar"
@@ -228,7 +228,7 @@
     "message": "Bu dili her zaman çevir"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Bu sitelerde gezinirken çevrilmiş metni göster"
+    "message": "Bu sitelerde üzerine gelindiğinde çevrilmiş metni göster"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Site çevrildiğinde pop-up simgesini mavi yapın"
@@ -252,7 +252,7 @@
     "message": "Seçili metin dili bilinmiyorsa gösterme"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Bu sitenin üzerine geldiğinizde çeviriyi göster"
+    "message": "Bu sitede üzerine gelindiğinde çeviriyi göster"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "$LANGUAGE_NAME$ dilindeki web sitelerinin üzerine gelindiğinde çeviriyi göster",

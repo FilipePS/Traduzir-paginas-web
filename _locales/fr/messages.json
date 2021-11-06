@@ -21,7 +21,7 @@
     "message": "Cette page n'a pas pu être traduite"
   },
   "lblAlwaysTranslate": {
-    "message": "Toujours traduire depuis $LANGUAGE_NAME$",
+    "message": "Toujours traduire les pages en $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

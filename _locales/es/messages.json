@@ -81,7 +81,7 @@
     "message": "Nunca traducir estos sitios"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Traducir siempre estos idiomas"
   },
   "optionPopupConfig": {
     "message": "Mostrar la ventana emergente móvil"
@@ -93,7 +93,7 @@
     "message": "Al tocar con tres dedos la pantalla"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Abrir en traductor de yandex"
+    "message": "Abrir en traductor de Yandex"
   },
   "lblOthers": {
     "message": "Otros"
@@ -132,7 +132,7 @@
     "message": "No (usar widgets)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Opciones"
+    "message": "Traducir páginas web - Opciones"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
     "message": "Sólo cuando haga clic en \"Traducir este sitio\""
@@ -141,10 +141,10 @@
     "message": "No has añadido ningún sitio a esta lista."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "No has añadido ningún sitio a esta lista."
+    "message": "No has añadido ningún idioma a esta lista."
   },
   "btnAlwaysTranslate": {
-    "message": "Siempre traducir este sitio"
+    "message": "Traducir siempre este sitio"
   },
   "lblAlwaysTranslateSites": {
     "message": "Traducir siempre estos sitios"
@@ -348,7 +348,7 @@
     "message": "Activar DeepL como servicio de traducción de texto"
   },
   "enterShortcut": {
-    "message": "Escriba un acceso directo"
+    "message": "Escriba un atajo"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "Incluya Ctrl o Alt"
@@ -420,7 +420,7 @@
     "message": "Mostrar ventana emergente"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Para traducir este documento $DOC_TYPE$ es necesario convertirlo a HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Seleccione un servicio para realizar esta conversión"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Descargando el documento..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Enviar documento"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Error al descargar el documento"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Este servicio no soporta archivos mayores a $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF a HTML"
   }
 }
