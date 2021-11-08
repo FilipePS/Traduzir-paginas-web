@@ -182,7 +182,7 @@ translationCache.bing = {}
 				reject(event)
 			}
 			
-			request.onsuccess = () => {
+			request.onsuccess = function (event) {
 				resolve(this.result)
 			}
 		})
@@ -193,14 +193,17 @@ translationCache.bing = {}
 		let translations = cache[targetLanguage]
 		
 		if (translations && translations.has(source)) return translations.get(source)
-		else cache[targetLanguage] = new Map()
+		else {
+			cache[targetLanguage] = new Map()
+			translations = cache[targetLanguage]
+		}
 		
 		const db = getDB(translationService)
 		if (db) {
 			try {
 				const transInfo = await queryInDB(db, targetLanguage, await stringToSHA1String(source))
 				if (transInfo) {
-					translations.push(transInfo)
+					translations.set(source, transInfo.translated)
 					return transInfo.translated
 				}
 				//TODO RETURN AQUI DA LENTIDAO
@@ -232,7 +235,7 @@ translationCache.bing = {}
 		
 		if (db) {
 			try {
-				await addInDb(db, targetLanguage, {
+				addInDb(db, targetLanguage, {
 					key: await stringToSHA1String(source),
 					source,
 					translated
