@@ -33,11 +33,11 @@ translationCache.bing = {}
 	}
 	
 	function getDatabaseSize(dbName) {
-		return new Promise(resolve => {
+		return new Promise((resolve, reject) => {
 			const request = indexedDB.open(dbName)
 			request.onerror = event => console.error(event)
 			request.onsuccess = event => {
-				let db = event.target.result;
+				const db = event.target.result;
 				const tableNames = [ ...db.objectStoreNames ];
 				((tableNames, db) => {
 					const tableSizeGetters = tableNames.reduce((acc, tableName) => {
@@ -50,6 +50,7 @@ translationCache.bing = {}
 						resolve(total)
 					}).catch(e => {
 						console.error(e)
+						reject()
 					})
 				})(tableNames, db);
 			}
@@ -192,8 +193,9 @@ translationCache.bing = {}
 		const cache = getCache(translationService)
 		let translations = cache[targetLanguage]
 		
-		if (translations && translations.has(source)) return translations.get(source)
-		else {
+		if (translations && translations.has(source)) {
+			return translations.get(source)
+		} else {
 			cache[targetLanguage] = new Map()
 			translations = cache[targetLanguage]
 		}
