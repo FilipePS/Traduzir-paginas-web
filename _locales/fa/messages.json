@@ -291,85 +291,85 @@
     "message": "سرویس ترجمه"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "استفاده از رابط قدیمی پنجره‌ی بالاپر"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "رابط را ترجمه کنید"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "نمایش دکمه در نوار آدرس"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "سرویس ترجمه‌ی صفحه"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "سرویس ترجمه•ی متن"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "مخزن"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "حافظه‌ی پنهان ترجمه"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "فضای استفاده شده:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "حذف حافظه‌ی پنهان ترجمه"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "تنظیمات شخصی"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "ذخیره‌ی پشتیبان در فایل"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "بازیابی از فایل"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "بازگرداندن تنظیمات پیش فرض"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "آیا می خواهید کش ترجمه را حذف کنید؟"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "آیا می خواهید همه تنظیمات موجود را با استفاده از داده های پشتیبان بازنویسی کنید؟"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "به نظر می رسد فایل خراب است"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "آیا می خواهید افزونه را به تنظیمات پیش فرض خود بازگردانید؟"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "سرعت تبدیل متن به گفتار"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "فعال کردن DeepL به عنوان سرویس ترجمه متن "
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "یک میانبر تایپ کنید"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "شامل Ctrl یا Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "یک حرف تایپ کنید"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "ترکیب نامعتبر"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "جابجایی بین صفحه ترجمه شده و اصلی"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "بازگرداندن صفحه به حالت اصلی"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "ترجمه‌ی صفحه به زبان مقصد"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "فعال کردن ترجمه برای برچسب $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "نتایج گوگل ترنسلیت را مرتب نکن"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "محتوای ایجاد شده به صورت پویا را ترجمه کن"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "محاسبه"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "کمک مالی با پی پال"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "با کلیک بر روی پیوندی که شما را به همان دامنه سایت فعلی می برد، به صورت خودکار ترجمه کنید"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "مدیر کلید میانبر بومی را باز کنید"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "میانبرهای ویژه صفحه کلید"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "با دوبار فشار دادن $SHORTCUT_KEY$، متن انتخابی را ترجمه کنید",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "با دو بار فشار دادن $SHORTCUT_KEY$، متن را روی نشانگر ماوس ترجمه کنید",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "با یک بار کلیک کردن روی دکمه در نوار آدرس، صفحه را ترجمه کنید.  (برای دیدن پاپ آپ کلیک راست کنید)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "نمایش پنجره بازشو"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "برای ترجمه این سند $DOC_TYPE$ لازم است آن را به اچ•تی•ام•ال تبدیل کنید",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "سرویسی را برای انجام این تبدیل انتخاب کنید"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "در حال بارگیری سند..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "ارسال سند"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "خطا در بارگیری سند"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "این سرویس از فایل های بزرگتر از $FILE_SIZE$ پشتیبانی نمی کند",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "تبدیل پی‌دی‌اف به اچ‌تی‌ام‌ال"
   }
 }
