@@ -435,7 +435,7 @@
     "message": "Downloading the document..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "傳送文件"
   },
   "msgErrorDownloadingDocument": {
     "message": "Error downloading document"
