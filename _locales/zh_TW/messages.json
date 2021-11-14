@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "按兩次 $SHORTCUT_KEY$ 時，翻譯鼠標指針上的文字",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,7 +414,7 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "透過點擊網址欄中的按鈕來翻譯網頁。 (要顯示彈出視窗則點擊右鍵)"
   },
   "btnShowPopup": {
     "message": "顯示彈出式視窗"
