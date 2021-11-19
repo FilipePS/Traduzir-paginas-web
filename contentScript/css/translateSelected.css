@@ -1,23 +1,24 @@
+* {
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0);
+}
+
 #eDivResult {
     all: initial;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     font-style: normal;
     font-variant: normal;
     line-height: normal;
     font-size: 12px;
     font-weight: 500;
-
-    z-index: 2147483647;
     position: fixed;
-    border-radius: 5px;
-    top: 0px;
-    left: 0px;
-    background-color: white;
-    color: black;
-    border: 1px solid grey;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    color: white;
     visibility: visible;
     opacity: 1;
     display: none;
+    z-index: 2;
 }
 
 #eSelTextTrans,
@@ -43,8 +44,8 @@
     background-image: url("/icons/icon-32.png");
     width: 22px;
     height: 22px;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     cursor: pointer;
     visibility: visible;
     opacity: 1;
@@ -52,7 +53,7 @@
 }
 
 ul {
-    margin: 0px;
+    margin: 0;
     padding: 3px;
     list-style-type: none;
     overflow: hidden;
@@ -60,17 +61,21 @@ ul {
 }
 
 li {
-    margin: 3px;
+    margin: 5px;
     float: left;
     cursor: pointer;
     text-align: center;
+    vertical-align: middle;
     padding: 4px 6px;
-    border-radius: 6px;
-    box-shadow: 0 0 2px 0px #999;
+    border-radius: 5px;
+    box-shadow: 0 0 3px -2px black;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    transition: 0.2s;
 }
 
 li:hover {
-    background-color: #ccc;
+    transform: translateY(-1px);
 }
 
 #moreOrLess {
@@ -78,25 +83,30 @@ li:hover {
     cursor: pointer;
     text-align: center;
     padding: 4px 6px;
-    border-radius: 6px;
-    box-shadow: 0 0 2px 0px #999;
+    border-radius: 5px;
+    box-shadow: 0 0 3px -2px black;
+    background-color: rgba(0, 0, 0, 0.4);
     max-height: 16px;
+    border: none;
+    transition: 0.2s;
 }
 
 #moreOrLess:hover {
-    background-color: #ccc;
+    transform: translateY(-1px);
 }
 
 hr {
-    border: 1px solid #ddd;
+    width: 90%;
+    border: 1px black solid;
 }
 
 .selected {
-    background-color: #ccc;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
 }
 
 .arrow {
-    border: solid black;
+    border: solid white;
     border-width: 0 1px 1px 0;
     display: inline-block;
     padding: 3px;
@@ -132,8 +142,4 @@ hr {
 #listen {
     padding-top: 6px;
     padding-bottom: 2px;
-}
-
-#listen svg {
-    enable-background: new 0 0 93.038 93.038;
 }
