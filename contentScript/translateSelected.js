@@ -230,13 +230,13 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
                         background-color: rgba(0, 0, 0, 0.5);
                     }
                     li {
-                    	background-color: rgba(0, 0, 0, 0.4);
+                    	background-color: rgba(255, 255, 255, 0.1);
                     }
                     .selected {
-                    	background-color: rgba(0, 0, 0, 0.7);
+                    	background-color: rgba(255, 255, 255, 0.3);
                     }
                     #moreOrLess {
-                		background-color: rgba(0, 0, 0, 0.4);
+                		background-color: rgba(255, 255, 255, 0.1);
             		}
             		hr {
             			border: 1px black solid;
