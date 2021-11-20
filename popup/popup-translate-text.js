@@ -20,60 +20,6 @@ twpConfig.onReady(function () {
     let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
     let currentTextTranslatorService = twpConfig.get("textTranslatorService")
 
-    function enableDarkMode() {
-        if (!document.getElementById("darkModeElement")) {
-            const el = document.createElement("style")
-            el.setAttribute("id", "darkModeElement")
-            el.setAttribute("rel", "stylesheet")
-            el.textContent = `
-            * {
-                scrollbar-color: #202324 #454a4d;
-            }
-            body {
-                color: rgb(231, 230, 228) !important;
-                background-color: #181a1b !important;
-            }
-            hr {
-                border-color: #666;
-            }
-            li:hover {
-                color: rgb(231, 230, 228) !important;
-                background-color: #454a4d !important;
-            }
-            .selected {
-                background-color: #454a4d !important;
-            }
-            `
-            document.body.appendChild(el)
-            document.querySelector("#listen svg").style = "fill: rgb(231, 230, 228)"
-        }
-    }
-
-    function disableDarkMode() {
-        if (document.getElementById("#darkModeElement")) {
-            document.getElementById("#darkModeElement").remove()
-            document.querySelector("#listen svg").style = "fill: black"
-        }
-    }
-
-    switch (twpConfig.get("darkMode")) {
-        case "auto":
-            if (matchMedia("(prefers-color-scheme: dark)").matches) {
-                enableDarkMode()
-            } else {
-                disableDarkMode()
-            }
-            break
-        case "yes":
-            enableDarkMode()
-            break
-        case "no":
-            disableDarkMode()
-            break
-        default:
-            break
-    }
-
     let audioDataUrls = null
     let isPlayingAudio = false
 
@@ -95,7 +41,18 @@ twpConfig.onReady(function () {
     const sYandex = document.getElementById("sYandex")
     const sBing = document.getElementById("sBing")
     const sDeepL = document.getElementById("sDeepL")
-
+    const eCopy = document.getElementById("copy")
+    const eListen = document.getElementById("listen")
+    
+    eCopy.onclick = () => {
+        navigator.clipboard.writeText(eTextTranslated.textContent).then(() => {
+            eCopy.style.backgroundColor = "rgba(0, 255, 0, 0.4)"
+            setTimeout(() => {
+                eCopy.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
+            }, 500)
+        })
+    }
+    
     function setCaretAtEnd() {
         const el = eOrigText
         const range = document.createRange()
@@ -106,7 +63,7 @@ twpConfig.onReady(function () {
         sel.addRange(range)
         el.focus()
     }
-
+    
     let translateNewInputTimerHandler
     eOrigText.oninput = () => {
         clearTimeout(translateNewInputTimerHandler)
@@ -179,8 +136,7 @@ twpConfig.onReady(function () {
             e.target.classList.add("selected")
         }
     }
-
-    const eListen = document.getElementById("listen")
+    
     eListen.classList.remove("selected")
     eListen.onclick = () => {
         const msgListen = chrome.i18n.getMessage("btnListen")
