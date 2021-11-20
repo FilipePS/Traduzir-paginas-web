@@ -69,7 +69,6 @@ li {
     padding: 4px 6px;
     border-radius: 5px;
     box-shadow: 0 0 3px -2px black;
-    background-color: rgba(0, 0, 0, 0.4);
     border: none;
     transition: 0.2s;
 }
@@ -85,7 +84,6 @@ li:hover {
     padding: 4px 6px;
     border-radius: 5px;
     box-shadow: 0 0 3px -2px black;
-    background-color: rgba(0, 0, 0, 0.4);
     max-height: 16px;
     border: none;
     transition: 0.2s;
@@ -97,11 +95,9 @@ li:hover {
 
 hr {
     width: 90%;
-    border: 1px black solid;
 }
 
 .selected {
-    background-color: rgba(0, 0, 0, 0.6);
     border: none;
 }
 
