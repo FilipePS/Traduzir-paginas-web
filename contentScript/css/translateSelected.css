@@ -26,13 +26,20 @@
     padding: 14px;
     font-size: 16px;
     max-width: 360px;
-    max-height: 260px;
+    max-height: 250px;
     overflow: auto;
     white-space: pre-wrap;
+    min-height: 25px;
 }
 
 #eOrigText {
     outline: none;
+    max-width: 240px;
+}
+
+#eSelTextTrans {
+    float: left;
+    width: 200px;
 }
 
 #eButtonTransSelText {
@@ -61,8 +68,8 @@ ul {
 }
 
 li {
-    margin: 5px;
     float: left;
+    margin: 5px;
     cursor: pointer;
     text-align: center;
     vertical-align: middle;
@@ -72,6 +79,8 @@ li {
     border: none;
     transition: 0.2s;
 }
+
+
 
 li:hover {
     transform: translateY(-1px);
@@ -121,6 +130,7 @@ hr {
 }
 
 #drag {
+    width: 275px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
