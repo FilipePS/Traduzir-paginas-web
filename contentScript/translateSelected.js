@@ -206,6 +206,18 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
                         backdrop-filter: none;
                         background-color: rgba(0, 0, 0, 0.85);
                     }
+                    li {
+                    	background-color: rgba(255, 255, 255, 0.1);
+                    }
+                    .selected {
+                    	background-color: rgba(255, 255, 255, 0.4);
+                    }
+                    #moreOrLess {
+                		background-color: rgba(255, 255, 255, 0.1);
+            		}
+            		hr {
+            			border: 1px rgba(255, 255, 255, 0.5) solid;
+            		}
                 `
             shadowRoot.appendChild(el)
         }else{
@@ -217,6 +229,18 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
                         backdrop-filter: blur(3px);
                         background-color: rgba(0, 0, 0, 0.5);
                     }
+                    li {
+                    	background-color: rgba(0, 0, 0, 0.4);
+                    }
+                    .selected {
+                    	background-color: rgba(0, 0, 0, 0.7);
+                    }
+                    #moreOrLess {
+                		background-color: rgba(0, 0, 0, 0.4);
+            		}
+            		hr {
+            			border: 1px black solid;
+            		}
                 `
             shadowRoot.appendChild(el)
         }
@@ -240,9 +264,10 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
         
         eCopy.onclick = () => {
             navigator.clipboard.writeText(eSelTextTrans.textContent).then(() => {
+				const oldBackgroundColor = eCopy.style.backgroundColor
                 eCopy.style.backgroundColor = "rgba(0, 255, 0, 0.4)"
                 setTimeout(() => {
-                    eCopy.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
+                    eCopy.style.backgroundColor = oldBackgroundColor
                 }, 500)
             })
         }
