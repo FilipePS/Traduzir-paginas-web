@@ -1,15 +1,16 @@
-const sectionSelect = document.getElementById("sectionSelect")
-const sectionDownload = document.getElementById("sectionDownload")
-
-const progress = document.getElementById("progress")
 const send = document.getElementById("send")
-const tryAgain = document.getElementById("tryAgain")
-
+const error = document.getElementById("error")
 const selectService = document.getElementById("selectService")
-selectService.onclick = e => {
-    sectionSelect.style.display = "none"
-    sectionDownload.style.display = "block"
+const pleaseWait = document.getElementById("selectService")
+const googleTranslate = document.getElementById("googletranslate")
+const cannotUseGoogle = document.getElementById("cannotusegoogle")
+const cannotTranslate = document.getElementById("cannottranslate")
+const conversion = document.getElementById("conversion")
+const conversionAlert = document.getElementById("conversionalert")
 
+selectService.onclick = e => {
+    selectService.style.display = "none"
+    pleaseWait.style.display = "block"
     chrome.tabs.query({active: true, currentWindow: true}, async tabs => {
         try {
             const service = e.target.dataset.name
@@ -19,32 +20,27 @@ selectService.onclick = e => {
                 } else {
                     chrome.tabs.create({url: "https://translatewebpages.org/"})
                 }
-                window.close()
-                return
+                return window.close()
             }
             const data = await downloadDocument(tabs[0].url)
-            convertDocument(service, data)
+            pleaseWait.style.display = "none"
+            if (data.byteLength > 1048576 && service == "google") {
+                googleTranslate.style.display = "none"
+                cannotUseGoogle.style.display = "block"
+                cannotUseGoogle.innerHTML = chrome.i18n.getMessage("msgFileLargerThan", "10 MB")
+                selectService.style.display = "block"
+            } else {
+                convertDocument(service, data)
+            }
         } catch (e) {
             console.error(e)
-            showError(chrome.i18n.getMessage("msgErrorDownloadingDocument")) // "Error downloading document"
+            selectService.style.display = "none"
+            conversion.style.display = "none"
+            conversionAlert.style.display = "none"
+            pleaseWait.style.display = "none"
+            cannotTranslate.style.display = "block"
         }
     })
-}
-
-tryAgain.onclick = e => {
-    progress.textContent = "0%"
-    tryAgain.style.display = "none"
-    error.style.display = "none"
-    send.style.display = "none"
-
-    sectionDownload.style.display = "none"
-    sectionSelect.style.display = "block"
-}
-
-function showError(msg) {
-    error.textContent = msg
-    error.style.display = "block"
-    tryAgain.style.display = "block"
 }
 
 function downloadDocument(url) {
@@ -55,13 +51,18 @@ function downloadDocument(url) {
         http.onprogress = e => {
             if (e.lengthComputable) {
                 const percentComplete = (e.loaded / e.total) * 100;
-                progress.textContent = percentComplete.toFixed(1) + "%"
+                pleaseWait.innerHTML = "Please wait, " + percentComplete.toFixed(1) + "%"
             }
         }
         http.onload = e => {
             resolve(e.target.response)
         }
         http.onerror = e => {
+            selectService.style.display = "none"
+            conversion.style.display = "none"
+            conversionAlert.style.display = "none"
+            pleaseWait.style.display = "none"
+            cannotTranslate.style.display = "block"
             reject(e)
         }
         http.send()
@@ -69,22 +70,17 @@ function downloadDocument(url) {
 }
 
 function convertDocument(service, data) {
-    if (service === "google" && data.byteLength > 1048576) {
-        showError(chrome.i18n.getMessage("msgFileLargerThan", "10 MB")) // "This service does not support files larger than 10 MB"
-        return
-    }
-
     const file = new File([data], "document.pdf",{type:"application/pdf", lastModified: new Date().getTime()});
     const container = new DataTransfer();
     container.items.add(file)
-
     const myForm = document.getElementById("form_" + service)
     myForm.querySelector('[type="file"]').files = container.files
-
+    conversion.style.display = "none"
+    conversionAlert.style.display = "none"
+    pleaseWait.style.display = "none"
     send.style.display = "block"
-
     send.onclick = e => {
-        myForm.querySelector('[type="submit"').click()
+        myForm.querySelector('[type="submit"]').click()
         window.close()
     }
 }
@@ -93,24 +89,31 @@ function convertDocument(service, data) {
 
 $ = document.querySelector.bind(document)
 
-function enableDarkMode() {
-    if (!$("#darkModeElement")) {
+function disableDarkMode() {
+    if (!$("#lightModeElement")) {
         const el = document.createElement("style")
-        el.setAttribute("id", "darkModeElement")
+        el.setAttribute("id", "lightModeElement")
         el.setAttribute("rel", "stylesheet")
         el.textContent = `
         body {
-            color: rgb(231, 230, 228) !important;
-            background-color: #181a1b !important;
+            color: rgb(0, 0, 0);
+            background-color: rgb(224, 224, 224);
+        }
+        .servicebutton, .sendbutton, .title {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .servicebutton:hover, .sendbutton:hover {
+            background-color: rgba(0, 0, 0, 0.4);
         }
         `
         document.head.appendChild(el)
     }
 }
 
-function disableDarkMode() {
-    if ($("#darkModeElement")) {
-        $("#darkModeElement").remove()
+function enableDarkMode() {
+    if ($("#lightModeElement")) {
+        $("#lightModeElement").remove()
     }
 }
 
