@@ -65,11 +65,11 @@ twpConfig.onReady(function () {
 
             .select, #btnApply {
                 color: black;
-                background-color: rgba(0, 0, 0, 0.3);
+                background-color: rgba(0, 0, 0, 0.2);
             }
             
             .select:hover, #btnApply:hover {
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: rgba(0, 0, 0, 0.4);
             }
 
             .mdiv, .md {
