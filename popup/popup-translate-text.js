@@ -19,7 +19,51 @@ twpConfig.onReady(function () {
     let currentTargetLanguages = twpConfig.get("targetLanguages")
     let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
     let currentTextTranslatorService = twpConfig.get("textTranslatorService")
-
+    
+    function disableDarkMode() {
+        if (!document.getElementById("lightModeElement")) {
+            const el = document.createElement("style")
+            el.setAttribute("id", "lightModeElement")
+            el.setAttribute("rel", "stylesheet")
+            el.textContent = `
+            body {
+                color: rgb(0, 0, 0) !important;
+                background-color: rgb(215, 215, 215) !important;
+            }
+            .selected {
+                background-color: rgba(0, 0, 0, 0.6) !important;
+            }
+            `
+            document.body.appendChild(el)
+            document.querySelector("#listen svg").style = "fill: rgb(0, 0, 0)"
+        }
+    }
+    
+    function enableDarkMode() {
+        if (document.getElementById("#lightModeElement")) {
+            document.getElementById("#lightModeElement").remove()
+            document.querySelector("#listen svg").style = "fill: black"
+        }
+    }
+    
+    switch (twpConfig.get("darkMode")) {
+        case "auto":
+            if (matchMedia("(prefers-color-scheme: dark)").matches) {
+                enableDarkMode()
+            } else {
+                disableDarkMode()
+            }
+            break
+        case "yes":
+            enableDarkMode()
+            break
+        case "no":
+            disableDarkMode()
+            break
+        default:
+            break
+    }
+    
     let audioDataUrls = null
     let isPlayingAudio = false
 
