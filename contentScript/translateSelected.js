@@ -149,19 +149,8 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
                     <hr>
                 </div>
                 <div id="eSelTextTrans" dir="auto"></div>
-                <div id="drag">
-                    <ul id="setTargetLanguage">
-                        <li value="en" title="English">en</li>
-                        <li value="es" title="Spanish">es</li>
-                        <li value="de" title="German">de</li>
-                    </ul>
-                    <div id="moreOrLess"><i class="arrow up" id="more"></i><i class="arrow down" id="less"></i></div>
-                    <ul>
-                        <li title="Google" id="sGoogle">g</li>
-                        <li title="Yandex" id="sYandex">y</li>
-                        <li title="Bing" id="sBing">b</li>
-                        <li title="DeepL" id="sDeepL" hidden>d</li>
-                        <li title="Copy" data-i18n-title="btnCopy" id="copy">
+                <div style="float: right">
+                <li title="Copy" data-i18n-title="btnCopy" id="copy">
                             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13 7H7V5H13V7Z" fill="currentColor" />
                             <path d="M13 11H7V9H13V11Z" fill="currentColor" />
@@ -169,6 +158,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M3 19V1H17V5H21V23H7V19H3ZM15 17V3H5V17H15ZM17 7V19H9V21H19V7H17Z" fill="currentColor"/>
                             </svg>
                         </li>
+                        <br>
                         <li title="Listen" data-i18n-title="btnListen" id="listen">
                             <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             width="10px" height="10px" viewBox="0 0 93.038 93.038" xml:space="preserve" style="fill: rgb(255, 255, 255)">
@@ -187,21 +177,35 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
                             </g>
                             </svg>
                         </li>
+                        </div>
+                        <br>
+                <div id="drag">
+                    <ul id="setTargetLanguage">
+                        <li value="en" title="English">en</li>
+                        <li value="es" title="Spanish">es</li>
+                        <li value="de" title="German">de</li>
+                    </ul>
+                    <div id="moreOrLess"><i class="arrow up" id="more"></i><i class="arrow down" id="less"></i></div>
+                    <ul>
+                        <li title="Google" id="sGoogle">g</li>
+                        <li title="Yandex" id="sYandex">y</li>
+                        <li title="Bing" id="sBing">b</li>
+                        <li title="DeepL" id="sDeepL" hidden>d</li>
                     </ul>
                 </div>
             </div>
         `
-        const style = document.createElement("style")
-        style.textContent = styleTextContent
-        shadowRoot.insertBefore(style, shadowRoot.getElementById("eButtonTransSelText"))
+		const style = document.createElement("style")
+		style.textContent = styleTextContent
+		shadowRoot.insertBefore(style, shadowRoot.getElementById("eButtonTransSelText"))
 		
 		dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
 		
-        if (!CSS.supports("backdrop-filter: blur(5px)")) {
-            const el = document.createElement("style")
-            el.setAttribute("id", "backdropFilterElement")
-            el.setAttribute("rel", "stylesheet")
-            el.textContent = `
+		if (!CSS.supports("backdrop-filter: blur(5px)")) {
+			const el = document.createElement("style")
+			el.setAttribute("id", "backdropFilterElement")
+			el.setAttribute("rel", "stylesheet")
+			el.textContent = `
                     #eDivResult {
                         backdrop-filter: none;
                         background-color: rgba(0, 0, 0, 0.85);
@@ -219,12 +223,12 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
             			border: 1px rgba(255, 255, 255, 0.5) solid;
             		}
                 `
-            shadowRoot.appendChild(el)
-        }else{
-            const el = document.createElement("style")
-            el.setAttribute("id", "backdropFilterElement")
-            el.setAttribute("rel", "stylesheet")
-            el.textContent = `
+			shadowRoot.appendChild(el)
+		} else {
+			const el = document.createElement("style")
+			el.setAttribute("id", "backdropFilterElement")
+			el.setAttribute("rel", "stylesheet")
+			el.textContent = `
                     #eDivResult {
                         backdrop-filter: blur(3px);
                         background-color: rgba(0, 0, 0, 0.5);
@@ -242,8 +246,8 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
             			border: 1px black solid;
             		}
                 `
-            shadowRoot.appendChild(el)
-        }
+			shadowRoot.appendChild(el)
+		}
 		
 		eButtonTransSelText = shadowRoot.getElementById("eButtonTransSelText")
 		eDivResult = shadowRoot.getElementById("eDivResult")
@@ -259,18 +263,18 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		const sYandex = shadowRoot.getElementById("sYandex")
 		const sBing = shadowRoot.getElementById("sBing")
 		const sDeepL = shadowRoot.getElementById("sDeepL")
-        const eCopy = shadowRoot.getElementById("copy")
-        const eListen = shadowRoot.getElementById("listen")
-        
-        eCopy.onclick = () => {
-            navigator.clipboard.writeText(eSelTextTrans.textContent).then(() => {
+		const eCopy = shadowRoot.getElementById("copy")
+		const eListen = shadowRoot.getElementById("listen")
+		
+		eCopy.onclick = () => {
+			navigator.clipboard.writeText(eSelTextTrans.textContent).then(() => {
 				const oldBackgroundColor = eCopy.style.backgroundColor
-                eCopy.style.backgroundColor = "rgba(0, 255, 0, 0.4)"
-                setTimeout(() => {
-                    eCopy.style.backgroundColor = oldBackgroundColor
-                }, 500)
-            })
-        }
+				eCopy.style.backgroundColor = "rgba(0, 255, 0, 0.4)"
+				setTimeout(() => {
+					eCopy.style.backgroundColor = oldBackgroundColor
+				}, 500)
+			})
+		}
 		
 		eOrigText.onkeypress = e => {
 			e.stopPropagation()
@@ -362,7 +366,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				e.target.classList.add("selected")
 			}
 		}
-  
+		
 		eListen.onclick = () => {
 			const msgListen = chrome.i18n.getMessage("btnListen")
 			const msgStopListening = chrome.i18n.getMessage("btnStopListening")
