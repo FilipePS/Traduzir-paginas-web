@@ -9,10 +9,8 @@ $("#btnClose").addEventListener("click", () => {
 })
 
 $("#btnApply").addEventListener("click", () => {
-    if (selectTargetLanguage.value != twpConfig.get("targetLanguages")[0]) {
-        twpConfig.setTargetLanguage(selectTargetLanguage.value, true)
-    }
-        window.location = "popup.html"
+    twpConfig.setTargetLanguage(selectTargetLanguage.value, true)
+    window.location = "popup.html"
 })
 
 twpConfig.onReady(function () {
