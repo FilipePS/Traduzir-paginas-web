@@ -46,22 +46,20 @@
     <link rel="stylesheet" href="/w3css/4/w3.css">
 </head>
 <body>
-    <section id="sectionSelect">
-        <div class="title" data-i18n="extensionName">Translate Web Pages</div>
-        <div class="alert" data-i18n="msgToTranslateThisDocument" data-i18n-ph-value="(.pdf)" id="conversionalert">To translate this document (.pdf) it is necessary to convert it to HTML.</div>
-        <div style="text-align: center">
-            <div data-i18n="msgSelectServiceConversion" style="margin-bottom: 10px" id="conversion">Select a service to do this conversion</div>
-            <div data-i18n="msgPleaseWait" style="margin: 47px;display: none" id="pleasewait">Please wait...</div>
-            <div data-i18n="msgCannotTranslate" style="margin: 13px;display: none" id="cannottranslate">Cannot translate this pdf</div>
-            <div id="selectService">
-                <div class="servicebutton" id="translatewebpages" data-name="translatewebpages">Translate Web Pages</div>
-                <div class="servicebutton"  id="googletranslate" data-name="google">Google Translate</div>
-                <div style="margin: 13px;display: none" id="cannotusegoogle"></div>
-            </div>
-            <div id="send" style="display: none;" data-i18n="msgOpenTranslated" class="sendbutton">Open translated PDF</div>
+    <div class="title" data-i18n="extensionName">Translate Web Pages</div>
+    <div class="alert" data-i18n="msgToTranslateThisDocument" data-i18n-ph-value="(.pdf)" id="conversionalert">To translate this document (.pdf) it is necessary to convert it to HTML.</div>
+    <div style="text-align: center;">
+        <div data-i18n="msgSelectServiceConversion" style="margin-bottom: 10px;" id="conversion">Select a service to do this conversion</div>
+        <div data-i18n="msgPleaseWait" style="margin: 10px;display: none;" id="pleasewait">Please wait...</div>
+        <div data-i18n="msgCannotTranslate" style="margin: 13px;display: none;" id="cannottranslate">Cannot translate this pdf</div>
+        <div id="selectService">
+            <div class="servicebutton" id="translatewebpages" data-name="translatewebpages">Translate Web Pages</div>
+            <div class="servicebutton"  id="googletranslate" data-name="google">Google Translate</div>
         </div>
-    </section>
-
+        <div style="margin: 13px;display: none;" id="cannotusegoogle"></div>
+        <div id="send" style="display: none;" data-i18n="msgOpenTranslated" class="sendbutton">Open translated PDF</div>
+    </div>
+    
     <form action="https://translatewebpages.org/pdftohtml" method="POST" target="_blank" enctype="multipart/form-data" id="form_translatewebpages" style="display: none;">
         <input type="text" name="autotranslate" hidden>
         <input type="file" name="file">
