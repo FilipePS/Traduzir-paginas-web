@@ -1,6 +1,6 @@
 "use strict";
 
-var $ = document.querySelector.bind(document)
+let $ = document.querySelector.bind(document);
 
 twpConfig.onReady(function () {
     function backgroundTranslateSingleText(translationService, targetLanguage, source) {
@@ -32,6 +32,10 @@ twpConfig.onReady(function () {
             }
             .selected {
                 background-color: rgba(0, 0, 0, 0.6) !important;
+            }
+            hr {
+                width: 95%;
+                border: 1px rgba(0, 0, 0, 0.75) solid;
             }
             `
             document.body.appendChild(el)
@@ -88,8 +92,10 @@ twpConfig.onReady(function () {
     const eCopy = document.getElementById("copy")
     const eListen = document.getElementById("listen")
     
+    eOrigText.innerHTML =
+    
     eCopy.onclick = () => {
-        navigator.clipboard.writeText(eTextTranslated.textContent).then(() => {
+        navigator.clipboard.writeText(eTextTranslated.textContent).then(async () => {
             eCopy.style.backgroundColor = "rgba(0, 255, 0, 0.4)"
             setTimeout(() => {
                 eCopy.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
@@ -239,14 +245,22 @@ twpConfig.onReady(function () {
         targetLanguageButtons[i].setAttribute("title", twpLang.codeToLanguage(currentTargetLanguages[i]))
     }
 
-    if (currentTextTranslatorService === "yandex") {
-        sYandex.classList.add("selected")
-    } else if (currentTextTranslatorService == "deepl") {
-        sDeepL.classList.add("selected")
-    } else if (currentTextTranslatorService == "bing") {
-        sBing.classList.add("selected")
-    } else {
-        sGoogle.classList.add("selected")
+    switch (currentTextTranslatorService) {
+        case "yandex":
+            sYandex.classList.add("selected")
+            break
+        case "deepl":
+            sDeepL.classList.add("selected")
+            break
+        case "bing":
+            sBing.classList.add("selected")
+            break
+        case "google":
+            sGoogle.classList.add("selected")
+            break
+        default:
+            sGoogle.classList.add("selected")
+            break
     }
 
     if (twpConfig.get("enableDeepL") === "yes") {
