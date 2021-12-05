@@ -92,8 +92,6 @@ twpConfig.onReady(function () {
     const eCopy = document.getElementById("copy")
     const eListen = document.getElementById("listen")
     
-    eOrigText.innerHTML =
-    
     eCopy.onclick = () => {
         navigator.clipboard.writeText(eTextTranslated.textContent).then(async () => {
             eCopy.style.backgroundColor = "rgba(0, 255, 0, 0.4)"
