@@ -8,7 +8,7 @@
     
     <style>
         * {
-            scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0);
+            scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.2);
         }
 
         body {
@@ -65,8 +65,8 @@
         }
     
         hr {
-            width: 90%;
-            border: 1px black solid;
+            width: 95%;
+            border: 1px rgba(255, 255, 255, 0.75) solid;
         }
     
         .selected {
@@ -75,7 +75,6 @@
         }
         
         #eOrigTextDiv {
-            display: none;
             max-width: 200px;
         }
         
@@ -91,24 +90,23 @@
 <div>
     <div id="eOrigTextDiv">
         <div id="eOrigText" contentEditable="true" spellcheck="false" dir="auto"></div>
-        <hr>
     </div>
-    <div id="eTextTranslated" dir="auto" style="float: left"></div>
-    <div style="float: right">
+    <hr>
+    <div id="eTextTranslated" dir="auto" style="float: left;"></div>
+    <div style="float: right;list-style-type: none;">
         <li title="Copy" data-i18n-title="btnCopy" id="copy">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 7H7V5H13V7Z" fill="currentColor"/>
                 <path d="M13 11H7V9H13V11Z" fill="currentColor"/>
                 <path d="M7 15H13V13H7V15Z" fill="currentColor"/>
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M3 19V1H17V5H21V23H7V19H3ZM15 17V3H5V17H15ZM17 7V19H9V21H19V7H17Z" fill="currentColor"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 19V1H17V5H21V23H7V19H3ZM15 17V3H5V17H15ZM17 7V19H9V21H19V7H17Z" fill="currentColor"/>
             </svg>
         </li>
         <br>
         <li style="padding-top: 6px; padding-bottom: 2px;fill: white;" title="Listen" data-i18n-title="btnListen"
             id="listen">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 x="0px" y="0px" width="14px" height="12px" viewBox="0 0 93.038 93.038"
+                 x="0px" y="0px" width="10px" height="10px" viewBox="0 0 93.038 93.038"
                  style="enable-background:new 0 0 93.038 93.038;" xml:space="preserve">
                         <g>
                             <path d="M46.547,75.521c0,1.639-0.947,3.128-2.429,3.823c-0.573,0.271-1.187,0.402-1.797,0.402c-0.966,0-1.923-0.332-2.696-0.973
@@ -123,7 +121,7 @@
                             c-1.479-1.672-1.404-4.203,0.17-5.783l0.554-0.555c0.822-0.826,1.89-1.281,3.115-1.242c1.163,0.033,2.263,0.547,3.036,1.417
                             c8.818,9.928,13.675,22.718,13.675,36.01C93.04,59.783,88.499,72.207,80.252,81.976z"/>
                         </g>
-                    </svg>
+            </svg>
         </li>
     </div>
     <br>
