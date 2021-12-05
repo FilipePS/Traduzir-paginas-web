@@ -1,5 +1,5 @@
 * {
-    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0);
+    scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.2);
 }
 
 #eDivResult {
@@ -46,7 +46,6 @@
     all: initial;
     z-index: 2147483647;
     position: fixed;
-    background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/icons/icon-32.png");
     width: 22px;
@@ -103,7 +102,7 @@ li:hover {
 }
 
 hr {
-    width: 90%;
+    width: 95%;
 }
 
 .selected {
