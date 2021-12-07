@@ -39,7 +39,7 @@
     }
   },
   "btnReset": {
-    "message": "重置"
+    "message": "重設"
   },
   "btnTranslate": {
     "message": "翻譯"
@@ -81,13 +81,13 @@
     "message": "永遠不要翻譯這些網站"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "始終翻譯這些語言"
   },
   "optionPopupConfig": {
     "message": "顯示手機彈出視窗"
   },
   "optionPopupAuto": {
-    "message": "自動地"
+    "message": "自動"
   },
   "optionPopupThreeFingers": {
     "message": "當我以三隻手指觸控時。"
@@ -279,7 +279,7 @@
     "message": "套用"
   },
   "swapTranslationService": {
-    "message": "在翻譯服務之間切換"
+    "message": "在翻譯伺服器之間切換"
   },
   "swapPopup": {
     "message": "在舊介面和新介面之間切換"
@@ -288,7 +288,7 @@
     "message": "點擊這個按鈕可以在新舊介面之間切換。"
   },
   "lblTranslationService": {
-    "message": "翻譯服務"
+    "message": "翻譯伺服器"
   },
   "msgUseOldPopupInterface": {
     "message": "使用舊的彈出式介面"
@@ -300,10 +300,10 @@
     "message": "在網址列顯示按鈕"
   },
   "lblPageTranslationService": {
-    "message": "網頁翻譯服務"
+    "message": "網頁翻譯伺服器"
   },
   "lblTextTranslationService": {
-    "message": "文字翻譯服務"
+    "message": "文字翻譯伺服器"
   },
   "msgStorage": {
     "message": "儲存空間"
@@ -345,7 +345,7 @@
     "message": "文字轉語音速度"
   },
   "lblEnableDeepL": {
-    "message": "啟用DeepL作為一種文字翻譯服務"
+    "message": "啟用DeepL作為一種文字翻譯伺服器"
   },
   "enterShortcut": {
     "message": "輸入快捷鍵"
@@ -395,7 +395,7 @@
     "message": "開啟原生快捷鍵管理器"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "特殊快捷鍵"
   },
   "lblTranslateSelectedWhenPressTwice": {
     "message": "按兩下 $SHORTCUT_KEY$ 時翻譯所選文字",
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "按兩次 $SHORTCUT_KEY$ 時，翻譯鼠標指針上的文字",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "透過點擊網址欄中的按鈕來翻譯網頁。 (要顯示彈出視窗則點擊右鍵)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "顯示彈出式視窗"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "如要翻譯此文件類型 $DOC_TYPE$ 需要先轉換為 HTML 格式",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "選擇一個翻譯伺服器來轉換"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "下載文件中..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "傳送文件"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "寫入文件時發生未知錯誤"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "這個翻譯伺服器不支援檔案長度超過 $FILE_SIZE$ 的檔案",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,6 +450,6 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF 轉 HTML"
   }
 }

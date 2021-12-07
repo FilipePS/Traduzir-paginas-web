@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Idioma alvo $TARGET_LANGUAGE_NUM$",
+    "message": "Idioma de destino $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -51,13 +51,13 @@
     "message": "Mostrar original"
   },
   "btnTryAgain": {
-    "message": "Tente novamente"
+    "message": "Tentar novamente"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Abrir no google tradutor"
+    "message": "Abrir no Google Tradutor"
   },
   "btnDonate": {
-    "message": "Doar"
+    "message": "Fazer uma doação"
   },
   "btnNeverTranslate": {
     "message": "Nunca traduzir este site"
@@ -84,7 +84,7 @@
     "message": "Sempre traduzir estes idiomas"
   },
   "optionPopupConfig": {
-    "message": "Mostrar a janela móvel"
+    "message": "Mostrar o popup móvel"
   },
   "optionPopupAuto": {
     "message": "Automático"
@@ -93,7 +93,7 @@
     "message": "Ao tocar três dedos na tela"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Abrir no yandex translate"
+    "message": "Abrir no Yandex Translate"
   },
   "lblOthers": {
     "message": "Outros"
@@ -129,7 +129,7 @@
     "message": "Sim (recomendado)"
   },
   "msgNoUseWidgets": {
-    "message": "Não (use widgets)"
+    "message": "Não (usar widgets)"
   },
   "optionsPageTitle": {
     "message": "Traduzir Páginas Web - Opções"
@@ -228,7 +228,7 @@
     "message": "Sempre traduzir este idioma"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Mostrar texto traduzido ao passar o mouse sobre esses sites"
+    "message": "Mostrar texto traduzido ao passar o mouse nestes sites"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Deixe o ícone pop-up azul quando o site for traduzido"
@@ -246,7 +246,7 @@
     "message": "Não mostrar se o idioma da página for desconhecido"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Não mostrar se o idioma de texto selecionado é o idioma de destino"
+    "message": "Não mostrar se o idioma do texto selecionado é o idioma de destino"
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "Não mostrar se o idioma do texto selecionado for desconhecido"
@@ -377,7 +377,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Não ordene os resultados do google tradutor"
+    "message": "Não ordenar resultados do Google Tradutor"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Traduzir conteúdo criado dinamicamente"
