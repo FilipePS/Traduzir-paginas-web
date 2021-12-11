@@ -18,14 +18,14 @@
     visibility: visible;
     opacity: 1;
     display: none;
-    z-index: 2;
+    z-index: 2147483647;
 }
 
 #eSelTextTrans,
 #eOrigText {
     padding: 14px;
     font-size: 16px;
-    max-width: 360px;
+    max-width: 440px;
     max-height: 250px;
     overflow: auto;
     white-space: pre-wrap;
@@ -34,12 +34,6 @@
 
 #eOrigText {
     outline: none;
-    max-width: 240px;
-}
-
-#eSelTextTrans {
-    float: left;
-    width: 200px;
 }
 
 #eButtonTransSelText {
@@ -129,7 +123,6 @@ hr {
 }
 
 #drag {
-    width: 275px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
