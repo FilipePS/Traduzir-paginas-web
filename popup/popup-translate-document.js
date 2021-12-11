@@ -49,6 +49,7 @@ async function convertDocument(service, data) {
     container.items.add(file)
     const myForm = document.getElementById("form_" + service)
     myForm.querySelector('[type="file"]').files = container.files
+    myForm.querySelector('[name="tl"]').value = twpConfig.get("targetLanguage")
     pleaseWait.style.display = "none"
     send.style.display = "block"
     send.onclick = e => {
