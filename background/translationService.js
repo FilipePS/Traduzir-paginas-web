@@ -197,7 +197,6 @@ const translationService = {};
                     const data_iid_r = http.responseText.match(/data-iid\=\"[a-zA-Z0-9\.]+/)
                     const IG_r = http.responseText.match(/IG\:\"[a-zA-Z0-9\.]+/)
                     if (result && result[0] && result[0].length > 50 && data_iid_r && data_iid_r[0] && IG_r && IG_r[0]) {
-                        console.warn(data_iid_r, IG_r)
                         const params_RichTranslateHelper = result[0].substring("params_RichTranslateHelper = [".length).split(",")
                         const data_iid = data_iid_r[0].substring('data-iid="'.length)
                         const IG = IG_r[0].substring('IG:"'.length)

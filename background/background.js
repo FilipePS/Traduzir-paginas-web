@@ -708,7 +708,7 @@ twpConfig.onReady(async () => {
             chrome.webNavigation.onCommitted.removeListener(webNavigationOnCommitted)
             chrome.webNavigation.onDOMContentLoaded.removeListener(webNavigationOnDOMContentLoaded)
         } else {
-            console.warn("No webNavigation permission")
+            console.info("No webNavigation permission")
         }
     }
 
