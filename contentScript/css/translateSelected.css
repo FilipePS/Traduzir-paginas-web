@@ -30,6 +30,7 @@
     overflow: auto;
     white-space: pre-wrap;
     min-height: 25px;
+    user-select: text;
 }
 
 #eOrigText {
