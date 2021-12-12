@@ -26,7 +26,7 @@ async function downloadDocument(url) {
             http.onprogress = e => {
                 if (e.lengthComputable) {
                     const percentComplete = (e.loaded / e.total) * 100;
-                    pleaseWait.innerHTML = "Please wait, " + percentComplete.toFixed(1) + "%"
+                    pleaseWait.innerHTML = chrome.i18n.getMessage("msgPleaseWait") + " " + percentComplete.toFixed(1) + "%"
                 }
             }
             http.onload = e => {
