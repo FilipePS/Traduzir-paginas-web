@@ -453,12 +453,12 @@
     "message": "PDFをHTMLに変換"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "コピー"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "最近"
   },
   "msgAll": {
-    "message": "All"
+    "message": "すべて"
   }
 }
