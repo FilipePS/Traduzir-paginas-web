@@ -254,8 +254,8 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		eOrigTextDiv = shadowRoot.getElementById("eOrigTextDiv")
 		
 		const eMoreOrLess = shadowRoot.getElementById("moreOrLess")
-		const eMore = shadowRoot.getElementById("less")
-		const eLess = shadowRoot.getElementById("more")
+		const eMore = shadowRoot.getElementById("more")
+		const eLess = shadowRoot.getElementById("less")
 		
 		const sGoogle = shadowRoot.getElementById("sGoogle")
 		const sYandex = shadowRoot.getElementById("sYandex")
@@ -450,6 +450,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		} else {
 			sDeepL.setAttribute("hidden", "")
 		}
+
 		if (twpConfig.get("expandPanelTranslateSelectedText") === "yes") {
 			eOrigTextDiv.style.display = "block"
 			eMore.style.display = "none"
@@ -461,6 +462,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			eLess.style.display = "none"
 			eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"))
 		}
+
 		twpConfig.onChanged((name, newvalue) => {
 			switch (name) {
 				case "enableDeepL":
@@ -471,16 +473,19 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 					}
 					break
 				case "expandPanelTranslateSelectedText":
+					const prevHeight = parseInt(getComputedStyle(eDivResult).height)
 					if (newvalue === "yes") {
 						eOrigTextDiv.style.display = "block"
 						eMore.style.display = "none"
 						eLess.style.display = "block"
 						eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"))
+						eDivResult.style.top = parseInt(eDivResult.style.top) + (prevHeight - parseInt(getComputedStyle(eDivResult).height)) + "px"
 					} else {
 						eOrigTextDiv.style.display = "none"
 						eMore.style.display = "block"
 						eLess.style.display = "none"
 						eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"))
+						eDivResult.style.top = parseInt(eDivResult.style.top) + (prevHeight - parseInt(getComputedStyle(eDivResult).height)) + "px"
 					}
 					break
 			}
@@ -552,7 +557,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				break
 		}
 	})
-	
+
 	function update_eDivResult(result = "") {
 		if (eDivResult.style.display !== "block") {
 			init()
