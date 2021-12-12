@@ -451,5 +451,14 @@
   },
   "msgPDFtoHTML": {
     "message": "PDF إلى HTML"
+  },
+  "btncopy": {
+    "message": "Copy"
+  },
+  "msgRecents": {
+    "message": "Recents"
+  },
+  "msgAll": {
+    "message": "All"
   }
 }
