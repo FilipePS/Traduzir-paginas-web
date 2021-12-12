@@ -460,5 +460,8 @@
   },
   "msgAll": {
     "message": "All"
+  },
+  "msgPleaseWait": {
+    "message": "Please wait..."
   }
 }
