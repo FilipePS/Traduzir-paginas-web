@@ -453,12 +453,12 @@
     "message": "PDF para HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Copiar"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Recentes"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Todos"
   }
 }
