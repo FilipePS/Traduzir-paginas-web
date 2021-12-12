@@ -453,12 +453,12 @@
     "message": "PDF'den HTML'e"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Kopyala"
   },
   "msgRecents": {
     "message": "Recents"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Tümü"
   }
 }
