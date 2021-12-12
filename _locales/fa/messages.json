@@ -451,5 +451,14 @@
   },
   "msgPDFtoHTML": {
     "message": "تبدیل پی‌دی‌اف به اچ‌تی‌ام‌ال"
+  },
+  "btncopy": {
+    "message": "Copy"
+  },
+  "msgRecents": {
+    "message": "Recents"
+  },
+  "msgAll": {
+    "message": "All"
   }
 }
