@@ -460,5 +460,8 @@
   },
   "msgAll": {
     "message": "Tümü"
+  },
+  "msgPleaseWait": {
+    "message": "Please wait..."
   }
 }
