@@ -273,7 +273,7 @@
     "message": "Dinle"
   },
   "btnStopListening": {
-    "message": "Dinlemeyi bırak"
+    "message": "Dinlemeyi durdur"
   },
   "btnApply": {
     "message": "Uygula"
@@ -453,12 +453,15 @@
     "message": "PDF'den HTML'e"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Kopyala"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Son kullanılanlar"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Tümü"
+  },
+  "msgPleaseWait": {
+    "message": "Please wait..."
   }
 }

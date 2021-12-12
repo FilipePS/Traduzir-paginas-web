@@ -460,5 +460,8 @@
   },
   "msgAll": {
     "message": "Todos"
+  },
+  "msgPleaseWait": {
+    "message": "Por favor, aguarde..."
   }
 }
