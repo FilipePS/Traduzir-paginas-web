@@ -453,15 +453,15 @@
     "message": "PDF în HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Copiază"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Recente"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Toate"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Aşteaptă..."
   }
 }
