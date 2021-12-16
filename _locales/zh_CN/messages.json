@@ -456,12 +456,12 @@
     "message": "复制"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "最近"
   },
   "msgAll": {
-    "message": "All"
+    "message": "全部"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "请稍候…"
   }
 }
