@@ -102,7 +102,7 @@
     "message": "Més opcions"
   },
   "lblPlsDonate": {
-    "message": "Ajudeu al desenvolupador amb una donació"
+    "message": "Ajudeu al desenvolupador amb un donatiu"
   },
   "msgTranslateFor": {
     "message": "Tradueix en $LANGUAGE_NAME$",
@@ -150,7 +150,7 @@
     "message": "Tradueix sempre aquests llocs"
   },
   "msgDonateWithPaypal": {
-    "message": "Fes una donació amb PayPal"
+    "message": "Fes un donatiu amb PayPal"
   },
   "lblDarkMode": {
     "message": "Mode fosc"
@@ -174,88 +174,88 @@
     "message": "No tradueixis mai aquests idiomes"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "No tradueixis mai aquest idioma"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Mostra el text original en passar el cursor"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "Idiomes"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "Llocs"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "Traduccions"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "Estil"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Dreceres del teclat"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "Fes una donació"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Notes de la versió"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "Informa d'un problema"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "Paràmetres"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "Afegeix"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Mostra el text traduït en passar el cursor"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Dreceres del teclat"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Per traduir el lloc"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Gràcies per utilitzar aquesta extensió."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Us agrairé si podeu fer un donatiu."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Tradueix sempre aquest idioma"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Mostra el text traduït en passar el cursor per aquests llocs"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Fes que la icona emergent sigui blava en traduir el lloc"
   },
   "more": {
-    "message": "More"
+    "message": "Més"
   },
   "less": {
-    "message": "Less"
+    "message": "Menys"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "No mostris si l'idioma de la pàgina és l'idioma de destinació"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "No mostris si l'idioma de la pàgina és desconegut"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "No mostris si l'idioma del text seleccionat és l'idioma de destinació"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "No mostris si l'idioma del text seleccionat és desconegut"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Mostra la traducció en passar el cursor per aquest lloc"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Mostra la traducció en passar el cursor pels llocs web en $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,112 +264,112 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Mostra el text traduït en passar el cursor pels llocs amb aquests idiomes"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "No tradueixis el text seleccionat"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Llegeix"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Deixa de llegir"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Aplica"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Canvia de servei de traducció"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Canvia entre la interfície antiga i la nova"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "Feu clic a aquest botó per canviar entre la interfície antiga i la nova."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Servei de traducció"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Utilitzeu l'antiga interfície emergent"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Tradueix la interfície"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Mostra el botó a la barra d'adreces"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Servei de traducció de pàgines"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Servei de traducció de textos"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Emmagatzematge"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Memòria cau de traduccions"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Emmagatzematge utilitzat:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Suprimeix la memòria cau de traduccions"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Paràmetres personals"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Fes una còpia de seguretat"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Restaurar des d'un fitxer"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Restaura els paràmetres predeterminats"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Voleu suprimir la memòria cau de traduccions?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Voleu sobreescriure els paràmetres actuals amb els de la còpia de seguretat?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Sembla que el fitxer està malmès"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Voleu restaurar els paràmetres predeterminats de l'extensió?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Velocitat de lectura del text"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "Activa el servei de traducció de texts DeepL"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Escriviu una drecera"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Incloeu Ctrl o Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Escriviu una lletra"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Combinació no vàlida"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Canvia entre la pàgina traduïda i l'original"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Restaura la pàgina original"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Tradueix la pàgina a l'idioma de destinació"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Activa la traducció per a l'etiqueta $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "No ordenis els resultats del traductor de Google"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Tradueix el contingut creat dinàmicament"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Calcula"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Fes un donatiu amb PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Tradueix automàticament en fer clic a un enllaç que porta al mateix domini del lloc actual"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Obre el gestor de dreceres de teclat natiu"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Dreceres de teclat especials"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Tradueix el text seleccionat en prémer $SHORTCUT_KEY$ dues vegades",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Tradueix el text sota el punter en prémer $SHORTCUT_KEY$ dues vegades",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,10 +414,10 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Tradueix la pàgina fent clic al botó de la barra d'adreces (per veure la finestra emergent, feu clic amb el botó dret)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Mostra la finestra emergent"
   },
   "msgToTranslateThisDocument": {
     "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
