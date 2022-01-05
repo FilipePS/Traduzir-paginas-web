@@ -453,15 +453,15 @@
     "message": "PDF를 HTML로"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "복사"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "최근"
   },
   "msgAll": {
-    "message": "All"
+    "message": "모두"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "기다려 주세요..."
   }
 }
