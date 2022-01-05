@@ -1,24 +1,24 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Tradueix les pàgines web"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Traduïu la vostra web en temps real amb Google o Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Tradueix aquesta pàgina"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Voleu traduir aquesta pàgina?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "S'està traduint..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Pàgina traduida"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "No s'ha pogut traduir aquesta pàgina"
   },
   "lblAlwaysTranslate": {
     "message": "Always translate from $LANGUAGE_NAME$",
