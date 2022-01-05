@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Tradueix les pàgines web"
+    "message": "Traducció de pàgines web"
   },
   "extensionDescription": {
     "message": "Traduïu la vostra web en temps real amb Google o Yandex."
@@ -132,7 +132,7 @@
     "message": "No (utilitza ginys)"
   },
   "optionsPageTitle": {
-    "message": "Tradueix pàgines web - Opcions"
+    "message": "Traducció de pàgines web - Opcions"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
     "message": "Només quan faig clic a «Tradueix aquest lloc»"
@@ -420,7 +420,7 @@
     "message": "Mostra la finestra emergent"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Per traduir aquest document $DOC_TYPE$, cal convertir-lo a HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Seleccioneu un servei per fer aquesta conversió"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "S'està baixant el document..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Envia el document"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "S'ha produït un error en baixar el document"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Aquest servei no admet fitxers més grans de $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,18 +450,18 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF a HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Copia"
   },
   "msgRecents": {
     "message": "Recents"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Tot"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Espereu..."
   }
 }
