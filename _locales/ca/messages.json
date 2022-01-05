@@ -15,13 +15,13 @@
     "message": "S'està traduint..."
   },
   "lblTranslated": {
-    "message": "Pàgina traduida"
+    "message": "Pàgina traduïda"
   },
   "lblError": {
     "message": "No s'ha pogut traduir aquesta pàgina"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Tradueix sempre l'idioma $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Idioma de destinació $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,73 +39,73 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Restableix"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Tradueix"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Opcions"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Mostra l'original"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Torna-ho a provar"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Obre al traductor de Google"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Feu un donatiu"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "No tradueixis mai aquest lloc"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Canvia d'idioma"
   },
   "btnMobileOriginal": {
     "message": "Original"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Pàgina traduïda"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "No tradueixis mai aquest lloc"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Feu un donatiu"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "No tradueixis mai aquests llocs"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Tradueix sempre aquests idiomes"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Mostra la finestra emergent del mòbil"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Automàticament"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "En tocar amb tres dits la pantalla"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Obre al traductor de Yandex"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Altres"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "Més opcions"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Ajudeu al desenvolupador amb una donació"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Tradueix en $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,64 +114,64 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Mostra l'opció de traduir la pàgina al menú contextual"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Sí"
   },
   "msgNo": {
     "message": "No"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "Voleu utilitzar el nou algorisme de traducció?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "Sí (recomanat)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "No (utilitza ginys)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "Tradueix pàgines web - Opcions"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Només quan faig clic a «Tradueix aquest lloc»"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "No heu afegit cap lloc a aquesta llista."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "No heu afegit cap idioma a aquesta llista."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Tradueix sempre aquest lloc"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Tradueix sempre aquests llocs"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Fes una donació amb PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Mode fosc"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Mostra les notes de la versió en actualitzar"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Mostra el botó per traduir el text seleccionat"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automàtic"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "Tradueix el text selecionat"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Mostra l'opció de traduir el text seleccionat al menú contextual"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "No tradueixis mai aquests idiomes"
   },
   "btnNeverTranslateThisLanguage": {
     "message": "Never translate this language"
