@@ -417,7 +417,7 @@
     "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "بدون إشعارات منبثقة"
   },
   "msgToTranslateThisDocument": {
     "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
