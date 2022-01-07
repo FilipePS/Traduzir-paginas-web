@@ -453,10 +453,10 @@
     "message": "PDF в HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Копировать"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Недавние"
   },
   "msgAll": {
     "message": "Все"
