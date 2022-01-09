@@ -60,7 +60,7 @@
     "message": "Donar"
   },
   "btnNeverTranslate": {
-    "message": "Nunca traducir este sitio"
+    "message": "No traducir nunca este sitio"
   },
   "btnChangeLanguages": {
     "message": "Cambiar idiomas"
@@ -78,7 +78,7 @@
     "message": "Donar"
   },
   "optionsNeverTranslate": {
-    "message": "Nunca traducir estos sitios"
+    "message": "No traducir nunca estos sitios"
   },
   "optionsAlwaysTranslate": {
     "message": "Traducir siempre estos idiomas"
@@ -93,7 +93,7 @@
     "message": "Al tocar con tres dedos la pantalla"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Abrir en traductor de Yandex"
+    "message": "Abrir en el traductor de Yandex"
   },
   "lblOthers": {
     "message": "Otros"
@@ -105,7 +105,7 @@
     "message": "Ayuda al desarrollador con una donación"
   },
   "msgTranslateFor": {
-    "message": "Traducir a $LANGUAGE_NAME$",
+    "message": "Traducir al $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -135,13 +135,13 @@
     "message": "Traducir páginas web - Opciones"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Sólo cuando haga clic en \"Traducir este sitio\""
+    "message": "Solo cuando haga clic en \"Traducir este sitio\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "No has añadido ningún sitio a esta lista."
+    "message": "No ha añadido ningún sitio a esta lista."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "No has añadido ningún idioma a esta lista."
+    "message": "No ha añadido ningún idioma a esta lista."
   },
   "btnAlwaysTranslate": {
     "message": "Traducir siempre este sitio"
@@ -156,7 +156,7 @@
     "message": "Modo oscuro"
   },
   "lblShowReleaseNotes": {
-    "message": "Mostrar notas de la versión al actualizar"
+    "message": "Mostrar las notas de la versión al actualizar"
   },
   "lblShowTranslateSelectedButton": {
     "message": "Mostrar el botón para traducir el texto seleccionado"
@@ -171,13 +171,13 @@
     "message": "Mostrar la opción para traducir el texto seleccionado en el menú contextual"
   },
   "lblNeverTranslateLangs": {
-    "message": "Nunca traducir estos idiomas"
+    "message": "No traducir nunca estos idiomas"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Nunca traducir este idioma"
+    "message": "No traducir nunca este idioma"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Mostrar texto original al pasar el cursor"
+    "message": "Mostrar el texto original al pasar el cursor"
   },
   "msgLanguages": {
     "message": "Idiomas"
@@ -210,7 +210,7 @@
     "message": "Agregar"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Mostrar texto traducido al pasar el cursor"
+    "message": "Mostrar el texto traducido al pasar el cursor"
   },
   "lblKeyboardShortcuts": {
     "message": "Atajos del teclado"
@@ -228,7 +228,7 @@
     "message": "Traducir siempre este idioma"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Mostrar texto traducido al pasar el cursor por estos sitios"
+    "message": "Mostrar el texto traducido al pasar el cursor por estos sitios"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Hacer que el icono emergente sea azul cuando se traduzca el sitio"
@@ -240,22 +240,22 @@
     "message": "Menos"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "No mostrar si el idioma de la página es el idioma objetivo"
+    "message": "No mostrar si el idioma de la página es el idioma de destino"
   },
   "dontShowIfPageLangIsUnknown": {
     "message": "No mostrar si se desconoce el idioma de la página"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "No mostrar si el idioma del texto seleccionado es el idioma objetivo"
+    "message": "No mostrar si el idioma de texto seleccionado es el idioma de destino"
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "No mostrar si se desconoce el idioma del texto seleccionado"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Mostrar traducción al pasar el cursor sobre este sitio"
+    "message": "Mostrar la traducción al pasar el cursor sobre este sitio"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Mostrar traducción al pasar el cursor sobre sitios web en $LANGUAGE_NAME$",
+    "message": "Mostrar la traducción al pasar el cursor sobre sitios web en $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Mostrar texto traducido al pasar el cursor sobre sitios con estos idiomas"
+    "message": "Mostrar el texto traducido al pasar el cursor sobre sitios con estos idiomas"
   },
   "msgNoTranslateSelectedText": {
     "message": "No traducir el texto seleccionado"
@@ -297,7 +297,7 @@
     "message": "Traducir la interfaz"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Mostrar botón en la barra de direcciones"
+    "message": "Mostrar el botón en la barra de direcciones"
   },
   "lblPageTranslationService": {
     "message": "Servicio de traducción de página"
@@ -315,13 +315,13 @@
     "message": "Almacenamiento en uso:"
   },
   "deleteTranslationCache": {
-    "message": "Eliminar caché de traducciones"
+    "message": "Eliminar la caché de traducciones"
   },
   "lblPersonalSettings": {
     "message": "Ajustes personales"
   },
   "backupToFile": {
-    "message": "Respaldar al archivo"
+    "message": "Copia de seguridad en un archivo"
   },
   "restoreFromFile": {
     "message": "Restaurar desde el archivo"
@@ -339,7 +339,7 @@
     "message": "El archivo parece estar dañado"
   },
   "doYouWantRestoreSettings": {
-    "message": "¿Quiere restaurar la extensión a sus ajustes predeterminados?"
+    "message": "¿Quiere restaurar los ajustes predeterminados de la extensión?"
   },
   "lblTtsSpeed": {
     "message": "Velocidad del audio de texto a voz"
@@ -366,10 +366,10 @@
     "message": "Restaurar la página original"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Traducir la página al idioma objetivo"
+    "message": "Traducir la página al idioma de destino"
   },
   "lblTranslateTag_pre": {
-    "message": "Activar traducción para la etiqueta $HTML_TAG_NAME$",
+    "message": "Activar la traducción para la etiqueta $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -380,7 +380,7 @@
     "message": "No ordenar los resultados del traductor de Google"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Traducir el contenido dinámicamente creado"
+    "message": "Traducir el contenido creado dinámicamente"
   },
   "calculatestorage": {
     "message": "Calcular"
@@ -389,7 +389,7 @@
     "message": "Donar con PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Traducir automáticamente al hacer clic en un enlace que te lleva al mismo dominio que el sitio actual"
+    "message": "Traducir automáticamente al hacer clic en un enlace que lleva al mismo dominio que el sitio actual"
   },
   "openNativeShortcutManager": {
     "message": "Abrir el gestor de atajos de teclado nativo"
@@ -417,7 +417,7 @@
     "message": "Traducir la página pulsando una vez en el botón de la barra de direcciones. (Para ver la ventana emergente, haga clic derecho)"
   },
   "btnShowPopup": {
-    "message": "Mostrar ventana emergente"
+    "message": "Mostrar la ventana emergente"
   },
   "msgToTranslateThisDocument": {
     "message": "Para traducir este documento $DOC_TYPE$ es necesario convertirlo a HTML",
@@ -435,13 +435,13 @@
     "message": "Descargando el documento..."
   },
   "msgSendDocument": {
-    "message": "Enviar documento"
+    "message": "Enviar el documento"
   },
   "msgErrorDownloadingDocument": {
     "message": "Error al descargar el documento"
   },
   "msgFileLargerThan": {
-    "message": "Este servicio no soporta archivos mayores a $FILE_SIZE$",
+    "message": "Este servicio no admite archivos mayores de $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -453,15 +453,15 @@
     "message": "PDF a HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Copiar"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Recientes"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Todo"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Espere..."
   }
 }

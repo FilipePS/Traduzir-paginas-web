@@ -453,15 +453,15 @@
     "message": "PDF sang HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Sao Chép"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Gần đây"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Tất cả"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Xin chờ..."
   }
 }

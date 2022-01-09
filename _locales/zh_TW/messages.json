@@ -453,15 +453,15 @@
     "message": "PDF 轉 HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "複製"
   },
   "msgRecents": {
     "message": "Recents"
   },
   "msgAll": {
-    "message": "All"
+    "message": "全選"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "請稍候..."
   }
 }
