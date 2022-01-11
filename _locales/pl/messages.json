@@ -453,15 +453,15 @@
     "message": "PDF do HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Kopiuj"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Ostatnie"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Wszystkie"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Proszę czekać..."
   }
 }
