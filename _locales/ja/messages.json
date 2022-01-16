@@ -51,13 +51,13 @@
     "message": "原文を表示"
   },
   "btnTryAgain": {
-    "message": "再試行"
+    "message": "再試行する"
   },
   "btnOpenOnGoogleTranslate": {
     "message": "Google翻訳で開く"
   },
   "btnDonate": {
-    "message": "寄付"
+    "message": "寄付する"
   },
   "btnNeverTranslate": {
     "message": "このサイトを翻訳しない"
