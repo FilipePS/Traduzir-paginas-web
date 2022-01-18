@@ -87,25 +87,25 @@
     "message": "Mutassa a mobilon felugró ablakot"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Automatikusan"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Amikor 3 ujjal érintem a képernyőt"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Megnyitás Yandex fordítóban"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Egyebek"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "További beállítások"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Segítse a fejlesztőt egy adománnyal"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Fordítás $LANGUAGE_NAME$ nyelvre",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,25 +114,25 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Mutassa a fordítási lehetőséget a jobb klikkes menüben"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Igen"
   },
   "msgNo": {
-    "message": "No"
+    "message": "Nem"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "Használni kívánja az új fordítási algoritmust?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "Igen (javasolt)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "Nem (widget használata)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "Weboldalak fordítása - Beállítások"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
     "message": "Only when I click \"Translate this site\""
