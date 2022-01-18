@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Weboldalak fordítása"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Fordítsa le az oldalt valós időben Google vagy Yandex fordítóval."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Az oldal fordítása"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Kívánja az oldalt lefordítani?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Fordítás ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Lefordítva"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Ez az oldal nem lefordítható"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Mindig frdítsa $LANGUAGE_NAME$ nyelvről",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Oldal fordítása $TARGET_LANGUAGE_NUM$ nyelvre",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,52 +39,52 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Visszaállítás"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Lefordítás"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Beállítások"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Eredeti megtekintése"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Próbálja újra"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Megnyitás a Google Fordítóban"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Adományozás"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Soha ne fordítsa le ezt az oldalt"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Nyelvek változtatása"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Eredeti"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Lefordított"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Soha ne fordítsa le ezt az oldalt"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Adományozás"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Soha ne fordítsa le ezeket az oldalakat"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Mindig fordítsa le ezeket a nyelveket"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Mutassa a mobilon felugró ablakot"
   },
   "optionPopupAuto": {
     "message": "Automatically"
