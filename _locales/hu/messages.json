@@ -216,16 +216,16 @@
     "message": "Billentyűparancsok"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Az oldal fordításához"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Köszönjük, hogy ezt a bővítményt használja."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Örök hálám az adományokért."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Mindig fordítsa le ezt a nyelvet"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Show translated text when hovering on these sites"
