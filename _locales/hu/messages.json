@@ -135,25 +135,25 @@
     "message": "Weboldalak fordítása - Beállítások"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Csak akkor ha a \"Oldal lefordítása\"-ra kattintok"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Nem adott hozzá még weboldalt a listához."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Nem adott hozzá még nyelvet a listához."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Mindig fordítsa le ezt az oldalt"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Mindig fordítsa le ezeket az oldalakat"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Adományozás PayPal-lal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Sötét mód"
   },
   "lblShowReleaseNotes": {
     "message": "Show release notes when updating"
