@@ -156,64 +156,64 @@
     "message": "Sötét mód"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Kibocsátási megjegyzés megjelenítése frissítéskor"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Gomb megjelenítése kijelölt szöveg fordításához"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automatikus"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "A kijelölt szöveg fordítása"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Mutassa a fordítási lehetőséget a jobb klikkes menüben"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Soha ne fordítsa le ezeket a nyelveket"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Soha ne fordítsa le ezt a nyelvet"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Eredeti szöveg mutatása ha fölötte van a kurzor"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "Nyelvek"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "Weboldalak"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "Fordítások"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "Stílus"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Gyorsbillentyűk"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "Adományozás"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Kibocsátási megjegyzések"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "Probléma bejelentése"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "Beállítások"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "Hozzáad"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Fordított szöveg mutatása ha fölötte van a kurzor"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Billentyűparancsok"
   },
   "msgToTranslateSites": {
     "message": "To translate the site"
