@@ -228,34 +228,34 @@
     "message": "Mindig fordítsa le ezt a nyelvet"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Fordított szöveg mutatása ezeknél az oldalaknál ha fölötte áll a kurzorral"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "A felugró ikon kékre vált ha az oldal fordításra került"
   },
   "more": {
-    "message": "More"
+    "message": "Több"
   },
   "less": {
-    "message": "Less"
+    "message": "Kevesebb"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Ne mutassa, ha az oldal nyelve ugyanaz mint a fordítási cél"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "Ne mutassa, ha az oldal nyelve ismeretlen"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Ne mutassa, ha a kijelölt szöveg nyelve ugyanaz mint a fordítási cél"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Ne mutassa, ha a kijelölt szöveg nyelve ismeretlen"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Fordítás mutatása ha a kurzorral fölötte áll az oldalon"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Fordítás mutatása ha a kurzorral fölötte áll az oldalon $LANGUAGE_NAME$ nyelven",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,34 +264,34 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Fordítás mutatása ha a kurzorral fölötte áll az oldalon ezeknél a nyelveknél"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Ne fordítsa a kijelölt szöveget"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Hallgatás"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Hallgatás leállítása"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Alkalmaz"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Fordító szolgáltatások közötti váltás"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Az új és régi felület közötti váltás"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "A gomb megnyomására válthat az új és régi felület között."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Fordító szolgáltatás"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Használja a régi felugró felületet"
   },
   "lblTranslateInterface": {
     "message": "Translate the interface"
