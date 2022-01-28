@@ -398,7 +398,7 @@
     "message": "Speciale sneltoetsen"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Vertaal geselecteerde tekst wanneer u tweemaal op $SHORTCUT_KEY$ drukt.",
+    "message": "Vertaal geselecteerde tekst wanneer u tweemaal op $SHORTCUT_KEY$ drukt",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Vertaal de tekst bij de muiscursor wanneer u tweemaal op $SHORTCUT_KEY$ drukt.",
+    "message": "Vertaal de tekst bij de muiscursor wanneer u tweemaal op $SHORTCUT_KEY$ drukt",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Vertaal de pagina door eenmaal op de knop in de adresbalk te klikken. (Klik met de rechtermuisknop om de pop-up te zien)."
+    "message": "Vertaal de pagina door eenmaal op de knop in de adresbalk te klikken. (Klik met de rechtermuisknop om de pop-up te zien)"
   },
   "btnShowPopup": {
-    "message": "Geef popup weer."
+    "message": "Geef pop-up weer"
   },
   "msgToTranslateThisDocument": {
-    "message": "Om dit document $DOC_TYPE$ te vertalen, moet het naar HTML worden geconverteerd.",
+    "message": "Om dit document $DOC_TYPE$ te vertalen, moet het naar HTML worden geconverteerd",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Selecteer een dienst voor het omzetten"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Het document downloaden..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Document zenden"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Fout bij het downloaden van het document"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Deze dienst ondersteunt geen bestanden groter dan $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,18 +450,18 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF naar HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Kopiëren"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Recentelijk"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Alles"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Gelieve te wachten..."
   }
 }
