@@ -112,12 +112,14 @@
             "matches": ["<all_urls>"],
             "run_at": "document_start",
             "all_frames": true,
+            "match_about_blank": true,
             "js": ["/lib/languages.js", "/lib/config.js", "/lib/platformInfo.js"]
         },
         {
             "matches": ["<all_urls>"],
             "run_at": "document_end",
             "all_frames": true,
+            "match_about_blank": true,
             "js": ["/lib/i18n.js", "/contentScript/showOriginal.js", "/contentScript/pageTranslator.js", "/contentScript/translateSelected.js", "/contentScript/showTranslated.js"]
         },
         {
