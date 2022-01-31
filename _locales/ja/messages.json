@@ -84,7 +84,7 @@
     "message": "常に翻訳する言語"
   },
   "optionPopupConfig": {
-    "message": "モバイル端末で翻訳を表示"
+    "message": "モバイルで翻訳ポップアップを表示"
   },
   "optionPopupAuto": {
     "message": "自動"
