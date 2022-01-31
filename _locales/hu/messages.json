@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Weboldalak fordítása"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Fordítsa le az oldalt valós időben Google vagy Yandex fordítóval."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Az oldal fordítása"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Kívánja az oldalt lefordítani?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Fordítás ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Lefordítva"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Ez az oldal nem lefordítható"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Mindig frdítsa $LANGUAGE_NAME$ nyelvről",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Oldal fordítása $TARGET_LANGUAGE_NUM$ nyelvre",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,73 +39,73 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Visszaállítás"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Lefordítás"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Beállítások"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Eredeti megtekintése"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Próbálja újra"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Megnyitás a Google Fordítóban"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Adományozás"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Soha ne fordítsa le ezt az oldalt"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Nyelvek változtatása"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Eredeti"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Lefordított"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Soha ne fordítsa le ezt az oldalt"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Adományozás"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Soha ne fordítsa le ezeket az oldalakat"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Mindig fordítsa le ezeket a nyelveket"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Mutassa a mobilon felugró ablakot"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Automatikusan"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Amikor 3 ujjal érintem a képernyőt"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Megnyitás Yandex fordítóban"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Egyebek"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "További beállítások"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Segítse a fejlesztőt egy adománnyal"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Fordítás $LANGUAGE_NAME$ nyelvre",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,148 +114,148 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Mutassa a fordítási lehetőséget a jobb klikkes menüben"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Igen"
   },
   "msgNo": {
-    "message": "No"
+    "message": "Nem"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "Használni kívánja az új fordítási algoritmust?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "Igen (javasolt)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "Nem (widget használata)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "Weboldalak fordítása - Beállítások"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Csak akkor ha a \"Oldal lefordítása\"-ra kattintok"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Nem adott hozzá még weboldalt a listához."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Nem adott hozzá még nyelvet a listához."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Mindig fordítsa le ezt az oldalt"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Mindig fordítsa le ezeket az oldalakat"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Adományozás PayPal-lal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Sötét mód"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Kibocsátási megjegyzés megjelenítése frissítéskor"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Gomb megjelenítése kijelölt szöveg fordításához"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automatikus"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "A kijelölt szöveg fordítása"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Mutassa a fordítási lehetőséget a jobb klikkes menüben"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Soha ne fordítsa le ezeket a nyelveket"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Soha ne fordítsa le ezt a nyelvet"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Eredeti szöveg mutatása ha fölötte van a kurzor"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "Nyelvek"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "Weboldalak"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "Fordítások"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "Stílus"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Gyorsbillentyűk"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "Adományozás"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Kibocsátási megjegyzések"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "Probléma bejelentése"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "Beállítások"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "Hozzáad"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Fordított szöveg mutatása ha fölötte van a kurzor"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Billentyűparancsok"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Az oldal fordításához"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Köszönjük, hogy ezt a bővítményt használja."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Örök hálám az adományokért."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Mindig fordítsa le ezt a nyelvet"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Fordított szöveg mutatása ezeknél az oldalaknál ha fölötte áll a kurzorral"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "A felugró ikon kékre vált ha az oldal fordításra került"
   },
   "more": {
-    "message": "More"
+    "message": "Továbbiak"
   },
   "less": {
-    "message": "Less"
+    "message": "Kevesebb"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Ne mutassa, ha az oldal nyelve ugyanaz mint a fordítási cél"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "Ne mutassa, ha az oldal nyelve ismeretlen"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Ne mutassa, ha a kijelölt szöveg nyelve ugyanaz mint a fordítási cél"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Ne mutassa, ha a kijelölt szöveg nyelve ismeretlen"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Fordítás mutatása ha a kurzorral fölötte áll az oldalon"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Fordítás mutatása ha a kurzorral fölötte áll az oldalon $LANGUAGE_NAME$ nyelven",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,112 +264,112 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Fordítás mutatása ha a kurzorral fölötte áll az oldalon ezeknél a nyelveknél"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Ne fordítsa a kijelölt szöveget"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Hallgatás"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Hallgatás leállítása"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Alkalmaz"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Fordító szolgáltatások közötti váltás"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Az új és régi felület közötti váltás"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "A gomb megnyomására válthat az új és régi felület között."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Fordító szolgáltatás"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Használja a régi felugró felületet"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "A felület fordítása"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Gomb megjelenítése az eszköztáron"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Weboldal fordító szolgáltatás"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Szöveg fordító szolgáltatás"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Tárhely"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Fordítási cache"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Használt tárhely:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Fordítási cache törlése"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Személyes beállítások"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Biztonsági mentés fájlba"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Visszaállítás fájlból"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Alapértelmezett beállítások visszaállítása"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Szeretné törölni a fordítási cache-t?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Felül kívánja írni az összes létező beállítást a mentett adatból?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "A fájl meghibásodhatott"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Visszaállítja a bővítmény alapértelmezett beállításait?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Felolvasási hang sebesség"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "DeepL bekapcsolása mint szöveg fordító szolgáltatás"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Gyorsbillentyű megadása"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Tartalmazza a Ctrl-t vagy Alt-ot"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Nyomjon le egy betűt"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Érvénytelen kombináció"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Az eredeti és fordított weboldal közötti váltás"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Eredeti oldal megjelenítése"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Oldal fordítása a megadott nyelvre"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Fordítás bekapcsolás a $HTML_TAG_NAME$ címkére",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Ne rendezze sorba a Google fordított eredményeket"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Dinamikusan létrehozott tartalom fordítása"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Kalkulálás"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Adományozás PayPal-lal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Ha domainen belülre visz a megnyitott link, akkor ugyanúgy fordítsa az oldalt"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Natív billentyűparancs menedzser megnyitása"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Speciális billentyűparancsok"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Kijelölt szöveg fordítása, a $SHORTCUT_KEY$ kombináció dupla megnyomására",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "A kurzor alatti szöveg fordítása, a $SHORTCUT_KEY$ kombináció dupla megnyomására",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Oldal fordítása az eszköztáron levő ikonra kattintva. (felugró ablak megjelenítéséhez nyomjon jobb klikket)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Felugró ablak megjelenítése"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "A $DOC_TYPE$ lefordításához kérem konvertálja HTML formátumba",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Válasszon szolgáltatást a konvertáláshoz"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Dokumentum letöltése..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Dokumentum küldése"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Hiba a dokumentum letöltésénél"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Ez a szolgáltatás nem támogatja a $FILE_SIZE$ -nál nagyobb fájlokat",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,18 +450,18 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF-ből HTML-be"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Másolás"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Előzmények"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Mind"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Kérem várjon..."
   }
 }
