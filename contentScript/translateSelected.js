@@ -173,7 +173,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 					</li>
 					<li title="Listen" data-i18n-title="btnListen" id="listen">
 						<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 93.038 93.038"
-							style="enable-background:new 0 0 93.038 93.038;fill: white" xml:space="preserve">
+							style="enable-background:new 0 0 93.038 93.038;" xml:space="preserve">
 						<g>
 							<path d="M46.547,75.521c0,1.639-0.947,3.128-2.429,3.823c-0.573,0.271-1.187,0.402-1.797,0.402c-0.966,0-1.923-0.332-2.696-0.973
 							l-23.098-19.14H4.225C1.892,59.635,0,57.742,0,55.409V38.576c0-2.334,1.892-4.226,4.225-4.226h12.303l23.098-19.14
@@ -220,30 +220,68 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
             		hr {
             			border: 1px rgba(255, 255, 255, 0.5) solid;
             		}
+            		#listen {
+            		    fill: white;
+            		}
+            		.arrow {
+            		    border: solid white;
+            		}
                 `
 			shadowRoot.appendChild(el)
 		} else {
 			const el = document.createElement("style")
 			el.setAttribute("id", "backdropFilterElement")
 			el.setAttribute("rel", "stylesheet")
-			el.textContent = `
+			let darkMode = false
+			switch (twpConfig.get("darkMode")) {
+				case "auto":
+					if (matchMedia("(prefers-color-scheme: dark)").matches) darkMode = true
+					break
+				case "yes":
+					darkMode = true
+					break
+			}
+			if (darkMode === true) {
+				el.textContent = `
                     #eDivResult {
                         backdrop-filter: none;
                         background-color: rgba(0, 0, 0, 0.925);
+                        color: white;
                     }
-                    li {
-                    	background-color: rgba(255, 255, 255, 0.1);
+                    li, #moreOrLess {
+                    	background-color: rgba(255, 255, 255, 0.2);
                     }
                     .selected {
                     	background-color: rgba(255, 255, 255, 0.4);
                     }
-                    #moreOrLess {
-                		background-color: rgba(255, 255, 255, 0.1);
-            		}
             		hr {
             			border: 1px rgba(255, 255, 255, 0.75) solid;
             		}
+            		#listen {
+            		    fill: white;
+            		}
                 `
+			} else {
+				el.textContent = `
+                    #eDivResult {
+                        backdrop-filter: none;
+                        background-color: rgba(225, 225, 225, 0.925);
+                        color: black;
+                    }
+                    li, #moreOrLess {
+                    	background-color: rgba(0, 0, 0, 0.2);
+                    }
+                    .selected {
+                    	background-color: rgba(0, 0, 0, 0.4);
+                    }
+            		hr {
+            			border: 1px rgba(0, 0, 0, 0.75) solid;
+            		}
+            		#listen {
+            		    fill: black;
+            		}
+                `
+			}
 			shadowRoot.appendChild(el)
 		}
 		
