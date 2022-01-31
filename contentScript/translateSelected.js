@@ -223,9 +223,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
             		#listen {
             		    fill: white;
             		}
-            		.arrow {
-            		    border: solid white;
-            		}
                 `
 			shadowRoot.appendChild(el)
 		} else {
