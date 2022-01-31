@@ -3,7 +3,7 @@
     "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Переводите страницу в режиме реального времени с помощью Google или Яндекс."
+    "message": "Перевод страниц в режиме реального времени с помощью Google или Яндекс."
   },
   "pageActionTitle": {
     "message": "Перевести страницу"
@@ -12,7 +12,7 @@
     "message": "Перевести страницу?"
   },
   "lblTranslating": {
-    "message": "Перевод..."
+    "message": "Перевод…"
   },
   "lblTranslated": {
     "message": "Переведено"
