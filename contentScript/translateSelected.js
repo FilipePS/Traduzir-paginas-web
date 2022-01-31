@@ -198,38 +198,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		shadowRoot.insertBefore(style, shadowRoot.getElementById("eButtonTransSelText"))
 		
 		dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
-		
-		if (CSS.supports("backdrop-filter: blur(5px)")) {
-			const el = document.createElement("style")
-			el.setAttribute("id", "backdropFilterElement")
-			el.setAttribute("rel", "stylesheet")
-			el.textContent = `
-                    #eDivResult {
-                        backdrop-filter: blur(3px);
-                        background-color: rgba(0, 0, 0, 0.5);
-                    }
-                    li {
-                    	background-color: rgba(255, 255, 255, 0.1);
-                    }
-                    .selected {
-                    	background-color: rgba(255, 255, 255, 0.3);
-                    }
-                    #moreOrLess {
-                		background-color: rgba(255, 255, 255, 0.1);
-            		}
-            		hr {
-            			border: 1px rgba(255, 255, 255, 0.5) solid;
-            		}
-            		#listen {
-            		    fill: white;
-            		}
-                `
-			shadowRoot.appendChild(el)
-		} else {
-			const el = document.createElement("style")
-			el.setAttribute("id", "backdropFilterElement")
-			el.setAttribute("rel", "stylesheet")
-			let darkMode = false
+		let darkMode = false
 			switch (twpConfig.get("darkMode")) {
 				case "auto":
 					if (matchMedia("(prefers-color-scheme: dark)").matches) darkMode = true
@@ -238,6 +207,56 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 					darkMode = true
 					break
 			}
+		if (CSS.supports("backdrop-filter: blur(5px)")) {
+			const el = document.createElement("style")
+			el.setAttribute("id", "backdropFilterElement")
+			el.setAttribute("rel", "stylesheet")
+			if (darkMode === true) {
+				el.textContent = `
+                    #eDivResult {
+                        color: white;
+                        backdrop-filter: blur(3px);
+                        background-color: rgba(0, 0, 0, 0.4);
+                    }
+                    li, #moreOrLess {
+                    	background-color: rgba(255, 255, 255, 0.2);
+                    }
+                    .selected {
+                    	background-color: rgba(255, 255, 255, 0.4);
+                    }
+            		hr {
+            			border: 1px rgba(255, 255, 255, 0.5) solid;
+            		}
+            		#listen {
+            		    fill: white;
+            		}
+                `
+			} else {
+				el.textContent = `
+                    #eDivResult {
+                        color: black;
+                        backdrop-filter: blur(3px);
+                        background-color: rgba(225, 225, 225, 0.4);
+                    }
+                    li, #moreOrLess {
+                    	background-color: rgba(0, 0, 0, 0.2);
+                    }
+                    .selected {
+                    	background-color: rgba(0, 0, 0, 0.4);
+                    }
+            		hr {
+            			border: 1px rgba(0, 0, 0, 0.5) solid;
+            		}
+            		#listen {
+            		    fill: black;
+            		}
+                `
+			}
+			shadowRoot.appendChild(el)
+		} else {
+			const el = document.createElement("style")
+			el.setAttribute("id", "backdropFilterElement")
+			el.setAttribute("rel", "stylesheet")
 			if (darkMode === true) {
 				el.textContent = `
                     #eDivResult {
