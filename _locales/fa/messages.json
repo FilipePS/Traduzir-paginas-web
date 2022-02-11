@@ -291,7 +291,7 @@
     "message": "سرویس ترجمه"
   },
   "msgUseOldPopupInterface": {
-    "message": "استفاده از رابط قدیمی پنجره‌ی بالاپر"
+    "message": "استفاده از رابط قدیمی پنجره‌ی ظاهر شونده"
   },
   "lblTranslateInterface": {
     "message": "رابط را ترجمه کنید"
@@ -453,15 +453,15 @@
     "message": "تبدیل پی‌دی‌اف به اچ‌تی‌ام‌ال"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "کپی (رونوشت)"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "اخیراً"
   },
   "msgAll": {
-    "message": "All"
+    "message": "همه"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "منتظر باشید"
   }
 }
