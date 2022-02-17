@@ -6,10 +6,10 @@
     "message": "Перевод страниц в режиме реального времени с помощью Google или Яндекс."
   },
   "pageActionTitle": {
-    "message": "Перевести страницу"
+    "message": "Перевести эту страницу"
   },
   "lblTranslate": {
-    "message": "Перевести страницу?"
+    "message": "Перевести эту страницу?"
   },
   "lblTranslating": {
     "message": "Перевод…"
@@ -18,7 +18,7 @@
     "message": "Переведено"
   },
   "lblError": {
-    "message": "Невозможно перевести страницу"
+    "message": "Невозможно перевести эту страницу"
   },
   "lblAlwaysTranslate": {
     "message": "Всегда переводить с $LANGUAGE_NAME$",
@@ -39,7 +39,7 @@
     }
   },
   "btnReset": {
-    "message": "Сброс"
+    "message": "Сбросить"
   },
   "btnTranslate": {
     "message": "Перевести"
@@ -129,7 +129,7 @@
     "message": "Да (рекомендуется)"
   },
   "msgNoUseWidgets": {
-    "message": "Нет (используйте виджеты)"
+    "message": "Нет (использовать виджеты)"
   },
   "optionsPageTitle": {
     "message": "Translate Web Pages - Настройки"
@@ -441,7 +441,7 @@
     "message": "Ошибка при скачивании документа"
   },
   "msgFileLargerThan": {
-    "message": "Служба не поддерживает файлы размером более $FILE_SIZE$",
+    "message": "Эта служба не поддерживает файлы размером более $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
