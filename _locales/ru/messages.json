@@ -6,7 +6,7 @@
     "message": "Перевод страниц в режиме реального времени с помощью Google или Яндекс."
   },
   "pageActionTitle": {
-    "message": "Перевести страницу"
+    "message": "Перевести эту страницу"
   },
   "lblTranslate": {
     "message": "Перевести эту страницу?"
@@ -441,7 +441,7 @@
     "message": "Ошибка при скачивании документа"
   },
   "msgFileLargerThan": {
-    "message": "Служба не поддерживает файлы размером более $FILE_SIZE$",
+    "message": "Эта служба не поддерживает файлы размером более $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
