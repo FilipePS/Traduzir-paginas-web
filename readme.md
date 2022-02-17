@@ -18,13 +18,3 @@
 ### To collaborate with the translation of the interface use [Crowdin](https://crowdin.com/project/translate-web-pages)
 
 ### To make a donation use [Patreon](https://www.patreon.com/filipeps)
-
-## Thanks to the Patrons
-+ Jacek NZ
-+ Andrew Gaul
-+ Henry Henderson
-+ László Dr. Gerő
-+ Lani
-+ 2 kojix
-+ rifter
-+ Dima Kompot
