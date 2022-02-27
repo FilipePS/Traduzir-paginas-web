@@ -3,7 +3,7 @@
     "message": "Webseiten übersetzen"
   },
   "extensionDescription": {
-    "message": "Übersetzen Sie mit Google oder Yandex Webseiten in Echtzeit."
+    "message": "Übersetzen Sie Ihre Seite in Echtzeit mit Google oder Yandex."
   },
   "pageActionTitle": {
     "message": "Übersetze diese Seite"
@@ -84,7 +84,7 @@
     "message": "Diese Sprache immer übersetzen"
   },
   "optionPopupConfig": {
-    "message": "Mobiles Popup anzeigen"
+    "message": "Mobiles Pop-up anzeigen"
   },
   "optionPopupAuto": {
     "message": "Automatisch"
@@ -93,7 +93,7 @@
     "message": "Wenn ich den Bildschirm mit drei Fingern berühre"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "In Yandex translate öffnen"
+    "message": "In Yandex Übersetzung öffnen"
   },
   "lblOthers": {
     "message": "Andere"
@@ -210,7 +210,7 @@
     "message": "Hinzufügen"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Übersetzten Text beim Hovern anzeigen"
+    "message": "Originaltext beim Darüberfahren anzeigen"
   },
   "lblKeyboardShortcuts": {
     "message": "Tastenkürzel"
@@ -228,7 +228,7 @@
     "message": "Diese Sprache immer übersetzen"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Übersetzten Text beim Hovern auf diesen Seiten anzeigen"
+    "message": "Übersetzten Text beim Sofern auf diesen Seiten anzeigen"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Mache das Pop-Up-Symbol blau, wenn die Seite übersetzt ist"
