@@ -1,24 +1,24 @@
 {
   "extensionName": {
-    "message": "Μετάφραση ιστοσελίδων"
+    "message": "Μεταφράστε Ιστοσελίδες"
   },
   "extensionDescription": {
-    "message": "Μετάφραση της σελίδας σε πραγματικό χρόνο με χρήση το Google ή το Yandex."
+    "message": "Μεταφράστε τη σελίδα σας σε πραγματικό χρόνο χρησιμοποιώντας το Google ή το Yandex."
   },
   "pageActionTitle": {
-    "message": "Μετάφραση αυτής της σελίδας"
+    "message": "Μεταφράστε αυτή τη σελίδα"
   },
   "lblTranslate": {
     "message": "Μετάφραση αυτής της σελίδας;"
   },
   "lblTranslating": {
-    "message": "Μεταφράζεται ..."
+    "message": "Μετάφραση …"
   },
   "lblTranslated": {
-    "message": "Μεταφρασμένη"
+    "message": "Μεταφράστηκε"
   },
   "lblError": {
-    "message": "Αυτή η σελίδα δεν μπόρεσε να μεταφραστεί"
+    "message": "Δεν ήταν δυνατή η μετάφραση αυτής της σελίδας"
   },
   "lblAlwaysTranslate": {
     "message": "Πάντα μετάφραση από $LANGUAGE_NAME$",
@@ -48,43 +48,43 @@
     "message": "Επιλογές"
   },
   "btnRestore": {
-    "message": "Εμφάνιση αρχικού"
+    "message": "Εμφάνιση πρωτότυπου"
   },
   "btnTryAgain": {
-    "message": "Προσπάθησε ξανά"
+    "message": "Προσπαθήστε ξανά"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Χρήση της μετάφρασης Google"
+    "message": "Άνοιγμα στο μεταφραστή της Google"
   },
   "btnDonate": {
     "message": "Δωρεά"
   },
   "btnNeverTranslate": {
-    "message": "Ποτέ μην μεταφράζεται αυτός ο ιστότοπος"
+    "message": "Μη μεταφράζετε ποτέ αυτόν τον ιστότοπο"
   },
   "btnChangeLanguages": {
     "message": "Αλλαγή γλώσσας"
   },
   "btnMobileOriginal": {
-    "message": "Αρχικό"
+    "message": "Πρωτότυπο"
   },
   "btnMobileTranslated": {
     "message": "Μεταφρασμένη"
   },
   "btnMobileNeverTranslate": {
-    "message": "Ποτέ μην μεταφράζεται αυτός ο ιστότοπος"
+    "message": "Μη μεταφράζετε ποτέ αυτόν τον ιστότοπο"
   },
   "btnMobileDonate": {
     "message": "Δωρεά"
   },
   "optionsNeverTranslate": {
-    "message": "Ποτέ μην μεταφράζεται αυτός ο ιστότοπος"
+    "message": "Μη μεταφράζονται ποτέ αυτοί οι ιστότοποι"
   },
   "optionsAlwaysTranslate": {
     "message": "Πάντα μετάφραση αυτών των γλωσσών"
   },
   "optionPopupConfig": {
-    "message": "Προβολή αναδυόμενου κινητού παραθύρου"
+    "message": "Εμφάνιση του αναδυόμενου παραθύρου για κινητά"
   },
   "optionPopupAuto": {
     "message": "Αυτόματα"
@@ -93,7 +93,7 @@
     "message": "Όταν αγγίζω τρία δάχτυλα στην οθόνη"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Άνοιγμα σε μετάφραση Yandex"
+    "message": "Άνοιγμα στη μετάφραση Yandex"
   },
   "lblOthers": {
     "message": "Άλλα"
@@ -114,7 +114,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Εμφάνιση επιλογής μετάφρασης της σελίδας στο σχετικό μενού"
+    "message": "Εμφάνιση της επιλογής μετάφρασης της σελίδας στο μενού περιβάλλοντος"
   },
   "msgYes": {
     "message": "Ναι"
@@ -123,7 +123,7 @@
     "message": "Όχι"
   },
   "lblUseNewAlgorithm": {
-    "message": "Χρήση του νέου αλγορίθμου μετάφρασης;"
+    "message": "Να χρησιμοποιηθεί ο νέος αλγόριθμος μετάφρασης;"
   },
   "msgYesRecommended": {
     "message": "Ναι (προτείνεται)"
@@ -132,16 +132,16 @@
     "message": "Όχι (χρήση widget)"
   },
   "optionsPageTitle": {
-    "message": "Μετάφραση Ιστοσελίδων - Επιλογές"
+    "message": "Μεταφράστε Ιστοσελίδες - Επιλογές"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Μόνο όταν κάνω κλικ \"Μετάφραση αυτού του ιστότοπου\""
+    "message": "Μόνο όταν κάνω κλικ στο «Μετάφραση αυτού του ιστότοπου»"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Δεν έχετε προσθέσει ιστοσελίδες σε αυτή τη λίστα."
+    "message": "Δεν έχετε προσθέσει ιστότοπους σε αυτήν τη λίστα."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Δεν έχετε προσθέσει καμία γλώσσα σε αυτήν τη λίστα."
+    "message": "Δεν έχετε προσθέσει γλώσσες σε αυτήν τη λίστα."
   },
   "btnAlwaysTranslate": {
     "message": "Πάντα μετάφραση αυτής της ιστοσελίδας"
@@ -414,10 +414,10 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Μεταφράστε τη σελίδα κάνοντας κλικ μία φορά στο κουμπί στη γραμμή διευθύνσεων. (Για να δείτε το αναδυόμενο, δεξί κλικ)"
+    "message": "Μεταφράστε τη σελίδα κάνοντας κλικ μία φορά στο κουμπί στη γραμμή διευθύνσεων. (Για να δείτε το popup, κάντε δεξί κλικ)"
   },
   "btnShowPopup": {
-    "message": "Προβολή αναδυόμενου"
+    "message": "Προβολή popup"
   },
   "msgToTranslateThisDocument": {
     "message": "Για να μεταφράσετε αυτό το έγγραφο $DOC_TYPE$ είναι απαραίτητο να το μετατρέψετε σε HTML",
