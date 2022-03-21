@@ -1,9 +1,9 @@
 {
   "extensionName": {
-    "message": "Μετάφραση ιστοσελίδων"
+    "message": "Μεταφράστε Ιστοσελίδες"
   },
   "extensionDescription": {
-    "message": "Μετάφραση της σελίδας σε πραγματικό χρόνο με χρήση το Google ή το Yandex."
+    "message": "Μεταφράστε τη σελίδα σας σε πραγματικό χρόνο χρησιμοποιώντας το Google ή το Yandex."
   },
   "pageActionTitle": {
     "message": "Μετάφραση αυτής της σελίδας"
