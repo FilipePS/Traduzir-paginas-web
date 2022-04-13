@@ -252,10 +252,10 @@
     "message": "Não mostrar se o idioma do texto selecionado for desconhecido"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Mostrar tradução ao passar o mouse sobre este site"
+    "message": "Mostrar tradução ao passar o cursor do mouse sobre este site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Mostrar tradução ao passar o mouse sobre sites em $LANGUAGE_NAME$",
+    "message": "Mostrar tradução ao passar o cursor do mouse sobre sites em $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Mostrar texto traduzido ao passar o mouse sobre sites com estes idiomas"
+    "message": "Mostrar texto traduzido ao passar o cursor do mouse sobre sites com estes idiomas"
   },
   "msgNoTranslateSelectedText": {
     "message": "Não traduzir o texto selecionado"
@@ -291,7 +291,7 @@
     "message": "Serviço de tradução"
   },
   "msgUseOldPopupInterface": {
-    "message": "Usar a interface antiga do popup"
+    "message": "Usar a interface antiga do pop-up"
   },
   "lblTranslateInterface": {
     "message": "Traduzir a interface"
@@ -395,7 +395,7 @@
     "message": "Abra o gerenciador de teclas de atalho nativo"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Atalhos do teclado especiais"
+    "message": "Atalhos especiais do teclado"
   },
   "lblTranslateSelectedWhenPressTwice": {
     "message": "Traduza o texto selecionado ao pressionar $SHORTCUT_KEY$ duas vezes",
@@ -417,7 +417,7 @@
     "message": "Traduza a página clicando uma vez sobre o botão na barra de endereço. (Para ver o popup, clique com o botão direito)"
   },
   "btnShowPopup": {
-    "message": "Mostrar popup"
+    "message": "Mostrar pop-up"
   },
   "msgToTranslateThisDocument": {
     "message": "Para traduzir este documento $DOC_TYPE$ é necessário convertê-lo para HTML",
