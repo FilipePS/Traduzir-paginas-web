@@ -222,7 +222,7 @@
     "message": "Obrigado por usar esta extensão."
   },
   "msgIWillBeGrateful": {
-    "message": "Ficarei grato se você puder fazer uma doação."
+    "message": "Ficarei grato, se você podê me ajudar com uma doação."
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Sempre traduzir este idioma"
@@ -327,19 +327,19 @@
     "message": "Restaurar do arquivo"
   },
   "resetToDefault": {
-    "message": "Restaurar configurações padrão"
+    "message": "Restaurar configuração padrão"
   },
   "doYouWantToDeleteTranslationCache": {
     "message": "Deseja deletar o cache de tradução?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Deseja substituir todas as configurações existentes usando os dados do backup?"
+    "message": "Deseja substituir toda configuração existente usando os dados do backup?"
   },
   "fileIsCorrupted": {
     "message": "O arquivo parece estar corrompido"
   },
   "doYouWantRestoreSettings": {
-    "message": "Deseja restaurar a extensão para as configurações padrão?"
+    "message": "Deseja restaurar a extensão para configuração padrão?"
   },
   "lblTtsSpeed": {
     "message": "Velocidade de áudio do texto em voz"
@@ -369,7 +369,7 @@
     "message": "Traduza a página para o idioma de destino"
   },
   "lblTranslateTag_pre": {
-    "message": "Ativar tradução para a tag $HTML_TAG_NAME$",
+    "message": "Ativar tradução para etiqueta\n$HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -392,7 +392,7 @@
     "message": "Traduzir automaticamente ao clicar em um link que leva você para o mesmo domínio do site atual"
   },
   "openNativeShortcutManager": {
-    "message": "Abra o gerenciador de teclas de atalho nativo"
+    "message": "Abrir gerenciador de teclas de atalho nativa"
   },
   "lblKeyboardShortcutsSpecial": {
     "message": "Atalhos especiais do teclado"
@@ -414,7 +414,7 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Traduza a página clicando uma vez sobre o botão na barra de endereço. (Para ver o popup, clique com o botão direito)"
+    "message": "Traduza a página clicando uma vez sobre o botão na barra de endereço. (Para ver o pop-up, clique com o botão direito)"
   },
   "btnShowPopup": {
     "message": "Mostrar pop-up"
@@ -432,7 +432,7 @@
     "message": "Selecione um serviço para fazer esta conversão"
   },
   "msgDownloadingDocument": {
-    "message": "Baixando o documento..."
+    "message": "Baixando documento..."
   },
   "msgSendDocument": {
     "message": "Enviar documento"
