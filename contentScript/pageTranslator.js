@@ -414,12 +414,46 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         return attributesToTranslate
     }
 
+    function mut (pieceToTranslateNow) {
+
+        const observer = new MutationObserver(function(mutationList) {
+            for (const mutation of mutationList) {
+                // const pieceToTranslateNow = piecesToTranslateNow
+                const index =  piecesToTranslate.findIndex(el=>el==pieceToTranslateNow)
+                if (index>=0) {
+                    const piece = piecesToTranslate[index]
+                    let pieceNodesToRestore = []
+                    nodesToRestore = nodesToRestore.filter(n=>{
+                        const con = piece.nodes.some(pn=>pn.isSameNode(n.node))
+                        if (con) {
+                            pieceNodesToRestore.push(n)
+                        } else {
+                            return true
+                        }
+                    })
+                    observer.disconnect()
+                    const nodes = pieceNodesToRestore.map(n=>n.originalNode)
+                    for (const ntr of pieceNodesToRestore) {
+                        if (ntr.originalNode.textContent == ntr.translated) {
+                            ntr.originalNode.textContent = ntr.original
+                        }
+                        ntr.node.replaceWith(ntr.originalNode)
+                    }
+                    piece.isTranslated = false
+                    piece.nodes = nodes
+                }
+            }
+        })
+
+        return observer
+    }
+
     function encapsulateTextNode(node) {
         const fontNode = document.createElement("font")
         fontNode.setAttribute("style", "vertical-align: inherit;")
-        fontNode.textContent = node.textContent
 
         node.replaceWith(fontNode)
+        fontNode.replaceChildren(node)
 
         return fontNode
     }
@@ -427,6 +461,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
     function translateResults(piecesToTranslateNow, results) {
         if (dontSortResults) {
             for (let i = 0; i < results.length; i++) {
+                const observer = mut(piecesToTranslateNow[i])
+
                 for (let j = 0; j < results[i].length; j++) {
                     if (piecesToTranslateNow[i].nodes[j]) {
                         const nodes = piecesToTranslateNow[i].nodes
@@ -438,31 +474,44 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             translated += restResults.join(" ");
                         }
 
-                        nodes[j] = encapsulateTextNode(nodes[j])
+                        const originalNode = nodes[j]
+                        const original = originalNode.textContent
+                        originalNode.textContent = translated
+                        nodes[j] = encapsulateTextNode(originalNode)
+                        observer.observe(nodes[j], {subtree: true, characterData: true})
 
                         showOriginal.add(nodes[j])
                         nodesToRestore.push({
                             node: nodes[j],
-                            original: nodes[j].textContent
+                            original,
+                            originalNode,
+                            translated
                         })
 
-                        nodes[j].textContent = translated
                     }
                 }
             }
         } else {
             for (const i in piecesToTranslateNow) {
+                const observer = mut(piecesToTranslateNow[i])
+
                 for (const j in piecesToTranslateNow[i].nodes) {
                     if (results[i][j]) {
                         const nodes = piecesToTranslateNow[i].nodes
                         const translated = results[i][j] + " "
 
-                        nodes[j] = encapsulateTextNode(nodes[j])
+                        const originalNode = nodes[j]
+                        const original = originalNode.textContent
+                        originalNode.textContent = translated
+                        nodes[j] = encapsulateTextNode(originalNode)
+                        observer.observe(nodes[j], {subtree: true, characterData: true})
 
                         showOriginal.add(nodes[j])
                         nodesToRestore.push({
                             node: nodes[j],
-                            original: nodes[j].textContent
+                            original,
+                            originalNode,
+                            translated
                         })
 
                         nodes[j].textContent = translated
@@ -652,13 +701,16 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
 
         for (const ntr of nodesToRestore) {
-            ntr.node.replaceWith(ntr.original)
+            if (ntr.originalNode.textContent == ntr.translated) {
+                ntr.originalNode.textContent = ntr.original
+            }
+            ntr.node.replaceWith(ntr.originalNode)
         }
         nodesToRestore = []
 
         //TODO não restaurar atributos que foram modificados
         for (const ati of attributesToTranslate) {
-            if (ati.isTranslated) {
+            if (ati.isTranslated && ati.translated == ati.node.getAttribute(ati.attrName)) {
                 ati.node.setAttribute(ati.attrName, ati.original)
             }
         }
