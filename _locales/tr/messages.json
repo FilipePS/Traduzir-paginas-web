@@ -63,7 +63,7 @@
     "message": "Bu siteyi asla çevirme"
   },
   "btnChangeLanguages": {
-    "message": "Dili değiştirmek"
+    "message": "Dilleri dönüştür"
   },
   "btnMobileOriginal": {
     "message": "Orijinal"
@@ -72,7 +72,7 @@
     "message": "Çevirildi"
   },
   "btnMobileNeverTranslate": {
-    "message": "Bu siteyi asla çevirmemeli"
+    "message": "Bu siteyi asla çevirme"
   },
   "btnMobileDonate": {
     "message": "Bağış yapın"
@@ -192,10 +192,10 @@
     "message": "Görünüm"
   },
   "msgHotkeys": {
-    "message": "Kısayol tuşları"
+    "message": "Kısayollu Tuşlar"
   },
   "lblMakeDonation": {
-    "message": "Bağış Yap"
+    "message": "Bağışta Bulun"
   },
   "lblReleaseNotes": {
     "message": "Sürüm notları"
@@ -216,7 +216,7 @@
     "message": "Klavye kısayolları"
   },
   "msgToTranslateSites": {
-    "message": "Bu sayfayı çevirmek için"
+    "message": "Bu siteyi asla dönüştürme"
   },
   "msgThanksForUseExtension": {
     "message": "Bu uzantıyı kullandığınız için teşekkür ederiz."
