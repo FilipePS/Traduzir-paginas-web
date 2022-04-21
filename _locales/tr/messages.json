@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Web Sayfalarını Çevir"
+    "message": "Web Sayfalarını Çevirme"
   },
   "extensionDescription": {
     "message": "Sayfanızı Google veya Yandex'i kullanarak gerçek zamanlı olarak çevirin."
@@ -63,7 +63,7 @@
     "message": "Bu siteyi asla çevirme"
   },
   "btnChangeLanguages": {
-    "message": "Dilleri değiştir"
+    "message": "Güncel Dilleri değiştir"
   },
   "btnMobileOriginal": {
     "message": "Orijinal"
@@ -72,10 +72,10 @@
     "message": "Çevirildi"
   },
   "btnMobileNeverTranslate": {
-    "message": "Bu siteyi asla çevirme"
+    "message": "Bu siteyi asla çevirmemelisin"
   },
   "btnMobileDonate": {
-    "message": "Bağış yap"
+    "message": "Bağış yapın"
   },
   "optionsNeverTranslate": {
     "message": "Bu siteleri asla çevirme"
