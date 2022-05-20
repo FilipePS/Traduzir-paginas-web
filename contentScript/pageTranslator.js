@@ -83,6 +83,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
     let currentTargetLanguage = twpConfig.get("targetLanguage")
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
     let dontSortResults = twpConfig.get("dontSortResults") == "yes" ? true : false
+	let textSideBySide = twpConfig.get("showTextSideBySide") == "yes" ? true : false
     let fooCount = 0
 
     let originalPageTitle
@@ -445,8 +446,15 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             node: nodes[j],
                             original: nodes[j].textContent
                         })
-
-                        nodes[j].textContent = translated
+						
+						if(textSideBySide)
+						{
+							nodes[j].textContent = nodes[j].textContent + " || " + translated
+						}
+						else
+						{
+							nodes[j].textContent = translated
+						}
                     }
                 }
             }
@@ -464,8 +472,15 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             node: nodes[j],
                             original: nodes[j].textContent
                         })
-
-                        nodes[j].textContent = translated
+						
+						if(textSideBySide)
+						{
+							nodes[j].textContent = nodes[j].textContent + " || " + translated
+						}
+						else
+						{
+							nodes[j].textContent = translated
+						}
                     }
                 }
             }
@@ -607,6 +622,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         showOriginal.enable()
 
         dontSortResults = twpConfig.get("dontSortResults") == "yes" ? true : false
+		textSideBySide = twpConfig.get("showTextSideBySide") == "yes" ? true : false
 
         if (targetLanguage) {
             currentTargetLanguage = targetLanguage
@@ -713,6 +729,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             if (pageLanguageState === "translated") {
                 pageTranslator.restorePage()
             } else {
+                pageTranslator.translatePage()
+            }
+        } else if (request.action === "retranslatePage") {
+            if (pageLanguageState === "translated") {
                 pageTranslator.translatePage()
             }
         } else if (request.action === "autoTranslateBecauseClickedALink") {

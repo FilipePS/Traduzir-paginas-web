@@ -513,6 +513,16 @@ twpConfig.onReady(() => {
                     case "showButtonInTheAddressBar":
                         updateIconInAllTabs()
                         break
+					case "showTextSideBySide":
+						chrome.tabs.query({
+							active: true,
+							currentWindow: true
+						}, tabs => {
+							chrome.tabs.sendMessage(tabs[0].id, {
+								action: "retranslatePage"
+							}, checkedLastError)
+						})
+						break
                 }
             })
         }

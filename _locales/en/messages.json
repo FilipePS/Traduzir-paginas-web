@@ -254,6 +254,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Show translation when hovering over this site"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
     "placeholders": {

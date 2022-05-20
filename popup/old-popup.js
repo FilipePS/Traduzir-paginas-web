@@ -465,6 +465,14 @@ twpConfig.onReady(function () {
                     }
                     window.close()
                     break
+                case "showTextSideBySide":
+                    if (twpConfig.get("showTextSideBySide") === "yes") {
+                        twpConfig.set("showTextSideBySide", "no")
+                    } else {
+                        twpConfig.set("showTextSideBySide", "yes")
+                    }
+                    window.close()
+                    break
                 case "translateInExternalSite":
                     chrome.tabs.query({
                         active: true,
@@ -541,6 +549,13 @@ twpConfig.onReady(function () {
             } else {
                 $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = "✔ " + text
             }
-        }
+        } {
+            const text = chrome.i18n.getMessage("lblShowTextSideBySide")
+            if (twpConfig.get("showTextSideBySide") !== "yes") {
+                $("option[data-i18n=lblShowTextSideBySide]").textContent = text
+            } else {
+                $("option[data-i18n=lblShowTextSideBySide]").textContent = "✔ " + text
+            }
+        } 
     })
 })
