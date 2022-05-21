@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Мова перекладу $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -294,16 +294,16 @@
     "message": "Використовуйте старий спливаючий інтерфейс"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Перекласти інтерфейс"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Показувати значок в адресному рядку"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Послуга перекладу сторінки"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Послуга перекладу тексту"
   },
   "msgStorage": {
     "message": "Сховище"
@@ -354,10 +354,10 @@
     "message": "Include Ctrl or Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Введіть символ"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Недійсна комбінація"
   },
   "lblSwitchTranslatedAndOriginal": {
     "message": "Switch between the translated and the original page"
