@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Переклад вебсторінок"
   },
   "extensionDescription": {
     "message": "Перекладіть свою сторінку в реальному часі за допомогою Google або Yandex."
@@ -81,7 +81,7 @@
     "message": "Ніколи не перекладати цей сайт"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Завжди перекладати ці мови"
   },
   "optionPopupConfig": {
     "message": "Показати спливаюче вікно для мобільних пристроїв"
