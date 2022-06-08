@@ -348,11 +348,20 @@ twpConfig.onReady(function () {
             }
         })
 
-        $("#cbShowTranslatedWhenHoveringThisLang").addEventListener("change", e => {
+        $("#cbShowTranslatedWhenHoveringThisSite").addEventListener("change", e => {
+            const hostname = new URL(tabs[0].url).hostname
             if (e.target.checked) {
-                twpConfig.addLangToTranslateWhenHovering(originalTabLanguage)
+                twpConfig.addSiteToTranslateWhenHovering(hostname)
             } else {
-                twpConfig.removeLangFromTranslateWhenHovering(originalTabLanguage)
+                twpConfig.removeSiteFromTranslateWhenHovering(hostname)
+            }
+        })
+
+        $("#cbShowTextSideBySide").addEventListener("change", e => {
+            if (e.target.checked) {
+                twpConfig.set("showTextSideBySide", "yes")
+            } else {
+                twpConfig.set("showTextSideBySide", "no")
             }
         })
 
@@ -383,6 +392,13 @@ twpConfig.onReady(function () {
                 $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = text
             } else {
                 $("option[data-i18n=lblShowTranslatedWhenHoveringThisSite]").textContent = "✔ " + text
+            }
+        } {
+            const text = chrome.i18n.getMessage("lblShowTextSideBySide")
+            if (twpConfig.get("showTextSideBySide") !== "yes") {
+                $("option[data-i18n=lblShowTextSideBySide]").textContent = text
+            } else {
+                $("option[data-i18n=lblShowTextSideBySide]").textContent = "✔ " + text
             }
         }
     })
@@ -460,6 +476,14 @@ twpConfig.onReady(function () {
                         twpConfig.addLangToTranslateWhenHovering(originalTabLanguage)
                     } else {
                         twpConfig.removeLangFromTranslateWhenHovering(originalTabLanguage)
+                    }
+                    window.close()
+                    break
+                case "showTextSideBySide":
+                    if (twpConfig.get("showTextSideBySide") === "yes") {
+                        twpConfig.set("showTextSideBySide", "no")
+                    } else {
+                        twpConfig.set("showTextSideBySide", "yes")
                     }
                     window.close()
                     break

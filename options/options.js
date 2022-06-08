@@ -452,6 +452,11 @@ twpConfig.onReady(function () {
     }
     $("#showOriginalTextWhenHovering").value = twpConfig.get("showOriginalTextWhenHovering")
 
+    $("#showTextSideBySide").onchange = e => {
+        twpConfig.set("showTextSideBySide", e.target.value)
+    }
+    $("#showTextSideBySide").value = twpConfig.get("showTextSideBySide")
+
     $("#translateTag_pre").onchange = e => {
         twpConfig.set("translateTag_pre", e.target.value)
     }
