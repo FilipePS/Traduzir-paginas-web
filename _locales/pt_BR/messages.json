@@ -18,7 +18,7 @@
     "message": "Traduzido"
   },
   "lblError": {
-    "message": "Não se pôde traduzir esta página"
+    "message": "Não foi possível traduzir esta página"
   },
   "lblAlwaysTranslate": {
     "message": "Sempre traduzir do $LANGUAGE_NAME$",
@@ -63,7 +63,7 @@
     "message": "Nunca traduzir este site"
   },
   "btnChangeLanguages": {
-    "message": "Mudar idiomas"
+    "message": "Alternar idiomas"
   },
   "btnMobileOriginal": {
     "message": "Original"
@@ -90,7 +90,7 @@
     "message": "Automático"
   },
   "optionPopupThreeFingers": {
-    "message": "Ao tocar três dedos na tela"
+    "message": "Ao tocar com três dedos na tela"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Abrir no Yandex Translate"
@@ -114,7 +114,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Mostrar a opção de traduzir a pagina no menu contextual"
+    "message": "Mostrar a opção de traduzir a página no menu contextual"
   },
   "msgYes": {
     "message": "Sim"
@@ -135,7 +135,7 @@
     "message": "Traduzir Páginas Web - Opções"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Apenas quando clico em \"Traduzir este site\""
+    "message": "Apenas quando clicar em \"Traduzir este site\""
   },
   "msgEmptyListNeverTranslateSites": {
     "message": "Você não adicionou nenhum site a esta lista."
@@ -228,7 +228,7 @@
     "message": "Sempre traduzir este idioma"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Mostrar texto traduzido ao passar o mouse nestes sites"
+    "message": "Mostrar texto traduzido ao passar o cursor do mouse nestes sites"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Deixe o ícone pop-up azul quando o site for traduzido"
