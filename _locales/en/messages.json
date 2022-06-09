@@ -93,10 +93,10 @@
     "message": "When I touch three fingers on the screen"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Open in Google Translate"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Others:"
   },
   "btnMoreOptions": {
     "message": "More options"
