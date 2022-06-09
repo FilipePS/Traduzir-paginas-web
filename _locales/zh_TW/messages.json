@@ -18,7 +18,7 @@
     "message": "已翻譯"
   },
   "lblError": {
-    "message": "此頁面無法翻譯"
+    "message": "無法翻譯此頁面"
   },
   "lblAlwaysTranslate": {
     "message": "始終從 $LANGUAGE_NAME$ 翻譯",
@@ -84,7 +84,7 @@
     "message": "始終翻譯這些語言"
   },
   "optionPopupConfig": {
-    "message": "顯示手機彈出視窗"
+    "message": "顯示行動裝置彈出視窗"
   },
   "optionPopupAuto": {
     "message": "自動"
@@ -135,7 +135,7 @@
     "message": "翻譯網頁-選項"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "當我選擇“翻譯此網頁”時"
+    "message": "當我選擇「翻譯此網站」時"
   },
   "msgEmptyListNeverTranslateSites": {
     "message": "您尚未將任何網頁添加到此列表。"
@@ -150,7 +150,7 @@
     "message": "始終翻譯這些網站"
   },
   "msgDonateWithPaypal": {
-    "message": "透過 PayPal 贊助"
+    "message": "用 PayPal 資助"
   },
   "lblDarkMode": {
     "message": "黑暗模式"
@@ -159,7 +159,7 @@
     "message": "更新時顯示更新日誌"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "在選中文字旁顯示翻譯按鈕"
+    "message": "在選中的文字旁顯示翻譯按鈕"
   },
   "msgAutomatic": {
     "message": "自動"
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "當懸停在使用這些語言的網站上時，顯示翻譯文本。"
+    "message": "當懸停在使用這些語言的網站上時，顯示翻譯文字。"
   },
   "msgNoTranslateSelectedText": {
     "message": "不要翻譯選定的文字"
@@ -339,7 +339,7 @@
     "message": "這個檔案似乎已毀損"
   },
   "doYouWantRestoreSettings": {
-    "message": "您要將擴充功能設定重設成預設嗎?"
+    "message": "您要將擴充套件設定重設成預設嗎？"
   },
   "lblTtsSpeed": {
     "message": "文字轉語音速度"
@@ -456,7 +456,7 @@
     "message": "複製"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "最近記錄"
   },
   "msgAll": {
     "message": "全選"

@@ -18,7 +18,7 @@
     "message": "Traduzido"
   },
   "lblError": {
-    "message": "Não se pôde traduzir esta página"
+    "message": "Não foi possível traduzir esta página"
   },
   "lblAlwaysTranslate": {
     "message": "Sempre traduzir do $LANGUAGE_NAME$",
@@ -63,7 +63,7 @@
     "message": "Nunca traduzir este site"
   },
   "btnChangeLanguages": {
-    "message": "Mudar idiomas"
+    "message": "Alternar idiomas"
   },
   "btnMobileOriginal": {
     "message": "Original"
@@ -84,13 +84,13 @@
     "message": "Sempre traduzir estes idiomas"
   },
   "optionPopupConfig": {
-    "message": "Mostrar o popup móvel"
+    "message": "Mostrar o pop-up móvel"
   },
   "optionPopupAuto": {
     "message": "Automático"
   },
   "optionPopupThreeFingers": {
-    "message": "Ao tocar três dedos na tela"
+    "message": "Ao tocar com três dedos na tela"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Abrir no Yandex Translate"
@@ -114,7 +114,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Mostrar a opção de traduzir a pagina no menu contextual"
+    "message": "Mostrar a opção de traduzir a página no menu contextual"
   },
   "msgYes": {
     "message": "Sim"
@@ -135,7 +135,7 @@
     "message": "Traduzir Páginas Web - Opções"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Apenas quando clico em \"Traduzir este site\""
+    "message": "Apenas quando clicar em \"Traduzir este site\""
   },
   "msgEmptyListNeverTranslateSites": {
     "message": "Você não adicionou nenhum site a esta lista."
@@ -222,13 +222,13 @@
     "message": "Obrigado por usar esta extensão."
   },
   "msgIWillBeGrateful": {
-    "message": "Ficarei grato se você puder fazer uma doação."
+    "message": "Ficarei grato, se você podê me ajudar com uma doação."
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Sempre traduzir este idioma"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Mostrar texto traduzido ao passar o mouse nestes sites"
+    "message": "Mostrar texto traduzido ao passar o cursor do mouse nestes sites"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Deixe o ícone pop-up azul quando o site for traduzido"
@@ -252,10 +252,10 @@
     "message": "Não mostrar se o idioma do texto selecionado for desconhecido"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Mostrar tradução ao passar o mouse sobre este site"
+    "message": "Mostrar tradução ao passar o cursor do mouse sobre este site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Mostrar tradução ao passar o mouse sobre sites em $LANGUAGE_NAME$",
+    "message": "Mostrar tradução ao passar o cursor do mouse sobre sites em $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Mostrar texto traduzido ao passar o mouse sobre sites com estes idiomas"
+    "message": "Mostrar texto traduzido ao passar o cursor do mouse sobre sites com estes idiomas"
   },
   "msgNoTranslateSelectedText": {
     "message": "Não traduzir o texto selecionado"
@@ -291,7 +291,7 @@
     "message": "Serviço de tradução"
   },
   "msgUseOldPopupInterface": {
-    "message": "Usar a interface antiga do popup"
+    "message": "Usar a interface antiga do pop-up"
   },
   "lblTranslateInterface": {
     "message": "Traduzir a interface"
@@ -327,19 +327,19 @@
     "message": "Restaurar do arquivo"
   },
   "resetToDefault": {
-    "message": "Restaurar configurações padrão"
+    "message": "Restaurar configuração padrão"
   },
   "doYouWantToDeleteTranslationCache": {
     "message": "Deseja deletar o cache de tradução?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Deseja substituir todas as configurações existentes usando os dados do backup?"
+    "message": "Deseja substituir toda configuração existente usando os dados do backup?"
   },
   "fileIsCorrupted": {
     "message": "O arquivo parece estar corrompido"
   },
   "doYouWantRestoreSettings": {
-    "message": "Deseja restaurar a extensão para as configurações padrão?"
+    "message": "Deseja restaurar a extensão para configuração padrão?"
   },
   "lblTtsSpeed": {
     "message": "Velocidade de áudio do texto em voz"
@@ -369,7 +369,7 @@
     "message": "Traduza a página para o idioma de destino"
   },
   "lblTranslateTag_pre": {
-    "message": "Ativar tradução para a tag $HTML_TAG_NAME$",
+    "message": "Ativar tradução para etiqueta\n$HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -392,10 +392,10 @@
     "message": "Traduzir automaticamente ao clicar em um link que leva você para o mesmo domínio do site atual"
   },
   "openNativeShortcutManager": {
-    "message": "Abra o gerenciador de teclas de atalho nativo"
+    "message": "Abrir gerenciador de teclas de atalho nativa"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Atalhos do teclado especiais"
+    "message": "Atalhos especiais do teclado"
   },
   "lblTranslateSelectedWhenPressTwice": {
     "message": "Traduza o texto selecionado ao pressionar $SHORTCUT_KEY$ duas vezes",
@@ -414,10 +414,10 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Traduza a página clicando uma vez sobre o botão na barra de endereço. (Para ver o popup, clique com o botão direito)"
+    "message": "Traduza a página clicando uma vez sobre o botão na barra de endereço. (Para ver o pop-up, clique com o botão direito)"
   },
   "btnShowPopup": {
-    "message": "Mostrar popup"
+    "message": "Mostrar pop-up"
   },
   "msgToTranslateThisDocument": {
     "message": "Para traduzir este documento $DOC_TYPE$ é necessário convertê-lo para HTML",
@@ -432,7 +432,7 @@
     "message": "Selecione um serviço para fazer esta conversão"
   },
   "msgDownloadingDocument": {
-    "message": "Baixando o documento..."
+    "message": "Baixando documento..."
   },
   "msgSendDocument": {
     "message": "Enviar documento"

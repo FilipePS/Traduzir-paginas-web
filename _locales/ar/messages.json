@@ -12,7 +12,7 @@
     "message": "ترجم هذه الصفحة؟"
   },
   "lblTranslating": {
-    "message": "جار الترجمة ..."
+    "message": "جار التَّرْجَمَةً ..."
   },
   "lblTranslated": {
     "message": "تمت الترجمة"
@@ -81,7 +81,7 @@
     "message": "لا تترجم هذه المواقع أبدًا"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "دائما ترجمة هذه اللغة"
   },
   "optionPopupConfig": {
     "message": "إظهار النافذة المنبثقة للجوال"

@@ -39,7 +39,7 @@
     }
   },
   "btnReset": {
-    "message": "Przywróć"
+    "message": "Resetuj"
   },
   "btnTranslate": {
     "message": "Tłumacz"
@@ -57,7 +57,7 @@
     "message": "Otwórz w Tłumaczu Google"
   },
   "btnDonate": {
-    "message": "Wesprzyj"
+    "message": "Wspomóż"
   },
   "btnNeverTranslate": {
     "message": "Nigdy nie tłumacz tej strony"
@@ -93,7 +93,7 @@
     "message": "Kiedy dotykam ekranu trzema palcami"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Otwórz w Yandex translate"
+    "message": "Otwórz w translatorze Yandex"
   },
   "lblOthers": {
     "message": "Inne"
@@ -156,7 +156,7 @@
     "message": "Ciemny motyw"
   },
   "lblShowReleaseNotes": {
-    "message": "Pokaż informacje o wydaniu podczas aktualizacji"
+    "message": "Pokaż informacje o wydaniu, kiedy aktualizuje rozszerzenie"
   },
   "lblShowTranslateSelectedButton": {
     "message": "Pokaż przycisk, aby przetłumaczyć zaznaczony tekst"
@@ -219,7 +219,7 @@
     "message": "Aby przetłumaczyć witrynę"
   },
   "msgThanksForUseExtension": {
-    "message": "Dziękujemy za skorzystanie z tego rozszerzenia."
+    "message": "Dziękujemy że korzystasz z tego rozszerzenia."
   },
   "msgIWillBeGrateful": {
     "message": "Będę wdzięczny, jeśli możesz przekazać darowiznę."
