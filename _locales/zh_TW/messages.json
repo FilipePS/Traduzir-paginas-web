@@ -54,10 +54,10 @@
     "message": "再試一次"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "在 Google 翻譯中開啟"
+    "message": "在Google翻譯中打開"
   },
   "btnDonate": {
-    "message": "資助"
+    "message": "贊助"
   },
   "btnNeverTranslate": {
     "message": "永遠不要翻譯這個網站"
@@ -75,7 +75,7 @@
     "message": "永遠不要翻譯這個網站"
   },
   "btnMobileDonate": {
-    "message": "資助"
+    "message": "贊助"
   },
   "optionsNeverTranslate": {
     "message": "永遠不要翻譯這些網站"
@@ -102,7 +102,7 @@
     "message": "更多選項"
   },
   "lblPlsDonate": {
-    "message": "資助開發者"
+    "message": "贊助開發者"
   },
   "msgTranslateFor": {
     "message": "翻譯至 $LANGUAGE_NAME$",
