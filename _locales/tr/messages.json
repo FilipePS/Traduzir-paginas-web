@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Web Sayfalarını Çevirmek istermisin"
+    "message": "Web Sayfalarını Çevir"
   },
   "extensionDescription": {
     "message": "Sayfanızı Google veya Yandex'i kullanarak gerçek zamanlı olarak çevirin."
@@ -63,7 +63,7 @@
     "message": "Bu siteyi asla çevirme"
   },
   "btnChangeLanguages": {
-    "message": "Diller değişmek"
+    "message": "Dilleri değiştir"
   },
   "btnMobileOriginal": {
     "message": "Orijinal"
@@ -75,7 +75,7 @@
     "message": "Bu siteyi asla çevirme"
   },
   "btnMobileDonate": {
-    "message": "Bağış yapma"
+    "message": "Bağış yap"
   },
   "optionsNeverTranslate": {
     "message": "Bu siteleri asla çevirme"
@@ -192,10 +192,10 @@
     "message": "Görünüm"
   },
   "msgHotkeys": {
-    "message": "Kısayollu Tuşlar"
+    "message": "Kısayol tuşları"
   },
   "lblMakeDonation": {
-    "message": "Bağışta Bulun"
+    "message": "Bağış Yap"
   },
   "lblReleaseNotes": {
     "message": "Sürüm notları"
@@ -216,7 +216,7 @@
     "message": "Klavye kısayolları"
   },
   "msgToTranslateSites": {
-    "message": "Bu siteyi asla dönüştürme"
+    "message": "Bu sayfayı çevirmek için"
   },
   "msgThanksForUseExtension": {
     "message": "Bu uzantıyı kullandığınız için teşekkür ederiz."
@@ -459,7 +459,7 @@
     "message": "Son kullanılanlar"
   },
   "msgAll": {
-    "message": "Tamamı"
+    "message": "Tümü"
   },
   "msgPleaseWait": {
     "message": "Lütfen bekleyiniz..."
