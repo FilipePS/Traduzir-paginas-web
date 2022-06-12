@@ -453,15 +453,15 @@
     "message": "PDF do HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Kopírovat"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Nedávné"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Všechno"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Prosím, čekejte..."
   }
 }
