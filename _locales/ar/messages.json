@@ -438,7 +438,7 @@
     "message": "إرسال مستند"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error deleting document."
+    "message": "Error downloading document"
   },
   "msgFileLargerThan": {
     "message": "هذه الخدمة لا تدعم ملفات أكبر من $FILE_SIZE$",
