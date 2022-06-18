@@ -344,7 +344,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
         const placeholdersElements = root.querySelectorAll('input[placeholder], textarea[placeholder]')
         const altElements = root.querySelectorAll('area[alt], img[alt], input[type="image"][alt]')
-        const valueElements = root.querySelectorAll('input[type="button"], input[type="submit"]')
+        const valueElements = root.querySelectorAll('input[type="button"], input[type="submit"], input[type="reset"]')
         const titleElements = root.querySelectorAll("body [title]")
 
         function hasNoTranslate(elem) {
@@ -387,6 +387,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                 attributesToTranslate.push({
                     node: e,
                     original: "Submit Query",
+                    attrName: "value"
+                })
+            } else if (e.type == "reset" && !txt) {
+                attributesToTranslate.push({
+                    node: e,
+                    original: "Reset",
                     attrName: "value"
                 })
             } else if (txt && txt.trim()) {
