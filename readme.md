@@ -38,17 +38,6 @@ To make a donation use [Patreon](https://www.patreon.com/filipeps).
 
 [<img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/icons/patreon.png" alt="Patreon" height="50">](https://www.patreon.com/filipeps)
 
-### Thanks to the Patrons
-+ Henry Henderson
-+ László Dr. Gerő
-+ Mohammad El Musleh
-+ Lani
-+ EWi2M5UR
-+ 2 kojix
-+ Vadim
-+ rifter
-+ Dima Kompot
-
 ## FAQ
 
 **What can this extension do?**
