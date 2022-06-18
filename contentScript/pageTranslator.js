@@ -389,6 +389,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                     original: "Submit Query",
                     attrName: "value"
                 })
+            } else if (e.type == "reset" && !txt) {
+                attributesToTranslate.push({
+                    node: e,
+                    original: "Reset",
+                    attrName: "value"
+                })
             } else if (txt && txt.trim()) {
                 attributesToTranslate.push({
                     node: e,
