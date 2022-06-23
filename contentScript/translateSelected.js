@@ -244,7 +244,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				el.textContent = `
                     #eDivResult {
                         backdrop-filter: none;
-                        background-color: rgba(0, 0, 0, 0.925);
+                        background-color: rgba(25, 25, 25, 0.98);
                         color: white;
                     }
                     li, #moreOrLess {
@@ -254,7 +254,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
                     	background-color: rgba(255, 255, 255, 0.4);
                     }
             		hr {
-            			border: 1px rgba(255, 255, 255, 0.75) solid;
+            			border: 1px rgba(225, 225, 225, 0.75) solid;
             		}
             		#listen {
             		    fill: white;
@@ -264,7 +264,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				el.textContent = `
                     #eDivResult {
                         backdrop-filter: none;
-                        background-color: rgba(225, 225, 225, 0.925);
+                        background-color: rgba(225, 225, 225, 0.98);
                         color: black;
                     }
                     li, #moreOrLess {
