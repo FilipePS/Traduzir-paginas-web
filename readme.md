@@ -16,7 +16,7 @@ Translate your page in real time using Google or Yandex.
 
 #### Chromium based browsers
 
-1. Download [this file](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.5/TWP.9.5.1.Chromium.zip), or any [other version](https://github.com/FilipePS/Traduzir-paginas-web/releases)
+1. Download [this file](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.5.1/TWP.9.5.1.Chromium.zip), or any [other version](https://github.com/FilipePS/Traduzir-paginas-web/releases)
 2. Extract the zip file
 3. Open your browser's extension manager
 4. Activate developer mode
