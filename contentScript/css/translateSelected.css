@@ -21,13 +21,29 @@
     z-index: 2147483647;
 }
 
+#transTextContainer, #origTextContainer {
+    position: relative;
+}
+
+#listenOriginal, #listenTranslated {
+    position: absolute;
+    top: 0px;
+    right: 2px;
+}
+
+#copy {
+    position: absolute;
+    top: 30px;
+    right: 2px;
+}
+
 #eSelTextTrans,
 #eOrigText {
+    overflow: auto;
     padding: 14px;
     font-size: 16px;
     max-width: 440px;
     max-height: 250px;
-    overflow: auto;
     white-space: pre-wrap;
     min-height: 25px;
     user-select: text;

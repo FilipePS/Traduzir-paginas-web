@@ -20,7 +20,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 	let eDivResult
 	let eSelTextTrans
 	let eOrigText
-	let eOrigTextDiv
+	let origTextContainer
 	
 	let originalTabLanguage = "und"
 	let currentTargetLanguages = twpConfig.get("targetLanguages")
@@ -62,15 +62,15 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 	}
 	
 	let audioDataUrls = null
-	let isPlayingAudio = false
+	let playingAudio = null
 	
 	function stopAudio() {
-		if (isPlayingAudio) {
+		if (playingAudio) {
 			chrome.runtime.sendMessage({
 				action: "stopAudio"
 			})
 		}
-		isPlayingAudio = false
+		playingAudio = null
 	}
 	
 	function dragElement(elmnt, elmnt2) {
@@ -140,38 +140,36 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		})
 		
 		shadowRoot.innerHTML = `
-        <link rel="stylesheet" href="${chrome.runtime.getURL("/contentScript/css/translateSelected.css")}">
-
         <div id="eButtonTransSelText"></div>
 		<div id="eDivResult">
-			<div id="eOrigTextDiv">
-				<div id="eOrigText" contentEditable="true" spellcheck="false" dir="auto"></div>
-				<hr>
+			<div id="origTextContainer">
+				<div>
+					<div id="eOrigText" contentEditable="true" spellcheck="false" dir="auto"></div>
+					<hr>
+				</div>
+				<ul><li title="Listen" data-i18n-title="btnListen" id="listenOriginal">
+					<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 93.038 93.038"
+						style="enable-background:new 0 0 93.038 93.038;" xml:space="preserve">
+					<g>
+						<path d="M46.547,75.521c0,1.639-0.947,3.128-2.429,3.823c-0.573,0.271-1.187,0.402-1.797,0.402c-0.966,0-1.923-0.332-2.696-0.973
+						l-23.098-19.14H4.225C1.892,59.635,0,57.742,0,55.409V38.576c0-2.334,1.892-4.226,4.225-4.226h12.303l23.098-19.14
+						c1.262-1.046,3.012-1.269,4.493-0.569c1.481,0.695,2.429,2.185,2.429,3.823L46.547,75.521L46.547,75.521z M62.784,68.919
+						c-0.103,0.007-0.202,0.011-0.304,0.011c-1.116,0-2.192-0.441-2.987-1.237l-0.565-0.567c-1.482-1.479-1.656-3.822-0.408-5.504
+						c3.164-4.266,4.834-9.323,4.834-14.628c0-5.706-1.896-11.058-5.484-15.478c-1.366-1.68-1.24-4.12,0.291-5.65l0.564-0.565
+						c0.844-0.844,1.975-1.304,3.199-1.231c1.192,0.06,2.305,0.621,3.061,1.545c4.977,6.09,7.606,13.484,7.606,21.38
+						c0,7.354-2.325,14.354-6.725,20.24C65.131,68.216,64.007,68.832,62.784,68.919z M80.252,81.976
+						c-0.764,0.903-1.869,1.445-3.052,1.495c-0.058,0.002-0.117,0.004-0.177,0.004c-1.119,0-2.193-0.442-2.988-1.237l-0.555-0.555
+						c-1.551-1.55-1.656-4.029-0.246-5.707c6.814-8.104,10.568-18.396,10.568-28.982c0-11.011-4.019-21.611-11.314-29.847
+						c-1.479-1.672-1.404-4.203,0.17-5.783l0.554-0.555c0.822-0.826,1.89-1.281,3.115-1.242c1.163,0.033,2.263,0.547,3.036,1.417
+						c8.818,9.928,13.675,22.718,13.675,36.01C93.04,59.783,88.499,72.207,80.252,81.976z"/>
+					</g>
+					</svg>
+				</li></ul>
 			</div>
-			<div id="eSelTextTrans" dir="auto"></div>
-			<div id="drag">
-				<ul id="setTargetLanguage">
-					<li value="en" title="English">en</li>
-					<li value="es" title="Spanish">es</li>
-					<li value="de" title="German">de</li>
-				</ul>
-				<div id="moreOrLess"><i class="arrow up" id="more"></i><i class="arrow down" id="less"></i></div>
+			<div id="transTextContainer">
+				<div id="eSelTextTrans" dir="auto"></div>
 				<ul>
-					<li title="Google" id="sGoogle">g</li>
-					<li title="Yandex" id="sYandex">y</li>
-					<li title="Bing" id="sBing">b</li>
-					<li title="DeepL" id="sDeepL" hidden>d</li>
-				</ul>
-				<ul>
-					<li title="Copy" data-i18n-title="btnCopy" id="copy">
-						<svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M13 7H7V5H13V7Z" fill="currentColor" />
-						<path d="M13 11H7V9H13V11Z" fill="currentColor" />
-						<path d="M7 15H13V13H7V15Z" fill="currentColor" />
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M3 19V1H17V5H21V23H7V19H3ZM15 17V3H5V17H15ZM17 7V19H9V21H19V7H17Z" fill="currentColor"/>
-						</svg>
-					</li>
-					<li title="Listen" data-i18n-title="btnListen" id="listen">
+					<li title="Listen" data-i18n-title="btnListen" id="listenTranslated">
 						<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 93.038 93.038"
 							style="enable-background:new 0 0 93.038 93.038;" xml:space="preserve">
 						<g>
@@ -189,13 +187,45 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 						</g>
 						</svg>
 					</li>
+					<li title="Copy" data-i18n-title="btnCopy" id="copy">
+						<svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13 7H7V5H13V7Z" fill="currentColor" />
+						<path d="M13 11H7V9H13V11Z" fill="currentColor" />
+						<path d="M7 15H13V13H7V15Z" fill="currentColor" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M3 19V1H17V5H21V23H7V19H3ZM15 17V3H5V17H15ZM17 7V19H9V21H19V7H17Z" fill="currentColor"/>
+						</svg>
+					</li>
+				</ul>
+			</div>
+			<div id="drag">
+				<ul id="setTargetLanguage">
+					<li value="en" title="English">en</li>
+					<li value="es" title="Spanish">es</li>
+					<li value="de" title="German">de</li>
+				</ul>
+				<div id="moreOrLess"><i class="arrow up" id="more"></i><i class="arrow down" id="less"></i></div>
+				<ul>
+					<li title="Google" id="sGoogle">g</li>
+					<li title="Yandex" id="sYandex">y</li>
+					<li title="Bing" id="sBing">b</li>
+					<li title="DeepL" id="sDeepL" hidden>d</li>
 				</ul>
 			</div>
 		</div>
         `
-		const style = document.createElement("style")
-		style.textContent = styleTextContent
-		shadowRoot.insertBefore(style, shadowRoot.getElementById("eButtonTransSelText"))
+		
+
+		if (!styleTextContent) {
+			const style = document.createElement("style")
+			style.textContent = styleTextContent
+			shadowRoot.insertBefore(style, shadowRoot.getElementById("eButtonTransSelText"))
+		} else {
+			const link = document.createElement("link")
+			link.setAttribute("rel", "stylesheet")
+			link.setAttribute("href", chrome.runtime.getURL("/contentScript/css/translateSelected.css"))
+			shadowRoot.insertBefore(link, shadowRoot.getElementById("eButtonTransSelText"))
+		}
+		
 		
 		dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
 
@@ -288,7 +318,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		eDivResult = shadowRoot.getElementById("eDivResult")
 		eSelTextTrans = shadowRoot.getElementById("eSelTextTrans")
 		eOrigText = shadowRoot.getElementById("eOrigText")
-		eOrigTextDiv = shadowRoot.getElementById("eOrigTextDiv")
+		origTextContainer = shadowRoot.getElementById("origTextContainer")
 		
 		const eMoreOrLess = shadowRoot.getElementById("moreOrLess")
 		const eMore = shadowRoot.getElementById("more")
@@ -299,7 +329,8 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		const sBing = shadowRoot.getElementById("sBing")
 		const sDeepL = shadowRoot.getElementById("sDeepL")
 		const eCopy = shadowRoot.getElementById("copy")
-		const eListen = shadowRoot.getElementById("listen")
+		const eListenOriginal = shadowRoot.getElementById("listenOriginal")
+		const eListenTranslated = shadowRoot.getElementById("listenTranslated")
 		
 		eCopy.onclick = () => {
 			navigator.clipboard.writeText(eSelTextTrans.textContent).then(() => {
@@ -401,51 +432,79 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				e.target.classList.add("selected")
 			}
 		}
-		
-		eListen.onclick = () => {
+
+		function onListenClick(type, element, text, language) {
 			const msgListen = chrome.i18n.getMessage("btnListen")
 			const msgStopListening = chrome.i18n.getMessage("btnStopListening")
 			
-			eListen.classList.remove("selected")
-			eListen.setAttribute("title", msgStopListening)
+			eListenOriginal.classList.remove("selected")
+			eListenTranslated.classList.remove("selected")
+			eListenOriginal.setAttribute("title", msgStopListening)
+			eListenTranslated.setAttribute("title", msgStopListening)
 			
 			if (audioDataUrls) {
-				if (isPlayingAudio) {
+				if (playingAudio) {
 					stopAudio()
-					eListen.setAttribute("title", msgListen)
+					element.setAttribute("title", msgListen)
 				} else {
-					isPlayingAudio = true
+					playingAudio = type
 					chrome.runtime.sendMessage({
 						action: "playAudio",
 						audioDataUrls
 					}, () => {
-						eListen.classList.remove("selected")
-						eListen.setAttribute("title", msgListen)
+						element.classList.remove("selected")
+						element.setAttribute("title", msgListen)
 					})
-					eListen.classList.add("selected")
+					element.classList.add("selected")
 				}
 			} else {
 				stopAudio()
-				isPlayingAudio = true
+				playingAudio = type
 				chrome.runtime.sendMessage({
 					action: "textToSpeech",
-					text: eSelTextTrans.textContent,
-					targetLanguage: currentTargetLanguage
+					text: text,
+					targetLanguage: language
 				}, result => {
-					if (!result) return;
+					if (!result) {
+						stopAudio()
+						eListenOriginal.classList.remove("selected")
+						eListenTranslated.classList.remove("selected")
+						eListenOriginal.setAttribute("title", msgListen)
+						eListenTranslated.setAttribute("title", msgListen)
+					}
 					
 					audioDataUrls = result
 					chrome.runtime.sendMessage({
 						action: "playAudio",
 						audioDataUrls
 					}, () => {
-						isPlayingAudio = false
-						eListen.classList.remove("selected")
-						eListen.setAttribute("title", msgListen)
+						playingAudio = null
+						element.classList.remove("selected")
+						element.setAttribute("title", msgListen)
 					})
 				})
-				eListen.classList.add("selected")
+				element.classList.add("selected")
 			}
+		}
+
+		let lastListenAudioType = null
+		eListenOriginal.onclick = async () => {
+			let language = await detectTextLanguage(eOrigText.textContent)
+			if (lastListenAudioType !== "original") {
+				audioDataUrls = null;
+				stopAudio();
+			}
+			lastListenAudioType = "original"
+			onListenClick("original", eListenOriginal, eOrigText.textContent, language)
+		}
+		
+		eListenTranslated.onclick = () => {
+			if (lastListenAudioType !== "translated") {
+				audioDataUrls = null;
+				stopAudio();
+			}
+			lastListenAudioType = "translated"
+			onListenClick("translated", eListenTranslated, eSelTextTrans.textContent, currentTargetLanguage)
 		}
 		
 		document.body.appendChild(divElement)
@@ -489,12 +548,12 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		}
 
 		if (twpConfig.get("expandPanelTranslateSelectedText") === "yes") {
-			eOrigTextDiv.style.display = "block"
+			origTextContainer.style.display = "block"
 			eMore.style.display = "none"
 			eLess.style.display = "block"
 			eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"))
 		} else {
-			eOrigTextDiv.style.display = "none"
+			origTextContainer.style.display = "none"
 			eMore.style.display = "block"
 			eLess.style.display = "none"
 			eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"))
@@ -512,13 +571,13 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				case "expandPanelTranslateSelectedText":
 					const prevHeight = parseInt(getComputedStyle(eDivResult).height)
 					if (newvalue === "yes") {
-						eOrigTextDiv.style.display = "block"
+						origTextContainer.style.display = "block"
 						eMore.style.display = "none"
 						eLess.style.display = "block"
 						eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"))
 						eDivResult.style.top = parseInt(eDivResult.style.top) + (prevHeight - parseInt(getComputedStyle(eDivResult).height)) + "px"
 					} else {
-						eOrigTextDiv.style.display = "none"
+						origTextContainer.style.display = "none"
 						eMore.style.display = "block"
 						eLess.style.display = "none"
 						eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"))
