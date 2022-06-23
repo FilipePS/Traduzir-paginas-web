@@ -198,8 +198,10 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		shadowRoot.insertBefore(style, shadowRoot.getElementById("eButtonTransSelText"))
 		
 		dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
+
+		const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 		
-		if (CSS.supports("backdrop-filter: blur(5px)")) {
+		if (CSS.supports("backdrop-filter: blur(5px)") && !isFirefox) {
 			const el = document.createElement("style")
 			el.setAttribute("id", "backdropFilterElement")
 			el.setAttribute("rel", "stylesheet")
