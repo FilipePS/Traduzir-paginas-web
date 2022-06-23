@@ -501,7 +501,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
                     function topIsInScreen(element) {
                         if (!element) {
-                            debugger;
+                            // debugger;
                             return false
                         }
                         const rect = element.getBoundingClientRect()
@@ -513,7 +513,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
                     function bottomIsInScreen(element) {
                         if (!element) {
-                            debugger;
+                            // debugger;
                             return false
                         }
                         const rect = element.getBoundingClientRect()
