@@ -47,16 +47,16 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		
 		return await new Promise(resolve => {
 			chrome.i18n.detectLanguage(text, result => {
-				if (!result) return resolve("und")
+				if (!result) return resolve({lang: "und", isReliable: false})
 				
 				for (const langInfo of result.languages) {
 					const langCode = twpLang.checkLanguageCode(langInfo.language)
 					if (langCode) {
-						return resolve(langCode)
+						return resolve({lang: langCode, isReliable: result.isReliable})
 					}
 				}
 				
-				return resolve("und")
+				return resolve({lang: "und", isReliable: false})
 			})
 		})
 	}
@@ -489,13 +489,16 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 
 		let lastListenAudioType = null
 		eListenOriginal.onclick = async () => {
-			let language = await detectTextLanguage(eOrigText.textContent)
+			let {lang, isReliable} = await detectTextLanguage(eOrigText.textContent)
+			if (!isReliable && originalTabLanguage !== "und") {
+				lang = originalTabLanguage
+			}
 			if (lastListenAudioType !== "original") {
 				audioDataUrls = null;
 				stopAudio();
 			}
 			lastListenAudioType = "original"
-			onListenClick("original", eListenOriginal, eOrigText.textContent, language)
+			onListenClick("original", eListenOriginal, eOrigText.textContent, lang)
 		}
 		
 		eListenTranslated.onclick = () => {
@@ -813,7 +816,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		
 		const selectedText = getSelectionText().trim()
 		if (!selectedText || selectedText.length < 1) return;
-		let detectedLanguage = await detectTextLanguage(selectedText)
+		let detectedLanguage = (await detectTextLanguage(selectedText)).lang
 		if (!detectedLanguage) detectedLanguage = "und";
 		
 		if (((dontShowIfSelectedTextIsTargetLang == "yes" && detectedLanguage !== currentTargetLanguage) || dontShowIfSelectedTextIsTargetLang != "yes") &&
