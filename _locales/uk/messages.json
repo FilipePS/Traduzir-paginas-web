@@ -105,7 +105,7 @@
     "message": "Матеріально подякувати розробнику"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Перекласти на $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Показати переклад під час наведення курсора на цей сайт"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Показувати переклад під час наведення курсора на вебсайти $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -342,16 +342,16 @@
     "message": "Ви дійсно бажаєте відновити типові налаштування розширення?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Швидкість перетворення звуку Text-to-speech"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "Увімкнути DeepL як службу перекладу тексту"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Введіть комбінацію"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Додайте Ctrl або Alt"
   },
   "hotkeyError_letter": {
     "message": "Введіть символ"
@@ -360,16 +360,16 @@
     "message": "Недійсна комбінація"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Перемикання між перекладеною та оригінальною сторінками"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Відновити сторінку до оригіналу"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Перекласти сторінку на цільову мову"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Увімкнути переклад для тегу $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Не сортувати результати Google Translate"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Перекладати динамічно створений контент"
   },
   "calculatestorage": {
     "message": "Підрахувати"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Зробити пожертву через PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Автоматично перекладати при натисканні на посилання, яке веде на той самий домен, що й поточний сайт"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Відкрийте вбудований менеджер гарячих клавіш"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Спеціальні сполучення клавіш"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Перекладати виділений текст при подвійному натисканні на $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Перекладати текст над курсором при подвійному натисканні $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
