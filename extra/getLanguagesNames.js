@@ -1,4 +1,7 @@
+// Yandex only languages ba, cv, mrj, kazlat, mhr, pap, udm, sah
+
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var DomParser = require('dom-parser');
 const fs = require('fs');
 
 function getKey() {
@@ -88,9 +91,10 @@ async function getLangsFrom(key, lang) {
     result.targetLanguages.forEach(tl => {
         if (tl.language === "zh-CN") {
             langs["zh"] = tl.name
-        }
-        if (tl.name === "iw") {
-            tl.name = "he"
+        } else if (tl.language === "iw") {
+            tl.language = "he"
+        } else if (tl.language === "jw") {
+            tl.language = "jv"
         }
         langs[tl.language] = tl.name
     })
@@ -101,6 +105,41 @@ async function getLangsFrom(key, lang) {
 
     return langs
 }
+
+async function getYandexLangs(lang) {
+    return await new Promise((resolve, reject) => {
+        const xhttp = new XMLHttpRequest
+        xhttp.onload = e => {
+            const langs = {}
+            try {
+                var parser = new DomParser()
+                var dom = parser.parseFromString(xhttp.responseText)
+                Array.from(dom.getElementsByClassName("yt-listbox__label")).forEach(node => {
+                    let language = node.childNodes[0].getAttribute("value")
+                    if (language === "uzbcyr") {
+                        language = "uz"
+                    }
+                    langs[language] = node.childNodes[1].textContent
+                })
+            } catch (e) {
+                console.error(e)
+                reject(e)
+            }
+            resolve(langs)
+        }
+        xhttp.onerror = e => {
+            console.error(e)
+            reject(e)
+        }
+        xhttp.open("GET", "https://translate.yandex.net/website-widget/v1/widget.html", true)
+        xhttp.send()
+    })
+}
+!async function() {
+    const langs = await getYandexLangs()
+    console.log(langs)
+    fs.writeFileSync("yandex.json", JSON.stringify(langs), "utf-8")
+}()
 
 async function init() {
     const key = await getKey()
