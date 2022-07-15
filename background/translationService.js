@@ -651,15 +651,45 @@ const translationService = {};
     translationService.yandex.translateSingleText = (source, targetLanguage, dontSaveInCache = false) => translationService.yandex.translateText([ source ], targetLanguage, dontSaveInCache).then(results => results[0])
     
     translationService.bing.translateSingleText = async (source, targetLanguage, dontSaveInCache = false) => {
-        if (targetLanguage == "zh-CN") {
-            targetLanguage = "zh-Hans"
-        } else if (targetLanguage == "zh-TW") {
-            targetLanguage = "zh-Hant"
-        } else if (targetLanguage == "tl") {
-            targetLanguage = "fil"
-        } else if (targetLanguage.indexOf("zh-") !== -1) {
-            targetLanguage = "zh-Hans"
-        }
+        const replacements = [
+            {
+                search: "zh-CN",
+                replace: "zh-Hans"
+            },
+            {
+                search: "zh-TW",
+                replace: "zh-Hant"
+            },
+            {
+                search: "tl",
+                replace: "fil"
+            },
+            {
+                search: "hmn",
+                replace: "mww"
+            },
+            {
+                search: "ckb",
+                replace: "kmr"
+            },
+            {
+                search: "mn",
+                replace: "mn-Cyrl"
+            },
+            {
+                search: "no",
+                replace: "nb"
+            },
+            {
+                search: "sr",
+                replace: "sr-Cyrl"
+            },
+        ];
+        replacements.forEach(r => {
+            if (targetLanguage === r.search) {
+                targetLanguage = r.replace
+            }
+        })
         await getBingSID()
 
         return await translateHTML(
