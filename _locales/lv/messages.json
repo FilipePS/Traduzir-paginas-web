@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Tīmekļa lapu tulkotājs"
   },
   "extensionDescription": {
     "message": "Translate your page in real time using Google or Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Tulkot šo lapu"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Tulkot šo lapu?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Tulko ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Iztulkots"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Šo lapu nevarēja iztulkot"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Vienmēr tulkot no $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -39,49 +39,49 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Atiestatīt"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Tulkot"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Iespējas"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Parādiet oriģinālu"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Mēģini vēlreiz"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Atvērt Google tulkotājā"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Ziedot"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Nekad netulkot šo vietni"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Mainīt valodas"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Oriģināls"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Tulkojums"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Nekad netulkot šo vietni"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Ziedot"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Nekad netulkot šīs vietnes"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Vienmēr tulkot šīs valodas"
   },
   "optionPopupConfig": {
     "message": "Show the mobile popup"
@@ -99,10 +99,10 @@
     "message": "Others"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "Vairāk iespēju"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Atbalstīt izstrādātāju ar ziedojumu"
   },
   "msgTranslateFor": {
     "message": "Translate to $LANGUAGE_NAME$",
@@ -117,22 +117,22 @@
     "message": "Show the option to translate the page in the context menu"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Jā"
   },
   "msgNo": {
-    "message": "No"
+    "message": "Nē"
   },
   "lblUseNewAlgorithm": {
     "message": "Use the new translation algorithm?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "Jā (ieteicams)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "Nē (izmanto logrīkus)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "Tīmekļa lapu tulkotāja - Iespējas"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
     "message": "Only when I click \"Translate this site\""
@@ -150,10 +150,10 @@
     "message": "Always translate these sites"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "Ziedot izmantojot PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "Tumšais režīms"
   },
   "lblShowReleaseNotes": {
     "message": "Show release notes when updating"
@@ -180,22 +180,22 @@
     "message": "Show original text when hovering"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "Valodas"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "Vietnes"
   },
   "msgTranslations": {
     "message": "Translations"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "Stils"
   },
   "msgHotkeys": {
     "message": "Hotkeys"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "Ziedot"
   },
   "lblReleaseNotes": {
     "message": "Release Notes"
@@ -204,10 +204,10 @@
     "message": "Report a problem"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "Iestatījumi"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "Pievienot"
   },
   "lblShowTranslatedWhenHovering": {
     "message": "Show translated text when hovering"
@@ -219,13 +219,13 @@
     "message": "To translate the site"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Paldies, ka izmantojāt šo paplašinājumu."
   },
   "msgIWillBeGrateful": {
     "message": "I will be grateful if you can make a donation."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Vienmēr tulkot šo valodu"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Show translated text when hovering on these sites"
@@ -234,10 +234,10 @@
     "message": "Make the pop-up icon blue when the site is translated"
   },
   "more": {
-    "message": "More"
+    "message": "Vairāk"
   },
   "less": {
-    "message": "Less"
+    "message": "Mazāk"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Do not show if the page language is the target language"
@@ -270,10 +270,10 @@
     "message": "Do not translate selected text"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Klausīties"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Beigt klausīties"
   },
   "btnApply": {
     "message": "Apply"
@@ -288,7 +288,7 @@
     "message": "Click this button to switch between the old and the new interface."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Tulkošanas pakalpojums"
   },
   "msgUseOldPopupInterface": {
     "message": "Use the old popup interface"
@@ -315,7 +315,7 @@
     "message": "Storage used:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Dzēst tulkojuma kešatmiņu"
   },
   "lblPersonalSettings": {
     "message": "Personal settings"
@@ -386,7 +386,7 @@
     "message": "Calculate"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Ziedot izmantojot PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
     "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
@@ -435,7 +435,7 @@
     "message": "Downloading the document..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Nosūtīt dokumentu"
   },
   "msgErrorDownloadingDocument": {
     "message": "Error downloading document"
@@ -450,10 +450,10 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF uz HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Kopēt"
   },
   "msgRecents": {
     "message": "Recents"
@@ -462,6 +462,6 @@
     "message": "All"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Lūdzu, uzgaidiet..."
   }
 }
