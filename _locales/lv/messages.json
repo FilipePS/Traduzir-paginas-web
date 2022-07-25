@@ -90,13 +90,13 @@
     "message": "Automātiski"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Kad es pieskaros ekrānam ar trim pirkstiem"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Atvērt Yandex tulkot"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Citi"
   },
   "btnMoreOptions": {
     "message": "Vairāk iespēju"
@@ -105,7 +105,7 @@
     "message": "Atbalstīt izstrādātāju ar ziedojumu"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Tulkot uz $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,7 +114,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Parādīt lapas tulkošanas opciju konteksta izvēlnē"
   },
   "msgYes": {
     "message": "Jā"
@@ -123,7 +123,7 @@
     "message": "Nē"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "Vai lietot jauno tulkošanas algoritmu?"
   },
   "msgYesRecommended": {
     "message": "Jā (ieteicams)"
@@ -135,19 +135,19 @@
     "message": "Tīmekļa lapu tulkotāja - Iespējas"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "Tikai kad noklikšķinu uz \"Tulkot šo vietni\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "Jūs neesat pievienojis šim sarakstam nevienu vietni."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "Jūs neesat pievienojis šim sarakstam nevienu valodu."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "Vienmēr tulkot šo vietni"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "Vienmēr tulkot šīs vietnes"
   },
   "msgDonateWithPaypal": {
     "message": "Ziedot izmantojot PayPal"
@@ -156,28 +156,28 @@
     "message": "Tumšais režīms"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Parādīt izmaiņu žurnālu, kad atjaunina"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Rādīt pogu, lai tulkotu atlasīto tekstu"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "Automātiski"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "Tulkot atlasīto tekstu"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Parādīt atlasītā teksta tulkošanas iespējas konteksta izvēlnē"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "Nekad netulko šīs valodas"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "Nekad netulkot šo valodu"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Rādīt oriģinālo tekstu, virzot peles kursoru"
   },
   "msgLanguages": {
     "message": "Valodas"
@@ -186,22 +186,22 @@
     "message": "Vietnes"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "Tulkojumi"
   },
   "msgStyle": {
     "message": "Stils"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Īsinājumtaustiņi"
   },
   "lblMakeDonation": {
     "message": "Ziedot"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Izmaiņu žurnāls"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "Ziņot par problēmu"
   },
   "lblSettings": {
     "message": "Iestatījumi"
@@ -210,28 +210,28 @@
     "message": "Pievienot"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Rādīt tulkoto tekstu, virzot peles kursoru"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Īsinājumtaustiņi"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "Tulkot vietni"
   },
   "msgThanksForUseExtension": {
     "message": "Paldies, ka izmantojāt šo paplašinājumu."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Būšu pateicīgs, ja ziedosiet."
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Vienmēr tulkot šo valodu"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Rādīt tulkoto tekstu, virzot peles kursoru šādām vietnēm"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Kad vietne ir iztulkota, iekrāsojiet uznirstošā loga ikonu zilā krāsā"
   },
   "more": {
     "message": "Vairāk"
@@ -240,22 +240,22 @@
     "message": "Mazāk"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Nerādīt, ja lapas valoda ir mērķvaloda"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "Nerādīt, ja lapas valoda nav zināma"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Nerādīt, ja atlasītā teksta valoda ir mērķvaloda"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Nerādīt, ja atlasītā teksta valoda nav zināma"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Rādīt tulkojumu, virzot peles kursoru šai vietnei"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Rādīt tulkojumu, virzot peles kursoru vietnēm $LANGUAGE_NAME$ valodā",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,10 +264,10 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Rādīt tulkoto tekstu, virzot peles kursoru vietnēm šajās valodās"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Netulkot atlasīto tekstu"
   },
   "btnListen": {
     "message": "Klausīties"
@@ -276,43 +276,43 @@
     "message": "Beigt klausīties"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Apstiprināt"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Pārslēgties starp tulkošanas pakalpojumiem"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Pārslēgties starp veco un jauno saskarni"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "Noklikšķiniet uz šīs pogas, lai pārslēgtos starp veco un jauno saskarni."
   },
   "lblTranslationService": {
     "message": "Tulkošanas pakalpojums"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Izmantot veco uznirstošo izvēlni"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Palīdziet šī paplašinājuma tulkošanā"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Rādīt ikonu adreses joslā"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Lapu tulkošanas pakalpojums"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Teksta tulkošanas pakalpojums"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Krātuve"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Tulkojuma kešatmiņa"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Krātuves lietojums:"
   },
   "deleteTranslationCache": {
     "message": "Dzēst tulkojuma kešatmiņu"
@@ -330,46 +330,46 @@
     "message": "Atjaunot noklusējuma iestatījumus"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Vai tiešām vēlaties dzēst tulkojuma kešatmiņu?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Vai pārrakstīt visus esošos iestatījumus, izmantojot dublējuma datus?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Fails ir bojāts"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Vai atjaunot paplašinājuma noklusējuma iestatījumus?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Teksta pārvēršana runā ātrums"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "Iespējot DeepL kā teksta tulkošanas pakalpojumu"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Ievadiet īsinājumtaustiņa kombināciju"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Iekļaut Ctrl vai Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Ievadiet burtu"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Nederīga kombinācija"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Pārslēgties starp lapas tulkojumu un oriģinālu"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Atjaunot sākotnējo lapas valodu"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Tulkot lapu mērķvalodā"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Iespējot tulkojumu tagam $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Nekārtot Google tulkotāja rezultātus"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Tulkot dinamiski ģenerētu saturu"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Aprēķināt"
   },
   "donatewithpaypal": {
     "message": "Ziedot izmantojot PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Automātiski tulkot, noklikšķinot uz saiti, kas novirza uz to pašu domēnu, kurā atrodas pašreizējā vietne"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Atvērt iebūvēto īsinājumtaustiņu pārvaldnieku"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Īpašie īsinājumtaustiņi"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Tulkot atlasīto tekstu, veicot divreizēju $SHORTCUT_KEY$ īsinājumtaustiņu nospiešanu",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Tulkot tekstu virs peles kursora, veicot divreizēju $SHORTCUT_KEY$ īsinājumtaustiņu nospiešanu",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Tulkot lapu, vienreiz nospiežot pogu adreses joslā. (Lai redzētu uznirstošo logu, noklikšķiniet ar peles labo pogu)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Rādīt uznirstošo logu"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Lai tulkotu $DOC_TYPE$ dokumentu, tas ir jāpārvērš HTML formātā",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Izvēlieties konvertēšanas pakalpojumu"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Dokuments tiek lejupielādēts..."
   },
   "msgSendDocument": {
     "message": "Nosūtīt dokumentu"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Kļūda, lejupielādējot dokumentu"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Šis pakalpojums neatbalsta failus, kas ir lielāki par $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -459,7 +459,7 @@
     "message": "Nesenie"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Visi"
   },
   "msgPleaseWait": {
     "message": "Lūdzu, uzgaidiet..."
