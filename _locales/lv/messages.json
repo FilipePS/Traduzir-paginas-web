@@ -3,7 +3,7 @@
     "message": "Tīmekļa lapu tulkotājs"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Lapu tulkošana reāllaikā, izmantojot Google vai Yandex dzinējus."
   },
   "pageActionTitle": {
     "message": "Tulkot šo lapu"
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Mērķvaloda $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -84,10 +84,10 @@
     "message": "Vienmēr tulkot šīs valodas"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Rādīt mobilo uznirstošo logu"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Automātiski"
   },
   "optionPopupThreeFingers": {
     "message": "When I touch three fingers on the screen"
@@ -318,16 +318,16 @@
     "message": "Dzēst tulkojuma kešatmiņu"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Personiskie iestatījumi"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Dublēt failā"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Atjaunot no faila"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Atjaunot noklusējuma iestatījumus"
   },
   "doYouWantToDeleteTranslationCache": {
     "message": "Do you want to delete the translation cache?"
@@ -456,7 +456,7 @@
     "message": "Kopēt"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Nesenie"
   },
   "msgAll": {
     "message": "All"
