@@ -167,15 +167,17 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
         let text
         if (node.nodeName === "INPUT" || node.nodeName === "TEXTAREA") {
-            text = node.placeholder
-            if (node.nodeName === "INPUT") {
-                if (node.value !== "") {
-                    text = node.value
-                }
-                else if (node.textContent !== "") {
-                    text = node.textContent
-                }
+
+            if (node.value !== "") {
+                text = node.value
             }
+            else if (node.textContent !== "") {
+                text = node.textContent
+            }
+            else {
+                text = node.placeholder
+            }
+            
             if (node.nodeName === "INPUT" && (node.type === "BUTTON" || node.type === "SUBMIT")) {
                 text = node.value
                 if (!text && node.type === "SUBMIT") {
