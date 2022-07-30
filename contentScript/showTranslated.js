@@ -168,10 +168,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         let text
         if (node.nodeName === "INPUT" || node.nodeName === "TEXTAREA") {
 
-            if (node.value !== "") {
+            if (node.value) {
                 text = node.value
             }
-            else if (node.textContent !== "") {
+            else if (node.textContent) {
                 text = node.textContent
             }
             else {
