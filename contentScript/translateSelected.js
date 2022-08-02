@@ -10,10 +10,6 @@ function getTabHostName() {
 
 Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 	const tabHostName = _[1]
-	let styleTextContent = ""
-	fetch(chrome.runtime.getURL("/contentScript/css/translateSelected.css")).then(response => response.text()).then(response => {
-		styleTextContent = response.replace('/icons/icon-32.png', chrome.runtime.getURL("/icons/icon-32.png"))
-	}).catch(e => console.error(e))
 	
 	let divElement
 	let eButtonTransSelText
@@ -215,16 +211,22 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
         `
 		
 
-		if (!styleTextContent) {
-			const style = document.createElement("style")
-			style.textContent = styleTextContent
-			shadowRoot.insertBefore(style, shadowRoot.getElementById("eButtonTransSelText"))
-		} else {
-			const link = document.createElement("link")
-			link.setAttribute("rel", "stylesheet")
-			link.setAttribute("href", chrome.runtime.getURL("/contentScript/css/translateSelected.css"))
-			shadowRoot.insertBefore(link, shadowRoot.getElementById("eButtonTransSelText"))
+
+		const link = document.createElement("link")
+		link.setAttribute("rel", "stylesheet")
+		link.setAttribute("href", chrome.runtime.getURL("/contentScript/css/translateSelected.css"))
+		shadowRoot.insertBefore(link, shadowRoot.getElementById("eButtonTransSelText"))
+
+		const styleFix = document.createElement("style")
+		styleFix.textContent = `
+		#eSelTextTrans,#eOrigText {
+				margin-right: 22px;
 		}
+		#eDivResult {
+			min-width: 280px;
+		}
+		`
+		shadowRoot.insertBefore(styleFix, shadowRoot.getElementById("eButtonTransSelText"))
 		
 		
 		dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
