@@ -4,6 +4,10 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var DomParser = require('dom-parser');
 const fs = require('fs');
 
+if (!fs.existsSync("./out")) {
+    fs.mkdirSync("out")
+}
+
 function getKey() {
     function getURL() {
         return new Promise(async (resolve, reject) => {
@@ -138,7 +142,7 @@ async function getYandexLangs(lang) {
 !async function() {
     const langs = await getYandexLangs()
     console.log(langs)
-    fs.writeFileSync("yandex.json", JSON.stringify(langs), "utf-8")
+    fs.writeFileSync("./out/yandex.json", JSON.stringify(langs), "utf-8")
 }()
 
 async function init() {
@@ -186,7 +190,7 @@ async function init() {
         final_result[code] = langs
     }
     console.log(final_result)
-    fs.writeFileSync("out.json", JSON.stringify(final_result), "utf-8")
+    fs.writeFileSync("./out/google.json", JSON.stringify(final_result), "utf-8")
 }
 
 init()
