@@ -695,6 +695,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		}
 
 		eDivResult.style.top = Math.min(window.innerHeight-parseInt(getComputedStyle(eDivResult).height), parseInt(eDivResult.style.top)) + "px";
+		eDivResult.style.left = Math.min(window.innerWidth-parseInt(getComputedStyle(eDivResult).width)-18, parseInt(eDivResult.style.left)) + "px";
 	}
 	
 	function translateNewInput() {
@@ -829,8 +830,8 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				eButtonTransSelText.style.left = window.innerWidth - 45 + "px"
 				eButtonTransSelText.style.top = clientY + "px"
 			} else {
-				eButtonTransSelText.style.left = clientX + 20 + "px"
-				eButtonTransSelText.style.top = clientY - 30 + "px"
+				eButtonTransSelText.style.left = Math.min(window.innerWidth-40, clientX + 25) + "px"
+				eButtonTransSelText.style.top = Math.max(2, clientY - 35) + "px"
 			}
 			
 			eButtonTransSelText.style.display = "block"
