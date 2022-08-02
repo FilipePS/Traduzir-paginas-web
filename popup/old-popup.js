@@ -233,6 +233,8 @@ twpConfig.onReady(function () {
         }
 
         btnRestore.className = btnRestore.className.replace(" w3-disabled", "")
+        
+        $("#divPatreon").style.display = "none"
 
         if (showSelectTargetLanguage) {
             lblTranslate.style.display = "none"
@@ -266,6 +268,8 @@ twpConfig.onReady(function () {
                     btnRestore.style.display = "inline"
                     btnTryAgain.style.display = "none"
                     btnOptionsDiv.style.display = "inline"
+
+                    $("#divPatreon").style.display = "block"
                     break;
                 case "translating":
                     lblTranslate.style.display = "none"
