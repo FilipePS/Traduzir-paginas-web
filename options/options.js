@@ -51,6 +51,12 @@ twpConfig.onReady(function () {
             $("#sideBar").style.display = "none"
             sideBarIsVisible = false
         }
+
+        if (hash === "#release_notes") {
+            $("#btnPatreon").style.display = "none"
+        } else {
+            $("#btnPatreon").style.display = "block"
+        }
     }
     hashchange()
     window.addEventListener("hashchange", hashchange)
