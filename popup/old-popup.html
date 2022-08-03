@@ -13,13 +13,19 @@
 <body>
     <main>
         <div class="w3-display-topright">
-            <div class="w3-hover-light-grey" id="btnSwitchInterfaces"
-                title="Switch between the old interface and the new one" data-i18n-title="swapPopup">
-                <i class="gg-swap"></i>
+            <div style="display: flex;">
+                <div class="w3-hover-light-grey" id="btnPatreon"
+                    title="patreon" data-i18n-title="lblMakeDonation">
+                    <i class="gg-heart" style="scale: 0.85;"></i>
+                </div>
+                <div class="w3-hover-light-grey" id="btnSwitchInterfaces"
+                    title="Switch between the old interface and the new one" data-i18n-title="swapPopup">
+                    <i class="gg-swap"></i>
+                </div>
             </div>
         </div>
 
-        <label id="lblTranslate" class="" style="margin-right: 30px;" data-i18n="lblTranslate">Translate this
+        <label id="lblTranslate" class="" style="margin-right: 70px;" data-i18n="lblTranslate">Translate this
             page?</label>
         <label id="lblTranslating" class="" style="margin-right: 30px;"
             data-i18n="lblTranslating">Translating...</label>
@@ -90,11 +96,6 @@
                         data-i18n="btnOptions">Options</div>
                 </div>
             </div>
-        </div>
-
-        <div id="divPatreon" style="margin-top: 10px; padding: 5px; border-radius: 5px; display: none;" class="w3-light-blue">
-            <span data-i18n="lblMakeDonation"></span><br>
-            <a href="https://www.patreon.com/filipeps" target="blank"><img src="/icons/patreon.png" style="height: 30px; width: 100%;"></a>
         </div>
     </main>
 

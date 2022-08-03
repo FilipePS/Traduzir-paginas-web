@@ -34,9 +34,10 @@ twpConfig.onReady(function () {
     const btnOptionsDiv = document.getElementById("btnOptionsDiv")
     const btnOptions = document.getElementById("btnOptions")
 
-    const divDonate = document.getElementById("divDonate")
-    const msgHelpDevelopment = document.getElementById("msgHelpDevelopment")
-    const btnDonateWithPaypal = document.getElementById("btnDonateWithPaypal")
+    $("#btnPatreon").onclick = e => {
+        window.open("https://www.patreon.com/filipeps", "_blank")
+    }
+
 
     $("#btnOptionB").innerHTML += ' <i class="arrow down"></i>'
     $("#btnOptions option[value='donate']").innerHTML += " &#10084;";
@@ -233,8 +234,6 @@ twpConfig.onReady(function () {
         }
 
         btnRestore.className = btnRestore.className.replace(" w3-disabled", "")
-        
-        $("#divPatreon").style.display = "none"
 
         if (showSelectTargetLanguage) {
             lblTranslate.style.display = "none"
@@ -268,8 +267,6 @@ twpConfig.onReady(function () {
                     btnRestore.style.display = "inline"
                     btnTryAgain.style.display = "none"
                     btnOptionsDiv.style.display = "inline"
-
-                    $("#divPatreon").style.display = "block"
                     break;
                 case "translating":
                     lblTranslate.style.display = "none"
