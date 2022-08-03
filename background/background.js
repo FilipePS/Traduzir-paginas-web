@@ -157,6 +157,12 @@ chrome.runtime.onInstalled.addListener(details => {
             translationCache.deleteTranslationCache()
         })
     }
+
+    twpConfig.onReady(async () => {
+        if (platformInfo.isMobile.any) {
+            twpConfig.set("enableDeepL", "no")
+        }
+    })
 })
 
 function resetPageAction(tabId, forceShow = false) {
