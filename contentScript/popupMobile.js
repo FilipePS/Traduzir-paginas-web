@@ -85,6 +85,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         getElemById("menu").style.display = "none"
     }
 
+    let pageLanguageState = "original"
+    pageTranslator.onPageLanguageStateChange(_pageLanguageState => {
+        pageLanguageState = _pageLanguageState
+    })
+
     popupMobile.show = function (forceShow = false) {
         popupMobile.hide()
 
@@ -156,6 +161,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }
 
         getElemById = shadowRoot.getElementById.bind(shadowRoot)
+
+        if (pageLanguageState === "original") {
+            getElemById("btnOriginal").style.color = "#2196F3"
+            getElemById("btnTranslate").style.color = null
+        } else {
+            getElemById("btnOriginal").style.color = null
+            getElemById("btnTranslate").style.color = "#2196F3"
+        }
 
         function translatePage(targetLanguage = currentTargetLanguage) {
             getElemById("menuSelectLanguage").style.display = "none"
