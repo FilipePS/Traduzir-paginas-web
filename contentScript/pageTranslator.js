@@ -52,7 +52,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
     const htmlTagsInlineText = ['#text', 'A', 'ABBR', 'ACRONYM', 'B', 'BDO', 'BIG', 'CITE', 'DFN', 'EM', 'I', 'LABEL', 'Q', 'S', 'SMALL', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U', 'TT', 'VAR']
     const htmlTagsInlineIgnore = ['BR', 'CODE', 'KBD', 'WBR'] // and input if type is submit or button, and pre depending on settings
     const htmlTagsNoTranslate = ['TITLE', 'SCRIPT', 'STYLE', 'TEXTAREA', 'svg'] //TODO verificar porque 'svg' é com letras minúsculas
-    
+
     if (twpConfig.get('translateTag_pre') !== 'yes') {
         htmlTagsInlineIgnore.push('PRE')
     }
@@ -69,12 +69,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                 break
         }
     })
-    
+
     //TODO FOO
     if (twpConfig.get("useOldPopup") == "yes" || twpConfig.get("popupPanelSection") <= 1) {
         twpConfig.set("targetLanguage", twpConfig.get("targetLanguages")[0])
     }
-    
+
     // Pieces are a set of nodes separated by inline tags that form a sentence or paragraph.
     let piecesToTranslate = []
     let originalTabLanguage = "und"
@@ -84,34 +84,34 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService")
     let dontSortResults = twpConfig.get("dontSortResults") == "yes" ? true : false
     let fooCount = 0
-    
+
     let originalPageTitle
-    
+
     let attributesToTranslate = []
-    
+
     let translateNewNodesTimerHandler
     let newNodes = []
     let removedNodes = []
-    
+
     let nodesToRestore = []
-    
+
     function translateNewNodes() {
         try {
             newNodes.forEach(nn => {
                 if (removedNodes.indexOf(nn) != -1) return;
-                
+
                 let newPiecesToTranslate = getPiecesToTranslate(nn)
-                
+
                 for (const i in newPiecesToTranslate) {
                     const newNodes = newPiecesToTranslate[i].nodes
                     let finded = false
-                    
+
                     for (const ntt of piecesToTranslate) {
                         if (ntt.nodes.some(n1 => newNodes.some(n2 => n1 === n2))) {
                             finded = true
                         }
                     }
-                    
+
                     if (!finded) {
                         piecesToTranslate.push(newPiecesToTranslate[i])
                     }
@@ -124,10 +124,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             removedNodes = []
         }
     }
-    
+
     const mutationObserver = new MutationObserver(function (mutations) {
         const piecesToTranslate = []
-        
+
         mutations.forEach(mutation => {
             mutation.addedNodes.forEach(addedNode => {
                 if (htmlTagsNoTranslate.indexOf(addedNode.nodeName) == -1) {
@@ -138,22 +138,22 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                     }
                 }
             })
-            
+
             mutation.removedNodes.forEach(removedNode => {
                 removedNodes.push(removedNode)
             })
         })
-        
+
         piecesToTranslate.forEach(ptt => {
             if (newNodes.indexOf(ptt) == -1) {
                 newNodes.push(ptt)
             }
         })
     })
-    
+
     function enableMutatinObserver() {
         disableMutatinObserver()
-        
+
         if (twpConfig.get("translateDynamicallyCreatedContent") == "yes") {
             translateNewNodesTimerHandler = setInterval(translateNewNodes, 2000)
             mutationObserver.observe(document.body, {
@@ -162,7 +162,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             })
         }
     }
-    
+
     function disableMutatinObserver() {
         clearInterval(translateNewNodesTimerHandler)
         newNodes = []
@@ -170,7 +170,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         mutationObserver.disconnect()
         mutationObserver.takeRecords()
     }
-    
+
     let pageIsVisible = document.visibilityState == "visible"
     // isto faz com que partes do youtube não sejam traduzidas
     // new IntersectionObserver(entries => {
@@ -179,7 +179,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
     //         } else {
     //             pageIsVisible = false
     //         }
-    
+
     //         if (pageIsVisible && pageLanguageState === "translated") {
     //             enableMutatinObserver()
     //         } else {
@@ -189,14 +189,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
     //         root: null
     //     })
     //     .observe(document.body)
-    
+
     const handleVisibilityChange = function () {
         if (document.visibilityState == "visible") {
             pageIsVisible = true
         } else {
             pageIsVisible = false
         }
-        
+
         if (pageIsVisible && pageLanguageState === "translated") {
             enableMutatinObserver()
         } else {
@@ -204,7 +204,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }
     }
     document.addEventListener("visibilitychange", handleVisibilityChange, false)
-    
+
     function getPiecesToTranslate(root = document.body) {
         const piecesToTranslate = [{
             isTranslated: false,
@@ -215,14 +215,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }]
         let index = 0
         let currentParagraphSize = 0
-        
+
         const getAllNodes = function (node, lastHTMLElement = null) {
             if (node.nodeType == 1 || node.nodeType == 11) {
                 if (node.nodeType == 11) {
                     lastHTMLElement = node.host
                 } else if (node.nodeType == 1) {
                     lastHTMLElement = node
-                    
+
                     if (htmlTagsInlineIgnore.indexOf(node.nodeName) !== -1 ||
                         htmlTagsNoTranslate.indexOf(node.nodeName) !== -1 ||
                         node.classList.contains("notranslate") ||
@@ -243,13 +243,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         return
                     }
                 }
-                
+
                 function getAllChilds(childNodes) {
                     Array.from(childNodes).forEach(_node => {
                         if (_node.nodeType == 1) {
                             lastHTMLElement = _node
                         }
-                        
+
                         if (htmlTagsInlineText.indexOf(_node.nodeName) == -1) {
                             if (piecesToTranslate[index].nodes.length > 0) {
                                 currentParagraphSize = 0
@@ -262,11 +262,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                                     nodes: []
                                 })
                                 index++
-                                
+
                             }
-                            
+
                             getAllNodes(_node, lastHTMLElement)
-                            
+
                             if (piecesToTranslate[index].nodes.length > 0) {
                                 currentParagraphSize = 0
                                 piecesToTranslate[index].bottomElement = lastHTMLElement
@@ -284,7 +284,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         }
                     })
                 }
-                
+
                 getAllChilds(node.childNodes)
                 if (!piecesToTranslate[index].bottomElement) {
                     piecesToTranslate[index].bottomElement = node
@@ -331,31 +331,31 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             }
         }
         getAllNodes(root)
-        
+
         if (piecesToTranslate.length > 0 && piecesToTranslate[piecesToTranslate.length - 1].nodes.length == 0) {
             piecesToTranslate.pop()
         }
-        
+
         return piecesToTranslate
     }
-    
+
     function getAttributesToTranslate(root = document.body) {
         const attributesToTranslate = []
-        
+
         const placeholdersElements = root.querySelectorAll('input[placeholder], textarea[placeholder]')
         const altElements = root.querySelectorAll('area[alt], img[alt], input[type="image"][alt]')
         const valueElements = root.querySelectorAll('input[type="button"], input[type="submit"], input[type="reset"]')
         const titleElements = root.querySelectorAll("body [title]")
-        
+
         function hasNoTranslate(elem) {
             if (elem && (elem.classList.contains("notranslate") || elem.getAttribute("translate") === "no")) {
                 return true
             }
         }
-        
+
         placeholdersElements.forEach(e => {
             if (hasNoTranslate(e)) return;
-            
+
             const txt = e.getAttribute("placeholder")
             if (txt && txt.trim()) {
                 attributesToTranslate.push({
@@ -365,10 +365,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                 })
             }
         })
-        
+
         altElements.forEach(e => {
             if (hasNoTranslate(e)) return;
-            
+
             const txt = e.getAttribute("alt")
             if (txt && txt.trim()) {
                 attributesToTranslate.push({
@@ -378,10 +378,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                 })
             }
         })
-        
+
         valueElements.forEach(e => {
             if (hasNoTranslate(e)) return;
-            
+
             const txt = e.getAttribute("value")
             if (e.type == "submit" && !txt) {
                 attributesToTranslate.push({
@@ -403,10 +403,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                 })
             }
         })
-        
+
         titleElements.forEach(e => {
             if (hasNoTranslate(e)) return;
-            
+
             const txt = e.getAttribute("title")
             if (txt && txt.trim()) {
                 attributesToTranslate.push({
@@ -416,20 +416,20 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                 })
             }
         })
-        
+
         return attributesToTranslate
     }
-    
+
     function encapsulateTextNode(node) {
         const fontNode = document.createElement("font")
         fontNode.setAttribute("style", "vertical-align: inherit;")
         fontNode.textContent = node.textContent
-        
+
         node.replaceWith(fontNode)
-        
+
         return fontNode
     }
-    
+
     function translateResults(piecesToTranslateNow, results) {
         if (dontSortResults) {
             for (let i = 0; i < results.length; i++) {
@@ -444,15 +444,15 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             const restResults = results[i].slice(j + 1);
                             translated += restResults.join(" ");
                         }
-                        
+
                         nodes[j] = encapsulateTextNode(nodes[j])
-                        
+
                         showOriginal.add(nodes[j])
                         nodesToRestore.push({
                             node: nodes[j],
                             original
                         })
-                        
+
                         nodes[j].textContent = `${ original.match(/^\s*/)[0] }${ translated.trim() }${ original.match(/\s*$/)[0] }`
                     }
                 }
@@ -464,14 +464,15 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         const nodes = piecesToTranslateNow[i].nodes
                         const original = nodes[j].textContent
                         const translated = results[i][j] + " "
-                        
+
                         nodes[j] = encapsulateTextNode(nodes[j])
-                        
+
                         showOriginal.add(nodes[j])
                         nodesToRestore.push({
                             node: nodes[j],
                             original
                         })
+
                         nodes[j].textContent = `${ original.match(/^\s*/)[0] }${ translated.trim() }${ original.match(/\s*$/)[0] }`
                     }
                 }
@@ -479,17 +480,15 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }
         mutationObserver.takeRecords()
     }
-    
+
     function translateAttributes(attributesToTranslateNow, results) {
         for (const i in attributesToTranslateNow) {
             const ati = attributesToTranslateNow[i]
-            ati.node.setAttribute(ati.attrName, results[i])
-            
             const original = ati.node.getAttribute(ati.attrName);
             ati.node.setAttribute(ati.attrName, `${ original.match(/^\s*/)[0] }${ results[i].trim() }${ original.match(/\s*$/)[0] }`)
         }
     }
-    
+
     function translateDynamically() {
         try {
             if (piecesToTranslate && pageIsVisible) {
@@ -502,7 +501,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         }
                         return false
                     }
-                    
+
                     function topIsInScreen(element) {
                         if (!element) {
                             // debugger;
@@ -514,7 +513,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         }
                         return false
                     }
-                    
+
                     function bottomIsInScreen(element) {
                         if (!element) {
                             // debugger;
@@ -526,10 +525,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         }
                         return false
                     }
-                    
-                    
+
+
                     const currentFooCount = fooCount
-                    
+
                     const piecesToTranslateNow = []
                     piecesToTranslate.forEach(ptt => {
                         if (!ptt.isTranslated) {
@@ -539,7 +538,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             }
                         }
                     })
-                    
+
                     const attributesToTranslateNow = []
                     attributesToTranslate.forEach(ati => {
                         if (!ati.isTranslated) {
@@ -549,7 +548,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             }
                         }
                     })
-                    
+
                     if (piecesToTranslateNow.length > 0) {
                         backgroundTranslateHTML(
                                 currentPageTranslatorService,
@@ -563,7 +562,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                                 }
                             })
                     }
-                    
+
                     if (attributesToTranslateNow.length > 0) {
                         backgroundTranslateText(
                                 currentPageTranslatorService,
@@ -583,9 +582,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }
         setTimeout(translateDynamically, 600)
     }
-    
+
     translateDynamically()
-    
+
     function translatePageTitle() {
         const title = document.querySelector("title");
         if (title && (
@@ -596,7 +595,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }
         if (document.title.trim().length < 1) return;
         originalPageTitle = document.title
-        
+
         backgroundTranslateSingleText(currentPageTranslatorService, currentTargetLanguage, originalPageTitle)
             .then(result => {
                 if (result) {
@@ -604,27 +603,27 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                 }
             })
     }
-    
+
     const pageLanguageStateObservers = []
-    
+
     pageTranslator.onPageLanguageStateChange = function (callback) {
         pageLanguageStateObservers.push(callback)
     }
-    
+
     pageTranslator.translatePage = function (targetLanguage) {
         fooCount++
         pageTranslator.restorePage()
         showOriginal.enable()
-        
+
         dontSortResults = twpConfig.get("dontSortResults") == "yes" ? true : false
-        
+
         if (targetLanguage) {
             currentTargetLanguage = targetLanguage
         }
-        
+
         piecesToTranslate = getPiecesToTranslate()
         attributesToTranslate = getAttributesToTranslate()
-        
+
         pageLanguageState = "translated"
         chrome.runtime.sendMessage({
             action: "setPageLanguageState",
@@ -632,21 +631,21 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         })
         pageLanguageStateObservers.forEach(callback => callback(pageLanguageState))
         currentPageLanguage = currentTargetLanguage
-        
+
         translatePageTitle()
-        
+
         enableMutatinObserver()
-        
+
         translateDynamically()
     }
-    
+
     pageTranslator.restorePage = function () {
         fooCount++
         piecesToTranslate = []
-        
+
         showOriginal.disable()
         disableMutatinObserver()
-        
+
         pageLanguageState = "original"
         chrome.runtime.sendMessage({
             action: "setPageLanguageState",
@@ -654,18 +653,18 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         })
         pageLanguageStateObservers.forEach(callback => callback(pageLanguageState))
         currentPageLanguage = originalTabLanguage
-        
+
         if (originalPageTitle) {
             document.title = originalPageTitle
         }
         originalPageTitle = null
-        
-        
+
+
         for (const ntr of nodesToRestore) {
             ntr.node.replaceWith(ntr.original)
         }
         nodesToRestore = []
-        
+
         //TODO não restaurar atributos que foram modificados
         for (const ati of attributesToTranslate) {
             if (ati.isTranslated) {
@@ -674,7 +673,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }
         attributesToTranslate = []
     }
-    
+
     pageTranslator.swapTranslationService = function () {
         if (currentPageTranslatorService === "google") {
             currentPageTranslatorService = "yandex"
@@ -685,10 +684,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             pageTranslator.translatePage()
         }
     }
-    
+
     let alreadyGotTheLanguage = false
     const observers = []
-    
+
     pageTranslator.onGetOriginalTabLanguage = function (callback) {
         if (alreadyGotTheLanguage) {
             callback(originalTabLanguage)
@@ -696,7 +695,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             observers.push(callback)
         }
     }
-    
+
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "translatePage") {
             if (request.targetLanguage === "original") {
@@ -735,8 +734,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             }
         }
     })
-    
-    // Requests the detection of the tab language in the background
+
+    // Requests the detection of the tab language in the background 
     if (window.self === window.top) { // is main frame
         const onTabVisible = function () {
             chrome.runtime.sendMessage({
@@ -792,7 +791,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             observers.forEach(callback => callback(originalTabLanguage))
             alreadyGotTheLanguage = true
         })
-        
+
         chrome.runtime.sendMessage({
             action: "getMainFramePageLanguageState"
         }, result => {
