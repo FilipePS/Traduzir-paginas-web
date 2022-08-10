@@ -764,6 +764,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             };
             nodesToRestore.push(toRestore);
 
+            const originalText = originalTextNode.textContent;
             handleCustomWords(
               translated,
               nodes[j].textContent,
@@ -771,6 +772,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               currentSourceLanguage,
               currentTargetLanguage
             ).then((results) => {
+              results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
+                originalText.match(/\s*$/)[0]
+              }`;
               nodes[j].textContent = results;
               toRestore.translatedText = results;
             });
@@ -798,6 +802,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             };
             nodesToRestore.push(toRestore);
 
+            const originalText = originalTextNode.textContent;
             handleCustomWords(
               translated,
               nodes[j].textContent,
@@ -805,6 +810,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               currentSourceLanguage,
               currentTargetLanguage
             ).then((results) => {
+              results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
+                originalText.match(/\s*$/)[0]
+              }`;
               nodes[j].textContent = results;
               toRestore.translatedText = results;
             });
