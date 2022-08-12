@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "dom-parser": "^0.1.6",
+    "realistic-structured-clone": "^3.0.0",
     "xmlhttprequest": "^1.8.0"
   }
 }

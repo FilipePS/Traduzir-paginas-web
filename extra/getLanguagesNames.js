@@ -1,5 +1,6 @@
 // Yandex only languages ba, cv, mrj, kazlat, mhr, pap, udm, sah
 
+var structuredClone = require('realistic-structured-clone');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var DomParser = require('dom-parser');
 const fs = require('fs');
@@ -93,6 +94,9 @@ async function getLangsFrom(key, lang) {
     const langs = {}
 
     result.targetLanguages.forEach(tl => {
+        if (lang === "fr") {
+            tl.name = tl.name.toLowerCase()
+        }
         if (tl.language === "zh-CN") {
             langs["zh"] = tl.name
         } else if (tl.language === "iw") {
@@ -114,7 +118,7 @@ async function getYandexLangs(lang) {
     return await new Promise((resolve, reject) => {
         const xhttp = new XMLHttpRequest
         xhttp.onload = e => {
-            const langs = {}
+            const langs = {"en": {}}
             try {
                 var parser = new DomParser()
                 var dom = parser.parseFromString(xhttp.responseText)
@@ -123,7 +127,7 @@ async function getYandexLangs(lang) {
                     if (language === "uzbcyr") {
                         language = "uz"
                     }
-                    langs[language] = node.childNodes[1].textContent
+                    langs["en"][language] = node.childNodes[1].textContent
                 })
             } catch (e) {
                 console.error(e)
@@ -139,11 +143,6 @@ async function getYandexLangs(lang) {
         xhttp.send()
     })
 }
-!async function() {
-    const langs = await getYandexLangs()
-    console.log(langs)
-    fs.writeFileSync("./out/yandex.json", JSON.stringify(langs), "utf-8")
-}()
 
 async function init() {
     const key = await getKey()
@@ -183,14 +182,43 @@ async function init() {
         "vi",
     ]
 
-    const final_result = {}
+    const google_langs = {}
 
     for (const code of lang_codes) {
         const langs = await getLangsFrom(key, code)
-        final_result[code] = langs
+        google_langs[code] = langs
     }
-    console.log(final_result)
-    fs.writeFileSync("./out/google.json", JSON.stringify(final_result), "utf-8")
+    console.log(google_langs)
+    fs.writeFileSync("./out/google.json", JSON.stringify(google_langs, null, 4), "utf-8")
+
+
+
+
+    // yandex
+    
+    const yandex_langs = await getYandexLangs()
+    console.log(yandex_langs)
+    fs.writeFileSync("./out/yandex.json", JSON.stringify(yandex_langs, null, 4), "utf-8")
+
+
+
+
+    const final_result = structuredClone(google_langs)
+    const glangs = Object.keys(google_langs["en"])
+    const yandex_only = Object.keys(yandex_langs["en"]).filter(x => !glangs.includes(x) ? x : undefined)
+    console.log(yandex_only)
+
+    for (const lc of lang_codes) {
+        for (const code of yandex_only) {
+            if (lc === "fr") {
+                final_result[lc][code] = yandex_langs["en"][code].toLowerCase()
+            } else {
+                final_result[lc][code] = yandex_langs["en"][code]
+            }
+        }
+    }
+
+    fs.writeFileSync("./out/final.json", JSON.stringify(final_result, null, 4), "utf-8")
 }
 
 init()

@@ -133,7 +133,15 @@
         "xh": "Xhosa",
         "yi": "Yiddish",
         "yo": "Yoruba",
-        "zu": "Zulu"
+        "zu": "Zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "ar": {
         "is": "الآيسلندية",
@@ -269,7 +277,15 @@
         "ny": "تشيتشوا",
         "ak": "توي",
         "kri": "كريو",
-        "haw": "لغة هاواي"
+        "haw": "لغة هاواي",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "ca": {
         "af": "afrikaans",
@@ -405,7 +421,15 @@
         "zh-CN": "xinès (simplificat)",
         "zh-TW": "xinès (tradicional)",
         "ny": "xixewa",
-        "zu": "zulú"
+        "zu": "zulú",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "zh-CN": {
         "sq": "阿尔巴尼亚语",
@@ -541,7 +565,15 @@
         "zh-TW": "中文（繁体）",
         "zh": "中文（简体）",
         "zh-CN": "中文（简体）",
-        "ts": "宗加语"
+        "ts": "宗加语",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "zh-TW": {
         "tr": "土耳其文",
@@ -677,7 +709,15 @@
         "sm": "薩摩亞文",
         "ro": "羅馬尼亞文",
         "gd": "蘇格蘭的蓋爾文",
-        "tt": "韃靼文"
+        "tt": "韃靼文",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "hr": {
         "af": "afrikaans",
@@ -813,7 +853,15 @@
         "cy": "velški",
         "vi": "vijetnamski",
         "xh": "xhosa",
-        "zu": "zulu"
+        "zu": "zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "cs": {
         "af": "afrikánština",
@@ -949,7 +997,15 @@
         "cy": "velština",
         "vi": "vietnamština",
         "xh": "xhoština",
-        "zu": "zulu"
+        "zu": "zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "da": {
         "af": "Afrikaans",
@@ -1085,7 +1141,15 @@
         "cy": "Walisisk",
         "xh": "Xhosa",
         "yo": "Yoruba",
-        "zu": "Zulu"
+        "zu": "Zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "nl": {
         "af": "Afrikaans",
@@ -1221,7 +1285,15 @@
         "xh": "Xhosa",
         "yo": "Yoruba",
         "zu": "Zoeloe",
-        "sv": "Zweeds"
+        "sv": "Zweeds",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "fi": {
         "af": "afrikaans",
@@ -1357,7 +1429,15 @@
         "vi": "vietnam",
         "et": "viro",
         "xh": "xhosa",
-        "zu": "zulu"
+        "zu": "zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "fr": {
         "af": "afrikaans",
@@ -1493,7 +1573,15 @@
         "xh": "xhosa",
         "yi": "yiddish",
         "yo": "yorouba",
-        "zu": "zoulou"
+        "zu": "zoulou",
+        "ba": "bashkir",
+        "cv": "chuvash",
+        "mrj": "hill mari",
+        "kazlat": "kazakh (latin)",
+        "mhr": "mari",
+        "pap": "papiamento",
+        "udm": "udmurt",
+        "sah": "yakut"
     },
     "de": {
         "af": "Afrikaans",
@@ -1629,7 +1717,15 @@
         "cy": "Walisisch",
         "xh": "Xhosa",
         "yo": "Yoruba",
-        "zu": "Zulu"
+        "zu": "Zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "el": {
         "en": "Αγγλικά",
@@ -1765,7 +1861,15 @@
         "ha": "Χάουσα",
         "hi": "Χίντι",
         "km": "Χμερ",
-        "hmn": "Χμονγκ"
+        "hmn": "Χμονγκ",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "he": {
         "or": "אודיה (אוריה)",
@@ -1901,7 +2005,15 @@
         "sv": "שוודית",
         "sn": "שונה",
         "th": "תאית",
-        "ti": "תיגרינית"
+        "ti": "תיגרינית",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "hi": {
         "en": "अंग्रेज़ी",
@@ -2037,7 +2149,15 @@
         "hi": "हिन्दी",
         "he": "हीब्रू",
         "ht": "हैतियन क्रिओल",
-        "ha": "हौसा"
+        "ha": "हौसा",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "hu": {
         "af": "afrikaans",
@@ -2173,7 +2293,15 @@
         "vi": "vietnami",
         "cy": "walesi",
         "xh": "xhosa",
-        "zu": "zulu"
+        "zu": "zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "it": {
         "af": "Afrikaans",
@@ -2309,7 +2437,15 @@
         "xh": "Xhosa",
         "yi": "Yiddish",
         "yo": "Yoruba",
-        "zu": "Zulu"
+        "zu": "Zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "ja": {
         "is": "アイスランド語",
@@ -2445,7 +2581,15 @@
         "zh": "中国語（簡体）",
         "zh-CN": "中国語（簡体）",
         "zh-TW": "中国語（繁体）",
-        "ja": "日本語"
+        "ja": "日本語",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "ko": {
         "gl": "갈리시아어",
@@ -2581,7 +2725,15 @@
         "ko": "한국어",
         "hu": "헝가리어",
         "he": "히브리어",
-        "hi": "힌디어"
+        "hi": "힌디어",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "fa": {
         "az": "آذرباﻳﺠﺎﻧﻰ",
@@ -2717,7 +2869,15 @@
         "ha": "هوسه",
         "yi": "یدیشی",
         "yo": "یوروبایی",
-        "el": "يونانی"
+        "el": "يونانی",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "pl": {
         "af": "afrikaans",
@@ -2853,7 +3013,15 @@
         "vi": "wietnamski",
         "it": "włoski",
         "xh": "xhosa",
-        "zu": "zulu"
+        "zu": "zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "pt-PT": {
         "af": "Afrikaans",
@@ -2989,7 +3157,15 @@
         "uz": "Usbeque",
         "vi": "Vietnamita",
         "xh": "Xhosa",
-        "zu": "Zulu"
+        "zu": "Zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "pt-BR": {
         "af": "Africâner",
@@ -3125,7 +3301,15 @@
         "uz": "Uzbeque",
         "vi": "Vietnamita",
         "xh": "Xhosa",
-        "zu": "Zulu"
+        "zu": "Zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "ro": {
         "af": "Afrikaans",
@@ -3261,7 +3445,15 @@
         "vi": "Vietnameză",
         "xh": "Xhosa",
         "yo": "Yoruba",
-        "zu": "Zulu"
+        "zu": "Zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "ru": {
         "az": "азербайджанский",
@@ -3397,7 +3589,15 @@
         "eo": "эсперанто",
         "et": "эстонский",
         "jv": "яванский",
-        "ja": "японский"
+        "ja": "японский",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "sl": {
         "af": "afrikanščina",
@@ -3533,7 +3733,15 @@
         "uz": "uzbeščina",
         "cy": "valižanščina",
         "vi": "vietnamščina",
-        "zu": "zulujščina"
+        "zu": "zulujščina",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "es": {
         "af": "afrikáans",
@@ -3669,7 +3877,15 @@
         "xh": "xhosa",
         "yi": "yidis",
         "yo": "yoruba",
-        "zu": "zulú"
+        "zu": "zulú",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "sv": {
         "af": "afrikaans",
@@ -3805,7 +4021,15 @@
         "cy": "walesiska",
         "xh": "xhosa",
         "yo": "yoruba",
-        "zu": "zulu"
+        "zu": "zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "th": {
         "gom": "กงกณี",
@@ -3941,7 +4165,15 @@
         "haw": "ฮาวาย",
         "hi": "ฮินดี",
         "he": "ฮีบรู",
-        "ht": "เฮติครีโอล"
+        "ht": "เฮติครีโอล",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "tr": {
         "af": "Afrikaanca",
@@ -4077,7 +4309,15 @@
         "yi": "Yidce",
         "yo": "Yoruba",
         "el": "Yunanca",
-        "zu": "Zulu"
+        "zu": "Zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "uk": {
         "az": "азербайджанська",
@@ -4213,7 +4453,15 @@
         "sn": "шона",
         "gd": "шотландська (ґельська)",
         "jv": "яванська",
-        "ja": "японська"
+        "ja": "японська",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     },
     "vi": {
         "ar": "Ả Rập",
@@ -4349,6 +4597,14 @@
         "it": "Ý",
         "yi": "Yiddish",
         "yo": "Yoruba",
-        "zu": "Zulu"
+        "zu": "Zulu",
+        "ba": "Bashkir",
+        "cv": "Chuvash",
+        "mrj": "Hill Mari",
+        "kazlat": "Kazakh (Latin)",
+        "mhr": "Mari",
+        "pap": "Papiamento",
+        "udm": "Udmurt",
+        "sah": "Yakut"
     }
 }
