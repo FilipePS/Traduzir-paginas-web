@@ -420,7 +420,7 @@
     "message": "Visa popup-fönster"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "För att översätta detta dokument $DOC_TYPE$ måste det konverteras till HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Välj en tjänst att göra denna konvertering med"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Hämtar dokumentet..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Skicka dokument"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Fel vid hämtning av dokumentet"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Denna tjänst stöder inte filer större än $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,21 +450,21 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF till HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Kopiera"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Senaste"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Alla"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Var god vänta..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Okänt"
   }
 }
