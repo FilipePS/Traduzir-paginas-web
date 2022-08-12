@@ -1,4 +1,4 @@
-// Yandex only languages ba, cv, mrj, kazlat, mhr, pap, udm, sah
+// Yandex only languages ba, cv, mrj, kazlat, mhr, pap, udm, sah, uzbcyr
 
 var structuredClone = require('realistic-structured-clone');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
@@ -97,19 +97,13 @@ async function getLangsFrom(key, lang) {
         if (lang === "fr") {
             tl.name = tl.name.toLowerCase()
         }
-        if (tl.language === "zh-CN") {
-            langs["zh"] = tl.name
-        } else if (tl.language === "iw") {
+        if (tl.language === "iw") {
             tl.language = "he"
         } else if (tl.language === "jw") {
             tl.language = "jv"
         }
         langs[tl.language] = tl.name
     })
-
-    if (!langs["zh"]) {
-        throw new Error("")
-    }
 
     return langs
 }
@@ -124,9 +118,6 @@ async function getYandexLangs(lang) {
                 var dom = parser.parseFromString(xhttp.responseText)
                 Array.from(dom.getElementsByClassName("yt-listbox__label")).forEach(node => {
                     let language = node.childNodes[0].getAttribute("value")
-                    if (language === "uzbcyr") {
-                        language = "uz"
-                    }
                     langs["en"][language] = node.childNodes[1].textContent
                 })
             } catch (e) {
@@ -210,6 +201,7 @@ async function init() {
 
     for (const lc of lang_codes) {
         for (const code of yandex_only) {
+            if (code == "zh") continue;
             if (lc === "fr") {
                 final_result[lc][code] = yandex_langs["en"][code].toLowerCase()
             } else {

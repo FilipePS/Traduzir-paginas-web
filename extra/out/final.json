@@ -18,7 +18,6 @@
         "ca": "Catalan",
         "ceb": "Cebuano",
         "ny": "Chichewa",
-        "zh": "Chinese (Simplified)",
         "zh-CN": "Chinese (Simplified)",
         "zh-TW": "Chinese (Traditional)",
         "co": "Corsican",
@@ -141,6 +140,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "ar": {
@@ -218,7 +218,6 @@
         "sr": "الصربية",
         "so": "الصومالية",
         "zh-TW": "الصينية (التقليدية)",
-        "zh": "الصينية (المبسطة)",
         "zh-CN": "الصينية (المبسطة)",
         "tg": "الطاجيكية",
         "he": "العبرية",
@@ -285,6 +284,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "ca": {
@@ -417,7 +417,6 @@
         "uz": "uzbek",
         "vi": "vietnamita",
         "xh": "xhosa",
-        "zh": "xinès (simplificat)",
         "zh-CN": "xinès (simplificat)",
         "zh-TW": "xinès (tradicional)",
         "ny": "xixewa",
@@ -429,6 +428,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "zh-CN": {
@@ -563,7 +563,6 @@
         "yo": "约鲁巴语",
         "vi": "越南语",
         "zh-TW": "中文（繁体）",
-        "zh": "中文（简体）",
         "zh-CN": "中文（简体）",
         "ts": "宗加语",
         "ba": "Bashkir",
@@ -573,13 +572,13 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "zh-TW": {
         "tr": "土耳其文",
         "tk": "土庫曼文",
         "zh-TW": "中文 (繁體)",
-        "zh": "中文 (簡體)",
         "zh-CN": "中文 (簡體)",
         "da": "丹麥文",
         "eu": "巴斯克文",
@@ -717,6 +716,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "hr": {
@@ -774,7 +774,6 @@
         "ca": "katalonski",
         "kk": "kazaški",
         "qu": "kečuanski",
-        "zh": "kineski (pojednostavljeni)",
         "zh-CN": "kineski (pojednostavljeni)",
         "zh-TW": "kineski (tradicionalni)",
         "rw": "kinyarwanda",
@@ -861,6 +860,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "cs": {
@@ -885,7 +885,6 @@
         "cs": "čeština",
         "ny": "čičevština",
         "zh-TW": "čínština (tradiční)",
-        "zh": "čínština (zjednodušená)",
         "zh-CN": "čínština (zjednodušená)",
         "da": "dánština",
         "doi": "dógrí",
@@ -1005,6 +1004,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "da": {
@@ -1060,7 +1060,6 @@
         "kk": "Kasakhisk",
         "ca": "Katalansk",
         "km": "Khmer",
-        "zh": "Kinesisk (forenklet)",
         "zh-CN": "Kinesisk (forenklet)",
         "zh-TW": "Kinesisk (traditionelt)",
         "rw": "Kinyarwanda",
@@ -1149,6 +1148,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "nl": {
@@ -1172,7 +1172,6 @@
         "ceb": "Cebuano",
         "ny": "Chichewa",
         "zh-TW": "Chinees (traditioneel)",
-        "zh": "Chinees (vereenvoudigd)",
         "zh-CN": "Chinees (vereenvoudigd)",
         "co": "Corsicaans",
         "da": "Deens",
@@ -1293,6 +1292,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "fi": {
@@ -1346,7 +1346,6 @@
         "qu": "ketšua",
         "km": "khmer",
         "zh-TW": "kiina (perinteinen)",
-        "zh": "kiina (yksinkertaistettu)",
         "zh-CN": "kiina (yksinkertaistettu)",
         "rw": "kinyarwanda",
         "gom": "konkani",
@@ -1437,6 +1436,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "fr": {
@@ -1461,7 +1461,6 @@
         "ca": "catalan",
         "ceb": "cebuano",
         "ny": "chichewa",
-        "zh": "chinois (simplifié)",
         "zh-CN": "chinois (simplifié)",
         "zh-TW": "chinois (traditionnel)",
         "si": "cingalais",
@@ -1581,6 +1580,7 @@
         "mhr": "mari",
         "pap": "papiamento",
         "udm": "udmurt",
+        "uzbcyr": "uzbek (cyrillic)",
         "sah": "yakut"
     },
     "de": {
@@ -1603,7 +1603,6 @@
         "ceb": "Cebuano",
         "ny": "Chichewa",
         "zh-TW": "Chinesisch (traditionell)",
-        "zh": "Chinesisch (vereinfacht)",
         "zh-CN": "Chinesisch (vereinfacht)",
         "da": "Dänisch",
         "de": "Deutsch",
@@ -1725,6 +1724,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "el": {
@@ -1772,7 +1772,6 @@
         "kn": "Κανάντα",
         "ca": "Καταλανικά",
         "qu": "Κέτσουα",
-        "zh": "Κινεζικά (Απλοποιημένα)",
         "zh-CN": "Κινεζικά (Απλοποιημένα)",
         "zh-TW": "Κινεζικά (Παραδοσιακά)",
         "rw": "Κινιαρουάντα",
@@ -1869,6 +1868,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "he": {
@@ -1963,7 +1963,6 @@
         "sd": "סינדהי",
         "si": "סינהלית",
         "zh-TW": "סינית (מסורתית)",
-        "zh": "‏סינית (פשוטה)",
         "zh-CN": "‏סינית (פשוטה)",
         "sl": "סלובנית",
         "sk": "סלובקית",
@@ -2013,6 +2012,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "hi": {
@@ -2059,7 +2059,6 @@
         "el": "ग्रीक",
         "ny": "चिचेवा",
         "zh-TW": "चीनी (पारंपरिक)",
-        "zh": "चीनी (सरल)",
         "zh-CN": "चीनी (सरल)",
         "cs": "चेक",
         "de": "जर्मन",
@@ -2157,6 +2156,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "hu": {
@@ -2216,7 +2216,6 @@
         "kk": "kazah",
         "qu": "kecsua",
         "km": "khmer",
-        "zh": "kínai (egyszerűsített)",
         "zh-CN": "kínai (egyszerűsített)",
         "zh-TW": "kínai (hagyományos)",
         "rw": "kinyarwanda",
@@ -2301,6 +2300,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "it": {
@@ -2326,7 +2326,6 @@
         "ny": "Chichewa",
         "ky": "Chirghiso",
         "ak": "Ci",
-        "zh": "Cinese (semplificato)",
         "zh-CN": "Cinese (semplificato)",
         "zh-TW": "Cinese (tradizionale)",
         "ko": "Coreano",
@@ -2445,6 +2444,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "ja": {
@@ -2578,7 +2578,6 @@
         "ru": "ロシア語",
         "en": "英語",
         "ko": "韓国語",
-        "zh": "中国語（簡体）",
         "zh-CN": "中国語（簡体）",
         "zh-TW": "中国語（繁体）",
         "ja": "日本語",
@@ -2589,6 +2588,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "ko": {
@@ -2682,7 +2682,6 @@
         "jv": "자바어",
         "ka": "조지아어",
         "zu": "줄루어",
-        "zh": "중국어(간체)",
         "zh-CN": "중국어(간체)",
         "zh-TW": "중국어(번체)",
         "ny": "체와어",
@@ -2733,6 +2732,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "fa": {
@@ -2787,7 +2787,6 @@
         "jv": "جاوه‌ای",
         "cs": "چک",
         "ny": "چوایی",
-        "zh": "چینی (ساده‌شده)",
         "zh-CN": "چینی (ساده‌شده)",
         "zh-TW": "چینی (سنتی)",
         "km": "خمری",
@@ -2877,6 +2876,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "pl": {
@@ -2898,7 +2898,6 @@
         "bg": "bułgarski",
         "ceb": "cebuański",
         "zh-TW": "chiński (tradycyjny)",
-        "zh": "chiński (uproszczony)",
         "zh-CN": "chiński (uproszczony)",
         "hr": "chorwacki",
         "cs": "czeski",
@@ -3021,6 +3020,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "pt-PT": {
@@ -3047,7 +3047,6 @@
         "ceb": "Cebuano",
         "cs": "Checo",
         "ny": "Chichewa",
-        "zh": "Chinês (Simplificado)",
         "zh-CN": "Chinês (Simplificado)",
         "zh-TW": "Chinês (Tradicional)",
         "si": "Cingalês",
@@ -3165,6 +3164,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "pt-BR": {
@@ -3190,7 +3190,6 @@
         "kk": "Cazaque",
         "ceb": "Cebuano",
         "ny": "Chicheua",
-        "zh": "Chinês (simplificado)",
         "zh-CN": "Chinês (simplificado)",
         "zh-TW": "Chinês (tradicional)",
         "sn": "Chona",
@@ -3309,6 +3308,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "ro": {
@@ -3332,7 +3332,6 @@
         "ceb": "Cebuană",
         "cs": "Cehă",
         "ny": "Chichewa",
-        "zh": "Chineză (Simplificată)",
         "zh-CN": "Chineză (Simplificată)",
         "zh-TW": "Chineză (Tradițională)",
         "ko": "Coreeană",
@@ -3453,6 +3452,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "ru": {
@@ -3501,7 +3501,6 @@
         "qu": "кечуа",
         "ky": "киргизский",
         "zh-TW": "китайский (традиционный)",
-        "zh": "китайский (упрощенный)",
         "zh-CN": "китайский (упрощенный)",
         "gom": "конкани",
         "ko": "корейский",
@@ -3597,6 +3596,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "sl": {
@@ -3656,7 +3656,6 @@
         "qu": "kečvanščina",
         "rw": "kinjarvandščina",
         "ky": "kirgiščina",
-        "zh": "kitajščina (poenostavljena)",
         "zh-CN": "kitajščina (poenostavljena)",
         "zh-TW": "kitajščina (tradicionalna)",
         "km": "kmerščina",
@@ -3741,6 +3740,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "es": {
@@ -3766,7 +3766,6 @@
         "ceb": "cebuano",
         "cs": "checo",
         "ny": "chichewa",
-        "zh": "chino (simplificado)",
         "zh-CN": "chino (simplificado)",
         "zh-TW": "chino (tradicional)",
         "si": "cingalés",
@@ -3885,6 +3884,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "sv": {
@@ -3941,7 +3941,6 @@
         "ca": "katalanska",
         "kk": "kazakiska",
         "km": "khmer",
-        "zh": "kinesiska (förenklad)",
         "zh-CN": "kinesiska (förenklad)",
         "zh-TW": "kinesiska (traditionell)",
         "rw": "kinyarwanda",
@@ -4029,6 +4028,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "th": {
@@ -4054,7 +4054,6 @@
         "hr": "โครเอเชีย",
         "ka": "จอร์เจีย",
         "zh-TW": "จีน (ตัวเต็ม)",
-        "zh": "จีน (ตัวย่อ)",
         "zh-CN": "จีน (ตัวย่อ)",
         "jv": "ชวา",
         "ny": "ชิเชวา",
@@ -4173,6 +4172,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "tr": {
@@ -4195,7 +4195,6 @@
         "ceb": "Cebuano",
         "ny": "Chicheva",
         "cs": "Çekçe",
-        "zh": "Çince (Basitleştirilmiş)",
         "zh-CN": "Çince (Basitleştirilmiş)",
         "zh-TW": "Çince (Geleneksel)",
         "da": "Danca",
@@ -4317,6 +4316,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "uk": {
@@ -4370,7 +4370,6 @@
         "ca": "каталанська",
         "qu": "кечуа",
         "ky": "киргизька",
-        "zh": "китайська (спрощена)",
         "zh-CN": "китайська (спрощена)",
         "zh-TW": "китайська (традиційна)",
         "gom": "конкані",
@@ -4461,6 +4460,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     },
     "vi": {
@@ -4582,7 +4582,6 @@
         "tr": "Thổ Nhĩ Kỳ",
         "sv": "Thụy Điển",
         "ti": "Tigrinya",
-        "zh": "Trung (Giản thể)",
         "zh-CN": "Trung (Giản thể)",
         "zh-TW": "Trung (Phồn thể)",
         "ts": "Tsonga",
@@ -4605,6 +4604,7 @@
         "mhr": "Mari",
         "pap": "Papiamento",
         "udm": "Udmurt",
+        "uzbcyr": "Uzbek (Cyrillic)",
         "sah": "Yakut"
     }
 }
