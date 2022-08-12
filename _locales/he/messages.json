@@ -463,5 +463,8 @@
   },
   "msgPleaseWait": {
     "message": "Please wait..."
+  },
+  "msgUnknownLanguage": {
+    "message": "Unknown"
   }
 }
