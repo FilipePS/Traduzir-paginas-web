@@ -463,5 +463,8 @@
   },
   "msgPleaseWait": {
     "message": "処理中…"
+  },
+  "msgUnknownLanguage": {
+    "message": "Unknown"
   }
 }

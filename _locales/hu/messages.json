@@ -463,5 +463,8 @@
   },
   "msgPleaseWait": {
     "message": "Kérem várjon..."
+  },
+  "msgUnknownLanguage": {
+    "message": "Unknown"
   }
 }
