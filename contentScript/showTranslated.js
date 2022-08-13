@@ -475,7 +475,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         const setTargetLanguage = shadowRoot.getElementById("setTargetLanguage")
         setTargetLanguage.onclick = e => {
             if (e.target.getAttribute("value")) {
-                const langCode = twpLang.checkLanguageCode(e.target.getAttribute("value"))
+                const langCode = twpLang.fixTLanguageCode(e.target.getAttribute("value"))
                 if (langCode) {
                     currentTargetLanguage = langCode
                     twpConfig.setTargetLanguageTextTranslation(langCode)

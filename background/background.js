@@ -98,16 +98,7 @@ function updateContextMenu(pageLanguageState = "original") {
         contextMenuTitle = chrome.i18n.getMessage("btnRestore")
     } else {
         const targetLanguage = twpConfig.get("targetLanguage")
-        let uilanguage = chrome.i18n.getUILanguage()
-        uilanguage = uilanguage.toLowerCase() != "zh-cn" && uilanguage.toLowerCase() != "zh-tw" ? uilanguage.split("-")[0] : uilanguage
-
-        let languageName
-        if (twpLang.languages[uilanguage]) {
-            languageName = twpLang.languages[uilanguage][targetLanguage]
-        } else {
-            languageName = twpLang.languages['en'][targetLanguage]
-        }
-        contextMenuTitle = chrome.i18n.getMessage("msgTranslateFor", languageName)
+        contextMenuTitle = chrome.i18n.getMessage("msgTranslateFor", twpLang.codeToLanguage(targetLanguage))
     }
     if (typeof chrome.contextMenus != 'undefined') {
         chrome.contextMenus.remove("translate-web-page", checkedLastError)

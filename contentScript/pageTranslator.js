@@ -742,7 +742,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                 if (result === "und") {
                     originalTabLanguage = result
                 } else {
-                    const langCode = twpLang.checkLanguageCode(result)
+                    const langCode = twpLang.fixTLanguageCode(result)
                     if (langCode) {
                         originalTabLanguage = langCode
                     }

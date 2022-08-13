@@ -186,13 +186,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         // fill language list
         ;
         (function () {
-            let uilanguage = chrome.i18n.getUILanguage()
-            uilanguage = twpLang.fixLanguageCode(uilanguage)
-
-            let langs = twpLang.languages[uilanguage]
-            if (!langs) {
-                langs = twpLang.languages["en"]
-            }
+            let langs = twpLang.getLanguageList()
 
             const langsSorted = []
 
@@ -206,7 +200,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
             const menuSelectLanguage = getElemById("menuSelectLanguage")
             langsSorted.forEach(value => {
-                if (value[0] === "zh" || value[0] === "un" || value[0] === "und") return;
                 const a = document.createElement("a")
                 a.setAttribute("value", value[0])
                 a.textContent = value[1]
@@ -340,7 +333,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
     pageTranslator.onGetOriginalTabLanguage(function (tabLanguage) {
         if (!tabLanguage || tabLanguage === "und") {
-            const lang = twpLang.checkLanguageCode(document.documentElement.lang)
+            const lang = twpLang.fixTLanguageCode(document.documentElement.lang)
             if (lang) {
                 originalTabLanguage = tabLanguage
             }

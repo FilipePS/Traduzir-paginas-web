@@ -14,13 +14,7 @@ $("#btnApply").addEventListener("click", () => {
 })
 
 twpConfig.onReady(function () {
-    let uilanguage = chrome.i18n.getUILanguage()
-    uilanguage = twpLang.fixLanguageCode(uilanguage)
-
-    let langs = twpLang.languages[uilanguage]
-    if (!langs) {
-        langs = twpLang.languages["en"]
-    }
+    let langs = twpLang.getLanguageList()
 
     const langsSorted = []
 
@@ -34,7 +28,6 @@ twpConfig.onReady(function () {
 
     const eAllLangs = selectTargetLanguage.querySelector('[name="all"]')
     langsSorted.forEach(value => {
-        if (value[0] == "zh" || value[0] == "un" || value[0] == "und") return;
         const option = document.createElement("option")
         option.value = value[0]
         option.textContent = value[1]

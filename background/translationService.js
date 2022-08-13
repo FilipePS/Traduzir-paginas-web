@@ -651,6 +651,9 @@ const translationService = {};
     translationService.yandex.translateSingleText = (source, targetLanguage, dontSaveInCache = false) => translationService.yandex.translateText([ source ], targetLanguage, dontSaveInCache).then(results => results[0])
     
     translationService.bing.translateSingleText = async (source, targetLanguage, dontSaveInCache = false) => {
+        if (targetLanguage == "zh") {
+            targetLanguage = "zh-CN"
+        }
         const replacements = [
             {
                 search: "zh-CN",

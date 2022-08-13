@@ -110,7 +110,7 @@ twpConfig.onReady(function () {
             frameId: 0
         }, tabLanguage => {
             checkedLastError()
-            if (!tabLanguage || (tabLanguage = twpLang.checkLanguageCode(tabLanguage))) {
+            if (!tabLanguage || (tabLanguage = twpLang.fixTLanguageCode(tabLanguage))) {
                 originalTabLanguage = tabLanguage || "und"
                 twpButtons[0].childNodes[1].textContent = twpLang.codeToLanguage(originalTabLanguage)
             }

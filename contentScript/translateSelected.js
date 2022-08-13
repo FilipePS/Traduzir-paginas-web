@@ -46,7 +46,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				if (!result) return resolve({lang: "und", isReliable: false})
 				
 				for (const langInfo of result.languages) {
-					const langCode = twpLang.checkLanguageCode(langInfo.language)
+					const langCode = twpLang.fixTLanguageCode(langInfo.language)
 					if (langCode) {
 						return resolve({lang: langCode, isReliable: result.isReliable})
 					}
@@ -420,7 +420,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		const setTargetLanguage = shadowRoot.getElementById("setTargetLanguage")
 		setTargetLanguage.onclick = e => {
 			if (e.target.getAttribute("value")) {
-				const langCode = twpLang.checkLanguageCode(e.target.getAttribute("value"))
+				const langCode = twpLang.fixTLanguageCode(e.target.getAttribute("value"))
 				if (langCode) {
 					currentTargetLanguage = langCode
 					twpConfig.setTargetLanguageTextTranslation(langCode)
