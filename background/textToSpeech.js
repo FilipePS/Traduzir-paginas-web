@@ -25,7 +25,21 @@ const textToSpeech = {};
 	let audios = []
 	chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 		if (request.action === "textToSpeech") {
-			const splitted = request.text.split(" ")
+			const _splitted = request.text.trim().split(" ")
+			const splitted = []
+			_splitted.forEach(word => {
+				if (word.length > 160) {
+					while (word.length > 160) {
+						splitted.push(word.slice(0, 160))
+						word = word.slice(160)
+					}
+					if (word.trim().length > 0) {
+						splitted.push(word)
+					}
+				} else if (word.trim().length > 0) {
+					splitted.push(word)
+				}
+			})
 			const promises = []
 			
 			let requestString = ""
@@ -38,7 +52,7 @@ const textToSpeech = {};
 					requestString = txt
 				}
 			}
-			if (requestString) {
+			if (requestString.trim()) {
 				promises.push(textToSpeech.google(requestString, request.targetLanguage))
 				requestString = ""
 			}
