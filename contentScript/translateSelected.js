@@ -233,7 +233,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 
 		const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 		
-		if (CSS.supports("backdrop-filter: blur(5px)") && !isFirefox) {
+		if (CSS.supports("backdrop-filter: blur(5px)") && !isFirefox && false) {
 			const el = document.createElement("style")
 			el.setAttribute("id", "backdropFilterElement")
 			el.setAttribute("rel", "stylesheet")
