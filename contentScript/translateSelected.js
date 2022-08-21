@@ -121,6 +121,9 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		sel.addRange(range)
 		el.focus()
 	}
+
+	let onCSSLoad = null
+	let isCSSLoaded = false
 	
 	function init() {
 		destroy()
@@ -215,18 +218,23 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		const link = document.createElement("link")
 		link.setAttribute("rel", "stylesheet")
 		link.setAttribute("href", chrome.runtime.getURL("/contentScript/css/translateSelected.css"))
-		shadowRoot.insertBefore(link, shadowRoot.getElementById("eButtonTransSelText"))
+		isCSSLoaded = false
+		link.onload = e => {
+			isCSSLoaded = true
+			if (onCSSLoad) onCSSLoad();
+		}
+		shadowRoot.appendChild(link)
 
 		const styleFix = document.createElement("style")
 		styleFix.textContent = `
 		#eSelTextTrans,#eOrigText {
-				margin-right: 22px;
+			margin-right: 22px;
 		}
 		#eDivResult {
 			min-width: 280px;
 		}
 		`
-		shadowRoot.insertBefore(styleFix, shadowRoot.getElementById("eButtonTransSelText"))
+		shadowRoot.appendChild(styleFix)
 		
 		
 		dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
@@ -663,44 +671,58 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		if (eDivResult.style.display !== "block") {
 			init()
 		}
-		const eTop = prevSelectionInfo.bottom
-		const eLeft = prevSelectionInfo.left
-		
-		if (twpLang.isRtlLanguage(currentTargetLanguage)) {
-			eSelTextTrans.setAttribute("dir", "rtl")
-		} else {
-			eSelTextTrans.setAttribute("dir", "ltr")
-		}
-		eSelTextTrans.textContent = result
-		if (eDivResult.style.display !== "block") {
-			eDivResult.style.display = "block"
-			eDivResult.style.top = "0px"
-			eDivResult.style.left = "0px"
-			eOrigText.textContent = prevSelectionInfo.text
+
+		function onloaded() {
+			const eTop = prevSelectionInfo.bottom
+			const eLeft = prevSelectionInfo.left
 			
-			setCaretAtEnd()
-			
-			const height = parseInt(eDivResult.offsetHeight)
-			let top = eTop + 5
-			top = Math.max(0, top)
-			top = Math.min(window.innerHeight - height, top)
-			
-			const width = parseInt(eDivResult.offsetWidth)
-			let left = parseInt(eLeft /*- width / 2*/)
-			left = Math.max(0, left)
-			left = Math.min(window.innerWidth - width, left)
-			
-			eDivResult.style.top = top + "px"
-			eDivResult.style.left = left + "px"
+			if (twpLang.isRtlLanguage(currentTargetLanguage)) {
+				eSelTextTrans.setAttribute("dir", "rtl")
+			} else {
+				eSelTextTrans.setAttribute("dir", "ltr")
+			}
+			eSelTextTrans.textContent = result
+			if (eDivResult.style.display !== "block") {
+				eDivResult.style.display = "block"
+				eDivResult.style.top = "0px"
+				eDivResult.style.left = "0px"
+				eOrigText.textContent = prevSelectionInfo.text
+				
+				setCaretAtEnd()
+				
+				const height = parseInt(eDivResult.offsetHeight)
+				let top = eTop + 5
+				top = Math.max(0, top)
+				top = Math.min(window.innerHeight - height, top)
+				
+				const width = parseInt(eDivResult.offsetWidth)
+				let left = parseInt(eLeft /*- width / 2*/)
+				left = Math.max(0, left)
+				left = Math.min(window.innerWidth - width, left)
+				
+				eDivResult.style.top = top + "px"
+				eDivResult.style.left = left + "px"
+			}
+	
+			eDivResult.style.top = Math.min(window.innerHeight-parseInt(getComputedStyle(eDivResult).height), parseInt(eDivResult.style.top)) + "px";
+			eDivResult.style.left = Math.min(window.innerWidth-parseInt(getComputedStyle(eDivResult).width)-18, parseInt(eDivResult.style.left)) + "px";
 		}
 
-		eDivResult.style.top = Math.min(window.innerHeight-parseInt(getComputedStyle(eDivResult).height), parseInt(eDivResult.style.top)) + "px";
-		eDivResult.style.left = Math.min(window.innerWidth-parseInt(getComputedStyle(eDivResult).width)-18, parseInt(eDivResult.style.left)) + "px";
+		if (isCSSLoaded) {
+			onloaded()
+		} else {
+			const currentFooCount = fooCount
+			onCSSLoad = () => {
+				onCSSLoad = null
+				if (currentFooCount !== fooCount) return;
+				onloaded()
+			}
+		}
 	}
 	
 	function translateNewInput() {
 		fooCount++
-		let currentFooCount = fooCount
+		const currentFooCount = fooCount
 		stopAudio()
 		audioDataUrls = null
 		
