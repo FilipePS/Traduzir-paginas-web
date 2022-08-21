@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "default_locale": "en",
-    "name": "__MSG_extensionName__",
+    "name": "TWP - Translate Web Pages",
     "description": "__MSG_extensionDescription__",
-    "version": "9.5.4",
+    "version": "9.5.5",
     "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
 
     "commands": {
@@ -24,6 +24,18 @@
                 "default": "Alt+Q"
             },
             "description": "__MSG_swapTranslationService__"
+        },
+        "hotkey-show-original": {
+            "description": "__MSG_lblRestorePageToOriginal__"
+        },
+        "hotkey-translate-page-1": {
+            "description": "__MSG_lblTranslatePageToTargetLanguage__ 1"
+        },
+        "hotkey-translate-page-2": {
+            "description": "__MSG_lblTranslatePageToTargetLanguage__ 2"
+        },
+        "hotkey-translate-page-3": {
+            "description": "__MSG_lblTranslatePageToTargetLanguage__ 3"
         }
     },
 

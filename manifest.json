@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "default_locale": "en",
-    "name": "__MSG_extensionName__",
+    "name": "TWP - Translate Web Pages",
     "description": "__MSG_extensionDescription__",
-    "version": "9.5.4",
+    "version": "9.5.5",
     "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
 
     "browser_specific_settings": {
