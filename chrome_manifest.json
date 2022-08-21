@@ -24,6 +24,18 @@
                 "default": "Alt+Q"
             },
             "description": "__MSG_swapTranslationService__"
+        },
+        "hotkey-show-original": {
+            "description": "__MSG_lblRestorePageToOriginal__"
+        },
+        "hotkey-translate-page-1": {
+            "description": "__MSG_lblTranslatePageToTargetLanguage__ 1"
+        },
+        "hotkey-translate-page-2": {
+            "description": "__MSG_lblTranslatePageToTargetLanguage__ 2"
+        },
+        "hotkey-translate-page-3": {
+            "description": "__MSG_lblTranslatePageToTargetLanguage__ 3"
         }
     },
 
