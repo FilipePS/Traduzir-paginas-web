@@ -21,7 +21,7 @@ Translate your page in real time using Google or Yandex.
 3. Open your browser's extension manager
 4. Activate developer mode
 5. Load the extension with the option "Load unpacked"
-- Note: If you use Chromium you can install via [crx file](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.5.5/TWP.9.5.5.crx), download the file using a download manager/or firefox. Activate developer mode and drag the file into the chromium extension manager.
+- Note: You can also install via [crx file](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.5.5/TWP.9.5.5.crx), download the file using a download manager/or firefox. Activate developer mode and drag the file into the chromium extension manager. It doesn't work on Chrome/Edge.
 
 ## Screenshots
 | Menu 1 | Menu 2 | Translated |
