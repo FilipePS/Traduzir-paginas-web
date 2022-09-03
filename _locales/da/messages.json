@@ -177,7 +177,7 @@
     "message": "Oversæt aldrig dette sprog"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Vis original tekst ved svævning"
   },
   "msgLanguages": {
     "message": "Sprog"
@@ -210,7 +210,7 @@
     "message": "Tilføj"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Vis oversat tekst ved svævning"
   },
   "lblKeyboardShortcuts": {
     "message": "Tastaturgenveje"
@@ -228,7 +228,7 @@
     "message": "Oversæt altid dette sprog"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Vis oversat tekst ved svævning på disse websteder"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Gør pop-up-ikonet blåt, når hjemmesiden er oversat"
@@ -252,10 +252,10 @@
     "message": "Vis ikke hvis det markerede teksts sprog er ukendt"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Vis oversættelse ved svævning over dette websted"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Vis oversættelse ved svævning over hjemmesider i $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,7 +264,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Vis oversat tekst ved svævning over websteder med disse sprog"
   },
   "msgNoTranslateSelectedText": {
     "message": "Oversæt ikke valgt tekst"
@@ -392,7 +392,7 @@
     "message": "Oversæt automatisk, når du klikker på et link, der tager dig til det samme domæne som det aktuelle websted"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Åbn håndtering af genvejstasten"
   },
   "lblKeyboardShortcutsSpecial": {
     "message": "Særlige tastaturgenveje"
@@ -465,6 +465,6 @@
     "message": "Vent venligst..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Ukendt"
   }
 }
