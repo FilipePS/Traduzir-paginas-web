@@ -438,7 +438,7 @@
     "message": "إرسال مستند"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "خطأ في تنزيل المستند"
   },
   "msgFileLargerThan": {
     "message": "هذه الخدمة لا تدعم ملفات أكبر من $FILE_SIZE$",
@@ -465,6 +465,6 @@
     "message": "الرجاء الإنتظار..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "غير معروف"
   }
 }
