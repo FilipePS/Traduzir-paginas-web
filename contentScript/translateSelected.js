@@ -208,6 +208,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 					<li title="Yandex" id="sYandex">y</li>
 					<li title="Bing" id="sBing">b</li>
 					<li title="DeepL" id="sDeepL" hidden>d</li>
+					<li style="opacity: 0; cursor: move;">O</li>
 				</ul>
 			</div>
 		</div>
@@ -231,7 +232,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			margin-right: 22px;
 		}
 		#eDivResult {
-			min-width: 280px;
+			min-width: 300px;
 		}
 		`
 		shadowRoot.appendChild(styleFix)
@@ -682,6 +683,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				eSelTextTrans.setAttribute("dir", "ltr")
 			}
 			eSelTextTrans.textContent = result
+			let top = parseInt(eDivResult.style.top) || 0, left = parseInt(eDivResult.style.left) || 0
 			if (eDivResult.style.display !== "block") {
 				eDivResult.style.display = "block"
 				eDivResult.style.top = "0px"
@@ -691,21 +693,18 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				setCaretAtEnd()
 				
 				const height = parseInt(eDivResult.offsetHeight)
-				let top = eTop + 5
+				top = eTop + 5
 				top = Math.max(0, top)
 				top = Math.min(window.innerHeight - height, top)
 				
 				const width = parseInt(eDivResult.offsetWidth)
-				let left = parseInt(eLeft /*- width / 2*/)
+				left = parseInt(eLeft /*- width / 2*/)
 				left = Math.max(0, left)
 				left = Math.min(window.innerWidth - width, left)
-				
-				eDivResult.style.top = top + "px"
-				eDivResult.style.left = left + "px"
 			}
 	
-			eDivResult.style.top = Math.min(window.innerHeight-parseInt(getComputedStyle(eDivResult).height), parseInt(eDivResult.style.top)) + "px";
-			eDivResult.style.left = Math.min(window.innerWidth-parseInt(getComputedStyle(eDivResult).width)-18, parseInt(eDivResult.style.left)) + "px";
+			eDivResult.style.top = Math.min(window.innerHeight-parseInt(getComputedStyle(eDivResult).height), top) + "px";
+			eDivResult.style.left = Math.min(window.innerWidth-parseInt(getComputedStyle(eDivResult).width)-18, left) + "px";
 		}
 
 		if (isCSSLoaded) {
