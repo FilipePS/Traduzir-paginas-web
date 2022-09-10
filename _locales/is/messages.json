@@ -90,7 +90,7 @@
     "message": "Sjálfkrafa"
   },
   "optionPopupThreeFingers": {
-    "message": "Þegar ég snerti þrjá fingur á skjánum"
+    "message": "Þegar ég snerti skjáinn með þremur fingrum"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Opna í Yandex Translate"
@@ -129,7 +129,7 @@
     "message": "Já (mælt með)"
   },
   "msgNoUseWidgets": {
-    "message": "Nei (nota búnað)"
+    "message": "Nei (nota widgets)"
   },
   "optionsPageTitle": {
     "message": "Þýða vefsíður - Valkostir"
@@ -222,40 +222,40 @@
     "message": "Þakka þér fyrir að nota þessa viðbót."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Ég mun vera þakklát(ur) ef þú getur styrkjað mig."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "Alltaf þýða þetta tungumál"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Sýna þýddan texta þegar sveimað er yfir á þessum síðum"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Gerðu sprettimerkið blátt þegar síðan er þýdd"
   },
   "more": {
-    "message": "More"
+    "message": "Meira"
   },
   "less": {
-    "message": "Less"
+    "message": "Minna"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Ekki sýna ef síðutungumálið er markmálið"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "Ekki sýna ef tungumál síðunnar er óþekkt"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Ekki sýna ef textamálið er markmálið"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Ekki sýna ef valið textamál er óþekkt"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Sýna þýðingu þegar þú sveima yfir þessari síðu"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Sýna þýðingu þegar þú ferð yfir vefsíður á $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,64 +264,64 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Sýna þýddan texta þegar þú sveimar yfir vefsvæðum með þessum tungumálum"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Ekki þýða valinn texta"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "Hlusta"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "Hætta að hlusta"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "Nota"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Skipta á milli þýðingarþjónustu"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "Skipta á milli gamla viðmótsins og þess nýja"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "Smelltu á þennan hnapp til að skipta á milli gamla og nýja viðmótsins."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "Þýðingarþjónusta"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "Nota gamla sprettigluggaviðmótið"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Þýða viðmótið"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Sýna hnappinn á veffangastikunni"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Síðuþýðingarþjónusta"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Textaþýðingarþjónusta"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Geymslupláss"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Þýðingarskyndiminni"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Geymsla notuð:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Eyða þýðingarskyndiminni"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Persónulegar stillingar"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Afrita í skrá"
   },
   "restoreFromFile": {
     "message": "Endurheimta úr skrá"
