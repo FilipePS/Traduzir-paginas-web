@@ -216,12 +216,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         let index = 0
         let currentParagraphSize = 0
 
-        const getAllNodes = function (node, lastHTMLElement = null) {
+        const getAllNodes = function (node, lastHTMLElement = null, lastSelectOrDataListElement = null) {
             if (node.nodeType == 1 || node.nodeType == 11) {
                 if (node.nodeType == 11) {
                     lastHTMLElement = node.host
+                    lastSelectOrDataListElement = null
                 } else if (node.nodeType == 1) {
                     lastHTMLElement = node
+                    if (node.nodeName === "SELECT" || node.nodeName === "DATALIST") lastSelectOrDataListElement = node;
 
                     if (htmlTagsInlineIgnore.indexOf(node.nodeName) !== -1 ||
                         htmlTagsNoTranslate.indexOf(node.nodeName) !== -1 ||
@@ -248,6 +250,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                     Array.from(childNodes).forEach(_node => {
                         if (_node.nodeType == 1) {
                             lastHTMLElement = _node
+                            if (_node.nodeName === "SELECT" || _node.nodeName === "DATALIST") lastSelectOrDataListElement = _node;
                         }
 
                         if (htmlTagsInlineText.indexOf(_node.nodeName) == -1) {
@@ -265,7 +268,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
                             }
 
-                            getAllNodes(_node, lastHTMLElement)
+                            getAllNodes(_node, lastHTMLElement, lastSelectOrDataListElement)
 
                             if (piecesToTranslate[index].nodes.length > 0) {
                                 currentParagraphSize = 0
@@ -280,7 +283,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                                 index++
                             }
                         } else {
-                            getAllNodes(_node, lastHTMLElement)
+                            getAllNodes(_node, lastHTMLElement, lastSelectOrDataListElement)
                         }
                     })
                 }
@@ -298,14 +301,20 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             } else if (node.nodeType == 3) {
                 if (node.textContent.trim().length > 0) {
                     if (!piecesToTranslate[index].parentElement) {
-                        let temp = node.parentNode
-                        while (temp && temp != root && (htmlTagsInlineText.indexOf(temp.nodeName) != -1 || htmlTagsInlineIgnore.indexOf(temp.nodeName) != -1)) {
-                            temp = temp.parentNode
+                        if (node && node.parentNode && node.parentNode.nodeName === "OPTION" && lastSelectOrDataListElement) {
+                            piecesToTranslate[index].parentElement = lastSelectOrDataListElement
+                            piecesToTranslate[index].bottomElement = lastSelectOrDataListElement
+                            piecesToTranslate[index].topElement = lastSelectOrDataListElement
+                        } else {
+                            let temp = node.parentNode
+                            while (temp && temp != root && (htmlTagsInlineText.indexOf(temp.nodeName) != -1 || htmlTagsInlineIgnore.indexOf(temp.nodeName) != -1)) {
+                                temp = temp.parentNode
+                            }
+                            if (temp && temp.nodeType === 11) {
+                                temp = temp.host
+                            }
+                            piecesToTranslate[index].parentElement = temp
                         }
-                        if (temp && temp.nodeType === 11) {
-                            temp = temp.host
-                        }
-                        piecesToTranslate[index].parentElement = temp
                     }
                     if (!piecesToTranslate[index].topElement) {
                         piecesToTranslate[index].topElement = lastHTMLElement
