@@ -300,7 +300,7 @@
     "message": "نمایش دکمه در نوار آدرس"
   },
   "lblPageTranslationService": {
-    "message": "سرویس ترجمه‌ی صفحه"
+    "message": "خدمات ترجمه‌ی صفحه"
   },
   "lblTextTranslationService": {
     "message": "سرویس ترجمه•ی متن"
@@ -465,6 +465,6 @@
     "message": "منتظر باشید"
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "ناشناس"
   }
 }

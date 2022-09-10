@@ -48,7 +48,7 @@
     "message": "Настройки"
   },
   "btnRestore": {
-    "message": "Показать оригинал"
+    "message": "Показать исходный"
   },
   "btnTryAgain": {
     "message": "Попробуйте заново"
@@ -66,7 +66,7 @@
     "message": "Сменить языки"
   },
   "btnMobileOriginal": {
-    "message": "Оригинал"
+    "message": "Исходный"
   },
   "btnMobileTranslated": {
     "message": "Перевод"
@@ -102,7 +102,7 @@
     "message": "Дополнительные настройки"
   },
   "lblPlsDonate": {
-    "message": "Помочь разработчику пожертвованием"
+    "message": "Пожертвовать разработчику"
   },
   "msgTranslateFor": {
     "message": "Перевести на $LANGUAGE_NAME$",
@@ -219,10 +219,10 @@
     "message": "Перевести сайт"
   },
   "msgThanksForUseExtension": {
-    "message": "Спасибо, что используете это расширение"
+    "message": "Спасибо, что используете это расширение."
   },
   "msgIWillBeGrateful": {
-    "message": "Буду признателен, если сделаете пожертвование"
+    "message": "Буду признателен, если сделаете пожертвование."
   },
   "btnAlwaysTranslateThisLanguage": {
     "message": "Всегда переводить с этого языка"
@@ -282,7 +282,7 @@
     "message": "Переключиться между сервисами перевода"
   },
   "swapPopup": {
-    "message": "Переключиться между старым и новым интерфейсом"
+    "message": "Переключиться между старым и новым интерфейсами"
   },
   "helpSwapInterface": {
     "message": "Нажмите эту кнопку, чтобы переключиться между старым и новым интерфейсами."
@@ -465,6 +465,6 @@
     "message": "Подождите..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Неизвестный"
   }
 }
