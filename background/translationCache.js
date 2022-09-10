@@ -138,7 +138,7 @@ translationCache.bing = {}
 		request.onupgradeneeded = function () {
 			const db = this.result
 			
-			for (const langCode in twpLang.TargetLanguages) {
+			for (const langCode of twpLang.TargetLanguages) {
 				db.createObjectStore(langCode, {
 					keyPath: "key"
 				})
