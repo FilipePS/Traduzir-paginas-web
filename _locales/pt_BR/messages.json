@@ -466,5 +466,16 @@
   },
   "msgUnknownLanguage": {
     "message": "Desconhecido"
+  },
+  "btnReplace": {
+    "message": "Replace"
+  },
+  "lblReplaceSelectedTextWithTranslatedText": {
+    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
   }
 }
