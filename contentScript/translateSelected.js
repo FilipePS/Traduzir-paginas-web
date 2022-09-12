@@ -10,6 +10,9 @@ function getTabHostName() {
 
 Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 	const tabHostName = _[1]
+
+	let gSelectionInfo
+	let prevSelectionInfo
 	
 	let divElement
 	let eButtonTransSelText
@@ -115,7 +118,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		const el = eOrigText
 		const range = document.createRange()
 		const sel = window.getSelection()
-		range.setStart(el, 1)
+		range.setStart(el, el.textContent.length > 0 ? 1 : 0)
 		range.collapse(true)
 		sel.removeAllRanges()
 		sel.addRange(range)
@@ -192,6 +195,14 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 						<path d="M13 11H7V9H13V11Z" fill="currentColor" />
 						<path d="M7 15H13V13H7V15Z" fill="currentColor" />
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M3 19V1H17V5H21V23H7V19H3ZM15 17V3H5V17H15ZM17 7V19H9V21H19V7H17Z" fill="currentColor"/>
+						</svg>
+					</li>
+					<li title="Replace" data-i18n-title="btnReplace" id="replace" hidden>
+						<svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+						d="M5.75739 7.17154L7.1716 5.75732L16.2426 14.8283L16.2426 10.2427H18.2426L18.2426 18.2427H10.2426V16.2427L14.8285 16.2427L5.75739 7.17154Z"
+						fill="currentColor"
+						/>
 						</svg>
 					</li>
 				</ul>
@@ -340,8 +351,22 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		const sBing = shadowRoot.getElementById("sBing")
 		const sDeepL = shadowRoot.getElementById("sDeepL")
 		const eCopy = shadowRoot.getElementById("copy")
+		const eReplace = shadowRoot.getElementById("replace")
 		const eListenOriginal = shadowRoot.getElementById("listenOriginal")
 		const eListenTranslated = shadowRoot.getElementById("listenTranslated")
+
+		if (gSelectionInfo && gSelectionInfo.isInputElement) {
+			eCopy.setAttribute("hidden", "")
+			eReplace.removeAttribute("hidden")
+		} else {
+			eCopy.removeAttribute("hidden")
+			eReplace.setAttribute("hidden", "")
+		}
+
+		function replaceText() {
+			prevSelectionInfo.element.setRangeText(eSelTextTrans.textContent + " ", prevSelectionInfo.selStart, prevSelectionInfo.selEnd)
+			destroy()
+		}
 		
 		eCopy.onclick = () => {
 			navigator.clipboard.writeText(eSelTextTrans.textContent).then(() => {
@@ -352,6 +377,8 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				}, 500)
 			})
 		}
+
+		eReplace.onclick = replaceText
 		
 		eOrigText.onkeypress = e => {
 			e.stopPropagation()
@@ -359,6 +386,19 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		
 		eOrigText.onkeydown = e => {
 			e.stopPropagation()
+		}
+
+		let lastTimePressedCtrl = null
+
+		eOrigText.onkeyup = e => {
+			if (twpConfig.get("replaceSelectedTextWithTranslatedText") !== "yes") return;
+			if (e.key == "Control") {
+				if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 280) {
+					lastTimePressedCtrl = performance.now()
+					replaceText()
+				}
+				lastTimePressedCtrl = performance.now()
+			}
 		}
 		
 		let translateNewInputTimerHandler
@@ -561,7 +601,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			sDeepL.setAttribute("hidden", "")
 		}
 
-		if (twpConfig.get("expandPanelTranslateSelectedText") === "yes") {
+		if (twpConfig.get("expandPanelTranslateSelectedText") === "yes" || (prevSelectionInfo && (prevSelectionInfo.isContentEditable || prevSelectionInfo.isInputElement))) {
 			origTextContainer.style.display = "block"
 			eMore.style.display = "none"
 			eLess.style.display = "block"
@@ -732,9 +772,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		})
 	}
 	
-	let gSelectionInfo
-	let prevSelectionInfo
-	
 	function translateSelText(usePrevSelectionInfo = false) {
 		if (!usePrevSelectionInfo && gSelectionInfo) {
 			prevSelectionInfo = gSelectionInfo
@@ -803,6 +840,11 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			const text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
 			const rect = activeEl.getBoundingClientRect()
 			newSelectionInfo = {
+				isInputElement: true,
+				isContentEditable: false,
+				element: activeEl,
+				selStart: activeEl.selectionStart,
+				selEnd: activeEl.selectionEnd,
 				text: text,
 				top: rect.top,
 				left: rect.left,
@@ -815,6 +857,11 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				const text = selection.toString();
 				const rect = selection.getRangeAt(0).getBoundingClientRect()
 				newSelectionInfo = {
+					isInputElement: false,
+					isContentEditable: selection.focusNode.isContentEditable,
+					element: selection.focusNode,
+					selStart: selection.getRangeAt(0).startOffset,
+					selEnd: selection.getRangeAt(0).endOffset,
 					text: text,
 					top: rect.top,
 					left: rect.left,

@@ -31,7 +31,7 @@
     right: 2px;
 }
 
-#copy {
+#copy, #replace  {
     position: absolute;
     top: 30px;
     right: 2px;
