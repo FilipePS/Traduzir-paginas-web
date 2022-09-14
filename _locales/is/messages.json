@@ -468,7 +468,7 @@
     "message": "Óþekkt"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Skipta út"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
     "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
