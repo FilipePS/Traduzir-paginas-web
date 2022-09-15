@@ -364,7 +364,10 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		}
 
 		function replaceText() {
-			prevSelectionInfo.element.setRangeText(eSelTextTrans.textContent + " ", prevSelectionInfo.selStart, prevSelectionInfo.selEnd)
+			prevSelectionInfo.element.focus();
+			document.execCommand('selectAll', false);
+			prevSelectionInfo.element.setSelectionRange(prevSelectionInfo.selStart, prevSelectionInfo.selEnd)
+			document.execCommand('insertText', false, eSelTextTrans.textContent);
 			destroy()
 		}
 		
