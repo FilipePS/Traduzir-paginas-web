@@ -846,16 +846,7 @@ function filterCustomWords(textContext) {
                     let placeholderText = ''
                     let keyWordWithCase = textContext.substring(index, index + keyWord.length)
                     if (previousChar === ' ' && nextChar === ' ') {
-                        for (let c of Array.from(keyWordWithCase)) {
-                            let unicodeValue = c.charCodeAt(0)
-                            // fill 0 , guaranteed five digits
-                            let length = String(unicodeValue).length
-                            for (let i = 0; i < 5 - length; i++) {
-                                placeholderText += '0'
-                            }
-                            placeholderText += unicodeValue
-                        }
-                        placeholderText = startMark + textCompressionAndDecompression(placeholderText, true) + endMark
+                        placeholderText = startMark + handleHitKeywords(keyWordWithCase, true) + endMark
                     } else {
                         placeholderText = '#n%o#'
                         for (let c of Array.from(keyWordWithCase)) {
@@ -889,11 +880,7 @@ function handleCustomWords(translated) {
                 let endIndex = translated.indexOf(endMark)
                 let placeholderText = translated.substring(startIndex + startMark.length, endIndex)
                 // At this point placeholderText is actually currentIndex , the real value is in compressionMap
-                placeholderText = textCompressionAndDecompression(placeholderText, false)
-                let keyWord = ''
-                for (let i = 0, charsLength = placeholderText.length; i < charsLength; i += 5) {
-                    keyWord += String.fromCodePoint(Number(placeholderText.substring(i, i + 5)))
-                }
+                let keyWord = handleHitKeywords(placeholderText, false)
                 let frontPart = translated.substring(0, startIndex)
                 let backPart = translated.substring(endIndex + endMark.length)
                 let customValue = customDictionary.get(keyWord.toLowerCase())
@@ -904,18 +891,13 @@ function handleCustomWords(translated) {
     return translated
 }
 
-
 /**
- *  When a sentence consisting of multiple super-long Unicode value and English words is sent to Google Translate.
  *
- *  there seems to be some kind of overflow in Google Translate, and our numbers are changed
+ * True : Store the keyword in the Map and return the index
  *
- *  Therefore, convert this uper-long Unicode value to a smaller number
- *
- *  @param value Unicode16 or index
- *  @param mode true: compression the value, returns the associated Key, else indexed by value, returns the Unicode16
+ * False : Extract keywords by index
  * */
-function textCompressionAndDecompression(value, mode) {
+function handleHitKeywords(value, mode) {
     if (mode === true) {
         if (currentIndex === undefined) {
             currentIndex = 1
