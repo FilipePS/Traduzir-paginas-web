@@ -388,6 +388,45 @@ twpConfig.onReady(function () {
         twpConfig.addSiteToNeverTranslate(hostname)
     }
 
+    function createcustomDictionary(keyWord,customValue) {
+        const li = document.createElement("li")
+        li.setAttribute("class", "w3-display-container")
+        li.value = keyWord
+        if(customValue !== ''){
+            li.textContent = keyWord + " ------------------- " + customValue
+        }
+        else{
+            li.textContent = keyWord
+        }
+        const close = document.createElement("span")
+        close.setAttribute("class", "w3-button w3-transparent w3-display-right")
+        close.innerHTML = "&times;"
+
+        close.onclick = e => {
+            e.preventDefault()
+            twpConfig.removeKeyWordFromcustomDictionary(keyWord)
+            li.remove()
+        }
+        li.appendChild(close)
+        return li
+    }
+
+    const customDictionary = twpConfig.get("customDictionary")
+    customDictionary.forEach(function(customValue,keyWord){
+        const li = createcustomDictionary(keyWord,customValue)
+        $("#customDictionary").appendChild(li)
+    });
+
+    $("#addToCustomDictionary").onclick = e => {
+        let keyWord = prompt("Enter the keyWord", "")
+        if (!keyWord) return;
+        let customValue = prompt("(Optional)\nYou can enter a value to replace it , or fill in nothing.", "")
+        keyWord = keyWord.toLowerCase()
+        const li = createcustomDictionary(keyWord,customValue)
+        $("#customDictionary").appendChild(li)
+        twpConfig.addKeyWordTocustomDictionary(keyWord,customValue)
+    }
+
     // sitesToTranslateWhenHovering
 
     function createNodeToSitesToTranslateWhenHoveringList(hostname) {

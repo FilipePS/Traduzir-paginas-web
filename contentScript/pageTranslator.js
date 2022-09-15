@@ -461,7 +461,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             original: nodes[j].textContent
                         })
 
-                        nodes[j].textContent = translated
+                        nodes[j].textContent = handleCustomWords(translated)
                     }
                 }
             }
@@ -480,7 +480,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             original: nodes[j].textContent
                         })
 
-                        nodes[j].textContent = translated
+                        nodes[j].textContent = handleCustomWords(translated)
                     }
                 }
             }
@@ -559,7 +559,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         backgroundTranslateHTML(
                                 currentPageTranslatorService,
                                 currentTargetLanguage,
-                                piecesToTranslateNow.map(ptt => ptt.nodes.map(node => node.textContent)),
+                                piecesToTranslateNow.map(ptt => ptt.nodes.map(node => filterCustomWords(node.textContent))),
                                 dontSortResults
                             )
                             .then(results => {
@@ -741,7 +741,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }
     })
 
-    // Requests the detection of the tab language in the background 
+    // Requests the detection of the tab language in the background
     if (window.self === window.top) { // is main frame
         const onTabVisible = function () {
             chrome.runtime.sendMessage({
@@ -771,7 +771,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         }
                     }
                 }
-                
+
                 observers.forEach(callback => callback(originalTabLanguage))
                 alreadyGotTheLanguage = true
             })
@@ -807,3 +807,148 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         })
     }
 })
+
+
+let startMark = '#1%1#'
+let endMark = '#2%2#'
+let currentIndex
+let compressionMap
+
+/**
+ *  Convert matching keywords to a string of special numbers to skip translation before sending to the translation engine.
+ *
+ *  For English words, ignore case when matching.
+ *
+ *  But for the word "app" , We don't want to "Happy" also matched.
+ *
+ *  So we match only isolated words, by checking the two characters before and after the keyword.
+ *
+ *  But this will also cause this method to not work for Chinese, Burmese and other languages without spaces.
+ * */
+function filterCustomWords(textContext) {
+    const customDictionary = twpConfig.get("customDictionary")
+    if (customDictionary.size > 0) {
+        let lowerCaseText = textContext.toLowerCase()
+        for (let keyWord of customDictionary.keys()) {
+            while (true) {
+                let index = lowerCaseText.indexOf(keyWord)
+                if (index === -1) {
+                    break
+                } else {
+                    let previousIndex = index - 1
+                    let nextIndex = index + keyWord.length
+                    let previousChar = previousIndex === -1 ? ' ' : textContext.charAt(previousIndex)
+                    let nextChar = nextIndex === textContext.length ? ' ' : textContext.charAt(nextIndex)
+                    previousChar = previousChar === '\n' ? ' ' : previousChar
+                    nextChar = nextChar === '\n' ? ' ' : nextChar
+                    previousChar = isPunctuation(previousChar) ? ' ' : previousChar
+                    nextChar = isPunctuation(nextChar) ? ' ' : nextChar
+                    let placeholderText = ''
+                    let keyWordWithCase = textContext.substring(index, index + keyWord.length)
+                    if (previousChar === ' ' && nextChar === ' ') {
+                        for (let c of Array.from(keyWordWithCase)) {
+                            let unicodeValue = c.charCodeAt(0)
+                            // fill 0 , guaranteed five digits
+                            let length = String(unicodeValue).length
+                            for (let i = 0; i < 5 - length; i++) {
+                                placeholderText += '0'
+                            }
+                            placeholderText += unicodeValue
+                        }
+                        placeholderText = startMark + textCompressionAndDecompression(placeholderText, true) + endMark
+                    } else {
+                        placeholderText = '#n%o#'
+                        for (let c of Array.from(keyWordWithCase)) {
+                            placeholderText += c
+                            placeholderText += '#n%o#'
+                        }
+                    }
+                    let frontPart = textContext.substring(0, index)
+                    let backPart = textContext.substring(index + keyWord.length)
+                    textContext = frontPart + placeholderText + backPart
+                    lowerCaseText = textContext
+                }
+            }
+            textContext = textContext.replaceAll('#n%o#', '')
+        }
+    }
+    return textContext
+}
+
+/**
+ *  handle the keywords in translatedText, replace it if there is a custom replacement value.
+ *  */
+function handleCustomWords(translated) {
+    const customDictionary = twpConfig.get("customDictionary")
+    if (customDictionary.size > 0) {
+        while (true) {
+            let startIndex = translated.indexOf(startMark)
+            if (startIndex === -1) {
+                break
+            } else {
+                let endIndex = translated.indexOf(endMark)
+                let placeholderText = translated.substring(startIndex + startMark.length, endIndex)
+                // At this point placeholderText is actually currentIndex , the real value is in compressionMap
+                placeholderText = textCompressionAndDecompression(placeholderText, false)
+                let keyWord = ''
+                for (let i = 0, charsLength = placeholderText.length; i < charsLength; i += 5) {
+                    keyWord += String.fromCodePoint(Number(placeholderText.substring(i, i + 5)))
+                }
+                let frontPart = translated.substring(0, startIndex)
+                let backPart = translated.substring(endIndex + endMark.length)
+                let customValue = customDictionary.get(keyWord.toLowerCase())
+                translated = frontPart + (customValue === '' ? keyWord : customValue) + backPart
+            }
+        }
+    }
+    return translated
+}
+
+
+/**
+ *  When a sentence consisting of multiple super-long Unicode value and English words is sent to Google Translate.
+ *
+ *  there seems to be some kind of overflow in Google Translate, and our numbers are changed
+ *
+ *  Therefore, convert this uper-long Unicode value to a smaller number
+ *
+ *  @param value Unicode16 or index
+ *  @param mode true: compression the value, returns the associated Key, else indexed by value, returns the Unicode16
+ * */
+function textCompressionAndDecompression(value, mode) {
+    if (mode === true) {
+        if (currentIndex === undefined) {
+            currentIndex = 1
+            compressionMap = new Map()
+            compressionMap.set(currentIndex, value)
+        } else {
+            compressionMap.set(++currentIndex, value)
+        }
+        return String(currentIndex)
+    } else {
+        return String(compressionMap.get(Number(value)))
+    }
+}
+
+/**
+ * any kind of punctuation character (including international e.g. Chinese and Spanish punctuation)
+ *
+ * source: https://github.com/slevithan/xregexp/blob/41f4cd3fc0a8540c3c71969a0f81d1f00e9056a9/src/addons/unicode/unicode-categories.js#L142
+ *
+ * note: XRegExp unicode output taken from http://jsbin.com/uFiNeDOn/3/edit?js,console (see chrome console.log), then converted back to JS escaped unicode here http://rishida.net/tools/conversion/, then tested on http://regexpal.com/
+ *
+ * suggested by: https://stackoverflow.com/a/7578937
+ *
+ * added: extra characters like "$", "\uFFE5" [yen symbol], "^", "+", "=" which are not consider punctuation in the XRegExp regex (they are currency or mathmatical characters)
+ *
+ * added: Chinese Punctuation \u3002|\uff1f|\uff01|\uff0c|\u3001|\uff1b|\uff1a|\u201c|\u201d|\u2018|\u2019|\uff08|\uff09|\u300a|\u300b|\u3010|\u3011|\u007e
+ *
+ * @see https://stackoverflow.com/a/21396529/19616126
+ * */
+function isPunctuation(str) {
+    if (typeof str !== "string") return false
+    const regex = /[\$\uFFE5\^\+=`~<>{}\[\]|\u3002|\uff1f|\uff01|\uff0c|\u3001|\uff1b|\uff1a|\u201c|\u201d|\u2018|\u2019|\uff08|\uff09|\u300a|\u300b|\u3010|\u3011|\u007e!-#%-\x2A,-/:;\x3F@\x5B-\x5D_\x7B}\u00A1\u00A7\u00AB\u00B6\u00B7\u00BB\u00BF\u037E\u0387\u055A-\u055F\u0589\u058A\u05BE\u05C0\u05C3\u05C6\u05F3\u05F4\u0609\u060A\u060C\u060D\u061B\u061E\u061F\u066A-\u066D\u06D4\u0700-\u070D\u07F7-\u07F9\u0830-\u083E\u085E\u0964\u0965\u0970\u0AF0\u0DF4\u0E4F\u0E5A\u0E5B\u0F04-\u0F12\u0F14\u0F3A-\u0F3D\u0F85\u0FD0-\u0FD4\u0FD9\u0FDA\u104A-\u104F\u10FB\u1360-\u1368\u1400\u166D\u166E\u169B\u169C\u16EB-\u16ED\u1735\u1736\u17D4-\u17D6\u17D8-\u17DA\u1800-\u180A\u1944\u1945\u1A1E\u1A1F\u1AA0-\u1AA6\u1AA8-\u1AAD\u1B5A-\u1B60\u1BFC-\u1BFF\u1C3B-\u1C3F\u1C7E\u1C7F\u1CC0-\u1CC7\u1CD3\u2010-\u2027\u2030-\u2043\u2045-\u2051\u2053-\u205E\u207D\u207E\u208D\u208E\u2329\u232A\u2768-\u2775\u27C5\u27C6\u27E6-\u27EF\u2983-\u2998\u29D8-\u29DB\u29FC\u29FD\u2CF9-\u2CFC\u2CFE\u2CFF\u2D70\u2E00-\u2E2E\u2E30-\u2E3B\u3001-\u3003\u3008-\u3011\u3014-\u301F\u3030\u303D\u30A0\u30FB\uA4FE\uA4FF\uA60D-\uA60F\uA673\uA67E\uA6F2-\uA6F7\uA874-\uA877\uA8CE\uA8CF\uA8F8-\uA8FA\uA92E\uA92F\uA95F\uA9C1-\uA9CD\uA9DE\uA9DF\uAA5C-\uAA5F\uAADE\uAADF\uAAF0\uAAF1\uABEB\uFD3E\uFD3F\uFE10-\uFE19\uFE30-\uFE52\uFE54-\uFE61\uFE63\uFE68\uFE6A\uFE6B\uFF01-\uFF03\uFF05-\uFF0A\uFF0C-\uFF0F\uFF1A\uFF1B\uFF1F\uFF20\uFF3B-\uFF3D\uFF3F\uFF5B\uFF5D\uFF5F-\uFF65]+/g;
+    return regex.test(str)
+}
+
+

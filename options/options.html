@@ -48,7 +48,7 @@
 
         <header class="w3-container w3-xlarge">
             <p id="itemSelectedName" data-i18n="lblSettings" style="float: left;">Settings</p>
-            <p style="float: right; display: none;" id="btnPatreon"><a href="https://www.patreon.com/filipeps" target="blank"><img src="/icons/patreon.png" style="height: 40px;"></a></p> 
+            <p style="float: right; display: none;" id="btnPatreon"><a href="https://www.patreon.com/filipeps" target="blank"><img src="/icons/patreon.png" style="height: 40px;"></a></p>
         </header>
 
         <div>
@@ -160,6 +160,20 @@
                         </div>
                     </div>
                     <ul id="sitesToTranslateWhenHovering" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+                </div>
+                <div class="desktopOnly">
+                    <br>
+                    <div class="w3-display-container w3-padding w3-margin-top">
+                        <div class="w3-display-left">
+                            <p><b data-i18n="optionsAddToCustomDictionary">add to custom dictionary</b></p>
+                        </div>
+                        <div class="w3-display-right">
+                            <button id="addToCustomDictionary"
+                                    class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">Add
+                            </button>
+                        </div>
+                    </div>
+                    <ul id="customDictionary" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
                 </div>
             </div>
 
@@ -281,7 +295,7 @@
                     <li><label for="translateTextOverMouseWhenPressTwice"><input type="checkbox" id="translateTextOverMouseWhenPressTwice"> <span data-i18n="lblTranslateTextOverMouseWhenPressTwice">Translate the text over the mouse when pressing <kbd>Ctrl</kbd> twice</span></label></li>
                     <li><label for="replaceSelectedTextWithTranslatedText"><input type="checkbox" id="replaceSelectedTextWithTranslatedText"> <span data-i18n="lblReplaceSelectedTextWithTranslatedText">Replace selected text with translated text when pressing <kbd>Ctrl</kbd> twice</label></li>
                 </ul>
-                
+
                 <p><b data-i18n="lblKeyboardShortcuts">Keyboard shortcuts</b></p>
                 <ul id="KeyboardShortcuts" class="w3-container" style="max-width: 680px;"></ul>
             </div>
@@ -546,7 +560,7 @@
                 <section>
                     <h4>9.4</h4>
                     <ul>
-                        <li>Added: 
+                        <li>Added:
                             <ul>
                                 <li>PDF Translation
                                     <ul>
@@ -744,7 +758,7 @@
                                     <li>Option to control audio speed (tts)</li>
                                     <li>Option to hide the button in the address bar</li>
                                     <li>Option to translate the <kbd>PRE</kbd> tag</li>
-                                    <li>More options in the 3-point menu, and the old popup options button 
+                                    <li>More options in the 3-point menu, and the old popup options button
                                         <ul>
                                             <li>Show original text when hovering</li>
                                             <li>Show translation when hovering over this site</li>
@@ -848,7 +862,7 @@
                                 <li>A message teaching you to switch between the new and the old interface quickly.</li>
                             </ul>
                         </li>
-                        <li>Changes: 
+                        <li>Changes:
                             <ul>
                                 <li>In private tabs:
                                     <ul>
