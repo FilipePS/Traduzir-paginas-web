@@ -59,6 +59,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             url: chrome.runtime.getURL("/options/options.html#donation")
         })
     } else if (request.action === "detectTabLanguage") {
+        if (!sender.tab) {
+            // https://github.com/FilipePS/Traduzir-paginas-web/issues/478
+            sendResponse("und")
+            return
+        }
         try {
             chrome.tabs.detectLanguage(sender.tab.id, result => sendResponse(result))
         } catch (e) {
