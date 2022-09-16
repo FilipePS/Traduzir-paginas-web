@@ -828,6 +828,7 @@ let compressionMap
 function filterCustomWords(textContext) {
     const customDictionary = twpConfig.get("customDictionary")
     if (customDictionary.size > 0) {
+        // Keywords are lowercase, we also use lowercase to match
         let lowerCaseText = textContext.toLowerCase()
         for (let keyWord of customDictionary.keys()) {
             while (true) {
@@ -835,6 +836,10 @@ function filterCustomWords(textContext) {
                 if (index === -1) {
                     break
                 } else {
+                    // Remove useless newlines inside, which may affect our semantics
+                    // See if there are consecutive spaces, keep only one
+                    textContext = textContext.replaceAll('\n', ' ')
+                    textContext = textContext.replace(/  +/g, ' ');
                     let previousIndex = index - 1
                     let nextIndex = index + keyWord.length
                     let previousChar = previousIndex === -1 ? ' ' : textContext.charAt(previousIndex)
