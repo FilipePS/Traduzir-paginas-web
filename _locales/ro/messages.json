@@ -465,10 +465,10 @@
     "message": "Aşteaptă..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Necunoscut"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Înlocuiește"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
     "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
