@@ -465,13 +465,13 @@
     "message": "Proszę czekać..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Nieznany"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Zastąp"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Zastąp zaznaczony tekst przetłumaczonym tekstem po dwukrotnym naciśnięciu $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"

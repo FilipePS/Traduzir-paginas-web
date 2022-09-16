@@ -465,13 +465,13 @@
     "message": "Attendere prego..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Sconosciuto"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Sostituisci"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Sostituisci il testo selezionato con il testo tradotto premendo $SHORTCUT_KEY$ due volte",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
