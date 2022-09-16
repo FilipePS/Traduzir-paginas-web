@@ -471,7 +471,7 @@
     "message": "Înlocuiește"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Înlocuiește textul ales cu textul tradus dacă se apasă de două ori $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
