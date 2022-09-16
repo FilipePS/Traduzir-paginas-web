@@ -1,329 +1,658 @@
+// @ts-check
 "use strict";
 
-// TODO verificar se o navegador pode deletar objectstorage especificos
+const translationCache = (function () {
+  const translationCache = {};
 
-const translationCache = {};
+  /**
+   * @typedef {Object} CacheEntry
+   * @property {String} originalText
+   * @property {String} translatedText
+   * @property {String} detectedLanguage
+   * @property {String} key
+   */
 
-translationCache.google = {}
-translationCache.yandex = {}
-translationCache.bing = {}
+  class Utils {
+    /**
+     *
+     * @param {IDBDatabase} db
+     * @param {string} dbName
+     * @returns {Promise<number>}
+     */
+    static async getTableSize(db, dbName) {
+      return await new Promise((resolve, reject) => {
+        if (db == null) return reject();
+        let size = 0;
+        const transaction = db
+          .transaction([dbName])
+          .objectStore(dbName)
+          .openCursor();
 
-{
-	function getTableSize(db, dbName) {
-		return new Promise((resolve, reject) => {
-			if (db == null) {
-				return reject()
-			}
-			let size = 0
-			const transaction = db.transaction([ dbName ]).objectStore(dbName).openCursor()
-			
-			transaction.onsuccess = event => {
-				const cursor = event.target.result
-				if (cursor) {
-					const storedObject = cursor.value
-					const json = JSON.stringify(storedObject)
-					size += json.length
-					cursor.continue()
-				} else {
-					resolve(size)
-				}
-			}
-			transaction.onerror = err => reject("error in " + dbName + ": " + err)
-		})
-	}
-	
-	function getDatabaseSize(dbName) {
-		return new Promise((resolve, reject) => {
-			const request = indexedDB.open(dbName)
-			request.onerror = event => console.error(event)
-			request.onsuccess = event => {
-				const db = event.target.result;
-				const tableNames = [ ...db.objectStoreNames ];
-				((tableNames, db) => {
-					const tableSizeGetters = tableNames.reduce((acc, tableName) => {
-						acc.push(getTableSize(db, tableName))
-						return acc
-					}, [])
-					
-					Promise.all(tableSizeGetters).then(sizes => {
-						const total = sizes.reduce((acc, val) => acc + val, 0)
-						resolve(total)
-					}).catch(e => {
-						console.error(e)
-						reject()
-					})
-				})(tableNames, db);
-			}
-		})
-	}
-	
-	function humanReadableSize(bytes) {
-		const thresh = 1024
-		if (Math.abs(bytes) < thresh) {
-			return bytes + ' B'
-		}
-		const units = [ 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB' ]
-		let u = -1
-		do {
-			bytes /= thresh
-			++u
-		} while (Math.abs(bytes) >= thresh && u < units.length - 1)
-		return bytes.toFixed(1) + ' ' + units[u]
-	}
-	
-	async function stringToSHA1String(message) {
-		const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
-		const hashBuffer = await crypto.subtle.digest('SHA-1', msgUint8); // hash the message
-		const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
-		return hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
-	}
-	
-	const cache = {}
-	cache.google = {}
-	cache.yandex = {}
-	cache.bing = {}
-	
-	const db = {}
-	db.google = null
-	db.yandex = null
-	db.bing = null
-	
-	function getCache(translationService) {
-		switch (translationService) {
-			case "yandex":
-				return cache.yandex
-			case "bing":
-				return cache.bing
-			case "google":
-				return cache.google
-		}
-	}
-	
-	function getDB(translationService) {
-		switch (translationService) {
-			case "yandex":
-				return db.yandex
-			case "bing":
-				return db.bing
-			case "google":
-				return db.google
-		}
-	}
-	
-	function useDB(name, db_) {
-		switch (name) {
-			case "googleCache":
-				db.google = db_
-				break
-			case "yandexCache":
-				db.yandex = db_
-				break
-			case "bingCache":
-				db.bing = db_
-				break;
-		}
-	}
-	
-	function openIndexeddb(name, version) {
-		const request = indexedDB.open(name, version)
-		
-		request.onsuccess = function (event) {
-			console.info(event)
-			
-			useDB(name, this.result)
-		}
-		
-		request.onerror = event => console.error("Error opening the database, switching to non-database mode", event)
-		
-		request.onupgradeneeded = function () {
-			const db = this.result
-			
-			for (const langCode of twpLang.TargetLanguages) {
-				db.createObjectStore(langCode, {
-					keyPath: "key"
-				})
-			}
-		}
-		
-		return request
-	}
-	
-	function queryInDB(db, objectName, keyPath) {
-		return new Promise((resolve, reject) => {
-			if (!db) {
-				return reject()
-			}
-			
-			const objectStore = db.transaction([ objectName ], "readonly").objectStore(objectName)
-			const request = objectStore.get(keyPath)
-			
-			request.onerror = event => {
-				console.error(event)
-				reject(event)
-			}
-			
-			request.onsuccess = () => {
-				const result = request.result
-				resolve(result)
-			}
-		})
-	}
-	
-	function addInDb(db, objectName, data) {
-		return new Promise((resolve, reject) => {
-			if (!db) {
-				return reject()
-			}
-			
-			const objectStore = db.transaction([ objectName ], "readwrite").objectStore(objectName)
-			const request = objectStore.add(data)
-			
-			request.onerror = event => {
-				console.error(event)
-				reject(event)
-			}
-			
-			request.onsuccess = function (event) {
-				resolve(this.result)
-			}
-		})
-	}
-	
-	translationCache.get = async (translationService, source, targetLanguage) => {
-		const cache = getCache(translationService)
-		let translations = cache[targetLanguage]
-		
-		if (translations && translations.has(source)) {
-			return translations.get(source)
-		} else {
-			cache[targetLanguage] = new Map()
-			translations = cache[targetLanguage]
-		}
-		
-		const db = getDB(translationService)
-		if (db) {
-			try {
-				const transInfo = await queryInDB(db, targetLanguage, await stringToSHA1String(source))
-				if (transInfo) {
-					translations.set(source, transInfo.translated)
-					return transInfo.translated
-				}
-				//TODO RETURN AQUI DA LENTIDAO
-			} catch(e) {
-				console.error(e)
-			}
-		}
-	}
-	
-	translationCache.google.get = (source, targetLanguage) => translationCache.get("google", source, targetLanguage)
-	
-	translationCache.yandex.get = (source, targetLanguage) => translationCache.get("yandex", source, targetLanguage)
-	
-	translationCache.bing.get = (source, targetLanguage) => translationCache.get("bing", source, targetLanguage)
-	
-	translationCache.set = async (translationService, source, translated, targetLanguage) => {
-		const cache = getCache(translationService)
-		if (!cache) return false
-		
-		if (cache[targetLanguage]) {
-			cache[targetLanguage].set(source, translated)
-		} else {
-			let translations = new Map();
-			translations.set(source, translated)
-			cache[targetLanguage] = translations
-		}
-		
-		const db = getDB(translationService)
-		
-		if (db) {
-			try {
-				addInDb(db, targetLanguage, {
-					key: await stringToSHA1String(source),
-					source,
-					translated
-				})
-			} catch(e) {
-				console.error(e)
-			}
-		}
-		
-		return true
-	}
-	
-	translationCache.google.set = (source, translated, targetLanguage) => translationCache.set("google", source, translated, targetLanguage)
-	
-	translationCache.yandex.set = (source, translated, targetLanguage) => translationCache.set("yandex", source, translated, targetLanguage)
-	
-	translationCache.bing.set = (source, translated, targetLanguage) => translationCache.set("bing", source, translated, targetLanguage)
-	
-	openIndexeddb("googleCache", 1)
-	openIndexeddb("yandexCache", 1)
-	openIndexeddb("bingCache", 1)
-	
-	
-	function deleteDatabase(name) {
-		return new Promise(resolve => {
-			const DBDeleteRequest = indexedDB.deleteDatabase(name)
-			
-			DBDeleteRequest.onerror = () => {
-				console.warn("Error deleting database.")
-				resolve()
-			}
-			
-			DBDeleteRequest.onsuccess = () => {
-				console.info("Database deleted successfully")
-				resolve()
-			}
-		})
-	}
-	
-	translationCache.deleteTranslationCache = (reload = false) => {
-		if (db.google) {
-			db.google.close();
-			db.google = null
-		}
-		if (db.yandex) {
-			db.yandex.close();
-			db.yandex = null
-		}
-		if (db.bing) {
-			db.bing.close();
-			db.bing = null
-		}
-		
-		Promise.all([
-			deleteDatabase("googleCache"),
-			deleteDatabase("yandexCache"),
-			deleteDatabase("bingCache")
-		]).finally(() => {
-			if (reload) {
-				chrome.runtime.reload()
-			} else {
-				openIndexeddb("googleCache", 1)
-				openIndexeddb("yandexCache", 1)
-				openIndexeddb("bingCache", 1)
-			}
-		})
-	}
-	
-	
-	let promiseCalculatingStorage = null;
-	chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-		if (request.action === "getCacheSize") {
-			if (!promiseCalculatingStorage) {
-				promiseCalculatingStorage = Promise.all([ getDatabaseSize("googleCache"), getDatabaseSize("yandexCache"), getDatabaseSize("bingCache") ])
-			}
-			
-			promiseCalculatingStorage.then(results => {
-				promiseCalculatingStorage = null
-				sendResponse(humanReadableSize(results.reduce((total, num) => total + num)))
-			}).catch(() => {
-				promiseCalculatingStorage = null
-				sendResponse(humanReadableSize(0))
-			})
-			return true
-		} else if (request.action === "deleteTranslationCache") {
-			translationCache.deleteTranslationCache(request.reload)
-		}
-	})
-}
+        transaction.onsuccess = (event) => {
+          const cursor = transaction.result;
+          if (cursor) {
+            const storedObject = cursor.value;
+            const json = JSON.stringify(storedObject);
+            size += json.length;
+            cursor.continue();
+          } else {
+            resolve(size);
+          }
+        };
+        transaction.onerror = (err) =>
+          reject("error in " + dbName + ": " + err);
+      });
+    }
+
+    /**
+     *
+     * @param {string} dbName
+     * @returns {Promise<number>}
+     */
+    static async getDatabaseSize(dbName) {
+      return await new Promise((resolve, reject) => {
+        const request = indexedDB.open(dbName);
+        request.onerror = (event) => {
+          console.error(event);
+          reject();
+        };
+        request.onsuccess = (event) => {
+          const db = request.result;
+          const tableNames = [...db.objectStoreNames];
+          ((tableNames, db) => {
+            const tableSizeGetters = tableNames.reduce((acc, tableName) => {
+              acc.push(Utils.getTableSize(db, tableName));
+              return acc;
+            }, []);
+
+            Promise.all(tableSizeGetters)
+              .then((sizes) => {
+                const total = sizes.reduce((acc, val) => acc + val, 0);
+                resolve(total);
+              })
+              .catch((e) => {
+                console.error(e);
+                reject();
+              });
+          })(tableNames, db);
+        };
+      });
+    }
+
+    /**
+     *
+     * @param {number} bytes
+     * @returns {string}
+     */
+    static humanReadableSize(bytes) {
+      const thresh = 1024;
+      if (Math.abs(bytes) < thresh) {
+        return bytes + " B";
+      }
+      const units = ["KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+      let u = -1;
+      do {
+        bytes /= thresh;
+        ++u;
+      } while (Math.abs(bytes) >= thresh && u < units.length - 1);
+      return bytes.toFixed(1) + " " + units[u];
+    }
+
+    /**
+     *
+     * @param {string} message
+     * @returns {Promise<string>}
+     */
+    static async stringToSHA1String(message) {
+      const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
+      const hashBuffer = await crypto.subtle.digest("SHA-1", msgUint8); // hash the message
+      const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
+      return hashArray.map((b) => b.toString(16).padStart(2, "0")).join(""); // convert bytes to hex string
+    }
+  }
+
+  class Cache {
+    /**
+     *
+     * @param {string} translationService
+     * @param {string} sourceLanguage
+     * @param {string} targetLanguage
+     */
+    constructor(translationService, sourceLanguage, targetLanguage) {
+      /** @type {string} */
+      this.translationService = translationService;
+      /** @type {string} */
+      this.sourceLanguage = sourceLanguage;
+      /** @type {string} */
+      this.targetLanguage = targetLanguage;
+      /** @type {Map<string, CacheEntry>} */
+      this.cache = new Map();
+    }
+
+    /**
+     *
+     * @returns {Promise<boolean>}
+     */
+    async start() {
+      if (this.started) return true;
+      this.started = true;
+      try {
+        this.db = await Cache.openDataBaseCache(
+          this.translationService,
+          this.sourceLanguage,
+          this.targetLanguage
+        );
+        return true;
+      } catch (e) {
+        console.log(e);
+        Cache.deleteDatabase(
+          this.translationService,
+          this.sourceLanguage,
+          this.targetLanguage
+        );
+        return false;
+      }
+    }
+
+    close() {
+      if (this.db) this.db.close();
+      this.db = null;
+    }
+
+    /**
+     *
+     * @param {string} origTextHash
+     * @returns {Promise<CacheEntry>}
+     */
+    async #queryInDB(origTextHash) {
+      return await new Promise((resolve, reject) => {
+        if (!this.db) return reject();
+
+        const storageName = Cache.getCacheStorageName();
+        const objectStore = this.db
+          .transaction([storageName], "readonly")
+          .objectStore(storageName);
+        const request = objectStore.get(origTextHash);
+
+        request.onsuccess = (event) => {
+          const result = request.result;
+          resolve(result);
+        };
+
+        request.onerror = (event) => {
+          console.error(event);
+          reject();
+        };
+      });
+    }
+
+    /**
+     *
+     * @param {string} originalText
+     * @returns {Promise<CacheEntry>}
+     */
+    async query(originalText) {
+      const hash = await Utils.stringToSHA1String(originalText);
+
+      let translation = this.cache.get(hash);
+      if (translation) return translation;
+
+      translation = await this.#queryInDB(hash);
+      if (translation) this.cache.set(hash, translation);
+
+      return translation;
+    }
+
+    /**
+     *
+     * @param {CacheEntry} data
+     * @returns {Promise<boolean>}
+     */
+    async #addInDb(data) {
+      return await new Promise((resolve) => {
+        if (!this.db) return resolve(false);
+
+        const storageName = Cache.getCacheStorageName();
+        const objectStore = this.db
+          .transaction([storageName], "readwrite")
+          .objectStore(storageName);
+        const request = objectStore.put(data);
+
+        request.onsuccess = (event) => {
+          resolve(true);
+        };
+
+        request.onerror = (event) => {
+          console.error(event);
+          resolve(false);
+        };
+      });
+    }
+
+    /**
+     *
+     * @param {string} originalText
+     * @param {string} translatedText
+     * @param {string} detectedLanguage
+     * @returns {Promise<boolean>}
+     */
+    async add(originalText, translatedText, detectedLanguage = "und") {
+      const hash = await Utils.stringToSHA1String(originalText);
+      return await this.#addInDb({
+        originalText,
+        translatedText,
+        detectedLanguage,
+        key: hash,
+      });
+    }
+
+    /**
+     *
+     * @param {string} translationService
+     * @param {string} sourceLanguage
+     * @param {string} targetLanguage
+     * @returns {string}
+     */
+    static getDataBaseName(translationService, sourceLanguage, targetLanguage) {
+      return `${translationService}@${sourceLanguage}.${targetLanguage}`;
+    }
+
+    /**
+     *
+     * @returns {string}
+     */
+    static getCacheStorageName() {
+      return "cache";
+    }
+
+    /**
+     *
+     * @param {string} name
+     * @param {number} version
+     * @param {string[]} objectStorageNames
+     * @returns {Promise<IDBDatabase>}
+     */
+    static async openIndexeddb(name, version, objectStorageNames) {
+      return await new Promise((resolve, reject) => {
+        const request = indexedDB.open(name, version);
+
+        request.onsuccess = (event) => {
+          console.info(request.result);
+          resolve(request.result);
+        };
+
+        request.onerror = (event) => {
+          console.error(
+            "Error opening the database, switching to non-database mode",
+            event
+          );
+          reject();
+        };
+
+        request.onupgradeneeded = (event) => {
+          const db = request.result;
+
+          for (const storageName of objectStorageNames) {
+            db.createObjectStore(storageName, {
+              keyPath: "key",
+            });
+          }
+        };
+      });
+    }
+
+    /**
+     *
+     * @param {string} translationService
+     * @param {string} sourceLanguage
+     * @param {string} targetLanguage
+     * @returns {Promise<IDBDatabase>}
+     */
+    static async openDataBaseCache(
+      translationService,
+      sourceLanguage,
+      targetLanguage
+    ) {
+      const dbName = Cache.getDataBaseName(
+        translationService,
+        sourceLanguage,
+        targetLanguage
+      );
+      const storageName = Cache.getCacheStorageName();
+      const db = await Cache.openIndexeddb(dbName, 1, [storageName]);
+      return db;
+    }
+
+    /**
+     *
+     * @param {string} translationService
+     * @param {string} sourceLanguage
+     * @param {string} targetLanguage
+     * @returns {Promise<boolean>}
+     */
+    static async deleteDatabase(
+      translationService,
+      sourceLanguage,
+      targetLanguage
+    ) {
+      return await new Promise((resolve) => {
+        try {
+          const dbName = Cache.getDataBaseName(
+            translationService,
+            sourceLanguage,
+            targetLanguage
+          );
+          const request = indexedDB.deleteDatabase(dbName);
+
+          request.onsuccess = (event) => {
+            resolve(true);
+          };
+
+          request.onerror = (event) => {
+            console.error(event);
+            resolve(false);
+          };
+        } catch (e) {
+          console.error(e);
+          resolve(false);
+        }
+      });
+    }
+  }
+
+  class CacheList {
+    constructor() {
+      /** @type {Map<string, Cache>} */
+      this.list = new Map();
+      try {
+        this.#openCacheList();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    #openCacheList() {
+      const request = indexedDB.open("cacheList", 1);
+
+      request.onsuccess = (event) => {
+        this.dbCacheList = request.result;
+
+        this.list.forEach((cache, key) => {
+          this.#addCacheList(key);
+        });
+      };
+
+      request.onerror = (event) => {
+        console.error("Error opening the database", event);
+        this.dbCacheList = null;
+      };
+
+      request.onupgradeneeded = (event) => {
+        const db = request.result;
+
+        db.createObjectStore("cache_list", {
+          keyPath: "dbName",
+        });
+      };
+    }
+
+    /**
+     *
+     * @param {string} dbName
+     */
+    #addCacheList(dbName) {
+      if (!this.dbCacheList) return;
+
+      const storageName = "cache_list";
+      const objectStore = this.dbCacheList
+        .transaction([storageName], "readwrite")
+        .objectStore(storageName);
+      const request = objectStore.put({ dbName });
+
+      request.onsuccess = (event) => {};
+
+      request.onerror = (event) => {
+        console.error(event);
+      };
+    }
+
+    /**
+     *
+     * @param {string} translationService
+     * @param {string} sourceLanguage
+     * @param {string} targetLanguage
+     * @returns {Promise<Cache>}
+     */
+    async #createCache(translationService, sourceLanguage, targetLanguage) {
+      const cache = new Cache(
+        translationService,
+        sourceLanguage,
+        targetLanguage
+      );
+      try {
+        await cache.start();
+      } catch {}
+      this.#addCache(translationService, sourceLanguage, targetLanguage, cache);
+      return cache;
+    }
+
+    /**
+     *
+     * @param {string} translationService
+     * @param {string} sourceLanguage
+     * @param {string} targetLanguage
+     * @returns {Promise<Cache>}
+     */
+    async getCache(translationService, sourceLanguage, targetLanguage) {
+      const dbName = Cache.getDataBaseName(
+        translationService,
+        sourceLanguage,
+        targetLanguage
+      );
+      const cache = this.list.get(dbName);
+      if (cache) return cache;
+      return await this.#createCache(
+        translationService,
+        sourceLanguage,
+        targetLanguage
+      );
+    }
+
+    /**
+     *
+     * @param {string} translationService
+     * @param {string} sourceLanguage
+     * @param {string} targetLanguage
+     * @param {Cache} cache
+     */
+    #addCache(translationService, sourceLanguage, targetLanguage, cache) {
+      const dbName = Cache.getDataBaseName(
+        translationService,
+        sourceLanguage,
+        targetLanguage
+      );
+      this.list.set(dbName, cache);
+      try {
+        this.#addCacheList(dbName);
+      } catch {}
+    }
+
+    /**
+     *
+     * @returns {Promise<string[]>}
+     */
+    async #getAllDBNames() {
+      if (!this.dbCacheList) return [];
+      return await new Promise((resolve) => {
+        const storageName = "cache_list";
+        const objectStore = this.dbCacheList
+          .transaction([storageName], "readonly")
+          .objectStore(storageName);
+        const request = objectStore.getAllKeys();
+
+        request.onsuccess = (event) => {
+          // TODO this cast is realy necessary?
+          //cast
+          resolve(/** @type {string[]} */ (request.result));
+        };
+
+        request.onerror = (event) => {
+          console.error(event);
+          resolve([]);
+        };
+      });
+    }
+
+    /**
+     *
+     * @returns {Promise<boolean>}
+     */
+    async deleteAll() {
+      try {
+        /** @type {Array<Promise>} */
+        const promises = [];
+        this.list.forEach((cache, key) => {
+          if (cache) cache.close();
+          promises.push(CacheList.deleteDatabase(key));
+        });
+        this.list.clear();
+        const dbnames = await this.#getAllDBNames();
+        dbnames.forEach((dbName) => {
+          promises.push(CacheList.deleteDatabase(dbName));
+        });
+        await Promise.all(promises);
+        return true;
+      } catch (e) {
+        console.error(e);
+        return false;
+      }
+    }
+
+    /**
+     *
+     * @returns {Promise<boolean>}
+     */
+    static async deleteDatabase(dbName) {
+      return await new Promise((resolve) => {
+        const DBDeleteRequest = indexedDB.deleteDatabase(dbName);
+
+        DBDeleteRequest.onsuccess = () => {
+          console.info("Database deleted successfully");
+          resolve(true);
+        };
+
+        DBDeleteRequest.onerror = () => {
+          console.warn("Error deleting database.");
+          resolve(false);
+        };
+      });
+    }
+
+    /**
+     * @returns {Promise<string>}
+     */
+    async calculateSize() {
+      try {
+        /** @type {Array<Promise>} */
+        const promises = [];
+        const dbnames = await this.#getAllDBNames();
+        dbnames.forEach((dbName) => {
+          promises.push(Utils.getDatabaseSize(dbName));
+        });
+        const results = await Promise.all(promises);
+        return Utils.humanReadableSize(
+          results.reduce((total, size) => total + size, 0)
+        );
+      } catch (e) {
+        console.error(e);
+        return Utils.humanReadableSize(0);
+      }
+    }
+  }
+
+  const cacheList = new CacheList();
+
+  /**
+   *
+   * @param {string} translationService
+   * @param {string} sourceLanguage
+   * @param {string} targetLanguage
+   * @param {string} originalText
+   * @returns {Promise<CacheEntry>}
+   */
+  translationCache.get = async (
+    translationService,
+    sourceLanguage,
+    targetLanguage,
+    originalText
+  ) => {
+    const cache = await cacheList.getCache(
+      translationService,
+      sourceLanguage,
+      targetLanguage
+    );
+    return await cache.query(originalText);
+  };
+
+  /**
+   *
+   * @param {string} translationService
+   * @param {string} sourceLanguage
+   * @param {string} targetLanguage
+   * @param {string} originalText
+   * @param {string} translatedText
+   * @returns {Promise<boolean>}
+   */
+  translationCache.set = async (
+    translationService,
+    sourceLanguage,
+    targetLanguage,
+    originalText,
+    translatedText
+  ) => {
+    const cache = await cacheList.getCache(
+      translationService,
+      sourceLanguage,
+      targetLanguage
+    );
+    return await cache.add(originalText, translatedText);
+  };
+
+  /**
+   *
+   * @param {boolean} reload
+   */
+  translationCache.deleteTranslationCache = async (reload = false) => {
+    try {
+      await cacheList.deleteAll();
+    } catch (e) {
+      console.error(e);
+    } finally {
+      if (reload) chrome.runtime.reload();
+    }
+  };
+
+  let promiseCalculatingStorage = null;
+  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === "getCacheSize") {
+      if (!promiseCalculatingStorage) {
+        promiseCalculatingStorage = cacheList.calculateSize();
+      }
+
+      promiseCalculatingStorage
+        .then((size) => {
+          promiseCalculatingStorage = null;
+          sendResponse(size);
+        })
+        .catch(() => {
+          promiseCalculatingStorage = null;
+          sendResponse("0B");
+        });
+      return true;
+    } else if (request.action === "deleteTranslationCache") {
+      translationCache.deleteTranslationCache(request.reload);
+    }
+  });
+
+  return translationCache;
+})();
