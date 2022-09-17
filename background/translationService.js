@@ -347,9 +347,13 @@ const translationService = (function () {
      */
 
     /**
+     * @typedef {{text: string, detectedLanguage: string}} Service_Single_Result_Response
+     */
+
+    /**
      * @callback callback_cbParseResponse
      * @param {Object} response
-     * @returns {string[]}
+     * @returns {Array<Service_Single_Result_Response>}
      */
 
     /**
@@ -535,10 +539,11 @@ const translationService = (function () {
             .then((response) => {
               const results = this.cbParseResponse(response);
               for (const idx in request) {
-                this.cbTransformResponse(results[idx], dontSortResults); // apenas para gerar error
+                const result = results[idx];
+                this.cbTransformResponse(result.text, dontSortResults); // apenas para gerar error
                 const transInfo = request[idx];
-                transInfo.detectedLanguage = "und";
-                transInfo.translatedText = results[idx];
+                transInfo.detectedLanguage = result.detectedLanguage || "und";
+                transInfo.translatedText = result.text;
                 transInfo.status = "complete";
                 //this.translationsInProgress.delete([sourceLanguage, targetLanguage, transInfo.originalText])
                 if (dontSaveInPersistentCache === false) {
@@ -547,7 +552,8 @@ const translationService = (function () {
                     sourceLanguage,
                     targetLanguage,
                     transInfo.originalText,
-                    transInfo.translatedText
+                    transInfo.translatedText,
+                    transInfo.detectedLanguage
                   );
                 }
               }
@@ -584,12 +590,16 @@ const translationService = (function () {
           return `<pre>${sourceArray2d.join("")}</pre>`;
         },
         function parseResponse(response) {
-          /** @type {Array} */
+          /** @type {[Service_Single_Result_Response]} */
           let responseJson;
           if (typeof response[0] == "string") {
-            responseJson = response;
+            responseJson = [{ text: response, detectedLanguage: null }];
           } else {
-            responseJson = response.map((value) => value[0]);
+            responseJson = response.map(
+              /** @returns {Service_Single_Result_Response} */ (
+                /** @type {[string, string]} */ value
+              ) => ({ text: value[0], detectedLanguage: value[1] })
+            );
           }
           return responseJson;
         },
@@ -707,7 +717,13 @@ const translationService = (function () {
             .join("<wbr>");
         },
         function parseResponse(response) {
-          return response.text;
+          const lang = response.lang;
+          const detectedLanguage = lang ? lang.split("-")[0] : null;
+          return response.text.map(
+            /** @return {Service_Single_Result_Response} */ (
+              /** @type {string} */ text
+            ) => ({ text, detectedLanguage })
+          );
         },
         function transformResponse(result, dontSortResults) {
           return result
@@ -758,7 +774,12 @@ const translationService = (function () {
             .join("<wbr>");
         },
         function parseResponse(response) {
-          return [response[0].translations[0].text];
+          return [
+            {
+              text: response[0].translations[0].text,
+              detectedLanguage: response[0].detectedLanguage.language,
+            },
+          ];
         },
         function transformResponse(result, dontSortResults) {
           return [Utils.unescapeHTML(result)];
@@ -852,14 +873,14 @@ const translationService = (function () {
               resolve([[request.result]]);
               chrome.runtime.onMessage.removeListener(listener);
             }
-          }
+          };
           chrome.runtime.onMessage.addListener(listener);
 
           setTimeout(() => {
             chrome.runtime.onMessage.removeListener(listener);
             resolve([[""]]);
           }, 8000);
-        }
+        };
 
         if (this.DeepLTab) {
           chrome.tabs.get(this.DeepLTab.id, (tab) => {
