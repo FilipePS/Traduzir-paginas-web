@@ -1,7 +1,7 @@
 // @ts-check
 "use strict";
 
-var textToSpeech = (function () {
+const textToSpeech = (function () {
   const textToSpeech = {};
 
   /**

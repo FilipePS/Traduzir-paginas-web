@@ -1,7 +1,5 @@
 "use strict";
 
-//TODO abrir pagina de opções sem precisar abrir novas abas
-
 // Avoid outputting the error message "Receiving end does not exist" in the Console.
 function checkedLastError() {
     chrome.runtime.lastError
@@ -236,7 +234,6 @@ if (typeof chrome.contextMenus !== "undefined") {
 
     chrome.contextMenus.onClicked.addListener((info, tab) => {
         if (info.menuItemId == "translate-web-page") {
-            //TODO forçar tradução em vez de alternar
             chrome.tabs.sendMessage(tab.id, {
                 action: "toggle-translation"
             }, checkedLastError)
@@ -398,7 +395,6 @@ twpConfig.onReady(() => {
             }
         })
 
-        //TODO veriricar porque chrome.theme.getCurrent não funciona, apenas browser.theme.getCurrent
         if (chrome.pageAction && browser) {
             let pageLanguageState = "original"
 

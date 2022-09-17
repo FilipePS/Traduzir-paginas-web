@@ -1,9 +1,6 @@
 // @ts-check
 "use strict";
 
-//TODO dividir em varios requests
-//TODO Especificar o source lang com page no idioma do paragrafo (dividindo as requests)
-
 const translationService = (function () {
   const translationService = {};
 

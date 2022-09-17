@@ -1,7 +1,5 @@
 "use strict";
 
-//TODO mostrar o texto original apenas da frase sobre o mouse
-
 var showOriginal = {}
 
 twpConfig.onReady(function () {
