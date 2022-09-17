@@ -68,8 +68,28 @@ twpConfig.onReady(function () {
             break
     }
     
-    let audioDataUrls = null
     let isPlayingAudio = false
+
+	function playAudio(text, cbOnEnded=() => {}) {
+		isPlayingAudio = true
+        chrome.runtime.sendMessage({
+            action: "textToSpeech",
+            text,
+            targetLanguage: currentTargetLanguage
+        }, () => {
+			isPlayingAudio = false
+			cbOnEnded()
+		})
+    }
+
+    function stopAudio() {
+        if (isPlayingAudio) {
+            chrome.runtime.sendMessage({
+                action: "stopAudio"
+            })
+        }
+        isPlayingAudio = false
+    }
 
     function stopAudio() {
         if (isPlayingAudio) {
@@ -193,40 +213,13 @@ twpConfig.onReady(function () {
         eListen.classList.remove("selected")
         eListen.setAttribute("title", msgStopListening)
 
-        if (audioDataUrls) {
-            if (isPlayingAudio) {
-                stopAudio()
-                eListen.setAttribute("title", msgListen)
-            } else {
-                isPlayingAudio = true
-                chrome.runtime.sendMessage({
-                    action: "playAudio",
-                    audioDataUrls
-                }, () => {
-                    eListen.classList.remove("selected")
-                    eListen.setAttribute("title", msgListen)
-                })
-                eListen.classList.add("selected")
-            }
-        } else {
+        if (isPlayingAudio) {
             stopAudio()
-            isPlayingAudio = true
-            chrome.runtime.sendMessage({
-                action: "textToSpeech",
-                text: eTextTranslated.textContent,
-                targetLanguage: currentTargetLanguage
-            }, result => {
-                if (!result) return;
-
-                audioDataUrls = result
-                chrome.runtime.sendMessage({
-                    action: "playAudio",
-                    audioDataUrls
-                }, () => {
-                    isPlayingAudio = false
-                    eListen.classList.remove("selected")
-                    eListen.setAttribute("title", msgListen)
-                })
+            eListen.classList.remove("selected")
+        } else {
+            playAudio(eTextTranslated.textContent, () => {
+                eListen.classList.remove("selected")
+                eListen.setAttribute("title", msgListen)
             })
             eListen.classList.add("selected")
         }
@@ -281,7 +274,6 @@ twpConfig.onReady(function () {
 
     function translateText() {
         stopAudio()
-        audioDataUrls = null
 
         backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent)
             .then(result => {

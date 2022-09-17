@@ -59,17 +59,27 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			})
 		})
 	}
-	
-	let audioDataUrls = null
-	let playingAudio = null
+
+	let isPlayingAudio = false
+
+	function playAudio(text, cbOnEnded=() => {}) {
+		isPlayingAudio = true
+        chrome.runtime.sendMessage({
+            action: "textToSpeech",
+            text,
+            targetLanguage: currentTargetLanguage
+        }, () => {
+			isPlayingAudio = false
+			cbOnEnded()
+		})
+    }
 	
 	function stopAudio() {
-		if (playingAudio) {
-			chrome.runtime.sendMessage({
-				action: "stopAudio"
-			})
-		}
-		playingAudio = null
+		if (!isPlayingAudio) return;
+		isPlayingAudio = false
+		chrome.runtime.sendMessage({
+			action: "stopAudio"
+		})
 	}
 	
 	function dragElement(elmnt, elmnt2) {
@@ -496,46 +506,13 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			eListenOriginal.setAttribute("title", msgStopListening)
 			eListenTranslated.setAttribute("title", msgStopListening)
 			
-			if (audioDataUrls) {
-				if (playingAudio) {
-					stopAudio()
-					element.setAttribute("title", msgListen)
-				} else {
-					playingAudio = type
-					chrome.runtime.sendMessage({
-						action: "playAudio",
-						audioDataUrls
-					}, () => {
-						element.classList.remove("selected")
-						element.setAttribute("title", msgListen)
-					})
-					element.classList.add("selected")
-				}
-			} else {
+			if (isPlayingAudio) {
 				stopAudio()
-				playingAudio = type
-				chrome.runtime.sendMessage({
-					action: "textToSpeech",
-					text: text,
-					targetLanguage: language
-				}, result => {
-					if (!result) {
-						stopAudio()
-						eListenOriginal.classList.remove("selected")
-						eListenTranslated.classList.remove("selected")
-						eListenOriginal.setAttribute("title", msgListen)
-						eListenTranslated.setAttribute("title", msgListen)
-					}
-					
-					audioDataUrls = result
-					chrome.runtime.sendMessage({
-						action: "playAudio",
-						audioDataUrls
-					}, () => {
-						playingAudio = null
-						element.classList.remove("selected")
-						element.setAttribute("title", msgListen)
-					})
+				element.classList.remove("selected")
+			} else {
+				playAudio(text, () => {
+					element.classList.remove("selected")
+					element.setAttribute("title", msgListen)
 				})
 				element.classList.add("selected")
 			}
@@ -548,7 +525,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				lang = originalTabLanguage
 			}
 			if (lastListenAudioType !== "original") {
-				audioDataUrls = null;
 				stopAudio();
 			}
 			lastListenAudioType = "original"
@@ -557,7 +533,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		
 		eListenTranslated.onclick = () => {
 			if (lastListenAudioType !== "translated") {
-				audioDataUrls = null;
 				stopAudio();
 			}
 			lastListenAudioType = "translated"
@@ -649,7 +624,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		window.isTranslatingSelected = false
 		fooCount++
 		stopAudio()
-		audioDataUrls = null
 		if (!divElement) return;
 		
 		eButtonTransSelText.removeEventListener("click", onClick)
@@ -766,7 +740,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		fooCount++
 		const currentFooCount = fooCount
 		stopAudio()
-		audioDataUrls = null
 		
 		backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent).then(result => {
 			if (currentFooCount !== fooCount) return;

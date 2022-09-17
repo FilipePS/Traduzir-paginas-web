@@ -108,24 +108,34 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
     function onMouseDown(e) {
         if (e.target === divElement) return;
+        if (divElement && divElement.contains(e.target)) return;
         destroy()
     }
 
-    let audioDataUrls = null
     let isPlayingAudio = false
 
+    function playAudio(text, cbOnEnded=() => {}) {
+        isPlayingAudio = true
+        chrome.runtime.sendMessage({
+            action: "textToSpeech",
+            text,
+            targetLanguage: currentTargetLanguage
+        }, () => {
+            isPlayingAudio = false
+            cbOnEnded()
+        })
+    }
+
     function stopAudio() {
-        if (isPlayingAudio) {
-            chrome.runtime.sendMessage({
-                action: "stopAudio"
-            })
-        }
+        if (!isPlayingAudio) return;
         isPlayingAudio = false
+        chrome.runtime.sendMessage({
+            action: "stopAudio"
+        })
     }
 
     window.addEventListener("beforeunload", e => {
-        stopAudio()
-        audioDataUrls = null
+        destroy()
     })
 
     let prevNode = null
@@ -135,7 +145,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         let currentFooCount = fooCount
 
         stopAudio()
-        audioDataUrls = null
 
         if (usePrevNode && prevNode) {
             node = prevNode
@@ -502,40 +511,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             eListen.classList.remove("selected")
             eListen.setAttribute("title", msgStopListening)
 
-            if (audioDataUrls) {
-                if (isPlayingAudio) {
-                    stopAudio()
-                    eListen.setAttribute("title", msgListen)
-                } else {
-                    isPlayingAudio = true
-                    chrome.runtime.sendMessage({
-                        action: "playAudio",
-                        audioDataUrls
-                    }, () => {
-                        eListen.classList.remove("selected")
-                        eListen.setAttribute("title", msgListen)
-                    })
-                    eListen.classList.add("selected")
-                }
-            } else {
+            if (isPlayingAudio) {
                 stopAudio()
-                isPlayingAudio = true
-                chrome.runtime.sendMessage({
-                    action: "textToSpeech",
-                    text: eTextTranslated.textContent,
-                    targetLanguage: currentTargetLanguage
-                }, result => {
-                    if (!result) return;
-
-                    audioDataUrls = result
-                    chrome.runtime.sendMessage({
-                        action: "playAudio",
-                        audioDataUrls
-                    }, () => {
-                        isPlayingAudio = false
-                        eListen.classList.remove("selected")
-                        eListen.setAttribute("title", msgListen)
-                    })
+                eListen.classList.remove("selected")
+            } else {
+                playAudio(eTextTranslated.textContent, () => {
+                    eListen.classList.remove("selected")
+                    eListen.setAttribute("title", msgListen)
                 })
                 eListen.classList.add("selected")
             }
@@ -587,7 +569,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
     function destroy() {
         fooCount++
         stopAudio()
-        audioDataUrls = null
 
         clearTimeout(timeoutHandler)
 
