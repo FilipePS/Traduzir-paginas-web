@@ -846,8 +846,8 @@ const translationService = (function () {
       dontSortResults = false
     ) {
       return await new Promise((resolve) => {
-        function waitFirstTranslationResult() {
-          function listener(request, sender, sendResponse) {
+        const waitFirstTranslationResult = () => {
+          const listener = (request, sender, sendResponse) => {
             if (request.action === "DeepL_firstTranslationResult") {
               resolve([[request.result]]);
               chrome.runtime.onMessage.removeListener(listener);

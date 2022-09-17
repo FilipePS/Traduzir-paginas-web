@@ -57,24 +57,28 @@ const translationCache = (function () {
           reject();
         };
         request.onsuccess = (event) => {
-          const db = request.result;
-          const tableNames = [...db.objectStoreNames];
-          ((tableNames, db) => {
-            const tableSizeGetters = tableNames.reduce((acc, tableName) => {
-              acc.push(Utils.getTableSize(db, tableName));
-              return acc;
-            }, []);
-
-            Promise.all(tableSizeGetters)
-              .then((sizes) => {
-                const total = sizes.reduce((acc, val) => acc + val, 0);
-                resolve(total);
-              })
-              .catch((e) => {
-                console.error(e);
-                reject();
-              });
-          })(tableNames, db);
+          try {
+            const db = request.result;
+            const tableNames = [...db.objectStoreNames];
+            ((tableNames, db) => {
+              const tableSizeGetters = tableNames.reduce((acc, tableName) => {
+                acc.push(Utils.getTableSize(db, tableName));
+                return acc;
+              }, []);
+  
+              Promise.all(tableSizeGetters)
+                .then((sizes) => {
+                  const total = sizes.reduce((acc, val) => acc + val, 0);
+                  resolve(total);
+                })
+                .catch((e) => {
+                  console.error(e);
+                  reject();
+                });
+            })(tableNames, db);
+          } finally {
+            request.result.close()
+          }
         };
       });
     }
@@ -127,6 +131,8 @@ const translationCache = (function () {
       this.targetLanguage = targetLanguage;
       /** @type {Map<string, CacheEntry>} */
       this.cache = new Map();
+      /** @type {Promise<boolean>} */
+      this.promiseStartingCache = null;
     }
 
     /**
@@ -134,24 +140,28 @@ const translationCache = (function () {
      * @returns {Promise<boolean>}
      */
     async start() {
-      if (this.started) return true;
-      this.started = true;
-      try {
-        this.db = await Cache.openDataBaseCache(
+      if (this.promiseStartingCache) return await this.promiseStartingCache;
+      this.promiseStartingCache = new Promise(resolve => {
+        Cache.openDataBaseCache(
           this.translationService,
           this.sourceLanguage,
           this.targetLanguage
-        );
-        return true;
-      } catch (e) {
-        console.log(e);
-        Cache.deleteDatabase(
-          this.translationService,
-          this.sourceLanguage,
-          this.targetLanguage
-        );
-        return false;
-      }
+        )
+        .then(db => {
+          this.db = db
+          resolve(true)
+        })
+        .catch(e => {
+          console.error(e)
+          Cache.deleteDatabase(
+            this.translationService,
+            this.sourceLanguage,
+            this.targetLanguage
+          )
+          resolve(false)
+        })
+      })
+      return await this.promiseStartingCache
     }
 
     close() {
@@ -431,8 +441,11 @@ const translationCache = (function () {
       );
       try {
         await cache.start();
-      } catch {}
-      this.#addCache(translationService, sourceLanguage, targetLanguage, cache);
+      } catch (e) {
+        console.error(e)
+      } finally {
+        this.#addCache(translationService, sourceLanguage, targetLanguage, cache);
+      }
       return cache;
     }
 
@@ -586,12 +599,16 @@ const translationCache = (function () {
     targetLanguage,
     originalText
   ) => {
-    const cache = await cacheList.getCache(
-      translationService,
-      sourceLanguage,
-      targetLanguage
-    );
-    return await cache.query(originalText);
+    try {
+      const cache = await cacheList.getCache(
+        translationService,
+        sourceLanguage,
+        targetLanguage
+      );
+      return await cache.query(originalText);
+    } catch (e) {
+      console.error(e)
+    }
   };
 
   /**
@@ -610,12 +627,16 @@ const translationCache = (function () {
     originalText,
     translatedText
   ) => {
-    const cache = await cacheList.getCache(
-      translationService,
-      sourceLanguage,
-      targetLanguage
-    );
-    return await cache.add(originalText, translatedText);
+    try {
+      const cache = await cacheList.getCache(
+        translationService,
+        sourceLanguage,
+        targetLanguage
+      );
+      return await cache.add(originalText, translatedText);
+    } catch (e) {
+      console.error(e)
+    }
   };
 
   /**
@@ -643,10 +664,12 @@ const translationCache = (function () {
         .then((size) => {
           promiseCalculatingStorage = null;
           sendResponse(size);
+          return size
         })
         .catch(() => {
           promiseCalculatingStorage = null;
           sendResponse("0B");
+          return "0B"
         });
       return true;
     } else if (request.action === "deleteTranslationCache") {
