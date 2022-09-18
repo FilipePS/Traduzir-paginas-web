@@ -439,17 +439,11 @@ const translationCache = (function () {
         sourceLanguage,
         targetLanguage
       );
+      this.#addCache(translationService, sourceLanguage, targetLanguage, cache);
       try {
         await cache.start();
       } catch (e) {
         console.error(e);
-      } finally {
-        this.#addCache(
-          translationService,
-          sourceLanguage,
-          targetLanguage,
-          cache
-        );
       }
       return cache;
     }
@@ -468,12 +462,16 @@ const translationCache = (function () {
         targetLanguage
       );
       const cache = this.list.get(dbName);
-      if (cache) return cache;
-      return await this.#createCache(
-        translationService,
-        sourceLanguage,
-        targetLanguage
-      );
+      if (cache)  {
+        await cache.promiseStartingCache
+        return cache;
+      } else {
+        return await this.#createCache(
+          translationService,
+          sourceLanguage,
+          targetLanguage
+        );
+      }
     }
 
     /**
