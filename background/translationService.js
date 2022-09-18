@@ -360,12 +360,14 @@ const translationService = (function () {
      * @returns {string[]} sourceArray2d
      */
 
+    /** @typedef {"complete" | "translating" | "error"} TranslationStatus */
     /**
      * @typedef {Object} TranslationInfo
      * @property {String} originalText
      * @property {String} translatedText
      * @property {String} detectedLanguage
-     * @property {"complete" | "translating" | "error"} status
+     * @property {TranslationStatus} status
+     * @property {Promise<void>} waitTranlate
      */
 
     /**
@@ -397,7 +399,7 @@ const translationService = (function () {
       this.cbTransformResponse = cbTransformResponse;
       this.cbGetExtraParameters = cbGetExtraParameters;
       this.cbGetRequestBody = cbGetRequestBody;
-      /** @type {Map<[string, string, string], TranslationInfo>} */
+      /** @type {Map<string, TranslationInfo>} */
       this.translationsInProgress = new Map();
     }
 
@@ -414,50 +416,67 @@ const translationService = (function () {
       /** @type {TranslationInfo[]} */
       const currentTranslationsInProgress = [];
 
+      let currentRequest = [];
       let currentSize = 0;
 
-      for (const sourceArray2d of sourceArray3d) {
+      const length = sourceArray3d.length;
+      for (let idx = 0; idx < length; idx++) {
+        const sourceArray2d = sourceArray3d[idx];
         const requestString = this.cbTransformRequest(sourceArray2d);
-        const progressInfo = this.translationsInProgress.get([
+        const requestHash = [
           sourceLanguage,
           targetLanguage,
           requestString,
-        ]);
+        ].join(", ");
+
+        const progressInfo = this.translationsInProgress.get(requestHash);
         if (progressInfo) {
           currentTranslationsInProgress.push(progressInfo);
         } else {
+          /** @type {TranslationStatus} */
+          let status = "translating";
+          /** @type {() => void} */
+          let promise_resolve = null;
+
+          /** @type {TranslationInfo} */
+          const progressInfo = {
+            originalText: requestString,
+            translatedText: null,
+            detectedLanguage: null,
+            get status() {
+              return status;
+            },
+            set status(_status) {
+              status = _status;
+              promise_resolve();
+            },
+            waitTranlate: new Promise((resolve) => (promise_resolve = resolve)),
+          };
+
+          currentTranslationsInProgress.push(progressInfo);
+          this.translationsInProgress.set(requestHash, progressInfo);
+
           //cast
-          let transInfo = /** @type {TranslationInfo} */ /** @type {?} */ (
-            await translationCache.get(
-              this.serviceName,
-              sourceLanguage,
-              targetLanguage,
-              requestString
-            )
+          const cacheEntry = await translationCache.get(
+            this.serviceName,
+            sourceLanguage,
+            targetLanguage,
+            requestString
           );
-          if (transInfo) {
-            transInfo.status = "complete";
+          if (cacheEntry) {
+            progressInfo.translatedText = cacheEntry.translatedText;
+            progressInfo.detectedLanguage = cacheEntry.detectedLanguage;
+            progressInfo.status = "complete";
             //this.translationsInProgress.delete([sourceLanguage, targetLanguage, requestString])
           } else {
-            transInfo = {
-              originalText: requestString,
-              translatedText: null,
-              detectedLanguage: null,
-              status: "translating",
-            };
-            currentSize += transInfo.originalText.length;
-            if (requests.length < 1 || currentSize > 800) {
+            currentRequest.push(progressInfo);
+            currentSize += progressInfo.originalText.length;
+            if (currentSize > 800 || (currentSize > 0 && idx >= length - 1)) {
+              requests.push(currentRequest);
               currentSize = 0;
-              requests.push([transInfo]);
-            } else {
-              requests[requests.length - 1].push(transInfo);
+              currentRequest = [];
             }
           }
-          currentTranslationsInProgress.push(transInfo);
-          this.translationsInProgress.set(
-            [sourceLanguage, targetLanguage, requestString],
-            transInfo
-          );
         }
       }
 
@@ -564,7 +583,9 @@ const translationService = (function () {
             })
         );
       }
-      await Promise.all(promises);
+      await Promise.all(
+        currentTranslationsInProgress.map((transInfo) => transInfo.waitTranlate)
+      );
       return currentTranslationsInProgress.map((transInfo) =>
         this.cbTransformResponse(transInfo.translatedText, dontSortResults)
       );
