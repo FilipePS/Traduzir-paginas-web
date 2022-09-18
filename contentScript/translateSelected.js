@@ -62,12 +62,12 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 
 	let isPlayingAudio = false
 
-	function playAudio(text, cbOnEnded=() => {}) {
+	function playAudio(text, targetLanguage, cbOnEnded=() => {}) {
 		isPlayingAudio = true
         chrome.runtime.sendMessage({
             action: "textToSpeech",
             text,
-            targetLanguage: currentTargetLanguage
+            targetLanguage
         }, () => {
 			isPlayingAudio = false
 			cbOnEnded()
@@ -510,7 +510,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				stopAudio()
 				element.classList.remove("selected")
 			} else {
-				playAudio(text, () => {
+				playAudio(text, language, () => {
 					element.classList.remove("selected")
 					element.setAttribute("title", msgListen)
 				})

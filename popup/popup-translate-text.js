@@ -70,12 +70,12 @@ twpConfig.onReady(function () {
     
     let isPlayingAudio = false
 
-	function playAudio(text, cbOnEnded=() => {}) {
+	function playAudio(text, targetLanguage, cbOnEnded=() => {}) {
 		isPlayingAudio = true
         chrome.runtime.sendMessage({
             action: "textToSpeech",
             text,
-            targetLanguage: currentTargetLanguage
+            targetLanguage
         }, () => {
 			isPlayingAudio = false
 			cbOnEnded()
@@ -217,7 +217,7 @@ twpConfig.onReady(function () {
             stopAudio()
             eListen.classList.remove("selected")
         } else {
-            playAudio(eTextTranslated.textContent, () => {
+            playAudio(eTextTranslated.textContent, currentTargetLanguage, () => {
                 eListen.classList.remove("selected")
                 eListen.setAttribute("title", msgListen)
             })
