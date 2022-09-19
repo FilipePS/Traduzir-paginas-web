@@ -1,6 +1,7 @@
 {
-    "compilerOptions": {
-        "target": "ES2022",
-        "checkJs": true
-    }
+  "compilerOptions": {
+    "target": "ES2022",
+    "checkJs": true,
+    "alwaysStrict": true
+  }
 }

@@ -51,7 +51,7 @@ const translationCache = (function () {
     static async getDatabaseSize(dbName) {
       return await new Promise((resolve, reject) => {
         const request = indexedDB.open(dbName);
-        request.onerror = (event) => {
+        request.onerror = request.onblocked = (event) => {
           console.error(event);
           reject();
         };
@@ -290,7 +290,7 @@ const translationCache = (function () {
           resolve(request.result);
         };
 
-        request.onerror = (event) => {
+        request.onerror = request.onblocked = (event) => {
           console.error(
             "Error opening the database, switching to non-database mode",
             event
@@ -391,7 +391,7 @@ const translationCache = (function () {
         });
       };
 
-      request.onerror = (event) => {
+      request.onerror = request.onblocked = (event) => {
         console.error("Error opening the database", event);
         this.dbCacheList = null;
       };
@@ -461,8 +461,8 @@ const translationCache = (function () {
         targetLanguage
       );
       const cache = this.list.get(dbName);
-      if (cache)  {
-        await cache.promiseStartingCache
+      if (cache) {
+        await cache.promiseStartingCache;
         return cache;
       } else {
         return await this.#createCache(
