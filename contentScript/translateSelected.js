@@ -1,5 +1,6 @@
 "use strict";
 
+// TODO especificar o parametro HL para aprimorar a detecção de idioma
 //TODO desativar o botão caso a pagina esteja traduzida
 
 var translateSelected = {}

@@ -545,6 +545,7 @@ const translationService = (function () {
      * @param {string} targetLanguage
      * @param {Array<string[]>} sourceArray3d
      * @param {boolean} dontSortResults
+     * @returns {Promise<string[][]>}
      */
     async translate(
       sourceLanguage,
@@ -608,7 +609,7 @@ const translationService = (function () {
     constructor() {
       super(
         "google",
-        "https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html&sl=auto",
+        "https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html",
         "POST",
         function transformRequest(sourceArray2d) {
           sourceArray2d = sourceArray2d.map((text) => Utils.escapeHTML(text));
@@ -623,8 +624,14 @@ const translationService = (function () {
         function parseResponse(response) {
           /** @type {[Service_Single_Result_Response]} */
           let responseJson;
-          if (typeof response[0] == "string") {
+          if (typeof response === "string") {
             responseJson = [{ text: response, detectedLanguage: null }];
+          } else if (typeof response[0] === "string") {
+            responseJson = response.map(
+              /** @returns {Service_Single_Result_Response} */ (
+                /** @type {string} */ value
+              ) => ({ text: value, detectedLanguage: null })
+            );
           } else {
             responseJson = response.map(
               /** @returns {Service_Single_Result_Response} */ (
@@ -777,7 +784,7 @@ const translationService = (function () {
           }
         },
         function getExtraParameters(sourceLanguage, targetLanguage, requests) {
-          return `&tl=${targetLanguage}&tk=${GoogleHelper.calcHash(
+          return `&sl=${sourceLanguage}&tl=${targetLanguage}&tk=${GoogleHelper.calcHash(
             requests.map((info) => info.originalText).join("")
           )}`;
         },
@@ -816,9 +823,9 @@ const translationService = (function () {
             .map((value) => Utils.unescapeHTML(value));
         },
         function getExtraParameters(sourceLanguage, targetLanguage, requests) {
-          return `&id=${
-            YandexHelper.translateSid
-          }-0-0&format=html&lang=${targetLanguage}${requests
+          return `&id=${YandexHelper.translateSid}-0-0&format=html&lang=${
+            sourceLanguage === "auto" ? "" : sourceLanguage + "-"
+          }${targetLanguage}${requests
             .map((info) => `&text=${encodeURIComponent(info.originalText)}`)
             .join("")}`;
         },
@@ -837,6 +844,8 @@ const translationService = (function () {
     ) {
       await YandexHelper.findSID();
       if (!YandexHelper.translateSid) return;
+      if (sourceLanguage.startsWith("zh")) sourceLanguage = "zh";
+      if (targetLanguage.startsWith("zh")) targetLanguage = "zh";
       return await super.translate(
         sourceLanguage,
         targetLanguage,
@@ -873,7 +882,7 @@ const translationService = (function () {
           return `&${BingHelper.translate_IID_IG}`;
         },
         function getRequestBody(sourceLanguage, targetLanguage, requests) {
-          return `&fromLang=auto-detect${requests
+          return `&fromLang=${sourceLanguage}${requests
             .map((info) => `&text=${encodeURIComponent(info.originalText)}`)
             .join("")}&to=${targetLanguage}${BingHelper.translateSid}`;
         }
@@ -887,7 +896,12 @@ const translationService = (function () {
       dontSaveInPersistentCache,
       dontSortResults = false
     ) {
+      /** @type {{search: string, replace: string}[]} */
       const replacements = [
+        {
+          search: "auto",
+          replace: "auto-detect",
+        },
         {
           search: "zh-CN",
           replace: "zh-Hans",
@@ -924,6 +938,9 @@ const translationService = (function () {
       replacements.forEach((r) => {
         if (targetLanguage === r.search) {
           targetLanguage = r.replace;
+        }
+        if (sourceLanguage === r.search) {
+          sourceLanguage = r.replace;
         }
       });
 
