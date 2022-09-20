@@ -809,8 +809,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 })
 
 
-let startMark = '#1%1#'
-let endMark = '#2%2#'
+let startMark = '<customskipword>'
+let endMark = '</customskipword>'
 let currentIndex
 let compressionMap
 
@@ -836,10 +836,7 @@ function filterCustomWords(textContext) {
                 if (index === -1) {
                     break
                 } else {
-                    // Remove useless newlines inside, which may affect our semantics
-                    // See if there are consecutive spaces, keep only one
-                    textContext = textContext.replaceAll('\n', ' ')
-                    textContext = textContext.replace(/  +/g, ' ');
+                    textContext = removeNewlines(textContext, index, keyWord)
                     let previousIndex = index - 1
                     let nextIndex = index + keyWord.length
                     let previousChar = previousIndex === -1 ? ' ' : textContext.charAt(previousIndex)
@@ -915,6 +912,26 @@ function handleHitKeywords(value, mode) {
     } else {
         return String(compressionMap.get(Number(value)))
     }
+}
+
+
+/**
+ * Remove useless newlines inside, which may affect our semantics
+ *
+ * See if there are consecutive spaces, keep only one
+ *
+ * In order to minimize the impact on the original semantics, only the 30 characters before and after the keyword appear
+ *
+ * @see https://github.com/FilipePS/Traduzir-paginas-web/pull/476#issuecomment-1251864367
+ * */
+function removeNewlines(textContext,index,keyWord) {
+    let previous30 = index -30 >=0 ? index -30 : 0
+    let next30 = index + keyWord.length + 30 <= textContext.length - 1 ? index + keyWord.length + 30 : textContext.length
+    let needDealtPart = textContext.substring(previous30,next30)
+    needDealtPart = needDealtPart.replaceAll('\n', ' ')
+    needDealtPart = needDealtPart.replace(/  +/g, ' ')
+    textContext = textContext.substring(0,previous30) + needDealtPart +textContext.substring(next30)
+    return textContext
 }
 
 /**
