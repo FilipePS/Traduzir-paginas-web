@@ -1004,8 +1004,8 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				destroy()
 			}
 		} else if (request.action === "hotTranslateSelectedText") {
-			if (!gSelectionInfo?.element?.focus) return;
 			readSelection()
+			if (!gSelectionInfo?.element?.focus) return;
 			const selText = gSelectionInfo.text
 			if (selText) {
 				backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, selText)

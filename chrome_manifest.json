@@ -3,7 +3,7 @@
     "default_locale": "en",
     "name": "TWP - Translate Web Pages",
     "description": "__MSG_extensionDescription__",
-    "version": "9.6-beta-1",
+    "version": "9.6.0.2",
     "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
 
     "commands": {
