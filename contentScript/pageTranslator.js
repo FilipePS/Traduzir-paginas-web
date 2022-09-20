@@ -925,8 +925,8 @@ function handleHitKeywords(value, mode) {
  * @see https://github.com/FilipePS/Traduzir-paginas-web/pull/476#issuecomment-1251864367
  * */
 function removeNewlines(textContext,index,keyWord) {
-    let previous30 = index -30 >=0 ? index -30 : 0
-    let next30 = index + keyWord.length + 30 <= textContext.length - 1 ? index + keyWord.length + 30 : textContext.length
+    let previous30 = index - 30 >= 0 ? index - 30 : 0
+    let next30 = index + keyWord.length + 30 < textContext.length ? index + keyWord.length + 30 : textContext.length
     let needDealtPart = textContext.substring(previous30,next30)
     needDealtPart = needDealtPart.replaceAll('\n', ' ')
     needDealtPart = needDealtPart.replace(/  +/g, ' ')
