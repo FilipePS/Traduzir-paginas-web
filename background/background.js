@@ -595,6 +595,15 @@ if (typeof chrome.commands !== "undefined") {
                     targetLanguage: twpConfig.get("targetLanguages")[2]
                 }, checkedLastError)
             })
+        } else if (command === "hotkey-hot-translate-selected-text") {
+            chrome.tabs.query({
+                active: true,
+                currentWindow: true
+            }, tabs => {
+                chrome.tabs.sendMessage(tabs[0].id, {
+                    action: "hotTranslateSelectedText"
+                }, checkedLastError)
+            })
         }
     })
 }

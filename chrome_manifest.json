@@ -36,6 +36,9 @@
         },
         "hotkey-translate-page-3": {
             "description": "__MSG_lblTranslatePageToTargetLanguage__ 3"
+        },
+        "hotkey-hot-translate-selected-text": {
+            "description": "__MSG_lblHotTranslatedSelectedText"
         }
     },
 

@@ -1003,6 +1003,21 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			if (!windowIsInFocus) {
 				destroy()
 			}
+		} else if (request.action === "hotTranslateSelectedText") {
+			if (!gSelectionInfo?.element?.focus) return;
+			readSelection()
+			const selText = gSelectionInfo.text
+			if (selText) {
+				backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, selText)
+					.then(result => {
+						if (!result) return;
+						gSelectionInfo.element.focus();
+						document.execCommand('selectAll', false);
+						gSelectionInfo.element.setSelectionRange(gSelectionInfo.selStart, gSelectionInfo.selEnd)
+						document.execCommand('insertText', false, result);
+						destroy()
+					})
+			}
 		}
 	})
 })
