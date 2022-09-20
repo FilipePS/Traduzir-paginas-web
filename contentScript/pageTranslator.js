@@ -914,7 +914,6 @@ function handleHitKeywords(value, mode) {
     }
 }
 
-
 /**
  * Remove useless newlines inside, which may affect our semantics
  *
