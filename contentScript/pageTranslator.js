@@ -815,7 +815,7 @@ let currentIndex
 let compressionMap
 
 /**
- *  Convert matching keywords to a string of special numbers to skip translation before sending to the translation engine.
+ *  Convert matching keywords to a string of special marks to skip translation before sending to the translation engine.
  *
  *  For English words, ignore case when matching.
  *
@@ -869,7 +869,7 @@ function filterCustomWords(textContext) {
 }
 
 /**
- *  handle the keywords in translatedText, replace it if there is a custom replacement value.
+ *  Handle the keywords in translatedText, replace it if there is a custom replacement value.
  *  */
 function handleCustomWords(translated) {
     const customDictionary = twpConfig.get("customDictionary")
@@ -934,7 +934,7 @@ function removeNewlines(textContext,index,keyWord) {
 }
 
 /**
- * any kind of punctuation character (including international e.g. Chinese and Spanish punctuation)
+ * Any kind of punctuation character (including international e.g. Chinese and Spanish punctuation)
  *
  * source: https://github.com/slevithan/xregexp/blob/41f4cd3fc0a8540c3c71969a0f81d1f00e9056a9/src/addons/unicode/unicode-categories.js#L142
  *
