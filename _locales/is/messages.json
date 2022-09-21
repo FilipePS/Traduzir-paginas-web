@@ -63,7 +63,7 @@
     "message": "Aldrei þýða þessa síðu"
   },
   "btnChangeLanguages": {
-    "message": "Skiptu um tungumál"
+    "message": "Skipta um tungumál"
   },
   "btnMobileOriginal": {
     "message": "Upprunalegt"
@@ -252,10 +252,10 @@
     "message": "Ekki sýna ef valið textamál er óþekkt"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Sýna þýðingu þegar þú sveima yfir þessari síðu"
+    "message": "Sýna þýðingu þegar þú sveimar yfir þessari síðu"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Sýna þýðingu þegar þú ferð yfir vefsíður á $LANGUAGE_NAME$",
+    "message": "Sýna þýðingu þegar þú sveimar yfir vefsíður á $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -471,7 +471,7 @@
     "message": "Skipta út"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Skiptu út völdum texta fyrir þýddan texta þegar ýtt er tvisvar á $SHORTCUT_KEY$",
+    "message": "Skipta út völdum texta fyrir þýddan texta þegar ýtt er tvisvar á $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
