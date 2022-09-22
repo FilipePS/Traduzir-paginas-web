@@ -405,9 +405,9 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		let lastTimePressedCtrl = null
 
 		eOrigText.onkeyup = e => {
-			if (twpConfig.get("replaceSelectedTextWithTranslatedText") !== "yes") return;
+			if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
 			if (e.key == "Control") {
-				if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 280) {
+				if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 250) {
 					lastTimePressedCtrl = performance.now()
 					replaceText()
 				}
