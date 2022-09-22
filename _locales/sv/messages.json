@@ -477,5 +477,8 @@
         "content": "[Ctrl]"
       }
     }
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "Replace selected text with translated text instantly"
   }
 }
