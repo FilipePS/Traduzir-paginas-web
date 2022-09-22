@@ -425,7 +425,9 @@ const translationService = (function () {
       let currentSize = 0;
 
       for (const sourceArray2d of sourceArray3d) {
-        const requestString = this.fixString( this.cbTransformRequest(sourceArray2d) );
+        const requestString = this.fixString(
+          this.cbTransformRequest(sourceArray2d)
+        );
         const requestHash = [
           sourceLanguage,
           targetLanguage,
@@ -606,11 +608,11 @@ const translationService = (function () {
 
     /**
      * https://github.com/FilipePS/Traduzir-paginas-web/issues/484
-     * @param {string} str 
+     * @param {string} str
      * @returns {string}
      */
     fixString(str) {
-      return str.replace(/\u200b/g, " ")
+      return str.replace(/\u200b/g, " ");
     }
   }
 

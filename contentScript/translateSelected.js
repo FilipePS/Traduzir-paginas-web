@@ -366,7 +366,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		const eListenOriginal = shadowRoot.getElementById("listenOriginal")
 		const eListenTranslated = shadowRoot.getElementById("listenTranslated")
 
-		if (gSelectionInfo && gSelectionInfo.isInputElement) {
+		if (gSelectionInfo && (gSelectionInfo.isInputElement || gSelectionInfo.isContentEditable)) {
 			eCopy.setAttribute("hidden", "")
 			eReplace.removeAttribute("hidden")
 		} else {
@@ -375,11 +375,22 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		}
 
 		function replaceText() {
-			prevSelectionInfo.element.focus();
-			document.execCommand('selectAll', false);
-			prevSelectionInfo.element.setSelectionRange(prevSelectionInfo.selStart, prevSelectionInfo.selEnd)
-			document.execCommand('insertText', false, eSelTextTrans.textContent);
+			const prevSelInfo = prevSelectionInfo
 			destroy()
+			if (prevSelInfo.element.nodeType === 3) {
+				prevSelInfo.element.parentNode.focus();
+			} else {
+				prevSelInfo.element.focus();
+			}
+			document.execCommand('selectAll', false);
+			if (prevSelInfo.isInputElement) {
+				prevSelInfo.element.setSelectionRange(prevSelInfo.selStart, prevSelInfo.selEnd)
+			} else if (prevSelInfo.isContentEditable) {
+				const selection = window.getSelection()
+				selection.removeAllRanges()
+				selection.addRange(prevSelInfo.range)
+			}
+			document.execCommand('insertText', false, eSelTextTrans.textContent);
 		}
 		
 		eCopy.onclick = () => {
@@ -835,7 +846,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				const rect = selection.getRangeAt(0).getBoundingClientRect()
 				newSelectionInfo = {
 					isInputElement: false,
-					isContentEditable: selection.focusNode.isContentEditable,
+					isContentEditable: selection.focusNode.nodeType === 3 ? selection.focusNode.parentNode.isContentEditable : selection.focusNode.isContentEditable,
 					element: selection.focusNode,
 					selStart: selection.getRangeAt(0).startOffset,
 					selEnd: selection.getRangeAt(0).endOffset,
@@ -843,7 +854,8 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 					top: rect.top,
 					left: rect.left,
 					bottom: rect.bottom,
-					right: rect.right
+					right: rect.right,
+					range: selection.getRangeAt(0)
 				}
 			}
 		}
@@ -1005,17 +1017,28 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			}
 		} else if (request.action === "hotTranslateSelectedText") {
 			readSelection()
-			if (!gSelectionInfo?.element?.focus) return;
-			const selText = gSelectionInfo.text
-			if (selText) {
-				backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, selText)
+			const prevSelInfo = gSelectionInfo
+			if (!prevSelInfo?.element?.focus && !prevSelInfo?.element?.parentNode?.focus) return;
+			if (prevSelInfo.isInputElement && prevSelInfo.readOnly) return;
+			if (prevSelInfo.text) {
+				backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, prevSelInfo.text)
 					.then(result => {
 						if (!result) return;
-						gSelectionInfo.element.focus();
-						document.execCommand('selectAll', false);
-						gSelectionInfo.element.setSelectionRange(gSelectionInfo.selStart, gSelectionInfo.selEnd)
-						document.execCommand('insertText', false, result);
 						destroy()
+						if (prevSelInfo.element.nodeType === 3) {
+							prevSelInfo.element.parentNode.focus();
+						} else {
+							prevSelInfo.element.focus();
+						}
+						document.execCommand('selectAll', false);
+						if (prevSelInfo.isInputElement) {
+							prevSelInfo.element.setSelectionRange(prevSelInfo.selStart, prevSelInfo.selEnd)
+						} else if (prevSelInfo.isContentEditable) {
+							const selection = window.getSelection()
+							selection.removeAllRanges()
+							selection.addRange(prevSelInfo.range)
+						}
+						document.execCommand('insertText', false, result);
 					})
 			}
 		}
