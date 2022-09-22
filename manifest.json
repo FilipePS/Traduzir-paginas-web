@@ -57,6 +57,9 @@
             "description": "__MSG_lblTranslatePageToTargetLanguage__ 3"
         },
         "hotkey-hot-translate-selected-text": {
+            "suggested_key": {
+                "default": "Ctrl+Alt+X"
+            },
             "description": "__MSG_lblHotTranslatedSelectedText"
         }
     },
