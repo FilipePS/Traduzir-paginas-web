@@ -171,6 +171,7 @@ async function init() {
         "tr",
         "uk",
         "vi",
+        "is"
     ]
 
     const google_langs = {}
