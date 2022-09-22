@@ -60,7 +60,7 @@
             "suggested_key": {
                 "default": "Ctrl+Alt+X"
             },
-            "description": "__MSG_lblHotTranslatedSelectedText"
+            "description": "__MSG_lblHotTranslatedSelectedText__"
         }
     },
 
