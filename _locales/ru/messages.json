@@ -471,7 +471,7 @@
     "message": "Replace"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Заменить выделенный текст переводом при двойном нажатии $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,6 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Мгновенно заменить выделенный текст переводом"
   }
 }
