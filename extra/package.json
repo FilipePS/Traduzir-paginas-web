@@ -4,6 +4,7 @@
   "description": "",
   "main": "getLanguagesNames.js",
   "scripts": {
+    "start": "node getLanguagesNames.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

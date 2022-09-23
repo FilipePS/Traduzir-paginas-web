@@ -468,14 +468,17 @@
     "message": "不明な言語"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "置き換え"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$を2回押して選択したテキストを翻訳したテキストに置き換え",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
       }
     }
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "Replace selected text with translated text instantly"
   }
 }

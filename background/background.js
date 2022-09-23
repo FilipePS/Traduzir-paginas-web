@@ -1,7 +1,5 @@
 "use strict";
 
-//TODO abrir pagina de opções sem precisar abrir novas abas
-
 // Avoid outputting the error message "Receiving end does not exist" in the Console.
 function checkedLastError() {
     chrome.runtime.lastError
@@ -59,6 +57,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             url: chrome.runtime.getURL("/options/options.html#donation")
         })
     } else if (request.action === "detectTabLanguage") {
+        if (!sender.tab) {
+            // https://github.com/FilipePS/Traduzir-paginas-web/issues/478
+            sendResponse("und")
+            return
+        }
         try {
             chrome.tabs.detectLanguage(sender.tab.id, result => sendResponse(result))
         } catch (e) {
@@ -231,7 +234,6 @@ if (typeof chrome.contextMenus !== "undefined") {
 
     chrome.contextMenus.onClicked.addListener((info, tab) => {
         if (info.menuItemId == "translate-web-page") {
-            //TODO forçar tradução em vez de alternar
             chrome.tabs.sendMessage(tab.id, {
                 action: "toggle-translation"
             }, checkedLastError)
@@ -393,7 +395,6 @@ twpConfig.onReady(() => {
             }
         })
 
-        //TODO veriricar porque chrome.theme.getCurrent não funciona, apenas browser.theme.getCurrent
         if (chrome.pageAction && browser) {
             let pageLanguageState = "original"
 
@@ -592,6 +593,15 @@ if (typeof chrome.commands !== "undefined") {
                 chrome.tabs.sendMessage(tabs[0].id, {
                     action: "translatePage",
                     targetLanguage: twpConfig.get("targetLanguages")[2]
+                }, checkedLastError)
+            })
+        } else if (command === "hotkey-hot-translate-selected-text") {
+            chrome.tabs.query({
+                active: true,
+                currentWindow: true
+            }, tabs => {
+                chrome.tabs.sendMessage(tabs[0].id, {
+                    action: "hotTranslateSelectedText"
                 }, checkedLastError)
             })
         }

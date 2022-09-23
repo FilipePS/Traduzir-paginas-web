@@ -293,7 +293,6 @@
                 <ul class="w3-container" style="user-select: none; list-style-type: none;">
                     <li><label for="translateSelectedWhenPressTwice"><input type="checkbox" id="translateSelectedWhenPressTwice"> <span data-i18n="lblTranslateSelectedWhenPressTwice">Translate selected text when pressing <kbd>Ctrl</kbd> twice</span></label></li>
                     <li><label for="translateTextOverMouseWhenPressTwice"><input type="checkbox" id="translateTextOverMouseWhenPressTwice"> <span data-i18n="lblTranslateTextOverMouseWhenPressTwice">Translate the text over the mouse when pressing <kbd>Ctrl</kbd> twice</span></label></li>
-                    <li><label for="replaceSelectedTextWithTranslatedText"><input type="checkbox" id="replaceSelectedTextWithTranslatedText"> <span data-i18n="lblReplaceSelectedTextWithTranslatedText">Replace selected text with translated text when pressing <kbd>Ctrl</kbd> twice</label></li>
                 </ul>
 
                 <p><b data-i18n="lblKeyboardShortcuts">Keyboard shortcuts</b></p>
@@ -432,22 +431,40 @@
                     <ul>
                         <li>Added:
                             <ul>
-                                <li>Option to replace selected text with translated text</li>
+                                <li>Option to replace selected text with translated text
+                                    <ul>
+                                        <li>When you type a message, select the message and translate the selected text, instead of the copy text button there will be a button to replace/paste the translated text with the selected text.</li>
+                                        <li>If the <code style="background-color: lightgray;">Translate selected text when pressing <kbd>Ctrl</kbd> twice</code> option is enabled. Hitting <kbd>Ctrl</kbd> when the popup is open will be the same as clicking that new button.</li>
+                                        <li>When selecting text, the shortcut <kbd>Ctrl+Alt+X</kbd> will translate and replace the selected text instantly without showing any popup.
+                                            <ul>
+                                                <li>You can edit this hotkey in the extension's settings.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li>Added 33 new target languages: <i>Assamese, Aymara, Bambara, Bashkir, Bhojpuri, Chuvash, Dhivehi, Dogri, Ewe, Guarani, Hill Mari, Ilocano, Kazakh (Latin), Konkani, Krio, Kurdish (Sorani), Lingala, Luganda, Mari, Maithili, Meiteilon (Manipuri), Mizo, Oromo, Papiamento, Quechua, Sanskrit, Sepedi, Tigrinya, Tsonga, Twi, Udmurt, Uzbek (Cyrillic), Yakut</i></li>
                                 <li>Translation for language names in: <i>Catalan, Danish, Greek, Hungarian, Korean, Persian, Swedish, Thai and Portuguese (Portugal).</i></li>
                             </ul>
                         </li>
                         <li>Fixed:
                             <ul>
+                                <li>Some parts of the translation are lost and consequently parts of the page are left untranslated</li>
                                 <li>The <i><code>&lt;option&gt;</code></i> html tag is not translated.</li>
                                 <li>Fixed: <i>showOriginalTextWhenHovering</i> always translates placeholder instead of value</li>
                                 <li>Traditional Chinese is not detected as site language</li>
                                 <li>text-to-speech does not work on long texts in some languages</li>
+                                <li>Option to reset/import settings does not work in firefox android</li>
                                 <li>The <b>original</b> button is blue even when the page is translated on android</li>
                                 <li>Bugs related to invalid language code</li>
+                                <li>Bugs related to translation with DeepL</li>
                             </ul>
                         </li>
-                        <li>Updated interface translations.</li>
+                        <li>Changes:
+                            <ul>
+                                <li>Now text-to-speech has an in-memory cache</li>
+                                <li>Updated interface translations</li>
+                            </ul>
+                        </li>
                     </ul>
                 </section>
                 <section>

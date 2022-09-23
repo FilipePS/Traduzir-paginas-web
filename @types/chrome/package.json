@@ -1,0 +1,98 @@
+{
+    "name": "@types/chrome",
+    "version": "0.0.196",
+    "description": "TypeScript definitions for Chrome extension development",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/chrome",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Matthew Kimber",
+            "url": "https://github.com/matthewkimber",
+            "githubUsername": "matthewkimber"
+        },
+        {
+            "name": "otiai10",
+            "url": "https://github.com/otiai10",
+            "githubUsername": "otiai10"
+        },
+        {
+            "name": "sreimer15",
+            "url": "https://github.com/sreimer15",
+            "githubUsername": "sreimer15"
+        },
+        {
+            "name": "MatCarlson",
+            "url": "https://github.com/MatCarlson",
+            "githubUsername": "MatCarlson"
+        },
+        {
+            "name": "ekinsol",
+            "url": "https://github.com/ekinsol",
+            "githubUsername": "ekinsol"
+        },
+        {
+            "name": "Thierry Régagnon",
+            "url": "https://github.com/tregagnon",
+            "githubUsername": "tregagnon"
+        },
+        {
+            "name": "Brian Wilson",
+            "url": "https://github.com/echoabstract",
+            "githubUsername": "echoabstract"
+        },
+        {
+            "name": "Sebastiaan Pasma",
+            "url": "https://github.com/spasma",
+            "githubUsername": "spasma"
+        },
+        {
+            "name": "bdbai",
+            "url": "https://github.com/bdbai",
+            "githubUsername": "bdbai"
+        },
+        {
+            "name": "pokutuna",
+            "url": "https://github.com/pokutuna",
+            "githubUsername": "pokutuna"
+        },
+        {
+            "name": "Jason Xian",
+            "url": "https://github.com/JasonXian",
+            "githubUsername": "JasonXian"
+        },
+        {
+            "name": "userTim",
+            "url": "https://github.com/usertim",
+            "githubUsername": "usertim"
+        },
+        {
+            "name": "Idan Zeierman",
+            "url": "https://github.com/idan315",
+            "githubUsername": "idan315"
+        },
+        {
+            "name": "Nicolas Rodriguez",
+            "url": "https://github.com/nicolas377",
+            "githubUsername": "nicolas377"
+        },
+        {
+            "name": "Ido Salomon",
+            "url": "https://github.com/idosal",
+            "githubUsername": "idosal"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chrome"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/filesystem": "*",
+        "@types/har-format": "*"
+    },
+    "typesPublisherContentHash": "ade96379cfac9d4a5497afcdf7f058b9aedac0f28bc58bf498fed6b81a141c5f",
+    "typeScriptVersion": "4.1"
+}

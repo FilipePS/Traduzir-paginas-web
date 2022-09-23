@@ -1,5 +1,6 @@
 "use strict";
 
+// TODO especificar o parametro HL para aprimorar a detecção de idioma
 //TODO desativar o botão caso a pagina esteja traduzida
 
 var translateSelected = {}
@@ -59,17 +60,27 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			})
 		})
 	}
-	
-	let audioDataUrls = null
-	let playingAudio = null
+
+	let isPlayingAudio = false
+
+	function playAudio(text, targetLanguage, cbOnEnded=() => {}) {
+		isPlayingAudio = true
+        chrome.runtime.sendMessage({
+            action: "textToSpeech",
+            text,
+            targetLanguage
+        }, () => {
+			isPlayingAudio = false
+			cbOnEnded()
+		})
+    }
 	
 	function stopAudio() {
-		if (playingAudio) {
-			chrome.runtime.sendMessage({
-				action: "stopAudio"
-			})
-		}
-		playingAudio = null
+		if (!isPlayingAudio) return;
+		isPlayingAudio = false
+		chrome.runtime.sendMessage({
+			action: "stopAudio"
+		})
 	}
 	
 	function dragElement(elmnt, elmnt2) {
@@ -355,7 +366,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		const eListenOriginal = shadowRoot.getElementById("listenOriginal")
 		const eListenTranslated = shadowRoot.getElementById("listenTranslated")
 
-		if (gSelectionInfo && gSelectionInfo.isInputElement) {
+		if (gSelectionInfo && (gSelectionInfo.isInputElement || gSelectionInfo.isContentEditable)) {
 			eCopy.setAttribute("hidden", "")
 			eReplace.removeAttribute("hidden")
 		} else {
@@ -364,8 +375,22 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		}
 
 		function replaceText() {
-			prevSelectionInfo.element.setRangeText(eSelTextTrans.textContent + " ", prevSelectionInfo.selStart, prevSelectionInfo.selEnd)
+			const prevSelInfo = prevSelectionInfo
 			destroy()
+			if (prevSelInfo.element.nodeType === 3) {
+				prevSelInfo.element.parentNode.focus();
+			} else {
+				prevSelInfo.element.focus();
+			}
+			document.execCommand('selectAll', false);
+			if (prevSelInfo.isInputElement) {
+				prevSelInfo.element.setSelectionRange(prevSelInfo.selStart, prevSelInfo.selEnd)
+			} else if (prevSelInfo.isContentEditable) {
+				const selection = window.getSelection()
+				selection.removeAllRanges()
+				selection.addRange(prevSelInfo.range)
+			}
+			document.execCommand('insertText', false, eSelTextTrans.textContent);
 		}
 		
 		eCopy.onclick = () => {
@@ -391,9 +416,9 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		let lastTimePressedCtrl = null
 
 		eOrigText.onkeyup = e => {
-			if (twpConfig.get("replaceSelectedTextWithTranslatedText") !== "yes") return;
+			if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
 			if (e.key == "Control") {
-				if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 280) {
+				if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 250) {
 					lastTimePressedCtrl = performance.now()
 					replaceText()
 				}
@@ -493,46 +518,13 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			eListenOriginal.setAttribute("title", msgStopListening)
 			eListenTranslated.setAttribute("title", msgStopListening)
 			
-			if (audioDataUrls) {
-				if (playingAudio) {
-					stopAudio()
-					element.setAttribute("title", msgListen)
-				} else {
-					playingAudio = type
-					chrome.runtime.sendMessage({
-						action: "playAudio",
-						audioDataUrls
-					}, () => {
-						element.classList.remove("selected")
-						element.setAttribute("title", msgListen)
-					})
-					element.classList.add("selected")
-				}
-			} else {
+			if (isPlayingAudio) {
 				stopAudio()
-				playingAudio = type
-				chrome.runtime.sendMessage({
-					action: "textToSpeech",
-					text: text,
-					targetLanguage: language
-				}, result => {
-					if (!result) {
-						stopAudio()
-						eListenOriginal.classList.remove("selected")
-						eListenTranslated.classList.remove("selected")
-						eListenOriginal.setAttribute("title", msgListen)
-						eListenTranslated.setAttribute("title", msgListen)
-					}
-					
-					audioDataUrls = result
-					chrome.runtime.sendMessage({
-						action: "playAudio",
-						audioDataUrls
-					}, () => {
-						playingAudio = null
-						element.classList.remove("selected")
-						element.setAttribute("title", msgListen)
-					})
+				element.classList.remove("selected")
+			} else {
+				playAudio(text, language, () => {
+					element.classList.remove("selected")
+					element.setAttribute("title", msgListen)
 				})
 				element.classList.add("selected")
 			}
@@ -545,7 +537,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				lang = originalTabLanguage
 			}
 			if (lastListenAudioType !== "original") {
-				audioDataUrls = null;
 				stopAudio();
 			}
 			lastListenAudioType = "original"
@@ -554,7 +545,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		
 		eListenTranslated.onclick = () => {
 			if (lastListenAudioType !== "translated") {
-				audioDataUrls = null;
 				stopAudio();
 			}
 			lastListenAudioType = "translated"
@@ -646,7 +636,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		window.isTranslatingSelected = false
 		fooCount++
 		stopAudio()
-		audioDataUrls = null
 		if (!divElement) return;
 		
 		eButtonTransSelText.removeEventListener("click", onClick)
@@ -763,7 +752,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		fooCount++
 		const currentFooCount = fooCount
 		stopAudio()
-		audioDataUrls = null
 		
 		backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent).then(result => {
 			if (currentFooCount !== fooCount) return;
@@ -858,7 +846,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				const rect = selection.getRangeAt(0).getBoundingClientRect()
 				newSelectionInfo = {
 					isInputElement: false,
-					isContentEditable: selection.focusNode.isContentEditable,
+					isContentEditable: selection.focusNode.nodeType === 3 ? selection.focusNode.parentNode.isContentEditable : selection.focusNode.isContentEditable,
 					element: selection.focusNode,
 					selStart: selection.getRangeAt(0).startOffset,
 					selEnd: selection.getRangeAt(0).endOffset,
@@ -866,7 +854,8 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 					top: rect.top,
 					left: rect.left,
 					bottom: rect.bottom,
-					right: rect.right
+					right: rect.right,
+					range: selection.getRangeAt(0)
 				}
 			}
 		}
@@ -1025,6 +1014,32 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		} else if (request.action === "anotherFrameIsInFocus") {
 			if (!windowIsInFocus) {
 				destroy()
+			}
+		} else if (request.action === "hotTranslateSelectedText") {
+			readSelection()
+			const prevSelInfo = gSelectionInfo
+			if (!prevSelInfo?.element?.focus && !prevSelInfo?.element?.parentNode?.focus) return;
+			if (prevSelInfo.isInputElement && prevSelInfo.readOnly) return;
+			if (prevSelInfo.text) {
+				backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, prevSelInfo.text)
+					.then(result => {
+						if (!result) return;
+						destroy()
+						if (prevSelInfo.element.nodeType === 3) {
+							prevSelInfo.element.parentNode.focus();
+						} else {
+							prevSelInfo.element.focus();
+						}
+						document.execCommand('selectAll', false);
+						if (prevSelInfo.isInputElement) {
+							prevSelInfo.element.setSelectionRange(prevSelInfo.selStart, prevSelInfo.selEnd)
+						} else if (prevSelInfo.isContentEditable) {
+							const selection = window.getSelection()
+							selection.removeAllRanges()
+							selection.addRange(prevSelInfo.range)
+						}
+						document.execCommand('insertText', false, result);
+					})
 			}
 		}
 	})

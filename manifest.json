@@ -3,7 +3,7 @@
     "default_locale": "en",
     "name": "TWP - Translate Web Pages",
     "description": "__MSG_extensionDescription__",
-    "version": "9.6-beta-1",
+    "version": "9.6-beta-2",
     "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
 
     "browser_specific_settings": {
@@ -55,6 +55,12 @@
                 "default": "Shift+Alt+3"
             },
             "description": "__MSG_lblTranslatePageToTargetLanguage__ 3"
+        },
+        "hotkey-hot-translate-selected-text": {
+            "suggested_key": {
+                "default": "Ctrl+Alt+X"
+            },
+            "description": "__MSG_lblHotTranslatedSelectedText__"
         }
     },
 

@@ -619,8 +619,6 @@ twpConfig.onReady(function () {
     }
     $('[data-i18n="lblTranslateSelectedWhenPressTwice"]').innerHTML = $('[data-i18n="lblTranslateSelectedWhenPressTwice"]').innerHTML.replace("[Ctrl]", "<kbd>Ctrl</kbd>")
     $('[data-i18n="lblTranslateTextOverMouseWhenPressTwice"]').innerHTML = $('[data-i18n="lblTranslateTextOverMouseWhenPressTwice"]').innerHTML.replace("[Ctrl]", "<kbd>Ctrl</kbd>")
-    $('[data-i18n="lblReplaceSelectedTextWithTranslatedText"]').innerHTML = $('[data-i18n="lblReplaceSelectedTextWithTranslatedText"]').innerHTML.replace("[Ctrl]", "<kbd>Ctrl</kbd>")
-
 
     $("#openNativeShortcutManager").onclick = e => {
         chrome.tabs.create({
@@ -637,12 +635,6 @@ twpConfig.onReady(function () {
         twpConfig.set("translateTextOverMouseWhenPressTwice", e.target.checked ? "yes" : "no")
     }
     $("#translateTextOverMouseWhenPressTwice").checked = twpConfig.get("translateTextOverMouseWhenPressTwice") === "yes"
-
-    $("#replaceSelectedTextWithTranslatedText").onclick = e => {
-        twpConfig.set("replaceSelectedTextWithTranslatedText", e.target.checked ? "yes" : "no")
-    }
-    $("#replaceSelectedTextWithTranslatedText").checked = twpConfig.get("replaceSelectedTextWithTranslatedText") === "yes"
-
 
     const defaultShortcuts = {}
     for (const name of Object.keys(chrome.runtime.getManifest().commands || {})) {

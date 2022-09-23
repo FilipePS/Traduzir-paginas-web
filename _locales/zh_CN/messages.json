@@ -297,7 +297,7 @@
     "message": "使用旧的弹出界面"
   },
   "lblTranslateInterface": {
-    "message": "翻译界面"
+    "message": "贡献翻译"
   },
   "lblButtonInTheAddressBar": {
     "message": "在地址栏中显示按钮"
@@ -480,5 +480,8 @@
         "content": "[Ctrl]"
       }
     }
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "Replace selected text with translated text instantly"
   }
 }
