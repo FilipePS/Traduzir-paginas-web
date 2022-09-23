@@ -465,13 +465,13 @@
     "message": "Παρακαλώ περιμένετε..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Άγνωστο"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Αντικατάσταση"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Αντικατάσταση επιλεγμένου κειμένου με το μεταφρασμένο όταν πατήσετε $SHORTCUT_KEY$ δύο φορές",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,6 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Αντικατάσταση επιλεγμένου κειμένου με το μεταφρασμένο άμεσα"
   }
 }
