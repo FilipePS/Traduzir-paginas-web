@@ -1064,6 +1064,11 @@ const translationService = (function () {
     dontSaveInPersistentCache = false,
     dontSortResults = false
   ) => {
+    serviceName = twpLang.getAlternativeService(
+      targetLanguage,
+      serviceName,
+      true
+    );
     const service = serviceList.get(serviceName) || serviceList.get("google");
     return await service.translate(
       sourceLanguage,
@@ -1081,9 +1086,14 @@ const translationService = (function () {
     sourceArray2d,
     dontSaveInPersistentCache = false
   ) => {
+    serviceName = twpLang.getAlternativeService(
+      targetLanguage,
+      serviceName,
+      false
+    );
+    const service = serviceList.get(serviceName) || serviceList.get("google");
     return (
-      await translationService.translateHTML(
-        serviceName,
+      await service.translate(
         sourceLanguage,
         targetLanguage,
         [sourceArray2d],
@@ -1099,15 +1109,20 @@ const translationService = (function () {
     originalText,
     dontSaveInPersistentCache = false
   ) => {
+    serviceName = twpLang.getAlternativeService(
+      targetLanguage,
+      serviceName,
+      false
+    );
+    const service = serviceList.get(serviceName) || serviceList.get("google");
     return (
-      await translationService.translateText(
-        serviceName,
+      await service.translate(
         sourceLanguage,
         targetLanguage,
-        [originalText],
+        [[originalText]],
         dontSaveInPersistentCache
       )
-    )[0];
+    )[0][0];
   };
 
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -1123,7 +1138,10 @@ const translationService = (function () {
           request.dontSortResults
         )
         .then((results) => sendResponse(results))
-        .catch((e) => sendResponse());
+        .catch((e) => {
+          sendResponse();
+          console.error(e);
+        });
 
       return true;
     } else if (request.action === "translateText") {
@@ -1136,7 +1154,10 @@ const translationService = (function () {
           dontSaveInPersistentCache
         )
         .then((results) => sendResponse(results))
-        .catch((e) => sendResponse());
+        .catch((e) => {
+          sendResponse();
+          console.error(e);
+        });
 
       return true;
     } else if (request.action === "translateSingleText") {
@@ -1149,7 +1170,10 @@ const translationService = (function () {
           dontSaveInPersistentCache
         )
         .then((results) => sendResponse(results))
-        .catch((e) => sendResponse());
+        .catch((e) => {
+          sendResponse();
+          console.error(e);
+        });
 
       return true;
     }

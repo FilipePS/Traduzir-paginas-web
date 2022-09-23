@@ -675,7 +675,8 @@ const translationCache = (function () {
           sendResponse(size);
           return size;
         })
-        .catch(() => {
+        .catch(e => {
+          console.error(e)
           promiseCalculatingStorage = null;
           sendResponse("0B");
           return "0B";
