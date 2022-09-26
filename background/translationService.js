@@ -1249,6 +1249,8 @@ function spliceKeywordsIn3d(resultArray3d,allDescriptionMap) {
           parsedResult += front
           let key = description.substring(description.indexOf(startMark) + startMark.length, description.indexOf(endMark))
           let trueKey = handleHitKeywords(key, false)
+          // Due to the direct processing of sourceArray3d, so the original whitespace gap is lost
+          trueKey = ' ' + trueKey + ' '
           parsedResult += trueKey
           description = description.substring(description.indexOf(endMark) + endMark.length)
         }
