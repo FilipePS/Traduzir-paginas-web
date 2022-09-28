@@ -468,7 +468,7 @@
     "message": "Unknown"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Замінити"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
     "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
