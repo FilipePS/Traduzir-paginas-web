@@ -468,10 +468,10 @@
     "message": "Desconocido"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Reemplazar"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Reemplazar el texto seleccionado con el texto traducido al pulsar $SHORTCUT_KEY$ dos veces",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,6 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Reemplazar el texto seleccionado por el texto traducido al instante"
   }
 }
