@@ -465,13 +465,13 @@
     "message": "Espereu..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Desconegut"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Substitueix"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Substitueix el text seleccionat pel text traduït en prémer $SHORTCUT_KEY$ dues vegades",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,6 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Substitueix el text seleccionat pel text traduït a l'instant"
   }
 }
