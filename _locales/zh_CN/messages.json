@@ -479,6 +479,6 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "立即将所选文本替换为翻译文本"
+    "message": "自动替换选中文本为译文"
   }
 }
