@@ -471,7 +471,7 @@
     "message": "替换"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "按下两次 $SHORTCUT_KEY$ 时，用翻译文本替换选中的文本",
+    "message": "连按两下 $SHORTCUT_KEY$ 键替换选中文本为译文",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
