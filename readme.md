@@ -1,8 +1,9 @@
-#Custom Dictionary Edition
-##Allow keywords to be skipped during web page translation and give replacement values.
-##Languages that do not contain separators in their grammars, such as Chinese and Burmese, are not supported, it can be added, but it is actually invalid.
+# Custom Dictionary Edition
 
+#### Allow keywords to be skipped during web page translation and give replacement values.
+#### Languages that do not contain separators in their grammars, such as Chinese and Burmese, are not supported, it can be added, but it is actually invalid.
 
+---
 
 # <img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/icons/icon-128.png" height="50"> Translate Web Pages
 
