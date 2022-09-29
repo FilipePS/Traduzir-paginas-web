@@ -100,9 +100,7 @@ function handleHitKeywords(value, mode) {
         }
         return String(currentIndex)
     } else {
-        let keyword = String(compressionMap.get(Number(value)))
-        let alternativeWord = twpConfig.get("customDictionary").get(keyword.toLowerCase())
-        return alternativeWord ? alternativeWord : keyword
+        return String(compressionMap.get(Number(value)))
     }
 }
 
