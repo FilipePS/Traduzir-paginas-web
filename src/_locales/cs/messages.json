@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Přeložit webové stránky"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Přeložte svou stránku v reálném čase pomocí Google nebo Yandex."
+    "message": "Translate your page in real time using Google or Yandex."
   },
   "pageActionTitle": {
-    "message": "Přeložit tuto stránku"
+    "message": "Translate this page"
   },
   "lblTranslate": {
-    "message": "Přeložit tuto stránku?"
+    "message": "Translate this page?"
   },
   "lblTranslating": {
-    "message": "Překlady ..."
+    "message": "Translating ..."
   },
   "lblTranslated": {
-    "message": "Přeloženo"
+    "message": "Translated"
   },
   "lblError": {
-    "message": "Tuto stránku nelze přeložit"
+    "message": "This page could not be translated"
   },
   "lblAlwaysTranslate": {
-    "message": "Vždy přeložit z $LANGUAGE_NAME$",
+    "message": "Always translate from $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Cílový jazyk $TARGET_LANGUAGE_NUM$",
+    "message": "Target language $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,73 +39,73 @@
     }
   },
   "btnReset": {
-    "message": "Resetovat"
+    "message": "Reset"
   },
   "btnTranslate": {
-    "message": "Přeložit"
+    "message": "Translate"
   },
   "btnOptions": {
-    "message": "Možnosti"
+    "message": "Options"
   },
   "btnRestore": {
-    "message": "Ukázat originál"
+    "message": "Show original"
   },
   "btnTryAgain": {
-    "message": "Zkus to znovu"
+    "message": "Try again"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Otevřít v Překladači Google"
+    "message": "Open in google translator"
   },
   "btnDonate": {
-    "message": "Přispět"
+    "message": "Donate"
   },
   "btnNeverTranslate": {
-    "message": "Nikdy nepřekládat tento web"
+    "message": "Never translate this site"
   },
   "btnChangeLanguages": {
-    "message": "Změnit jazyky"
+    "message": "Change languages"
   },
   "btnMobileOriginal": {
-    "message": "Originál"
+    "message": "Original"
   },
   "btnMobileTranslated": {
-    "message": "Přeloženo"
+    "message": "Translated"
   },
   "btnMobileNeverTranslate": {
-    "message": "Nikdy nepřekládat tento web"
+    "message": "Never translate this site"
   },
   "btnMobileDonate": {
-    "message": "Přispět"
+    "message": "Donate"
   },
   "optionsNeverTranslate": {
-    "message": "Nikdy tyto stránky nepřekládat"
+    "message": "Never translate these sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "Vždy překládat tyto jazyky"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
-    "message": "Zobrazit mobilní vyskakovací okno"
+    "message": "Show the mobile popup"
   },
   "optionPopupAuto": {
-    "message": "Automaticky"
+    "message": "Automatically"
   },
   "optionPopupThreeFingers": {
-    "message": "Když se dotknu tří prstů na obrazovce"
+    "message": "When I touch three fingers on the screen"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Otevřeno v yandexovém překladu"
+    "message": "Open in yandex translate"
   },
   "lblOthers": {
-    "message": "Ostatní"
+    "message": "Others"
   },
   "btnMoreOptions": {
-    "message": "Více možností"
+    "message": "More options"
   },
   "lblPlsDonate": {
-    "message": "Pomozte vývojáři darem"
+    "message": "Help the developer with a donation"
   },
   "msgTranslateFor": {
-    "message": "Přeložit do $LANGUAGE_NAME$",
+    "message": "Translate to $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,148 +114,148 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "V místní nabídce se zobrazí možnost překladu stránky"
+    "message": "Show the option to translate the page in the context menu"
   },
   "msgYes": {
-    "message": "Ano"
+    "message": "Yes"
   },
   "msgNo": {
-    "message": "Ne"
+    "message": "No"
   },
   "lblUseNewAlgorithm": {
-    "message": "Použít nový překladový algoritmus?"
+    "message": "Use the new translation algorithm?"
   },
   "msgYesRecommended": {
-    "message": "Ano (doporučeno)"
+    "message": "Yes (recommended)"
   },
   "msgNoUseWidgets": {
-    "message": "Ne (používat widgety)"
+    "message": "No (use widgets)"
   },
   "optionsPageTitle": {
-    "message": "Přeložit webové stránky - Možnosti"
+    "message": "Translate Web Pages - Options"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Pouze po kliknutí na tlačítko \"Přeložit tuto stránku\""
+    "message": "Only when I click \"Translate this site\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Do tohoto seznamu jste nepřidali žádný úkol."
+    "message": "You have not added any sites to this list."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Do tohoto seznamu jste nepřidali žádný úkol."
+    "message": "You have not added any languages to this list."
   },
   "btnAlwaysTranslate": {
-    "message": "Vždy překládat tuto stránku"
+    "message": "Always translate this site"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Tyto stránky vždy překládejte"
+    "message": "Always translate these sites"
   },
   "msgDonateWithPaypal": {
-    "message": "Podpořit přes PayPal"
+    "message": "Donate with PayPal"
   },
   "lblDarkMode": {
-    "message": "Tmavý režim"
+    "message": "Dark Mode"
   },
   "lblShowReleaseNotes": {
-    "message": "Zobrazit poznámky k vydání při aktualizaci"
+    "message": "Show release notes when updating"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Zobrazit tlačítko pro překlad vybraného textu"
+    "message": "Show the button to translate the selected text"
   },
   "msgAutomatic": {
-    "message": "Automatický"
+    "message": "Automatic"
   },
   "msgTranslateSelectedText": {
-    "message": "Přeložit označený text"
+    "message": "Translate selected text"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "V místní nabídce se zobrazí možnost překladu stránky"
+    "message": "Show the option to translate the selected text in the context menu"
   },
   "lblNeverTranslateLangs": {
-    "message": "Tento jazyk nikdy nepřekládat"
+    "message": "Never translate these languages"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Tyto jazyky nikdy nepřekládat"
+    "message": "Never translate this language"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Zobrazit původní text při najetí"
+    "message": "Show original text when hovering"
   },
   "msgLanguages": {
-    "message": "Jazyky"
+    "message": "Languages"
   },
   "msgSites": {
-    "message": "Weby"
+    "message": "Sites"
   },
   "msgTranslations": {
-    "message": "Překlady"
+    "message": "Translations"
   },
   "msgStyle": {
-    "message": "Styl"
+    "message": "Style"
   },
   "msgHotkeys": {
-    "message": "Klávesové zkratky"
+    "message": "Hotkeys"
   },
   "lblMakeDonation": {
-    "message": "Přispět"
+    "message": "Make a donation"
   },
   "lblReleaseNotes": {
-    "message": "Poznámky k vydání"
+    "message": "Release Notes"
   },
   "lblReport": {
-    "message": "Nahlásit problém"
+    "message": "Report a problem"
   },
   "lblSettings": {
-    "message": "Nastavení"
+    "message": "Settings"
   },
   "lblAdd": {
-    "message": "Přidat"
+    "message": "Add"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Při umístění kurzoru zobrazit přeložený text"
+    "message": "Show translated text when hovering"
   },
   "lblKeyboardShortcuts": {
-    "message": "Klávesové zkratky"
+    "message": "Keyboard shortcuts"
   },
   "msgToTranslateSites": {
-    "message": "Přeložit web"
+    "message": "To translate the site"
   },
   "msgThanksForUseExtension": {
-    "message": "Děkujeme, že používáte toto rozšíření."
+    "message": "Thank you for using this extension."
   },
   "msgIWillBeGrateful": {
-    "message": "Budu vděčný, pokud můžete poskytnout dar."
+    "message": "I will be grateful if you can make a donation."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Tento jazyk vždy překládejte"
+    "message": "Always translate this language"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Když na těchto webech najedete myší, zobrazí se přeložený text"
+    "message": "Show translated text when hovering on these sites"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Když je web přeložen, udělejte vyskakovací ikonu modrou"
+    "message": "Make the pop-up icon blue when the site is translated"
   },
   "more": {
-    "message": "Více"
+    "message": "More"
   },
   "less": {
-    "message": "Méně"
+    "message": "Less"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Nezobrazovat, pokud je jazyk stránky cílovým jazykem"
+    "message": "Do not show if the page language is the target language"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Nezobrazovat, pokud je neznámý jazyk stránky"
+    "message": "Do not show if the page language is unknown"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Nezobrazovat, pokud je vybraný jazyk textu cílovým jazykem"
+    "message": "Do not show if the selected text language is the target language"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Nezobrazovat, pokud je vybraný jazyk textu neznámý"
+    "message": "Do not show if the selected text language is unknown"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Zobrazit překlad, když umístíte ukazatel myši na tento web"
+    "message": "Show translation when hovering over this site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Zobrazit překlad při přejetí myší přes webové stránky v $LANGUAGE_NAME$",
+    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,112 +264,112 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Zobrazovat přeložený text, když najedete myší nad weby v těchto jazycích"
+    "message": "Show translated text when hovering over sites with these languages"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Nepřeložit vybraný text"
+    "message": "Do not translate selected text"
   },
   "btnListen": {
-    "message": "Poslouchat"
+    "message": "Listen"
   },
   "btnStopListening": {
-    "message": "Přestaň poslouchat"
+    "message": "Stop listening"
   },
   "btnApply": {
-    "message": "Aplikovat"
+    "message": "Apply"
   },
   "swapTranslationService": {
-    "message": "Přepínání mezi překladatelskými službami"
+    "message": "Switch between translation services"
   },
   "swapPopup": {
-    "message": "Přepínání mezi starým a novým rozhraním"
+    "message": "Switch between the old interface and the new one"
   },
   "helpSwapInterface": {
-    "message": "Kliknutím na toto tlačítko přepnete mezi starým a novým rozhraním."
+    "message": "Click this button to switch between the old and the new interface."
   },
   "lblTranslationService": {
-    "message": "Překladatelská služba"
+    "message": "Translation service"
   },
   "msgUseOldPopupInterface": {
-    "message": "Použijte staré vyskakovací rozhraní"
+    "message": "Use the old popup interface"
   },
   "lblTranslateInterface": {
-    "message": "Přeložte rozhraní"
+    "message": "Translate the interface"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Zobrazit tlačítko v adresním řádku"
+    "message": "Show button in the address bar"
   },
   "lblPageTranslationService": {
-    "message": "Služba na překlad stránek"
+    "message": "Page translation service"
   },
   "lblTextTranslationService": {
-    "message": "Služba na překlad textu"
+    "message": "Text Translation Service"
   },
   "msgStorage": {
-    "message": "Úložiště"
+    "message": "Storage"
   },
   "lblTranslationCache": {
-    "message": "Vyrovnávací paměť překladače"
+    "message": "Translation cache"
   },
   "lblStorageUsed": {
-    "message": "Využití úložiště:"
+    "message": "Storage used:"
   },
   "deleteTranslationCache": {
-    "message": "Vymazat vyrovnávací paměť"
+    "message": "Delete translation cache"
   },
   "lblPersonalSettings": {
-    "message": "Osobní nastavení"
+    "message": "Personal settings"
   },
   "backupToFile": {
-    "message": "Zálohovat do souboru"
+    "message": "Backup to file"
   },
   "restoreFromFile": {
-    "message": "Obnovit ze souboru"
+    "message": "Restore from file"
   },
   "resetToDefault": {
-    "message": "Obnovit výchozí nastavení"
+    "message": "Restore default settings"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Chcete vymazat vyrovnávací paměť překladače?"
+    "message": "Do you want to delete the translation cache?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Chcete přepsat všechna existující nastavení pomocí záložních dat?"
+    "message": "Do you want to overwrite all existing settings using the backup data?"
   },
   "fileIsCorrupted": {
-    "message": "Soubor se zdá být poškozen"
+    "message": "The file appears to be corrupted"
   },
   "doYouWantRestoreSettings": {
-    "message": "Chcete obnovit rozšíření do výchozího nastavení?"
+    "message": "Do you want to restore the extension to its default settings?"
   },
   "lblTtsSpeed": {
-    "message": "Rychlost audia textu na řeč"
+    "message": "Text-to-speech audio speed"
   },
   "lblEnableDeepL": {
-    "message": "Povolit DeepL jako textovou překladatelskou službu"
+    "message": "Enable DeepL as a text translation service"
   },
   "enterShortcut": {
-    "message": "Stiskněte zkratku"
+    "message": "Type a shortcut"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Zahrnout Ctrl nebo Alt"
+    "message": "Include Ctrl or Alt"
   },
   "hotkeyError_letter": {
-    "message": "Zadejte písmeno"
+    "message": "Type a letter"
   },
   "hotkeyError_invalid": {
-    "message": "Neplatná kombinace"
+    "message": "Invalid combination"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Přepínání mezi přeloženou a původní stránkou"
+    "message": "Switch between the translated and the original page"
   },
   "lblRestorePageToOriginal": {
-    "message": "Obnovit stránku na původní"
+    "message": "Restore page to original"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Přeložit stránku do cílového jazyka"
+    "message": "Translate the page to the target language"
   },
   "lblTranslateTag_pre": {
-    "message": "Povolit překlad pro tag $HTML_TAG_NAME$",
+    "message": "Enable translation for the tag $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Netřídit výsledky překladu Google"
+    "message": "Do not sort the google translate results"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Přeložit dynamicky vytvořený obsah"
+    "message": "Translate dynamically created content"
   },
   "calculatestorage": {
-    "message": "Spočítat"
+    "message": "Calculate"
   },
   "donatewithpaypal": {
-    "message": "Podpořit přes PayPal"
+    "message": "Donate With PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automaticky přeložit při kliknutí na odkaz, který vás přesune na stejnou doménu jako aktuální web"
+    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
   },
   "openNativeShortcutManager": {
-    "message": "Otevřít nativního správce zkratek"
+    "message": "Open native shortcut key manager"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Speciální klávesové zkratky"
+    "message": "Special keyboard shortcuts"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Přeložit vybraný text dvojím stisknutím $SHORTCUT_KEY$",
+    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Přeložit text přes kurzor myši po dvojím stisknutí $SHORTCUT_KEY$",
+    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Stránku přeložíte jedním kliknutím na tlačítko v adresním řádku. (Chcete-li zobrazit vyskakovací okno, klikněte pravým tlačítkem myši)"
+    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
   },
   "btnShowPopup": {
-    "message": "Zobrazit vyskakovací okno"
+    "message": "Show popup"
   },
   "msgToTranslateThisDocument": {
-    "message": "Chcete-li přeložit tento dokument $DOC_TYPE$, je nutné jej převést na HTML",
+    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Vyberte službu pro provedení této konverze"
+    "message": "Select a service to do this conversion"
   },
   "msgDownloadingDocument": {
-    "message": "Stahuji dokument..."
+    "message": "Downloading the document..."
   },
   "msgSendDocument": {
-    "message": "Odeslat dokument"
+    "message": "Send document"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Chyba při stahování dokumentu"
+    "message": "Error downloading document"
   },
   "msgFileLargerThan": {
-    "message": "Tato služba nepodporuje soubory větší než $FILE_SIZE$",
+    "message": "This service does not support files larger than $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,22 +450,22 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF do HTML"
+    "message": "PDF to HTML"
   },
   "btncopy": {
-    "message": "Kopírovat"
+    "message": "Copy"
   },
   "msgRecents": {
-    "message": "Nedávné"
+    "message": "Recents"
   },
   "msgAll": {
-    "message": "Všechno"
+    "message": "All"
   },
   "msgPleaseWait": {
-    "message": "Prosím, čekejte..."
+    "message": "Please wait..."
   },
   "msgUnknownLanguage": {
-    "message": "Neznámý"
+    "message": "Unknown"
   },
   "btnReplace": {
     "message": "Replace"
