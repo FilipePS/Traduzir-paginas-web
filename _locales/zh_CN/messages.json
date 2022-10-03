@@ -468,10 +468,10 @@
     "message": "未知"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "替换"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "连按两下 $SHORTCUT_KEY$ 键替换选中文本为译文",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,6 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "自动替换选中文本为译文"
   }
 }

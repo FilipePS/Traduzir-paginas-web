@@ -479,6 +479,6 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "選択したテキストを翻訳済みテキストに即座に置き換える"
   }
 }

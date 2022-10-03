@@ -468,10 +468,10 @@
     "message": "Bilinmeyen"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Değiştir"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Seçili metni $SHORTCUT_KEY$ tuşuna iki kez basıldığında çevrilmiş metinle değiştirin",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,6 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Seçili metni anında çevrilmiş metinle değiştirin"
   }
 }

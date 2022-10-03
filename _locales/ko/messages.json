@@ -465,13 +465,13 @@
     "message": "기다려 주세요..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "알 수 없음"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "교체"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ 단축키를 두 번 누르면 선택한 텍스트를 번역된 텍스트로 즉시 교체",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,6 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "선택한 텍스트를 번역된 텍스트로 즉시 교체"
   }
 }
