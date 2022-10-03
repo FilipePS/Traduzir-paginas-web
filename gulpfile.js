@@ -2,6 +2,7 @@ const gulp = require("gulp");
 const zip = require("gulp-zip");
 const fs = require("fs");
 const babel = require("gulp-babel");
+const sourcemaps = require("gulp-sourcemaps");
 
 gulp.task("clean", (cb) => {
   fs.rmSync("dist", { recursive: true, force: true });
@@ -15,11 +16,13 @@ gulp.task("firefox-copy", () => {
 gulp.task("firefox-babel", () => {
   return gulp
     .src(["dist/firefox/background/*.js"])
+    .pipe(sourcemaps.init())
     .pipe(
       babel({
         presets: ["@babel/preset-env"],
       })
     )
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest("dist/firefox/background"));
 });
 
@@ -49,12 +52,14 @@ gulp.task("chrome-rename", (cb) => {
 gulp.task("chrome-babel", () => {
   return gulp
     .src(["dist/chrome/background/*.js"])
+    .pipe(sourcemaps.init())
     .pipe(
       babel({
         presets: ["@babel/preset-env"],
       })
     )
-    .pipe(gulp.dest("dist/firefox/background"));
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest("dist/chrome/background"));
 });
 
 gulp.task("chrome-zip", () => {
