@@ -153,8 +153,8 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		})
 		
 		shadowRoot.innerHTML = `
-        <div id="eButtonTransSelText"></div>
-		<div id="eDivResult">
+        <div id="eButtonTransSelText" style="display: none"></div>
+		<div id="eDivResult" style="display: none">
 			<div id="origTextContainer">
 				<div>
 					<div id="eOrigText" contentEditable="true" spellcheck="false" dir="auto"></div>
