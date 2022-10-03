@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "ترجمه صفحات وب"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "صفحه‌ی خود را بی‌درنگ با استفاده از Google یا Yandex ترجمه کنید."
+    "message": "Translate your page in real time using Google or Yandex."
   },
   "pageActionTitle": {
-    "message": "ترجمه این صفحه"
+    "message": "Translate this page"
   },
   "lblTranslate": {
-    "message": "این صفحه ترجمه شود ؟"
+    "message": "Translate this page?"
   },
   "lblTranslating": {
-    "message": "در حال ترجمه ..."
+    "message": "Translating ..."
   },
   "lblTranslated": {
-    "message": "ترجمه شده"
+    "message": "Translated"
   },
   "lblError": {
-    "message": "این صفحه قابل ترجمه نیست"
+    "message": "This page could not be translated"
   },
   "lblAlwaysTranslate": {
-    "message": "همیشه از $LANGUAGE_NAME$ ترجمه شود",
+    "message": "Always translate from $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "نام زبان مقصد $TARGET_LANGUAGE_NUM$",
+    "message": "Target language $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,73 +39,73 @@
     }
   },
   "btnReset": {
-    "message": "راه اندازی مجدد"
+    "message": "Reset"
   },
   "btnTranslate": {
-    "message": "ترجمه"
+    "message": "Translate"
   },
   "btnOptions": {
-    "message": "گزينه ها"
+    "message": "Options"
   },
   "btnRestore": {
-    "message": "نمایش متن اصلی"
+    "message": "Show original"
   },
   "btnTryAgain": {
-    "message": "سعی مجدد"
+    "message": "Try again"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "بازکردن در مترجم گوگل"
+    "message": "Open in google translator"
   },
   "btnDonate": {
-    "message": "حمایت مالی"
+    "message": "Donate"
   },
   "btnNeverTranslate": {
-    "message": "هرگز این سایت ترجمه نشود"
+    "message": "Never translate this site"
   },
   "btnChangeLanguages": {
-    "message": "تغییر زبان ها"
+    "message": "Change languages"
   },
   "btnMobileOriginal": {
-    "message": "اصلی"
+    "message": "Original"
   },
   "btnMobileTranslated": {
-    "message": "ترجمه شده"
+    "message": "Translated"
   },
   "btnMobileNeverTranslate": {
-    "message": "هرگز این سایت ترجمه نشود"
+    "message": "Never translate this site"
   },
   "btnMobileDonate": {
-    "message": "حمایت مالی"
+    "message": "Donate"
   },
   "optionsNeverTranslate": {
-    "message": "هرگز این سایت ها ترجمه نشود"
+    "message": "Never translate these sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "همیشه این زبان ها ترجمه شود"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
-    "message": "نمایش پنجره‌ی کوچک اعلان دهنده"
+    "message": "Show the mobile popup"
   },
   "optionPopupAuto": {
-    "message": "بطور خودکار"
+    "message": "Automatically"
   },
   "optionPopupThreeFingers": {
-    "message": "وقتی سه انگشت را روی صفحه لمس می کنم"
+    "message": "When I touch three fingers on the screen"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "باز کردن در مترجم یاندکس"
+    "message": "Open in yandex translate"
   },
   "lblOthers": {
-    "message": "سایر موارد"
+    "message": "Others"
   },
   "btnMoreOptions": {
-    "message": "گزینه‌های بیشتر"
+    "message": "More options"
   },
   "lblPlsDonate": {
-    "message": "کمک مالی به برنامه نویس"
+    "message": "Help the developer with a donation"
   },
   "msgTranslateFor": {
-    "message": "ترجمه به زبان $LANGUAGE_NAME$",
+    "message": "Translate to $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,148 +114,148 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "نمایش گزینه‌ی ترجمه صفحه در منوی راست کلیک"
+    "message": "Show the option to translate the page in the context menu"
   },
   "msgYes": {
-    "message": "بله"
+    "message": "Yes"
   },
   "msgNo": {
-    "message": "خیر"
+    "message": "No"
   },
   "lblUseNewAlgorithm": {
-    "message": "از الگوریتم ترجمه جدید استفاده می کنید ؟"
+    "message": "Use the new translation algorithm?"
   },
   "msgYesRecommended": {
-    "message": "بله (پیشنهاد شده)"
+    "message": "Yes (recommended)"
   },
   "msgNoUseWidgets": {
-    "message": "خیر (استفاده از ویجت ها)"
+    "message": "No (use widgets)"
   },
   "optionsPageTitle": {
-    "message": "ترجمه صفحات وب - گزینه ها"
+    "message": "Translate Web Pages - Options"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "فقط وقتی روی \"ترجمه کردن این سایت\" کلیک می کنم"
+    "message": "Only when I click \"Translate this site\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "شما هیچ سایتی را به این فهرست اضافه نکرده اید."
+    "message": "You have not added any sites to this list."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "شما هیچ زبانی را به این فهرست اضافه نکرده اید."
+    "message": "You have not added any languages to this list."
   },
   "btnAlwaysTranslate": {
-    "message": "این سایت را همیشه ترجمه کن"
+    "message": "Always translate this site"
   },
   "lblAlwaysTranslateSites": {
-    "message": "این سایت ها را همیشه ترجمه کن"
+    "message": "Always translate these sites"
   },
   "msgDonateWithPaypal": {
-    "message": "کمک مالی با پی پال (حساب خارجی)"
+    "message": "Donate with PayPal"
   },
   "lblDarkMode": {
-    "message": "حالت تاریک"
+    "message": "Dark Mode"
   },
   "lblShowReleaseNotes": {
-    "message": "نمایش تغییرات نسخه های منتشر شده ، هنگام به روز رسانی"
+    "message": "Show release notes when updating"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "نمایش دکمه‌ ای جهت ترجمه‌ متن انتخاب شده"
+    "message": "Show the button to translate the selected text"
   },
   "msgAutomatic": {
-    "message": "خودکار"
+    "message": "Automatic"
   },
   "msgTranslateSelectedText": {
-    "message": "ترجمه‌ی متن انتخاب شده"
+    "message": "Translate selected text"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "نمایش گزینه‌ی ترجمه‌ی متن انتخاب شده در منوی زمینه"
+    "message": "Show the option to translate the selected text in the context menu"
   },
   "lblNeverTranslateLangs": {
-    "message": "هرگز این زبان ها را ترجمه نکن"
+    "message": "Never translate these languages"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "هرگز این زبان را ترجمه نکن"
+    "message": "Never translate this language"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "نمایش متن اصلی هنگام نگه داشتن ماوس"
+    "message": "Show original text when hovering"
   },
   "msgLanguages": {
-    "message": "زبان ها"
+    "message": "Languages"
   },
   "msgSites": {
-    "message": "سایت ها"
+    "message": "Sites"
   },
   "msgTranslations": {
-    "message": "ترجمه ها"
+    "message": "Translations"
   },
   "msgStyle": {
-    "message": "سبک"
+    "message": "Style"
   },
   "msgHotkeys": {
-    "message": "کلیدهای میانبر"
+    "message": "Hotkeys"
   },
   "lblMakeDonation": {
-    "message": "کمک مالی کنید"
+    "message": "Make a donation"
   },
   "lblReleaseNotes": {
-    "message": "یادداشت های انتشار"
+    "message": "Release Notes"
   },
   "lblReport": {
-    "message": "یک مشکل را گزارش کنید"
+    "message": "Report a problem"
   },
   "lblSettings": {
-    "message": "تنظیمات"
+    "message": "Settings"
   },
   "lblAdd": {
-    "message": "افزودن"
+    "message": "Add"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "نمایش متن ترجمه شده هنگام نگه داشتن ماوس"
+    "message": "Show translated text when hovering"
   },
   "lblKeyboardShortcuts": {
-    "message": "کلیدهای میانبر"
+    "message": "Keyboard shortcuts"
   },
   "msgToTranslateSites": {
-    "message": "برای ترجمه سایت"
+    "message": "To translate the site"
   },
   "msgThanksForUseExtension": {
-    "message": "از شما برای استفاده از این افزونه متشکریم."
+    "message": "Thank you for using this extension."
   },
   "msgIWillBeGrateful": {
-    "message": "اگر بتوانید کمک مالی بکنید سپاسگزار خواهم بود."
+    "message": "I will be grateful if you can make a donation."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "همیشه این زبان را ترجمه کن"
+    "message": "Always translate this language"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "نمایش متن ترجمه‌شده در این سایت‌ها هنگام نگه‌داشتن ماوس"
+    "message": "Show translated text when hovering on these sites"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "هنگام ترجمه سایت، نماد پاپ آپ را آبی کن"
+    "message": "Make the pop-up icon blue when the site is translated"
   },
   "more": {
-    "message": "بیشتر"
+    "message": "More"
   },
   "less": {
-    "message": "کمتر"
+    "message": "Less"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "اگر زبان صفحه، زبان مقصد است، نشان داده نشود"
+    "message": "Do not show if the page language is the target language"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "اگر زبان صفحه ناشناخته است نشان داده نشود"
+    "message": "Do not show if the page language is unknown"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "اگر زبان متن انتخاب شده همان زبان مقصد است، نشان داده نشود"
+    "message": "Do not show if the selected text language is the target language"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "اگر زبان متن انتخاب شده ناشناخته است نشان داده نشود"
+    "message": "Do not show if the selected text language is unknown"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "نمایش ترجمه هنگام نگه داشتن ماوس روی این سایت"
+    "message": "Show translation when hovering over this site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "نمایش ترجمه هنگام قرار دادن ماوس روی وب‌سایت‌ها به زبان $LANGUAGE_NAME$",
+    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,112 +264,112 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "نمایش متن ترجمه شده هنگامی که ماوس را روی سایت هایی با این زبان ها قرار می دهید"
+    "message": "Show translated text when hovering over sites with these languages"
   },
   "msgNoTranslateSelectedText": {
-    "message": "متن انتخاب شده را ترجمه نکن"
+    "message": "Do not translate selected text"
   },
   "btnListen": {
-    "message": "شنیدن"
+    "message": "Listen"
   },
   "btnStopListening": {
-    "message": "توقف شنیدن"
+    "message": "Stop listening"
   },
   "btnApply": {
-    "message": "اعمال"
+    "message": "Apply"
   },
   "swapTranslationService": {
-    "message": "جابه جایی بین سرویس ترجمه ها"
+    "message": "Switch between translation services"
   },
   "swapPopup": {
-    "message": "بین رابط قدیمی و جدید سوئیچ کنید"
+    "message": "Switch between the old interface and the new one"
   },
   "helpSwapInterface": {
-    "message": "برای جابجایی بین رابط قدیمی و جدید، روی این دکمه کلیک کنید."
+    "message": "Click this button to switch between the old and the new interface."
   },
   "lblTranslationService": {
-    "message": "سرویس ترجمه"
+    "message": "Translation service"
   },
   "msgUseOldPopupInterface": {
-    "message": "استفاده از رابط قدیمی پنجره‌ی ظاهر شونده"
+    "message": "Use the old popup interface"
   },
   "lblTranslateInterface": {
-    "message": "رابط را ترجمه کنید"
+    "message": "Translate the interface"
   },
   "lblButtonInTheAddressBar": {
-    "message": "نمایش دکمه در نوار آدرس"
+    "message": "Show button in the address bar"
   },
   "lblPageTranslationService": {
-    "message": "خدمات ترجمه‌ی صفحه"
+    "message": "Page translation service"
   },
   "lblTextTranslationService": {
-    "message": "سرویس ترجمه•ی متن"
+    "message": "Text Translation Service"
   },
   "msgStorage": {
-    "message": "مخزن"
+    "message": "Storage"
   },
   "lblTranslationCache": {
-    "message": "حافظه‌ی پنهان ترجمه"
+    "message": "Translation cache"
   },
   "lblStorageUsed": {
-    "message": "فضای استفاده شده:"
+    "message": "Storage used:"
   },
   "deleteTranslationCache": {
-    "message": "حذف حافظه‌ی پنهان ترجمه"
+    "message": "Delete translation cache"
   },
   "lblPersonalSettings": {
-    "message": "تنظیمات شخصی"
+    "message": "Personal settings"
   },
   "backupToFile": {
-    "message": "ذخیره‌ی پشتیبان در فایل"
+    "message": "Backup to file"
   },
   "restoreFromFile": {
-    "message": "بازیابی از فایل"
+    "message": "Restore from file"
   },
   "resetToDefault": {
-    "message": "بازگرداندن تنظیمات پیش فرض"
+    "message": "Restore default settings"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "آیا می خواهید کش ترجمه را حذف کنید؟"
+    "message": "Do you want to delete the translation cache?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "آیا می خواهید همه تنظیمات موجود را با استفاده از داده های پشتیبان بازنویسی کنید؟"
+    "message": "Do you want to overwrite all existing settings using the backup data?"
   },
   "fileIsCorrupted": {
-    "message": "به نظر می رسد فایل خراب است"
+    "message": "The file appears to be corrupted"
   },
   "doYouWantRestoreSettings": {
-    "message": "آیا می خواهید افزونه را به تنظیمات پیش فرض خود بازگردانید؟"
+    "message": "Do you want to restore the extension to its default settings?"
   },
   "lblTtsSpeed": {
-    "message": "سرعت تبدیل متن به گفتار"
+    "message": "Text-to-speech audio speed"
   },
   "lblEnableDeepL": {
-    "message": "فعال کردن DeepL به عنوان سرویس ترجمه متن "
+    "message": "Enable DeepL as a text translation service"
   },
   "enterShortcut": {
-    "message": "یک میانبر تایپ کنید"
+    "message": "Type a shortcut"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "شامل Ctrl یا Alt"
+    "message": "Include Ctrl or Alt"
   },
   "hotkeyError_letter": {
-    "message": "یک حرف تایپ کنید"
+    "message": "Type a letter"
   },
   "hotkeyError_invalid": {
-    "message": "ترکیب نامعتبر"
+    "message": "Invalid combination"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "جابجایی بین صفحه ترجمه شده و اصلی"
+    "message": "Switch between the translated and the original page"
   },
   "lblRestorePageToOriginal": {
-    "message": "بازگرداندن صفحه به حالت اصلی"
+    "message": "Restore page to original"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "ترجمه‌ی صفحه به زبان مقصد"
+    "message": "Translate the page to the target language"
   },
   "lblTranslateTag_pre": {
-    "message": "فعال کردن ترجمه برای برچسب $HTML_TAG_NAME$",
+    "message": "Enable translation for the tag $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "نتایج گوگل ترنسلیت را مرتب نکن"
+    "message": "Do not sort the google translate results"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "محتوای ایجاد شده به صورت پویا را ترجمه کن"
+    "message": "Translate dynamically created content"
   },
   "calculatestorage": {
-    "message": "محاسبه"
+    "message": "Calculate"
   },
   "donatewithpaypal": {
-    "message": "کمک مالی با پی پال"
+    "message": "Donate With PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "با کلیک بر روی پیوندی که شما را به همان دامنه سایت فعلی می برد، به صورت خودکار ترجمه کنید"
+    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
   },
   "openNativeShortcutManager": {
-    "message": "مدیر کلید میانبر بومی را باز کنید"
+    "message": "Open native shortcut key manager"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "میانبرهای ویژه صفحه کلید"
+    "message": "Special keyboard shortcuts"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "با دوبار فشار دادن $SHORTCUT_KEY$، متن انتخابی را ترجمه کنید",
+    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "با دو بار فشار دادن $SHORTCUT_KEY$، متن را روی نشانگر ماوس ترجمه کنید",
+    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "با یک بار کلیک کردن روی دکمه در نوار آدرس، صفحه را ترجمه کنید.  (برای دیدن پاپ آپ کلیک راست کنید)"
+    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
   },
   "btnShowPopup": {
-    "message": "نمایش پنجره بازشو"
+    "message": "Show popup"
   },
   "msgToTranslateThisDocument": {
-    "message": "برای ترجمه این سند $DOC_TYPE$ لازم است آن را به اچ•تی•ام•ال تبدیل کنید",
+    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "سرویسی را برای انجام این تبدیل انتخاب کنید"
+    "message": "Select a service to do this conversion"
   },
   "msgDownloadingDocument": {
-    "message": "در حال بارگیری سند..."
+    "message": "Downloading the document..."
   },
   "msgSendDocument": {
-    "message": "ارسال سند"
+    "message": "Send document"
   },
   "msgErrorDownloadingDocument": {
-    "message": "خطا در بارگیری سند"
+    "message": "Error downloading document"
   },
   "msgFileLargerThan": {
-    "message": "این سرویس از فایل های بزرگتر از $FILE_SIZE$ پشتیبانی نمی کند",
+    "message": "This service does not support files larger than $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,22 +450,22 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "تبدیل پی‌دی‌اف به اچ‌تی‌ام‌ال"
+    "message": "PDF to HTML"
   },
   "btncopy": {
-    "message": "کپی (رونوشت)"
+    "message": "Copy"
   },
   "msgRecents": {
-    "message": "اخیراً"
+    "message": "Recents"
   },
   "msgAll": {
-    "message": "همه"
+    "message": "All"
   },
   "msgPleaseWait": {
-    "message": "منتظر باشید"
+    "message": "Please wait..."
   },
   "msgUnknownLanguage": {
-    "message": "ناشناس"
+    "message": "Unknown"
   },
   "btnReplace": {
     "message": "Replace"
