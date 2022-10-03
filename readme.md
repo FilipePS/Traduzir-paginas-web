@@ -1,5 +1,5 @@
 
-# <img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/icons/icon-128.png" height="50"> Translate Web Pages
+# <img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/src/icons/icon-128.png" height="50"> Translate Web Pages
 
 Translate your page in real time using Google or Yandex.
 
@@ -36,7 +36,7 @@ Translate your page in real time using Google or Yandex.
 
 To make a donation use [Patreon](https://www.patreon.com/filipeps).
 
-[<img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/icons/patreon.png" alt="Patreon" height="50">](https://www.patreon.com/filipeps)
+[<img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/src/icons/patreon.png" alt="Patreon" height="50">](https://www.patreon.com/filipeps)
 
 ## FAQ
 
