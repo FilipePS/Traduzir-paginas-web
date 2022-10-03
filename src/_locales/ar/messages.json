@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "ترجمة صفحات الويب"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "ترجم صفحتك في الوقت الفعلي باستخدام Google أو Yandex."
+    "message": "Translate your page in real time using Google or Yandex."
   },
   "pageActionTitle": {
-    "message": "ترجم هذه الصفحة"
+    "message": "Translate this page"
   },
   "lblTranslate": {
-    "message": "ترجم هذه الصفحة؟"
+    "message": "Translate this page?"
   },
   "lblTranslating": {
-    "message": "جار التَّرْجَمَةً ..."
+    "message": "Translating ..."
   },
   "lblTranslated": {
-    "message": "تمت الترجمة"
+    "message": "Translated"
   },
   "lblError": {
-    "message": "هذه الصفحة لا يمكن ترجمتها"
+    "message": "This page could not be translated"
   },
   "lblAlwaysTranslate": {
-    "message": "ترجم دائمًا من $LANGUAGE_NAME$",
+    "message": "Always translate from $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "لغة الهدف $TARGET_LANGUAGE_NUM$",
+    "message": "Target language $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,73 +39,73 @@
     }
   },
   "btnReset": {
-    "message": "إعادة تعيين"
+    "message": "Reset"
   },
   "btnTranslate": {
-    "message": "ترجم"
+    "message": "Translate"
   },
   "btnOptions": {
-    "message": "خيارات"
+    "message": "Options"
   },
   "btnRestore": {
-    "message": "إظهار النص الأصلي"
+    "message": "Show original"
   },
   "btnTryAgain": {
-    "message": "حاول مجددًا"
+    "message": "Try again"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "فتح في مترجم جوجل"
+    "message": "Open in google translator"
   },
   "btnDonate": {
-    "message": "تبرع"
+    "message": "Donate"
   },
   "btnNeverTranslate": {
-    "message": "لا تترجم هذا الموقع ابدًا"
+    "message": "Never translate this site"
   },
   "btnChangeLanguages": {
-    "message": "تغيير اللغات"
+    "message": "Change languages"
   },
   "btnMobileOriginal": {
-    "message": "الأصلي"
+    "message": "Original"
   },
   "btnMobileTranslated": {
-    "message": "تمت الترجمة"
+    "message": "Translated"
   },
   "btnMobileNeverTranslate": {
-    "message": "لا تترجم هذا الموقع ابدًا"
+    "message": "Never translate this site"
   },
   "btnMobileDonate": {
-    "message": "تبرع"
+    "message": "Donate"
   },
   "optionsNeverTranslate": {
-    "message": "لا تترجم هذه المواقع أبدًا"
+    "message": "Never translate these sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "دائما ترجمة هذه اللغة"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
-    "message": "إظهار النافذة المنبثقة للجوال"
+    "message": "Show the mobile popup"
   },
   "optionPopupAuto": {
-    "message": "تلقائيًا"
+    "message": "Automatically"
   },
   "optionPopupThreeFingers": {
-    "message": "عندما ألمس الشاشة بثلاث أصابع"
+    "message": "When I touch three fingers on the screen"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "فتح في ترجمة yandex"
+    "message": "Open in yandex translate"
   },
   "lblOthers": {
-    "message": "أخرى"
+    "message": "Others"
   },
   "btnMoreOptions": {
-    "message": "المزيد من الخيارات"
+    "message": "More options"
   },
   "lblPlsDonate": {
-    "message": "مساعدة المطور بالتبرع"
+    "message": "Help the developer with a donation"
   },
   "msgTranslateFor": {
-    "message": "ترجم إلى $LANGUAGE_NAME$",
+    "message": "Translate to $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,148 +114,148 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "اعرض خيار ترجمة الصفحة في قائمة السياق"
+    "message": "Show the option to translate the page in the context menu"
   },
   "msgYes": {
-    "message": "نعم"
+    "message": "Yes"
   },
   "msgNo": {
-    "message": "لا"
+    "message": "No"
   },
   "lblUseNewAlgorithm": {
-    "message": "استخدم خوارزمية الترجمة الجديدة؟"
+    "message": "Use the new translation algorithm?"
   },
   "msgYesRecommended": {
-    "message": "نعم (موصى به)"
+    "message": "Yes (recommended)"
   },
   "msgNoUseWidgets": {
-    "message": "لا (استخدم widgets)"
+    "message": "No (use widgets)"
   },
   "optionsPageTitle": {
-    "message": "ترجمة صفحات الويب - خيارات"
+    "message": "Translate Web Pages - Options"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "فقط عندما أنقر على \"ترجم هذا الموقع\""
+    "message": "Only when I click \"Translate this site\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "لم تقم بإضافة أي مواقع إلى هذه القائمة."
+    "message": "You have not added any sites to this list."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "لم تقم بإضافة أي لغات إلى هذه القائمة."
+    "message": "You have not added any languages to this list."
   },
   "btnAlwaysTranslate": {
-    "message": "ترجمة هذا الموقع دائمًا"
+    "message": "Always translate this site"
   },
   "lblAlwaysTranslateSites": {
-    "message": "ترجمة هذه المواقع دائمًا"
+    "message": "Always translate these sites"
   },
   "msgDonateWithPaypal": {
-    "message": "تبرع بواسطة PayPal"
+    "message": "Donate with PayPal"
   },
   "lblDarkMode": {
-    "message": "الوضع المظلم"
+    "message": "Dark Mode"
   },
   "lblShowReleaseNotes": {
-    "message": "إظهار ملاحظات الإصدار عند التحديث"
+    "message": "Show release notes when updating"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "أظهر الزر لترجمة النص المحدد"
+    "message": "Show the button to translate the selected text"
   },
   "msgAutomatic": {
-    "message": "تلقائي"
+    "message": "Automatic"
   },
   "msgTranslateSelectedText": {
-    "message": "ترجمة النص المحدد"
+    "message": "Translate selected text"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "اعرض خيار ترجمة الصفحة في قائمة السياق"
+    "message": "Show the option to translate the selected text in the context menu"
   },
   "lblNeverTranslateLangs": {
-    "message": "لا تترجم هذه المواقع أبدًا"
+    "message": "Never translate these languages"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "لا تترجم هذه المواقع أبدًا"
+    "message": "Never translate this language"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "إظهار النص الأصلي عند تحويله"
+    "message": "Show original text when hovering"
   },
   "msgLanguages": {
-    "message": "اللغات"
+    "message": "Languages"
   },
   "msgSites": {
-    "message": "المواقع"
+    "message": "Sites"
   },
   "msgTranslations": {
-    "message": "الترجمات"
+    "message": "Translations"
   },
   "msgStyle": {
-    "message": "أسلوب"
+    "message": "Style"
   },
   "msgHotkeys": {
-    "message": "مفاتيح التشغيل السريع"
+    "message": "Hotkeys"
   },
   "lblMakeDonation": {
-    "message": "التبرع"
+    "message": "Make a donation"
   },
   "lblReleaseNotes": {
-    "message": "ملاحظات الإصدار"
+    "message": "Release Notes"
   },
   "lblReport": {
-    "message": "الإبلاغ عن مشكلة"
+    "message": "Report a problem"
   },
   "lblSettings": {
-    "message": "إعدادات"
+    "message": "Settings"
   },
   "lblAdd": {
-    "message": "يضيف"
+    "message": "Add"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "إظهار النص المترجم عند التمرير"
+    "message": "Show translated text when hovering"
   },
   "lblKeyboardShortcuts": {
-    "message": "اختصارات لوحة المفاتيح"
+    "message": "Keyboard shortcuts"
   },
   "msgToTranslateSites": {
-    "message": "لترجمة الموقع"
+    "message": "To translate the site"
   },
   "msgThanksForUseExtension": {
-    "message": "شكرا لك على استخدام هذا الامتداد."
+    "message": "Thank you for using this extension."
   },
   "msgIWillBeGrateful": {
-    "message": "سأكون ممتنًا إذا أمكنك التبرع."
+    "message": "I will be grateful if you can make a donation."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "دائما ترجمة هذه اللغة"
+    "message": "Always translate this language"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "إظهار النص المترجم عند التمرير فوق هذه المواقع"
+    "message": "Show translated text when hovering on these sites"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "اجعل الأيقونة المنبثقة زرقاء عند ترجمة الموقع"
+    "message": "Make the pop-up icon blue when the site is translated"
   },
   "more": {
-    "message": "أكثر"
+    "message": "More"
   },
   "less": {
-    "message": "أقل"
+    "message": "Less"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "لا تعرض ما إذا كانت لغة الصفحة هي اللغة الهدف"
+    "message": "Do not show if the page language is the target language"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "لا تظهر إذا كانت لغة الصفحة غير معروفة"
+    "message": "Do not show if the page language is unknown"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "لا تظهر إذا كانت لغة النص المحددة هي اللغة الهدف"
+    "message": "Do not show if the selected text language is the target language"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "لا تظهر إذا كانت لغة النص المحددة غير معروفة"
+    "message": "Do not show if the selected text language is unknown"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "إظهار الترجمة عند التمرير فوق هذا الموقع"
+    "message": "Show translation when hovering over this site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "إظهار الترجمة عند التمرير فوق المواقع باللغة $LANGUAGE_NAME$",
+    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,112 +264,112 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "إظهار النص المترجم عند التمرير فوق مواقع بهذه اللغات"
+    "message": "Show translated text when hovering over sites with these languages"
   },
   "msgNoTranslateSelectedText": {
-    "message": "لا تترجم النص المحدد"
+    "message": "Do not translate selected text"
   },
   "btnListen": {
-    "message": "استمع"
+    "message": "Listen"
   },
   "btnStopListening": {
-    "message": "توقف عن الاستماع"
+    "message": "Stop listening"
   },
   "btnApply": {
-    "message": "يتقدم"
+    "message": "Apply"
   },
   "swapTranslationService": {
-    "message": "التبديل بين خدمات الترجمة"
+    "message": "Switch between translation services"
   },
   "swapPopup": {
-    "message": "التبديل بين الواجهة القديمة والجديدة"
+    "message": "Switch between the old interface and the new one"
   },
   "helpSwapInterface": {
-    "message": "انقر فوق هذا الزر للتبديل بين الواجهة القديمة والواجهة الجديدة."
+    "message": "Click this button to switch between the old and the new interface."
   },
   "lblTranslationService": {
-    "message": "خدمة الترجمة"
+    "message": "Translation service"
   },
   "msgUseOldPopupInterface": {
-    "message": "استخدم الواجهة المنبثقة القديمة"
+    "message": "Use the old popup interface"
   },
   "lblTranslateInterface": {
-    "message": "ترجمة الواجهة"
+    "message": "Translate the interface"
   },
   "lblButtonInTheAddressBar": {
-    "message": "إظهار الزر في شريط العنوان"
+    "message": "Show button in the address bar"
   },
   "lblPageTranslationService": {
-    "message": "خدمة ترجمة الصفحة"
+    "message": "Page translation service"
   },
   "lblTextTranslationService": {
-    "message": "خدمة ترجمة النص"
+    "message": "Text Translation Service"
   },
   "msgStorage": {
-    "message": "التخزين"
+    "message": "Storage"
   },
   "lblTranslationCache": {
-    "message": "ذاكرة التخزين المؤقت للترجمة"
+    "message": "Translation cache"
   },
   "lblStorageUsed": {
-    "message": "التخزين المستخدم:"
+    "message": "Storage used:"
   },
   "deleteTranslationCache": {
-    "message": "حذف ذاكرة التخزين المؤقت للترجمة"
+    "message": "Delete translation cache"
   },
   "lblPersonalSettings": {
-    "message": "الإعدادات الشخصية"
+    "message": "Personal settings"
   },
   "backupToFile": {
-    "message": "النسخ الاحتياطي إلى الملف"
+    "message": "Backup to file"
   },
   "restoreFromFile": {
-    "message": "استعادة من ملف"
+    "message": "Restore from file"
   },
   "resetToDefault": {
-    "message": "استعادة الإعدادات الافتراضية"
+    "message": "Restore default settings"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "هل تريد حذف ذاكرة التخزين المؤقت للترجمة؟"
+    "message": "Do you want to delete the translation cache?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "هل تريد الكتابة فوق كافة الإعدادات الحالية باستخدام بيانات النسخ الاحتياطي؟"
+    "message": "Do you want to overwrite all existing settings using the backup data?"
   },
   "fileIsCorrupted": {
-    "message": "يبدو أن الملف تالف"
+    "message": "The file appears to be corrupted"
   },
   "doYouWantRestoreSettings": {
-    "message": "هل تريد استعادة الملحق إلى الإعدادات الافتراضية؟"
+    "message": "Do you want to restore the extension to its default settings?"
   },
   "lblTtsSpeed": {
-    "message": "سرعة صوت تحويل النص إلى كلام"
+    "message": "Text-to-speech audio speed"
   },
   "lblEnableDeepL": {
-    "message": "تمكين DeepL كخدمة ترجمة نصية"
+    "message": "Enable DeepL as a text translation service"
   },
   "enterShortcut": {
-    "message": "أدخل الاختصار"
+    "message": "Type a shortcut"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "تضمين Ctrl أو Alt"
+    "message": "Include Ctrl or Alt"
   },
   "hotkeyError_letter": {
-    "message": "اكتب حرف"
+    "message": "Type a letter"
   },
   "hotkeyError_invalid": {
-    "message": "مجموعة غير صالحة"
+    "message": "Invalid combination"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "التبديل بين الصفحة المترجمة والصفحة الأصلية"
+    "message": "Switch between the translated and the original page"
   },
   "lblRestorePageToOriginal": {
-    "message": "استعادة الصفحة الأصلية"
+    "message": "Restore page to original"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "ترجمة الصفحة إلى اللغة المستهدفة"
+    "message": "Translate the page to the target language"
   },
   "lblTranslateTag_pre": {
-    "message": "تمكين الترجمة للوسم $HTML_TAG_NAME$",
+    "message": "Enable translation for the tag $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "لا تفرز نتائج ترجمة جوجل"
+    "message": "Do not sort the google translate results"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "ترجمة المحتوى الذي تم إنشاؤه ديناميكيًا"
+    "message": "Translate dynamically created content"
   },
   "calculatestorage": {
-    "message": "احسب"
+    "message": "Calculate"
   },
   "donatewithpaypal": {
-    "message": "تبرع بواسطة PayPal"
+    "message": "Donate With PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "ترجمة تلقائية عند النقر على رابط يأخذك إلى نفس النطاق مثل الموقع الحالي"
+    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
   },
   "openNativeShortcutManager": {
-    "message": "افتح مدير مفتاح الاختصار الأصلي"
+    "message": "Open native shortcut key manager"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "اختصارات لوحة المفاتيح الخاصة"
+    "message": "Special keyboard shortcuts"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "ترجمة النص المحدد عند الضغط على $SHORTCUT_KEY$ مرتين",
+    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "ترجم النص فوق مؤشر الماوس عند الضغط على $SHORTCUT_KEY$ مرتين",
+    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "ترجمة الصفحة بالنقر مرة واحدة على الزر في شريط العنوان. (لرؤية النوافذ، انقر بزر اليمين)"
+    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
   },
   "btnShowPopup": {
-    "message": "بدون إشعارات منبثقة"
+    "message": "Show popup"
   },
   "msgToTranslateThisDocument": {
-    "message": "لترجمة هذا المستند $DOC_TYPE$ من الضروري تحويله إلى HTML",
+    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "حدد خدمة للقيام بهذا التحويل"
+    "message": "Select a service to do this conversion"
   },
   "msgDownloadingDocument": {
-    "message": "تحميل ثيقة..."
+    "message": "Downloading the document..."
   },
   "msgSendDocument": {
-    "message": "إرسال مستند"
+    "message": "Send document"
   },
   "msgErrorDownloadingDocument": {
-    "message": "خطأ في تنزيل المستند"
+    "message": "Error downloading document"
   },
   "msgFileLargerThan": {
-    "message": "هذه الخدمة لا تدعم ملفات أكبر من $FILE_SIZE$",
+    "message": "This service does not support files larger than $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,22 +450,22 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF إلى HTML"
+    "message": "PDF to HTML"
   },
   "btncopy": {
-    "message": "نسخ"
+    "message": "Copy"
   },
   "msgRecents": {
-    "message": "الأحدث"
+    "message": "Recents"
   },
   "msgAll": {
-    "message": "كل الأقسام"
+    "message": "All"
   },
   "msgPleaseWait": {
-    "message": "الرجاء الإنتظار..."
+    "message": "Please wait..."
   },
   "msgUnknownLanguage": {
-    "message": "غير معروف"
+    "message": "Unknown"
   },
   "btnReplace": {
     "message": "Replace"
