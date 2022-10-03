@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Þýða vefsíður"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Þýddu síðuna þína í rauntíma með Google eða Yandex."
+    "message": "Translate your page in real time using Google or Yandex."
   },
   "pageActionTitle": {
-    "message": "Þýða þessa síðu"
+    "message": "Translate this page"
   },
   "lblTranslate": {
-    "message": "Þýða þessa síðu?"
+    "message": "Translate this page?"
   },
   "lblTranslating": {
-    "message": "Þýðir..."
+    "message": "Translating ..."
   },
   "lblTranslated": {
-    "message": "Þýtt"
+    "message": "Translated"
   },
   "lblError": {
-    "message": "Ekki var hægt að þýða þessa síðu"
+    "message": "This page could not be translated"
   },
   "lblAlwaysTranslate": {
-    "message": "Alltaf að þýða úr $LANGUAGE_NAME$",
+    "message": "Always translate from $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Marktungumál $TARGET_LANGUAGE_NUM$",
+    "message": "Target language $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,73 +39,73 @@
     }
   },
   "btnReset": {
-    "message": "Endurstilla"
+    "message": "Reset"
   },
   "btnTranslate": {
-    "message": "Þýða"
+    "message": "Translate"
   },
   "btnOptions": {
-    "message": "Valkostir"
+    "message": "Options"
   },
   "btnRestore": {
-    "message": "Sýna upprunalega"
+    "message": "Show original"
   },
   "btnTryAgain": {
-    "message": "Reyna aftur"
+    "message": "Try again"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Opna í Google Þýðingar"
+    "message": "Open in google translator"
   },
   "btnDonate": {
-    "message": "Styrkja"
+    "message": "Donate"
   },
   "btnNeverTranslate": {
-    "message": "Aldrei þýða þessa síðu"
+    "message": "Never translate this site"
   },
   "btnChangeLanguages": {
-    "message": "Skipta um tungumál"
+    "message": "Change languages"
   },
   "btnMobileOriginal": {
-    "message": "Upprunalegt"
+    "message": "Original"
   },
   "btnMobileTranslated": {
-    "message": "Þýtt"
+    "message": "Translated"
   },
   "btnMobileNeverTranslate": {
-    "message": "Aldrei þýða þessa síðu"
+    "message": "Never translate this site"
   },
   "btnMobileDonate": {
-    "message": "Styrkja"
+    "message": "Donate"
   },
   "optionsNeverTranslate": {
-    "message": "Aldrei þýða þessa síðu"
+    "message": "Never translate these sites"
   },
   "optionsAlwaysTranslate": {
-    "message": "Alltaf þýða þessi tungumál"
+    "message": "Always translate these languages"
   },
   "optionPopupConfig": {
-    "message": "Sýna farsímasprettigluggann"
+    "message": "Show the mobile popup"
   },
   "optionPopupAuto": {
-    "message": "Sjálfkrafa"
+    "message": "Automatically"
   },
   "optionPopupThreeFingers": {
-    "message": "Þegar ég snerti skjáinn með þremur fingrum"
+    "message": "When I touch three fingers on the screen"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Opna í Yandex Translate"
+    "message": "Open in yandex translate"
   },
   "lblOthers": {
-    "message": "Annað"
+    "message": "Others"
   },
   "btnMoreOptions": {
-    "message": "Fleiri valkostir"
+    "message": "More options"
   },
   "lblPlsDonate": {
-    "message": "Hjálpa hönnuðinum með því að styrkja"
+    "message": "Help the developer with a donation"
   },
   "msgTranslateFor": {
-    "message": "Þýða yfir á $LANGUAGE_NAME$",
+    "message": "Translate to $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,148 +114,148 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Sýna valkostinn á að þýða síðuna í samhengisvalmyndinni"
+    "message": "Show the option to translate the page in the context menu"
   },
   "msgYes": {
-    "message": "Já"
+    "message": "Yes"
   },
   "msgNo": {
-    "message": "Nei"
+    "message": "No"
   },
   "lblUseNewAlgorithm": {
-    "message": "Nota nýja þýðingarreikniritið?"
+    "message": "Use the new translation algorithm?"
   },
   "msgYesRecommended": {
-    "message": "Já (mælt með)"
+    "message": "Yes (recommended)"
   },
   "msgNoUseWidgets": {
-    "message": "Nei (nota widgets)"
+    "message": "No (use widgets)"
   },
   "optionsPageTitle": {
-    "message": "Þýða vefsíður - Valkostir"
+    "message": "Translate Web Pages - Options"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Aðeins þegar ég smelli á \"Þýða þessa síðu\""
+    "message": "Only when I click \"Translate this site\""
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "Þú hefur ekki bætt neinum síðum við þennan lista."
+    "message": "You have not added any sites to this list."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Þú hefur ekki bætt neinum tungumálum við þennan lista."
+    "message": "You have not added any languages to this list."
   },
   "btnAlwaysTranslate": {
-    "message": "Alltaf þýða þessa síðu"
+    "message": "Always translate this site"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Alltaf þýða þessar síður"
+    "message": "Always translate these sites"
   },
   "msgDonateWithPaypal": {
-    "message": "Styrkja með PayPal"
+    "message": "Donate with PayPal"
   },
   "lblDarkMode": {
-    "message": "Dökkur hamur"
+    "message": "Dark Mode"
   },
   "lblShowReleaseNotes": {
-    "message": "Sýna útgáfuupplýsingar við uppfærslu"
+    "message": "Show release notes when updating"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Sýna hnappinn til að þýða valda textann"
+    "message": "Show the button to translate the selected text"
   },
   "msgAutomatic": {
-    "message": "Sjálfvirkt"
+    "message": "Automatic"
   },
   "msgTranslateSelectedText": {
-    "message": "Þýða valinn texta"
+    "message": "Translate selected text"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Sýna valkostinn til að þýða valda textann í samhengisvalmyndinni"
+    "message": "Show the option to translate the selected text in the context menu"
   },
   "lblNeverTranslateLangs": {
-    "message": "Aldrei þýða þessi tungumál"
+    "message": "Never translate these languages"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Aldrei þýða þetta tungumál"
+    "message": "Never translate this language"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Sýna upprunalegan texta þegar þú sveimar yfir"
+    "message": "Show original text when hovering"
   },
   "msgLanguages": {
-    "message": "Tungumál"
+    "message": "Languages"
   },
   "msgSites": {
-    "message": "Síður"
+    "message": "Sites"
   },
   "msgTranslations": {
-    "message": "Þýðingar"
+    "message": "Translations"
   },
   "msgStyle": {
-    "message": "Stíll"
+    "message": "Style"
   },
   "msgHotkeys": {
-    "message": "Flýtilyklar"
+    "message": "Hotkeys"
   },
   "lblMakeDonation": {
-    "message": "Styrkja verkefnið"
+    "message": "Make a donation"
   },
   "lblReleaseNotes": {
-    "message": "Útgáfuupplýsingar"
+    "message": "Release Notes"
   },
   "lblReport": {
-    "message": "Tilkynna vandamál"
+    "message": "Report a problem"
   },
   "lblSettings": {
-    "message": "Stillingar"
+    "message": "Settings"
   },
   "lblAdd": {
-    "message": "Bæta við"
+    "message": "Add"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Sýna þýddan texta þegar þú sveimar yfir"
+    "message": "Show translated text when hovering"
   },
   "lblKeyboardShortcuts": {
-    "message": "Flýtileiðir á lyklaborði"
+    "message": "Keyboard shortcuts"
   },
   "msgToTranslateSites": {
-    "message": "Til að þýða síðuna"
+    "message": "To translate the site"
   },
   "msgThanksForUseExtension": {
-    "message": "Þakka þér fyrir að nota þessa viðbót."
+    "message": "Thank you for using this extension."
   },
   "msgIWillBeGrateful": {
-    "message": "Ég mun vera þakklát(ur) ef þú getur styrkjað mig."
+    "message": "I will be grateful if you can make a donation."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Alltaf þýða þetta tungumál"
+    "message": "Always translate this language"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Sýna þýddan texta þegar sveimað er yfir á þessum síðum"
+    "message": "Show translated text when hovering on these sites"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Gerðu sprettimerkið blátt þegar síðan er þýdd"
+    "message": "Make the pop-up icon blue when the site is translated"
   },
   "more": {
-    "message": "Meira"
+    "message": "More"
   },
   "less": {
-    "message": "Minna"
+    "message": "Less"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Ekki sýna ef síðutungumálið er markmálið"
+    "message": "Do not show if the page language is the target language"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Ekki sýna ef tungumál síðunnar er óþekkt"
+    "message": "Do not show if the page language is unknown"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Ekki sýna ef textamálið er markmálið"
+    "message": "Do not show if the selected text language is the target language"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Ekki sýna ef valið textamál er óþekkt"
+    "message": "Do not show if the selected text language is unknown"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Sýna þýðingu þegar þú sveimar yfir þessari síðu"
+    "message": "Show translation when hovering over this site"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Sýna þýðingu þegar þú sveimar yfir vefsíður á $LANGUAGE_NAME$",
+    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,112 +264,112 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Sýna þýddan texta þegar þú sveimar yfir vefsvæðum með þessum tungumálum"
+    "message": "Show translated text when hovering over sites with these languages"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Ekki þýða valinn texta"
+    "message": "Do not translate selected text"
   },
   "btnListen": {
-    "message": "Hlusta"
+    "message": "Listen"
   },
   "btnStopListening": {
-    "message": "Hætta að hlusta"
+    "message": "Stop listening"
   },
   "btnApply": {
-    "message": "Nota"
+    "message": "Apply"
   },
   "swapTranslationService": {
-    "message": "Skipta á milli þýðingarþjónustu"
+    "message": "Switch between translation services"
   },
   "swapPopup": {
-    "message": "Skipta á milli gamla viðmótsins og þess nýja"
+    "message": "Switch between the old interface and the new one"
   },
   "helpSwapInterface": {
-    "message": "Smelltu á þennan hnapp til að skipta á milli gamla og nýja viðmótsins."
+    "message": "Click this button to switch between the old and the new interface."
   },
   "lblTranslationService": {
-    "message": "Þýðingarþjónusta"
+    "message": "Translation service"
   },
   "msgUseOldPopupInterface": {
-    "message": "Nota gamla sprettigluggaviðmótið"
+    "message": "Use the old popup interface"
   },
   "lblTranslateInterface": {
-    "message": "Þýða viðmótið"
+    "message": "Translate the interface"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Sýna hnappinn á veffangastikunni"
+    "message": "Show button in the address bar"
   },
   "lblPageTranslationService": {
-    "message": "Síðuþýðingarþjónusta"
+    "message": "Page translation service"
   },
   "lblTextTranslationService": {
-    "message": "Textaþýðingarþjónusta"
+    "message": "Text Translation Service"
   },
   "msgStorage": {
-    "message": "Geymslupláss"
+    "message": "Storage"
   },
   "lblTranslationCache": {
-    "message": "Þýðingarskyndiminni"
+    "message": "Translation cache"
   },
   "lblStorageUsed": {
-    "message": "Geymsla notuð:"
+    "message": "Storage used:"
   },
   "deleteTranslationCache": {
-    "message": "Eyða þýðingarskyndiminni"
+    "message": "Delete translation cache"
   },
   "lblPersonalSettings": {
-    "message": "Persónulegar stillingar"
+    "message": "Personal settings"
   },
   "backupToFile": {
-    "message": "Afrita í skrá"
+    "message": "Backup to file"
   },
   "restoreFromFile": {
-    "message": "Endurheimta úr skrá"
+    "message": "Restore from file"
   },
   "resetToDefault": {
-    "message": "Endurheimta sjálfgefnar stillingar"
+    "message": "Restore default settings"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Viltu eyða þýðingarskyndiminni?"
+    "message": "Do you want to delete the translation cache?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Viltu yfirskrifa allar núverandi stillingar með því að nota öryggisafritsgögnin?"
+    "message": "Do you want to overwrite all existing settings using the backup data?"
   },
   "fileIsCorrupted": {
-    "message": "Skráin virðist vera skemmd"
+    "message": "The file appears to be corrupted"
   },
   "doYouWantRestoreSettings": {
-    "message": "Viltu endurheimta viðbótina í sjálfgefnar stillingar?"
+    "message": "Do you want to restore the extension to its default settings?"
   },
   "lblTtsSpeed": {
-    "message": "Hljóðhraði textatal"
+    "message": "Text-to-speech audio speed"
   },
   "lblEnableDeepL": {
-    "message": "Virkja DeepL sem textaþýðingarþjónustu"
+    "message": "Enable DeepL as a text translation service"
   },
   "enterShortcut": {
-    "message": "Sláðu inn flýtileið"
+    "message": "Type a shortcut"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Hafa Ctrl eða Alt"
+    "message": "Include Ctrl or Alt"
   },
   "hotkeyError_letter": {
-    "message": "Sláðu inn staf"
+    "message": "Type a letter"
   },
   "hotkeyError_invalid": {
-    "message": "Ógild samsetning"
+    "message": "Invalid combination"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Víxla milli þýddu og upprunalegu síðunnar"
+    "message": "Switch between the translated and the original page"
   },
   "lblRestorePageToOriginal": {
-    "message": "Endurheimta síðu til upprunalegu"
+    "message": "Restore page to original"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Þýða síðuna yfir á markmálið"
+    "message": "Translate the page to the target language"
   },
   "lblTranslateTag_pre": {
-    "message": "Virkja þýðingu fyrir merkið $HTML_TAG_NAME$",
+    "message": "Enable translation for the tag $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Ekki flokka niðurstöður Google Þýðingar"
+    "message": "Do not sort the google translate results"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Þýða efni sem búið er til á kraftmikinn hátt"
+    "message": "Translate dynamically created content"
   },
   "calculatestorage": {
-    "message": "Reikna"
+    "message": "Calculate"
   },
   "donatewithpaypal": {
-    "message": "Styrkja með PayPal"
+    "message": "Donate With PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Þýða sjálfkrafa þegar smellt er á tengil sem færir þig á sama lén og núverandi síða"
+    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
   },
   "openNativeShortcutManager": {
-    "message": "Opna heimaflýtilyklastjóra"
+    "message": "Open native shortcut key manager"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Sérstakar flýtilyklar"
+    "message": "Special keyboard shortcuts"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Þýða valinn texta þegar ýtt er tvisvar á $SHORTCUT_KEY$",
+    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Þýddu textann yfir músarbendilinn þegar ýtt er tvisvar á $SHORTCUT_KEY$",
+    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Þýddu síðuna með því að smella einu sinni á hnappinn á veffangastikunni. (Til að sjá sprettigluggann skaltu hægrismella)"
+    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
   },
   "btnShowPopup": {
-    "message": "Sýna sprettiglugga"
+    "message": "Show popup"
   },
   "msgToTranslateThisDocument": {
-    "message": "Til að þýða þetta skjal $DOC_TYPE$ er nauðsynlegt að breyta því í HTML",
+    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Veldu þjónustu til að gera þessa umbreytingu"
+    "message": "Select a service to do this conversion"
   },
   "msgDownloadingDocument": {
-    "message": "Sækir skjalið..."
+    "message": "Downloading the document..."
   },
   "msgSendDocument": {
-    "message": "Senda skjal"
+    "message": "Send document"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Villa við að sækja skjali"
+    "message": "Error downloading document"
   },
   "msgFileLargerThan": {
-    "message": "Þessi þjónusta styður ekki skrár sem eru stærri en $FILE_SIZE$",
+    "message": "This service does not support files larger than $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,28 +450,28 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF til HTML"
+    "message": "PDF to HTML"
   },
   "btncopy": {
-    "message": "Afrita"
+    "message": "Copy"
   },
   "msgRecents": {
-    "message": "Nýlegt"
+    "message": "Recents"
   },
   "msgAll": {
-    "message": "Allt"
+    "message": "All"
   },
   "msgPleaseWait": {
-    "message": "Vinsamlegast bíðið..."
+    "message": "Please wait..."
   },
   "msgUnknownLanguage": {
-    "message": "Óþekkt"
+    "message": "Unknown"
   },
   "btnReplace": {
-    "message": "Skipta út"
+    "message": "Replace"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Skipta út völdum texta fyrir þýddan texta þegar ýtt er tvisvar á $SHORTCUT_KEY$",
+    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,6 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Skipta út völdum texta fyrir þýddan texta strax"
+    "message": "Replace selected text with translated text instantly"
   }
 }
