@@ -151,7 +151,7 @@ const translationService = (function () {
     /** @type {boolean} */
     static #SIDNotFound = false;
     /** @type {Promise<void>} */
-    static #fingPromise = null;
+    static #findPromise = null;
 
     static get translateSid() {
       return YandexHelper.#translateSid;
@@ -162,8 +162,8 @@ const translationService = (function () {
      * @returns {Promise<void>}
      */
     static async findSID() {
-      if (YandexHelper.#fingPromise) return await YandexHelper.#fingPromise;
-      YandexHelper.#fingPromise = new Promise((resolve) => {
+      if (YandexHelper.#findPromise) return await YandexHelper.#findPromise;
+      YandexHelper.#findPromise = new Promise((resolve) => {
         let updateYandexSid = false;
         if (YandexHelper.#lastRequestSidTime) {
           const date = new Date();
@@ -212,11 +212,11 @@ const translationService = (function () {
         }
       });
 
-      YandexHelper.#fingPromise.finally(() => {
-        YandexHelper.#fingPromise = null;
+      YandexHelper.#findPromise.finally(() => {
+        YandexHelper.#findPromise = null;
       });
 
-      return await YandexHelper.#fingPromise;
+      return await YandexHelper.#findPromise;
     }
   }
 
