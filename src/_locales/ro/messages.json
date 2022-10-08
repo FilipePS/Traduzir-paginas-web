@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Tradu Pagini Web"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Tradu pagina în timp real folosind Google sau Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Tradu această pagină"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Traduci această pagină?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Se traduce ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Tradusă"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Această pagină nu a putut fi tradusă"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Tradu mereu din $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Limba de destinație $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,43 +39,43 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Restabilește"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Tradu"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Opțiuni"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Arată originalul"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Mai încearcă"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Deschide în Google Translator"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Donează"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Nu traduce niciodată acest sit"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Schimbă limba"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Originalul"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Tradusă"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Nu traduce niciodată acest sit"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Donează"
   },
   "optionsNeverTranslate": {
     "message": "Never translate these sites"
