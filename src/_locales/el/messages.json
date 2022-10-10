@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Μετάφραση ιστοσελίδων"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Μετάφραση της σελίδας σε πραγματικό χρόνο με χρήση το Google ή το Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Μετάφραση αυτής της σελίδας"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Μετάφραση αυτής της σελίδας;"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Μετάφραση ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Μεταφράστηκε"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Αυτή η σελίδα δεν ήταν δυνατόν να μεταφραστεί"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Πάντα μετάφραση από $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Γλώσσα προορισμού $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,67 +39,67 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Επαναφορά"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Μετάφραση"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Επιλογές"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Εμφάνιση αρχικού"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Προσπαθήστε ξανά"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Άνοιγμα στο google μεταφραστή"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Δωρεά"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Ποτέ μετάφραση αυτή την ιστοσελίδα"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Αλλαγή γλωσσών"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Αρχικό"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Μεταφρασμένο"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Ποτέ μετάφραση αυτή την ιστοσελίδα"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Δωρεά"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Ποτέ μετάφραση αυτών των ιστοσελίδων"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Πάντα μετάφραση αυτών των γλωσσών"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Εμφάνιση αναδυόμενου παράθυρου για κινητά"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Αυτόματα"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Όταν αγγίζω τρία δάχτυλα στην οθόνη"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Άνοιγμα σε yandex μετάφραση"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Άλλα"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "Περισσότερες επιλογές"
   },
   "lblPlsDonate": {
     "message": "Help the developer with a donation"
