@@ -2,7 +2,7 @@
 
 // const startMark = '<customskipword>';
 // const endMark = '</customskipword>';
-// Better not to have words , Google reordering  <customskipword> xx </customskipword>'
+// not to have words, Google reordering " <customskipword>12</customskipword>34 " to "<customskipword>1234</customskipword>"
 const startMark = '#1%1#';
 const endMark = '#2%2#';
 
@@ -33,7 +33,6 @@ let compressionMap;
  *  But this will also cause this method to not work for Chinese, Burmese and other languages without spaces.
  * */
 function filterKeywordsInText(textContext) {
-    console.log("拦截前-------")
     console.log(textContext)
 
     let customDictionary = twpConfig.get("customDictionary")
@@ -76,10 +75,8 @@ function filterKeywordsInText(textContext) {
             textContext = textContext.replaceAll('#n%o#', '')
         }
     }
-    console.log("拦截后---------------------")
     console.log(textContext)
-
-
+    console.log("\n")
 
     return textContext
 }
@@ -98,7 +95,7 @@ function handleCustomWords(translated) {
     translated = translated.replaceAll(endMark2,endMark)
     translated = translated.replaceAll(endMark3,endMark)
 
-    console.log("准备还原 ----------------------------------------------------")
+    console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
     console.log(translated)
 
     console.log(compressionMap)
@@ -123,8 +120,9 @@ function handleCustomWords(translated) {
             }
         }
     }
-    console.log(" 还原 结果----------")
     console.log(translated)
+    console.log("\n")
+
 
     return translated
 }
