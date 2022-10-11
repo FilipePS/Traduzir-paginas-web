@@ -411,7 +411,8 @@ twpConfig.onReady(function () {
         return li
     }
 
-    const customDictionary = twpConfig.get("customDictionary")
+    let customDictionary = twpConfig.get("customDictionary")
+    customDictionary = new Map([...customDictionary.entries()].sort((a, b) => String(b[0]).length - String(a[0]).length))
     customDictionary.forEach(function(customValue,keyWord){
         const li = createcustomDictionary(keyWord,customValue)
         $("#customDictionary").appendChild(li)
