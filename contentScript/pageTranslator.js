@@ -2,6 +2,9 @@
 
 const startMark = '<customskipword>';
 const endMark = '</customskipword>';
+// Google broken the translation, returned this in some cases
+const endMark0 = '</ customskipword>';
+
 let currentIndex;
 let compressionMap;
 
@@ -19,6 +22,9 @@ let compressionMap;
  *  But this will also cause this method to not work for Chinese, Burmese and other languages without spaces.
  * */
 function filterKeywordsInText(textContext) {
+    console.log("拦截前-------")
+    console.log(textContext)
+
     let customDictionary = twpConfig.get("customDictionary")
     if (customDictionary.size > 0) {
         // reordering , we want to match the keyword "Spring Boot" first then the keyword "Spring"
@@ -42,6 +48,8 @@ function filterKeywordsInText(textContext) {
                     let keyWordWithCase = textContext.substring(index, index + keyWord.length)
                     if (previousChar === ' ' && nextChar === ' ') {
                         placeholderText = startMark + handleHitKeywords(keyWordWithCase, true) + endMark
+                        // console.log("当前内存map")
+                        // console.log(compressionMap)
                     } else {
                         placeholderText = '#n%o#'
                         for (let c of Array.from(keyWordWithCase)) {
@@ -57,6 +65,11 @@ function filterKeywordsInText(textContext) {
             textContext = textContext.replaceAll('#n%o#', '')
         }
     }
+    console.log("拦截后---------------------")
+    console.log(textContext)
+
+
+
     return textContext
 }
 
@@ -64,6 +77,13 @@ function filterKeywordsInText(textContext) {
  *  handle the keywords in translatedText, replace it if there is a custom replacement value.
  *  */
 function handleCustomWords(translated) {
+    translated = translated.replaceAll(endMark0,endMark)
+    console.log("准备还原 -------------")
+    console.log(translated)
+
+    console.log("当前内存map")
+    console.log(compressionMap)
+
     const customDictionary = twpConfig.get("customDictionary")
     if (customDictionary.size > 0) {
         while (true) {
@@ -75,6 +95,8 @@ function handleCustomWords(translated) {
                 let placeholderText = translated.substring(startIndex + startMark.length, endIndex)
                 // At this point placeholderText is actually currentIndex , the real value is in compressionMap
                 let keyWord = handleHitKeywords(placeholderText, false)
+                // console.log("当前内存map")
+                // console.log(compressionMap)
                 let frontPart = translated.substring(0, startIndex)
                 let backPart = translated.substring(endIndex + endMark.length)
                 let customValue = customDictionary.get(keyWord.toLowerCase())
@@ -82,6 +104,9 @@ function handleCustomWords(translated) {
             }
         }
     }
+    console.log(" 还原 结果----------")
+    console.log(translated)
+
     return translated
 }
 
