@@ -5,9 +5,16 @@
 // Better not to have words , Google reordering  <customskipword> xx </customskipword>'
 const startMark = '#1%1#';
 const endMark = '#2%2#';
+
 // Google broken the translation, returned this in some cases
 const startMark0 = '# 1%1#';
 const endMark0 = '# 2%2#';
+const startMark1 = '#1 %1#';
+const endMark1 = '#2 %2#';
+const startMark2 = '#1% 1#';
+const endMark2 = '#2% 2#';
+const startMark3 = '#1%1 #';
+const endMark3 = '#2%2 #';
 
 let currentIndex;
 let compressionMap;
@@ -81,8 +88,16 @@ function filterKeywordsInText(textContext) {
  *  handle the keywords in translatedText, replace it if there is a custom replacement value.
  *  */
 function handleCustomWords(translated) {
+
     translated = translated.replaceAll(startMark0,startMark)
+    translated = translated.replaceAll(startMark1,startMark)
+    translated = translated.replaceAll(startMark2,startMark)
+    translated = translated.replaceAll(startMark3,startMark)
     translated = translated.replaceAll(endMark0,endMark)
+    translated = translated.replaceAll(endMark1,endMark)
+    translated = translated.replaceAll(endMark2,endMark)
+    translated = translated.replaceAll(endMark3,endMark)
+
     console.log("准备还原 ----------------------------------------------------")
     console.log(translated)
 
