@@ -1,9 +1,13 @@
 "use strict";
 
-const startMark = '<customskipword>';
-const endMark = '</customskipword>';
+// const startMark = '<customskipword>';
+// const endMark = '</customskipword>';
+// Better not to have words , Google reordering  <customskipword> xx </customskipword>'
+const startMark = '#1%1#';
+const endMark = '#2%2#';
 // Google broken the translation, returned this in some cases
-const endMark0 = '</ customskipword>';
+const startMark0 = '# 1%1#';
+const endMark0 = '# 2%2#';
 
 let currentIndex;
 let compressionMap;
@@ -77,11 +81,11 @@ function filterKeywordsInText(textContext) {
  *  handle the keywords in translatedText, replace it if there is a custom replacement value.
  *  */
 function handleCustomWords(translated) {
+    translated = translated.replaceAll(startMark0,startMark)
     translated = translated.replaceAll(endMark0,endMark)
-    console.log("准备还原 -------------")
+    console.log("准备还原 ----------------------------------------------------")
     console.log(translated)
 
-    console.log("当前内存map")
     console.log(compressionMap)
 
     const customDictionary = twpConfig.get("customDictionary")
