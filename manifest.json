@@ -9,19 +9,18 @@
     "commands": {
         "hotkey-toggle-translation": {
             "suggested_key": {
-                "default": "Alt+T"
+                "default": "Alt+Q"
             },
             "description": "__MSG_lblSwitchTranslatedAndOriginal__"
         },
         "hotkey-translate-selected-text": {
             "suggested_key": {
-                "default": "Alt+S"
             },
             "description": "__MSG_msgTranslateSelectedText__"
         },
         "hotkey-swap-page-translation-service": {
             "suggested_key": {
-                "default": "Alt+Q"
+                "default": "Alt+A"
             },
             "description": "__MSG_swapTranslationService__"
         },
