@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Þýða vefsíður"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Þýddu síðuna þína í rauntíma með Google eða Yandex."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "Þýða þessa síðu"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "Þýða þessa síðu?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "Þýðir..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "Þýtt"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "Ekki var hægt að þýða þessa síðu"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "Alltaf að þýða úr $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Marktungumál $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,73 +39,73 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Endurstilla"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "Þýða"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Valkostir"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Sýna upprunalega"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "Reyna aftur"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Opna í Google Þýðingar"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "Styrkja"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Aldrei þýða þessa síðu"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "Skipta um tungumál"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Upprunalegt"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "Þýtt"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "Aldrei þýða þessa síðu"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "Styrkja"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "Aldrei þýða þessa síðu"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Alltaf þýða þessi tungumál"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Sýna farsímasprettigluggann"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "Sjálfkrafa"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Þegar ég snerti skjáinn með þremur fingrum"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Opna í Yandex Translate"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "Annað"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "Fleiri valkostir"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "Hjálpa hönnuðinum með því að styrkja"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Þýða yfir á $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,22 +114,22 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Sýna valkostinn á að þýða síðuna í samhengisvalmyndinni"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "Já"
   },
   "msgNo": {
-    "message": "No"
+    "message": "Nei"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "Nota nýja þýðingarreikniritið?"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "Já (mælt með)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "Nei (nota widgets)"
   },
   "optionsPageTitle": {
     "message": "Translate Web Pages - Options"
