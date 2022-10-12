@@ -1,0 +1,5 @@
+一个样本 用于实验 标记是否会被更改
+
+ The main benefit of Local Activities is that they use less <22>2</22> service resources (e.g. lower state transitions) and have much lower latency overhead (because no need to roundtrip to the Cluster) compared to normal <22>1<22> Executions. However, Local Activities are subject to shorter durations and a lack of rate limiting. 
+
+-------------------------------------------------------------------------------------------------------------------------
