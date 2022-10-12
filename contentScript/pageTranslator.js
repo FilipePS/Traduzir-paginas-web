@@ -42,7 +42,6 @@ let compressionMap;
  *  But this will also cause this method to not work for Chinese, Burmese and other languages without spaces.
  * */
 function filterKeywordsInText(textContext) {
-    console.log(textContext)
 
     let customDictionary = twpConfig.get("customDictionary")
     if (customDictionary.size > 0) {
@@ -84,8 +83,6 @@ function filterKeywordsInText(textContext) {
             textContext = textContext.replaceAll('#n%o#', '')
         }
     }
-    console.log(textContext)
-    console.log("\n")
 
     return textContext
 }
@@ -98,8 +95,9 @@ function handleCustomWords(translated, rollbackOnFailure) {
     translated = translated.replaceAll(startMark0, startMark)
     translated = translated.replaceAll(endMark0, endMark)
 
-    // console.log("翻译后---")
+    // console.log("--------")
     // console.log(translated)
+    // console.log("\n")
 
     try {
         const customDictionary = twpConfig.get("customDictionary")
@@ -113,6 +111,11 @@ function handleCustomWords(translated, rollbackOnFailure) {
                     let placeholderText = translated.substring(startIndex + startMark.length, endIndex)
                     // At this point placeholderText is actually currentIndex , the real value is in compressionMap
                     let keyWord = handleHitKeywords(placeholderText, false)
+
+                    if (keyWord === "undefined") {
+                        throw new Error("undefined")
+                    }
+
                     let frontPart = translated.substring(0, startIndex)
                     let backPart = translated.substring(endIndex + endMark.length)
                     let customValue = customDictionary.get(keyWord.toLowerCase())
@@ -124,8 +127,9 @@ function handleCustomWords(translated, rollbackOnFailure) {
         return rollbackOnFailure
     }
 
-    // console.log(translated)
-    // console.log("\n")
+    if (translated.indexOf(startMark) !== -1 || translated.indexOf(endMark) !== -1) {
+        return rollbackOnFailure
+    }
 
     return translated
 }
