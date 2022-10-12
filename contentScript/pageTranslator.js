@@ -3,18 +3,27 @@
 // const startMark = '<customskipword>';
 // const endMark = '</customskipword>';
 // not to have words, Google reordering " <customskipword>12</customskipword>34 " to "<customskipword>1234</customskipword>"
-const startMark = '#1%1#';
-const endMark = '#2%2#';
+const startMark = '@%';
+const endMark = '#$';
 
 // Google broken the translation, returned this in some cases
-const startMark0 = '# 1%1#';
-const endMark0 = '# 2%2#';
-const startMark1 = '#1 %1#';
-const endMark1 = '#2 %2#';
-const startMark2 = '#1% 1#';
-const endMark2 = '#2% 2#';
-const startMark3 = '#1%1 #';
-const endMark3 = '#2%2 #';
+
+const startMark0 = '@ %';
+const endMark0 = '# $';
+
+// const startMark0 = '/ %/';
+// const endMark0 = '# %#';
+// const startMark1 = '/% /';
+// const endMark1 = '#% #';
+
+// const startMark0 = '# 1%1#';
+// const endMark0 = '# 2%2#';
+// const startMark1 = '#1 %1#';
+// const endMark1 = '#2 %2#';
+// const startMark2 = '#1% 1#';
+// const endMark2 = '#2% 2#';
+// const startMark3 = '#1%1 #';
+// const endMark3 = '#2%2 #';
 
 let currentIndex;
 let compressionMap;
@@ -84,45 +93,39 @@ function filterKeywordsInText(textContext) {
 /**
  *  handle the keywords in translatedText, replace it if there is a custom replacement value.
  *  */
-function handleCustomWords(translated) {
+function handleCustomWords(translated, rollbackOnFailure) {
 
-    translated = translated.replaceAll(startMark0,startMark)
-    translated = translated.replaceAll(startMark1,startMark)
-    translated = translated.replaceAll(startMark2,startMark)
-    translated = translated.replaceAll(startMark3,startMark)
-    translated = translated.replaceAll(endMark0,endMark)
-    translated = translated.replaceAll(endMark1,endMark)
-    translated = translated.replaceAll(endMark2,endMark)
-    translated = translated.replaceAll(endMark3,endMark)
+    translated = translated.replaceAll(startMark0, startMark)
+    translated = translated.replaceAll(endMark0, endMark)
 
-    console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
-    console.log(translated)
+    // console.log("翻译后---")
+    // console.log(translated)
 
-    console.log(compressionMap)
-
-    const customDictionary = twpConfig.get("customDictionary")
-    if (customDictionary.size > 0) {
-        while (true) {
-            let startIndex = translated.indexOf(startMark)
-            if (startIndex === -1) {
-                break
-            } else {
-                let endIndex = translated.indexOf(endMark)
-                let placeholderText = translated.substring(startIndex + startMark.length, endIndex)
-                // At this point placeholderText is actually currentIndex , the real value is in compressionMap
-                let keyWord = handleHitKeywords(placeholderText, false)
-                // console.log("当前内存map")
-                // console.log(compressionMap)
-                let frontPart = translated.substring(0, startIndex)
-                let backPart = translated.substring(endIndex + endMark.length)
-                let customValue = customDictionary.get(keyWord.toLowerCase())
-                translated = frontPart + (customValue === '' ? keyWord : customValue) + backPart
+    try {
+        const customDictionary = twpConfig.get("customDictionary")
+        if (customDictionary.size > 0) {
+            while (true) {
+                let startIndex = translated.indexOf(startMark)
+                if (startIndex === -1) {
+                    break
+                } else {
+                    let endIndex = translated.indexOf(endMark)
+                    let placeholderText = translated.substring(startIndex + startMark.length, endIndex)
+                    // At this point placeholderText is actually currentIndex , the real value is in compressionMap
+                    let keyWord = handleHitKeywords(placeholderText, false)
+                    let frontPart = translated.substring(0, startIndex)
+                    let backPart = translated.substring(endIndex + endMark.length)
+                    let customValue = customDictionary.get(keyWord.toLowerCase())
+                    translated = frontPart + (customValue === '' ? keyWord : customValue) + backPart
+                }
             }
         }
+    } catch (e) {
+        return rollbackOnFailure
     }
-    console.log(translated)
-    console.log("\n")
 
+    // console.log(translated)
+    // console.log("\n")
 
     return translated
 }
@@ -694,6 +697,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }
 
         function translateResults(piecesToTranslateNow, results) {
+            console.log(piecesToTranslateNow)
+            console.log(results)
+
             if (dontSortResults) {
                 for (let i = 0; i < results.length; i++) {
                     for (let j = 0; j < results[i].length; j++) {
@@ -714,12 +720,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                                 node: nodes[j], original: nodes[j].textContent
                             })
 
-                            nodes[j].textContent = handleCustomWords(translated)
+                            nodes[j].textContent = handleCustomWords(translated, nodes[j].textContent)
 
                         }
                     }
                 }
             } else {
+
                 for (const i in piecesToTranslateNow) {
                     for (const j in piecesToTranslateNow[i].nodes) {
                         if (results[i][j]) {
@@ -733,7 +740,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                                 node: nodes[j], original: nodes[j].textContent
                             })
 
-                            nodes[j].textContent = handleCustomWords(translated)
+                            // console.log("piecesToTranslateNow[i].nodes")
+                            //
+                            // console.log(nodes[j].textContent)
+
+                            nodes[j].textContent = handleCustomWords(translated, nodes[j].textContent)
                         }
                     }
                 }

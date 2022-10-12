@@ -7,12 +7,23 @@
 <body>
 
 <!--<p>-->
-
 <!--    The main benefit of Local Activities is that they use less Temporal service resources (e.g. lower state transitions) and have much lower latency overhead (because no need to roundtrip to the Cluster) compared to normal Activity Executions.-->
 <!--    However, Local Activities are subject to shorter durations and a lack of rate limiting.-->
-
 <!--</p>-->
 
-<p>An Activity Definition is the code that defines the constraints of an <a href="/tasks#activity-task-execution">Activity Task Execution</a></p>
+<!--<p>An Activity Definition is the code that defines the constraints of an <a href="/tasks#activity-task-execution">Activity Task Execution</a></p>-->
+
+<!--<p>-->
+<!--    In day-to-day conversations, the term <em>Activity</em> frequently denotes either an <a href="#activity-definition">Activity Definition</a>, an <a href="#activity-type">Activity Type</a>, or an <a href="#activity-execution">Activity Execution</a>-->
+<!--</p>-->
+
+<!--<p> that provides an access point to an Activity Function Definition——the method or function that is invoked for an <a href="/tasks#activity-task-execution">Activity Task Execution</a>.-->
+<!--     </p>-->
+
+<p>If this timeout is used, we recommend setting this timeout to the maximum time a Workflow Execution is willing to wait for an Activity Execution in the presence of all possible Worker outages, and have a concrete plan in place to reroute Activity Tasks to a different Task Queue.
+    This timeout <strong>does not</strong> trigger any retries regardless of the Retry Policy, as a retry would place the Activity Task back into the same Task Queue.
+    We do not recommend using this timeout unless you know what you are doing.</p>
+
+
 </body>
 </html>
