@@ -90,48 +90,68 @@ function filterKeywordsInText(textContext) {
 /**
  *  handle the keywords in translatedText, replace it if there is a custom replacement value.
  *  */
-function handleCustomWords(translated, rollbackOnFailure) {
+function handleCustomWords(translated, rollbackOnFailure, currentPageTranslatorService, currentTargetLanguage) {
 
-    translated = translated.replaceAll(startMark0, startMark)
-    translated = translated.replaceAll(endMark0, endMark)
 
-    // console.log("--------")
-    // console.log(translated)
-    // console.log("\n")
 
-    try {
-        const customDictionary = twpConfig.get("customDictionary")
-        if (customDictionary.size > 0) {
-            while (true) {
-                let startIndex = translated.indexOf(startMark)
-                if (startIndex === -1) {
-                    break
-                } else {
-                    let endIndex = translated.indexOf(endMark)
-                    let placeholderText = translated.substring(startIndex + startMark.length, endIndex)
-                    // At this point placeholderText is actually currentIndex , the real value is in compressionMap
-                    let keyWord = handleHitKeywords(placeholderText, false)
+    // translated = translated.replaceAll(startMark0, startMark)
+    // translated = translated.replaceAll(endMark0, endMark)
+    // translated = removeNewlines(translated)
 
-                    if (keyWord === "undefined") {
-                        throw new Error("undefined")
-                    }
 
-                    let frontPart = translated.substring(0, startIndex)
-                    let backPart = translated.substring(endIndex + endMark.length)
-                    let customValue = customDictionary.get(keyWord.toLowerCase())
-                    translated = frontPart + (customValue === '' ? keyWord : customValue) + backPart
-                }
-            }
-        }
-    } catch (e) {
-        return rollbackOnFailure
-    }
+    let aaa = 'ww'
 
-    if (translated.indexOf(startMark) !== -1 || translated.indexOf(endMark) !== -1) {
-        return rollbackOnFailure
-    }
+    backgroundTranslateSingleText(currentPageTranslatorService, currentTargetLanguage, rollbackOnFailure.textContent).then(result => {
+        console.log(result)
+        aaa = result
 
-    return translated
+        rollbackOnFailure = result
+
+        // return result
+    })
+
+    // try {
+    //     const customDictionary = twpConfig.get("customDictionary")
+    //     if (customDictionary.size > 0) {
+    //         while (true) {
+    //             let startIndex = translated.indexOf(startMark)
+    //             if (startIndex === -1) {
+    //                 break
+    //             } else {
+    //                 let endIndex = translated.indexOf(endMark)
+    //                 let placeholderText = translated.substring(startIndex + startMark.length, endIndex)
+    //                 // At this point placeholderText is actually currentIndex , the real value is in compressionMap
+    //                 let keyWord = handleHitKeywords(placeholderText, false)
+    //                 if (keyWord === "undefined") {
+    //                     throw new Error("undefined")
+    //                 }
+    //                 let frontPart = translated.substring(0, startIndex)
+    //                 let backPart = translated.substring(endIndex + endMark.length)
+    //                 let customValue = customDictionary.get(keyWord.toLowerCase())
+    //                 customValue = (customValue === '') ? keyWord : customValue
+    //
+    //                 if (frontPart.length > 0) {
+    //                     if (frontPart.charAt(frontPart.length - 1) !== ' ' && customValue.charAt(0) !== ' ') frontPart = frontPart + ' '
+    //                 }
+    //                 if (backPart.length > 0) {
+    //                     if (backPart.charAt(0) !== ' ' && customValue.charAt(customValue.length - 1) !== ' ') backPart = ' ' + backPart
+    //                 }
+    //
+    //                 translated = frontPart + customValue + backPart
+    //             }
+    //         }
+    //     }
+    // } catch (e) {
+    //     return rollbackOnFailure.textContent
+    // }
+    //
+    // if (translated.indexOf(startMark) !== -1 || translated.indexOf(endMark) !== -1) {
+    //     return rollbackOnFailure.textContent
+    // }
+
+        // return aaa
+
+    // return translated
 }
 
 /**
@@ -701,8 +721,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
         }
 
         function translateResults(piecesToTranslateNow, results) {
-            console.log(piecesToTranslateNow)
-            console.log(results)
+            // console.log(piecesToTranslateNow)
+            // console.log(results)
 
             if (dontSortResults) {
                 for (let i = 0; i < results.length; i++) {
@@ -724,7 +744,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                                 node: nodes[j], original: nodes[j].textContent
                             })
 
-                            nodes[j].textContent = handleCustomWords(translated, nodes[j].textContent)
+                            // nodes[j].textContent = handleCustomWords(translated, nodes[j])
+                            nodes[j].textContent = handleCustomWords(translated, nodes[j], currentPageTranslatorService, currentTargetLanguage)
 
                         }
                     }
@@ -748,7 +769,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             //
                             // console.log(nodes[j].textContent)
 
-                            nodes[j].textContent = handleCustomWords(translated, nodes[j].textContent)
+
+                            nodes[j].textContent = handleCustomWords(translated, nodes[j], currentPageTranslatorService, currentTargetLanguage)
                         }
                     }
                 }
@@ -832,8 +854,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         }
 
                         if (attributesToTranslateNow.length > 0) {
+
                             backgroundTranslateText(currentPageTranslatorService, currentTargetLanguage, attributesToTranslateNow.map(ati => ati.original))
                                 .then(results => {
+
                                     if (pageLanguageState === "translated" && currentFooCount === fooCount) {
                                         translateAttributes(attributesToTranslateNow, results)
                                     }
