@@ -424,6 +424,7 @@ twpConfig.onReady(function () {
         if (!keyWord || keyWord.length < 2) return
         let customValue = prompt("(Optional)\nYou can enter a value to replace it , or fill in nothing.", "")
         if (!customValue) customValue = ''
+        customValue = customValue.trim()
         const li = createcustomDictionary(keyWord,customValue)
         $("#customDictionary").appendChild(li)
         twpConfig.addKeyWordTocustomDictionary(keyWord,customValue)
