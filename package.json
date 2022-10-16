@@ -1,0 +1,20 @@
+{
+  "name": "translate-web-pages",
+  "version": "1.0.0",
+  "browserslist": [
+    "firefox 63",
+    "chrome 70"
+  ],
+  "scripts": {
+    "build": "npx gulp"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "@types/chrome": "^0.0.197",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-zip": "^5.1.0"
+  }
+}
