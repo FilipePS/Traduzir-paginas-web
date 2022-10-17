@@ -602,7 +602,7 @@ const translationService = (function () {
         currentTranslationsInProgress.map((transInfo) => transInfo.waitTranlate)
       );
       return currentTranslationsInProgress.map((transInfo) =>
-          this.cbTransformResponse(transInfo.translatedText, dontSortResults)
+        this.cbTransformResponse(transInfo.translatedText, dontSortResults)
       );
     }
 
@@ -1181,4 +1181,3 @@ const translationService = (function () {
 
   return translationService;
 })();
-

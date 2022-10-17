@@ -260,20 +260,6 @@ var twpConfig = {}
         }
     }
 
-    /**
-     * We want to match the keyword "Spring Boot" first then the keyword "Spring".
-     *
-     * So adjust the Map order according to the keyword length here.
-     * */
-    function addInMapAndSort(configName,key, value) {
-        let map = twpConfig.get(configName)
-        if (typeof map.get(key) === "undefined") {
-            map.set(key,value)
-            const orderedMap = new Map([...map.entries()].sort((a, b) => String(b[0]).length - String(a[0]).length))
-            twpConfig.set(configName, orderedMap)
-        }
-    }
-
     function removeFromArray(configName, value) {
         const array = twpConfig.get(configName)
         const index = array.indexOf(value)
@@ -416,5 +402,3 @@ function toMapIfTypeIsObj(value) {
         return value
     }
 }
-
-

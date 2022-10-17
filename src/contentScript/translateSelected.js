@@ -348,8 +348,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		}
 
 		eButtonTransSelText = shadowRoot.getElementById("eButtonTransSelText")
-
-
 		eDivResult = shadowRoot.getElementById("eDivResult")
 		eSelTextTrans = shadowRoot.getElementById("eSelTextTrans")
 		eOrigText = shadowRoot.getElementById("eOrigText")
@@ -550,7 +548,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				stopAudio();
 			}
 			lastListenAudioType = "translated"
-			console.log("11111111111111111111")
 			onListenClick("translated", eListenTranslated, eSelTextTrans.textContent, currentTargetLanguage)
 		}
 
@@ -757,8 +754,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		stopAudio()
 
 		backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent).then(result => {
-			// console.log(result)
-
 			if (currentFooCount !== fooCount) return;
 
 			update_eDivResult(result)
@@ -774,7 +769,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 
 		eOrigText.textContent = prevSelectionInfo.text
 
-
 		translateNewInput()
 		const currentFooCount = fooCount
 		setTimeout(() => {
@@ -785,8 +779,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 	}
 
 	function onClick(e) {
-		console.log("7777777")
-
 		translateSelText()
 		eButtonTransSelText.style.display = "none"
 	}
@@ -1015,8 +1007,6 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 	updateEventListener()
 
 	chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-		console.log("000000000000000000000000000000000000000")
-
 		if (request.action === "TranslateSelectedText") {
 			readSelection()
 			init()
