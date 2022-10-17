@@ -621,9 +621,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             original: nodes[j].textContent
                         })
 
-                            handleCustomWords(translated, nodes[j].textContent, currentPageTranslatorService, currentTargetLanguage).then(results => {
-                                nodes[j].textContent = results
-                            })
+                        handleCustomWords(translated, nodes[j].textContent, currentPageTranslatorService, currentTargetLanguage).then(results => {
+                            nodes[j].textContent = results
+                        })
                     }
                 }
             }
@@ -641,9 +641,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             node: nodes[j],
                             original: nodes[j].textContent
                         })
-                            handleCustomWords(translated, nodes[j].textContent, currentPageTranslatorService, currentTargetLanguage).then(results => {
-                                nodes[j].textContent = results
-                            })
+
+                        handleCustomWords(translated, nodes[j].textContent, currentPageTranslatorService, currentTargetLanguage).then(results => {
+                            nodes[j].textContent = results
+                        })
                     }
                 }
             }
@@ -722,7 +723,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                         backgroundTranslateHTML(
                                 currentPageTranslatorService,
                                 currentTargetLanguage,
-                                piecesToTranslateNow.map(ptt => ptt.nodes.map(node => node.textContent)),
+                                piecesToTranslateNow.map(ptt => ptt.nodes.map(node => filterKeywordsInText(node.textContent))),
                                 dontSortResults
                             )
                             .then(results => {
