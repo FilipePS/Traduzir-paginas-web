@@ -18,8 +18,6 @@ let compressionMap;
 /**
  *  Convert matching keywords to a string of special numbers to skip translation before sending to the translation engine.
  *
- * This method is no longer used directly, and the higher-level method 'filterKeywordsIn3d' processes keywords at the sourceArray3d level
- *
  *  For English words, ignore case when matching.
  *
  *  But for the word "app" , We don't want to "Happy" also matched.
@@ -29,7 +27,6 @@ let compressionMap;
  *  But this will also cause this method to not work for Chinese, Burmese and other languages without spaces.
  * */
 function filterKeywordsInText(textContext) {
-
     let customDictionary = twpConfig.get("customDictionary")
     if (customDictionary.size > 0) {
         // reordering , we want to match the keyword "Spring Boot" first then the keyword "Spring"
@@ -40,12 +37,11 @@ function filterKeywordsInText(textContext) {
                 if (index === -1) {
                     break
                 } else {
-                    textContext = removeNewlines(textContext)
+                    textContext = removeExtraDelimiter(textContext)
                     let previousIndex = index - 1
                     let nextIndex = index + keyWord.length
                     let previousChar = previousIndex === -1 ? '\n' : textContext.charAt(previousIndex)
                     let nextChar = nextIndex === textContext.length ? '\n' : textContext.charAt(nextIndex)
-
                     let placeholderText = ''
                     let keyWordWithCase = textContext.substring(index, index + keyWord.length)
                     if (isPunctuationOrDelimiter(previousChar) && isPunctuationOrDelimiter(nextChar)) {
@@ -65,19 +61,18 @@ function filterKeywordsInText(textContext) {
             textContext = textContext.replaceAll('#n%o#', '')
         }
     }
-
     return textContext
 }
 
 /**
  *  handle the keywords in translatedText, replace it if there is a custom replacement value.
+ *
+ *  When encountering Google Translate reordering, the original text contains our mark, etc. , we will catch these exceptions and call the text translation method to retranslate this section.
  *  */
-async function handleCustomWords(translated, rollbackOnFailure, currentPageTranslatorService, currentTargetLanguage) {
-
-    translated = removeNewlines(translated)
+async function handleCustomWords(translated, originalText, currentPageTranslatorService, currentTargetLanguage) {
+    translated = removeExtraDelimiter(translated)
     translated = translated.replaceAll(startMark0, startMark)
     translated = translated.replaceAll(endMark0, endMark)
-
     try {
         const customDictionary = twpConfig.get("customDictionary")
         if (customDictionary.size > 0) {
@@ -105,11 +100,7 @@ async function handleCustomWords(translated, rollbackOnFailure, currentPageTrans
             }
         }
     } catch (e) {
-        return await backgroundTranslateSingleText(currentPageTranslatorService, currentTargetLanguage, rollbackOnFailure.textContent)
-    }
-
-    if (translated.indexOf(startMark) !== -1 || translated.indexOf(endMark) !== -1) {
-        return rollbackOnFailure.textContent
+        return await backgroundTranslateSingleText(currentPageTranslatorService, currentTargetLanguage, originalText)
     }
 
     return translated
@@ -160,117 +151,12 @@ function isPunctuationOrDelimiter(str) {
 }
 
 /**
- * Remove useless newlines inside, which may affect our semantics
- *
- * See if there are consecutive spaces, keep only one
- *
- * In order to minimize the impact on the original semantics, only the 30 characters before and after the keyword appear
- *
- * @see https://github.com/FilipePS/Traduzir-paginas-web/pull/476#issuecomment-1251864367
+ * Remove useless newlines, spaces inside, which may affect our semantics
  * */
-function removeNewlines(textContext) {
+function removeExtraDelimiter(textContext) {
     textContext = textContext.replaceAll('\n', ' ')
     textContext = textContext.replace(/  +/g, ' ')
     return textContext
-}
-
-function removeNewlines30(textContext, index, keyWord) {
-    let previous30 = index - 30 >= 0 ? index - 30 : 0
-    let next30 = index + keyWord.length + 30 < textContext.length ? index + keyWord.length + 30 : textContext.length
-    let needDealtPart = textContext.substring(previous30, next30)
-    needDealtPart = needDealtPart.replaceAll('\n', ' ')
-    needDealtPart = needDealtPart.replace(/  +/g, ' ')
-    textContext = textContext.substring(0, previous30) + needDealtPart + textContext.substring(next30)
-    return textContext
-}
-
-/**
- * Iterate over '_sourceArray3d' , delete our keywords
- *
- * Each 'sourceArray2d' corresponds to a 'originalDescriptionMap', and each 'originalDescriptionMap' contains several 'description'
- *
- * The size of 'sourceArray2d', corresponding to the number of 'description'
- *
- * For example, with only 1 element in 'sourceArray2d', ['The Temporal Platform explained'] , we have the keyword 'Temporal'
- *
- * After going through our method, so now 'newSourceArray2d' consists of two elements ['The ,' Platform explained']
- *
- * And we have a 'description' , we restore it through original text, it looks like '0T1'
- *
- * T represents the keyword, '0, 1' corresponds to the current index of newSourceArray2d
- * */
-function filterKeywordsIn3d(sourceArray3d, allDescriptionMap) {
-    return sourceArray3d.map((sourceArray2d, index) => {
-        let newSourceArray2d = []
-        let originalDescriptionMap = new Map()
-        // points to the last of the newSourceArray2d
-        let currentPoint = -1
-        sourceArray2d.forEach((value, index) => {
-            let description = ''
-            let processedText = filterKeywordsInText(value)
-            while (true) {
-                let startIndex = processedText.indexOf(startMark)
-                if (startIndex === -1) {
-                    if (processedText.length > 0) {
-                        newSourceArray2d.push(processedText)
-                        currentPoint++
-                        description += currentPoint
-                    }
-                    break
-                } else {
-                    let frontPart = processedText.substring(0, startIndex)
-                    let backPart = processedText.substring(processedText.indexOf(endMark) + endMark.length)
-                    let indexWithMark = processedText.substring(startIndex, processedText.indexOf(endMark) + endMark.length)
-                    if (frontPart.length > 0) {
-                        newSourceArray2d.push(frontPart)
-                        currentPoint++
-                        description += currentPoint
-                    }
-                    description += indexWithMark
-                    processedText = backPart
-                }
-            }
-            originalDescriptionMap.set(index, description)
-        })
-        allDescriptionMap.set(index, originalDescriptionMap)
-        return newSourceArray2d
-    })
-}
-
-/**
- * Splicing custom keywords
- * */
-function spliceKeywordsIn3d(resultArray3d, allDescriptionMap) {
-    return resultArray3d.map((resultArray2d, index) => {
-        let newResultArray2d = []
-        allDescriptionMap.get(index).forEach((description) => {
-            let parsedResult = ''
-            while (true) {
-                let startIndex = description.indexOf(startMark)
-                if (startIndex === -1) {
-                    if (description.length > 0) {
-                        // There is no valid value guarantee here, there is '' sent to Google, resultArray2d will have a null
-                        parsedResult += resultArray2d[description] ? resultArray2d[description] : ''
-                    }
-                    break
-                } else {
-                    let front = ''
-                    if (startIndex > 0) {
-                        front = resultArray2d[description.substring(0, startIndex)]
-                    }
-                    parsedResult += front
-                    let key = description.substring(description.indexOf(startMark) + startMark.length, description.indexOf(endMark))
-                    let trueKey = handleHitKeywords(key, false)
-                    // Due to the direct processing of sourceArray3d, so the original whitespace gap is lost
-                    trueKey = ' ' + trueKey + ' '
-                    parsedResult += trueKey
-                    description = description.substring(description.indexOf(endMark) + endMark.length)
-                }
-            }
-            newResultArray2d.push(parsedResult)
-        })
-        return newResultArray2d
-    })
 }
 
 
@@ -706,10 +592,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                                 node: nodes[j], original: nodes[j].textContent
                             })
 
-                            // nodes[j].textContent = handleCustomWords(translated, nodes[j])
-                            // nodes[j].textContent = handleCustomWords(translated, nodes[j], currentPageTranslatorService, currentTargetLanguage)
-
-                            handleCustomWords(translated, nodes[j], currentPageTranslatorService, currentTargetLanguage).then(results => {
+                            handleCustomWords(translated, nodes[j].textContent, currentPageTranslatorService, currentTargetLanguage).then(results => {
                                 nodes[j].textContent = results
                             })
 
@@ -731,14 +614,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                                 node: nodes[j], original: nodes[j].textContent
                             })
 
-                            // console.log("piecesToTranslateNow[i].nodes")
-                            //
-                            // console.log(nodes[j].textContent)
-
-
-                            // nodes[j].textContent = handleCustomWords(translated, nodes[j], currentPageTranslatorService, currentTargetLanguage)
-
-                            handleCustomWords(translated, nodes[j], currentPageTranslatorService, currentTargetLanguage).then(results => {
+                            handleCustomWords(translated, nodes[j].textContent, currentPageTranslatorService, currentTargetLanguage).then(results => {
                                 nodes[j].textContent = results
                             })
 
