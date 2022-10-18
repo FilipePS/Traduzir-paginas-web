@@ -78,10 +78,10 @@ async function handleCustomWords(translated, originalText, currentPageTranslator
         if (customDictionary.size > 0) {
             while (true) {
                 let startIndex = translated.indexOf(startMark)
-                if (startIndex === -1) {
+                let endIndex = translated.indexOf(endMark)
+                if (startIndex === -1 && endIndex === -1) {
                     break
                 } else {
-                    let endIndex = translated.indexOf(endMark)
                     let placeholderText = translated.substring(startIndex + startMark.length, endIndex)
                     // At this point placeholderText is actually currentIndex , the real value is in compressionMap
                     let keyWord = handleHitKeywords(placeholderText, false)
