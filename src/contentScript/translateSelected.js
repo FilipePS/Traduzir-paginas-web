@@ -14,14 +14,14 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 
 	let gSelectionInfo
 	let prevSelectionInfo
-	
+
 	let divElement
 	let eButtonTransSelText
 	let eDivResult
 	let eSelTextTrans
 	let eOrigText
 	let origTextContainer
-	
+
 	let originalTabLanguage = "und"
 	let currentTargetLanguages = twpConfig.get("targetLanguages")
 	let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
@@ -35,27 +35,27 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 	let dontShowIfSelectedTextIsTargetLang = twpConfig.get("dontShowIfSelectedTextIsTargetLang")
 	let dontShowIfSelectedTextIsUnknown = twpConfig.get("dontShowIfSelectedTextIsUnknown")
 	let fooCount = 0
-	
+
 	pageTranslator.onGetOriginalTabLanguage(function (tabLanguage) {
 		originalTabLanguage = tabLanguage
 		translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1
 		updateEventListener()
 	})
-	
+
 	async function detectTextLanguage(text) {
 		if (!chrome.i18n.detectLanguage) return "und"
-		
+
 		return await new Promise(resolve => {
 			chrome.i18n.detectLanguage(text, result => {
 				if (!result) return resolve({lang: "und", isReliable: false})
-				
+
 				for (const langInfo of result.languages) {
 					const langCode = twpLang.fixTLanguageCode(langInfo.language)
 					if (langCode) {
 						return resolve({lang: langCode, isReliable: result.isReliable})
 					}
 				}
-				
+
 				return resolve({lang: "und", isReliable: false})
 			})
 		})
@@ -74,7 +74,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			cbOnEnded()
 		})
     }
-	
+
 	function stopAudio() {
 		if (!isPlayingAudio) return;
 		isPlayingAudio = false
@@ -82,7 +82,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			action: "stopAudio"
 		})
 	}
-	
+
 	function dragElement(elmnt, elmnt2) {
 		var pos1 = 0,
 			pos2 = 0,
@@ -93,7 +93,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		} else {
 			elmnt.addEventListener("mousedown", dragMouseDown);
 		}
-		
+
 		function dragMouseDown(e) {
 			e = e || window.event;
 			e.preventDefault();
@@ -104,7 +104,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			// call a function whenever the cursor moves:
 			document.addEventListener("mousemove", elementDrag);
 		}
-		
+
 		function elementDrag(e) {
 			e = e || window.event;
 			e.preventDefault();
@@ -117,14 +117,14 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			elmnt.style.top =  Math.min(window.innerHeight-parseInt(getComputedStyle(elmnt).height), Math.max(0, elmnt.offsetTop - pos2)) + "px";
 			elmnt.style.left = Math.max(0, elmnt.offsetLeft - pos1) + "px";
 		}
-		
+
 		function closeDragElement() {
 			// stop moving when mouse button is released:
 			document.removeEventListener("mouseup", closeDragElement);
 			document.removeEventListener("mousemove", elementDrag);
 		}
 	}
-	
+
 	function setCaretAtEnd() {
 		const el = eOrigText
 		const range = document.createRange()
@@ -138,20 +138,20 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 
 	let onCSSLoad = null
 	let isCSSLoaded = false
-	
+
 	function init() {
 		destroy()
-		
+
 		window.isTranslatingSelected = true
-		
+
 		divElement = document.createElement("div")
 		divElement.style = "all: initial"
 		divElement.classList.add("notranslate")
-		
+
 		const shadowRoot = divElement.attachShadow({
 			mode: "closed"
 		})
-		
+
 		shadowRoot.innerHTML = `
         <div id="eButtonTransSelText" style="display: none"></div>
 		<div id="eDivResult" style="display: none">
@@ -235,7 +235,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			</div>
 		</div>
         `
-		
+
 
 
 		const link = document.createElement("link")
@@ -258,12 +258,12 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		}
 		`
 		shadowRoot.appendChild(styleFix)
-		
-		
+
+
 		dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
 
 		const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-		
+
 		if (CSS.supports("backdrop-filter: blur(5px)") && !isFirefox && false) {
 			const el = document.createElement("style")
 			el.setAttribute("id", "backdropFilterElement")
@@ -346,17 +346,17 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			}
 			shadowRoot.appendChild(el)
 		}
-		
+
 		eButtonTransSelText = shadowRoot.getElementById("eButtonTransSelText")
 		eDivResult = shadowRoot.getElementById("eDivResult")
 		eSelTextTrans = shadowRoot.getElementById("eSelTextTrans")
 		eOrigText = shadowRoot.getElementById("eOrigText")
 		origTextContainer = shadowRoot.getElementById("origTextContainer")
-		
+
 		const eMoreOrLess = shadowRoot.getElementById("moreOrLess")
 		const eMore = shadowRoot.getElementById("more")
 		const eLess = shadowRoot.getElementById("less")
-		
+
 		const sGoogle = shadowRoot.getElementById("sGoogle")
 		const sYandex = shadowRoot.getElementById("sYandex")
 		const sBing = shadowRoot.getElementById("sBing")
@@ -392,7 +392,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			}
 			document.execCommand('insertText', false, eSelTextTrans.textContent);
 		}
-		
+
 		eCopy.onclick = () => {
 			navigator.clipboard.writeText(eSelTextTrans.textContent).then(() => {
 				const oldBackgroundColor = eCopy.style.backgroundColor
@@ -404,11 +404,11 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		}
 
 		eReplace.onclick = replaceText
-		
+
 		eOrigText.onkeypress = e => {
 			e.stopPropagation()
 		}
-		
+
 		eOrigText.onkeydown = e => {
 			e.stopPropagation()
 		}
@@ -425,72 +425,72 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				lastTimePressedCtrl = performance.now()
 			}
 		}
-		
+
 		let translateNewInputTimerHandler
 		eOrigText.oninput = () => {
 			clearTimeout(translateNewInputTimerHandler)
 			translateNewInputTimerHandler = setTimeout(translateNewInput, 800)
 		}
-		
+
 		eMoreOrLess.onclick = () => {
 			if (twpConfig.get("expandPanelTranslateSelectedText") === "no") {
 				twpConfig.set("expandPanelTranslateSelectedText", "yes")
 			} else {
 				twpConfig.set("expandPanelTranslateSelectedText", "no")
 			}
-			
+
 			setCaretAtEnd()
 		}
-		
+
 		sGoogle.onclick = () => {
 			currentTextTranslatorService = "google"
 			twpConfig.set("textTranslatorService", "google")
 			translateNewInput()
-			
+
 			sGoogle.classList.remove("selected")
 			sYandex.classList.remove("selected")
 			sBing.classList.remove("selected")
 			sDeepL.classList.remove("selected")
-			
+
 			sGoogle.classList.add("selected")
 		}
 		sYandex.onclick = () => {
 			currentTextTranslatorService = "yandex"
 			twpConfig.set("textTranslatorService", "yandex")
 			translateNewInput()
-			
+
 			sGoogle.classList.remove("selected")
 			sYandex.classList.remove("selected")
 			sBing.classList.remove("selected")
 			sDeepL.classList.remove("selected")
-			
+
 			sYandex.classList.add("selected")
 		}
 		sBing.onclick = () => {
 			currentTextTranslatorService = "bing"
 			twpConfig.set("textTranslatorService", "bing")
 			translateNewInput()
-			
+
 			sGoogle.classList.remove("selected")
 			sYandex.classList.remove("selected")
 			sBing.classList.remove("selected")
 			sDeepL.classList.remove("selected")
-			
+
 			sBing.classList.add("selected")
 		}
 		sDeepL.onclick = () => {
 			currentTextTranslatorService = "deepl"
 			twpConfig.set("textTranslatorService", "deepl")
 			translateNewInput()
-			
+
 			sGoogle.classList.remove("selected")
 			sYandex.classList.remove("selected")
 			sBing.classList.remove("selected")
 			sDeepL.classList.remove("selected")
-			
+
 			sDeepL.classList.add("selected")
 		}
-		
+
 		const setTargetLanguage = shadowRoot.getElementById("setTargetLanguage")
 		setTargetLanguage.onclick = e => {
 			if (e.target.getAttribute("value")) {
@@ -500,11 +500,11 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 					twpConfig.setTargetLanguageTextTranslation(langCode)
 					translateNewInput()
 				}
-				
+
 				shadowRoot.querySelectorAll("#setTargetLanguage li").forEach(li => {
 					li.classList.remove("selected")
 				})
-				
+
 				e.target.classList.add("selected")
 			}
 		}
@@ -512,12 +512,12 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		function onListenClick(type, element, text, language) {
 			const msgListen = chrome.i18n.getMessage("btnListen")
 			const msgStopListening = chrome.i18n.getMessage("btnStopListening")
-			
+
 			eListenOriginal.classList.remove("selected")
 			eListenTranslated.classList.remove("selected")
 			eListenOriginal.setAttribute("title", msgStopListening)
 			eListenTranslated.setAttribute("title", msgStopListening)
-			
+
 			if (isPlayingAudio) {
 				stopAudio()
 				element.classList.remove("selected")
@@ -542,7 +542,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			lastListenAudioType = "original"
 			onListenClick("original", eListenOriginal, eOrigText.textContent, lang)
 		}
-		
+
 		eListenTranslated.onclick = () => {
 			if (lastListenAudioType !== "translated") {
 				stopAudio();
@@ -550,22 +550,22 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			lastListenAudioType = "translated"
 			onListenClick("translated", eListenTranslated, eSelTextTrans.textContent, currentTargetLanguage)
 		}
-		
+
 		document.body.appendChild(divElement)
-		
+
 		chrome.i18n.translateDocument(shadowRoot)
-		
+
 		if (platformInfo.isMobile.any) {
 			eButtonTransSelText.style.width = "30px"
 			eButtonTransSelText.style.height = "30px"
 			document.addEventListener("touchstart", onTouchstart)
 		}
-		
+
 		eButtonTransSelText.addEventListener("click", onClick)
 		document.addEventListener("mousedown", onDown)
-		
+
 		const targetLanguageButtons = shadowRoot.querySelectorAll("#setTargetLanguage li")
-		
+
 		for (let i = 0; i < 3; i++) {
 			if (currentTargetLanguages[i] == currentTargetLanguage) {
 				targetLanguageButtons[i].classList.add("selected")
@@ -574,7 +574,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			targetLanguageButtons[i].setAttribute("value", currentTargetLanguages[i])
 			targetLanguageButtons[i].setAttribute("title", twpLang.codeToLanguage(currentTargetLanguages[i]))
 		}
-		
+
 		if (currentTextTranslatorService === "yandex") {
 			sYandex.classList.add("selected")
 		} else if (currentTextTranslatorService == "deepl") {
@@ -584,7 +584,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		} else {
 			sGoogle.classList.add("selected")
 		}
-		
+
 		if (twpConfig.get("enableDeepL") === "yes") {
 			sDeepL.removeAttribute("hidden")
 		} else {
@@ -631,13 +631,13 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			}
 		})
 	}
-	
+
 	function destroy() {
 		window.isTranslatingSelected = false
 		fooCount++
 		stopAudio()
 		if (!divElement) return;
-		
+
 		eButtonTransSelText.removeEventListener("click", onClick)
 		document.removeEventListener("mousedown", onDown)
 		if (platformInfo.isMobile.any) {
@@ -646,13 +646,13 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		divElement.remove()
 		divElement = eButtonTransSelText = eDivResult = null
 	}
-	
+
 	function destroyIfButtonIsShowing(e) {
 		if (eButtonTransSelText && e.target !== divElement && eButtonTransSelText.style.display === "block") {
 			destroy()
 		}
 	}
-	
+
 	twpConfig.onChanged(function (name, newValue) {
 		switch (name) {
 			case "textTranslatorService":
@@ -705,7 +705,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		function onloaded() {
 			const eTop = prevSelectionInfo.bottom
 			const eLeft = prevSelectionInfo.left
-			
+
 			if (twpLang.isRtlLanguage(currentTargetLanguage)) {
 				eSelTextTrans.setAttribute("dir", "rtl")
 			} else {
@@ -718,20 +718,20 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				eDivResult.style.top = "0px"
 				eDivResult.style.left = "0px"
 				eOrigText.textContent = prevSelectionInfo.text
-				
+
 				setCaretAtEnd()
-				
+
 				const height = parseInt(eDivResult.offsetHeight)
 				top = eTop + 5
 				top = Math.max(0, top)
 				top = Math.min(window.innerHeight - height, top)
-				
+
 				const width = parseInt(eDivResult.offsetWidth)
 				left = parseInt(eLeft /*- width / 2*/)
 				left = Math.max(0, left)
 				left = Math.min(window.innerWidth - width, left)
 			}
-	
+
 			eDivResult.style.top = Math.min(window.innerHeight-parseInt(getComputedStyle(eDivResult).height), top) + "px";
 			eDivResult.style.left = Math.min(window.innerWidth-parseInt(getComputedStyle(eDivResult).width)-18, left) + "px";
 		}
@@ -747,28 +747,28 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			}
 		}
 	}
-	
+
 	function translateNewInput() {
 		fooCount++
 		const currentFooCount = fooCount
 		stopAudio()
-		
+
 		backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent).then(result => {
 			if (currentFooCount !== fooCount) return;
-			
+
 			update_eDivResult(result)
 		})
 	}
-	
+
 	function translateSelText(usePrevSelectionInfo = false) {
 		if (!usePrevSelectionInfo && gSelectionInfo) {
 			prevSelectionInfo = gSelectionInfo
 		} else if (!(usePrevSelectionInfo && prevSelectionInfo)) {
 			return
 		}
-		
+
 		eOrigText.textContent = prevSelectionInfo.text
-		
+
 		translateNewInput()
 		const currentFooCount = fooCount
 		setTimeout(() => {
@@ -777,12 +777,12 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			fooCount = currentFooCount
 		}, 1000)
 	}
-	
+
 	function onClick(e) {
 		translateSelText()
 		eButtonTransSelText.style.display = "none"
 	}
-	
+
 	function onDown(e) {
 		if (e.target != divElement) {
 			eDivResult.style.display = "none"
@@ -790,15 +790,15 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			destroy()
 		}
 	}
-	
-	
+
+
 	let isTouchSelection = false
-	
+
 	function onTouchstart(e) {
 		isTouchSelection = true
 		onDown(e)
 	}
-	
+
 	function getSelectionText() {
 		let text = "";
 		const activeEl = document.activeElement;
@@ -814,10 +814,10 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		}
 		return text;
 	}
-	
+
 	function readSelection(dontReadIfSelectionDontChange = false) {
 		let newSelectionInfo = null
-		
+
 		const activeEl = document.activeElement;
 		const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
 		if (
@@ -859,7 +859,7 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				}
 			}
 		}
-		
+
 		if (dontReadIfSelectionDontChange && gSelectionInfo && newSelectionInfo && gSelectionInfo.text === newSelectionInfo.text) {
 			gSelectionInfo = newSelectionInfo
 			return false
@@ -867,18 +867,18 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		gSelectionInfo = newSelectionInfo
 		return true
 	}
-	
+
 	async function onUp(e) {
 		if (e.target == divElement) return;
-		
+
 		const clientX = Math.max((typeof e.clientX === 'undefined' ? 0 : e.clientX), (typeof e.changedTouches === 'undefined' ? 0 : e.changedTouches[0].clientX));
 		const clientY = Math.max((typeof e.clientY === 'undefined' ? 0 : e.clientY), (typeof e.changedTouches === 'undefined' ? 0 : e.changedTouches[0].clientY));
-		
+
 		const selectedText = getSelectionText().trim()
 		if (!selectedText || selectedText.length < 1) return;
 		let detectedLanguage = (await detectTextLanguage(selectedText)).lang
 		if (!detectedLanguage) detectedLanguage = "und";
-		
+
 		if (((dontShowIfSelectedTextIsTargetLang == "yes" && detectedLanguage !== currentTargetLanguage) || dontShowIfSelectedTextIsTargetLang != "yes") &&
 			((dontShowIfSelectedTextIsUnknown == "yes" && detectedLanguage !== "und") || dontShowIfSelectedTextIsUnknown != "yes")
 		) {
@@ -890,13 +890,13 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				eButtonTransSelText.style.left = Math.min(window.innerWidth-40, clientX + 25) + "px"
 				eButtonTransSelText.style.top = Math.max(2, clientY - 35) + "px"
 			}
-			
+
 			eButtonTransSelText.style.display = "block"
 		}
 	}
-	
+
 	let showButtonTimerHandler = null
-	
+
 	function onMouseup(e) {
 		if (e.button != 0) return;
 		if (e.target == divElement) return;
@@ -905,20 +905,20 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			showButtonTimerHandler = setTimeout(() => onUp(e), 150)
 		}
 	}
-	
+
 	function onTouchend(e) {
 		if (e.target == divElement) return;
 		readSelection()
 		clearTimeout(showButtonTimerHandler)
 		showButtonTimerHandler = setTimeout(() => onUp(e), 150)
 	}
-	
+
 	function onSelectionchange(e) {
 		if (isTouchSelection) {
 			readSelection()
 		}
 	}
-	
+
 	function isSelectingText() {
 		const activeEl = document.activeElement;
 		const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
@@ -938,9 +938,9 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 		}
 		return false
 	}
-	
+
 	let lastTimePressedCtrl = null
-	
+
 	function onKeyUp(e) {
 		if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
 		if (e.key == "Control") {
@@ -953,9 +953,9 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 			lastTimePressedCtrl = performance.now()
 		}
 	}
-	
+
 	document.addEventListener("keyup", onKeyUp)
-	
+
 	let windowIsInFocus = true
 	window.addEventListener("focus", function (e) {
 		windowIsInFocus = true
@@ -964,48 +964,48 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 	window.addEventListener("blur", function (e) {
 		windowIsInFocus = false
 	})
-	
+
 	window.addEventListener("beforeunload", function (e) {
 		destroy()
 	})
-	
+
 	function updateEventListener() {
 		if (showTranslateSelectedButton == "yes" && (awaysTranslateThisSite || (translateThisSite && translateThisLanguage)) &&
 			((dontShowIfPageLangIsTargetLang == "yes" && originalTabLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes") &&
 			((dontShowIfPageLangIsUnknown == "yes" && originalTabLanguage !== "und") || dontShowIfPageLangIsUnknown != "yes")
 		) {
 			document.addEventListener("mouseup", onMouseup)
-			
+
 			document.addEventListener("blur", destroyIfButtonIsShowing)
 			document.addEventListener("visibilitychange", destroyIfButtonIsShowing)
-			
+
 			document.addEventListener("keydown", destroyIfButtonIsShowing)
 			document.addEventListener("mousedown", destroyIfButtonIsShowing)
 			document.addEventListener("wheel", destroyIfButtonIsShowing)
-			
+
 			if (platformInfo.isMobile.any) {
 				document.addEventListener("touchend", onTouchend)
 				document.addEventListener("selectionchange", onSelectionchange)
 			}
 		} else {
 			document.removeEventListener("mouseup", onMouseup)
-			
+
 			document.removeEventListener("blur", destroyIfButtonIsShowing)
 			document.removeEventListener("visibilitychange", destroyIfButtonIsShowing)
-			
+
 			document.removeEventListener("keydown", destroyIfButtonIsShowing)
 			document.removeEventListener("mousedown", destroyIfButtonIsShowing)
 			document.removeEventListener("wheel", destroyIfButtonIsShowing)
-			
+
 			if (platformInfo.isMobile.any) {
 				document.removeEventListener("touchend", onTouchend)
 				document.removeEventListener("selectionchange", onSelectionchange)
 			}
 		}
 	}
-	
+
 	updateEventListener()
-	
+
 	chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 		if (request.action === "TranslateSelectedText") {
 			readSelection()

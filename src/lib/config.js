@@ -20,6 +20,7 @@ var twpConfig = {}
         langsToTranslateWhenHovering: [],
         alwaysTranslateLangs: [],
         neverTranslateLangs: [],
+        customDictionary: new Map(),
         showTranslatePageContextMenu: "yes",
         showTranslateSelectedContextMenu: "yes",
         showButtonInTheAddressBar: "yes",
@@ -46,7 +47,7 @@ var twpConfig = {}
         translateClickingOnce: "no"
     }
 
-    
+
     let onReadyObservers = []
     let configIsReady = false
     let onReadyResolvePromise
@@ -77,7 +78,7 @@ var twpConfig = {}
     twpConfig.set = function (name, value) {
         config[name] = value
         const obj = {}
-        obj[name] = value
+        obj[name] = toObjIfTypeIsMap(value)
         chrome.storage.local.set(obj)
         observers.forEach(callback => callback(name, value))
     }
@@ -89,7 +90,8 @@ var twpConfig = {}
         }
 
         for (const key in defaultConfig) {
-            r[key] = twpConfig.get(key)
+            let value = twpConfig.get(key)
+            r[key] = toObjIfTypeIsMap(value)
         }
 
         return r
@@ -98,7 +100,8 @@ var twpConfig = {}
     twpConfig.import = function (newconfig) {
         for (const key in defaultConfig) {
             if (typeof newconfig[key] !== "undefined") {
-                twpConfig.set(key, newconfig[key])
+                let value = toMapIfTypeIsObj(newconfig[key])
+                twpConfig.set(key, value)
             }
         }
 
@@ -145,7 +148,7 @@ var twpConfig = {}
                 for (const name in changes) {
                     const newValue = changes[name].newValue
                     if (config[name] !== newValue) {
-                        config[name] = newValue
+                        config[name] = toMapIfTypeIsObj(newValue)
                         observers.forEach(callback => callback(name, newValue))
                     }
                 }
@@ -177,7 +180,7 @@ var twpConfig = {}
             }
 
             for (const name in onGot) {
-                config[name] = onGot[name]
+                config[name] = toMapIfTypeIsObj(onGot[name])
             }
 
             // se tiver algum targetLanguage undefined substitui a configuração
@@ -249,12 +252,28 @@ var twpConfig = {}
         }
     }
 
+    function addInMap(configName,key, value) {
+        let map = twpConfig.get(configName)
+        if (typeof map.get(key) === "undefined") {
+            map.set(key,value)
+            twpConfig.set(configName, map)
+        }
+    }
+
     function removeFromArray(configName, value) {
         const array = twpConfig.get(configName)
         const index = array.indexOf(value)
         if (index > -1) {
             array.splice(index, 1)
             twpConfig.set(configName, array)
+        }
+    }
+
+    function removeFromMap(configName, key) {
+        const map = twpConfig.get(configName)
+        if (typeof map.get(key) !== "undefined") {
+            map.delete(key)
+            twpConfig.set(configName, map)
         }
     }
 
@@ -286,8 +305,14 @@ var twpConfig = {}
         removeFromArray("alwaysTranslateSites", hostname)
         removeFromArray("sitesToTranslateWhenHovering", hostname)
     }
+    twpConfig.addKeyWordTocustomDictionary = function (key, value) {
+        addInMap("customDictionary", key, value)
+    }
     twpConfig.removeSiteFromNeverTranslate = function (hostname) {
         removeFromArray("neverTranslateSites", hostname)
+    }
+    twpConfig.removeKeyWordFromcustomDictionary = function (keyWord) {
+        removeFromMap("customDictionary", keyWord)
     }
     twpConfig.addLangToAlwaysTranslate = function (lang, hostname) {
         addInArray("alwaysTranslateLangs", lang)
@@ -351,5 +376,29 @@ var twpConfig = {}
         if (!lang) return;
 
         twpConfig.set("targetLanguageTextTranslation", lang)
+    }
+}
+
+/**
+ * The StorageEvent.newValue unable to monitor Map changes.
+ *
+ * So here the Map type is converted to Object, otherwise return it directly.
+ * */
+function toObjIfTypeIsMap(value) {
+    if (value instanceof Map) {
+        return Object.fromEntries(value)
+    } else {
+        return value
+    }
+}
+
+/**
+ * If it is Object we convert it to Map, otherwise return it directly.
+ * */
+function toMapIfTypeIsObj(value) {
+    if (Object.prototype.toString.call(value) === '[object Object]') {
+        return new Map(Object.entries(value))
+    }else {
+        return value
     }
 }
