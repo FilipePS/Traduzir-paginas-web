@@ -70,12 +70,13 @@ function filterKeywordsInText(textContext) {
  *  When encountering Google Translate reordering, the original text contains our mark, etc. , we will catch these exceptions and call the text translation method to retranslate this section.
  *  */
 async function handleCustomWords(translated, originalText, currentPageTranslatorService, currentTargetLanguage) {
-    translated = removeExtraDelimiter(translated)
-    translated = translated.replaceAll(startMark0, startMark)
-    translated = translated.replaceAll(endMark0, endMark)
     try {
         const customDictionary = twpConfig.get("customDictionary")
         if (customDictionary.size > 0) {
+            translated = removeExtraDelimiter(translated)
+            translated = translated.replaceAll(startMark0, startMark)
+            translated = translated.replaceAll(endMark0, endMark)
+
             while (true) {
                 let startIndex = translated.indexOf(startMark)
                 let endIndex = translated.indexOf(endMark)
