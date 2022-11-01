@@ -823,10 +823,10 @@ twpConfig.onReady(function () {
     }
 
     $("#backupToFile").onclick = e => {
-        const config = twpConfig.export()
+        const configJSON = twpConfig.export()
 
         const element = document.createElement('a')
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(config, null, 4)))
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(configJSON))
         element.setAttribute('download', 'twp-backup_' + new Date().toISOString().replace(/T/, '_').replace(/\..+/, '').replace(/\:/g, ".") + ".txt")
 
         element.style.display = 'none'
@@ -850,10 +850,8 @@ twpConfig.onReady(function () {
             const reader = new FileReader()
             reader.onload = function () {
                 try {
-                    const config = JSON.parse(reader.result)
-
                     if (confirm(chrome.i18n.getMessage("doYouWantOverwriteAllSettings"))) {
-                        twpConfig.import(config)
+                        twpConfig.import(reader.result)
                     }
                 } catch (e) {
                     alert(chrome.i18n.getMessage("fileIsCorrupted"))
