@@ -48,7 +48,7 @@ const twpConfig = (function () {
     translateTextOverMouseWhenPressTwice: "no",
     translateClickingOnce: "no",
   };
-  const config = JSON.parse(JSON.stringify(defaultConfig));
+  const config = structuredClone(defaultConfig);
 
   let onReadyObservers = [];
   let configIsReady = false;
@@ -100,6 +100,7 @@ const twpConfig = (function () {
    * @param {*} value
    */
   twpConfig.set = function (name, value) {
+    // @ts-ignore
     config[name] = value;
     const obj = {};
     obj[name] = toObjectOrArrayIfTypeIsMapOrSet(value);
@@ -212,7 +213,22 @@ const twpConfig = (function () {
   // load config
   chrome.i18n.getAcceptLanguages((acceptedLanguages) => {
     chrome.storage.local.get(null, (onGot) => {
-      // first try to get the 3 target languages through the user defined languages in the browser configuration.
+      // load config; convert object/array to map/set if necessary
+      for (const name in onGot) {
+        config[name] = fixObjectType(name, onGot[name]);
+      }
+
+      // if there are any targetLanguage undefined, replace them
+      if (config.targetLanguages.some((tl) => !tl)) {
+        config.targetLanguages = [...defaultTargetLanguages];
+        chrome.storage.local.set({
+          targetLanguages: config.targetLanguages,
+        });
+      }
+
+      // Probably at this point it doesn't have 3 target languages.
+
+      // try to get the 3 target languages through the user defined languages in the browser configuration.
       for (let lang of acceptedLanguages) {
         if (config.targetLanguages.length >= 3) break;
         lang = twpLang.fixTLanguageCode(lang);
@@ -231,26 +247,13 @@ const twpConfig = (function () {
         }
       }
 
-      // load config; convert object/array to map/set if necessary
-      for (const name in onGot) {
-        config[name] = fixObjectType(name, onGot[name]);
-      }
-
-      // if there are any targetLanguage undefined, replace them
-      if (config.targetLanguages.some((tl) => !tl)) {
-        config.targetLanguages = [...defaultTargetLanguages];
-        chrome.storage.local.set({
-          targetLanguages: config.targetLanguages,
-        });
-      }
-
       // if targetLanguages is bigger than 3 remove the surplus
       while (config.targetLanguages.length > 3) config.targetLanguages.pop();
 
-      // remove the duplicates languages
       /*
+      // remove the duplicates languages
       config.targetLanguages = [... new Set(config.targetLanguages)]
-
+      //*
       // then try to use de array defaultTargetLanguages ["en", "es", "de"]
       for (const lang of defaultTargetLanguages) {
         if (config.targetLanguages.length >= 3) break;
