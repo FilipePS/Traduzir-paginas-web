@@ -161,13 +161,13 @@ function removeExtraDelimiter(textContext) {
 }
 
 
-function backgroundTranslateHTML(translationService, targetLanguage, sourceArray3d, dontSortResults) {
+function backgroundTranslateHTML(translationService, targetLanguage, sourceArray2d, dontSortResults) {
     return new Promise((resolve, reject) => {
         chrome.runtime.sendMessage({
             action: "translateHTML",
             translationService,
             targetLanguage,
-            sourceArray3d,
+            sourceArray2d,
             dontSortResults
         }, response => {
             resolve(response)

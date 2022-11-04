@@ -5,9 +5,9 @@ const translationService = (function () {
 
   class Utils {
     /**
-     *
+     * Replace the characters `& < > " '` with `&amp; &lt; &gt; &quot; &#39;`.
      * @param {string} unsafe
-     * @returns {string}
+     * @returns {string} escapedString
      */
     static escapeHTML(unsafe) {
       return unsafe
@@ -19,9 +19,9 @@ const translationService = (function () {
     }
 
     /**
-     *
+     * Replace the characters `&amp; &lt; &gt; &quot; &#39;` with `& < > " '`.
      * @param {string} unsafe
-     * @returns {string}
+     * @returns {string} unescapedString
      */
     static unescapeHTML(unsafe) {
       return unsafe
@@ -108,7 +108,7 @@ const translationService = (function () {
     }
 
     /**
-     *
+     * Calculates the hash (TK) of a query for google translator.
      * @param {string} query
      * @returns {string}
      */
@@ -158,7 +158,7 @@ const translationService = (function () {
     }
 
     /**
-     *
+     * Find the SID of Yandex Translator. The SID value is used in translation requests.
      * @returns {Promise<void>}
      */
     static async findSID() {
@@ -240,7 +240,7 @@ const translationService = (function () {
       return BingHelper.#translate_IID_IG;
     }
     /**
-     *
+     * Find the SID (IID and IG) of Bing Translator. The SID value is used in translation requests.
      * @returns {Promise<void>}
      */
     static async findSID() {
@@ -333,9 +333,13 @@ const translationService = (function () {
     }
   }
 
+  /**
+   * Base class to create new translation services.
+   */
   class Service {
     /**
-     * @callback Callback_cbParameters
+     * Returns a string with additional parameters to be concatenated to the request URL.
+     * @callback callback_cbParameters
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
      * @param {Array<TranslationInfo>} requests
@@ -343,8 +347,9 @@ const translationService = (function () {
      */
 
     /**
+     * Takes `sourceArray` and returns a request string to the translation service.
      * @callback callback_cbTransformRequest
-     * @param {string[]} sourceArray2d
+     * @param {string[]} sourceArray
      * @returns {string}
      */
 
@@ -353,16 +358,20 @@ const translationService = (function () {
      */
 
     /**
+     * Receives the response from the *http request* and returns `Service_Single_Result_Response[]`.
+     *
+     * Returns a string with the body of a request of type **POST**.
      * @callback callback_cbParseResponse
      * @param {Object} response
      * @returns {Array<Service_Single_Result_Response>}
      */
 
     /**
+     * Takes a string formatted with the translated text and returns a `resultArray`.
      * @callback callback_cbTransformResponse
      * @param {String} response
      * @param {boolean} dontSortResults
-     * @returns {string[]} sourceArray2d
+     * @returns {string[]} resultArray
      */
 
     /** @typedef {"complete" | "translating" | "error"} TranslationStatus */
@@ -376,15 +385,15 @@ const translationService = (function () {
      */
 
     /**
-     *
+     * Initializes the **Service** class with information about the new translation service.
      * @param {string} serviceName
      * @param {string} baseURL
      * @param {"GET" | "POST"} xhrMethod
-     * @param {callback_cbTransformRequest} cbTransformRequest
-     * @param {callback_cbParseResponse} cbParseResponse
-     * @param {callback_cbTransformResponse} cbTransformResponse
-     * @param {Callback_cbParameters} cbGetExtraParameters
-     * @param {Callback_cbParameters} cbGetRequestBody
+     * @param {callback_cbTransformRequest} cbTransformRequest Takes `sourceArray` and returns a request string to the translation service.
+     * @param {callback_cbParseResponse} cbParseResponse Receives the response from the *http request* and returns `Service_Single_Result_Response[]`.
+     * @param {callback_cbTransformResponse} cbTransformResponse Takes a string formatted with the translated text and returns a `resultArray`.
+     * @param {callback_cbParameters} cbGetExtraParameters Returns a string with additional parameters to be concatenated to the request URL.
+     * @param {callback_cbParameters} cbGetRequestBody Returns a string with the body of a request of type **POST**.
      */
     constructor(
       serviceName,
@@ -409,13 +418,20 @@ const translationService = (function () {
     }
 
     /**
+     * Receives the `sourceArray2d` parameter and prepares the requests.
+     * Calls `cbTransformRequest` for each `sourceArray` of `sourceArray2d`.
+     * The `currentTranslationsInProgress` array will be the **final result** with requests already completed or in progress. And the `requests` array will only contain the new requests that need to be made.
      *
+     * Checks if there is already an identical request in progress or if it is already in the translation cache.
+     * If it doesn't exist, add it to `requests` to make a new *http request*.
+     *
+     * Requests longer than **800 characters** will be split into new requests.
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
-     * @param {Array<string[]>} sourceArray3d
-     * @returns {Promise<[Array<TranslationInfo[]>, TranslationInfo[]]>} requests, currentTranslationsInProgress
+     * @param {Array<string[]>} sourceArray2d
+     * @returns {Promise<[Array<TranslationInfo[]>, TranslationInfo[]]>} `requests`, `currentTranslationsInProgress`
      */
-    async getRequests(sourceLanguage, targetLanguage, sourceArray3d) {
+    async getRequests(sourceLanguage, targetLanguage, sourceArray2d) {
       /** @type {Array<TranslationInfo[]>} */
       const requests = [];
       /** @type {TranslationInfo[]} */
@@ -424,9 +440,9 @@ const translationService = (function () {
       let currentRequest = [];
       let currentSize = 0;
 
-      for (const sourceArray2d of sourceArray3d) {
+      for (const sourceArray of sourceArray2d) {
         const requestString = this.fixString(
-          this.cbTransformRequest(sourceArray2d)
+          this.cbTransformRequest(sourceArray)
         );
         const requestHash = [
           sourceLanguage,
@@ -495,11 +511,11 @@ const translationService = (function () {
     }
 
     /**
-     *
+     * Makes a request using the *XMLHttpRequest* API. Returns a promise that will be resolved with the result of the request. If the request fails, the promise will be rejected.
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
      * @param {Array<TranslationInfo>} requests
-     * @returns {Promise<void>}
+     * @returns {Promise<*>}
      */
     async makeRequest(sourceLanguage, targetLanguage, requests) {
       return await new Promise((resolve, reject) => {
@@ -542,24 +558,29 @@ const translationService = (function () {
     }
 
     /**
+     * Translates the `sourceArray2d`.
      *
+     * If `dontSaveInPersistentCache` is **true** then the translation result will not be saved in the on-disk translation cache, only in the in-memory cache.
+     *
+     * The `dontSortResults` parameter is only valid when using the ***google*** translation service, if its value is **true** then the translation result will not be sorted.
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
-     * @param {Array<string[]>} sourceArray3d
+     * @param {Array<string[]>} sourceArray2d
+     * @param {boolean} dontSaveInPersistentCache
      * @param {boolean} dontSortResults
      * @returns {Promise<string[][]>}
      */
     async translate(
       sourceLanguage,
       targetLanguage,
-      sourceArray3d,
+      sourceArray2d,
       dontSaveInPersistentCache = false,
       dontSortResults = false
     ) {
       const [requests, currentTranslationsInProgress] = await this.getRequests(
         sourceLanguage,
         targetLanguage,
-        sourceArray3d
+        sourceArray2d
       );
       /** @type {Promise<void>[]} */
       const promises = [];
@@ -609,7 +630,7 @@ const translationService = (function () {
     /**
      * https://github.com/FilipePS/Traduzir-paginas-web/issues/484
      * @param {string} str
-     * @returns {string}
+     * @returns {string} fixedStr
      */
     fixString(str) {
       return str.replace(/\u200b/g, " ");
@@ -622,17 +643,17 @@ const translationService = (function () {
         "google",
         "https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html",
         "POST",
-        function transformRequest(sourceArray2d) {
-          sourceArray2d = sourceArray2d.map((text) => Utils.escapeHTML(text));
-          if (sourceArray2d.length > 1) {
-            sourceArray2d = sourceArray2d.map(
+        function cbTransformRequest(sourceArray) {
+          sourceArray = sourceArray.map((text) => Utils.escapeHTML(text));
+          if (sourceArray.length > 1) {
+            sourceArray = sourceArray.map(
               (text, index) => `<a i=${index}>${text}</a>`
             );
           }
           // the <pre> tag is to preserve the text formating
-          return `<pre>${sourceArray2d.join("")}</pre>`;
+          return `<pre>${sourceArray.join("")}</pre>`;
         },
-        function parseResponse(response) {
+        function cbParseResponse(response) {
           /** @type {[Service_Single_Result_Response]} */
           let responseJson;
           if (typeof response === "string") {
@@ -652,7 +673,7 @@ const translationService = (function () {
           }
           return responseJson;
         },
-        function transformResponse(result, dontSortResults) {
+        function cbTransformResponse(result, dontSortResults) {
           // remove the <pre> tag from the response
           if (result.indexOf("<pre") !== -1) {
             result = result.replace("</pre>", "");
@@ -794,12 +815,16 @@ const translationService = (function () {
             return finalResulArray;
           }
         },
-        function getExtraParameters(sourceLanguage, targetLanguage, requests) {
+        function cbGetExtraParameters(
+          sourceLanguage,
+          targetLanguage,
+          requests
+        ) {
           return `&sl=${sourceLanguage}&tl=${targetLanguage}&tk=${GoogleHelper.calcHash(
             requests.map((info) => info.originalText).join("")
           )}`;
         },
-        function getRequestBody(sourceLanguage, targetLanguage, requests) {
+        function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
           return requests
             .map((info) => `&q=${encodeURIComponent(info.originalText)}`)
             .join("");
@@ -814,12 +839,12 @@ const translationService = (function () {
         "yandex",
         "https://translate.yandex.net/api/v1/tr.json/translate?srv=tr-url-widget",
         "GET",
-        function transformRequest(sourceArray2d) {
-          return sourceArray2d
+        function cbTransformRequest(sourceArray) {
+          return sourceArray
             .map((value) => Utils.escapeHTML(value))
             .join("<wbr>");
         },
-        function parseResponse(response) {
+        function cbParseResponse(response) {
           const lang = response.lang;
           const detectedLanguage = lang ? lang.split("-")[0] : null;
           return response.text.map(
@@ -828,28 +853,35 @@ const translationService = (function () {
             ) => ({ text, detectedLanguage })
           );
         },
-        function transformResponse(result, dontSortResults) {
+        function cbTransformResponse(result, dontSortResults) {
           return result
             .split("<wbr>")
             .map((value) => Utils.unescapeHTML(value));
         },
-        function getExtraParameters(sourceLanguage, targetLanguage, requests) {
+        function cbGetExtraParameters(
+          sourceLanguage,
+          targetLanguage,
+          requests
+        ) {
           return `&id=${YandexHelper.translateSid}-0-0&format=html&lang=${
             sourceLanguage === "auto" ? "" : sourceLanguage + "-"
           }${targetLanguage}${requests
             .map((info) => `&text=${encodeURIComponent(info.originalText)}`)
             .join("")}`;
         },
-        function getRequestBody(sourceLanguage, targetLanguage, requests) {
+        function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
           return undefined;
         }
       );
     }
 
+    /**
+     * @param {boolean} dontSortResults This parameter is not needed in this translation service
+     */
     async translate(
       sourceLanguage,
       targetLanguage,
-      sourceArray3d,
+      sourceArray2d,
       dontSaveInPersistentCache,
       dontSortResults = false
     ) {
@@ -860,7 +892,7 @@ const translationService = (function () {
       return await super.translate(
         sourceLanguage,
         targetLanguage,
-        sourceArray3d,
+        sourceArray2d,
         dontSaveInPersistentCache,
         dontSortResults
       );
@@ -873,12 +905,12 @@ const translationService = (function () {
         "bing",
         "https://www.bing.com/ttranslatev3?isVertical=1",
         "POST",
-        function transformRequest(sourceArray2d) {
-          return sourceArray2d
+        function cbTransformRequest(sourceArray) {
+          return sourceArray
             .map((value) => Utils.escapeHTML(value))
             .join("<wbr>");
         },
-        function parseResponse(response) {
+        function cbParseResponse(response) {
           return [
             {
               text: response[0].translations[0].text,
@@ -886,13 +918,17 @@ const translationService = (function () {
             },
           ];
         },
-        function transformResponse(result, dontSortResults) {
+        function cbTransformResponse(result, dontSortResults) {
           return [Utils.unescapeHTML(result)];
         },
-        function getExtraParameters(sourceLanguage, targetLanguage, requests) {
+        function cbGetExtraParameters(
+          sourceLanguage,
+          targetLanguage,
+          requests
+        ) {
           return `&${BingHelper.translate_IID_IG}`;
         },
-        function getRequestBody(sourceLanguage, targetLanguage, requests) {
+        function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
           return `&fromLang=${sourceLanguage}${requests
             .map((info) => `&text=${encodeURIComponent(info.originalText)}`)
             .join("")}&to=${targetLanguage}${BingHelper.translateSid}`;
@@ -900,10 +936,14 @@ const translationService = (function () {
       );
     }
 
+    /**
+     * @param {string[][]} sourceArray2d - Only the string `sourceArray2d[0][0]` will be translated.
+     * @param {boolean} dontSortResults - This parameter is not needed in this translation service
+     */
     async translate(
       sourceLanguage,
       targetLanguage,
-      sourceArray3d,
+      sourceArray2d,
       dontSaveInPersistentCache,
       dontSortResults = false
     ) {
@@ -961,7 +1001,7 @@ const translationService = (function () {
       return await super.translate(
         sourceLanguage,
         targetLanguage,
-        sourceArray3d,
+        sourceArray2d,
         dontSaveInPersistentCache,
         dontSortResults
       );
@@ -972,10 +1012,19 @@ const translationService = (function () {
     constructor() {
       this.DeepLTab = null;
     }
+    /**
+     *
+     * @param {string} sourceLanguage - This parameter is not used
+     * @param {*} targetLanguage
+     * @param {*} sourceArray2d - Only the string `sourceArray2d[0][0]` will be translated.
+     * @param {*} dontSaveInPersistentCache - This parameter is not used
+     * @param {*} dontSortResults - This parameter is not used
+     * @returns
+     */
     async translate(
       sourceLanguage,
       targetLanguage,
-      sourceArray3d,
+      sourceArray2d,
       dontSaveInPersistentCache,
       dontSortResults = false
     ) {
@@ -1004,7 +1053,7 @@ const translationService = (function () {
                 tab.id,
                 {
                   action: "translateTextWithDeepL",
-                  text: sourceArray3d[0][0],
+                  text: sourceArray2d[0][0],
                   targetLanguage,
                 },
                 {
@@ -1016,7 +1065,7 @@ const translationService = (function () {
               chrome.tabs.create(
                 {
                   url: `https://www.deepl.com/#!${targetLanguage}!#${encodeURIComponent(
-                    sourceArray3d[0][0]
+                    sourceArray2d[0][0]
                   )}`,
                 },
                 (tab) => {
@@ -1031,7 +1080,7 @@ const translationService = (function () {
           chrome.tabs.create(
             {
               url: `https://www.deepl.com/#!${targetLanguage}!#${encodeURIComponent(
-                sourceArray3d[0][0]
+                sourceArray2d[0][0]
               )}`,
             },
             (tab) => {
@@ -1060,7 +1109,7 @@ const translationService = (function () {
     serviceName,
     sourceLanguage,
     targetLanguage,
-    sourceArray3d,
+    sourceArray2d,
     dontSaveInPersistentCache = false,
     dontSortResults = false
   ) => {
@@ -1073,7 +1122,7 @@ const translationService = (function () {
     return await service.translate(
       sourceLanguage,
       targetLanguage,
-      sourceArray3d,
+      sourceArray2d,
       dontSaveInPersistentCache,
       dontSortResults
     );
@@ -1083,7 +1132,7 @@ const translationService = (function () {
     serviceName,
     sourceLanguage,
     targetLanguage,
-    sourceArray2d,
+    sourceArray,
     dontSaveInPersistentCache = false
   ) => {
     serviceName = twpLang.getAlternativeService(
@@ -1096,7 +1145,7 @@ const translationService = (function () {
       await service.translate(
         sourceLanguage,
         targetLanguage,
-        [sourceArray2d],
+        [sourceArray],
         dontSaveInPersistentCache
       )
     )[0];
@@ -1126,6 +1175,7 @@ const translationService = (function () {
   };
 
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    // If the translation request came from an incognito window, the translation should not be cached on disk.
     const dontSaveInPersistentCache = sender.tab ? sender.tab.incognito : false;
     if (request.action === "translateHTML") {
       translationService
@@ -1133,7 +1183,7 @@ const translationService = (function () {
           request.translationService,
           "auto",
           request.targetLanguage,
-          request.sourceArray3d,
+          request.sourceArray2d,
           dontSaveInPersistentCache,
           request.dontSortResults
         )

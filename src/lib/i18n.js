@@ -3,9 +3,14 @@
 void (function () {
   /**
    * Gets the localized string for the specified message
+   * @example
+   * getMessage("lblAlwaysTranslate", "German")
+   * // returns "Always translate from German"
+   * getMessage("lblAlwaysTranslate", ["German"])
+   * // returns "Always translate from German"
    * @param {string} messageName
    * @param {string | string[]} substitutions
-   * @returns {string}
+   * @returns {string} localizedString
    */
   function getMessage(messageName, substitutions) {
     return chrome.i18n.getMessage(messageName, substitutions);

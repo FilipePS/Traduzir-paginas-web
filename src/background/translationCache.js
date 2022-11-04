@@ -13,18 +13,18 @@ const translationCache = (function () {
 
   class Utils {
     /**
-     *
+     * Returns the size of a ObjectStorage
      * @param {IDBDatabase} db
-     * @param {string} dbName
-     * @returns {Promise<number>}
+     * @param {string} storageName
+     * @returns {Promise<number>} Promise\<size\>
      */
-    static async getTableSize(db, dbName) {
+    static async getTableSize(db, storageName) {
       return await new Promise((resolve, reject) => {
         if (db == null) return reject();
         let size = 0;
         const transaction = db
-          .transaction([dbName])
-          .objectStore(dbName)
+          .transaction([storageName])
+          .objectStore(storageName)
           .openCursor();
 
         transaction.onsuccess = (event) => {
@@ -39,14 +39,14 @@ const translationCache = (function () {
           }
         };
         transaction.onerror = (err) =>
-          reject("error in " + dbName + ": " + err);
+          reject("error in " + storageName + ": " + err);
       });
     }
 
     /**
-     *
+     * Returns the size of a database
      * @param {string} dbName
-     * @returns {Promise<number>}
+     * @returns {Promise<number>} Promise\<size\>
      */
     static async getDatabaseSize(dbName) {
       return await new Promise((resolve, reject) => {
@@ -83,9 +83,12 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Converts a size in bytes to a human-readable string.
+     * @example
+     * humanReadableSize(1024)
+     * // returns "1.0KB"
      * @param {number} bytes
-     * @returns {string}
+     * @returns {string} sizeString
      */
     static humanReadableSize(bytes) {
       const thresh = 1024;
@@ -102,9 +105,12 @@ const translationCache = (function () {
     }
 
     /**
-     *
-     * @param {string} message
-     * @returns {Promise<string>}
+     * Returns a Promise that resolves to a sha1 string of the given text.
+     * @example
+     * await stringToSHA1String("Hello World!")
+     * // returns "2ef7bde608ce5404e97d5f042f95f89f1c232871"
+     * @param {string} message text
+     * @returns {Promise<string>} Promise\<sha1String\>
      */
     static async stringToSHA1String(message) {
       const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
@@ -116,7 +122,7 @@ const translationCache = (function () {
 
   class Cache {
     /**
-     *
+     * Base class to create a translation cache for different services.
      * @param {string} translationService
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
@@ -135,7 +141,7 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Start the translation cache
      * @returns {Promise<boolean>}
      */
     async start() {
@@ -163,13 +169,16 @@ const translationCache = (function () {
       return await this.promiseStartingCache;
     }
 
+    /**
+     * Closes the database.
+     */
     close() {
       if (this.db) this.db.close();
       this.db = null;
     }
 
     /**
-     *
+     * Queries an entry in the translation cache, through the hash of the source text.
      * @param {string} origTextHash
      * @returns {Promise<CacheEntry>}
      */
@@ -196,7 +205,7 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Query translation cache data
      * @param {string} originalText
      * @returns {Promise<CacheEntry>}
      */
@@ -213,7 +222,7 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Store the data in the database
      * @param {CacheEntry} data
      * @returns {Promise<boolean>}
      */
@@ -239,7 +248,7 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Add to translation cache
      * @param {string} originalText
      * @param {string} translatedText
      * @param {string} detectedLanguage
@@ -256,26 +265,32 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Returns the name of the database using the given data.
+     * @example
+     * getDataBaseName("google", "de", "en")
+     * // returns "google@de.en"
      * @param {string} translationService
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
-     * @returns {string}
+     * @returns {string} databaseName
      */
     static getDataBaseName(translationService, sourceLanguage, targetLanguage) {
       return `${translationService}@${sourceLanguage}.${targetLanguage}`;
     }
 
     /**
-     *
-     * @returns {string}
+     * Returns the storageName
+     * @example
+     * getCacheStorageName()
+     * // returns "cache"
+     * @returns {string} storageName
      */
     static getCacheStorageName() {
       return "cache";
     }
 
     /**
-     *
+     * Start/create a database with the given data.
      * @param {string} name
      * @param {number} version
      * @param {string[]} objectStorageNames
@@ -311,7 +326,7 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Start/create a database for the translation cache with the given data.
      * @param {string} translationService
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
@@ -333,7 +348,7 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Delete a database.
      * @param {string} translationService
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
@@ -370,6 +385,9 @@ const translationCache = (function () {
   }
 
   class CacheList {
+    /**
+     * Defines a translation cache manager.
+     */
     constructor() {
       /** @type {Map<string, Cache>} */
       this.list = new Map();
@@ -380,12 +398,17 @@ const translationCache = (function () {
       }
     }
 
+    /**
+     * Starts the connection to the database cacheList.
+     */
     #openCacheList() {
       const request = indexedDB.open("cacheList", 1);
 
       request.onsuccess = (event) => {
         this.dbCacheList = request.result;
 
+        // If any translation cache was created while waiting for the cacheList to be created.
+        // Then add all these entries to the cacheList.
         this.list.forEach((cache, key) => {
           this.#addCacheList(key);
         });
@@ -406,7 +429,7 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Stores a new translation cache name to cacheList.
      * @param {string} dbName
      */
     #addCacheList(dbName) {
@@ -426,7 +449,7 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Create and start a translation cache then add to cacheList.
      * @param {string} translationService
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
@@ -448,7 +471,8 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Get a translation cache from the given data.
+     * If the translation cache does not exist, create a new one.
      * @param {string} translationService
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
@@ -474,7 +498,7 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Adds a new translation cache name to the "list" and if possible stores it in the cacheList database.
      * @param {string} translationService
      * @param {string} sourceLanguage
      * @param {string} targetLanguage
@@ -493,7 +517,10 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Get the name of all translation caches.
+     * @example
+     * #getAllDBNames()
+     * // returns ["google@de.en", "google@zh-CN.es", "yandex@ru.pt"]
      * @returns {Promise<string[]>}
      */
     async #getAllDBNames() {
@@ -519,7 +546,8 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Delete all translation caches.
+     * And clear the cache list.
      * @returns {Promise<boolean>}
      */
     async deleteAll() {
@@ -544,7 +572,7 @@ const translationCache = (function () {
     }
 
     /**
-     *
+     * Delete a database by its name.
      * @returns {Promise<boolean>}
      */
     static async deleteDatabase(dbName) {
@@ -564,6 +592,10 @@ const translationCache = (function () {
     }
 
     /**
+     * Gets the sum of the size of all translation caches.
+     * @example
+     * await calculateSize()
+     * // returns "1.0MB"
      * @returns {Promise<string>}
      */
     async calculateSize() {
@@ -585,15 +617,16 @@ const translationCache = (function () {
     }
   }
 
+  // Create a translation cache list.
   const cacheList = new CacheList();
 
   /**
-   *
+   * Get a new translation cache entry.
    * @param {string} translationService
    * @param {string} sourceLanguage
    * @param {string} targetLanguage
    * @param {string} originalText
-   * @returns {Promise<CacheEntry>}
+   * @returns {Promise<CacheEntry>} cacheEntry
    */
   translationCache.get = async (
     translationService,
@@ -614,7 +647,7 @@ const translationCache = (function () {
   };
 
   /**
-   *
+   * Defines a new entry in the translation cache.
    * @param {string} translationService
    * @param {string} sourceLanguage
    * @param {string} targetLanguage
@@ -644,16 +677,19 @@ const translationCache = (function () {
   };
 
   /**
-   *
+   * Delete all translation caches.
+   * If `reload` is `true` reloads the extension after deleting caches.
    * @param {boolean} reload
    */
   translationCache.deleteTranslationCache = async (reload = false) => {
     try {
+      // Deletes old translation cache.
       if (indexedDB && indexedDB.deleteDatabase) {
         indexedDB.deleteDatabase("googleCache");
         indexedDB.deleteDatabase("yandexCache");
         indexedDB.deleteDatabase("bingCache");
       }
+      // Delete the new translation cache.
       await cacheList.deleteAll();
     } catch (e) {
       console.error(e);
@@ -675,8 +711,8 @@ const translationCache = (function () {
           sendResponse(size);
           return size;
         })
-        .catch(e => {
-          console.error(e)
+        .catch((e) => {
+          console.error(e);
           promiseCalculatingStorage = null;
           sendResponse("0B");
           return "0B";

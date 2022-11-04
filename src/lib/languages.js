@@ -5194,6 +5194,11 @@ const twpLang = (function () {
 
   /**
    * convert langCode to languageName
+   * @example
+   * twpLang.codeToLanguage("de")
+   * // returns "German"
+   * twpLang.codeToLanguage("und")
+   * // returns "Unknown" -- chrome.i18n.getMessage("msgUnknownLanguage")
    * @param {string} langCode
    * @returns {string} languageName
    */
@@ -5275,6 +5280,11 @@ const twpLang = (function () {
 
   /**
    * check if langCode is RTL
+   * @example
+   * twpLang.isRtlLanguage("ckb")
+   * // returns true
+   * twpLang.isRtlLanguage("en")
+   * // returns false
    * @param {string} langCode
    * @returns {boolean} isRTL
    */

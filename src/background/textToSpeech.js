@@ -7,14 +7,15 @@ const textToSpeech = (function () {
    * @callback Callback_Speech_cbGetExtraParameters
    * @param {string} text
    * @param {string} targetLanguage
-   * @return {string}
+   * @return {string} urlParamsString
    */
+
   class Service {
     /**
-     *
+     * Defines the Service class for the text-to-speech service.
      * @param {string} serviceName
      * @param {string} baseURL
-     * @param {string} xhrMethod
+     * @param {"GET" | "POST"} xhrMethod
      * @param {Callback_Speech_cbGetExtraParameters} cbGetExtraParameters
      */
     constructor(serviceName, baseURL, xhrMethod, cbGetExtraParameters) {
@@ -28,9 +29,11 @@ const textToSpeech = (function () {
     }
 
     /**
+     * Takes a long text and splits the text into an array of strings. Each string will be less than 170 characters.
      *
+     * The goal is not to exceed the quota for text-to-speech services.
      * @param {string} fullText
-     * @returns {string[]}
+     * @returns {string[]} requestStrings
      */
     getRequests(fullText) {
       /** @type {string[]} */
@@ -73,10 +76,12 @@ const textToSpeech = (function () {
     }
 
     /**
+     * Makes the request to the text-to-speech service and returns a promise that resolves with the result of the request.
      *
+     * The promise is rejected if there is an error.
      * @param {string} text
      * @param {string} targetLanguage
-     * @returns {Promise<any>}
+     * @returns {Promise<any>} Promise\<blob\>
      */
     async makeRequest(text, targetLanguage) {
       return await new Promise((resolve, reject) => {
@@ -101,10 +106,10 @@ const textToSpeech = (function () {
     }
 
     /**
-     *
+     * Transform text into audio and play then.
      * @param {string} fullText
      * @param {string} targetLanguage
-     * @returns {Promise<void>}
+     * @returns {Promise<void>} Promise\<void\>
      */
     async textToSpeech(fullText, targetLanguage) {
       const requests = this.getRequests(fullText);
@@ -138,6 +143,7 @@ const textToSpeech = (function () {
     }
 
     /**
+     * Play the audio or all the audio in the array.
      * @param {HTMLAudioElement | HTMLAudioElement[]} audios
      */
     async play(audios) {
@@ -174,7 +180,7 @@ const textToSpeech = (function () {
     }
 
     /**
-     *
+     * Sets the audio speed
      * @param {number} speed
      */
     setAudioSpeed(speed) {
@@ -184,6 +190,9 @@ const textToSpeech = (function () {
       });
     }
 
+    /**
+     * Pause all audio and reset audio time to start
+     */
     stopAll() {
       this.audios.forEach((audio) => {
         audio.pause();
@@ -192,6 +201,7 @@ const textToSpeech = (function () {
     }
   }
 
+  // Create a Service instance based on google's text-to-speech service.
   const googleService = new Service(
     "google",
     "https://translate.google.com/translate_tts?ie=UTF-8",
@@ -203,11 +213,7 @@ const textToSpeech = (function () {
     }
   );
 
-  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.action === "textToSpeech") {
-    }
-  });
-
+  // Listen for messages coming from contentScript or other scripts.
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "textToSpeech") {
       googleService
@@ -222,6 +228,7 @@ const textToSpeech = (function () {
     }
   });
 
+  // Listen for changes to the audio speed setting and apply it immediately.
   twpConfig.onReady(async () => {
     twpConfig.onChanged((name, newvalue) => {
       if (name === "ttsSpeed") {

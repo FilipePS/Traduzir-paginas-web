@@ -86,7 +86,10 @@ const twpConfig = (function () {
   };
 
   /**
-   *
+   * get the value of a config
+   * @example
+   * twpConfig.get("targetLanguages")
+   * // returns ["en", "es", "de"]
    * @param {DefaultConfigNames} name
    * @returns {*} value
    */
@@ -95,7 +98,9 @@ const twpConfig = (function () {
   };
 
   /**
-   *
+   * set the value of a config
+   * @example
+   * twpConfig.set("showReleaseNotes", "no")
    * @param {DefaultConfigNames} name
    * @param {*} value
    */
@@ -427,6 +432,8 @@ const twpConfig = (function () {
 
   /**
    * Add a new lang to the targetLanguages and remove the last target language. If the language is already in the targetLanguages then move it to the first position
+   * @example
+   * addTargetLanguage("de")
    * @param {string} lang - langCode
    * @returns
    */
@@ -451,6 +458,8 @@ const twpConfig = (function () {
    * set lang as target language for page translation only (not text translation)
    *
    * if the lang in not in targetLanguages then call addTargetLanguage
+   * @example
+   * twpConfig.setTargetLanguage("de",  true)
    * @param {string} lang - langCode
    * @param {boolean} forTextToo - also call setTargetLanguageTextTranslation
    * @returns
@@ -473,6 +482,8 @@ const twpConfig = (function () {
 
   /**
    * set lang as target language for text translation only (not page translation)
+   * @example
+   * twpConfig.setTargetLanguage("de")
    * @param {string} lang - langCode
    * @returns
    */
@@ -485,6 +496,11 @@ const twpConfig = (function () {
 
   /**
    * convert object to map or set if necessary, otherwise return the value itself
+   * @example
+   * fixObjectType("customDictionary", {})
+   * // returns Map
+   * fixObjectType("targetLanguages", ["en", "es", "de"])
+   * // return ["en", "es", "de"] -- Array
    * @param {string} key
    * @param {*} value
    * @returns {Map | Set | *}
@@ -501,6 +517,11 @@ const twpConfig = (function () {
 
   /**
    * convert map and set to object and array respectively, otherwise return the value itself
+   * @example
+   * toObjectOrArrayIfTypeIsMapOrSet(new Map())
+   * // returns {}
+   * toObjectOrArrayIfTypeIsMapOrSet({})
+   * // returns {}
    * @param {Map | Set | *} value
    * @returns {Object | Array | *}
    */
