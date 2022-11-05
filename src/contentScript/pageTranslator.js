@@ -261,7 +261,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             newNodes.forEach(nn => {
                 if (removedNodes.indexOf(nn) != -1) return;
 
-                let newPiecesToTranslate = getPiecesToTranslate(nn)
+                // let newPiecesToTranslate = getPiecesToTranslate(nn)
+                let newPiecesToTranslate = getNodesThatNeedToTranslate(nn,tabHostName).reduce((acc, node) => {
+                  return acc.concat(getPiecesToTranslate(node))
+                }, [])
 
                 for (const i in newPiecesToTranslate) {
                     const newNodes = newPiecesToTranslate[i].nodes
@@ -592,7 +595,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
 
     function encapsulateTextNode(node) {
         const fontNode = document.createElement("font")
-        fontNode.setAttribute("style", "vertical-align: inherit;")
+        fontNode.setAttribute("style", "vertical-align: inherit;border-bottom: 2px solid #72ECE9;")
         fontNode.textContent = node.textContent
 
         node.replaceWith(fontNode)
@@ -730,6 +733,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
                             .then(results => {
                                 if (pageLanguageState === "translated" && currentFooCount === fooCount) {
                                     translateResults(piecesToTranslateNow, results)
+                                     // changed here
+                                     showCopyiedNodes()
                                 }
                             })
                     }
@@ -792,7 +797,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()])
             currentTargetLanguage = targetLanguage
         }
 
-        piecesToTranslate = getPiecesToTranslate()
+        // piecesToTranslate = getPiecesToTranslate()
+        piecesToTranslate = getNodesThatNeedToTranslate(document.body,tabHostName).reduce((acc, node) => {
+          return acc.concat(getPiecesToTranslate(node))
+        }, [])
         attributesToTranslate = getAttributesToTranslate()
 
         pageLanguageState = "translated"

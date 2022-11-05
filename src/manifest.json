@@ -126,7 +126,7 @@
             "run_at": "document_end",
             "all_frames": true,
             "match_about_blank": true,
-            "js": ["/lib/i18n.js", "/contentScript/showOriginal.js", "/contentScript/pageTranslator.js", "/contentScript/translateSelected.js", "/contentScript/showTranslated.js"]
+            "js": ["/lib/i18n.js", "/contentScript/showOriginal.js", "/contentScript/enhance.js", "/contentScript/pageTranslator.js", "/contentScript/translateSelected.js", "/contentScript/showTranslated.js"]
         },
         {
             "matches": ["<all_urls>"],
