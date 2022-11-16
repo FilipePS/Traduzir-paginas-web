@@ -231,7 +231,7 @@
     "message": "Sýna þýddan texta þegar sveimað er yfir á þessum síðum"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Gerðu sprettimerkið blátt þegar síðan er þýdd"
+    "message": "Gera sprettimerkið blátt þegar síðan er þýdd"
   },
   "more": {
     "message": "Meira"
@@ -240,13 +240,13 @@
     "message": "Minna"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Ekki sýna ef síðutungumálið er markmálið"
+    "message": "Ekki sýna ef síðutungumálið er marktungumálið"
   },
   "dontShowIfPageLangIsUnknown": {
     "message": "Ekki sýna ef tungumál síðunnar er óþekkt"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Ekki sýna ef textamálið er markmálið"
+    "message": "Ekki sýna ef textatungumálið er marktungumálið"
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "Ekki sýna ef valið textamál er óþekkt"
@@ -366,7 +366,7 @@
     "message": "Endurheimta síðu til upprunalegu"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Þýða síðuna yfir á markmálið"
+    "message": "Þýða síðuna yfir á marktungumálið"
   },
   "lblTranslateTag_pre": {
     "message": "Virkja þýðingu fyrir merkið $HTML_TAG_NAME$",
@@ -414,7 +414,7 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Þýddu síðuna með því að smella einu sinni á hnappinn á veffangastikunni. (Til að sjá sprettigluggann skaltu hægrismella)"
+    "message": "Þýða síðuna með því að smella einu sinni á hnappinn á veffangastikunni. (Til að sjá sprettigluggann skaltu hægrismella)"
   },
   "btnShowPopup": {
     "message": "Sýna sprettiglugga"
@@ -480,5 +480,8 @@
   },
   "lblHotTranslatedSelectedText": {
     "message": "Skipta út völdum texta fyrir þýddan texta strax"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Bæta við sérsniðna orðabók (Þetta gerir þér kleift að sleppa tilteknum orðum við þýðingar á vefsíðu)"
   }
 }

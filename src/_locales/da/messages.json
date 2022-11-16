@@ -468,10 +468,10 @@
     "message": "Ukendt"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Erstatte"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Erstat valgt tekst med oversat tekst, når du trykker to gange på $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Erstat valgt tekst med oversat tekst med det samme"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Føj til brugerdefineret ordbog (Dette giver dig mulighed for at springe visse ord over under oversættelse af websider)"
   }
 }

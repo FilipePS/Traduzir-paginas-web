@@ -468,10 +468,10 @@
     "message": "ناشناس"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "جایگزین کردن"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "با دو بار فشار دادن $SHORTCUT_KEY$ ، متن انتخاب شده را با متن ترجمه شده جایگزین کنید",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "متن انتخاب شده را بلافاصله با متن ترجمه شده جایگزین کنید"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "افزودن به فرهنگ لغت سفارشی (این به شما امکان می دهد از کلمات خاصی در حین ترجمه صفحه وب رد شوید)"
   }
 }

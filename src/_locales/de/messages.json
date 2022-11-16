@@ -459,7 +459,7 @@
     "message": "Aktuelles"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Alle"
   },
   "msgPleaseWait": {
     "message": "Bitte warten..."
@@ -468,10 +468,10 @@
     "message": "Unbekannt"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Ersetzen"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Ersetze den ausgewählten Text mit dem übersetztem Text, wenn du $SHORTCUT_KEY$ zweimal drückst",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Ersetze den ausgewählten Text mit dem übersetzten Text sofort"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Zum benutzerdefinierten Wörterbuch hinzufügen (Damit können Sie bestimmte Wörter während der Webseiten Übersetzung überspringen)"
   }
 }

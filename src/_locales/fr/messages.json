@@ -45,7 +45,7 @@
     "message": "Traduire"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "Choix"
   },
   "btnRestore": {
     "message": "Afficher l'original"
@@ -183,7 +183,7 @@
     "message": "Langues"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "Des sites"
   },
   "msgTranslations": {
     "message": "Traductions"
@@ -465,13 +465,13 @@
     "message": "Veuillez patienter..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Inconnue"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Remplacer"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Remplacer le texte sélectionné par le texte traduit en appuyant deux fois sur $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Remplacez instantanément le texte sélectionné par le texte traduit"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Ajouter au dictionnaire personnalisé (cela vous permet d'ignorer certains mots lors de la traduction de la page Web)"
   }
 }

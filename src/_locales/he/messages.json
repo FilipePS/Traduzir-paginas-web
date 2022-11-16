@@ -392,13 +392,13 @@
     "message": "תרגם באופן אוטומטי ברגע שאתה לוחץ על קישור ונפתח לך דף זהה"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "פתח את מנהל מקשי הקיצור המקורי"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "קיצורי מקשים מיוחדים"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "תרגם טקסט נבחר בעת לחיצה על $SHORTCUT_KEY$ פעמיים",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "תרגם את הטקסט מעל סמן העכבר בעת לחיצה על $SHORTCUT_KEY$ פעמיים",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "תרגם את הדף על ידי לחיצה אחת על הכפתור בשורת הכתובת. (כדי לראות את החלון הקופץ, לחץ לחיצה ימנית)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "הצג קופץ"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "כדי לתרגם מסמך זה $DOC_TYPE$ יש צורך להמיר אותו ל-HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "בחר שירות לביצוע המרה זו"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "מוריד את המסמך..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "שלח מסמך"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "שגיאה בהורדת המסמך"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "שירות זה אינו תומך בקבצים גדולים מ $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,28 +450,28 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF ל-HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "עותק"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "אחרונים"
   },
   "msgAll": {
-    "message": "All"
+    "message": "את כל"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "המתן בבקשה..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "לא ידוע"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "החלף"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "החלף טקסט שנבחר בטקסט מתורגם בעת לחיצה על $SHORTCUT_KEY$ פעמיים",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "החלף טקסט נבחר בטקסט מתורגם באופן מיידי"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "הוסף למילון מותאם אישית (זה מאפשר לך לדלג על מילים מסוימות במהלך תרגום דפי אינטרנט)"
   }
 }

@@ -480,5 +480,8 @@
   },
   "lblHotTranslatedSelectedText": {
     "message": "選択したテキストを翻訳済みテキストに即座に置き換える"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "カスタム辞書に追加 (これにより、Web ページの翻訳中に特定の単語をスキップできます)"
   }
 }

@@ -471,7 +471,7 @@
     "message": "Замінити"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Замінити виділений текст перекладеним, якщо двічі натиснути $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Миттєво замініть виділений текст на перекладений"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Додати до спеціального словника (це дозволяє пропускати певні слова під час перекладу веб-сторінки)"
   }
 }

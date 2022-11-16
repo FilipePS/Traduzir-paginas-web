@@ -39,7 +39,7 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "Resetten"
   },
   "btnTranslate": {
     "message": "Vertalen"
@@ -465,13 +465,13 @@
     "message": "Gelieve te wachten..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Onbekend"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Vervangen"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Vervang geselecteerde tekst door vertaalde tekst door twee keer op $SHORTCUT_KEY$ te drukken",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Vervang geselecteerde tekst direct door vertaalde tekst"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Toevoegen aan aangepast woordenboek (hiermee kunt u bepaalde woorden overslaan tijdens de vertaling van webpagina's)"
   }
 }

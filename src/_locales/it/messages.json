@@ -93,7 +93,7 @@
     "message": "Quando tocco tre dita sullo schermo"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Apri in yandex translate"
+    "message": "Apri in Yandex Translate"
   },
   "lblOthers": {
     "message": "Altro"
@@ -414,7 +414,7 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Traduci la pagina facendo clic una volta sul pulsante nella barra degli indirizzi. (Per vedere il popup, fare clic con il tasto destro)"
+    "message": "Traduci la pagina facendo clic una volta sul pulsante nella barra degli indirizzi. (Per vedere le opzioni, fare clic con il tasto destro)"
   },
   "btnShowPopup": {
     "message": "Mostra finestra opzioni"
@@ -480,5 +480,8 @@
   },
   "lblHotTranslatedSelectedText": {
     "message": "Sostituisci subito il testo selezionato con il testo tradotto"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Aggiungi al dizionario personalizzato (questo ti consente di saltare alcune parole durante la traduzione della pagina web)"
   }
 }

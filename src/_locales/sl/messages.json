@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "Prevajajte spletne strani"
   },
   "extensionDescription": {
     "message": "Prevedite spletne strani v realnem času z uporabo storitev Google ali Yandex."
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Ciljni jezik $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -81,7 +81,7 @@
     "message": "Nikoli ne prevedi teh strani"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "Vedno prevedite te jezike"
   },
   "optionPopupConfig": {
     "message": "Pokaži mobilno pojavno okno"
@@ -105,7 +105,7 @@
     "message": "Pomagaj razvijalcu z donacijo"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "Prevedi v $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "Pokažite prevod, ko lebdite nad tem spletnim mestom"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Prikaži prevod, ko miškin kazalec premaknete nad spletna mesta v $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -297,79 +297,79 @@
     "message": "Prevedite uporabniški vmesnik"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Prikaži gumb v naslovni vrstici"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Storitev prevajanja strani"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Storitev prevajanja besedil"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Shranjevanje"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Predpomnilnik prevodov"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Uporabljena shramba:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Izbriši predpomnilnik prevodov"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Osebne nastavitve"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Varnostno kopiranje v datoteko"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "Obnovi iz datoteke"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "Obnovi privzete nastavitve"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Ali želite izbrisati predpomnilnik prevodov?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Ali želite prepisati vse obstoječe nastavitve z varnostno kopijo podatkov?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Videti je, da je datoteka poškodovana"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Ali želite obnoviti razširitev na privzete nastavitve?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Hitrost zvoka besedila v govor"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "Omogočite DeepL kot storitev prevajanja besedil"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Vnesite bližnjico"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Vključite Ctrl ali Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Vnesite črko"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Neveljavna kombinacija"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Preklopite med prevedeno in izvirno stranjo"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Obnovi stran na izvirnik"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Prevedite stran v ciljni jezik"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Omogoči prevod za oznako $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Ne razvrsti rezultatov Google Translate"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Prevedite dinamično ustvarjeno vsebino"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Izračunaj"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Donirajte s PayPalom"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Samodejno prevedi, ko klikneš povezavo, ki te popelje na isto domeno kot trenutno spletno mesto"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Odprite izvirnega upravitelja tipk za bližnjice"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Posebne bližnjice na tipkovnici"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Prevedite izbrano besedilo, ko dvakrat pritisnete $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Prevedite besedilo nad kazalcem miške, ko dvakrat pritisnete $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Prevedite stran tako, da enkrat kliknete gumb v naslovni vrstici. (Za ogled pojavnega okna kliknite z desno miškino tipko)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Prikaži pojavno okno"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Za prevod tega dokumenta $DOC_TYPE$ ga je potrebno pretvoriti v HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Izberite storitev za izvedbo te pretvorbe"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Prenos dokumenta ..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Pošlji dokument"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Napaka pri prenosu dokumenta"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Ta storitev ne podpira datotek, večjih od $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,28 +450,28 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF v HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Kopirati"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Nedavne"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Vse"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Prosim počakaj..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Neznano"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Zamenjati"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Zamenjajte izbrano besedilo s prevedenim besedilom, ko dvakrat pritisnete $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Takoj zamenjajte izbrano besedilo s prevedenim besedilom"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Dodaj v slovar po meri (To vam omogoča, da med prevajanjem spletne strani preskočite določene besede)"
   }
 }

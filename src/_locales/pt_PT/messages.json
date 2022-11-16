@@ -465,13 +465,13 @@
     "message": "Por favor, aguarde..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Desconhecido"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Substituir"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Substitua o texto selecionado pelo texto traduzido ao pressionar $SHORTCUT_KEY$ duas vezes",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Substitua o texto selecionado pelo texto traduzido instantaneamente"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Adicionar ao dicionário personalizado (isso permite que você pule certas palavras durante a tradução da página da web)"
   }
 }

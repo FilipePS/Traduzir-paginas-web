@@ -3,3 +3,6 @@ package-lock.json
 extra/package-lock.json
 dist
 test
+meta.txt
+result
+*.zip

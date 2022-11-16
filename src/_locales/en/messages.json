@@ -480,5 +480,8 @@
   },
   "lblHotTranslatedSelectedText": {
     "message": "Replace selected text with translated text instantly"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Add to custom dictionary (This allows you to skip certain words during web page translation)"
   }
 }

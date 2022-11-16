@@ -480,5 +480,8 @@
   },
   "lblHotTranslatedSelectedText": {
     "message": "Substitueix el text seleccionat pel text traduït a l'instant"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Afegeix al diccionari personalitzat (això us permet ometre determinades paraules durant la traducció de la pàgina web)"
   }
 }

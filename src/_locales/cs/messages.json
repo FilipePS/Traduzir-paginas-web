@@ -468,10 +468,10 @@
     "message": "Neznámý"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Nahradit"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Nahraďte vybraný text přeloženým textem při dvojím stisknutí $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Okamžitě nahraďte vybraný text přeloženým textem"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Přidat do vlastního slovníku (To vám umožní přeskočit určitá slova během překladu webové stránky)"
   }
 }

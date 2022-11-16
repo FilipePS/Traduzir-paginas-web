@@ -80,9 +80,6 @@
   "optionsNeverTranslate": {
     "message": "永不翻译这些网站"
   },
-  "optionsAddToCustomDictionary": {
-    "message": "添加到我的字典（这允许您在网页翻译时跳过某些单词）"
-  },
   "optionsAlwaysTranslate": {
     "message": "总是翻译这些语言"
   },
@@ -483,5 +480,8 @@
   },
   "lblHotTranslatedSelectedText": {
     "message": "自动替换选中文本为译文"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "添加到我的字典（这允许您在网页翻译时跳过某些单词）"
   }
 }

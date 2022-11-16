@@ -3,7 +3,7 @@
     "message": "網頁翻譯器"
   },
   "extensionDescription": {
-    "message": "使用Google或Yandex即時翻譯你的網頁。"
+    "message": "使用 Google 或 Yandex 即時翻譯您的網頁。"
   },
   "pageActionTitle": {
     "message": "翻譯此頁面"
@@ -21,7 +21,7 @@
     "message": "無法翻譯此頁面"
   },
   "lblAlwaysTranslate": {
-    "message": "始終從 $LANGUAGE_NAME$ 翻譯",
+    "message": "始終翻譯$LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -54,13 +54,13 @@
     "message": "再試一次"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "在Google翻譯中打開"
+    "message": "在 Google 翻譯中開啟"
   },
   "btnDonate": {
-    "message": "贊助"
+    "message": "資助"
   },
   "btnNeverTranslate": {
-    "message": "永遠不要翻譯這個網站"
+    "message": "永不翻譯此網站"
   },
   "btnChangeLanguages": {
     "message": "變更語言"
@@ -72,13 +72,13 @@
     "message": "已翻譯"
   },
   "btnMobileNeverTranslate": {
-    "message": "永遠不要翻譯這個網站"
+    "message": "永不翻譯此網站"
   },
   "btnMobileDonate": {
-    "message": "贊助"
+    "message": "資助"
   },
   "optionsNeverTranslate": {
-    "message": "永遠不要翻譯這些網站"
+    "message": "永不翻譯這些網站"
   },
   "optionsAlwaysTranslate": {
     "message": "始終翻譯這些語言"
@@ -93,7 +93,7 @@
     "message": "當我以三隻手指觸控時。"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "在Yandex翻譯中打開"
+    "message": "在 Yandex 翻譯中打開"
   },
   "lblOthers": {
     "message": "其他"
@@ -102,10 +102,10 @@
     "message": "更多選項"
   },
   "lblPlsDonate": {
-    "message": "贊助開發者"
+    "message": "資助開發者"
   },
   "msgTranslateFor": {
-    "message": "翻譯至 $LANGUAGE_NAME$",
+    "message": "翻譯成$LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -129,22 +129,22 @@
     "message": "是（推薦）"
   },
   "msgNoUseWidgets": {
-    "message": "否（使用小部件）"
+    "message": "否（使用小工具）"
   },
   "optionsPageTitle": {
-    "message": "翻譯網頁-選項"
+    "message": "網頁翻譯器 - 選項"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
     "message": "當我選擇「翻譯此網站」時"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "您尚未將任何網頁添加到此列表。"
+    "message": "您尚未新增任何網站至此清單。"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "您尚未添加任何語言至此清單。"
+    "message": "您尚未新增任何語言至此清單。"
   },
   "btnAlwaysTranslate": {
-    "message": "一律翻譯這個網站"
+    "message": "始終翻譯此網站"
   },
   "lblAlwaysTranslateSites": {
     "message": "始終翻譯這些網站"
@@ -159,7 +159,7 @@
     "message": "更新時顯示更新日誌"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "在選中的文字旁顯示翻譯按鈕"
+    "message": "在選取的文字旁顯示翻譯按鈕"
   },
   "msgAutomatic": {
     "message": "自動"
@@ -168,16 +168,16 @@
     "message": "翻譯選取文字"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "在上下文選單中顯示翻譯頁面的選項"
+    "message": "在選單中顯示翻譯選取文字的選項"
   },
   "lblNeverTranslateLangs": {
-    "message": "永遠不要翻譯這些語言"
+    "message": "永不翻譯這些語言"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "永遠不要翻譯這個語言"
+    "message": "永不翻譯此語言"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "懸停時顯示原文"
+    "message": "停留時顯示原文"
   },
   "msgLanguages": {
     "message": "語言"
@@ -210,7 +210,7 @@
     "message": "新增"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "懸停在文字上時顯示翻譯文本"
+    "message": "停留時顯示譯文"
   },
   "lblKeyboardShortcuts": {
     "message": "鍵盤快捷鍵"
@@ -225,13 +225,13 @@
     "message": "如果您有能力捐款，我將感激不盡。"
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "始終翻譯這個語言"
+    "message": "始終翻譯此語言"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "在這些網站上懸停時顯示翻譯文本"
+    "message": "停留在這些網站上時顯示譯文"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "將網站翻譯時的彈出式圖示變為藍色"
+    "message": "當網站翻譯完成時讓彈出圖示變為藍色"
   },
   "more": {
     "message": "更多"
@@ -240,22 +240,22 @@
     "message": "更少"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "如果頁面語言是要翻譯目標語言，則不顯示。"
+    "message": "在頁面語言是要翻譯的目標語言時不顯示"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "如果頁面語言未知，則不要顯示。"
+    "message": "在未知頁面語言時不顯示"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "如果選定的文字語言是目標語言，則不顯示。"
+    "message": "在選取的文字語言是目標語言時不顯示"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "如果選擇的文字語言未知，則不顯示。"
+    "message": "在未知選取的文字語言時不顯示"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "懸停在此網站上時顯示翻譯"
+    "message": "停留在此網站上時顯示翻譯"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "懸停在 $LANGUAGE_NAME$ 網站上時顯示翻譯",
+    "message": "停留在$LANGUAGE_NAME$網站上時顯示翻譯",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,10 +264,10 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "當懸停在使用這些語言的網站上時，顯示翻譯文字。"
+    "message": "停留在使用這些語言的網站上時顯示譯文。"
   },
   "msgNoTranslateSelectedText": {
-    "message": "不要翻譯選定的文字"
+    "message": "不要翻譯選取的文字"
   },
   "btnListen": {
     "message": "聆聽"
@@ -285,7 +285,7 @@
     "message": "在舊介面和新介面之間切換"
   },
   "helpSwapInterface": {
-    "message": "點擊這個按鈕可以在新舊介面之間切換。"
+    "message": "點一下這個按鈕可以在新舊介面之間切換。"
   },
   "lblTranslationService": {
     "message": "翻譯伺服器"
@@ -294,7 +294,7 @@
     "message": "使用舊的彈出式介面"
   },
   "lblTranslateInterface": {
-    "message": "協助此擴充插件翻譯"
+    "message": "協助翻譯此擴充套件"
   },
   "lblButtonInTheAddressBar": {
     "message": "在網址列顯示按鈕"
@@ -336,25 +336,25 @@
     "message": "您要使用備份資料覆蓋所有目前的設定嗎？"
   },
   "fileIsCorrupted": {
-    "message": "這個檔案似乎已毀損"
+    "message": "這個檔案似乎毀損了"
   },
   "doYouWantRestoreSettings": {
-    "message": "您要將擴充套件設定重設成預設嗎？"
+    "message": "您要將擴充套件重設回預設嗎？"
   },
   "lblTtsSpeed": {
     "message": "文字轉語音速度"
   },
   "lblEnableDeepL": {
-    "message": "啟用DeepL作為一種文字翻譯伺服器"
+    "message": "啟用 DeepL 作為文字翻譯服務"
   },
   "enterShortcut": {
     "message": "輸入快捷鍵"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "包括 Ctrl 鍵 或 Alt 鍵"
+    "message": "需包含 Ctrl 鍵或 Alt 鍵"
   },
   "hotkeyError_letter": {
-    "message": "請輸入文字"
+    "message": "請輸入字母"
   },
   "hotkeyError_invalid": {
     "message": "無效組合"
@@ -369,7 +369,7 @@
     "message": "將頁面翻譯成目標語言"
   },
   "lblTranslateTag_pre": {
-    "message": "為標籤 $HTML_TAG_NAME$ 啟用翻譯",
+    "message": "為 $HTML_TAG_NAME$ 標籤啟用翻譯",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -380,16 +380,16 @@
     "message": "不要對 Google 翻譯的結果進行排序"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "翻譯動態建立的內容"
+    "message": "翻譯動態內容"
   },
   "calculatestorage": {
     "message": "計算"
   },
   "donatewithpaypal": {
-    "message": "透過 PayPal 贊助我"
+    "message": "透過 PayPal 資助我"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "當點擊一個帶你到與目前網站相同的域名的連結時，自動進行翻譯"
+    "message": "當點到一個將您帶到與目前網站相同網域的連結時，自動進行翻譯"
   },
   "openNativeShortcutManager": {
     "message": "開啟原生快捷鍵管理器"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "按兩次 $SHORTCUT_KEY$ 時，翻譯鼠標指針上的文字",
+    "message": "按兩下 $SHORTCUT_KEY$ 時翻譯滑鼠游標所指的文字",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,7 +414,7 @@
     }
   },
   "translateClickingOnce": {
-    "message": "透過點擊網址欄中的按鈕來翻譯網頁。 (要顯示彈出視窗則點擊右鍵)"
+    "message": "點一下網址列中的按鈕來翻譯網頁。（要顯示彈出視窗則點擊右鍵）"
   },
   "btnShowPopup": {
     "message": "顯示彈出式視窗"
@@ -432,13 +432,13 @@
     "message": "選擇一個翻譯伺服器來轉換"
   },
   "msgDownloadingDocument": {
-    "message": "下載文件中..."
+    "message": "下載文件中……"
   },
   "msgSendDocument": {
     "message": "傳送文件"
   },
   "msgErrorDownloadingDocument": {
-    "message": "寫入文件時發生未知錯誤"
+    "message": "下載文件時發生錯誤"
   },
   "msgFileLargerThan": {
     "message": "這個翻譯伺服器不支援檔案長度超過 $FILE_SIZE$ 的檔案",
@@ -462,7 +462,7 @@
     "message": "全選"
   },
   "msgPleaseWait": {
-    "message": "請稍候..."
+    "message": "請稍候……"
   },
   "msgUnknownLanguage": {
     "message": "未知"
@@ -471,7 +471,7 @@
     "message": "取代"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "按 $SHORTCUT_KEY$ 兩次時用翻譯文字取代所選文字",
+    "message": "按 $SHORTCUT_KEY$ 兩次時用譯文取代所選文字",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "立即將所選文字取代為翻譯文字"
+    "message": "立即將所選文字取代為譯文"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "新增至自訂的字典（這能讓您在網頁翻譯期間跳過特定的字詞）"
   }
 }

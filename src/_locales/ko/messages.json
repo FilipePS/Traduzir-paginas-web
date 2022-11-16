@@ -114,7 +114,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "상황에 맞는 메뉴에 페이지 번역 옵션 표시"
+    "message": "컨텍스트 메뉴에 페이지 번역 옵션 표시"
   },
   "msgYes": {
     "message": "예"
@@ -162,7 +162,7 @@
     "message": "선택한 텍스트에 번역 버튼 표시"
   },
   "msgAutomatic": {
-    "message": "자동"
+    "message": "자동적 인"
   },
   "msgTranslateSelectedText": {
     "message": "선택한 텍스트 번역"
@@ -420,7 +420,7 @@
     "message": "팝업 표시"
   },
   "msgToTranslateThisDocument": {
-    "message": "이 문서$DOC_TYPE$를 번역하려면 HTML로 변환해야 합니다",
+    "message": "이 $DOC_TYPE$ 문서를 번역하려면 HTML로 변환해야 합니다",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -480,5 +480,8 @@
   },
   "lblHotTranslatedSelectedText": {
     "message": "선택한 텍스트를 번역된 텍스트로 즉시 교체"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "사용자 정의 사전에 추가(웹 페이지 번역 중에 특정 단어를 건너뛸 수 있음)"
   }
 }

@@ -465,13 +465,13 @@
     "message": "Kérem várjon..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Ismeretlen"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Cserélje ki"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "A kiválasztott szöveg lecserélése lefordított szöveggel, ha kétszer megnyomja a $SHORTCUT_KEY$ gombot",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Cserélje ki a kijelölt szöveget lefordított szöveggel azonnal"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Hozzáadás egyéni szótárhoz (Ez lehetővé teszi bizonyos szavak kihagyását a weboldal fordítása során)"
   }
 }

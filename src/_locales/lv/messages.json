@@ -468,10 +468,10 @@
     "message": "Nezināma"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Aizvietot"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Aizstāt atlasīto tekstu ar tulkotu tekstu, divreiz nospiežot $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Nekavējoties nomainiet atlasīto tekstu ar tulkoto tekstu"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Pievienot pielāgotajai vārdnīcai (tas ļauj izlaist noteiktus vārdus tīmekļa lapas tulkošanas laikā)"
   }
 }

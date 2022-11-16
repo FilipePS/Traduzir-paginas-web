@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Natychmiastowe zastępowanie zaznaczonego tekstu tekstem przetłumaczonym"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Dodaj do własnego słownika (Pomija podane słowa podczas tłumaczenia stron internetowych)"
   }
 }

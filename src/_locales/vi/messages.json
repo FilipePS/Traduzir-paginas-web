@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Dịch trang Web"
+    "message": "Translate Web Pages"
   },
   "extensionDescription": {
     "message": "Dịch trang của bạn trong thời gian thực sử dụng Google hoặc Yandex. "
@@ -465,13 +465,13 @@
     "message": "Xin chờ..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Không rõ"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Thay thế"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Thay thế văn bản đã chọn thành văn bản đã dịch khi nhấn phím $SHORTCUT_KEY$ hai lần",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Thay Thay thế văn bản đã chọn thành văn bản đã dịch ngay lập tức"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Thêm vào từ điển tùy chỉnh (Điều này cho phép bạn bỏ qua một số từ nhất định trong khi dịch trang web)"
   }
 }

@@ -63,7 +63,7 @@
     "message": "No traducir nunca este sitio"
   },
   "btnChangeLanguages": {
-    "message": "Cambiar idiomas"
+    "message": "Cambiar el idioma"
   },
   "btnMobileOriginal": {
     "message": "Original"
@@ -336,7 +336,7 @@
     "message": "¿Quiere sobrescribir los ajustes existentes utilizando en su lugar los de la copia de seguridad?"
   },
   "fileIsCorrupted": {
-    "message": "El archivo parece estar dañado"
+    "message": "El archivo parece estar corrupto"
   },
   "doYouWantRestoreSettings": {
     "message": "¿Quiere restaurar los ajustes predeterminados de la extensión?"
@@ -480,5 +480,8 @@
   },
   "lblHotTranslatedSelectedText": {
     "message": "Reemplazar el texto seleccionado por el texto traducido al instante"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Agregar a diccionario personalizado (Esto le permite omitir ciertas palabras durante la traducción de la página web)"
   }
 }

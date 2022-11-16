@@ -255,7 +255,7 @@
     "message": "Näytä käännökset osoitinaktivoinnilla tällä sivustolla"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Näytä käännös, kun vie hiiri verkkosivustojen päälle $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -300,10 +300,10 @@
     "message": "Näytä painike osoitepalkissa"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Sivujen käännöspalvelu"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Tekstin käännöspalvelu"
   },
   "msgStorage": {
     "message": "Tallennustila"
@@ -333,25 +333,25 @@
     "message": "Haluatko poistaa käännösvälimuistin?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Haluatko korvata kaikki olemassa olevat asetukset käyttämällä varmuuskopiotietoja?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Tiedosto näyttää olevan vioittunut"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Haluatko palauttaa laajennuksen oletusasetuksiin?"
   },
   "lblTtsSpeed": {
     "message": "Tekstistä puheeksi äänen nopeus"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "Ota DeepL käyttöön tekstinkäännöspalveluna"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Kirjoita pikakuvake"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Sisällytä Ctrl tai Alt"
   },
   "hotkeyError_letter": {
     "message": "Kirjoita kirjain"
@@ -360,16 +360,16 @@
     "message": "Virheellinen yhdistelmä"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Vaihda käännetyn ja alkuperäisen sivun välillä"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Palauta sivu alkuperäiseen"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Käännä sivu kohdekielelle"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Ota käännös käyttöön tagille $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Älä lajittele Google-kääntäjän tuloksia"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Käännä dynaamisesti luotua sisältöä"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Laskea"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "Lahjoita PayPalin kautta"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Käännä automaattisesti, kun napsautat linkkiä, joka vie sinut samaan verkkotunnukseen kuin nykyinen sivusto"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Avaa natiivi pikanäppäinhallinta"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Erityiset pikanäppäimet"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Käännä valittu teksti painamalla $SHORTCUT_KEY$ kahdesti",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "Käännä teksti hiiren kohdistimen päälle, kun painat $SHORTCUT_KEY$ kahdesti",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Käännä sivu napsauttamalla kerran osoitepalkin painiketta. (Näet ponnahdusikkunan napsauttamalla hiiren kakkospainikkeella)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "Näytä ponnahdusikkuna"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "Tämän asiakirjan $DOC_TYPE$ kääntämiseksi se on muutettava HTML-muotoon",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Valitse palvelu tämän muuntamisen suorittamiseksi"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Ladataan asiakirjaa..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Lähetä asiakirja"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Virhe asiakirjan lataamisessa"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Tämä palvelu ei tue tiedostoja, jotka ovat suurempia kuin $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,28 +450,28 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF HTML-muotoon"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "Kopio"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Viimeaikaiset"
   },
   "msgAll": {
-    "message": "All"
+    "message": "Kaikki"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "Odota..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "Tuntematon"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Korvata"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Korvaa valittu teksti käännetyllä tekstillä painamalla $SHORTCUT_KEY$ kahdesti",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Korvaa valittu teksti käännetyllä tekstillä välittömästi"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Lisää mukautettuun sanakirjaan (Tämän avulla voit ohittaa tietyt sanat verkkosivun kääntämisen aikana)"
   }
 }

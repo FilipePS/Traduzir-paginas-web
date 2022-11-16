@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "dom-parser": "^0.1.6",
+    "extract-zip": "^2.0.1",
     "realistic-structured-clone": "^3.0.0",
     "xmlhttprequest": "^1.8.0"
   }

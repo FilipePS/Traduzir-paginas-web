@@ -129,7 +129,7 @@
     "message": "Da (recomandat)"
   },
   "msgNoUseWidgets": {
-    "message": "Nu (folosește widget)"
+    "message": "Nu (folosește miniatura)"
   },
   "optionsPageTitle": {
     "message": "Tradu Pagini Web - Opțiuni"
@@ -480,5 +480,8 @@
   },
   "lblHotTranslatedSelectedText": {
     "message": "Înlocuiește instantaneu textul ales cu textul tradus"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Adaugă la dicționarul personalizat (Acest lucru permite omiterea anumitor cuvinte în timpul traducerii paginii web)"
   }
 }

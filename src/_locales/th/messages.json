@@ -3,25 +3,25 @@
     "message": "Translate Web Pages"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "แปลหน้าเว็บแบบเรียลไทม์โดยใช้ Google หรือ Yandex"
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "แปลหน้านี้ไหม"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "แปลหน้านี้ไหม?"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "แปลแล้ว ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "แปลแล้ว"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "ไม่สามารถแปลหน้านี้"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "แปลจาก $LANGUAGE_NAME$เสมอ",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "ภาษาเป้าหมาย $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,73 +39,73 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "รีเซ็ต"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "แปลภาษา"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "การตั้งค่า"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "แสดงดั้งเดิม"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "ลองอีกครั้ง"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "เปิดใน Google นักแปล"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "บริจาค"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "ไม่เคยแปลไซต์นี้"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "เปลี่ยนภาษา"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "ต้นฉบับ"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "แปลแล้ว"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "ไม่เคยแปลไซต์นี้"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "บริจาค"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "อย่าแปลเว็บไซต์เหล่านี้"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "แปลภาษาเหล่านี้เสมอ"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "แสดงป๊อปอัปมือถือ"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "โดยอัตโนมัติ"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "เมื่อฉันแตะสามนิ้วบนหน้าจอ"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "เปิดในยานเดกซ์แปล"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "คนอื่น"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "ตัวเลือกเพิ่มเติม"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "ช่วยนักพัฒนาด้วยการบริจาค"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "แปลเป็น $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,148 +114,148 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "แสดงตัวเลือกในการแปลหน้าในเมนูบริบท"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "ใช่"
   },
   "msgNo": {
-    "message": "No"
+    "message": "ไม่"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "ใช้อัลกอริธึมการแปลใหม่หรือไม่"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "ใช่ (แนะนำ)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "ไม่ (ใช้วิดเจ็ต)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "แปลหน้าเว็บ - ตัวเลือก"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "เมื่อฉันคลิก \"แปลไซต์นี้\" เท่านั้น"
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "คุณยังไม่ได้เพิ่มไซต์ใด ๆ ในรายการนี้"
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "คุณยังไม่ได้เพิ่มภาษาใด ๆ ในรายการนี้"
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "แปลไซต์นี้เสมอ"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "แปลเว็บไซต์เหล่านี้เสมอ"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "บริจาคด้วย PayPal"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "โหมดมืด"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "แสดงบันทึกประจำรุ่นเมื่ออัปเดต"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "แสดงปุ่มเพื่อแปลข้อความที่เลือก"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "อัตโนมัติ"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "แปลข้อความที่เลือก"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "แสดงตัวเลือกในการแปลข้อความที่เลือกในเมนูบริบท"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "อย่าแปลภาษาเหล่านี้"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "ไม่เคยแปลภาษานี้"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "แสดงข้อความต้นฉบับเมื่อวางเมาส์เหนือ"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "ภาษา"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "เว็บไซต์"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "การแปล"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "สไตล์"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "ปุ่มลัด"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "บริจาค"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "บันทึกประจำรุ่น"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "รายงานปัญหา"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "การตั้งค่า"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "เพิ่ม"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "แสดงข้อความที่แปลเมื่อวางเมาส์เหนือ"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "แป้นพิมพ์ลัด"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "เพื่อแปลเว็บไซต์"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "ขอขอบคุณที่ใช้ส่วนขยายนี้"
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "ฉันจะขอบคุณถ้าคุณสามารถบริจาคได้"
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "แปลภาษานี้เสมอ"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "แสดงข้อความที่แปลแล้วเมื่อวางเมาส์เหนือไซต์เหล่านี้"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "ทำให้ไอคอนป๊อปอัปเป็นสีน้ำเงินเมื่อแปลไซต์แล้ว"
   },
   "more": {
-    "message": "More"
+    "message": "มากกว่า"
   },
   "less": {
-    "message": "Less"
+    "message": "น้อย"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "ไม่แสดงหากภาษาของเพจเป็นภาษาเป้าหมาย"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "ไม่แสดงหากไม่รู้จักภาษาของเพจ"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "ไม่แสดงว่าภาษาข้อความที่เลือกเป็นภาษาเป้าหมายหรือไม่"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "ไม่แสดงหากไม่รู้จักภาษาของข้อความที่เลือก"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "แสดงคำแปลเมื่อวางเมาส์เหนือไซต์นี้"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "แสดงคำแปลเมื่อวางเมาส์เหนือเว็บไซต์ใน $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,112 +264,112 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "แสดงข้อความที่แปลเมื่อวางเมาส์เหนือไซต์ที่มีภาษาเหล่านี้"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "อย่าแปลข้อความที่เลือก"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "ฟัง"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "หยุดฟัง"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "นำมาใช้"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "สลับระหว่างบริการแปลภาษา"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "สลับระหว่างอินเทอร์เฟซเก่ากับอินเทอร์เฟซใหม่"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "คลิกปุ่มนี้เพื่อสลับระหว่างอินเทอร์เฟซเก่าและใหม่"
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "บริการแปลภาษา"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "ใช้อินเทอร์เฟซป๊อปอัปเก่า"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "แปลอินเทอร์เฟซ"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "แสดงปุ่มในแถบที่อยู่"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "บริการแปลเพจ"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "บริการแปลข้อความ"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "พื้นที่จัดเก็บ"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "แคชการแปล"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "พื้นที่เก็บข้อมูลที่ใช้:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "ลบแคชการแปล"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "การตั้งค่าส่วนบุคคล"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "สำรองข้อมูลไปยังไฟล์"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "กู้คืนจากไฟล์"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "คืนค่าการตั้งค่าเริ่มต้น"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "คุณต้องการลบแคชการแปลหรือไม่?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "คุณต้องการเขียนทับการตั้งค่าที่มีอยู่ทั้งหมดโดยใช้ข้อมูลสำรองหรือไม่"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "ดูเหมือนว่าไฟล์จะเสียหาย"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "คุณต้องการกู้คืนส่วนขยายเป็นการตั้งค่าเริ่มต้นหรือไม่"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "ความเร็วเสียงอ่านออกเสียงข้อความ"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "เปิดใช้งาน DeepL เป็นบริการแปลข้อความ"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "พิมพ์ทางลัด"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "รวม Ctrl หรือ Alt"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "พิมพ์ตัวอักษร"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "ชุดค่าผสมไม่ถูกต้อง"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "สลับไปมาระหว่างหน้าที่แปลและหน้าต้นฉบับ"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "คืนค่าหน้าเป็นต้นฉบับ"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "แปลหน้าเว็บเป็นภาษาเป้าหมาย"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "เปิดใช้งานการแปลสำหรับแท็ก $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "อย่าจัดเรียงผลลัพธ์การแปลของ Google"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "แปลเนื้อหาที่สร้างขึ้นแบบไดนามิก"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "คำนวณ"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "บริจาคด้วย PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "แปลโดยอัตโนมัติเมื่อคลิกลิงก์ที่นำคุณไปยังโดเมนเดียวกันกับไซต์ปัจจุบัน"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "เปิดตัวจัดการคีย์ลัดเนทีฟ"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "แป้นพิมพ์ลัดพิเศษ"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "แปลข้อความที่เลือกเมื่อกด $SHORTCUT_KEY$ สองครั้ง",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "แปลข้อความบนเคอร์เซอร์ของเมาส์เมื่อกด $SHORTCUT_KEY$ สองครั้ง",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "แปลหน้าโดยคลิกหนึ่งครั้งที่ปุ่มในแถบที่อยู่ (หากต้องการดูป๊อปอัป ให้คลิกขวา)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "แสดงป๊อปอัป"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "ในการแปลเอกสารนี้ $DOC_TYPE$ จำเป็นต้องแปลงเป็น HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "เลือกบริการเพื่อทำการแปลงนี้"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "กำลังดาวน์โหลดเอกสาร..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "ส่งเอกสาร"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "เกิดข้อผิดพลาดในการดาวน์โหลดเอกสาร"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "บริการนี้ไม่รองรับไฟล์ที่มีขนาดใหญ่กว่า $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,28 +450,28 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF เป็น HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "สำเนา"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "ล่าสุด"
   },
   "msgAll": {
-    "message": "All"
+    "message": "ทั้งหมด"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "โปรดรอ..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "ไม่ทราบ"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "แทนที่"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "แทนที่ข้อความที่เลือกด้วยข้อความที่แปลเมื่อกด $SHORTCUT_KEY$ สองครั้ง",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "แทนที่ข้อความที่เลือกด้วยข้อความที่แปลทันที"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "เพิ่มในพจนานุกรมแบบกำหนดเอง (ทำให้คุณสามารถข้ามคำบางคำระหว่างการแปลหน้าเว็บ)"
   }
 }

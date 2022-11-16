@@ -468,10 +468,10 @@
     "message": "Okänt"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Byta ut"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "Ersätt markerad text med översatt text när du trycker två gånger på $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Ersätt vald text med översatt text direkt"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Lägg till i anpassad ordbok (Detta låter dig hoppa över vissa ord under översättning av webbsidor)"
   }
 }

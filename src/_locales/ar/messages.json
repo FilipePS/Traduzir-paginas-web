@@ -468,10 +468,10 @@
     "message": "غير معروف"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "يحل محل"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "استبدل النص المحدد بالنص المترجم عند الضغط على $SHORTCUT_KEY$ مرتين",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "استبدل النص المحدد بالنص المترجم على الفور"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "إضافة إلى القاموس المخصص (يسمح لك هذا بتخطي كلمات معينة أثناء ترجمة صفحة الويب)"
   }
 }

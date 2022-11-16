@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "लक्ष्य भाषा $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -81,7 +81,7 @@
     "message": "इन साइटों का अनुवाद कभी न करें"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "हमेशा इन भाषाओं का अनुवाद करें"
   },
   "optionPopupConfig": {
     "message": "मोबाइल पॉपअप दिखाएं"
@@ -105,7 +105,7 @@
     "message": "एक दान के साथ डेवलपर की मदद करें"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$में अनुवाद करें",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -255,7 +255,7 @@
     "message": "इस साइट पर मँडराते समय अनुवाद दिखाएं"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$में वेबसाइटों पर मँडराते समय अनुवाद दिखाएं",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -294,82 +294,82 @@
     "message": "पुराने पॉपअप इंटरफ़ेस का उपयोग करें"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "इंटरफ़ेस का अनुवाद करें"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "एड्रेस बार में शो बटन"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "पृष्ठ अनुवाद सेवा"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "पाठ अनुवाद सेवा"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "भंडारण"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "अनुवाद कैश"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "भंडारण इस्तेमाल किया:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "अनुवाद कैश हटाएं"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "व्यक्तिगत सेटिंग"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "फाइल करने के लिए बैकअप"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "फ़ाइल से पुनर्स्थापित करें"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "डिफ़ॉल्ट सेटिंग्स को पुनर्स्थापित करें"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "क्या आप अनुवाद कैश हटाना चाहते हैं?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "क्या आप बैकअप डेटा का उपयोग करके सभी मौजूदा सेटिंग्स को अधिलेखित करना चाहते हैं?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "फ़ाइल दूषित प्रतीत होती है"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "क्या आप एक्सटेंशन को उसकी डिफ़ॉल्ट सेटिंग्स पर पुनर्स्थापित करना चाहते हैं?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "पाठ से वाक् ऑडियो गति"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "डीपएल को टेक्स्ट अनुवाद सेवा के रूप में सक्षम करें"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "शॉर्टकट टाइप करें"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Ctrl या Alt शामिल करें"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "एक पत्र लिखें"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "अमान्य संयोजन"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "अनुवादित और मूल पृष्ठ के बीच स्विच करें"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "पृष्ठ को मूल रूप में पुनर्स्थापित करें"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "पृष्ठ का लक्ष्य भाषा में अनुवाद करें"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "टैग $HTML_TAG_NAME$के लिए अनुवाद सक्षम करें",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Google अनुवाद परिणामों को क्रमबद्ध न करें"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "गतिशील रूप से बनाई गई सामग्री का अनुवाद करें"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "गणना"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "पेपैल के साथ दान करें"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "किसी ऐसे लिंक पर क्लिक करने पर स्वचालित रूप से अनुवाद करें जो आपको वर्तमान साइट के समान डोमेन पर ले जाता है"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "देशी शॉर्टकट कुंजी प्रबंधक खोलें"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "विशेष कीबोर्ड शॉर्टकट"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ को दो बार दबाने पर चयनित टेक्स्ट का अनुवाद करें",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ को दो बार दबाने पर माउस कर्सर पर टेक्स्ट का अनुवाद करें",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "पता बार में बटन पर एक बार क्लिक करके पृष्ठ का अनुवाद करें। (पॉपअप देखने के लिए राइट-क्लिक करें)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "पॉपअप दिखाएं"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "इस दस्तावेज़ $DOC_TYPE$ का अनुवाद करने के लिए इसे HTML में बदलना आवश्यक है",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "इस रूपांतरण को करने के लिए एक सेवा का चयन करें"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "दस्तावेज़ डाउनलोड हो रहा है..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "दस्तावेज़ भेजें"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "दस्तावेज़ डाउनलोड करने में त्रुटि"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "यह सेवा $FILE_SIZE$से बड़ी फ़ाइलों का समर्थन नहीं करती है",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,28 +450,28 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "पीडीएफ से एचटीएमएल"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "प्रतिलिपि"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "हाल ही"
   },
   "msgAll": {
-    "message": "All"
+    "message": "सभी"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "कृपया प्रतीक्षा करें..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "अनजान"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "बदलने के"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ को दो बार दबाने पर चयनित टेक्स्ट को अनुवादित टेक्स्ट से बदलें",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "चयनित टेक्स्ट को तुरंत अनुवादित टेक्स्ट से बदलें"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "कस्टम शब्दकोश में जोड़ें (यह आपको वेब पेज अनुवाद के दौरान कुछ शब्दों को छोड़ने की अनुमति देता है)"
   }
 }

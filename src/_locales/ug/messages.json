@@ -1,27 +1,27 @@
 {
   "extensionName": {
-    "message": "Translate Web Pages"
+    "message": "تور بەتلەرنى تەرجىمە قىلىڭ"
   },
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Google ياكى Yandex ئارقىلىق بېتىڭىزنى ھەقىقىي تەرجىمە قىلىڭ."
   },
   "pageActionTitle": {
-    "message": "Translate this page"
+    "message": "بۇ بەتنى تەرجىمە قىلىڭ"
   },
   "lblTranslate": {
-    "message": "Translate this page?"
+    "message": "بۇ بەتنى تەرجىمە قىلامسىز؟"
   },
   "lblTranslating": {
-    "message": "Translating ..."
+    "message": "تەرجىمە ..."
   },
   "lblTranslated": {
-    "message": "Translated"
+    "message": "تەرجىمە قىلىندى"
   },
   "lblError": {
-    "message": "This page could not be translated"
+    "message": "بۇ بەتنى تەرجىمە قىلىشقا بولمىدى"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "ھەمىشە $LANGUAGE_NAME$دىن تەرجىمە قىلىڭ",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "نىشان تىلى $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -39,73 +39,73 @@
     }
   },
   "btnReset": {
-    "message": "Reset"
+    "message": "ئەسلىگە قايتۇرۇش"
   },
   "btnTranslate": {
-    "message": "Translate"
+    "message": "تەرجىمە"
   },
   "btnOptions": {
-    "message": "Options"
+    "message": "تاللانما"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "ئەسلى كۆرسەت"
   },
   "btnTryAgain": {
-    "message": "Try again"
+    "message": "قايتا سىناڭ"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Google تەرجىمانىدا ئېچىڭ"
   },
   "btnDonate": {
-    "message": "Donate"
+    "message": "ئىئانە قىلىڭ"
   },
   "btnNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "بۇ تور بەتنى ھەرگىز تەرجىمە قىلماڭ"
   },
   "btnChangeLanguages": {
-    "message": "Change languages"
+    "message": "تىلنى ئۆزگەرتىش"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "ئەسلى"
   },
   "btnMobileTranslated": {
-    "message": "Translated"
+    "message": "تەرجىمە قىلىندى"
   },
   "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
+    "message": "بۇ تور بەتنى ھەرگىز تەرجىمە قىلماڭ"
   },
   "btnMobileDonate": {
-    "message": "Donate"
+    "message": "ئىئانە قىلىڭ"
   },
   "optionsNeverTranslate": {
-    "message": "Never translate these sites"
+    "message": "بۇ تور بېكەتلەرنى ھەرگىز تەرجىمە قىلماڭ"
   },
   "optionsAlwaysTranslate": {
-    "message": "Always translate these languages"
+    "message": "بۇ تىللارنى ھەمىشە تەرجىمە قىلىڭ"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "كۆچمە كۆزنەكنى كۆرسەت"
   },
   "optionPopupAuto": {
-    "message": "Automatically"
+    "message": "ئاپتوماتىك"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "ئېكرانغا ئۈچ بارماق تەگسەم"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Yandex تەرجىمىسىدە ئېچىڭ"
   },
   "lblOthers": {
-    "message": "Others"
+    "message": "باشقىلار"
   },
   "btnMoreOptions": {
-    "message": "More options"
+    "message": "تېخىمۇ كۆپ تاللاشلار"
   },
   "lblPlsDonate": {
-    "message": "Help the developer with a donation"
+    "message": "ئىئانە قىلغۇچىغا ئىئانە بىلەن ياردەم قىلىڭ"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$تەرجىمە قىلىڭ",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -114,148 +114,148 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "مەزمۇن تىزىملىكىدە بەتنى تەرجىمە قىلىش تاللانمىسىنى كۆرسىتىڭ"
   },
   "msgYes": {
-    "message": "Yes"
+    "message": "ھەئە"
   },
   "msgNo": {
-    "message": "No"
+    "message": "ياق"
   },
   "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
+    "message": "يېڭى تەرجىمە ھېسابلاش ئۇسۇلىنى ئىشلىتىڭ؟"
   },
   "msgYesRecommended": {
-    "message": "Yes (recommended)"
+    "message": "ھەئە (تەۋسىيە)"
   },
   "msgNoUseWidgets": {
-    "message": "No (use widgets)"
+    "message": "ياق (كىچىك قوراللارنى ئىشلىتىڭ)"
   },
   "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
+    "message": "تور بەتلەرنى تەرجىمە قىلىش - تاللانما"
   },
   "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
+    "message": "«بۇ تور بەتنى تەرجىمە قىلىش» نى باسساملا بولىدۇ."
   },
   "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
+    "message": "سىز بۇ تىزىملىككە ھېچقانداق تور بېكەت قوشمىدىڭىز."
   },
   "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
+    "message": "سىز بۇ تىزىملىككە ھېچقانداق تىل قوشمىدىڭىز."
   },
   "btnAlwaysTranslate": {
-    "message": "Always translate this site"
+    "message": "بۇ تور بەتنى ھەمىشە تەرجىمە قىلىڭ"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Always translate these sites"
+    "message": "بۇ تور بېكەتلەرنى ھەمىشە تەرجىمە قىلىڭ"
   },
   "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
+    "message": "PayPal بىلەن ئىئانە قىلىڭ"
   },
   "lblDarkMode": {
-    "message": "Dark Mode"
+    "message": "قاراڭغۇ ھالەت"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "يېڭىلىغاندا قويۇپ بېرىش خاتىرىسىنى كۆرسەت"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "تاللانغان تېكىستنى تەرجىمە قىلىش ئۈچۈن كۇنۇپكىنى كۆرسىتىڭ"
   },
   "msgAutomatic": {
-    "message": "Automatic"
+    "message": "ئاپتوماتىك"
   },
   "msgTranslateSelectedText": {
-    "message": "Translate selected text"
+    "message": "تاللانغان تېكىستنى تەرجىمە قىلىڭ"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "تاللانغان تېكىستنى مەزمۇن تىزىملىكىدە تەرجىمە قىلىش تاللانمىسىنى كۆرسىتىڭ"
   },
   "lblNeverTranslateLangs": {
-    "message": "Never translate these languages"
+    "message": "بۇ تىللارنى ھەرگىز تەرجىمە قىلماڭ"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Never translate this language"
+    "message": "بۇ تىلنى ھەرگىز تەرجىمە قىلماڭ"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "يۆتكىگەندە ئەسلى تېكىستنى كۆرسىتىڭ"
   },
   "msgLanguages": {
-    "message": "Languages"
+    "message": "تىللار"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "بېكەتلەر"
   },
   "msgTranslations": {
-    "message": "Translations"
+    "message": "تەرجىمە"
   },
   "msgStyle": {
-    "message": "Style"
+    "message": "ئۇسلۇب"
   },
   "msgHotkeys": {
     "message": "Hotkeys"
   },
   "lblMakeDonation": {
-    "message": "Make a donation"
+    "message": "ئىئانە قىلىڭ"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "ئىزاھات"
   },
   "lblReport": {
-    "message": "Report a problem"
+    "message": "بىر مەسىلىنى دوكلات قىلىڭ"
   },
   "lblSettings": {
-    "message": "Settings"
+    "message": "تەڭشەك"
   },
   "lblAdd": {
-    "message": "Add"
+    "message": "قوش"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "يۆتكەلگەندە تەرجىمە قىلىنغان تېكىستنى كۆرسەت"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "كۇنۇپكا تاختىسى تېزلەتمىسى"
   },
   "msgToTranslateSites": {
-    "message": "To translate the site"
+    "message": "بېكەتنى تەرجىمە قىلىش"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "بۇ كېڭەيتىلمىنى ئىشلەتكەنلىكىڭىزگە رەھمەت."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "ئىئانە قىلسىڭىز مەن مىننەتدار بولىمەن."
   },
   "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
+    "message": "بۇ تىلنى ھەمىشە تەرجىمە قىلىڭ"
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "بۇ تور بەتلەردە يۈرگەندە تەرجىمە قىلىنغان تېكىستنى كۆرسەت"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "تور بېكەت تەرجىمە قىلىنغاندا سەكرىمە سىنبەلگىنى كۆك قىلىڭ"
   },
   "more": {
-    "message": "More"
+    "message": "تېخىمۇ كۆپ"
   },
   "less": {
-    "message": "Less"
+    "message": "ئاز"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "بەت تىلى نىشان تىل ئىكەنلىكىنى كۆرسەتمەڭ"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Do not show if the page language is unknown"
+    "message": "بەت تىلى نامەلۇم بولسا كۆرسەتمەڭ"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "تاللانغان تېكىستنىڭ نىشان تىل ئىكەنلىكىنى كۆرسەتمەڭ"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "تاللانغان تېكىست تىلى نامەلۇم ياكى ئەمەسلىكىنى كۆرسەتمەڭ"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "بۇ تور بەتنى بېسىپ ئۆتكەندە تەرجىمىنى كۆرسەت"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$دىكى تور بېكەتلەرنى بېسىپ ئۆتكەندە تەرجىمىنى كۆرسىتىڭ",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,112 +264,112 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "بۇ تىللار بىلەن تور بېكەتلەرنى ئايلىنىپ يۈرگەندە تەرجىمە قىلىنغان تېكىستنى كۆرسىتىڭ"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "تاللانغان تېكىستنى تەرجىمە قىلماڭ"
   },
   "btnListen": {
-    "message": "Listen"
+    "message": "ئاڭلاڭ"
   },
   "btnStopListening": {
-    "message": "Stop listening"
+    "message": "ئاڭلاشنى توختىتىڭ"
   },
   "btnApply": {
-    "message": "Apply"
+    "message": "ئىلتىماس قىلىڭ"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "تەرجىمە مۇلازىمىتى ئارىسىدا ئالماشتۇرۇڭ"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
+    "message": "كونا كۆرۈنمە يۈزى بىلەن يېڭىسىنى ئالماشتۇرۇڭ"
   },
   "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "كونا ۋە يېڭى كۆرۈنمە يۈزنى ئالماشتۇرۇش ئۈچۈن بۇ كۇنۇپكىنى بېسىڭ."
   },
   "lblTranslationService": {
-    "message": "Translation service"
+    "message": "تەرجىمە مۇلازىمىتى"
   },
   "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
+    "message": "كونا سەكرىمە كۆرۈنمە يۈزىنى ئىشلىتىڭ"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "كۆرۈنمە يۈزىنى تەرجىمە قىلىڭ"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "ئادرېس ستونىدا كۇنۇپكىنى كۆرسىتىش"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "بەت تەرجىمە مۇلازىمىتى"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "تېكىست تەرجىمە مۇلازىمىتى"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "ساقلاش"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "تەرجىمە ساقلىغۇچ"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "ساقلاش بوشلۇقى:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "تەرجىمە ساقلانمىسىنى ئۆچۈرۈڭ"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "شەخسىي تەڭشەكلەر"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "ھۆججەتكە زاپاسلاش"
   },
   "restoreFromFile": {
-    "message": "Restore from file"
+    "message": "ھۆججەتتىن ئەسلىگە كەلتۈرۈڭ"
   },
   "resetToDefault": {
-    "message": "Restore default settings"
+    "message": "سۈكۈتتىكى تەڭشەكلەرنى ئەسلىگە كەلتۈرۈڭ"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "تەرجىمە ساقلىغۇچنى ئۆچۈرمەكچىمۇ؟"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "زاپاس سانلىق مەلۇمات ئارقىلىق بارلىق تەڭشەكلەرنى قاپلىماقچىمۇ؟"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "بۇ ھۆججەت بۇزۇلغاندەك قىلىدۇ"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "كېڭەيتىلمىنى سۈكۈتتىكى تەڭشىكىگە ئەسلىگە كەلتۈرمەكچىمۇ؟"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "تېكىستتىن سۆزلەش ئاۋازى"
   },
   "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
+    "message": "DeepL نى تېكىست تەرجىمە مۇلازىمىتى سۈپىتىدە قوزغىتىڭ"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "تېزلەتمە كىرگۈزۈڭ"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Ctrl ياكى Alt نى ئۆز ئىچىگە ئالىدۇ"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "خەت يېزىڭ"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "ئىناۋەتسىز"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "تەرجىمە قىلىنغان بىلەن ئەسلى بەتنى ئالماشتۇرۇڭ"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "بەتنى ئەسلىگە ئەسلىگە كەلتۈرۈڭ"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "بەتنى نىشان تىلغا تەرجىمە قىلىڭ"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "$HTML_TAG_NAME$بەلگىسىنىڭ تەرجىمىسىنى قوزغىتىڭ",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -377,28 +377,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort the google translate results"
+    "message": "Google تەرجىمە نەتىجىسىنى رەتلىمەڭ"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "ھەرىكەتچان ئىجاد قىلىنغان مەزمۇننى تەرجىمە قىلىڭ"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "ھېسابلاپ بېقىڭ"
   },
   "donatewithpaypal": {
-    "message": "Donate With PayPal"
+    "message": "PayPal بىلەن ئىئانە قىلىڭ"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "سىزنى نۆۋەتتىكى تور بېكەت بىلەن ئوخشاش تورغا ئېلىپ بارىدىغان ئۇلانمىنى چەككەندە ئاپتوماتىك تەرجىمە قىلىڭ"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "يەرلىك تېزلەتمە ئاچقۇچ باشقۇرغۇچىنى ئېچىڭ"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "ئالاھىدە كۇنۇپكا تاختىسى"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ نى ئىككى قېتىم باسقاندا تاللانغان تېكىستنى تەرجىمە قىلىڭ",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -406,7 +406,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ نى ئىككى قېتىم باسقاندا تېكىستنى مائۇس نۇر بەلگىسىنىڭ ئۈستىگە تەرجىمە قىلىڭ",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,13 +414,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "ئادرېس ستونىدىكى كۇنۇپكىنى بىر قېتىم چېكىپ بەتنى تەرجىمە قىلىڭ. (سەكرىمە كۆزنەكنى كۆرۈش ئۈچۈن ئوڭ تەرەپنى چېكىڭ)"
   },
   "btnShowPopup": {
-    "message": "Show popup"
+    "message": "سەكرىمە كۆزنەكنى كۆرسىتىش"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "بۇ ھۆججەتنى $DOC_TYPE$ قىلىش ئۈچۈن ئۇنى HTML غا ئايلاندۇرۇش كېرەك",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -429,19 +429,19 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "بۇ ئايلاندۇرۇش ئۈچۈن مۇلازىمەت تاللاڭ"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "ھۆججەتنى چۈشۈرۈش ..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "ھۆججەت ئەۋەتىڭ"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "ھۆججەت چۈشۈرۈشتە خاتالىق"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "بۇ مۇلازىمەت $FILE_SIZE$دىن چوڭ ھۆججەتلەرنى قوللىمايدۇ",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -450,28 +450,28 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF دىن HTML"
   },
   "btncopy": {
-    "message": "Copy"
+    "message": "كۆچۈرۈڭ"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "قوبۇل قىلىدۇ"
   },
   "msgAll": {
-    "message": "All"
+    "message": "ھەممىسى"
   },
   "msgPleaseWait": {
-    "message": "Please wait..."
+    "message": "ساقلاپ تۇرۇڭ ..."
   },
   "msgUnknownLanguage": {
-    "message": "Unknown"
+    "message": "نامەلۇم"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "ئالماشتۇرۇڭ"
   },
   "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ نى ئىككى قېتىم باسقاندا تاللانغان تېكىستنى تەرجىمە تېكىست بىلەن ئالماشتۇرۇڭ",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -479,6 +479,9 @@
     }
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "تاللانغان تېكىستنى تەرجىمە تېكىست بىلەن دەرھال ئالماشتۇرۇڭ"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "ئىختىيارى لۇغەتكە قوشۇڭ (بۇ تور بەت تەرجىمە جەريانىدا بەزى سۆزلەرنى ئاتلاپ ئۆتۈپ كېتىدۇ)"
   }
 }
