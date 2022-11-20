@@ -3,156 +3,181 @@
 // TODO especificar o parametro HL para aprimorar a detecção de idioma
 //TODO desativar o botão caso a pagina esteja traduzida
 
-var translateSelected = {}
+var translateSelected = {};
 
 function getTabHostName() {
-	return new Promise(resolve => chrome.runtime.sendMessage({action: "getTabHostName"}, result => resolve(result)))
+  return new Promise((resolve) =>
+    chrome.runtime.sendMessage({ action: "getTabHostName" }, (result) =>
+      resolve(result)
+    )
+  );
 }
 
-Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
-	const tabHostName = _[1]
+Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
+  const tabHostName = _[1];
 
-	let gSelectionInfo
-	let prevSelectionInfo
+  let gSelectionInfo;
+  let prevSelectionInfo;
 
-	let divElement
-	let eButtonTransSelText
-	let eDivResult
-	let eSelTextTrans
-	let eOrigText
-	let origTextContainer
+  let divElement;
+  let eButtonTransSelText;
+  let eDivResult;
+  let eSelTextTrans;
+  let eOrigText;
+  let origTextContainer;
 
-	let originalTabLanguage = "und"
-	let currentTargetLanguages = twpConfig.get("targetLanguages")
-	let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation")
-	let currentTextTranslatorService = twpConfig.get("textTranslatorService")
-	let awaysTranslateThisSite = twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !== -1
-	let translateThisSite = twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1
-	let translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1
-	let showTranslateSelectedButton = twpConfig.get("showTranslateSelectedButton")
-	let dontShowIfPageLangIsTargetLang = twpConfig.get("dontShowIfPageLangIsTargetLang")
-	let dontShowIfPageLangIsUnknown = twpConfig.get("dontShowIfPageLangIsUnknown")
-	let dontShowIfSelectedTextIsTargetLang = twpConfig.get("dontShowIfSelectedTextIsTargetLang")
-	let dontShowIfSelectedTextIsUnknown = twpConfig.get("dontShowIfSelectedTextIsUnknown")
-	let fooCount = 0
+  let originalTabLanguage = "und";
+  let currentTargetLanguages = twpConfig.get("targetLanguages");
+  let currentTargetLanguage = twpConfig.get("targetLanguageTextTranslation");
+  let currentTextTranslatorService = twpConfig.get("textTranslatorService");
+  let awaysTranslateThisSite =
+    twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !== -1;
+  let translateThisSite =
+    twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1;
+  let translateThisLanguage =
+    twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1;
+  let showTranslateSelectedButton = twpConfig.get(
+    "showTranslateSelectedButton"
+  );
+  let dontShowIfPageLangIsTargetLang = twpConfig.get(
+    "dontShowIfPageLangIsTargetLang"
+  );
+  let dontShowIfPageLangIsUnknown = twpConfig.get(
+    "dontShowIfPageLangIsUnknown"
+  );
+  let dontShowIfSelectedTextIsTargetLang = twpConfig.get(
+    "dontShowIfSelectedTextIsTargetLang"
+  );
+  let dontShowIfSelectedTextIsUnknown = twpConfig.get(
+    "dontShowIfSelectedTextIsUnknown"
+  );
+  let fooCount = 0;
 
-	pageTranslator.onGetOriginalTabLanguage(function (tabLanguage) {
-		originalTabLanguage = tabLanguage
-		translateThisLanguage = twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1
-		updateEventListener()
-	})
+  pageTranslator.onGetOriginalTabLanguage(function (tabLanguage) {
+    originalTabLanguage = tabLanguage;
+    translateThisLanguage =
+      twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) === -1;
+    updateEventListener();
+  });
 
-	async function detectTextLanguage(text) {
-		if (!chrome.i18n.detectLanguage) return "und"
+  async function detectTextLanguage(text) {
+    if (!chrome.i18n.detectLanguage) return "und";
 
-		return await new Promise(resolve => {
-			chrome.i18n.detectLanguage(text, result => {
-				if (!result) return resolve({lang: "und", isReliable: false})
+    return await new Promise((resolve) => {
+      chrome.i18n.detectLanguage(text, (result) => {
+        if (!result) return resolve({ lang: "und", isReliable: false });
 
-				for (const langInfo of result.languages) {
-					const langCode = twpLang.fixTLanguageCode(langInfo.language)
-					if (langCode) {
-						return resolve({lang: langCode, isReliable: result.isReliable})
-					}
-				}
+        for (const langInfo of result.languages) {
+          const langCode = twpLang.fixTLanguageCode(langInfo.language);
+          if (langCode) {
+            return resolve({ lang: langCode, isReliable: result.isReliable });
+          }
+        }
 
-				return resolve({lang: "und", isReliable: false})
-			})
-		})
-	}
+        return resolve({ lang: "und", isReliable: false });
+      });
+    });
+  }
 
-	let isPlayingAudio = false
+  let isPlayingAudio = false;
 
-	function playAudio(text, targetLanguage, cbOnEnded=() => {}) {
-		isPlayingAudio = true
-        chrome.runtime.sendMessage({
-            action: "textToSpeech",
-            text,
-            targetLanguage
-        }, () => {
-			isPlayingAudio = false
-			cbOnEnded()
-		})
+  function playAudio(text, targetLanguage, cbOnEnded = () => {}) {
+    isPlayingAudio = true;
+    chrome.runtime.sendMessage(
+      {
+        action: "textToSpeech",
+        text,
+        targetLanguage,
+      },
+      () => {
+        isPlayingAudio = false;
+        cbOnEnded();
+      }
+    );
+  }
+
+  function stopAudio() {
+    if (!isPlayingAudio) return;
+    isPlayingAudio = false;
+    chrome.runtime.sendMessage({
+      action: "stopAudio",
+    });
+  }
+
+  function dragElement(elmnt, elmnt2) {
+    var pos1 = 0,
+      pos2 = 0,
+      pos3 = 0,
+      pos4 = 0;
+    if (elmnt2) {
+      elmnt2.addEventListener("mousedown", dragMouseDown);
+    } else {
+      elmnt.addEventListener("mousedown", dragMouseDown);
     }
 
-	function stopAudio() {
-		if (!isPlayingAudio) return;
-		isPlayingAudio = false
-		chrome.runtime.sendMessage({
-			action: "stopAudio"
-		})
-	}
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.addEventListener("mouseup", closeDragElement);
+      // call a function whenever the cursor moves:
+      document.addEventListener("mousemove", elementDrag);
+    }
 
-	function dragElement(elmnt, elmnt2) {
-		var pos1 = 0,
-			pos2 = 0,
-			pos3 = 0,
-			pos4 = 0;
-		if (elmnt2) {
-			elmnt2.addEventListener("mousedown", dragMouseDown);
-		} else {
-			elmnt.addEventListener("mousedown", dragMouseDown);
-		}
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      elmnt.style.top =
+        Math.min(
+          window.innerHeight - parseInt(getComputedStyle(elmnt).height),
+          Math.max(0, elmnt.offsetTop - pos2)
+        ) + "px";
+      elmnt.style.left = Math.max(0, elmnt.offsetLeft - pos1) + "px";
+    }
 
-		function dragMouseDown(e) {
-			e = e || window.event;
-			e.preventDefault();
-			// get the mouse cursor position at startup:
-			pos3 = e.clientX;
-			pos4 = e.clientY;
-			document.addEventListener("mouseup", closeDragElement);
-			// call a function whenever the cursor moves:
-			document.addEventListener("mousemove", elementDrag);
-		}
+    function closeDragElement() {
+      // stop moving when mouse button is released:
+      document.removeEventListener("mouseup", closeDragElement);
+      document.removeEventListener("mousemove", elementDrag);
+    }
+  }
 
-		function elementDrag(e) {
-			e = e || window.event;
-			e.preventDefault();
-			// calculate the new cursor position:
-			pos1 = pos3 - e.clientX;
-			pos2 = pos4 - e.clientY;
-			pos3 = e.clientX;
-			pos4 = e.clientY;
-			// set the element's new position:
-			elmnt.style.top =  Math.min(window.innerHeight-parseInt(getComputedStyle(elmnt).height), Math.max(0, elmnt.offsetTop - pos2)) + "px";
-			elmnt.style.left = Math.max(0, elmnt.offsetLeft - pos1) + "px";
-		}
+  function setCaretAtEnd() {
+    const el = eOrigText;
+    const range = document.createRange();
+    const sel = window.getSelection();
+    range.setStart(el, el.textContent.length > 0 ? 1 : 0);
+    range.collapse(true);
+    sel.removeAllRanges();
+    sel.addRange(range);
+    el.focus();
+  }
 
-		function closeDragElement() {
-			// stop moving when mouse button is released:
-			document.removeEventListener("mouseup", closeDragElement);
-			document.removeEventListener("mousemove", elementDrag);
-		}
-	}
+  let onCSSLoad = null;
+  let isCSSLoaded = false;
 
-	function setCaretAtEnd() {
-		const el = eOrigText
-		const range = document.createRange()
-		const sel = window.getSelection()
-		range.setStart(el, el.textContent.length > 0 ? 1 : 0)
-		range.collapse(true)
-		sel.removeAllRanges()
-		sel.addRange(range)
-		el.focus()
-	}
+  function init() {
+    destroy();
 
-	let onCSSLoad = null
-	let isCSSLoaded = false
+    window.isTranslatingSelected = true;
 
-	function init() {
-		destroy()
+    divElement = document.createElement("div");
+    divElement.style = "all: initial";
+    divElement.classList.add("notranslate");
 
-		window.isTranslatingSelected = true
+    const shadowRoot = divElement.attachShadow({
+      mode: "closed",
+    });
 
-		divElement = document.createElement("div")
-		divElement.style = "all: initial"
-		divElement.classList.add("notranslate")
-
-		const shadowRoot = divElement.attachShadow({
-			mode: "closed"
-		})
-
-		shadowRoot.innerHTML = `
+    shadowRoot.innerHTML = `
         <div id="eButtonTransSelText" style="display: none"></div>
 		<div id="eDivResult" style="display: none">
 			<div id="origTextContainer">
@@ -234,41 +259,44 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
 				</ul>
 			</div>
 		</div>
-        `
+        `;
 
+    const link = document.createElement("link");
+    link.setAttribute("rel", "stylesheet");
+    link.setAttribute(
+      "href",
+      chrome.runtime.getURL("/contentScript/css/translateSelected.css")
+    );
+    isCSSLoaded = false;
+    link.onload = (e) => {
+      isCSSLoaded = true;
+      if (onCSSLoad) onCSSLoad();
+    };
+    shadowRoot.appendChild(link);
 
-
-		const link = document.createElement("link")
-		link.setAttribute("rel", "stylesheet")
-		link.setAttribute("href", chrome.runtime.getURL("/contentScript/css/translateSelected.css"))
-		isCSSLoaded = false
-		link.onload = e => {
-			isCSSLoaded = true
-			if (onCSSLoad) onCSSLoad();
-		}
-		shadowRoot.appendChild(link)
-
-		const styleFix = document.createElement("style")
-		styleFix.textContent = `
+    const styleFix = document.createElement("style");
+    styleFix.textContent = `
 		#eSelTextTrans,#eOrigText {
 			margin-right: 22px;
 		}
 		#eDivResult {
 			min-width: 300px;
 		}
-		`
-		shadowRoot.appendChild(styleFix)
+		`;
+    shadowRoot.appendChild(styleFix);
 
+    dragElement(
+      shadowRoot.getElementById("eDivResult"),
+      shadowRoot.getElementById("drag")
+    );
 
-		dragElement(shadowRoot.getElementById("eDivResult"), shadowRoot.getElementById("drag"))
+    const isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
 
-		const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-
-		if (CSS.supports("backdrop-filter: blur(5px)") && !isFirefox && false) {
-			const el = document.createElement("style")
-			el.setAttribute("id", "backdropFilterElement")
-			el.setAttribute("rel", "stylesheet")
-			el.textContent = `
+    if (CSS.supports("backdrop-filter: blur(5px)") && !isFirefox && false) {
+      const el = document.createElement("style");
+      el.setAttribute("id", "backdropFilterElement");
+      el.setAttribute("rel", "stylesheet");
+      el.textContent = `
                     #eDivResult {
                         backdrop-filter: blur(3px);
                         background-color: rgba(0, 0, 0, 0.5);
@@ -288,23 +316,24 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
             		#listen {
             		    fill: white;
             		}
-                `
-			shadowRoot.appendChild(el)
-		} else {
-			const el = document.createElement("style")
-			el.setAttribute("id", "backdropFilterElement")
-			el.setAttribute("rel", "stylesheet")
-			let darkMode = false
-			switch (twpConfig.get("darkMode")) {
-				case "auto":
-					if (matchMedia("(prefers-color-scheme: dark)").matches) darkMode = true
-					break
-				case "yes":
-					darkMode = true
-					break
-			}
-			if (darkMode === true) {
-				el.textContent = `
+                `;
+      shadowRoot.appendChild(el);
+    } else {
+      const el = document.createElement("style");
+      el.setAttribute("id", "backdropFilterElement");
+      el.setAttribute("rel", "stylesheet");
+      let darkMode = false;
+      switch (twpConfig.get("darkMode")) {
+        case "auto":
+          if (matchMedia("(prefers-color-scheme: dark)").matches)
+            darkMode = true;
+          break;
+        case "yes":
+          darkMode = true;
+          break;
+      }
+      if (darkMode === true) {
+        el.textContent = `
                     #eDivResult {
                         backdrop-filter: none;
                         background-color: rgba(25, 25, 25, 0.98);
@@ -322,9 +351,9 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
             		#listen {
             		    fill: white;
             		}
-                `
-			} else {
-				el.textContent = `
+                `;
+      } else {
+        el.textContent = `
                     #eDivResult {
                         backdrop-filter: none;
                         background-color: rgba(225, 225, 225, 0.98);
@@ -342,705 +371,811 @@ Promise.all([ twpConfig.onReady(), getTabHostName() ]).then(function (_) {
             		#listen {
             		    fill: black;
             		}
-                `
-			}
-			shadowRoot.appendChild(el)
-		}
-
-		eButtonTransSelText = shadowRoot.getElementById("eButtonTransSelText")
-		eDivResult = shadowRoot.getElementById("eDivResult")
-		eSelTextTrans = shadowRoot.getElementById("eSelTextTrans")
-		eOrigText = shadowRoot.getElementById("eOrigText")
-		origTextContainer = shadowRoot.getElementById("origTextContainer")
-
-		const eMoreOrLess = shadowRoot.getElementById("moreOrLess")
-		const eMore = shadowRoot.getElementById("more")
-		const eLess = shadowRoot.getElementById("less")
-
-		const sGoogle = shadowRoot.getElementById("sGoogle")
-		const sYandex = shadowRoot.getElementById("sYandex")
-		const sBing = shadowRoot.getElementById("sBing")
-		const sDeepL = shadowRoot.getElementById("sDeepL")
-		const eCopy = shadowRoot.getElementById("copy")
-		const eReplace = shadowRoot.getElementById("replace")
-		const eListenOriginal = shadowRoot.getElementById("listenOriginal")
-		const eListenTranslated = shadowRoot.getElementById("listenTranslated")
-
-		if (gSelectionInfo && (gSelectionInfo.isInputElement || gSelectionInfo.isContentEditable)) {
-			eCopy.setAttribute("hidden", "")
-			eReplace.removeAttribute("hidden")
-		} else {
-			eCopy.removeAttribute("hidden")
-			eReplace.setAttribute("hidden", "")
-		}
-
-		function replaceText() {
-			const prevSelInfo = prevSelectionInfo
-			destroy()
-			if (prevSelInfo.element.nodeType === 3) {
-				prevSelInfo.element.parentNode.focus();
-			} else {
-				prevSelInfo.element.focus();
-			}
-			document.execCommand('selectAll', false);
-			if (prevSelInfo.isInputElement) {
-				prevSelInfo.element.setSelectionRange(prevSelInfo.selStart, prevSelInfo.selEnd)
-			} else if (prevSelInfo.isContentEditable) {
-				const selection = window.getSelection()
-				selection.removeAllRanges()
-				selection.addRange(prevSelInfo.range)
-			}
-			document.execCommand('insertText', false, eSelTextTrans.textContent);
-		}
-
-		eCopy.onclick = () => {
-			navigator.clipboard.writeText(eSelTextTrans.textContent).then(() => {
-				const oldBackgroundColor = eCopy.style.backgroundColor
-				eCopy.style.backgroundColor = "rgba(0, 255, 0, 0.4)"
-				setTimeout(() => {
-					eCopy.style.backgroundColor = oldBackgroundColor
-				}, 500)
-			})
-		}
-
-		eReplace.onclick = replaceText
-
-		eOrigText.onkeypress = e => {
-			e.stopPropagation()
-		}
-
-		eOrigText.onkeydown = e => {
-			e.stopPropagation()
-		}
-
-		let lastTimePressedCtrl = null
-
-		eOrigText.onkeyup = e => {
-			if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
-			if (e.key == "Control") {
-				if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 250) {
-					lastTimePressedCtrl = performance.now()
-					replaceText()
-				}
-				lastTimePressedCtrl = performance.now()
-			}
-		}
-
-		let translateNewInputTimerHandler
-		eOrigText.oninput = () => {
-			clearTimeout(translateNewInputTimerHandler)
-			translateNewInputTimerHandler = setTimeout(translateNewInput, 800)
-		}
-
-		eMoreOrLess.onclick = () => {
-			if (twpConfig.get("expandPanelTranslateSelectedText") === "no") {
-				twpConfig.set("expandPanelTranslateSelectedText", "yes")
-			} else {
-				twpConfig.set("expandPanelTranslateSelectedText", "no")
-			}
-
-			setCaretAtEnd()
-		}
-
-		sGoogle.onclick = () => {
-			currentTextTranslatorService = "google"
-			twpConfig.set("textTranslatorService", "google")
-			translateNewInput()
-
-			sGoogle.classList.remove("selected")
-			sYandex.classList.remove("selected")
-			sBing.classList.remove("selected")
-			sDeepL.classList.remove("selected")
-
-			sGoogle.classList.add("selected")
-		}
-		sYandex.onclick = () => {
-			currentTextTranslatorService = "yandex"
-			twpConfig.set("textTranslatorService", "yandex")
-			translateNewInput()
-
-			sGoogle.classList.remove("selected")
-			sYandex.classList.remove("selected")
-			sBing.classList.remove("selected")
-			sDeepL.classList.remove("selected")
-
-			sYandex.classList.add("selected")
-		}
-		sBing.onclick = () => {
-			currentTextTranslatorService = "bing"
-			twpConfig.set("textTranslatorService", "bing")
-			translateNewInput()
-
-			sGoogle.classList.remove("selected")
-			sYandex.classList.remove("selected")
-			sBing.classList.remove("selected")
-			sDeepL.classList.remove("selected")
-
-			sBing.classList.add("selected")
-		}
-		sDeepL.onclick = () => {
-			currentTextTranslatorService = "deepl"
-			twpConfig.set("textTranslatorService", "deepl")
-			translateNewInput()
-
-			sGoogle.classList.remove("selected")
-			sYandex.classList.remove("selected")
-			sBing.classList.remove("selected")
-			sDeepL.classList.remove("selected")
-
-			sDeepL.classList.add("selected")
-		}
-
-		const setTargetLanguage = shadowRoot.getElementById("setTargetLanguage")
-		setTargetLanguage.onclick = e => {
-			if (e.target.getAttribute("value")) {
-				const langCode = twpLang.fixTLanguageCode(e.target.getAttribute("value"))
-				if (langCode) {
-					currentTargetLanguage = langCode
-					twpConfig.setTargetLanguageTextTranslation(langCode)
-					translateNewInput()
-				}
-
-				shadowRoot.querySelectorAll("#setTargetLanguage li").forEach(li => {
-					li.classList.remove("selected")
-				})
-
-				e.target.classList.add("selected")
-			}
-		}
-
-		function onListenClick(type, element, text, language) {
-			const msgListen = chrome.i18n.getMessage("btnListen")
-			const msgStopListening = chrome.i18n.getMessage("btnStopListening")
-
-			eListenOriginal.classList.remove("selected")
-			eListenTranslated.classList.remove("selected")
-			eListenOriginal.setAttribute("title", msgStopListening)
-			eListenTranslated.setAttribute("title", msgStopListening)
-
-			if (isPlayingAudio) {
-				stopAudio()
-				element.classList.remove("selected")
-			} else {
-				playAudio(text, language, () => {
-					element.classList.remove("selected")
-					element.setAttribute("title", msgListen)
-				})
-				element.classList.add("selected")
-			}
-		}
-
-		let lastListenAudioType = null
-		eListenOriginal.onclick = async () => {
-			let {lang, isReliable} = await detectTextLanguage(eOrigText.textContent)
-			if (!isReliable && originalTabLanguage !== "und") {
-				lang = originalTabLanguage
-			}
-			if (lastListenAudioType !== "original") {
-				stopAudio();
-			}
-			lastListenAudioType = "original"
-			onListenClick("original", eListenOriginal, eOrigText.textContent, lang)
-		}
-
-		eListenTranslated.onclick = () => {
-			if (lastListenAudioType !== "translated") {
-				stopAudio();
-			}
-			lastListenAudioType = "translated"
-			onListenClick("translated", eListenTranslated, eSelTextTrans.textContent, currentTargetLanguage)
-		}
-
-		document.body.appendChild(divElement)
-
-		chrome.i18n.translateDocument(shadowRoot)
-
-		if (platformInfo.isMobile.any) {
-			eButtonTransSelText.style.width = "30px"
-			eButtonTransSelText.style.height = "30px"
-			document.addEventListener("touchstart", onTouchstart)
-		}
-
-		eButtonTransSelText.addEventListener("click", onClick)
-		document.addEventListener("mousedown", onDown)
-
-		const targetLanguageButtons = shadowRoot.querySelectorAll("#setTargetLanguage li")
-
-		for (let i = 0; i < 3; i++) {
-			if (currentTargetLanguages[i] == currentTargetLanguage) {
-				targetLanguageButtons[i].classList.add("selected")
-			}
-			targetLanguageButtons[i].textContent = currentTargetLanguages[i]
-			targetLanguageButtons[i].setAttribute("value", currentTargetLanguages[i])
-			targetLanguageButtons[i].setAttribute("title", twpLang.codeToLanguage(currentTargetLanguages[i]))
-		}
-
-		if (currentTextTranslatorService === "yandex") {
-			sYandex.classList.add("selected")
-		} else if (currentTextTranslatorService == "deepl") {
-			sDeepL.classList.add("selected")
-		} else if (currentTextTranslatorService == "bing") {
-			sBing.classList.add("selected")
-		} else {
-			sGoogle.classList.add("selected")
-		}
-
-		if (twpConfig.get("enableDeepL") === "yes") {
-			sDeepL.removeAttribute("hidden")
-		} else {
-			sDeepL.setAttribute("hidden", "")
-		}
-
-		if (twpConfig.get("expandPanelTranslateSelectedText") === "yes" || (prevSelectionInfo && (prevSelectionInfo.isContentEditable || prevSelectionInfo.isInputElement))) {
-			origTextContainer.style.display = "block"
-			eMore.style.display = "none"
-			eLess.style.display = "block"
-			eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"))
-		} else {
-			origTextContainer.style.display = "none"
-			eMore.style.display = "block"
-			eLess.style.display = "none"
-			eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"))
-		}
-
-		twpConfig.onChanged((name, newvalue) => {
-			switch (name) {
-				case "enableDeepL":
-					if (newvalue === "yes") {
-						sDeepL.removeAttribute("hidden")
-					} else {
-						sDeepL.setAttribute("hidden", "")
-					}
-					break
-				case "expandPanelTranslateSelectedText":
-					const prevHeight = parseInt(getComputedStyle(eDivResult).height)
-					if (newvalue === "yes") {
-						origTextContainer.style.display = "block"
-						eMore.style.display = "none"
-						eLess.style.display = "block"
-						eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"))
-						eDivResult.style.top = parseInt(eDivResult.style.top) + (prevHeight - parseInt(getComputedStyle(eDivResult).height)) + "px"
-					} else {
-						origTextContainer.style.display = "none"
-						eMore.style.display = "block"
-						eLess.style.display = "none"
-						eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"))
-						eDivResult.style.top = parseInt(eDivResult.style.top) + (prevHeight - parseInt(getComputedStyle(eDivResult).height)) + "px"
-					}
-					break
-			}
-		})
-	}
-
-	function destroy() {
-		window.isTranslatingSelected = false
-		fooCount++
-		stopAudio()
-		if (!divElement) return;
-
-		eButtonTransSelText.removeEventListener("click", onClick)
-		document.removeEventListener("mousedown", onDown)
-		if (platformInfo.isMobile.any) {
-			document.removeEventListener("touchstart", onTouchstart)
-		}
-		divElement.remove()
-		divElement = eButtonTransSelText = eDivResult = null
-	}
-
-	function destroyIfButtonIsShowing(e) {
-		if (eButtonTransSelText && e.target !== divElement && eButtonTransSelText.style.display === "block") {
-			destroy()
-		}
-	}
-
-	twpConfig.onChanged(function (name, newValue) {
-		switch (name) {
-			case "textTranslatorService":
-				currentTextTranslatorService = newValue
-				break
-			case "targetLanguages":
-				currentTargetLanguages = newValue
-				break
-			case "targetLanguageTextTranslation":
-				currentTargetLanguage = newValue
-				break
-			case "alwaysTranslateSites":
-				awaysTranslateThisSite = newValue.indexOf(tabHostName) !== -1
-				updateEventListener()
-				break
-			case "neverTranslateSites":
-				translateThisSite = newValue.indexOf(tabHostName) === -1
-				updateEventListener()
-				break
-			case "neverTranslateLangs":
-				translateThisLanguage = newValue.indexOf(originalTabLanguage) === -1
-				updateEventListener()
-				break
-			case "showTranslateSelectedButton":
-				showTranslateSelectedButton = newValue
-				updateEventListener()
-				break
-			case "dontShowIfPageLangIsTargetLang":
-				dontShowIfPageLangIsTargetLang = newValue
-				updateEventListener()
-				break
-			case "dontShowIfPageLangIsUnknown":
-				dontShowIfPageLangIsUnknown = newValue
-				updateEventListener()
-				break
-			case "dontShowIfSelectedTextIsTargetLang":
-				dontShowIfSelectedTextIsTargetLang = newValue
-				break
-			case "dontShowIfSelectedTextIsUnknown":
-				dontShowIfSelectedTextIsUnknown = newValue
-				break
-		}
-	})
-
-	function update_eDivResult(result = "") {
-		if (eDivResult.style.display !== "block") {
-			init()
-		}
-
-		function onloaded() {
-			const eTop = prevSelectionInfo.bottom
-			const eLeft = prevSelectionInfo.left
-
-			if (twpLang.isRtlLanguage(currentTargetLanguage)) {
-				eSelTextTrans.setAttribute("dir", "rtl")
-			} else {
-				eSelTextTrans.setAttribute("dir", "ltr")
-			}
-			eSelTextTrans.textContent = result
-			let top = parseInt(eDivResult.style.top) || 0, left = parseInt(eDivResult.style.left) || 0
-			if (eDivResult.style.display !== "block") {
-				eDivResult.style.display = "block"
-				eDivResult.style.top = "0px"
-				eDivResult.style.left = "0px"
-				eOrigText.textContent = prevSelectionInfo.text
-
-				setCaretAtEnd()
-
-				const height = parseInt(eDivResult.offsetHeight)
-				top = eTop + 5
-				top = Math.max(0, top)
-				top = Math.min(window.innerHeight - height, top)
-
-				const width = parseInt(eDivResult.offsetWidth)
-				left = parseInt(eLeft /*- width / 2*/)
-				left = Math.max(0, left)
-				left = Math.min(window.innerWidth - width, left)
-			}
-
-			eDivResult.style.top = Math.min(window.innerHeight-parseInt(getComputedStyle(eDivResult).height), top) + "px";
-			eDivResult.style.left = Math.min(window.innerWidth-parseInt(getComputedStyle(eDivResult).width)-18, left) + "px";
-		}
-
-		if (isCSSLoaded) {
-			onloaded()
-		} else {
-			const currentFooCount = fooCount
-			onCSSLoad = () => {
-				onCSSLoad = null
-				if (currentFooCount !== fooCount) return;
-				onloaded()
-			}
-		}
-	}
-
-	function translateNewInput() {
-		fooCount++
-		const currentFooCount = fooCount
-		stopAudio()
-
-		backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, eOrigText.textContent).then(result => {
-			if (currentFooCount !== fooCount) return;
-
-			update_eDivResult(result)
-		})
-	}
-
-	function translateSelText(usePrevSelectionInfo = false) {
-		if (!usePrevSelectionInfo && gSelectionInfo) {
-			prevSelectionInfo = gSelectionInfo
-		} else if (!(usePrevSelectionInfo && prevSelectionInfo)) {
-			return
-		}
-
-		eOrigText.textContent = prevSelectionInfo.text
-
-		translateNewInput()
-		const currentFooCount = fooCount
-		setTimeout(() => {
-			if (currentFooCount !== fooCount) return;
-			update_eDivResult(eSelTextTrans.textContent)
-			fooCount = currentFooCount
-		}, 1000)
-	}
-
-	function onClick(e) {
-		translateSelText()
-		eButtonTransSelText.style.display = "none"
-	}
-
-	function onDown(e) {
-		if (e.target != divElement) {
-			eDivResult.style.display = "none"
-			eButtonTransSelText.style.display = "none"
-			destroy()
-		}
-	}
-
-
-	let isTouchSelection = false
-
-	function onTouchstart(e) {
-		isTouchSelection = true
-		onDown(e)
-	}
-
-	function getSelectionText() {
-		let text = "";
-		const activeEl = document.activeElement;
-		const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
-		if (
-			(activeElTagName == "textarea") || (activeElTagName == "input" &&
-				/^(?:text|search)$/i.test(activeEl.type)) &&
-			(typeof activeEl.selectionStart == "number")
-		) {
-			text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
-		} else if (window.getSelection) {
-			text = window.getSelection().toString();
-		}
-		return text;
-	}
-
-	function readSelection(dontReadIfSelectionDontChange = false) {
-		let newSelectionInfo = null
-
-		const activeEl = document.activeElement;
-		const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
-		if (
-			(activeElTagName == "textarea") || (activeElTagName == "input" &&
-				/^(?:text|search)$/i.test(activeEl.type)) &&
-			(typeof activeEl.selectionStart == "number")
-		) {
-			const text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
-			const rect = activeEl.getBoundingClientRect()
-			newSelectionInfo = {
-				isInputElement: true,
-				isContentEditable: false,
-				element: activeEl,
-				selStart: activeEl.selectionStart,
-				selEnd: activeEl.selectionEnd,
-				text: text,
-				top: rect.top,
-				left: rect.left,
-				bottom: rect.bottom,
-				right: rect.right
-			}
-		} else if (window.getSelection) {
-			const selection = window.getSelection()
-			if (selection.type == "Range") {
-				const text = selection.toString();
-				const rect = selection.getRangeAt(0).getBoundingClientRect()
-				newSelectionInfo = {
-					isInputElement: false,
-					isContentEditable: selection.focusNode.nodeType === 3 ? selection.focusNode.parentNode.isContentEditable : selection.focusNode.isContentEditable,
-					element: selection.focusNode,
-					selStart: selection.getRangeAt(0).startOffset,
-					selEnd: selection.getRangeAt(0).endOffset,
-					text: text,
-					top: rect.top,
-					left: rect.left,
-					bottom: rect.bottom,
-					right: rect.right,
-					range: selection.getRangeAt(0)
-				}
-			}
-		}
-
-		if (dontReadIfSelectionDontChange && gSelectionInfo && newSelectionInfo && gSelectionInfo.text === newSelectionInfo.text) {
-			gSelectionInfo = newSelectionInfo
-			return false
-		}
-		gSelectionInfo = newSelectionInfo
-		return true
-	}
-
-	async function onUp(e) {
-		if (e.target == divElement) return;
-
-		const clientX = Math.max((typeof e.clientX === 'undefined' ? 0 : e.clientX), (typeof e.changedTouches === 'undefined' ? 0 : e.changedTouches[0].clientX));
-		const clientY = Math.max((typeof e.clientY === 'undefined' ? 0 : e.clientY), (typeof e.changedTouches === 'undefined' ? 0 : e.changedTouches[0].clientY));
-
-		const selectedText = getSelectionText().trim()
-		if (!selectedText || selectedText.length < 1) return;
-		let detectedLanguage = (await detectTextLanguage(selectedText)).lang
-		if (!detectedLanguage) detectedLanguage = "und";
-
-		if (((dontShowIfSelectedTextIsTargetLang == "yes" && detectedLanguage !== currentTargetLanguage) || dontShowIfSelectedTextIsTargetLang != "yes") &&
-			((dontShowIfSelectedTextIsUnknown == "yes" && detectedLanguage !== "und") || dontShowIfSelectedTextIsUnknown != "yes")
-		) {
-			init()
-			if (platformInfo.isMobile.any) {
-				eButtonTransSelText.style.left = window.innerWidth - 45 + "px"
-				eButtonTransSelText.style.top = clientY + "px"
-			} else {
-				eButtonTransSelText.style.left = Math.min(window.innerWidth-40, clientX + 25) + "px"
-				eButtonTransSelText.style.top = Math.max(2, clientY - 35) + "px"
-			}
-
-			eButtonTransSelText.style.display = "block"
-		}
-	}
-
-	let showButtonTimerHandler = null
-
-	function onMouseup(e) {
-		if (e.button != 0) return;
-		if (e.target == divElement) return;
-		if (readSelection(true)) {
-			clearTimeout(showButtonTimerHandler)
-			showButtonTimerHandler = setTimeout(() => onUp(e), 150)
-		}
-	}
-
-	function onTouchend(e) {
-		if (e.target == divElement) return;
-		readSelection()
-		clearTimeout(showButtonTimerHandler)
-		showButtonTimerHandler = setTimeout(() => onUp(e), 150)
-	}
-
-	function onSelectionchange(e) {
-		if (isTouchSelection) {
-			readSelection()
-		}
-	}
-
-	function isSelectingText() {
-		const activeEl = document.activeElement;
-		const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
-		if (
-			(activeElTagName == "textarea") || (activeElTagName == "input" &&
-				/^(?:text|search)$/i.test(activeEl.type)) &&
-			(typeof activeEl.selectionStart == "number")
-		) {
-			const text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
-			if (text) return true;
-		} else if (window.getSelection) {
-			const selection = window.getSelection()
-			if (selection.type == "Range") {
-				const text = selection.toString();
-				if (text) return true;
-			}
-		}
-		return false
-	}
-
-	let lastTimePressedCtrl = null
-
-	function onKeyUp(e) {
-		if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
-		if (e.key == "Control") {
-			if (lastTimePressedCtrl && performance.now() - lastTimePressedCtrl < 280 && isSelectingText()) {
-				lastTimePressedCtrl = performance.now()
-				readSelection()
-				init()
-				translateSelText()
-			}
-			lastTimePressedCtrl = performance.now()
-		}
-	}
-
-	document.addEventListener("keyup", onKeyUp)
-
-	let windowIsInFocus = true
-	window.addEventListener("focus", function (e) {
-		windowIsInFocus = true
-		chrome.runtime.sendMessage({action: "thisFrameIsInFocus"})
-	})
-	window.addEventListener("blur", function (e) {
-		windowIsInFocus = false
-	})
-
-	window.addEventListener("beforeunload", function (e) {
-		destroy()
-	})
-
-	function updateEventListener() {
-		if (showTranslateSelectedButton == "yes" && (awaysTranslateThisSite || (translateThisSite && translateThisLanguage)) &&
-			((dontShowIfPageLangIsTargetLang == "yes" && originalTabLanguage !== currentTargetLanguage) || dontShowIfPageLangIsTargetLang != "yes") &&
-			((dontShowIfPageLangIsUnknown == "yes" && originalTabLanguage !== "und") || dontShowIfPageLangIsUnknown != "yes")
-		) {
-			document.addEventListener("mouseup", onMouseup)
-
-			document.addEventListener("blur", destroyIfButtonIsShowing)
-			document.addEventListener("visibilitychange", destroyIfButtonIsShowing)
-
-			document.addEventListener("keydown", destroyIfButtonIsShowing)
-			document.addEventListener("mousedown", destroyIfButtonIsShowing)
-			document.addEventListener("wheel", destroyIfButtonIsShowing)
-
-			if (platformInfo.isMobile.any) {
-				document.addEventListener("touchend", onTouchend)
-				document.addEventListener("selectionchange", onSelectionchange)
-			}
-		} else {
-			document.removeEventListener("mouseup", onMouseup)
-
-			document.removeEventListener("blur", destroyIfButtonIsShowing)
-			document.removeEventListener("visibilitychange", destroyIfButtonIsShowing)
-
-			document.removeEventListener("keydown", destroyIfButtonIsShowing)
-			document.removeEventListener("mousedown", destroyIfButtonIsShowing)
-			document.removeEventListener("wheel", destroyIfButtonIsShowing)
-
-			if (platformInfo.isMobile.any) {
-				document.removeEventListener("touchend", onTouchend)
-				document.removeEventListener("selectionchange", onSelectionchange)
-			}
-		}
-	}
-
-	updateEventListener()
-
-	chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-		if (request.action === "TranslateSelectedText") {
-			readSelection()
-			init()
-			translateSelText()
-		} else if (request.action === "anotherFrameIsInFocus") {
-			if (!windowIsInFocus) {
-				destroy()
-			}
-		} else if (request.action === "hotTranslateSelectedText") {
-			readSelection()
-			const prevSelInfo = gSelectionInfo
-			if (!prevSelInfo?.element?.focus && !prevSelInfo?.element?.parentNode?.focus) return;
-			if (prevSelInfo.isInputElement && prevSelInfo.readOnly) return;
-			if (prevSelInfo.text) {
-				backgroundTranslateSingleText(currentTextTranslatorService, currentTargetLanguage, prevSelInfo.text)
-					.then(result => {
-						if (!result) return;
-						destroy()
-						if (prevSelInfo.element.nodeType === 3) {
-							prevSelInfo.element.parentNode.focus();
-						} else {
-							prevSelInfo.element.focus();
-						}
-						document.execCommand('selectAll', false);
-						if (prevSelInfo.isInputElement) {
-							prevSelInfo.element.setSelectionRange(prevSelInfo.selStart, prevSelInfo.selEnd)
-						} else if (prevSelInfo.isContentEditable) {
-							const selection = window.getSelection()
-							selection.removeAllRanges()
-							selection.addRange(prevSelInfo.range)
-						}
-						document.execCommand('insertText', false, result);
-					})
-			}
-		}
-	})
-})
+                `;
+      }
+      shadowRoot.appendChild(el);
+    }
+
+    eButtonTransSelText = shadowRoot.getElementById("eButtonTransSelText");
+    eDivResult = shadowRoot.getElementById("eDivResult");
+    eSelTextTrans = shadowRoot.getElementById("eSelTextTrans");
+    eOrigText = shadowRoot.getElementById("eOrigText");
+    origTextContainer = shadowRoot.getElementById("origTextContainer");
+
+    const eMoreOrLess = shadowRoot.getElementById("moreOrLess");
+    const eMore = shadowRoot.getElementById("more");
+    const eLess = shadowRoot.getElementById("less");
+
+    const sGoogle = shadowRoot.getElementById("sGoogle");
+    const sYandex = shadowRoot.getElementById("sYandex");
+    const sBing = shadowRoot.getElementById("sBing");
+    const sDeepL = shadowRoot.getElementById("sDeepL");
+    const eCopy = shadowRoot.getElementById("copy");
+    const eReplace = shadowRoot.getElementById("replace");
+    const eListenOriginal = shadowRoot.getElementById("listenOriginal");
+    const eListenTranslated = shadowRoot.getElementById("listenTranslated");
+
+    if (
+      gSelectionInfo &&
+      (gSelectionInfo.isInputElement || gSelectionInfo.isContentEditable)
+    ) {
+      eCopy.setAttribute("hidden", "");
+      eReplace.removeAttribute("hidden");
+    } else {
+      eCopy.removeAttribute("hidden");
+      eReplace.setAttribute("hidden", "");
+    }
+
+    function replaceText() {
+      const prevSelInfo = prevSelectionInfo;
+      destroy();
+      if (prevSelInfo.element.nodeType === 3) {
+        prevSelInfo.element.parentNode.focus();
+      } else {
+        prevSelInfo.element.focus();
+      }
+      document.execCommand("selectAll", false);
+      if (prevSelInfo.isInputElement) {
+        prevSelInfo.element.setSelectionRange(
+          prevSelInfo.selStart,
+          prevSelInfo.selEnd
+        );
+      } else if (prevSelInfo.isContentEditable) {
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(prevSelInfo.range);
+      }
+      document.execCommand("insertText", false, eSelTextTrans.textContent);
+    }
+
+    eCopy.onclick = () => {
+      navigator.clipboard.writeText(eSelTextTrans.textContent).then(() => {
+        const oldBackgroundColor = eCopy.style.backgroundColor;
+        eCopy.style.backgroundColor = "rgba(0, 255, 0, 0.4)";
+        setTimeout(() => {
+          eCopy.style.backgroundColor = oldBackgroundColor;
+        }, 500);
+      });
+    };
+
+    eReplace.onclick = replaceText;
+
+    eOrigText.onkeypress = (e) => {
+      e.stopPropagation();
+    };
+
+    eOrigText.onkeydown = (e) => {
+      e.stopPropagation();
+    };
+
+    let lastTimePressedCtrl = null;
+
+    eOrigText.onkeyup = (e) => {
+      if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
+      if (e.key == "Control") {
+        if (
+          lastTimePressedCtrl &&
+          performance.now() - lastTimePressedCtrl < 250
+        ) {
+          lastTimePressedCtrl = performance.now();
+          replaceText();
+        }
+        lastTimePressedCtrl = performance.now();
+      }
+    };
+
+    let translateNewInputTimerHandler;
+    eOrigText.oninput = () => {
+      clearTimeout(translateNewInputTimerHandler);
+      translateNewInputTimerHandler = setTimeout(translateNewInput, 800);
+    };
+
+    eMoreOrLess.onclick = () => {
+      if (twpConfig.get("expandPanelTranslateSelectedText") === "no") {
+        twpConfig.set("expandPanelTranslateSelectedText", "yes");
+      } else {
+        twpConfig.set("expandPanelTranslateSelectedText", "no");
+      }
+
+      setCaretAtEnd();
+    };
+
+    sGoogle.onclick = () => {
+      currentTextTranslatorService = "google";
+      twpConfig.set("textTranslatorService", "google");
+      translateNewInput();
+
+      sGoogle.classList.remove("selected");
+      sYandex.classList.remove("selected");
+      sBing.classList.remove("selected");
+      sDeepL.classList.remove("selected");
+
+      sGoogle.classList.add("selected");
+    };
+    sYandex.onclick = () => {
+      currentTextTranslatorService = "yandex";
+      twpConfig.set("textTranslatorService", "yandex");
+      translateNewInput();
+
+      sGoogle.classList.remove("selected");
+      sYandex.classList.remove("selected");
+      sBing.classList.remove("selected");
+      sDeepL.classList.remove("selected");
+
+      sYandex.classList.add("selected");
+    };
+    sBing.onclick = () => {
+      currentTextTranslatorService = "bing";
+      twpConfig.set("textTranslatorService", "bing");
+      translateNewInput();
+
+      sGoogle.classList.remove("selected");
+      sYandex.classList.remove("selected");
+      sBing.classList.remove("selected");
+      sDeepL.classList.remove("selected");
+
+      sBing.classList.add("selected");
+    };
+    sDeepL.onclick = () => {
+      currentTextTranslatorService = "deepl";
+      twpConfig.set("textTranslatorService", "deepl");
+      translateNewInput();
+
+      sGoogle.classList.remove("selected");
+      sYandex.classList.remove("selected");
+      sBing.classList.remove("selected");
+      sDeepL.classList.remove("selected");
+
+      sDeepL.classList.add("selected");
+    };
+
+    const setTargetLanguage = shadowRoot.getElementById("setTargetLanguage");
+    setTargetLanguage.onclick = (e) => {
+      if (e.target.getAttribute("value")) {
+        const langCode = twpLang.fixTLanguageCode(
+          e.target.getAttribute("value")
+        );
+        if (langCode) {
+          currentTargetLanguage = langCode;
+          twpConfig.setTargetLanguageTextTranslation(langCode);
+          translateNewInput();
+        }
+
+        shadowRoot.querySelectorAll("#setTargetLanguage li").forEach((li) => {
+          li.classList.remove("selected");
+        });
+
+        e.target.classList.add("selected");
+      }
+    };
+
+    function onListenClick(type, element, text, language) {
+      const msgListen = chrome.i18n.getMessage("btnListen");
+      const msgStopListening = chrome.i18n.getMessage("btnStopListening");
+
+      eListenOriginal.classList.remove("selected");
+      eListenTranslated.classList.remove("selected");
+      eListenOriginal.setAttribute("title", msgStopListening);
+      eListenTranslated.setAttribute("title", msgStopListening);
+
+      if (isPlayingAudio) {
+        stopAudio();
+        element.classList.remove("selected");
+      } else {
+        playAudio(text, language, () => {
+          element.classList.remove("selected");
+          element.setAttribute("title", msgListen);
+        });
+        element.classList.add("selected");
+      }
+    }
+
+    let lastListenAudioType = null;
+    eListenOriginal.onclick = async () => {
+      let { lang, isReliable } = await detectTextLanguage(
+        eOrigText.textContent
+      );
+      if (!isReliable && originalTabLanguage !== "und") {
+        lang = originalTabLanguage;
+      }
+      if (lastListenAudioType !== "original") {
+        stopAudio();
+      }
+      lastListenAudioType = "original";
+      onListenClick("original", eListenOriginal, eOrigText.textContent, lang);
+    };
+
+    eListenTranslated.onclick = () => {
+      if (lastListenAudioType !== "translated") {
+        stopAudio();
+      }
+      lastListenAudioType = "translated";
+      onListenClick(
+        "translated",
+        eListenTranslated,
+        eSelTextTrans.textContent,
+        currentTargetLanguage
+      );
+    };
+
+    document.body.appendChild(divElement);
+
+    chrome.i18n.translateDocument(shadowRoot);
+
+    if (platformInfo.isMobile.any) {
+      eButtonTransSelText.style.width = "30px";
+      eButtonTransSelText.style.height = "30px";
+      document.addEventListener("touchstart", onTouchstart);
+    }
+
+    eButtonTransSelText.addEventListener("click", onClick);
+    document.addEventListener("mousedown", onDown);
+
+    const targetLanguageButtons = shadowRoot.querySelectorAll(
+      "#setTargetLanguage li"
+    );
+
+    for (let i = 0; i < 3; i++) {
+      if (currentTargetLanguages[i] == currentTargetLanguage) {
+        targetLanguageButtons[i].classList.add("selected");
+      }
+      targetLanguageButtons[i].textContent = currentTargetLanguages[i];
+      targetLanguageButtons[i].setAttribute("value", currentTargetLanguages[i]);
+      targetLanguageButtons[i].setAttribute(
+        "title",
+        twpLang.codeToLanguage(currentTargetLanguages[i])
+      );
+    }
+
+    if (currentTextTranslatorService === "yandex") {
+      sYandex.classList.add("selected");
+    } else if (currentTextTranslatorService == "deepl") {
+      sDeepL.classList.add("selected");
+    } else if (currentTextTranslatorService == "bing") {
+      sBing.classList.add("selected");
+    } else {
+      sGoogle.classList.add("selected");
+    }
+
+    if (twpConfig.get("enableDeepL") === "yes") {
+      sDeepL.removeAttribute("hidden");
+    } else {
+      sDeepL.setAttribute("hidden", "");
+    }
+
+    if (
+      twpConfig.get("expandPanelTranslateSelectedText") === "yes" ||
+      (prevSelectionInfo &&
+        (prevSelectionInfo.isContentEditable ||
+          prevSelectionInfo.isInputElement))
+    ) {
+      origTextContainer.style.display = "block";
+      eMore.style.display = "none";
+      eLess.style.display = "block";
+      eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"));
+    } else {
+      origTextContainer.style.display = "none";
+      eMore.style.display = "block";
+      eLess.style.display = "none";
+      eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"));
+    }
+
+    twpConfig.onChanged((name, newvalue) => {
+      switch (name) {
+        case "enableDeepL":
+          if (newvalue === "yes") {
+            sDeepL.removeAttribute("hidden");
+          } else {
+            sDeepL.setAttribute("hidden", "");
+          }
+          break;
+        case "expandPanelTranslateSelectedText":
+          const prevHeight = parseInt(getComputedStyle(eDivResult).height);
+          if (newvalue === "yes") {
+            origTextContainer.style.display = "block";
+            eMore.style.display = "none";
+            eLess.style.display = "block";
+            eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"));
+            eDivResult.style.top =
+              parseInt(eDivResult.style.top) +
+              (prevHeight - parseInt(getComputedStyle(eDivResult).height)) +
+              "px";
+          } else {
+            origTextContainer.style.display = "none";
+            eMore.style.display = "block";
+            eLess.style.display = "none";
+            eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"));
+            eDivResult.style.top =
+              parseInt(eDivResult.style.top) +
+              (prevHeight - parseInt(getComputedStyle(eDivResult).height)) +
+              "px";
+          }
+          break;
+      }
+    });
+  }
+
+  function destroy() {
+    window.isTranslatingSelected = false;
+    fooCount++;
+    stopAudio();
+    if (!divElement) return;
+
+    eButtonTransSelText.removeEventListener("click", onClick);
+    document.removeEventListener("mousedown", onDown);
+    if (platformInfo.isMobile.any) {
+      document.removeEventListener("touchstart", onTouchstart);
+    }
+    divElement.remove();
+    divElement = eButtonTransSelText = eDivResult = null;
+  }
+
+  function destroyIfButtonIsShowing(e) {
+    if (
+      eButtonTransSelText &&
+      e.target !== divElement &&
+      eButtonTransSelText.style.display === "block"
+    ) {
+      destroy();
+    }
+  }
+
+  twpConfig.onChanged(function (name, newValue) {
+    switch (name) {
+      case "textTranslatorService":
+        currentTextTranslatorService = newValue;
+        break;
+      case "targetLanguages":
+        currentTargetLanguages = newValue;
+        break;
+      case "targetLanguageTextTranslation":
+        currentTargetLanguage = newValue;
+        break;
+      case "alwaysTranslateSites":
+        awaysTranslateThisSite = newValue.indexOf(tabHostName) !== -1;
+        updateEventListener();
+        break;
+      case "neverTranslateSites":
+        translateThisSite = newValue.indexOf(tabHostName) === -1;
+        updateEventListener();
+        break;
+      case "neverTranslateLangs":
+        translateThisLanguage = newValue.indexOf(originalTabLanguage) === -1;
+        updateEventListener();
+        break;
+      case "showTranslateSelectedButton":
+        showTranslateSelectedButton = newValue;
+        updateEventListener();
+        break;
+      case "dontShowIfPageLangIsTargetLang":
+        dontShowIfPageLangIsTargetLang = newValue;
+        updateEventListener();
+        break;
+      case "dontShowIfPageLangIsUnknown":
+        dontShowIfPageLangIsUnknown = newValue;
+        updateEventListener();
+        break;
+      case "dontShowIfSelectedTextIsTargetLang":
+        dontShowIfSelectedTextIsTargetLang = newValue;
+        break;
+      case "dontShowIfSelectedTextIsUnknown":
+        dontShowIfSelectedTextIsUnknown = newValue;
+        break;
+    }
+  });
+
+  function update_eDivResult(result = "") {
+    if (eDivResult.style.display !== "block") {
+      init();
+    }
+
+    function onloaded() {
+      const eTop = prevSelectionInfo.bottom;
+      const eLeft = prevSelectionInfo.left;
+
+      if (twpLang.isRtlLanguage(currentTargetLanguage)) {
+        eSelTextTrans.setAttribute("dir", "rtl");
+      } else {
+        eSelTextTrans.setAttribute("dir", "ltr");
+      }
+      eSelTextTrans.textContent = result;
+      let top = parseInt(eDivResult.style.top) || 0,
+        left = parseInt(eDivResult.style.left) || 0;
+      if (eDivResult.style.display !== "block") {
+        eDivResult.style.display = "block";
+        eDivResult.style.top = "0px";
+        eDivResult.style.left = "0px";
+        eOrigText.textContent = prevSelectionInfo.text;
+
+        setCaretAtEnd();
+
+        const height = parseInt(eDivResult.offsetHeight);
+        top = eTop + 5;
+        top = Math.max(0, top);
+        top = Math.min(window.innerHeight - height, top);
+
+        const width = parseInt(eDivResult.offsetWidth);
+        left = parseInt(eLeft /*- width / 2*/);
+        left = Math.max(0, left);
+        left = Math.min(window.innerWidth - width, left);
+      }
+
+      eDivResult.style.top =
+        Math.min(
+          window.innerHeight - parseInt(getComputedStyle(eDivResult).height),
+          top
+        ) + "px";
+      eDivResult.style.left =
+        Math.min(
+          window.innerWidth - parseInt(getComputedStyle(eDivResult).width) - 18,
+          left
+        ) + "px";
+    }
+
+    if (isCSSLoaded) {
+      onloaded();
+    } else {
+      const currentFooCount = fooCount;
+      onCSSLoad = () => {
+        onCSSLoad = null;
+        if (currentFooCount !== fooCount) return;
+        onloaded();
+      };
+    }
+  }
+
+  function translateNewInput() {
+    fooCount++;
+    const currentFooCount = fooCount;
+    stopAudio();
+
+    backgroundTranslateSingleText(
+      currentTextTranslatorService,
+      currentTargetLanguage,
+      eOrigText.textContent
+    ).then((result) => {
+      if (currentFooCount !== fooCount) return;
+
+      update_eDivResult(result);
+    });
+  }
+
+  function translateSelText(usePrevSelectionInfo = false) {
+    if (!usePrevSelectionInfo && gSelectionInfo) {
+      prevSelectionInfo = gSelectionInfo;
+    } else if (!(usePrevSelectionInfo && prevSelectionInfo)) {
+      return;
+    }
+
+    eOrigText.textContent = prevSelectionInfo.text;
+
+    translateNewInput();
+    const currentFooCount = fooCount;
+    setTimeout(() => {
+      if (currentFooCount !== fooCount) return;
+      update_eDivResult(eSelTextTrans.textContent);
+      fooCount = currentFooCount;
+    }, 1000);
+  }
+
+  function onClick(e) {
+    translateSelText();
+    eButtonTransSelText.style.display = "none";
+  }
+
+  function onDown(e) {
+    if (e.target != divElement) {
+      eDivResult.style.display = "none";
+      eButtonTransSelText.style.display = "none";
+      destroy();
+    }
+  }
+
+  let isTouchSelection = false;
+
+  function onTouchstart(e) {
+    isTouchSelection = true;
+    onDown(e);
+  }
+
+  function getSelectionText() {
+    let text = "";
+    const activeEl = document.activeElement;
+    const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (
+      activeElTagName == "textarea" ||
+      (activeElTagName == "input" &&
+        /^(?:text|search)$/i.test(activeEl.type) &&
+        typeof activeEl.selectionStart == "number")
+    ) {
+      text = activeEl.value.slice(
+        activeEl.selectionStart,
+        activeEl.selectionEnd
+      );
+    } else if (window.getSelection) {
+      text = window.getSelection().toString();
+    }
+    return text;
+  }
+
+  function readSelection(dontReadIfSelectionDontChange = false) {
+    let newSelectionInfo = null;
+
+    const activeEl = document.activeElement;
+    const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (
+      activeElTagName == "textarea" ||
+      (activeElTagName == "input" &&
+        /^(?:text|search)$/i.test(activeEl.type) &&
+        typeof activeEl.selectionStart == "number")
+    ) {
+      const text = activeEl.value.slice(
+        activeEl.selectionStart,
+        activeEl.selectionEnd
+      );
+      const rect = activeEl.getBoundingClientRect();
+      newSelectionInfo = {
+        isInputElement: true,
+        isContentEditable: false,
+        element: activeEl,
+        selStart: activeEl.selectionStart,
+        selEnd: activeEl.selectionEnd,
+        text: text,
+        top: rect.top,
+        left: rect.left,
+        bottom: rect.bottom,
+        right: rect.right,
+      };
+    } else if (window.getSelection) {
+      const selection = window.getSelection();
+      if (selection.type == "Range") {
+        const text = selection.toString();
+        const rect = selection.getRangeAt(0).getBoundingClientRect();
+        newSelectionInfo = {
+          isInputElement: false,
+          isContentEditable:
+            selection.focusNode.nodeType === 3
+              ? selection.focusNode.parentNode.isContentEditable
+              : selection.focusNode.isContentEditable,
+          element: selection.focusNode,
+          selStart: selection.getRangeAt(0).startOffset,
+          selEnd: selection.getRangeAt(0).endOffset,
+          text: text,
+          top: rect.top,
+          left: rect.left,
+          bottom: rect.bottom,
+          right: rect.right,
+          range: selection.getRangeAt(0),
+        };
+      }
+    }
+
+    if (
+      dontReadIfSelectionDontChange &&
+      gSelectionInfo &&
+      newSelectionInfo &&
+      gSelectionInfo.text === newSelectionInfo.text
+    ) {
+      gSelectionInfo = newSelectionInfo;
+      return false;
+    }
+    gSelectionInfo = newSelectionInfo;
+    return true;
+  }
+
+  async function onUp(e) {
+    if (e.target == divElement) return;
+
+    const clientX = Math.max(
+      typeof e.clientX === "undefined" ? 0 : e.clientX,
+      typeof e.changedTouches === "undefined" ? 0 : e.changedTouches[0].clientX
+    );
+    const clientY = Math.max(
+      typeof e.clientY === "undefined" ? 0 : e.clientY,
+      typeof e.changedTouches === "undefined" ? 0 : e.changedTouches[0].clientY
+    );
+
+    const selectedText = getSelectionText().trim();
+    if (!selectedText || selectedText.length < 1) return;
+    let detectedLanguage = (await detectTextLanguage(selectedText)).lang;
+    if (!detectedLanguage) detectedLanguage = "und";
+
+    if (
+      ((dontShowIfSelectedTextIsTargetLang == "yes" &&
+        detectedLanguage !== currentTargetLanguage) ||
+        dontShowIfSelectedTextIsTargetLang != "yes") &&
+      ((dontShowIfSelectedTextIsUnknown == "yes" &&
+        detectedLanguage !== "und") ||
+        dontShowIfSelectedTextIsUnknown != "yes")
+    ) {
+      init();
+      if (platformInfo.isMobile.any) {
+        eButtonTransSelText.style.left = window.innerWidth - 45 + "px";
+        eButtonTransSelText.style.top = clientY + "px";
+      } else {
+        eButtonTransSelText.style.left =
+          Math.min(window.innerWidth - 40, clientX + 25) + "px";
+        eButtonTransSelText.style.top = Math.max(2, clientY - 35) + "px";
+      }
+
+      eButtonTransSelText.style.display = "block";
+    }
+  }
+
+  let showButtonTimerHandler = null;
+
+  function onMouseup(e) {
+    if (e.button != 0) return;
+    if (e.target == divElement) return;
+    if (readSelection(true)) {
+      clearTimeout(showButtonTimerHandler);
+      showButtonTimerHandler = setTimeout(() => onUp(e), 150);
+    }
+  }
+
+  function onTouchend(e) {
+    if (e.target == divElement) return;
+    readSelection();
+    clearTimeout(showButtonTimerHandler);
+    showButtonTimerHandler = setTimeout(() => onUp(e), 150);
+  }
+
+  function onSelectionchange(e) {
+    if (isTouchSelection) {
+      readSelection();
+    }
+  }
+
+  function isSelectingText() {
+    const activeEl = document.activeElement;
+    const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (
+      activeElTagName == "textarea" ||
+      (activeElTagName == "input" &&
+        /^(?:text|search)$/i.test(activeEl.type) &&
+        typeof activeEl.selectionStart == "number")
+    ) {
+      const text = activeEl.value.slice(
+        activeEl.selectionStart,
+        activeEl.selectionEnd
+      );
+      if (text) return true;
+    } else if (window.getSelection) {
+      const selection = window.getSelection();
+      if (selection.type == "Range") {
+        const text = selection.toString();
+        if (text) return true;
+      }
+    }
+    return false;
+  }
+
+  let lastTimePressedCtrl = null;
+
+  function onKeyUp(e) {
+    if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
+    if (e.key == "Control") {
+      if (
+        lastTimePressedCtrl &&
+        performance.now() - lastTimePressedCtrl < 280 &&
+        isSelectingText()
+      ) {
+        lastTimePressedCtrl = performance.now();
+        readSelection();
+        init();
+        translateSelText();
+      }
+      lastTimePressedCtrl = performance.now();
+    }
+  }
+
+  document.addEventListener("keyup", onKeyUp);
+
+  let windowIsInFocus = true;
+  window.addEventListener("focus", function (e) {
+    windowIsInFocus = true;
+    chrome.runtime.sendMessage({ action: "thisFrameIsInFocus" });
+  });
+  window.addEventListener("blur", function (e) {
+    windowIsInFocus = false;
+  });
+
+  window.addEventListener("beforeunload", function (e) {
+    destroy();
+  });
+
+  function updateEventListener() {
+    if (
+      showTranslateSelectedButton == "yes" &&
+      (awaysTranslateThisSite ||
+        (translateThisSite && translateThisLanguage)) &&
+      ((dontShowIfPageLangIsTargetLang == "yes" &&
+        originalTabLanguage !== currentTargetLanguage) ||
+        dontShowIfPageLangIsTargetLang != "yes") &&
+      ((dontShowIfPageLangIsUnknown == "yes" &&
+        originalTabLanguage !== "und") ||
+        dontShowIfPageLangIsUnknown != "yes")
+    ) {
+      document.addEventListener("mouseup", onMouseup);
+
+      document.addEventListener("blur", destroyIfButtonIsShowing);
+      document.addEventListener("visibilitychange", destroyIfButtonIsShowing);
+
+      document.addEventListener("keydown", destroyIfButtonIsShowing);
+      document.addEventListener("mousedown", destroyIfButtonIsShowing);
+      document.addEventListener("wheel", destroyIfButtonIsShowing);
+
+      if (platformInfo.isMobile.any) {
+        document.addEventListener("touchend", onTouchend);
+        document.addEventListener("selectionchange", onSelectionchange);
+      }
+    } else {
+      document.removeEventListener("mouseup", onMouseup);
+
+      document.removeEventListener("blur", destroyIfButtonIsShowing);
+      document.removeEventListener(
+        "visibilitychange",
+        destroyIfButtonIsShowing
+      );
+
+      document.removeEventListener("keydown", destroyIfButtonIsShowing);
+      document.removeEventListener("mousedown", destroyIfButtonIsShowing);
+      document.removeEventListener("wheel", destroyIfButtonIsShowing);
+
+      if (platformInfo.isMobile.any) {
+        document.removeEventListener("touchend", onTouchend);
+        document.removeEventListener("selectionchange", onSelectionchange);
+      }
+    }
+  }
+
+  updateEventListener();
+
+  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === "TranslateSelectedText") {
+      readSelection();
+      init();
+      translateSelText();
+    } else if (request.action === "anotherFrameIsInFocus") {
+      if (!windowIsInFocus) {
+        destroy();
+      }
+    } else if (request.action === "hotTranslateSelectedText") {
+      readSelection();
+      const prevSelInfo = gSelectionInfo;
+      if (
+        !prevSelInfo?.element?.focus &&
+        !prevSelInfo?.element?.parentNode?.focus
+      )
+        return;
+      if (prevSelInfo.isInputElement && prevSelInfo.readOnly) return;
+      if (prevSelInfo.text) {
+        backgroundTranslateSingleText(
+          currentTextTranslatorService,
+          currentTargetLanguage,
+          prevSelInfo.text
+        ).then((result) => {
+          if (!result) return;
+          destroy();
+          if (prevSelInfo.element.nodeType === 3) {
+            prevSelInfo.element.parentNode.focus();
+          } else {
+            prevSelInfo.element.focus();
+          }
+          document.execCommand("selectAll", false);
+          if (prevSelInfo.isInputElement) {
+            prevSelInfo.element.setSelectionRange(
+              prevSelInfo.selStart,
+              prevSelInfo.selEnd
+            );
+          } else if (prevSelInfo.isContentEditable) {
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(prevSelInfo.range);
+          }
+          document.execCommand("insertText", false, result);
+        });
+      }
+    }
+  });
+});

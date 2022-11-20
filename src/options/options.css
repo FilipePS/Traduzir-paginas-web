@@ -1,5 +1,6 @@
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .list {
@@ -27,10 +28,11 @@ kbd {
   background-color: #eee;
   border-radius: 3px;
   border: 1px solid #b4b4b4;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+    0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
   color: #333;
   display: inline-block;
-  font-size: .85em;
+  font-size: 0.85em;
   font-weight: 700;
   line-height: 1;
   padding: 2px 4px;
@@ -105,10 +107,6 @@ kbd {
   transform: rotate(-45deg);
 }
 
-
-
-
-
 .gg-trash {
   box-sizing: border-box;
   position: relative;
@@ -117,13 +115,10 @@ kbd {
   width: 10px;
   height: 12px;
   border: 2px solid transparent;
-  box-shadow:
-    0 0 0 2px,
-    inset -2px 0 0,
-    inset 2px 0 0;
+  box-shadow: 0 0 0 2px, inset -2px 0 0, inset 2px 0 0;
   border-bottom-left-radius: 1px;
   border-bottom-right-radius: 1px;
-  margin-top: 4px
+  margin-top: 4px;
 }
 
 .gg-trash::after,
@@ -131,7 +126,7 @@ kbd {
   content: "";
   display: block;
   box-sizing: border-box;
-  position: absolute
+  position: absolute;
 }
 
 .gg-trash::after {
@@ -140,7 +135,7 @@ kbd {
   width: 16px;
   height: 2px;
   top: -4px;
-  left: -5px
+  left: -5px;
 }
 
 .gg-trash::before {
@@ -151,10 +146,8 @@ kbd {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   top: -7px;
-  left: -2px
+  left: -2px;
 }
-
-
 
 .gg-sync {
   box-sizing: border-box;
@@ -167,7 +160,7 @@ kbd {
   border-left-color: transparent;
   border-right-color: transparent;
   width: 18px;
-  height: 18px
+  height: 18px;
 }
 
 .gg-sync::after,
@@ -180,22 +173,20 @@ kbd {
   height: 0;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  transform: rotate(-45deg)
+  transform: rotate(-45deg);
 }
 
 .gg-sync::before {
   border-left: 6px solid;
   bottom: -1px;
-  right: -3px
+  right: -3px;
 }
 
 .gg-sync::after {
   border-right: 6px solid;
   top: -1px;
-  left: -3px
+  left: -3px;
 }
-
-
 
 .shortcut-row {
   display: flex;
