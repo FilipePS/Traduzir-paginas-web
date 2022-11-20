@@ -490,7 +490,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             htmlTagsNoTranslate.indexOf(node.nodeName) !== -1 ||
             node.classList.contains("notranslate") ||
             node.getAttribute("translate") === "no" ||
-            node.isContentEditable
+            node.isContentEditable ||
+            node.classList.contains("material-icons") ||
+            node.classList.contains("material-symbols-outlined")
           ) {
             if (piecesToTranslate[index].nodes.length > 0) {
               currentParagraphSize = 0;
