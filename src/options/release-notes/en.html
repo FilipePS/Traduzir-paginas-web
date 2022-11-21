@@ -3,7 +3,13 @@
     <ul>
         <li>Added custom dictionary.</li>
         <li>Refactored several files.</li>
-        <li>Interface localization in 5 new languages. In total, the extension's interface is localized in 38 languages, thanks to everyone who contributed.</li>
+        <li>Alterado o termo "targetLanguages" para "favoriteLangues". Opção de alterar os idiomas de destino na página
+            de configuração.</li>
+        <li>Preservar nodo de texto original #393. Não encapsular nodo de texto se a opção
+            `showOriginalTextWhenHovering` não estiver ativa Closes #295</li>
+        <li>Corrigido: material icons também são traduzidos - Fix #481</li>
+        <li>Interface localization in 5 new languages. In total, the extension's interface is localized in 38 languages,
+            thanks to everyone who contributed.</li>
     </ul>
 </section>
 <section>
@@ -20,17 +26,27 @@
             <ul>
                 <li>Option to replace selected text with translated text
                     <ul>
-                        <li>When you type a message, select the message and translate the selected text, instead of the copy text button there will be a button to replace/paste the translated text with the selected text.</li>
-                        <li>If the <code style="background-color: lightgray;">Translate selected text when pressing <kbd>Ctrl</kbd> twice</code> option is enabled. Hitting <kbd>Ctrl</kbd> when the popup is open will be the same as clicking that new button.</li>
-                        <li>When selecting text, the shortcut <kbd>Ctrl+Alt+X</kbd> will translate and replace the selected text instantly without showing any popup.
+                        <li>When you type a message, select the message and translate the selected text, instead of the
+                            copy text button there will be a button to replace/paste the translated text with the
+                            selected text.</li>
+                        <li>If the <code
+                                style="background-color: lightgray;">Translate selected text when pressing <kbd>Ctrl</kbd> twice</code>
+                            option is enabled. Hitting <kbd>Ctrl</kbd> when the popup is open will be the same as
+                            clicking that new button.</li>
+                        <li>When selecting text, the shortcut <kbd>Ctrl+Alt+X</kbd> will translate and replace the
+                            selected text instantly without showing any popup.
                             <ul>
                                 <li>You can edit this hotkey in the extension's settings.</li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-                <li>Added 33 new target languages: <i>Assamese, Aymara, Bambara, Bashkir, Bhojpuri, Chuvash, Dhivehi, Dogri, Ewe, Guarani, Hill Mari, Ilocano, Kazakh (Latin), Konkani, Krio, Kurdish (Sorani), Lingala, Luganda, Mari, Maithili, Meiteilon (Manipuri), Mizo, Oromo, Papiamento, Quechua, Sanskrit, Sepedi, Tigrinya, Tsonga, Twi, Udmurt, Uzbek (Cyrillic), Yakut</i></li>
-                <li>Translation for language names in: <i>Catalan, Danish, Greek, Hungarian, Icelandic, Korean, Persian, Swedish, Thai and Portuguese (Portugal).</i></li>
+                <li>Added 33 new target languages: <i>Assamese, Aymara, Bambara, Bashkir, Bhojpuri, Chuvash, Dhivehi,
+                        Dogri, Ewe, Guarani, Hill Mari, Ilocano, Kazakh (Latin), Konkani, Krio, Kurdish (Sorani),
+                        Lingala, Luganda, Mari, Maithili, Meiteilon (Manipuri), Mizo, Oromo, Papiamento, Quechua,
+                        Sanskrit, Sepedi, Tigrinya, Tsonga, Twi, Udmurt, Uzbek (Cyrillic), Yakut</i></li>
+                <li>Translation for language names in: <i>Catalan, Danish, Greek, Hungarian, Icelandic, Korean, Persian,
+                        Swedish, Thai and Portuguese (Portugal).</i></li>
             </ul>
         </li>
         <li>Fixed:
@@ -49,7 +65,8 @@
         <li>Changes:
             <ul>
                 <li>Now text-to-speech has an in-memory cache</li>
-                <li>Now the translation service will change silently if the selected target language is not supported by the preferred translation service.</li>
+                <li>Now the translation service will change silently if the selected target language is not supported by
+                    the preferred translation service.</li>
                 <li>Updated interface translations</li>
             </ul>
         </li>
@@ -60,18 +77,21 @@
     <ul>
         <li>Added:
             <ul>
-                <li>Option to configure four more hotkey settings for chromium browsers. (same options as in Firefox and missing in chromium browsers).</li>
+                <li>Option to configure four more hotkey settings for chromium browsers. (same options as in Firefox and
+                    missing in chromium browsers).</li>
             </ul>
         </li>
         <li>Changed:
             <ul>
                 <li>Now the extension name is <b>TWP - Translate Web Pages</b> in all languages.</li>
-                <li>Disabled the transparent visual style of the translate selected text panel in chromium-based browsers.</li>
+                <li>Disabled the transparent visual style of the translate selected text panel in chromium-based
+                    browsers.</li>
             </ul>
         </li>
         <li>Fixed:
             <ul>
-                <li>Translate Selected Text panel always appears on the left side of the screen in chromium-based browsers.</li>
+                <li>Translate Selected Text panel always appears on the left side of the screen in chromium-based
+                    browsers.</li>
             </ul>
         </li>
     </ul>
@@ -98,7 +118,8 @@
         <li>Fixed:
             <ul>
                 <li>Link to translate via Yandex in new tab</li>
-                <li>Bing was not translating to these languages: <i>Hmong, Kurdish (Sorani), Mongolian, Norwegian and Serbian.</i></li>
+                <li>Bing was not translating to these languages: <i>Hmong, Kurdish (Sorani), Mongolian, Norwegian and
+                        Serbian.</i></li>
             </ul>
         </li>
         <li>Update interface translations</li>
@@ -150,7 +171,8 @@
 <section>
     <h4>9.4.2</h4>
     <ul>
-        <li>Fixed bug: Some texts disappear when translating with the option <b>Do not sort the google translate results</b> enabled.</li>
+        <li>Fixed bug: Some texts disappear when translating with the option <b>Do not sort the google translate
+                results</b> enabled.</li>
         <li>Updated interface translations</li>
     </ul>
 </section>
@@ -186,7 +208,8 @@
                 <li>Every time the extension updates the translation cache it will be automatically deleted.</li>
                 <li>Now all translated text nodes will be encapsulated in a FONT element
                     <ul>
-                        <li>This allows the <em>"Show original text when hovering"</em> feature to work on more sites</li>
+                        <li>This allows the <em>"Show original text when hovering"</em> feature to work on more sites
+                        </li>
                     </ul>
                 </li>
                 <li>Improved: Detection of which texts are being shown on the screen
@@ -219,7 +242,8 @@
                 <li>Button to open the shortcut key manager in chromium-based browsers</li>
                 <li>Translate selected text when pressing <b>Ctrl</b> twice</li>
                 <li>Translate the text over the mouse cursor when pressing <b>Ctrl</b> twice</li>
-                <li>Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)</li>
+                <li>Translate the page by clicking once on the button in the address bar. (To see the popup,
+                    right-click)</li>
             </ul>
         </li>
         <li>Changes:
@@ -236,7 +260,8 @@
                 <li>Translate selected text button reappears when clicking a scroll bar</li>
                 <li>The "Show translated when hovering" panel is shown while translating the selected text</li>
                 <li>Some features don't work sometimes</li>
-                <li>Some parts of the page are not restored when the <b>Do not sort the google translate results</b> option is enabled.</li>
+                <li>Some parts of the page are not restored when the <b>Do not sort the google translate results</b>
+                    option is enabled.</li>
             </ul>
         </li>
         <li>Updated interface translations</li>
@@ -246,7 +271,10 @@
 <section>
     <h4>9.2</h4>
     <ul>
-        <li>The <b>webNavigation</b> permission is now optional. If you use the <code>Automatically translate when clicking on a link that takes you to the same domain as the current site</code> option, enable it again in the translation settings.</li>
+        <li>The <b>webNavigation</b> permission is now optional. If you use the
+            <code>Automatically translate when clicking on a link that takes you to the same domain as the current site</code>
+            option, enable it again in the translation settings.
+        </li>
         <li>Now the button to translate selected text is automatically hidden when you press any key</li>
         <li>Updated interface translations</li>
         <li>Bug fixes and general improvements</li>
@@ -259,7 +287,8 @@
             <ul>
                 <li>Bing as a text translation service</li>
                 <li>Do not sort the google translate results</li>
-                <li>Automatically translate when clicking on a link that takes you to the same domain as the current site</li>
+                <li>Automatically translate when clicking on a link that takes you to the same domain as the current
+                    site</li>
                 <li>Translate dynamically created content
                     <ul>
                         <li>This feature already exists, but now you can choose to disable it.</li>
@@ -304,7 +333,8 @@
         <li>Fixed
             <ul>
                 <li>Text direction in RTL languages</li>
-                <li>The context menu entry "Translate selected text" is not working in version 9.0 if you disable the option "Show the button to translate the selected text"</li>
+                <li>The context menu entry "Translate selected text" is not working in version 9.0 if you disable the
+                    option "Show the button to translate the selected text"</li>
                 <li>A randomly occurring bug that stops the extension working.</li>
             </ul>
         </li>
@@ -319,7 +349,8 @@
                 <li>DeepL as a translation service
                     <ul>
                         <li>Only for translation of selected text (not when hovering)</li>
-                        <li>When you translate for the first time, the DeepL website will open. Keep the tab open and the next texts will be translated without having to change the tab.</li>
+                        <li>When you translate for the first time, the DeepL website will open. Keep the tab open and
+                            the next texts will be translated without having to change the tab.</li>
                     </ul>
                 </li>
                 <li>Storage options
@@ -339,64 +370,69 @@
                         </li>
                         <li>* After using these options the extension will be reloaded </li>
                     </ul>
-                    <li>Shortcuts
-                        <ul>
-                            <li>Options for changing keyboard shortcuts</li>
-                            <li>Default shortcuts
-                                <ul>
-                                    <li><kbd>Ctrl+Alt+T</kbd> Switch between the translated and the original page</li>
-                                    <li><kbd>Ctrl+Alt+S</kbd> Translate selected text</li>
-                                    <li><kbd>Ctrl+Alt+Q</kbd> Switch between translation services</li>
-                                    <li><kbd>Alt+0</kbd> Restore page to original</li>
-                                    <li><kbd>Alt+1</kbd> <kbd>Alt+2</kbd> <kbd>Alt+3</kbd> Translate to specific target languages</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>When to translate selected text
-                        <ul>
-                            <li>View original text</li>
-                            <li>Translate the text you type in place of the original text</li>
-                            <li>You can also drag this popup</li>
-                        </ul>
-                    </li>
-                    <li>Option to control audio speed (tts)</li>
-                    <li>Option to hide the button in the address bar</li>
-                    <li>Option to translate the <kbd>PRE</kbd> tag</li>
-                    <li>More options in the 3-point menu, and the old popup options button
-                        <ul>
-                            <li>Show original text when hovering</li>
-                            <li>Show translation when hovering over this site</li>
-                            <li>Show translation when hovering over websites in PAGE_LANGUAGE</li>
-                        </ul>
-                    </li>
+                <li>Shortcuts
+                    <ul>
+                        <li>Options for changing keyboard shortcuts</li>
+                        <li>Default shortcuts
+                            <ul>
+                                <li><kbd>Ctrl+Alt+T</kbd> Switch between the translated and the original page</li>
+                                <li><kbd>Ctrl+Alt+S</kbd> Translate selected text</li>
+                                <li><kbd>Ctrl+Alt+Q</kbd> Switch between translation services</li>
+                                <li><kbd>Alt+0</kbd> Restore page to original</li>
+                                <li><kbd>Alt+1</kbd> <kbd>Alt+2</kbd> <kbd>Alt+3</kbd> Translate to specific target
+                                    languages</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-            </ul>
+                <li>When to translate selected text
+                    <ul>
+                        <li>View original text</li>
+                        <li>Translate the text you type in place of the original text</li>
+                        <li>You can also drag this popup</li>
+                    </ul>
+                </li>
+                <li>Option to control audio speed (tts)</li>
+                <li>Option to hide the button in the address bar</li>
+                <li>Option to translate the <kbd>PRE</kbd> tag</li>
+                <li>More options in the 3-point menu, and the old popup options button
+                    <ul>
+                        <li>Show original text when hovering</li>
+                        <li>Show translation when hovering over this site</li>
+                        <li>Show translation when hovering over websites in PAGE_LANGUAGE</li>
+                    </ul>
+                </li>
         </li>
-        <li>Changes
-            <ul>
-                <li>The language for page and text translation may now be different</li>
-                <li>The page and text translation service can now be different</li>
-                <li>When an HTML element has a notranslate attribute, its attributes will not be translated</li>
-                <li>When translating the page with Google, the text formatting will be maintained</li>
-                <li>The <kbd>PRE</kbd> tag is translated by default</li>
-                <li>When using the old popup or in the popup the additional translation languages have been hidden, the automatic translation of the page (the one that happens as soon as you open the site), will use targetLanguage1, instead of your previous preference.</li>
-            </ul>
-        </li>
-        <li>Fixed
-            <ul>
-                <li>Translation with Yandex</li>
-                <li>Text formatting when showing original when hovering</li>
-                <li>Among others</li>
-            </ul>
-        </li>
-        <li>Updated interface translations</li>
+    </ul>
+    </li>
+    <li>Changes
+        <ul>
+            <li>The language for page and text translation may now be different</li>
+            <li>The page and text translation service can now be different</li>
+            <li>When an HTML element has a notranslate attribute, its attributes will not be translated</li>
+            <li>When translating the page with Google, the text formatting will be maintained</li>
+            <li>The <kbd>PRE</kbd> tag is translated by default</li>
+            <li>When using the old popup or in the popup the additional translation languages have been hidden, the
+                automatic translation of the page (the one that happens as soon as you open the site), will use
+                targetLanguage1, instead of your previous preference.</li>
+        </ul>
+    </li>
+    <li>Fixed
+        <ul>
+            <li>Translation with Yandex</li>
+            <li>Text formatting when showing original when hovering</li>
+            <li>Among others</li>
+        </ul>
+    </li>
+    <li>Updated interface translations</li>
     </ul>
 </section>
 <section>
     <h4>8.9.3</h4>
     <ul>
-        <li>When you click to translate the selected text in the context menu, the translation will only be done in the popup in the address bar if it is not possible to inject the scripts on the page. That is, only if the page is in read mode or is from some domain without permission for scripts like "addons.mozilla.org".</li>
+        <li>When you click to translate the selected text in the context menu, the translation will only be done in the
+            popup in the address bar if it is not possible to inject the scripts on the page. That is, only if the page
+            is in read mode or is from some domain without permission for scripts like "addons.mozilla.org".</li>
     </ul>
 </section>
 <section>
@@ -417,15 +453,18 @@
     <ul>
         <li>Changes:
             <ul>
-                <li>Now when clicking on "Translate selected text" in the context menu, the text will be translated in the popup in the address bar</li>
-                <li>Translate selected text on pages that are not possible to inject scripts such as "addons.mozilla.org" and "about:reader". Only by the button in the context menu</li>
+                <li>Now when clicking on "Translate selected text" in the context menu, the text will be translated in
+                    the popup in the address bar</li>
+                <li>Translate selected text on pages that are not possible to inject scripts such as
+                    "addons.mozilla.org" and "about:reader". Only by the button in the context menu</li>
             </ul>
         </li>
         <li>Fixed:
             <ul>
                 <li>Sometimes the popup is not displayed correctly</li>
                 <li>Parts of the page are not restored when you click "Original"</li>
-                <li>The pop up shown when translating when hovering, disappears and appears when you click into another target language or translation service</li>
+                <li>The pop up shown when translating when hovering, disappears and appears when you click into another
+                    target language or translation service</li>
                 <li>Among others</li>
             </ul>
         </li>
@@ -475,7 +514,8 @@
                         <li>Do not translate automatically</li>
                     </ul>
                 </li>
-                <li>Now when you click on a translate button, the order of the buttons will not be changed automatically.</li>
+                <li>Now when you click on a translate button, the order of the buttons will not be changed
+                    automatically.</li>
             </ul>
         </li>
         <li>Fixed:

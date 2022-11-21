@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/w3css/4/w3.css">
     <link rel="stylesheet" href="popup.css">
-    
+
     <script src="detect-pdf.js"></script>
 </head>
 
@@ -100,16 +100,23 @@
             <select id="btnOptions" style="font-weight: 500; font-size: small;">
                 <option value="options" selected disabled hidden>Options</option>
                 <option data-i18n="btnChangeLanguages" value="changeLanguage">Change languages</option>
-                <option data-i18n="btnNeverTranslateThisLanguage" value="neverTranslateThisLanguage" style="display: none;">Never translate this language</option>
+                <option data-i18n="btnNeverTranslateThisLanguage" value="neverTranslateThisLanguage"
+                    style="display: none;">Never translate this language</option>
                 <option data-i18n="btnNeverTranslate" value="neverTranslateThisSite">Never translate this site</option>
-                <option data-i18n="btnAlwaysTranslate" value="alwaysTranslateThisSite" data-popupPanelSection2="1">Always translate this site</option>
+                <option data-i18n="btnAlwaysTranslate" value="alwaysTranslateThisSite" data-popupPanelSection2="1">
+                    Always translate this site</option>
                 <optgroup label="" data-popupPanelSection2="6"></optgroup>
-                <option data-i18n="lblShowTranslateSelectedButton" value="showTranslateSelectedButton" data-popupPanelSection2="3">Show the button to translate the selected text</option>
-                <option data-i18n="lblShowOriginalTextWhenHovering" value="showOriginalTextWhenHovering" data-popupPanelSection2="4">Show original text when hovering</option>
-                <option data-i18n="lblShowTranslatedWhenHoveringThisSite" value="showTranslatedWhenHoveringThisSite" data-popupPanelSection2="5">Show translation when hovering over this site</option>
-                <option data-i18n="lblShowTranslatedWhenHoveringThisLang" value="showTranslatedWhenHoveringThisLang" data-popupPanelSection2="6" hidden>Show translation when hovering over websites in</option>
+                <option data-i18n="lblShowTranslateSelectedButton" value="showTranslateSelectedButton"
+                    data-popupPanelSection2="3">Show the button to translate the selected text</option>
+                <option data-i18n="lblShowOriginalTextWhenHovering" value="showOriginalTextWhenHovering"
+                    data-popupPanelSection2="4">Show original text when hovering</option>
+                <option data-i18n="lblShowTranslatedWhenHoveringThisSite" value="showTranslatedWhenHoveringThisSite"
+                    data-popupPanelSection2="5">Show translation when hovering over this site</option>
+                <option data-i18n="lblShowTranslatedWhenHoveringThisLang" value="showTranslatedWhenHoveringThisLang"
+                    data-popupPanelSection2="6" hidden>Show translation when hovering over websites in</option>
                 <optgroup label="" data-popupPanelSection2="6"></optgroup>
-                <option data-i18n="btnOpenOnGoogleTranslate" value="translateInExternalSite">Open in google translate</option>
+                <option data-i18n="btnOpenOnGoogleTranslate" value="translateInExternalSite">Open in google translate
+                </option>
                 <option data-i18n="btnMoreOptions" value="moreOptions">More options</option>
                 <option data-i18n="btnDonate" value="donate">Donate</option>
             </select>
@@ -122,11 +129,6 @@
             <img id='iconTranslate' src="/icons/google-translate-32.png" style="position: relative;">
             <img id='iconSwap' src="/icons/swap-32.png" style="position: absolute; top: 0; left: 0;">
         </div>
-    </div>
-
-    <div id="helpSwapInterface" style="display: none;">
-        <i id="btnCloseHelpSwapInterface" class="gg-close" style="float: right; cursor: pointer;"></i>
-        <span data-i18n="helpSwapInterface">Click this button to switch between the old and the new interface.</span>
     </div>
 
     <script src="/lib/languages.js"></script>

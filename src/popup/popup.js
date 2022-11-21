@@ -311,10 +311,6 @@ twpConfig.onReady(function () {
             .arrow {
                 border-color: rgb(231, 230, 228);
             }
-
-            #helpSwapInterface span:before {
-                border-bottom: 10px solid #88f;
-            }
             `;
       document.head.appendChild(el);
     }
@@ -346,11 +342,6 @@ twpConfig.onReady(function () {
 
   $("#btnSwitchInterfaces").addEventListener("click", () => {
     twpConfig.set("useOldPopup", "yes");
-
-    if ($("#helpSwapInterface").style.display === "block") {
-      twpConfig.set("dontShowHelpSwapInterface", "yes");
-    }
-
     window.location = "old-popup.html";
   });
 
@@ -664,47 +655,4 @@ twpConfig.onReady(function () {
       $("option[data-i18n=btnDonate]").innerHTML += " &#10084;";
     }
   );
-
-  $("#btnCloseHelpSwapInterface").onclick = (e) => {
-    $("#helpSwapInterface").style.display = "none";
-    twpConfig.set("dontShowHelpSwapInterface", "yes");
-    document.body.style.minHeight = null;
-  };
-
-  const installDateTime = twpConfig.get("installDateTime");
-  const dontShowHelpSwapInterface = twpConfig.get("dontShowHelpSwapInterface");
-  if (installDateTime && !dontShowHelpSwapInterface) {
-    const date = new Date();
-    date.setDate(date.getDate() - 1);
-    if (date.getTime() > installDateTime) {
-      let lastTimeShowingHelpSwapInterface = twpConfig.get(
-        "lastTimeShowingHelpSwapInterface"
-      );
-      let showHelpSwapInterface = false;
-      if (lastTimeShowingHelpSwapInterface) {
-        const date = new Date();
-        date.setDate(date.getDate() - 1);
-        if (date.getTime() > lastTimeShowingHelpSwapInterface) {
-          showHelpSwapInterface = true;
-          lastTimeShowingHelpSwapInterface = Date.now();
-          twpConfig.set(
-            "lastTimeShowingHelpSwapInterface",
-            lastTimeShowingHelpSwapInterface
-          );
-        }
-      } else {
-        showHelpSwapInterface = true;
-        lastTimeShowingHelpSwapInterface = Date.now();
-        twpConfig.set(
-          "lastTimeShowingHelpSwapInterface",
-          lastTimeShowingHelpSwapInterface
-        );
-      }
-
-      if (showHelpSwapInterface) {
-        $("#helpSwapInterface").style.display = "block";
-        document.body.style.minHeight = "150px";
-      }
-    }
-  }
 });

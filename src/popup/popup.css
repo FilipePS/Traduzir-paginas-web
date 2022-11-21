@@ -162,32 +162,6 @@ hr {
   left: -4px;
 }
 
-#helpSwapInterface {
-  position: fixed;
-  top: 40px;
-  right: 4px;
-  background-color: #88f;
-  border-radius: 10px;
-  padding: 10px;
-  max-width: 200px;
-  border: 2px solid black;
-  font-weight: 500;
-}
-
-#helpSwapInterface span:before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  position: absolute;
-
-  border-left: 10px solid transparent;
-  border-bottom: 10px solid black;
-  border-right: 10px solid transparent;
-  right: 8px;
-  top: -12px;
-}
-
 .gg-close {
   box-sizing: border-box;
   position: relative;
