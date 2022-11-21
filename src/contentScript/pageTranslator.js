@@ -718,6 +718,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     return attributesToTranslate;
   }
 
+  // encapsular o texto faz com que do video suma
+  // ao utilizar função como Pai.removeChild(filho)
+  // pode ser gerado um erro ao encapsular
   function encapsulateTextNode(node) {
     const fontNode = document.createElement("font");
     fontNode.setAttribute("style", "vertical-align: inherit;");
@@ -745,13 +748,19 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               translated += restResults.join(" ");
             }
 
-            nodes[j] = encapsulateTextNode(nodes[j]);
+            const originalTextNode = nodes[j];
+            if (showOriginal.isEnabled) {
+              nodes[j] = encapsulateTextNode(nodes[j]);
+              showOriginal.add(nodes[j]);
+            }
 
-            showOriginal.add(nodes[j]);
-            nodesToRestore.push({
+            const toRestore = {
               node: nodes[j],
-              original: nodes[j].textContent,
-            });
+              original: originalTextNode,
+              originalText: originalTextNode.textContent,
+              translatedText: translated,
+            };
+            nodesToRestore.push(toRestore);
 
             handleCustomWords(
               translated,
@@ -760,6 +769,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               currentTargetLanguage
             ).then((results) => {
               nodes[j].textContent = results;
+              toRestore.translatedText = results;
             });
           }
         }
@@ -771,13 +781,19 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             const nodes = piecesToTranslateNow[i].nodes;
             const translated = results[i][j] + " ";
 
-            nodes[j] = encapsulateTextNode(nodes[j]);
+            const originalTextNode = nodes[j];
+            if (showOriginal.isEnabled) {
+              nodes[j] = encapsulateTextNode(nodes[j]);
+              showOriginal.add(nodes[j]);
+            }
 
-            showOriginal.add(nodes[j]);
-            nodesToRestore.push({
+            const toRestore = {
               node: nodes[j],
-              original: nodes[j].textContent,
-            });
+              original: originalTextNode,
+              originalText: originalTextNode.textContent,
+              translatedText: translated,
+            };
+            nodesToRestore.push(toRestore);
 
             handleCustomWords(
               translated,
@@ -786,6 +802,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               currentTargetLanguage
             ).then((results) => {
               nodes[j].textContent = results;
+              toRestore.translatedText = results;
             });
           }
         }
@@ -990,7 +1007,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     originalPageTitle = null;
 
     for (const ntr of nodesToRestore) {
-      ntr.node.replaceWith(ntr.original);
+      if (ntr.node === ntr.original) {
+        if (ntr.node.textContent === ntr.translatedText) {
+          ntr.node.textContent = ntr.originalText;
+        }
+      } else {
+        ntr.node.replaceWith(ntr.original);
+      }
     }
     nodesToRestore = [];
 
@@ -1179,4 +1202,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       }
     );
   }
+
+  showOriginal.enabledObserverSubscribe(function () {
+    if (pageLanguageState !== "original") {
+      pageTranslator.translatePage();
+    }
+  });
 });

@@ -11,6 +11,11 @@ twpConfig.onReady(function () {
     return;
   }
 
+  const enabledObservers = [];
+  showOriginal.enabledObserverSubscribe = function (callback) {
+    enabledObservers.push(callback);
+  };
+
   let styleTextContent = "";
   fetch(chrome.runtime.getURL("/contentScript/css/showOriginal.css"))
     .then((response) => response.text())
@@ -20,10 +25,15 @@ twpConfig.onReady(function () {
   let showOriginalTextWhenHovering = twpConfig.get(
     "showOriginalTextWhenHovering"
   );
+  showOriginal.isEnabled = showOriginalTextWhenHovering === "yes";
   twpConfig.onChanged(function (name, newValue) {
     if (name === "showOriginalTextWhenHovering") {
       showOriginalTextWhenHovering = newValue;
+      showOriginal.isEnabled = showOriginalTextWhenHovering === "yes";
       showOriginal.enable(true);
+      enabledObservers.forEach((callback) => {
+        callback();
+      });
     }
   });
 
