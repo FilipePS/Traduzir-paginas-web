@@ -1,5 +1,11 @@
 "use strict";
 
+fetch("./release-notes/en.html")
+  .then((response) => response.text())
+  .then((responseText) => {
+    document.getElementById("release_notes").innerHTML = responseText;
+  });
+
 var $ = document.querySelector.bind(document);
 
 twpConfig.onReady(function () {
