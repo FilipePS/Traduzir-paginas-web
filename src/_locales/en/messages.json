@@ -282,16 +282,10 @@
     "message": "Switch between translation services"
   },
   "swapPopup": {
-    "message": "Switch between the old interface and the new one"
-  },
-  "helpSwapInterface": {
-    "message": "Click this button to switch between the old and the new interface."
+    "message": "Switch between simple and complex interface"
   },
   "lblTranslationService": {
     "message": "Translation service"
-  },
-  "msgUseOldPopupInterface": {
-    "message": "Use the old popup interface"
   },
   "lblTranslateInterface": {
     "message": "Translate the interface"
@@ -483,5 +477,32 @@
   },
   "optionsAddToCustomDictionary": {
     "message": "Add to custom dictionary (This allows you to skip certain words during web page translation)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Translate websites to this target language"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Translate selected text to this target language"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorite languages"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Select popup interface style"
+  },
+  "msgInterfaceSimple": {
+    "message": "Simple"
+  },
+  "msgInterfaceComplex": {
+    "message": "Complex"
   }
 }
