@@ -240,6 +240,11 @@ twpConfig.onReady(function () {
 
     let showAlwaysTranslateCheckbox = false;
 
+    if (originalTabLanguage !== "und" && originalTabLanguage !== twpConfig.get("targetLanguage")) {
+      divAlwaysTranslate.style.display = "block";
+      showAlwaysTranslateCheckbox = true;
+    }
+
     if (originalTabLanguage !== "und") {
       $("#cbAlwaysTranslateThisLang").checked =
         twpConfig.get("alwaysTranslateLangs").indexOf(originalTabLanguage) !==
@@ -248,7 +253,6 @@ twpConfig.onReady(function () {
         "lblAlwaysTranslate",
         twpLang.codeToLanguage(originalTabLanguage)
       );
-      $("#divAlwaysTranslateThisLang").style.display = "block";
 
       const translatedWhenHoveringThisLangText = chrome.i18n.getMessage(
         "lblShowTranslatedWhenHoveringThisLang",
@@ -285,8 +289,6 @@ twpConfig.onReady(function () {
       }
       $("option[data-i18n=btnNeverTranslateThisLanguage]").style.display =
         "block";
-
-      showAlwaysTranslateCheckbox = true;
     }
 
     btnRestore.className = btnRestore.className.replace(" w3-disabled", "");
