@@ -479,10 +479,10 @@
     "message": "Add to custom dictionary (This allows you to skip certain words during web page translation)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites to this target language"
+    "message": "Translate websites into this target language"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text to this target language"
+    "message": "Translate selected text into this target language"
   },
   "msgFavoriteLanguages": {
     "message": "Favorite languages"
@@ -504,5 +504,23 @@
   },
   "msgInterfaceComplex": {
     "message": "Complex"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
   }
 }

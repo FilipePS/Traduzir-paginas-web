@@ -60,6 +60,8 @@ twpConfig.onReady(function () {
   // fill language list
   {
     let langs = twpLang.getLanguageList();
+    lblTranslate.textContent = chrome.i18n.getMessage("lblTranslatePageInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage"))
+    lblTranslated.textContent = chrome.i18n.getMessage("lblPageTranslateInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage")) 
 
     const langsSorted = [];
 
@@ -387,6 +389,11 @@ twpConfig.onReady(function () {
         } else {
           twpConfig.setTargetLanguage(selectTargetLanguage.value);
         }
+        
+        const langs = twpLang.getLanguageList()
+        lblTranslate.textContent = chrome.i18n.getMessage("lblTranslatePageInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage"))
+        lblTranslated.textContent = chrome.i18n.getMessage("lblPageTranslateInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage"))
+
         chrome.tabs.sendMessage(
           tabs[0].id,
           {
