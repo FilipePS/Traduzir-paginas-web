@@ -191,6 +191,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       getElemById("menu").style.display = "none";
 
       if (targetLanguage !== currentTargetLanguage) {
+        currentTargetLanguage = targetLanguage;
         twpConfig.setTargetLanguage(targetLanguage, true);
       }
       pageTranslator.translatePage(targetLanguage);
@@ -265,7 +266,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     getElemById("btnMenu").onclick = (e) => {
       if (!getElemById) return;
-      getElemById("menu").style.display = "block";
+      if (getElemById("menu").style.display === "block") {
+        getElemById("menu").style.display = "none";
+      } else {
+        getElemById("menu").style.display = "block";
+      }
       getElemById("menuSelectLanguage").style.display = "none";
     };
 
