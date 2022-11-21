@@ -223,3 +223,7 @@ kbd {
   width: 100%;
   text-align: center;
 }
+
+select {
+  padding-left: 10px !important;
+}

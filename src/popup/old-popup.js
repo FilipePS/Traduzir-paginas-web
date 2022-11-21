@@ -88,7 +88,7 @@ twpConfig.onReady(function () {
       eRecentsLangs.appendChild(option);
     });
   }
-  selectTargetLanguage.value = twpConfig.get("targetLanguages")[0];
+  selectTargetLanguage.value = twpConfig.get("targetLanguage");
 
   function enableDarkMode() {
     if (!document.getElementById("darkModeElement")) {

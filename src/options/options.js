@@ -98,9 +98,12 @@ twpConfig.onReady(function () {
     });
   }
 
-  fillLanguageList($("#targetLanguage1"));
-  fillLanguageList($("#targetLanguage2"));
-  fillLanguageList($("#targetLanguage3"));
+  fillLanguageList($("#selectTargetLanguage"));
+  fillLanguageList($("#selectTargetLanguageForText"));
+
+  fillLanguageList($("#favoriteLanguage1"));
+  fillLanguageList($("#favoriteLanguage2"));
+  fillLanguageList($("#favoriteLanguage3"));
 
   fillLanguageList($("#addToNeverTranslateLangs"));
   fillLanguageList($("#addToAlwaysTranslateLangs"));
@@ -163,13 +166,30 @@ twpConfig.onReady(function () {
 
   // target languages
 
+  const targetLanguage = twpConfig.get("targetLanguage");
+  $("#selectTargetLanguage").value = targetLanguage;
+  $("#selectTargetLanguage").onchange = (e) => {
+    twpConfig.setTargetLanguage(e.target.value);
+    location.reload();
+  };
+
+  const targetLanguageTextTranslation = twpConfig.get(
+    "targetLanguageTextTranslation"
+  );
+  $("#selectTargetLanguageForText").value = targetLanguageTextTranslation;
+  $("#selectTargetLanguageForText").onchange = (e) => {
+    twpConfig.setTargetLanguage(e.target.value, true);
+    twpConfig.setTargetLanguage(targetLanguage, false);
+    location.reload();
+  };
+
   const targetLanguages = twpConfig.get("targetLanguages");
 
-  $("#targetLanguage1").value = targetLanguages[0];
-  $("#targetLanguage2").value = targetLanguages[1];
-  $("#targetLanguage3").value = targetLanguages[2];
+  $("#favoriteLanguage1").value = targetLanguages[0];
+  $("#favoriteLanguage2").value = targetLanguages[1];
+  $("#favoriteLanguage3").value = targetLanguages[2];
 
-  $("#targetLanguage1").onchange = (e) => {
+  $("#favoriteLanguage1").onchange = (e) => {
     targetLanguages[0] = e.target.value;
     twpConfig.set("targetLanguages", targetLanguages);
     if (targetLanguages.indexOf(twpConfig.get("targetLanguage")) == -1) {
@@ -181,9 +201,10 @@ twpConfig.onReady(function () {
     ) {
       twpConfig.set("targetLanguageTextTranslation", targetLanguages[0]);
     }
+    location.reload();
   };
 
-  $("#targetLanguage2").onchange = (e) => {
+  $("#favoriteLanguage2").onchange = (e) => {
     targetLanguages[1] = e.target.value;
     twpConfig.set("targetLanguages", targetLanguages);
     if (targetLanguages.indexOf(twpConfig.get("targetLanguage")) == -1) {
@@ -195,9 +216,10 @@ twpConfig.onReady(function () {
     ) {
       twpConfig.set("targetLanguageTextTranslation", targetLanguages[0]);
     }
+    location.reload();
   };
 
-  $("#targetLanguage3").onchange = (e) => {
+  $("#favoriteLanguage3").onchange = (e) => {
     targetLanguages[2] = e.target.value;
     twpConfig.set("targetLanguages", targetLanguages);
     if (targetLanguages.indexOf(twpConfig.get("targetLanguage")) == -1) {
@@ -209,6 +231,7 @@ twpConfig.onReady(function () {
     ) {
       twpConfig.set("targetLanguageTextTranslation", targetLanguages[0]);
     }
+    location.reload();
   };
 
   // Never translate these languages
