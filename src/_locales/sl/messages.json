@@ -282,16 +282,10 @@
     "message": "Preklapljanje med prevajalskimi storitvami"
   },
   "swapPopup": {
-    "message": "Preklopite med starim in novim vmesnikom"
-  },
-  "helpSwapInterface": {
-    "message": "Kliknite ta gumb za preklop med starim in novim vmesnikom."
+    "message": "Switch between simple and complex interface"
   },
   "lblTranslationService": {
     "message": "Prevajalska služba"
-  },
-  "msgUseOldPopupInterface": {
-    "message": "Uporabite starejši pojavni vmesnik"
   },
   "lblTranslateInterface": {
     "message": "Prevedite uporabniški vmesnik"
@@ -483,5 +477,50 @@
   },
   "optionsAddToCustomDictionary": {
     "message": "Dodaj v slovar po meri (To vam omogoča, da med prevajanjem spletne strani preskočite določene besede)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Translate websites into this target language"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Translate selected text into this target language"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorite languages"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Select popup interface style"
+  },
+  "msgInterfaceSimple": {
+    "message": "Simple"
+  },
+  "msgInterfaceComplex": {
+    "message": "Complex"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
   }
 }

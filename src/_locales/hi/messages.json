@@ -282,16 +282,10 @@
     "message": "अनुवाद सेवाओं के बीच स्विच करें"
   },
   "swapPopup": {
-    "message": "पुराने इंटरफ़ेस और नए के बीच स्विच करें"
-  },
-  "helpSwapInterface": {
-    "message": "पुराने और नए इंटरफ़ेस के बीच स्विच करने के लिए इस बटन पर क्लिक करें।"
+    "message": "Switch between simple and complex interface"
   },
   "lblTranslationService": {
     "message": "अनुवाद सेवा"
-  },
-  "msgUseOldPopupInterface": {
-    "message": "पुराने पॉपअप इंटरफ़ेस का उपयोग करें"
   },
   "lblTranslateInterface": {
     "message": "इंटरफ़ेस का अनुवाद करें"
@@ -483,5 +477,50 @@
   },
   "optionsAddToCustomDictionary": {
     "message": "कस्टम शब्दकोश में जोड़ें (यह आपको वेब पेज अनुवाद के दौरान कुछ शब्दों को छोड़ने की अनुमति देता है)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Translate websites into this target language"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Translate selected text into this target language"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorite languages"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Select popup interface style"
+  },
+  "msgInterfaceSimple": {
+    "message": "Simple"
+  },
+  "msgInterfaceComplex": {
+    "message": "Complex"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
   }
 }

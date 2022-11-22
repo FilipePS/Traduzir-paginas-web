@@ -282,16 +282,10 @@
     "message": "切换翻译服务"
   },
   "swapPopup": {
-    "message": "切换新旧界面"
-  },
-  "helpSwapInterface": {
-    "message": "点击此按钮即可切换新旧界面"
+    "message": "Switch between simple and complex interface"
   },
   "lblTranslationService": {
     "message": "翻译服务"
-  },
-  "msgUseOldPopupInterface": {
-    "message": "使用旧的弹出界面"
   },
   "lblTranslateInterface": {
     "message": "贡献翻译"
@@ -483,5 +477,50 @@
   },
   "optionsAddToCustomDictionary": {
     "message": "添加到我的字典（这允许您在网页翻译时跳过某些单词）"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Translate websites into this target language"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Translate selected text into this target language"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorite languages"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Select popup interface style"
+  },
+  "msgInterfaceSimple": {
+    "message": "Simple"
+  },
+  "msgInterfaceComplex": {
+    "message": "Complex"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
   }
 }

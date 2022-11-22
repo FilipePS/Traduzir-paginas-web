@@ -282,16 +282,10 @@
     "message": "Fordító szolgáltatások közötti váltás"
   },
   "swapPopup": {
-    "message": "Az új és régi felület közötti váltás"
-  },
-  "helpSwapInterface": {
-    "message": "A gomb megnyomására válthat az új és régi felület között."
+    "message": "Switch between simple and complex interface"
   },
   "lblTranslationService": {
     "message": "Fordító szolgáltatás"
-  },
-  "msgUseOldPopupInterface": {
-    "message": "Használja a régi felugró felületet"
   },
   "lblTranslateInterface": {
     "message": "A felület fordítása"
@@ -483,5 +477,50 @@
   },
   "optionsAddToCustomDictionary": {
     "message": "Hozzáadás egyéni szótárhoz (Ez lehetővé teszi bizonyos szavak kihagyását a weboldal fordítása során)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Translate websites into this target language"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Translate selected text into this target language"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorite languages"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Select popup interface style"
+  },
+  "msgInterfaceSimple": {
+    "message": "Simple"
+  },
+  "msgInterfaceComplex": {
+    "message": "Complex"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
   }
 }

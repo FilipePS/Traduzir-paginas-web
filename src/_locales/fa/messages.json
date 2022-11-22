@@ -282,16 +282,10 @@
     "message": "جابه جایی بین سرویس ترجمه ها"
   },
   "swapPopup": {
-    "message": "بین رابط قدیمی و جدید سوئیچ کنید"
-  },
-  "helpSwapInterface": {
-    "message": "برای جابجایی بین رابط قدیمی و جدید، روی این دکمه کلیک کنید."
+    "message": "Switch between simple and complex interface"
   },
   "lblTranslationService": {
     "message": "سرویس ترجمه"
-  },
-  "msgUseOldPopupInterface": {
-    "message": "استفاده از رابط قدیمی پنجره‌ی ظاهر شونده"
   },
   "lblTranslateInterface": {
     "message": "رابط را ترجمه کنید"
@@ -483,5 +477,50 @@
   },
   "optionsAddToCustomDictionary": {
     "message": "افزودن به فرهنگ لغت سفارشی (این به شما امکان می دهد از کلمات خاصی در حین ترجمه صفحه وب رد شوید)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Translate websites into this target language"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Translate selected text into this target language"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorite languages"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Select popup interface style"
+  },
+  "msgInterfaceSimple": {
+    "message": "Simple"
+  },
+  "msgInterfaceComplex": {
+    "message": "Complex"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
   }
 }

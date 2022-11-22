@@ -282,16 +282,10 @@
     "message": "Bytt mellom oversettelsestjenester"
   },
   "swapPopup": {
-    "message": "Bytt mellom det gamle grensesnittet og det nye"
-  },
-  "helpSwapInterface": {
-    "message": "Klikk på denne knappen for å bytte mellom det gamle og det nye grensesnittet."
+    "message": "Switch between simple and complex interface"
   },
   "lblTranslationService": {
     "message": "Oversettelsestjeneste"
-  },
-  "msgUseOldPopupInterface": {
-    "message": "Bruk det gamle popup-grensesnittet"
   },
   "lblTranslateInterface": {
     "message": "Oversett grensesnittet"
@@ -483,5 +477,50 @@
   },
   "optionsAddToCustomDictionary": {
     "message": "Legg til i egendefinert ordbok (dette lar deg hoppe over bestemte ord under oversettelse av nettsider)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Translate websites into this target language"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Translate selected text into this target language"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorite languages"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Select popup interface style"
+  },
+  "msgInterfaceSimple": {
+    "message": "Simple"
+  },
+  "msgInterfaceComplex": {
+    "message": "Complex"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
   }
 }
