@@ -259,6 +259,7 @@ twpConfig.onReady(function () {
   }
 
   const neverTranslateLangs = twpConfig.get("neverTranslateLangs");
+  neverTranslateLangs.sort((a, b) => a.localeCompare(b));
   neverTranslateLangs.forEach((langCode) => {
     const langName = twpLang.codeToLanguage(langCode);
     const li = createNodeToNeverTranslateLangsList(langCode, langName);
@@ -299,6 +300,7 @@ twpConfig.onReady(function () {
   }
 
   const alwaysTranslateLangs = twpConfig.get("alwaysTranslateLangs");
+  alwaysTranslateLangs.sort((a, b) => a.localeCompare(b));
   alwaysTranslateLangs.forEach((langCode) => {
     const langName = twpLang.codeToLanguage(langCode);
     const li = createNodeToAlwaysTranslateLangsList(langCode, langName);
@@ -341,6 +343,7 @@ twpConfig.onReady(function () {
   const langsToTranslateWhenHovering = twpConfig.get(
     "langsToTranslateWhenHovering"
   );
+  langsToTranslateWhenHovering.sort((a, b) => a.localeCompare(b));
   langsToTranslateWhenHovering.forEach((langCode) => {
     const langName = twpLang.codeToLanguage(langCode);
     const li = createNodeToLangsToTranslateWhenHoveringList(langCode, langName);
@@ -381,6 +384,7 @@ twpConfig.onReady(function () {
   }
 
   const alwaysTranslateSites = twpConfig.get("alwaysTranslateSites");
+  alwaysTranslateSites.sort((a, b) => a.localeCompare(b));
   alwaysTranslateSites.forEach((hostname) => {
     const li = createNodeToAlwaysTranslateSitesList(hostname);
     $("#alwaysTranslateSites").appendChild(li);
@@ -421,6 +425,7 @@ twpConfig.onReady(function () {
   }
 
   const neverTranslateSites = twpConfig.get("neverTranslateSites");
+  neverTranslateSites.sort((a, b) => a.localeCompare(b));
   neverTranslateSites.forEach((hostname) => {
     const li = createNodeToNeverTranslateSitesList(hostname);
     $("#neverTranslateSites").appendChild(li);
@@ -460,8 +465,8 @@ twpConfig.onReady(function () {
 
   let customDictionary = twpConfig.get("customDictionary");
   customDictionary = new Map(
-    [...customDictionary.entries()].sort(
-      (a, b) => String(b[0]).length - String(a[0]).length
+    [...customDictionary.entries()].sort((a, b) =>
+      String(a[0]).localeCompare(String(b[0]))
     )
   );
   customDictionary.forEach(function (customValue, keyWord) {
@@ -511,6 +516,7 @@ twpConfig.onReady(function () {
   const sitesToTranslateWhenHovering = twpConfig.get(
     "sitesToTranslateWhenHovering"
   );
+  sitesToTranslateWhenHovering.sort((a, b) => a.localeCompare(b));
   sitesToTranslateWhenHovering.forEach((hostname) => {
     const li = createNodeToSitesToTranslateWhenHoveringList(hostname);
     $("#sitesToTranslateWhenHovering").appendChild(li);
