@@ -109,40 +109,6 @@ twpConfig.onReady(function () {
   fillLanguageList($("#addToAlwaysTranslateLangs"));
   fillLanguageList($("#addLangToTranslateWhenHovering"));
 
-  function enableDarkMode() {
-    if (!$("#darkModeElement")) {
-      const el = document.createElement("style");
-      el.setAttribute("id", "darkModeElement");
-      el.setAttribute("rel", "stylesheet");
-      el.textContent = `
-            * {
-                scrollbar-color: #202324 #454a4d;
-            }
-
-            #donation * {
-                background-color: #87CEEB !important;
-            }
-
-            #donation select {
-                color: black !important;
-                background-color: rgb(231, 230, 228) !important;
-            }
-
-            html *, nav, #header {
-                color: rgb(231, 230, 228) !important;
-                background-color: #181a1b !important;
-            }
-            `;
-      document.head.appendChild(el);
-    }
-  }
-
-  function disableDarkMode() {
-    if ($("#darkModeElement")) {
-      $("#darkModeElement").remove();
-    }
-  }
-
   function updateDarkMode() {
     switch (twpConfig.get("darkMode")) {
       case "auto":
