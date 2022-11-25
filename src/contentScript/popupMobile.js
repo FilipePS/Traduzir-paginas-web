@@ -23,7 +23,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     <div id='main'>
         <img id="iconTranslate">
         <button id="btnOriginal" class="item button" data-i18n="btnMobileOriginal">Original</button>
-        <button id="btnTranslate" class="item button" data-i18n="lblTranslated">Translated</button>
+        <button id="btnTranslate" class="item button" data-i18n="btnMobileTranslated">Translated</button>
         <button id="spin" class="item button">
             <div class="loader button"></div>
         </button>

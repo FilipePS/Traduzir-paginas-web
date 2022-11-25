@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Translate Web Pages"
-  },
   "extensionDescription": {
     "message": "Translate your page in real time using Google or Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Translating ..."
-  },
-  "lblTranslated": {
-    "message": "Translated"
   },
   "lblError": {
     "message": "This page could not be translated"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Translated"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Never translate this site"
-  },
-  "btnMobileDonate": {
-    "message": "Donate"
-  },
   "optionsNeverTranslate": {
     "message": "Never translate these sites"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Show the mobile popup"
-  },
-  "optionPopupAuto": {
-    "message": "Automatically"
   },
   "optionPopupThreeFingers": {
     "message": "When I touch three fingers on the screen"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "No"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Use the new translation algorithm?"
-  },
-  "msgYesRecommended": {
-    "message": "Yes (recommended)"
-  },
-  "msgNoUseWidgets": {
-    "message": "No (use widgets)"
-  },
-  "optionsPageTitle": {
-    "message": "Translate Web Pages - Options"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Only when I click \"Translate this site\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "You have not added any sites to this list."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "You have not added any languages to this list."
-  },
   "btnAlwaysTranslate": {
     "message": "Always translate this site"
   },
   "lblAlwaysTranslateSites": {
     "message": "Always translate these sites"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Donate with PayPal"
   },
   "lblDarkMode": {
     "message": "Dark Mode"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Keyboard shortcuts"
   },
-  "msgToTranslateSites": {
-    "message": "To translate the site"
-  },
   "msgThanksForUseExtension": {
     "message": "Thank you for using this extension."
   },
   "msgIWillBeGrateful": {
     "message": "I will be grateful if you can make a donation."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Always translate this language"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Show translated text when hovering on these sites"
@@ -283,9 +238,6 @@
   },
   "swapPopup": {
     "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Translation service"
   },
   "lblTranslateInterface": {
     "message": "Translate the interface"
@@ -463,14 +415,6 @@
   },
   "btnReplace": {
     "message": "Replace"
-  },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Replace selected text with translated text when pressing $SHORTCUT_KEY$ twice",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
   },
   "lblHotTranslatedSelectedText": {
     "message": "Replace selected text with translated text instantly"
