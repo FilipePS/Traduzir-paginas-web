@@ -822,11 +822,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     try {
       if (piecesToTranslate && pageIsVisible) {
         (function () {
+          const innerHeight = window.innerHeight;
+
           function isInScreen(element) {
             const rect = element.getBoundingClientRect();
             if (
-              (rect.top > 0 && rect.top <= window.innerHeight) ||
-              (rect.bottom > 0 && rect.bottom <= window.innerHeight)
+              (rect.top > 0 && rect.top <= innerHeight) ||
+              (rect.bottom > 0 && rect.bottom <= innerHeight)
             ) {
               return true;
             }
@@ -839,7 +841,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               return false;
             }
             const rect = element.getBoundingClientRect();
-            if (rect.top > 0 && rect.top <= window.innerHeight) {
+            if (rect.top > 0 && rect.top <= innerHeight) {
               return true;
             }
             return false;
@@ -851,7 +853,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               return false;
             }
             const rect = element.getBoundingClientRect();
-            if (rect.bottom > 0 && rect.bottom <= window.innerHeight) {
+            if (rect.bottom > 0 && rect.bottom <= innerHeight) {
               return true;
             }
             return false;
