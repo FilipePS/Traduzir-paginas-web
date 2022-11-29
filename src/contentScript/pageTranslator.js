@@ -1105,6 +1105,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           result = result || "und";
           if (result === "und") {
             originalTabLanguage = result;
+            if (
+              twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !== -1
+            ) {
+              pageTranslator.translatePage();
+            }
           } else {
             const langCode = twpLang.fixTLanguageCode(result);
             if (langCode) {
