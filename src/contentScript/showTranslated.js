@@ -67,50 +67,43 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
   const htmlTagsInlineText = [
     "#text",
-    "A",
-    "ABBR",
-    "ACRONYM",
-    "B",
-    "BDO",
-    "BIG",
-    "CITE",
-    "DFN",
-    "EM",
-    "I",
-    "LABEL",
-    "Q",
-    "S",
-    "SMALL",
-    "SPAN",
-    "STRONG",
-    "SUB",
-    "SUP",
-    "U",
-    "TT",
-    "VAR",
+    "a",
+    "abbr",
+    "acronym",
+    "b",
+    "bdo",
+    "big",
+    "cite",
+    "dfn",
+    "em",
+    "i",
+    "label",
+    "q",
+    "s",
+    "small",
+    "span",
+    "strong",
+    "sub",
+    "sup",
+    "u",
+    "tt",
+    "var",
   ];
-  const htmlTagsInlineIgnore = ["BR", "CODE", "KBD", "WBR"]; // and input if type is submit or button, and pre depending on settings
-  const htmlTagsNoTranslate = [
-    "TITLE",
-    "SCRIPT",
-    "STYLE",
-    "TEXTAREA",
-    "SVG",
-    "svg",
-  ];
+  const htmlTagsInlineIgnore = ["br", "code", "kbd", "wbr"]; // and input if type is submit or button, and <pre> depending on settings
+  const htmlTagsNoTranslate = ["title", "script", "style", "textarea", "svg"];
 
   if (twpConfig.get("translateTag_pre") !== "yes") {
-    htmlTagsInlineIgnore.push("PRE");
+    htmlTagsInlineIgnore.push("pre");
   }
   twpConfig.onChanged((name, newvalue) => {
     switch (name) {
       case "translateTag_pre":
-        const index = htmlTagsInlineIgnore.indexOf("PRE");
+        const index = htmlTagsInlineIgnore.indexOf("pre");
         if (index !== -1) {
           htmlTagsInlineIgnore.splice(index, 1);
         }
         if (newvalue !== "yes") {
-          htmlTagsInlineIgnore.push("PRE");
+          htmlTagsInlineIgnore.push("pre");
         }
         break;
     }
@@ -203,9 +196,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     let hasChildNodeBlock = function (node) {
       let foo = function (node) {
+        const nodeName = node.nodeName.toLowerCase();
         if (
-          htmlTagsInlineText.indexOf(node.nodeName) === -1 &&
-          htmlTagsInlineIgnore.indexOf(node.nodeName) === -1
+          htmlTagsInlineText.indexOf(nodeName) === -1 &&
+          htmlTagsInlineIgnore.indexOf(nodeName) === -1
         ) {
           return true;
         }
@@ -223,22 +217,23 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       }
     };
 
+    const nodeName = node.nodeName.toLowerCase();
     if (
-      htmlTagsInlineText.indexOf(node.nodeName) === -1 &&
-      htmlTagsInlineIgnore.indexOf(node.nodeName) === -1
+      htmlTagsInlineText.indexOf(nodeName) === -1 &&
+      htmlTagsInlineIgnore.indexOf(nodeName) === -1
     ) {
       if (hasChildNodeBlock(node)) return;
     }
 
     let text;
-    if (node.nodeName === "INPUT" || node.nodeName === "TEXTAREA") {
+    if (nodeName === "input" || nodeName === "textarea") {
       text = node.value.length > 0 ? node.value : node.placeholder;
-      if (node.nodeName === "INPUT" && !/^(?:text|search)$/i.test(node.type)) {
+      if (nodeName === "input" && !/^(?:text|search)$/i.test(node.type)) {
         text = null;
         return;
       }
       if (
-        node.nodeName === "INPUT" &&
+        nodeName === "input" &&
         (node.type === "BUTTON" || node.type === "SUBMIT")
       ) {
         text = node.value;
@@ -248,10 +243,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       }
     } else {
       do {
-        if (htmlTagsNoTranslate.indexOf(node.nodeName) !== -1) return;
+        const nodeName = node.nodeName.toLowerCase();
+        if (htmlTagsNoTranslate.indexOf(nodeName) !== -1) return;
         if (
-          htmlTagsInlineText.indexOf(node.nodeName) === -1 &&
-          htmlTagsInlineIgnore.indexOf(node.nodeName) === -1
+          htmlTagsInlineText.indexOf(nodeName) === -1 &&
+          htmlTagsInlineIgnore.indexOf(nodeName) === -1
         ) {
           break;
         } else {

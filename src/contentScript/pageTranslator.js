@@ -270,50 +270,43 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   const tabHostName = _[1];
   const htmlTagsInlineText = [
     "#text",
-    "A",
-    "ABBR",
-    "ACRONYM",
-    "B",
-    "BDO",
-    "BIG",
-    "CITE",
-    "DFN",
-    "EM",
-    "I",
-    "LABEL",
-    "Q",
-    "S",
-    "SMALL",
-    "SPAN",
-    "STRONG",
-    "SUB",
-    "SUP",
-    "U",
-    "TT",
-    "VAR",
+    "a",
+    "abbr",
+    "acronym",
+    "b",
+    "bdo",
+    "big",
+    "cite",
+    "dfn",
+    "em",
+    "i",
+    "label",
+    "q",
+    "s",
+    "small",
+    "span",
+    "strong",
+    "sub",
+    "sup",
+    "u",
+    "tt",
+    "var",
   ];
-  const htmlTagsInlineIgnore = ["BR", "CODE", "KBD", "WBR"]; // and input if type is submit or button, and <pre> depending on settings
-  const htmlTagsNoTranslate = [
-    "TITLE",
-    "SCRIPT",
-    "STYLE",
-    "TEXTAREA",
-    "SVG",
-    "svg",
-  ]; //TODO verificar porque 'svg' é com letras minúsculas
+  const htmlTagsInlineIgnore = ["br", "code", "kbd", "wbr"]; // and input if type is submit or button, and <pre> depending on settings
+  const htmlTagsNoTranslate = ["title", "script", "style", "textarea", "svg"];
 
   if (twpConfig.get("translateTag_pre") !== "yes") {
-    htmlTagsInlineIgnore.push("PRE");
+    htmlTagsInlineIgnore.push("pre");
   }
   twpConfig.onChanged((name, newvalue) => {
     switch (name) {
       case "translateTag_pre":
-        const index = htmlTagsInlineIgnore.indexOf("PRE");
+        const index = htmlTagsInlineIgnore.indexOf("pre");
         if (index !== -1) {
           htmlTagsInlineIgnore.splice(index, 1);
         }
         if (newvalue !== "yes") {
-          htmlTagsInlineIgnore.push("PRE");
+          htmlTagsInlineIgnore.push("pre");
         }
         break;
     }
@@ -383,9 +376,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((addedNode) => {
-        if (htmlTagsNoTranslate.indexOf(addedNode.nodeName) == -1) {
-          if (htmlTagsInlineText.indexOf(addedNode.nodeName) == -1) {
-            if (htmlTagsInlineIgnore.indexOf(addedNode.nodeName) == -1) {
+        const nodeName = addedNode.nodeName.toLowerCase();
+        if (htmlTagsNoTranslate.indexOf(nodeName) == -1) {
+          if (htmlTagsInlineText.indexOf(nodeName) == -1) {
+            if (htmlTagsInlineIgnore.indexOf(nodeName) == -1) {
               piecesToTranslate.push(addedNode);
             }
           }
@@ -482,12 +476,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           lastSelectOrDataListElement = null;
         } else if (node.nodeType == 1) {
           lastHTMLElement = node;
-          if (node.nodeName === "SELECT" || node.nodeName === "DATALIST")
+          const nodeName = node.nodeName.toLowerCase();
+
+          if (nodeName === "select" || nodeName === "datalist")
             lastSelectOrDataListElement = node;
 
           if (
-            htmlTagsInlineIgnore.indexOf(node.nodeName) !== -1 ||
-            htmlTagsNoTranslate.indexOf(node.nodeName) !== -1 ||
+            htmlTagsInlineIgnore.indexOf(nodeName) !== -1 ||
+            htmlTagsNoTranslate.indexOf(nodeName) !== -1 ||
             node.classList.contains("notranslate") ||
             node.getAttribute("translate") === "no" ||
             node.isContentEditable ||
@@ -512,13 +508,15 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
         function getAllChilds(childNodes) {
           Array.from(childNodes).forEach((_node) => {
+            const nodeName = _node.nodeName.toLowerCase();
+
             if (_node.nodeType == 1) {
               lastHTMLElement = _node;
-              if (_node.nodeName === "SELECT" || _node.nodeName === "DATALIST")
+              if (nodeName === "select" || nodeName === "datalist")
                 lastSelectOrDataListElement = _node;
             }
 
-            if (htmlTagsInlineText.indexOf(_node.nodeName) == -1) {
+            if (htmlTagsInlineText.indexOf(nodeName) == -1) {
               if (piecesToTranslate[index].nodes.length > 0) {
                 currentParagraphSize = 0;
                 piecesToTranslate[index].bottomElement = lastHTMLElement;
@@ -568,7 +566,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             if (
               node &&
               node.parentNode &&
-              node.parentNode.nodeName === "OPTION" &&
+              node.parentNode.nodeName.toLowerCase() === "option" &&
               lastSelectOrDataListElement
             ) {
               piecesToTranslate[index].parentElement =
@@ -578,11 +576,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               piecesToTranslate[index].topElement = lastSelectOrDataListElement;
             } else {
               let temp = node.parentNode;
+              const nodeName = temp.nodeName.toLowerCase();
               while (
                 temp &&
                 temp != root &&
-                (htmlTagsInlineText.indexOf(temp.nodeName) != -1 ||
-                  htmlTagsInlineIgnore.indexOf(temp.nodeName) != -1)
+                (htmlTagsInlineText.indexOf(nodeName) != -1 ||
+                  htmlTagsInlineIgnore.indexOf(nodeName) != -1)
               ) {
                 temp = temp.parentNode;
               }
