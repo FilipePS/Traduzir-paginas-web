@@ -292,7 +292,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     "TT",
     "VAR",
   ];
-  const htmlTagsInlineIgnore = ["BR", "CODE", "KBD", "WBR"]; // and input if type is submit or button, and pre depending on settings
+  const htmlTagsInlineIgnore = ["BR", "CODE", "KBD", "WBR"]; // and input if type is submit or button, and <pre> depending on settings
   const htmlTagsNoTranslate = [
     "TITLE",
     "SCRIPT",
@@ -458,7 +458,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   };
   document.addEventListener("visibilitychange", handleVisibilityChange, false);
 
-  function getPiecesToTranslate(root = document.body) {
+  function getPiecesToTranslate(root = document.documentElement) {
     const piecesToTranslate = [
       {
         isTranslated: false,
