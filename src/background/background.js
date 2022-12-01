@@ -488,30 +488,37 @@ twpConfig.onReady(() => {
     if (chrome.pageAction && browser) {
       let pageLanguageState = "original";
 
-      let themeColorPopupText = null;
+      let themeColorFieldText = null;
+      let themeColorAttention = null;
       browser.theme.getCurrent().then((theme) => {
-        themeColorPopupText = null;
-        if (
-          theme.colors &&
-          (theme.colors.toolbar_field_text || theme.colors.popup_text)
-        ) {
-          themeColorPopupText =
-            theme.colors.toolbar_field_text || theme.colors.popup_text;
+        themeColorFieldText = null;
+        themeColorAttention = null;
+        if (theme.colors && theme.colors.toolbar_field_text) {
+          themeColorFieldText = theme.colors.toolbar_field_text;
         }
+        if (theme.colors && theme.colors.icons_attention) {
+          themeColorAttention = theme.colors.icons_attention;
+        }
+
         updateIconInAllTabs();
       });
 
       chrome.theme.onUpdated.addListener((updateInfo) => {
-        themeColorPopupText = null;
+        themeColorFieldText = null;
+        themeColorAttention = null;
         if (
           updateInfo.theme.colors &&
-          (updateInfo.theme.colors.toolbar_field_text ||
-            updateInfo.theme.colors.popup_text)
+          updateInfo.theme.colors.toolbar_field_text
         ) {
-          themeColorPopupText =
-            updateInfo.theme.colors.toolbar_field_text ||
-            updateInfo.theme.colors.popup_text;
+          themeColorFieldText = updateInfo.theme.colors.toolbar_field_text;
         }
+        if (
+          updateInfo.theme.colors &&
+          updateInfo.theme.colors.icons_attention
+        ) {
+          themeColorAttention = updateInfo.theme.colors.icons_attention;
+        }
+
         updateIconInAllTabs();
       });
 
@@ -527,7 +534,7 @@ twpConfig.onReady(() => {
         }
       );
 
-      function getSVGIcon() {
+      function getSVGIcon(incognito = false) {
         const svgXml = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path fill="$(fill);" fill-opacity="$(fill-opacity);" d="M 45 0 C 20.186 0 0 20.186 0 45 L 0 347 C 0 371.814 20.186 392 45 392 L 301 392 C 305.819 392 310.34683 389.68544 313.17383 385.77344 C 315.98683 381.84744 316.76261 376.82491 315.22461 372.25391 L 195.23828 10.269531 A 14.995 14.995 0 0 0 181 0 L 45 0 z M 114.3457 107.46289 L 156.19336 107.46289 C 159.49489 107.46289 162.41322 109.61359 163.39258 112.76367 L 163.38281 112.77539 L 214.06641 276.2832 C 214.77315 278.57508 214.35913 281.05986 212.93555 282.98828 C 211.52206 284.90648 209.27989 286.04688 206.87695 286.04688 L 179.28516 286.04688 C 175.95335 286.04687 173.01546 283.86624 172.06641 280.67578 L 159.92969 240.18945 L 108.77148 240.18945 L 97.564453 280.52344 C 96.655774 283.77448 93.688937 286.03711 90.306641 286.03711 L 64.347656 286.03711 C 61.954806 286.03711 59.71461 284.90648 58.291016 282.98828 C 56.867422 281.05986 56.442021 278.57475 57.138672 276.29297 L 107.14648 112.79492 C 108.11572 109.62465 111.03407 107.46289 114.3457 107.46289 z M 133.39648 137.70117 L 114.55664 210.03125 L 154.06445 210.03125 L 133.91211 137.70117 L 133.39648 137.70117 z " />
                     <path fill="$(fill);" fill-opacity="$(fill-opacity);" d="M226.882 378.932c28.35 85.716 26.013 84.921 34.254 88.658a14.933 14.933 0 0 0 6.186 1.342c5.706 0 11.16-3.274 13.67-8.809l36.813-81.19z" />
@@ -544,12 +551,18 @@ twpConfig.onReady(() => {
           twpConfig.get("popupBlueWhenSiteIsTranslated") === "yes"
         ) {
           svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "1.0");
-          svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#45a1ff"));
+          if (themeColorAttention) {
+            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorAttention));
+          } else if (darkMode || incognito) {
+            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#00ddff"));
+          } else {
+            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#0061e0"));
+          }
         } else {
           svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "0.5");
-          if (themeColorPopupText) {
-            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorPopupText));
-          } else if (darkMode) {
+          if (themeColorFieldText) {
+            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorFieldText));
+          } else if (darkMode || incognito) {
             svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "white"));
           } else {
             svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "black"));
@@ -561,17 +574,22 @@ twpConfig.onReady(() => {
       }
 
       function updateIcon(tabId) {
-        resetPageAction(tabId);
-        chrome.pageAction.setIcon({
-          tabId: tabId,
-          path: getSVGIcon(),
-        });
+        chrome.tabs.query({}, (tabs) => {
+          const tabInfo = tabs.find((tab) => tab.id === tabId);
+          const incognito = tabInfo ? tabInfo.incognito : false;
 
-        if (twpConfig.get("showButtonInTheAddressBar") == "no") {
-          chrome.pageAction.hide(tabId);
-        } else {
-          chrome.pageAction.show(tabId);
-        }
+          resetPageAction(tabId);
+          chrome.pageAction.setIcon({
+            tabId: tabId,
+            path: getSVGIcon(incognito),
+          });
+
+          if (twpConfig.get("showButtonInTheAddressBar") == "no") {
+            chrome.pageAction.hide(tabId);
+          } else {
+            chrome.pageAction.show(tabId);
+          }
+        });
       }
 
       function updateIconInAllTabs() {
