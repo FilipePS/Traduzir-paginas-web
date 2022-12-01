@@ -958,6 +958,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     fooCount++;
     pageTranslator.restorePage();
     showOriginal.enable();
+    chrome.runtime.sendMessage({ action: "removeTranslationsWithError" });
 
     dontSortResults = twpConfig.get("dontSortResults") == "yes" ? true : false;
 

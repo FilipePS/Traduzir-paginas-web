@@ -413,8 +413,27 @@ const translationService = (function () {
       this.cbTransformResponse = cbTransformResponse;
       this.cbGetExtraParameters = cbGetExtraParameters;
       this.cbGetRequestBody = cbGetRequestBody;
-      /** @type {Map<string, TranslationInfo>} */
+      /**
+       * @type {Map<string, TranslationInfo>}
+       *
+       * It works as an in-memory translation cache.
+       * Ensures that two identical requests share the same `XMLHttpRequest`.
+       * */
       this.translationsInProgress = new Map();
+    }
+
+    /**
+     * Removes all translations with `status` **error** and are in `translationsInProgress`.
+     *
+     * Sometimes there is a device translation error due to internet connection problems.
+     * Clearing translationsInProgress ensures that the translation will be retried.
+     */
+    removeTranslationsWithError() {
+      this.translationsInProgress.forEach((transInfo, key) => {
+        if (transInfo.status === "error") {
+          this.translationsInProgress.delete(key);
+        }
+      });
     }
 
     /**
@@ -597,8 +616,11 @@ const translationService = (function () {
                 transInfo.detectedLanguage = result.detectedLanguage || "und";
                 transInfo.translatedText = result.text;
                 transInfo.status = "complete";
-                //this.translationsInProgress.delete([sourceLanguage, targetLanguage, transInfo.originalText])
-                if (dontSaveInPersistentCache === false) {
+
+                if (
+                  dontSaveInPersistentCache === false &&
+                  transInfo.translatedText
+                ) {
                   translationCache.set(
                     this.serviceName,
                     sourceLanguage,
@@ -1226,6 +1248,12 @@ const translationService = (function () {
         });
 
       return true;
+    } else if (request.action === "removeTranslationsWithError") {
+      serviceList.forEach((service) => {
+        if (service.removeTranslationsWithError) {
+          service.removeTranslationsWithError();
+        }
+      });
     }
   });
 
