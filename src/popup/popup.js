@@ -282,7 +282,7 @@ twpConfig.onReady(function () {
                 color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
             }
-            
+
             .mdiv, .md, {
                 background-color: rgb(231, 230, 228);
             }
@@ -298,7 +298,7 @@ twpConfig.onReady(function () {
                 background-color: #454a4d !important;
                 color: rgb(231, 230, 228) !important;
             }
-            
+
             select {
                 color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
@@ -602,9 +602,7 @@ twpConfig.onReady(function () {
                 } else {
                   // google
                   chrome.tabs.create({
-                    url: `https://translate.google.${
-                      "zh-cn" == navigator.language.toLowerCase() ? "cn" : "com"
-                    }/translate?tl=${twpConfig.get(
+                    url: `https://translate.google.com/translate?tl=${twpConfig.get(
                       "targetLanguage"
                     )}&u=${encodeURIComponent(tabs[0].url)}`,
                   });

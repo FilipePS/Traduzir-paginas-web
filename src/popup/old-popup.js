@@ -61,7 +61,7 @@ twpConfig.onReady(function () {
   {
     let langs = twpLang.getLanguageList();
     lblTranslate.textContent = chrome.i18n.getMessage("lblTranslatePageInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage"))
-    lblTranslated.textContent = chrome.i18n.getMessage("lblPageTranslateInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage")) 
+    lblTranslated.textContent = chrome.i18n.getMessage("lblPageTranslateInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage"))
 
     const langsSorted = [];
 
@@ -101,18 +101,18 @@ twpConfig.onReady(function () {
             * {
                 scrollbar-color: #202324 #454a4d;
             }
-            
+
             body {
                 color: #e8e6e3 !important;
                 background-color: #181a1b !important;
                 border: 1px solid #454a4d;
             }
-            
+
             #btnSwitchInterfaces:hover {
                 background-color: #454a4d !important;
                 color: rgb(231, 230, 228) !important;
             }
-            
+
             #selectTargetLanguage, select, option, #btnReset, #btnRestore, #btnTryAgain, #btnOptionB {
                 color: #55a9ed !important;
                 background-color: #181a1b !important;
@@ -391,7 +391,7 @@ twpConfig.onReady(function () {
         } else {
           twpConfig.setTargetLanguage(selectTargetLanguage.value);
         }
-        
+
         const langs = twpLang.getLanguageList()
         lblTranslate.textContent = chrome.i18n.getMessage("lblTranslatePageInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage"))
         lblTranslated.textContent = chrome.i18n.getMessage("lblPageTranslateInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage"))
@@ -589,9 +589,7 @@ twpConfig.onReady(function () {
                 } else {
                   // google
                   chrome.tabs.create({
-                    url: `https://translate.google.${
-                      "zh-cn" == navigator.language.toLowerCase() ? "cn" : "com"
-                    }/translate?tl=${twpConfig.get(
+                    url: `https://translate.google.com/translate?tl=${twpConfig.get(
                       "targetLanguage"
                     )}&u=${encodeURIComponent(tabs[0].url)}`,
                   });
