@@ -93,6 +93,11 @@ async function handleCustomWords(
   try {
     const customDictionary = twpConfig.get("customDictionary");
     if (customDictionary.size > 0) {
+      // If the translation is a single word and exists in the dictionary, return it directly
+      let customValue = customDictionary.get(originalText.trim());
+      if(customValue)
+        return customValue;
+
       translated = removeExtraDelimiter(translated);
       translated = translated.replaceAll(startMark0, startMark);
       translated = translated.replaceAll(endMark0, endMark);
