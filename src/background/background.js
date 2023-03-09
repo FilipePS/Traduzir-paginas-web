@@ -485,42 +485,44 @@ twpConfig.onReady(() => {
       }
     });
 
-    if (chrome.pageAction && browser) {
+    {
       let pageLanguageState = "original";
 
       let themeColorFieldText = null;
       let themeColorAttention = null;
-      browser.theme.getCurrent().then((theme) => {
-        themeColorFieldText = null;
-        themeColorAttention = null;
-        if (theme.colors && theme.colors.toolbar_field_text) {
-          themeColorFieldText = theme.colors.toolbar_field_text;
-        }
-        if (theme.colors && theme.colors.icons_attention) {
-          themeColorAttention = theme.colors.icons_attention;
-        }
+      if (browser.theme) {
+        browser.theme.getCurrent().then((theme) => {
+          themeColorFieldText = null;
+          themeColorAttention = null;
+          if (theme.colors && theme.colors.toolbar_field_text) {
+            themeColorFieldText = theme.colors.toolbar_field_text;
+          }
+          if (theme.colors && theme.colors.icons_attention) {
+            themeColorAttention = theme.colors.icons_attention;
+          }
 
-        updateIconInAllTabs();
-      });
+          updateIconInAllTabs();
+        });
 
-      chrome.theme.onUpdated.addListener((updateInfo) => {
-        themeColorFieldText = null;
-        themeColorAttention = null;
-        if (
-          updateInfo.theme.colors &&
-          updateInfo.theme.colors.toolbar_field_text
-        ) {
-          themeColorFieldText = updateInfo.theme.colors.toolbar_field_text;
-        }
-        if (
-          updateInfo.theme.colors &&
-          updateInfo.theme.colors.icons_attention
-        ) {
-          themeColorAttention = updateInfo.theme.colors.icons_attention;
-        }
+        chrome.theme.onUpdated.addListener((updateInfo) => {
+          themeColorFieldText = null;
+          themeColorAttention = null;
+          if (
+            updateInfo.theme.colors &&
+            updateInfo.theme.colors.toolbar_field_text
+          ) {
+            themeColorFieldText = updateInfo.theme.colors.toolbar_field_text;
+          }
+          if (
+            updateInfo.theme.colors &&
+            updateInfo.theme.colors.icons_attention
+          ) {
+            themeColorAttention = updateInfo.theme.colors.icons_attention;
+          }
 
-        updateIconInAllTabs();
-      });
+          updateIconInAllTabs();
+        });
+      }
 
       let darkMode = false;
       darkMode = matchMedia("(prefers-color-scheme: dark)").matches;
@@ -578,16 +580,35 @@ twpConfig.onReady(() => {
           const tabInfo = tabs.find((tab) => tab.id === tabId);
           const incognito = tabInfo ? tabInfo.incognito : false;
 
-          resetPageAction(tabId);
-          chrome.pageAction.setIcon({
-            tabId: tabId,
-            path: getSVGIcon(incognito),
-          });
+          if (chrome.pageAction) {
+            resetPageAction(tabId);
+            chrome.pageAction.setIcon({
+              tabId: tabId,
+              path: getSVGIcon(incognito),
+            });
 
-          if (twpConfig.get("showButtonInTheAddressBar") == "no") {
-            chrome.pageAction.hide(tabId);
-          } else {
-            chrome.pageAction.show(tabId);
+            if (twpConfig.get("showButtonInTheAddressBar") == "no") {
+              chrome.pageAction.hide(tabId);
+            } else {
+              chrome.pageAction.show(tabId);
+            }
+          }
+
+          if (chrome.browserAction) {
+            if (
+              pageLanguageState === "translated" &&
+              twpConfig.get("popupBlueWhenSiteIsTranslated") === "yes"
+            ) {
+              chrome.browserAction.setIcon({
+                tabId: tabId,
+                path: "/icons/icon-32-translated.png",
+              });
+            } else {
+              chrome.browserAction.setIcon({
+                tabId: tabId,
+                path: "/icons/icon-32.png",
+              });
+            }
           }
         });
       }
