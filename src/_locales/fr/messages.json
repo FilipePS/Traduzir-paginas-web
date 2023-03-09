@@ -282,16 +282,10 @@
     "message": "Basculer entre les services de traduction"
   },
   "swapPopup": {
-    "message": "Basculer entre l'ancienne interface et la nouvelle"
-  },
-  "helpSwapInterface": {
-    "message": "Cliquez sur ce bouton pour basculer entre l'ancienne et la nouvelle interface."
+    "message": "Switch between simple and complex interface"
   },
   "lblTranslationService": {
     "message": "Service de traduction"
-  },
-  "msgUseOldPopupInterface": {
-    "message": "Utilisez l'ancienne interface contextuelle"
   },
   "lblTranslateInterface": {
     "message": "Traduire l'interface"
@@ -483,5 +477,50 @@
   },
   "optionsAddToCustomDictionary": {
     "message": "Ajouter au dictionnaire personnalisé (cela vous permet d'ignorer certains mots lors de la traduction de la page Web)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Translate websites into this target language"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Translate selected text into this target language"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorite languages"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Select popup interface style"
+  },
+  "msgInterfaceSimple": {
+    "message": "Simple"
+  },
+  "msgInterfaceComplex": {
+    "message": "Complex"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
   }
 }

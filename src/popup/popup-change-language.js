@@ -2,53 +2,53 @@
 
 let $ = document.querySelector.bind(document);
 
-const selectTargetLanguage = $("select")
+const selectTargetLanguage = $("select");
 
 $("#btnClose").addEventListener("click", () => {
-    window.location = "popup.html"
-})
+  window.location = "popup.html";
+});
 
 $("#btnApply").addEventListener("click", () => {
-    twpConfig.setTargetLanguage(selectTargetLanguage.value, true)
-    window.location = "popup.html"
-})
+  twpConfig.setTargetLanguage(selectTargetLanguage.value, true);
+  window.location = "popup.html";
+});
 
 twpConfig.onReady(function () {
-    let langs = twpLang.getLanguageList()
+  let langs = twpLang.getLanguageList();
 
-    const langsSorted = []
+  const langsSorted = [];
 
-    for (const i in langs) {
-        langsSorted.push([i, langs[i]])
-    }
+  for (const i in langs) {
+    langsSorted.push([i, langs[i]]);
+  }
 
-    langsSorted.sort(function (a, b) {
-        return a[1].localeCompare(b[1]);
-    })
+  langsSorted.sort(function (a, b) {
+    return a[1].localeCompare(b[1]);
+  });
 
-    const eAllLangs = selectTargetLanguage.querySelector('[name="all"]')
-    langsSorted.forEach(value => {
-        const option = document.createElement("option")
-        option.value = value[0]
-        option.textContent = value[1]
-        eAllLangs.appendChild(option)
-    })
-    
-    const eRecentsLangs = selectTargetLanguage.querySelector('[name="targets"]')
-    for (const value of twpConfig.get("targetLanguages")) {
-        const option = document.createElement("option")
-        option.value = value
-        option.textContent = langs[value]
-        eRecentsLangs.appendChild(option)
-    }
-    selectTargetLanguage.value = twpConfig.get("targetLanguages")[0]
+  const eAllLangs = selectTargetLanguage.querySelector('[name="all"]');
+  langsSorted.forEach((value) => {
+    const option = document.createElement("option");
+    option.value = value[0];
+    option.textContent = value[1];
+    eAllLangs.appendChild(option);
+  });
 
-    function disableDarkMode() {
-        if (!$("#lightModeElement")) {
-            const el = document.createElement("style")
-            el.setAttribute("id", "lightModeElement")
-            el.setAttribute("rel", "stylesheet")
-            el.textContent = `
+  const eRecentsLangs = selectTargetLanguage.querySelector('[name="targets"]');
+  for (const value of twpConfig.get("targetLanguages")) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = langs[value];
+    eRecentsLangs.appendChild(option);
+  }
+  selectTargetLanguage.value = twpConfig.get("targetLanguages")[0];
+
+  function disableDarkMode() {
+    if (!$("#lightModeElement")) {
+      const el = document.createElement("style");
+      el.setAttribute("id", "lightModeElement");
+      el.setAttribute("rel", "stylesheet");
+      el.textContent = `
             body {
                 color: rgb(0, 0, 0);
                 background-color: rgb(224, 224, 224);
@@ -66,32 +66,32 @@ twpConfig.onReady(function () {
             .mdiv, .md {
                 background-color: rgb(0, 0, 0);
             }
-            `
-            document.head.appendChild(el)
-        }
+            `;
+      document.head.appendChild(el);
     }
+  }
 
-    function enableDarkMode() {
-        if ($("#lightModeElement")) {
-            $("#lightModeElement").remove()
-        }
+  function enableDarkMode() {
+    if ($("#lightModeElement")) {
+      $("#lightModeElement").remove();
     }
+  }
 
-    switch (twpConfig.get("darkMode")) {
-        case "auto":
-            if (matchMedia("(prefers-color-scheme: dark)").matches) {
-                enableDarkMode()
-            } else {
-                disableDarkMode()
-            }
-            break
-        case "yes":
-            enableDarkMode()
-            break
-        case "no":
-            disableDarkMode()
-            break
-        default:
-            break
-    }
-})
+  switch (twpConfig.get("darkMode")) {
+    case "auto":
+      if (matchMedia("(prefers-color-scheme: dark)").matches) {
+        enableDarkMode();
+      } else {
+        disableDarkMode();
+      }
+      break;
+    case "yes":
+      enableDarkMode();
+      break;
+    case "no":
+      disableDarkMode();
+      break;
+    default:
+      break;
+  }
+});

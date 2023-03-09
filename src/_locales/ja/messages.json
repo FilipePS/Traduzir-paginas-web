@@ -282,16 +282,10 @@
     "message": "翻訳サービスを切り替える"
   },
   "swapPopup": {
-    "message": "古いインターフェースと新しいインターフェースを切り替える"
-  },
-  "helpSwapInterface": {
-    "message": "このボタンで、古いインターフェースと新しいインターフェースを切り替えることができます。"
+    "message": "Switch between simple and complex interface"
   },
   "lblTranslationService": {
     "message": "翻訳サービス"
-  },
-  "msgUseOldPopupInterface": {
-    "message": "古いポップアップインターフェースを使用"
   },
   "lblTranslateInterface": {
     "message": "インターフェースを翻訳"
@@ -483,5 +477,50 @@
   },
   "optionsAddToCustomDictionary": {
     "message": "カスタム辞書に追加 (これにより、Web ページの翻訳中に特定の単語をスキップできます)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Translate websites into this target language"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Translate selected text into this target language"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorite languages"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Select popup interface style"
+  },
+  "msgInterfaceSimple": {
+    "message": "Simple"
+  },
+  "msgInterfaceComplex": {
+    "message": "Complex"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
   }
 }

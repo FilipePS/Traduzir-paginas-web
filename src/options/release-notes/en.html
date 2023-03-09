@@ -1,0 +1,930 @@
+<section>
+    <h4>9.7</h4>
+    <ul>
+        <li>Corrigido: Always translate this site não funciona se o idioma for desconhecido. Fix #352</li>
+        <li>Pequena melhoria de performance</li>
+        <li>Converter nodeName para lowerCase para evitar problemas com nodes XML</li>
+        <li>garantiar que não sera armazenado nenhuma entrada nula no cache</li>
+        <li>quando clicar em traduzir novamente, se ouver algum translationInProgress com erro remover ela do Map</li>
+        <li>Added custom dictionary.</li>
+        <li>Refactored several files.</li>
+        <li>interface simples e complexa</li>
+        <li>Translate page into **; Page translated into **</li>
+        <li>Organizar listas por ordem alfabética</li>
+        <li>Ocultar always transte from **; se o idioma de destino for o mesmo idioma do site</li>
+        <li>Alterado o termo "targetLanguages" para "favoriteLangues". Opção de alterar os idiomas de destino na página
+            de configuração.</li>
+        <li>Preservar nodo de texto original #393. Não encapsular nodo de texto se a opção
+            `showOriginalTextWhenHovering` não estiver ativa Closes #295</li>
+        <li>Corrigido: material icons também são traduzidos - Fix #481</li>
+        <li>Interface localization in 5 new languages. In total, the extension's interface is localized in 38 languages,
+            thanks to everyone who contributed.</li>
+    </ul>
+</section>
+<section>
+    <h4>9.6.1</h4>
+    <ul>
+        <li>Support for older versions of Firefox.</li>
+        <li>Updated interface translations.</li>
+    </ul>
+</section>
+<section>
+    <h4>9.6</h4>
+    <ul>
+        <li>Added:
+            <ul>
+                <li>Option to replace selected text with translated text
+                    <ul>
+                        <li>When you type a message, select the message and translate the selected text, instead of the
+                            copy text button there will be a button to replace/paste the translated text with the
+                            selected text.</li>
+                        <li>If the <code
+                                style="background-color: lightgray;">Translate selected text when pressing <kbd>Ctrl</kbd> twice</code>
+                            option is enabled. Hitting <kbd>Ctrl</kbd> when the popup is open will be the same as
+                            clicking that new button.</li>
+                        <li>When selecting text, the shortcut <kbd>Ctrl+Alt+X</kbd> will translate and replace the
+                            selected text instantly without showing any popup.
+                            <ul>
+                                <li>You can edit this hotkey in the extension's settings.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Added 33 new target languages: <i>Assamese, Aymara, Bambara, Bashkir, Bhojpuri, Chuvash, Dhivehi,
+                        Dogri, Ewe, Guarani, Hill Mari, Ilocano, Kazakh (Latin), Konkani, Krio, Kurdish (Sorani),
+                        Lingala, Luganda, Mari, Maithili, Meiteilon (Manipuri), Mizo, Oromo, Papiamento, Quechua,
+                        Sanskrit, Sepedi, Tigrinya, Tsonga, Twi, Udmurt, Uzbek (Cyrillic), Yakut</i></li>
+                <li>Translation for language names in: <i>Catalan, Danish, Greek, Hungarian, Icelandic, Korean, Persian,
+                        Swedish, Thai and Portuguese (Portugal).</i></li>
+            </ul>
+        </li>
+        <li>Fixed:
+            <ul>
+                <li>Some parts of the translation are lost and consequently parts of the page are left untranslated</li>
+                <li>The <i><code>&lt;option&gt;</code></i> html tag is not translated.</li>
+                <li>Fixed: <i>showOriginalTextWhenHovering</i> always translates placeholder instead of value</li>
+                <li>Traditional Chinese is not detected as site language</li>
+                <li>text-to-speech does not work on long texts in some languages</li>
+                <li>Option to reset/import settings does not work in firefox android</li>
+                <li>The <b>original</b> button is blue even when the page is translated on android</li>
+                <li>Bugs related to invalid language code</li>
+                <li>Bugs related to translation with DeepL</li>
+            </ul>
+        </li>
+        <li>Changes:
+            <ul>
+                <li>Now text-to-speech has an in-memory cache</li>
+                <li>Now the translation service will change silently if the selected target language is not supported by
+                    the preferred translation service.</li>
+                <li>Updated interface translations</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h4>9.5.5</h4>
+    <ul>
+        <li>Added:
+            <ul>
+                <li>Option to configure four more hotkey settings for chromium browsers. (same options as in Firefox and
+                    missing in chromium browsers).</li>
+            </ul>
+        </li>
+        <li>Changed:
+            <ul>
+                <li>Now the extension name is <b>TWP - Translate Web Pages</b> in all languages.</li>
+                <li>Disabled the transparent visual style of the translate selected text panel in chromium-based
+                    browsers.</li>
+            </ul>
+        </li>
+        <li>Fixed:
+            <ul>
+                <li>Translate Selected Text panel always appears on the left side of the screen in chromium-based
+                    browsers.</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h4>9.5.4</h4>
+    <ul>
+        <li>Changed donation button position.</li>
+    </ul>
+</section>
+<section>
+    <h4>9.5.3</h4>
+    <ul>
+        <li>Fixed:
+            <ul>
+                <li>The button to listen to the selected text overlays some of the text</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h4>9.5.2</h4>
+    <ul>
+        <li>Fixed:
+            <ul>
+                <li>Link to translate via Yandex in new tab</li>
+                <li>Bing was not translating to these languages: <i>Hmong, Kurdish (Sorani), Mongolian, Norwegian and
+                        Serbian.</i></li>
+            </ul>
+        </li>
+        <li>Update interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>9.5.1</h4>
+    <ul>
+        <li>Added:
+            <ul>
+                <li>Button to listen to the original text</li>
+            </ul>
+        </li>
+        <li>Fixed:
+            <ul>
+                <li>Transparency in modified versions of Firefox</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h4>9.5</h4>
+    <ul>
+        <li>Added:
+            <ul>
+                <li>Visual improvements in several parts of the extension. Thanks to: <i>CaganAgabey</i></li>
+                <li>Button to copy selected translated text</li>
+            </ul>
+        </li>
+        <li>Fixed:
+            <ul>
+                <li><strong>Fixed: Donation button doesn't work</strong></li>
+                <li>Bing translate does not work</li>
+                <li>Translate PDF with google translation only translates to Portuguese</li>
+                <li>Sometimes the translate selected text popup appears off screen.</li>
+                <li>When translating selected text on some websites, there is no way to manually copy the text.</li>
+                <li><em>Input of type reset</em> is not translated</li>
+            </ul>
+        </li>
+        <li>Changes:
+            <ul>
+                <li>Now you can translate into <em>about:blank</em></li>
+            </ul>
+        </li>
+        <li>Updated interface translations</li>
+        <li>General fixes and improvements.</li>
+    </ul>
+</section>
+<section>
+    <h4>9.4.2</h4>
+    <ul>
+        <li>Fixed bug: Some texts disappear when translating with the option <b>Do not sort the google translate
+                results</b> enabled.</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>9.4.1</h4>
+    <ul>
+        <li>Fixed bug: youtube comments are not translated sometimes</li>
+        <li>Added: Translate PDF automatically after converting it into HTML</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>9.4</h4>
+    <ul>
+        <li>Added:
+            <ul>
+                <li>PDF Translation
+                    <ul>
+                        <li>To translate a PDF it is necessary to convert it into HTML.</li>
+                        <li>You can convert using one of these services:
+                            <ul>
+                                <li><b><em>translatewebpages.org</em></b></li>
+                                <li><b><em>translate.googleusercontent.com</em></b></li>
+                            </ul>
+                        </li>
+                        <li>Files uploaded to <b><em>translatewebpages.org</em></b> will be deleted in 24 hours.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Changes:
+            <ul>
+                <li>Every time the extension updates the translation cache it will be automatically deleted.</li>
+                <li>Now all translated text nodes will be encapsulated in a FONT element
+                    <ul>
+                        <li>This allows the <em>"Show original text when hovering"</em> feature to work on more sites
+                        </li>
+                    </ul>
+                </li>
+                <li>Improved: Detection of which texts are being shown on the screen
+                    <ul>
+                        <li>Texts in iframes will only be translated when the iframe is visible</li>
+                    </ul>
+                </li>
+                <li>Improved: Translation appears a little faster when starting to translate the page.</li>
+                <li>Hide text translation panel if you click on an iframe</li>
+                <li>Stops playing audio if you close the tab</li>
+            </ul>
+        </li>
+        <li>Fixed:
+            <ul>
+                <li>Crash issues when translating certain sites</li>
+                <li>Parts of the page are not restored when using a text marker extension </li>
+                <li>After restarting the browser the option <em>"AutoTranslateWhenClickingALink"</em> stops working</li>
+                <li>Sometimes the extension doesn't work</li>
+            </ul>
+        </li>
+        <li>Updated interface translations</li>
+        <li>Bug fixes and general improvements</li>
+    </ul>
+</section>
+<section>
+    <h4>9.3</h4>
+    <ul>
+        <li>Added: (These features need to be enabled in the settings)
+            <ul>
+                <li>Button to open the shortcut key manager in chromium-based browsers</li>
+                <li>Translate selected text when pressing <b>Ctrl</b> twice</li>
+                <li>Translate the text over the mouse cursor when pressing <b>Ctrl</b> twice</li>
+                <li>Translate the page by clicking once on the button in the address bar. (To see the popup,
+                    right-click)</li>
+            </ul>
+        </li>
+        <li>Changes:
+            <ul>
+                <li>Do not hide the selected text translation panel when switching tabs</li>
+                <li>Show the panel to translate the selected text, even if there is a translation error</li>
+                <li>Some settings that are not used on mobile devices have been hidden</li>
+            </ul>
+        </li>
+        <li>Fixed:
+            <ul>
+                <li>Problem with <i>CSP</i> when showing translation panel on some sites</li>
+                <li>When typing text to translate, key events are triggered in the page listeners</li>
+                <li>Translate selected text button reappears when clicking a scroll bar</li>
+                <li>The "Show translated when hovering" panel is shown while translating the selected text</li>
+                <li>Some features don't work sometimes</li>
+                <li>Some parts of the page are not restored when the <b>Do not sort the google translate results</b>
+                    option is enabled.</li>
+            </ul>
+        </li>
+        <li>Updated interface translations</li>
+        <li>Bug fixes and general improvements</li>
+    </ul>
+</section>
+<section>
+    <h4>9.2</h4>
+    <ul>
+        <li>The <b>webNavigation</b> permission is now optional. If you use the
+            <code>Automatically translate when clicking on a link that takes you to the same domain as the current site</code>
+            option, enable it again in the translation settings.
+        </li>
+        <li>Now the button to translate selected text is automatically hidden when you press any key</li>
+        <li>Updated interface translations</li>
+        <li>Bug fixes and general improvements</li>
+    </ul>
+</section>
+<section>
+    <h4>9.1</h4>
+    <ul>
+        <li>Added:
+            <ul>
+                <li>Bing as a text translation service</li>
+                <li>Do not sort the google translate results</li>
+                <li>Automatically translate when clicking on a link that takes you to the same domain as the current
+                    site</li>
+                <li>Translate dynamically created content
+                    <ul>
+                        <li>This feature already exists, but now you can choose to disable it.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>The old interface is enabled by default</li>
+        <li>Bug fixes and general improvements</li>
+    </ul>
+</section>
+<section>
+    <h4>9.0.4</h4>
+    <ul>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>9.0.3</h4>
+    <ul>
+        <li>Fixed
+            <ul>
+                <li>Some settings are not saved when using Firefox Mobile</li>
+            </ul>
+        </li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>9.0.2</h4>
+    <ul>
+        <li>Fixed
+            <ul>
+                <li>There is no way to change the shortcut keys when using a keyboard with a Russian layout.</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h4>9.0.1</h4>
+    <ul>
+        <li>Fixed
+            <ul>
+                <li>Text direction in RTL languages</li>
+                <li>The context menu entry "Translate selected text" is not working in version 9.0 if you disable the
+                    option "Show the button to translate the selected text"</li>
+                <li>A randomly occurring bug that stops the extension working.</li>
+            </ul>
+        </li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>9.0</h4>
+    <ul>
+        <li>Added
+            <ul>
+                <li>DeepL as a translation service
+                    <ul>
+                        <li>Only for translation of selected text (not when hovering)</li>
+                        <li>When you translate for the first time, the DeepL website will open. Keep the tab open and
+                            the next texts will be translated without having to change the tab.</li>
+                    </ul>
+                </li>
+                <li>Storage options
+                    <ul>
+                        <li>Translation cache
+                            <ul>
+                                <li>View used space</li>
+                                <li>Delete the cache*</li>
+                            </ul>
+                        </li>
+                        <li>Personal settings
+                            <ul>
+                                <li>Backup to file</li>
+                                <li>Restore from file*</li>
+                                <li>Restore default configuration*</li>
+                            </ul>
+                        </li>
+                        <li>* After using these options the extension will be reloaded </li>
+                    </ul>
+                <li>Shortcuts
+                    <ul>
+                        <li>Options for changing keyboard shortcuts</li>
+                        <li>Default shortcuts
+                            <ul>
+                                <li><kbd>Ctrl+Alt+T</kbd> Switch between the translated and the original page</li>
+                                <li><kbd>Ctrl+Alt+S</kbd> Translate selected text</li>
+                                <li><kbd>Ctrl+Alt+Q</kbd> Switch between translation services</li>
+                                <li><kbd>Alt+0</kbd> Restore page to original</li>
+                                <li><kbd>Alt+1</kbd> <kbd>Alt+2</kbd> <kbd>Alt+3</kbd> Translate to specific target
+                                    languages</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>When to translate selected text
+                    <ul>
+                        <li>View original text</li>
+                        <li>Translate the text you type in place of the original text</li>
+                        <li>You can also drag this popup</li>
+                    </ul>
+                </li>
+                <li>Option to control audio speed (tts)</li>
+                <li>Option to hide the button in the address bar</li>
+                <li>Option to translate the <kbd>PRE</kbd> tag</li>
+                <li>More options in the 3-point menu, and the old popup options button
+                    <ul>
+                        <li>Show original text when hovering</li>
+                        <li>Show translation when hovering over this site</li>
+                        <li>Show translation when hovering over websites in PAGE_LANGUAGE</li>
+                    </ul>
+                </li>
+        </li>
+    </ul>
+    </li>
+    <li>Changes
+        <ul>
+            <li>The language for page and text translation may now be different</li>
+            <li>The page and text translation service can now be different</li>
+            <li>When an HTML element has a notranslate attribute, its attributes will not be translated</li>
+            <li>When translating the page with Google, the text formatting will be maintained</li>
+            <li>The <kbd>PRE</kbd> tag is translated by default</li>
+            <li>When using the old popup or in the popup the additional translation languages have been hidden, the
+                automatic translation of the page (the one that happens as soon as you open the site), will use
+                targetLanguage1, instead of your previous preference.</li>
+        </ul>
+    </li>
+    <li>Fixed
+        <ul>
+            <li>Translation with Yandex</li>
+            <li>Text formatting when showing original when hovering</li>
+            <li>Among others</li>
+        </ul>
+    </li>
+    <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.9.3</h4>
+    <ul>
+        <li>When you click to translate the selected text in the context menu, the translation will only be done in the
+            popup in the address bar if it is not possible to inject the scripts on the page. That is, only if the page
+            is in read mode or is from some domain without permission for scripts like "addons.mozilla.org".</li>
+    </ul>
+</section>
+<section>
+    <h4>8.9.2</h4>
+    <ul>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.9.1</h4>
+    <ul>
+        <li>Fixed: Translation of the text selected by the context menu does not work if using dark mode</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.9</h4>
+    <ul>
+        <li>Changes:
+            <ul>
+                <li>Now when clicking on "Translate selected text" in the context menu, the text will be translated in
+                    the popup in the address bar</li>
+                <li>Translate selected text on pages that are not possible to inject scripts such as
+                    "addons.mozilla.org" and "about:reader". Only by the button in the context menu</li>
+            </ul>
+        </li>
+        <li>Fixed:
+            <ul>
+                <li>Sometimes the popup is not displayed correctly</li>
+                <li>Parts of the page are not restored when you click "Original"</li>
+                <li>The pop up shown when translating when hovering, disappears and appears when you click into another
+                    target language or translation service</li>
+                <li>Among others</li>
+            </ul>
+        </li>
+        <li>Optimization in the translation of dynamically created elements</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.8</h4>
+    <ul>
+        <li>Added:
+            <ul>
+                <li>In the 3-point menu
+                    <ul>
+                        <li>Option to always translate this site</li>
+                        <li>Option to translate the selected text</li>
+                        <li>These options appear only if the checkboxes that perform the same function are hidden</li>
+                    </ul>
+                </li>
+                <li>Button to open crowdin in settings</li>
+            </ul>
+        </li>
+        <li>Fixed:
+            <ul>
+                <li>Icons do not turn blue when the site is translated (when using themes)</li>
+                <li>Some pages that use shadowRoot are not translated.</li>
+            </ul>
+        </li>
+        <li>Changed the default value of popupPanelSection from 2 to 1</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.7</h4>
+    <ul>
+        <li>Added:
+            <ul>
+                <li>Help title on some popup buttons</li>
+                <li>A message teaching you to switch between the new and the old interface quickly.</li>
+            </ul>
+        </li>
+        <li>Changes:
+            <ul>
+                <li>In private tabs:
+                    <ul>
+                        <li>Do not save translation cache</li>
+                        <li>Do not translate automatically</li>
+                    </ul>
+                </li>
+                <li>Now when you click on a translate button, the order of the buttons will not be changed
+                    automatically.</li>
+            </ul>
+        </li>
+        <li>Fixed:
+            <ul>
+                <li>tts does not work on long texts</li>
+                <li>among other bugs</li>
+            </ul>
+        </li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.6.1</h4>
+    <ul>
+        <li>Fixed bug: text to speech does not work on some sites</li>
+    </ul>
+</section>
+<section>
+    <h4>8.6</h4>
+    <ul>
+        <li>Added in the popup to translate selected text and translate when hovering
+            <ul>
+                <li>Keep text formatting</li>
+                <li>Buttons to change the target language</li>
+                <li>Buttons to change the translation service</li>
+                <li>Button to listen to the translated text</li>
+            </ul>
+        </li>
+        <li>Updated interface translations</li>
+        <li>Fixed bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>8.5.2</h4>
+    <ul>
+        <li>Fixed a bug where parts of the page were not restored</li>
+    </ul>
+</section>
+<section>
+    <h4>8.5.1</h4>
+    <ul>
+        <li>Fixed translating with yandex</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.5</h4>
+    <ul>
+        <li>Added a button in the popup to switch between the old interface and the new one</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.4.2</h4>
+    <ul>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.4.1</h4>
+    <ul>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.4</h4>
+    <ul>
+        <li>Added option to use the old popup interface in settings</li>
+        <li>Added "Show the button to translate the selected text" checkbox in the popup </li>
+        <li>Added an option in the mobile popup to switch the translation of selected text</li>
+        <li>The default value of "Do not show if the page language is the target language" is now "no"
+        </li>
+        <li>Now when a site is marked to never be translated, "✔" will appear next to the option "Never
+            translate this site". The same goes for other options like "Never translate this language"
+        </li>
+        <li>Fixed bugs</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.3</h4>
+    <ul>
+        <li>Added the following settings to show the "translate selected text button":
+            <ul>
+                <li>Do not show if the page language is the target language (default: yes)</li>
+                <li>Do not show if the page language is unknown (default: no)</li>
+                <li>Do not show if the selected text language is the target language (default: yes)</li>
+                <li>Do not show if the selected text language is unknown (default: no)</li>
+            </ul>
+        </li>
+        <li>Added options to hide the context menu buttons</li>
+        <li>Fixed bugs</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.2.2</h4>
+    <ul>
+        <li>Fixed bugs</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>8.2.1</h4>
+    <ul>
+        <li>Fixed bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>8.2</h4>
+    <ul>
+        <li>Added in the popup
+            <ul>
+                <li>Checkbox to always translate this site</li>
+                <li>Checkbox to show the original text when hovering</li>
+                <li>Buttons to expand and contract popup sessions</li>
+            </ul>
+        </li>
+        <li>Show original text when hovering is now disabled by default</li>
+        <li>Added translation for shadowRoot elements</li>
+        <li>Now when the site is translated, the pop up icon will turn blue</li>
+        <li>Updated interface translations</li>
+        <li>Fixed some bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>8.1.1</h4>
+    <ul>
+        <li>Updated interface translations for: Korean and Chinese Simplified</li>
+    </ul>
+</section>
+<section>
+    <h4>8.1</h4>
+    <ul>
+        <li>Added in the popup
+            <ul>
+                <li>The first button now contains the text "Original", its functionality is and has
+                    always been to show the original text</li>
+                <li>Checkbox to always translate a language</li>
+                <li>Checkbox to translate when hovering on this site</li>
+            </ul>
+        </li>
+        <li>Fixed
+            <ul>
+                <li>Text "undefined" in translation</li>
+                <li>Some elements not being translated</li>
+                <li>Among other bugs</li>
+            </ul>
+        </li>
+        <li>Because privacy issues, hover translation is disabled by default. It is necessary to
+            activate individually for each site</li>
+        <li>Updated interface translations for
+            <ul>
+                <li>Turkish</li>
+                <li>German</li>
+                <li>Vietnamese</li>
+                <li>Chinese Traditional</li>
+                <li>Japanese</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h4>8.0.4</h4>
+    <ul>
+        <li>Fixed bugs</li>
+        <li>Updated interface translations for
+            <ul>
+                <li>Russian</li>
+                <li>Turkish</li>
+                <li>Romanian</li>
+                <li>Italian</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h4>8.0.3</h4>
+    <ul>
+        <li>Fixed zh-cn translations</li>
+        <li>Fixed some bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>8.0.2</h4>
+    <ul>
+        <li>Do not translate when hovering if the page language is the same as the target language</li>
+        <li>Do not show the button to translate the selected text if the page language is the same as
+            the target language</li>
+    </ul>
+</section>
+<section>
+    <h4>8.0.1</h4>
+    <ul>
+        <li>Fixed bug that page to change language does not appear</li>
+    </ul>
+</section>
+<section>
+    <h4>8.0</h4>
+    <ul>
+        <li>Added
+            <ul>
+                <li>new design</li>
+                <li>show translated text when hovering</li>
+                <li>shortcut keys to translate the page</li>
+                <li>save the translations to allow you to translate the pages even without internet (it
+                    will only work on pages that you have already translated 1 time)</li>
+                <li>Switch the translation service without having to reload the page</li>
+                <li>dark mode for the popups that appear on the pages</li>
+            </ul>
+        </li>
+        <li>New donation options</li>
+        <li>Refactored github code</li>
+        <li>Update interface translations</li>
+        <li>Fixed some bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>7.7.2</h4>
+    <ul>
+        <li>Update interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>7.7</h4>
+    <ul>
+        <li>Fixed</li>
+        <ul>
+            <li>HTML tags with editable content are no longer translated</li>
+            <li>Google translation working in China</li>
+            <li>Dark mode on the settings page</li>
+        </ul>
+        <li>Improved interface translations for
+            <ul>
+                <li>Vietnamese</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h4>7.6</h4>
+    <ul>
+        <li>Fixed bug that the extension stops translating with Google</li>
+        <li>Added interface translation for
+            <ul>
+                <li>Vietnamese</li>
+                <li>Ukrainian</li>
+            </ul>
+        </li>
+        <li>Improved interface translations for
+            <ul>
+                <li>Chinese Simplified</li>
+                <li>Croatian</li>
+                <li>Turkish</li>
+                <li>Slovenian</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h4>7.5</h4>
+    <ul>
+        <li>Updated interface translations</li>
+        <li>Fixed some bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>7.4</h4>
+    <ul>
+        <li>Show original text when hovering</li>
+        <li>Added option to never translate a language</li>
+        <li>Now the release notes page will appear at most once every 3 weeks</li>
+        <li>When a website has the url or language set to never be translated, the mobile popup and the
+            button for translating selected text will not appear</li>
+        <li>Added option to hide the button to translate the selected text from the context menu</li>
+        <li>Dark mode added for mobile popup</li>
+        <li>Updated interface translations</li>
+        <li>Fixed several bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>7.3.x</h4>
+    <ul>
+        <li>Fixed button colors in the address bar</li>
+        <li>Added option to translate selected text through the context menu</li>
+        <li>Increased button size to translate selected text for mobile devices</li>
+        <li>Updated translations</li>
+        <li>Fixed some bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>7.3</h4>
+    <ul>
+        <li>Added the toolbar button again</li>
+        <li>Fixed some bugs</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>7.2</h4>
+    <ul>
+        <li>Added a button to translate the selected text</li>
+        <li>Option to switch between dark and light mode</li>
+        <li>Option to hide the version notes page when updating</li>
+        <li>Removed toolbar icon</li>
+        <li>Change the style of the address bar icon</li>
+        <li>Fixed some bugs</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>7.1</h4>
+    <ul>
+        <li>Added the option "Always translate this site" in the popup</li>
+        <li>Fixed some bugs</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>7.0</h4>
+    <ul>
+        <li>Added dark mode</li>
+        <li>Added button to show original page in the context menu</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>6.9</h4>
+    <ul>
+        <li>The button to open the popup was placed in the address bar again</li>
+        <li>Elements with the class "notranslate" are now not translated</li>
+        <li>Improved privacy</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>6.8</h4>
+    <ul>
+        <li>Removed translation using widgets. <i>Reason: widgets load external scripts, which goes
+                against Firefox's extension policy</i></li>
+        <li>Added the "Translate this site" button on Firefox Mobile</li>
+        <li>Change popup layout for desktop</li>
+        <li>Updated interface translations</li>
+        <li>Fixed several bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>6.7</h4>
+    <ul>
+        <li>Fixed some bugs</li>
+        <li>Added translation of the interface to new languages</li>
+        <li>Added the shortcut "Alt + T" to translate the page</li>
+    </ul>
+</section>
+<section>
+    <h4>6.6</h4>
+    <ul>
+        <li>Added interface translation for Dutch</li>
+        <li>Improve the translation algorithm</li>
+    </ul>
+</section>
+<section>
+    <h4>6.5</h4>
+    <ul>
+        <li>Fixed some bugs</li>
+        <li>Updated interface translations</li>
+    </ul>
+</section>
+<section>
+    <h4>6.3</h4>
+    <ul>
+        <li>Now the translations are super fast</li>
+        <li>The title of the sites are translated</li>
+        <li>Polish interface translation added</li>
+    </ul>
+</section>
+<section>
+    <h4>6.2</h4>
+    <ul>
+        <li>Added translation for html attributes</li>
+        <li>Dynamically created 'iframes' are now automatically translated</li>
+        <li>Improved language detection</li>
+        <li>Updated interface translation</li>
+        <li>Fixed several bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>6.1</h4>
+    <ul>
+        <li>Support for translating sites into Traditional Chinese (zh-TW)</li>
+        <li>Added interface translation for Japanese and Traditional Chinese</li>
+        <li>Updated some interface translations</li>
+        <li>Fixed some bugs</li>
+    </ul>
+</section>
+<section>
+    <h4>6.0</h4>
+    <ul>
+        <li>Added translation for dynamically created elements</li>
+        <li>Added option to use widgets instead of the new algorithm</li>
+        <li>Improved language detection on mobile devices</li>
+    </ul>
+</section>

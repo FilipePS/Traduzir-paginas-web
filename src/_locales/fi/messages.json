@@ -282,16 +282,10 @@
     "message": "Vaihda käännöspalveluiden välillä"
   },
   "swapPopup": {
-    "message": "Vaihda vanhan ja uuden käyttöliittymän välillä"
-  },
-  "helpSwapInterface": {
-    "message": "Napsauta tätä painiketta vaihtaaksesi vanhan ja uuden käyttöliittymän välillä."
+    "message": "Switch between simple and complex interface"
   },
   "lblTranslationService": {
     "message": "Käännöspalvelu"
-  },
-  "msgUseOldPopupInterface": {
-    "message": "Käytä vanhaa ponnahdusikkunan käyttöliittymää"
   },
   "lblTranslateInterface": {
     "message": "Auta käyttöliittymän kääntämisessä"
@@ -483,5 +477,50 @@
   },
   "optionsAddToCustomDictionary": {
     "message": "Lisää mukautettuun sanakirjaan (Tämän avulla voit ohittaa tietyt sanat verkkosivun kääntämisen aikana)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Translate websites into this target language"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Translate selected text into this target language"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorite languages"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Select popup interface style"
+  },
+  "msgInterfaceSimple": {
+    "message": "Simple"
+  },
+  "msgInterfaceComplex": {
+    "message": "Complex"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
   }
 }

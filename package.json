@@ -6,16 +6,23 @@
     "chrome 70"
   ],
   "scripts": {
-    "build": "npx gulp"
+    "build": "npx gulp",
+    "map": "npx merge-source-maps --inline-sources --inline-source-map all.min.js"
+  },
+  "dependencies": {
+    "core-js": "^3.26.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.3",
-    "@babel/preset-env": "^7.19.3",
-    "@types/chrome": "^0.0.197",
+    "@babel/preset-env": "^7.20.2",
+    "@types/chrome": "^0.0.203",
     "@types/firefox-webext-browser": "^94.0.1",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "concat-with-sourcemaps": "^1.1.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-sourcemaps": "^3.0.0",
-    "gulp-zip": "^5.1.0"
+    "gulp-zip": "^5.1.0",
+    "merge-source-maps": "^0.6.1"
   }
 }
