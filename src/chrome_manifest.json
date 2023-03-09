@@ -5,7 +5,8 @@
   "description": "__MSG_extensionDescription__",
   "version": "9.6.1",
   "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
-
+  "update_url": "https://raw.githubusercontent.com/FilipePS/Traduzir-paginas-web/master/updates.xml",
+  
   "commands": {
     "hotkey-toggle-translation": {
       "suggested_key": {
