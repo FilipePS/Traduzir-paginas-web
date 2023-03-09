@@ -442,8 +442,8 @@ twpConfig.onReady(function () {
 
   $("#addToCustomDictionary").onclick = (e) => {
     let keyWord = prompt("Enter the keyWord, Minimum two letters ", "");
-    keyWord = keyWord.trim().toLowerCase();
     if (!keyWord || keyWord.length < 2) return;
+    keyWord = keyWord.trim().toLowerCase();
     let customValue = prompt(
       "(Optional)\nYou can enter a value to replace it , or fill in nothing.",
       ""
