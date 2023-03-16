@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Přeložit webové stránky"
-  },
   "extensionDescription": {
     "message": "Přeložte svou stránku v reálném čase pomocí Google nebo Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Překlady ..."
-  },
-  "lblTranslated": {
-    "message": "Přeloženo"
   },
   "lblError": {
     "message": "Tuto stránku nelze přeložit"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Přeloženo"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Nikdy nepřekládat tento web"
-  },
-  "btnMobileDonate": {
-    "message": "Přispět"
-  },
   "optionsNeverTranslate": {
     "message": "Nikdy tyto stránky nepřekládat"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Zobrazit mobilní vyskakovací okno"
-  },
-  "optionPopupAuto": {
-    "message": "Automaticky"
   },
   "optionPopupThreeFingers": {
     "message": "Když se dotknu tří prstů na obrazovce"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Ne"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Použít nový překladový algoritmus?"
-  },
-  "msgYesRecommended": {
-    "message": "Ano (doporučeno)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Ne (používat widgety)"
-  },
-  "optionsPageTitle": {
-    "message": "Přeložit webové stránky - Možnosti"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Pouze po kliknutí na tlačítko \"Přeložit tuto stránku\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Do tohoto seznamu jste nepřidali žádný úkol."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Do tohoto seznamu jste nepřidali žádný úkol."
-  },
   "btnAlwaysTranslate": {
     "message": "Vždy překládat tuto stránku"
   },
   "lblAlwaysTranslateSites": {
     "message": "Tyto stránky vždy překládejte"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Podpořit přes PayPal"
   },
   "lblDarkMode": {
     "message": "Tmavý režim"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Klávesové zkratky"
   },
-  "msgToTranslateSites": {
-    "message": "Přeložit web"
-  },
   "msgThanksForUseExtension": {
     "message": "Děkujeme, že používáte toto rozšíření."
   },
   "msgIWillBeGrateful": {
     "message": "Budu vděčný, pokud můžete poskytnout dar."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Tento jazyk vždy překládejte"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Když na těchto webech najedete myší, zobrazí se přeložený text"
@@ -282,10 +237,7 @@
     "message": "Přepínání mezi překladatelskými službami"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Překladatelská služba"
+    "message": "Přepínání mezi jednoduchým a komplexním rozhraním"
   },
   "lblTranslateInterface": {
     "message": "Přeložte rozhraní"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Nahradit"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Nahraďte vybraný text přeloženým textem při dvojím stisknutí $SHORTCUT_KEY$",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Okamžitě nahraďte vybraný text přeloženým textem"
   },
@@ -479,16 +423,16 @@
     "message": "Přidat do vlastního slovníku (To vám umožní přeskočit určitá slova během překladu webové stránky)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Přeložte webové stránky do tohoto cílového jazyka"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Přeložte vybraný text do tohoto cílového jazyka"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Oblíbené jazyky"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Oblíbený jazyk $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Vyberte styl rozhraní vyskakovacího okna"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Jednoduchý"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Komplex"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Přeložit stránku do $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Stránka přeložena do $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

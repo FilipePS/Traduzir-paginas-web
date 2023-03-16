@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Translate Web Pages"
-  },
   "extensionDescription": {
     "message": "보고 계신 페이지를 실시간으로 Google이나 Yandex를 사용하여 번역합니다."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "번역 중..."
-  },
-  "lblTranslated": {
-    "message": "번역됨"
   },
   "lblError": {
     "message": "이 페이지를 번역할 수 없습니다"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "번역됨"
   },
-  "btnMobileNeverTranslate": {
-    "message": "이 사이트 번역 안 함"
-  },
-  "btnMobileDonate": {
-    "message": "기부"
-  },
   "optionsNeverTranslate": {
     "message": "번역하지 않을 사이트 목록"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "모바일 팝업 표시"
-  },
-  "optionPopupAuto": {
-    "message": "자동"
   },
   "optionPopupThreeFingers": {
     "message": "화면을 손가락 세 개로 터치했을 때"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "아니오"
   },
-  "lblUseNewAlgorithm": {
-    "message": "새 번역 알고리즘을 사용하시겠습니까?"
-  },
-  "msgYesRecommended": {
-    "message": "예 (권장)"
-  },
-  "msgNoUseWidgets": {
-    "message": "아니오 (위젯 사용)"
-  },
-  "optionsPageTitle": {
-    "message": "웹 페이지 번역기 - 옵션"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "\"이 사이트 번역\" 버튼을 클릭했을 때만"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "이 목록에 사이트를 추가하지 않았습니다."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "이 목록에 언어를 추가하지 않았습니다."
-  },
   "btnAlwaysTranslate": {
     "message": "이 사이트 항상 번역"
   },
   "lblAlwaysTranslateSites": {
     "message": "항상 자동으로 번역할 사이트 목록"
-  },
-  "msgDonateWithPaypal": {
-    "message": "PayPal로 기부"
   },
   "lblDarkMode": {
     "message": "야간 모드"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "키보드 단축키"
   },
-  "msgToTranslateSites": {
-    "message": "사이트 번역"
-  },
   "msgThanksForUseExtension": {
     "message": "이 확장 기능을 사용해주셔서 감사합니다."
   },
   "msgIWillBeGrateful": {
     "message": "기부해 주시면 감사하겠습니다."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "이 언어 항상 번역"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "마우스를 가져다 대면 번역된 텍스트를 표시할 사이트 목록"
@@ -282,10 +237,7 @@
     "message": "번역 서비스 간 전환"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "번역 서비스"
+    "message": "간단한 인터페이스와 복잡한 인터페이스 간 전환"
   },
   "lblTranslateInterface": {
     "message": "인터페이스 번역"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "교체"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "$SHORTCUT_KEY$ 단축키를 두 번 누르면 선택한 텍스트를 번역된 텍스트로 즉시 교체",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "선택한 텍스트를 번역된 텍스트로 즉시 교체"
   },
@@ -479,16 +423,16 @@
     "message": "사용자 정의 사전에 추가(웹 페이지 번역 중에 특정 단어를 건너뛸 수 있음)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "사이트를 대상 언어로 번역"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "선택한 텍스트를 대상 언어로 번역"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "즐겨찾는 언어"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "즐겨찾는 언어 $FAVORITE_LANGUAGE_NUM$개",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "팝업 인터페이스 스타일 선택"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "단순"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "복잡"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "페이지를 $LANGUAGE_NAME$ 언어로 번역할까요?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$ 언어로 번역 완료",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

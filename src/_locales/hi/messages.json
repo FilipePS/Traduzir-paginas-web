@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "वेब पृष्ठों का अनुवाद करें"
-  },
   "extensionDescription": {
     "message": "Google या Yandex का उपयोग करके वास्तविक समय में अपने पृष्ठ का अनुवाद करें।"
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "अनुवाद हो रहा है ..."
-  },
-  "lblTranslated": {
-    "message": "अनूदित"
   },
   "lblError": {
     "message": "इस पृष्ठ का अनुवाद नहीं किया जा सका"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "अनूदित"
   },
-  "btnMobileNeverTranslate": {
-    "message": "इस साइट का अनुवाद कभी मत करो"
-  },
-  "btnMobileDonate": {
-    "message": "दान करना"
-  },
   "optionsNeverTranslate": {
     "message": "इन साइटों का अनुवाद कभी न करें"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "मोबाइल पॉपअप दिखाएं"
-  },
-  "optionPopupAuto": {
-    "message": "खुद ब खुद"
   },
   "optionPopupThreeFingers": {
     "message": "जब मैं स्क्रीन पर तीन उंगलियां छूता हूं"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "नहीं"
   },
-  "lblUseNewAlgorithm": {
-    "message": "नए अनुवाद एल्गोरिथ्म का उपयोग करें?"
-  },
-  "msgYesRecommended": {
-    "message": "हाँ (अनुशंसित)"
-  },
-  "msgNoUseWidgets": {
-    "message": "नहीं (विजेट का उपयोग करें)"
-  },
-  "optionsPageTitle": {
-    "message": "वेब पेज का अनुवाद करें - विकल्प"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "केवल जब मैं \"इस साइट का अनुवाद करता हूं\" पर क्लिक करता हूं"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "आपने इस सूची में कोई साइट नहीं जोड़ी है।"
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "आपने इस सूची में कोई भी भाषा नहीं जोड़ी है।"
-  },
   "btnAlwaysTranslate": {
     "message": "हमेशा इस साइट का अनुवाद करें"
   },
   "lblAlwaysTranslateSites": {
     "message": "हमेशा इस साइट का अनुवाद करें"
-  },
-  "msgDonateWithPaypal": {
-    "message": "पेपैल के साथ दान करें"
   },
   "lblDarkMode": {
     "message": "अंधेरा मोड"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "कुंजीपटल अल्प मार्ग"
   },
-  "msgToTranslateSites": {
-    "message": "साइट का अनुवाद करने के लिए"
-  },
   "msgThanksForUseExtension": {
     "message": "इस एक्सटेंशन का उपयोग करने के लिए धन्यवाद।"
   },
   "msgIWillBeGrateful": {
     "message": "यदि आप दान कर सकते हैं तो मैं आभारी रहूंगा।"
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "हमेशा इस भाषा का अनुवाद करें"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "इन साइटों पर मँडराते समय अनुवादित पाठ दिखाएं"
@@ -282,10 +237,7 @@
     "message": "अनुवाद सेवाओं के बीच स्विच करें"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "अनुवाद सेवा"
+    "message": "सरल और जटिल इंटरफ़ेस के बीच स्विच करें"
   },
   "lblTranslateInterface": {
     "message": "इंटरफ़ेस का अनुवाद करें"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "बदलने के"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "$SHORTCUT_KEY$ को दो बार दबाने पर चयनित टेक्स्ट को अनुवादित टेक्स्ट से बदलें",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "चयनित टेक्स्ट को तुरंत अनुवादित टेक्स्ट से बदलें"
   },
@@ -479,16 +423,16 @@
     "message": "कस्टम शब्दकोश में जोड़ें (यह आपको वेब पेज अनुवाद के दौरान कुछ शब्दों को छोड़ने की अनुमति देता है)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "वेबसाइटों का इस लक्षित भाषा में अनुवाद करें"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "चयनित पाठ का इस लक्षित भाषा में अनुवाद करें"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "पसंदीदा भाषाएँ"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "पसंदीदा भाषा $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "पॉपअप इंटरफ़ेस शैली का चयन करें"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "सरल"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "जटिल"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "पृष्ठ का $LANGUAGE_NAME$में अनुवाद करें?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "पृष्ठ $LANGUAGE_NAME$में अनुवादित",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

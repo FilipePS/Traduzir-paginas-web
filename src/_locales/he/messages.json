@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "תרגום דפי אינטרנט"
-  },
   "extensionDescription": {
     "message": "תרגום דפי האינטרנט בזמן אמת באמצעות גוגל או יאנדקס."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "מתרגם ..."
-  },
-  "lblTranslated": {
-    "message": "תורגם"
   },
   "lblError": {
     "message": "לא ניתן לתרגם דף זה"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "תורגם"
   },
-  "btnMobileNeverTranslate": {
-    "message": "לעולם אל תתרגם דף זה"
-  },
-  "btnMobileDonate": {
-    "message": "תרומה"
-  },
   "optionsNeverTranslate": {
     "message": "לעולם אל תתרגם דפים אלו"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "הראה את חלון הקופץ לנייד"
-  },
-  "optionPopupAuto": {
-    "message": "אוטומטית"
   },
   "optionPopupThreeFingers": {
     "message": "בלחיצה על המסך עם שלוש אצבעות"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "לא"
   },
-  "lblUseNewAlgorithm": {
-    "message": "להשתמש באלגוריתם תרגום החדש?"
-  },
-  "msgYesRecommended": {
-    "message": "כן (מומלץ)"
-  },
-  "msgNoUseWidgets": {
-    "message": "לא (השתמש ביישומונים)"
-  },
-  "optionsPageTitle": {
-    "message": "תרגם דפי אינטרנט - אפשרויות"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "רק כשאני לוחץ על \"תרגם אתר זה\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "לא הוספת אתרים לרשימה זו."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "לא הוספת שפות לרשימה זו."
-  },
   "btnAlwaysTranslate": {
     "message": "תרגם תמיד אתר זה"
   },
   "lblAlwaysTranslateSites": {
     "message": "תרגם תמיד אתרים אלה"
-  },
-  "msgDonateWithPaypal": {
-    "message": "תרום באמצעות PayPal"
   },
   "lblDarkMode": {
     "message": "מצב כהה"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "קיצורי דרך במקלדת"
   },
-  "msgToTranslateSites": {
-    "message": "לתרגום האתר"
-  },
   "msgThanksForUseExtension": {
     "message": "תודה על השימוש בתוסף זה."
   },
   "msgIWillBeGrateful": {
     "message": "אני אהיה אסיר תודה אם תוכל להתרום."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "תרגם תמיד את השפה הזו"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "הראה טקסט מתורגם בעת ריחוף באתרים אלה"
@@ -282,10 +237,7 @@
     "message": "מעבר בין שירותי תרגום"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "שירות תרגום"
+    "message": "מעבר בין ממשק פשוט למורכב"
   },
   "lblTranslateInterface": {
     "message": "תתרגם את הממשק"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "החלף"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "החלף טקסט שנבחר בטקסט מתורגם בעת לחיצה על $SHORTCUT_KEY$ פעמיים",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "החלף טקסט נבחר בטקסט מתורגם באופן מיידי"
   },
@@ -479,16 +423,16 @@
     "message": "הוסף למילון מותאם אישית (זה מאפשר לך לדלג על מילים מסוימות במהלך תרגום דפי אינטרנט)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "תרגם אתרים לשפת יעד זו"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "תרגם טקסט נבחר לשפת יעד זו"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "שפות אהובות"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "שפה אהובה $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "בחר סגנון ממשק קופץ"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "פָּשׁוּט"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "מורכב"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "לתרגם עמוד ל $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "הדף תורגם ל $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

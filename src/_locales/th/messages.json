@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Translate Web Pages"
-  },
   "extensionDescription": {
     "message": "แปลหน้าเว็บแบบเรียลไทม์โดยใช้ Google หรือ Yandex"
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "แปลแล้ว ..."
-  },
-  "lblTranslated": {
-    "message": "แปลแล้ว"
   },
   "lblError": {
     "message": "ไม่สามารถแปลหน้านี้"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "แปลแล้ว"
   },
-  "btnMobileNeverTranslate": {
-    "message": "ไม่เคยแปลไซต์นี้"
-  },
-  "btnMobileDonate": {
-    "message": "บริจาค"
-  },
   "optionsNeverTranslate": {
     "message": "อย่าแปลเว็บไซต์เหล่านี้"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "แสดงป๊อปอัปมือถือ"
-  },
-  "optionPopupAuto": {
-    "message": "โดยอัตโนมัติ"
   },
   "optionPopupThreeFingers": {
     "message": "เมื่อฉันแตะสามนิ้วบนหน้าจอ"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "ไม่"
   },
-  "lblUseNewAlgorithm": {
-    "message": "ใช้อัลกอริธึมการแปลใหม่หรือไม่"
-  },
-  "msgYesRecommended": {
-    "message": "ใช่ (แนะนำ)"
-  },
-  "msgNoUseWidgets": {
-    "message": "ไม่ (ใช้วิดเจ็ต)"
-  },
-  "optionsPageTitle": {
-    "message": "แปลหน้าเว็บ - ตัวเลือก"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "เมื่อฉันคลิก \"แปลไซต์นี้\" เท่านั้น"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "คุณยังไม่ได้เพิ่มไซต์ใด ๆ ในรายการนี้"
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "คุณยังไม่ได้เพิ่มภาษาใด ๆ ในรายการนี้"
-  },
   "btnAlwaysTranslate": {
     "message": "แปลไซต์นี้เสมอ"
   },
   "lblAlwaysTranslateSites": {
     "message": "แปลเว็บไซต์เหล่านี้เสมอ"
-  },
-  "msgDonateWithPaypal": {
-    "message": "บริจาคด้วย PayPal"
   },
   "lblDarkMode": {
     "message": "โหมดมืด"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "แป้นพิมพ์ลัด"
   },
-  "msgToTranslateSites": {
-    "message": "เพื่อแปลเว็บไซต์"
-  },
   "msgThanksForUseExtension": {
     "message": "ขอขอบคุณที่ใช้ส่วนขยายนี้"
   },
   "msgIWillBeGrateful": {
     "message": "ฉันจะขอบคุณถ้าคุณสามารถบริจาคได้"
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "แปลภาษานี้เสมอ"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "แสดงข้อความที่แปลแล้วเมื่อวางเมาส์เหนือไซต์เหล่านี้"
@@ -282,10 +237,7 @@
     "message": "สลับระหว่างบริการแปลภาษา"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "บริการแปลภาษา"
+    "message": "สลับไปมาระหว่างอินเทอร์เฟซที่เรียบง่ายและซับซ้อน"
   },
   "lblTranslateInterface": {
     "message": "แปลอินเทอร์เฟซ"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "แทนที่"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "แทนที่ข้อความที่เลือกด้วยข้อความที่แปลเมื่อกด $SHORTCUT_KEY$ สองครั้ง",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "แทนที่ข้อความที่เลือกด้วยข้อความที่แปลทันที"
   },
@@ -479,16 +423,16 @@
     "message": "เพิ่มในพจนานุกรมแบบกำหนดเอง (ทำให้คุณสามารถข้ามคำบางคำระหว่างการแปลหน้าเว็บ)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "แปลเว็บไซต์เป็นภาษาเป้าหมายนี้"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "แปลข้อความที่เลือกเป็นภาษาเป้าหมายนี้"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "ภาษาที่ชอบ"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "ภาษาที่ชอบ $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "เลือกรูปแบบอินเทอร์เฟซป๊อปอัป"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "เรียบง่าย"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "ซับซ้อน"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "แปลหน้าเป็น $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "หน้าแปลเป็น $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

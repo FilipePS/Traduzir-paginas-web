@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Web Sayfalarını Çevir"
-  },
   "extensionDescription": {
     "message": "Google veya Yandex kullanarak sayfanızı gerçek zamanlı olarak çevirin."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Çevriliyor ..."
-  },
-  "lblTranslated": {
-    "message": "Çevrildi"
   },
   "lblError": {
     "message": "Bu sayfa çevrilemedi"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Çevrildi"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Bu siteyi hiçbir zaman çevirme"
-  },
-  "btnMobileDonate": {
-    "message": "Bağış yap"
-  },
   "optionsNeverTranslate": {
     "message": "Bu siteleri hiçbir zaman çevirme"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Mobil açılır pencereyi göster"
-  },
-  "optionPopupAuto": {
-    "message": "Otomatikman"
   },
   "optionPopupThreeFingers": {
     "message": "Ekrana üç parmağımla dokunduğumda"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Hayır"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Yeni çeviri algoritması kullanılsın mı?"
-  },
-  "msgYesRecommended": {
-    "message": "Evet (önerilen)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Hayır (widgetleri kullan)"
-  },
-  "optionsPageTitle": {
-    "message": "Web Sayfalarını Çevir - Seçenekler"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Sadece \"Bu siteyi çevir\" butonuna tıkladığımda"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Bu listeye herhangi bir site eklemediniz."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Bu listeye herhangi bir dil eklemediniz."
-  },
   "btnAlwaysTranslate": {
     "message": "Bu siteyi her zaman çevir"
   },
   "lblAlwaysTranslateSites": {
     "message": "Bu siteleri her zaman çevir"
-  },
-  "msgDonateWithPaypal": {
-    "message": "PayPal ile bağış yap"
   },
   "lblDarkMode": {
     "message": "Koyu Tema"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Klavye kısayolları"
   },
-  "msgToTranslateSites": {
-    "message": "Siteyi çevirmek için"
-  },
   "msgThanksForUseExtension": {
     "message": "Bu uzantıyı kullandığınız için teşekkür ederiz."
   },
   "msgIWillBeGrateful": {
     "message": "Bağış yapabilirseniz minnettar olacağım."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Bu dili her zaman çevir"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Bu sitelerin üzerine gelindiğinde çevrilmiş metni göster"
@@ -282,10 +237,7 @@
     "message": "Çeviri hizmetleri arasında geçiş yapın"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Çeviri hizmeti"
+    "message": "Basit ve karmaşık arayüz arasında geçiş yap"
   },
   "lblTranslateInterface": {
     "message": "Arayüzü çevir"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Değiştir"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Seçili metni $SHORTCUT_KEY$ tuşuna iki kez basıldığında çevrilmiş metinle değiştir",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Seçili metni anında çevrilmiş metinle değiştir"
   },
@@ -479,16 +423,16 @@
     "message": "Özel sözlüğe ekle (Bu, web sayfası çevirisi sırasında belirli kelimeleri atlamanızı sağlar)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Web sitelerini bu hedef dile çevir"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Seçilen metni bu hedef dile çevir"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Sık kullanılan diller"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Sık kullanılan dil $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Açılır arayüz görünümünü seçin"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Basit"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Karmaşık"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Sayfa $LANGUAGE_NAME$ diline çevrilsin mi?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Sayfa $LANGUAGE_NAME$ diline çevrildi",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

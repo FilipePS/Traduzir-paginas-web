@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Translate Web Pages"
-  },
   "extensionDescription": {
     "message": "Dịch trang của bạn trong thời gian thực sử dụng Google hoặc Yandex. "
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Đang dịch... "
-  },
-  "lblTranslated": {
-    "message": "Đã dịch "
   },
   "lblError": {
     "message": "Không thể dịch trang này "
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Đã dịch"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Không bao giờ dịch trang này"
-  },
-  "btnMobileDonate": {
-    "message": "Ủng hộ"
-  },
   "optionsNeverTranslate": {
     "message": "Không bao giờ dịch các trang này"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Hiển thị cửa sổ bật lên trên di động"
-  },
-  "optionPopupAuto": {
-    "message": "Tự động"
   },
   "optionPopupThreeFingers": {
     "message": "Khi tôi chạm 3 ngón tay trên màn hình"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Không"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Sử dụng thuật toán dịch mới?"
-  },
-  "msgYesRecommended": {
-    "message": "Đồng ý (khuyến nghị)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Không (sử dụng widget) "
-  },
-  "optionsPageTitle": {
-    "message": "Dịch trang Web - Tùy chọn "
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Chỉ khi tôi nhấn \"Dịch trang này\" "
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Bạn chưa thêm bất kỳ trang web nào vào danh sách này. "
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Bạn chưa thêm bất kỳ ngôn ngữ nào vào danh sách này."
-  },
   "btnAlwaysTranslate": {
     "message": "Luôn dịch trang này"
   },
   "lblAlwaysTranslateSites": {
     "message": "Luôn dịch những trang này"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Ủng hộ qua PayPal"
   },
   "lblDarkMode": {
     "message": "Chế độ tối"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Phím tắt bàn phím"
   },
-  "msgToTranslateSites": {
-    "message": "Để dịch trang web"
-  },
   "msgThanksForUseExtension": {
     "message": "Cảm ơn bạn đã sử dụng tiện ích này."
   },
   "msgIWillBeGrateful": {
     "message": "Tôi sẽ biết ơn nếu bạn có thể đóng góp."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Luôn dịch trang web này"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Hiển thị văn bản đã dịch khi di chuột qua các trang web này"
@@ -282,10 +237,7 @@
     "message": "Chuyển đổi giữa các dịch vụ dịch thuật"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Dịch vụ dịch thuật"
+    "message": "Chuyển giữa giao diện đơn giản và phức tạp"
   },
   "lblTranslateInterface": {
     "message": "Dịch giao diện"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Thay thế"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Thay thế văn bản đã chọn thành văn bản đã dịch khi nhấn phím $SHORTCUT_KEY$ hai lần",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Thay Thay thế văn bản đã chọn thành văn bản đã dịch ngay lập tức"
   },
@@ -479,16 +423,16 @@
     "message": "Thêm vào từ điển tùy chỉnh (Điều này cho phép bạn bỏ qua một số từ nhất định trong khi dịch trang web)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Dịch trang web sang ngôn ngữ đích này"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Dịch văn bản đã chọn sang ngôn ngữ đích này"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Ngôn ngữ yêu thích"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Ngôn ngữ yêu thích $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Chọn kiểu giao diện popup"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Đơn giản"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Phức tạp"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Dịch trang sang $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Đã dịch trang sang $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

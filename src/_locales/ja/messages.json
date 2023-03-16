@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "ウェブページを翻訳"
-  },
   "extensionDescription": {
     "message": "GoogleやYandexを使ってリアルタイムでページを翻訳します。"
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "翻訳中..."
-  },
-  "lblTranslated": {
-    "message": "翻訳済み"
   },
   "lblError": {
     "message": "ページを翻訳できませんでした"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "翻訳済み"
   },
-  "btnMobileNeverTranslate": {
-    "message": "このサイトを翻訳しない"
-  },
-  "btnMobileDonate": {
-    "message": "寄付する"
-  },
   "optionsNeverTranslate": {
     "message": "翻訳しないサイト"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "モバイルで翻訳ポップアップを表示"
-  },
-  "optionPopupAuto": {
-    "message": "自動"
   },
   "optionPopupThreeFingers": {
     "message": "画面を3本指でタップしたとき"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "無効"
   },
-  "lblUseNewAlgorithm": {
-    "message": "新しい翻訳アルゴリズムを使用しますか？"
-  },
-  "msgYesRecommended": {
-    "message": "はい（推奨）"
-  },
-  "msgNoUseWidgets": {
-    "message": "いいえ（ウィジェットを使用）"
-  },
-  "optionsPageTitle": {
-    "message": "ウェブページを翻訳 - 設定"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "「このサイトを翻訳」をクリックした時のみ"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "まだサイトが1つも追加されていません"
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "まだ言語が追加されていません"
-  },
   "btnAlwaysTranslate": {
     "message": "このサイトを常に翻訳する"
   },
   "lblAlwaysTranslateSites": {
     "message": "常に翻訳するサイト"
-  },
-  "msgDonateWithPaypal": {
-    "message": "PayPalで寄付"
   },
   "lblDarkMode": {
     "message": "ダークモード"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "キーボードショートカット"
   },
-  "msgToTranslateSites": {
-    "message": "でサイトを翻訳"
-  },
   "msgThanksForUseExtension": {
     "message": "この拡張機能をご利用いただきありがとうございます。"
   },
   "msgIWillBeGrateful": {
     "message": "もしご寄付いただければ、本当に感謝いたします。"
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "この言語を常に翻訳する"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "マウスオーバーしたテキストを翻訳するサイト"
@@ -282,10 +237,7 @@
     "message": "翻訳サービスを切り替える"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "翻訳サービス"
+    "message": "シンプルなインターフェースと複雑なインターフェースを切り替える"
   },
   "lblTranslateInterface": {
     "message": "インターフェースを翻訳"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "置き換え"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "$SHORTCUT_KEY$を2回押して選択したテキストを翻訳したテキストに置き換え",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "選択したテキストを翻訳済みテキストに即座に置き換える"
   },
@@ -479,16 +423,16 @@
     "message": "カスタム辞書に追加 (これにより、Web ページの翻訳中に特定の単語をスキップできます)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "ウェブサイトをこのターゲット言語に翻訳する"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "選択したテキストをこのターゲット言語に翻訳します"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "好きな言語"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "好きな言語 $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "ポップアップ インターフェイスのスタイルを選択"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "単純"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "複雑"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "ページを $LANGUAGE_NAME$に変換しますか?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$に翻訳されたページ",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

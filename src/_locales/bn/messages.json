@@ -1,0 +1,470 @@
+{
+  "extensionDescription": {
+    "message": "গুগোল বা ইয়ান্দেক্স ব্যবহার করে সরাসরি আপনার সামনে পৃষ্ঠা অনুবাদ করুন।"
+  },
+  "pageActionTitle": {
+    "message": "পৃষ্ঠাটি অনুবাদ করুন"
+  },
+  "lblTranslate": {
+    "message": "পৃষ্ঠাটি অনুবাদ করতে চান ?"
+  },
+  "lblTranslating": {
+    "message": "অনুবাদ হচ্ছে..."
+  },
+  "lblError": {
+    "message": "পৃষ্ঠাটি অনুবাদ করা যায়নি"
+  },
+  "lblAlwaysTranslate": {
+    "message": "সর্বদা $LANGUAGE_NAME$ অনুবাদ করুন",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblTargetLanguage": {
+    "message": "অনুবাদের লক্ষ্য ভাষা $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "btnReset": {
+    "message": "পুনরায় সেট করুন"
+  },
+  "btnTranslate": {
+    "message": "অনুবাদ করুন"
+  },
+  "btnOptions": {
+    "message": "অপশনসমূহ"
+  },
+  "btnRestore": {
+    "message": "আসলটি দেখান"
+  },
+  "btnTryAgain": {
+    "message": "আবার চেষ্টা করুন"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "গুগল ট্রান্সলেটরে খুলুন"
+  },
+  "btnDonate": {
+    "message": "দান করুন"
+  },
+  "btnNeverTranslate": {
+    "message": "সাইটটি কখনো অনুবাদ করবেন না"
+  },
+  "btnChangeLanguages": {
+    "message": "ভাষা পরিবর্তন করুন"
+  },
+  "btnMobileOriginal": {
+    "message": "আসল"
+  },
+  "btnMobileTranslated": {
+    "message": "অনুবাদ করা হয়েছে"
+  },
+  "optionsNeverTranslate": {
+    "message": "এই সাইটগুলি কখনো অনুবাদ করবেন না"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "সর্বদা এই ভাষাগুলি অনুবাদ করবেন"
+  },
+  "optionPopupConfig": {
+    "message": "মোবাইল পপআপ দেখান"
+  },
+  "optionPopupThreeFingers": {
+    "message": "যখন আমি স্ক্রিনে তিনটি আঙ্গুল স্পর্শ করি"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "ইয়ানডেক্স অনুবাদ সফটওয়্যারে খুলুন"
+  },
+  "lblOthers": {
+    "message": "অন্যান্য"
+  },
+  "btnMoreOptions": {
+    "message": "আরও অপশন"
+  },
+  "lblPlsDonate": {
+    "message": "অনুদান দিয়ে সৃষ্টিকারীরকে সাহায্য করুন"
+  },
+  "msgTranslateFor": {
+    "message": "$LANGUAGE_NAME$ তে অনুবাদ করুন",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowContextMenu": {
+    "message": "প্রসঙ্গ মেনুতে পৃষ্ঠাটি অনুবাদ করার অপশনটি দেখান"
+  },
+  "msgYes": {
+    "message": "হ্যাঁ"
+  },
+  "msgNo": {
+    "message": "না"
+  },
+  "btnAlwaysTranslate": {
+    "message": "সর্বদা সাইটটি অনুবাদ করবেন"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "সর্বদা এই সাইটগুলো অনুবাদ করবেন"
+  },
+  "lblDarkMode": {
+    "message": "অন্ধকার মোড"
+  },
+  "lblShowReleaseNotes": {
+    "message": "আপডেট করার সময় রিলিজ নোট দেখান"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "নির্বাচিত লেখা অনুবাদ করার বোতামটি দেখান"
+  },
+  "msgAutomatic": {
+    "message": "স্বয়ংক্রিয়"
+  },
+  "msgTranslateSelectedText": {
+    "message": "নির্বাচিত লেখা অনুবাদ করুন"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "নির্বাচিত লেখাটি অনুবাদ করার অপশনটি প্রসঙ্গ মেনুতে দেখান"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "এই ভাষাগুলো কখনো অনুবাদ করবেন না"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "এই ভাষাগুলো কখনো অনুবাদ করবেন না"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "মাউস ভাসানোর সময় আসল টেক্সট দেখান"
+  },
+  "msgLanguages": {
+    "message": "ভাষাসমূহ"
+  },
+  "msgSites": {
+    "message": "সাইটসমূহ"
+  },
+  "msgTranslations": {
+    "message": "অনুবাদসমূহ"
+  },
+  "msgStyle": {
+    "message": "স্টাইল"
+  },
+  "msgHotkeys": {
+    "message": "হটকীগুলো"
+  },
+  "lblMakeDonation": {
+    "message": "দান করুন"
+  },
+  "lblReleaseNotes": {
+    "message": "রিলিজ নোটসমূহ"
+  },
+  "lblReport": {
+    "message": "সমস্যা রিপোর্ট করুন"
+  },
+  "lblSettings": {
+    "message": "সেটিংস"
+  },
+  "lblAdd": {
+    "message": "যোগ করুন"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "মাউস ভাসানোর সময় আসল টেক্সট দেখান"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "কীবোর্ড শর্টকাটসমূহ"
+  },
+  "msgThanksForUseExtension": {
+    "message": "এক্সটেনশনটি ব্যবহার করার জন্য আপনাকে ধন্যবাদ।"
+  },
+  "msgIWillBeGrateful": {
+    "message": "আপনি যদি দান করতে পারেন, আমি কৃতজ্ঞ হব।"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "এই সাইটগুলিতে মাউস ভাসানোর সময় অনুবাদিত পাঠ্য দেখাবেন"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "সাইটটি অনুবাদ করা হলে পপ-আপ আইকনটিকে নীল রঙের করুন"
+  },
+  "more": {
+    "message": "আরও"
+  },
+  "less": {
+    "message": "কমিয়ে দিন"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "পৃষ্ঠার ভাষা শুরুতেই টার্গেট ভাষা হলে দেখাবেন না"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "পৃষ্ঠার ভাষা অজানা থাকলে দেখাবেন না"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "নির্বাচিত লেখার ভাষা শুরুতেই টার্গেট ভাষা হলে দেখাবেন না"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "নির্বাচিত লেখার ভাষা অজানা থাকলে দেখাবেন না"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "এই সাইটগুলিতে মাউস ভাসানোর সময় অনুবাদিত পাঠ্য দেখাবেন"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "$LANGUAGE_NAME$ ভাষার ওয়েবসাইটগুলোর উপর মাউস ভাসানোর সময় অনুবাদ দেখাবেন",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "এই ভাষাগুলির সাইটে মাউস ভাসানোর সময় অনুবাদিত পাঠ্য দেখাবেন"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "নির্বাচিত লেখা অনুবাদ করবেন না"
+  },
+  "btnListen": {
+    "message": "শুনুন"
+  },
+  "btnStopListening": {
+    "message": "শোনা বন্ধ করুন"
+  },
+  "btnApply": {
+    "message": "প্রয়োগ করুন"
+  },
+  "swapTranslationService": {
+    "message": "ভিন্ন ভিন্ন অনুবাদ সেবাগুলির মধ্যে স্যুইচ করুন"
+  },
+  "swapPopup": {
+    "message": "সহজ এবং জটিল ইন্টারফেসের মধ্যে স্যুইচ করুন"
+  },
+  "lblTranslateInterface": {
+    "message": "ইন্টারফেস অনুবাদ করুন"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "ঠিকানা বারে বোতাম দেখান"
+  },
+  "lblPageTranslationService": {
+    "message": "পৃষ্ঠা অনুবাদ সেবা"
+  },
+  "lblTextTranslationService": {
+    "message": "লেখা অনুবাদ সেবা"
+  },
+  "msgStorage": {
+    "message": "স্টোরেজ"
+  },
+  "lblTranslationCache": {
+    "message": "অনুবাদ ক্যাশে"
+  },
+  "lblStorageUsed": {
+    "message": "ব্যবহৃত স্টোরেজের পরিমাণ:"
+  },
+  "deleteTranslationCache": {
+    "message": "অনুবাদ ক্যাশে মুছুন"
+  },
+  "lblPersonalSettings": {
+    "message": "ব্যক্তিগত সেটিংস"
+  },
+  "backupToFile": {
+    "message": "ফাইলে ব্যাকআপ করুন"
+  },
+  "restoreFromFile": {
+    "message": "ফাইল থেকে পুনরুদ্ধার করুন"
+  },
+  "resetToDefault": {
+    "message": "ডিফল্ট সেটিংসে ফিরিয়ে আনুন"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "আপনি কি অনুবাদ ক্যাশে মুছতে চান?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "আপনি কি ব্যাকআপ ডেটা ব্যবহার করে বিদ্যমান সমস্ত সেটিংস ওভাররাইট করতে চান?"
+  },
+  "fileIsCorrupted": {
+    "message": "ফাইলটি নষ্ট হয়ে গেছে বলে মনে হচ্ছে"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "আপনি কি এক্সটেনশনটিকে এর ডিফল্ট সেটিংসে পুনরুদ্ধার করতে চান?"
+  },
+  "lblTtsSpeed": {
+    "message": "টেক্সট-টু-স্পিচ অডিও গতি"
+  },
+  "lblEnableDeepL": {
+    "message": "DeepL লেখা অনুবাদ সেবা হিসাবে সক্ষম করুন"
+  },
+  "enterShortcut": {
+    "message": "শর্টকাট লিখুন"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Ctrl বা Alt অন্তর্ভুক্ত করুন"
+  },
+  "hotkeyError_letter": {
+    "message": "একটি চিঠি টাইপ করুন"
+  },
+  "hotkeyError_invalid": {
+    "message": " ভুল মিশ্রণ"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "অনুবাদিত এবং মূল পৃষ্ঠার মধ্যে স্যুইচ করুন"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "মূল পৃষ্ঠা পুনরুদ্ধার করুন"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "পৃষ্ঠাটিকে নির্দেশিত ভাষায় অনুবাদ করুন"
+  },
+  "lblTranslateTag_pre": {
+    "message": "$HTML_TAG_NAME$ ট্যাগ এর জন্য অনুবাদ চালু করুন",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "গুগল অনুবাদ ফলাফল সর্ট করবেন না"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "গতিশীলভাবে তৈরি কন্টেন্ট অনুবাদ করুন"
+  },
+  "calculatestorage": {
+    "message": "হিসাব করুন"
+  },
+  "donatewithpaypal": {
+    "message": "পেপ্যাল এর মাধ্যমে দান করুন"
+  },
+  "lblAutoTranslateWhenClickingALink": {
+    "message": "কোনো লিঙ্ক যদি বর্তমান সাইটের অন্য একই ডোমেনে নিয়ে যায়, তাহলে তা স্বয়ংক্রিয়ভাবে অনুবাদ করুন"
+  },
+  "openNativeShortcutManager": {
+    "message": "নেটিভ শর্টকাট কী ম্যানেজার খুলুন"
+  },
+  "lblKeyboardShortcutsSpecial": {
+    "message": "বিশেষ কীবোর্ড শর্টকাটসমূহ"
+  },
+  "lblTranslateSelectedWhenPressTwice": {
+    "message": "$SHORTCUT_KEY$ দুবার চাপলে নির্বাচিত লেখা অনুবাদ করুন",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "lblTranslateTextOverMouseWhenPressTwice": {
+    "message": "$SHORTCUT_KEY$ দুইবার টিপলে মাউস কার্সারের নিচের টেক্সট অনুবাদ করুন",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "translateClickingOnce": {
+    "message": "পৃষ্ঠাটি অনুবাদ করতে ঠিকানা বারের বোতামে একবার ক্লিক করে করুন। (পপআপ দেখতে ডান মাউস বাটনে ক্লিক করুন)"
+  },
+  "btnShowPopup": {
+    "message": "পপআপ দেখান"
+  },
+  "msgToTranslateThisDocument": {
+    "message": "$DOC_TYPE$ নথিটি অনুবাদ করতে এটিকে HTML-এ রূপান্তর করতে হবে",
+    "placeholders": {
+      "DOC_TYPE": {
+        "content": "$1",
+        "example": "(.pdf)"
+      }
+    }
+  },
+  "msgSelectServiceConversion": {
+    "message": "রূপান্তর করতে একটি অনুবাদ সেবা নির্বাচন করুন"
+  },
+  "msgDownloadingDocument": {
+    "message": "নথিটি ডাউনলোড করা হচ্ছে..."
+  },
+  "msgSendDocument": {
+    "message": "নথিটি পাঠান"
+  },
+  "msgErrorDownloadingDocument": {
+    "message": "নথি ডাউনলোড করার সময় ত্রুটি ঘটেছে"
+  },
+  "msgFileLargerThan": {
+    "message": "এই পরিষেবাটি $FILE_SIZE$এর চেয়ে বড় ফাইলগুলিকে সমর্থন করে না৷",
+    "placeholders": {
+      "FILE_SIZE": {
+        "content": "$1",
+        "example": "10 MB"
+      }
+    }
+  },
+  "msgPDFtoHTML": {
+    "message": "পিডিএফ থেকে এইচটিএমএল"
+  },
+  "btncopy": {
+    "message": "কপি করুন"
+  },
+  "msgRecents": {
+    "message": "সাম্প্রতিক"
+  },
+  "msgAll": {
+    "message": "সব"
+  },
+  "msgPleaseWait": {
+    "message": "অনুগ্রহ করে অপেক্ষা করুন…"
+  },
+  "msgUnknownLanguage": {
+    "message": "অজানা"
+  },
+  "btnReplace": {
+    "message": "প্রতিস্থাপন করুন"
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "অবিলম্বে অনুবাদিত পাঠ্য দিয়ে নির্বাচিত পাঠ্য প্রতিস্থাপন করুন"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "কাস্টম অভিধানে যোগ করুন (এটি আপনাকে ওয়েব পৃষ্ঠা অনুবাদের সময় কিছু শব্দ এড়িয়ে যেতে দেয়)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "ওয়েবসাইটগুলোকে নির্দেশিত ভাষায় অনুবাদ করুন"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "টার্গেট ভাষায় নির্বাচিত লেখা অনুবাদ করুন"
+  },
+  "msgFavoriteLanguages": {
+    "message": "প্রিয় ভাষাসমূহ"
+  },
+  "lblFavoriteLanguage": {
+    "message": "পছন্দের ভাষা $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "পপআপ ইন্টারফেস স্টাইল নির্বাচন করুন"
+  },
+  "msgInterfaceSimple": {
+    "message": "সরল"
+  },
+  "msgInterfaceComplex": {
+    "message": "জটিল"
+  },
+  "lblTranslatePageInto": {
+    "message": "পৃষ্ঠা $LANGUAGE_NAME$ এ অনুবাদ করবেন?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "পৃষ্ঠা $LANGUAGE_NAME$ এ অনুবাদ করা হয়েছে",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  }
+}

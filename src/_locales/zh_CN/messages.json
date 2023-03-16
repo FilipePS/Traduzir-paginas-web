@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "翻译网页"
-  },
   "extensionDescription": {
     "message": "使用 Google 或 Yandex 实时翻译您的页面。"
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "翻译中..."
-  },
-  "lblTranslated": {
-    "message": "译文"
   },
   "lblError": {
     "message": "无法翻译此页面"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "译文"
   },
-  "btnMobileNeverTranslate": {
-    "message": "永不翻译此网站"
-  },
-  "btnMobileDonate": {
-    "message": "捐助支持"
-  },
   "optionsNeverTranslate": {
     "message": "永不翻译这些网站"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "显示底部翻译栏"
-  },
-  "optionPopupAuto": {
-    "message": "自动"
   },
   "optionPopupThreeFingers": {
     "message": "当我三指轻触屏幕时"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "否"
   },
-  "lblUseNewAlgorithm": {
-    "message": "使用新的翻译算法？"
-  },
-  "msgYesRecommended": {
-    "message": "是（推荐）"
-  },
-  "msgNoUseWidgets": {
-    "message": "否（使用微件）"
-  },
-  "optionsPageTitle": {
-    "message": "翻译网页 - 选项"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "当我点按\"翻译此网站\"时"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "您尚未将任何网站添加至此列表。"
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "您尚未将任何语言添加至此列表。"
-  },
   "btnAlwaysTranslate": {
     "message": "总是翻译此网站"
   },
   "lblAlwaysTranslateSites": {
     "message": "总是翻译这些网站"
-  },
-  "msgDonateWithPaypal": {
-    "message": "PayPal 捐款"
   },
   "lblDarkMode": {
     "message": "深色模式"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "键盘快捷键"
   },
-  "msgToTranslateSites": {
-    "message": "翻译该网站"
-  },
   "msgThanksForUseExtension": {
     "message": "感谢您使用此扩展。"
   },
   "msgIWillBeGrateful": {
     "message": "若您能够提供捐助，我将不胜感激。"
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "总是翻译此语言"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "在这些网站悬停显示译文"
@@ -282,10 +237,7 @@
     "message": "切换翻译服务"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "翻译服务"
+    "message": "切换简单和复杂接口"
   },
   "lblTranslateInterface": {
     "message": "贡献翻译"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "替换"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "连按两下 $SHORTCUT_KEY$ 键替换选中文本为译文",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "自动替换选中文本为译文"
   },
@@ -479,16 +423,16 @@
     "message": "添加到我的字典（这允许您在网页翻译时跳过某些单词）"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "将网站翻译成目标语言"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "将所选文本翻译成该目标语言"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "偏好语言"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "偏好语言 $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "选择弹出界面样式"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "简单"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "复杂"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "翻译页面为 $LANGUAGE_NAME$？",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "页面翻译为 $LANGUAGE_NAME$？",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

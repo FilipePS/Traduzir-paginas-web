@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Tīmekļa lapu tulkotājs"
-  },
   "extensionDescription": {
     "message": "Lapu tulkošana reāllaikā, izmantojot Google vai Yandex dzinējus."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Tulko ..."
-  },
-  "lblTranslated": {
-    "message": "Iztulkots"
   },
   "lblError": {
     "message": "Šo lapu nevarēja iztulkot"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Tulkojums"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Nekad netulkot šo vietni"
-  },
-  "btnMobileDonate": {
-    "message": "Ziedot"
-  },
   "optionsNeverTranslate": {
     "message": "Nekad netulkot šīs vietnes"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Rādīt mobilo uznirstošo logu"
-  },
-  "optionPopupAuto": {
-    "message": "Automātiski"
   },
   "optionPopupThreeFingers": {
     "message": "Kad es pieskaros ekrānam ar trim pirkstiem"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Nē"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Vai lietot jauno tulkošanas algoritmu?"
-  },
-  "msgYesRecommended": {
-    "message": "Jā (ieteicams)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Nē (izmanto logrīkus)"
-  },
-  "optionsPageTitle": {
-    "message": "Tīmekļa lapu tulkotāja - Iespējas"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Tikai kad noklikšķinu uz \"Tulkot šo vietni\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Jūs neesat pievienojis šim sarakstam nevienu vietni."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Jūs neesat pievienojis šim sarakstam nevienu valodu."
-  },
   "btnAlwaysTranslate": {
     "message": "Vienmēr tulkot šo vietni"
   },
   "lblAlwaysTranslateSites": {
     "message": "Vienmēr tulkot šīs vietnes"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Ziedot izmantojot PayPal"
   },
   "lblDarkMode": {
     "message": "Tumšais režīms"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Īsinājumtaustiņi"
   },
-  "msgToTranslateSites": {
-    "message": "Tulkot vietni"
-  },
   "msgThanksForUseExtension": {
     "message": "Paldies, ka izmantojāt šo paplašinājumu."
   },
   "msgIWillBeGrateful": {
     "message": "Būšu pateicīgs, ja ziedosiet."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Vienmēr tulkot šo valodu"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Rādīt tulkoto tekstu, virzot peles kursoru šādām vietnēm"
@@ -282,10 +237,7 @@
     "message": "Pārslēgties starp tulkošanas pakalpojumiem"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Tulkošanas pakalpojums"
+    "message": "Pārslēdzieties starp vienkāršu un sarežģītu saskarni"
   },
   "lblTranslateInterface": {
     "message": "Palīdziet šī paplašinājuma tulkošanā"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Aizvietot"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Aizstāt atlasīto tekstu ar tulkotu tekstu, divreiz nospiežot $SHORTCUT_KEY$",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Nekavējoties nomainiet atlasīto tekstu ar tulkoto tekstu"
   },
@@ -479,16 +423,16 @@
     "message": "Pievienot pielāgotajai vārdnīcai (tas ļauj izlaist noteiktus vārdus tīmekļa lapas tulkošanas laikā)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Tulkojiet vietnes šajā mērķa valodā"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Tulkot atlasīto tekstu šajā mērķa valodā"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Mīļākās valodas"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Mīļākā valoda $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Izvēlieties uznirstošo interfeisa stilu"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Vienkārši"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Komplekss"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Vai tulkot lapu $LANGUAGE_NAME$valodā?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Lapa tulkota $LANGUAGE_NAME$valodā",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

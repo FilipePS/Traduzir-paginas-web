@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Перевод веб страниц"
-  },
   "extensionDescription": {
     "message": "Перевод страниц в режиме реального времени с помощью Google или Яндекс."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Идет перевод ..."
-  },
-  "lblTranslated": {
-    "message": "Переведено"
   },
   "lblError": {
     "message": "Невозможно перевести эту страницу"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Перевод"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Никогда не переводить этот сайт"
-  },
-  "btnMobileDonate": {
-    "message": "Пожертвовать"
-  },
   "optionsNeverTranslate": {
     "message": "Никогда не переводить эти сайты"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Показывать всплывающее окно для мобильного телефона"
-  },
-  "optionPopupAuto": {
-    "message": "Автоматически"
   },
   "optionPopupThreeFingers": {
     "message": "Когда касаюсь экрана тремя пальцами"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Нет"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Использовать новый алгоритм перевода?"
-  },
-  "msgYesRecommended": {
-    "message": "Да (рекомендуется)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Нет (использовать виджеты)"
-  },
-  "optionsPageTitle": {
-    "message": "Translate Web Pages - Настройки"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Только при нажатии \"Перевести этот сайт\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Вы не добавили ни один сайт в этот список."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Вы не добавили ни один язык в этот список."
-  },
   "btnAlwaysTranslate": {
     "message": "Всегда переводить этот сайт"
   },
   "lblAlwaysTranslateSites": {
     "message": "Всегда переводить эти сайты"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Сделать пожертвование через PayPal"
   },
   "lblDarkMode": {
     "message": "Тёмный режим"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Горячие клавиши"
   },
-  "msgToTranslateSites": {
-    "message": "Перевести сайт"
-  },
   "msgThanksForUseExtension": {
     "message": "Спасибо, что используете это расширение."
   },
   "msgIWillBeGrateful": {
     "message": "Буду признателен, если сделаете пожертвование."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Всегда переводить с этого языка"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Показывать переведённый текст при наведении курсора на этих сайтах"
@@ -282,10 +237,7 @@
     "message": "Переключиться между сервисами перевода"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Сервис перевода"
+    "message": "Переключиться между упрощённым и расширенным интерфейсами"
   },
   "lblTranslateInterface": {
     "message": "Помочь с переводом"
@@ -464,31 +416,23 @@
   "btnReplace": {
     "message": "Заменить"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Заменить выделенный текст переводом при двойном нажатии $SHORTCUT_KEY$",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Мгновенно заменить выделенный текст переводом"
   },
   "optionsAddToCustomDictionary": {
-    "message": "Добавить в пользовательский словарь (Это позволяет пропускать определённые слова при переводе веб-страниц)"
+    "message": "Добавить в пользовательский словарь (это позволяет пропускать определённые слова при переводе веб-страниц)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Перевести веб-сайты на выбранный язык"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Перевести выделенный текст на выбранный язык"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Избранные языки"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Избранный язык $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Выберите стиль всплывающего окна"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Упрощённый"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Расширенный"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Перевести страницу на $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Страница переведена на $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

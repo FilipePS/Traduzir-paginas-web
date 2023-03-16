@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Oversæt Websider"
-  },
   "extensionDescription": {
     "message": "Oversæt din side i realtid via Google eller Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Oversætter..."
-  },
-  "lblTranslated": {
-    "message": "Oversat"
   },
   "lblError": {
     "message": "Denne side kunne ikke oversættes"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Oversat"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Oversæt aldrig denne hjemmeside"
-  },
-  "btnMobileDonate": {
-    "message": "Donér"
-  },
   "optionsNeverTranslate": {
     "message": "Oversæt aldrig disse hjemmesider"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Vis mobilpopupen"
-  },
-  "optionPopupAuto": {
-    "message": "Automatisk"
   },
   "optionPopupThreeFingers": {
     "message": "Når jeg rører tre fingre på skærmen"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Nej"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Brug den nye oversættelsesalgoritme?"
-  },
-  "msgYesRecommended": {
-    "message": "Ja (anbefales)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Nej (brug widgets)"
-  },
-  "optionsPageTitle": {
-    "message": "Oversæt Hjemmesider - Indstillinger"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Kun når jeg klikker \"Oversæt denne hjemmeside\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Du har ikke tilføjet nogen sider til denne liste."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Du har ikke tilføjet nogen sprog til denne liste."
-  },
   "btnAlwaysTranslate": {
     "message": "Oversæt altid denne hjemmeside"
   },
   "lblAlwaysTranslateSites": {
     "message": "Oversæt altid disse hjemmesider"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Doner med PayPal"
   },
   "lblDarkMode": {
     "message": "Mørk tilstand"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Tastaturgenveje"
   },
-  "msgToTranslateSites": {
-    "message": "Til oversættelse af hjemmeside"
-  },
   "msgThanksForUseExtension": {
     "message": "Tak for din brug af denne udvidelse."
   },
   "msgIWillBeGrateful": {
     "message": "Jeg vil være taknemmelig, hvis du kan donere."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Oversæt altid dette sprog"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Vis oversat tekst ved svævning på disse websteder"
@@ -282,10 +237,7 @@
     "message": "Skift mellem oversættelsestjenester"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Oversættelsestjeneste"
+    "message": "Skift mellem enkel og kompleks grænseflade"
   },
   "lblTranslateInterface": {
     "message": "Oversæt brugerflade"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Erstatte"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Erstat valgt tekst med oversat tekst, når du trykker to gange på $SHORTCUT_KEY$",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Erstat valgt tekst med oversat tekst med det samme"
   },
@@ -479,16 +423,16 @@
     "message": "Føj til brugerdefineret ordbog (Dette giver dig mulighed for at springe visse ord over under oversættelse af websider)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Oversæt websteder til dette målsprog"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Oversæt valgt tekst til dette målsprog"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Yndlingssprog"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Yndlingssprog $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Vælg popup-grænsefladestil"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Enkel"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Kompleks"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Oversætte side til $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Side oversat til $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

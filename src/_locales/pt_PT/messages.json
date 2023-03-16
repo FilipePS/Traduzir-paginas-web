@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Traduzir Páginas"
-  },
   "extensionDescription": {
     "message": "Traduza sua página em tempo real usando o Google ou Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Traduzindo..."
-  },
-  "lblTranslated": {
-    "message": "Traduzido"
   },
   "lblError": {
     "message": "Esta página não pôde ser traduzida"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Traduzido"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Nunca traduzir este sítio"
-  },
-  "btnMobileDonate": {
-    "message": "Doar"
-  },
   "optionsNeverTranslate": {
     "message": "Nunca traduzir estes sítios"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Mostrar o popup mobile"
-  },
-  "optionPopupAuto": {
-    "message": "Automaticamente"
   },
   "optionPopupThreeFingers": {
     "message": "Quando eu tocar três dedos no ecrã"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Não"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Usar o novo algoritmo de tradução?"
-  },
-  "msgYesRecommended": {
-    "message": "Sim (recomendado)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Não (use widgets)"
-  },
-  "optionsPageTitle": {
-    "message": "Traduzir Páginas Web - Opções"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Apenas quando eu clicar em \"Traduzir este site\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Você não adicionou nenhum site a esta lista."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Você não adicionou nenhum idioma a esta lista."
-  },
   "btnAlwaysTranslate": {
     "message": "Sempre traduzir este site"
   },
   "lblAlwaysTranslateSites": {
     "message": "Sempre traduzir estes sites"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Doe com o PayPal"
   },
   "lblDarkMode": {
     "message": "Modo escuro"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Atalhos do teclado"
   },
-  "msgToTranslateSites": {
-    "message": "Para traduzir o site"
-  },
   "msgThanksForUseExtension": {
     "message": "Obrigado por usar esta extensão."
   },
   "msgIWillBeGrateful": {
     "message": "Ficarei grato se você puder fazer uma doação."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Sempre traduzir este idioma"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Mostrar texto traduzido ao passar o mouse sobre esses sites"
@@ -282,10 +237,7 @@
     "message": "Alternar entre os serviços de tradução"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Serviço de tradução"
+    "message": "Alternar entre interface simples e complexa"
   },
   "lblTranslateInterface": {
     "message": "Traduzir a interface"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Substituir"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Substitua o texto selecionado pelo texto traduzido ao pressionar $SHORTCUT_KEY$ duas vezes",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Substitua o texto selecionado pelo texto traduzido instantaneamente"
   },
@@ -479,16 +423,16 @@
     "message": "Adicionar ao dicionário personalizado (isso permite que você pule certas palavras durante a tradução da página da web)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Traduzir sites para este idioma de destino"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Traduza o texto selecionado para este idioma de destino"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "idiomas favoritos"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Idioma favorito $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Selecione o estilo de interface pop-up"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Simples"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Complexo"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Traduzir página em $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Página traduzida para $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

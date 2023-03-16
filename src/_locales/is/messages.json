@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Þýða vefsíður"
-  },
   "extensionDescription": {
     "message": "Þýddu síðuna þína í rauntíma með Google eða Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Þýðir..."
-  },
-  "lblTranslated": {
-    "message": "Þýtt"
   },
   "lblError": {
     "message": "Ekki var hægt að þýða þessa síðu"
@@ -54,7 +48,7 @@
     "message": "Reyna aftur"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Opna í Google Þýðingar"
+    "message": "Opna í Google Þýðingum"
   },
   "btnDonate": {
     "message": "Styrkja"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Þýtt"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Aldrei þýða þessa síðu"
-  },
-  "btnMobileDonate": {
-    "message": "Styrkja"
-  },
   "optionsNeverTranslate": {
     "message": "Aldrei þýða þessa síðu"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Sýna farsímasprettigluggann"
-  },
-  "optionPopupAuto": {
-    "message": "Sjálfkrafa"
   },
   "optionPopupThreeFingers": {
     "message": "Þegar ég snerti skjáinn með þremur fingrum"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Nei"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Nota nýja þýðingarreikniritið?"
-  },
-  "msgYesRecommended": {
-    "message": "Já (mælt með)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Nei (nota widgets)"
-  },
-  "optionsPageTitle": {
-    "message": "Þýða vefsíður - Valkostir"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Aðeins þegar ég smelli á \"Þýða þessa síðu\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Þú hefur ekki bætt neinum síðum við þennan lista."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Þú hefur ekki bætt neinum tungumálum við þennan lista."
-  },
   "btnAlwaysTranslate": {
     "message": "Alltaf þýða þessa síðu"
   },
   "lblAlwaysTranslateSites": {
     "message": "Alltaf þýða þessar síður"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Styrkja með PayPal"
   },
   "lblDarkMode": {
     "message": "Dökkur hamur"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Flýtileiðir á lyklaborði"
   },
-  "msgToTranslateSites": {
-    "message": "Til að þýða síðuna"
-  },
   "msgThanksForUseExtension": {
     "message": "Þakka þér fyrir að nota þessa viðbót."
   },
   "msgIWillBeGrateful": {
     "message": "Ég mun vera þakklát(ur) ef þú getur styrkjað mig."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Alltaf þýða þetta tungumál"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Sýna þýddan texta þegar sveimað er yfir á þessum síðum"
@@ -282,10 +237,7 @@
     "message": "Skipta á milli þýðingarþjónustu"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Þýðingarþjónusta"
+    "message": "Skipta á milli einfalds og flókins viðmóts"
   },
   "lblTranslateInterface": {
     "message": "Þýða viðmótið"
@@ -336,7 +288,7 @@
     "message": "Viltu endurheimta viðbótina í sjálfgefnar stillingar?"
   },
   "lblTtsSpeed": {
-    "message": "Hljóðhraði textatal"
+    "message": "Hljóðhraði textatals"
   },
   "lblEnableDeepL": {
     "message": "Virkja DeepL sem textaþýðingarþjónustu"
@@ -374,7 +326,7 @@
     "message": "Ekki flokka niðurstöður Google Þýðingar"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Þýða efni sem búið er til á kraftmikinn hátt"
+    "message": "Þýða breytilega búið til efni"
   },
   "calculatestorage": {
     "message": "Reikna"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Skipta út"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Skipta út völdum texta fyrir þýddan texta þegar ýtt er tvisvar á $SHORTCUT_KEY$",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Skipta út völdum texta fyrir þýddan texta strax"
   },
@@ -479,16 +423,16 @@
     "message": "Bæta við sérsniðna orðabók (Þetta gerir þér kleift að sleppa tilteknum orðum við þýðingar á vefsíðu)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Þýða vefsíður yfir á þetta marktungumál"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Þýða valinn texta yfir á þetta marktungumál"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Uppáhalds tungumál"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Uppáhalds tungumál $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Velja sprettigluggaviðmótsstíl"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Einfalt"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Flókið"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Þýða vefsíðu yfir á $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Síða þýdd yfir á $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

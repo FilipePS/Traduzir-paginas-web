@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Traducció de pàgines web"
-  },
   "extensionDescription": {
     "message": "Traduïu la vostra web en temps real amb Google o Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "S'està traduint..."
-  },
-  "lblTranslated": {
-    "message": "Pàgina traduïda"
   },
   "lblError": {
     "message": "No s'ha pogut traduir aquesta pàgina"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Pàgina traduïda"
   },
-  "btnMobileNeverTranslate": {
-    "message": "No tradueixis mai aquest lloc"
-  },
-  "btnMobileDonate": {
-    "message": "Feu un donatiu"
-  },
   "optionsNeverTranslate": {
     "message": "No tradueixis mai aquests llocs"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Mostra la finestra emergent del mòbil"
-  },
-  "optionPopupAuto": {
-    "message": "Automàticament"
   },
   "optionPopupThreeFingers": {
     "message": "En tocar amb tres dits la pantalla"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "No"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Voleu utilitzar el nou algorisme de traducció?"
-  },
-  "msgYesRecommended": {
-    "message": "Sí (recomanat)"
-  },
-  "msgNoUseWidgets": {
-    "message": "No (utilitza ginys)"
-  },
-  "optionsPageTitle": {
-    "message": "Traducció de pàgines web - Opcions"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Només quan faig clic a «Tradueix aquest lloc»"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "No heu afegit cap lloc a aquesta llista."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "No heu afegit cap idioma a aquesta llista."
-  },
   "btnAlwaysTranslate": {
     "message": "Tradueix sempre aquest lloc"
   },
   "lblAlwaysTranslateSites": {
     "message": "Tradueix sempre aquests llocs"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Fes un donatiu amb PayPal"
   },
   "lblDarkMode": {
     "message": "Mode fosc"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Dreceres del teclat"
   },
-  "msgToTranslateSites": {
-    "message": "Per traduir el lloc"
-  },
   "msgThanksForUseExtension": {
     "message": "Gràcies per utilitzar aquesta extensió."
   },
   "msgIWillBeGrateful": {
     "message": "Us agrairé si podeu fer un donatiu."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Tradueix sempre aquest idioma"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Mostra el text traduït en passar el cursor per aquests llocs"
@@ -282,10 +237,7 @@
     "message": "Canvia de servei de traducció"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Servei de traducció"
+    "message": "Canvia entre una interfície senzilla i una complexa"
   },
   "lblTranslateInterface": {
     "message": "Tradueix la interfície"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Substitueix"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Substitueix el text seleccionat pel text traduït en prémer $SHORTCUT_KEY$ dues vegades",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Substitueix el text seleccionat pel text traduït a l'instant"
   },
@@ -479,16 +423,16 @@
     "message": "Afegeix al diccionari personalitzat (això us permet ometre determinades paraules durant la traducció de la pàgina web)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Tradueix llocs web a aquesta llengua d'arribada"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Tradueix el text seleccionat a aquesta llengua d'arribada"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Idiomes preferits"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Idioma preferit $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,7 +441,7 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Seleccioneu l'estil d'interfície emergent"
   },
   "msgInterfaceSimple": {
     "message": "Simple"
@@ -506,7 +450,7 @@
     "message": "Complex"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Traduir la pàgina a $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Pàgina traduïda al $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

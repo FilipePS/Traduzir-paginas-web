@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Tłumacz strony internetowe"
-  },
   "extensionDescription": {
     "message": "Przetłumacz swoją stronę w czasie rzeczywistym za pomocą Google lub Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Trwa tłumaczenie ..."
-  },
-  "lblTranslated": {
-    "message": "Przetłumaczone"
   },
   "lblError": {
     "message": "Nie udało się przetłumaczyć tę stronę"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Przetłumaczony"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Nigdy nie tłumacz tej witryny"
-  },
-  "btnMobileDonate": {
-    "message": "Wesprzyj"
-  },
   "optionsNeverTranslate": {
     "message": "Nigdy nie tłumacz tych witryn"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Pokaż wyskakujące okienko komórkowe"
-  },
-  "optionPopupAuto": {
-    "message": "Automatycznie"
   },
   "optionPopupThreeFingers": {
     "message": "Kiedy dotykam ekranu trzema palcami"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Nie"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Użyć nowego algorytmu tłumaczenia?"
-  },
-  "msgYesRecommended": {
-    "message": "Tak (zalecane)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Nie (użyj widżetów)"
-  },
-  "optionsPageTitle": {
-    "message": "Przetłumacz strony internetowe - Opcje"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Tylko gdy kliknę \"Przetłumacz tę witrynę\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Nie dodano żadnych stron do tej listy."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Nie dodano żadnych języków do tej listy."
-  },
   "btnAlwaysTranslate": {
     "message": "Zawsze tłumacz tę witrynę"
   },
   "lblAlwaysTranslateSites": {
     "message": "Zawsze tłumacz te witryny"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Wspomóż przy pomocy PayPal"
   },
   "lblDarkMode": {
     "message": "Ciemny motyw"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Skróty klawiszowe"
   },
-  "msgToTranslateSites": {
-    "message": "Aby przetłumaczyć witrynę"
-  },
   "msgThanksForUseExtension": {
     "message": "Dziękujemy że korzystasz z tego rozszerzenia."
   },
   "msgIWillBeGrateful": {
     "message": "Będę wdzięczny, jeśli możesz przekazać darowiznę."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Zawsze tłumacz z tego języka"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Pokaż przetłumaczony tekst po najechaniu wskaźnikiem na te witryny"
@@ -282,10 +237,7 @@
     "message": "Przełącz usługę tłumaczenia"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Usługa tłumaczenia"
+    "message": "Przełącz między uproszczonym a zaawansowanym interfejsem"
   },
   "lblTranslateInterface": {
     "message": "Pomóż w tłumaczeniu interfejsu"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Zastąp"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Zastąp zaznaczony tekst przetłumaczonym tekstem po dwukrotnym naciśnięciu $SHORTCUT_KEY$",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Natychmiastowe zastępowanie zaznaczonego tekstu tekstem przetłumaczonym"
   },
@@ -479,16 +423,16 @@
     "message": "Dodaj do własnego słownika (Pomija podane słowa podczas tłumaczenia stron internetowych)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Przetłumacz strony internetowe na ten język"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Przetłumacz zaznaczony tekst na ten język"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Ulubione języki"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Ulubiony język $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Wybierz wygląd wyskakującego okienka"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Uproszczony"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Zaawansowany"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Przetłumaczyć stronę na $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Strona przetłumaczona na $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Μετάφραση ιστοσελίδων"
-  },
   "extensionDescription": {
     "message": "Μετάφραση της σελίδας σας άμεσα με χρήση Google ή Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Μεταφράζεται …"
-  },
-  "lblTranslated": {
-    "message": "Μεταφράστηκε"
   },
   "lblError": {
     "message": "Αυτή η σελίδα δεν μπόρεσε να μεταφραστεί"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Μεταφράστηκε"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Ποτέ μετάφραση αυτή την ιστοσελίδα"
-  },
-  "btnMobileDonate": {
-    "message": "Δωρεά"
-  },
   "optionsNeverTranslate": {
     "message": "Ποτέ μετάφραση αυτών των ιστοσελίδων"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Εμφάνιση αναδυόμενου κινητού παραθύρου"
-  },
-  "optionPopupAuto": {
-    "message": "Αυτόματα"
   },
   "optionPopupThreeFingers": {
     "message": "Όταν αγγίζω τρία δάχτυλα στην οθόνη"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Όχι"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Χρήση του νέου αλγόριθμου μετάφρασης;"
-  },
-  "msgYesRecommended": {
-    "message": "Ναι (προτείνεται)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Όχι (χρήση γραφικού)"
-  },
-  "optionsPageTitle": {
-    "message": "Μετάφραση Ιστοσελίδων - Επιλογές"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Μόνο όταν κάνω κλικ στο \"Μετάφραση αυτού του ιστότοπου\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Δεν έχετε προσθέσει ιστότοπους σε αυτήν τη λίστα."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Δεν έχετε προσθέσει γλώσσες σε αυτήν τη λίστα."
-  },
   "btnAlwaysTranslate": {
     "message": "Πάντα μετάφραση αυτής της ιστοσελίδας"
   },
   "lblAlwaysTranslateSites": {
     "message": "Πάντα μετάφραση αυτών των ιστοσελίδων"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Δωρεά μέσω PayPal"
   },
   "lblDarkMode": {
     "message": "Σκοτεινή Λειτουργία"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Συντομεύσεις πληκτρολογίου"
   },
-  "msgToTranslateSites": {
-    "message": "Για μετάφραση ιστοσελίδας"
-  },
   "msgThanksForUseExtension": {
     "message": "Σας ευχαριστούμε για τη χρήση αυτής της επέκτασης."
   },
   "msgIWillBeGrateful": {
     "message": "Θα είμαι ευγνώμων αν μπορείτε να κάνετε μια δωρεά."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Πάντα μετάφραση αυτής της γλώσσας"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Εμφάνιση μεταφρασμένου κειμένου όταν αιωρείται σε αυτούς τους ιστότοπους"
@@ -282,10 +237,7 @@
     "message": "Εναλλαγή μεταξύ υπηρεσιών μετάφρασης"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Υπηρεσία Μετάφρασης"
+    "message": "Εναλλαγή μεταξύ απλού και σύνθετου περιβάλλοντος"
   },
   "lblTranslateInterface": {
     "message": "Μετάφραση περιβάλλοντος"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Αντικατάσταση"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Αντικατάσταση του επιλεγμένου κειμένου με μεταφρασμένο κείμενο όταν πατήσετε $SHORTCUT_KEY$ δύο φορές",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Αντικατάσταση επιλεγμένου κειμένου με το μεταφρασμένο άμεσα"
   },
@@ -479,16 +423,16 @@
     "message": "Προσθήκη στο προσαρμοσμένο λεξικό (Αυτό σας επιτρέπει να παραλείψετε ορισμένες λέξεις κατά τη μετάφρασή της)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Μετάφραση της σελίδας στη γλώσσα προορισμού"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Μετάφραση του επιλεγμένου κειμένου στη γλώσσα προορισμού"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Αγαπημένες γλώσσες"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Αγαπημένη γλώσσα $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Επιλογή στυλ αναδυόμενου περιβάλλοντος"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Απλό"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Σύνθετο"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Μετάφραση σελίδας σε $LANGUAGE_NAME$;",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Η σελίδα μεταφράστηκε σε $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

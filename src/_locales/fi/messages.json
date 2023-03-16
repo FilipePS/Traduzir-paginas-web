@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Käännä verkkosivut"
-  },
   "extensionDescription": {
     "message": "Käännä verkkosivu lennossa Googlella tai Yandexilla."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Käännetään..."
-  },
-  "lblTranslated": {
-    "message": "Käännetty"
   },
   "lblError": {
     "message": "Sivua ei voitu kääntää"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Käännetty"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Älä käännä tätä sivua"
-  },
-  "btnMobileDonate": {
-    "message": "Lahjoita"
-  },
   "optionsNeverTranslate": {
     "message": "Älä käännä näitä sivuja"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Näytä työkalupalkki mobiiliversiossa"
-  },
-  "optionPopupAuto": {
-    "message": "Automaattisesti"
   },
   "optionPopupThreeFingers": {
     "message": "Kolmen sormen kosketuksella"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Ei"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Käytä uutta käännösalgorytmiä?"
-  },
-  "msgYesRecommended": {
-    "message": "Kyllä (Suositellaan)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Ei (käytä pienoisohjelmaa)"
-  },
-  "optionsPageTitle": {
-    "message": "Käännä verkkosivut - Asetukset"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Vain, jos klikkaan \"Käännä tämä sivusto\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Et ole lisännyt yhtään kieltä tähän luetteloon."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Et ole lisännyt yhtään kieltä tähän luetteloon."
-  },
   "btnAlwaysTranslate": {
     "message": "Käännä tämä sivusto aina"
   },
   "lblAlwaysTranslateSites": {
     "message": "Käännä nämä sivustot aina"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Lahjoita PayPalin kautta"
   },
   "lblDarkMode": {
     "message": "Tumma tila"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Pikanäppäimet"
   },
-  "msgToTranslateSites": {
-    "message": "Sivuston kääntäminen"
-  },
   "msgThanksForUseExtension": {
     "message": "Kiitos, että käytät tätä laajennusta."
   },
   "msgIWillBeGrateful": {
     "message": "Olen kiitollinen, jos voit tehdä lahjoituksen."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Käännä tämä kieli aina"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Näytä käännetty teksti, kun käytät osoitinaktivointia näillä sivustoilla"
@@ -282,10 +237,7 @@
     "message": "Vaihda käännöspalveluiden välillä"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Käännöspalvelu"
+    "message": "Vaihda yksinkertaisen ja monimutkaisen käyttöliittymän välillä"
   },
   "lblTranslateInterface": {
     "message": "Auta käyttöliittymän kääntämisessä"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Korvata"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Korvaa valittu teksti käännetyllä tekstillä painamalla $SHORTCUT_KEY$ kahdesti",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Korvaa valittu teksti käännetyllä tekstillä välittömästi"
   },
@@ -479,16 +423,16 @@
     "message": "Lisää mukautettuun sanakirjaan (Tämän avulla voit ohittaa tietyt sanat verkkosivun kääntämisen aikana)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Käännä verkkosivustoja tälle kohdekielelle"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Käännä valittu teksti tälle kohdekielelle"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Suosikkikielet"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Suosikkikieli $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Valitse ponnahdusikkunan käyttöliittymätyyli"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Yksinkertainen"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Monimutkainen"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Käännä sivu kielelle $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Sivu käännetty $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "تور بەتلەرنى تەرجىمە قىلىڭ"
-  },
   "extensionDescription": {
     "message": "Google ياكى Yandex ئارقىلىق بېتىڭىزنى ھەقىقىي تەرجىمە قىلىڭ."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "تەرجىمە ..."
-  },
-  "lblTranslated": {
-    "message": "تەرجىمە قىلىندى"
   },
   "lblError": {
     "message": "بۇ بەتنى تەرجىمە قىلىشقا بولمىدى"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "تەرجىمە قىلىندى"
   },
-  "btnMobileNeverTranslate": {
-    "message": "بۇ تور بەتنى ھەرگىز تەرجىمە قىلماڭ"
-  },
-  "btnMobileDonate": {
-    "message": "ئىئانە قىلىڭ"
-  },
   "optionsNeverTranslate": {
     "message": "بۇ تور بېكەتلەرنى ھەرگىز تەرجىمە قىلماڭ"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "كۆچمە كۆزنەكنى كۆرسەت"
-  },
-  "optionPopupAuto": {
-    "message": "ئاپتوماتىك"
   },
   "optionPopupThreeFingers": {
     "message": "ئېكرانغا ئۈچ بارماق تەگسەم"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "ياق"
   },
-  "lblUseNewAlgorithm": {
-    "message": "يېڭى تەرجىمە ھېسابلاش ئۇسۇلىنى ئىشلىتىڭ؟"
-  },
-  "msgYesRecommended": {
-    "message": "ھەئە (تەۋسىيە)"
-  },
-  "msgNoUseWidgets": {
-    "message": "ياق (كىچىك قوراللارنى ئىشلىتىڭ)"
-  },
-  "optionsPageTitle": {
-    "message": "تور بەتلەرنى تەرجىمە قىلىش - تاللانما"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "«بۇ تور بەتنى تەرجىمە قىلىش» نى باسساملا بولىدۇ."
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "سىز بۇ تىزىملىككە ھېچقانداق تور بېكەت قوشمىدىڭىز."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "سىز بۇ تىزىملىككە ھېچقانداق تىل قوشمىدىڭىز."
-  },
   "btnAlwaysTranslate": {
     "message": "بۇ تور بەتنى ھەمىشە تەرجىمە قىلىڭ"
   },
   "lblAlwaysTranslateSites": {
     "message": "بۇ تور بېكەتلەرنى ھەمىشە تەرجىمە قىلىڭ"
-  },
-  "msgDonateWithPaypal": {
-    "message": "PayPal بىلەن ئىئانە قىلىڭ"
   },
   "lblDarkMode": {
     "message": "قاراڭغۇ ھالەت"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "كۇنۇپكا تاختىسى تېزلەتمىسى"
   },
-  "msgToTranslateSites": {
-    "message": "بېكەتنى تەرجىمە قىلىش"
-  },
   "msgThanksForUseExtension": {
     "message": "بۇ كېڭەيتىلمىنى ئىشلەتكەنلىكىڭىزگە رەھمەت."
   },
   "msgIWillBeGrateful": {
     "message": "ئىئانە قىلسىڭىز مەن مىننەتدار بولىمەن."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "بۇ تىلنى ھەمىشە تەرجىمە قىلىڭ"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "بۇ تور بەتلەردە يۈرگەندە تەرجىمە قىلىنغان تېكىستنى كۆرسەت"
@@ -282,10 +237,7 @@
     "message": "تەرجىمە مۇلازىمىتى ئارىسىدا ئالماشتۇرۇڭ"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "تەرجىمە مۇلازىمىتى"
+    "message": "ئاددىي ۋە مۇرەككەپ كۆرۈنمە يۈزىگە ئالماشتۇرۇڭ"
   },
   "lblTranslateInterface": {
     "message": "كۆرۈنمە يۈزىنى تەرجىمە قىلىڭ"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "ئالماشتۇرۇڭ"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "$SHORTCUT_KEY$ نى ئىككى قېتىم باسقاندا تاللانغان تېكىستنى تەرجىمە تېكىست بىلەن ئالماشتۇرۇڭ",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "تاللانغان تېكىستنى تەرجىمە تېكىست بىلەن دەرھال ئالماشتۇرۇڭ"
   },
@@ -479,16 +423,16 @@
     "message": "ئىختىيارى لۇغەتكە قوشۇڭ (بۇ تور بەت تەرجىمە جەريانىدا بەزى سۆزلەرنى ئاتلاپ ئۆتۈپ كېتىدۇ)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "تور بېكەتلەرنى بۇ نىشان تىلغا تەرجىمە قىلىڭ"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "تاللانغان تېكىستنى بۇ نىشان تىلغا تەرجىمە قىلىڭ"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "ياقتۇرىدىغان تىللار"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "ياقتۇرىدىغان تىل $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "سەكرىمە كۆرۈنمە يۈز ئۇسلۇبىنى تاللاڭ"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "ئاددىي"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "مۇرەككەپ"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "بەتنى $LANGUAGE_NAME$گە تەرجىمە قىلامسىز؟",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "بەت $LANGUAGE_NAME$گە تەرجىمە قىلىندى",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

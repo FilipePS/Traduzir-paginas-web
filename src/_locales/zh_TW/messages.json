@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "網頁翻譯器"
-  },
   "extensionDescription": {
     "message": "使用 Google 或 Yandex 即時翻譯您的網頁。"
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "翻譯中……"
-  },
-  "lblTranslated": {
-    "message": "已翻譯"
   },
   "lblError": {
     "message": "無法翻譯此頁面"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "已翻譯"
   },
-  "btnMobileNeverTranslate": {
-    "message": "永不翻譯此網站"
-  },
-  "btnMobileDonate": {
-    "message": "資助"
-  },
   "optionsNeverTranslate": {
     "message": "永不翻譯這些網站"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "顯示行動裝置彈出視窗"
-  },
-  "optionPopupAuto": {
-    "message": "自動"
   },
   "optionPopupThreeFingers": {
     "message": "當我以三隻手指觸控時。"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "否"
   },
-  "lblUseNewAlgorithm": {
-    "message": "使用新的翻譯演算法？"
-  },
-  "msgYesRecommended": {
-    "message": "是（推薦）"
-  },
-  "msgNoUseWidgets": {
-    "message": "否（使用小工具）"
-  },
-  "optionsPageTitle": {
-    "message": "網頁翻譯器 - 選項"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "當我選擇「翻譯此網站」時"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "您尚未新增任何網站至此清單。"
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "您尚未新增任何語言至此清單。"
-  },
   "btnAlwaysTranslate": {
     "message": "始終翻譯此網站"
   },
   "lblAlwaysTranslateSites": {
     "message": "始終翻譯這些網站"
-  },
-  "msgDonateWithPaypal": {
-    "message": "用 PayPal 資助"
   },
   "lblDarkMode": {
     "message": "黑暗模式"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "鍵盤快捷鍵"
   },
-  "msgToTranslateSites": {
-    "message": "翻譯這個網站"
-  },
   "msgThanksForUseExtension": {
     "message": "感謝您使用這個擴充套件"
   },
   "msgIWillBeGrateful": {
     "message": "如果您有能力捐款，我將感激不盡。"
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "始終翻譯此語言"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "停留在這些網站上時顯示譯文"
@@ -282,10 +237,7 @@
     "message": "在翻譯伺服器之間切換"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "翻譯伺服器"
+    "message": "在簡潔和紛繁界面之間切換"
   },
   "lblTranslateInterface": {
     "message": "協助翻譯此擴充套件"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "取代"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "按 $SHORTCUT_KEY$ 兩次時用譯文取代所選文字",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "立即將所選文字取代為譯文"
   },
@@ -479,16 +423,16 @@
     "message": "新增至自訂的字典（這能讓您在網頁翻譯期間跳過特定的字詞）"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "將網站翻譯為此目標語言"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "將選取的文字翻譯為此目標語言"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "偏好的語言"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "偏好的語言 $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "選擇彈出式介面的樣式"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "簡潔"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "紛繁"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "將頁面翻譯為 $LANGUAGE_NAME$？",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "已將頁面翻譯為 $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

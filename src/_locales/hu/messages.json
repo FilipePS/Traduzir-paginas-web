@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Weboldalak fordítása"
-  },
   "extensionDescription": {
     "message": "Fordítsa le az oldalt valós időben Google vagy Yandex fordítóval."
   },
@@ -14,14 +11,11 @@
   "lblTranslating": {
     "message": "Fordítás ..."
   },
-  "lblTranslated": {
-    "message": "Lefordítva"
-  },
   "lblError": {
     "message": "Ez az oldal nem lefordítható"
   },
   "lblAlwaysTranslate": {
-    "message": "Mindig frdítsa $LANGUAGE_NAME$ nyelvről",
+    "message": "Mindig fordítsa le $LANGUAGE_NAME$ nyelvről",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -45,7 +39,7 @@
     "message": "Lefordítás"
   },
   "btnOptions": {
-    "message": "Beállítások"
+    "message": "Lehetőségek"
   },
   "btnRestore": {
     "message": "Eredeti megtekintése"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Lefordított"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Soha ne fordítsa le ezt az oldalt"
-  },
-  "btnMobileDonate": {
-    "message": "Adományozás"
-  },
   "optionsNeverTranslate": {
     "message": "Soha ne fordítsa le ezeket az oldalakat"
   },
@@ -84,10 +72,7 @@
     "message": "Mindig fordítsa le ezeket a nyelveket"
   },
   "optionPopupConfig": {
-    "message": "Mutassa a mobilon felugró ablakot"
-  },
-  "optionPopupAuto": {
-    "message": "Automatikusan"
+    "message": "Mutasson mobilon felugró ablakot"
   },
   "optionPopupThreeFingers": {
     "message": "Amikor 3 ujjal érintem a képernyőt"
@@ -114,7 +99,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Mutassa a fordítási lehetőséget a jobb klikkes menüben"
+    "message": "Mutassa az oldal fordítási lehetőségét a jobb klikkes menüben"
   },
   "msgYes": {
     "message": "Igen"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Nem"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Használni kívánja az új fordítási algoritmust?"
-  },
-  "msgYesRecommended": {
-    "message": "Igen (javasolt)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Nem (widget használata)"
-  },
-  "optionsPageTitle": {
-    "message": "Weboldalak fordítása - Beállítások"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Csak akkor ha a \"Oldal lefordítása\"-ra kattintok"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Nem adott hozzá még weboldalt a listához."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Nem adott hozzá még nyelvet a listához."
-  },
   "btnAlwaysTranslate": {
     "message": "Mindig fordítsa le ezt az oldalt"
   },
   "lblAlwaysTranslateSites": {
     "message": "Mindig fordítsa le ezeket az oldalakat"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Adományozás PayPal-lal"
   },
   "lblDarkMode": {
     "message": "Sötét mód"
@@ -168,7 +129,7 @@
     "message": "A kijelölt szöveg fordítása"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Mutassa a fordítási lehetőséget a jobb klikkes menüben"
+    "message": "Mutassa a kijelölt szöveg fordítási lehetőségét a jobb klikkes menüben"
   },
   "lblNeverTranslateLangs": {
     "message": "Soha ne fordítsa le ezeket a nyelveket"
@@ -177,7 +138,7 @@
     "message": "Soha ne fordítsa le ezt a nyelvet"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Eredeti szöveg mutatása ha fölötte van a kurzor"
+    "message": "Eredeti szöveg mutatása, ha fölötte van a kurzor"
   },
   "msgLanguages": {
     "message": "Nyelvek"
@@ -210,13 +171,10 @@
     "message": "Hozzáad"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Fordított szöveg mutatása ha fölötte van a kurzor"
+    "message": "Fordított szöveg mutatása, ha fölötte van a kurzor"
   },
   "lblKeyboardShortcuts": {
     "message": "Billentyűparancsok"
-  },
-  "msgToTranslateSites": {
-    "message": "Az oldal fordításához"
   },
   "msgThanksForUseExtension": {
     "message": "Köszönjük, hogy ezt a bővítményt használja."
@@ -224,11 +182,8 @@
   "msgIWillBeGrateful": {
     "message": "Örök hálám az adományokért."
   },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Mindig fordítsa le ezt a nyelvet"
-  },
   "lblShowTranslatedHoveringSites": {
-    "message": "Fordított szöveg mutatása ezeknél az oldalaknál ha fölötte áll a kurzorral"
+    "message": "Fordított szöveg mutatása ezeknél az oldalaknál, ha fölötte áll a kurzorral"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "A felugró ikon kékre vált ha az oldal fordításra került"
@@ -252,10 +207,10 @@
     "message": "Ne mutassa, ha a kijelölt szöveg nyelve ismeretlen"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Fordítás mutatása ha a kurzorral fölötte áll az oldalon"
+    "message": "Fordítás mutatása, ha a kurzorral fölötte áll az oldalon"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Fordítás mutatása ha a kurzorral fölötte áll az oldalon $LANGUAGE_NAME$ nyelven",
+    "message": "Fordítás mutatása, ha a kurzorral fölötte áll $LANGUAGE_NAME$ nyelvű oldalon",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -264,7 +219,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Fordítás mutatása ha a kurzorral fölötte áll az oldalon ezeknél a nyelveknél"
+    "message": "Fordítás mutatása, ha a kurzorral fölötte áll az ilyen nyelvű oldalakon"
   },
   "msgNoTranslateSelectedText": {
     "message": "Ne fordítsa a kijelölt szöveget"
@@ -282,10 +237,7 @@
     "message": "Fordító szolgáltatások közötti váltás"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Fordító szolgáltatás"
+    "message": "Váltás az egyszerű és az összetett felület között"
   },
   "lblTranslateInterface": {
     "message": "A felület fordítása"
@@ -303,13 +255,13 @@
     "message": "Tárhely"
   },
   "lblTranslationCache": {
-    "message": "Fordítási cache"
+    "message": "Fordítási gyorsítótár"
   },
   "lblStorageUsed": {
     "message": "Használt tárhely:"
   },
   "deleteTranslationCache": {
-    "message": "Fordítási cache törlése"
+    "message": "Fordítási gyorsítótár törlése"
   },
   "lblPersonalSettings": {
     "message": "Személyes beállítások"
@@ -324,7 +276,7 @@
     "message": "Alapértelmezett beállítások visszaállítása"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Szeretné törölni a fordítási cache-t?"
+    "message": "Szeretné törölni a fordítási gyorsítótárat?"
   },
   "doYouWantOverwriteAllSettings": {
     "message": "Felül kívánja írni az összes létező beállítást a mentett adatból?"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Cserélje ki"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "A kiválasztott szöveg lecserélése lefordított szöveggel, ha kétszer megnyomja a $SHORTCUT_KEY$ gombot",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Cserélje ki a kijelölt szöveget lefordított szöveggel azonnal"
   },
@@ -479,16 +423,16 @@
     "message": "Hozzáadás egyéni szótárhoz (Ez lehetővé teszi bizonyos szavak kihagyását a weboldal fordítása során)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Weboldalak fordítása erre a célnyelvre"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "A kijelölt szöveg fordítása erre a célnyelvre"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Kedvenc nyelvek"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Kedvenc nyelv: $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Válassza ki a felugró felület stílusát"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Egyszerű"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Összetett"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Az oldal lefordítása $LANGUAGE_NAME$ nyelvre?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Az oldal lefordítva $LANGUAGE_NAME$ nyelvre",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

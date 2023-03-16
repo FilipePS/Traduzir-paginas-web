@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "ترجمه صفحات وب"
-  },
   "extensionDescription": {
     "message": "صفحه‌ی خود را بی‌درنگ با استفاده از Google یا Yandex ترجمه کنید."
   },
@@ -9,19 +6,16 @@
     "message": "ترجمه این صفحه"
   },
   "lblTranslate": {
-    "message": "این صفحه ترجمه شود ؟"
+    "message": "این صفحه ترجمه شود؟"
   },
   "lblTranslating": {
     "message": "در حال ترجمه ..."
-  },
-  "lblTranslated": {
-    "message": "ترجمه شده"
   },
   "lblError": {
     "message": "این صفحه قابل ترجمه نیست"
   },
   "lblAlwaysTranslate": {
-    "message": "همیشه از $LANGUAGE_NAME$ ترجمه شود",
+    "message": "همیشه از زبان $LANGUAGE_NAME$ ترجمه شود.",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "ترجمه شده"
   },
-  "btnMobileNeverTranslate": {
-    "message": "هرگز این سایت ترجمه نشود"
-  },
-  "btnMobileDonate": {
-    "message": "حمایت مالی"
-  },
   "optionsNeverTranslate": {
     "message": "هرگز این سایت ها ترجمه نشود"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "نمایش پنجره‌ی کوچک اعلان دهنده"
-  },
-  "optionPopupAuto": {
-    "message": "بطور خودکار"
   },
   "optionPopupThreeFingers": {
     "message": "وقتی سه انگشت را روی صفحه لمس می کنم"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "خیر"
   },
-  "lblUseNewAlgorithm": {
-    "message": "از الگوریتم ترجمه جدید استفاده می کنید ؟"
-  },
-  "msgYesRecommended": {
-    "message": "بله (پیشنهاد شده)"
-  },
-  "msgNoUseWidgets": {
-    "message": "خیر (استفاده از ویجت ها)"
-  },
-  "optionsPageTitle": {
-    "message": "ترجمه صفحات وب - گزینه ها"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "فقط وقتی روی \"ترجمه کردن این سایت\" کلیک می کنم"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "شما هیچ سایتی را به این فهرست اضافه نکرده اید."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "شما هیچ زبانی را به این فهرست اضافه نکرده اید."
-  },
   "btnAlwaysTranslate": {
     "message": "این سایت را همیشه ترجمه کن"
   },
   "lblAlwaysTranslateSites": {
     "message": "این سایت ها را همیشه ترجمه کن"
-  },
-  "msgDonateWithPaypal": {
-    "message": "کمک مالی با پی پال (حساب خارجی)"
   },
   "lblDarkMode": {
     "message": "حالت تاریک"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "کلیدهای میانبر"
   },
-  "msgToTranslateSites": {
-    "message": "برای ترجمه سایت"
-  },
   "msgThanksForUseExtension": {
     "message": "از شما برای استفاده از این افزونه متشکریم."
   },
   "msgIWillBeGrateful": {
     "message": "اگر بتوانید کمک مالی بکنید سپاسگزار خواهم بود."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "همیشه این زبان را ترجمه کن"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "نمایش متن ترجمه‌شده در این سایت‌ها هنگام نگه‌داشتن ماوس"
@@ -282,10 +237,7 @@
     "message": "جابه جایی بین سرویس ترجمه ها"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "سرویس ترجمه"
+    "message": "بین رابط کاربری ساده و پیچیده منتقل شوید"
   },
   "lblTranslateInterface": {
     "message": "رابط را ترجمه کنید"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "جایگزین کردن"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "با دو بار فشار دادن $SHORTCUT_KEY$ ، متن انتخاب شده را با متن ترجمه شده جایگزین کنید",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "متن انتخاب شده را بلافاصله با متن ترجمه شده جایگزین کنید"
   },
@@ -479,16 +423,16 @@
     "message": "افزودن به فرهنگ لغت سفارشی (این به شما امکان می دهد از کلمات خاصی در حین ترجمه صفحه وب رد شوید)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "ترجمه‌ی تارنما را به زبان هدف"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "ترجمه‌ی متن انخاب شده به زبان هدف"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "زبان‌های مورد علاقه"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "زبان مورد علاقه $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "سبک رابط پنجره بازشو را انتخاب کنید."
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "ساده"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "ترکیبی"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "صفحه به زبان $LANGUAGE_NAME$ ترجمه شود؟",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "صفحه به زبان $LANGUAGE_NAME$ ترجمه شده است.",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

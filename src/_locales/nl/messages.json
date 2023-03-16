@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Webpagina's vertalen"
-  },
   "extensionDescription": {
     "message": "Vertaal uw pagina in realtime met Google of Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Vertalen ..."
-  },
-  "lblTranslated": {
-    "message": "Vertaald"
   },
   "lblError": {
     "message": "Deze pagina kon niet worden vertaald"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Vertaald"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Deze site nooit vertalen"
-  },
-  "btnMobileDonate": {
-    "message": "Alleen maar"
-  },
   "optionsNeverTranslate": {
     "message": "Vertaal deze sites nooit"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Toon de mobiele pop-up"
-  },
-  "optionPopupAuto": {
-    "message": "Automatisch"
   },
   "optionPopupThreeFingers": {
     "message": "Als ik drie vingers op het scherm aanraak"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Nee"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Het nieuwe vertaalalgoritme gebruiken?"
-  },
-  "msgYesRecommended": {
-    "message": "Ja (aanbevolen)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Nee (gebruik widgets)"
-  },
-  "optionsPageTitle": {
-    "message": "Webpagina's vertalen - Opties"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Alleen als ik op \"Vertaal deze site\" klik"
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "U heeft geen sites toegevoegd aan deze lijst."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "U heeft geen sites toegevoegd aan deze lijst."
-  },
   "btnAlwaysTranslate": {
     "message": "Vertaal deze site altijd"
   },
   "lblAlwaysTranslateSites": {
     "message": "Vertaal deze sites altijd"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Doneer met PayPal"
   },
   "lblDarkMode": {
     "message": "Donkere modus"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Toetsenbord sneltoetsen"
   },
-  "msgToTranslateSites": {
-    "message": "Om de site te vertalen"
-  },
   "msgThanksForUseExtension": {
     "message": "Bedankt voor het gebruik van deze extensie."
   },
   "msgIWillBeGrateful": {
     "message": "Ik zal u dankbaar zijn als u een donatie kunt doen."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Vertaal deze taal altijd"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Toon vertaalde tekst wanneer u op deze sites zweeft"
@@ -282,10 +237,7 @@
     "message": "Schakel tussen vertaaldiensten"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Vertaaldienst"
+    "message": "Schakel tussen eenvoudige en complexe interface"
   },
   "lblTranslateInterface": {
     "message": "Vertaal de interface"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Vervangen"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Vervang geselecteerde tekst door vertaalde tekst door twee keer op $SHORTCUT_KEY$ te drukken",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Vervang geselecteerde tekst direct door vertaalde tekst"
   },
@@ -479,16 +423,16 @@
     "message": "Toevoegen aan aangepast woordenboek (hiermee kunt u bepaalde woorden overslaan tijdens de vertaling van webpagina's)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Vertaal websites naar deze doeltaal"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Vertaal geselecteerde tekst naar deze doeltaal"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Favoriete talen"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Favoriete taal $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Selecteer de stijl van de pop-upinterface"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Eenvoudig"
   },
   "msgInterfaceComplex": {
     "message": "Complex"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Pagina vertalen naar $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Pagina vertaald naar $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

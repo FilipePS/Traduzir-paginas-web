@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Översätt Webbsida"
-  },
   "extensionDescription": {
     "message": "Översätt webbplatser i realtid med hjälp av Google eller Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Översätter ..."
-  },
-  "lblTranslated": {
-    "message": "Översatt"
   },
   "lblError": {
     "message": "Denna sida kunde inte översättas"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Översatt"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Översätt aldrig denna webbplats"
-  },
-  "btnMobileDonate": {
-    "message": "Donera"
-  },
   "optionsNeverTranslate": {
     "message": "Översätt aldrig dessa webbplatser"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Visa den mobila popup-skärmen"
-  },
-  "optionPopupAuto": {
-    "message": "Automatiskt"
   },
   "optionPopupThreeFingers": {
     "message": "När jag trycker på skärmen med tre fingrar"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Nej"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Använd den nya översättningsalgoritmen?"
-  },
-  "msgYesRecommended": {
-    "message": "Ja (rekommenderas)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Nej (använd widget)"
-  },
-  "optionsPageTitle": {
-    "message": "Översätt webbplatser - Alternativ"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Endast när jag klickar på \"Översätt denna webbplats\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Du har inte lagt till några webbplatser i denna lista."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Du har inte lagt till några språk i denna lista."
-  },
   "btnAlwaysTranslate": {
     "message": "Översätt alltid denna webbplats"
   },
   "lblAlwaysTranslateSites": {
     "message": "Översätt alltid dessa webbplatser"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Donera via PayPal"
   },
   "lblDarkMode": {
     "message": "Mörkt läge"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Tangentbordsgenvägar"
   },
-  "msgToTranslateSites": {
-    "message": "Att översätta webbplatsen"
-  },
   "msgThanksForUseExtension": {
     "message": "Tack för att du använder det här tillägget."
   },
   "msgIWillBeGrateful": {
     "message": "Jag är tacksam om du kan göra en donation."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Översätt alltid detta språk"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Visa översatt text när du svävar på dessa webbplatser"
@@ -282,10 +237,7 @@
     "message": "Växla mellan översättningstjänster"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Översättningstjänst"
+    "message": "Växla mellan enkelt och komplext gränssnitt"
   },
   "lblTranslateInterface": {
     "message": "Översätt gränssnittet"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Byta ut"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Ersätt markerad text med översatt text när du trycker två gånger på $SHORTCUT_KEY$",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Ersätt vald text med översatt text direkt"
   },
@@ -479,16 +423,16 @@
     "message": "Lägg till i anpassad ordbok (Detta låter dig hoppa över vissa ord under översättning av webbsidor)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Översätt webbplatser till detta målspråk"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Översätt vald text till detta målspråk"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Favoritspråk"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Favoritspråk $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Välj popup-gränssnittsstil"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Enkel"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Komplex"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Översätt sidan till $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Sidan översatt till $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

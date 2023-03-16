@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "ترجمة صفحات الويب"
-  },
   "extensionDescription": {
     "message": "ترجم صفحتك في الوقت الفعلي باستخدام Google أو Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "جار التَّرْجَمَةً ..."
-  },
-  "lblTranslated": {
-    "message": "تمت الترجمة"
   },
   "lblError": {
     "message": "هذه الصفحة لا يمكن ترجمتها"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "تمت الترجمة"
   },
-  "btnMobileNeverTranslate": {
-    "message": "لا تترجم هذا الموقع ابدًا"
-  },
-  "btnMobileDonate": {
-    "message": "تبرع"
-  },
   "optionsNeverTranslate": {
     "message": "لا تترجم هذه المواقع أبدًا"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "إظهار النافذة المنبثقة للجوال"
-  },
-  "optionPopupAuto": {
-    "message": "تلقائيًا"
   },
   "optionPopupThreeFingers": {
     "message": "عندما ألمس الشاشة بثلاث أصابع"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "لا"
   },
-  "lblUseNewAlgorithm": {
-    "message": "استخدم خوارزمية الترجمة الجديدة؟"
-  },
-  "msgYesRecommended": {
-    "message": "نعم (موصى به)"
-  },
-  "msgNoUseWidgets": {
-    "message": "لا (استخدم widgets)"
-  },
-  "optionsPageTitle": {
-    "message": "ترجمة صفحات الويب - خيارات"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "فقط عندما أنقر على \"ترجم هذا الموقع\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "لم تقم بإضافة أي مواقع إلى هذه القائمة."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "لم تقم بإضافة أي لغات إلى هذه القائمة."
-  },
   "btnAlwaysTranslate": {
     "message": "ترجمة هذا الموقع دائمًا"
   },
   "lblAlwaysTranslateSites": {
     "message": "ترجمة هذه المواقع دائمًا"
-  },
-  "msgDonateWithPaypal": {
-    "message": "تبرع بواسطة PayPal"
   },
   "lblDarkMode": {
     "message": "الوضع المظلم"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "اختصارات لوحة المفاتيح"
   },
-  "msgToTranslateSites": {
-    "message": "لترجمة الموقع"
-  },
   "msgThanksForUseExtension": {
     "message": "شكرا لك على استخدام هذا الامتداد."
   },
   "msgIWillBeGrateful": {
     "message": "سأكون ممتنًا إذا أمكنك التبرع."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "دائما ترجمة هذه اللغة"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "إظهار النص المترجم عند التمرير فوق هذه المواقع"
@@ -282,10 +237,7 @@
     "message": "التبديل بين خدمات الترجمة"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "خدمة الترجمة"
+    "message": "التبديل بين الواجهة البسيطة و المعقدة"
   },
   "lblTranslateInterface": {
     "message": "ترجمة الواجهة"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "يحل محل"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "استبدل النص المحدد بالنص المترجم عند الضغط على $SHORTCUT_KEY$ مرتين",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "استبدل النص المحدد بالنص المترجم على الفور"
   },
@@ -479,16 +423,16 @@
     "message": "إضافة إلى القاموس المخصص (يسمح لك هذا بتخطي كلمات معينة أثناء ترجمة صفحة الويب)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "ترجمة الصفحة إلى اللغة المستهدفة"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "تَرْجَمَة الصفحة إلى اللغة المستهدفة"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "اللغات المفضلة"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "اللغة المفضلة $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "حدد نمط الواجهة المنبثقة"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "بسيط"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "معقد"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "تَرْجَمَة الصفحة إلى $LANGUAGE_NAME$؟",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "تمت تَرْجَمَة الصفحة إلى $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

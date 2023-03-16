@@ -1,7 +1,4 @@
 {
-  "extensionName": {
-    "message": "Prevajajte spletne strani"
-  },
   "extensionDescription": {
     "message": "Prevedite spletne strani v realnem času z uporabo storitev Google ali Yandex."
   },
@@ -13,9 +10,6 @@
   },
   "lblTranslating": {
     "message": "Prevajanje ..."
-  },
-  "lblTranslated": {
-    "message": "Prevedeno"
   },
   "lblError": {
     "message": "Te strani ni bilo mogoče prevesti"
@@ -71,12 +65,6 @@
   "btnMobileTranslated": {
     "message": "Prevedeno"
   },
-  "btnMobileNeverTranslate": {
-    "message": "Nikoli ne prevedi te strani"
-  },
-  "btnMobileDonate": {
-    "message": "Doniraj"
-  },
   "optionsNeverTranslate": {
     "message": "Nikoli ne prevedi teh strani"
   },
@@ -85,9 +73,6 @@
   },
   "optionPopupConfig": {
     "message": "Pokaži mobilno pojavno okno"
-  },
-  "optionPopupAuto": {
-    "message": "Samodejno"
   },
   "optionPopupThreeFingers": {
     "message": "Ko se s tremi prsti dotaknem zaslona"
@@ -122,35 +107,11 @@
   "msgNo": {
     "message": "Ne"
   },
-  "lblUseNewAlgorithm": {
-    "message": "Uporabimo nov algoritem za prevajanje?"
-  },
-  "msgYesRecommended": {
-    "message": "Da (priporočeno)"
-  },
-  "msgNoUseWidgets": {
-    "message": "Ne (uporabi gradnike)"
-  },
-  "optionsPageTitle": {
-    "message": "Prevedi spletne strani - možnosti"
-  },
-  "optionPopupjustWhenIClickTranlateThisSite": {
-    "message": "Le ko kliknem \"prevedi to stran\""
-  },
-  "msgEmptyListNeverTranslateSites": {
-    "message": "Niste dodali nobene strani na ta seznam."
-  },
-  "msgEmptyListAlwaysTranslateLanguages": {
-    "message": "Niste dodali nobenega jezika na ta seznam."
-  },
   "btnAlwaysTranslate": {
     "message": "Vedno prevedi to stran"
   },
   "lblAlwaysTranslateSites": {
     "message": "Vedno prevedi te strani"
-  },
-  "msgDonateWithPaypal": {
-    "message": "Donacija preko Paypala"
   },
   "lblDarkMode": {
     "message": "Temni način"
@@ -215,17 +176,11 @@
   "lblKeyboardShortcuts": {
     "message": "Bližnjice na tipkovnici"
   },
-  "msgToTranslateSites": {
-    "message": "Če želite prevesti spletno mesto"
-  },
   "msgThanksForUseExtension": {
     "message": "Zahvaljujemo se vam za uporabo te razširitve."
   },
   "msgIWillBeGrateful": {
     "message": "Hvaležen vam bom, če lahko prispevate."
-  },
-  "btnAlwaysTranslateThisLanguage": {
-    "message": "Vedno prevedite ta jezik"
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Pokažite prevedeno besedilo, ko lebdite na teh straneh"
@@ -282,10 +237,7 @@
     "message": "Preklapljanje med prevajalskimi storitvami"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
-  },
-  "lblTranslationService": {
-    "message": "Prevajalska služba"
+    "message": "Preklapljajte med preprostim in zapletenim vmesnikom"
   },
   "lblTranslateInterface": {
     "message": "Prevedite uporabniški vmesnik"
@@ -464,14 +416,6 @@
   "btnReplace": {
     "message": "Zamenjati"
   },
-  "lblReplaceSelectedTextWithTranslatedText": {
-    "message": "Zamenjajte izbrano besedilo s prevedenim besedilom, ko dvakrat pritisnete $SHORTCUT_KEY$",
-    "placeholders": {
-      "SHORTCUT_KEY": {
-        "content": "[Ctrl]"
-      }
-    }
-  },
   "lblHotTranslatedSelectedText": {
     "message": "Takoj zamenjajte izbrano besedilo s prevedenim besedilom"
   },
@@ -479,16 +423,16 @@
     "message": "Dodaj v slovar po meri (To vam omogoča, da med prevajanjem spletne strani preskočite določene besede)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Translate websites into this target language"
+    "message": "Prevedite spletna mesta v ta ciljni jezik"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Prevedite izbrano besedilo v ta ciljni jezik"
   },
   "msgFavoriteLanguages": {
-    "message": "Favorite languages"
+    "message": "Najljubši jeziki"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Najljubši jezik $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -497,16 +441,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Izberite slog pojavnega vmesnika"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Enostavno"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Kompleksno"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "Prevesti stran v $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -515,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "Stran prevedena v $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
