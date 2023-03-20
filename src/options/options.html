@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TWP - Translate Web Pages</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/w3css/4/w3.css" />
+  <link rel="stylesheet" href="options.css" />
+  <script src="darkmode.js"></script>
+</head>
+
+<body class="w3-content" style="max-width: 1200px">
+  <nav class="w3-sidebar w3-bar-block w3-collapse w3-top" style="z-index: 3; width: 300px" id="sideBar">
+    <div class="w3-container w3-display-container w3-padding-16">
+      <h3 class="w3-wide"><b>TWP - Translate Web Pages</b></h3>
+    </div>
+    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight: bold">
+      <a href="#languages" class="w3-bar-item w3-button" data-i18n="msgLanguages">Languages</a>
+      <a href="#sites" class="w3-bar-item w3-button" data-i18n="msgSites">Sites</a>
+      <a href="#translations" class="w3-bar-item w3-button" data-i18n="msgTranslations">Translations</a>
+      <a href="#style" class="w3-bar-item w3-button" data-i18n="msgStyle">Style</a>
+      <a href="#hotkeys" class="w3-bar-item w3-button desktopOnly" data-i18n="msgHotkeys">Hotkeys</a>
+      <a href="#storage" class="w3-bar-item w3-button" data-i18n="msgStorage">Storage</a>
+      <a href="#others" class="w3-bar-item w3-button" data-i18n="lblOthers">Others</a>
+    </div>
+    <b><a href="#donation" class="w3-bar-item w3-button w3-padding"><span data-i18n="lblMakeDonation">Make a
+          donation</span> &#10084;</a></b>
+    <a href="#release_notes" class="w3-bar-item w3-button w3-padding" data-i18n="lblReleaseNotes">Release Notes</a>
+    <a href="https://github.com/FilipePS/Traduzir-paginas-web/issues" target="blank"
+      class="w3-bar-item w3-button w3-padding" data-i18n="lblReport">Report a problem</a>
+    <a href="https://crowdin.com/project/translate-web-pages" target="blank" class="w3-bar-item w3-button w3-padding"
+      data-i18n="lblTranslateInterface">Translate the interface</a>
+  </nav>
+
+  <header class="w3-bar w3-top w3-black w3-hide-large w3-xlarge" id="header">
+    <div class="w3-bar-item w3-padding-20 w3-wide">TWP</div>
+    <a class="w3-bar-item w3-button w3-padding-24 w3-right" id="btnOpenMenu">
+      <div class="menu-container" id="menuContainer">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+        <div class="bar5"></div>
+      </div>
+    </a>
+  </header>
+
+  <div class="w3-main" style="margin-left: 300px">
+    <div class="w3-hide-large" style="margin-top: 83px"></div>
+
+    <header class="w3-container w3-xlarge">
+      <p id="itemSelectedName" data-i18n="lblSettings" style="float: left">
+        Settings
+      </p>
+      <p style="float: right; display: none" id="btnPatreon">
+        <a href="https://www.patreon.com/filipeps" target="blank"><img src="/icons/patreon.png"
+            style="height: 40px" /></a>
+      </p>
+    </header>
+
+    <div>
+      <div id="languages" class="w3-container">
+        <p><b data-i18n="msgSelectTargetLanguage">Translate websites into this target language</b></p>
+        <select id="selectTargetLanguage" class="w3-select w3-half w3-border w3-round"
+          style="margin-left: 20px;"></select>
+        <br />
+        <br />
+
+        <p><b data-i18n="msgSelectTargetLanguageForText">Translate selected text into this target language</b></p>
+        <select id="selectTargetLanguageForText" class="w3-select w3-half w3-border w3-round"
+          style="margin-left: 20px;"></select>
+        <br />
+        <br />
+
+        <p><b data-i18n="msgFavoriteLanguages">Favorite languages</b></p>
+        <ul class="w3-ul">
+          <li class="w3-row">
+            <p class="w3-half" data-i18n="lblFavoriteLanguage" data-i18n-ph-value="1">
+              Favorite language 1
+            </p>
+            <select id="favoriteLanguage1" class="w3-select w3-half w3-border w3-round"></select>
+          </li>
+          <li class="w3-row">
+            <p class="w3-half" data-i18n="lblFavoriteLanguage" data-i18n-ph-value="2">
+              Favorite language 2
+            </p>
+            <select id="favoriteLanguage2" class="w3-select w3-half w3-border w3-round"></select>
+          </li>
+          <li class="w3-row">
+            <p class="w3-half" data-i18n="lblFavoriteLanguage" data-i18n-ph-value="3">
+              Favorite language 3
+            </p>
+            <select id="favoriteLanguage3" class="w3-select w3-half w3-border w3-round"></select>
+          </li>
+        </ul>
+        <br />
+        <div class="w3-display-container w3-padding w3-margin-top">
+          <div class="w3-display-left">
+            <p>
+              <b data-i18n="lblNeverTranslateLangs">Never translate these languages</b>
+            </p>
+          </div>
+          <div class="w3-display-right">
+            <div style="position: relative">
+              <button class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">
+                Add
+              </button>
+              <select id="addToNeverTranslateLangs" class="add">
+                <option value="" selected disabled hidden></option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <ul id="neverTranslateLangs" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+        <div class="desktopOnly">
+          <br />
+          <div class="w3-display-container w3-padding w3-margin-top">
+            <div class="w3-display-left">
+              <p>
+                <b data-i18n="optionsAlwaysTranslate">Always translate these languages</b>
+              </p>
+            </div>
+            <div class="w3-display-right">
+              <div style="position: relative">
+                <button class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">
+                  Add
+                </button>
+                <select id="addToAlwaysTranslateLangs" class="add">
+                  <option value="" selected disabled hidden></option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <ul id="alwaysTranslateLangs" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+        </div>
+        <div class="desktopOnly">
+          <br />
+          <div class="w3-display-container w3-padding w3-margin-top">
+            <div class="w3-display-left">
+              <p>
+                <b data-i18n="lblShowTranslatedHoveringLangs">Show translated text when hovering over sites with these
+                  languages</b>
+              </p>
+            </div>
+            <div class="w3-display-right">
+              <div style="position: relative">
+                <button class="w3-button w3-blue w3-round w3-margin-right add" data-i18n="lblAdd">
+                  Add
+                </button>
+                <select id="addLangToTranslateWhenHovering" class="add">
+                  <option value="" selected disabled hidden></option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <ul id="langsToTranslateWhenHovering" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+        </div>
+      </div>
+
+      <div id="sites" class="w3-container">
+        <div class="desktopOnly">
+          <div class="w3-display-container w3-padding w3-margin-top">
+            <div class="w3-display-left">
+              <p>
+                <b data-i18n="lblAlwaysTranslateSites">Always translate these sites</b>
+              </p>
+            </div>
+            <div class="w3-display-right">
+              <button id="addToAlwaysTranslateSites" class="w3-button w3-blue w3-round w3-margin-right add"
+                data-i18n="lblAdd">
+                Add
+              </button>
+            </div>
+          </div>
+          <ul id="alwaysTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+        </div>
+        <br />
+        <div class="w3-display-container w3-padding w3-margin-top">
+          <div class="w3-display-left">
+            <p>
+              <b data-i18n="optionsNeverTranslate">Never translate these sites</b>
+            </p>
+          </div>
+          <div class="w3-display-right">
+            <button id="addToNeverTranslateSites" class="w3-button w3-blue w3-round w3-margin-right add"
+              data-i18n="lblAdd">
+              Add
+            </button>
+          </div>
+        </div>
+        <ul id="neverTranslateSites" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+        <div class="desktopOnly">
+          <br />
+          <div class="w3-display-container w3-padding w3-margin-top">
+            <div class="w3-display-left">
+              <p>
+                <b data-i18n="lblShowTranslatedHoveringSites">Show translated text when hovering on these sites</b>
+              </p>
+            </div>
+            <div class="w3-display-right">
+              <button id="addSiteToTranslateWhenHovering" class="w3-button w3-blue w3-round w3-margin-right add"
+                data-i18n="lblAdd">
+                Add
+              </button>
+            </div>
+          </div>
+          <ul id="sitesToTranslateWhenHovering" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+        </div>
+        <div class="desktopOnly">
+          <br />
+          <div class="w3-display-container w3-padding w3-margin-top">
+            <div class="w3-display-left">
+              <p>
+                <b data-i18n="optionsAddToCustomDictionary">Add to custom dictionary (This allows you to skip certain
+                  words during web page translation)</b>
+              </p>
+            </div>
+            <div class="w3-display-right">
+              <button id="addToCustomDictionary" class="w3-button w3-blue w3-round w3-margin-right add"
+                data-i18n="lblAdd">
+                Add
+              </button>
+            </div>
+          </div>
+          <ul id="customDictionary" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
+        </div>
+      </div>
+
+      <div id="translations" class="w3-container">
+        <p>
+          <b data-i18n="lblPageTranslationService">Page translation service</b>
+        </p>
+        <select id="pageTranslatorService" class="w3-select w3-margin">
+          <option value="google">Google</option>
+          <option value="yandex">Yandex</option>
+        </select>
+        <br />
+        <p>
+          <b data-i18n="lblTextTranslationService">Text Translation Service</b>
+        </p>
+        <select id="textTranslatorService" class="w3-select w3-margin">
+          <option value="google">Google</option>
+          <option value="yandex">Yandex</option>
+          <option value="bing">Bing</option>
+          <option value="deepl" hidden>DeepL</option>
+        </select>
+        <br />
+        <p><b data-i18n="lblTtsSpeed">Text-to-speech audio speed</b></p>
+        <input id="ttsSpeed" type="range" min="0.25" max="2.0" step="0.25" value="1.0" />
+        <output id="displayTtsSpeed">1.0</output>
+        <br />
+        <p>
+          <b data-i18n="lblTranslateDynamicallyCreatedContent">Translate dynamically created content</b>
+        </p>
+        <select id="translateDynamicallyCreatedContent" class="w3-select w3-margin">
+          <option value="no" data-i18n="msgNo">No</option>
+          <option value="yes" data-i18n="msgYes">Yes</option>
+        </select>
+        <br />
+        <p>
+          <b data-i18n="lblShowTranslateSelectedButton">Show the button to translate the selected text</b>
+        </p>
+        <select id="showTranslateSelectedButton" class="w3-select w3-margin">
+          <option value="yes" data-i18n="msgYes">Yes</option>
+          <option value="no" data-i18n="msgNo">No</option>
+        </select>
+        <div class="w3-container" id="translateSelectedAdvancedOptions">
+          <input type="checkbox" class="check" id="dontShowIfPageLangIsTargetLang" />
+          <label for="dontShowIfPageLangIsTargetLang" data-i18n="dontShowIfPageLangIsTargetLang">Do not show if the page
+            language is the target language</label>
+          <br />
+          <input type="checkbox" class="check" id="dontShowIfPageLangIsUnknown" />
+          <label for="dontShowIfPageLangIsUnknown" data-i18n="dontShowIfPageLangIsUnknown">Do not show if the page
+            language is unknown</label>
+          <br />
+          <input type="checkbox" class="check" id="dontShowIfSelectedTextIsTargetLang" />
+          <label for="dontShowIfSelectedTextIsTargetLang" data-i18n="dontShowIfSelectedTextIsTargetLang">Do not show if
+            the selected text language is the target
+            language</label>
+          <br />
+          <input type="checkbox" class="check" id="dontShowIfSelectedTextIsUnknown" />
+          <label for="dontShowIfSelectedTextIsUnknown" data-i18n="dontShowIfSelectedTextIsUnknown">Do not show if the
+            selected text language is unknown</label>
+        </div>
+        <div class="desktopOnly">
+          <br />
+          <p>
+            <b data-i18n="lblShowOriginalTextWhenHovering">Show original text when hovering</b>
+          </p>
+          <select id="showOriginalTextWhenHovering" class="w3-select w3-margin">
+            <option value="yes" data-i18n="msgYes">Yes</option>
+            <option value="no" data-i18n="msgNo">No</option>
+          </select>
+        </div>
+        <br />
+        <p>
+          <b data-i18n="lblAutoTranslateWhenClickingALink">Automatically translate when clicking on a link that takes
+            you to
+            the same domain as the current site</b>
+        </p>
+        <select id="autoTranslateWhenClickingALink" class="w3-select w3-margin">
+          <option value="no" data-i18n="msgNo">No</option>
+          <option value="yes" data-i18n="msgYes">Yes</option>
+        </select>
+        <br />
+        <p>
+          <b data-i18n="lblDontSortResults">Do not sort the google translate results</b>
+        </p>
+        <select id="dontSortResults" class="w3-select w3-margin">
+          <option value="no" data-i18n="msgNo">No</option>
+          <option value="yes" data-i18n="msgYes">Yes</option>
+        </select>
+        <br />
+        <p>
+          <b data-i18n="lblTranslateTag_pre">Enable translation for the tag &lt;PRE&gt;</b>
+        </p>
+        <select id="translateTag_pre" class="w3-select w3-margin">
+          <option value="yes" data-i18n="msgYes">Yes</option>
+          <option value="no" data-i18n="msgNo">No</option>
+        </select>
+        <br />
+        <div class="">
+          <p>
+            <b data-i18n="lblEnableDeepL">Enable DeepL as a text translation service</b>
+          </p>
+          <select id="enableDeepL" class="w3-select w3-margin">
+            <option value="yes" data-i18n="msgYes">Yes</option>
+            <option value="no" data-i18n="msgNo">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="style" class="w3-container">
+        <div class="desktopOnly">
+          <p>
+            <b data-i18n="lblSelectPopupInterfaceStyle">Select popup interface style</b>
+          </p>
+          <select id="useOldPopup" class="w3-select w3-margin">
+            <option value="yes" data-i18n="msgInterfaceSimple">Simple</option>
+            <option value="no" data-i18n="msgInterfaceComplex">Complex</option>
+          </select>
+        </div>
+
+        <p><b data-i18n="lblDarkMode">Dark mode</b></p>
+        <select id="darkMode" class="w3-select w3-margin">
+          <option value="auto" data-i18n="msgAutomatic">Automatic</option>
+          <option value="yes" data-i18n="msgYes">Yes</option>
+          <option value="no" data-i18n="msgNo">No</option>
+        </select>
+
+        <div class="desktopOnly">
+          <p>
+            <b data-i18n="popupBlueWhenSiteIsTranslated">Make the pop-up icon blue when the site is translated</b>
+          </p>
+          <select id="popupBlueWhenSiteIsTranslated" class="w3-select w3-margin">
+            <option value="yes" data-i18n="msgYes">Yes</option>
+            <option value="no" data-i18n="msgNo">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="hotkeys" class="w3-container desktopOnly">
+        <button data-i18n="openNativeShortcutManager" id="openNativeShortcutManager"
+          class="w3-btn w3-light-grey w3-round w3-border w3-margin" style="width: 60%; max-width: 650px">
+          Open native shortcut key manager
+        </button>
+
+        <p>
+          <b data-i18n="lblKeyboardShortcutsSpecial">Special keyboard shortcuts</b>
+        </p>
+        <ul class="w3-container" style="user-select: none; list-style-type: none">
+          <li>
+            <label for="translateSelectedWhenPressTwice"><input type="checkbox" id="translateSelectedWhenPressTwice" />
+              <span data-i18n="lblTranslateSelectedWhenPressTwice">Translate selected text when pressing
+                <kbd>Ctrl</kbd> twice</span></label>
+          </li>
+          <li>
+            <label for="translateTextOverMouseWhenPressTwice"><input type="checkbox"
+                id="translateTextOverMouseWhenPressTwice" />
+              <span data-i18n="lblTranslateTextOverMouseWhenPressTwice">Translate the text over the mouse when pressing
+                <kbd>Ctrl</kbd> twice</span></label>
+          </li>
+        </ul>
+
+        <p><b data-i18n="lblKeyboardShortcuts">Keyboard shortcuts</b></p>
+        <ul id="KeyboardShortcuts" class="w3-container" style="max-width: 680px"></ul>
+      </div>
+
+      <div id="storage" class="w3-container">
+        <b data-i18n="lblTranslationCache">Translation cache</b>
+        <div class="w3-container">
+          <span data-i18n="lblStorageUsed">Storage used:</span>
+          <button id="btnCalculateStorage" data-i18n="calculateStorage" style="font-size: 12px">
+            Calculate</button><i id="storageUsed">0 KB</i> <br /><br />
+          <button class="w3-button w3-light-grey w3-round" data-i18n="deleteTranslationCache"
+            id="deleteTranslationCache">
+            Delete translation cache
+          </button>
+        </div>
+        <br />
+        <b data-i18n="lblPersonalSettings">Personal settings</b>
+        <div class="w3-container">
+          <button class="w3-button w3-light-grey w3-round w3-margin-top" data-i18n="backupToFile" id="backupToFile">
+            Backup to file</button><br />
+          <button class="w3-button w3-light-grey w3-round w3-margin-top" data-i18n="restoreFromFile"
+            id="restoreFromFile">
+            Restore from file</button><br />
+          <button class="w3-button w3-light-grey w3-round w3-margin-top" data-i18n="resetToDefault" id="resetToDefault">
+            Reset settings to default</button><br />
+        </div>
+      </div>
+
+      <div id="others" class="w3-container">
+        <div class="desktopOnly">
+          <p>
+            <b data-i18n="lblShowReleaseNotes">Show release notes when updating</b>
+          </p>
+          <select id="showReleaseNotes" class="w3-select w3-margin">
+            <option value="yes" data-i18n="msgYes">Yes</option>
+            <option value="no" data-i18n="msgNo">No</option>
+          </select>
+        </div>
+        <br />
+        <p><b data-i18n="optionPopupConfig">Show the mobile popup</b></p>
+        <select id="showPopupMobile" class="w3-select w3-margin">
+          <option value="yes" data-i18n="msgYes">Yes</option>
+          <option value="no" data-i18n="msgNo">No</option>
+          <option value="threeFingersOnTheScreen" data-i18n="optionPopupThreeFingers">
+            When I touch three fingers on the screen
+          </option>
+        </select>
+        <div class="desktopOnly">
+          <br />
+          <p>
+            <b data-i18n="lblButtonInTheAddressBar">Show button in the address bar</b>
+          </p>
+          <select id="showButtonInTheAddressBar" class="w3-select w3-margin">
+            <option value="yes" data-i18n="msgYes">Yes</option>
+            <option value="no" data-i18n="msgNo">No</option>
+          </select>
+          <br />
+          <p>
+            <b data-i18n="lblShowContextMenu">Show the option to translate the page in the context menu</b>
+          </p>
+          <select id="showTranslatePageContextMenu" class="w3-select w3-margin">
+            <option value="yes" data-i18n="msgYes">Yes</option>
+            <option value="no" data-i18n="msgNo">No</option>
+          </select>
+          <br />
+          <p>
+            <b data-i18n="lblShowTranslateSelectedContextMenu">Show the option to translate the selected text in the
+              context
+              menu</b>
+          </p>
+          <select id="showTranslateSelectedContextMenu" class="w3-select w3-margin">
+            <option value="yes" data-i18n="msgYes">Yes</option>
+            <option value="no" data-i18n="msgNo">No</option>
+          </select>
+          <br />
+          <p>
+            <b data-i18n="translateClickingOnce">Translate the page by clicking once on the button in the
+              address bar. (To see the popup, right-click)</b>
+          </p>
+          <select id="translateClickingOnce" class="w3-select w3-margin">
+            <option value="no" data-i18n="msgNo">No</option>
+            <option value="yes" data-i18n="msgYes">Yes</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div id="donation" class="w3-container">
+        <div class="w3-light-blue w3-padding w3-round">
+          <p data-i18n="msgThanksForUseExtension">
+            Thank you for using this extension.
+          </p>
+          <p data-i18n="msgIWillBeGrateful">
+            I will be grateful if you can make a donation.
+          </p>
+          <a href="https://www.patreon.com/filipeps" target="blank"><img src="/icons/patreon.png" alt="Become a patreon"
+              width="200px" /></a>
+          <br /><br />
+          <form action="https://www.coinpayments.net/index.php" method="post" target="blank">
+            <input type="hidden" name="cmd" value="_donate" />
+            <input type="hidden" name="reset" value="1" />
+            <input type="hidden" name="merchant" value="c1d8fe2f52abea27ac1e160150272540" />
+            <input type="hidden" name="item_name" value="Translate Web Pages" />
+            <input type="hidden" name="currency" value="USD" />
+            <input type="hidden" name="amountf" value="10.00000000" />
+            <input type="hidden" name="allow_amount" value="1" />
+            <input type="hidden" name="want_shipping" value="0" />
+            <input type="hidden" name="allow_extra" value="1" />
+            <input type="image" src="/icons/coinpayments.png" alt="CoinPayments.net" />
+          </form>
+
+          <b>
+            <div style="margin-top: 20px; display: inline-block" data-i18n="donateWithPayPal">
+              Donate With PayPal
+            </div>
+          </b>
+          <select id="currency" style="margin-left: 8px">
+            <option value="USD">USD</option>
+            <option value="BRL">BRL</option>
+          </select>
+          <div id="donateInUSD">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+              <input type="hidden" name="cmd" value="_s-xclick" />
+              <input type="hidden" name="hosted_button_id" value="3FH2APUZGCY3A" />
+              <table>
+                <tr>
+                  <td>
+                    <input type="hidden" name="on0" value="Donate With Paypal" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select name="os0">
+                      <option value="Maximum">20,00 USD</option>
+                      <option value="Pizza">10,00 USD</option>
+                      <option value="Lunch" selected>5,00 USD</option>
+                      <option value="Coffe">3,00 USD</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+              <input type="hidden" name="currency_code" value="USD" />
+              <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal" />
+              <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
+            </form>
+          </div>
+
+          <div id="donateInBRL">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+              <input type="hidden" name="cmd" value="_s-xclick" />
+              <input type="hidden" name="hosted_button_id" value="UKVQDPTUB5HTG" />
+              <table>
+                <tr>
+                  <td>
+                    <input type="hidden" name="on0" value="Doar com o Paypal" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select name="os0">
+                      <option value="Maximum">50,00 BRL</option>
+                      <option value="Pizza">30,00 BRL</option>
+                      <option value="Lunch" selected>15,00 BRL</option>
+                      <option value="Coffe">5,00 BRL</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+              <input type="hidden" name="currency_code" value="BRL" />
+              <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal" />
+              <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="release_notes" class="w3-container"></div>
+    </div>
+  </div>
+
+  <script src="/lib/languages.js"></script>
+  <script src="/lib/config.js"></script>
+  <script src="/lib/platformInfo.js"></script>
+  <script src="/lib/i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+
+</html>

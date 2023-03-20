@@ -1,15 +1,14 @@
 {
   "name": "twp-extra",
   "version": "1.0.0",
-  "description": "",
   "main": "getLanguagesNames.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node getLanguagesNames.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "dom-parser": "^0.1.6",
+    "extract-zip": "^2.0.1",
+    "realistic-structured-clone": "^3.0.0",
     "xmlhttprequest": "^1.8.0"
   }
 }

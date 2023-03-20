@@ -1,5 +1,5 @@
 
-# <img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/icons/icon-128.png" height="50"> Translate Web Pages
+# <img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/src/icons/icon-128.png" height="50"> Translate Web Pages
 
 Translate your page in real time using Google or Yandex.
 
@@ -16,11 +16,12 @@ Translate your page in real time using Google or Yandex.
 
 #### Chromium based browsers
 
-1. Download [this file](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.5.1/TWP.9.5.1.Chromium.zip), or any [other version](https://github.com/FilipePS/Traduzir-paginas-web/releases)
+1. Download [this file](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.6/TWP.9.6.Chromium.zip), or any [other version](https://github.com/FilipePS/Traduzir-paginas-web/releases)
 2. Extract the zip file
 3. Open your browser's extension manager
 4. Activate developer mode
 5. Load the extension with the option "Load unpacked"
+- Note: You can also install via [crx file](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.6/TWP.9.6.crx), download the file using a download manager/or firefox. Activate developer mode and drag the file into the chromium extension manager. It doesn't work on Chrome/Edge.
 
 ## Screenshots
 | Menu 1 | Menu 2 | Translated |
@@ -35,7 +36,7 @@ Translate your page in real time using Google or Yandex.
 
 To make a donation use [Patreon](https://www.patreon.com/filipeps).
 
-[<img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/icons/patreon.png" alt="Patreon" height="50">](https://www.patreon.com/filipeps)
+[<img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/src/icons/patreon.png" alt="Patreon" height="50">](https://www.patreon.com/filipeps)
 
 ## FAQ
 

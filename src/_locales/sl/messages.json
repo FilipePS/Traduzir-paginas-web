@@ -1,0 +1,470 @@
+{
+  "extensionDescription": {
+    "message": "Prevedite spletne strani v realnem času z uporabo storitev Google ali Yandex."
+  },
+  "pageActionTitle": {
+    "message": "Prevedi to stran"
+  },
+  "lblTranslate": {
+    "message": "Prevedem to stran?"
+  },
+  "lblTranslating": {
+    "message": "Prevajanje ..."
+  },
+  "lblError": {
+    "message": "Te strani ni bilo mogoče prevesti"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Vedno prevedi iz $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblTargetLanguage": {
+    "message": "Ciljni jezik $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "btnReset": {
+    "message": "Ponastavi"
+  },
+  "btnTranslate": {
+    "message": "Prevedi"
+  },
+  "btnOptions": {
+    "message": "Možnosti"
+  },
+  "btnRestore": {
+    "message": "Pokaži izvirnik"
+  },
+  "btnTryAgain": {
+    "message": "Poskusi znova"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Odpri v Google prevajalniku"
+  },
+  "btnDonate": {
+    "message": "Doniraj"
+  },
+  "btnNeverTranslate": {
+    "message": "Nikoli ne prevedi te strani"
+  },
+  "btnChangeLanguages": {
+    "message": "Spremeni jezike"
+  },
+  "btnMobileOriginal": {
+    "message": "Izvirnik"
+  },
+  "btnMobileTranslated": {
+    "message": "Prevedeno"
+  },
+  "optionsNeverTranslate": {
+    "message": "Nikoli ne prevedi teh strani"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Vedno prevedite te jezike"
+  },
+  "optionPopupConfig": {
+    "message": "Pokaži mobilno pojavno okno"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Ko se s tremi prsti dotaknem zaslona"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Odpri v Yandex prevajalniku"
+  },
+  "lblOthers": {
+    "message": "Ostali"
+  },
+  "btnMoreOptions": {
+    "message": "Več možnosti"
+  },
+  "lblPlsDonate": {
+    "message": "Pomagaj razvijalcu z donacijo"
+  },
+  "msgTranslateFor": {
+    "message": "Prevedi v $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowContextMenu": {
+    "message": "Prikaži možnost, da prevedeš stran v kontekstnem meniju"
+  },
+  "msgYes": {
+    "message": "Da"
+  },
+  "msgNo": {
+    "message": "Ne"
+  },
+  "btnAlwaysTranslate": {
+    "message": "Vedno prevedi to stran"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Vedno prevedi te strani"
+  },
+  "lblDarkMode": {
+    "message": "Temni način"
+  },
+  "lblShowReleaseNotes": {
+    "message": "Pokaži opombe ob izdaji med posodobitvijo"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "Pokaži gumb za prevod izbranega besedila"
+  },
+  "msgAutomatic": {
+    "message": "Samodejno"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Prevedi izbrano besedilo"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "Pokaži možnost prevoda izbranega besedila v kontekstnem meniju"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "Nikoli ne prevajaj teh jezikov"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "Nikoli ne prevajajte tega jezika"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "Med lebdenjem pokaži izvirno besedilo"
+  },
+  "msgLanguages": {
+    "message": "Jeziki"
+  },
+  "msgSites": {
+    "message": "Spletna mesta"
+  },
+  "msgTranslations": {
+    "message": "Prevodi"
+  },
+  "msgStyle": {
+    "message": "Slog"
+  },
+  "msgHotkeys": {
+    "message": "Bližnjice"
+  },
+  "lblMakeDonation": {
+    "message": "Naredite donacijo"
+  },
+  "lblReleaseNotes": {
+    "message": "Opombe ob izdaji"
+  },
+  "lblReport": {
+    "message": "Prijavite težavo"
+  },
+  "lblSettings": {
+    "message": "Nastavitve"
+  },
+  "lblAdd": {
+    "message": "Dodaj"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Pokažite prevedeno besedilo med lebdenjem"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Bližnjice na tipkovnici"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Zahvaljujemo se vam za uporabo te razširitve."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Hvaležen vam bom, če lahko prispevate."
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Pokažite prevedeno besedilo, ko lebdite na teh straneh"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Ko je spletno mesto prevedeno, naj bo pojavna ikona modra"
+  },
+  "more": {
+    "message": "Več"
+  },
+  "less": {
+    "message": "Manj"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Ne prikazuj, ali je jezik strani ciljni jezik"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Ne prikazuj, če jezik strani ni znan"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Ne prikazuj, ali je izbrani jezik besedila ciljni jezik"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Ne prikaži, če je izbrani jezik besedila neznan"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Pokažite prevod, ko lebdite nad tem spletnim mestom"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Prikaži prevod, ko miškin kazalec premaknete nad spletna mesta v $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Pokažite prevedeno besedilo, ko lebdite nad spletnimi mesti s temi jeziki"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Ne prevajajte izbranega besedila"
+  },
+  "btnListen": {
+    "message": "Poslušaj"
+  },
+  "btnStopListening": {
+    "message": "Nehajte poslušati"
+  },
+  "btnApply": {
+    "message": "Prijavite se"
+  },
+  "swapTranslationService": {
+    "message": "Preklapljanje med prevajalskimi storitvami"
+  },
+  "swapPopup": {
+    "message": "Preklapljajte med preprostim in zapletenim vmesnikom"
+  },
+  "lblTranslateInterface": {
+    "message": "Prevedite uporabniški vmesnik"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Prikaži gumb v naslovni vrstici"
+  },
+  "lblPageTranslationService": {
+    "message": "Storitev prevajanja strani"
+  },
+  "lblTextTranslationService": {
+    "message": "Storitev prevajanja besedil"
+  },
+  "msgStorage": {
+    "message": "Shranjevanje"
+  },
+  "lblTranslationCache": {
+    "message": "Predpomnilnik prevodov"
+  },
+  "lblStorageUsed": {
+    "message": "Uporabljena shramba:"
+  },
+  "deleteTranslationCache": {
+    "message": "Izbriši predpomnilnik prevodov"
+  },
+  "lblPersonalSettings": {
+    "message": "Osebne nastavitve"
+  },
+  "backupToFile": {
+    "message": "Varnostno kopiranje v datoteko"
+  },
+  "restoreFromFile": {
+    "message": "Obnovi iz datoteke"
+  },
+  "resetToDefault": {
+    "message": "Obnovi privzete nastavitve"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Ali želite izbrisati predpomnilnik prevodov?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Ali želite prepisati vse obstoječe nastavitve z varnostno kopijo podatkov?"
+  },
+  "fileIsCorrupted": {
+    "message": "Videti je, da je datoteka poškodovana"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Ali želite obnoviti razširitev na privzete nastavitve?"
+  },
+  "lblTtsSpeed": {
+    "message": "Hitrost zvoka besedila v govor"
+  },
+  "lblEnableDeepL": {
+    "message": "Omogočite DeepL kot storitev prevajanja besedil"
+  },
+  "enterShortcut": {
+    "message": "Vnesite bližnjico"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Vključite Ctrl ali Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Vnesite črko"
+  },
+  "hotkeyError_invalid": {
+    "message": "Neveljavna kombinacija"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Preklopite med prevedeno in izvirno stranjo"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Obnovi stran na izvirnik"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Prevedite stran v ciljni jezik"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Omogoči prevod za oznako $HTML_TAG_NAME$",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "Ne razvrsti rezultatov Google Translate"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "Prevedite dinamično ustvarjeno vsebino"
+  },
+  "calculatestorage": {
+    "message": "Izračunaj"
+  },
+  "donatewithpaypal": {
+    "message": "Donirajte s PayPalom"
+  },
+  "lblAutoTranslateWhenClickingALink": {
+    "message": "Samodejno prevedi, ko klikneš povezavo, ki te popelje na isto domeno kot trenutno spletno mesto"
+  },
+  "openNativeShortcutManager": {
+    "message": "Odprite izvirnega upravitelja tipk za bližnjice"
+  },
+  "lblKeyboardShortcutsSpecial": {
+    "message": "Posebne bližnjice na tipkovnici"
+  },
+  "lblTranslateSelectedWhenPressTwice": {
+    "message": "Prevedite izbrano besedilo, ko dvakrat pritisnete $SHORTCUT_KEY$",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "lblTranslateTextOverMouseWhenPressTwice": {
+    "message": "Prevedite besedilo nad kazalcem miške, ko dvakrat pritisnete $SHORTCUT_KEY$",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "translateClickingOnce": {
+    "message": "Prevedite stran tako, da enkrat kliknete gumb v naslovni vrstici. (Za ogled pojavnega okna kliknite z desno miškino tipko)"
+  },
+  "btnShowPopup": {
+    "message": "Prikaži pojavno okno"
+  },
+  "msgToTranslateThisDocument": {
+    "message": "Za prevod tega dokumenta $DOC_TYPE$ ga je potrebno pretvoriti v HTML",
+    "placeholders": {
+      "DOC_TYPE": {
+        "content": "$1",
+        "example": "(.pdf)"
+      }
+    }
+  },
+  "msgSelectServiceConversion": {
+    "message": "Izberite storitev za izvedbo te pretvorbe"
+  },
+  "msgDownloadingDocument": {
+    "message": "Prenos dokumenta ..."
+  },
+  "msgSendDocument": {
+    "message": "Pošlji dokument"
+  },
+  "msgErrorDownloadingDocument": {
+    "message": "Napaka pri prenosu dokumenta"
+  },
+  "msgFileLargerThan": {
+    "message": "Ta storitev ne podpira datotek, večjih od $FILE_SIZE$",
+    "placeholders": {
+      "FILE_SIZE": {
+        "content": "$1",
+        "example": "10 MB"
+      }
+    }
+  },
+  "msgPDFtoHTML": {
+    "message": "PDF v HTML"
+  },
+  "btncopy": {
+    "message": "Kopirati"
+  },
+  "msgRecents": {
+    "message": "Nedavne"
+  },
+  "msgAll": {
+    "message": "Vse"
+  },
+  "msgPleaseWait": {
+    "message": "Prosim počakaj..."
+  },
+  "msgUnknownLanguage": {
+    "message": "Neznano"
+  },
+  "btnReplace": {
+    "message": "Zamenjati"
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "Takoj zamenjajte izbrano besedilo s prevedenim besedilom"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Dodaj v slovar po meri (To vam omogoča, da med prevajanjem spletne strani preskočite določene besede)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Prevedite spletna mesta v ta ciljni jezik"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Prevedite izbrano besedilo v ta ciljni jezik"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Najljubši jeziki"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Najljubši jezik $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Izberite slog pojavnega vmesnika"
+  },
+  "msgInterfaceSimple": {
+    "message": "Enostavno"
+  },
+  "msgInterfaceComplex": {
+    "message": "Kompleksno"
+  },
+  "lblTranslatePageInto": {
+    "message": "Prevesti stran v $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Stran prevedena v $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  }
+}

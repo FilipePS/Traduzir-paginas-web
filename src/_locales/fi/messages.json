@@ -1,0 +1,470 @@
+{
+  "extensionDescription": {
+    "message": "Käännä verkkosivu lennossa Googlella tai Yandexilla."
+  },
+  "pageActionTitle": {
+    "message": "Käännä tämä sivu"
+  },
+  "lblTranslate": {
+    "message": "Käännetäänkö sivu?"
+  },
+  "lblTranslating": {
+    "message": "Käännetään..."
+  },
+  "lblError": {
+    "message": "Sivua ei voitu kääntää"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Käännä aina kielestä $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblTargetLanguage": {
+    "message": "Kohdekieli $TARGET_LANGUAGE_NUM$$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "btnReset": {
+    "message": "Nollaa"
+  },
+  "btnTranslate": {
+    "message": "Käännä"
+  },
+  "btnOptions": {
+    "message": "Valinnat"
+  },
+  "btnRestore": {
+    "message": "Näytä alkuperäinen"
+  },
+  "btnTryAgain": {
+    "message": "Yritä uudestaan"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Avaa Google kääntäjässä"
+  },
+  "btnDonate": {
+    "message": "Lahjoita"
+  },
+  "btnNeverTranslate": {
+    "message": "Älä käännä tätä sivua"
+  },
+  "btnChangeLanguages": {
+    "message": "Vaihda kieliä"
+  },
+  "btnMobileOriginal": {
+    "message": "Alkuperäinen"
+  },
+  "btnMobileTranslated": {
+    "message": "Käännetty"
+  },
+  "optionsNeverTranslate": {
+    "message": "Älä käännä näitä sivuja"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Käännä aina nämä kielet"
+  },
+  "optionPopupConfig": {
+    "message": "Näytä työkalupalkki mobiiliversiossa"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Kolmen sormen kosketuksella"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Avaa Yandex translatessa"
+  },
+  "lblOthers": {
+    "message": "Muut"
+  },
+  "btnMoreOptions": {
+    "message": "Lisää asetuksia"
+  },
+  "lblPlsDonate": {
+    "message": "Auta kehittäjää tekemällä lahjoitus"
+  },
+  "msgTranslateFor": {
+    "message": "Käännä kielelle $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowContextMenu": {
+    "message": "Näytä valinta kääntämiselle pikavalikossa"
+  },
+  "msgYes": {
+    "message": "Kyllä"
+  },
+  "msgNo": {
+    "message": "Ei"
+  },
+  "btnAlwaysTranslate": {
+    "message": "Käännä tämä sivusto aina"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Käännä nämä sivustot aina"
+  },
+  "lblDarkMode": {
+    "message": "Tumma tila"
+  },
+  "lblShowReleaseNotes": {
+    "message": "Näytä julkaisutiedot päivitettäessä"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "Näytä painike, jolla voit kääntää valitun tekstin"
+  },
+  "msgAutomatic": {
+    "message": "Automaattinen"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Käännä valittu teksti"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "Näytä valinta kääntämiselle pikavalikossa"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "Älä koskaan käännä näitä sivustoja"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "Älä koskaan käännä tätä sivua"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "Näytä alkuperäinen teksti osoitinaktivoinnilla"
+  },
+  "msgLanguages": {
+    "message": "Kielet"
+  },
+  "msgSites": {
+    "message": "Sivustot"
+  },
+  "msgTranslations": {
+    "message": "Käännökset"
+  },
+  "msgStyle": {
+    "message": "Tyyli"
+  },
+  "msgHotkeys": {
+    "message": "Pikanäppäimet"
+  },
+  "lblMakeDonation": {
+    "message": "Tee lahjoitus"
+  },
+  "lblReleaseNotes": {
+    "message": "Julkaisutiedot"
+  },
+  "lblReport": {
+    "message": "Ilmoita ongelmasta"
+  },
+  "lblSettings": {
+    "message": "Asetukset"
+  },
+  "lblAdd": {
+    "message": "Lisää"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Näytä käännetty teksti osoitinaktivoinnilla"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Pikanäppäimet"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Kiitos, että käytät tätä laajennusta."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Olen kiitollinen, jos voit tehdä lahjoituksen."
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Näytä käännetty teksti, kun käytät osoitinaktivointia näillä sivustoilla"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Muuta työkalupalkin ikoni siniseksi, kun sivusto on käännetty"
+  },
+  "more": {
+    "message": "Lisää"
+  },
+  "less": {
+    "message": "Vähemmän"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Älä näytä, jos sivuston kieli on kohdekieli"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Älä näytä, jos sivuston kieltä ei pystytä tunnistamaan"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Älä näytä, jos valitun tekstin kieli on kohdekieli"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Älä näytä, jos valittua tekstikieltä ei tunneta"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Näytä käännökset osoitinaktivoinnilla tällä sivustolla"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Näytä käännös, kun vie hiiri verkkosivustojen päälle $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Näytä käännetty teksti osoitinaktivoinnilla näillä kielillä"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Älä käännä valittua tekstiä"
+  },
+  "btnListen": {
+    "message": "Kuuntele"
+  },
+  "btnStopListening": {
+    "message": "Lopeta kuuntelu"
+  },
+  "btnApply": {
+    "message": "Käytä"
+  },
+  "swapTranslationService": {
+    "message": "Vaihda käännöspalveluiden välillä"
+  },
+  "swapPopup": {
+    "message": "Vaihda yksinkertaisen ja monimutkaisen käyttöliittymän välillä"
+  },
+  "lblTranslateInterface": {
+    "message": "Auta käyttöliittymän kääntämisessä"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Näytä painike osoitepalkissa"
+  },
+  "lblPageTranslationService": {
+    "message": "Sivujen käännöspalvelu"
+  },
+  "lblTextTranslationService": {
+    "message": "Tekstin käännöspalvelu"
+  },
+  "msgStorage": {
+    "message": "Tallennustila"
+  },
+  "lblTranslationCache": {
+    "message": "Käännösvälimuisti"
+  },
+  "lblStorageUsed": {
+    "message": "Käytetty tallennustila:"
+  },
+  "deleteTranslationCache": {
+    "message": "Poista käännösvälimuisti"
+  },
+  "lblPersonalSettings": {
+    "message": "Omat asetukset"
+  },
+  "backupToFile": {
+    "message": "Varmuuskopioi tiedostoon"
+  },
+  "restoreFromFile": {
+    "message": "Palauta tiedostosta"
+  },
+  "resetToDefault": {
+    "message": "Palauta oletusasetukset"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Haluatko poistaa käännösvälimuistin?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Haluatko korvata kaikki olemassa olevat asetukset käyttämällä varmuuskopiotietoja?"
+  },
+  "fileIsCorrupted": {
+    "message": "Tiedosto näyttää olevan vioittunut"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Haluatko palauttaa laajennuksen oletusasetuksiin?"
+  },
+  "lblTtsSpeed": {
+    "message": "Tekstistä puheeksi äänen nopeus"
+  },
+  "lblEnableDeepL": {
+    "message": "Ota DeepL käyttöön tekstinkäännöspalveluna"
+  },
+  "enterShortcut": {
+    "message": "Kirjoita pikakuvake"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Sisällytä Ctrl tai Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Kirjoita kirjain"
+  },
+  "hotkeyError_invalid": {
+    "message": "Virheellinen yhdistelmä"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Vaihda käännetyn ja alkuperäisen sivun välillä"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Palauta sivu alkuperäiseen"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Käännä sivu kohdekielelle"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Ota käännös käyttöön tagille $HTML_TAG_NAME$",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "Älä lajittele Google-kääntäjän tuloksia"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "Käännä dynaamisesti luotua sisältöä"
+  },
+  "calculatestorage": {
+    "message": "Laskea"
+  },
+  "donatewithpaypal": {
+    "message": "Lahjoita PayPalin kautta"
+  },
+  "lblAutoTranslateWhenClickingALink": {
+    "message": "Käännä automaattisesti, kun napsautat linkkiä, joka vie sinut samaan verkkotunnukseen kuin nykyinen sivusto"
+  },
+  "openNativeShortcutManager": {
+    "message": "Avaa natiivi pikanäppäinhallinta"
+  },
+  "lblKeyboardShortcutsSpecial": {
+    "message": "Erityiset pikanäppäimet"
+  },
+  "lblTranslateSelectedWhenPressTwice": {
+    "message": "Käännä valittu teksti painamalla $SHORTCUT_KEY$ kahdesti",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "lblTranslateTextOverMouseWhenPressTwice": {
+    "message": "Käännä teksti hiiren kohdistimen päälle, kun painat $SHORTCUT_KEY$ kahdesti",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "translateClickingOnce": {
+    "message": "Käännä sivu napsauttamalla kerran osoitepalkin painiketta. (Näet ponnahdusikkunan napsauttamalla hiiren kakkospainikkeella)"
+  },
+  "btnShowPopup": {
+    "message": "Näytä ponnahdusikkuna"
+  },
+  "msgToTranslateThisDocument": {
+    "message": "Tämän asiakirjan $DOC_TYPE$ kääntämiseksi se on muutettava HTML-muotoon",
+    "placeholders": {
+      "DOC_TYPE": {
+        "content": "$1",
+        "example": "(.pdf)"
+      }
+    }
+  },
+  "msgSelectServiceConversion": {
+    "message": "Valitse palvelu tämän muuntamisen suorittamiseksi"
+  },
+  "msgDownloadingDocument": {
+    "message": "Ladataan asiakirjaa..."
+  },
+  "msgSendDocument": {
+    "message": "Lähetä asiakirja"
+  },
+  "msgErrorDownloadingDocument": {
+    "message": "Virhe asiakirjan lataamisessa"
+  },
+  "msgFileLargerThan": {
+    "message": "Tämä palvelu ei tue tiedostoja, jotka ovat suurempia kuin $FILE_SIZE$",
+    "placeholders": {
+      "FILE_SIZE": {
+        "content": "$1",
+        "example": "10 MB"
+      }
+    }
+  },
+  "msgPDFtoHTML": {
+    "message": "PDF HTML-muotoon"
+  },
+  "btncopy": {
+    "message": "Kopio"
+  },
+  "msgRecents": {
+    "message": "Viimeaikaiset"
+  },
+  "msgAll": {
+    "message": "Kaikki"
+  },
+  "msgPleaseWait": {
+    "message": "Odota..."
+  },
+  "msgUnknownLanguage": {
+    "message": "Tuntematon"
+  },
+  "btnReplace": {
+    "message": "Korvata"
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "Korvaa valittu teksti käännetyllä tekstillä välittömästi"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Lisää mukautettuun sanakirjaan (Tämän avulla voit ohittaa tietyt sanat verkkosivun kääntämisen aikana)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Käännä verkkosivustoja tälle kohdekielelle"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Käännä valittu teksti tälle kohdekielelle"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Suosikkikielet"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Suosikkikieli $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Valitse ponnahdusikkunan käyttöliittymätyyli"
+  },
+  "msgInterfaceSimple": {
+    "message": "Yksinkertainen"
+  },
+  "msgInterfaceComplex": {
+    "message": "Monimutkainen"
+  },
+  "lblTranslatePageInto": {
+    "message": "Käännä sivu kielelle $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Sivu käännetty $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  }
+}

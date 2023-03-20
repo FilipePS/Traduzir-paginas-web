@@ -1,0 +1,470 @@
+{
+  "extensionDescription": {
+    "message": "แปลหน้าเว็บแบบเรียลไทม์โดยใช้ Google หรือ Yandex"
+  },
+  "pageActionTitle": {
+    "message": "แปลหน้านี้ไหม"
+  },
+  "lblTranslate": {
+    "message": "แปลหน้านี้ไหม?"
+  },
+  "lblTranslating": {
+    "message": "แปลแล้ว ..."
+  },
+  "lblError": {
+    "message": "ไม่สามารถแปลหน้านี้"
+  },
+  "lblAlwaysTranslate": {
+    "message": "แปลจาก $LANGUAGE_NAME$เสมอ",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblTargetLanguage": {
+    "message": "ภาษาเป้าหมาย $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "btnReset": {
+    "message": "รีเซ็ต"
+  },
+  "btnTranslate": {
+    "message": "แปลภาษา"
+  },
+  "btnOptions": {
+    "message": "การตั้งค่า"
+  },
+  "btnRestore": {
+    "message": "แสดงดั้งเดิม"
+  },
+  "btnTryAgain": {
+    "message": "ลองอีกครั้ง"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "เปิดใน Google นักแปล"
+  },
+  "btnDonate": {
+    "message": "บริจาค"
+  },
+  "btnNeverTranslate": {
+    "message": "ไม่เคยแปลไซต์นี้"
+  },
+  "btnChangeLanguages": {
+    "message": "เปลี่ยนภาษา"
+  },
+  "btnMobileOriginal": {
+    "message": "ต้นฉบับ"
+  },
+  "btnMobileTranslated": {
+    "message": "แปลแล้ว"
+  },
+  "optionsNeverTranslate": {
+    "message": "อย่าแปลเว็บไซต์เหล่านี้"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "แปลภาษาเหล่านี้เสมอ"
+  },
+  "optionPopupConfig": {
+    "message": "แสดงป๊อปอัปมือถือ"
+  },
+  "optionPopupThreeFingers": {
+    "message": "เมื่อฉันแตะสามนิ้วบนหน้าจอ"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "เปิดในยานเดกซ์แปล"
+  },
+  "lblOthers": {
+    "message": "คนอื่น"
+  },
+  "btnMoreOptions": {
+    "message": "ตัวเลือกเพิ่มเติม"
+  },
+  "lblPlsDonate": {
+    "message": "ช่วยนักพัฒนาด้วยการบริจาค"
+  },
+  "msgTranslateFor": {
+    "message": "แปลเป็น $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowContextMenu": {
+    "message": "แสดงตัวเลือกในการแปลหน้าในเมนูบริบท"
+  },
+  "msgYes": {
+    "message": "ใช่"
+  },
+  "msgNo": {
+    "message": "ไม่"
+  },
+  "btnAlwaysTranslate": {
+    "message": "แปลไซต์นี้เสมอ"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "แปลเว็บไซต์เหล่านี้เสมอ"
+  },
+  "lblDarkMode": {
+    "message": "โหมดมืด"
+  },
+  "lblShowReleaseNotes": {
+    "message": "แสดงบันทึกประจำรุ่นเมื่ออัปเดต"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "แสดงปุ่มเพื่อแปลข้อความที่เลือก"
+  },
+  "msgAutomatic": {
+    "message": "อัตโนมัติ"
+  },
+  "msgTranslateSelectedText": {
+    "message": "แปลข้อความที่เลือก"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "แสดงตัวเลือกในการแปลข้อความที่เลือกในเมนูบริบท"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "อย่าแปลภาษาเหล่านี้"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "ไม่เคยแปลภาษานี้"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "แสดงข้อความต้นฉบับเมื่อวางเมาส์เหนือ"
+  },
+  "msgLanguages": {
+    "message": "ภาษา"
+  },
+  "msgSites": {
+    "message": "เว็บไซต์"
+  },
+  "msgTranslations": {
+    "message": "การแปล"
+  },
+  "msgStyle": {
+    "message": "สไตล์"
+  },
+  "msgHotkeys": {
+    "message": "ปุ่มลัด"
+  },
+  "lblMakeDonation": {
+    "message": "บริจาค"
+  },
+  "lblReleaseNotes": {
+    "message": "บันทึกประจำรุ่น"
+  },
+  "lblReport": {
+    "message": "รายงานปัญหา"
+  },
+  "lblSettings": {
+    "message": "การตั้งค่า"
+  },
+  "lblAdd": {
+    "message": "เพิ่ม"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "แสดงข้อความที่แปลเมื่อวางเมาส์เหนือ"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "แป้นพิมพ์ลัด"
+  },
+  "msgThanksForUseExtension": {
+    "message": "ขอขอบคุณที่ใช้ส่วนขยายนี้"
+  },
+  "msgIWillBeGrateful": {
+    "message": "ฉันจะขอบคุณถ้าคุณสามารถบริจาคได้"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "แสดงข้อความที่แปลแล้วเมื่อวางเมาส์เหนือไซต์เหล่านี้"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "ทำให้ไอคอนป๊อปอัปเป็นสีน้ำเงินเมื่อแปลไซต์แล้ว"
+  },
+  "more": {
+    "message": "มากกว่า"
+  },
+  "less": {
+    "message": "น้อย"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "ไม่แสดงหากภาษาของเพจเป็นภาษาเป้าหมาย"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "ไม่แสดงหากไม่รู้จักภาษาของเพจ"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "ไม่แสดงว่าภาษาข้อความที่เลือกเป็นภาษาเป้าหมายหรือไม่"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "ไม่แสดงหากไม่รู้จักภาษาของข้อความที่เลือก"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "แสดงคำแปลเมื่อวางเมาส์เหนือไซต์นี้"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "แสดงคำแปลเมื่อวางเมาส์เหนือเว็บไซต์ใน $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "แสดงข้อความที่แปลเมื่อวางเมาส์เหนือไซต์ที่มีภาษาเหล่านี้"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "อย่าแปลข้อความที่เลือก"
+  },
+  "btnListen": {
+    "message": "ฟัง"
+  },
+  "btnStopListening": {
+    "message": "หยุดฟัง"
+  },
+  "btnApply": {
+    "message": "นำมาใช้"
+  },
+  "swapTranslationService": {
+    "message": "สลับระหว่างบริการแปลภาษา"
+  },
+  "swapPopup": {
+    "message": "สลับไปมาระหว่างอินเทอร์เฟซที่เรียบง่ายและซับซ้อน"
+  },
+  "lblTranslateInterface": {
+    "message": "แปลอินเทอร์เฟซ"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "แสดงปุ่มในแถบที่อยู่"
+  },
+  "lblPageTranslationService": {
+    "message": "บริการแปลเพจ"
+  },
+  "lblTextTranslationService": {
+    "message": "บริการแปลข้อความ"
+  },
+  "msgStorage": {
+    "message": "พื้นที่จัดเก็บ"
+  },
+  "lblTranslationCache": {
+    "message": "แคชการแปล"
+  },
+  "lblStorageUsed": {
+    "message": "พื้นที่เก็บข้อมูลที่ใช้:"
+  },
+  "deleteTranslationCache": {
+    "message": "ลบแคชการแปล"
+  },
+  "lblPersonalSettings": {
+    "message": "การตั้งค่าส่วนบุคคล"
+  },
+  "backupToFile": {
+    "message": "สำรองข้อมูลไปยังไฟล์"
+  },
+  "restoreFromFile": {
+    "message": "กู้คืนจากไฟล์"
+  },
+  "resetToDefault": {
+    "message": "คืนค่าการตั้งค่าเริ่มต้น"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "คุณต้องการลบแคชการแปลหรือไม่?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "คุณต้องการเขียนทับการตั้งค่าที่มีอยู่ทั้งหมดโดยใช้ข้อมูลสำรองหรือไม่"
+  },
+  "fileIsCorrupted": {
+    "message": "ดูเหมือนว่าไฟล์จะเสียหาย"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "คุณต้องการกู้คืนส่วนขยายเป็นการตั้งค่าเริ่มต้นหรือไม่"
+  },
+  "lblTtsSpeed": {
+    "message": "ความเร็วเสียงอ่านออกเสียงข้อความ"
+  },
+  "lblEnableDeepL": {
+    "message": "เปิดใช้งาน DeepL เป็นบริการแปลข้อความ"
+  },
+  "enterShortcut": {
+    "message": "พิมพ์ทางลัด"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "รวม Ctrl หรือ Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "พิมพ์ตัวอักษร"
+  },
+  "hotkeyError_invalid": {
+    "message": "ชุดค่าผสมไม่ถูกต้อง"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "สลับไปมาระหว่างหน้าที่แปลและหน้าต้นฉบับ"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "คืนค่าหน้าเป็นต้นฉบับ"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "แปลหน้าเว็บเป็นภาษาเป้าหมาย"
+  },
+  "lblTranslateTag_pre": {
+    "message": "เปิดใช้งานการแปลสำหรับแท็ก $HTML_TAG_NAME$",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "อย่าจัดเรียงผลลัพธ์การแปลของ Google"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "แปลเนื้อหาที่สร้างขึ้นแบบไดนามิก"
+  },
+  "calculatestorage": {
+    "message": "คำนวณ"
+  },
+  "donatewithpaypal": {
+    "message": "บริจาคด้วย PayPal"
+  },
+  "lblAutoTranslateWhenClickingALink": {
+    "message": "แปลโดยอัตโนมัติเมื่อคลิกลิงก์ที่นำคุณไปยังโดเมนเดียวกันกับไซต์ปัจจุบัน"
+  },
+  "openNativeShortcutManager": {
+    "message": "เปิดตัวจัดการคีย์ลัดเนทีฟ"
+  },
+  "lblKeyboardShortcutsSpecial": {
+    "message": "แป้นพิมพ์ลัดพิเศษ"
+  },
+  "lblTranslateSelectedWhenPressTwice": {
+    "message": "แปลข้อความที่เลือกเมื่อกด $SHORTCUT_KEY$ สองครั้ง",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "lblTranslateTextOverMouseWhenPressTwice": {
+    "message": "แปลข้อความบนเคอร์เซอร์ของเมาส์เมื่อกด $SHORTCUT_KEY$ สองครั้ง",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "translateClickingOnce": {
+    "message": "แปลหน้าโดยคลิกหนึ่งครั้งที่ปุ่มในแถบที่อยู่ (หากต้องการดูป๊อปอัป ให้คลิกขวา)"
+  },
+  "btnShowPopup": {
+    "message": "แสดงป๊อปอัป"
+  },
+  "msgToTranslateThisDocument": {
+    "message": "ในการแปลเอกสารนี้ $DOC_TYPE$ จำเป็นต้องแปลงเป็น HTML",
+    "placeholders": {
+      "DOC_TYPE": {
+        "content": "$1",
+        "example": "(.pdf)"
+      }
+    }
+  },
+  "msgSelectServiceConversion": {
+    "message": "เลือกบริการเพื่อทำการแปลงนี้"
+  },
+  "msgDownloadingDocument": {
+    "message": "กำลังดาวน์โหลดเอกสาร..."
+  },
+  "msgSendDocument": {
+    "message": "ส่งเอกสาร"
+  },
+  "msgErrorDownloadingDocument": {
+    "message": "เกิดข้อผิดพลาดในการดาวน์โหลดเอกสาร"
+  },
+  "msgFileLargerThan": {
+    "message": "บริการนี้ไม่รองรับไฟล์ที่มีขนาดใหญ่กว่า $FILE_SIZE$",
+    "placeholders": {
+      "FILE_SIZE": {
+        "content": "$1",
+        "example": "10 MB"
+      }
+    }
+  },
+  "msgPDFtoHTML": {
+    "message": "PDF เป็น HTML"
+  },
+  "btncopy": {
+    "message": "สำเนา"
+  },
+  "msgRecents": {
+    "message": "ล่าสุด"
+  },
+  "msgAll": {
+    "message": "ทั้งหมด"
+  },
+  "msgPleaseWait": {
+    "message": "โปรดรอ..."
+  },
+  "msgUnknownLanguage": {
+    "message": "ไม่ทราบ"
+  },
+  "btnReplace": {
+    "message": "แทนที่"
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "แทนที่ข้อความที่เลือกด้วยข้อความที่แปลทันที"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "เพิ่มในพจนานุกรมแบบกำหนดเอง (ทำให้คุณสามารถข้ามคำบางคำระหว่างการแปลหน้าเว็บ)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "แปลเว็บไซต์เป็นภาษาเป้าหมายนี้"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "แปลข้อความที่เลือกเป็นภาษาเป้าหมายนี้"
+  },
+  "msgFavoriteLanguages": {
+    "message": "ภาษาที่ชอบ"
+  },
+  "lblFavoriteLanguage": {
+    "message": "ภาษาที่ชอบ $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "เลือกรูปแบบอินเทอร์เฟซป๊อปอัป"
+  },
+  "msgInterfaceSimple": {
+    "message": "เรียบง่าย"
+  },
+  "msgInterfaceComplex": {
+    "message": "ซับซ้อน"
+  },
+  "lblTranslatePageInto": {
+    "message": "แปลหน้าเป็น $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "หน้าแปลเป็น $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  }
+}

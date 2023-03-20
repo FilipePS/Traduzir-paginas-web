@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "target": "ES2022",
+    "checkJs": true,
+    "alwaysStrict": true
+  },
+  "include": ["./src"]
+}

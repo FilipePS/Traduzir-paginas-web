@@ -1,0 +1,470 @@
+{
+  "extensionDescription": {
+    "message": "Google ᱟᱨᱵᱟᱝ Yandex ᱛᱮ ᱟᱢᱟᱜ ᱥᱟᱦᱴᱟ ᱱᱤᱛ ᱟᱨ ᱱᱤᱛ ᱫᱮᱠᱷᱟᱣ ᱞᱮᱠᱷᱟᱛᱮ ᱛᱟᱨᱡᱚᱢᱟᱭ ᱢᱮ ᱾"
+  },
+  "pageActionTitle": {
+    "message": "ᱱᱚᱣᱟ ᱥᱟᱦᱴᱟ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
+  },
+  "lblTranslate": {
+    "message": "ᱱᱚᱣᱟ ᱥᱟᱦᱴᱟ ᱛᱚᱨᱡᱚᱢᱟᱭᱟ ᱢᱮ?"
+  },
+  "lblTranslating": {
+    "message": "ᱛᱟᱨᱡᱚᱢᱟᱜ ᱠᱟᱱᱟ ..."
+  },
+  "lblError": {
+    "message": "ᱱᱚᱶᱟ ᱨᱮᱫ ᱫᱚ ᱛᱚᱨᱡᱚᱢᱟ ᱵᱟᱭ ᱜᱟᱱᱚᱜᱼᱟ"
+  },
+  "lblAlwaysTranslate": {
+    "message": "$LANGUAGE_NAME$ ᱠᱷᱚᱱ ᱡᱟᱹᱣᱜᱮ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblTargetLanguage": {
+    "message": "ᱡᱚᱥ ᱯᱟᱹᱨᱥᱤ $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "btnReset": {
+    "message": "ᱫᱚᱦᱲᱟ ᱥᱮᱴ"
+  },
+  "btnTranslate": {
+    "message": "ᱛᱚᱨᱡᱚᱢᱟᱭ"
+  },
+  "btnOptions": {
+    "message": "ᱢᱚᱱᱮ ᱛᱮᱭᱟᱜ ᱠᱚ"
+  },
+  "btnRestore": {
+    "message": "ᱢᱩᱞᱟᱜ ᱩᱫᱩᱜᱽ ᱢᱮ"
+  },
+  "btnTryAgain": {
+    "message": "ᱫᱩᱦᱲᱟᱹ ᱠᱩᱨᱩᱢᱩᱴᱩᱭ ᱢᱮ"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "google translator ᱨᱮ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ"
+  },
+  "btnDonate": {
+    "message": "ᱫᱟᱱ"
+  },
+  "btnNeverTranslate": {
+    "message": "ᱱᱚᱣᱟ ᱥᱟᱦᱴᱟ ᱛᱤᱥ ᱦᱚᱸ ᱟᱞᱚᱢ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱟ"
+  },
+  "btnChangeLanguages": {
+    "message": "ᱯᱟᱹᱨᱥᱤᱠᱚ ᱵᱚᱫᱚᱞ ᱢᱮ"
+  },
+  "btnMobileOriginal": {
+    "message": "ᱢᱩᱞ"
+  },
+  "btnMobileTranslated": {
+    "message": "ᱛᱚᱨᱡᱚᱢᱟ‌‌ ᱮᱱᱟ"
+  },
+  "optionsNeverTranslate": {
+    "message": "ᱱᱚᱣᱟ ᱥᱟᱦᱴᱟᱠᱚᱫᱚ ᱛᱤᱥ ᱦᱚᱸ ᱟᱞᱚᱢ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱟ"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "ᱱᱚᱶᱟ ᱯᱟᱹᱨᱥᱤ ᱠᱚᱫᱚ ᱜᱷᱤᱲᱜᱮ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
+  },
+  "optionPopupConfig": {
+    "message": "ᱢᱚᱵᱟᱭᱤᱞ ᱴᱟᱴᱠᱟ ᱚᱲᱚᱠ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "optionPopupThreeFingers": {
+    "message": "ᱚᱠᱟ ᱡᱷᱚᱜ ᱤᱧ ᱯᱮᱭᱟ ᱠᱟᱹᱴᱩᱵ ᱛᱮ ᱯᱚᱨᱫᱟ ᱨᱮ ᱴᱤᱯᱟᱹᱣ ᱮᱫᱟᱹᱧ"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "yandex ᱛᱚᱨᱡᱚᱢᱟ ᱨᱮ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ"
+  },
+  "lblOthers": {
+    "message": "ᱮᱴᱟᱜᱠᱚ"
+  },
+  "btnMoreOptions": {
+    "message": "ᱰᱷᱮᱨ ᱚᱯᱥᱚᱱ ᱠᱚ"
+  },
+  "lblPlsDonate": {
+    "message": "ᱰᱮᱵᱷᱞᱚᱯᱚᱨ ᱫᱚ ᱛᱤᱱᱟᱹᱜ ᱜᱟᱱ ᱴᱟᱠᱟ ᱪᱟᱞ ᱟᱭ ᱢᱮ"
+  },
+  "msgTranslateFor": {
+    "message": "$LANGUAGE_NAME$ ᱯᱟᱹᱨᱥᱤ ᱛᱮ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowContextMenu": {
+    "message": "ᱵᱟᱛᱟᱣ ᱢᱮᱱᱩ ᱨᱮᱭᱟᱜ ᱥᱟᱦᱴᱟ ᱨᱮ ᱛᱚᱨᱡᱚᱢᱟ ᱞᱟᱹᱜᱤᱫ ᱢᱚᱱᱮ ᱛᱮᱭᱟᱜ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "msgYes": {
+    "message": "ᱦᱚᱭ"
+  },
+  "msgNo": {
+    "message": "ᱵᱟᱝ"
+  },
+  "btnAlwaysTranslate": {
+    "message": "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱜᱷᱤᱲ ᱜᱮ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ "
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱠᱚ ᱜᱷᱤᱲ ᱜᱚ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
+  },
+  "lblDarkMode": {
+    "message": "ᱧᱩᱛ ᱢᱳᱰ"
+  },
+  "lblShowReleaseNotes": {
+    "message": "ᱦᱟᱹᱞᱤᱭᱟᱹᱠ ᱡᱷᱚᱜ ᱯᱟᱹᱨᱥᱟᱞ  ᱠᱷᱟᱴᱚ ᱢᱟᱪᱷᱟ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "ᱵᱟᱪᱷᱟᱣ ᱠᱟᱱ ᱚᱞ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱞᱟᱹᱜᱤᱫ ᱵᱩᱛᱟᱹᱢ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "msgAutomatic": {
+    "message": "ᱟᱡ ᱛᱮ"
+  },
+  "msgTranslateSelectedText": {
+    "message": "ᱵᱟᱪᱷᱟᱣ ᱠᱟᱱ ᱚᱞ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "ᱵᱟᱛᱟᱣ ᱢᱮᱱᱩ ᱨᱮᱭᱟᱜ ᱚᱞ ᱨᱮ ᱛᱚᱨᱡᱚᱢᱟ ᱞᱟᱹᱜᱤᱫ ᱢᱚᱱᱮ ᱛᱮᱭᱟᱜ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "ᱱᱚᱶᱟ ᱯᱟᱹᱨᱥᱤᱠᱚ ᱛᱤᱥ ᱦᱚᱸ ᱟᱞᱚᱢ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱟ"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "ᱱᱚᱶᱟ ᱯᱟᱹᱨᱥᱤ ᱛᱤᱥ ᱦᱚᱸ ᱟᱞᱚᱢ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱟ"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "ᱦᱰᱟᱹᱣ ᱡᱷᱚᱜ ᱢᱩᱞ ᱚᱞ ᱠᱚ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "msgLanguages": {
+    "message": "ᱯᱟᱹᱨᱥᱤᱠᱚ"
+  },
+  "msgSites": {
+    "message": "ᱥᱟᱭᱤᱴᱠᱚ"
+  },
+  "msgTranslations": {
+    "message": "ᱛᱚᱨᱡᱚᱢᱟᱠᱚ"
+  },
+  "msgStyle": {
+    "message": "ᱦᱩᱱᱟᱹᱨ"
+  },
+  "msgHotkeys": {
+    "message": "ᱦᱚᱴᱠᱤ"
+  },
+  "lblMakeDonation": {
+    "message": "ᱫᱟᱱ ᱛᱟᱞᱟᱝ ᱢᱮ"
+  },
+  "lblReleaseNotes": {
+    "message": "ᱟᱲᱟᱜ ᱠᱟᱱ ᱠᱷᱟᱴᱚ ᱢᱟᱪᱷᱟ ᱠᱚ"
+  },
+  "lblReport": {
+    "message": "ᱢᱤᱫᱴᱟᱹᱝ ᱦᱩᱰᱟᱹᱜ ᱠᱷᱚᱵᱚᱨ ᱢᱮ"
+  },
+  "lblSettings": {
+    "message": "ᱥᱟᱡᱟᱣᱠᱚ"
+  },
+  "lblAdd": {
+    "message": "ᱥᱮᱞᱮᱫ"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "ᱩᱰᱟᱹᱣ ᱡᱷᱚᱜ ᱛᱚᱨᱡᱚᱢᱟ ᱠᱟᱱ ᱚᱞ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "ᱠᱟᱹᱴᱷᱤ ᱵᱚᱰ ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟᱠᱚ"
+  },
+  "msgThanksForUseExtension": {
+    "message": "ᱱᱚᱶᱟ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱵᱮᱵᱷᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱨᱦᱟᱣ ᱾"
+  },
+  "msgIWillBeGrateful": {
+    "message": "ᱤᱧ ᱟᱹᱰᱤᱜᱟᱱ ᱤᱧ ᱨᱟᱹᱥᱠᱟᱹᱜᱼᱟ ᱡᱩᱫᱤ ᱟᱢ ᱛᱤᱱᱟᱹᱜ ᱜᱟᱱ ᱴᱟᱠᱟᱢ ᱫᱟᱱ ᱠᱟᱭᱟ ᱾"
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "ᱱᱚᱶᱟ ᱠᱚ ᱥᱟᱭᱤᱴ ᱪᱮᱛᱟᱱ ᱨᱮ ᱩᱰᱟᱹᱣ ᱵᱟᱲᱟ ᱡᱷᱚᱜ ᱛᱚᱨᱡᱚᱢᱟ ᱠᱟᱱ ᱚᱞ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "ᱥᱟᱭᱤᱴ ᱛᱚᱨᱡᱚᱢᱟ ᱡᱷᱚᱜ ᱴᱟᱴᱠᱟ ᱞᱤᱞ ᱪᱤᱱᱦᱟᱹ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "more": {
+    "message": "ᱰᱷᱮᱨ"
+  },
+  "less": {
+    "message": "ᱠᱚᱢ"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "ᱡᱩᱫᱤ ᱥᱟᱦᱴᱟ ᱫᱚ ᱞᱚᱠᱷᱭᱚ ᱠᱟᱱ ᱯᱟᱹᱨᱥᱤ ᱨᱮ ᱢᱮᱱᱟᱜ ᱠᱷᱟᱱ ᱟᱞᱚᱢ ᱫᱮᱠᱷᱟᱣ ᱟ"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "ᱡᱩᱫᱤ ᱥᱟᱦᱴᱟ ᱵᱟᱝ ᱵᱟᱲᱟᱭᱚᱜ ᱠᱷᱟᱱ ᱟᱞᱚᱢ ᱫᱮᱠᱷᱟᱣ ᱟ"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "ᱡᱩᱫᱤ ᱵᱟᱪᱷᱟᱣ ᱠᱟᱱ ᱚᱞ ᱯᱟᱹᱨᱥᱤ ᱫᱚ ᱞᱚᱠᱷᱭᱚ ᱯᱟᱹᱨᱥᱤ ᱛᱟᱦᱮᱱ ᱠᱷᱟᱱ ᱟᱞᱚᱢ ᱫᱮᱠᱷᱟᱣ ᱟ"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "ᱡᱩᱫᱤ ᱵᱟᱪᱷᱟᱣ ᱠᱟᱱ ᱚᱞ ᱯᱟᱹᱨᱥᱤ ᱫᱚ ᱵᱟᱝ ᱵᱟᱝ ᱵᱟᱲᱟᱭᱚᱜ ᱠᱟᱱ ᱠᱷᱟᱱ ᱟᱞᱚᱢ ᱫᱮᱠᱷᱟᱣ ᱟ "
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱨᱮ ᱩᱰᱟᱹᱣ ᱡᱷᱚᱜ ᱛᱚᱨᱡᱚᱢᱟ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱨᱮ ᱩᱰᱟᱹᱣ ᱡᱷᱚᱜ $LANGUAGE_NAME$ ᱨᱮ ᱛᱚᱨᱡᱚᱢᱟ ᱫᱮᱠᱷᱟᱣ ᱢᱮ",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "ᱱᱚᱶᱟ ᱠᱚ ᱥᱟᱭᱤᱴ ᱪᱮᱛᱟᱱ ᱨᱮ ᱩᱰᱟᱹᱣ ᱵᱟᱲᱟ ᱡᱷᱚᱜ ᱚᱞ ᱨᱮᱭᱟᱜ ᱛᱚᱨᱡᱚᱢᱟ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "ᱵᱟᱪᱷᱟᱣ ᱠᱟᱱ ᱚᱞ ᱟᱞᱚᱢ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱟ"
+  },
+  "btnListen": {
+    "message": "ᱟᱧᱡᱚᱢ"
+  },
+  "btnStopListening": {
+    "message": "ᱟᱧᱡᱚᱢ ᱵᱚᱱᱫᱚᱜ ᱢᱮ"
+  },
+  "btnApply": {
+    "message": "ᱮᱢ ᱪᱷᱚ"
+  },
+  "swapTranslationService": {
+    "message": "ᱛᱚᱨᱡᱚᱢᱟ ᱮᱢᱚᱜᱤᱡ ᱠᱚ ᱛᱟᱞᱟ ᱵᱷᱤᱛᱤᱨ ᱨᱮ ᱵᱚᱫᱚᱞ ᱢᱮ"
+  },
+  "swapPopup": {
+    "message": "ᱥᱚᱦᱚᱡᱽ ᱟᱨ ᱡᱚᱴᱤᱞ ᱤᱱᱴᱚᱨᱯᱷᱮᱥ ᱵᱷᱤᱛᱤᱨ ᱨᱮ ᱵᱚᱫᱚᱞ ᱢᱮ"
+  },
+  "lblTranslateInterface": {
+    "message": "ᱤᱱᱴᱚᱨᱯᱷᱮᱥ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "ᱴᱷᱤᱠᱬᱟᱹ ᱵᱟᱨ ᱨᱮ ᱵᱩᱛᱟᱹᱢ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "lblPageTranslationService": {
+    "message": "ᱥᱟᱦᱴᱟ ᱛᱚᱨᱡᱚᱢᱟ ᱠᱟᱹᱢᱤᱦᱚᱨᱟ"
+  },
+  "lblTextTranslationService": {
+    "message": "ᱚᱱᱚᱞ ᱛᱚᱨᱡᱚᱢᱟ ᱠᱟᱹᱢᱤᱦᱚᱨᱟ"
+  },
+  "msgStorage": {
+    "message": "ᱫᱚᱦᱚ"
+  },
+  "lblTranslationCache": {
+    "message": "ᱛᱚᱨᱡᱚᱢᱟ ᱠᱮᱪ"
+  },
+  "lblStorageUsed": {
+    "message": "ᱵᱮᱵᱷᱟᱨ ᱠᱟᱱ ᱫᱚᱦᱚ ᱡᱟᱭᱜᱟ:"
+  },
+  "deleteTranslationCache": {
+    "message": "ᱛᱚᱨᱡᱚᱢᱟ ᱠᱮᱪ ᱢᱮᱴᱟᱣ ᱢᱮ"
+  },
+  "lblPersonalSettings": {
+    "message": "ᱱᱤᱡᱚᱨᱟᱜ ᱥᱟᱡᱟᱣ ᱠᱚ"
+  },
+  "backupToFile": {
+    "message": "ᱨᱮᱫ ᱨᱮ ᱵᱮᱠᱚᱯᱷ ᱢᱮ"
+  },
+  "restoreFromFile": {
+    "message": "ᱨᱮᱫ ᱠᱷᱚᱱ ᱫᱩᱦᱲᱟᱹ ᱫᱚᱦᱚᱭ ᱢᱮ"
+  },
+  "resetToDefault": {
+    "message": "ᱢᱩᱞ ᱥᱟᱡᱟᱣ ᱠᱚ ᱫᱩᱦᱲᱟᱹ ᱫᱚᱦᱚᱭ ᱢᱮ"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "ᱟᱢ ᱫᱚ ᱪᱮᱫ ᱛᱚᱨᱡᱚᱢᱟ ᱠᱮᱪ ᱠᱚᱢ ᱢᱮᱴᱟᱣ ᱥᱟᱱᱟᱢ ᱠᱟᱱᱟ ᱢᱮ ? "
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "ᱟᱢ ᱫᱚ ᱪᱮᱫ ᱵᱮᱠᱚᱯᱷ ᱰᱟᱴᱟ ᱵᱮᱵᱷᱟᱨ ᱟᱛᱮᱫ ᱡᱷᱚᱛᱚ ᱢᱟᱲᱟᱝ ᱠᱷᱚᱱ ᱢᱮᱱᱟᱜ ᱥᱟᱡᱟᱣ ᱠᱚ ᱫᱩᱦᱲᱟᱹ ᱚᱞ ᱥᱟᱱᱟᱢ ᱠᱟᱱᱟ ᱥᱮ ?"
+  },
+  "fileIsCorrupted": {
+    "message": "ᱨᱮᱫ ᱫᱚ ᱠᱷᱟᱨᱟᱯ ᱜᱮᱭᱟ ᱞᱮᱠᱷᱟ ᱵᱩᱡᱷᱟᱹᱣᱜ ᱠᱟᱱᱟ"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "ᱟᱢ ᱫᱚ ᱪᱮᱫ ᱢᱩᱞ ᱥᱟᱡᱟᱣ ᱠᱚ ᱞᱮᱠᱷᱟ ᱛᱮ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱫᱚᱦᱚ ᱥᱟᱱᱟᱢ ᱠᱟᱱᱟ ᱢᱮ ?"
+  },
+  "lblTtsSpeed": {
+    "message": "ᱚᱞ ᱠᱷᱚᱱ ᱨᱚᱲ ᱥᱟᱰᱮ ᱜᱚᱛᱤ"
+  },
+  "lblEnableDeepL": {
+    "message": "DeepL ᱫᱚ ᱚᱞ ᱛᱚᱨᱡᱚᱢᱟ ᱠᱟᱹᱢᱤᱦᱚᱨᱟ ᱞᱮᱠᱷᱟ ᱫᱚᱦᱚ ᱮᱢ"
+  },
+  "enterShortcut": {
+    "message": "ᱢᱤᱫᱴᱟᱹᱝ ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ ᱚᱞ ᱢᱮ"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Ctrl ᱟᱨᱵᱟᱝ Alt ᱥᱮᱞᱮᱫ ᱠᱟᱜ ᱢᱮ"
+  },
+  "hotkeyError_letter": {
+    "message": "ᱢᱤᱫᱴᱟᱹᱝ ᱪᱤᱠᱤ ᱚᱞ ᱢᱮ"
+  },
+  "hotkeyError_invalid": {
+    "message": "ᱵᱷᱩᱞ ᱢᱮᱲᱟᱯ"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "ᱛᱚᱨᱡᱚᱢᱟ ᱟᱨ ᱢᱩᱞ ᱥᱟᱦᱴᱟ ᱵᱷᱤᱛᱤᱨ ᱨᱮ ᱵᱚᱫᱚᱞ ᱢᱮ"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "ᱥᱟᱦᱴᱟ ᱫᱚ ᱢᱩᱞ ᱞᱮᱠᱷᱟᱮ ᱫᱩᱦᱲᱟᱹ ᱫᱚᱦᱚᱭ ᱢᱮ"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "ᱞᱚᱠᱷᱭᱚ ᱠᱟᱱ ᱯᱟᱹᱨᱥᱤ ᱛᱮ ᱥᱟᱦᱴᱟ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
+  },
+  "lblTranslateTag_pre": {
+    "message": "ᱴᱮᱜᱽ $HTML_TAG_NAME$ ᱞᱟᱹᱜᱤᱫ ᱛᱚᱨᱡᱚᱢᱟ ᱮᱢ ᱪᱷᱚᱭ ᱢᱮ",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "google ᱛᱚᱨᱡᱚᱢᱟᱭ ᱛᱮᱞᱟ ᱟᱞᱚᱢ ᱥᱟᱹᱛ ᱟ"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "ᱴᱟᱴᱠᱟ ᱛᱮ ᱛᱮᱭᱟᱨ ᱡᱤᱱᱤᱥ ᱠᱚ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
+  },
+  "calculatestorage": {
+    "message": "ᱦᱤᱥᱟᱹᱵ"
+  },
+  "donatewithpaypal": {
+    "message": "PayPal ᱛᱮ ᱫᱟᱱ ᱢᱮ"
+  },
+  "lblAutoTranslateWhenClickingALink": {
+    "message": "ᱢᱤᱫᱴᱟᱹᱝ ᱞᱤᱝᱠ ᱨᱮ ᱚᱛᱟ ᱠᱟᱛᱮ ᱟᱢ ᱫᱚ ᱡᱟᱦᱟᱸ ᱚᱱᱟ ᱰᱚᱢᱮᱱ ᱨᱮ ᱱᱤᱛᱚᱜᱟᱜ ᱥᱟᱭᱤᱴ ᱞᱮᱠᱷᱟ ᱛᱟᱦᱮᱱᱟ ᱚᱱᱟ ᱟᱡ ᱛᱮ ᱛᱚᱨᱡᱚᱢᱟᱜᱼᱟ ᱾"
+  },
+  "openNativeShortcutManager": {
+    "message": "ᱱᱤᱡᱚᱨ ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ ᱪᱟᱹᱵᱤ ᱢᱮᱱᱮᱡᱚᱨ ᱠᱷᱩᱞᱟᱹᱭ ᱢᱮ"
+  },
+  "lblKeyboardShortcutsSpecial": {
+    "message": "ᱵᱤᱥᱮᱥ ᱠᱟᱹᱴᱷᱤ ᱵᱚᱰ ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟᱠᱚ"
+  },
+  "lblTranslateSelectedWhenPressTwice": {
+    "message": "$SHORTCUT_KEY$ ᱵᱟᱨ ᱡᱮᱠᱷᱟ ᱚᱛᱟ ᱞᱮᱠᱟᱱ ᱵᱟᱪᱷᱟᱣ ᱠᱟᱱ ᱚᱞ ᱛᱚᱨᱡᱚᱢᱟᱜᱼᱟ",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "lblTranslateTextOverMouseWhenPressTwice": {
+    "message": "$SHORTCUT_KEY$ ᱵᱟᱨ ᱡᱮᱠᱷᱟ ᱚᱛᱟ ᱞᱮᱠᱷᱟᱱ ᱢᱟᱣᱩᱥ ᱠᱚᱨᱥᱚᱨ ᱩᱰᱟᱹᱣ ᱡᱷᱚᱜ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "translateClickingOnce": {
+    "message": "ᱴᱷᱤᱠᱬᱟᱹ ᱵᱟᱨ ᱨᱮᱭᱟᱜ ᱵᱩᱛᱟᱹᱢ ᱨᱮ ᱢᱤᱫ ᱡᱮᱠᱷᱟ ᱚᱛᱟ ᱞᱮᱠᱷᱟᱱ ᱛᱚᱨᱡᱚᱢᱟᱜ ᱟ ᱾ (ᱴᱟᱴᱠᱟ ᱚᱰᱚᱠ ᱧᱮᱞ ᱞᱟᱹᱜᱤᱫ, ᱡᱚᱡᱚᱢ ᱛᱮ ᱚᱛᱟᱭ ᱢᱮ)"
+  },
+  "btnShowPopup": {
+    "message": "ᱴᱟᱴᱠᱟ ᱚᱰᱚᱠ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
+  },
+  "msgToTranslateThisDocument": {
+    "message": "ᱫᱚᱞᱤᱞ $DOC_TYPE$ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱞᱟᱹᱜᱤᱫ ᱚᱱᱟ ᱫᱚ HTML ᱛᱮ ᱵᱚᱫᱚᱞ ᱞᱟᱹᱠᱛᱤ ᱠᱟᱱᱟ",
+    "placeholders": {
+      "DOC_TYPE": {
+        "content": "$1",
+        "example": "(.pdf)"
+      }
+    }
+  },
+  "msgSelectServiceConversion": {
+    "message": "ᱱᱚᱶᱟ ᱵᱚᱫᱚᱞ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫᱴᱟᱹᱝ ᱠᱟᱹᱢᱤᱦᱚᱨᱟ ᱵᱟᱪᱷᱟᱣ ᱢᱮ"
+  },
+  "msgDownloadingDocument": {
+    "message": "ᱫᱚᱞᱤᱞ ᱰᱟᱣᱩᱱᱞᱚᱰᱚᱜ ᱠᱟᱱᱟ..."
+  },
+  "msgSendDocument": {
+    "message": "ᱫᱚᱞᱤᱞ ᱵᱷᱮᱡᱟᱭ ᱢᱮ"
+  },
+  "msgErrorDownloadingDocument": {
+    "message": "ᱫᱚᱞᱤᱞ ᱰᱟᱣᱩᱱᱞᱚᱰᱚᱜ ᱡᱷᱚᱜ ᱵᱷᱩᱞ ᱦᱩᱭᱮᱱᱟ"
+  },
+  "msgFileLargerThan": {
+    "message": "ᱱᱚᱶᱟ ᱠᱟᱹᱢᱤᱦᱚᱨᱟ ᱫᱚ $FILE_SIZE$ ᱠᱷᱚᱱ ᱢᱟᱨᱟᱝᱟᱜ ᱫᱚᱞᱤᱞ ᱠᱚᱫᱚ ᱵᱟᱭ ᱛᱚᱨᱡᱚᱢᱟ ᱫᱟᱲᱮᱭᱟᱜᱼᱟᱭ",
+    "placeholders": {
+      "FILE_SIZE": {
+        "content": "$1",
+        "example": "10 MB"
+      }
+    }
+  },
+  "msgPDFtoHTML": {
+    "message": "PDF ᱠᱷᱚᱱ HTML"
+  },
+  "btncopy": {
+    "message": "ᱱᱚᱠᱚᱞ"
+  },
+  "msgRecents": {
+    "message": "ᱱᱮᱛᱟᱨᱟᱜ"
+  },
+  "msgAll": {
+    "message": "ᱡᱷᱚᱛᱚ"
+  },
+  "msgPleaseWait": {
+    "message": "ᱫᱟᱭᱟ ᱠᱟᱛᱮ ᱛᱟᱹᱝᱜᱤ ᱢᱮ…"
+  },
+  "msgUnknownLanguage": {
+    "message": "ᱵᱟᱝ ᱵᱟᱰᱟᱭ"
+  },
+  "btnReplace": {
+    "message": "ᱥᱟᱦᱟ"
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "ᱵᱟᱪᱷᱟᱣ ᱠᱟᱱ ᱚᱞ ᱫᱚ ᱛᱚᱨᱡᱚᱢᱟ ᱠᱟᱱ ᱚᱞ ᱛᱮ ᱴᱟᱴᱠᱟ ᱵᱚᱫᱚᱞ ᱢᱮ"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "ᱱᱤᱡᱮᱛᱮᱭᱟᱜ ᱥᱟᱵᱟᱫ ᱜᱟᱫᱮᱞ ᱛᱮ ᱥᱟᱵᱟᱫ ᱢᱮ (ᱱᱚᱶᱟ ᱫᱚ ᱣᱮᱵᱽ ᱛᱚᱨᱡᱚᱢᱟ ᱛᱚᱨᱡᱚᱢᱟ ᱡᱷᱚᱜ ᱛᱤᱱᱟᱹᱜ ᱜᱟᱱ ᱟᱹᱲᱟᱹ ᱠᱚ ᱟᱹᱲᱟᱜ ᱩᱛᱟᱹᱨ ᱪᱷᱚ ᱢᱮᱭᱟᱭ)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "ᱱᱚᱶᱟ ᱞᱚᱠᱷᱭᱚ ᱠᱟᱱ ᱯᱟᱹᱨᱥᱤ ᱛᱮ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱠᱚ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "ᱱᱚᱶᱟ ᱞᱚᱠᱷᱭᱚ ᱠᱟᱱ ᱯᱟᱹᱨᱥᱤ ᱛᱮ ᱵᱟᱪᱷᱟᱣ ᱠᱟᱱ ᱚᱞ ᱠᱚ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
+  },
+  "msgFavoriteLanguages": {
+    "message": "ᱠᱩᱥᱤ ᱯᱟᱹᱨᱥᱤ ᱠᱚ"
+  },
+  "lblFavoriteLanguage": {
+    "message": "ᱠᱩᱥᱤ ᱯᱟᱹᱨᱥᱤ $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "ᱴᱟᱴᱠᱟ ᱚᱰᱚᱠ ᱤᱱᱴᱚᱨᱯᱷᱮᱥ ᱥᱴᱟᱭᱤᱞ ᱵᱟᱪᱷᱟᱣ ᱢᱮ"
+  },
+  "msgInterfaceSimple": {
+    "message": "ᱥᱟᱫᱷᱨᱚᱬ "
+  },
+  "msgInterfaceComplex": {
+    "message": "ᱡᱚᱴᱤᱞ"
+  },
+  "lblTranslatePageInto": {
+    "message": "ᱥᱟᱦᱴᱟ ᱫᱚ $LANGUAGE_NAME$ ᱛᱮ ᱛᱚᱨᱡᱚᱢᱟᱭᱟᱢ ᱢᱮ?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "ᱥᱟᱦᱴᱟ ᱫᱚ $LANGUAGE_NAME$ ᱛᱮ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  }
+}

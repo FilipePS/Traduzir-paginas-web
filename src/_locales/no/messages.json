@@ -1,0 +1,470 @@
+{
+  "extensionDescription": {
+    "message": "Oversett siden din i sanntid ved hjelp av Google eller Yandex."
+  },
+  "pageActionTitle": {
+    "message": "Oversett denne siden"
+  },
+  "lblTranslate": {
+    "message": "Oversette denne siden?"
+  },
+  "lblTranslating": {
+    "message": "Oversetter ..."
+  },
+  "lblError": {
+    "message": "Denne siden kunne ikke oversettes"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Oversett alltid fra $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblTargetLanguage": {
+    "message": "Målspråk $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "btnReset": {
+    "message": "Nullstille"
+  },
+  "btnTranslate": {
+    "message": "Oversette"
+  },
+  "btnOptions": {
+    "message": "Alternativer"
+  },
+  "btnRestore": {
+    "message": "Vis originalen"
+  },
+  "btnTryAgain": {
+    "message": "Prøv igjen"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Åpne i google oversetter"
+  },
+  "btnDonate": {
+    "message": "Donere"
+  },
+  "btnNeverTranslate": {
+    "message": "Oversett aldri dette nettstedet"
+  },
+  "btnChangeLanguages": {
+    "message": "Bytt språk"
+  },
+  "btnMobileOriginal": {
+    "message": "Opprinnelig"
+  },
+  "btnMobileTranslated": {
+    "message": "Oversatt"
+  },
+  "optionsNeverTranslate": {
+    "message": "Oversett aldri disse nettstedene"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Oversett alltid disse språkene"
+  },
+  "optionPopupConfig": {
+    "message": "Vis popup-vinduet for mobil"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Når jeg berører tre fingre på skjermen"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Åpne i yandex translate"
+  },
+  "lblOthers": {
+    "message": "Andre"
+  },
+  "btnMoreOptions": {
+    "message": "Flere valg"
+  },
+  "lblPlsDonate": {
+    "message": "Hjelp utvikleren med en donasjon"
+  },
+  "msgTranslateFor": {
+    "message": "Oversett til $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowContextMenu": {
+    "message": "Vis alternativet for å oversette siden i hurtigmenyen"
+  },
+  "msgYes": {
+    "message": "Ja"
+  },
+  "msgNo": {
+    "message": "Nei"
+  },
+  "btnAlwaysTranslate": {
+    "message": "Oversett alltid denne siden"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Oversett alltid disse nettstedene"
+  },
+  "lblDarkMode": {
+    "message": "Mørk modus"
+  },
+  "lblShowReleaseNotes": {
+    "message": "Vis versjonsnotater ved oppdatering"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "Vis knappen for å oversette den valgte teksten"
+  },
+  "msgAutomatic": {
+    "message": "Automatisk"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Oversett valgt tekst"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "Vis alternativet for å oversette den valgte teksten i hurtigmenyen"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "Oversett aldri disse språkene"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "Oversett aldri dette språket"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "Vis originaltekst når du holder musepekeren"
+  },
+  "msgLanguages": {
+    "message": "Språk"
+  },
+  "msgSites": {
+    "message": "Nettsteder"
+  },
+  "msgTranslations": {
+    "message": "Oversettelser"
+  },
+  "msgStyle": {
+    "message": "Stil"
+  },
+  "msgHotkeys": {
+    "message": "Hurtigtaster"
+  },
+  "lblMakeDonation": {
+    "message": "Gi en donasjon"
+  },
+  "lblReleaseNotes": {
+    "message": "Utgivelsesnotater"
+  },
+  "lblReport": {
+    "message": "Rapporter et problem"
+  },
+  "lblSettings": {
+    "message": "Innstillinger"
+  },
+  "lblAdd": {
+    "message": "Legge til"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Vis oversatt tekst når du holder markøren"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Tastatursnarveier"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Takk for at du bruker denne utvidelsen."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Jeg vil være takknemlig hvis du kan gi en donasjon."
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Vis oversatt tekst når du holder musepekeren på disse nettstedene"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Gjør popup-ikonet blått når nettstedet er oversatt"
+  },
+  "more": {
+    "message": "Mer"
+  },
+  "less": {
+    "message": "Mindre"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Ikke vis om sidespråket er målspråket"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Ikke vis hvis sidespråket er ukjent"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Ikke vis om det valgte tekstspråket er målspråket"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Ikke vis hvis det valgte tekstspråket er ukjent"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Vis oversettelse når du holder musepekeren over denne siden"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Vis oversettelse når du holder musepekeren over nettsteder i $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Vis oversatt tekst når du holder markøren over nettsteder med disse språkene"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Ikke oversett valgt tekst"
+  },
+  "btnListen": {
+    "message": "Lytte"
+  },
+  "btnStopListening": {
+    "message": "Slutt å lytte"
+  },
+  "btnApply": {
+    "message": "Søke om"
+  },
+  "swapTranslationService": {
+    "message": "Bytt mellom oversettelsestjenester"
+  },
+  "swapPopup": {
+    "message": "Bytt mellom enkelt og komplekst grensesnitt"
+  },
+  "lblTranslateInterface": {
+    "message": "Oversett grensesnittet"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Vis knapp i adressefeltet"
+  },
+  "lblPageTranslationService": {
+    "message": "Sideoversettelsestjeneste"
+  },
+  "lblTextTranslationService": {
+    "message": "Tekstoversettelsestjeneste"
+  },
+  "msgStorage": {
+    "message": "Oppbevaring"
+  },
+  "lblTranslationCache": {
+    "message": "Oversettelsesbuffer"
+  },
+  "lblStorageUsed": {
+    "message": "Lagring brukt:"
+  },
+  "deleteTranslationCache": {
+    "message": "Slett oversettelsesbuffer"
+  },
+  "lblPersonalSettings": {
+    "message": "Personlige innstillinger"
+  },
+  "backupToFile": {
+    "message": "Sikkerhetskopier til fil"
+  },
+  "restoreFromFile": {
+    "message": "Gjenopprett fra fil"
+  },
+  "resetToDefault": {
+    "message": "Gjenopprett standardinnstillinger"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Vil du slette oversettelsesbufferen?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Vil du overskrive alle eksisterende innstillinger ved å bruke sikkerhetskopidataene?"
+  },
+  "fileIsCorrupted": {
+    "message": "Filen ser ut til å være ødelagt"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Vil du gjenopprette utvidelsen til standardinnstillingene?"
+  },
+  "lblTtsSpeed": {
+    "message": "Tekst-til-tale lydhastighet"
+  },
+  "lblEnableDeepL": {
+    "message": "Aktiver DeepL som en tekstoversettelsestjeneste"
+  },
+  "enterShortcut": {
+    "message": "Skriv inn en snarvei"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Ta med Ctrl eller Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Skriv inn en bokstav"
+  },
+  "hotkeyError_invalid": {
+    "message": "Ugyldig kombinasjon"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Bytt mellom den oversatte og den originale siden"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Gjenopprett siden til originalen"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Oversett siden til målspråket"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Aktiver oversettelse for taggen $HTML_TAG_NAME$",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "Ikke sorter google translate-resultatene"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "Oversett dynamisk skapt innhold"
+  },
+  "calculatestorage": {
+    "message": "Regne ut"
+  },
+  "donatewithpaypal": {
+    "message": "Doner med PayPal"
+  },
+  "lblAutoTranslateWhenClickingALink": {
+    "message": "Oversett automatisk når du klikker på en lenke som tar deg til samme domene som det gjeldende nettstedet"
+  },
+  "openNativeShortcutManager": {
+    "message": "Åpne administrator for innebygd snarvei"
+  },
+  "lblKeyboardShortcutsSpecial": {
+    "message": "Spesielle hurtigtaster"
+  },
+  "lblTranslateSelectedWhenPressTwice": {
+    "message": "Oversett valgt tekst når du trykker $SHORTCUT_KEY$ to ganger",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "lblTranslateTextOverMouseWhenPressTwice": {
+    "message": "Oversett teksten over musepekeren når du trykker $SHORTCUT_KEY$ to ganger",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "translateClickingOnce": {
+    "message": "Oversett siden ved å klikke én gang på knappen i adressefeltet. (Høyreklikk for å se popup-vinduet)"
+  },
+  "btnShowPopup": {
+    "message": "Vis popup"
+  },
+  "msgToTranslateThisDocument": {
+    "message": "For å oversette dette dokumentet $DOC_TYPE$ er det nødvendig å konvertere det til HTML",
+    "placeholders": {
+      "DOC_TYPE": {
+        "content": "$1",
+        "example": "(.pdf)"
+      }
+    }
+  },
+  "msgSelectServiceConversion": {
+    "message": "Velg en tjeneste for å utføre denne konverteringen"
+  },
+  "msgDownloadingDocument": {
+    "message": "Laster ned dokumentet..."
+  },
+  "msgSendDocument": {
+    "message": "Send dokument"
+  },
+  "msgErrorDownloadingDocument": {
+    "message": "Feil ved nedlasting av dokument"
+  },
+  "msgFileLargerThan": {
+    "message": "Denne tjenesten støtter ikke filer større enn $FILE_SIZE$",
+    "placeholders": {
+      "FILE_SIZE": {
+        "content": "$1",
+        "example": "10 MB"
+      }
+    }
+  },
+  "msgPDFtoHTML": {
+    "message": "PDF til HTML"
+  },
+  "btncopy": {
+    "message": "Kopiere"
+  },
+  "msgRecents": {
+    "message": "Nylig"
+  },
+  "msgAll": {
+    "message": "Alle"
+  },
+  "msgPleaseWait": {
+    "message": "Vennligst vent..."
+  },
+  "msgUnknownLanguage": {
+    "message": "Ukjent"
+  },
+  "btnReplace": {
+    "message": "Erstatte"
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "Erstatt valgt tekst med oversatt tekst umiddelbart"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Legg til i egendefinert ordbok (dette lar deg hoppe over bestemte ord under oversettelse av nettsider)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Oversett nettsteder til dette målspråket"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Oversett valgt tekst til dette målspråket"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Favorittspråk"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorittspråk $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Velg popup-grensesnittstil"
+  },
+  "msgInterfaceSimple": {
+    "message": "Enkel"
+  },
+  "msgInterfaceComplex": {
+    "message": "Kompleks"
+  },
+  "lblTranslatePageInto": {
+    "message": "Oversette siden til $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Side oversatt til $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  }
+}
