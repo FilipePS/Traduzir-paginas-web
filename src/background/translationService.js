@@ -246,7 +246,7 @@ const translationService = (function () {
     static async findSID() {
       if (BingHelper.#sidPromise) return await BingHelper.#sidPromise;
       BingHelper.#sidPromise = new Promise((resolve) => {
-        let updateYandexSid = false;
+        let updateBingSid = false;
         if (BingHelper.#lastRequestSidTime) {
           const date = new Date();
           if (BingHelper.#translateSid) {
@@ -257,13 +257,13 @@ const translationService = (function () {
             date.setMinutes(date.getMinutes() - 2);
           }
           if (date.getTime() > BingHelper.#lastRequestSidTime) {
-            updateYandexSid = true;
+            updateBingSid = true;
           }
         } else {
-          updateYandexSid = true;
+          updateBingSid = true;
         }
 
-        if (updateYandexSid) {
+        if (updateBingSid) {
           BingHelper.#lastRequestSidTime = Date.now();
 
           const http = new XMLHttpRequest();
@@ -272,6 +272,9 @@ const translationService = (function () {
           http.onload = (e) => {
             const result = http.responseText.match(
               /params_RichTranslateHelper\s=\s\[[^\]]+/
+            );
+            const backup_result = http.responseText.match(
+              /params_AbusePreventionHelper\s=\s\[[^\]]+/
             );
             const data_iid_r = http.responseText.match(
               /data-iid\=\"[a-zA-Z0-9\.]+/
@@ -289,23 +292,45 @@ const translationService = (function () {
               const params_RichTranslateHelper = result[0]
                 .substring("params_RichTranslateHelper = [".length)
                 .split(",");
+              const params_AbusePreventionHelper = backup_result[0]
+                .substring("params_AbusePreventionHelper = [".length)
+                .split(",");
               const data_iid = data_iid_r[0].substring('data-iid="'.length);
               const IG = IG_r[0].substring('IG:"'.length);
+              //IID & IG
+              if (
+                data_iid &&
+                IG
+              ){
+                BingHelper.#translate_IID_IG = `IG=${IG}&IID=${data_iid}`;
+              }
+              //SID
               if (
                 params_RichTranslateHelper &&
                 params_RichTranslateHelper[0] &&
                 params_RichTranslateHelper[1] &&
-                parseInt(params_RichTranslateHelper[0]) &&
-                data_iid &&
-                IG
+                parseInt(params_RichTranslateHelper[0])
               ) {
                 BingHelper.#translateSid = `&token=${params_RichTranslateHelper[1].substring(
                   1,
                   params_RichTranslateHelper[1].length - 1
                 )}&key=${parseInt(params_RichTranslateHelper[0])}`;
-                BingHelper.#translate_IID_IG = `IG=${IG}&IID=${data_iid}`;
                 BingHelper.#SIDNotFound = false;
-              } else {
+              } 
+              else if (
+                params_AbusePreventionHelper &&
+                params_AbusePreventionHelper[0] &&
+                params_AbusePreventionHelper[1] &&
+                parseInt(params_AbusePreventionHelper[0])
+              )
+              {
+                BingHelper.#translateSid = `&token=${params_AbusePreventionHelper[1].substring(
+                  1,
+                  params_AbusePreventionHelper[1].length - 1
+                )}&key=${parseInt(params_AbusePreventionHelper[0])}`;
+                BingHelper.#SIDNotFound = false;
+              }
+              else {
                 BingHelper.#SIDNotFound = true;
               }
             } else {
