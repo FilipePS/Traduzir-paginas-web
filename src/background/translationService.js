@@ -1111,7 +1111,7 @@ const translationService = (function () {
             } else {
               chrome.tabs.create(
                 {
-                  url: `https://www.deepl.com/#!${targetLanguage}!#${encodeURIComponent(
+                  url: `https://www.deepl.com/translator#${sourceLanguage}/${targetLanguage}/${encodeURIComponent(
                     sourceArray2d[0][0]
                   )}`,
                 },
@@ -1126,7 +1126,7 @@ const translationService = (function () {
         } else {
           chrome.tabs.create(
             {
-              url: `https://www.deepl.com/#!${targetLanguage}!#${encodeURIComponent(
+              url: `https://www.deepl.com/translator#${sourceLanguage}/${targetLanguage}/${encodeURIComponent(
                 sourceArray2d[0][0]
               )}`,
             },
