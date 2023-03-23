@@ -298,10 +298,7 @@ const translationService = (function () {
               const data_iid = data_iid_r[0].substring('data-iid="'.length);
               const IG = IG_r[0].substring('IG:"'.length);
               //IID & IG
-              if (
-                data_iid &&
-                IG
-              ){
+              if (data_iid && IG) {
                 BingHelper.#translate_IID_IG = `IG=${IG}&IID=${data_iid}`;
               }
               //SID
@@ -316,21 +313,18 @@ const translationService = (function () {
                   params_RichTranslateHelper[1].length - 1
                 )}&key=${parseInt(params_RichTranslateHelper[0])}`;
                 BingHelper.#SIDNotFound = false;
-              } 
-              else if (
+              } else if (
                 params_AbusePreventionHelper &&
                 params_AbusePreventionHelper[0] &&
                 params_AbusePreventionHelper[1] &&
                 parseInt(params_AbusePreventionHelper[0])
-              )
-              {
+              ) {
                 BingHelper.#translateSid = `&token=${params_AbusePreventionHelper[1].substring(
                   1,
                   params_AbusePreventionHelper[1].length - 1
                 )}&key=${parseInt(params_AbusePreventionHelper[0])}`;
                 BingHelper.#SIDNotFound = false;
-              }
-              else {
+              } else {
                 BingHelper.#SIDNotFound = true;
               }
             } else {
@@ -1111,7 +1105,7 @@ const translationService = (function () {
             } else {
               chrome.tabs.create(
                 {
-                  url: `https://www.deepl.com/translator#auto/${targetLanguage}/${encodeURIComponent(
+                  url: `https://www.deepl.com/#!${targetLanguage}!#${encodeURIComponent(
                     sourceArray2d[0][0]
                   )}`,
                 },
@@ -1126,7 +1120,7 @@ const translationService = (function () {
         } else {
           chrome.tabs.create(
             {
-              url: `https://www.deepl.com/translator#auto/${targetLanguage}/${encodeURIComponent(
+              url: `https://www.deepl.com/#!${targetLanguage}!#${encodeURIComponent(
                 sourceArray2d[0][0]
               )}`,
             },

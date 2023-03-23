@@ -14,42 +14,16 @@ void (function () {
   async function translate(text, targetLanguage) {
     return await new Promise((resolve) => {
       /** @type {HTMLTextAreaElement} */
-      const source_textarea = document.querySelector(
-        "d-textarea[dl-test=translator-source-input]"
-      );
-      /** @type {HTMLTextAreaElement} */
       const target_textarea = document.querySelector(
-        "d-textarea[dl-test=translator-target-input]"
+        "d-2textarea[dl-test=translator-target-input]"
       );
 
-      // select the target language
-      try {
-        targetLanguage = targetLanguage.split("-")[0];
-        if (
-          target_textarea.lang.split("-")[0].toLowerCase() !== targetLanguage
-        ) {
-          /** @type {HTMLButtonElement} */
-          const buttonOpenTargetLanguageSelector = document.querySelector(
-            `button[dl-test=translator-target-lang-btn]`
-          );
-          buttonOpenTargetLanguageSelector.click();
+      // set the URL hash, the translation will start immediately
+      location.hash = `#/auto/${targetLanguage}/${encodeURIComponent(text)}`;
 
-          /** @type {HTMLButtonElement} */
-          const buttonSelectedTargetLanguage = document.querySelector(
-            `button[dl-test|=translator-lang-option-${targetLanguage}]`
-          );
-          buttonSelectedTargetLanguage.click();
-        } else if (target_textarea.textContent && text === source_textarea.textContent) {
-          resolve(target_textarea.textContent);
-          return;
-        }
-      } catch (e) {
-        console.error(e);
+      if (!target_textarea) {
+        throw new Error("target_textarea not found.");
       }
-
-      // set the source language, the translation will start immediately
-      source_textarea.firstChild.firstChild.textContent = text;
-      source_textarea.dispatchEvent(new Event("change"));
 
       const startTime = performance.now();
 
@@ -61,7 +35,8 @@ void (function () {
       function checkresult(oldvalue) {
         if (
           performance.now() - startTime > 2400 ||
-          (target_textarea.textContent && target_textarea.textContent !== oldvalue)
+          (target_textarea.textContent &&
+            target_textarea.textContent !== oldvalue)
         ) {
           return resolve(target_textarea.textContent);
         }
@@ -72,28 +47,42 @@ void (function () {
   }
 
   // get the sourceText and targetLanguage from the URL hash
-  if (location.hash.startsWith("#")) {
-    let [fill,targetLanguage, text] = location.hash.split("/");
+  if (location.hash.startsWith("#!")) {
+    let [targetLanguage, text] = location.hash.split("!#");
+    location.hash = "";
 
-    targetLanguage = decodeURIComponent(targetLanguage);
+    targetLanguage = decodeURIComponent(targetLanguage.substring(2));
     text = decodeURIComponent(text);
 
-    translate(text, targetLanguage || "en").then((result) => {
-      console.info(result);
-      chrome.runtime.sendMessage({
-        action: "DeepL_firstTranslationResult",
-        result,
+    translate(text, targetLanguage || "en")
+      .then((result) => {
+        console.info(result);
+        chrome.runtime.sendMessage({
+          action: "DeepL_firstTranslationResult",
+          result,
+        });
+      })
+      .catch((e) => {
+        console.error(e);
+        chrome.runtime.sendMessage({
+          action: "DeepL_firstTranslationResult",
+          result: "",
+        });
       });
-    });
   }
 
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "translateTextWithDeepL") {
       console.info(request);
-      translate(request.text, request.targetLanguage).then((result) => {
-        console.info(result);
-        sendResponse(result);
-      });
+      translate(request.text, request.targetLanguage)
+        .then((result) => {
+          console.info(result);
+          sendResponse(result);
+        })
+        .catch((e) => {
+          console.error(e);
+          sendResponse("");
+        });
     }
 
     return true;
