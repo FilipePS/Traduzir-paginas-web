@@ -15,11 +15,11 @@ void (function () {
     return await new Promise((resolve) => {
       /** @type {HTMLTextAreaElement} */
       const source_textarea = document.querySelector(
-        "textarea[dl-test=translator-source-input]"
+        "d-textarea[dl-test=translator-source-input]"
       );
       /** @type {HTMLTextAreaElement} */
       const target_textarea = document.querySelector(
-        "textarea[dl-test=translator-target-input]"
+        "d-textarea[dl-test=translator-target-input]"
       );
 
       // select the target language
@@ -39,8 +39,8 @@ void (function () {
             `button[dl-test|=translator-lang-option-${targetLanguage}]`
           );
           buttonSelectedTargetLanguage.click();
-        } else if (target_textarea.value && text === source_textarea.value) {
-          resolve(target_textarea.value);
+        } else if (target_textarea.textContent && text === source_textarea.textContent) {
+          resolve(target_textarea.textContent);
           return;
         }
       } catch (e) {
@@ -48,7 +48,7 @@ void (function () {
       }
 
       // set the source language, the translation will start immediately
-      source_textarea.value = text;
+      source_textarea.firstChild.firstChild.textContent = text;
       source_textarea.dispatchEvent(new Event("change"));
 
       const startTime = performance.now();
@@ -61,22 +61,21 @@ void (function () {
       function checkresult(oldvalue) {
         if (
           performance.now() - startTime > 2400 ||
-          (target_textarea.value && target_textarea.value !== oldvalue)
+          (target_textarea.textContent && target_textarea.textContent !== oldvalue)
         ) {
-          return resolve(target_textarea.value);
+          return resolve(target_textarea.textContent);
         }
         setTimeout(checkresult, 100, oldvalue);
       }
-      checkresult(target_textarea.value);
+      checkresult(target_textarea.textContent);
     });
   }
 
   // get the sourceText and targetLanguage from the URL hash
-  if (location.hash.startsWith("#!")) {
-    let [targetLanguage, text] = location.hash.split("!#");
-    location.hash = "";
+  if (location.hash.startsWith("#")) {
+    let [fill,targetLanguage, text] = location.hash.split("/");
 
-    targetLanguage = decodeURIComponent(targetLanguage.substring(2));
+    targetLanguage = decodeURIComponent(targetLanguage);
     text = decodeURIComponent(text);
 
     translate(text, targetLanguage || "en").then((result) => {
