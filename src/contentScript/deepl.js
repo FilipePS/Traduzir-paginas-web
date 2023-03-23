@@ -15,7 +15,7 @@ void (function () {
     return await new Promise((resolve) => {
       /** @type {HTMLTextAreaElement} */
       const target_textarea = document.querySelector(
-        "d-2textarea[dl-test=translator-target-input]"
+        "d-textarea[dl-test=translator-target-input]"
       );
 
       // set the URL hash, the translation will start immediately
