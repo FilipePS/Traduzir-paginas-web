@@ -490,7 +490,7 @@ twpConfig.onReady(() => {
 
       let themeColorFieldText = null;
       let themeColorAttention = null;
-      if (browser.theme) {
+      if (typeof browser != "undefined" && browser.theme) {
         browser.theme.getCurrent().then((theme) => {
           themeColorFieldText = null;
           themeColorAttention = null;

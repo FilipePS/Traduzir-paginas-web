@@ -41,6 +41,22 @@ twpConfig.onReady(function () {
   const btnTryAgain = document.getElementById("btnTryAgain");
   const btnOptionsDiv = document.getElementById("btnOptionsDiv");
   const btnOptions = document.getElementById("btnOptions");
+  const divShowTranslateSelectedButton = document.getElementById(
+    "divShowTranslateSelectedButton"
+  );
+  const cbShowTranslateSelectedButton = document.getElementById(
+    "cbShowTranslateSelectedButton"
+  );
+
+  cbShowTranslateSelectedButton.oninput = (e) => {
+    console.log(e.target.checked);
+    twpConfig.set(
+      "showTranslateSelectedButton",
+      e.target.checked ? "yes" : "no"
+    );
+  };
+  cbShowTranslateSelectedButton.checked =
+    twpConfig.get("showTranslateSelectedButton") == "yes" ? true : false;
 
   $("#btnPatreon").onclick = (e) => {
     window.open("https://www.patreon.com/filipeps", "_blank");
@@ -60,8 +76,14 @@ twpConfig.onReady(function () {
   // fill language list
   {
     let langs = twpLang.getLanguageList();
-    lblTranslate.textContent = chrome.i18n.getMessage("lblTranslatePageInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage"))
-    lblTranslated.textContent = chrome.i18n.getMessage("lblPageTranslateInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage")) 
+    lblTranslate.textContent = chrome.i18n.getMessage(
+      "lblTranslatePageInto",
+      langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage")
+    );
+    lblTranslated.textContent = chrome.i18n.getMessage(
+      "lblPageTranslateInto",
+      langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage")
+    );
 
     const langsSorted = [];
 
@@ -240,7 +262,10 @@ twpConfig.onReady(function () {
 
     let showAlwaysTranslateCheckbox = false;
 
-    if (originalTabLanguage !== "und" && originalTabLanguage !== twpConfig.get("targetLanguage")) {
+    if (
+      originalTabLanguage !== "und" &&
+      originalTabLanguage !== twpConfig.get("targetLanguage")
+    ) {
       divAlwaysTranslate.style.display = "block";
       showAlwaysTranslateCheckbox = true;
     }
@@ -313,6 +338,9 @@ twpConfig.onReady(function () {
       lblTargetLanguage.style.display = "none";
       selectTargetLanguage.style.display = "none";
       btnReset.style.display = "none";
+
+      divShowTranslateSelectedButton.style.display = "none";
+
       switch (currentPageLanguageState) {
         case "translated":
           lblTranslate.style.display = "none";
@@ -325,6 +353,9 @@ twpConfig.onReady(function () {
           btnRestore.style.display = "inline";
           btnTryAgain.style.display = "none";
           btnOptionsDiv.style.display = "inline";
+
+          divShowTranslateSelectedButton.style.display = "block";
+
           break;
         case "translating":
           lblTranslate.style.display = "none";
@@ -391,10 +422,18 @@ twpConfig.onReady(function () {
         } else {
           twpConfig.setTargetLanguage(selectTargetLanguage.value);
         }
-        
-        const langs = twpLang.getLanguageList()
-        lblTranslate.textContent = chrome.i18n.getMessage("lblTranslatePageInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage"))
-        lblTranslated.textContent = chrome.i18n.getMessage("lblPageTranslateInto", langs[twpConfig.get("targetLanguage")] || twpConfig.get("targetLanguage"))
+
+        const langs = twpLang.getLanguageList();
+        lblTranslate.textContent = chrome.i18n.getMessage(
+          "lblTranslatePageInto",
+          langs[twpConfig.get("targetLanguage")] ||
+            twpConfig.get("targetLanguage")
+        );
+        lblTranslated.textContent = chrome.i18n.getMessage(
+          "lblPageTranslateInto",
+          langs[twpConfig.get("targetLanguage")] ||
+            twpConfig.get("targetLanguage")
+        );
 
         chrome.tabs.sendMessage(
           tabs[0].id,
