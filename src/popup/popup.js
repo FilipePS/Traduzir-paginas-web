@@ -340,6 +340,10 @@ twpConfig.onReady(function () {
       break;
   }
 
+  $("#btnPatreon").onclick = (e) => {
+    window.open("https://www.patreon.com/filipeps", "_blank");
+  };
+
   $("#btnSwitchInterfaces").addEventListener("click", () => {
     twpConfig.set("useOldPopup", "yes");
     window.location = "old-popup.html";
