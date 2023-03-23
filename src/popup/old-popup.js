@@ -135,10 +135,15 @@ twpConfig.onReady(function () {
                 color: rgb(231, 230, 228) !important;
             }
             
-            #selectTargetLanguage, select, option, #btnReset, #btnRestore, #btnTryAgain, #btnOptionB {
+            #selectTargetLanguage, #btnReset, #btnRestore, #btnTryAgain, #btnOptionB {
                 color: #55a9ed !important;
                 background-color: #181a1b !important;
                 border: 1px solid #454a4d !important;
+            }
+
+            select, option {
+              color: GhostWhite !important;
+              background-color: #181a1b !important;
             }
             `;
       document.head.appendChild(el);
