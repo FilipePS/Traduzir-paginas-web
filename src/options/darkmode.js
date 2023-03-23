@@ -12,14 +12,14 @@ function enableDarkMode() {
             }
   
             #donation * {
+                color: black !important;
                 background-color: #87CEEB !important;
             }
   
-            #donation select {
-                color: black !important;
+            #donation select, #donation option {
                 background-color: rgb(231, 230, 228) !important;
             }
-  
+
             html *, nav, #header {
                 color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
