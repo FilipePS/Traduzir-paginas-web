@@ -56,9 +56,6 @@
   "btnNeverTranslate": {
     "message": "Never translate this site"
   },
-  "btnChangeLanguages": {
-    "message": "Change languages"
-  },
   "btnMobileOriginal": {
     "message": "Original"
   },
@@ -466,5 +463,8 @@
         "example": "German"
       }
     }
+  },
+  "msgChooseAnotherLanguage": {
+    "message": "Choose another language"
   }
 }

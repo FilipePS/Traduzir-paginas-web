@@ -30,7 +30,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         <button id="btnMenu" class="item2">
             <div class="dropup">
                 <div id="menu" class="dropup-content">
-                    <a id="btnChangeLanguages" data-i18n="btnChangeLanguages">Change languages</a>
+                    <a id="btnChangeLanguages" data-i18n="msgChooseAnotherLanguage">Choose another language</a>
                     <a id="btnTranslateSelectedText" data-i18n="msgTranslateSelectedText">Translate selected text</a>
                     <a id="btnNeverTranslate" data-i18n="btnNeverTranslate">Never translate this site</a>
                     <a id="neverTranslateThisLanguage" data-i18n="btnNeverTranslateThisLanguage" display="none">Never translate this language</a>
