@@ -1,28 +1,41 @@
 <section>
     <h4>9.7</h4>
     <ul>
-        <li>Corrigido: Always translate this site não funciona se o idioma for desconhecido. Fix #352</li>
-        <li>Pequena melhoria de performance</li>
-        <li>Converter nodeName para lowerCase para evitar problemas com nodes XML</li>
-        <li>garantiar que não sera armazenado nenhuma entrada nula no cache</li>
-        <li>quando clicar em traduzir novamente, se ouver algum translationInProgress com erro remover ela do Map</li>
-        <li>Added custom dictionary.</li>
+        <li>Added:
+            <ul>
+                <li>Custom dictionary in site settings.</li>
+                <li>Option to change target language and favorite languages in setting page.</li>
+                <li>Checkbox to disable translate selected text button in simple interface.</li>
+                <li>Auto update for chromium.</li>
+                <li>Taskbar button changes color when page is translated. <i>(Also works in chrome).</i></li>
+            </ul>
+        </li>
+        <li>Fixed:
+            <ul>
+                <li>Option <b>Always translate this site</b> does not work if the language of the site is unknown.</li>
+                <li>If a translation error occurs due to internet problems, the extension does not try to translate these texts again unless the browser is restarted.</li>
+                <li>Material icons are also translated.</li>
+                <li>Some extension colors.</li>
+                <li>Some bugs when translating sites that use <i>SvelteJS</i> and <i>SolidJS</i>.</li>
+                <li>YouTube video title disappears when the extension is translating the site.</li>
+                <li>DeepL and Bing do not work.</li>
+            </ul>
+        </li>
+        <li>Changes: <i>(some changes fix potential bugs)</i>
+            <ul>
+                <li>Minor performance improvement.</li>
+                <li>Now the extension's two interfaces are just called <i>Simple</i> and <i>Complex</i>.</li>
+                <li>On the settings page the lists of sites and languages are now in alphabetical order.</li>
+                <li>Inform in the simple interface which language the site will be/was translated into.</li>
+                <li>The <b>Always translate from [...]</b> option will be hidden if the target language is the same as the original website language.</li>
+                <li>Incomplete translations due to error are removed when clicking translate again.</li>
+                <li>Check to prevent a null entry being inserted into the persistent cache.</li>
+                <li>Convert nodeName to lowerCase to avoid problems with XML nodes.</li>
+            </ul>
+        </li>
         <li>Refactored several files.</li>
-        <li>interface simples e complexa</li>
-        <li>Translate page into **; Page translated into **</li>
-        <li>Organizar listas por ordem alfabética</li>
-        <li>Ocultar always transte from **; se o idioma de destino for o mesmo idioma do site</li>
-        <li>Alterado o termo "targetLanguages" para "favoriteLangues". Opção de alterar os idiomas de destino na página
-            de configuração.</li>
-        <li>Preservar nodo de texto original #393. Não encapsular nodo de texto se a opção
-            `showOriginalTextWhenHovering` não estiver ativa Closes #295</li>
-        <li>Corrigido: material icons também são traduzidos - Fix #481</li>
-        <li>Interface localization in 5 new languages. In total, the extension's interface is localized in 38 languages,
+        <li>Interface localization in 5 new languages. In total, the extension's interface is localized in 40 languages,
             thanks to everyone who contributed.</li>
-        <li>auto-update para chromium</li>
-        <li>alterar cor do botão na barra de tarefas quando a página for traduzida</li>
-        <li>Adicionado: checkbox para desativar butão de traduzir texto selecionado no popup simples</li>
-        <li>Corrigido algumas cores da extensão</li>
     </ul>
 </section>
 <section>
