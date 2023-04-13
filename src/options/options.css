@@ -232,3 +232,13 @@ select {
 #menuContainer {
   background-color: unset !important;
 }
+
+
+.patreonButton img {
+  box-shadow: 0 0 4px 0px black;
+  border-radius: 5px;
+}
+
+.patreonButton img:hover {
+  scale: 1.02;
+}
