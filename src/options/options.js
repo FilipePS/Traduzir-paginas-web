@@ -3,6 +3,7 @@
 fetch("./release-notes/en.html")
   .then((response) => response.text())
   .then((responseText) => {
+    window.scrollTo(0, 0)
     document.getElementById("release_notes").innerHTML = responseText;
     document.getElementById("msgHasBeenUpdated").textContent = chrome.i18n.getMessage("msgHasBeenUpdated")
     document.getElementById("msgHasBeenUpdated").innerHTML = document.getElementById("msgHasBeenUpdated").textContent
