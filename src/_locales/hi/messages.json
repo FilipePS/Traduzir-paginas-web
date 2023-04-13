@@ -56,9 +56,6 @@
   "btnNeverTranslate": {
     "message": "इस साइट का अनुवाद कभी मत करो"
   },
-  "btnChangeLanguages": {
-    "message": "भाषाएं बदलें"
-  },
   "btnMobileOriginal": {
     "message": "मूल"
   },
@@ -466,5 +463,24 @@
         "example": "German"
       }
     }
+  },
+  "msgChooseAnotherLanguage": {
+    "message": "Choose another language"
+  },
+  "msgHasBeenUpdated": {
+    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      },
+      "EXTENSION_VERSION": {
+        "content": "#EXTENSION_VERSION#",
+        "example": "9.7"
+      }
+    }
+  },
+  "donationText": {
+    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   }
 }
