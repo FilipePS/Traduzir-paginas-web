@@ -1010,3 +1010,7 @@ twpConfig.onReady(async () => {
     }
   );
 });
+
+
+// garante que a extensão só seja atualizada quando reiniciar o navegador ao reiniciar manualmente a extensão. 
+chrome.runtime.onUpdateAvailable.addListener(details => {});
