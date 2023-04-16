@@ -465,10 +465,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Choose another language"
+    "message": "Chọn ngôn ngữ khác"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "Tiện ích mở rộng $EXTENSION_NAME$ đã được cập nhật lên phiên bản $EXTENSION_VERSION$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -481,6 +481,6 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Tôi đã phát triển, cập nhật và hỗ trợ tiện ích mở rộng này trong hơn ba năm. Thật ngạc nhiên khi thấy rằng chúng tôi có hơn 600.000 người dùng hàng ngày và tất cả những người này đã có thể chuyển sang Firefox vĩnh viễn.\n\nTôi đặt mục tiêu phát hành phiên bản mới của tiện ích mở rộng này hàng tháng và tiếp tục cải thiện nó.\n\nTôi sẽ rất biết ơn nếu bạn có thể giúp tôi về mặt tài chính bằng cách trở thành thành viên Patreon và hỗ trợ tôi mang lại những cải tiến cho tiện ích mở rộng này.\n\nCảm ơn tất cả những người đã đóng góp cho dự án này."
   }
 }

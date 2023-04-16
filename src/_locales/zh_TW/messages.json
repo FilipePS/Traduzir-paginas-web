@@ -465,10 +465,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Choose another language"
+    "message": "換另一種語言"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "$EXTENSION_NAME$ 的版本已更新爲 $EXTENSION_VERSION$。",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -481,6 +481,6 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "我已經開發、更新並支援這款擴充套件超過三年了。看到每天能有超過 60 萬名使用者認真在 Firefox 上用它真是令人感到驚訝。\n\n我的目標是每個月都能發布這款擴充套件的新版本並不斷改善它。\n\n如果您能成為我的 Patreon 成員，來支援我改善這款擴充套件，我將不勝感激。\n\n感謝所有爲這個專案做出貢獻的各位。"
   }
 }

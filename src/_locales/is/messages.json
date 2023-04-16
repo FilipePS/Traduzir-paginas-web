@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Ekki flokka niðurstöður Google Þýðingar"
+    "message": "Ekki flokka niðurstöður Google Þýðinga"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Þýða breytilega búið til efni"
@@ -426,10 +426,10 @@
     "message": "Þýða valinn texta yfir á þetta marktungumál"
   },
   "msgFavoriteLanguages": {
-    "message": "Uppáhalds tungumál"
+    "message": "Uppáhaldstungumál"
   },
   "lblFavoriteLanguage": {
-    "message": "Uppáhalds tungumál $FAVORITE_LANGUAGE_NUM$",
+    "message": "Uppáhaldstungumál $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -465,10 +465,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Choose another language"
+    "message": "Veldu annað tungumál"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "Viðbótin $EXTENSION_NAME$ hefur verið uppfærð í útgáfu $EXTENSION_VERSION$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -481,6 +481,6 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Ég hef verið að þróa, uppfæra og styðja þessa viðbót í meira en þrjú ár. Það er ótrúlegt að sjá að við erum með yfir 600.000 notendur daglega og að allt þetta fólk hefur getað skipt yfir í Firefox endanlega.\n\nÉg stefni á að gefa út nýja útgáfu af þessari viðbót í hverjum mánuði og halda áfram að bæta hana.\n\nÉg væri þakklátur ef þú gætir hjálpað mér fjárhagslega með því að gerast meðlimur á Patreon og styðja mig við að bæta úr þessari viðbót.\n\nÉg þakka öllum sem hafa nú þegar lagt þessu verkefni lið."
   }
 }

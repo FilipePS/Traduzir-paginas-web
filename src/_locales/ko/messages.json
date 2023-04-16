@@ -465,10 +465,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Choose another language"
+    "message": "다른 언어 선택"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "$EXTENSION_NAME$ 확장 프로그램이 $EXTENSION_VERSION$ 버전으로 업데이트되었습니다.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -481,6 +481,6 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "저는 3년 넘게 이 확장 프로그램을 개발, 업데이트하고 지원해 왔습니다. 60만 명 이상 사용자가 매일 확장 프로그램을 이용하고 있고, 이 모든 사람들이 Firefox로 영구적으로 이주할 수 있었다는 사실이 놀랍습니다.\n\n매월 이 확장 프로그램의 새 버전을 출시하고 계속 개선하는 것이 제 목표입니다.\n\nPatreon 회원이 되어 제게 재정적으로 도움을 주시거나 이 확장 프로그램을 개선할 수 있도록 저를 지원해 주신다면 정말 감사드리겠습니다.\n\n이미 이 프로젝트에 기여해 주신 모든 분들께 감사드립니다."
   }
 }
