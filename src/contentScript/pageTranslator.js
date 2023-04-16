@@ -966,6 +966,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       currentTargetLanguage = targetLanguage;
     }
 
+    // https://github.com/FilipePS/Traduzir-paginas-web/issues/619
+    if (
+      location.hostname === "sberbank.com" ||
+      location.hostname === "www.sberbank.com"
+    ) {
+      document.body.classList.remove("notranslate");
+    }
+
     piecesToTranslate = getPiecesToTranslate();
     attributesToTranslate = getAttributesToTranslate();
 
@@ -1127,7 +1135,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               if (
                 location.hostname !== "translate.googleusercontent.com" &&
                 location.hostname !== "translate.google.com" &&
-                location.hostname !== "translate.yandex.com"
+                location.hostname !== "translate.yandex.com" &&
+                location.hostname !== "sberbank.com" &&
+                location.hostname !== "www.sberbank.com" // https://github.com/FilipePS/Traduzir-paginas-web/issues/619
               ) {
                 if (
                   pageLanguageState === "original" &&
