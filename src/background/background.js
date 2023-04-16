@@ -848,7 +848,7 @@ twpConfig.onReady(async () => {
 
 twpConfig.onReady(async () => {
   let navigationsInfo = {};
-  let tabsInfo = {}
+  let tabsInfo = {};
 
   function tabsOnRemoved(tabId) {
     delete navigationsInfo[tabId];
@@ -859,55 +859,64 @@ twpConfig.onReady(async () => {
     if (request.action === "setPageLanguageState") {
       tabsInfo[sender.tab.id] = {
         pageLanguageState: request.pageLanguageState,
-        host: new URL(sender.tab.url).host
-      }
+        host: new URL(sender.tab.url).host,
+      };
     }
   }
 
   //TODO ver porque no Firefox o evento OnCommitted executa antes de OnCreatedNavigationTarget e OnBeforeNavigate quando [target="_blank"]
 
   function webNavigationOnCreatedNavigationTarget(details) {
-    const navInfo = navigationsInfo[details.tabId] || { }
-    navInfo.sourceTabId = details.sourceTabId
-    navigationsInfo[details.tabId]  = navInfo
+    const navInfo = navigationsInfo[details.tabId] || {};
+    navInfo.sourceTabId = details.sourceTabId;
+    navigationsInfo[details.tabId] = navInfo;
   }
 
   function webNavigationOnBeforeNavigate(details) {
     if (details.frameId !== 0) return;
 
-    const navInfo = navigationsInfo[details.tabId] || { sourceTabId: details.tabId }
-    navInfo.beforeNavigateIsExecuted = true
+    const navInfo = navigationsInfo[details.tabId] || {
+      sourceTabId: details.tabId,
+    };
+    navInfo.beforeNavigateIsExecuted = true;
     if (tabsInfo[navInfo.sourceTabId]) {
-      navInfo.sourceHost = tabsInfo[navInfo.sourceTabId].host
-      navInfo.sourcePageLanguageState = tabsInfo[navInfo.sourceTabId].pageLanguageState
+      navInfo.sourceHost = tabsInfo[navInfo.sourceTabId].host;
+      navInfo.sourcePageLanguageState =
+        tabsInfo[navInfo.sourceTabId].pageLanguageState;
     }
-    navigationsInfo[details.tabId]  = navInfo
+    navigationsInfo[details.tabId] = navInfo;
 
     if (navInfo.promise_resolve) {
-      navInfo.promise_resolve()
+      navInfo.promise_resolve();
     }
   }
 
   async function webNavigationOnCommitted(details) {
     if (details.frameId !== 0) return;
 
-    const navInfo = navigationsInfo[details.tabId] || { sourceTabId: details.tabId }
-    navInfo.transitionType = details.transitionType
-    navigationsInfo[details.tabId]  = navInfo
+    const navInfo = navigationsInfo[details.tabId] || {
+      sourceTabId: details.tabId,
+    };
+    navInfo.transitionType = details.transitionType;
+    navigationsInfo[details.tabId] = navInfo;
 
     if (!navInfo.beforeNavigateIsExecuted) {
-      await new Promise(resolve => navInfo.promise_resolve = resolve)
+      await new Promise((resolve) => (navInfo.promise_resolve = resolve));
     }
   }
 
   function webNavigationOnDOMContentLoaded(details) {
     if (details.frameId !== 0) return;
 
-    const navInfo = navigationsInfo[details.tabId]
+    const navInfo = navigationsInfo[details.tabId];
 
     if (navInfo && navInfo.sourceHost) {
-      const host = new URL(details.url).host
-      if (navInfo.transitionType === "link" && navInfo.sourcePageLanguageState === "translated" && navInfo.sourceHost === host) {
+      const host = new URL(details.url).host;
+      if (
+        navInfo.transitionType === "link" &&
+        navInfo.sourcePageLanguageState === "translated" &&
+        navInfo.sourceHost === host
+      ) {
         setTimeout(
           () =>
             chrome.tabs.sendMessage(
@@ -933,10 +942,14 @@ twpConfig.onReady(async () => {
     if (!chrome.webNavigation) return;
 
     chrome.tabs.onRemoved.addListener(tabsOnRemoved);
-    chrome.runtime.onMessage.addListener(runtimeOnMessage)
+    chrome.runtime.onMessage.addListener(runtimeOnMessage);
 
-    chrome.webNavigation.onCreatedNavigationTarget.addListener(webNavigationOnCreatedNavigationTarget)
-    chrome.webNavigation.onBeforeNavigate.addListener(webNavigationOnBeforeNavigate)
+    chrome.webNavigation.onCreatedNavigationTarget.addListener(
+      webNavigationOnCreatedNavigationTarget
+    );
+    chrome.webNavigation.onBeforeNavigate.addListener(
+      webNavigationOnBeforeNavigate
+    );
     chrome.webNavigation.onCommitted.addListener(webNavigationOnCommitted);
     chrome.webNavigation.onDOMContentLoaded.addListener(
       webNavigationOnDOMContentLoaded
@@ -945,13 +958,17 @@ twpConfig.onReady(async () => {
 
   function disableTranslationOnClickingALink() {
     navigationsInfo = {};
-    tabsInfo = {}
+    tabsInfo = {};
     chrome.tabs.onRemoved.removeListener(tabsOnRemoved);
-    chrome.runtime.onMessage.removeListener(runtimeOnMessage)
+    chrome.runtime.onMessage.removeListener(runtimeOnMessage);
 
     if (chrome.webNavigation) {
-      chrome.webNavigation.onCreatedNavigationTarget.removeListener(webNavigationOnCreatedNavigationTarget)
-      chrome.webNavigation.onBeforeNavigate.removeListener(webNavigationOnBeforeNavigate)
+      chrome.webNavigation.onCreatedNavigationTarget.removeListener(
+        webNavigationOnCreatedNavigationTarget
+      );
+      chrome.webNavigation.onBeforeNavigate.removeListener(
+        webNavigationOnBeforeNavigate
+      );
       chrome.webNavigation.onCommitted.removeListener(webNavigationOnCommitted);
       chrome.webNavigation.onDOMContentLoaded.removeListener(
         webNavigationOnDOMContentLoaded

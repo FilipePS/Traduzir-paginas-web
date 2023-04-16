@@ -3,13 +3,22 @@
 fetch("./release-notes/en.html")
   .then((response) => response.text())
   .then((responseText) => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     document.getElementById("release_notes").innerHTML = responseText;
-    document.getElementById("msgHasBeenUpdated").textContent = chrome.i18n.getMessage("msgHasBeenUpdated")
-    document.getElementById("msgHasBeenUpdated").innerHTML = document.getElementById("msgHasBeenUpdated").textContent
-      .replace("#EXTENSION_NAME#", "<b>" + chrome.runtime.getManifest().name + "</b>")
-      .replace("#EXTENSION_VERSION#", "<b>" + chrome.runtime.getManifest().version + "</b>");
-    document.getElementById("donationText").textContent = chrome.i18n.getMessage("donationText")
+    document.getElementById("msgHasBeenUpdated").textContent =
+      chrome.i18n.getMessage("msgHasBeenUpdated");
+    document.getElementById("msgHasBeenUpdated").innerHTML = document
+      .getElementById("msgHasBeenUpdated")
+      .textContent.replace(
+        "#EXTENSION_NAME#",
+        "<b>" + chrome.runtime.getManifest().name + "</b>"
+      )
+      .replace(
+        "#EXTENSION_VERSION#",
+        "<b>" + chrome.runtime.getManifest().version + "</b>"
+      );
+    document.getElementById("donationText").textContent =
+      chrome.i18n.getMessage("donationText");
   });
 
 var $ = document.querySelector.bind(document);

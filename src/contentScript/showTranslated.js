@@ -228,7 +228,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     let text;
     if (nodeName === "input" || nodeName === "textarea") {
       text = node.value.length > 0 ? node.value : node.placeholder;
-      if (nodeName === "input" && !/^(?:text|search|button|submit)$/i.test(node.type)) {
+      if (
+        nodeName === "input" &&
+        !/^(?:text|search|button|submit)$/i.test(node.type)
+      ) {
         text = null;
         return;
       }
