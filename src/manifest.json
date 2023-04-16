@@ -101,7 +101,10 @@
       "matches": ["<all_urls>"],
       "run_at": "document_start",
       "all_frames": false,
-      "js": ["/contentScript/checkScriptIsInjected.js"]
+      "js": [
+        "/contentScript/checkScriptIsInjected.js",
+        "/lib/checkedLastError.js"
+      ]
     },
     {
       "matches": ["<all_urls>"],
@@ -139,6 +142,7 @@
   "background": {
     "persistent": true,
     "scripts": [
+      "/lib/checkedLastError.js",
       "/lib/languages.js",
       "/lib/config.js",
       "/lib/platformInfo.js",

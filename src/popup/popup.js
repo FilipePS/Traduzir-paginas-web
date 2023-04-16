@@ -43,11 +43,6 @@ twpConfig.onReady(function () {
   }
   updatePopupSection();
 
-  // Avoid outputting the error message "Receiving end does not exist" in the Console.
-  function checkedLastError() {
-    chrome.runtime.lastError;
-  }
-
   $("#more").onclick = (e) => {
     if (popupPanelSection < 6) {
       popupPanelSection++;

@@ -7,9 +7,11 @@ var translateSelected = {};
 
 function getTabHostName() {
   return new Promise((resolve) =>
-    chrome.runtime.sendMessage({ action: "getTabHostName" }, (result) =>
-      resolve(result)
-    )
+    chrome.runtime.sendMessage({ action: "getTabHostName" }, (result) => {
+      checkedLastError();
+
+      resolve(result);
+    })
   );
 }
 
@@ -90,6 +92,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         targetLanguage,
       },
       () => {
+        checkedLastError();
+
         isPlayingAudio = false;
         cbOnEnded();
       }
@@ -99,9 +103,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   function stopAudio() {
     if (!isPlayingAudio) return;
     isPlayingAudio = false;
-    chrome.runtime.sendMessage({
-      action: "stopAudio",
-    });
+    chrome.runtime.sendMessage(
+      {
+        action: "stopAudio",
+      },
+      checkedLastError
+    );
   }
 
   function dragElement(elmnt, elmnt2) {
@@ -1074,7 +1081,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   let windowIsInFocus = true;
   window.addEventListener("focus", function (e) {
     windowIsInFocus = true;
-    chrome.runtime.sendMessage({ action: "thisFrameIsInFocus" });
+    chrome.runtime.sendMessage(
+      { action: "thisFrameIsInFocus" },
+      checkedLastError
+    );
   });
   window.addEventListener("blur", function (e) {
     windowIsInFocus = false;

@@ -57,17 +57,23 @@ void (function () {
     translate(text, targetLanguage || "en")
       .then((result) => {
         console.info(result);
-        chrome.runtime.sendMessage({
-          action: "DeepL_firstTranslationResult",
-          result,
-        });
+        chrome.runtime.sendMessage(
+          {
+            action: "DeepL_firstTranslationResult",
+            result,
+          },
+          checkedLastError
+        );
       })
       .catch((e) => {
         console.error(e);
-        chrome.runtime.sendMessage({
-          action: "DeepL_firstTranslationResult",
-          result: "",
-        });
+        chrome.runtime.sendMessage(
+          {
+            action: "DeepL_firstTranslationResult",
+            result: "",
+          },
+          checkedLastError
+        );
       });
   }
 

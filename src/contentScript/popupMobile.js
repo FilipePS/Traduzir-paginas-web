@@ -4,9 +4,10 @@ var popupMobile = {};
 
 function getTabHostName() {
   return new Promise((resolve) =>
-    chrome.runtime.sendMessage({ action: "getTabHostName" }, (result) =>
-      resolve(result)
-    )
+    chrome.runtime.sendMessage({ action: "getTabHostName" }, (result) => {
+      checkedLastError();
+      resolve(result);
+    })
   );
 }
 
@@ -310,16 +311,22 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     };
 
     getElemById("btnMoreOptions").onclick = (e) => {
-      chrome.runtime.sendMessage({
-        action: "openOptionsPage",
-      });
+      chrome.runtime.sendMessage(
+        {
+          action: "openOptionsPage",
+        },
+        checkedLastError
+      );
     };
 
     getElemById("btnDonate").onclick = (e) => {
       e.preventDefault();
-      chrome.runtime.sendMessage({
-        action: "openDonationPage",
-      });
+      chrome.runtime.sendMessage(
+        {
+          action: "openDonationPage",
+        },
+        checkedLastError
+      );
     };
 
     document.addEventListener("blur", hideMenu);

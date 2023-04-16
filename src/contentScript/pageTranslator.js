@@ -95,8 +95,7 @@ async function handleCustomWords(
     if (customDictionary.size > 0) {
       // If the translation is a single word and exists in the dictionary, return it directly
       let customValue = customDictionary.get(originalText.trim());
-      if(customValue)
-        return customValue;
+      if (customValue) return customValue;
 
       translated = removeExtraDelimiter(translated);
       translated = translated.replaceAll(startMark0, startMark);
@@ -215,6 +214,7 @@ function backgroundTranslateHTML(
         dontSortResults,
       },
       (response) => {
+        checkedLastError();
         resolve(response);
       }
     );
@@ -235,6 +235,7 @@ function backgroundTranslateText(
         sourceArray,
       },
       (response) => {
+        checkedLastError();
         resolve(response);
       }
     );
@@ -255,6 +256,7 @@ function backgroundTranslateSingleText(
         source,
       },
       (response) => {
+        checkedLastError();
         resolve(response);
       }
     );
@@ -265,9 +267,10 @@ var pageTranslator = {};
 
 function getTabHostName() {
   return new Promise((resolve) =>
-    chrome.runtime.sendMessage({ action: "getTabHostName" }, (result) =>
-      resolve(result)
-    )
+    chrome.runtime.sendMessage({ action: "getTabHostName" }, (result) => {
+      checkedLastError();
+      resolve(result);
+    })
   );
 }
 
@@ -963,7 +966,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     fooCount++;
     pageTranslator.restorePage();
     showOriginal.enable();
-    chrome.runtime.sendMessage({ action: "removeTranslationsWithError" });
+    chrome.runtime.sendMessage(
+      { action: "removeTranslationsWithError" },
+      checkedLastError
+    );
 
     dontSortResults = twpConfig.get("dontSortResults") == "yes" ? true : false;
 
@@ -983,10 +989,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     attributesToTranslate = getAttributesToTranslate();
 
     pageLanguageState = "translated";
-    chrome.runtime.sendMessage({
-      action: "setPageLanguageState",
-      pageLanguageState,
-    });
+    chrome.runtime.sendMessage(
+      {
+        action: "setPageLanguageState",
+        pageLanguageState,
+      },
+      checkedLastError
+    );
     pageLanguageStateObservers.forEach((callback) =>
       callback(pageLanguageState)
     );
@@ -1007,10 +1016,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     disableMutatinObserver();
 
     pageLanguageState = "original";
-    chrome.runtime.sendMessage({
-      action: "setPageLanguageState",
-      pageLanguageState,
-    });
+    chrome.runtime.sendMessage(
+      {
+        action: "setPageLanguageState",
+        pageLanguageState,
+      },
+      checkedLastError
+    );
     pageLanguageStateObservers.forEach((callback) =>
       callback(pageLanguageState)
     );
@@ -1117,6 +1129,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           action: "detectTabLanguage",
         },
         (result) => {
+          checkedLastError();
+
           result = result || "und";
           if (result === "und") {
             originalTabLanguage = result;
@@ -1207,6 +1221,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         action: "getMainFrameTabLanguage",
       },
       (result) => {
+        checkedLastError();
+
         originalTabLanguage = result || "und";
         observers.forEach((callback) => callback(originalTabLanguage));
         alreadyGotTheLanguage = true;
@@ -1218,6 +1234,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         action: "getMainFramePageLanguageState",
       },
       (result) => {
+        checkedLastError();
+
         if (result === "translated" && pageLanguageState === "original") {
           pageTranslator.translatePage();
         }

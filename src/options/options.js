@@ -915,10 +915,13 @@ twpConfig.onReady(function () {
   // storage options
   $("#deleteTranslationCache").onclick = (e) => {
     if (confirm(chrome.i18n.getMessage("doYouWantToDeleteTranslationCache"))) {
-      chrome.runtime.sendMessage({
-        action: "deleteTranslationCache",
-        reload: true,
-      });
+      chrome.runtime.sendMessage(
+        {
+          action: "deleteTranslationCache",
+          reload: true,
+        },
+        checkedLastError
+      );
     }
   };
 
@@ -1033,6 +1036,8 @@ twpConfig.onReady(function () {
         action: "getCacheSize",
       },
       (result) => {
+        checkedLastError();
+
         $("#storageUsed").textContent = result;
         $("#storageUsed").style.display = "inline-block";
       }

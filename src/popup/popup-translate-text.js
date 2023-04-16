@@ -17,6 +17,7 @@ twpConfig.onReady(function () {
           source,
         },
         (response) => {
+          checkedLastError();
           resolve(response);
         }
       );
@@ -86,6 +87,7 @@ twpConfig.onReady(function () {
         targetLanguage,
       },
       () => {
+        checkedLastError();
         isPlayingAudio = false;
         cbOnEnded();
       }
@@ -94,18 +96,24 @@ twpConfig.onReady(function () {
 
   function stopAudio() {
     if (isPlayingAudio) {
-      chrome.runtime.sendMessage({
-        action: "stopAudio",
-      });
+      chrome.runtime.sendMessage(
+        {
+          action: "stopAudio",
+        },
+        checkedLastError
+      );
     }
     isPlayingAudio = false;
   }
 
   function stopAudio() {
     if (isPlayingAudio) {
-      chrome.runtime.sendMessage({
-        action: "stopAudio",
-      });
+      chrome.runtime.sendMessage(
+        {
+          action: "stopAudio",
+        },
+        checkedLastError
+      );
     }
     isPlayingAudio = false;
   }

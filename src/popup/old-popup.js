@@ -68,11 +68,6 @@ twpConfig.onReady(function () {
   var cStyle = getComputedStyle(document.querySelector("#btnOptionB"));
   btnOptions.style.width = parseInt(cStyle.width) + 0 + "px";
 
-  // Avoid outputting the error message "Receiving end does not exist" in the Console.
-  function checkedLastError() {
-    chrome.runtime.lastError;
-  }
-
   // fill language list
   {
     let langs = twpLang.getLanguageList();

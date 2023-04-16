@@ -1100,7 +1100,10 @@ const translationService = (function () {
                 {
                   frameId: 0,
                 },
-                (response) => resolve([[response]])
+                (response) => {
+                  checkedLastError();
+                  resolve([[response]]);
+                }
               );
             } else {
               chrome.tabs.create(

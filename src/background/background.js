@@ -1,10 +1,5 @@
 "use strict";
 
-// Avoid outputting the error message "Receiving end does not exist" in the Console.
-function checkedLastError() {
-  chrome.runtime.lastError;
-}
-
 // get mimetype
 var tabToMimeType = {};
 chrome.webRequest.onHeadersReceived.addListener(

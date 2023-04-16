@@ -4,9 +4,10 @@ var showTranslated = {};
 
 function getTabHostName() {
   return new Promise((resolve) =>
-    chrome.runtime.sendMessage({ action: "getTabHostName" }, (result) =>
-      resolve(result)
-    )
+    chrome.runtime.sendMessage({ action: "getTabHostName" }, (result) => {
+      checkedLastError();
+      resolve(result);
+    })
   );
 }
 
@@ -163,6 +164,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         targetLanguage,
       },
       () => {
+        checkedLastError();
+
         isPlayingAudio = false;
         cbOnEnded();
       }
@@ -172,9 +175,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   function stopAudio() {
     if (!isPlayingAudio) return;
     isPlayingAudio = false;
-    chrome.runtime.sendMessage({
-      action: "stopAudio",
-    });
+    chrome.runtime.sendMessage(
+      {
+        action: "stopAudio",
+      },
+      checkedLastError
+    );
   }
 
   window.addEventListener("beforeunload", (e) => {
