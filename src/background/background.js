@@ -576,8 +576,7 @@ twpConfig.onReady(() => {
       }
 
       function updateIcon(tabId) {
-        chrome.tabs.query({}, (tabs) => {
-          const tabInfo = tabs.find((tab) => tab.id === tabId);
+        chrome.tabs.get(tabId, (tabInfo) => {
           const incognito = tabInfo ? tabInfo.incognito : false;
 
           if (chrome.pageAction) {
@@ -623,6 +622,23 @@ twpConfig.onReady(() => {
         if (changeInfo.status == "loading") {
           pageLanguageState = "original";
           updateIcon(tabId);
+        } else if (changeInfo.status == "complete") {
+          chrome.tabs.sendMessage(
+            tabId,
+            {
+              action: "getCurrentPageLanguageState",
+            },
+            {
+              frameId: 0,
+            },
+            (_pageLanguageState) => {
+              checkedLastError();
+              if (_pageLanguageState) {
+                pageLanguageState = _pageLanguageState;
+                updateIcon(tabId);
+              }
+            }
+          );
         }
       });
 
