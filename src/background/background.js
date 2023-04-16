@@ -831,75 +831,67 @@ twpConfig.onReady(async () => {
 });
 
 twpConfig.onReady(async () => {
-  let activeTabTranslationInfo = {};
-
-  function tabsOnActivated(activeInfo) {
-    chrome.tabs.query(
-      {
-        active: true,
-        currentWindow: true,
-      },
-      (tabs) => {
-        activeTabTranslationInfo = {
-          tabId: tabs[0].id,
-          pageLanguageState: "original",
-          url: tabs[0].url,
-        };
-        chrome.tabs.sendMessage(
-          tabs[0].id,
-          {
-            action: "getCurrentPageLanguageState",
-          },
-          {
-            frameId: 0,
-          },
-          (pageLanguageState) => {
-            activeTabTranslationInfo = {
-              tabId: tabs[0].id,
-              pageLanguageState,
-              url: tabs[0].url,
-            };
-          }
-        );
-      }
-    );
-  }
-
-  let sitesToAutoTranslate = {};
+  let navigationsInfo = {};
+  let tabsInfo = {}
 
   function tabsOnRemoved(tabId) {
-    delete sitesToAutoTranslate[tabId];
+    delete navigationsInfo[tabId];
+    delete tabsInfo[tabId];
   }
 
   function runtimeOnMessage(request, sender, sendResponse) {
     if (request.action === "setPageLanguageState") {
-      if (sender.tab.active) {
-        activeTabTranslationInfo = {
-          tabId: sender.tab.id,
-          pageLanguageState: request.pageLanguageState,
-          url: sender.tab.url,
-        };
+      tabsInfo[sender.tab.id] = {
+        pageLanguageState: request.pageLanguageState,
+        host: new URL(sender.tab.url).host
       }
     }
   }
 
-  function webNavigationOnCommitted(details) {
-    if (
-      details.transitionType === "link" &&
-      details.frameId === 0 &&
-      activeTabTranslationInfo.pageLanguageState === "translated" &&
-      new URL(activeTabTranslationInfo.url).host === new URL(details.url).host
-    ) {
-      sitesToAutoTranslate[details.tabId] = new URL(details.url).host;
-    } else {
-      delete sitesToAutoTranslate[details.tabId];
+  //TODO ver porque no Firefox o evento OnCommitted executa antes de OnCreatedNavigationTarget e OnBeforeNavigate quando [target="_blank"]
+
+  function webNavigationOnCreatedNavigationTarget(details) {
+    const navInfo = navigationsInfo[details.tabId] || { }
+    navInfo.sourceTabId = details.sourceTabId
+    navigationsInfo[details.tabId]  = navInfo
+  }
+
+  function webNavigationOnBeforeNavigate(details) {
+    if (details.frameId !== 0) return;
+
+    const navInfo = navigationsInfo[details.tabId] || { sourceTabId: details.tabId }
+    navInfo.beforeNavigateIsExecuted = true
+    if (tabsInfo[navInfo.sourceTabId]) {
+      navInfo.sourceHost = tabsInfo[navInfo.sourceTabId].host
+      navInfo.sourcePageLanguageState = tabsInfo[navInfo.sourceTabId].pageLanguageState
+    }
+    navigationsInfo[details.tabId]  = navInfo
+
+    if (navInfo.promise_resolve) {
+      navInfo.promise_resolve()
+    }
+  }
+
+  async function webNavigationOnCommitted(details) {
+    if (details.frameId !== 0) return;
+
+    const navInfo = navigationsInfo[details.tabId] || { sourceTabId: details.tabId }
+    navInfo.transitionType = details.transitionType
+    navigationsInfo[details.tabId]  = navInfo
+
+    if (!navInfo.beforeNavigateIsExecuted) {
+      await new Promise(resolve => navInfo.promise_resolve = resolve)
     }
   }
 
   function webNavigationOnDOMContentLoaded(details) {
-    if (details.frameId === 0) {
-      const host = new URL(details.url).host;
-      if (sitesToAutoTranslate[details.tabId] === host) {
+    if (details.frameId !== 0) return;
+
+    const navInfo = navigationsInfo[details.tabId]
+
+    if (navInfo && navInfo.sourceHost) {
+      const host = new URL(details.url).host
+      if (navInfo.transitionType === "link" && navInfo.sourcePageLanguageState === "translated" && navInfo.sourceHost === host) {
         setTimeout(
           () =>
             chrome.tabs.sendMessage(
@@ -909,22 +901,26 @@ twpConfig.onReady(async () => {
               },
               {
                 frameId: 0,
-              }
+              },
+              checkedLastError
             ),
-          700
+          500
         );
       }
-      delete sitesToAutoTranslate[details.tabId];
     }
+
+    delete navigationsInfo[details.tabId];
   }
 
   function enableTranslationOnClickingALink() {
     disableTranslationOnClickingALink();
     if (!chrome.webNavigation) return;
 
-    chrome.tabs.onActivated.addListener(tabsOnActivated);
     chrome.tabs.onRemoved.addListener(tabsOnRemoved);
-    chrome.runtime.onMessage.addListener(runtimeOnMessage);
+    chrome.runtime.onMessage.addListener(runtimeOnMessage)
+
+    chrome.webNavigation.onCreatedNavigationTarget.addListener(webNavigationOnCreatedNavigationTarget)
+    chrome.webNavigation.onBeforeNavigate.addListener(webNavigationOnBeforeNavigate)
     chrome.webNavigation.onCommitted.addListener(webNavigationOnCommitted);
     chrome.webNavigation.onDOMContentLoaded.addListener(
       webNavigationOnDOMContentLoaded
@@ -932,13 +928,14 @@ twpConfig.onReady(async () => {
   }
 
   function disableTranslationOnClickingALink() {
-    activeTabTranslationInfo = {};
-    sitesToAutoTranslate = {};
-    chrome.tabs.onActivated.removeListener(tabsOnActivated);
+    navigationsInfo = {};
+    tabsInfo = {}
     chrome.tabs.onRemoved.removeListener(tabsOnRemoved);
-    chrome.runtime.onMessage.removeListener(runtimeOnMessage);
+    chrome.runtime.onMessage.removeListener(runtimeOnMessage)
 
     if (chrome.webNavigation) {
+      chrome.webNavigation.onCreatedNavigationTarget.removeListener(webNavigationOnCreatedNavigationTarget)
+      chrome.webNavigation.onBeforeNavigate.removeListener(webNavigationOnBeforeNavigate)
       chrome.webNavigation.onCommitted.removeListener(webNavigationOnCommitted);
       chrome.webNavigation.onDOMContentLoaded.removeListener(
         webNavigationOnDOMContentLoaded
