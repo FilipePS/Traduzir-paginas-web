@@ -5,6 +5,10 @@ const zip = require("gulp-zip");
 const babel = require("gulp-babel");
 const sourcemaps = require("gulp-sourcemaps");
 
+const mappath = "../maps"
+//const mapconfig = {sourceMappingURLPrefix: "https://raw.githubusercontent.com/FilipePS/TWP---Source-Maps/main"}
+const mapconfig = null
+
 const babelConfig = {
   presets: [
     [
@@ -41,7 +45,7 @@ gulp.task("firefox-babel", () => {
         .src(["dist/firefox/background/*.js"])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
         .pipe(gulp.dest("dist/firefox/background"))
         .on("end", resolve);
@@ -51,7 +55,7 @@ gulp.task("firefox-babel", () => {
         .src(["dist/firefox/lib/*.js"])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
         .pipe(gulp.dest("dist/firefox/lib"))
         .on("end", resolve);
@@ -61,7 +65,7 @@ gulp.task("firefox-babel", () => {
         .src(["dist/firefox/contentScript/*.js"])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
         .pipe(gulp.dest("dist/firefox/contentScript"))
         .on("end", resolve);
@@ -71,7 +75,7 @@ gulp.task("firefox-babel", () => {
         .src(["dist/firefox/options/*.js"])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
         .pipe(gulp.dest("dist/firefox/options"))
         .on("end", resolve);
@@ -81,7 +85,7 @@ gulp.task("firefox-babel", () => {
         .src(["dist/firefox/popup/*.js"])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
         .pipe(gulp.dest("dist/firefox/popup"))
         .on("end", resolve);
@@ -119,7 +123,7 @@ gulp.task("chrome-babel", () => {
         .src(["dist/chrome/background/*.js"])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
         .pipe(gulp.dest("dist/chrome/background"))
         .on("end", resolve);
@@ -129,7 +133,7 @@ gulp.task("chrome-babel", () => {
         .src(["dist/chrome/lib/*.js"])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
         .pipe(gulp.dest("dist/chrome/lib"))
         .on("end", resolve);
@@ -139,7 +143,7 @@ gulp.task("chrome-babel", () => {
         .src(["dist/chrome/contentScript/*.js"])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
         .pipe(gulp.dest("dist/chrome/contentScript"))
         .on("end", resolve);
@@ -149,7 +153,7 @@ gulp.task("chrome-babel", () => {
         .src(["dist/chrome/options/*.js"])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
         .pipe(gulp.dest("dist/chrome/options"))
         .on("end", resolve);
@@ -159,7 +163,7 @@ gulp.task("chrome-babel", () => {
         .src(["dist/chrome/popup/*.js"])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
         .pipe(gulp.dest("dist/chrome/popup"))
         .on("end", resolve);
