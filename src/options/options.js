@@ -91,6 +91,13 @@ twpConfig.onReady(function () {
 
     if (hash === "#release_notes") {
       $("#btnPatreon").style.display = "none";
+      if (chrome.i18n.getUILanguage() === "zh-CN") {
+        setTimeout(() => {
+          alert("现在 Bing 翻译服务可用于页面翻译。\n因为你的浏览器语言是简体中文，我相信你在中国大陆，你无法使用谷歌翻译进行翻译，所以翻译服务设置为Bing。")
+          twpConfig.set("pageTranslatorService", "bing")
+          twpConfig.set("textTranslatorService", "bing")
+        }, 50)
+      }
     } else {
       $("#btnPatreon").style.display = "block";
     }
