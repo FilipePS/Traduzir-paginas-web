@@ -465,10 +465,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Choose another language"
+    "message": "Escolha outro idioma"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "A extensão $EXTENSION_NAME$ foi atualizada para a versão $EXTENSION_VERSION$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -481,6 +481,6 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Venho desenvolvendo, atualizando e dando suporte a esta extensão por mais de três anos. É incrível ver que temos mais de 600.000 usuários diários, e todas essas pessoas puderam migrar para o Firefox permanentemente.\n\nPretendo lançar uma nova versão desta extensão todos os meses e continuar a melhorá-la.\n\nEu ficaria muito grato se você pudesse me ajudar financeiramente, tornando-se um membro do Patreon e me apoiando em trazer melhorias para esta extensão.\n\nObrigado a todos os que já contribuíram para este projeto."
   }
 }

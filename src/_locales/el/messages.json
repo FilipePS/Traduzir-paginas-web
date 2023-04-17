@@ -465,10 +465,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Choose another language"
+    "message": "Επιλέξτε άλλη γλώσσα"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "Η επέκταση $EXTENSION_NAME$ έχει ενημερωθεί στην έκδοση $EXTENSION_VERSION$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -481,6 +481,6 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Αναπτύσσω, ενημερώνω και υποστηρίζω αυτήν την επέκταση για περισσότερα από τρία χρόνια. Είναι εκπληκτικό να βλέπουμε ότι έχουμε πάνω από 600.000 καθημερινούς χρήστες και όλοι αυτοί οι άνθρωποι μπόρεσαν να μετεγκατασταθούν μόνιμα στον Firefox.\n\nΣτόχος μου είναι να κυκλοφορώ μια νέα έκδοση αυτής της επέκτασης κάθε μήνα και να συνεχίσω να τη βελτιώνω.\n\nΘα σας ήμουν ευγνώμων εάν μπορούσατε να με βοηθήσετε οικονομικά, γίνοντας μέλος του Patreon και υποστηρίζοντάς με να βελτιώσω αυτήν την επέκταση.\n\nΕυχαριστούμε όλους όσους έχουν ήδη συνεισφέρει σε αυτό το έργο."
   }
 }

@@ -465,10 +465,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Choose another language"
+    "message": "Izvēlieties citu valodu"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "$EXTENSION_NAME$ paplašinājums ir atjaunināts uz $EXTENSION_VERSION$versiju.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -481,6 +481,6 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Esmu izstrādājis, atjauninājis un atbalstījis šo paplašinājumu vairāk nekā trīs gadus. Ir pārsteidzoši redzēt, ka mums ikdienā ir vairāk nekā 600 000 lietotāju, un visi šie cilvēki ir spējuši pastāvīgi migrēt uz Firefox.\n\nEs cenšos katru mēnesi izlaist jaunu šī paplašinājuma versiju un turpināt to uzlabot.\n\nBūšu pateicīgs, ja jūs varētu man palīdzēt finansiāli, kļūstot par Patreon biedru un atbalstot mani šī paplašinājuma uzlabošanā.\n\nPaldies visiem, kas jau ir devuši ieguldījumu šajā projektā."
   }
 }

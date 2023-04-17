@@ -465,10 +465,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Choose another language"
+    "message": "باشقا تىلنى تاللاڭ"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "$EXTENSION_NAME$ كېڭەيتىلمىسى $EXTENSION_VERSION$نەشرىگە يېڭىلاندى.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -481,6 +481,6 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "مەن بۇ كېڭەيتىشنى ئۈچ يىلدىن كۆپرەك ۋاقىتتىن بۇيان تەتقىق قىلىۋاتىمەن ، يېڭىلاۋاتىمەن ۋە قوللاۋاتىمەن. بىزنىڭ كۈندىلىك ئىشلەتكۈچىلىرىمىزنىڭ 600،000 دىن ئاشىدىغانلىقى ئادەمنى ھەيران قالدۇرىدۇ ، بۇ كىشىلەرنىڭ ھەممىسى Firefox غا مەڭگۈلۈك كۆچۈپ كېتەلەيدۇ.\n\nمەن ھەر ئايدا بۇ كېڭەيتىلمىنىڭ يېڭى نەشرىنى ئېلان قىلىپ ، ئۇنى داۋاملىق ياخشىلاشنى مەقسەت قىلىمەن.\n\nئەگەر سىز پاترون ئەزاسى بولۇپ ، بۇ كېڭەيتىشكە ياخشىلىنىشلارنى ئېلىپ مېنى قوللاپ ئىقتىسادىي جەھەتتىن ياردەم قىلغان بولسىڭىز ، مەن مىننەتدار.\n\nبۇ تۈرگە تۆھپە قوشقان بارلىق كىشىلەرگە رەھمەت."
   }
 }
