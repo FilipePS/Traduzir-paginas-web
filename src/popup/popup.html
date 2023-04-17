@@ -29,10 +29,10 @@
 
     <div class="w3-container w3-margin-top" style="font-weight: 500">
         <div data-popupPanelSection="0">
-            <div id="divAlwaysTranslateThisLang" style="display: none;">
-                <input type="checkbox" class="w3-check" id="cbAlwaysTranslateThisLang">
-                <label id="lblAlwaysTranslateThisLang" for="cbAlwaysTranslateThisLang"
-                    data-i18n="lblAlwaysTranslate">Always translate from</label>
+            <div id="divAlwaysTranslateThisLang">
+                <input type="checkbox" class="w3-check" id="cbAlwaysTranslateThisLang" disabled>
+                <label id="lblAlwaysTranslateThisLang" for="cbAlwaysTranslateThisLang" data-i18n="lblAlwaysTranslate"
+                    data-i18n-ph-value="">Always translate from</label>
             </div>
         </div>
         <div data-popupPanelSection="1">
@@ -61,10 +61,11 @@
                 translation when hovering over this site</label>
         </div>
         <div data-popupPanelSection="6">
-            <div id="divShowTranslatedWhenHoveringThisLang" style="display: none;">
-                <input type="checkbox" class="w3-check" id="cbShowTranslatedWhenHoveringThisLang">
+            <div id="divShowTranslatedWhenHoveringThisLang">
+                <input type="checkbox" class="w3-check" id="cbShowTranslatedWhenHoveringThisLang" disabled>
                 <label id="lblShowTranslatedWhenHoveringThisLang" for="cbShowTranslatedWhenHoveringThisLang"
-                    data-i18n="lblShowTranslatedWhenHoveringThisLang">Show translation when hovering over websites
+                    data-i18n="lblShowTranslatedWhenHoveringThisLang" data-i18n-ph-value="">Show translation when
+                    hovering over websites
                     in</label>
             </div>
         </div>
@@ -112,8 +113,9 @@
                     data-popupPanelSection2="4">Show original text when hovering</option>
                 <option data-i18n="lblShowTranslatedWhenHoveringThisSite" value="showTranslatedWhenHoveringThisSite"
                     data-popupPanelSection2="5">Show translation when hovering over this site</option>
-                <option data-i18n="lblShowTranslatedWhenHoveringThisLang" value="showTranslatedWhenHoveringThisLang"
-                    data-popupPanelSection2="6" hidden>Show translation when hovering over websites in</option>
+                <option data-i18n="lblShowTranslatedWhenHoveringThisLang" data-i18n-ph-value=""
+                    value="showTranslatedWhenHoveringThisLang" data-popupPanelSection2="6" hidden>Show translation when
+                    hovering over websites in</option>
                 <optgroup label="" data-popupPanelSection2="6"></optgroup>
                 <option data-i18n="btnOpenOnGoogleTranslate" value="translateInExternalSite">Open in google translate
                 </option>

@@ -218,7 +218,7 @@ twpConfig.onReady(function () {
         "lblAlwaysTranslate",
         twpLang.codeToLanguage(originalTabLanguage)
       );
-      $("#divAlwaysTranslateThisLang").style.display = "block";
+      $("#cbAlwaysTranslateThisLang").removeAttribute("disabled");
 
       const translatedWhenHoveringThisLangText = chrome.i18n.getMessage(
         "lblShowTranslatedWhenHoveringThisLang",
@@ -230,7 +230,7 @@ twpConfig.onReady(function () {
           .indexOf(originalTabLanguage) !== -1;
       $("#lblShowTranslatedWhenHoveringThisLang").textContent =
         translatedWhenHoveringThisLangText;
-      $("#divShowTranslatedWhenHoveringThisLang").style.display = "block";
+      $("#cbShowTranslatedWhenHoveringThisLang").removeAttribute("disabled");
 
       if (
         twpConfig

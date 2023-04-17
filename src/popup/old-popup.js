@@ -266,7 +266,6 @@ twpConfig.onReady(function () {
       originalTabLanguage !== "und" &&
       originalTabLanguage !== twpConfig.get("targetLanguage")
     ) {
-      divAlwaysTranslate.style.display = "block";
       showAlwaysTranslateCheckbox = true;
     }
 
@@ -317,6 +316,7 @@ twpConfig.onReady(function () {
     }
 
     btnRestore.className = btnRestore.className.replace(" w3-disabled", "");
+    cbAlwaysTranslate.removeAttribute("disabled");
 
     if (showSelectTargetLanguage) {
       lblTranslate.style.display = "none";
@@ -393,9 +393,10 @@ twpConfig.onReady(function () {
           lblTranslated.style.display = "none";
           lblError.style.display = "none";
 
+          divAlwaysTranslate.style.display = "block";
           showAlwaysTranslateCheckbox
-            ? (divAlwaysTranslate.style.display = "block")
-            : (divAlwaysTranslate.style.display = "none");
+            ? void 0
+            : cbAlwaysTranslate.setAttribute("disabled", "disabled");
           btnTranslate.style.display = "inline";
           btnRestore.style.display = "none";
           btnTryAgain.style.display = "none";
