@@ -983,11 +983,13 @@ twpConfig.onReady(async () => {
     }
   });
 
-  chrome.permissions.onRemoved.addListener((permissions) => {
-    if (permissions.permissions.indexOf("webNavigation") !== -1) {
-      twpConfig.set("autoTranslateWhenClickingALink", "no");
-    }
-  });
+  if (chrome.permissions.onRemoved) {
+    chrome.permissions.onRemoved.addListener((permissions) => {
+      if (permissions.permissions.indexOf("webNavigation") !== -1) {
+        twpConfig.set("autoTranslateWhenClickingALink", "no");
+      }
+    });
+  }
 
   chrome.permissions.contains(
     {

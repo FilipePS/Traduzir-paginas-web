@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "build": "npx gulp",
+    "polyfill": "webpack --entry=./polyfill.js --output-path=./dist --output-filename=polyfill.js -d inline-source-map",
     "map": "npx merge-source-maps --inline-sources --inline-source-map all.min.js"
   },
   "dependencies": {

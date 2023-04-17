@@ -101,17 +101,20 @@
       "matches": ["<all_urls>"],
       "run_at": "document_start",
       "all_frames": false,
-      "js": [
-        "/contentScript/checkScriptIsInjected.js",
-        "/lib/checkedLastError.js"
-      ]
+      "js": ["/contentScript/checkScriptIsInjected.js"]
     },
     {
       "matches": ["<all_urls>"],
       "run_at": "document_start",
       "all_frames": true,
       "match_about_blank": true,
-      "js": ["/lib/languages.js", "/lib/config.js", "/lib/platformInfo.js"]
+      "js": [
+        "/lib/polyfill.js",
+        "/lib/checkedLastError.js",
+        "/lib/languages.js",
+        "/lib/config.js",
+        "/lib/platformInfo.js"
+      ]
     },
     {
       "matches": ["<all_urls>"],
@@ -142,6 +145,7 @@
   "background": {
     "persistent": true,
     "scripts": [
+      "/lib/polyfill.js",
       "/lib/checkedLastError.js",
       "/lib/languages.js",
       "/lib/config.js",

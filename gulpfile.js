@@ -11,11 +11,8 @@ const babelConfig = {
       "@babel/preset-env",
       {
         targets: {
-          edge: "17",
-          ie: "8",
-          firefox: "60",
-          chrome: "67",
-          safari: "11.1",
+          firefox: "63",
+          chrome: "70",
         },
         // corejs: 3,
         // useBuiltIns: "usage",
@@ -59,6 +56,36 @@ gulp.task("firefox-babel", () => {
         .pipe(gulp.dest("dist/firefox/lib"))
         .on("end", resolve);
     }),
+    new Promise((resolve, reject) => {
+      gulp
+        .src(["dist/firefox/contentScript/*.js"])
+        .pipe(sourcemaps.init())
+        .pipe(babel(babelConfig))
+        .pipe(sourcemaps.write())
+        .on("error", reject)
+        .pipe(gulp.dest("dist/firefox/contentScript"))
+        .on("end", resolve);
+    }),
+    new Promise((resolve, reject) => {
+      gulp
+        .src(["dist/firefox/options/*.js"])
+        .pipe(sourcemaps.init())
+        .pipe(babel(babelConfig))
+        .pipe(sourcemaps.write())
+        .on("error", reject)
+        .pipe(gulp.dest("dist/firefox/options"))
+        .on("end", resolve);
+    }),
+    new Promise((resolve, reject) => {
+      gulp
+        .src(["dist/firefox/popup/*.js"])
+        .pipe(sourcemaps.init())
+        .pipe(babel(babelConfig))
+        .pipe(sourcemaps.write())
+        .on("error", reject)
+        .pipe(gulp.dest("dist/firefox/popup"))
+        .on("end", resolve);
+    })
   ]);
 });
 
@@ -107,6 +134,36 @@ gulp.task("chrome-babel", () => {
         .pipe(gulp.dest("dist/chrome/lib"))
         .on("end", resolve);
     }),
+    new Promise((resolve, reject) => {
+      gulp
+        .src(["dist/chrome/contentScript/*.js"])
+        .pipe(sourcemaps.init())
+        .pipe(babel(babelConfig))
+        .pipe(sourcemaps.write())
+        .on("error", reject)
+        .pipe(gulp.dest("dist/chrome/contentScript"))
+        .on("end", resolve);
+    }),
+    new Promise((resolve, reject) => {
+      gulp
+        .src(["dist/chrome/options/*.js"])
+        .pipe(sourcemaps.init())
+        .pipe(babel(babelConfig))
+        .pipe(sourcemaps.write())
+        .on("error", reject)
+        .pipe(gulp.dest("dist/chrome/options"))
+        .on("end", resolve);
+    }),
+    new Promise((resolve, reject) => {
+      gulp
+        .src(["dist/chrome/popup/*.js"])
+        .pipe(sourcemaps.init())
+        .pipe(babel(babelConfig))
+        .pipe(sourcemaps.write())
+        .on("error", reject)
+        .pipe(gulp.dest("dist/chrome/popup"))
+        .on("end", resolve);
+    })
   ]);
 });
 
