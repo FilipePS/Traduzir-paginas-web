@@ -235,6 +235,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         getElemById("iconTranslate").src = chrome.runtime.getURL(
           "/icons/yandex-translate-32.png"
         );
+      } else if (currentPageTranslatorService === "bing") {
+        getElemById("iconTranslate").src = chrome.runtime.getURL(
+          "/icons/bing-translate-32.png"
+        );
       } else {
         getElemById("iconTranslate").src = chrome.runtime.getURL(
           "/icons/google-translate-32.png"
@@ -246,8 +250,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     getElemById("iconTranslate").onclick = (e) => {
       pageTranslator.swapTranslationService();
 
-      currentPageTranslatorService =
-        currentPageTranslatorService === "google" ? "yandex" : "google";
+      if (currentPageTranslatorService === "google") {
+        currentPageTranslatorService = "bing";
+      } else if (currentPageTranslatorService === "bing") {
+        currentPageTranslatorService = "yandex";
+      } else {
+        currentPageTranslatorService = "google";
+      }
       updateIcon();
 
       twpConfig.set("pageTranslatorService", currentPageTranslatorService);

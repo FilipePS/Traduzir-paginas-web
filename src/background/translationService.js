@@ -168,9 +168,9 @@ const translationService = (function () {
         if (YandexHelper.#lastRequestSidTime) {
           const date = new Date();
           if (YandexHelper.#translateSid) {
-            date.setHours(date.getHours() - 12);
+            date.setHours(date.getMinutes() - 30);
           } else if (YandexHelper.#SIDNotFound) {
-            date.setMinutes(date.getMinutes() - 30);
+            date.setMinutes(date.getMinutes() - 5);
           } else {
             date.setMinutes(date.getMinutes() - 2);
           }
@@ -222,113 +222,55 @@ const translationService = (function () {
 
   class BingHelper {
     /** @type {number} */
-    static #lastRequestSidTime = null;
+    static #lastRequestAuthTime = null;
     /** @type {string} */
-    static #translateSid = null;
-    /** @type {string} */
-    static #translate_IID_IG = null;
+    static #translateAuth = null;
     /** @type {boolean} */
-    static #SIDNotFound = false;
+    static #AuthNotFound = false;
     /** @type {Promise<void>} */
-    static #sidPromise = null;
+    static #authPromise = null;
 
-    static get translateSid() {
-      return BingHelper.#translateSid;
+    static get translateAuth() {
+      return BingHelper.#translateAuth;
     }
 
-    static get translate_IID_IG() {
-      return BingHelper.#translate_IID_IG;
-    }
     /**
      * Find the SID (IID and IG) of Bing Translator. The SID value is used in translation requests.
      * @returns {Promise<void>}
      */
-    static async findSID() {
-      if (BingHelper.#sidPromise) return await BingHelper.#sidPromise;
-      BingHelper.#sidPromise = new Promise((resolve) => {
-        let updateBingSid = false;
-        if (BingHelper.#lastRequestSidTime) {
+    static async findAuth() {
+      if (BingHelper.#authPromise) return await BingHelper.#authPromise;
+
+      BingHelper.#authPromise = new Promise((resolve) => {
+        let updateBingAuth = false;
+        if (BingHelper.#lastRequestAuthTime) {
           const date = new Date();
-          if (BingHelper.#translateSid) {
-            date.setHours(date.getHours() - 12);
-          } else if (BingHelper.#SIDNotFound) {
-            date.setMinutes(date.getMinutes() - 30);
+          if (BingHelper.#translateAuth) {
+            date.setHours(date.getMinutes() - 30);
+          } else if (BingHelper.#AuthNotFound) {
+            date.setMinutes(date.getMinutes() - 5);
           } else {
             date.setMinutes(date.getMinutes() - 2);
           }
-          if (date.getTime() > BingHelper.#lastRequestSidTime) {
-            updateBingSid = true;
+          if (date.getTime() > BingHelper.#lastRequestAuthTime) {
+            updateBingAuth = true;
           }
         } else {
-          updateBingSid = true;
+          updateBingAuth = true;
         }
 
-        if (updateBingSid) {
-          BingHelper.#lastRequestSidTime = Date.now();
+        if (updateBingAuth) {
+          BingHelper.#lastRequestAuthTime = Date.now();
 
           const http = new XMLHttpRequest();
-          http.open("GET", "https://www.bing.com/translator");
+          http.open("GET", "https://edge.microsoft.com/translate/auth");
           http.send();
           http.onload = (e) => {
-            const result = http.responseText.match(
-              /params_RichTranslateHelper\s=\s\[[^\]]+/
-            );
-            const backup_result = http.responseText.match(
-              /params_AbusePreventionHelper\s=\s\[[^\]]+/
-            );
-            const data_iid_r = http.responseText.match(
-              /data-iid\=\"[a-zA-Z0-9\.]+/
-            );
-            const IG_r = http.responseText.match(/IG\:\"[a-zA-Z0-9\.]+/);
-            if (
-              result &&
-              result[0] &&
-              result[0].length > 50 &&
-              data_iid_r &&
-              data_iid_r[0] &&
-              IG_r &&
-              IG_r[0]
-            ) {
-              const params_RichTranslateHelper = result[0]
-                .substring("params_RichTranslateHelper = [".length)
-                .split(",");
-              const params_AbusePreventionHelper = backup_result[0]
-                .substring("params_AbusePreventionHelper = [".length)
-                .split(",");
-              const data_iid = data_iid_r[0].substring('data-iid="'.length);
-              const IG = IG_r[0].substring('IG:"'.length);
-              //IID & IG
-              if (data_iid && IG) {
-                BingHelper.#translate_IID_IG = `IG=${IG}&IID=${data_iid}`;
-              }
-              //SID
-              if (
-                params_RichTranslateHelper &&
-                params_RichTranslateHelper[0] &&
-                params_RichTranslateHelper[1] &&
-                parseInt(params_RichTranslateHelper[0])
-              ) {
-                BingHelper.#translateSid = `&token=${params_RichTranslateHelper[1].substring(
-                  1,
-                  params_RichTranslateHelper[1].length - 1
-                )}&key=${parseInt(params_RichTranslateHelper[0])}`;
-                BingHelper.#SIDNotFound = false;
-              } else if (
-                params_AbusePreventionHelper &&
-                params_AbusePreventionHelper[0] &&
-                params_AbusePreventionHelper[1] &&
-                parseInt(params_AbusePreventionHelper[0])
-              ) {
-                BingHelper.#translateSid = `&token=${params_AbusePreventionHelper[1].substring(
-                  1,
-                  params_AbusePreventionHelper[1].length - 1
-                )}&key=${parseInt(params_AbusePreventionHelper[0])}`;
-                BingHelper.#SIDNotFound = false;
-              } else {
-                BingHelper.#SIDNotFound = true;
-              }
+            if (http.responseText && http.responseText.length > 1) {
+              BingHelper.#translateAuth = http.responseText;
+              BingHelper.#AuthNotFound = false;
             } else {
-              BingHelper.#SIDNotFound = true;
+              BingHelper.#AuthNotFound = true;
             }
             resolve();
           };
@@ -344,65 +286,71 @@ const translationService = (function () {
         }
       });
 
-      BingHelper.#sidPromise.finally(() => {
-        BingHelper.#sidPromise = null;
+      BingHelper.#authPromise.finally(() => {
+        BingHelper.#authPromise = null;
       });
 
-      return await BingHelper.#sidPromise;
+      return await BingHelper.#authPromise;
     }
   }
+
+  /**
+   * Returns a string with additional parameters to be concatenated to the request URL.
+   * @callback callback_cbParameters
+   * @param {string} sourceLanguage
+   * @param {string} targetLanguage
+   * @param {Array<TranslationInfo>} requests
+   * @returns {string}
+   */
+
+  /**
+   * Takes `sourceArray` and returns a request string to the translation service.
+   * @callback callback_cbTransformRequest
+   * @param {string[]} sourceArray
+   * @returns {string}
+   */
+
+  /**
+   * @typedef {{text: string, detectedLanguage: string}} Service_Single_Result_Response
+   */
+
+  /**
+   * Receives the response from the *http request* and returns `Service_Single_Result_Response[]`.
+   *
+   * Returns a string with the body of a request of type **POST**.
+   * @callback callback_cbParseResponse
+   * @param {Object} response
+   * @returns {Array<Service_Single_Result_Response>}
+   */
+
+  /**
+   * Takes a string formatted with the translated text and returns a `resultArray`.
+   * @callback callback_cbTransformResponse
+   * @param {String} response
+   * @param {boolean} dontSortResults
+   * @returns {string[]} resultArray
+   */
+
+  /**
+   * Return extra headers for the request.
+   * @callback callback_cbGetExtraHeaders
+   * @returns {Array<{name: string, value: string}>} headers
+   */
+
+  /** @typedef {"complete" | "translating" | "error"} TranslationStatus */
+  /**
+   * @typedef {Object} TranslationInfo
+   * @property {String} originalText
+   * @property {String} translatedText
+   * @property {String} detectedLanguage
+   * @property {TranslationStatus} status
+   * @property {Promise<void>} waitTranlate
+   */
 
   /**
    * Base class to create new translation services.
    */
   class Service {
-    /**
-     * Returns a string with additional parameters to be concatenated to the request URL.
-     * @callback callback_cbParameters
-     * @param {string} sourceLanguage
-     * @param {string} targetLanguage
-     * @param {Array<TranslationInfo>} requests
-     * @returns {string}
-     */
-
-    /**
-     * Takes `sourceArray` and returns a request string to the translation service.
-     * @callback callback_cbTransformRequest
-     * @param {string[]} sourceArray
-     * @returns {string}
-     */
-
-    /**
-     * @typedef {{text: string, detectedLanguage: string}} Service_Single_Result_Response
-     */
-
-    /**
-     * Receives the response from the *http request* and returns `Service_Single_Result_Response[]`.
-     *
-     * Returns a string with the body of a request of type **POST**.
-     * @callback callback_cbParseResponse
-     * @param {Object} response
-     * @returns {Array<Service_Single_Result_Response>}
-     */
-
-    /**
-     * Takes a string formatted with the translated text and returns a `resultArray`.
-     * @callback callback_cbTransformResponse
-     * @param {String} response
-     * @param {boolean} dontSortResults
-     * @returns {string[]} resultArray
-     */
-
-    /** @typedef {"complete" | "translating" | "error"} TranslationStatus */
-    /**
-     * @typedef {Object} TranslationInfo
-     * @property {String} originalText
-     * @property {String} translatedText
-     * @property {String} detectedLanguage
-     * @property {TranslationStatus} status
-     * @property {Promise<void>} waitTranlate
-     */
-
     /**
      * Initializes the **Service** class with information about the new translation service.
      * @param {string} serviceName
@@ -413,6 +361,7 @@ const translationService = (function () {
      * @param {callback_cbTransformResponse} cbTransformResponse Takes a string formatted with the translated text and returns a `resultArray`.
      * @param {callback_cbParameters} cbGetExtraParameters Returns a string with additional parameters to be concatenated to the request URL.
      * @param {callback_cbParameters} cbGetRequestBody Returns a string with the body of a request of type **POST**.
+     * @param {callback_cbGetExtraHeaders} cbGetExtraHeaders Return extra headers for the request.
      */
     constructor(
       serviceName,
@@ -422,7 +371,8 @@ const translationService = (function () {
       cbParseResponse,
       cbTransformResponse,
       cbGetExtraParameters = null,
-      cbGetRequestBody = null
+      cbGetRequestBody = null,
+      cbGetExtraHeaders = null
     ) {
       this.serviceName = serviceName;
       this.baseURL = baseURL;
@@ -432,6 +382,8 @@ const translationService = (function () {
       this.cbTransformResponse = cbTransformResponse;
       this.cbGetExtraParameters = cbGetExtraParameters;
       this.cbGetRequestBody = cbGetRequestBody;
+      this.cbGetExtraHeaders = cbGetExtraHeaders;
+
       /**
        * @type {Map<string, TranslationInfo>}
        *
@@ -569,10 +521,14 @@ const translationService = (function () {
                 )
               : "")
         );
-        xhr.setRequestHeader(
-          "Content-Type",
-          "application/x-www-form-urlencoded"
-        );
+
+        if (this.cbGetExtraHeaders) {
+          const headers = this.cbGetExtraHeaders();
+          headers.forEach((header) => {
+            xhr.setRequestHeader(header.name, header.value);
+          });
+        }
+
         xhr.responseType = "json";
 
         xhr.onload = (event) => {
@@ -869,6 +825,14 @@ const translationService = (function () {
           return requests
             .map((info) => `&q=${encodeURIComponent(info.originalText)}`)
             .join("");
+        },
+        function cbGetExtraHeaders() {
+          return [
+            {
+              name: "Content-Type",
+              value: "application/x-www-form-urlencoded",
+            },
+          ];
         }
       );
     }
@@ -912,6 +876,14 @@ const translationService = (function () {
         },
         function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
           return undefined;
+        },
+        function cbGetExtraHeaders() {
+          return [
+            {
+              name: "Content-Type",
+              value: "application/x-www-form-urlencoded",
+            },
+          ];
         }
       );
     }
@@ -944,35 +916,81 @@ const translationService = (function () {
     constructor() {
       super(
         "bing",
-        "https://www.bing.com/ttranslatev3?isVertical=1",
+        "https://api-edge.cognitive.microsofttranslator.com/translate?api-version=3.0&includeSentenceLength=true",
         "POST",
         function cbTransformRequest(sourceArray) {
+          let id = 10;
           return sourceArray
-            .map((value) => Utils.escapeHTML(value))
-            .join("<wbr>");
+            .map((value) => {
+              const r = `<b${id}>${Utils.escapeHTML(value)}</b${id}>`;
+              id++;
+              return r;
+            })
+            .join("");
         },
         function cbParseResponse(response) {
-          return [
-            {
-              text: response[0].translations[0].text,
-              detectedLanguage: response[0].detectedLanguage.language,
-            },
-          ];
+          return response.map(
+            /** @return {Service_Single_Result_Response} */
+            (/** @type {object} */ r) => ({
+              text: r.translations[0].text,
+              detectedLanguage: r.detectedLanguage?.language,
+            })
+          );
         },
         function cbTransformResponse(result, dontSortResults) {
-          return [Utils.unescapeHTML(result)];
+          const resultArray = []
+
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(result, "text/html");
+          let currText = ""
+          doc.body.childNodes.forEach((node) => {
+            if (dontSortResults) {
+              if (node.nodeName == "#text") {
+                currText += node.textContent
+              } else {
+                resultArray.push(currText + node.textContent);
+                currText = ""
+              }
+            } else {
+              if (node.nodeName == "#text") {
+                currText += node.textContent
+              } else {
+                const id = parseInt(node.nodeName.slice(1)) - 10
+                resultArray[id] = currText + node.textContent;
+                currText = ""
+              }
+            }
+          });
+
+          return resultArray;
         },
         function cbGetExtraParameters(
           sourceLanguage,
           targetLanguage,
           requests
         ) {
-          return `&${BingHelper.translate_IID_IG}`;
+          return `${
+            sourceLanguage !== "auto-detect" ? "&from=" + sourceLanguage : ""
+          }&to=${targetLanguage}`;
         },
         function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
-          return `&fromLang=${sourceLanguage}${requests
-            .map((info) => `&text=${encodeURIComponent(info.originalText)}`)
-            .join("")}&to=${targetLanguage}${BingHelper.translateSid}`;
+          return JSON.stringify(
+            requests.map((info) => ({
+              text: info.originalText,
+            }))
+          );
+        },
+        function cbGetExtraHeaders() {
+          return [
+            {
+              name: "Content-Type",
+              value: "application/json",
+            },
+            {
+              name: "authorization",
+              value: "Bearer " + BingHelper.translateAuth,
+            },
+          ];
         }
       );
     }
@@ -1036,8 +1054,8 @@ const translationService = (function () {
         }
       });
 
-      await BingHelper.findSID();
-      if (!BingHelper.translate_IID_IG) return;
+      await BingHelper.findAuth();
+      if (!BingHelper.translateAuth) return;
 
       return await super.translate(
         sourceLanguage,

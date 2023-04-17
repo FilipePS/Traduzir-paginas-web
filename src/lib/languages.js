@@ -5156,7 +5156,7 @@ const twpLang = (function () {
 
   /** @type {Map<string, string>} */
   const alternatives = new Map();
-  const pageTranslationServices = ["google", "yandex"];
+  const pageTranslationServices = ["google", "bing", "yandex"];
   /**
    * gets an alternate translation service if the selected translation service does not support the current target language.
    * @param {string} lang

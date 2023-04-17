@@ -1055,6 +1055,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
   pageTranslator.swapTranslationService = function () {
     if (currentPageTranslatorService === "google") {
+      currentPageTranslatorService = "bing";
+    } else if (currentPageTranslatorService === "bing") {
       currentPageTranslatorService = "yandex";
     } else {
       currentPageTranslatorService = "google";
@@ -1155,6 +1157,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
                 location.hostname !== "translate.googleusercontent.com" &&
                 location.hostname !== "translate.google.com" &&
                 location.hostname !== "translate.yandex.com" &&
+                location.hostname !== "www.deepl.com" &&
+                location.hostname !== "translated.turbopages.org" &&
+                !location.hostname.endsWith("translate.goog") &&
                 location.hostname !== "sberbank.com" &&
                 location.hostname !== "www.sberbank.com" // https://github.com/FilipePS/Traduzir-paginas-web/issues/619
               ) {

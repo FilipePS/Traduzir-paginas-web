@@ -730,6 +730,8 @@ if (typeof chrome.commands !== "undefined") {
 
       let currentPageTranslatorService = twpConfig.get("pageTranslatorService");
       if (currentPageTranslatorService === "google") {
+        currentPageTranslatorService = "bing";
+      } else if (currentPageTranslatorService === "bing") {
         currentPageTranslatorService = "yandex";
       } else {
         currentPageTranslatorService = "google";

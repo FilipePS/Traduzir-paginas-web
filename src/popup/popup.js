@@ -191,6 +191,10 @@ twpConfig.onReady(function () {
       $("#btnOptions option[value='translateInExternalSite']").textContent =
         chrome.i18n.getMessage("msgOpenOnYandexTranslator");
       $("#iconTranslate").setAttribute("src", "/icons/yandex-translate-32.png");
+    } else if (currentPageTranslatorService == "bing") {
+      $("#btnOptions option[value='translateInExternalSite']").textContent =
+        chrome.i18n.getMessage("btnOpenOnGoogleTranslate");
+      $("#iconTranslate").setAttribute("src", "/icons/bing-translate-32.png");
     } else {
       // google
       $("#btnOptions option[value='translateInExternalSite']").textContent =
@@ -362,6 +366,8 @@ twpConfig.onReady(function () {
     );
 
     if (currentPageTranslatorService === "google") {
+      currentPageTranslatorService = "bing";
+    } else if (currentPageTranslatorService === "bing") {
       currentPageTranslatorService = "yandex";
     } else {
       currentPageTranslatorService = "google";
