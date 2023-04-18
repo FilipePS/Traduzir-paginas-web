@@ -168,11 +168,11 @@ const translationService = (function () {
         if (YandexHelper.#lastRequestSidTime) {
           const date = new Date();
           if (YandexHelper.#translateSid) {
-            date.setHours(date.getMinutes() - 30);
+            date.setMinutes(date.getMinutes() - 30);
           } else if (YandexHelper.#SIDNotFound) {
             date.setMinutes(date.getMinutes() - 5);
           } else {
-            date.setMinutes(date.getMinutes() - 2);
+            date.setMinutes(date.getMinutes() - 1);
           }
           if (date.getTime() > YandexHelper.#lastRequestSidTime) {
             updateYandexSid = true;
@@ -246,7 +246,7 @@ const translationService = (function () {
         if (BingHelper.#lastRequestAuthTime) {
           const date = new Date();
           if (BingHelper.#translateAuth) {
-            date.setHours(date.getMinutes() - 30);
+            date.setMinutes(date.getMinutes() - 30);
           } else if (BingHelper.#AuthNotFound) {
             date.setMinutes(date.getMinutes() - 5);
           } else {
