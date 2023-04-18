@@ -5,9 +5,9 @@ const zip = require("gulp-zip");
 const babel = require("gulp-babel");
 const sourcemaps = require("gulp-sourcemaps");
 
-const mappath = "../maps"
-//const mapconfig = {sourceMappingURLPrefix: "https://raw.githubusercontent.com/FilipePS/TWP---Source-Maps/main"}
-const mapconfig = null
+const mappath = "../maps/4edda1"
+const mapconfig = {sourceMappingURLPrefix: "https://raw.githubusercontent.com/FilipePS/TWP---Source-Maps/main"}
+//const mapconfig = null
 
 const babelConfig = {
   presets: [
