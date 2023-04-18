@@ -5,7 +5,7 @@ const zip = require("gulp-zip");
 const babel = require("gulp-babel");
 const sourcemaps = require("gulp-sourcemaps");
 
-const mappath = "../maps/9.7.0.2"
+const mappath = "../maps/9.7.0.3"
 const mapconfig = {sourceMappingURLPrefix: "https://raw.githubusercontent.com/FilipePS/TWP---Source-Maps/main"}
 //const mapconfig = null
 
