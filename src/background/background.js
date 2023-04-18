@@ -139,6 +139,12 @@ chrome.runtime.onInstalled.addListener((details) => {
     chrome.tabs.create({
       url: chrome.runtime.getURL("/options/options.html"),
     });
+    twpConfig.onReady(async () => {
+      if (chrome.i18n.getUILanguage() === "zh-CN") {
+        twpConfig.set("pageTranslatorService", "bing")
+        twpConfig.set("textTranslatorService", "bing")
+      }
+    })
   } else if (
     details.reason == "update" &&
     chrome.runtime.getManifest().version != details.previousVersion
