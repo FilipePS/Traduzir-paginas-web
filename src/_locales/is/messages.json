@@ -177,7 +177,7 @@
     "message": "Þakka þér fyrir að nota þessa viðbót."
   },
   "msgIWillBeGrateful": {
-    "message": "Ég mun vera þakklát(ur) ef þú getur styrkjað mig."
+    "message": "Ég mun vera þakklátur ef þú getur styrkt mig."
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Sýna þýddan texta þegar sveimað er yfir á þessum síðum"
@@ -482,5 +482,8 @@
   },
   "donationText": {
     "message": "Ég hef verið að þróa, uppfæra og styðja þessa viðbót í meira en þrjú ár. Það er ótrúlegt að sjá að við erum með yfir 600.000 notendur daglega og að allt þetta fólk hefur getað skipt yfir í Firefox endanlega.\n\nÉg stefni á að gefa út nýja útgáfu af þessari viðbót í hverjum mánuði og halda áfram að bæta hana.\n\nÉg væri þakklátur ef þú gætir hjálpað mér fjárhagslega með því að gerast meðlimur á Patreon og styðja mig við að bæta úr þessari viðbót.\n\nÉg þakka öllum sem hafa nú þegar lagt þessu verkefni lið."
+  },
+  "lblEnableDiskCache": {
+    "message": "Enable persistent translation cache (on-disk cache)"
   }
 }

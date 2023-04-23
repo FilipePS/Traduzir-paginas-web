@@ -482,5 +482,8 @@
   },
   "donationText": {
     "message": "Jeg har udviklet, opdateret og understøttet denne udvidelse i over tre år. Det er fantastisk at se, at vi har over 600.000 daglige brugere, og alle disse mennesker har været i stand til at migrere til Firefox permanent.\n\nJeg sigter efter at frigive en ny version af denne udvidelse hver måned og blive ved med at forbedre den.\n\nJeg ville være taknemmelig, hvis du kunne hjælpe mig økonomisk ved at blive Patreon-medlem og støtte mig i at forbedre denne udvidelse.\n\nTak til alle, der allerede har bidraget til dette projekt."
+  },
+  "lblEnableDiskCache": {
+    "message": "Enable persistent translation cache (on-disk cache)"
   }
 }

@@ -482,5 +482,8 @@
   },
   "donationText": {
     "message": "Több mint három éve fejlesztem, frissítem és támogatom ezt a bővítményt. Lenyűgöző látni, hogy több mint 600 000 napi felhasználónk van, és ezek az emberek véglegesen áttértek a Firefoxra.\n\nCélom, hogy minden hónapban kiadjam ennek a bővítménynek az új verzióját, és folyamatosan fejlesszem.\n\nHálás lennék, ha anyagilag segítene nekem azzal, hogy Patreon taggá válna és támogatna a bővítmény fejlesztésében.\n\nKöszönöm mindenkinek, aki már hozzájárult ehhez a projekthez."
+  },
+  "lblEnableDiskCache": {
+    "message": "Enable persistent translation cache (on-disk cache)"
   }
 }

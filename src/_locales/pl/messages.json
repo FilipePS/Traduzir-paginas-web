@@ -482,5 +482,8 @@
   },
   "donationText": {
     "message": "Rozwijam, aktualizuję i wspieram to rozszerzenie od ponad trzech lat. To niesamowite, że mamy ponad 600 000 użytkowników dziennie i wszyscy ci ludzie mogli na stałe przenieść się do Firefoksa.\n\nZamierzam wydawać nową wersję tego rozszerzenia co miesiąc i kontynuować jego ulepszanie.\n\nByłbym wdzięczny za pomoc finansową, zostań członkiem Patreon i wesprzyj mnie we wprowadzaniu ulepszeń do tego rozszerzenia.\n\nDziękuję wszystkim, którzy już przyczynili się do tego projektu."
+  },
+  "lblEnableDiskCache": {
+    "message": "Enable persistent translation cache (on-disk cache)"
   }
 }
