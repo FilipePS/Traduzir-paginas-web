@@ -154,7 +154,7 @@ twpConfig.onReady(function () {
   let translateNewInputTimerHandler;
   eOrigText.oninput = () => {
     clearTimeout(translateNewInputTimerHandler);
-    translateNewInputTimerHandler = setTimeout(translateText, 800);
+    translateNewInputTimerHandler = setTimeout(translateText, 600);
   };
 
   sGoogle.onclick = () => {

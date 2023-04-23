@@ -474,7 +474,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     let translateNewInputTimerHandler;
     eOrigText.oninput = () => {
       clearTimeout(translateNewInputTimerHandler);
-      translateNewInputTimerHandler = setTimeout(translateNewInput, 800);
+      translateNewInputTimerHandler = setTimeout(translateNewInput, 600);
     };
 
     eMoreOrLess.onclick = () => {

@@ -107,7 +107,7 @@ twpConfig.onReady(function () {
     if (currentNodeOverMouse && e.target === currentNodeOverMouse) return;
     currentNodeOverMouse = e.target;
     if (timeoutHandler) clearTimeout(timeoutHandler);
-    timeoutHandler = setTimeout(showOriginalText, 1500, currentNodeOverMouse);
+    timeoutHandler = setTimeout(showOriginalText, 1250, currentNodeOverMouse);
   }
 
   function onMouseOut(e) {

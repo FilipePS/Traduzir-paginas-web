@@ -928,7 +928,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     } catch (e) {
       console.error(e);
     }
-    setTimeout(translateDynamically, 600);
+    setTimeout(translateDynamically, 400);
   }
 
   translateDynamically();
@@ -1218,7 +1218,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           false
         );
       }
-    }, 120);
+    }, 150);
   } else {
     // is subframe (iframe)
     chrome.runtime.sendMessage(
