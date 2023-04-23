@@ -1,8 +1,9 @@
 node_modules
 package-lock.json
 extra/package-lock.json
-dist
+build
 test
 meta.txt
+meta2.txt
 result
 *.zip
