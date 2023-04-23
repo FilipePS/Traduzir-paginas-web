@@ -393,7 +393,15 @@
         <div class="w3-container">
           <span data-i18n="lblStorageUsed">Storage used:</span>
           <button id="btnCalculateStorage" data-i18n="calculateStorage" style="font-size: 12px">
-            Calculate</button><i id="storageUsed">0 KB</i> <br /><br />
+            Calculate</button><i id="storageUsed">0 KB</i> <br />
+
+          <p><b data-i18n="lblEnableDiskCache">Enable persistent translation cache (on-disk cache)</b></p>
+          <select id="enableDiskCache" class="w3-select w3-margin">
+            <option value="yes" data-i18n="msgYes">Yes</option>
+            <option value="no" data-i18n="msgNo" selected>No</option>
+          </select>
+          <br />
+
           <button class="w3-button w3-light-grey w3-round" data-i18n="deleteTranslationCache"
             id="deleteTranslationCache">
             Delete translation cache

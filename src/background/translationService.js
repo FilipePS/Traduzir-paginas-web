@@ -1238,7 +1238,13 @@ const translationService = (function () {
 
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     // If the translation request came from an incognito window, the translation should not be cached on disk.
-    const dontSaveInPersistentCache = sender.tab ? sender.tab.incognito : false;
+    let dontSaveInPersistentCache = true
+    if (twpConfig.get("enableDiskCache") !== "yes") {
+      dontSaveInPersistentCache = true
+    } else {
+      dontSaveInPersistentCache = sender.tab ? sender.tab.incognito : false;
+    }
+
     if (request.action === "translateHTML") {
       translationService
         .translateHTML(
