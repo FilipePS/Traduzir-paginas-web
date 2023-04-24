@@ -381,7 +381,7 @@
     "message": "Senda skjal"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Villa við að sækja skjali"
+    "message": "Villa við að sækja skjal"
   },
   "msgFileLargerThan": {
     "message": "Þessi þjónusta styður ekki skrár sem eru stærri en $FILE_SIZE$",
@@ -393,7 +393,7 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF til HTML"
+    "message": "PDF í HTML"
   },
   "btncopy": {
     "message": "Afrita"
@@ -417,7 +417,7 @@
     "message": "Skipta út völdum texta fyrir þýddan texta strax"
   },
   "optionsAddToCustomDictionary": {
-    "message": "Bæta við sérsniðna orðabók (Þetta gerir þér kleift að sleppa tilteknum orðum við þýðingar á vefsíðu)"
+    "message": "Bæta við sérsniðna orðasafn (Þetta gerir þér kleift að sleppa tilteknum orðum við þýðingar á vefsíðu)"
   },
   "msgSelectTargetLanguage": {
     "message": "Þýða vefsíður yfir á þetta marktungumál"
@@ -484,6 +484,6 @@
     "message": "Ég hef verið að þróa, uppfæra og styðja þessa viðbót í meira en þrjú ár. Það er ótrúlegt að sjá að við erum með yfir 600.000 notendur daglega og að allt þetta fólk hefur getað skipt yfir í Firefox endanlega.\n\nÉg stefni á að gefa út nýja útgáfu af þessari viðbót í hverjum mánuði og halda áfram að bæta hana.\n\nÉg væri þakklátur ef þú gætir hjálpað mér fjárhagslega með því að gerast meðlimur á Patreon og styðja mig við að bæta úr þessari viðbót.\n\nÉg þakka öllum sem hafa nú þegar lagt þessu verkefni lið."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Virkja varanlegt þýðingarskyndiminni (skyndiminni á diski)"
   }
 }
