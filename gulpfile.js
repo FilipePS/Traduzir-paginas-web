@@ -14,8 +14,8 @@ const version = JSON.parse(
   fs.readFileSync("src/manifest.json", "utf8")
 ).version;
 
-const chrome_folder_name = `TWP.${version}.Chrome`;
-const firefoxfolder_name = `TWP.${version}.Firefox`;
+const chromium_folder_name = `TWP_${version}_Chromium`;
+const firefox_folder_name = `TWP_${version}_Firefox`;
 
 const mappath = `../maps/${version}`;
 const mapconfig = remoteSourceMaps
@@ -31,7 +31,7 @@ const babelConfig = {
       "@babel/preset-env",
       {
         targets: {
-          firefox: "63",
+          firefox: "64",
           chrome: "70",
         },
         // corejs: 3,
@@ -51,59 +51,59 @@ gulp.task("clean", (cb) => {
 });
 
 gulp.task("firefox-copy", () => {
-  return gulp.src(["src/**/**"]).pipe(gulp.dest(`build/${firefoxfolder_name}`));
+  return gulp.src(["src/**/**"]).pipe(gulp.dest(`build/${firefox_folder_name}`));
 });
 
 gulp.task("firefox-babel", () => {
   return Promise.all([
     new Promise((resolve, reject) => {
       gulp
-        .src([`build/${firefoxfolder_name}/background/*.js`])
+        .src([`build/${firefox_folder_name}/background/*.js`])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
         .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
-        .pipe(gulp.dest(`build/${firefoxfolder_name}/background`))
+        .pipe(gulp.dest(`build/${firefox_folder_name}/background`))
         .on("end", resolve);
     }),
     new Promise((resolve, reject) => {
       gulp
-        .src([`build/${firefoxfolder_name}/lib/*.js`])
+        .src([`build/${firefox_folder_name}/lib/*.js`])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
         .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
-        .pipe(gulp.dest(`build/${firefoxfolder_name}/lib`))
+        .pipe(gulp.dest(`build/${firefox_folder_name}/lib`))
         .on("end", resolve);
     }),
     new Promise((resolve, reject) => {
       gulp
-        .src([`build/${firefoxfolder_name}/contentScript/*.js`])
+        .src([`build/${firefox_folder_name}/contentScript/*.js`])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
         .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
-        .pipe(gulp.dest(`build/${firefoxfolder_name}/contentScript`))
+        .pipe(gulp.dest(`build/${firefox_folder_name}/contentScript`))
         .on("end", resolve);
     }),
     new Promise((resolve, reject) => {
       gulp
-        .src([`build/${firefoxfolder_name}/options/*.js`])
+        .src([`build/${firefox_folder_name}/options/*.js`])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
         .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
-        .pipe(gulp.dest(`build/${firefoxfolder_name}/options`))
+        .pipe(gulp.dest(`build/${firefox_folder_name}/options`))
         .on("end", resolve);
     }),
     new Promise((resolve, reject) => {
       gulp
-        .src([`build/${firefoxfolder_name}/popup/*.js`])
+        .src([`build/${firefox_folder_name}/popup/*.js`])
         .pipe(sourcemaps.init())
         .pipe(babel(babelConfig))
         .pipe(sourcemaps.write(mappath, mapconfig))
         .on("error", reject)
-        .pipe(gulp.dest(`build/${firefoxfolder_name}/popup`))
+        .pipe(gulp.dest(`build/${firefox_folder_name}/popup`))
         .on("end", resolve);
     }),
   ]);
@@ -115,12 +115,12 @@ gulp.task("firefox-move-sourcemap", (cb) => {
   }
   return new Promise((resolve, reject) => {
     gulp
-      .src([`build/${firefoxfolder_name}/maps/**/*`])
+      .src([`build/${firefox_folder_name}/maps/**/*`])
       .pipe(gulp.dest("build/maps"))
       .on("error", reject)
       .on("end", resolve);
   }).then(() => {
-    fs.rmSync(`build/${firefoxfolder_name}/maps`, {
+    fs.rmSync(`build/${firefox_folder_name}/maps`, {
       recursive: true,
       force: true,
     });
@@ -129,43 +129,49 @@ gulp.task("firefox-move-sourcemap", (cb) => {
 
 gulp.task("firefox-zip", () => {
   return gulp
-    .src([`build/${firefoxfolder_name}/**/*`])
-    .pipe(zip(`TWP.${version}.Firefox.zip`))
+    .src([`build/${firefox_folder_name}/**/*`])
+    .pipe(zip(`TWP_${version}_Firefox.zip`))
     .pipe(gulp.dest("build"));
 });
 
 gulp.task("chrome-copy-from-firefox", () => {
   return gulp
-    .src([`build/${firefoxfolder_name}/**/**`])
-    .pipe(gulp.dest(`build/${chrome_folder_name}`));
+    .src([`build/${firefox_folder_name}/**/**`])
+    .pipe(gulp.dest(`build/${chromium_folder_name}`));
 });
 
 gulp.task("chrome-rename", (cb) => {
   fs.renameSync(
-    `build/${chrome_folder_name}/manifest.json`,
-    `build/${chrome_folder_name}/firefox_manifest.json`
+    `build/${chromium_folder_name}/manifest.json`,
+    `build/${chromium_folder_name}/firefox_manifest.json`
   );
   fs.renameSync(
-    `build/${chrome_folder_name}/chrome_manifest.json`,
-    `build/${chrome_folder_name}/manifest.json`
+    `build/${chromium_folder_name}/chrome_manifest.json`,
+    `build/${chromium_folder_name}/manifest.json`
   );
   cb();
 });
 
 gulp.task("chrome-zip", () => {
   return gulp
-    .src([`build/${chrome_folder_name}/**/**`])
-    .pipe(zip(`TWP.${version}.Chrome.zip`))
+    .src([`build/${chromium_folder_name}/**/**`])
+    .pipe(zip(`TWP_${version}_Chrome.zip`))
     .pipe(gulp.dest("build"));
 });
 
 gulp.task("chrome-sign", (cb) => {
-  return crx3([`build/TWP.${version}.Chrome/manifest.json`], {
-    keyPath: "buld/Traduzir-paginas-web.pem",
-    crxPath: `build/TWP.${version}.Chrome.crx`,
-  })
-    .then(() => console.log("done"))
-    .catch(console.error);
+  const dialog = require("node-file-dialog");
+
+  if (process.argv[2] === "--sign") {
+    return dialog({type: "open-file"}).then((file) => {
+        return crx3([`build/${chromium_folder_name}/manifest.json`], {
+          keyPath: file[0],
+          crxPath: `build/${chromium_folder_name}.crx`,
+        })
+    });
+  } else {
+    cb();
+  }
 });
 
 gulp.task(

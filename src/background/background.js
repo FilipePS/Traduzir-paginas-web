@@ -141,17 +141,17 @@ chrome.runtime.onInstalled.addListener((details) => {
     });
     twpConfig.onReady(async () => {
       if (chrome.i18n.getUILanguage() === "zh-CN") {
-        twpConfig.set("pageTranslatorService", "bing")
-        twpConfig.set("textTranslatorService", "bing")
+        twpConfig.set("pageTranslatorService", "bing");
+        twpConfig.set("textTranslatorService", "bing");
       }
-    })
+    });
   } else if (
     details.reason == "update" &&
     chrome.runtime.getManifest().version != details.previousVersion
   ) {
     twpConfig.onReady(async () => {
       if (platformInfo.isMobile.any) return;
-      if (twpConfig.get("showReleaseNotes") !== "yes") return;
+      // if (twpConfig.get("showReleaseNotes") !== "yes") return;
 
       let lastTimeShowingReleaseNotes = twpConfig.get(
         "lastTimeShowingReleaseNotes"
@@ -182,7 +182,9 @@ chrome.runtime.onInstalled.addListener((details) => {
           url: chrome.runtime.getURL("/options/options.html#release_notes"),
         });
       }
+    });
 
+    twpConfig.onReady(async () => {
       translationCache.deleteTranslationCache();
     });
   }
@@ -1016,6 +1018,5 @@ twpConfig.onReady(async () => {
   );
 });
 
-
-// garante que a extensão só seja atualizada quando reiniciar o navegador ao reiniciar manualmente a extensão. 
-chrome.runtime.onUpdateAvailable.addListener(details => {});
+// garante que a extensão só seja atualizada quando reiniciar o navegador ao reiniciar manualmente a extensão.
+chrome.runtime.onUpdateAvailable.addListener((details) => {});
