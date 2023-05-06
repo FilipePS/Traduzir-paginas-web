@@ -7,6 +7,10 @@ twpConfig.onReady(function () {
     document.body.style.minWidth = "300px";
   }
 
+  $("#btnImproveTranslation").onclick = () => {
+    window.location = "improve-translation.html";
+  };
+
   // get elements
   const btnSwitchInterfaces = document.getElementById("btnSwitchInterfaces");
   const divIconTranslateContainer = document.getElementById(
@@ -130,10 +134,14 @@ twpConfig.onReady(function () {
                 color: rgb(231, 230, 228) !important;
             }
             
-            #selectTargetLanguage, #btnReset, #btnRestore, #btnTryAgain, #btnOptionB {
+            #selectTargetLanguage, #btnReset, #btnRestore, #btnTryAgain, #btnOptionB, #btnImproveTranslation {
                 color: #55a9ed !important;
                 background-color: #181a1b !important;
                 border: 1px solid #454a4d !important;
+            }
+
+            #btnImproveTranslation {
+              color: rgb(231, 230, 228) !important;
             }
 
             select, option {

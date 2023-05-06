@@ -1151,7 +1151,7 @@ twpConfig.onReady(function () {
 
   $("#removeLibre").onclick = () => {
     twpConfig.set("customServices", []);
-    chrome.runtime.sendMessage({ action: "removeLibreService" });
+    chrome.runtime.sendMessage({ action: "removeLibreService" }, checkedLastError);
     if (twpConfig.get("textTranslatorService") === "libre") {
       twpConfig.set("textTranslatorService", twpConfig.get("pageTranslatorService"))
     }

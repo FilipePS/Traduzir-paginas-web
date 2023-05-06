@@ -88,6 +88,7 @@ async function handleCustomWords(
   translated,
   originalText,
   currentPageTranslatorService,
+  currentSourceLanguage,
   currentTargetLanguage
 ) {
   try {
@@ -136,6 +137,7 @@ async function handleCustomWords(
   } catch (e) {
     return await backgroundTranslateSingleText(
       currentPageTranslatorService,
+      currentSourceLanguage,
       currentTargetLanguage,
       originalText
     );
@@ -200,6 +202,7 @@ function removeExtraDelimiter(textContext) {
 
 function backgroundTranslateHTML(
   translationService,
+  sourceLanguage,
   targetLanguage,
   sourceArray2d,
   dontSortResults
@@ -209,6 +212,7 @@ function backgroundTranslateHTML(
       {
         action: "translateHTML",
         translationService,
+        sourceLanguage,
         targetLanguage,
         sourceArray2d,
         dontSortResults,
@@ -223,6 +227,7 @@ function backgroundTranslateHTML(
 
 function backgroundTranslateText(
   translationService,
+  sourceLanguage,
   targetLanguage,
   sourceArray
 ) {
@@ -231,6 +236,7 @@ function backgroundTranslateText(
       {
         action: "translateText",
         translationService,
+        sourceLanguage,
         targetLanguage,
         sourceArray,
       },
@@ -244,6 +250,7 @@ function backgroundTranslateText(
 
 function backgroundTranslateSingleText(
   translationService,
+  sourceLanguage,
   targetLanguage,
   source
 ) {
@@ -252,6 +259,7 @@ function backgroundTranslateSingleText(
       {
         action: "translateSingleText",
         translationService,
+        sourceLanguage,
         targetLanguage,
         source,
       },
@@ -333,6 +341,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   let originalTabLanguage = "und";
   let currentPageLanguage = "und";
   let pageLanguageState = "original";
+  let currentSourceLanguage = "auto";
   let currentTargetLanguage = twpConfig.get("targetLanguage");
   let currentPageTranslatorService = twpConfig.get("pageTranslatorService");
   let dontSortResults =
@@ -773,6 +782,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               translated,
               nodes[j].textContent,
               currentPageTranslatorService,
+              currentSourceLanguage,
               currentTargetLanguage
             ).then((results) => {
               nodes[j].textContent = results;
@@ -806,6 +816,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               translated,
               nodes[j].textContent,
               currentPageTranslatorService,
+              currentSourceLanguage,
               currentTargetLanguage
             ).then((results) => {
               nodes[j].textContent = results;
@@ -894,6 +905,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           if (piecesToTranslateNow.length > 0) {
             backgroundTranslateHTML(
               currentPageTranslatorService,
+              currentSourceLanguage,
               currentTargetLanguage,
               piecesToTranslateNow.map((ptt) =>
                 ptt.nodes.map((node) => filterKeywordsInText(node.textContent))
@@ -912,6 +924,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           if (attributesToTranslateNow.length > 0) {
             backgroundTranslateText(
               currentPageTranslatorService,
+              currentSourceLanguage,
               currentTargetLanguage,
               attributesToTranslateNow.map((ati) => ati.original)
             ).then((results) => {
@@ -947,6 +960,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     backgroundTranslateSingleText(
       currentPageTranslatorService,
+      currentSourceLanguage,
       currentTargetLanguage,
       originalPageTitle
     ).then((result) => {
@@ -1060,6 +1074,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   };
 
+  pageTranslator.improveTranslation = function (info) {
+    dontSortResults = info.dontSortResults === "yes" ? true : false;
+    currentSourceLanguage = info.sourceLanguage;
+    if (pageLanguageState === "translated") {
+      pageTranslator.translatePage(info.targetLanguage);
+    }
+  };
+
   let alreadyGotTheLanguage = false;
   const observers = [];
 
@@ -1115,9 +1137,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       }
     } else if (request.action === "restorePagesWithServiceNames") {
       if (request.serviceNames.includes(currentPageTranslatorService)) {
-        pageTranslator.restorePage()
-        currentPageTranslatorService = request.newServiceName
+        pageTranslator.restorePage();
+        currentPageTranslatorService = request.newServiceName;
       }
+    } else if (request.action === "improveTranslation") {
+      pageTranslator.improveTranslation(request);
+    } else if (request.action === "getCurrentSourceLanguage") {
+      sendResponse(currentSourceLanguage);
     }
   });
 

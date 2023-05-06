@@ -273,6 +273,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     backgroundTranslateSingleText(
       currentTextTranslatorService,
+      "auto",
       currentTargetLanguage,
       text
     )

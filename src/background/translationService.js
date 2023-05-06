@@ -1336,7 +1336,7 @@ const translationService = (function () {
       translationService
         .translateHTML(
           request.translationService,
-          "auto",
+          request.sourceLanguage,
           request.targetLanguage,
           request.sourceArray2d,
           dontSaveInPersistentCache,
@@ -1353,7 +1353,7 @@ const translationService = (function () {
       translationService
         .translateText(
           request.translationService,
-          "auto",
+          request.sourceLanguage,
           request.targetLanguage,
           request.sourceArray,
           dontSaveInPersistentCache
@@ -1369,7 +1369,7 @@ const translationService = (function () {
       translationService
         .translateSingleText(
           request.translationService,
-          "auto",
+          request.sourceLanguage,
           request.targetLanguage,
           request.source,
           dontSaveInPersistentCache

@@ -186,3 +186,16 @@ option {
   left: -2px;
   top: 3px;
 }
+
+#btnImproveTranslation {
+  width: 100%;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+}
+
+#btnImproveTranslation:hover {
+  scale: 1.03;
+  box-shadow: 0 0 3px -2px black;
+}

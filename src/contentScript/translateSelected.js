@@ -905,6 +905,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     backgroundTranslateSingleText(
       currentTextTranslatorService,
+      "auto",
       currentTargetLanguage,
       eOrigText.textContent
     ).then((result) => {
@@ -1229,6 +1230,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       if (prevSelInfo.text) {
         backgroundTranslateSingleText(
           currentTextTranslatorService,
+          "auto",
           currentTargetLanguage,
           prevSelInfo.text
         ).then((result) => {

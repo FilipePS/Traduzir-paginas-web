@@ -5,6 +5,7 @@ let $ = document.querySelector.bind(document);
 twpConfig.onReady(function () {
   function backgroundTranslateSingleText(
     translationService,
+    sourceLanguage,
     targetLanguage,
     source
   ) {
@@ -13,6 +14,7 @@ twpConfig.onReady(function () {
         {
           action: "translateSingleText",
           translationService,
+          sourceLanguage
           targetLanguage,
           source,
         },
@@ -367,6 +369,7 @@ twpConfig.onReady(function () {
 
     backgroundTranslateSingleText(
       currentTextTranslatorService,
+      "auto",
       currentTargetLanguage,
       eOrigText.textContent
     ).then((result) => {

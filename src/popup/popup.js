@@ -3,6 +3,10 @@
 var $ = document.querySelector.bind(document);
 
 twpConfig.onReady(function () {
+  $("#btnImproveTranslation").onclick = () => {
+    window.location = "improve-translation.html";
+  };
+
   let popupPanelSection = twpConfig.get("popupPanelSection");
 
   function updatePopupSection() {
@@ -309,6 +313,12 @@ twpConfig.onReady(function () {
 
             .arrow {
                 border-color: rgb(231, 230, 228);
+            }
+
+            #btnImproveTranslation {
+              color: rgb(231, 230, 228) !important;
+              background-color: #181a1b !important;
+              border: 1px solid #454a4d !important;
             }
             `;
       document.head.appendChild(el);
