@@ -57,6 +57,7 @@ twpConfig.onReady(function () {
       $("#translations"),
       $("#style"),
       $("#hotkeys"),
+      $("#privacy"),
       $("#storage"),
       $("#others"),
       $("#donation"),
@@ -91,15 +92,6 @@ twpConfig.onReady(function () {
 
     if (hash === "#release_notes") {
       $("#btnPatreon").style.display = "none";
-      if (chrome.i18n.getUILanguage() === "zh-CN") {
-        setTimeout(() => {
-          alert(
-            "现在 Bing 翻译服务可用于页面翻译。\n因为你的浏览器语言是简体中文，我相信你在中国大陆，你无法使用谷歌翻译进行翻译，所以翻译服务设置为Bing。"
-          );
-          twpConfig.set("pageTranslatorService", "bing");
-          twpConfig.set("textTranslatorService", "bing");
-        }, 50);
-      }
     } else {
       $("#btnPatreon").style.display = "block";
     }
@@ -924,6 +916,73 @@ twpConfig.onReady(function () {
       for (const result of results) {
         addHotkey(result.name, result.description);
       }
+    });
+  }
+
+  // privacy options
+  $("#useAlternativeService").oninput = (e) => {
+    twpConfig.set("useAlternativeService", e.target.value);
+  };
+  $("#useAlternativeService").value = twpConfig.get("useAlternativeService");
+
+  {
+    const servicesInfo = [
+      { selector: "#btnEnableGoogle", svName: "google" },
+      { selector: "#btnEnableBing", svName: "bing" },
+      { selector: "#btnEnableYandex", svName: "yandex" },
+      { selector: "#btnEnableDeepL", svName: "deepl" },
+    ];
+
+    servicesInfo.forEach((svInfo) => {
+      $(svInfo.selector).oninput = (e) => {
+        const enabledServices = [];
+        let enabledCount = 0;
+        servicesInfo.forEach((_svInfo) => {
+          if ($(_svInfo.selector).checked) {
+            enabledCount++;
+          }
+        });
+        if (
+          enabledCount === 0 ||
+          (enabledCount === 1 && $("#btnEnableDeepL").checked)
+        ) {
+          if (e.target === $("#btnEnableGoogle")) {
+            $("#btnEnableBing").checked = true;
+          } else {
+            $("#btnEnableGoogle").checked = true;
+          }
+        }
+        servicesInfo.forEach((_svInfo) => {
+          if ($(_svInfo.selector).checked) {
+            enabledServices.push(_svInfo.svName);
+          }
+        });
+
+        if (!enabledServices.includes(twpConfig.get("textTranslatorService"))) {
+          twpConfig.set("textTranslatorService", enabledServices[0]);
+        }
+        if (!enabledServices.includes(twpConfig.get("pageTranslatorService"))) {
+          twpConfig.set("pageTranslatorService", enabledServices[0]);
+        }
+
+        const pageTranslationServices = ["google", "bing", "yandex"];
+        chrome.runtime.sendMessage(
+          {
+            action: "restorePagesWithServiceNames",
+            serviceNames: pageTranslationServices.filter(
+              (svName) => !enabledServices.includes(svName)
+            ),
+            newServiceName: twpConfig.get("pageTranslatorService"),
+          },
+          checkedLastError
+        );
+
+        twpConfig.set("enabledServices", enabledServices);
+      };
+      $(svInfo.selector).checked =
+        twpConfig.get("enabledServices").indexOf(svInfo.svName) === -1
+          ? false
+          : true;
     });
   }
 

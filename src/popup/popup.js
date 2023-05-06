@@ -349,6 +349,8 @@ twpConfig.onReady(function () {
   });
 
   $("#divIconTranslate").addEventListener("click", () => {
+    currentPageTranslatorService = twpConfig.swapPageTranslationService();
+
     chrome.tabs.query(
       {
         active: true,
@@ -359,21 +361,12 @@ twpConfig.onReady(function () {
           tabs[0].id,
           {
             action: "swapTranslationService",
+            newServiceName: currentPageTranslatorService,
           },
           checkedLastError
         );
       }
     );
-
-    if (currentPageTranslatorService === "google") {
-      currentPageTranslatorService = "bing";
-    } else if (currentPageTranslatorService === "bing") {
-      currentPageTranslatorService = "yandex";
-    } else {
-      currentPageTranslatorService = "google";
-    }
-
-    twpConfig.set("pageTranslatorService", currentPageTranslatorService);
 
     updateInterface();
   });

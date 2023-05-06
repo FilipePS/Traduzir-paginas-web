@@ -248,18 +248,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     updateIcon();
 
     getElemById("iconTranslate").onclick = (e) => {
-      pageTranslator.swapTranslationService();
+      currentPageTranslatorService = twpConfig.swapPageTranslationService();
 
-      if (currentPageTranslatorService === "google") {
-        currentPageTranslatorService = "bing";
-      } else if (currentPageTranslatorService === "bing") {
-        currentPageTranslatorService = "yandex";
-      } else {
-        currentPageTranslatorService = "google";
-      }
+      pageTranslator.swapTranslationService(currentPageTranslatorService);
       updateIcon();
-
-      twpConfig.set("pageTranslatorService", currentPageTranslatorService);
     };
 
     getElemById("btnOriginal").onclick = (e) => {

@@ -938,26 +938,26 @@ const translationService = (function () {
           );
         },
         function cbTransformResponse(result, dontSortResults) {
-          const resultArray = []
+          const resultArray = [];
 
           const parser = new DOMParser();
           const doc = parser.parseFromString(result, "text/html");
-          let currText = ""
+          let currText = "";
           doc.body.childNodes.forEach((node) => {
             if (dontSortResults) {
               if (node.nodeName == "#text") {
-                currText += node.textContent
+                currText += node.textContent;
               } else {
                 resultArray.push(currText + node.textContent);
-                currText = ""
+                currText = "";
               }
             } else {
               if (node.nodeName == "#text") {
-                currText += node.textContent
+                currText += node.textContent;
               } else {
-                const id = parseInt(node.nodeName.slice(1)) - 10
+                const id = parseInt(node.nodeName.slice(1)) - 10;
                 resultArray[id] = currText + node.textContent;
-                currText = ""
+                currText = "";
               }
             }
           });
@@ -1167,6 +1167,20 @@ const translationService = (function () {
     /** @type {Service} */ /** @type {?} */ (deeplService)
   );
 
+  /**
+   * Get translation service from your name
+   * Make sure the service is enabled
+   * @param {string} serviceName
+   * @returns {Service} service
+   */
+  const getSafeServiceByName = (serviceName) => {
+    if (twpConfig.get("enabledServices").includes(serviceName)) {
+      return serviceList.get(serviceName)
+    } else {
+      return null
+    }
+  }
+
   translationService.translateHTML = async (
     serviceName,
     sourceLanguage,
@@ -1180,7 +1194,7 @@ const translationService = (function () {
       serviceName,
       true
     );
-    const service = serviceList.get(serviceName) || serviceList.get("google");
+    const service = getSafeServiceByName(serviceName);
     return await service.translate(
       sourceLanguage,
       targetLanguage,
@@ -1202,7 +1216,7 @@ const translationService = (function () {
       serviceName,
       false
     );
-    const service = serviceList.get(serviceName) || serviceList.get("google");
+    const service = getSafeServiceByName(serviceName);
     return (
       await service.translate(
         sourceLanguage,
@@ -1225,7 +1239,7 @@ const translationService = (function () {
       serviceName,
       false
     );
-    const service = serviceList.get(serviceName) || serviceList.get("google");
+    const service = getSafeServiceByName(serviceName);
     return (
       await service.translate(
         sourceLanguage,
@@ -1238,9 +1252,9 @@ const translationService = (function () {
 
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     // If the translation request came from an incognito window, the translation should not be cached on disk.
-    let dontSaveInPersistentCache = true
+    let dontSaveInPersistentCache = true;
     if (twpConfig.get("enableDiskCache") !== "yes") {
-      dontSaveInPersistentCache = true
+      dontSaveInPersistentCache = true;
     } else {
       dontSaveInPersistentCache = sender.tab ? sender.tab.incognito : false;
     }

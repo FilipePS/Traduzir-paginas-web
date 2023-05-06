@@ -259,8 +259,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 				<div id="moreOrLess"><i class="arrow up" id="more"></i><i class="arrow down" id="less"></i></div>
 				<ul>
 					<li title="Google" id="sGoogle">g</li>
-					<li title="Yandex" id="sYandex">y</li>
 					<li title="Bing" id="sBing">b</li>
+					<li title="Yandex" id="sYandex">y</li>
 					<li title="DeepL" id="sDeepL" hidden>d</li>
 					<li style="opacity: 0; cursor: move;">O</li>
 				</ul>
@@ -644,7 +644,23 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sGoogle.classList.add("selected");
     }
 
-    if (twpConfig.get("enableDeepL") === "yes") {
+    const enabledServices = twpConfig.get("enabledServices");
+    if (enabledServices.includes("google")) {
+      sGoogle.removeAttribute("hidden");
+    } else {
+      sGoogle.setAttribute("hidden", "");
+    }
+    if (enabledServices.includes("bing")) {
+      sBing.removeAttribute("hidden");
+    } else {
+      sBing.setAttribute("hidden", "");
+    }
+    if (enabledServices.includes("yandex")) {
+      sYandex.removeAttribute("hidden");
+    } else {
+      sYandex.setAttribute("hidden", "");
+    }
+    if (enabledServices.includes("deepl")) {
       sDeepL.removeAttribute("hidden");
     } else {
       sDeepL.setAttribute("hidden", "");
@@ -669,13 +685,30 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     twpConfig.onChanged((name, newvalue) => {
       switch (name) {
-        case "enableDeepL":
-          if (newvalue === "yes") {
+        case "enabledServices": {
+          const enabledServices = newvalue;
+          if (enabledServices.includes("google")) {
+            sGoogle.removeAttribute("hidden");
+          } else {
+            sGoogle.setAttribute("hidden", "");
+          }
+          if (enabledServices.includes("bing")) {
+            sBing.removeAttribute("hidden");
+          } else {
+            sBing.setAttribute("hidden", "");
+          }
+          if (enabledServices.includes("yandex")) {
+            sYandex.removeAttribute("hidden");
+          } else {
+            sYandex.setAttribute("hidden", "");
+          }
+          if (enabledServices.includes("deepl")) {
             sDeepL.removeAttribute("hidden");
           } else {
             sDeepL.setAttribute("hidden", "");
           }
           break;
+        }
         case "expandPanelTranslateSelectedText":
           const prevHeight = parseInt(getComputedStyle(eDivResult).height);
           if (newvalue === "yes") {

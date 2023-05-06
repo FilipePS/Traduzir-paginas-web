@@ -1053,14 +1053,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     attributesToTranslate = [];
   };
 
-  pageTranslator.swapTranslationService = function () {
-    if (currentPageTranslatorService === "google") {
-      currentPageTranslatorService = "bing";
-    } else if (currentPageTranslatorService === "bing") {
-      currentPageTranslatorService = "yandex";
-    } else {
-      currentPageTranslatorService = "google";
-    }
+  pageTranslator.swapTranslationService = function (newServiceName) {
+    currentPageTranslatorService = newServiceName;
     if (pageLanguageState === "translated") {
       pageTranslator.translatePage();
     }
@@ -1098,7 +1092,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     } else if (request.action === "getCurrentPageTranslatorService") {
       sendResponse(currentPageTranslatorService);
     } else if (request.action === "swapTranslationService") {
-      pageTranslator.swapTranslationService();
+      pageTranslator.swapTranslationService(request.newServiceName);
     } else if (request.action === "toggle-translation") {
       if (pageLanguageState === "translated") {
         pageTranslator.restorePage();
@@ -1118,6 +1112,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             pageTranslator.translatePage();
           }
         });
+      }
+    } else if (request.action === "restorePagesWithServiceNames") {
+      if (request.serviceNames.includes(currentPageTranslatorService)) {
+        pageTranslator.restorePage()
+        currentPageTranslatorService = request.newServiceName
       }
     }
   });

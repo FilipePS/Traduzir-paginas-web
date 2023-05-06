@@ -5170,15 +5170,17 @@ const twpLang = (function () {
     forPageTranslation = false
   ) {
     lang = twpLang.fixTLanguageCode(lang);
-    if (!twpLang.SupportedLanguages[serviceName])
-      return pageTranslationServices[0];
+    if (!twpLang.SupportedLanguages[serviceName]) return null;
     if (
       forPageTranslation &&
       pageTranslationServices.indexOf(serviceName) === -1
     )
-      serviceName = pageTranslationServices[0];
+      return null;
     if (twpLang.SupportedLanguages[serviceName].indexOf(lang) !== -1)
       return serviceName;
+
+    if (twpConfig.get("useAlternativeService") !== "yes") return null;
+
     for (const sn in twpLang.SupportedLanguages) {
       if (sn === serviceName) continue;
       if (forPageTranslation && pageTranslationServices.indexOf(sn) === -1)
@@ -5189,7 +5191,7 @@ const twpLang = (function () {
         return sn;
       }
     }
-    return pageTranslationServices[0];
+    return null;
   };
 
   /**

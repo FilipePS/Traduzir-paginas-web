@@ -383,8 +383,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
                     </ul>
                     <ul>
                         <li title="Google" id="sGoogle">g</li>
-                        <li title="Yandex" id="sYandex">y</li>
                         <li title="Bing" id="sBing">b</li>
+                        <li title="Yandex" id="sYandex">y</li>
                         <li title="DeepL" id="sDeepL" hidden>d</li>
                         <li title="Listen" data-i18n-title="btnListen" id="listen">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

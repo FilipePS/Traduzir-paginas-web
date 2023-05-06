@@ -278,20 +278,54 @@ twpConfig.onReady(function () {
       break;
   }
 
-  if (twpConfig.get("enableDeepL") === "yes") {
+  const enabledServices = twpConfig.get("enabledServices");
+  if (enabledServices.includes("google")) {
+    sGoogle.removeAttribute("hidden");
+  } else {
+    sGoogle.setAttribute("hidden", "");
+  }
+  if (enabledServices.includes("bing")) {
+    sBing.removeAttribute("hidden");
+  } else {
+    sBing.setAttribute("hidden", "");
+  }
+  if (enabledServices.includes("yandex")) {
+    sYandex.removeAttribute("hidden");
+  } else {
+    sYandex.setAttribute("hidden", "");
+  }
+  if (enabledServices.includes("deepl")) {
     sDeepL.removeAttribute("hidden");
   } else {
     sDeepL.setAttribute("hidden", "");
   }
+
   twpConfig.onChanged((name, newvalue) => {
     switch (name) {
-      case "enableDeepL":
-        if (newvalue === "yes") {
+      case "enabledServices": {
+        const enabledServices = newvalue;
+        if (enabledServices.includes("google")) {
+          sGoogle.removeAttribute("hidden");
+        } else {
+          sGoogle.setAttribute("hidden", "");
+        }
+        if (enabledServices.includes("bing")) {
+          sBing.removeAttribute("hidden");
+        } else {
+          sBing.setAttribute("hidden", "");
+        }
+        if (enabledServices.includes("yandex")) {
+          sYandex.removeAttribute("hidden");
+        } else {
+          sYandex.setAttribute("hidden", "");
+        }
+        if (enabledServices.includes("deepl")) {
           sDeepL.removeAttribute("hidden");
         } else {
           sDeepL.setAttribute("hidden", "");
         }
         break;
+      }
     }
   });
 

@@ -21,6 +21,7 @@
       <a href="#translations" class="w3-bar-item w3-button" data-i18n="msgTranslations">Translations</a>
       <a href="#style" class="w3-bar-item w3-button" data-i18n="msgStyle">Style</a>
       <a href="#hotkeys" class="w3-bar-item w3-button desktopOnly" data-i18n="msgHotkeys">Hotkeys</a>
+      <a href="#privacy" class="w3-bar-item w3-button" data-i18n="msgPrivacy">Privacy</a>
       <a href="#storage" class="w3-bar-item w3-button" data-i18n="msgStorage">Storage</a>
       <a href="#others" class="w3-bar-item w3-button" data-i18n="lblOthers">Others</a>
     </div>
@@ -242,8 +243,8 @@
         </p>
         <select id="textTranslatorService" class="w3-select w3-margin">
           <option value="google">Google</option>
-          <option value="yandex">Yandex</option>
           <option value="bing">Bing</option>
+          <option value="yandex">Yandex</option>
           <option value="deepl" hidden>DeepL</option>
         </select>
         <br />
@@ -386,6 +387,28 @@
 
         <p><b data-i18n="lblKeyboardShortcuts">Keyboard shortcuts</b></p>
         <ul id="KeyboardShortcuts" class="w3-container" style="max-width: 680px"></ul>
+      </div>
+
+      <div id="privacy" class="w3-container">
+        <p>
+          <b>Select the translation services you want to use</b>
+          <div class="w3-container">
+            <label for="btnEnableGoogle" style="user-select: none;"><input type="checkbox" id="btnEnableGoogle" checked> Google</label>
+            <br>
+            <label for="btnEnableBing" style="user-select: none;"><input type="checkbox" id="btnEnableBing" checked> Bing</label>
+            <br>
+            <label for="btnEnableYandex" style="user-select: none;"><input type="checkbox" id="btnEnableYandex" checked> Yandex</label>
+            <br>
+            <label for="btnEnableDeepL" style="user-select: none;"><input type="checkbox" id="btnEnableDeepL" checked> DeepL</label>
+            <br>
+          </div>
+        </p>
+        <p>
+          <b>Silently use an alternate translation service if the current target language is not supported by the selected translation service</b>
+          <select id="useAlternativeService" class="w3-select w3-margin">
+            <option value="yes" data-i18n="msgYes">Yes</option>
+            <option value="no" data-i18n="msgNo">No</option>
+          </select>
       </div>
 
       <div id="storage" class="w3-container">

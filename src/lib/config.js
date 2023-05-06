@@ -6,11 +6,12 @@ const twpConfig = (function () {
   const defaultTargetLanguages = ["en", "es", "de"];
   /**
    * all configName available
-   * @typedef {"pageTranslatorService" | "textTranslatorService" | "ttsSpeed" | "enableDeepL" | "targetLanguage" | "targetLanguageTextTranslation" | "targetLanguages" | "alwaysTranslateSites" | "neverTranslateSites" | "sitesToTranslateWhenHovering" | "langsToTranslateWhenHovering" | "alwaysTranslateLangs" | "neverTranslateLangs" | "customDictionary" | "showTranslatePageContextMenu" | "showTranslateSelectedContextMenu" | "showButtonInTheAddressBar" | "showOriginalTextWhenHovering" | "showTranslateSelectedButton" | "showPopupMobile" | "useOldPopup" | "darkMode" | "popupBlueWhenSiteIsTranslated" | "popupPanelSection" | "showReleaseNotes" | "dontShowIfPageLangIsTargetLang" | "dontShowIfPageLangIsUnknown" | "dontShowIfSelectedTextIsTargetLang" | "dontShowIfSelectedTextIsUnknown" | "hotkeys" | "expandPanelTranslateSelectedText" | "translateTag_pre" | "dontSortResults" | "translateDynamicallyCreatedContent" | "autoTranslateWhenClickingALink" | "translateSelectedWhenPressTwice" | "translateTextOverMouseWhenPressTwice" | "translateClickingOnce" | "enableDiskCache"} DefaultConfigNames
+   * @typedef {"pageTranslatorService" | "textTranslatorService" | "enabledServices" | "ttsSpeed" | "enableDeepL" | "targetLanguage" | "targetLanguageTextTranslation" | "targetLanguages" | "alwaysTranslateSites" | "neverTranslateSites" | "sitesToTranslateWhenHovering" | "langsToTranslateWhenHovering" | "alwaysTranslateLangs" | "neverTranslateLangs" | "customDictionary" | "showTranslatePageContextMenu" | "showTranslateSelectedContextMenu" | "showButtonInTheAddressBar" | "showOriginalTextWhenHovering" | "showTranslateSelectedButton" | "showPopupMobile" | "useOldPopup" | "darkMode" | "popupBlueWhenSiteIsTranslated" | "popupPanelSection" | "showReleaseNotes" | "dontShowIfPageLangIsTargetLang" | "dontShowIfPageLangIsUnknown" | "dontShowIfSelectedTextIsTargetLang" | "dontShowIfSelectedTextIsUnknown" | "hotkeys" | "expandPanelTranslateSelectedText" | "translateTag_pre" | "dontSortResults" | "translateDynamicallyCreatedContent" | "autoTranslateWhenClickingALink" | "translateSelectedWhenPressTwice" | "translateTextOverMouseWhenPressTwice" | "translateClickingOnce" | "enableDiskCache" | "useAlternativeService"} DefaultConfigNames
    */
   const defaultConfig = {
     pageTranslatorService: "google", // google yandex bing
     textTranslatorService: "google", // google yandex bing deepl
+    enabledServices: ["google", "bing", "yandex", "deepl"],
     ttsSpeed: 1.0,
     enableDeepL: "yes",
     targetLanguage: null,
@@ -47,7 +48,8 @@ const twpConfig = (function () {
     translateSelectedWhenPressTwice: "no",
     translateTextOverMouseWhenPressTwice: "no",
     translateClickingOnce: "no",
-    enableDiskCache: "no"
+    enableDiskCache: "no",
+    useAlternativeService: "yes",
   };
   const config = structuredClone(defaultConfig);
 
@@ -535,6 +537,30 @@ const twpConfig = (function () {
       return value;
     }
   }
+
+  /**
+   * Switch between page translation services that are enabled
+   * @returns {string} newServiceName
+   */
+  twpConfig.swapPageTranslationService = function () {
+    const pageTranslationServices = ["google", "bing", "yandex"];
+    const pageEnabledServices = twpConfig
+      .get("enabledServices")
+      .filter((svName) => pageTranslationServices.includes(svName));
+    const index = pageEnabledServices.indexOf(
+      twpConfig.get("pageTranslatorService")
+    );
+    if (index !== -1) {
+      if (pageEnabledServices[index + 1]) {
+        twpConfig.set("pageTranslatorService", pageEnabledServices[index + 1]);
+      } else {
+        twpConfig.set("pageTranslatorService", pageEnabledServices[0]);
+      }
+    } else {
+      twpConfig.set("pageTranslatorService", pageEnabledServices[0]);
+    }
+    return twpConfig.get("pageTranslatorService");
+  };
 
   return twpConfig;
 })();

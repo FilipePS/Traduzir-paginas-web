@@ -155,7 +155,7 @@ gulp.task("chrome-rename", (cb) => {
 gulp.task("chrome-zip", () => {
   return gulp
     .src([`build/${chromium_folder_name}/**/**`])
-    .pipe(zip(`TWP_${version}_Chrome.zip`))
+    .pipe(zip(`${chromium_folder_name}.zip`))
     .pipe(gulp.dest("build"));
 });
 

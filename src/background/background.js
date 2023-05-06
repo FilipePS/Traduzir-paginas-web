@@ -95,6 +95,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       sendResponse(tabToMimeType[tabs[0].id]);
     });
     return true;
+  } else if (request.action === "restorePagesWithServiceNames") {
+    chrome.tabs.query({}, (tabs) => {
+      tabs.forEach((tab) => {
+        chrome.tabs.sendMessage(tab.id, request, checkedLastError);
+      });
+    });
   }
 });
 
@@ -151,7 +157,7 @@ chrome.runtime.onInstalled.addListener((details) => {
   ) {
     twpConfig.onReady(async () => {
       if (platformInfo.isMobile.any) return;
-      // if (twpConfig.get("showReleaseNotes") !== "yes") return;
+      if (twpConfig.get("showReleaseNotes") !== "yes") return;
 
       let lastTimeShowingReleaseNotes = twpConfig.get(
         "lastTimeShowingReleaseNotes"
@@ -731,21 +737,11 @@ if (typeof chrome.commands !== "undefined") {
             tabs[0].id,
             {
               action: "swapTranslationService",
+              newServiceName: twpConfig.swapPageTranslationService(),
             },
             checkedLastError
           )
       );
-
-      let currentPageTranslatorService = twpConfig.get("pageTranslatorService");
-      if (currentPageTranslatorService === "google") {
-        currentPageTranslatorService = "bing";
-      } else if (currentPageTranslatorService === "bing") {
-        currentPageTranslatorService = "yandex";
-      } else {
-        currentPageTranslatorService = "google";
-      }
-
-      twpConfig.set("pageTranslatorService", currentPageTranslatorService);
     } else if (command === "hotkey-show-original") {
       chrome.tabs.query(
         {
