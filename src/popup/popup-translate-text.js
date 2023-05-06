@@ -14,7 +14,7 @@ twpConfig.onReady(function () {
         {
           action: "translateSingleText",
           translationService,
-          sourceLanguage
+          sourceLanguage,
           targetLanguage,
           source,
         },
