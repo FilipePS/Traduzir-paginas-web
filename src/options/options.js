@@ -761,6 +761,16 @@ twpConfig.onReady(function () {
       description = "Enable the extension";
     }
 
+    function escapeHtml(unsafe){
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+    description = escapeHtml(description)
+
     const li = document.createElement("li");
     li.classList.add("shortcut-row");
     li.setAttribute("id", hotkeyname);
@@ -1145,6 +1155,8 @@ twpConfig.onReady(function () {
     if (twpConfig.get("textTranslatorService") === "libre") {
       twpConfig.set("textTranslatorService", twpConfig.get("pageTranslatorService"))
     }
+    $("#libreURL").value = ""
+    $("#libreKEY").value = ""
   };
 
   const libre = twpConfig.get("customServices").find(cs => cs.name === "libre")
