@@ -24,6 +24,7 @@
       <a href="#privacy" class="w3-bar-item w3-button" data-i18n="msgPrivacy">Privacy</a>
       <a href="#storage" class="w3-bar-item w3-button" data-i18n="msgStorage">Storage</a>
       <a href="#others" class="w3-bar-item w3-button" data-i18n="lblOthers">Others</a>
+      <a href="#experimental" class="w3-bar-item w3-button" data-i18n="lblExperimental">Experimental</a>
     </div>
     <b><a href="#donation" class="w3-bar-item w3-button w3-padding"><span data-i18n="lblMakeDonation">Make a
           donation</span> &#10084;</a></b>
@@ -501,6 +502,18 @@
             <option value="yes" data-i18n="msgYes">Yes</option>
           </select>
         </div>
+      </div>
+
+      <div id="experimental" class="w3-container">
+        <h3>Configure your Libretranslate server for text (not page) translation.</h3>
+        <label for="libreURL">Your Server URL</label><br>
+        <input type="text" id="libreURL" placeholder="https://my-libretranslate-server.com/translate" style="width: 90%;"><br>
+        <br>
+        <label for="libreKEY">Your API key</label><br>
+        <input type="text" id="libreKEY" placeholder="c02976e6-ec19-11ed-a05b-0242ac120003" style="width: 90%;"><br>
+        <br>
+        <button id="addLibre">Add Libretranslate</button>
+        <button id="removeLibre">Remove Libretranslate</button>
       </div>
     </div>
 

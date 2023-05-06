@@ -262,6 +262,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 					<li title="Bing" id="sBing">b</li>
 					<li title="Yandex" id="sYandex">y</li>
 					<li title="DeepL" id="sDeepL" hidden>d</li>
+					<li title="Libretranslate" id="sLibre" hidden>l</li>
 					<li style="opacity: 0; cursor: move;">O</li>
 				</ul>
 			</div>
@@ -397,6 +398,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     const sYandex = shadowRoot.getElementById("sYandex");
     const sBing = shadowRoot.getElementById("sBing");
     const sDeepL = shadowRoot.getElementById("sDeepL");
+    const sLibre = shadowRoot.getElementById("sLibre");
     const eCopy = shadowRoot.getElementById("copy");
     const eReplace = shadowRoot.getElementById("replace");
     const eListenOriginal = shadowRoot.getElementById("listenOriginal");
@@ -496,6 +498,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sYandex.classList.remove("selected");
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
+      sLibre.classList.remove("selected");
 
       sGoogle.classList.add("selected");
     };
@@ -508,6 +511,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sYandex.classList.remove("selected");
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
+      sLibre.classList.remove("selected");
 
       sYandex.classList.add("selected");
     };
@@ -520,6 +524,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sYandex.classList.remove("selected");
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
+      sLibre.classList.remove("selected");
 
       sBing.classList.add("selected");
     };
@@ -532,8 +537,22 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sYandex.classList.remove("selected");
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
+      sLibre.classList.remove("selected");
 
       sDeepL.classList.add("selected");
+    };
+    sLibre.onclick = () => {
+      currentTextTranslatorService = "libre";
+      twpConfig.set("textTranslatorService", "libre");
+      translateNewInput();
+
+      sGoogle.classList.remove("selected");
+      sYandex.classList.remove("selected");
+      sBing.classList.remove("selected");
+      sDeepL.classList.remove("selected");
+      sLibre.classList.remove("selected");
+
+      sLibre.classList.add("selected");
     };
 
     const setTargetLanguage = shadowRoot.getElementById("setTargetLanguage");
@@ -640,6 +659,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sDeepL.classList.add("selected");
     } else if (currentTextTranslatorService == "bing") {
       sBing.classList.add("selected");
+    } else if (currentTextTranslatorService == "libre") {
+      sLibre.classList.add("selected");
     } else {
       sGoogle.classList.add("selected");
     }
@@ -664,6 +685,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sDeepL.removeAttribute("hidden");
     } else {
       sDeepL.setAttribute("hidden", "");
+    }
+    if (twpConfig.get("customServices").find((cs) => cs.name === "libre")) {
+      sLibre.removeAttribute("hidden");
+    } else {
+      sLibre.setAttribute("hidden", "");
     }
 
     if (
@@ -706,6 +732,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             sDeepL.removeAttribute("hidden");
           } else {
             sDeepL.setAttribute("hidden", "");
+          }
+          break;
+        }
+        case "customServices": {
+          if (newvalue.find((cs) => cs.name === "libre")) {
+            sLibre.removeAttribute("hidden");
+          } else {
+            sLibre.setAttribute("hidden", "");
           }
           break;
         }

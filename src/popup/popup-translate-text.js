@@ -126,6 +126,7 @@ twpConfig.onReady(function () {
   const sYandex = document.getElementById("sYandex");
   const sBing = document.getElementById("sBing");
   const sDeepL = document.getElementById("sDeepL");
+  const sLibre = document.getElementById("sLibre");
   const eCopy = document.getElementById("copy");
   const eListen = document.getElementById("listen");
 
@@ -166,6 +167,7 @@ twpConfig.onReady(function () {
     sYandex.classList.remove("selected");
     sBing.classList.remove("selected");
     sDeepL.classList.remove("selected");
+    sLibre.classList.remove("selected");
 
     sGoogle.classList.add("selected");
   };
@@ -178,6 +180,7 @@ twpConfig.onReady(function () {
     sYandex.classList.remove("selected");
     sBing.classList.remove("selected");
     sDeepL.classList.remove("selected");
+    sLibre.classList.remove("selected");
 
     sYandex.classList.add("selected");
   };
@@ -190,6 +193,7 @@ twpConfig.onReady(function () {
     sYandex.classList.remove("selected");
     sBing.classList.remove("selected");
     sDeepL.classList.remove("selected");
+    sLibre.classList.remove("selected");
 
     sBing.classList.add("selected");
   };
@@ -202,8 +206,22 @@ twpConfig.onReady(function () {
     sYandex.classList.remove("selected");
     sBing.classList.remove("selected");
     sDeepL.classList.remove("selected");
+    sLibre.classList.remove("selected");
 
     sDeepL.classList.add("selected");
+  };
+  sLibre.onclick = () => {
+    currentTextTranslatorService = "libre";
+    twpConfig.set("textTranslatorService", "libre");
+    translateText();
+
+    sGoogle.classList.remove("selected");
+    sYandex.classList.remove("selected");
+    sBing.classList.remove("selected");
+    sDeepL.classList.remove("selected");
+    sLibre.classList.remove("selected");
+
+    sLibre.classList.add("selected");
   };
 
   const setTargetLanguage = document.getElementById("setTargetLanguage");
@@ -273,6 +291,8 @@ twpConfig.onReady(function () {
     case "google":
       sGoogle.classList.add("selected");
       break;
+    case "libre":
+      sLibre.classList.add("selected");
     default:
       sGoogle.classList.add("selected");
       break;
@@ -299,6 +319,11 @@ twpConfig.onReady(function () {
   } else {
     sDeepL.setAttribute("hidden", "");
   }
+  if (twpConfig.get("customServices").find((cs) => cs.name === "libre")) {
+    sLibre.removeAttribute("hidden");
+  } else {
+    sLibre.setAttribute("hidden", "");
+  }
 
   twpConfig.onChanged((name, newvalue) => {
     switch (name) {
@@ -323,6 +348,14 @@ twpConfig.onReady(function () {
           sDeepL.removeAttribute("hidden");
         } else {
           sDeepL.setAttribute("hidden", "");
+        }
+        break;
+      }
+      case "customServices": {
+        if (newvalue.find((cs) => cs.name === "libre")) {
+          sLibre.removeAttribute("hidden");
+        } else {
+          sLibre.setAttribute("hidden", "");
         }
         break;
       }

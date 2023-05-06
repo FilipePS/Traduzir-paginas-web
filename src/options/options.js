@@ -60,6 +60,7 @@ twpConfig.onReady(function () {
       $("#privacy"),
       $("#storage"),
       $("#others"),
+      $("#experimental"),
       $("#donation"),
       $("#release_notes"),
     ];
@@ -1123,6 +1124,36 @@ twpConfig.onReady(function () {
     );
   };
 
+  // experimental options
+  $("#addLibre").onclick = () => {
+    const libre = { name: "libre", url: $("#libreURL").value, apiKey: $("#libreKEY").value };
+    try {
+      new URL(libre.url)
+      if (libre.apiKey.length < 10) {
+        throw new Error("Provides an API Key")
+      }
+    } catch (e) {
+      alert(e)
+    }
+    twpConfig.set("customServices", [libre]);
+    chrome.runtime.sendMessage({ action: "createLibreService", libre });
+  };
+
+  $("#removeLibre").onclick = () => {
+    twpConfig.set("customServices", []);
+    chrome.runtime.sendMessage({ action: "removeLibreService" });
+    if (twpConfig.get("textTranslatorService") === "libre") {
+      twpConfig.set("textTranslatorService", twpConfig.get("pageTranslatorService"))
+    }
+  };
+
+  const libre = twpConfig.get("customServices").find(cs => cs.name === "libre")
+  if (libre) {
+    $("#libreURL").value = libre.url
+    $("#libreKEY").value = libre.apiKey
+  }
+
+  // donation options
   if (navigator.language === "pt-BR") {
     $("#currency").value = "BRL";
     $("#donateInUSD").style.display = "none";

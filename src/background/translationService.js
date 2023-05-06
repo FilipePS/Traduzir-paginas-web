@@ -326,7 +326,7 @@ const translationService = (function () {
   /**
    * Takes a string formatted with the translated text and returns a `resultArray`.
    * @callback callback_cbTransformResponse
-   * @param {String} response
+   * @param {String} result
    * @param {boolean} dontSortResults
    * @returns {string[]} resultArray
    */
@@ -544,7 +544,7 @@ const translationService = (function () {
             };
 
         xhr.send(
-          this.cbGetExtraParameters
+          this.cbGetRequestBody
             ? this.cbGetRequestBody(sourceLanguage, targetLanguage, requests)
             : undefined
         );
@@ -1156,6 +1156,76 @@ const translationService = (function () {
     }
   })();
 
+  /**
+   * Creates the libreTranslate translation service from URL and apiKey
+   * @param {string} url
+   * @param {string} apiKey
+   * @returns {Service} libreService
+   */
+  const createLibreService = (url, apiKey) => {
+    return new (class extends Service {
+      constructor() {
+        super(
+          "libre",
+          url,
+          "POST",
+          function cbTransformRequest(sourceArray) {
+            return sourceArray[0];
+          },
+          function cbParseResponse(response) {
+            return [
+              {
+                text: response.translatedText,
+                detectedLanguage: response.detectedLanguage.language,
+              },
+            ];
+          },
+          function cbTransformResponse(result, dontSortResults) {
+            return [result];
+          },
+          null,
+          function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
+            const params = new URLSearchParams();
+            params.append("q", requests[0].originalText);
+            params.append("source", sourceLanguage);
+            params.append("target", targetLanguage);
+            params.append("format", "text");
+            params.append("api_key", apiKey);
+            return params.toString();
+          },
+          function cbGetExtraHeaders() {
+            return [
+              {
+                name: "Content-Type",
+                value: "application/x-www-form-urlencoded",
+              },
+            ];
+          }
+        );
+      }
+
+      /**
+       *
+       * @param {string} sourceLanguage - This parameter is not used
+       * @param {*} targetLanguage
+       * @param {*} sourceArray2d - Only the string `sourceArray2d[0][0]` will be translated.
+       * @param {*} dontSaveInPersistentCache - This parameter is not used
+       * @param {*} dontSortResults - This parameter is not used
+       * @returns
+       */
+      /*
+      async translate(
+        sourceLanguage,
+        targetLanguage,
+        sourceArray2d,
+        dontSaveInPersistentCache,
+        dontSortResults = false
+      ) {
+      }
+      //*/
+    })();
+  };
+
   /** @type {Map<string, Service>} */
   const serviceList = new Map();
 
@@ -1174,12 +1244,15 @@ const translationService = (function () {
    * @returns {Service} service
    */
   const getSafeServiceByName = (serviceName) => {
-    if (twpConfig.get("enabledServices").includes(serviceName)) {
-      return serviceList.get(serviceName)
+    if (
+      twpConfig.get("enabledServices").includes(serviceName) ||
+      twpConfig.get("customServices").find((cs) => cs.name === serviceName)
+    ) {
+      return serviceList.get(serviceName);
     } else {
-      return null
+      return null;
     }
-  }
+  };
 
   translationService.translateHTML = async (
     serviceName,
@@ -1314,8 +1387,22 @@ const translationService = (function () {
           service.removeTranslationsWithError();
         }
       });
+    } else if (request.action === "createLibreService") {
+      serviceList.set(
+        "libre",
+        createLibreService(request.libre.url, request.libre.apiKey)
+      );
+    } else if (request.action === "removeLibreService") {
+      serviceList.delete("libre");
     }
   });
+
+  if (twpConfig.get("customServices").find((cs) => cs.name === "libre")) {
+    const libre = twpConfig
+      .get("customServices")
+      .find((cs) => cs.name === "libre");
+    serviceList.set("libre", createLibreService(libre.url, libre.apiKey));
+  }
 
   return translationService;
 })();
