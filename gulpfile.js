@@ -51,7 +51,9 @@ gulp.task("clean", (cb) => {
 });
 
 gulp.task("firefox-copy", () => {
-  return gulp.src(["src/**/**"]).pipe(gulp.dest(`build/${firefox_folder_name}`));
+  return gulp
+    .src(["src/**/**"])
+    .pipe(gulp.dest(`build/${firefox_folder_name}`));
 });
 
 gulp.task("firefox-babel", () => {
@@ -127,6 +129,30 @@ gulp.task("firefox-move-sourcemap", (cb) => {
   });
 });
 
+gulp.task("firefox-self-hosted", (cb) => {
+  return new Promise((resolve, reject) => {
+    gulp
+      .src([`build/${firefox_folder_name}/**/**`])
+      .pipe(gulp.dest(`build/${firefox_folder_name}_selfhosted`))
+      .on("error", reject)
+      .on("end", resolve);
+  }).then(() => {
+    const manifest = JSON.parse(
+      fs.readFileSync(
+        `build/${firefox_folder_name}_selfhosted/manifest.json`,
+        "utf8"
+      )
+    );
+    manifest.browser_specific_settings.gecko.update_url =
+      "https://raw.githubusercontent.com/FilipePS/Traduzir-paginas-web/master/dist/firefox/updates.json";
+    fs.writeFileSync(
+      `build/${firefox_folder_name}_selfhosted/manifest.json`,
+      JSON.stringify(manifest, null, 4),
+      "utf8"
+    );
+  });
+});
+
 gulp.task("firefox-zip", () => {
   return gulp
     .src([`build/${firefox_folder_name}/**/*`])
@@ -163,11 +189,11 @@ gulp.task("chrome-sign", (cb) => {
   const dialog = require("node-file-dialog");
 
   if (process.argv[2] === "--sign") {
-    return dialog({type: "open-file"}).then((file) => {
-        return crx3([`build/${chromium_folder_name}/manifest.json`], {
-          keyPath: file[0],
-          crxPath: `build/${chromium_folder_name}.crx`,
-        })
+    return dialog({ type: "open-file" }).then((file) => {
+      return crx3([`build/${chromium_folder_name}/manifest.json`], {
+        keyPath: file[0],
+        crxPath: `build/${chromium_folder_name}.crx`,
+      });
     });
   } else {
     cb();
@@ -180,6 +206,7 @@ gulp.task(
     "firefox-copy",
     "firefox-babel",
     "firefox-move-sourcemap",
+    "firefox-self-hosted",
     "firefox-zip"
   )
 );
