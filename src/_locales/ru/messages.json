@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Не сортировать результаты Google Translate"
+    "message": "Do not sort translation results"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Переводить динамически созданный контент"
@@ -360,7 +360,7 @@
     "message": "Переводить страницу по однократному нажатию кнопки в адресной строке. Чтобы увидеть всплывающее окно, щелкните правой кнопкой"
   },
   "btnShowPopup": {
-    "message": "Показывать всплывающее окно"
+    "message": "Показать всплывающее окно"
   },
   "msgToTranslateThisDocument": {
     "message": "Для перевода документа $DOC_TYPE$ необходимо сконвертировать его в HTML",
@@ -485,5 +485,26 @@
   },
   "lblEnableDiskCache": {
     "message": "Включить постоянный кеш переводов (кеш на диске)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Select the original website language"
+  },
+  "selectTargetLanguage": {
+    "message": "Select target language"
+  },
+  "msgImproveTranslation": {
+    "message": "Improve translation"
+  },
+  "lblExperimental": {
+    "message": "Experimental"
+  },
+  "msgPrivacy": {
+    "message": "Privacy"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Select the translation services you want to use"
+  },
+  "useAlternativeService": {
+    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
   }
 }

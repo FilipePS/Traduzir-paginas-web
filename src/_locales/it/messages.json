@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Non ordinare i risultati di Google Traduttore"
+    "message": "Do not sort translation results"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Traduci contenuti creati dinamicamente"
@@ -484,6 +484,27 @@
     "message": "Ho creato, aggiornato e mantenuto questa estensione per oltre tre anni. È sorprendente vedere che abbiamo oltre 600.000 utenti giornalieri e che tutte queste persone sono riuscite a migrare a Firefox in modo permanente.\n\nMi propongo di rilasciare una nuova versione di questa estensione ogni mese e di continuare a migliorarla.\n\nSarei grato se tu potessi aiutarmi finanziariamente diventando un membro di Patreon e sostenendomi nell'apportare miglioramenti a questa estensione.\n\nGrazie a tutti coloro che hanno già contribuito a questo progetto."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Abilita la cache persistente di traduzione (cache su disco)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Select the original website language"
+  },
+  "selectTargetLanguage": {
+    "message": "Select target language"
+  },
+  "msgImproveTranslation": {
+    "message": "Improve translation"
+  },
+  "lblExperimental": {
+    "message": "Experimental"
+  },
+  "msgPrivacy": {
+    "message": "Privacy"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Select the translation services you want to use"
+  },
+  "useAlternativeService": {
+    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
   }
 }

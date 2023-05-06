@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Nie sortuj wyników Tłumacza Google"
+    "message": "Do not sort translation results"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Tłumacz treści, które dynamicznie się zmieniają"
@@ -485,5 +485,26 @@
   },
   "lblEnableDiskCache": {
     "message": "Włącz trwałą pamięć podręczną tłumaczeń (na dysku)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Select the original website language"
+  },
+  "selectTargetLanguage": {
+    "message": "Select target language"
+  },
+  "msgImproveTranslation": {
+    "message": "Improve translation"
+  },
+  "lblExperimental": {
+    "message": "Experimental"
+  },
+  "msgPrivacy": {
+    "message": "Privacy"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Select the translation services you want to use"
+  },
+  "useAlternativeService": {
+    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
   }
 }

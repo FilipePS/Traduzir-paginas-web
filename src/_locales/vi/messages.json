@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Không sắp xếp các kết quả của Google Dịch"
+    "message": "Do not sort translation results"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Dịch các nội dung động"
@@ -485,5 +485,26 @@
   },
   "lblEnableDiskCache": {
     "message": "Kích hoạt bộ nhớ đệm dịch lâu dài (bộ nhớ đệm trên ổ cứng)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Select the original website language"
+  },
+  "selectTargetLanguage": {
+    "message": "Select target language"
+  },
+  "msgImproveTranslation": {
+    "message": "Improve translation"
+  },
+  "lblExperimental": {
+    "message": "Experimental"
+  },
+  "msgPrivacy": {
+    "message": "Privacy"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Select the translation services you want to use"
+  },
+  "useAlternativeService": {
+    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
   }
 }

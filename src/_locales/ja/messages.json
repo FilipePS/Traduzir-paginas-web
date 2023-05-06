@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Google翻訳の結果を並べ替えない"
+    "message": "Do not sort translation results"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "動的に読み込まれたコンテンツを翻訳"
@@ -485,5 +485,26 @@
   },
   "lblEnableDiskCache": {
     "message": "Enable persistent translation cache (on-disk cache)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Select the original website language"
+  },
+  "selectTargetLanguage": {
+    "message": "Select target language"
+  },
+  "msgImproveTranslation": {
+    "message": "Improve translation"
+  },
+  "lblExperimental": {
+    "message": "Experimental"
+  },
+  "msgPrivacy": {
+    "message": "Privacy"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Select the translation services you want to use"
+  },
+  "useAlternativeService": {
+    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
   }
 }

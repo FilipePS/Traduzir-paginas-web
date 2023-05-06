@@ -60,7 +60,7 @@
     "message": "原文"
   },
   "btnMobileTranslated": {
-    "message": "已翻譯"
+    "message": "譯文"
   },
   "optionsNeverTranslate": {
     "message": "永不翻譯這些網站"
@@ -72,7 +72,7 @@
     "message": "顯示行動裝置彈出視窗"
   },
   "optionPopupThreeFingers": {
-    "message": "當我以三隻手指觸控時。"
+    "message": "以三指點螢幕時"
   },
   "msgOpenOnYandexTranslator": {
     "message": "在 Yandex 翻譯中打開"
@@ -174,7 +174,7 @@
     "message": "鍵盤快捷鍵"
   },
   "msgThanksForUseExtension": {
-    "message": "感謝您使用這個擴充套件"
+    "message": "感謝您使用這款擴充套件"
   },
   "msgIWillBeGrateful": {
     "message": "如果您有能力捐款，我將感激不盡。"
@@ -183,7 +183,7 @@
     "message": "停留在這些網站上時顯示譯文"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "當網站翻譯完成時讓彈出圖示變為藍色"
+    "message": "頁面翻譯完成時讓彈出圖示變藍"
   },
   "more": {
     "message": "更多"
@@ -288,7 +288,7 @@
     "message": "文字轉語音速度"
   },
   "lblEnableDeepL": {
-    "message": "啟用 DeepL 作為文字翻譯服務"
+    "message": "讓 DeepL 成爲翻譯服務的選項"
   },
   "enterShortcut": {
     "message": "輸入快捷鍵"
@@ -312,7 +312,7 @@
     "message": "將頁面翻譯成目標語言"
   },
   "lblTranslateTag_pre": {
-    "message": "為 $HTML_TAG_NAME$ 標籤啟用翻譯",
+    "message": "翻譯 $HTML_TAG_NAME$ 標籤",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -320,10 +320,10 @@
     }
   },
   "lbldontsortresults": {
-    "message": "不要對 Google 翻譯的結果進行排序"
+    "message": "Do not sort translation results"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "翻譯動態內容"
+    "message": "Translate dynamically created content"
   },
   "calculatestorage": {
     "message": "計算"
@@ -332,7 +332,7 @@
     "message": "透過 PayPal 資助我"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "當點到一個將您帶到與目前網站相同網域的連結時，自動進行翻譯"
+    "message": "翻譯後，自動翻譯頁面中指向相同網域的鏈結之頁面"
   },
   "openNativeShortcutManager": {
     "message": "開啟原生快捷鍵管理器"
@@ -485,5 +485,26 @@
   },
   "lblEnableDiskCache": {
     "message": "啟用永久翻譯快取（將快取存入磁碟）"
+  },
+  "selectOriginalLanguage": {
+    "message": "Select the original website language"
+  },
+  "selectTargetLanguage": {
+    "message": "Select target language"
+  },
+  "msgImproveTranslation": {
+    "message": "Improve translation"
+  },
+  "lblExperimental": {
+    "message": "Experimental"
+  },
+  "msgPrivacy": {
+    "message": "Privacy"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Select the translation services you want to use"
+  },
+  "useAlternativeService": {
+    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
   }
 }

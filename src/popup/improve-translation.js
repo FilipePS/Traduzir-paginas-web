@@ -35,7 +35,9 @@ twpConfig.onReady(function () {
       { action: "getCurrentSourceLanguage" },
       (sourceLanguage) => {
         checkedLastError();
-        $("#selectOriginalLanguage").value = sourceLanguage;
+        $("#selectOriginalLanguage").value = sourceLanguage
+          ? sourceLanguage
+          : "auto";
       }
     );
   });
