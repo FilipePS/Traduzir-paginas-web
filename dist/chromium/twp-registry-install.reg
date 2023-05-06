@@ -6,9 +6,14 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallAllowlist]
 "1337"="bolggfoncklhniejomgplkjcllmnonbh"
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallSources]
-"1"="https://github.com/*"
-"2"="https://objects.githubusercontent.com/*"
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist]
 "1337"="bolggfoncklhniejomgplkjcllmnonbh"
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallSources]
+"1335"="https://github.com/*"
+"1336"="https://objects.githubusercontent.com/*"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources]
+"1335"="https://github.com/*"
+"1336"="https://objects.githubusercontent.com/*"
