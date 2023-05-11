@@ -105,8 +105,8 @@ const twpI18n = (function () {
    * Updates interface location messages based on user preference
    * @returns {Promise<void>}
    */
-  twpI18n.updateUiMessages = async () => {
-    let uiLanguage = twpConfig.get("uiLanguage");
+  twpI18n.updateUiMessages = async (temporaryLanguage = null) => {
+    let uiLanguage = temporaryLanguage || twpConfig.get("uiLanguage");
     uiLanguage = uiLanguage.replace("-", "_");
     if (uiLanguage === "default") {
       messages = null;

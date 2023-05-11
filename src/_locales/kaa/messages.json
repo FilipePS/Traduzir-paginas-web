@@ -465,7 +465,7 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Choose another language"
+    "message": "Basqa tildi tańlań"
   },
   "msgHasBeenUpdated": {
     "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
@@ -506,5 +506,11 @@
   },
   "useAlternativeService": {
     "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }

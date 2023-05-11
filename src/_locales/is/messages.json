@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Ekki flokka þýðingarniðurstöður"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Þýða breytilega búið til efni"
@@ -487,24 +487,30 @@
     "message": "Virkja varanlegt þýðingarskyndiminni (skyndiminni á diski)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Veldu upprunalega tungumál vefsíðunnar"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Veldu marktungumál"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Bæta þýðingar"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Prufa"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Friðhelgi"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Veldu þýðingarþjónustuna sem þú vilt nota"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Notaðu aðra þýðingarþjónustu án vitundar ef núverandi marktungumál er ekki stutt af völdu þýðingarþjónustunni"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }

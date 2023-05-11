@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Nu aranja rezultatele traducerii"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Tradu conținutul creat dinamic"
@@ -487,24 +487,30 @@
     "message": "Activează memoria cache persistentă de traducere (memoria cache pe disc)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Alege limba originală a sitului web"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Alege limba de destinație"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Îmbunătățește traducerea"
   },
   "lblExperimental": {
     "message": "Experimental"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Confidențialitate"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Alege serviciile de traducere pe care vrei să le folosești"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Folosește automat un serviciu de traducere alternativ dacă limba de destinație actuală nu este acceptată de serviciul de traducere ales"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }

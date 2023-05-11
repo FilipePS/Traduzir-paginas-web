@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Não ordenar os resultados da tradução"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Traduzir conteúdo criado dinamicamente"
@@ -487,24 +487,30 @@
     "message": "Ativar cache de tradução persistente (cache em disco)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Selecione o idioma original do site"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Selecione o idioma de destino"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Melhorar a tradução"
   },
   "lblExperimental": {
     "message": "Experimental"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Privacidade"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Selecione os serviços de tradução que deseja usar"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Use silenciosamente um serviço de tradução alternativo se o idioma de destino atual não for compatível com o serviço de tradução selecionado"
+  },
+  "msgDefaultLanguage": {
+    "message": "Idioma padrão"
+  },
+  "msgExtUILanguage": {
+    "message": "Idioma da interface do usuário da extensão"
   }
 }

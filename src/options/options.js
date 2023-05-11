@@ -23,8 +23,12 @@ fetch("./release-notes/en.html")
 
 var $ = document.querySelector.bind(document);
 
-twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
+twpConfig.onReady().then(() => twpI18n.updateUiMessages(sessionStorage.getItem("temporaryUiLanguage"))).then(() => {
   twpI18n.translateDocument();
+  document.querySelector("[data-i18n='msgDefaultLanguage']").textContent = twpI18n.getMessage("msgDefaultLanguage") + " - Default language"
+
+  const temporaryUiLanguage = sessionStorage.getItem("temporaryUiLanguage");
+  sessionStorage.removeItem("temporaryUiLanguage")
 
   if (platformInfo.isMobile.any) {
     let style = document.createElement("style");
@@ -156,11 +160,21 @@ twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
   updateDarkMode();
 
   // target languages
-  $("#selectUiLanguage").value = twpConfig.get("uiLanguage");
+  $("#selectUiLanguage").value = temporaryUiLanguage || twpConfig.get("uiLanguage");
   $("#selectUiLanguage").onchange = (e) => {
-    twpConfig.set("uiLanguage", e.target.value);
+    if (e.target.value === "default") {
+      twpConfig.set("uiLanguage", "default");
+    } else {
+      sessionStorage.setItem("temporaryUiLanguage", e.target.value);
+    }
     location.reload();
   };
+  $("#btnApplyUiLanguage").onclick = () => {
+    if (temporaryUiLanguage) {
+      twpConfig.set("uiLanguage", temporaryUiLanguage === "default" ? "default" : twpLang.fixUILanguageCode(temporaryUiLanguage));
+      location.reload();
+    }
+  }
 
   const targetLanguage = twpConfig.get("targetLanguage");
   $("#selectTargetLanguage").value = targetLanguage;

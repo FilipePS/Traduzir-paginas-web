@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "번역 결과를 정렬하지 않음"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "동적으로 생성된 콘텐츠 번역"
@@ -487,24 +487,30 @@
     "message": "영구 번역 캐시 사용 (디스크 캐시)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "웹사이트 원본 언어 선택"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "도착어 선택"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "번역 개선"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "실험"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "개인정보"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "사용할 번역 서비스 선택"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "선택한 번역 서비스가 도착어를 지원하지 않는 경우 자동으로 대체 번역 서비스를 사용합니다."
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }

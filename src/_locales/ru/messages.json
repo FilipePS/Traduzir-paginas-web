@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Не сортировать результаты перевода"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Переводить динамически созданный контент"
@@ -484,27 +484,33 @@
     "message": "Я разрабатываю, обновляю и поддерживаю это расширение более трёх лет. Удивительно видеть, что у нас более 600 000 ежедневных пользователей, и все они смогли навсегда перейти на Firefox.\n\nЯ планирую выпускать новую версию этого расширения каждый месяц и постоянно улучшать её.\n\nЯ был бы признателен, если бы вы могли помочь мне финансово, став участником Patreon и поддержав меня в улучшении этого расширения.\n\nСпасибо всем, кто уже внёс свой вклад в этот проект."
   },
   "lblEnableDiskCache": {
-    "message": "Включить постоянный кеш переводов (кеш на диске)"
+    "message": "Включить постоянный кэш переводов (кэш на диске)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Выберите исходный язык сайта"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Выберите целевой язык"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Улучшить перевод"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Экспериментальные"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Конфиденциальность"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Выберите сервис перевода, который вы хотите использовать"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Автоматически использовать альтернативную службу перевода, если текущий целевой язык не поддерживается выбранным сервисом перевода"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }

@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Không sắp xếp kết quả dịch"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Dịch các nội dung động"
@@ -487,24 +487,30 @@
     "message": "Kích hoạt bộ nhớ đệm dịch lâu dài (bộ nhớ đệm trên ổ cứng)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Chọn ngôn ngữ gốc của trang web"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Chọn ngôn ngữ cần dịch sang"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Cải thiện bản dịch"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Thử nghiệm"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Riêng tư"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Chọn dịch vụ dịch thuật bạn muốn sử dụng"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Âm thầm sử dụng dịch vụ dịch thuật thay thế nếu ngôn ngữ cần dịch sang không được hỗ trợ bởi dịch vụ dịch thuật đã chọn"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }
