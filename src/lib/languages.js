@@ -5181,7 +5181,10 @@ const twpLang = (function () {
    * @returns {string[]} languageList
    */
   twpLang.getLanguageList = function () {
-    let uiLanguage = chrome.i18n.getUILanguage();
+    let uiLanguage =
+      twpConfig.get("uiLanguage") !== "default"
+        ? twpConfig.get("uiLanguage")
+        : chrome.i18n.getUILanguage();
     uiLanguage = twpLang.fixUILanguageCode(uiLanguage) || "en";
     return allLanguagesNames[uiLanguage];
   };
@@ -5232,13 +5235,13 @@ const twpLang = (function () {
    * twpLang.codeToLanguage("de")
    * // returns "German"
    * twpLang.codeToLanguage("und")
-   * // returns "Unknown" -- chrome.i18n.getMessage("msgUnknownLanguage")
+   * // returns "Unknown" -- twpI18n.getMessage("msgUnknownLanguage")
    * @param {string} langCode
    * @returns {string} languageName
    */
   twpLang.codeToLanguage = function (langCode) {
     if (langCode === "und") {
-      return chrome.i18n.getMessage("msgUnknownLanguage");
+      return twpI18n.getMessage("msgUnknownLanguage");
     }
 
     const languageList = twpLang.getLanguageList();

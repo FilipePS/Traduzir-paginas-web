@@ -13,7 +13,9 @@ $("#btnApply").addEventListener("click", () => {
   window.location = "popup.html";
 });
 
-twpConfig.onReady(function () {
+twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
+  twpI18n.translateDocument();
+
   let langs = twpLang.getLanguageList();
 
   const langsSorted = [];

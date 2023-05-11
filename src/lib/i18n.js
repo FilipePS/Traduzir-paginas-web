@@ -1,6 +1,9 @@
 "use strict";
 
-void (function () {
+const twpI18n = (function () {
+  const twpI18n = {};
+  let messages = null;
+
   /**
    * Gets the localized string for the specified message
    * @example
@@ -12,20 +15,60 @@ void (function () {
    * @param {string | string[]} substitutions
    * @returns {string} localizedString
    */
-  function getMessage(messageName, substitutions) {
-    return chrome.i18n.getMessage(messageName, substitutions);
-  }
+  twpI18n.getMessage = function (messageName, substitutions = null) {
+    try {
+      if (messages) {
+        const message = messages[messageName];
+        if (!message) return "";
+
+        /** @type {string} */
+        let finalMessage = message.message;
+
+        if (message.placeholders) {
+          for (const [key, value] of Object.entries(message.placeholders)) {
+            /** @type {string} */
+            let content = value.content;
+            let match = content.match(/\$([1-9][0-9]*)/);
+            let index = match ? parseInt(match[1]) : null;
+            if (index) {
+              if (substitutions instanceof Array) {
+                content = content.replaceAll(
+                  "$" + index,
+                  String(substitutions[index - 1])
+                );
+              } else if (index === 1) {
+                content = content.replaceAll(
+                  "$" + index,
+                  String(substitutions)
+                );
+              } else {
+                content = content.replaceAll("$" + index, "");
+              }
+            }
+            finalMessage = finalMessage.replaceAll("$" + key + "$", content);
+          }
+        }
+
+        return finalMessage;
+      } else {
+        return chrome.i18n.getMessage(messageName, substitutions);
+      }
+    } catch (e) {
+      console.log(e);
+      return chrome.i18n.getMessage(messageName, substitutions);
+    }
+  };
 
   /**
    * translate attribute in all childNodes
-   * @param {Document | HTMLElement} root
+   * @param {Document | HTMLElement | ShadowRoot} root
    * @param {string} attributeName
    */
   function translateAttributes(root, attributeName) {
     for (const element of root.querySelectorAll(
       `[data-i18n-${attributeName}]`
     )) {
-      let text = getMessage(
+      let text = twpI18n.getMessage(
         element.getAttribute(`data-i18n-${attributeName}`),
         element.getAttribute("data-i18n-ph-value")
       );
@@ -39,12 +82,11 @@ void (function () {
 
   /**
    * translate innerText and attributes for a Document or HTMLElement
-   * @param {Document | HTMLElement} root
+   * @param {Document | HTMLElement | ShadowRoot} root
    */
-  //@ts-ignore
-  chrome.i18n.translateDocument = function (root = document) {
+  twpI18n.translateDocument = function (root = document) {
     for (const element of root.querySelectorAll("[data-i18n]")) {
-      let text = getMessage(
+      let text = twpI18n.getMessage(
         element.getAttribute("data-i18n"),
         element.getAttribute("data-i18n-ph-value")
       );
@@ -59,9 +101,39 @@ void (function () {
     translateAttributes(root, "label");
   };
 
-  // detects if this script is not a contentScript and then call i18n.translateDocument
-  if (typeof chrome.tabs !== "undefined") {
-    //@ts-ignore
-    chrome.i18n.translateDocument();
-  }
+  /**
+   * Updates interface location messages based on user preference
+   * @returns {Promise<void>}
+   */
+  twpI18n.updateUiMessages = async () => {
+    let uiLanguage = twpConfig.get("uiLanguage");
+    uiLanguage = uiLanguage.replace("-", "_");
+    if (uiLanguage === "default") {
+      messages = null;
+    } else {
+      return await fetch(
+        chrome.runtime.getURL(`/_locales/${uiLanguage}/messages.json`)
+      )
+        .then((response) => response.json())
+        .then((result) => {
+          messages = result;
+        })
+        .catch((e) => {
+          messages = null;
+          console.warn(e);
+        });
+    }
+  };
+
+  twpConfig.onReady(function () {
+    twpI18n.updateUiMessages();
+
+    twpConfig.onChanged(function (name, newValue) {
+      if (name === "uiLanguage") {
+        twpI18n.updateUiMessages();
+      }
+    });
+  });
+
+  return twpI18n;
 })();

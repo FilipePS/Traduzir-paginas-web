@@ -123,7 +123,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     document.body.appendChild(divElement);
 
-    chrome.i18n.translateDocument(shadowRoot);
+    twpI18n.translateDocument(shadowRoot);
 
     function enableDarkMode() {
       if (!shadowRoot.getElementById("darkModeElement")) {
@@ -291,11 +291,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       if (twpConfig.get("showTranslateSelectedButton") === "yes") {
         twpConfig.set("showTranslateSelectedButton", "no");
         getElemById("btnTranslateSelectedText").textContent =
-          chrome.i18n.getMessage("msgTranslateSelectedText");
+          twpI18n.getMessage("msgTranslateSelectedText");
       } else {
         twpConfig.set("showTranslateSelectedButton", "yes");
         getElemById("btnTranslateSelectedText").textContent =
-          chrome.i18n.getMessage("msgNoTranslateSelectedText");
+          twpI18n.getMessage("msgNoTranslateSelectedText");
       }
       getElemById("menu").style.display = "none";
       e.stopPropagation();
@@ -335,10 +335,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     if (twpConfig.get("showTranslateSelectedButton") === "yes") {
       getElemById("btnTranslateSelectedText").textContent =
-        chrome.i18n.getMessage("msgNoTranslateSelectedText");
+        twpI18n.getMessage("msgNoTranslateSelectedText");
     } else {
       getElemById("btnTranslateSelectedText").textContent =
-        chrome.i18n.getMessage("msgTranslateSelectedText");
+        twpI18n.getMessage("msgTranslateSelectedText");
     }
 
     getElemById("btnDonate").innerHTML += " &#10084;";

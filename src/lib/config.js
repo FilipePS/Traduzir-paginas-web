@@ -6,9 +6,10 @@ const twpConfig = (function () {
   const defaultTargetLanguages = ["en", "es", "de"];
   /**
    * all configName available
-   * @typedef {"pageTranslatorService" | "textTranslatorService" | "enabledServices" | "ttsSpeed" | "enableDeepL" | "targetLanguage" | "targetLanguageTextTranslation" | "targetLanguages" | "alwaysTranslateSites" | "neverTranslateSites" | "sitesToTranslateWhenHovering" | "langsToTranslateWhenHovering" | "alwaysTranslateLangs" | "neverTranslateLangs" | "customDictionary" | "showTranslatePageContextMenu" | "showTranslateSelectedContextMenu" | "showButtonInTheAddressBar" | "showOriginalTextWhenHovering" | "showTranslateSelectedButton" | "showPopupMobile" | "useOldPopup" | "darkMode" | "popupBlueWhenSiteIsTranslated" | "popupPanelSection" | "showReleaseNotes" | "dontShowIfPageLangIsTargetLang" | "dontShowIfPageLangIsUnknown" | "dontShowIfSelectedTextIsTargetLang" | "dontShowIfSelectedTextIsUnknown" | "hotkeys" | "expandPanelTranslateSelectedText" | "translateTag_pre" | "dontSortResults" | "translateDynamicallyCreatedContent" | "autoTranslateWhenClickingALink" | "translateSelectedWhenPressTwice" | "translateTextOverMouseWhenPressTwice" | "translateClickingOnce" | "enableDiskCache" | "useAlternativeService" | "customServices"} DefaultConfigNames
+   * @typedef {"uiLanguage" | "pageTranslatorService" | "textTranslatorService" | "enabledServices" | "ttsSpeed" | "enableDeepL" | "targetLanguage" | "targetLanguageTextTranslation" | "targetLanguages" | "alwaysTranslateSites" | "neverTranslateSites" | "sitesToTranslateWhenHovering" | "langsToTranslateWhenHovering" | "alwaysTranslateLangs" | "neverTranslateLangs" | "customDictionary" | "showTranslatePageContextMenu" | "showTranslateSelectedContextMenu" | "showButtonInTheAddressBar" | "showOriginalTextWhenHovering" | "showTranslateSelectedButton" | "showPopupMobile" | "useOldPopup" | "darkMode" | "popupBlueWhenSiteIsTranslated" | "popupPanelSection" | "showReleaseNotes" | "dontShowIfPageLangIsTargetLang" | "dontShowIfPageLangIsUnknown" | "dontShowIfSelectedTextIsTargetLang" | "dontShowIfSelectedTextIsUnknown" | "hotkeys" | "expandPanelTranslateSelectedText" | "translateTag_pre" | "dontSortResults" | "translateDynamicallyCreatedContent" | "autoTranslateWhenClickingALink" | "translateSelectedWhenPressTwice" | "translateTextOverMouseWhenPressTwice" | "translateClickingOnce" | "enableDiskCache" | "useAlternativeService" | "customServices"} DefaultConfigNames
    */
   const defaultConfig = {
+    uiLanguage: "default",
     pageTranslatorService: "google", // google yandex bing
     textTranslatorService: "google", // google yandex bing deepl
     enabledServices: ["google", "bing", "yandex", "deepl"],
@@ -78,7 +79,7 @@ const twpConfig = (function () {
    * @param {function} callback
    * @returns {Promise}
    */
-  twpConfig.onReady = function (callback) {
+  twpConfig.onReady = function (callback = null) {
     if (callback) {
       if (configIsReady) {
         callback();

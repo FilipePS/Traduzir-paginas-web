@@ -2,7 +2,9 @@
 
 let $ = document.querySelector.bind(document);
 
-twpConfig.onReady(function () {
+twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
+  twpI18n.translateDocument();
+
   function backgroundTranslateSingleText(
     translationService,
     sourceLanguage,
@@ -246,8 +248,8 @@ twpConfig.onReady(function () {
 
   eListen.classList.remove("selected");
   eListen.onclick = () => {
-    const msgListen = chrome.i18n.getMessage("btnListen");
-    const msgStopListening = chrome.i18n.getMessage("btnStopListening");
+    const msgListen = twpI18n.getMessage("btnListen");
+    const msgStopListening = twpI18n.getMessage("btnStopListening");
 
     eListen.classList.remove("selected");
     eListen.setAttribute("title", msgStopListening);

@@ -584,8 +584,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     const eListen = shadowRoot.getElementById("listen");
     eListen.onclick = () => {
-      const msgListen = chrome.i18n.getMessage("btnListen");
-      const msgStopListening = chrome.i18n.getMessage("btnStopListening");
+      const msgListen = twpI18n.getMessage("btnListen");
+      const msgStopListening = twpI18n.getMessage("btnStopListening");
 
       eListen.classList.remove("selected");
       eListen.setAttribute("title", msgStopListening);
@@ -604,7 +604,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     document.body.appendChild(divElement);
 
-    chrome.i18n.translateDocument(shadowRoot);
+    twpI18n.translateDocument(shadowRoot);
 
     const targetLanguageButtons = shadowRoot.querySelectorAll(
       "#setTargetLanguage li"

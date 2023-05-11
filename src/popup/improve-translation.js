@@ -27,7 +27,9 @@ $("#btnApply").addEventListener("click", () => {
   });
 });
 
-twpConfig.onReady(function () {
+twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
+  twpI18n.translateDocument();
+
   $("#dontSortResults").value = twpConfig.get("dontSortResults");
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.tabs.sendMessage(

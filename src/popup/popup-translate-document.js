@@ -27,7 +27,7 @@ async function downloadDocument(url) {
         if (e.lengthComputable) {
           const percentComplete = (e.loaded / e.total) * 100;
           pleaseWait.textContent =
-            chrome.i18n.getMessage("msgPleaseWait") +
+            twpI18n.getMessage("msgPleaseWait") +
             " " +
             percentComplete.toFixed(1) +
             "%";
@@ -97,7 +97,7 @@ selectService.onclick = async (e) => {
           conversionAlert.style.display = "block";
           googleTranslate.style.display = "none";
           selectService.style.display = "block";
-          cannotUseGoogle.textContent = chrome.i18n.getMessage(
+          cannotUseGoogle.textContent = twpI18n.getMessage(
             "msgFileLargerThan",
             "10 MB"
           );
@@ -140,7 +140,9 @@ function enableDarkMode() {
   if ($("#lightModeElement")) $("#lightModeElement").remove();
 }
 
-twpConfig.onReady(() => {
+twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
+  twpI18n.translateDocument();
+
   switch (twpConfig.get("darkMode")) {
     case "auto":
       if (matchMedia("(prefers-color-scheme: dark)").matches) enableDarkMode();

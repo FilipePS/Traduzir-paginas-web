@@ -110,7 +110,7 @@ function updateTranslateSelectedContextMenu() {
     if (twpConfig.get("showTranslateSelectedContextMenu") === "yes") {
       chrome.contextMenus.create({
         id: "translate-selected-text",
-        title: chrome.i18n.getMessage("msgTranslateSelectedText"),
+        title: twpI18n.getMessage("msgTranslateSelectedText"),
         contexts: ["selection"],
       });
     }
@@ -120,10 +120,10 @@ function updateTranslateSelectedContextMenu() {
 function updateContextMenu(pageLanguageState = "original") {
   let contextMenuTitle;
   if (pageLanguageState === "translated") {
-    contextMenuTitle = chrome.i18n.getMessage("btnRestore");
+    contextMenuTitle = twpI18n.getMessage("btnRestore");
   } else {
     const targetLanguage = twpConfig.get("targetLanguage");
-    contextMenuTitle = chrome.i18n.getMessage(
+    contextMenuTitle = twpI18n.getMessage(
       "msgTranslateFor",
       twpLang.codeToLanguage(targetLanguage)
     );
@@ -244,32 +244,32 @@ function resetBrowserAction(forceShow = false) {
 if (typeof chrome.contextMenus !== "undefined") {
   chrome.contextMenus.create({
     id: "browserAction-showPopup",
-    title: chrome.i18n.getMessage("btnShowPopup"),
+    title: twpI18n.getMessage("btnShowPopup"),
     contexts: ["browser_action"],
   });
   chrome.contextMenus.create({
     id: "pageAction-showPopup",
-    title: chrome.i18n.getMessage("btnShowPopup"),
+    title: twpI18n.getMessage("btnShowPopup"),
     contexts: ["page_action"],
   });
   chrome.contextMenus.create({
     id: "never-translate",
-    title: chrome.i18n.getMessage("btnNeverTranslate"),
+    title: twpI18n.getMessage("btnNeverTranslate"),
     contexts: ["browser_action", "page_action"],
   });
   chrome.contextMenus.create({
     id: "more-options",
-    title: chrome.i18n.getMessage("btnMoreOptions"),
+    title: twpI18n.getMessage("btnMoreOptions"),
     contexts: ["browser_action", "page_action"],
   });
   chrome.contextMenus.create({
     id: "browserAction-pdf-to-html",
-    title: chrome.i18n.getMessage("msgPDFtoHTML"),
+    title: twpI18n.getMessage("msgPDFtoHTML"),
     contexts: ["browser_action"],
   });
   chrome.contextMenus.create({
     id: "pageAction-pdf-to-html",
-    title: chrome.i18n.getMessage("msgPDFtoHTML"),
+    title: twpI18n.getMessage("msgPDFtoHTML"),
     contexts: ["page_action"],
   });
 

@@ -6,7 +6,7 @@ fetch("./release-notes/en.html")
     window.scrollTo(0, 0);
     document.getElementById("release_notes").innerHTML = responseText;
     document.getElementById("msgHasBeenUpdated").textContent =
-      chrome.i18n.getMessage("msgHasBeenUpdated");
+      twpI18n.getMessage("msgHasBeenUpdated");
     document.getElementById("msgHasBeenUpdated").innerHTML = document
       .getElementById("msgHasBeenUpdated")
       .textContent.replace(
@@ -18,12 +18,14 @@ fetch("./release-notes/en.html")
         "<b>" + chrome.runtime.getManifest().version + "</b>"
       );
     document.getElementById("donationText").textContent =
-      chrome.i18n.getMessage("donationText");
+      twpI18n.getMessage("donationText");
   });
 
 var $ = document.querySelector.bind(document);
 
-twpConfig.onReady(function () {
+twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
+  twpI18n.translateDocument();
+
   if (platformInfo.isMobile.any) {
     let style = document.createElement("style");
     style.textContent = ".desktopOnly {display: none !important}";
@@ -77,11 +79,11 @@ twpConfig.onReady(function () {
 
     let text;
     if (hash === "#donation") {
-      text = chrome.i18n.getMessage("lblMakeDonation");
+      text = twpI18n.getMessage("lblMakeDonation");
     } else if (hash === "#release_notes") {
-      text = chrome.i18n.getMessage("lblReleaseNotes");
+      text = twpI18n.getMessage("lblReleaseNotes");
     } else {
-      text = chrome.i18n.getMessage("lblSettings");
+      text = twpI18n.getMessage("lblSettings");
     }
     $("#itemSelectedName").textContent = text;
 
@@ -154,6 +156,11 @@ twpConfig.onReady(function () {
   updateDarkMode();
 
   // target languages
+  $("#selectUiLanguage").value = twpConfig.get("uiLanguage");
+  $("#selectUiLanguage").onchange = (e) => {
+    twpConfig.set("uiLanguage", e.target.value);
+    location.reload();
+  };
 
   const targetLanguage = twpConfig.get("targetLanguage");
   $("#selectTargetLanguage").value = targetLanguage;
@@ -761,15 +768,15 @@ twpConfig.onReady(function () {
       description = "Enable the extension";
     }
 
-    function escapeHtml(unsafe){
-        return unsafe
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
+    function escapeHtml(unsafe) {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
     }
-    description = escapeHtml(description)
+    description = escapeHtml(description);
 
     const li = document.createElement("li");
     li.classList.add("shortcut-row");
@@ -800,7 +807,7 @@ twpConfig.onReady(function () {
     }
 
     function setError(errorname) {
-      const text = chrome.i18n.getMessage("hotkeyError_" + errorname);
+      const text = twpI18n.getMessage("hotkeyError_" + errorname);
       switch (errorname) {
         case "ctrlOrAlt":
           error.textContent = text ? text : "Include Ctrl or Alt";
@@ -999,7 +1006,7 @@ twpConfig.onReady(function () {
 
   // storage options
   $("#deleteTranslationCache").onclick = (e) => {
-    if (confirm(chrome.i18n.getMessage("doYouWantToDeleteTranslationCache"))) {
+    if (confirm(twpI18n.getMessage("doYouWantToDeleteTranslationCache"))) {
       chrome.runtime.sendMessage(
         {
           action: "deleteTranslationCache",
@@ -1055,13 +1062,11 @@ twpConfig.onReady(function () {
       const reader = new FileReader();
       reader.onload = function () {
         try {
-          if (
-            confirm(chrome.i18n.getMessage("doYouWantOverwriteAllSettings"))
-          ) {
+          if (confirm(twpI18n.getMessage("doYouWantOverwriteAllSettings"))) {
             twpConfig.import(reader.result);
           }
         } catch (e) {
-          alert(chrome.i18n.getMessage("fileIsCorrupted"));
+          alert(twpI18n.getMessage("fileIsCorrupted"));
           console.error(e);
         }
       };
@@ -1074,7 +1079,7 @@ twpConfig.onReady(function () {
     document.body.removeChild(element);
   };
   $("#resetToDefault").onclick = (e) => {
-    if (confirm(chrome.i18n.getMessage("doYouWantRestoreSettings"))) {
+    if (confirm(twpI18n.getMessage("doYouWantRestoreSettings"))) {
       twpConfig.restoreToDefault();
     }
   };
@@ -1136,14 +1141,18 @@ twpConfig.onReady(function () {
 
   // experimental options
   $("#addLibre").onclick = () => {
-    const libre = { name: "libre", url: $("#libreURL").value, apiKey: $("#libreKEY").value };
+    const libre = {
+      name: "libre",
+      url: $("#libreURL").value,
+      apiKey: $("#libreKEY").value,
+    };
     try {
-      new URL(libre.url)
+      new URL(libre.url);
       if (libre.apiKey.length < 10) {
-        throw new Error("Provides an API Key")
+        throw new Error("Provides an API Key");
       }
     } catch (e) {
-      alert(e)
+      alert(e);
     }
     twpConfig.set("customServices", [libre]);
     chrome.runtime.sendMessage({ action: "createLibreService", libre });
@@ -1151,18 +1160,26 @@ twpConfig.onReady(function () {
 
   $("#removeLibre").onclick = () => {
     twpConfig.set("customServices", []);
-    chrome.runtime.sendMessage({ action: "removeLibreService" }, checkedLastError);
+    chrome.runtime.sendMessage(
+      { action: "removeLibreService" },
+      checkedLastError
+    );
     if (twpConfig.get("textTranslatorService") === "libre") {
-      twpConfig.set("textTranslatorService", twpConfig.get("pageTranslatorService"))
+      twpConfig.set(
+        "textTranslatorService",
+        twpConfig.get("pageTranslatorService")
+      );
     }
-    $("#libreURL").value = ""
-    $("#libreKEY").value = ""
+    $("#libreURL").value = "";
+    $("#libreKEY").value = "";
   };
 
-  const libre = twpConfig.get("customServices").find(cs => cs.name === "libre")
+  const libre = twpConfig
+    .get("customServices")
+    .find((cs) => cs.name === "libre");
   if (libre) {
-    $("#libreURL").value = libre.url
-    $("#libreKEY").value = libre.apiKey
+    $("#libreURL").value = libre.url;
+    $("#libreKEY").value = libre.apiKey;
   }
 
   // donation options

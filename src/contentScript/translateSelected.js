@@ -232,7 +232,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 						</g>
 						</svg>
 					</li>
-					<li title="Copy" data-i18n-title="btnCopy" id="copy">
+					<li title="Copy" data-i18n-title="btncopy" id="copy">
 						<svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M13 7H7V5H13V7Z" fill="currentColor" />
 						<path d="M13 11H7V9H13V11Z" fill="currentColor" />
@@ -576,8 +576,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     };
 
     function onListenClick(type, element, text, language) {
-      const msgListen = chrome.i18n.getMessage("btnListen");
-      const msgStopListening = chrome.i18n.getMessage("btnStopListening");
+      const msgListen = twpI18n.getMessage("btnListen");
+      const msgStopListening = twpI18n.getMessage("btnStopListening");
 
       eListenOriginal.classList.remove("selected");
       eListenTranslated.classList.remove("selected");
@@ -626,7 +626,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     document.body.appendChild(divElement);
 
-    chrome.i18n.translateDocument(shadowRoot);
+    twpI18n.translateDocument(shadowRoot);
 
     if (platformInfo.isMobile.any) {
       eButtonTransSelText.style.width = "30px";
@@ -701,12 +701,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       origTextContainer.style.display = "block";
       eMore.style.display = "none";
       eLess.style.display = "block";
-      eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"));
+      eMoreOrLess.setAttribute("title", twpI18n.getMessage("less"));
     } else {
       origTextContainer.style.display = "none";
       eMore.style.display = "block";
       eLess.style.display = "none";
-      eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"));
+      eMoreOrLess.setAttribute("title", twpI18n.getMessage("more"));
     }
 
     twpConfig.onChanged((name, newvalue) => {
@@ -749,7 +749,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             origTextContainer.style.display = "block";
             eMore.style.display = "none";
             eLess.style.display = "block";
-            eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("less"));
+            eMoreOrLess.setAttribute("title", twpI18n.getMessage("less"));
             eDivResult.style.top =
               parseInt(eDivResult.style.top) +
               (prevHeight - parseInt(getComputedStyle(eDivResult).height)) +
@@ -758,7 +758,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             origTextContainer.style.display = "none";
             eMore.style.display = "block";
             eLess.style.display = "none";
-            eMoreOrLess.setAttribute("title", chrome.i18n.getMessage("more"));
+            eMoreOrLess.setAttribute("title", twpI18n.getMessage("more"));
             eDivResult.style.top =
               parseInt(eDivResult.style.top) +
               (prevHeight - parseInt(getComputedStyle(eDivResult).height)) +

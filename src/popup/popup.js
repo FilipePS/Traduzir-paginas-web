@@ -2,7 +2,9 @@
 
 var $ = document.querySelector.bind(document);
 
-twpConfig.onReady(function () {
+twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
+  twpI18n.translateDocument();
+
   $("#btnImproveTranslation").onclick = () => {
     window.location = "improve-translation.html";
   };
@@ -193,16 +195,16 @@ twpConfig.onReady(function () {
   function updateInterface() {
     if (currentPageTranslatorService == "yandex") {
       $("#btnOptions option[value='translateInExternalSite']").textContent =
-        chrome.i18n.getMessage("msgOpenOnYandexTranslator");
+        twpI18n.getMessage("msgOpenOnYandexTranslator");
       $("#iconTranslate").setAttribute("src", "/icons/yandex-translate-32.png");
     } else if (currentPageTranslatorService == "bing") {
       $("#btnOptions option[value='translateInExternalSite']").textContent =
-        chrome.i18n.getMessage("btnOpenOnGoogleTranslate");
+        twpI18n.getMessage("btnOpenOnGoogleTranslate");
       $("#iconTranslate").setAttribute("src", "/icons/bing-translate-32.png");
     } else {
       // google
       $("#btnOptions option[value='translateInExternalSite']").textContent =
-        chrome.i18n.getMessage("btnOpenOnGoogleTranslate");
+        twpI18n.getMessage("btnOpenOnGoogleTranslate");
       $("#iconTranslate").setAttribute("src", "/icons/google-translate-32.png");
     }
 
@@ -222,13 +224,13 @@ twpConfig.onReady(function () {
       $("#cbAlwaysTranslateThisLang").checked =
         twpConfig.get("alwaysTranslateLangs").indexOf(originalTabLanguage) !==
         -1;
-      $("#lblAlwaysTranslateThisLang").textContent = chrome.i18n.getMessage(
+      $("#lblAlwaysTranslateThisLang").textContent = twpI18n.getMessage(
         "lblAlwaysTranslate",
         twpLang.codeToLanguage(originalTabLanguage)
       );
       $("#cbAlwaysTranslateThisLang").removeAttribute("disabled");
 
-      const translatedWhenHoveringThisLangText = chrome.i18n.getMessage(
+      const translatedWhenHoveringThisLangText = twpI18n.getMessage(
         "lblShowTranslatedWhenHoveringThisLang",
         twpLang.codeToLanguage(originalTabLanguage)
       );
@@ -257,7 +259,7 @@ twpConfig.onReady(function () {
         "option[data-i18n=lblShowTranslatedWhenHoveringThisLang]"
       ).removeAttribute("hidden");
 
-      const neverTranslateLangText = chrome.i18n.getMessage(
+      const neverTranslateLangText = twpI18n.getMessage(
         "btnNeverTranslateThisLanguage"
       );
       if (
@@ -456,7 +458,7 @@ twpConfig.onReady(function () {
         twpConfig.get("sitesToTranslateWhenHovering").indexOf(hostname) !== -1;
 
       {
-        const text = chrome.i18n.getMessage("lblShowTranslateSelectedButton");
+        const text = twpI18n.getMessage("lblShowTranslateSelectedButton");
         if (twpConfig.get("showTranslateSelectedButton") !== "yes") {
           $("option[data-i18n=lblShowTranslateSelectedButton]").textContent =
             text;
@@ -466,7 +468,7 @@ twpConfig.onReady(function () {
         }
       }
       {
-        const text = chrome.i18n.getMessage("lblShowOriginalTextWhenHovering");
+        const text = twpI18n.getMessage("lblShowOriginalTextWhenHovering");
         if (twpConfig.get("showOriginalTextWhenHovering") !== "yes") {
           $("option[data-i18n=lblShowOriginalTextWhenHovering]").textContent =
             text;
@@ -476,7 +478,7 @@ twpConfig.onReady(function () {
         }
       }
       {
-        const text = chrome.i18n.getMessage(
+        const text = twpI18n.getMessage(
           "lblShowTranslatedWhenHoveringThisSite"
         );
         if (
@@ -643,14 +645,14 @@ twpConfig.onReady(function () {
     },
     (tabs) => {
       const hostname = new URL(tabs[0].url).hostname;
-      const textNever = chrome.i18n.getMessage("btnNeverTranslate");
+      const textNever = twpI18n.getMessage("btnNeverTranslate");
       if (twpConfig.get("neverTranslateSites").indexOf(hostname) === -1) {
         $("option[data-i18n=btnNeverTranslate]").textContent = textNever;
       } else {
         $("option[data-i18n=btnNeverTranslate]").textContent = "✔ " + textNever;
       }
 
-      const textAlways = chrome.i18n.getMessage("btnAlwaysTranslate");
+      const textAlways = twpI18n.getMessage("btnAlwaysTranslate");
       if (twpConfig.get("alwaysTranslateSites").indexOf(hostname) === -1) {
         $("option[data-i18n=btnAlwaysTranslate]").textContent = textAlways;
       } else {
