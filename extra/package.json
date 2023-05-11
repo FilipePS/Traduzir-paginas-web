@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "main": "getLanguagesNames.js",
   "scripts": {
-    "start": "node getLanguagesNames.js"
+    "updateLanguageNames:google": "node getLanguagesNames.js --google",
+    "updateLanguageNames:bing": "node getLanguagesNames.js --bing",
+    "updateLanguageNames:yandex": "node getLanguagesNames.js --yandex",
+    "updateLanguageNames:final": "node getLanguagesNames.js --final",
+    "updateLanguageNames:info": "node getLanguagesNames.js --info"
   },
   "dependencies": {
     "dom-parser": "^0.1.6",
     "extract-zip": "^2.0.1",
     "realistic-structured-clone": "^3.0.0",
+    "superagent": "^8.0.9",
+    "superagent-proxy": "^3.0.0",
     "xmlhttprequest": "^1.8.0"
   }
 }

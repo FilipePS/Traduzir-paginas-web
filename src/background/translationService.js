@@ -900,8 +900,8 @@ const translationService = (function () {
     ) {
       await YandexHelper.findSID();
       if (!YandexHelper.translateSid) return;
-      if (sourceLanguage.startsWith("zh")) sourceLanguage = "zh";
-      if (targetLanguage.startsWith("zh")) targetLanguage = "zh";
+      sourceLanguage = sourceLanguage.split("-")[0];
+      targetLanguage = targetLanguage.split("-")[0];
       return await super.translate(
         sourceLanguage,
         targetLanguage,
@@ -1029,8 +1029,12 @@ const translationService = (function () {
           replace: "mww",
         },
         {
-          search: "ckb",
+          search: "ku",
           replace: "kmr",
+        },
+        {
+          search: "ckb",
+          replace: "ku",
         },
         {
           search: "mn",
@@ -1039,6 +1043,10 @@ const translationService = (function () {
         {
           search: "no",
           replace: "nb",
+        },
+        {
+          search: "lg",
+          replace: "lug",
         },
         {
           search: "sr",
@@ -1087,6 +1095,16 @@ const translationService = (function () {
       dontSaveInPersistentCache,
       dontSortResults = false
     ) {
+      if (targetLanguage === "pt") {
+        targetLanguage = "pt-BR";
+      } else if (targetLanguage === "no") {
+        targetLanguage = "nb"
+      } else if (targetLanguage.startsWith("zh-")) {
+        targetLanguage = "zh"
+      } else if (targetLanguage.startsWith("fr-")) {
+        targetLanguage = "fr"
+      }
+
       return await new Promise((resolve) => {
         const waitFirstTranslationResult = () => {
           const listener = (request, sender, sendResponse) => {
