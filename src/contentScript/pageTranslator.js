@@ -504,8 +504,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             node.classList.contains("notranslate") ||
             node.getAttribute("translate") === "no" ||
             node.isContentEditable ||
-            node.classList.contains("material-icons") ||
-            node.classList.contains("material-symbols-outlined")
+            node.classList.contains("material-icons") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/481
+            node.classList.contains("material-symbols-outlined") ||
+            node.nodeName.toLowerCase().startsWith("br-") // https://github.com/FilipePS/Traduzir-paginas-web/issues/627
           ) {
             if (piecesToTranslate[index].nodes.length > 0) {
               currentParagraphSize = 0;
@@ -836,7 +837,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   }
 
-  function translateDynamically() {
+  function translationRoutine() {
     try {
       if (piecesToTranslate && pageIsVisible) {
         (function () {
@@ -941,10 +942,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     } catch (e) {
       console.error(e);
     }
-    setTimeout(translateDynamically, 400);
+  
+    clearTimeout(translationRoutine_handler);
+    translationRoutine_handler = setTimeout(translationRoutine, 300);
   }
 
-  translateDynamically();
+  translationRoutine();
 
   function translatePageTitle() {
     const title = document.querySelector("title");
@@ -975,6 +978,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   pageTranslator.onPageLanguageStateChange = function (callback) {
     pageLanguageStateObservers.push(callback);
   };
+
+  var translationRoutine_handler = null;
 
   pageTranslator.translatePage = function (targetLanguage) {
     fooCount++;
@@ -1019,7 +1024,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     enableMutatinObserver();
 
-    translateDynamically();
+    translationRoutine();
   };
 
   pageTranslator.restorePage = function () {
