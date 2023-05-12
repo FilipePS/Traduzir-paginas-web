@@ -9,7 +9,7 @@
     "message": "翻譯此頁面？"
   },
   "lblTranslating": {
-    "message": "翻譯中……"
+    "message": "翻譯中⋯⋯"
   },
   "lblError": {
     "message": "無法翻譯此頁面"
@@ -60,7 +60,7 @@
     "message": "原文"
   },
   "btnMobileTranslated": {
-    "message": "已翻譯"
+    "message": "譯文"
   },
   "optionsNeverTranslate": {
     "message": "永不翻譯這些網站"
@@ -72,7 +72,7 @@
     "message": "顯示行動裝置彈出視窗"
   },
   "optionPopupThreeFingers": {
-    "message": "當我以三隻手指觸控時。"
+    "message": "以三指點螢幕時"
   },
   "msgOpenOnYandexTranslator": {
     "message": "在 Yandex 翻譯中打開"
@@ -174,7 +174,7 @@
     "message": "鍵盤快捷鍵"
   },
   "msgThanksForUseExtension": {
-    "message": "感謝您使用這個擴充套件"
+    "message": "感謝您使用這款擴充套件"
   },
   "msgIWillBeGrateful": {
     "message": "如果您有能力捐款，我將感激不盡。"
@@ -183,7 +183,7 @@
     "message": "停留在這些網站上時顯示譯文"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "當網站翻譯完成時讓彈出圖示變為藍色"
+    "message": "頁面翻譯完成時讓彈出圖示變藍"
   },
   "more": {
     "message": "更多"
@@ -231,10 +231,10 @@
     "message": "套用"
   },
   "swapTranslationService": {
-    "message": "在翻譯伺服器之間切換"
+    "message": "切換翻譯服務"
   },
   "swapPopup": {
-    "message": "在簡潔和紛繁界面之間切換"
+    "message": "切換簡潔和紛繁界面"
   },
   "lblTranslateInterface": {
     "message": "協助翻譯此擴充套件"
@@ -243,10 +243,10 @@
     "message": "在網址列顯示按鈕"
   },
   "lblPageTranslationService": {
-    "message": "網頁翻譯伺服器"
+    "message": "網頁翻譯服務"
   },
   "lblTextTranslationService": {
-    "message": "文字翻譯伺服器"
+    "message": "文字翻譯服務"
   },
   "msgStorage": {
     "message": "儲存空間"
@@ -288,7 +288,7 @@
     "message": "文字轉語音速度"
   },
   "lblEnableDeepL": {
-    "message": "啟用 DeepL 作為文字翻譯服務"
+    "message": "讓 DeepL 成爲翻譯服務的選項"
   },
   "enterShortcut": {
     "message": "輸入快捷鍵"
@@ -303,7 +303,7 @@
     "message": "無效組合"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "在翻譯後的頁面和原始頁面之間進行切換"
+    "message": "切換頁面的譯文和原文"
   },
   "lblRestorePageToOriginal": {
     "message": "將頁面恢復到原始狀態"
@@ -312,7 +312,7 @@
     "message": "將頁面翻譯成目標語言"
   },
   "lblTranslateTag_pre": {
-    "message": "為 $HTML_TAG_NAME$ 標籤啟用翻譯",
+    "message": "翻譯 $HTML_TAG_NAME$ 標籤",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -320,10 +320,10 @@
     }
   },
   "lbldontsortresults": {
-    "message": "不要對 Google 翻譯的結果進行排序"
+    "message": "不排序翻譯結果"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "翻譯動態內容"
+    "message": "翻譯動態建立的內容"
   },
   "calculatestorage": {
     "message": "計算"
@@ -332,7 +332,7 @@
     "message": "透過 PayPal 資助我"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "當點到一個將您帶到與目前網站相同網域的連結時，自動進行翻譯"
+    "message": "翻譯後，自動翻譯頁面中指向相同網域的鏈結之頁面"
   },
   "openNativeShortcutManager": {
     "message": "開啟原生快捷鍵管理器"
@@ -363,7 +363,7 @@
     "message": "顯示彈出式視窗"
   },
   "msgToTranslateThisDocument": {
-    "message": "如要翻譯此文件類型 $DOC_TYPE$ 需要先轉換為 HTML 格式",
+    "message": "要翻譯此類文件 $DOC_TYPE$ 需先轉換爲 HTML 格式",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -372,10 +372,10 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "選擇一個翻譯伺服器來轉換"
+    "message": "選一家翻譯服務來轉換"
   },
   "msgDownloadingDocument": {
-    "message": "下載文件中……"
+    "message": "下載文件中⋯⋯"
   },
   "msgSendDocument": {
     "message": "傳送文件"
@@ -384,7 +384,7 @@
     "message": "下載文件時發生錯誤"
   },
   "msgFileLargerThan": {
-    "message": "這個翻譯伺服器不支援檔案長度超過 $FILE_SIZE$ 的檔案",
+    "message": "這家翻譯服務不支援檔案長度超過 $FILE_SIZE$ 的檔案",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -402,10 +402,10 @@
     "message": "最近記錄"
   },
   "msgAll": {
-    "message": "全選"
+    "message": "全部"
   },
   "msgPleaseWait": {
-    "message": "請稍候……"
+    "message": "請稍候⋯⋯"
   },
   "msgUnknownLanguage": {
     "message": "未知"
@@ -420,16 +420,16 @@
     "message": "新增至自訂的字典（這能讓您在網頁翻譯期間跳過特定的字詞）"
   },
   "msgSelectTargetLanguage": {
-    "message": "將網站翻譯為此目標語言"
+    "message": "將網頁翻譯爲"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "將選取的文字翻譯為此目標語言"
+    "message": "將選取的文字翻譯爲"
   },
   "msgFavoriteLanguages": {
     "message": "偏好的語言"
   },
   "lblFavoriteLanguage": {
-    "message": "偏好的語言 $FAVORITE_LANGUAGE_NUM$",
+    "message": "偏好語言 $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -485,5 +485,32 @@
   },
   "lblEnableDiskCache": {
     "message": "啟用永久翻譯快取（將快取存入磁碟）"
+  },
+  "selectOriginalLanguage": {
+    "message": "更改網頁的原始語言"
+  },
+  "selectTargetLanguage": {
+    "message": "更改目標語言"
+  },
+  "msgImproveTranslation": {
+    "message": "改善翻譯"
+  },
+  "lblExperimental": {
+    "message": "實驗中"
+  },
+  "msgPrivacy": {
+    "message": "隱私政策"
+  },
+  "selectToEnableTranslationService": {
+    "message": "選擇要使用的翻譯服務"
+  },
+  "useAlternativeService": {
+    "message": "如果這家翻譯服務不支援目前的目標語言，可以換一家翻譯服務試試"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }

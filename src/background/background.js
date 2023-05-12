@@ -150,38 +150,38 @@ chrome.runtime.onInstalled.addListener((details) => {
     chrome.runtime.getManifest().version != details.previousVersion
   ) {
     twpConfig.onReady(async () => {
-      if (platformInfo.isMobile.any) return;
-      // if (twpConfig.get("showReleaseNotes") !== "yes") return;
+      // if (platformInfo.isMobile.any) return;
+      // // if (twpConfig.get("showReleaseNotes") !== "yes") return;
 
-      let lastTimeShowingReleaseNotes = twpConfig.get(
-        "lastTimeShowingReleaseNotes"
-      );
-      let showReleaseNotes = false;
-      if (lastTimeShowingReleaseNotes) {
-        const date = new Date();
-        date.setDate(date.getDate() - 21);
-        if (date.getTime() > lastTimeShowingReleaseNotes) {
-          showReleaseNotes = true;
-          lastTimeShowingReleaseNotes = Date.now();
-          twpConfig.set(
-            "lastTimeShowingReleaseNotes",
-            lastTimeShowingReleaseNotes
-          );
-        }
-      } else {
-        showReleaseNotes = true;
-        lastTimeShowingReleaseNotes = Date.now();
-        twpConfig.set(
-          "lastTimeShowingReleaseNotes",
-          lastTimeShowingReleaseNotes
-        );
-      }
+      // let lastTimeShowingReleaseNotes = twpConfig.get(
+      //   "lastTimeShowingReleaseNotes"
+      // );
+      // let showReleaseNotes = false;
+      // if (lastTimeShowingReleaseNotes) {
+      //   const date = new Date();
+      //   date.setDate(date.getDate() - 21);
+      //   if (date.getTime() > lastTimeShowingReleaseNotes) {
+      //     showReleaseNotes = true;
+      //     lastTimeShowingReleaseNotes = Date.now();
+      //     twpConfig.set(
+      //       "lastTimeShowingReleaseNotes",
+      //       lastTimeShowingReleaseNotes
+      //     );
+      //   }
+      // } else {
+      //   showReleaseNotes = true;
+      //   lastTimeShowingReleaseNotes = Date.now();
+      //   twpConfig.set(
+      //     "lastTimeShowingReleaseNotes",
+      //     lastTimeShowingReleaseNotes
+      //   );
+      // }
 
-      if (showReleaseNotes) {
-        chrome.tabs.create({
-          url: chrome.runtime.getURL("/options/options.html#release_notes"),
-        });
-      }
+      // if (showReleaseNotes) {
+      //   chrome.tabs.create({
+      //     url: chrome.runtime.getURL("/options/options.html#release_notes"),
+      //   });
+      // }
     });
 
     twpConfig.onReady(async () => {

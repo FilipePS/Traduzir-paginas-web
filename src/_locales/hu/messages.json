@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Ne rendezze sorba a Google fordított eredményeket"
+    "message": "Ne rendezze a fordítási eredményeket"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Dinamikusan létrehozott tartalom fordítása"
@@ -485,5 +485,32 @@
   },
   "lblEnableDiskCache": {
     "message": "Állandó fordítási gyorsítótár engedélyezése (lemezen lévő gyorsítótár)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Válassza ki a webhely eredeti nyelvét"
+  },
+  "selectTargetLanguage": {
+    "message": "Válassza ki a célnyelvet"
+  },
+  "msgImproveTranslation": {
+    "message": "Fordítás javítása"
+  },
+  "lblExperimental": {
+    "message": "Kísérleti funkciók"
+  },
+  "msgPrivacy": {
+    "message": "Adatvédelem"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Válassza ki a használni kívánt fordítómotort"
+  },
+  "useAlternativeService": {
+    "message": "Használjon a háttérben egy alternatív fordítómotort, ha az aktuális célnyelvet a kiválasztott motor nem támogatja"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }

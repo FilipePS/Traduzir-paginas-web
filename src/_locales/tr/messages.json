@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Google Çeviri sonuçlarını asla sıralama"
+    "message": "Do not sort translation results"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Dinamik olarak oluşturulan içeriği çevir"
@@ -485,5 +485,32 @@
   },
   "lblEnableDiskCache": {
     "message": "Enable persistent translation cache (on-disk cache)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Select the original website language"
+  },
+  "selectTargetLanguage": {
+    "message": "Select target language"
+  },
+  "msgImproveTranslation": {
+    "message": "Improve translation"
+  },
+  "lblExperimental": {
+    "message": "Experimental"
+  },
+  "msgPrivacy": {
+    "message": "Privacy"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Select the translation services you want to use"
+  },
+  "useAlternativeService": {
+    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }

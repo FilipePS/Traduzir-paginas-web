@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Ekki flokka niðurstöður Google Þýðinga"
+    "message": "Ekki flokka þýðingarniðurstöður"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Þýða breytilega búið til efni"
@@ -485,5 +485,32 @@
   },
   "lblEnableDiskCache": {
     "message": "Virkja varanlegt þýðingarskyndiminni (skyndiminni á diski)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Veldu upprunalega tungumál vefsíðunnar"
+  },
+  "selectTargetLanguage": {
+    "message": "Veldu marktungumál"
+  },
+  "msgImproveTranslation": {
+    "message": "Bæta þýðingar"
+  },
+  "lblExperimental": {
+    "message": "Prufa"
+  },
+  "msgPrivacy": {
+    "message": "Friðhelgi"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Veldu þýðingarþjónustuna sem þú vilt nota"
+  },
+  "useAlternativeService": {
+    "message": "Notaðu aðra þýðingarþjónustu án vitundar ef núverandi marktungumál er ekki stutt af völdu þýðingarþjónustunni"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }

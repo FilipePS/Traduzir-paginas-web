@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Nu aranja rezultatele traducerii Google"
+    "message": "Nu aranja rezultatele traducerii"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Tradu conținutul creat dinamic"
@@ -484,6 +484,33 @@
     "message": "Am creat, actualizat și susținut această extensie timp de peste trei ani. Este uimitor să vezi că există zilnic peste 600.000 de utilizatori, iar toți acești oameni au reușit să migreze definitiv la Firefox.\n\nÎmi propun să public o nouă versiune a acestei extensii în fiecare lună și să continui s-o îmbunătățesc.\n\nAș fi recunoscător dacă m-ai putea ajuta financiar devenind membru Patreon și sprijinindu-mă să aduc îmbunătățiri acestei extensii.\n\nLe mulțumesc tuturor celor care au contribuit deja la acest proiect."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Activează memoria cache persistentă de traducere (memoria cache pe disc)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Alege limba originală a sitului web"
+  },
+  "selectTargetLanguage": {
+    "message": "Alege limba de destinație"
+  },
+  "msgImproveTranslation": {
+    "message": "Îmbunătățește traducerea"
+  },
+  "lblExperimental": {
+    "message": "Experimental"
+  },
+  "msgPrivacy": {
+    "message": "Confidențialitate"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Alege serviciile de traducere pe care vrei să le folosești"
+  },
+  "useAlternativeService": {
+    "message": "Folosește automat un serviciu de traducere alternativ dacă limba de destinație actuală nu este acceptată de serviciul de traducere ales"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }

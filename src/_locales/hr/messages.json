@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Prevedite svoju stranicu u stvarnom vremenu pomoću Googlea ili Yandexa."
+    "message": "Prevodi stranice izravno koristeći Google ili Yandex."
   },
   "pageActionTitle": {
     "message": "Prevedi ovu stranicu"
@@ -12,7 +12,7 @@
     "message": "Prevođenje ..."
   },
   "lblError": {
-    "message": "Ova stranica ne može se prevesti"
+    "message": "Nije bilo moguće prevesti ovu stranicu"
   },
   "lblAlwaysTranslate": {
     "message": "Uvijek prevodi sa $LANGUAGE_NAME$",
@@ -24,7 +24,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Ciljni jezik $TARGET_LANGUAGE_NUM$",
+    "message": "Ciljani jezik $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -42,7 +42,7 @@
     "message": "Opcije"
   },
   "btnRestore": {
-    "message": "Prikaži izvornik"
+    "message": "Prikaži original"
   },
   "btnTryAgain": {
     "message": "Pokušaj ponovo"
@@ -54,37 +54,37 @@
     "message": "Doniraj"
   },
   "btnNeverTranslate": {
-    "message": "Nikada ne prevoditi ovu web stranicu"
+    "message": "Nikada ne prevodi ovu web stranicu"
   },
   "btnMobileOriginal": {
-    "message": "Izvornik"
+    "message": "Original"
   },
   "btnMobileTranslated": {
     "message": "Prevedeno"
   },
   "optionsNeverTranslate": {
-    "message": "Nikada ne prevoditi ove web stranice"
+    "message": "Nikada ne prevodi ove web stranice"
   },
   "optionsAlwaysTranslate": {
-    "message": "Uvijek prevodite ove jezike"
+    "message": "Uvijek prevodi ove jezike"
   },
   "optionPopupConfig": {
-    "message": "Pokažite skočni prozor za mobilne uređaje"
+    "message": "Prikaži skočni prozor za mobilne uređaje"
   },
   "optionPopupThreeFingers": {
-    "message": "Kad dodirnem zaslon s tri prsta"
+    "message": "Kad dodirnem ekran s tri prsta"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Otvori u Yandex prevoditelju"
   },
   "lblOthers": {
-    "message": "Ostali"
+    "message": "Ostalo"
   },
   "btnMoreOptions": {
-    "message": "Više mogućnosti"
+    "message": "Više opcija"
   },
   "lblPlsDonate": {
-    "message": "Pomozite programeru donacijom"
+    "message": "Pomogni programeru putem donacije"
   },
   "msgTranslateFor": {
     "message": "Prevedi na $LANGUAGE_NAME$",
@@ -96,7 +96,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Pokaži mogućnost prevođenja stranice u kontekstnom izborniku"
+    "message": "Prikaži opcije za prevođenje stranice u kontekstnom izborniku"
   },
   "msgYes": {
     "message": "Da"
@@ -105,19 +105,19 @@
     "message": "Ne"
   },
   "btnAlwaysTranslate": {
-    "message": "Uvijek prevodi ovu stranicu"
+    "message": "Uvijek prevodi ovu web stranicu"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Uvijek prevodi ove stranice"
+    "message": "Uvijek prevodi ove web stranice"
   },
   "lblDarkMode": {
-    "message": "Tamni način"
+    "message": "Tamni modus"
   },
   "lblShowReleaseNotes": {
-    "message": "Prikazujte napomene o izdanju prilikom ažuriranja"
+    "message": "Prikaži napomene o izdanju prilikom aktualiziranja"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Pokažite gumb za prijevod označenog teksta"
+    "message": "Prikaži gumb za prevođenje označenog teksta"
   },
   "msgAutomatic": {
     "message": "Automatski"
@@ -126,7 +126,7 @@
     "message": "Prevedi označeni tekst"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Pokaži mogućnost prevođenja označenog teksta u kontekstnom izborniku"
+    "message": "Prikaži mogućnost prevođenja označenog teksta u kontekstnom izborniku"
   },
   "lblNeverTranslateLangs": {
     "message": "Nikada ne prevodi ove jezike"
@@ -135,13 +135,13 @@
     "message": "Nikada ne prevodi ovaj jezik"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Prikaži izvorni tekst prilikom lebdenja"
+    "message": "Prikaži originalni tekst prilikom prelaženja preko teksta"
   },
   "msgLanguages": {
     "message": "Jezici"
   },
   "msgSites": {
-    "message": "Stranice"
+    "message": "Web stranice"
   },
   "msgTranslations": {
     "message": "Prijevodi"
@@ -168,22 +168,22 @@
     "message": "Dodaj"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Prikaži prevedeni tekst prilikom lebdenja"
+    "message": "Prikaži prevedeni tekst prilikom prelaženja"
   },
   "lblKeyboardShortcuts": {
     "message": "Tipkovnički prečaci"
   },
   "msgThanksForUseExtension": {
-    "message": "Zahvaljujemo na korištenju ovog proširenja."
+    "message": "Hvala ti što koristiš ovaj dodatak."
   },
   "msgIWillBeGrateful": {
-    "message": "Bit ću vam zahvalan ako možete dati donaciju."
+    "message": "Bio bih ti zahvalan ako možeš donirati."
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Prikaži prevedeni tekst prilikom lebdenja na ovim web stranicama"
+    "message": "Prikaži prevedeni tekst prilikom prelaženja mišem na ovim web stranicama"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Neka ikona skočnog prozora bude plava kada se stranica prevede"
+    "message": "Oboji ikonu skočnog prozora u plavu boju kada je web stranica prevedena"
   },
   "more": {
     "message": "Više"
@@ -192,22 +192,22 @@
     "message": "Manje"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Ne prikazuj ako je jezik stranice ciljni jezik"
+    "message": "Ne prikazuj ako je jezik stranice ciljani jezik"
   },
   "dontShowIfPageLangIsUnknown": {
     "message": "Ne prikazuj ako je jezik stranice nepoznat"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Ne prikazuj ako je jezik odabranog teksta ciljni jezik"
+    "message": "Ne prikazuj ako je jezik odabranog teksta ciljani jezik"
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "Ne prikazuj ako je jezik odabranog teksta nepoznat"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Pokaži prijevod prilikom lebdenja nad ovom stranicom"
+    "message": "Prikaži prijevod prilikom prelaženja mišem na ovoj web stranici"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Prikaži prijevod kada lebdite iznad web stranica u $LANGUAGE_NAME$",
+    "message": "Prikaži prijevod prilikom prelaženja mišem na web stranicama koje koriste $LANGUAGE_NAME$ jezik",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -216,7 +216,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Prikaži prevedeni tekst prilikom lebdenja nad stranicama s ovim jezicima"
+    "message": "Prikaži prevedeni tekst prilikom prelaženja na web stranicama s ovim jezicima"
   },
   "msgNoTranslateSelectedText": {
     "message": "Ne prevodi odabrani tekst"
@@ -231,10 +231,10 @@
     "message": "Primijeni"
   },
   "swapTranslationService": {
-    "message": "Prebaci između prevoditeljskih servisa"
+    "message": "Mijenjaj između usluga prevođenja"
   },
   "swapPopup": {
-    "message": "Prebacivanje između jednostavnog i složenog sučelja"
+    "message": "Mijenjaj između jednostavnog i kompleksnog sučelja"
   },
   "lblTranslateInterface": {
     "message": "Prevedi sučelje"
@@ -249,13 +249,13 @@
     "message": "Usluga prevođenja teksta"
   },
   "msgStorage": {
-    "message": "Skladištenje"
+    "message": "Memorija"
   },
   "lblTranslationCache": {
     "message": "Predmemorija prijevoda"
   },
   "lblStorageUsed": {
-    "message": "Korištena pohrana:"
+    "message": "Korištena memorija:"
   },
   "deleteTranslationCache": {
     "message": "Izbriši predmemoriju prijevoda"
@@ -264,55 +264,55 @@
     "message": "Osobne postavke"
   },
   "backupToFile": {
-    "message": "Sigurnosna kopija u datoteku"
+    "message": "Spremi sigurnosnu kopiju u datoteku"
   },
   "restoreFromFile": {
-    "message": "Vrati iz datoteke"
+    "message": "Obnovi iz datoteke"
   },
   "resetToDefault": {
-    "message": "Vrati na tvornicke postavke"
+    "message": "Obnovi zadane postavke"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Želite li izbrisati predmemoriju prijevoda?"
+    "message": "Želiš li izbrisati predmemoriju prijevoda?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Želite li prebrisati sve postojeće postavke pomoću podataka sigurnosne kopije?"
+    "message": "Želiš li prepisati sve postojeće postavke s podacima sigurnosne kopije?"
   },
   "fileIsCorrupted": {
     "message": "Čini se da je datoteka oštećena"
   },
   "doYouWantRestoreSettings": {
-    "message": "Želite li vratiti proširenje na zadane postavke?"
+    "message": "Želiš li obnoviti zadane postavke dodatka?"
   },
   "lblTtsSpeed": {
-    "message": "Brzina zvuka pretvaranja teksta u govor"
+    "message": "Brzina govora za pretvoreni tekst u govor"
   },
   "lblEnableDeepL": {
-    "message": "Omogućite DeepL kao uslugu prevođenja teksta"
+    "message": "Aktiviraj DeepL kao uslugu prevođenja teksta"
   },
   "enterShortcut": {
-    "message": "Upišite prečac"
+    "message": "Upiši prečac"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Uključite Ctrl ili Alt"
+    "message": "Uključi tipku Ctrl ili Alt"
   },
   "hotkeyError_letter": {
-    "message": "Upišite slovo"
+    "message": "Upiši slovo"
   },
   "hotkeyError_invalid": {
     "message": "Nevažeća kombinacija"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Prebacivanje između prevedene i izvorne stranice"
+    "message": "Mijenjaj između prevedene i originalne stranice"
   },
   "lblRestorePageToOriginal": {
-    "message": "Vrati stranicu na original"
+    "message": "Obnovi stranicu na original"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Prevedite stranicu na ciljni jezik"
+    "message": "Prevedi stranicu na ciljani jezik"
   },
   "lblTranslateTag_pre": {
-    "message": "Omogući prijevod za oznaku $HTML_TAG_NAME$",
+    "message": "Aktiviraj prijevod za oznaku $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -320,28 +320,28 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Nemojte sortirati rezultate google prevoditelja"
+    "message": "Ne razvrstavaj „Google Prevoditelj” rezultate"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Prevodite dinamički stvoren sadržaj"
+    "message": "Prevedi dinamički stvoren sadržaj"
   },
   "calculatestorage": {
-    "message": "Izračunati"
+    "message": "Izračunaj"
   },
   "donatewithpaypal": {
-    "message": "Donirajte putem PayPala"
+    "message": "Doniraj putem PayPala"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatski prevedite kada kliknete na vezu koja vas vodi na istu domenu kao i trenutna stranica"
+    "message": "Automatski prevedi kada pritisneš poveznicu koja vodi na istu domenu kao trenutačna web stranica"
   },
   "openNativeShortcutManager": {
-    "message": "Otvori izvorni upravitelj tipkovnih prečaca"
+    "message": "Otvori izvorni upravljač tipkovnih prečaca"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Posebni prečaci na tipkovnici"
+    "message": "Posebni tipkovni prečaci"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Prevedite odabrani tekst kada dvaput pritisnete $SHORTCUT_KEY$",
+    "message": "Prevedi odabrani tekst dvostrukim pritiskom tipke $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -349,7 +349,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Prevedite tekst preko pokazivača miša kada dvaput pritisnete $SHORTCUT_KEY$",
+    "message": "Prevedi tekst iznad pokazivača miša dvostrukim pritiskom tipke $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -357,13 +357,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Prevedite stranicu tako da jednom kliknete na gumb u adresnoj traci. (Da biste vidjeli skočni prozor, kliknite desnom tipkom miša)"
+    "message": "Prevedi stranicu pritiskom gumba u adresnoj traci. (Za prikaz skočnog prozora, pritisni desnu tipku miša)"
   },
   "btnShowPopup": {
     "message": "Prikaži skočni prozor"
   },
   "msgToTranslateThisDocument": {
-    "message": "Za prijevod ovog dokumenta $DOC_TYPE$ potrebno ga je pretvoriti u HTML",
+    "message": "Za prevođenje ovog $DOC_TYPE$ dokumenta, potrebno ga je pretvoriti u HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -372,16 +372,16 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Odaberite uslugu za ovu konverziju"
+    "message": "Odaberi uslugu za ovu konverziju"
   },
   "msgDownloadingDocument": {
-    "message": "Preuzimanje dokumenta..."
+    "message": "Preuzimanje dokumenta …"
   },
   "msgSendDocument": {
     "message": "Pošalji dokument"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Pogreška pri preuzimanju dokumenta"
+    "message": "Greška tijekom preuzimanju dokumenta"
   },
   "msgFileLargerThan": {
     "message": "Ova usluga ne podržava datoteke veće od $FILE_SIZE$",
@@ -396,40 +396,40 @@
     "message": "PDF u HTML"
   },
   "btncopy": {
-    "message": "Kopirati"
+    "message": "Kopiraj"
   },
   "msgRecents": {
-    "message": "Nedavni"
+    "message": "Nedavne"
   },
   "msgAll": {
-    "message": "svi"
+    "message": "Sve"
   },
   "msgPleaseWait": {
-    "message": "Molimo pričekajte..."
+    "message": "Pričekaj …"
   },
   "msgUnknownLanguage": {
-    "message": "Nepoznato"
+    "message": "Nepoznat"
   },
   "btnReplace": {
-    "message": "Zamijeniti"
+    "message": "Zamijeni"
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Trenutačno zamijenite odabrani tekst prevedenim tekstom"
+    "message": "Trenutno zamijeni odabrani tekst s prevedenim tekstom"
   },
   "optionsAddToCustomDictionary": {
-    "message": "Dodaj u prilagođeni rječnik (Ovo vam omogućuje da preskočite određene riječi tijekom prijevoda web stranice)"
+    "message": "Dodaj u prilagođeni rječnik (Ovo omogućuje preskakanje određenih riječi tijekom prevođenja web stranice)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Prevedite web stranice na ovaj ciljani jezik"
+    "message": "Prevedi web stranice na ovaj ciljani jezik"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Prevedite odabrani tekst na ovaj ciljni jezik"
+    "message": "Prevedi odabrani tekst na ovaj ciljani jezik"
   },
   "msgFavoriteLanguages": {
-    "message": "Omiljeni jezici"
+    "message": "Favorizirani jezici"
   },
   "lblFavoriteLanguage": {
-    "message": "Omiljeni jezik $FAVORITE_LANGUAGE_NUM$",
+    "message": "Favorizirani jezik $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -438,16 +438,16 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Odaberite stil skočnog sučelja"
+    "message": "Odaberi stil skočnog sučelja"
   },
   "msgInterfaceSimple": {
-    "message": "Jednostavan"
+    "message": "Jednostavno"
   },
   "msgInterfaceComplex": {
-    "message": "Kompleks"
+    "message": "Kompleksno"
   },
   "lblTranslatePageInto": {
-    "message": "Prevesti stranicu u $LANGUAGE_NAME$?",
+    "message": "Prevedi stranicu na $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -456,7 +456,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Stranica prevedena na $LANGUAGE_NAME$",
+    "message": "Stranica je prevedena na $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -465,10 +465,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Odaberite drugi jezik"
+    "message": "Odaberi jedan drugi jezik"
   },
   "msgHasBeenUpdated": {
-    "message": "Proširenje $EXTENSION_NAME$ je ažurirano na verziju $EXTENSION_VERSION$.",
+    "message": "Dodatak $EXTENSION_NAME$ je aktualiziran na verziju $EXTENSION_VERSION$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -481,9 +481,36 @@
     }
   },
   "donationText": {
-    "message": "Razvijam, ažuriram i podržavam ovo proširenje više od tri godine. Nevjerojatno je vidjeti da imamo preko 600.000 dnevnih korisnika i da su svi ti ljudi mogli trajno migrirati na Firefox.\n\nCilj mi je izdati novu verziju ovog proširenja svaki mjesec i nastaviti ga poboljšavati.\n\nBio bih vam zahvalan ako biste mi financijski pomogli tako da postanete član Patreona i podržite me u unošenju poboljšanja u ovo proširenje.\n\nHvala svima koji su već doprinijeli ovom projektu."
+    "message": "Razvijam, aktualiziram i podržavam ovaj dodatak više od tri godine. Nevjerojatno je vidjeti da imamo preko 600.000 dnevnih korisnika i da su svi ti ljudi mogli trajno migrirati na Firefox.\n\nCilj mi je izdati novu verziju ovog dodatka svaki mjesec i nastaviti ga poboljšavati.\n\nZahvaljujem se za svaku financijsku pomoć. Postani član Patreona i podrži me u poboljšanju ovog dodatka.\n\nHvala svima koji su već doprinijeli ovom projektu."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Aktiviraj trajnu predmemoriju prijevoda (predmemorija na disku)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Odaberi izvorni jezik web stranice"
+  },
+  "selectTargetLanguage": {
+    "message": "Odaberi ciljani jezik"
+  },
+  "msgImproveTranslation": {
+    "message": "Poboljšaj prijevod"
+  },
+  "lblExperimental": {
+    "message": "Eksperimentalno"
+  },
+  "msgPrivacy": {
+    "message": "Privatnost"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Odaberi usluge prevođenja koje želiš koristiti"
+  },
+  "useAlternativeService": {
+    "message": "Koristi alternativnu uslugu prevođenja ako odabrana usluga prevođenja ne podržava trenutačni ciljani jezik"
+  },
+  "msgDefaultLanguage": {
+    "message": "Default language"
+  },
+  "msgExtUILanguage": {
+    "message": "Extension user interface language"
   }
 }
