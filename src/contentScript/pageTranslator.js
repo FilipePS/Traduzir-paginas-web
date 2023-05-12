@@ -506,7 +506,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             node.isContentEditable ||
             node.classList.contains("material-icons") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/481
             node.classList.contains("material-symbols-outlined") ||
-            node.nodeName.toLowerCase().startsWith("br-") // https://github.com/FilipePS/Traduzir-paginas-web/issues/627
+            node.nodeName.toLowerCase().startsWith("br-") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/627
+            node.getAttribute("id") === "branch-select-menu" // https://github.com/FilipePS/Traduzir-paginas-web/issues/570
           ) {
             if (piecesToTranslate[index].nodes.length > 0) {
               currentParagraphSize = 0;
