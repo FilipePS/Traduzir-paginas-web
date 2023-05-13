@@ -1,6 +1,4 @@
 node_modules
-package-lock.json
-extra/package-lock.json
 build
 test
 meta.txt

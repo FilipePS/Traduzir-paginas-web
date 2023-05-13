@@ -135,6 +135,7 @@ function updateContextMenu(pageLanguageState = "original") {
         id: "translate-web-page",
         title: contextMenuTitle,
         contexts: ["page", "frame"],
+        documentUrlPatterns: ["*://*/*"]
       });
     }
   }
@@ -274,6 +275,8 @@ if (typeof chrome.contextMenus !== "undefined") {
   });
 
   const tabHasContentScript = {};
+  let currentTabId = null
+  chrome.tabs.onActivated.addListener(activeInfo => currentTabId = activeInfo.tabId);
 
   chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId == "translate-web-page") {
@@ -288,17 +291,17 @@ if (typeof chrome.contextMenus !== "undefined") {
       if (
         chrome.pageAction &&
         chrome.pageAction.openPopup &&
-        (!tabHasContentScript[tab.id] || tab.isInReaderMode)
+        (!tab || !tabHasContentScript[tab.id] || tab.isInReaderMode)
       ) {
         chrome.pageAction.setPopup({
           popup:
             "popup/popup-translate-text.html#text=" +
             encodeURIComponent(info.selectionText),
-          tabId: tab.id,
+          tabId: tab?.id || currentTabId,
         });
         chrome.pageAction.openPopup();
 
-        resetPageAction(tab.id);
+        resetPageAction(tab?.id || currentTabId);
       } else {
         // a merda do chrome não suporte openPopup
         chrome.tabs.sendMessage(
