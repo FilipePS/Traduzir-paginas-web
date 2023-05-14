@@ -284,30 +284,8 @@ function getTabHostName() {
 
 Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   const tabHostName = _[1];
-  const htmlTagsInlineText = [
-    "#text",
-    "a",
-    "abbr",
-    "acronym",
-    "b",
-    "bdo",
-    "big",
-    "cite",
-    "dfn",
-    "em",
-    "i",
-    "label",
-    "q",
-    "s",
-    "small",
-    "span",
-    "strong",
-    "sub",
-    "sup",
-    "u",
-    "tt",
-    "var",
-  ];
+  /* prettier-ignore */
+  const htmlTagsInlineText = ["#text", "a", "abbr", "acronym", "b", "bdo", "big", "cite", "dfn", "em", "i", "label", "q", "s", "small", "span", "strong", "sub", /*"sup",*/ "u", "tt", "var"];
   const htmlTagsInlineIgnore = ["br", "code", "kbd", "wbr"]; // and input if type is submit or button, and <pre> depending on settings
   const htmlTagsNoTranslate = ["title", "script", "style", "textarea", "svg"];
 
@@ -324,6 +302,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         if (newvalue !== "yes") {
           htmlTagsInlineIgnore.push("pre");
         }
+        break;
+      case "dontSortResults":
+        dontSortResults = newvalue == "yes" ? true : false;
         break;
     }
   });
@@ -506,7 +487,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             node.isContentEditable ||
             node.classList.contains("material-icons") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/481
             node.classList.contains("material-symbols-outlined") ||
-            node.nodeName.toLowerCase().startsWith("br-") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/627
+            nodeName.startsWith("br-") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/627
             node.getAttribute("id") === "branch-select-menu" // https://github.com/FilipePS/Traduzir-paginas-web/issues/570
           ) {
             if (piecesToTranslate[index].nodes.length > 0) {
@@ -828,6 +809,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         }
       }
     }
+
     mutationObserver.takeRecords();
   }
 
@@ -943,7 +925,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     } catch (e) {
       console.error(e);
     }
-  
+
     clearTimeout(translationRoutine_handler);
     translationRoutine_handler = setTimeout(translationRoutine, 300);
   }
@@ -990,8 +972,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       { action: "removeTranslationsWithError" },
       checkedLastError
     );
-
-    dontSortResults = twpConfig.get("dontSortResults") == "yes" ? true : false;
 
     if (targetLanguage) {
       currentTargetLanguage = targetLanguage;
@@ -1150,6 +1130,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       pageTranslator.improveTranslation(request);
     } else if (request.action === "getCurrentSourceLanguage") {
       sendResponse(currentSourceLanguage);
+    } else if (request.action === "getDontSortResults") {
+      sendResponse(dontSortResults);
     }
   });
 

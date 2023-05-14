@@ -8,7 +8,7 @@ $("#btnClose").addEventListener("click", () => {
 
 $("#btnApply").addEventListener("click", () => {
   twpConfig.setTargetLanguage($("#selectTargetLanguage").value, true);
-  twpConfig.set("dontSortResults", $("#dontSortResults").value);
+  // twpConfig.set("dontSortResults", $("#dontSortResults").value);
 
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.tabs.sendMessage(
@@ -27,66 +27,78 @@ $("#btnApply").addEventListener("click", () => {
   });
 });
 
-twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
-  twpI18n.translateDocument();
+twpConfig
+  .onReady()
+  .then(() => twpI18n.updateUiMessages())
+  .then(() => {
+    twpI18n.translateDocument();
 
-  $("#dontSortResults").value = twpConfig.get("dontSortResults");
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(
-      tabs[0].id,
-      { action: "getCurrentSourceLanguage" },
-      (sourceLanguage) => {
-        checkedLastError();
-        $("#selectOriginalLanguage").value = sourceLanguage
-          ? sourceLanguage
-          : "auto";
-      }
-    );
-  });
+    $("#dontSortResults").value = twpConfig.get("dontSortResults");
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        { action: "getCurrentSourceLanguage" },
+        (sourceLanguage) => {
+          checkedLastError();
+          $("#selectOriginalLanguage").value = sourceLanguage
+            ? sourceLanguage
+            : "auto";
+        }
+      );
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        { action: "getDontSortResults" },
+        (dontSortResults) => {
+          checkedLastError();
+          $("#dontSortResults").value = dontSortResults ? "yes" : "no";
+        }
+      );
+    });
 
-  let langs = twpLang.getLanguageList();
+    let langs = twpLang.getLanguageList();
 
-  const langsSorted = [];
+    const langsSorted = [];
 
-  for (const i in langs) {
-    langsSorted.push([i, langs[i]]);
-  }
+    for (const i in langs) {
+      langsSorted.push([i, langs[i]]);
+    }
 
-  langsSorted.sort(function (a, b) {
-    return a[1].localeCompare(b[1]);
-  });
+    langsSorted.sort(function (a, b) {
+      return a[1].localeCompare(b[1]);
+    });
 
-  const eAllLangs = selectTargetLanguage.querySelector('[name="all"]');
-  langsSorted.forEach((value) => {
-    const option = document.createElement("option");
-    option.value = value[0];
-    option.textContent = value[1];
-    eAllLangs.appendChild(option);
-  });
+    const eAllLangs = selectTargetLanguage.querySelector('[name="all"]');
+    langsSorted.forEach((value) => {
+      const option = document.createElement("option");
+      option.value = value[0];
+      option.textContent = value[1];
+      eAllLangs.appendChild(option);
+    });
 
-  const selectOriginalLanguage = $("#selectOriginalLanguage");
-  langsSorted.forEach((value) => {
-    const option = document.createElement("option");
-    option.value = value[0];
-    option.textContent = value[1];
-    selectOriginalLanguage.appendChild(option);
-  });
+    const selectOriginalLanguage = $("#selectOriginalLanguage");
+    langsSorted.forEach((value) => {
+      const option = document.createElement("option");
+      option.value = value[0];
+      option.textContent = value[1];
+      selectOriginalLanguage.appendChild(option);
+    });
 
-  const eRecentsLangs = selectTargetLanguage.querySelector('[name="targets"]');
-  for (const value of twpConfig.get("targetLanguages")) {
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = langs[value];
-    eRecentsLangs.appendChild(option);
-  }
-  selectTargetLanguage.value = twpConfig.get("targetLanguages")[0];
+    const eRecentsLangs =
+      selectTargetLanguage.querySelector('[name="targets"]');
+    for (const value of twpConfig.get("targetLanguages")) {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = langs[value];
+      eRecentsLangs.appendChild(option);
+    }
+    selectTargetLanguage.value = twpConfig.get("targetLanguages")[0];
 
-  function disableDarkMode() {
-    if (!$("#lightModeElement")) {
-      const el = document.createElement("style");
-      el.setAttribute("id", "lightModeElement");
-      el.setAttribute("rel", "stylesheet");
-      el.textContent = `
+    function disableDarkMode() {
+      if (!$("#lightModeElement")) {
+        const el = document.createElement("style");
+        el.setAttribute("id", "lightModeElement");
+        el.setAttribute("rel", "stylesheet");
+        el.textContent = `
             body {
                 color: rgb(0, 0, 0);
                 background-color: rgb(224, 224, 224);
@@ -105,31 +117,31 @@ twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
                 background-color: rgb(0, 0, 0);
             }
             `;
-      document.head.appendChild(el);
-    }
-  }
-
-  function enableDarkMode() {
-    if ($("#lightModeElement")) {
-      $("#lightModeElement").remove();
-    }
-  }
-
-  switch (twpConfig.get("darkMode")) {
-    case "auto":
-      if (matchMedia("(prefers-color-scheme: dark)").matches) {
-        enableDarkMode();
-      } else {
-        disableDarkMode();
+        document.head.appendChild(el);
       }
-      break;
-    case "yes":
-      enableDarkMode();
-      break;
-    case "no":
-      disableDarkMode();
-      break;
-    default:
-      break;
-  }
-});
+    }
+
+    function enableDarkMode() {
+      if ($("#lightModeElement")) {
+        $("#lightModeElement").remove();
+      }
+    }
+
+    switch (twpConfig.get("darkMode")) {
+      case "auto":
+        if (matchMedia("(prefers-color-scheme: dark)").matches) {
+          enableDarkMode();
+        } else {
+          disableDarkMode();
+        }
+        break;
+      case "yes":
+        enableDarkMode();
+        break;
+      case "no":
+        disableDarkMode();
+        break;
+      default:
+        break;
+    }
+  });

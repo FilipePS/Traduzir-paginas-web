@@ -739,6 +739,7 @@ const translationService = (function () {
             }
             lastEndPos = pos + fullLength;
           }
+
           // captures the final text outside the <a> tag
           {
             const lastOutsideText = result
@@ -753,54 +754,54 @@ const translationService = (function () {
           //   /\<a\si\=[0-9]+\>[^\<\>]*(?=\<\/a\>)/g
           // );
 
+          let indexes;
+          // each inline tag has a index starting with 0 <a i={number}>
+          if (resultArray && resultArray.length > 0) {
+            // get the indexed of <a i={number}>
+            indexes = resultArray
+              .map((value) => parseInt(value.match(/[0-9]+(?=\>)/g)[0]))
+              .filter((value) => !isNaN(value));
+            // get the text inside of <a i={number}>
+            resultArray = resultArray.map((value) => {
+              const resultStartAtIndex = value.indexOf(">");
+              return value.slice(resultStartAtIndex + 1);
+            });
+          } else {
+            // maybe the response don't have any <a i={number}>
+            resultArray = [result];
+            indexes = [0];
+          }
+
+          // unescapeHTML
+          resultArray = resultArray.map((value) => Utils.unescapeHTML(value));
+
           if (dontSortResults) {
             // Should not sort the <a i={number}> of Google Translate result
             // Instead of it, join the texts without sorting
             // https://github.com/FilipePS/Traduzir-paginas-web/issues/163
 
-            if (resultArray && resultArray.length > 0) {
-              // get the text inside of <a i={number}>
-              // the indexes is not needed in this case
-              resultArray = resultArray.map((value) => {
-                const resultStartAtIndex = value.indexOf(">");
-                return value.slice(resultStartAtIndex + 1);
-              });
-            } else {
-              // maybe the response don't have any <a i={number}>
-              resultArray = [result];
-            }
+            // /** @type {string[]} */
+            // const finalResulArray = [];
 
-            // unescapeHTML
-            resultArray = resultArray.map((value) => Utils.unescapeHTML(value));
+            // for (const j in indexes) {
+            //   finalResulArray[indexes[j]] = "";
+            // }
 
+            // resultArray.forEach((text, i) => {
+            //   finalResulArray[
+            //     Math.floor(i * (finalResulArray.length / resultArray.length))
+            //   ] += text;
+            // });
+
+            // return finalResulArray;
             return resultArray;
           } else {
             // Sort Google translate results to keep the links with the correct name
             // Note: the links may also disappear; http://web.archive.org/web/20220919162911/https://de.wikipedia.org/wiki/Wikipedia:Hauptseite
-            // each inline tag has a index starting with 0 <a i={number}>
-            let indexes;
-            if (resultArray && resultArray.length > 0) {
-              // get the indexed of <a i={number}>
-              indexes = resultArray
-                .map((value) => parseInt(value.match(/[0-9]+(?=\>)/g)[0]))
-                .filter((value) => !isNaN(value));
-              // get the text inside of <a i={number}>
-              resultArray = resultArray.map((value) => {
-                const resultStartAtIndex = value.indexOf(">");
-                return value.slice(resultStartAtIndex + 1);
-              });
-            } else {
-              // maybe the response don't have any <a i={number}>
-              resultArray = [result];
-              indexes = [0];
-            }
-
-            // unescapeHTML
-            resultArray = resultArray.map((value) => Utils.unescapeHTML(value));
 
             /** @type {string[]} */
             const finalResulArray = [];
-            // sorte de results and put in finalResulArray
+
             for (const j in indexes) {
               if (finalResulArray[indexes[j]]) {
                 finalResulArray[indexes[j]] += " " + resultArray[j];
@@ -1098,11 +1099,11 @@ const translationService = (function () {
       if (targetLanguage === "pt") {
         targetLanguage = "pt-BR";
       } else if (targetLanguage === "no") {
-        targetLanguage = "nb"
+        targetLanguage = "nb";
       } else if (targetLanguage.startsWith("zh-")) {
-        targetLanguage = "zh"
+        targetLanguage = "zh";
       } else if (targetLanguage.startsWith("fr-")) {
-        targetLanguage = "fr"
+        targetLanguage = "fr";
       }
 
       return await new Promise((resolve) => {
