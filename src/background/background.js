@@ -264,13 +264,13 @@ if (typeof chrome.contextMenus !== "undefined") {
     contexts: ["browser_action", "page_action"],
   });
   chrome.contextMenus.create({
-    id: "browserAction-pdf-to-html",
-    title: twpI18n.getMessage("msgPDFtoHTML"),
+    id: "browserAction-translate-pdf",
+    title: twpI18n.getMessage("msgTranslatePDF"),
     contexts: ["browser_action"],
   });
   chrome.contextMenus.create({
-    id: "pageAction-pdf-to-html",
-    title: twpI18n.getMessage("msgPDFtoHTML"),
+    id: "pageAction-translate-pdf",
+    title: twpI18n.getMessage("msgTranslatePDF"),
     contexts: ["page_action"],
   });
 
@@ -332,7 +332,7 @@ if (typeof chrome.contextMenus !== "undefined") {
       chrome.tabs.create({
         url: chrome.runtime.getURL("/options/options.html"),
       });
-    } else if (info.menuItemId == "browserAction-pdf-to-html") {
+    } else if (info.menuItemId == "browserAction-translate-pdf") {
       const mimeType = tabToMimeType[tab.id];
       if (
         mimeType &&
@@ -342,10 +342,10 @@ if (typeof chrome.contextMenus !== "undefined") {
         chrome.browserAction.openPopup();
       } else {
         chrome.tabs.create({
-          url: "https://translatewebpages.org/",
+          url: "https://pdf.translatewebpages.org/",
         });
       }
-    } else if (info.menuItemId == "pageAction-pdf-to-html") {
+    } else if (info.menuItemId == "pageAction-translate-pdf") {
       const mimeType = tabToMimeType[tab.id];
       if (
         mimeType &&
@@ -355,7 +355,7 @@ if (typeof chrome.contextMenus !== "undefined") {
         chrome.pageAction.openPopup();
       } else {
         chrome.tabs.create({
-          url: "https://translatewebpages.org/",
+          url: "https://pdf.translatewebpages.org/",
         });
       }
     }

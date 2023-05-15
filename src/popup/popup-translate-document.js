@@ -69,7 +69,7 @@ async function convertDocument(service, data) {
 
 selectService.onclick = async (e) => {
   if (
-    e.target.dataset.name == "google" ||
+    // e.target.dataset.name == "google" ||
     e.target.dataset.name == "translatewebpages"
   ) {
     selectService.style.display = "none";
@@ -109,6 +109,17 @@ selectService.onclick = async (e) => {
         showError(e);
       }
     });
+  } else if (e.target.dataset.name === "google") {
+    window.open(
+      `https://translate.google.com/?sl=auto&tl=${twpConfig.get(
+        "targetLanguage"
+      )}&op=docs`,
+      "_blank"
+    );
+    window.close();
+  } else if (e.target.dataset.name === "pdftwp") {
+    window.open("https://pdf.translatewebpages.org", "_blank");
+    window.close();
   }
 };
 
@@ -140,19 +151,23 @@ function enableDarkMode() {
   if ($("#lightModeElement")) $("#lightModeElement").remove();
 }
 
-twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
-  twpI18n.translateDocument();
+twpConfig
+  .onReady()
+  .then(() => twpI18n.updateUiMessages())
+  .then(() => {
+    twpI18n.translateDocument();
 
-  switch (twpConfig.get("darkMode")) {
-    case "auto":
-      if (matchMedia("(prefers-color-scheme: dark)").matches) enableDarkMode();
-      else disableDarkMode();
-      break;
-    case "yes":
-      enableDarkMode();
-      break;
-    case "no":
-      disableDarkMode();
-      break;
-  }
-});
+    switch (twpConfig.get("darkMode")) {
+      case "auto":
+        if (matchMedia("(prefers-color-scheme: dark)").matches)
+          enableDarkMode();
+        else disableDarkMode();
+        break;
+      case "yes":
+        enableDarkMode();
+        break;
+      case "no":
+        disableDarkMode();
+        break;
+    }
+  });

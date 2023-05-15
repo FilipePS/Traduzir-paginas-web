@@ -8,7 +8,7 @@
   <style>
     body {
       width: 350px;
-      background-color: #181a1b;
+      background-color: #2e3031;
       color: white;
     }
 
@@ -32,7 +32,7 @@
     .servicebutton,
     .sendbutton {
       padding: 8px;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.8);
       border-radius: 5px;
       margin: 13px;
       box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.5);
@@ -65,11 +65,14 @@
       Error downloading document
     </div>
     <div id="selectService">
+      <div class="servicebutton" id="pdftwp" data-name="pdftwp">
+        pdf.translatewebpages.org (new)
+      </div>
       <div class="servicebutton" id="translatewebpages" data-name="translatewebpages">
-        Translate Web Pages
+        pdftohtml.translatewebpages.org
       </div>
       <div class="servicebutton" id="googletranslate" data-name="google">
-        Google Translate
+        translate.google.com
       </div>
     </div>
     <div style="margin: 13px; display: none" id="cannotusegoogle"></div>

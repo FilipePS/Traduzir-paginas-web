@@ -733,6 +733,37 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     return fontNode;
   }
 
+  function translateTextContent(node, text, toRestore) {
+    toRestore.translatedText = text;
+
+    if (location.hostname === "pdf.translatewebpages.org") {
+      const parentNode = node.parentNode;
+      if (
+        parentNode.nodeName.toLowerCase() === "span" &&
+        parentNode.getAttribute("role") === "presentation"
+      ) {
+        const oldClientWidth = node.parentNode.clientWidth;
+        node.textContent = text;
+        const newClientWidth = node.parentNode.clientWidth;
+        const transformMatch = parentNode.style.transform.match(
+          /[0-9]+[\.]{1,1}[0-9]*/
+        );
+        const currentScaleX = transformMatch
+          ? parseFloat(transformMatch[0])
+          : 1.0;
+        toRestore.originalScale = currentScaleX;
+        parentNode.style.transform = `scaleX(${
+          currentScaleX *
+          Math.min(currentScaleX, oldClientWidth / newClientWidth)
+        })`;
+      } else {
+        node.textContent = text;
+      }
+    } else {
+      node.textContent = text;
+    }
+  };
+
   function translateResults(piecesToTranslateNow, results) {
     if (dontSortResults) {
       for (let i = 0; i < results.length; i++) {
@@ -761,6 +792,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               original: originalTextNode,
               originalText: originalTextNode.textContent,
               translatedText: translated,
+              originalScale: null,
             };
             nodesToRestore.push(toRestore);
 
@@ -775,8 +807,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
                 originalText.match(/\s*$/)[0]
               }`;
-              nodes[j].textContent = results;
-              toRestore.translatedText = results;
+              translateTextContent(nodes[j], results, toRestore);
             });
           }
         }
@@ -813,8 +844,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
                 originalText.match(/\s*$/)[0]
               }`;
-              nodes[j].textContent = results;
-              toRestore.translatedText = results;
+              translateTextContent(nodes[j], results, toRestore);
             });
           }
         }
@@ -996,6 +1026,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       document.body.classList.remove("notranslate");
     }
 
+    if (location.hostname === "pdf.translatewebpages.org") {
+      document.getElementById("scaleSelect").value = "1.5";
+      document.getElementById("scaleSelect").dispatchEvent(new Event("change"));
+    }
+
     piecesToTranslate = getPiecesToTranslate();
     attributesToTranslate = getAttributesToTranslate();
 
@@ -1051,6 +1086,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         }
       } else {
         ntr.node.replaceWith(ntr.original);
+      }
+      if (ntr.originalScale) {
+        ntr.node.parentNode.style.transform = `scaleX(${ntr.originalScale}`;
       }
     }
     nodesToRestore = [];
