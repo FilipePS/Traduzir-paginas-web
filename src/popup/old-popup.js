@@ -656,6 +656,11 @@ twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
               url: chrome.runtime.getURL("/options/options.html#donation"),
             });
             break;
+          case "translatePDF":
+            chrome.tabs.create({
+              url: "https://pdf.translatewebpages.org/",
+            });
+            break;
           default:
             break;
         }

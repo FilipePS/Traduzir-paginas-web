@@ -289,6 +289,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   const htmlTagsInlineIgnore = ["br", "code", "kbd", "wbr"]; // and input if type is submit or button, and <pre> depending on settings
   const htmlTagsNoTranslate = ["title", "script", "style", "textarea", "svg"];
 
+  if (location.hostname === "pdf.translatewebpages.org") {
+    const index = htmlTagsInlineText.indexOf("span");
+    if (index !== -1) {
+      htmlTagsInlineText.splice(index, 1);
+    }
+  }
+
   if (twpConfig.get("translateTag_pre") !== "yes") {
     htmlTagsInlineIgnore.push("pre");
   }
@@ -762,7 +769,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     } else {
       node.textContent = text;
     }
-  };
+  }
 
   function translateResults(piecesToTranslateNow, results) {
     if (dontSortResults) {
@@ -1199,7 +1206,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           if (result === "und") {
             originalTabLanguage = result;
             if (
-              twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !== -1
+              twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !==
+                -1 ||
+              (location.hostname === "pdf.translatewebpages.org" &&
+                twpConfig.get("neverTranslateSites").indexOf(tabHostName) ===
+                  -1)
             ) {
               pageTranslator.translatePage();
             }
@@ -1209,9 +1220,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               originalTabLanguage = langCode;
             }
             if (
-              location.hostname === "translatewebpages.org" &&
-              location.href.indexOf("?autotranslate") !== -1 &&
-              twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1
+              (location.hostname === "translatewebpages.org" &&
+                location.href.indexOf("?autotranslate") !== -1 &&
+                twpConfig.get("neverTranslateSites").indexOf(tabHostName) ===
+                  -1) ||
+              (location.hostname === "pdf.translatewebpages.org" &&
+                twpConfig.get("neverTranslateSites").indexOf(tabHostName) ===
+                  -1)
             ) {
               pageTranslator.translatePage();
             } else {

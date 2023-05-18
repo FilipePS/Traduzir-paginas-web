@@ -117,6 +117,13 @@ selectService.onclick = async (e) => {
       "_blank"
     );
     window.close();
+  } else if (e.target.dataset.name === "deepl") {
+    window.open("https://www.deepl.com/translator/files", "_blank");
+  } else if (e.target.dataset.name === "onlinedoctranslator") {
+    window.open(
+      "https://www.onlinedoctranslator.com/translationform",
+      "_blank"
+    );
   } else if (e.target.dataset.name === "pdftwp") {
     window.open("https://pdf.translatewebpages.org", "_blank");
     window.close();

@@ -280,13 +280,18 @@ if (typeof chrome.contextMenus !== "undefined") {
 
   chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId == "translate-web-page") {
-      chrome.tabs.sendMessage(
-        tab.id,
-        {
-          action: "toggle-translation",
-        },
-        checkedLastError
-      );
+      const mimeType = tabToMimeType[tab.id];
+      if (mimeType && mimeType.toLowerCase() === "application/pdf" && chrome.pageAction && chrome.pageAction.openPopup) {
+        chrome.pageAction.openPopup();
+      } else {
+        chrome.tabs.sendMessage(
+          tab.id,
+          {
+            action: "toggle-translation",
+          },
+          checkedLastError
+        );
+      }
     } else if (info.menuItemId == "translate-selected-text") {
       if (
         chrome.pageAction &&

@@ -29,6 +29,13 @@
             <ul>
                 <li>Release notes since version 1.0</li>
                 <li>Added option to set extension UI language</li>
+                <li>A new way to translate <b>PDF</b>
+                    <ol>
+                        <li>Open website <a href="https://pdf.translatewebpages.org" target="_blank">pdf.translatewebpages.org</a></li>
+                        <li>Select or drag and drop a PDF file</li>
+                        <li>The translation will start immediately and happen dynamically as you scroll through the page</li>
+                    </ol>
+                </li>
                 <li><b>Improve translation</b> button in page translation panel, with the options:
                     <ul>
                         <li>Select the original website language</li>
@@ -57,12 +64,22 @@
                 </li>
             </ul>
         </li>
-        <li>Fixed
+        <li>Changes
             <ul>
-                <li>Gitako doesn't work with TWP</li>
-                <li>Selected text translation not working in other extensions popup</li>
+                <li>Nodes modified by <i>jiffyreader</i> will not be translated</li>
+                <li>Links in Twitter posts will not be translated to improve translation quality</li>
+                <li>When translating selected text on PDF and other restrictive websites, you now have the option to listen to the original text as well</li>
             </ul>
         </li>
+        <li>Fixed
+            <ul>
+                <!-- <li>Gitako doesn't work with TWP</li> -->
+                <li>Selected text translation not working in other extensions popup</li>
+                <li>Layout breaks on some <i>Wikipedia</i> pages when the <i><code>Do not sort translation results</code></i> option is enabled</li>
+                <li>Keep whitespace in textNodes to prevent the translation from getting truncated</li>
+            </ul>
+        </li>
+        <li>Bug fixes and general improvements</li>
         <li>Update interface translations</li>
     </ul>
 </section>
