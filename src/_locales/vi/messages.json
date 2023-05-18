@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDF sang HTML"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "Sao Chép"
   },
@@ -508,9 +511,9 @@
     "message": "Âm thầm sử dụng dịch vụ dịch thuật thay thế nếu ngôn ngữ cần dịch sang không được hỗ trợ bởi dịch vụ dịch thuật đã chọn"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Ngôn ngữ mặc định"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Ngôn ngữ giao diện người dùng của tiện ích"
   }
 }

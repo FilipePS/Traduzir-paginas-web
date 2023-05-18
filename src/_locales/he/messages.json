@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDF ל-HTML"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "עותק"
   },

@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDF do HTML"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "Kopiuj"
   },
@@ -508,9 +511,9 @@
     "message": "Sam użyj alternatywnej usługi tłumaczeniowej, jeśli bieżący język docelowy nie jest obsługiwany przez wybraną usługę tłumaczeniową"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Domyślny język"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Język interfejsu rozszerzenia"
   }
 }

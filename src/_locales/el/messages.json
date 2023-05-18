@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Μην ταξινομήσετε τα αποτελέσματα μετάφρασης"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Μετάφραση δυναμικά δημιουργημένου περιεχομένου"
@@ -394,6 +394,9 @@
   },
   "msgPDFtoHTML": {
     "message": "PDF σε HTML"
+  },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
   },
   "btncopy": {
     "message": "Αντιγραφή"
@@ -484,33 +487,33 @@
     "message": "Αναπτύσσω, ενημερώνω και υποστηρίζω αυτήν την επέκταση για περισσότερα από τρία χρόνια. Είναι εκπληκτικό να βλέπουμε ότι έχουμε πάνω από 600.000 καθημερινούς χρήστες και όλοι αυτοί οι άνθρωποι μπόρεσαν να μετεγκατασταθούν μόνιμα στον Firefox.\n\nΣτόχος μου είναι να κυκλοφορώ μια νέα έκδοση αυτής της επέκτασης κάθε μήνα και να συνεχίσω να τη βελτιώνω.\n\nΘα σας ήμουν ευγνώμων εάν μπορούσατε να με βοηθήσετε οικονομικά, γίνοντας μέλος του Patreon και υποστηρίζοντάς με να βελτιώσω αυτήν την επέκταση.\n\nΕυχαριστούμε όλους όσους έχουν ήδη συνεισφέρει σε αυτό το έργο."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Ενεργοποίηση μόνιμης προσωρινής μνήμης μετάφρασης (κρυφή μνήμη στο δίσκο)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Επιλέξτε την αρχική γλώσσα της ιστοσελίδας"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Επιλογή γλώσσας προορισμού"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Βελτίωση μετάφρασης"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Πειραματική"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Απόρρητο"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Επιλέξτε τις υπηρεσίες μετάφρασης που θέλετε να χρησιμοποιήσετε"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Αθόρυβη χρήση μιας εναλλακτικής μεταφραστικής υπηρεσίας εάν η τρέχουσα γλώσσα προορισμού δεν υποστηρίζεται από την επιλεγμένη μεταφραστική υπηρεσία"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Προεπιλεγμένη γλώσσα"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Επέκταση γλώσσας διεπαφής χρήστη"
   }
 }

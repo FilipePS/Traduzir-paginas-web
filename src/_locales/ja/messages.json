@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDFをHTMLに変換"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "コピー"
   },

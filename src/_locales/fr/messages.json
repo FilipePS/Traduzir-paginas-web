@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDF à HTML"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "Copier"
   },

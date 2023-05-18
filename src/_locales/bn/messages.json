@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "পিডিএফ থেকে এইচটিএমএল"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "কপি করুন"
   },

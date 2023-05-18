@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "نتایج ترجمه را مرتب نکن"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "محتوای ایجاد شده به صورت پویا را ترجمه کن"
@@ -394,6 +394,9 @@
   },
   "msgPDFtoHTML": {
     "message": "تبدیل پی‌دی‌اف به اچ‌تی‌ام‌ال"
+  },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
   },
   "btncopy": {
     "message": "کپی (رونوشت)"
@@ -484,33 +487,33 @@
     "message": "من بیش از سه سال است که این برنامه افزودنی را توسعه، به روز رسانی و پشتیبانی می کنم. شگفت انگیز است که می بینیم روزانه بیش از 600000 کاربر داریم و همه این افراد توانسته اند به طور دائم به فایرفاکس مهاجرت کنند.\n\nمن قصد دارم هر ماه یک نسخه جدید از این افزونه منتشر کنم و به بهبود آن ادامه دهم.\n\nسپاسگزار خواهم بود اگر بتوانید با عضویت در Patreon و حمایت مالی از من در بهبود این برنامه افزودنی به من کمک مالی کنید.\n\nبا تشکر از همه کسانی که قبلاً در این پروژه مشارکت داشته اند."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "فعال کردن حافظه پنهان ترجمه دائمی (کش روی دیسک)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "انتخاب زبان اصلی وب سایت"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "انتخاب زبان مورد نیاز"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "اصلاح ترجمه"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "(آزمایشی)"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "حریم خصوصی"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "انتخاب خدمات ترجمه ای که شما می خواهید استفاده کنید"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "اگر زبان مقصد فعلی توسط سرویس ترجمه انتخابی پشتیبانی نمی‌شود، بدون خبر دادن از یک سرویس ترجمه جایگزین استفاده کنید"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "زبان پیش‌فرض / زبان معمول"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "زبان رابط کاربری افزونه"
   }
 }

@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Çeviri sonuçlarını sıralama"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Dinamik olarak oluşturulan içeriği çevir"
@@ -394,6 +394,9 @@
   },
   "msgPDFtoHTML": {
     "message": "PDF'den HTML'e"
+  },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
   },
   "btncopy": {
     "message": "Kopyala"
@@ -484,33 +487,33 @@
     "message": "Bu uzantıyı üç yılı aşkın bir süredir geliştiriyor, güncelliyor ve destekliyorum. Günlük 600.000'den fazla kullanıcımız olduğunu ve bu insanların hepsinin kalıcı olarak Firefox'a geçebildiğini görmek harika.\n\nHer ay bu uzantının yeni bir sürümünü yayınlamayı ve geliştirmeye devam etmeyi hedefliyorum.\n\nBir Patreon üyesi olarak bana finansal olarak yardımcı olabilirseniz ve bu uzantıyı geliştirmemde beni desteklerseniz minnettar olurum.\n\nBu projeye şimdiden katkıda bulunan herkese teşekkür ederiz."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Kalıcı çeviri önbelleğini etkinleştir (disk önbelleği)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Orijinal web sitesi dilini seçin"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Hedef dili seçin"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Çeviriyi iyileştir"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Deneysel"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Gizlilik"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Kullanmak istediğiniz çeviri hizmetlerini seçin"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Geçerli hedef dil, seçilen çeviri hizmeti tarafından desteklenmiyorsa, alternatif bir çeviri hizmetini sessizce kullanın"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Varsayılan dil"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Eklenti kullanıcı arayüzü dili"
   }
 }

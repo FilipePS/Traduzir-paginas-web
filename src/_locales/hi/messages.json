@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "पीडीएफ से एचटीएमएल"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "प्रतिलिपि"
   },

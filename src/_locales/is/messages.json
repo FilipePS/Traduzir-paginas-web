@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDF í HTML"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "Afrita"
   },
@@ -465,7 +468,7 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Veldu annað tungumál"
+    "message": "Velja annað tungumál"
   },
   "msgHasBeenUpdated": {
     "message": "Viðbótin $EXTENSION_NAME$ hefur verið uppfærð í útgáfu $EXTENSION_VERSION$.",
@@ -508,9 +511,9 @@
     "message": "Notaðu aðra þýðingarþjónustu án vitundar ef núverandi marktungumál er ekki stutt af völdu þýðingarþjónustunni"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Sjálfgefið tungumál"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Tungumál aukanotendaviðmóts"
   }
 }

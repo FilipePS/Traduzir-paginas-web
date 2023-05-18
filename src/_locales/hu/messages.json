@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDF-ből HTML-be"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "Másolás"
   },
@@ -508,9 +511,9 @@
     "message": "Használjon a háttérben egy alternatív fordítómotort, ha az aktuális célnyelvet a kiválasztott motor nem támogatja"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Alapértelmezett nyelv"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Bővítmény felhasználói felületének nyelve"
   }
 }

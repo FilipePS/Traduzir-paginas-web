@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDF to HTML"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "Kóshirip alıw"
   },

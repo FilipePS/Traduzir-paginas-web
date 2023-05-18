@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDF u HTML"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "Kopiraj"
   },
@@ -508,9 +511,9 @@
     "message": "Koristi alternativnu uslugu prevođenja ako odabrana usluga prevođenja ne podržava trenutačni ciljani jezik"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Zadani jezik"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Jezik korisničkog sučelja dodatka"
   }
 }

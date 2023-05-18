@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDF를 HTML로"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "복사"
   },

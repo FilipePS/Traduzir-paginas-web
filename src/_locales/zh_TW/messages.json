@@ -48,7 +48,7 @@
     "message": "再試一次"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "在 Google 翻譯中開啟"
+    "message": "用 Google 譯者開啟"
   },
   "btnDonate": {
     "message": "資助"
@@ -75,7 +75,7 @@
     "message": "以三指點螢幕時"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "在 Yandex 翻譯中打開"
+    "message": "用 Yandex 譯者開啟"
   },
   "lblOthers": {
     "message": "其他"
@@ -395,6 +395,9 @@
   "msgPDFtoHTML": {
     "message": "PDF 轉 HTML"
   },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
+  },
   "btncopy": {
     "message": "複製"
   },
@@ -508,9 +511,9 @@
     "message": "如果這家翻譯服務不支援目前的目標語言，可以換一家翻譯服務試試"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "預設語言"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "擴充套件使用者界面語言"
   }
 }

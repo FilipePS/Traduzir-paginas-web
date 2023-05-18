@@ -320,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Не сортувати результати перекладу"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Перекладати динамічно створений контент"
@@ -394,6 +394,9 @@
   },
   "msgPDFtoHTML": {
     "message": "PDF у HTML"
+  },
+  "msgTranslatePDF": {
+    "message": "Translate PDF"
   },
   "btncopy": {
     "message": "Копіювати"
@@ -484,33 +487,33 @@
     "message": "Я розробляю, оновлюю та підтримую це розширення більше трьох років. Дивно бачити, що ми маємо понад 600 000 щоденних користувачів, і всі ці люди змогли назавжди перейти на Firefox.\n\nЯ маю на меті випускати нову версію цього розширення щомісяця та постійно вдосконалювати його.\n\nЯ був би вдячний, якщо б ви допомогли мені фінансово, ставши членом Patreon і підтримавши мене в покращенні цього розширення.\n\nДякуємо всім, хто вже долучився до цього проекту."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Ввімкнути постійне кешування перекладів (кеш на диску)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Оберіть основну мову сайту"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Виберіть мову перекладу"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Покращити переклад"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Експериментальний"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Конфіденційність"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Виберіть сервіси перекладу, які ви хочете використовувати"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Використовувати альтернативну службу перекладу, якщо поточна мова перекладу не підтримується обраною службою перекладу"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Мова за замовчуванням"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Мова інтерфейсу розширень"
   }
 }
