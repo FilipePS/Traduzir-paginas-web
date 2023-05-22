@@ -460,7 +460,16 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     let lastTimePressedCtrl = null;
 
     eOrigText.onkeyup = (e) => {
+      e.stopPropagation();
+
       if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
+      // https://github.com/FilipePS/Traduzir-paginas-web/issues/577
+      if (isSelectingText()) {
+        return onKeyUp(e);
+      } else {
+        if (eReplace.hasAttribute("hidden")) return;
+      }
+
       if (e.key == "Control") {
         if (
           lastTimePressedCtrl &&

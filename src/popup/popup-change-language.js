@@ -61,7 +61,7 @@ twpConfig.onReady().then(() => twpI18n.updateUiMessages()).then(() => {
                 background-color: rgba(0, 0, 0, 0.2);
             }
             
-            .select:hover, #btnApply:hover {
+            .select:hover, .select:focus, #btnApply:hover {
                 background-color: rgba(0, 0, 0, 0.4);
             }
 
