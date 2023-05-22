@@ -740,13 +740,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     return fontNode;
   }
 
-  function translateTextContent(node, text, toRestore) {
+  function translateTextContent(node, parentNode, text, toRestore) {
     toRestore.translatedText = text;
 
     if (location.hostname === "pdf.translatewebpages.org") {
-      const parentNode = node.parentNode;
       if (
-        parentNode.nodeName.toLowerCase() === "span" &&
+        parentNode && parentNode.nodeName.toLowerCase() === "span" &&
         parentNode.getAttribute("role") === "presentation"
       ) {
         const oldClientWidth = node.parentNode.clientWidth;
@@ -789,6 +788,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             }
 
             const originalTextNode = nodes[j];
+            const parentNode = nodes[j].parentNode;
             if (showOriginal.isEnabled) {
               nodes[j] = encapsulateTextNode(nodes[j]);
               showOriginal.add(nodes[j]);
@@ -800,6 +800,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               originalText: originalTextNode.textContent,
               translatedText: translated,
               originalScale: null,
+              parentNode,
             };
             nodesToRestore.push(toRestore);
 
@@ -814,7 +815,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
                 originalText.match(/\s*$/)[0]
               }`;
-              translateTextContent(nodes[j], results, toRestore);
+              translateTextContent(nodes[j], parentNode, results, toRestore);
             });
           }
         }
@@ -827,6 +828,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             const translated = results[i][j] + " ";
 
             const originalTextNode = nodes[j];
+            const parentNode = nodes[j].parentNode;
             if (showOriginal.isEnabled) {
               nodes[j] = encapsulateTextNode(nodes[j]);
               showOriginal.add(nodes[j]);
@@ -837,6 +839,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               original: originalTextNode,
               originalText: originalTextNode.textContent,
               translatedText: translated,
+              parentNode,
             };
             nodesToRestore.push(toRestore);
 
@@ -851,7 +854,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
                 originalText.match(/\s*$/)[0]
               }`;
-              translateTextContent(nodes[j], results, toRestore);
+              translateTextContent(nodes[j], parentNode, results, toRestore);
             });
           }
         }
@@ -1095,7 +1098,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         ntr.node.replaceWith(ntr.original);
       }
       if (ntr.originalScale) {
-        ntr.node.parentNode.style.transform = `scaleX(${ntr.originalScale}`;
+        ntr.parentNode.style.transform = `scaleX(${ntr.originalScale}`;
       }
     }
     nodesToRestore = [];
