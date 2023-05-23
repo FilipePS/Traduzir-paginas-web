@@ -135,7 +135,7 @@ function updateContextMenu(pageLanguageState = "original") {
         id: "translate-web-page",
         title: contextMenuTitle,
         contexts: ["page", "frame"],
-        documentUrlPatterns: ["*://*/*"]
+        documentUrlPatterns: ["*://*/*"],
       });
     }
   }
@@ -275,13 +275,20 @@ if (typeof chrome.contextMenus !== "undefined") {
   });
 
   const tabHasContentScript = {};
-  let currentTabId = null
-  chrome.tabs.onActivated.addListener(activeInfo => currentTabId = activeInfo.tabId);
+  let currentTabId = null;
+  chrome.tabs.onActivated.addListener(
+    (activeInfo) => (currentTabId = activeInfo.tabId)
+  );
 
   chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId == "translate-web-page") {
       const mimeType = tabToMimeType[tab.id];
-      if (mimeType && mimeType.toLowerCase() === "application/pdf" && chrome.pageAction && chrome.pageAction.openPopup) {
+      if (
+        mimeType &&
+        mimeType.toLowerCase() === "application/pdf" &&
+        chrome.pageAction &&
+        chrome.pageAction.openPopup
+      ) {
         chrome.pageAction.openPopup();
       } else {
         chrome.tabs.sendMessage(
@@ -1022,5 +1029,30 @@ twpConfig.onReady(async () => {
   );
 });
 
-// garante que a extensão só seja atualizada quando reiniciar o navegador ao reiniciar manualmente a extensão.
-chrome.runtime.onUpdateAvailable.addListener((details) => {});
+// garante que a extensão só seja atualizada quando reiniciar o navegador.
+// caso seja uma atualização manual, realiza uma limpeza e recarrega a extensão para instalar a atualização.
+chrome.runtime.onUpdateAvailable.addListener((details) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    const url = new URL(tabs[0].url);
+    if (
+      (url.hostname === "github.com" &&
+        url.pathname.includes("FilipePS/Traduzir-paginas-web/releases")) ||
+      (url.hostname === "addons.mozilla.org" &&
+        url.pathname.includes("addon/traduzir-paginas-web/versions"))
+    ) {
+      chrome.tabs.query({}, (tabs) => {
+        const cleanUpsPromises = [];
+        tabs.forEach((tab) => {
+          cleanUpsPromises.push(
+            new Promise((resolve) => {
+              chrome.tabs.sendMessage(tab.id, { action: "cleanUp" }, resolve);
+            })
+          );
+        });
+        Promise.all(cleanUpsPromises).finally(() => {
+          chrome.runtime.reload();
+        });
+      });
+    }
+  });
+});

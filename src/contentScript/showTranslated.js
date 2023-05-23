@@ -91,7 +91,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     "var",
   ];
   const htmlTagsInlineIgnore = ["br", "code", "kbd", "wbr"]; // and input if type is submit or button, and <pre> depending on settings
-  const htmlTagsNoTranslate = ["title", "script", "style", "textarea", "svg"];
+  const htmlTagsNoTranslate = [
+    "title",
+    "script",
+    "style",
+    "textarea",
+    "svg",
+    "template",
+  ];
 
   if (twpConfig.get("translateTag_pre") !== "yes") {
     htmlTagsInlineIgnore.push("pre");

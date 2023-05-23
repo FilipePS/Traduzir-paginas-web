@@ -284,10 +284,13 @@ function getTabHostName() {
 
 Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   const tabHostName = _[1];
+  // "sup" não será traduzido https://github.com/FilipePS/Traduzir-paginas-web/issues/647
   /* prettier-ignore */
   const htmlTagsInlineText = ["#text", "a", "abbr", "acronym", "b", "bdo", "big", "cite", "dfn", "em", "i", "label", "q", "s", "small", "span", "strong", "sub", /*"sup",*/ "u", "tt", "var"];
+  /* prettier-ignore */
   const htmlTagsInlineIgnore = ["br", "code", "kbd", "wbr"]; // and input if type is submit or button, and <pre> depending on settings
-  const htmlTagsNoTranslate = ["title", "script", "style", "textarea", "svg"];
+  /* prettier-ignore */
+  const htmlTagsNoTranslate = ["title", "script", "style", "textarea", "svg", "template"];
 
   if (location.hostname === "pdf.translatewebpages.org") {
     const index = htmlTagsInlineText.indexOf("span");
@@ -745,7 +748,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     if (location.hostname === "pdf.translatewebpages.org") {
       if (
-        parentNode && parentNode.nodeName.toLowerCase() === "span" &&
+        parentNode &&
+        parentNode.nodeName.toLowerCase() === "span" &&
         parentNode.getAttribute("role") === "presentation"
       ) {
         const oldClientWidth = node.parentNode.clientWidth;
@@ -1191,6 +1195,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sendResponse(currentSourceLanguage);
     } else if (request.action === "getDontSortResults") {
       sendResponse(dontSortResults);
+    } else if (request.action === "cleanUp") {
+      pageTranslator.restorePage();
     }
   });
 
