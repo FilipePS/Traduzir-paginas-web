@@ -16,6 +16,7 @@ $("#btnApply").addEventListener("click", () => {
       {
         action: "improveTranslation",
         sourceLanguage: $("#selectOriginalLanguage").value,
+        pageTranslatorService: $("#pageTranslatorService").value,
         dontSortResults: $("#dontSortResults").value,
         targetLanguage: $("#selectTargetLanguage").value,
       },
@@ -33,6 +34,7 @@ twpConfig
   .then(() => {
     twpI18n.translateDocument();
 
+    $("#pageTranslatorService").value = twpConfig.get("pageTranslatorService");
     $("#dontSortResults").value = twpConfig.get("dontSortResults");
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       chrome.tabs.sendMessage(
@@ -43,6 +45,17 @@ twpConfig
           $("#selectOriginalLanguage").value = sourceLanguage
             ? sourceLanguage
             : "auto";
+        }
+      );
+
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        { action: "getCurrentPageTranslatorService" },
+        (pageService) => {
+          checkedLastError();
+          if (pageService) {
+            $("#pageTranslatorService").value = pageService;
+          }
         }
       );
       chrome.tabs.sendMessage(

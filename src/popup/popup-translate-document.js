@@ -82,11 +82,9 @@ selectService.onclick = async (e) => {
         const service = e.target.dataset.name;
         if (tabs[0].url.startsWith("file:")) {
           if (service == "google") {
-            chrome.tabs.create({
-              url: "https://translate.google.com/?op=docs",
-            });
+            tabsCreate("https://translate.google.com/?op=docs");
           } else {
-            chrome.tabs.create({ url: "https://translatewebpages.org/" });
+            tabsCreate("https://pdftohtml.translatewebpages.org/");
           }
           return window.close();
         }

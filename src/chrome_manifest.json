@@ -124,6 +124,7 @@
     "scripts": [
       "/lib/polyfill.js",
       "/lib/checkedLastError.js",
+      "/lib/stuff.js",
       "/lib/languages.js",
       "/lib/config.js",
       "/lib/platformInfo.js",

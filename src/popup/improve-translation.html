@@ -117,7 +117,19 @@
     <br>
   </div>
 
-  <div style="margin: 10px;">
+  <div style="margin: 10px; margin-top: 5px;">
+    <label for="pageTranslatorService" data-i18n="lblPageTranslationService">Page translation service</label>
+    <br>
+    <select class="select" id="pageTranslatorService">
+      <option value="google">Google</option>
+      <option value="bing">Bing</option>
+      <option value="yandex">Yandex</option>
+    </select>
+    <br>
+  </div>
+
+  <hr style="margin-bottom: 0;">
+  <div style="margin: 10px; margin-top: 5px;">
     <label for="dontSortResults" data-i18n="lblDontSortResults">Do not sort translation results</label>
     <br>
     <select class="select" id="dontSortResults">
@@ -133,6 +145,7 @@
 
   <script src="/lib/polyfill.js"></script>
   <script src="/lib/checkedLastError.js"></script>
+  <script src="/lib/stuff.js"></script>
   <script src="/lib/languages.js"></script>
   <script src="/lib/config.js"></script>
   <script src="/lib/i18n.js"></script>

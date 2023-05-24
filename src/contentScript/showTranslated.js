@@ -638,23 +638,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     } else {
       sGoogle.classList.add("selected");
     }
-
-    // if (twpConfig.get("enableDeepL") === "yes") {
-    //     sDeepL.removeAttribute("hidden")
-    // } else {
-    //     sDeepL.setAttribute("hidden", "")
-    // }
-    twpConfig.onChanged((name, newvalue) => {
-      switch (name) {
-        case "enableDeepL":
-          // if (newvalue === "yes") {
-          //     sDeepL.removeAttribute("hidden")
-          // } else {
-          //     sDeepL.setAttribute("hidden", "")
-          // }
-          break;
-      }
-    });
   }
 
   function destroy() {

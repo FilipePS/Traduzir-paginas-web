@@ -1124,6 +1124,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   };
 
   pageTranslator.improveTranslation = function (info) {
+    currentPageTranslatorService = info.pageTranslatorService;
     dontSortResults = info.dontSortResults === "yes" ? true : false;
     currentSourceLanguage = info.sourceLanguage;
     if (pageLanguageState === "translated") {
@@ -1229,7 +1230,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               originalTabLanguage = langCode;
             }
             if (
-              (location.hostname === "translatewebpages.org" &&
+              (location.hostname === "pdftohtml.translatewebpages.org" &&
                 location.href.indexOf("?autotranslate") !== -1 &&
                 twpConfig.get("neverTranslateSites").indexOf(tabHostName) ===
                   -1) ||

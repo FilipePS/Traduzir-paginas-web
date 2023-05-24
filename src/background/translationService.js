@@ -1143,12 +1143,10 @@ const translationService = (function () {
                 }
               );
             } else {
-              chrome.tabs.create(
-                {
-                  url: `https://www.deepl.com/#!${targetLanguage}!#${encodeURIComponent(
-                    sourceArray2d[0][0]
-                  )}`,
-                },
+              tabsCreate(
+                `https://www.deepl.com/#!${targetLanguage}!#${encodeURIComponent(
+                  sourceArray2d[0][0]
+                )}`,
                 (tab) => {
                   this.DeepLTab = tab;
                   waitFirstTranslationResult();
@@ -1158,12 +1156,10 @@ const translationService = (function () {
             }
           });
         } else {
-          chrome.tabs.create(
-            {
-              url: `https://www.deepl.com/#!${targetLanguage}!#${encodeURIComponent(
-                sourceArray2d[0][0]
-              )}`,
-            },
+          tabsCreate(
+            `https://www.deepl.com/#!${targetLanguage}!#${encodeURIComponent(
+              sourceArray2d[0][0]
+            )}`,
             (tab) => {
               this.DeepLTab = tab;
               waitFirstTranslationResult();
@@ -1313,10 +1309,10 @@ const translationService = (function () {
       await service.translate(
         sourceLanguage,
         targetLanguage,
-        [sourceArray],
+        sourceArray.map((text) => [text]),
         dontSaveInPersistentCache
       )
-    )[0];
+    ).map((result) => result[0]);
   };
 
   translationService.translateSingleText = async (

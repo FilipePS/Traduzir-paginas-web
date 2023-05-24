@@ -59,13 +59,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   } else if (request.action === "setPageLanguageState") {
     updateContextMenu(request.pageLanguageState);
   } else if (request.action === "openOptionsPage") {
-    chrome.tabs.create({
-      url: chrome.runtime.getURL("/options/options.html"),
-    });
+    tabsCreate(chrome.runtime.getURL("/options/options.html"));
   } else if (request.action === "openDonationPage") {
-    chrome.tabs.create({
-      url: chrome.runtime.getURL("/options/options.html#donation"),
-    });
+    tabsCreate(chrome.runtime.getURL("/options/options.html#donation"));
   } else if (request.action === "detectTabLanguage") {
     if (!sender.tab) {
       // https://github.com/FilipePS/Traduzir-paginas-web/issues/478
@@ -143,9 +139,7 @@ function updateContextMenu(pageLanguageState = "original") {
 
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason == "install") {
-    chrome.tabs.create({
-      url: chrome.runtime.getURL("/options/options.html"),
-    });
+    tabsCreate(chrome.runtime.getURL("/options/options.html"));
     twpConfig.onReady(async () => {
       if (chrome.i18n.getUILanguage() === "zh-CN") {
         twpConfig.set("pageTranslatorService", "bing");
@@ -185,11 +179,21 @@ chrome.runtime.onInstalled.addListener((details) => {
       }
 
       if (showReleaseNotes) {
-        chrome.tabs.create({
-          url: chrome.runtime.getURL("/options/options.html#release_notes"),
-        });
+        tabsCreate(
+          chrome.runtime.getURL("/options/options.html#release_notes")
+        );
       }
     });
+
+    // twpConfig.onReady(async () => {
+    //   if (twpConfig.get("textTranslatorService") === "deepl") {
+    //     if (chrome.i18n.getUILanguage() === "zh-CN") {
+    //       twpConfig.set("textTranslatorService", "bing");
+    //     } else {
+    //       twpConfig.set("textTranslatorService", "google");
+    //     }
+    //   }
+    // });
 
     twpConfig.onReady(async () => {
       translationCache.deleteTranslationCache();
@@ -341,9 +345,7 @@ if (typeof chrome.contextMenus !== "undefined") {
       const hostname = new URL(tab.url).hostname;
       twpConfig.addSiteToNeverTranslate(hostname);
     } else if (info.menuItemId == "more-options") {
-      chrome.tabs.create({
-        url: chrome.runtime.getURL("/options/options.html"),
-      });
+      tabsCreate(chrome.runtime.getURL("/options/options.html"));
     } else if (info.menuItemId == "browserAction-translate-pdf") {
       const mimeType = tabToMimeType[tab.id];
       if (
@@ -353,9 +355,7 @@ if (typeof chrome.contextMenus !== "undefined") {
       ) {
         chrome.browserAction.openPopup();
       } else {
-        chrome.tabs.create({
-          url: "https://pdf.translatewebpages.org/",
-        });
+        tabsCreate("https://pdf.translatewebpages.org/");
       }
     } else if (info.menuItemId == "pageAction-translate-pdf") {
       const mimeType = tabToMimeType[tab.id];
@@ -366,9 +366,7 @@ if (typeof chrome.contextMenus !== "undefined") {
       ) {
         chrome.pageAction.openPopup();
       } else {
-        chrome.tabs.create({
-          url: "https://pdf.translatewebpages.org/",
-        });
+        tabsCreate("https://pdf.translatewebpages.org/");
       }
     }
   });
