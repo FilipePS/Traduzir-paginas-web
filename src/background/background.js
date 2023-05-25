@@ -185,15 +185,15 @@ chrome.runtime.onInstalled.addListener((details) => {
       }
     });
 
-    // twpConfig.onReady(async () => {
-    //   if (twpConfig.get("textTranslatorService") === "deepl") {
-    //     if (chrome.i18n.getUILanguage() === "zh-CN") {
-    //       twpConfig.set("textTranslatorService", "bing");
-    //     } else {
-    //       twpConfig.set("textTranslatorService", "google");
-    //     }
-    //   }
-    // });
+    twpConfig.onReady(async () => {
+      if (twpConfig.get("textTranslatorService") === "deepl") {
+        if (chrome.i18n.getUILanguage() === "zh-CN") {
+          twpConfig.set("textTranslatorService", "bing");
+        } else {
+          twpConfig.set("textTranslatorService", "google");
+        }
+      }
+    });
 
     twpConfig.onReady(async () => {
       translationCache.deleteTranslationCache();
@@ -202,7 +202,12 @@ chrome.runtime.onInstalled.addListener((details) => {
 
   twpConfig.onReady(async () => {
     if (platformInfo.isMobile.any) {
-      twpConfig.set("enableDeepL", "no");
+      const enabledServices = twpConfig.get("enabledServices");
+      const index = enabledServices.indexOf("deepl");
+      if (index !== -1) {
+        enabledServices.splice(index, 1);
+        twpConfig.set("enabledServices", enabledServices);
+      }
     }
   });
 });

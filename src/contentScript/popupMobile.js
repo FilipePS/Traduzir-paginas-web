@@ -31,16 +31,19 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         <button id="btnMenu" class="item2">
             <div class="dropup">
                 <div id="menu" class="dropup-content">
-                    <a id="btnChangeLanguages" data-i18n="msgChooseAnotherLanguage">Choose another language</a>
+                    <a id="btnChangeLanguages" style="position: relative;">
+                      <span data-i18n="msgChooseAnotherLanguage">Choose another language</span>
+                      <select id="menuSelectLanguage">
+                        <optgroup name="targets" label="Recents" data-i18n-label="msgRecents"></optgroup>
+                        <optgroup name="all" label="All" data-i18n-label="msgAll"></optgroup>
+                      </select>
+                    </a>
                     <a id="btnTranslateSelectedText" data-i18n="msgTranslateSelectedText">Translate selected text</a>
                     <a id="btnNeverTranslate" data-i18n="btnNeverTranslate">Never translate this site</a>
                     <a id="neverTranslateThisLanguage" data-i18n="btnNeverTranslateThisLanguage" display="none">Never translate this language</a>
                     <a id="btnMoreOptions" data-i18n="btnMoreOptions">More options</a>
                     <a id="btnDonate" data-i18n="btnDonate" href="https://www.patreon.com/filipeps" target="_blank" rel="noopener noreferrer">Donate</a>
                 </div>
-            </div>
-            <div class="dropup">
-                <div id="menuSelectLanguage" class="dropup-content"></div>
             </div>
             <div class="menuDot"></div>
             <div class="menuDot"></div>
@@ -92,7 +95,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     if (!divElement) return;
     if (e.target === divElement) return;
 
-    getElemById("menuSelectLanguage").style.display = "none";
     getElemById("menu").style.display = "none";
   }
 
@@ -188,7 +190,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
 
     function translatePage(targetLanguage = currentTargetLanguage) {
-      getElemById("menuSelectLanguage").style.display = "none";
       getElemById("menu").style.display = "none";
 
       if (targetLanguage !== currentTargetLanguage) {
@@ -216,16 +217,35 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       });
 
       const menuSelectLanguage = getElemById("menuSelectLanguage");
+
+      const eAllLangs = menuSelectLanguage.querySelector('[name="all"]');
       langsSorted.forEach((value) => {
-        const a = document.createElement("a");
-        a.setAttribute("value", value[0]);
-        a.textContent = value[1];
-        a.addEventListener("click", (e) => {
-          e.stopPropagation();
-          translatePage(value[0]);
-        });
-        menuSelectLanguage.appendChild(a);
+        const option = document.createElement("option");
+        option.value = value[0];
+        option.textContent = value[1];
+        eAllLangs.appendChild(option);
       });
+
+      const eRecentsLangs =
+        menuSelectLanguage.querySelector('[name="targets"]');
+
+      const buildRecentsLanguages = () => {
+        eRecentsLangs.innerHTML = "";
+        for (const value of twpConfig.get("targetLanguages")) {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = langs[value];
+          eRecentsLangs.appendChild(option);
+        }
+        menuSelectLanguage.value = twpConfig.get("targetLanguages")[0];
+      };
+      buildRecentsLanguages();
+
+      menuSelectLanguage.oninput = () => {
+        translatePage(menuSelectLanguage.value);
+        getElemById("menu").style.display = "none";
+        buildRecentsLanguages();
+      };
     })();
 
     function updateIcon() {
@@ -273,7 +293,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       } else {
         getElemById("menu").style.display = "block";
       }
-      getElemById("menuSelectLanguage").style.display = "none";
     };
 
     getElemById("btnClose").onclick = (e) => {
@@ -283,8 +302,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     getElemById("btnChangeLanguages").onclick = (e) => {
       e.stopPropagation();
       if (!getElemById) return;
-      getElemById("menuSelectLanguage").style.display = "block";
-      getElemById("menu").style.display = "none";
+      // getElemById("menu").style.display = "none";
     };
 
     getElemById("btnTranslateSelectedText").onclick = (e) => {
@@ -334,11 +352,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     document.addEventListener("click", hideMenu);
 
     if (twpConfig.get("showTranslateSelectedButton") === "yes") {
-      getElemById("btnTranslateSelectedText").textContent =
-        twpI18n.getMessage("msgNoTranslateSelectedText");
+      getElemById("btnTranslateSelectedText").textContent = twpI18n.getMessage(
+        "msgNoTranslateSelectedText"
+      );
     } else {
-      getElemById("btnTranslateSelectedText").textContent =
-        twpI18n.getMessage("msgTranslateSelectedText");
+      getElemById("btnTranslateSelectedText").textContent = twpI18n.getMessage(
+        "msgTranslateSelectedText"
+      );
     }
 
     getElemById("btnDonate").innerHTML += " &#10084;";

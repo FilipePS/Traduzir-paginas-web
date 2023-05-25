@@ -959,6 +959,10 @@ twpConfig
     $("#useAlternativeService").value = twpConfig.get("useAlternativeService");
 
     {
+      if (platformInfo.isMobile.any) {
+        $("#btnEnableDeepL").setAttribute("disabled", "");
+      }
+
       const updateServiceSelector = (enabledServices) => {
         document
           .querySelectorAll("#pageTranslatorService option")
