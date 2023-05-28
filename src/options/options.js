@@ -1204,25 +1204,42 @@ twpConfig
         if (libre.apiKey.length < 10) {
           throw new Error("Provides an API Key");
         }
+
+        const customServices = twpConfig.get("customServices");
+
+        const index = customServices.findIndex((cs) => cs.name === "libre");
+        if (index !== -1) {
+          customServices.splice(index, 1);
+        }
+
+        customServices.push(libre);
+        twpConfig.set("customServices", customServices);
+        chrome.runtime.sendMessage({ action: "createLibreService", libre });
       } catch (e) {
         alert(e);
       }
-      twpConfig.set("customServices", [libre]);
-      chrome.runtime.sendMessage({ action: "createLibreService", libre });
     };
 
     $("#removeLibre").onclick = () => {
-      twpConfig.set("customServices", []);
-      chrome.runtime.sendMessage(
-        { action: "removeLibreService" },
-        checkedLastError
-      );
+      const customServices = twpConfig.get("customServices");
+      const index = customServices.findIndex((cs) => cs.name === "libre");
+
+      if (index !== -1) {
+        customServices.splice(index, 1);
+        twpConfig.set("customServices", customServices);
+        chrome.runtime.sendMessage(
+          { action: "removeLibreService" },
+          checkedLastError
+        );
+      }
+
       if (twpConfig.get("textTranslatorService") === "libre") {
         twpConfig.set(
           "textTranslatorService",
           twpConfig.get("pageTranslatorService")
         );
       }
+
       $("#libreURL").value = "";
       $("#libreKEY").value = "";
     };
@@ -1233,6 +1250,78 @@ twpConfig
     if (libre) {
       $("#libreURL").value = libre.url;
       $("#libreKEY").value = libre.apiKey;
+    }
+
+    async function testDeepLFreeApiKey(apiKey) {
+      return await new Promise((resolve) => {
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "https://api-free.deepl.com/v2/usage");
+        xhttp.responseType = "json";
+        xhttp.setRequestHeader("Authorization", "DeepL-Auth-Key " + apiKey);
+        xhttp.onload = () => {
+          resolve(xhttp.response);
+        };
+        xhttp.send();
+      });
+    }
+
+    $("#addDeepL").onclick = async () => {
+      const deepl_freeapi = {
+        name: "deepl_freeapi",
+        apiKey: $("#deeplKEY").value,
+      };
+      try {
+        const response = await testDeepLFreeApiKey(deepl_freeapi.apiKey);
+        $("#deeplApiResponse").textContent = JSON.stringify(response);
+        if (response) {
+          const customServices = twpConfig.get("customServices");
+
+          const index = customServices.findIndex(
+            (cs) => cs.name === "deepl_freeapi"
+          );
+          if (index !== -1) {
+            customServices.splice(index, 1);
+          }
+
+          customServices.push(deepl_freeapi);
+          twpConfig.set("customServices", customServices);
+          chrome.runtime.sendMessage({
+            action: "createDeeplFreeApiService",
+            deepl_freeapi,
+          });
+        } else {
+          alert("Invalid API key");
+        }
+      } catch (e) {
+        alert(e);
+      }
+    };
+
+    $("#removeDeepL").onclick = () => {
+      const customServices = twpConfig.get("customServices");
+      const index = customServices.findIndex(
+        (cs) => cs.name === "deepl_freeapi"
+      );
+      if (index !== -1) {
+        customServices.splice(index, 1);
+        twpConfig.set("customServices", customServices);
+        chrome.runtime.sendMessage(
+          { action: "removeDeeplFreeApiService" },
+          checkedLastError
+        );
+      }
+      $("#deeplKEY").value = "";
+      $("#deeplApiResponse").textContent = "";
+    };
+
+    const deepl_freeapi = twpConfig
+      .get("customServices")
+      .find((cs) => cs.name === "deepl_freeapi");
+    if (deepl_freeapi) {
+      $("#deeplKEY").value = deepl_freeapi.apiKey;
+      testDeepLFreeApiKey(deepl_freeapi.apiKey).then((response) => {
+        $("#deeplApiResponse").textContent = JSON.stringify(response);
+      });
     }
 
     // donation options

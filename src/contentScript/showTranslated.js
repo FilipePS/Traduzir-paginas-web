@@ -196,6 +196,30 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
   let prevNode = null;
 
+  /**
+   *
+   * @param {HTMLElement} node
+   * @returns
+   */
+  function isNoTranslateNode(node) {
+    const nodeName = node.nodeName.toLowerCase();
+    const index = htmlTagsNoTranslate.indexOf(nodeName);
+    if (index === -1) {
+      return false;
+    } else {
+      // https://github.com/FilipePS/Traduzir-paginas-web/issues/654
+      if (
+        nodeName === "script" &&
+        node.getAttribute("data-spotim-module") === "spotim-launcher" &&
+        [...node.childNodes].find((node) => node.nodeType === 1)
+      ) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+
   function translateThisNode(node, usePrevNode = false) {
     fooCount++;
     let currentFooCount = fooCount;
@@ -260,7 +284,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     } else {
       do {
         const nodeName = node.nodeName.toLowerCase();
-        if (htmlTagsNoTranslate.indexOf(nodeName) !== -1) return;
+        if (isNoTranslateNode(node)) return;
         if (
           htmlTagsInlineText.indexOf(nodeName) === -1 &&
           htmlTagsInlineIgnore.indexOf(nodeName) === -1

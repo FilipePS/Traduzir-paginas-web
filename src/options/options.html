@@ -108,7 +108,8 @@
           <option value="zh-CN">中文（简体） - Chinese (Simplified)</option>
           <option value="ja">日本語 - Japanese</option>
         </select>
-        <button class="w3-button w3-blue w3-round w3-margin-left" data-i18n="btnApply" id="btnApplyUiLanguage">Apply</button>
+        <button class="w3-button w3-blue w3-round w3-margin-left" data-i18n="btnApply"
+          id="btnApplyUiLanguage">Apply</button>
         <br />
         <br />
 
@@ -552,16 +553,30 @@
       </div>
 
       <div id="experimental" class="w3-container">
-        <h3>Configure your Libretranslate server for text (not page) translation.</h3>
-        <label for="libreURL">Your Server URL</label><br>
-        <input type="text" id="libreURL" placeholder="https://my-libretranslate-server.com/translate"
-          style="width: 90%;"><br>
-        <br>
-        <label for="libreKEY">Your API key</label><br>
-        <input type="text" id="libreKEY" placeholder="c02976e6-ec19-11ed-a05b-0242ac120003" style="width: 90%;"><br>
-        <br>
-        <button id="addLibre">Add Libretranslate</button>
-        <button id="removeLibre">Remove Libretranslate</button>
+        <div>
+          <h3>Configure your Libretranslate server for text (not page) translation.</h3>
+          <label for="libreURL">Your Server URL</label><br>
+          <input type="text" id="libreURL" placeholder="https://my-libretranslate-server.com/translate"
+            style="width: 90%;" autocomplete="off" spellcheck="false"><br>
+          <br>
+          <label for="libreKEY">Your API key</label><br>
+          <input type="text" id="libreKEY" placeholder="c02976e6-ec19-11ed-a05b-0242ac120003" style="width: 90%;"
+            autocomplete="off" spellcheck="false"><br>
+          <br>
+          <button id="addLibre">Add Libretranslate</button>
+          <button id="removeLibre">Remove Libretranslate</button>
+        </div>
+        <hr>
+        <div>
+          <h3>Configure a DeepL Free API API key to translate text (not pages) without opening new tabs.</h3>
+          <label for="deeplKEY">Your API key</label><br>
+          <input type="text" id="deeplKEY" placeholder="7cad3e19-32b8-4cac-a03d-64f3c1e1c1be:fx" style="width: 90%;"
+            autocomplete="off" spellcheck="false"><br>
+          <br>
+          <button id="addDeepL">Add DeepL Free API</button>
+          <button id="removeDeepL">Remove DeepL Free API</button>
+          <p id="deeplApiResponse"></p>
+        </div>
       </div>
     </div>
 

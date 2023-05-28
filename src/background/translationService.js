@@ -1241,6 +1241,89 @@ const translationService = (function () {
     })();
   };
 
+  /**
+   * Creates the DeepLFreeApi translation service
+   * @param {string} apiKey
+   * @returns {Service} libreService
+   */
+  const createDeeplFreeApiService = (apiKey) => {
+    return new (class extends Service {
+      constructor() {
+        super(
+          "deepl",
+          "https://api-free.deepl.com/v2/translate",
+          "POST",
+          function cbTransformRequest(sourceArray) {
+            return sourceArray[0];
+          },
+          function cbParseResponse(response) {
+            return [
+              {
+                text: response.translations[0].text,
+                detectedLanguage:
+                  response.translations[0].detected_source_language,
+              },
+            ];
+          },
+          function cbTransformResponse(result, dontSortResults) {
+            return [result];
+          },
+          null,
+          function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
+            const params = new URLSearchParams();
+            params.append("text", requests[0].originalText);
+            if (sourceLanguage !== "auto") {
+              // params.append("source_lang", sourceLanguage);
+            }
+            if (targetLanguage === "pt") {
+              targetLanguage = "pt-BR";
+            } else if (targetLanguage === "no") {
+              targetLanguage = "nb";
+            } else if (targetLanguage.startsWith("zh-")) {
+              targetLanguage = "zh";
+            } else if (targetLanguage.startsWith("fr-")) {
+              targetLanguage = "fr";
+            }
+            params.append("target_lang", targetLanguage);
+            return params.toString();
+          },
+          function cbGetExtraHeaders() {
+            return [
+              {
+                name: "Content-Type",
+                value: "application/x-www-form-urlencoded",
+              },
+              {
+                name: "Authorization",
+                value: "DeepL-Auth-Key " + apiKey,
+              },
+            ];
+          }
+        );
+      }
+
+      /**
+       *
+       * @param {string} sourceLanguage - This parameter is not used
+       * @param {*} targetLanguage
+       * @param {*} sourceArray2d - Only the string `sourceArray2d[0][0]` will be translated.
+       * @param {*} dontSaveInPersistentCache - This parameter is not used
+       * @param {*} dontSortResults - This parameter is not used
+       * @returns
+       */
+      /*
+      async translate(
+        sourceLanguage,
+        targetLanguage,
+        sourceArray2d,
+        dontSaveInPersistentCache,
+        dontSortResults = false
+      ) {
+      }
+      //*/
+    })();
+  };
+
   /** @type {Map<string, Service>} */
   const serviceList = new Map();
 
@@ -1409,15 +1492,36 @@ const translationService = (function () {
       );
     } else if (request.action === "removeLibreService") {
       serviceList.delete("libre");
+    } else if (request.action === "createDeeplFreeApiService") {
+      serviceList.set(
+        "deepl",
+        createDeeplFreeApiService(request.deepl_freeapi.apiKey)
+      );
+    } else if (request.action === "removeDeeplFreeApiService") {
+      serviceList.set(
+        "deepl",
+        /** @type {Service} */ /** @type {?} */ (deeplService)
+      );
     }
   });
 
-  if (twpConfig.get("customServices").find((cs) => cs.name === "libre")) {
-    const libre = twpConfig
-      .get("customServices")
-      .find((cs) => cs.name === "libre");
-    serviceList.set("libre", createLibreService(libre.url, libre.apiKey));
-  }
+  twpConfig.onReady(function () {
+    if (twpConfig.get("customServices").find((cs) => cs.name === "libre")) {
+      const libre = twpConfig
+        .get("customServices")
+        .find((cs) => cs.name === "libre");
+      serviceList.set("libre", createLibreService(libre.url, libre.apiKey));
+    }
+
+    if (
+      twpConfig.get("customServices").find((cs) => cs.name === "deepl_freeapi")
+    ) {
+      const deepl_freeapi = twpConfig
+        .get("customServices")
+        .find((cs) => cs.name === "deepl_freeapi");
+      serviceList.set("deepl", createDeeplFreeApiService(deepl_freeapi.apiKey));
+    }
+  });
 
   return translationService;
 })();
