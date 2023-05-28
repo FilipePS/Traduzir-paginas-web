@@ -19,6 +19,25 @@ fetch("./release-notes/en.html")
       );
     document.getElementById("donationText").textContent =
       twpI18n.getMessage("donationText");
+
+    // donation options
+    if (navigator.language === "pt-BR") {
+      $("#_currency").value = "BRL";
+      $("#_donateInUSD").style.display = "none";
+    } else {
+      $("#_currency").value = "USD";
+      $("#_donateInBRL").style.display = "none";
+    }
+
+    $("#_currency").onchange = (e) => {
+      if (e.target.value === "BRL") {
+        $("#_donateInUSD").style.display = "none";
+        $("#_donateInBRL").style.display = "block";
+      } else {
+        $("#_donateInUSD").style.display = "block";
+        $("#_donateInBRL").style.display = "none";
+      }
+    };
   });
 
 var $ = document.querySelector.bind(document);

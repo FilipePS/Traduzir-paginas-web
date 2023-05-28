@@ -840,9 +840,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               currentSourceLanguage,
               currentTargetLanguage
             ).then((results) => {
-              results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
-                originalText.match(/\s*$/)[0]
-              }`;
+              // results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
+              //   originalText.match(/\s*$/)[0]
+              // }`;
               translateTextContent(nodes[j], parentNode, results, toRestore);
             });
           }
@@ -879,9 +879,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               currentSourceLanguage,
               currentTargetLanguage
             ).then((results) => {
-              results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
-                originalText.match(/\s*$/)[0]
-              }`;
+              // results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
+              //   originalText.match(/\s*$/)[0]
+              // }`;
               translateTextContent(nodes[j], parentNode, results, toRestore);
             });
           }

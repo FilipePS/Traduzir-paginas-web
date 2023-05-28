@@ -1,5 +1,5 @@
 <section style="background-color: #87CEEB; padding: 20px; border-radius: 20px; box-shadow: 0 0 10px 3px black;">
-    <h5>
+    <div style="font-size: 1.2em;">
         <!-- i18n = msgHasBeenUpdated -->
         <p id="msgHasBeenUpdated">The <b>TWP - Translate Web Pages</b> extension has been updated to version <b>9.7</b>.
         </p>
@@ -16,10 +16,78 @@
 
             Thank you to everyone who has already contributed to this project.</p>
 
-        <a href="https://www.patreon.com/filipeps" target="blank" class="patreonButton"><img src="/icons/patreon.png"
-                alt="Become a patreon" width="260px" /></a>
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <a href="https://www.patreon.com/filipeps" target="blank" class="patreonButton"><img
+                        src="/icons/patreon.png" alt="Become a patreon" width="260" /></a>
+            </div>
 
-    </h5>
+            <div style="font-size: 0.9em;">
+                <b>
+                    <div style="display: inline-block" data-i18n="donateWithPayPal">
+                        Donate With PayPal
+                    </div>
+                </b>
+                <select id="_currency" style="margin-left: 8px">
+                    <option value="USD">USD</option>
+                    <option value="BRL">BRL</option>
+                </select>
+                <div id="_donateInUSD">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input type="hidden" name="hosted_button_id" value="3FH2APUZGCY3A" />
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="hidden" name="on0" value="Donate With Paypal" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select name="os0">
+                                        <option value="Maximum">20,00 USD</option>
+                                        <option value="Pizza">10,00 USD</option>
+                                        <option value="Lunch" selected>5,00 USD</option>
+                                        <option value="Coffe">3,00 USD</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal" />
+                        <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
+                    </form>
+                </div>
+
+                <div id="_donateInBRL">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input type="hidden" name="hosted_button_id" value="UKVQDPTUB5HTG" />
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="hidden" name="on0" value="Doar com o Paypal" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select name="os0">
+                                        <option value="Maximum">50,00 BRL</option>
+                                        <option value="Pizza">30,00 BRL</option>
+                                        <option value="Lunch" selected>15,00 BRL</option>
+                                        <option value="Coffe">5,00 BRL</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="currency_code" value="BRL" />
+                        <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal" />
+                        <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section>
@@ -31,9 +99,11 @@
                 <li>Added option to set extension UI language</li>
                 <li>A new way to translate <b>PDF</b>
                     <ol>
-                        <li>Open website <a href="https://pdf.translatewebpages.org" target="_blank">pdf.translatewebpages.org</a></li>
+                        <li>Open website <a href="https://pdf.translatewebpages.org"
+                                target="_blank">pdf.translatewebpages.org</a></li>
                         <li>Select or drag and drop a PDF file</li>
-                        <li>The translation will start immediately and happen dynamically as you scroll through the page</li>
+                        <li>The translation will start immediately and happen dynamically as you scroll through the page
+                        </li>
                     </ol>
                 </li>
                 <li><b>Improve translation</b> button in page translation panel, with the options:
@@ -47,7 +117,8 @@
                 <li><b>Privacy</b> tab on the settings page, with the options:
                     <ul>
                         <li>Select the translation services you want to use</li>
-                        <li>Silently use an alternate translation service if the current target language is not supported by the selected translation service</li>
+                        <li>Silently use an alternate translation service if the current target language is not
+                            supported by the selected translation service</li>
                     </ul>
                 </li>
                 <li><b>Experimental</b> tab on the settings page, with the options:
@@ -56,11 +127,14 @@
                         <li>Configure a DeepL Free API API key to translate text (not pages).</li>
                     </ul>
                 </li>
-                <li>Support for 26 new target languages: 
+                <li>Support for 26 new target languages:
                     <i>
-                        Tibetan, Lower Sorbian, Emoji 😀 (yandex only), Fijian, Faroese, French (Canada), Upper Sorbian, Inuinnaqtun, 
-                        Inuktitut, Inuktitut (Latin), Chinese (Literary), Mongolian (Traditional), Nyanja, Querétaro Otomi, Dari, 
-                        Portuguese (Portugal), Rundi, Elvish (Sindarin), Serbian (Latin), Klingon (Latin), Klingon (pIqaD), Setswana, 
+                        Tibetan, Lower Sorbian, Emoji 😀 (yandex only), Fijian, Faroese, French (Canada), Upper Sorbian,
+                        Inuinnaqtun,
+                        Inuktitut, Inuktitut (Latin), Chinese (Literary), Mongolian (Traditional), Nyanja, Querétaro
+                        Otomi, Dari,
+                        Portuguese (Portugal), Rundi, Elvish (Sindarin), Serbian (Latin), Klingon (Latin), Klingon
+                        (pIqaD), Setswana,
                         Tongan, Tahitian, Yucatec Maya, Cantonese (Traditional).
                     </i>
                 </li>
@@ -71,17 +145,21 @@
             <ul>
                 <li>Nodes modified by <i>jiffyreader</i> will not be translated</li>
                 <li>Links in Twitter posts will not be translated to improve translation quality</li>
-                <li>When translating selected text on PDF and other restrictive websites, you now have the option to listen to the original text as well</li>
+                <li>When translating selected text on PDF and other restrictive websites, you now have the option to
+                    listen to the original text as well</li>
                 <li>Now tabs opened by TWP appear next to your current tab.</li>
-                <li>When this version is installed, if your text translation service is set to DeepL, it will change to Google or Bing</li>
+                <li>When this version is installed, if your text translation service is set to DeepL, it will change to
+                    Google or Bing</li>
             </ul>
         </li>
         <li>Fixed
             <ul>
                 <!-- <li>Gitako doesn't work with TWP</li> -->
                 <li>Selected text translation not working in other extensions popup</li>
-                <li>Layout breaks on some <i>Wikipedia</i> pages when the <i><code>Do not sort translation results</code></i> option is enabled</li>
-                <li>Keep whitespace in textNodes to prevent the translation from getting truncated</li>
+                <li>Layout breaks on some <i>Wikipedia</i> pages when the
+                    <i><code>Do not sort translation results</code></i> option is enabled
+                </li>
+                <!-- <li>Keep whitespace in textNodes to prevent the translation from getting truncated</li> -->
                 <li>Pressing <b>Ctrl</b> twice in the selected text translation panel translates the entire page</li>
                 <li>Comments section on sites like <b>Fox News</b> and <b>Yahoo news</b> are not translated</li>
             </ul>
@@ -100,7 +178,9 @@
     <h4>9.7.2 - April 24, 2023</h4>
     <ul>
         <li>Added option to disable persistent translation cache (on-disk cache).
-            <ul><li>By default, persistent caching will be disabled.</li></ul>
+            <ul>
+                <li>By default, persistent caching will be disabled.</li>
+            </ul>
         </li>
     </ul>
 </section>
@@ -128,7 +208,8 @@
                 <li>YouTube video title disappears when the extension is translating the site.</li>
                 <li>DeepL and Bing do not work.</li>
                 <li>Address bar button doesn't turn blue when clicking forward/backward.</li>
-                <li>The option <b>Automatically translate when clicking on a link [...]</b> does not work on some sites.</li>
+                <li>The option <b>Automatically translate when clicking on a link [...]</b> does not work on some sites.
+                </li>
                 <li>Fixed support for old browsers.</li>
             </ul>
         </li>
@@ -338,7 +419,8 @@
                                 <li><b><em>translate.googleusercontent.com</em></b></li>
                             </ul>
                         </li>
-                        <li>Files uploaded to <b><em>pdftohtml.translatewebpages.org</em></b> will be deleted in 24 hours.</li>
+                        <li>Files uploaded to <b><em>pdftohtml.translatewebpages.org</em></b> will be deleted in 24
+                            hours.</li>
                     </ul>
                 </li>
             </ul>
@@ -1101,7 +1183,8 @@
     <h4>5.1, 5.2, 5.3, 5.4 - July 2, 2020</h4>
     <ul>
         <li>Added button to switch between Google and Yandex</li>
-        <li>Added a new translation algorithm which is independent of Google and Yandex widgets. This improved privacy, allowed more websites to be translated, and made the extension work alongside the NoScript extension</li>
+        <li>Added a new translation algorithm which is independent of Google and Yandex widgets. This improved privacy,
+            allowed more websites to be translated, and made the extension work alongside the NoScript extension</li>
         <li>Some fixes</li>
     </ul>
 </section>
@@ -1136,14 +1219,17 @@
 <section>
     <h4>4.4 - April 27, 2020</h4>
     <ul>
-        <li>Now the <b>Change languages</b> button no longer shows the translation widget, instead the target language selection takes place in the extension's own interface</li>
+        <li>Now the <b>Change languages</b> button no longer shows the translation widget, instead the target language
+            selection takes place in the extension's own interface</li>
         <li>Some fixes and improvements</li>
     </ul>
 </section>
 <section>
     <h4>4.2, 4.3 - April 26, 2020</h4>
     <ul>
-        <li>Added support for viewing/removing sites and languages from the <b>Never translate these sites</b> and <b>Automatically translate these languages</b> lists in the settings page</li>
+        <li>Added support for viewing/removing sites and languages from the <b>Never translate these sites</b> and
+            <b>Automatically translate these languages</b> lists in the settings page
+        </li>
         <li>Added localization for language names</li>
         <li>Some improvements and fixes</li>
     </ul>
@@ -1171,7 +1257,8 @@
 <section>
     <h4>3.4, 3.5, 3.6, 3.7, 3.8 - April 6, 2020</h4>
     <ul>
-        <li>Use <i><code>chrome.tabs.sendMessage</code></i> instead of the <i>lang</i> attribute of the <i>html</i> tag to detect the language of the site</li>
+        <li>Use <i><code>chrome.tabs.sendMessage</code></i> instead of the <i>lang</i> attribute of the <i>html</i> tag
+            to detect the language of the site</li>
         <li>Added options on the mobile popup</li>
         <li>Added translations for the mobile popup interface</li>
         <li>Some fixes</li>
@@ -1211,7 +1298,8 @@
 <section>
     <h4>2.8, 2.9, 2.9.1 - March 14, 2020</h4>
     <div style="margin-left: 30px;">
-        <p>These versions existed and were released on the same day. These versions were probably released to test bugs in Firefox Mobile, in preparation for version 3.0.</p>
+        <p>These versions existed and were released on the same day. These versions were probably released to test bugs
+            in Firefox Mobile, in preparation for version 3.0.</p>
     </div>
 </section>
 <section>
@@ -1238,7 +1326,9 @@
     <h4>2.0, 2.1, 2.2, 2.3, 2.4, 2.5 - February 28, 2020</h4>
     <div style="margin-left: 30px;">
         <p>All these versions were released on the same day and only fixed mobile popup visual bugs.</p>
-        <p>At that time I didn't know that it was possible to load the extension in Firefox Mobile using <a href="https://github.com/mozilla/web-ext" target="_blank">webext</a>, it took me years to know that. Then I uploaded a new version for every change I made to try to fix the bug.</p>
+        <p>At that time I didn't know that it was possible to load the extension in Firefox Mobile using <a
+                href="https://github.com/mozilla/web-ext" target="_blank">webext</a>, it took me years to know that.
+            Then I uploaded a new version for every change I made to try to fix the bug.</p>
     </div>
 </section>
 <section>
@@ -1278,14 +1368,15 @@
 <section>
     <h4>1.4 - February 11, 2020</h4>
     <div style="margin-left: 30px;">
-        <p>In this version, the Google Translate Widget is injected but is hidden, the objective is that you use the Widget options through the extension's interface.</p>
+        <p>In this version, the Google Translate Widget is injected but is hidden, the objective is that you use the
+            Widget options through the extension's interface.</p>
         <p>In the extension interface there were only two options:
-            <dl>
-                <dt>Translate</dt>
-                <dd>This option injected the Google Translate Widget into the page, this widget was hidden.</dd>
-                <dt>Show original</dt>
-                <dd>Restores the page, but the Widget is still injected.</dd>
-            </dl>
+        <dl>
+            <dt>Translate</dt>
+            <dd>This option injected the Google Translate Widget into the page, this widget was hidden.</dd>
+            <dt>Show original</dt>
+            <dd>Restores the page, but the Widget is still injected.</dd>
+        </dl>
         </p>
         <p>There was nothing left, not even an option to change the target language.</p>
     </div>
@@ -1294,13 +1385,19 @@
     <h4>1.0, 1.2, 1.3 - February 9, 2020</h4>
     <div style="margin-left: 30px;">
         <p>The first version was released on February 9, 2020.</p>
-        <p>Versions 1.2 and 1.3 also existed and were released on the same day as version 1.0, I don't know what exactly was changed in them but it was insignificant.</p>
-        <p>The only thing the extension did in this version was inject the Google translator widget into the website.</p>
-        <p>This Google Widget allows you to translate the website into any language with the same quality as the Chrome translator.</p>
+        <p>Versions 1.2 and 1.3 also existed and were released on the same day as version 1.0, I don't know what exactly
+            was changed in them but it was insignificant.</p>
+        <p>The only thing the extension did in this version was inject the Google translator widget into the website.
+        </p>
+        <p>This Google Widget allows you to translate the website into any language with the same quality as the Chrome
+            translator.</p>
         <p>
             I learned a lot about <i>HTML</i>, <i>CSS</i> and <i>JAVASCRIPT</i> on the <i>W3Schools</i> website.
-            And it was even thanks to <i>W3Schools</i> that I learned that this Google Translate Widget existed and how to use it, perhaps without this site, <i>TWP</i> would never have existed.
+            And it was even thanks to <i>W3Schools</i> that I learned that this Google Translate Widget existed and how
+            to use it, perhaps without this site, <i>TWP</i> would never have existed.
         </p>
-        <p>Learn you also about the Google Translate Widget: <a href="https://www.w3schools.com/howto/howto_google_translate.asp" target="_blank">How TO - Google Translate</a></p>
+        <p>Learn you also about the Google Translate Widget: <a
+                href="https://www.w3schools.com/howto/howto_google_translate.asp" target="_blank">How TO - Google
+                Translate</a></p>
     </div>
 </section>
