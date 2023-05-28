@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Hljóðhraði textatals"
   },
-  "lblEnableDeepL": {
-    "message": "Virkja DeepL sem textaþýðingarþjónustu"
-  },
   "enterShortcut": {
     "message": "Sláðu inn flýtileið"
   },
@@ -396,7 +393,7 @@
     "message": "PDF í HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Þýða PDF"
   },
   "btncopy": {
     "message": "Afrita"

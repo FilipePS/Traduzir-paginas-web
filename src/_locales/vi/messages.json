@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Tốc độ âm thanh chuyển văn bản thành giọng nói"
   },
-  "lblEnableDeepL": {
-    "message": "Bật DeepL làm dịch vụ dịch văn bản"
-  },
   "enterShortcut": {
     "message": "Nhập một phím tắt"
   },
@@ -396,7 +393,7 @@
     "message": "PDF sang HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Dịch PDF"
   },
   "btncopy": {
     "message": "Sao Chép"

@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "تېكىستتىن سۆزلەش ئاۋازى"
   },
-  "lblEnableDeepL": {
-    "message": "DeepL نى تېكىست تەرجىمە مۇلازىمىتى سۈپىتىدە قوزغىتىڭ"
-  },
   "enterShortcut": {
     "message": "تېزلەتمە كىرگۈزۈڭ"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "تەرجىمە نەتىجىسىنى رەتلىمەڭ"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "ھەرىكەتچان ئىجاد قىلىنغان مەزمۇننى تەرجىمە قىلىڭ"
@@ -396,7 +393,7 @@
     "message": "PDF دىن HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "PDF نى تەرجىمە قىلىڭ"
   },
   "btncopy": {
     "message": "كۆچۈرۈڭ"
@@ -487,33 +484,33 @@
     "message": "مەن بۇ كېڭەيتىشنى ئۈچ يىلدىن كۆپرەك ۋاقىتتىن بۇيان تەتقىق قىلىۋاتىمەن ، يېڭىلاۋاتىمەن ۋە قوللاۋاتىمەن. بىزنىڭ كۈندىلىك ئىشلەتكۈچىلىرىمىزنىڭ 600،000 دىن ئاشىدىغانلىقى ئادەمنى ھەيران قالدۇرىدۇ ، بۇ كىشىلەرنىڭ ھەممىسى Firefox غا مەڭگۈلۈك كۆچۈپ كېتەلەيدۇ.\n\nمەن ھەر ئايدا بۇ كېڭەيتىلمىنىڭ يېڭى نەشرىنى ئېلان قىلىپ ، ئۇنى داۋاملىق ياخشىلاشنى مەقسەت قىلىمەن.\n\nئەگەر سىز پاترون ئەزاسى بولۇپ ، بۇ كېڭەيتىشكە ياخشىلىنىشلارنى ئېلىپ مېنى قوللاپ ئىقتىسادىي جەھەتتىن ياردەم قىلغان بولسىڭىز ، مەن مىننەتدار.\n\nبۇ تۈرگە تۆھپە قوشقان بارلىق كىشىلەرگە رەھمەت."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "ئىزچىل تەرجىمە ساقلىغۇچنى قوزغىتىڭ (دىسكىدىكى غەملەك)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "ئەسلى تور بېكەت تىلىنى تاللاڭ"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "نىشان تىلنى تاللاڭ"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "تەرجىمىنى ياخشىلاش"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "تەجرىبە"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "مەخپىيەتلىك"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "ئىشلەتمەكچى بولغان تەرجىمە مۇلازىمىتىنى تاللاڭ"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "ئەگەر نۆۋەتتىكى نىشان تىلنى تاللانغان تەرجىمە مۇلازىمىتى قوللىمىسا ، باشقا تەرجىمە مۇلازىمىتىنى جىمجىت ئىشلىتىڭ"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "كۆڭۈلدىكى تىل"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "كېڭەيتىلگەن ئىشلەتكۈچى كۆرۈنمە يۈزى تىلى"
   }
 }

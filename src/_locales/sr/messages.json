@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Брзина звука претварања текста у говор"
   },
-  "lblEnableDeepL": {
-    "message": "Омогућите ДеепЛ као услугу превођења текста"
-  },
   "enterShortcut": {
     "message": "Унесите пречицу"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Немојте сортирати резултате превода"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Преведите динамички креиран садржај"
@@ -396,7 +393,7 @@
     "message": "ПДФ у ХТМЛ"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Преведи ПДФ"
   },
   "btncopy": {
     "message": "Копирај"
@@ -487,33 +484,33 @@
     "message": "Развијам, ажурирам и подржавам ово проширење више од три године. Невероватно је видети да имамо преко 600.000 корисника дневно, и да су сви ови људи могли да мигрирају на Фирефок трајно.\n\nЦиљ ми је да објавим нову верзију овог проширења сваког месеца и наставим да је побољшавам.\n\nБио бих вам захвалан ако бисте ми могли финансијски помоћи тако што ћете постати члан Патреона и подржати ме у побољшању овог проширења.\n\nХвала свима који су већ допринели овом пројекту."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Омогући трајни кеш за превод (кеш меморија на диску)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Изаберите оригинални језик веб локације"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Изаберите циљни језик"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Побољшајте превод"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Експериментално"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Приватност"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Изаберите услуге превођења које желите да користите"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Нечујно користите алтернативну услугу превођења ако одабрана услуга превођења не подржава тренутни циљни језик"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Подразумевани језик"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Језик корисничког интерфејса екстензије"
   }
 }

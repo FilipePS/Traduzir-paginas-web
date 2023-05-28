@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Prędkość dźwięku tekstu na mowę"
   },
-  "lblEnableDeepL": {
-    "message": "Włącz DeepL jako usługę tłumaczenia tekstu"
-  },
   "enterShortcut": {
     "message": "Wprowadź skrót klawiszowy"
   },
@@ -396,7 +393,7 @@
     "message": "PDF do HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Tłumacz pliki PDF"
   },
   "btncopy": {
     "message": "Kopiuj"

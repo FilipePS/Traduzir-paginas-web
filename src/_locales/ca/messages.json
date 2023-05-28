@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Velocitat de lectura del text"
   },
-  "lblEnableDeepL": {
-    "message": "Activa el servei de traducció de texts DeepL"
-  },
   "enterShortcut": {
     "message": "Escriviu una drecera"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "No ordeneu els resultats de la traducció"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Tradueix el contingut creat dinàmicament"
@@ -396,7 +393,7 @@
     "message": "PDF a HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Tradueix PDF"
   },
   "btncopy": {
     "message": "Copia"
@@ -487,33 +484,33 @@
     "message": "He estat desenvolupant, actualitzant i donant suport a aquesta extensió durant més de tres anys. És increïble veure que tenim més de 600.000 usuaris diaris i totes aquestes persones han pogut migrar a Firefox de manera permanent.\n\nEl meu objectiu és llançar una nova versió d'aquesta extensió cada mes i seguir millorant-la.\n\nAgrairia que em pogués ajudar econòmicament fent-me membre de Patreon i donant-me suport per millorar aquesta extensió.\n\nGràcies a tots els que ja heu col·laborat en aquest projecte."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Activa la memòria cau de traducció persistent (caché al disc)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Seleccioneu l'idioma original del lloc web"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Seleccioneu l'idioma de destinació"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Millorar la traducció"
   },
   "lblExperimental": {
     "message": "Experimental"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Privadesa"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Seleccioneu els serveis de traducció que voleu utilitzar"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Utilitzeu silenciosament un servei de traducció alternatiu si el servei de traducció seleccionat no admet l'idioma de destinació actual"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Idioma per defecte"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Idioma de la interfície d'usuari de l'extensió"
   }
 }

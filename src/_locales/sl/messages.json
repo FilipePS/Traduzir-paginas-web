@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Hitrost zvoka besedila v govor"
   },
-  "lblEnableDeepL": {
-    "message": "Omogočite DeepL kot storitev prevajanja besedil"
-  },
   "enterShortcut": {
     "message": "Vnesite bližnjico"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Ne razvrščaj rezultatov prevodov"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Prevedite dinamično ustvarjeno vsebino"
@@ -396,7 +393,7 @@
     "message": "PDF v HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Prevedi PDF"
   },
   "btncopy": {
     "message": "Kopirati"
@@ -487,33 +484,33 @@
     "message": "To razširitev razvijam, posodabljam in podpiram več kot tri leta. Neverjetno je videti, da imamo več kot 600.000 dnevnih uporabnikov in da so vsi ti ljudje lahko trajno prešli na Firefox.\n\nVsak mesec nameravam izdati novo različico te razširitve in jo še naprej izboljševati.\n\nHvaležen bi bil, če bi mi lahko finančno pomagali tako, da bi postal član Patreona in me podprli pri uvajanju izboljšav v to razširitev.\n\nHvala vsem, ki ste že prispevali k temu projektu."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Omogoči trajni predpomnilnik prevodov (predpomnilnik na disku)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Izberite izvirni jezik spletnega mesta"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Izberite ciljni jezik"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Izboljšajte prevod"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Eksperimentalno"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Zasebnost"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Izberite prevajalske storitve, ki jih želite uporabiti"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Tiho uporabite nadomestno prevajalsko storitev, če izbrana prevajalska storitev ne podpira trenutnega ciljnega jezika"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Privzeti jezik"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Jezik uporabniškega vmesnika razširitve"
   }
 }

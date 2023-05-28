@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Viteza de pronunțare a textului"
   },
-  "lblEnableDeepL": {
-    "message": "Activează DeepL ca serviciu de traducere a textului"
-  },
   "enterShortcut": {
     "message": "Tastează o comandă rapidă"
   },
@@ -396,7 +393,7 @@
     "message": "PDF în HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Tradu PDF"
   },
   "btncopy": {
     "message": "Copiază"

@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Brzina govora za pretvoreni tekst u govor"
   },
-  "lblEnableDeepL": {
-    "message": "Aktiviraj DeepL kao uslugu prevođenja teksta"
-  },
   "enterShortcut": {
     "message": "Upiši prečac"
   },
@@ -396,7 +393,7 @@
     "message": "PDF u HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Prevedi PDF"
   },
   "btncopy": {
     "message": "Kopiraj"

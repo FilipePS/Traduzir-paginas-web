@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Vitesse de la synthèse vocale"
   },
-  "lblEnableDeepL": {
-    "message": "Activer DeepL comme service de traduction de texte"
-  },
   "enterShortcut": {
     "message": "Tapez un raccourci"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Ne pas trier les résultats de traduction"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Traduire le contenu créé dynamiquement"
@@ -396,7 +393,7 @@
     "message": "PDF à HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Traduire le PDF"
   },
   "btncopy": {
     "message": "Copier"
@@ -487,33 +484,33 @@
     "message": "Je développe, mets à jour et supporte cette extension depuis plus de trois ans. C'est incroyable de voir que nous avons plus de 600 000 utilisateurs quotidiens, et que toutes ces personnes ont pu migrer définitivement vers Firefox.\n\nJ'ai pour objectif de publier une nouvelle version de cette extension tous les mois et de continuer à l'améliorer.\n\nJe vous serais reconnaissant si vous pouviez m'aider financièrement en devenant membre de Patreon et en me soutenant pour apporter des améliorations à cette extension.\n\nMerci à tous ceux qui ont déjà contribué à ce projet."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Activer le cache de traduction persistant (cache sur disque)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Sélectionnez la langue d'origine du site Web"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Sélectionnez la langue cible"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Améliorer la traduction"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Expérimental"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Confidentialité"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Sélectionnez les services de traduction que vous souhaitez utiliser"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Utiliser silencieusement un autre service de traduction si la langue cible actuelle n'est pas prise en charge par le service de traduction sélectionné"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Langage par défaut"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Langue de l'interface utilisateur de l'extension"
   }
 }

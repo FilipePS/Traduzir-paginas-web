@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Metin okuma ses hızı"
   },
-  "lblEnableDeepL": {
-    "message": "DeepL'yi bir metin çeviri hizmeti olarak etkinleştir"
-  },
   "enterShortcut": {
     "message": "Kısayol yazın"
   },
@@ -396,7 +393,7 @@
     "message": "PDF'den HTML'e"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "PDF'yi çevir"
   },
   "btncopy": {
     "message": "Kopyala"

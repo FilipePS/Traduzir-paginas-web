@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Скорость преобразования текста в речь"
   },
-  "lblEnableDeepL": {
-    "message": "Включить DeepL как сервис перевода текста"
-  },
   "enterShortcut": {
     "message": "Введите комбинацию"
   },
@@ -396,7 +393,7 @@
     "message": "PDF в HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Перевести PDF"
   },
   "btncopy": {
     "message": "Копировать"
@@ -511,9 +508,9 @@
     "message": "Автоматически использовать альтернативную службу перевода, если текущий целевой язык не поддерживается выбранным сервисом перевода"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Язык по умолчанию"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Язык интерфейса расширения"
   }
 }

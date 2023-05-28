@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Rychlost audia textu na řeč"
   },
-  "lblEnableDeepL": {
-    "message": "Povolit DeepL jako textovou překladatelskou službu"
-  },
   "enterShortcut": {
     "message": "Stiskněte zkratku"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Netříděte výsledky překladu"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Přeložit dynamicky vytvořený obsah"
@@ -396,7 +393,7 @@
     "message": "PDF do HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Přeložit PDF"
   },
   "btncopy": {
     "message": "Kopírovat"
@@ -487,33 +484,33 @@
     "message": "Toto rozšíření vyvíjím, aktualizuji a podporuji více než tři roky. Je úžasné vidět, že máme přes 600 000 uživatelů denně a všichni tito lidé byli schopni migrovat na Firefox trvale.\n\nSnažím se vydávat každý měsíc novou verzi tohoto rozšíření a neustále ji vylepšovat.\n\nByl bych Vám vděčný, kdybyste mi mohli finančně pomoci tím, že se stanete členem Patreonu a podpoříte mě při vylepšování tohoto rozšíření.\n\nDěkujeme všem, kteří se již na tomto projektu podíleli."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Povolit mezipaměť trvalého překladu (mezipaměť na disku)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Vyberte původní jazyk webových stránek"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Vyberte cílový jazyk"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Zlepšit překlad"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Experimentální"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Soukromí"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Vyberte překladatelské služby, které chcete použít"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Tiše použijte alternativní překladatelskou službu, pokud vybraná překladatelská služba nepodporuje aktuální cílový jazyk"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Základní jazyk"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Jazyk uživatelského rozhraní rozšíření"
   }
 }

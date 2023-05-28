@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "سرعت تبدیل متن به گفتار"
   },
-  "lblEnableDeepL": {
-    "message": "فعال کردن DeepL به عنوان سرویس ترجمه متن "
-  },
   "enterShortcut": {
     "message": "یک میانبر تایپ کنید"
   },
@@ -396,7 +393,7 @@
     "message": "تبدیل پی‌دی‌اف به اچ‌تی‌ام‌ال"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "PDF را ترجمه کنید"
   },
   "btncopy": {
     "message": "کپی (رونوشت)"

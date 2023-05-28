@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Felolvasási hang sebesség"
   },
-  "lblEnableDeepL": {
-    "message": "DeepL bekapcsolása mint szöveg fordító szolgáltatás"
-  },
   "enterShortcut": {
     "message": "Gyorsbillentyű megadása"
   },
@@ -396,7 +393,7 @@
     "message": "PDF-ből HTML-be"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "PDF fordítása"
   },
   "btncopy": {
     "message": "Másolás"

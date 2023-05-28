@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Швидкість перетворення звуку Text-to-speech"
   },
-  "lblEnableDeepL": {
-    "message": "Увімкнути DeepL як службу перекладу тексту"
-  },
   "enterShortcut": {
     "message": "Введіть комбінацію"
   },
@@ -396,7 +393,7 @@
     "message": "PDF у HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Перекласти PDF"
   },
   "btncopy": {
     "message": "Копіювати"

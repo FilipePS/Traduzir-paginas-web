@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Ljudhastighet för text-till-tal"
   },
-  "lblEnableDeepL": {
-    "message": "Aktivera DeepL som en översättningstjänst för text"
-  },
   "enterShortcut": {
     "message": "Skriv en genväg"
   },
@@ -396,7 +393,7 @@
     "message": "PDF till HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Översätt PDF"
   },
   "btncopy": {
     "message": "Kopiera"

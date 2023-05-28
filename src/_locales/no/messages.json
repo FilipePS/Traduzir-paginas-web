@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Tekst-til-tale lydhastighet"
   },
-  "lblEnableDeepL": {
-    "message": "Aktiver DeepL som en tekstoversettelsestjeneste"
-  },
   "enterShortcut": {
     "message": "Skriv inn en snarvei"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Ikke sorter oversettelsesresultater"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Oversett dynamisk skapt innhold"
@@ -396,7 +393,7 @@
     "message": "PDF til HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Oversett PDF"
   },
   "btncopy": {
     "message": "Kopiere"
@@ -487,33 +484,33 @@
     "message": "Jeg har utviklet, oppdatert og støttet denne utvidelsen i over tre år. Det er utrolig å se at vi har over 600 000 daglige brukere, og alle disse menneskene har vært i stand til å migrere til Firefox permanent.\n\nJeg har som mål å gi ut en ny versjon av denne utvidelsen hver måned og fortsette å forbedre den.\n\nJeg ville være takknemlig hvis du kunne hjelpe meg økonomisk ved å bli et Patreon-medlem og støtte meg i å forbedre denne utvidelsen.\n\nTakk til alle som allerede har bidratt til dette prosjektet."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Aktiver vedvarende oversettelsesbuffer (cache på disk)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Velg det originale nettstedets språk"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Velg målspråk"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Forbedre oversettelsen"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Eksperimentell"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Personvern"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Velg oversettelsestjenestene du vil bruke"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Bruk en alternativ oversettelsestjeneste stille hvis gjeldende målspråk ikke støttes av den valgte oversettelsestjenesten"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Standardspråk"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Språk for utvidelse av brukergrensesnitt"
   }
 }

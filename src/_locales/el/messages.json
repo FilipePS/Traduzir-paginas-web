@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Ταχύτητα ήχου κειμένου σε ομιλία"
   },
-  "lblEnableDeepL": {
-    "message": "Ενεργοποίηση DeepL ως υπηρεσία μετάφρασης κειμένου"
-  },
   "enterShortcut": {
     "message": "Πληκτρολογήστε μια συντόμευση"
   },
@@ -396,7 +393,7 @@
     "message": "PDF σε HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Μετάφραση PDF"
   },
   "btncopy": {
     "message": "Αντιγραφή"

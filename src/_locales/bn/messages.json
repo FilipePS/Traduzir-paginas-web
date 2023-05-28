@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "টেক্সট-টু-স্পিচ অডিও গতি"
   },
-  "lblEnableDeepL": {
-    "message": "DeepL লেখা অনুবাদ সেবা হিসাবে সক্ষম করুন"
-  },
   "enterShortcut": {
     "message": "শর্টকাট লিখুন"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "অনুবাদ ফলাফল বাছাই করবেন না"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "গতিশীলভাবে তৈরি কন্টেন্ট অনুবাদ করুন"
@@ -396,7 +393,7 @@
     "message": "পিডিএফ থেকে এইচটিএমএল"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "PDF অনুবাদ করুন"
   },
   "btncopy": {
     "message": "কপি করুন"
@@ -487,33 +484,33 @@
     "message": "আমি তিন বছরেরও বেশি সময় ধরে এই এক্সটেনশনটি বিকাশ, আপডেট এবং সমর্থন করছি। এটা দেখতে আশ্চর্যজনক যে আমাদের 600,000 এরও বেশি দৈনিক ব্যবহারকারী রয়েছে, এবং এই সমস্ত লোক স্থায়ীভাবে Firefox-এ স্থানান্তর করতে সক্ষম হয়েছে।\n\nআমি প্রতি মাসে এই এক্সটেনশনের একটি নতুন সংস্করণ প্রকাশ করার লক্ষ্য রাখি এবং এটিকে উন্নত করতে থাকি।\n\nআমি কৃতজ্ঞ হব যদি আপনি আমাকে প্যাট্রিয়ন সদস্য হয়ে আর্থিকভাবে সাহায্য করতে পারেন এবং এই এক্সটেনশনের উন্নতিতে আমাকে সমর্থন করেন।\n\nযারা ইতিমধ্যে এই প্রকল্পে অবদান রেখেছেন তাদের সবাইকে ধন্যবাদ৷"
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "স্থায়ী অনুবাদ ক্যাশে সক্ষম করুন (অন-ডিস্ক ক্যাশে)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "মূল ওয়েবসাইটের ভাষা নির্বাচন করুন"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "লক্ষ্য ভাষা নির্বাচন করুন"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "অনুবাদ উন্নত করুন"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "পরীক্ষামূলক"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "গোপনীয়তা"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "আপনি যে অনুবাদ পরিষেবাগুলি ব্যবহার করতে চান তা নির্বাচন করুন৷"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "বর্তমান টার্গেট ভাষা নির্বাচিত অনুবাদ পরিষেবা দ্বারা সমর্থিত না হলে নীরবে একটি বিকল্প অনুবাদ পরিষেবা ব্যবহার করুন৷"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "নির্ধারিত ভাষা"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "এক্সটেনশন ইউজার ইন্টারফেস ভাষা"
   }
 }

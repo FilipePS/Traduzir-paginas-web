@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Text-to-speech audio speed"
   },
-  "lblEnableDeepL": {
-    "message": "Enable DeepL as a text translation service"
-  },
   "enterShortcut": {
     "message": "Type a shortcut"
   },

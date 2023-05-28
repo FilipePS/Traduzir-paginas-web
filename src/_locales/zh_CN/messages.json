@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "文字转语音的语速"
   },
-  "lblEnableDeepL": {
-    "message": "启用基于 DeepL 的文本翻译服务"
-  },
   "enterShortcut": {
     "message": "输入一个快捷键"
   },
@@ -396,7 +393,7 @@
     "message": "PDF 转 HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "翻译 PDF"
   },
   "btncopy": {
     "message": "复制"

@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "Teks-na-spraak klank spoed"
   },
-  "lblEnableDeepL": {
-    "message": "Aktiveer DeepL as 'n teksvertaaldiens"
-  },
   "enterShortcut": {
     "message": "Tik 'n kortpad"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Moenie vertaalresultate sorteer nie"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Vertaal dinamies geskep inhoud"
@@ -396,7 +393,7 @@
     "message": "PDF na HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Vertaal PDF"
   },
   "btncopy": {
     "message": "Kopieer"
@@ -487,33 +484,33 @@
     "message": "Ek het hierdie uitbreiding al meer as drie jaar ontwikkel, bygewerk en ondersteun. Dit is ongelooflik om te sien dat ons meer as 600 000 daaglikse gebruikers het, en al hierdie mense kon permanent na Firefox toe migreer.\n\nEk beoog om elke maand 'n nuwe weergawe van hierdie uitbreiding vry te stel en aan te hou om dit te verbeter.\n\nEk sal dankbaar wees as jy my finansieel kan help deur 'n Patreon-lid te word en my te ondersteun om verbeterings aan hierdie uitbreiding aan te bring.\n\nDankie aan almal wat reeds bygedra het tot hierdie projek."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Aktiveer aanhoudende vertaalkas (op-skyfkas)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Kies die oorspronklike webwerftaal"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Kies doeltaal"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Verbeter vertaling"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Eksperimenteel"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Privaatheid"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Kies die vertaaldienste wat jy wil gebruik"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Gebruik stilweg 'n alternatiewe vertaaldiens as die huidige teikentaal nie deur die geselekteerde vertaaldiens ondersteun word nie"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Verstektaal"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Uitbreiding gebruikerskoppelvlak taal"
   }
 }

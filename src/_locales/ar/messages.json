@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "سرعة صوت تحويل النص إلى كلام"
   },
-  "lblEnableDeepL": {
-    "message": "تمكين DeepL كخدمة ترجمة نصية"
-  },
   "enterShortcut": {
     "message": "أدخل الاختصار"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "لا تفرز نتائج الترجمة"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "ترجمة المحتوى الذي تم إنشاؤه ديناميكيًا"
@@ -396,7 +393,7 @@
     "message": "PDF إلى HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "ترجمة PDF"
   },
   "btncopy": {
     "message": "نسخ"
@@ -490,25 +487,25 @@
     "message": "تمكين ذاكرة التخزين المؤقت للترجمة الدائمة (ذاكرة التخزين المؤقت على القرص)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "حدد لغة الموقع الأصلية"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "اختر اللغة المستهدفة"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "تحسين الترجمة"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "تجريبي"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "خصوصية"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "حدد خدمات الترجمة التي تريد استخدامها"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "استخدم بصمت خدمة ترجمة بديلة إذا كانت اللغة الهدف الحالية غير مدعومة من قبل خدمة الترجمة المحددة"
   },
   "msgDefaultLanguage": {
     "message": "اللغة الاعْتيادية"

@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "텍스트 음성 변환 오디오 속도"
   },
-  "lblEnableDeepL": {
-    "message": "텍스트 번역 서비스로 DeepL 활성화"
-  },
   "enterShortcut": {
     "message": "단축키 입력"
   },
@@ -396,7 +393,7 @@
     "message": "PDF를 HTML로"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "PDF 번역"
   },
   "btncopy": {
     "message": "복사"
@@ -511,9 +508,9 @@
     "message": "선택한 번역 서비스가 도착어를 지원하지 않는 경우 자동으로 대체 번역 서비스를 사용합니다."
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "기본 언어"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "확장 기능 사용자 인터페이스 언어"
   }
 }

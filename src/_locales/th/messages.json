@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "ความเร็วเสียงอ่านออกเสียงข้อความ"
   },
-  "lblEnableDeepL": {
-    "message": "เปิดใช้งาน DeepL เป็นบริการแปลข้อความ"
-  },
   "enterShortcut": {
     "message": "พิมพ์ทางลัด"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "อย่าเรียงลำดับการแปลผล"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "แปลเนื้อหาที่สร้างขึ้นแบบไดนามิก"
@@ -396,7 +393,7 @@
     "message": "PDF เป็น HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "แปล PDF"
   },
   "btncopy": {
     "message": "สำเนา"
@@ -487,33 +484,33 @@
     "message": "ฉันพัฒนา อัปเดต และสนับสนุนส่วนขยายนี้มากว่าสามปีแล้ว เป็นเรื่องน่าทึ่งที่เห็นว่าเรามีผู้ใช้มากกว่า 600,000 รายต่อวัน และผู้ใช้เหล่านี้ทั้งหมดสามารถย้ายไปยัง Firefox อย่างถาวรได้\n\nฉันตั้งเป้าที่จะออกเวอร์ชันใหม่ของส่วนขยายนี้ทุกเดือนและปรับปรุงต่อไป\n\nฉันจะขอบคุณมากหากคุณสามารถช่วยฉันทางการเงินด้วยการเป็นสมาชิก Patreon และสนับสนุนฉันในการปรับปรุงส่วนขยายนี้\n\nขอขอบคุณทุกคนที่มีส่วนสนับสนุนโครงการนี้แล้ว"
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "เปิดใช้งานแคชการแปลถาวร (แคชบนดิสก์)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "เลือกภาษาของเว็บไซต์ต้นฉบับ"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "เลือกภาษาเป้าหมาย"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "ปรับปรุงการแปล"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "การทดลอง"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "ความเป็นส่วนตัว"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "เลือกบริการแปลที่คุณต้องการใช้"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "ใช้บริการแปลอื่นโดยไม่ต้องแจ้งให้ทราบหากภาษาเป้าหมายปัจจุบันไม่ได้รับการสนับสนุนโดยบริการแปลที่เลือก"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "ภาษาเริ่มต้น"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "ภาษาส่วนติดต่อผู้ใช้ส่วนขยาย"
   }
 }

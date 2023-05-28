@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "音声読み上げの速度"
   },
-  "lblEnableDeepL": {
-    "message": "テキストの翻訳サービスとしてDeepLを追加"
-  },
   "enterShortcut": {
     "message": "ショートカットを入力"
   },
@@ -396,7 +393,7 @@
     "message": "PDFをHTMLに変換"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "PDFを翻訳"
   },
   "btncopy": {
     "message": "コピー"
@@ -511,9 +508,9 @@
     "message": "現在の翻訳対象の言語が、選択された翻訳サービスでサポートされていない場合は、別の翻訳サービスを使用します"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "既定の言語"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "拡張ユーザーインターフェース言語"
   }
 }

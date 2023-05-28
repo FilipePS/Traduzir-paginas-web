@@ -287,9 +287,6 @@
   "lblTtsSpeed": {
     "message": "טקסט-אל-קול מהירות קול"
   },
-  "lblEnableDeepL": {
-    "message": "אפשר DeepL כמנוע תרגום לטקסט"
-  },
   "enterShortcut": {
     "message": "הקלד קיצור דרך"
   },
@@ -320,7 +317,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "אל תמיין את תוצאות התרגום"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "תרגום בצורה דינאמית יוצרת תוכן"
@@ -396,7 +393,7 @@
     "message": "PDF ל-HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "תרגם PDF"
   },
   "btncopy": {
     "message": "עותק"
@@ -487,33 +484,33 @@
     "message": "אני מפתח, מעדכן ותומך בהרחבה זו במשך יותר משלוש שנים. מדהים לראות שיש לנו יותר מ-600,000 משתמשים יומיים, וכל האנשים האלה הצליחו לעבור ל-Firefox לצמיתות.\n\nאני שואף לשחרר גרסה חדשה של הרחבה זו מדי חודש ולהמשיך לשפר אותה.\n\nאודה לך אם תוכל לעזור לי כלכלית על ידי הפיכתך לחבר בפטראון ותתמוך בי בהבאת שיפורים להרחבה זו.\n\nתודה לכל מי שכבר תרם לפרויקט זה."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "אפשר מטמון תרגום מתמיד (מטמון בדיסק)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "בחר את שפת האתר המקורי"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "בחר שפת יעד"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "שפר את התרגום"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "נִסיוֹנִי"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "פְּרָטִיוּת"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "בחר את שירותי התרגום שבהם ברצונך להשתמש"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "השתמש בשקט בשירות תרגום חלופי אם שפת היעד הנוכחית אינה נתמכת על ידי שירות התרגום שנבחר"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "שפת ברירת מחדל"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "שפת ממשק משתמש הרחבה"
   }
 }
