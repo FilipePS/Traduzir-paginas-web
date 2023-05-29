@@ -63,28 +63,19 @@ function filterKeywordsInText(textContext) {
             isPunctuationOrDelimiter(previousChar) &&
             isPunctuationOrDelimiter(nextChar)
           ) {
-            // placeholderText =
-            //   startMark + handleHitKeywords(keyWordWithCase, true) + endMark;
-            //
-
-
-            // 大小写还原
-            let word1 = customDictionary.get(keyWord.toLowerCase())
-            let word = keyWord
-            if(word1!=='')
-              word = word1
-
-            word =  word.substring(0,1)+"#n%o#"+word.substring(1)
-
-
-
-
-            placeholderText = bingMarkFrontPart+ word+ bingMarkSecondPart
-
-            // console.error(word)
-            // console.error(placeholderText)
-
-
+            /**
+             * Bing's translation engine, officially provides custom dictionary function,
+             * so it has its own separate tags, and the engine digests these tags internally.
+             * */
+            if(twpConfig.get("pageTranslatorService") === 'bing'){
+              let customValue = customDictionary.get(keyWord);
+              if(customValue === '') customValue = keyWordWithCase
+              customValue =  customValue.substring(0,1) + "#n%o#" + customValue.substring(1)
+              placeholderText = bingMarkFrontPart+ customValue+ bingMarkSecondPart
+            }else {
+              placeholderText =
+                startMark + handleHitKeywords(keyWordWithCase, true) + endMark;
+            }
           } else {
             placeholderText = "#n%o#";
             for (let c of Array.from(keyWordWithCase)) {
@@ -100,17 +91,18 @@ function filterKeywordsInText(textContext) {
       textContext = textContext.replaceAll("#n%o#", "");
     }
   }
-
-  console.error(textContext)
-
   return textContext;
 }
 
 /**
  *  handle the keywords in translatedText, replace it if there is a custom replacement value.
+ *  When encountering Google Translate reordering, the original text contains our mark, etc.
+ *  we will catch these exceptions and call the text translation method to retranslate this section.
  *
- *  When encountering Google Translate reordering, the original text contains our mark, etc. , we will catch these exceptions and call the text translation method to retranslate this section.
- *  */
+ * Note:
+ *  Bing's translation engine has its own separate tags,and the engine digests these tags internally,
+ *  we don't need to call the method below.
+ **/
 async function handleCustomWords(
   translated,
   originalText,
@@ -120,7 +112,7 @@ async function handleCustomWords(
 ) {
   try {
     const customDictionary = twpConfig.get("customDictionary");
-    if (customDictionary.size > 0) {
+    if (customDictionary.size > 0 && twpConfig.get("pageTranslatorService") !== 'bing') {
       // If the translation is a single word and exists in the dictionary, return it directly
       let customValue = customDictionary.get(originalText.trim());
       if (customValue) return customValue;
