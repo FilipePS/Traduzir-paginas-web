@@ -12,6 +12,10 @@ const endMark = "#$";
 const startMark0 = "@ %";
 const endMark0 = "# $";
 
+const bingMarkFrontPart = '<mstrans:dictionary translation=\"';
+const bingMarkSecondPart = '\"></mstrans:dictionary>';
+
+
 let currentIndex;
 let compressionMap;
 
@@ -59,8 +63,28 @@ function filterKeywordsInText(textContext) {
             isPunctuationOrDelimiter(previousChar) &&
             isPunctuationOrDelimiter(nextChar)
           ) {
-            placeholderText =
-              startMark + handleHitKeywords(keyWordWithCase, true) + endMark;
+            // placeholderText =
+            //   startMark + handleHitKeywords(keyWordWithCase, true) + endMark;
+            //
+
+
+            // 大小写还原
+            let word1 = customDictionary.get(keyWord.toLowerCase())
+            let word = keyWord
+            if(word1!=='')
+              word = word1
+
+            word =  word.substring(0,1)+"#n%o#"+word.substring(1)
+
+
+
+
+            placeholderText = bingMarkFrontPart+ word+ bingMarkSecondPart
+
+            // console.error(word)
+            // console.error(placeholderText)
+
+
           } else {
             placeholderText = "#n%o#";
             for (let c of Array.from(keyWordWithCase)) {
@@ -76,6 +100,9 @@ function filterKeywordsInText(textContext) {
       textContext = textContext.replaceAll("#n%o#", "");
     }
   }
+
+  console.error(textContext)
+
   return textContext;
 }
 
