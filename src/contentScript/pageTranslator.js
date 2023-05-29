@@ -71,10 +71,9 @@ function filterKeywordsInText(textContext) {
               let customValue = customDictionary.get(keyWord);
               if(customValue === '') customValue = keyWordWithCase
               customValue =  customValue.substring(0,1) + "#n%o#" + customValue.substring(1)
-              placeholderText = bingMarkFrontPart+ customValue+ bingMarkSecondPart
+              placeholderText = bingMarkFrontPart + customValue + bingMarkSecondPart
             }else {
-              placeholderText =
-                startMark + handleHitKeywords(keyWordWithCase, true) + endMark;
+              placeholderText = startMark + handleHitKeywords(keyWordWithCase, true) + endMark;
             }
           } else {
             placeholderText = "#n%o#";
