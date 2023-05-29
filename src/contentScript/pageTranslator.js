@@ -66,11 +66,12 @@ function filterKeywordsInText(textContext) {
             /**
              * Bing's translation engine, officially provides custom dictionary function,
              * so it has its own separate tags, and the engine digests these tags internally.
+             * At the same time we add a space before and after the word to make it look a little more comfortable.
              * */
             if(twpConfig.get("pageTranslatorService") === 'bing'){
               let customValue = customDictionary.get(keyWord);
               if(customValue === '') customValue = keyWordWithCase
-              customValue =  customValue.substring(0,1) + "#n%o#" + customValue.substring(1)
+              customValue =  ' ' + customValue.substring(0,1) + "#n%o#" + customValue.substring(1) + ' '
               placeholderText = bingMarkFrontPart + customValue + bingMarkSecondPart
             }else {
               placeholderText = startMark + handleHitKeywords(keyWordWithCase, true) + endMark;
