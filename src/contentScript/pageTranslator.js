@@ -111,7 +111,7 @@ async function handleCustomWords(
 ) {
   try {
     const customDictionary = twpConfig.get("customDictionary");
-    if (customDictionary.size > 0 && currentPageTranslatorService !== 'bing') {
+    if (customDictionary.size > 0) {
       // If the translation is a single word and exists in the dictionary, return it directly
       let customValue = customDictionary.get(originalText.trim());
       if (customValue) return customValue;
