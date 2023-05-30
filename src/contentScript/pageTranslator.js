@@ -15,7 +15,6 @@ const endMark0 = "# $";
 const bingMarkFrontPart = '<mstrans:dictionary translation=\"';
 const bingMarkSecondPart = '\"></mstrans:dictionary>';
 
-
 let currentIndex;
 let compressionMap;
 
@@ -65,7 +64,7 @@ function filterKeywordsInText(textContext) {
           ) {
             /**
              * Bing's translation engine, officially provides custom dictionary function,
-             * so it has its own separate tags, and the engine digests these tags internally.
+             * so it has its own separate tags.
              * At the same time we add a space before and after the word to make it look a little more comfortable.
              * */
             if(twpConfig.get("pageTranslatorService") === 'bing'){
@@ -112,7 +111,7 @@ async function handleCustomWords(
 ) {
   try {
     const customDictionary = twpConfig.get("customDictionary");
-    if (customDictionary.size > 0 && twpConfig.get("pageTranslatorService") !== 'bing') {
+    if (customDictionary.size > 0 && currentPageTranslatorService !== 'bing') {
       // If the translation is a single word and exists in the dictionary, return it directly
       let customValue = customDictionary.get(originalText.trim());
       if (customValue) return customValue;
