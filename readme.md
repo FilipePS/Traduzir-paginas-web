@@ -12,10 +12,12 @@ Translate your page in real time using Google or Yandex.
 
 ### Firefox
 - Desktop users, download from [Mozilla Addons](https://addons.mozilla.org/firefox/addon/traduzir-paginas-web/).
-- Mobile users, see [this tutorial](https://www.ghacks.net/2020/10/01/you-can-now-install-any-add-on-in-firefox-nightly-for-android-but-it-is-complicated/).
+- Mobile users
+  - You can install **TWP** using this alternative browser to Firefox Mobile [Iceraven](https://github.com/fork-maintainers/iceraven-browser/releases).
+  - Or follow [this tutorial](https://www.ghacks.net/2020/10/01/you-can-now-install-any-add-on-in-firefox-nightly-for-android-but-it-is-complicated/) and install **TWP** on **Firefox Nightly**.
 
 ### Vivaldi, Opera, Maxthon, Chromium and Yandex
-1. Download this CRX file [TWP_Chromium.crx](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.7.2/TWP_9.7.2_Chromium.crx)
+1. Download this CRX file [TWP_Chromium.crx](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.8.0.3/TWP_9.8.0.3_Chromium.crx)
 2. Open your browser's extension manager, you can find it at this link: `chrome://extensions`
 3. Activate developer mode
 4. Reload the extension manager page to avoid errors
@@ -24,7 +26,7 @@ Translate your page in real time using Google or Yandex.
 7. Note 2: In Yandex you need to reactivate the extension every time you open the browser
 
 ### Chrome, Edge and Brave (With folder without auto update)
-1. Download and extract this ZIP file [TWP_Chromium.zip](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.7.2/TWP_9.7.2_Chromium.zip)
+1. Download and extract this ZIP file [TWP_Chromium.zip](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.8.0.3/TWP_9.8.0.3_Chromium.zip)
 2. Open your browser's extension manager, you can find it at this link: `chrome://extensions`
 3. Activate developer mode
 4. Reload the extension manager page to avoid errors
@@ -35,7 +37,7 @@ Translate your page in real time using Google or Yandex.
 
 1. Download this and run this file [twp-registry-install.reg](https://raw.githubusercontent.com/FilipePS/Traduzir-paginas-web/master/dist/chromium/twp-registry-install.reg). It edit the necessary windows registries
 2. Close your browser and reopen it
-3. Download this CRX file [TWP_Chromium.crx](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.7.2/TWP_9.7.2_Chromium.crx)
+3. Download this CRX file [TWP_Chromium.crx](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.8.0.3/TWP_9.8.0.3_Chromium.crx)
 4. Open your browser's extension manager, you can find it at this link: `chrome://extensions`
 5. Activate developer mode
 6. Reload the extension manager page to avoid errors
