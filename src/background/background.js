@@ -137,9 +137,25 @@ function updateContextMenu(pageLanguageState = "original") {
   }
 }
 
+twpConfig.onReady(function () {
+  if (platformInfo.isMobile.any) return;
+  if (twpConfig.get("showReleaseNotes") !== "yes") return;
+  if (localStorage.getItem("v98hasshowedreleasenotes")) return;
+  if (twpConfig.get("v98hasshowedreleasenotes")) return;
+  setTimeout(() => {
+    tabsCreate(chrome.runtime.getURL("/options/options.html#release_notes"));
+  }, 2000);
+  localStorage.setItem("v98hasshowedreleasenotes", "yes");
+  twpConfig.set("v98hasshowedreleasenotes", "yes");
+});
+
+twpConfig.onReady(async () => {
+  translationCache.deleteTranslationCache();
+});
+
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason == "install") {
-    tabsCreate(chrome.runtime.getURL("/options/options.html"));
+    // tabsCreate(chrome.runtime.getURL("/options/options.html"));
     twpConfig.onReady(async () => {
       if (chrome.i18n.getUILanguage() === "zh-CN") {
         twpConfig.set("pageTranslatorService", "bing");
@@ -150,54 +166,41 @@ chrome.runtime.onInstalled.addListener((details) => {
     details.reason == "update" &&
     chrome.runtime.getManifest().version != details.previousVersion
   ) {
-    twpConfig.onReady(async () => {
-      if (platformInfo.isMobile.any) return;
-      if (twpConfig.get("showReleaseNotes") !== "yes") return;
-
-      let lastTimeShowingReleaseNotes = twpConfig.get(
-        "lastTimeShowingReleaseNotes"
-      );
-      let showReleaseNotes = false;
-      if (lastTimeShowingReleaseNotes) {
-        const date = new Date();
-        date.setDate(date.getDate() - 21);
-        if (date.getTime() > lastTimeShowingReleaseNotes) {
-          showReleaseNotes = true;
-          lastTimeShowingReleaseNotes = Date.now();
-          twpConfig.set(
-            "lastTimeShowingReleaseNotes",
-            lastTimeShowingReleaseNotes
-          );
-        }
-      } else {
-        showReleaseNotes = true;
-        lastTimeShowingReleaseNotes = Date.now();
-        twpConfig.set(
-          "lastTimeShowingReleaseNotes",
-          lastTimeShowingReleaseNotes
-        );
-      }
-
-      if (showReleaseNotes) {
-        tabsCreate(
-          chrome.runtime.getURL("/options/options.html#release_notes")
-        );
-      }
-    });
-
-    twpConfig.onReady(async () => {
-      if (twpConfig.get("textTranslatorService") === "deepl") {
-        if (chrome.i18n.getUILanguage() === "zh-CN") {
-          twpConfig.set("textTranslatorService", "bing");
-        } else {
-          twpConfig.set("textTranslatorService", "google");
-        }
-      }
-    });
-
-    twpConfig.onReady(async () => {
-      translationCache.deleteTranslationCache();
-    });
+    // twpConfig.onReady(async () => {
+    //   if (platformInfo.isMobile.any) return;
+    //   if (twpConfig.get("showReleaseNotes") !== "yes") return;
+    //   let lastTimeShowingReleaseNotes = twpConfig.get(
+    //     "lastTimeShowingReleaseNotes"
+    //   );
+    //   let showReleaseNotes = false;
+    //   if (lastTimeShowingReleaseNotes) {
+    //     const date = new Date();
+    //     date.setDate(date.getDate() - 21);
+    //     if (date.getTime() > lastTimeShowingReleaseNotes) {
+    //       showReleaseNotes = true;
+    //       lastTimeShowingReleaseNotes = Date.now();
+    //       twpConfig.set(
+    //         "lastTimeShowingReleaseNotes",
+    //         lastTimeShowingReleaseNotes
+    //       );
+    //     }
+    //   } else {
+    //     showReleaseNotes = true;
+    //     lastTimeShowingReleaseNotes = Date.now();
+    //     twpConfig.set(
+    //       "lastTimeShowingReleaseNotes",
+    //       lastTimeShowingReleaseNotes
+    //     );
+    //   }
+    //   if (showReleaseNotes) {
+    //     tabsCreate(
+    //       chrome.runtime.getURL("/options/options.html#release_notes")
+    //     );
+    //   }
+    // });
+    // twpConfig.onReady(async () => {
+    //   translationCache.deleteTranslationCache();
+    // });
   }
 
   twpConfig.onReady(async () => {
@@ -1035,27 +1038,53 @@ twpConfig.onReady(async () => {
 // garante que a extensão só seja atualizada quando reiniciar o navegador.
 // caso seja uma atualização manual, realiza uma limpeza e recarrega a extensão para instalar a atualização.
 chrome.runtime.onUpdateAvailable.addListener((details) => {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    const url = new URL(tabs[0].url);
-    if (
-      (url.hostname === "github.com" &&
-        url.pathname.includes("FilipePS/Traduzir-paginas-web/releases")) ||
-      (url.hostname === "addons.mozilla.org" &&
-        url.pathname.includes("addon/traduzir-paginas-web/versions"))
-    ) {
-      chrome.tabs.query({}, (tabs) => {
-        const cleanUpsPromises = [];
-        tabs.forEach((tab) => {
-          cleanUpsPromises.push(
-            new Promise((resolve) => {
-              chrome.tabs.sendMessage(tab.id, { action: "cleanUp" }, resolve);
-            })
-          );
-        });
-        Promise.all(cleanUpsPromises).finally(() => {
-          chrome.runtime.reload();
-        });
-      });
+  var reloaded = false;
+
+  setTimeout(function () {
+    if (!reloaded) {
+      reloaded = true;
+      chrome.runtime.reload();
     }
+  }, 2500);
+
+  chrome.tabs.query({}, (tabs) => {
+    const cleanUpsPromises = [];
+    tabs.forEach((tab) => {
+      cleanUpsPromises.push(
+        new Promise((resolve) => {
+          chrome.tabs.sendMessage(tab.id, { action: "cleanUp" }, resolve);
+        })
+      );
+    });
+    Promise.all(cleanUpsPromises).finally(() => {
+      if (!reloaded) {
+        reloaded = true;
+        chrome.runtime.reload();
+      }
+    });
   });
+
+  // chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  //   const url = new URL(tabs[0].url);
+  //   if (
+  //     (url.hostname === "github.com" &&
+  //       url.pathname.includes("FilipePS/Traduzir-paginas-web/releases")) ||
+  //     (url.hostname === "addons.mozilla.org" &&
+  //       url.pathname.includes("addon/traduzir-paginas-web/versions"))
+  //   ) {
+  //     chrome.tabs.query({}, (tabs) => {
+  //       const cleanUpsPromises = [];
+  //       tabs.forEach((tab) => {
+  //         cleanUpsPromises.push(
+  //           new Promise((resolve) => {
+  //             chrome.tabs.sendMessage(tab.id, { action: "cleanUp" }, resolve);
+  //           })
+  //         );
+  //       });
+  //       Promise.all(cleanUpsPromises).finally(() => {
+  //         chrome.runtime.reload();
+  //       });
+  //     });
+  //   }
+  // });
 });
