@@ -186,10 +186,10 @@
     "message": "Make the pop-up icon blue when the site is translated"
   },
   "more": {
-    "message": "More"
+    "message": "Kóbirek"
   },
   "less": {
-    "message": "Less"
+    "message": "Azıraq"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Do not show if the page language is the target language"
@@ -378,7 +378,7 @@
     "message": "Send document"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Error downloading document"
+    "message": "Hújjetti júklep alıwdaǵı qátelik"
   },
   "msgFileLargerThan": {
     "message": "This service does not support files larger than $FILE_SIZE$",

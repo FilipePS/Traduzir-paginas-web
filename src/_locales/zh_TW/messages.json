@@ -150,7 +150,7 @@
     "message": "樣式"
   },
   "msgHotkeys": {
-    "message": "快捷鍵"
+    "message": "快速鍵"
   },
   "lblMakeDonation": {
     "message": "捐款"
@@ -171,7 +171,7 @@
     "message": "停留時顯示譯文"
   },
   "lblKeyboardShortcuts": {
-    "message": "鍵盤快捷鍵"
+    "message": "鍵盤快速鍵"
   },
   "msgThanksForUseExtension": {
     "message": "感謝您使用這款擴充套件"
@@ -288,7 +288,7 @@
     "message": "文字轉語音速度"
   },
   "enterShortcut": {
-    "message": "輸入快捷鍵"
+    "message": "輸入快速鍵"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "需包含 Ctrl 鍵或 Alt 鍵"
@@ -332,10 +332,10 @@
     "message": "翻譯後，自動翻譯頁面中指向相同網域的鏈結之頁面"
   },
   "openNativeShortcutManager": {
-    "message": "開啟原生快捷鍵管理器"
+    "message": "開啟原生快速鍵管理器"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "特殊快捷鍵"
+    "message": "特殊鍵盤快速鍵"
   },
   "lblTranslateSelectedWhenPressTwice": {
     "message": "按兩下 $SHORTCUT_KEY$ 時翻譯所選文字",
@@ -511,6 +511,6 @@
     "message": "預設語言"
   },
   "msgExtUILanguage": {
-    "message": "擴充套件使用者界面語言"
+    "message": "擴充套件使用者介面語言"
   }
 }
