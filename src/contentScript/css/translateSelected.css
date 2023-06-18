@@ -31,10 +31,17 @@
     right: 2px;
 }
 
-#copy, #replace  {
+#copy {
     position: absolute;
     top: 30px;
     right: 2px;
+}
+
+#replace  {
+    position: absolute;
+    top: 60px;
+    right: 2px;
+    display: none;
 }
 
 #eSelTextTrans,

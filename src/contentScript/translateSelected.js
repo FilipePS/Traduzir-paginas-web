@@ -408,11 +408,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       gSelectionInfo &&
       (gSelectionInfo.isInputElement || gSelectionInfo.isContentEditable)
     ) {
-      eCopy.setAttribute("hidden", "");
-      eReplace.removeAttribute("hidden");
+      eReplace.style.display = "block";
+      eSelTextTrans.style.minHeight = "55px";
     } else {
-      eCopy.removeAttribute("hidden");
-      eReplace.setAttribute("hidden", "");
+      eReplace.style.display = "none";
+      eSelTextTrans.style.minHeight = null;
     }
 
     function replaceText() {
