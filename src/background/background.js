@@ -131,7 +131,7 @@ function updateContextMenu(pageLanguageState = "original") {
         id: "translate-web-page",
         title: contextMenuTitle,
         contexts: ["page", "frame"],
-        documentUrlPatterns: ["*://*/*"],
+        documentUrlPatterns: ["http://*/*", "https://*/*", "file://*/*", "ftp://*/*"],
       });
     }
   }
