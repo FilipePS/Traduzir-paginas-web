@@ -6,16 +6,34 @@ const translationService = (function () {
   class Utils {
     /**
      * Replace the characters `& < > " '` with `&amp; &lt; &gt; &quot; &#39;`.
+     *
+     * Note: For bing translation, we want to use its custom dictionary feature,
+     * we have to keep certain html tags, so we need to avoid them from being escaped.
+     * These symbols are nothing, just to ensure that there are no such symbols in the original text.
+     *
      * @param {string} unsafe
      * @returns {string} escapedString
      */
     static escapeHTML(unsafe) {
-      return unsafe
+      const bingMarkFrontPart = '<mstrans:dictionary translation="';
+      const bingMarkSecondPart = '"></mstrans:dictionary>';
+
+      unsafe = unsafe
+        .replaceAll(bingMarkFrontPart, "@-/629^*")
+        .replaceAll(bingMarkSecondPart, "^$537+*");
+
+      unsafe = unsafe
         .replace(/\&/g, "&amp;")
         .replace(/\</g, "&lt;")
         .replace(/\>/g, "&gt;")
         .replace(/\"/g, "&quot;")
         .replace(/\'/g, "&#39;");
+
+      unsafe = unsafe
+        .replaceAll("@-/629^*", bingMarkFrontPart)
+        .replaceAll("^$537+*", bingMarkSecondPart);
+
+      return unsafe;
     }
 
     /**
