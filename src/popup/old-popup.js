@@ -383,6 +383,8 @@ twpConfig
             btnOptionsDiv.style.display = "inline";
 
             divShowTranslateSelectedButton.style.display = "block";
+            
+            divIconTranslateContainer.style.display = "block";
 
             break;
           case "translating":
