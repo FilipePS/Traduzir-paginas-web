@@ -369,7 +369,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   let currentSourceLanguage = "auto";
   let currentTargetLanguage = twpConfig.get("targetLanguage");
   let currentPageTranslatorService = twpConfig.get("pageTranslatorService");
-  let customDictionary = twpConfig.get("customDictionary");
+  let customDictionary = sortDictionary(twpConfig.get("customDictionary"));
   let dontSortResults =
     twpConfig.get("dontSortResults") == "yes" ? true : false;
   let fooCount = 0;
@@ -1003,8 +1003,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           });
 
           if (piecesToTranslateNow.length > 0) {
-            const sortedCustomDictionary = sortDictionary(customDictionary)
-
             backgroundTranslateHTML(
               currentPageTranslatorService,
               currentSourceLanguage,
@@ -1012,7 +1010,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               piecesToTranslateNow.map((ptt) =>
                 ptt.nodes.map((node) => filterKeywordsInText(
                     node.textContent,
-                    sortedCustomDictionary,
+                    customDictionary,
                     currentPageTranslatorService
                 ))
               ),
@@ -1098,6 +1096,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     if (targetLanguage) {
       currentTargetLanguage = targetLanguage;
     }
+
+    customDictionary = sortDictionary(twpConfig.get("customDictionary"))
 
     // https://github.com/FilipePS/Traduzir-paginas-web/issues/619
     if (
