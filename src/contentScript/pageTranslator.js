@@ -12,8 +12,8 @@ const endMark = "#$";
 const startMark0 = "@ %";
 const endMark0 = "# $";
 
-const bingMarkFrontPart = '<mstrans:dictionary translation=\"';
-const bingMarkSecondPart = '\"></mstrans:dictionary>';
+const bingMarkFrontPart = '<mstrans:dictionary translation="';
+const bingMarkSecondPart = '"></mstrans:dictionary>';
 
 let currentIndex;
 let compressionMap;
@@ -38,9 +38,9 @@ let compressionMap;
  *     But this will also cause this method to not work for Chinese, Burmese and other languages without spaces.
  * */
 function filterKeywordsInText(
-    textContext,
-    sortedCustomDictionary,
-    currentPageTranslatorService
+  textContext,
+  sortedCustomDictionary,
+  currentPageTranslatorService
 ) {
   if (sortedCustomDictionary.size > 0) {
     for (let keyWord of sortedCustomDictionary.keys()) {
@@ -72,13 +72,20 @@ function filterKeywordsInText(
              * so it has its own separate tags.
              * At the same time we add a space before and after the word to make it look a little more comfortable.
              * */
-            if(currentPageTranslatorService === 'bing'){
+            if (currentPageTranslatorService === "bing") {
               let customValue = sortedCustomDictionary.get(keyWord);
-              if(customValue === '') customValue = keyWordWithCase
-              customValue =  ' ' + customValue.substring(0,1) + "#n%o#" + customValue.substring(1) + ' '
-              placeholderText = bingMarkFrontPart + customValue + bingMarkSecondPart
-            }else {
-              placeholderText = startMark + handleHitKeywords(keyWordWithCase, true) + endMark;
+              if (customValue === "") customValue = keyWordWithCase;
+              customValue =
+                " " +
+                customValue.substring(0, 1) +
+                "#n%o#" +
+                customValue.substring(1) +
+                " ";
+              placeholderText =
+                bingMarkFrontPart + customValue + bingMarkSecondPart;
+            } else {
+              placeholderText =
+                startMark + handleHitKeywords(keyWordWithCase, true) + endMark;
             }
           } else {
             placeholderText = "#n%o#";
@@ -116,7 +123,7 @@ async function handleCustomWords(
   currentTargetLanguage
 ) {
   try {
-    if (customDictionary.size > 0 && currentPageTranslatorService !== 'bing') {
+    if (customDictionary.size > 0 && currentPageTranslatorService !== "bing") {
       // If the translation is a single word and exists in the dictionary, return it directly
       let customValue = customDictionary.get(originalText.trim());
       if (customValue) return customValue;
@@ -217,11 +224,11 @@ function isPunctuationOrDelimiter(str) {
 /**
  * get a sorted dictionary
  * */
-function sortDictionary(customDictionary){
+function sortDictionary(customDictionary) {
   return new Map(
-      [...customDictionary.entries()].sort(
-          (a, b) => String(b[0]).length - String(a[0]).length
-      )
+    [...customDictionary.entries()].sort(
+      (a, b) => String(b[0]).length - String(a[0]).length
+    )
   );
 }
 
@@ -1008,11 +1015,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               currentSourceLanguage,
               currentTargetLanguage,
               piecesToTranslateNow.map((ptt) =>
-                ptt.nodes.map((node) => filterKeywordsInText(
+                ptt.nodes.map((node) =>
+                  filterKeywordsInText(
                     node.textContent,
                     customDictionary,
                     currentPageTranslatorService
-                ))
+                  )
+                )
               ),
               dontSortResults
             ).then((results) => {
@@ -1097,7 +1106,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       currentTargetLanguage = targetLanguage;
     }
 
-    customDictionary = sortDictionary(twpConfig.get("customDictionary"))
+    customDictionary = sortDictionary(twpConfig.get("customDictionary"));
 
     // https://github.com/FilipePS/Traduzir-paginas-web/issues/619
     if (

@@ -15,12 +15,12 @@ const translationService = (function () {
      * @returns {string} escapedString
      */
     static escapeHTML(unsafe) {
-      const bingMarkFrontPart = '<mstrans:dictionary translation=\"';
-      const bingMarkSecondPart = '\"></mstrans:dictionary>';
+      const bingMarkFrontPart = '<mstrans:dictionary translation="';
+      const bingMarkSecondPart = '"></mstrans:dictionary>';
 
       unsafe = unsafe
-          .replaceAll(bingMarkFrontPart,'@-/629^*')
-          .replaceAll(bingMarkSecondPart,'^$537+*')
+        .replaceAll(bingMarkFrontPart, "@-/629^*")
+        .replaceAll(bingMarkSecondPart, "^$537+*");
 
       unsafe = unsafe
         .replace(/\&/g, "&amp;")
@@ -30,8 +30,8 @@ const translationService = (function () {
         .replace(/\'/g, "&#39;");
 
       unsafe = unsafe
-          .replaceAll('@-/629^*',bingMarkFrontPart)
-          .replaceAll('^$537+*',bingMarkSecondPart)
+        .replaceAll("@-/629^*", bingMarkFrontPart)
+        .replaceAll("^$537+*", bingMarkSecondPart);
 
       return unsafe;
     }
