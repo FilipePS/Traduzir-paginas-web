@@ -131,31 +131,20 @@ function updateContextMenu(pageLanguageState = "original") {
         id: "translate-web-page",
         title: contextMenuTitle,
         contexts: ["page", "frame"],
-        documentUrlPatterns: ["http://*/*", "https://*/*", "file://*/*", "ftp://*/*"],
+        documentUrlPatterns: [
+          "http://*/*",
+          "https://*/*",
+          "file://*/*",
+          "ftp://*/*",
+        ],
       });
     }
   }
 }
 
-twpConfig.onReady(function () {
-  if (platformInfo.isMobile.any) return;
-  if (twpConfig.get("showReleaseNotes") !== "yes") return;
-  if (localStorage.getItem("v98hasshowedreleasenotes")) return;
-  if (twpConfig.get("v98hasshowedreleasenotes")) return;
-  setTimeout(() => {
-    tabsCreate(chrome.runtime.getURL("/options/options.html#release_notes"));
-  }, 2000);
-  localStorage.setItem("v98hasshowedreleasenotes", "yes");
-  twpConfig.set("v98hasshowedreleasenotes", "yes");
-});
-
-twpConfig.onReady(async () => {
-  translationCache.deleteTranslationCache();
-});
-
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason == "install") {
-    // tabsCreate(chrome.runtime.getURL("/options/options.html"));
+    tabsCreate(chrome.runtime.getURL("/options/options.html"));
     twpConfig.onReady(async () => {
       if (chrome.i18n.getUILanguage() === "zh-CN") {
         twpConfig.set("pageTranslatorService", "bing");
@@ -198,9 +187,9 @@ chrome.runtime.onInstalled.addListener((details) => {
     //     );
     //   }
     // });
-    // twpConfig.onReady(async () => {
-    //   translationCache.deleteTranslationCache();
-    // });
+    twpConfig.onReady(async () => {
+      translationCache.deleteTranslationCache();
+    });
   }
 
   twpConfig.onReady(async () => {
@@ -1045,7 +1034,7 @@ chrome.runtime.onUpdateAvailable.addListener((details) => {
       reloaded = true;
       chrome.runtime.reload();
     }
-  }, 2500);
+  }, 2200);
 
   chrome.tabs.query({}, (tabs) => {
     const cleanUpsPromises = [];

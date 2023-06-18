@@ -340,6 +340,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   }
 
+  // https://github.com/FilipePS/Traduzir-paginas-web/issues/609
   if (twpConfig.get("translateTag_pre") !== "yes" && !(document.body.childElementCount === 1 && document.body.firstChild.nodeName.toLocaleLowerCase() === "pre")) {
     htmlTagsInlineIgnore.push("pre");
   }
