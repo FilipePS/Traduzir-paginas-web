@@ -7,7 +7,7 @@
           "browser_specific_settings": {
             "gecko": { "strict_min_version": "64.0" }
           },
-          "update_link": "https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.8.1.10/TWP_9.8.1.10_Firefox.xpi"
+          "update_link": "https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.8.1.0/TWP_9.8.1.0_Firefox.xpi"
         }
       ]
     }
