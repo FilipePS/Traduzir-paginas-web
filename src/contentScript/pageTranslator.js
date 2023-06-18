@@ -340,7 +340,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   }
 
-  if (twpConfig.get("translateTag_pre") !== "yes") {
+  if (twpConfig.get("translateTag_pre") !== "yes" && !(document.body.childElementCount === 1 && document.body.firstChild.nodeName.toLocaleLowerCase() === "pre")) {
     htmlTagsInlineIgnore.push("pre");
   }
   twpConfig.onChanged((name, newvalue) => {
@@ -350,7 +350,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         if (index !== -1) {
           htmlTagsInlineIgnore.splice(index, 1);
         }
-        if (newvalue !== "yes") {
+        if (newvalue !== "yes" && !(document.body.childElementCount === 1 && document.body.firstChild.nodeName.toLocaleLowerCase() === "pre")) {
           htmlTagsInlineIgnore.push("pre");
         }
         break;
