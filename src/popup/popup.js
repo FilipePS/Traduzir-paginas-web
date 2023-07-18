@@ -44,7 +44,7 @@ twpConfig
       $("#more").style.display = "block";
       $("#less").style.display = "block";
 
-      if (popupPanelSection >= 6) {
+      if (popupPanelSection >= 7) {
         $("#more").style.display = "none";
       } else if (popupPanelSection <= 0) {
         $("#less").style.display = "none";
@@ -53,7 +53,7 @@ twpConfig
     updatePopupSection();
 
     $("#more").onclick = (e) => {
-      if (popupPanelSection < 6) {
+      if (popupPanelSection < 7) {
         popupPanelSection++;
         updatePopupSection();
       }
@@ -458,10 +458,20 @@ twpConfig
           }
         );
 
+        $("#cbShowTextSideBySide").addEventListener("change", (e) => {
+          if (e.target.checked) {
+            twpConfig.set("showTextSideBySide", "yes");
+          } else {
+            twpConfig.set("showTextSideBySide", "no");
+          }
+        });
+
         $("#cbShowTranslateSelectedButton").checked =
           twpConfig.get("showTranslateSelectedButton") == "yes" ? true : false;
         $("#cbShowOriginalWhenHovering").checked =
           twpConfig.get("showOriginalTextWhenHovering") == "yes" ? true : false;
+        $("#cbShowTextSideBySide").checked =
+          twpConfig.get("showTextSideBySide") == "yes" ? true : false;
 
         const hostname = new URL(tabs[0].url).hostname;
         $("#cbAlwaysTranslateThisSite").checked =
