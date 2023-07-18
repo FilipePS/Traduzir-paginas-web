@@ -811,8 +811,15 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   }
 
   function translateTextContent(node, parentNode, text, toRestore) {
-    toRestore.translatedText = text;
+    const isSameText = toRestore.originalText.trim().localeCompare(text.trim()) === 0;
+    const inlineText = isSameText ? text : toRestore.originalText + "\r\n" + text;
+    text = twpConfig.get("showTextSideBySide") === "yes" ? inlineText : text;
+    // Render \r\n properly
+    twpConfig.get("showTextSideBySide") === "yes" && !isSameText ? 
+      parentNode.setAttribute('style', 'white-space: pre-line;') : null;
 
+    toRestore.translatedText = text;
+    
     if (location.hostname === "pdf.translatewebpages.org") {
       if (
         parentNode &&

@@ -636,6 +636,13 @@ twpConfig
       "translateDynamicallyCreatedContent"
     );
 
+    $("#showTextSideBySide").onchange = (e) => {
+      twpConfig.set("showTextSideBySide", e.target.value);
+    };
+    $("#showTextSideBySide").value = twpConfig.get(
+      "showTextSideBySide"
+    );
+
     $("#autoTranslateWhenClickingALink").onchange = (e) => {
       if (e.target.value == "yes") {
         chrome.permissions.request(
