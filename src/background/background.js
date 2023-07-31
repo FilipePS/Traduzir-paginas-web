@@ -190,6 +190,9 @@ chrome.runtime.onInstalled.addListener((details) => {
     twpConfig.onReady(async () => {
       translationCache.deleteTranslationCache();
     });
+    twpConfig.onReady(async () => {
+      twpConfig.set("textTranslatorService", twpConfig.get("enabledServices")[0]);
+    });
   }
 
   twpConfig.onReady(async () => {
