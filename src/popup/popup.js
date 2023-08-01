@@ -523,7 +523,7 @@ twpConfig
           switch (btnOptions.value) {
             case "changeLanguage":
               location = chrome.runtime.getURL(
-                "/popup/popup-change-language.html"
+                "/popup/improve-translation.html"
               );
               break;
             case "alwaysTranslateThisSite":
