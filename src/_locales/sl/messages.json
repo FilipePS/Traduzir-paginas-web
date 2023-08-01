@@ -512,5 +512,8 @@
   },
   "msgExtUILanguage": {
     "message": "Jezik uporabniškega vmesnika razširitve"
+  },
+  "msgSetDeepLAlert": {
+    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
   }
 }

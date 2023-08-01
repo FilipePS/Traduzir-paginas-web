@@ -329,7 +329,7 @@
     "message": "Dona con PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Traduci automaticamente quando fai clic su un link che ti porta allo stesso dominio del sito corrente"
+    "message": "Traduci automaticamente quando fai clic su un link che ti porta allo stesso dominio del sito attuale"
   },
   "openNativeShortcutManager": {
     "message": "Apri il gestore nativo delle scorciatoie"
@@ -512,5 +512,8 @@
   },
   "msgExtUILanguage": {
     "message": "Lingua dell'interfaccia dell'estensione"
+  },
+  "msgSetDeepLAlert": {
+    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
   }
 }

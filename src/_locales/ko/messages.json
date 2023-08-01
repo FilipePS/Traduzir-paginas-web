@@ -512,5 +512,8 @@
   },
   "msgExtUILanguage": {
     "message": "확장 기능 사용자 인터페이스 언어"
+  },
+  "msgSetDeepLAlert": {
+    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
   }
 }

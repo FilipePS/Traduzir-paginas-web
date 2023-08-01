@@ -249,19 +249,19 @@
     "message": "Text Translation Service"
   },
   "msgStorage": {
-    "message": "Storage"
+    "message": "Saqlaw ornı"
   },
   "lblTranslationCache": {
-    "message": "Translation cache"
+    "message": "Awdarma keshi"
   },
   "lblStorageUsed": {
     "message": "Storage used:"
   },
   "deleteTranslationCache": {
-    "message": "Delete translation cache"
+    "message": "Awdarma keshin óshiriw"
   },
   "lblPersonalSettings": {
-    "message": "Personal settings"
+    "message": "Jeke sazlawlar"
   },
   "backupToFile": {
     "message": "Backup to file"
@@ -273,7 +273,7 @@
     "message": "Aldınnan ornatılǵan sazlawlardı qayta tiklew"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Do you want to delete the translation cache?"
+    "message": "Awdarma keshin óshiriwdi qáleysiz be?"
   },
   "doYouWantOverwriteAllSettings": {
     "message": "Do you want to overwrite all existing settings using the backup data?"
@@ -291,10 +291,10 @@
     "message": "Type a shortcut"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Include Ctrl or Alt"
+    "message": "Ctrl yamasa Altti qosıń"
   },
   "hotkeyError_letter": {
-    "message": "Type a letter"
+    "message": "Hárip jazıń"
   },
   "hotkeyError_invalid": {
     "message": "Invalid combination"
@@ -323,7 +323,7 @@
     "message": "Translate dynamically created content"
   },
   "calculatestorage": {
-    "message": "Calculate"
+    "message": "Esaplaw"
   },
   "donatewithpaypal": {
     "message": "PayPal arqalı qollap-quwatlaw"
@@ -375,13 +375,13 @@
     "message": "Downloading the document..."
   },
   "msgSendDocument": {
-    "message": "Send document"
+    "message": "Hújjet jiberiw"
   },
   "msgErrorDownloadingDocument": {
     "message": "Hújjetti júklep alıwdaǵı qátelik"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "Bul xızmet $FILE_SIZE$dan úlken fayllardı qollap-quwatlamaydı",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -411,7 +411,7 @@
     "message": "Belgisiz"
   },
   "btnReplace": {
-    "message": "Replace"
+    "message": "Almastırıw"
   },
   "lblHotTranslatedSelectedText": {
     "message": "Replace selected text with translated text instantly"
@@ -499,10 +499,10 @@
     "message": "Experimental"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Qupıyalıq"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "Paydalanıwdı qáleytuǵın awdaema xızmetlerin tańlań"
   },
   "useAlternativeService": {
     "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
@@ -512,5 +512,8 @@
   },
   "msgExtUILanguage": {
     "message": "Extension user interface language"
+  },
+  "msgSetDeepLAlert": {
+    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
   }
 }

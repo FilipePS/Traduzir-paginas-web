@@ -512,5 +512,8 @@
   },
   "msgExtUILanguage": {
     "message": "Idioma da interface do usuário da extensão"
+  },
+  "msgSetDeepLAlert": {
+    "message": "Tem certeza de que deseja definir o serviço de tradução para DeepL?\nUma nova guia será aberta e a tradução ocorrerá lá."
   }
 }

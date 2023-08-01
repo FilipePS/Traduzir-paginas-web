@@ -9,7 +9,7 @@
     "message": "לתרגם את הדף הזה?"
   },
   "lblTranslating": {
-    "message": "מתרגם ..."
+    "message": "מתרגם..."
   },
   "lblError": {
     "message": "לא ניתן לתרגם דף זה"
@@ -45,7 +45,7 @@
     "message": "הצג את המקור"
   },
   "btnTryAgain": {
-    "message": "נסה שנית"
+    "message": "נסה שוב"
   },
   "btnOpenOnGoogleTranslate": {
     "message": "פתח בגוגל תרגום"
@@ -75,7 +75,7 @@
     "message": "בלחיצה על המסך עם שלוש אצבעות"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "פתח ביאנדקס תרגום"
+    "message": "פתח בתרגום יאנדקס"
   },
   "lblOthers": {
     "message": "שונות"
@@ -147,13 +147,13 @@
     "message": "תרגומים"
   },
   "msgStyle": {
-    "message": "סִגְנוֹן"
+    "message": "עיצוב"
   },
   "msgHotkeys": {
     "message": "מקשי קיצור"
   },
   "lblMakeDonation": {
-    "message": "לתרום"
+    "message": "תרומה"
   },
   "lblReleaseNotes": {
     "message": "מכתבי שחרור"
@@ -189,7 +189,7 @@
     "message": "יותר"
   },
   "less": {
-    "message": "פָּחוּת"
+    "message": "פחות"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "אל תראה אם ​​שפת העמוד היא שפת היעד"
@@ -225,7 +225,7 @@
     "message": "להקשיב"
   },
   "btnStopListening": {
-    "message": "תפסיק להקשיב"
+    "message": "הפסק להקשיב"
   },
   "btnApply": {
     "message": "להגיש מועמדות"
@@ -237,28 +237,28 @@
     "message": "מעבר בין ממשק פשוט למורכב"
   },
   "lblTranslateInterface": {
-    "message": "תתרגם את הממשק"
+    "message": "תרגם את הממשק"
   },
   "lblButtonInTheAddressBar": {
-    "message": "הצג כפתור בשורת הכתובה"
+    "message": "הצג כפתור בשורת הכתובת"
   },
   "lblPageTranslationService": {
     "message": "שירותי תרגום לדף"
   },
   "lblTextTranslationService": {
-    "message": "שירותי תרגום לטקסט"
+    "message": "שירות תרגום לטקסט"
   },
   "msgStorage": {
     "message": "אחסון"
   },
   "lblTranslationCache": {
-    "message": "תרגום מוטמן"
+    "message": "מטמון תרגום"
   },
   "lblStorageUsed": {
     "message": "אחסון בשימוש:"
   },
   "deleteTranslationCache": {
-    "message": "מחק תרגום מוטמן"
+    "message": "מחק מטמון תרגום"
   },
   "lblPersonalSettings": {
     "message": "הגדרות אישיות"
@@ -285,7 +285,7 @@
     "message": "האם ברצונך לשחזר את התוסף להגדרת ברירת מחדל?"
   },
   "lblTtsSpeed": {
-    "message": "טקסט-אל-קול מהירות קול"
+    "message": "הקראת טקסט - מהירות קול"
   },
   "enterShortcut": {
     "message": "הקלד קיצור דרך"
@@ -294,7 +294,7 @@
     "message": "הוסף/לחץ Ctrl או Alt"
   },
   "hotkeyError_letter": {
-    "message": "כתוב מכתב"
+    "message": "הקלד אות"
   },
   "hotkeyError_invalid": {
     "message": "צירוף לא חוקי"
@@ -426,10 +426,10 @@
     "message": "תרגם טקסט נבחר לשפת יעד זו"
   },
   "msgFavoriteLanguages": {
-    "message": "שפות אהובות"
+    "message": "שפות מועדפות"
   },
   "lblFavoriteLanguage": {
-    "message": "שפה אהובה $FAVORITE_LANGUAGE_NUM$",
+    "message": "שפה מועדפת $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -487,7 +487,7 @@
     "message": "אפשר מטמון תרגום מתמיד (מטמון בדיסק)"
   },
   "selectOriginalLanguage": {
-    "message": "בחר את שפת האתר המקורי"
+    "message": "בחר את שפת האתר המקורית"
   },
   "selectTargetLanguage": {
     "message": "בחר שפת יעד"
@@ -496,10 +496,10 @@
     "message": "שפר את התרגום"
   },
   "lblExperimental": {
-    "message": "נִסיוֹנִי"
+    "message": "ניסיוני"
   },
   "msgPrivacy": {
-    "message": "פְּרָטִיוּת"
+    "message": "פרטיות"
   },
   "selectToEnableTranslationService": {
     "message": "בחר את שירותי התרגום שבהם ברצונך להשתמש"
@@ -508,9 +508,12 @@
     "message": "השתמש בשקט בשירות תרגום חלופי אם שפת היעד הנוכחית אינה נתמכת על ידי שירות התרגום שנבחר"
   },
   "msgDefaultLanguage": {
-    "message": "שפת ברירת מחדל"
+    "message": "שפה ברירת מחדל"
   },
   "msgExtUILanguage": {
-    "message": "שפת ממשק משתמש הרחבה"
+    "message": "שפת ממשק התוסף"
+  },
+  "msgSetDeepLAlert": {
+    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
   }
 }
