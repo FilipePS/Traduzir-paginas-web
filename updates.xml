@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
   <app appid='bolggfoncklhniejomgplkjcllmnonbh'>
-    <updatecheck codebase='https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.8.1.0/TWP_9.8.1.0_Chromium.crx' version='9.8.1.0' status='ok' />
+    <updatecheck codebase='https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v9.8.2.0/TWP_9.8.2.0_Chromium.crx' version='9.8.2.0' status='ok' />
   </app>
 </gupdate>
