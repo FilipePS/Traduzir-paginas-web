@@ -7,6 +7,7 @@ twpConfig
   .then(() => twpI18n.updateUiMessages())
   .then(() => {
     twpI18n.translateDocument();
+    const popupSectionCount = 7;
 
     $("#btnImproveTranslation").onclick = () => {
       window.location = "improve-translation.html";
@@ -44,7 +45,7 @@ twpConfig
       $("#more").style.display = "block";
       $("#less").style.display = "block";
 
-      if (popupPanelSection >= 7) {
+      if (popupPanelSection >= popupSectionCount) {
         $("#more").style.display = "none";
       } else if (popupPanelSection <= 0) {
         $("#less").style.display = "none";
@@ -53,7 +54,7 @@ twpConfig
     updatePopupSection();
 
     $("#more").onclick = (e) => {
-      if (popupPanelSection < 7) {
+      if (popupPanelSection < popupSectionCount) {
         popupPanelSection++;
         updatePopupSection();
       }
@@ -464,6 +465,23 @@ twpConfig
           } else {
             twpConfig.set("showTextSideBySide", "no");
           }
+
+          chrome.tabs.query(
+            {
+              active: true,
+              currentWindow: true,
+            },
+            (tabs) => {
+              chrome.tabs.sendMessage(
+                tabs[0].id,
+                {
+                  action: "setShowTextSideBySide",
+                  showTextSideBySide: e.target.checked,
+                },
+                checkedLastError
+              );
+            }
+          );
         });
 
         $("#cbShowTranslateSelectedButton").checked =
