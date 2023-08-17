@@ -7,6 +7,7 @@ twpConfig
   .then(() => twpI18n.updateUiMessages())
   .then(() => {
     twpI18n.translateDocument();
+    const popupSectionCount = 7;
 
     $("#btnImproveTranslation").onclick = () => {
       window.location = "improve-translation.html";
@@ -44,7 +45,7 @@ twpConfig
       $("#more").style.display = "block";
       $("#less").style.display = "block";
 
-      if (popupPanelSection >= 6) {
+      if (popupPanelSection >= popupSectionCount) {
         $("#more").style.display = "none";
       } else if (popupPanelSection <= 0) {
         $("#less").style.display = "none";
@@ -53,7 +54,7 @@ twpConfig
     updatePopupSection();
 
     $("#more").onclick = (e) => {
-      if (popupPanelSection < 6) {
+      if (popupPanelSection < popupSectionCount) {
         popupPanelSection++;
         updatePopupSection();
       }
@@ -458,10 +459,37 @@ twpConfig
           }
         );
 
+        $("#cbShowTextSideBySide").addEventListener("change", (e) => {
+          if (e.target.checked) {
+            twpConfig.set("showTextSideBySide", "yes");
+          } else {
+            twpConfig.set("showTextSideBySide", "no");
+          }
+
+          chrome.tabs.query(
+            {
+              active: true,
+              currentWindow: true,
+            },
+            (tabs) => {
+              chrome.tabs.sendMessage(
+                tabs[0].id,
+                {
+                  action: "setShowTextSideBySide",
+                  showTextSideBySide: e.target.checked,
+                },
+                checkedLastError
+              );
+            }
+          );
+        });
+
         $("#cbShowTranslateSelectedButton").checked =
           twpConfig.get("showTranslateSelectedButton") == "yes" ? true : false;
         $("#cbShowOriginalWhenHovering").checked =
           twpConfig.get("showOriginalTextWhenHovering") == "yes" ? true : false;
+        $("#cbShowTextSideBySide").checked =
+          twpConfig.get("showTextSideBySide") == "yes" ? true : false;
 
         const hostname = new URL(tabs[0].url).hostname;
         $("#cbAlwaysTranslateThisSite").checked =
