@@ -2,7 +2,6 @@
 
 const fs = require("fs");
 const superagent = require("superagent");
-require("superagent-proxy")(superagent);
 
 if (!fs.existsSync("./out")) {
     fs.mkdirSync("out");
