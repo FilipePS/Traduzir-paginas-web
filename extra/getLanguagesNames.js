@@ -3,33 +3,31 @@
 const fs = require("fs");
 const superagent = require("superagent");
 
-if (!fs.existsSync("./out")) {
-    fs.mkdirSync("out");
-}
+if (!fs.existsSync("./out")) fs.mkdirSync("out");
 
 async function getKey(service) {
     if (service == "bing") return ""
     else {
         async function getURL() {
             return await new Promise(async (resolve, reject) => {
-                let response;
                 superagent.get("https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit").end((err, res) => {
                     if (err) {
                         console.error(err)
                         reject()
                     }
-                    const startIdx = res.indexOf("_loadJs(");
+
+                    const startIdx = res.text.indexOf("_loadJs(");
                     if (startIdx === -1) {
                         console.error("startIdx = -1");
                         reject();
                     }
-                    const endIdx = res.indexOf(");", startIdx);
+                    const endIdx = res.text.indexOf(");", startIdx);
                     if (endIdx === -1) {
                         console.error("startIdx = -1");
                         reject();
                     }
                     try {
-                        response = eval(res.slice(startIdx + "_loadJs(".length, endIdx))
+                        resolve(eval(res.text.slice(startIdx + "_loadJs(".length, endIdx)))
                     } catch (err) {
                         console.error(err)
                         reject()
@@ -47,7 +45,7 @@ async function getKey(service) {
                     reject()
                 }
 
-                response = service == "google" ? res.match(/(key:")(\w+)/)[2] : res.match(/sid:\s'[0-9a-f.]+/)[0].substring(6);
+                response = service == "google" ? res.text.match(/(key:")(\w+)/)[2] : res.header["set-cookie"][0].split('_yasc=')[1].split('; domain')[0]
                 resolve(response)
             })
         })
@@ -57,7 +55,6 @@ async function getKey(service) {
 async function getSupportedLanguages(service, lang, key = "") {
     return await new Promise((resolve, reject) => {
         let url;
-        let response;
 
         switch (service) {
             case "google":
@@ -71,15 +68,18 @@ async function getSupportedLanguages(service, lang, key = "") {
         }
 
         superagent.get(url).end((err, res) => {
+            function callback(langs) {
+                resolve(langs);
+            }
+
             if (err) {
                 console.error(err)
                 reject()
             }
-            if (service == "google") response = eval(res);
-            if (service == "bing") response = JSON.parse(res).translation
-            if (service == "yandex") response = res._body.langs
 
-            resolve(response)
+            if (service == "google") resolve(eval(res.text));
+            if (service == "bing") resolve(JSON.parse(res.text).translation)
+            if (service == "yandex") resolve(res._body.langs)
         })
     });
 }
@@ -94,7 +94,8 @@ async function getLanguages(service, lang, key = "") {
         case "google":
             iteratingObject = result.targetLanguages
             break
-        case "yandex" || "bing":
+        case "yandex":
+        case "bing":
             iteratingObject = Object.keys(result)
             break
     }
@@ -251,6 +252,7 @@ async function init() {
         langs.bing = JSON.parse(fs.readFileSync("./out/bing.json", "utf8"));
         langs.yandex = JSON.parse(fs.readFileSync("./out/yandex.json", "utf8"));
 
+
         const info = {};
 
         info.supportedLanguages = {};
@@ -266,7 +268,7 @@ async function init() {
         info.allSupportedLangs = [];
 
         Object.keys(info.supportedCount).forEach(key => {
-            info.supportedCount[key].forEach(lang => {
+            info.supportedLanguages[key].forEach(lang => {
                 if (key == "google") {
                     info.allSupportedLangs.push(lang)
                 } else {
@@ -301,10 +303,10 @@ async function init() {
     }
 
     if (process.argv[2] === "--final") {
-        const langs = {}
-        langs.google = JSON.parse(fs.readFileSync("./out/google.json", "utf8"));
-        langs.bing = JSON.parse(fs.readFileSync("./out/bing.json", "utf8"));
-        langs.yandex = JSON.parse(fs.readFileSync("./out/yandex.json", "utf8"));
+        const langsFinal = {}
+        langsFinal.google = JSON.parse(fs.readFileSync("./out/google.json", "utf8"));
+        langsFinal.bing = JSON.parse(fs.readFileSync("./out/bing.json", "utf8"));
+        langsFinal.yandex = JSON.parse(fs.readFileSync("./out/yandex.json", "utf8"));
         const info = JSON.parse(fs.readFileSync("./out/info.json", "utf8"));
 
         const final_result = {};
@@ -313,12 +315,12 @@ async function init() {
             final_result[ui_lang] = {};
             info.allSupportedLangs.forEach((lang) => {
                 final_result[ui_lang][lang] =
-                    langs.google[ui_lang][lang] ||
-                    langs.bing[ui_lang][lang] ||
-                    langs.yandex[ui_lang][lang];
+                    langsFinal.google[ui_lang][lang] ||
+                    langsFinal.bing[ui_lang][lang] ||
+                    langsFinal.yandex[ui_lang][lang];
 
                 if (lang.split("-")[0] === "fr" || lang.split("-")[0] === "pt") {
-                    final_result[ui_lang][lang] = langs.bing[ui_lang][lang];
+                    final_result[ui_lang][lang] = langsFinal.bing[ui_lang][lang];
                 }
             });
         });
