@@ -377,7 +377,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   if (showPopupMobile !== "no") {
     window.addEventListener("touchstart", (e) => {
       if (e.touches.length == 3) {
-        popupMobile.show(true);
+        // https://github.com/FilipePS/Traduzir-paginas-web/issues/702
+        if (divElement) {
+          popupMobile.hide();
+        } else {
+          popupMobile.show(true);
+        }
       }
     });
   }
