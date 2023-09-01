@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Rādīt tulkojumu, virzot peles kursoru šai vietnei"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Rādīt tulkojumu, virzot peles kursoru vietnēm $LANGUAGE_NAME$ valodā",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "Esmu izstrādājis, atjauninājis un atbalstījis šo paplašinājumu vairāk nekā trīs gadus. Ir pārsteidzoši redzēt, ka mums ikdienā ir vairāk nekā 600 000 lietotāju, un visi šie cilvēki ir spējuši pastāvīgi migrēt uz Firefox.\n\nEs cenšos katru mēnesi izlaist jaunu šī paplašinājuma versiju un turpināt to uzlabot.\n\nBūšu pateicīgs, ja jūs varētu man palīdzēt finansiāli, kļūstot par Patreon biedru un atbalstot mani šī paplašinājuma uzlabošanā.\n\nPaldies visiem, kas jau ir devuši ieguldījumu šajā projektā."
   },
@@ -514,6 +526,6 @@
     "message": "Paplašinājuma lietotāja interfeisa valoda"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "Vai tiešām vēlaties iestatīt tulkošanas pakalpojumu DeepL?\nTiks atvērta jauna cilne, kurā notiks tulkojums."
   }
 }

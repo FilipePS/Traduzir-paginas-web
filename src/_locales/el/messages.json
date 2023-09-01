@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Εμφάνιση μετάφρασης όταν αιωρείται ο δείκτης επάνω σε αυτόν τον ιστότοπο"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Εμφάνιση μετάφρασης όταν τοποθετείτε το δείκτη σε ιστότοπους σε $LANGUAGE_NAME$",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "Αναπτύσσω, ενημερώνω και υποστηρίζω αυτήν την επέκταση για περισσότερα από τρία χρόνια. Είναι εκπληκτικό να βλέπουμε ότι έχουμε πάνω από 600.000 καθημερινούς χρήστες και όλοι αυτοί οι άνθρωποι μπόρεσαν να μετεγκατασταθούν μόνιμα στον Firefox.\n\nΣτόχος μου είναι να κυκλοφορώ μια νέα έκδοση αυτής της επέκτασης κάθε μήνα και να συνεχίσω να τη βελτιώνω.\n\nΘα σας ήμουν ευγνώμων εάν μπορούσατε να με βοηθήσετε οικονομικά, γίνοντας μέλος του Patreon και υποστηρίζοντάς με να βελτιώσω αυτήν την επέκταση.\n\nΕυχαριστούμε όλους όσους έχουν ήδη συνεισφέρει σε αυτό το έργο."
   },
@@ -514,6 +526,6 @@
     "message": "Επέκταση γλώσσας διεπαφής χρήστη"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "Είστε βέβαιοι ότι θέλετε να ρυθμίσετε την υπηρεσία μετάφρασης σε DeepL;\nΘα ανοίξει μια νέα καρτέλα και η μετάφραση θα πραγματοποιηθεί εκεί."
   }
 }

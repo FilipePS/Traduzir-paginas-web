@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Прикажи превод када пређете курсором преко овог сајта"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Прикажи превод када пређете курсором преко веб локација у $LANGUAGE_NAME$",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "Развијам, ажурирам и подржавам ово проширење више од три године. Невероватно је видети да имамо преко 600.000 корисника дневно, и да су сви ови људи могли да мигрирају на Фирефок трајно.\n\nЦиљ ми је да објавим нову верзију овог проширења сваког месеца и наставим да је побољшавам.\n\nБио бих вам захвалан ако бисте ми могли финансијски помоћи тако што ћете постати члан Патреона и подржати ме у побољшању овог проширења.\n\nХвала свима који су већ допринели овом пројекту."
   },
@@ -514,6 +526,6 @@
     "message": "Језик корисничког интерфејса екстензије"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "Да ли сте сигурни да желите да подесите услугу превођења на ДеепЛ?\nОтвориће се нова картица и ту ће се извршити превод."
   }
 }

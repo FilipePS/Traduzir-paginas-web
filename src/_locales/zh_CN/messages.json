@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "在此网站悬停显示译文"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "在此语言的网站悬停显示翻译 - $LANGUAGE_NAME$",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "三年多来，我一直在开发、更新和支持这个扩展。看到我们每天有超过 600,000 名用户，并且所有这些人都能够永久迁移到 Firefox，真是太棒了。\n\n我的目标是每月发布此扩展的新版本并不断改进它。\n\n如果您能在经济上帮助我成为 Patreon 成员并支持我改进此扩展，我将不胜感激。\n\n感谢所有已经为这个项目做出贡献的人。"
   },
@@ -514,6 +526,6 @@
     "message": "扩展用户界面语言"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "您确定要将翻译服务设置为 DeepL 吗？\n使用 DeepL 翻译文本时将会打开一个新选项卡，并在那里进行翻译。"
   }
 }

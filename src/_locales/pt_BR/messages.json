@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Mostrar tradução ao passar o cursor do mouse sobre este site"
   },
+  "lblShowTextSideBySide": {
+    "message": "Mostrar texto original e traduzido lado a lado"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Mostrar tradução ao passar o cursor do mouse sobre sites em $LANGUAGE_NAME$",
     "placeholders": {
@@ -477,6 +480,15 @@
       "EXTENSION_VERSION": {
         "content": "#EXTENSION_VERSION#",
         "example": "9.7"
+      }
+    }
+  },
+  "msgDonationRecipient": {
+    "message": "Sua doação vai para o desenvolvedor da extensão $EXTENSION_NAME$.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
       }
     }
   },

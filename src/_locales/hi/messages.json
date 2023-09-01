@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "इस साइट पर मँडराते समय अनुवाद दिखाएं"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "$LANGUAGE_NAME$में वेबसाइटों पर मँडराते समय अनुवाद दिखाएं",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "मैं तीन वर्षों से अधिक समय से इस विस्तार का विकास, अद्यतन और समर्थन कर रहा हूँ। यह देखना आश्चर्यजनक है कि हमारे पास 600,000 से अधिक दैनिक उपयोगकर्ता हैं, और ये सभी लोग फ़ायरफ़ॉक्स में स्थायी रूप से माइग्रेट करने में सक्षम हैं।\n\nमेरा लक्ष्य हर महीने इस विस्तार का एक नया संस्करण जारी करना और इसमें सुधार करना है।\n\nअगर आप पैट्रियन सदस्य बनकर और इस विस्तार में सुधार लाने में मेरी मदद करके मेरी आर्थिक मदद कर सकते हैं तो मैं आपका आभारी रहूंगा।\n\nउन सभी को धन्यवाद जिन्होंने इस परियोजना में पहले ही योगदान दिया है।"
   },
@@ -514,6 +526,6 @@
     "message": "एक्सटेंशन यूजर इंटरफेस भाषा"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "क्या आप वाकई अनुवाद सेवा को डीपएल पर सेट करना चाहते हैं?\nएक नया टैब खुलेगा और अनुवाद वहां होगा।"
   }
 }

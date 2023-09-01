@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Pokaż tłumaczenie po najechaniu wskaźnikiem na tę witrynę"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Pokaż tłumaczenie po najechaniu wskaźnikiem na witryny w języku: $LANGUAGE_NAME$",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "Rozwijam, aktualizuję i wspieram to rozszerzenie od ponad trzech lat. To niesamowite, że mamy ponad 600 000 użytkowników dziennie i wszyscy ci ludzie mogli na stałe przenieść się do Firefoksa.\n\nZamierzam wydawać nową wersję tego rozszerzenia co miesiąc i kontynuować jego ulepszanie.\n\nByłbym wdzięczny za pomoc finansową, zostań członkiem Patreon i wesprzyj mnie we wprowadzaniu ulepszeń do tego rozszerzenia.\n\nDziękuję wszystkim, którzy już przyczynili się do tego projektu."
   },
@@ -514,6 +526,6 @@
     "message": "Język interfejsu rozszerzenia"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "Czy na pewno chcesz ustawić usługę tłumaczenia na DeepL?\nOtworzy się nowa karta, w której odbędzie się tłumaczenie."
   }
 }

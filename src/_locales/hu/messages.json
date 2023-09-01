@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Fordítás mutatása, ha a kurzorral fölötte áll az oldalon"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Fordítás mutatása, ha a kurzorral fölötte áll $LANGUAGE_NAME$ nyelvű oldalon",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "Több mint három éve fejlesztem, frissítem és támogatom ezt a bővítményt. Lenyűgöző látni, hogy több mint 600 000 napi felhasználónk van, és ezek az emberek véglegesen áttértek a Firefoxra.\n\nCélom, hogy minden hónapban kiadjam ennek a bővítménynek az új verzióját, és folyamatosan fejlesszem.\n\nHálás lennék, ha anyagilag segítene nekem azzal, hogy Patreon taggá válna és támogatna a bővítmény fejlesztésében.\n\nKöszönöm mindenkinek, aki már hozzájárult ehhez a projekthez."
   },
@@ -514,6 +526,6 @@
     "message": "Bővítmény felhasználói felületének nyelve"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "Biztos, hogy a fordítási szolgáltatást a DeepL-re szeretné beállítani?\nEgy új lap fog megnyílni, és a fordítás ott fog megtörténni."
   }
 }

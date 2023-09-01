@@ -1,11 +1,11 @@
 <section style="background-color: #87CEEB; padding: 20px; border-radius: 20px; box-shadow: 0 0 10px 3px black;">
     <div style="font-size: 1.2em;">
         <!-- i18n = msgHasBeenUpdated -->
-        <p id="msgHasBeenUpdated">The <b>TWP - Translate Web Pages</b> extension has been updated to version <b>9.7</b>.
+        <p id="_msgHasBeenUpdated">The <b>TWP - Translate Web Pages</b> extension has been updated to version <b>9.7</b>.
         </p>
 
         <!-- i18n = donationText -->
-        <p style="white-space: pre-line;" id="donationText">I have been developing, updating, and supporting this
+        <p style="white-space: pre-line;" id="_donationText">I have been developing, updating, and supporting this
             extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these
             people have been able to migrate to Firefox permanently.
 
@@ -24,7 +24,8 @@
 
             <div style="font-size: 0.9em;">
                 <b>
-                    <div style="display: inline-block" data-i18n="donateWithPayPal">
+                    <!-- i18n = donatewithpaypal -->
+                    <div style="display: inline-block" id="_donatewithpaypal">
                         Donate With PayPal
                     </div>
                 </b>
@@ -87,13 +88,25 @@
                 </div>
             </div>
         </div>
+
+        <!-- i18n = msgDonationRecipient -->
+        <p id="_donationRecipient" style="margin: 4px 0 -14px 0">Your donation goes to the developer of the <b>TWP -
+                Translate Web Pages</b> extension.</p>
     </div>
 </section>
 
 <section>
+    <h4>9.9 - September 5, 2023</h4>
+    <ul>
+        <li>Updated some language names</li>
+        <li>Update interface translations</li>
+    </ul>
+</section>
+<section>
     <h4>9.8.2 - July 31, 2023</h4>
     <ul>
-        <li>When clicking the DeepL button in the Translate selected text panel a confirmation message will be shown</li>
+        <li>When clicking the DeepL button in the Translate selected text panel a confirmation message will be shown
+        </li>
         <li>Update interface translations</li>
     </ul>
 </section>
@@ -103,7 +116,8 @@
         <li>Changes
             <ul>
                 <li>For custom dictionaries, adapt to the official Bing API</li>
-                <li>Now the button to switch between translation services also appears in the <i>simple interface</i> when the site is translated</li>
+                <li>Now the button to switch between translation services also appears in the <i>simple interface</i>
+                    when the site is translated</li>
             </ul>
         </li>
         <li>Fixed
@@ -648,29 +662,28 @@
                         <li>Show translation when hovering over websites in PAGE_LANGUAGE</li>
                     </ul>
                 </li>
+            </ul>
         </li>
-    </ul>
-    </li>
-    <li>Changes
-        <ul>
-            <li>The language for page and text translation may now be different</li>
-            <li>The page and text translation service can now be different</li>
-            <li>When an HTML element has a notranslate attribute, its attributes will not be translated</li>
-            <li>When translating the page with Google, the text formatting will be maintained</li>
-            <li>The <kbd>PRE</kbd> tag is translated by default</li>
-            <li>When using the old popup or in the popup the additional translation languages have been hidden, the
-                automatic translation of the page (the one that happens as soon as you open the site), will use
-                targetLanguage1, instead of your previous preference.</li>
-        </ul>
-    </li>
-    <li>Fixed
-        <ul>
-            <li>Translation with Yandex</li>
-            <li>Text formatting when showing original when hovering</li>
-            <li>Among others</li>
-        </ul>
-    </li>
-    <li>Updated interface translations</li>
+        <li>Changes
+            <ul>
+                <li>The language for page and text translation may now be different</li>
+                <li>The page and text translation service can now be different</li>
+                <li>When an HTML element has a notranslate attribute, its attributes will not be translated</li>
+                <li>When translating the page with Google, the text formatting will be maintained</li>
+                <li>The <kbd>PRE</kbd> tag is translated by default</li>
+                <li>When using the old popup or in the popup the additional translation languages have been hidden, the
+                    automatic translation of the page (the one that happens as soon as you open the site), will use
+                    targetLanguage1, instead of your previous preference.</li>
+            </ul>
+        </li>
+        <li>Fixed
+            <ul>
+                <li>Translation with Yandex</li>
+                <li>Text formatting when showing original when hovering</li>
+                <li>Among others</li>
+            </ul>
+        </li>
+        <li>Updated interface translations</li>
     </ul>
 </section>
 <section>
@@ -1401,7 +1414,6 @@
             <dt>Show original</dt>
             <dd>Restores the page, but the Widget is still injected.</dd>
         </dl>
-        </p>
         <p>There was nothing left, not even an option to change the target language.</p>
     </div>
 </section>

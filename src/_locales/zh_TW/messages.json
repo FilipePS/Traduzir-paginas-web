@@ -78,7 +78,7 @@
     "message": "用 Yandex 譯者開啟"
   },
   "lblOthers": {
-    "message": "其他"
+    "message": "其它"
   },
   "btnMoreOptions": {
     "message": "更多選項"
@@ -205,6 +205,9 @@
   },
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "停留在此網站上時顯示翻譯"
+  },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "停留在$LANGUAGE_NAME$網站上時顯示翻譯",
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "我已經開發、更新並支援這款擴充套件超過三年了。看到每天能有超過 60 萬名使用者認真在 Firefox 上用它真是令人感到驚訝。\n\n我的目標是每個月都能發布這款擴充套件的新版本並不斷改善它。\n\n如果您能成為我的 Patreon 成員，來支援我改善這款擴充套件，我將不勝感激。\n\n感謝所有爲這個專案做出貢獻的各位。"
   },
@@ -514,6 +526,6 @@
     "message": "擴充套件使用者介面語言"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "您確定要將 DeepL 設爲翻譯服務嗎？\n這樣會打開一張新分頁，並在新分頁裏翻譯。"
   }
 }

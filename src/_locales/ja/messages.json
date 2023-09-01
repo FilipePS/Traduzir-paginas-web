@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "このサイトでマウスオーバーしたテキストを翻訳する"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "$LANGUAGE_NAME$のサイトでマウスオーバーしたテキストを翻訳する",
     "placeholders": {
@@ -234,7 +237,7 @@
     "message": "翻訳サービスを切り替える"
   },
   "swapPopup": {
-    "message": "シンプルなインターフェースと複雑なインターフェースを切り替える"
+    "message": "シンプルなポップアップ画面と高機能なポップアップ画面を切り替える"
   },
   "lblTranslateInterface": {
     "message": "インターフェースを翻訳"
@@ -417,19 +420,19 @@
     "message": "選択したテキストを翻訳済みテキストに即座に置き換える"
   },
   "optionsAddToCustomDictionary": {
-    "message": "カスタム辞書に追加 (これにより、Web ページの翻訳中に特定の単語をスキップできます)"
+    "message": "カスタム辞書（翻訳しない単語）"
   },
   "msgSelectTargetLanguage": {
-    "message": "ウェブサイトをこのターゲット言語に翻訳する"
+    "message": "ページの翻訳先言語"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "選択したテキストをこのターゲット言語に翻訳します"
+    "message": "選択したテキストの翻訳先言語"
   },
   "msgFavoriteLanguages": {
-    "message": "好きな言語"
+    "message": "お気に入りの言語"
   },
   "lblFavoriteLanguage": {
-    "message": "好きな言語 $FAVORITE_LANGUAGE_NUM$",
+    "message": "お気に入りの言語 $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -441,13 +444,13 @@
     "message": "ポップアップ インターフェイスのスタイルを選択"
   },
   "msgInterfaceSimple": {
-    "message": "単純"
+    "message": "シンプル"
   },
   "msgInterfaceComplex": {
-    "message": "複雑"
+    "message": "高機能"
   },
   "lblTranslatePageInto": {
-    "message": "ページを $LANGUAGE_NAME$に変換しますか?",
+    "message": "ページを$LANGUAGE_NAME$に翻訳しますか？",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -456,7 +459,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "$LANGUAGE_NAME$に翻訳されたページ",
+    "message": "ページを$LANGUAGE_NAME$に翻訳しました",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -480,14 +483,23 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "私はこの拡張機能の開発、更新、およびサポートを 3 年以上行ってきました。毎日 600,000 人以上のユーザーがいて、その全員が Firefox に完全に移行できたことは驚くべきことです。\n\nこの拡張機能の新しいバージョンを毎月リリースし、改善し続けることを目指しています。\n\nPatreon のメンバーになって、この拡張機能を改善するために私をサポートすることで、私を経済的に支援していただければ幸いです。\n\nすでにこのプロジェクトに貢献してくれたすべての人に感謝します。"
   },
   "lblEnableDiskCache": {
-    "message": "永続的な翻訳キャッシュを有効にする (ディスク上のキャッシュ)"
+    "message": "永続的な翻訳キャッシュを使用（ディスク上にキャッシュを保存）"
   },
   "selectOriginalLanguage": {
-    "message": "オリジナルのウェブサイト言語を選択してください"
+    "message": "元のウェブサイトの言語を選択"
   },
   "selectTargetLanguage": {
     "message": "翻訳先の言語を選択"
@@ -502,18 +514,18 @@
     "message": "プライバシー"
   },
   "selectToEnableTranslationService": {
-    "message": "使用したい翻訳サービスを選択してください"
+    "message": "使用する翻訳サービスを選択"
   },
   "useAlternativeService": {
-    "message": "現在の翻訳対象の言語が、選択された翻訳サービスでサポートされていない場合は、別の翻訳サービスを使用します"
+    "message": "選択された翻訳サービスが翻訳対象の言語に対応していない場合、別の翻訳サービスを使用"
   },
   "msgDefaultLanguage": {
     "message": "既定の言語"
   },
   "msgExtUILanguage": {
-    "message": "拡張ユーザーインターフェース言語"
+    "message": "拡張機能のインターフェースの言語"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "本当に翻訳サービスをDeepLに設定しますか？\n翻訳は新しいタブで行われるようになります。"
   }
 }

@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱨᱮ ᱩᱰᱟᱹᱣ ᱡᱷᱚᱜ ᱛᱚᱨᱡᱚᱢᱟ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱨᱮ ᱩᱰᱟᱹᱣ ᱡᱷᱚᱜ $LANGUAGE_NAME$ ᱨᱮ ᱛᱚᱨᱡᱚᱢᱟ ᱫᱮᱠᱷᱟᱣ ᱢᱮ",
     "placeholders": {
@@ -477,6 +480,15 @@
       "EXTENSION_VERSION": {
         "content": "#EXTENSION_VERSION#",
         "example": "9.7"
+      }
+    }
+  },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
       }
     }
   },

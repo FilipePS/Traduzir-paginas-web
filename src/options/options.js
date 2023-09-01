@@ -1,44 +1,57 @@
 "use strict";
 
-fetch("./release-notes/en.html")
-  .then((response) => response.text())
-  .then((responseText) => {
-    window.scrollTo(0, 0);
-    document.getElementById("release_notes").innerHTML = responseText;
-    document.getElementById("msgHasBeenUpdated").textContent =
-      twpI18n.getMessage("msgHasBeenUpdated");
-    document.getElementById("msgHasBeenUpdated").innerHTML = document
-      .getElementById("msgHasBeenUpdated")
-      .textContent.replace(
-        "#EXTENSION_NAME#",
-        "<b>" + chrome.runtime.getManifest().name + "</b>"
-      )
-      .replace(
-        "#EXTENSION_VERSION#",
-        "<b>" + chrome.runtime.getManifest().version + "</b>"
-      );
-    document.getElementById("donationText").textContent =
-      twpI18n.getMessage("donationText");
+setTimeout(() => {
+  fetch("./release-notes/en.html")
+    .then((response) => response.text())
+    .then((responseText) => {
+      window.scrollTo(0, 0);
+      document.getElementById("release_notes").innerHTML = responseText;
+      document.getElementById("_msgHasBeenUpdated").textContent =
+        twpI18n.getMessage("msgHasBeenUpdated");
+      document.getElementById("_msgHasBeenUpdated").innerHTML = document
+        .getElementById("_msgHasBeenUpdated")
+        .textContent.replace(
+          "#EXTENSION_NAME#",
+          "<b>" + chrome.runtime.getManifest().name + "</b>"
+        )
+        .replace(
+          "#EXTENSION_VERSION#",
+          "<b>" + chrome.runtime.getManifest().version + "</b>"
+        );
+      document.getElementById("_donationText").textContent =
+        twpI18n.getMessage("donationText");
+      document.getElementById("_donatewithpaypal").textContent =
+        twpI18n.getMessage("donatewithpaypal");
 
-    // donation options
-    if (navigator.language === "pt-BR") {
-      $("#_currency").value = "BRL";
-      $("#_donateInUSD").style.display = "none";
-    } else {
-      $("#_currency").value = "USD";
-      $("#_donateInBRL").style.display = "none";
-    }
+      document.getElementById("_donationRecipient").textContent =
+        twpI18n.getMessage("msgDonationRecipient");
+      document.getElementById("_donationRecipient").innerHTML = document
+        .getElementById("_donationRecipient")
+        .textContent.replace(
+          "#EXTENSION_NAME#",
+          "<b>" + chrome.runtime.getManifest().name + "</b>"
+        );
 
-    $("#_currency").onchange = (e) => {
-      if (e.target.value === "BRL") {
+      // donation options
+      if (navigator.language === "pt-BR") {
+        $("#_currency").value = "BRL";
         $("#_donateInUSD").style.display = "none";
-        $("#_donateInBRL").style.display = "block";
       } else {
-        $("#_donateInUSD").style.display = "block";
+        $("#_currency").value = "USD";
         $("#_donateInBRL").style.display = "none";
       }
-    };
-  });
+
+      $("#_currency").onchange = (e) => {
+        if (e.target.value === "BRL") {
+          $("#_donateInUSD").style.display = "none";
+          $("#_donateInBRL").style.display = "block";
+        } else {
+          $("#_donateInUSD").style.display = "block";
+          $("#_donateInBRL").style.display = "none";
+        }
+      };
+    });
+}, 800);
 
 var $ = document.querySelector.bind(document);
 
@@ -639,9 +652,7 @@ twpConfig
     $("#showTextSideBySide").onchange = (e) => {
       twpConfig.set("showTextSideBySide", e.target.value);
     };
-    $("#showTextSideBySide").value = twpConfig.get(
-      "showTextSideBySide"
-    );
+    $("#showTextSideBySide").value = twpConfig.get("showTextSideBySide");
 
     $("#autoTranslateWhenClickingALink").onchange = (e) => {
       if (e.target.value == "yes") {

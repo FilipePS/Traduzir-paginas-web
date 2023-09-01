@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "نمایش ترجمه هنگام نگه داشتن ماوس روی این سایت"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "نمایش ترجمه هنگام قرار دادن ماوس روی وب‌سایت‌ها به زبان $LANGUAGE_NAME$",
     "placeholders": {
@@ -234,7 +237,7 @@
     "message": "جابه جایی بین سرویس ترجمه ها"
   },
   "swapPopup": {
-    "message": "بین رابط کاربری ساده و پیچیده منتقل شوید"
+    "message": "بین رابط قدیمی و جدید سوئیچ کنید"
   },
   "lblTranslateInterface": {
     "message": "رابط را ترجمه کنید"
@@ -317,7 +320,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "نتایج ترجمه را مرتب نکن"
+    "message": "نتایج گوگل ترنسلیت را مرتب نکن"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "محتوای ایجاد شده به صورت پویا را ترجمه کن"
@@ -414,7 +417,7 @@
     "message": "جایگزین کردن"
   },
   "lblHotTranslatedSelectedText": {
-    "message": "متن انتخاب شده را بلافاصله با متن ترجمه شده جایگزین کنید"
+    "message": "جایگزین کردن فوری متن انتخاب شده با متن ترجمه شده"
   },
   "optionsAddToCustomDictionary": {
     "message": "افزودن به فرهنگ لغت سفارشی (این به شما امکان می دهد از کلمات خاصی در حین ترجمه صفحه وب رد شوید)"
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "من بیش از سه سال است که این برنامه افزودنی را توسعه، به روز رسانی و پشتیبانی می کنم. شگفت انگیز است که می بینیم روزانه بیش از 600000 کاربر داریم و همه این افراد توانسته اند به طور دائم به فایرفاکس مهاجرت کنند.\n\nمن قصد دارم هر ماه یک نسخه جدید از این افزونه منتشر کنم و به بهبود آن ادامه دهم.\n\nسپاسگزار خواهم بود اگر بتوانید با عضویت در Patreon و حمایت مالی از من در بهبود این برنامه افزودنی به من کمک مالی کنید.\n\nبا تشکر از همه کسانی که قبلاً در این پروژه مشارکت داشته اند."
   },
@@ -514,6 +526,6 @@
     "message": "زبان رابط کاربری افزونه"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "آیا مطمئن هستید که می خواهید سرویس ترجمه را روی DeepL تنظیم کنید؟\nیک برگه جدید باز می شود و ترجمه در آنجا انجام می شود."
   }
 }

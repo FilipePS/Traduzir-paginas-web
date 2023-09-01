@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "بۇ تور بەتنى بېسىپ ئۆتكەندە تەرجىمىنى كۆرسەت"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "$LANGUAGE_NAME$دىكى تور بېكەتلەرنى بېسىپ ئۆتكەندە تەرجىمىنى كۆرسىتىڭ",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "مەن بۇ كېڭەيتىشنى ئۈچ يىلدىن كۆپرەك ۋاقىتتىن بۇيان تەتقىق قىلىۋاتىمەن ، يېڭىلاۋاتىمەن ۋە قوللاۋاتىمەن. بىزنىڭ كۈندىلىك ئىشلەتكۈچىلىرىمىزنىڭ 600،000 دىن ئاشىدىغانلىقى ئادەمنى ھەيران قالدۇرىدۇ ، بۇ كىشىلەرنىڭ ھەممىسى Firefox غا مەڭگۈلۈك كۆچۈپ كېتەلەيدۇ.\n\nمەن ھەر ئايدا بۇ كېڭەيتىلمىنىڭ يېڭى نەشرىنى ئېلان قىلىپ ، ئۇنى داۋاملىق ياخشىلاشنى مەقسەت قىلىمەن.\n\nئەگەر سىز پاترون ئەزاسى بولۇپ ، بۇ كېڭەيتىشكە ياخشىلىنىشلارنى ئېلىپ مېنى قوللاپ ئىقتىسادىي جەھەتتىن ياردەم قىلغان بولسىڭىز ، مەن مىننەتدار.\n\nبۇ تۈرگە تۆھپە قوشقان بارلىق كىشىلەرگە رەھمەت."
   },
@@ -514,6 +526,6 @@
     "message": "كېڭەيتىلگەن ئىشلەتكۈچى كۆرۈنمە يۈزى تىلى"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "DeepL غا تەرجىمە مۇلازىمىتىنى تەڭشىمەكچىمۇ؟\nيېڭى بەتكۈچ ئېچىلىدۇ ، تەرجىمە شۇ يەردە ئېلىپ بېرىلىدۇ."
   }
 }

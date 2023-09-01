@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "এই সাইটগুলিতে মাউস ভাসানোর সময় অনুবাদিত পাঠ্য দেখাবেন"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "$LANGUAGE_NAME$ ভাষার ওয়েবসাইটগুলোর উপর মাউস ভাসানোর সময় অনুবাদ দেখাবেন",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "আমি তিন বছরেরও বেশি সময় ধরে এই এক্সটেনশনটি বিকাশ, আপডেট এবং সমর্থন করছি। এটা দেখতে আশ্চর্যজনক যে আমাদের 600,000 এরও বেশি দৈনিক ব্যবহারকারী রয়েছে, এবং এই সমস্ত লোক স্থায়ীভাবে Firefox-এ স্থানান্তর করতে সক্ষম হয়েছে।\n\nআমি প্রতি মাসে এই এক্সটেনশনের একটি নতুন সংস্করণ প্রকাশ করার লক্ষ্য রাখি এবং এটিকে উন্নত করতে থাকি।\n\nআমি কৃতজ্ঞ হব যদি আপনি আমাকে প্যাট্রিয়ন সদস্য হয়ে আর্থিকভাবে সাহায্য করতে পারেন এবং এই এক্সটেনশনের উন্নতিতে আমাকে সমর্থন করেন।\n\nযারা ইতিমধ্যে এই প্রকল্পে অবদান রেখেছেন তাদের সবাইকে ধন্যবাদ৷"
   },
@@ -514,6 +526,6 @@
     "message": "এক্সটেনশন ইউজার ইন্টারফেস ভাষা"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "আপনি কি অনুবাদ পরিষেবাটিকে DeepL-এ সেট করার বিষয়ে নিশ্চিত?\nএকটি নতুন ট্যাব খুলবে, এবং অনুবাদ সেখানে সঞ্চালিত হবে।"
   }
 }

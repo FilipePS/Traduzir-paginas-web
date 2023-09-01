@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Hiển thị bản dịch khi di chuột qua trang web này"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Hiển thị bản dịch khi di chuột qua các trang web bằng $LANGUAGE_NAME$",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "Tôi đã phát triển, cập nhật và hỗ trợ tiện ích mở rộng này trong hơn ba năm. Thật ngạc nhiên khi thấy rằng chúng tôi có hơn 600.000 người dùng hàng ngày và tất cả những người này đã có thể chuyển sang Firefox vĩnh viễn.\n\nTôi đặt mục tiêu phát hành phiên bản mới của tiện ích mở rộng này hàng tháng và tiếp tục cải thiện nó.\n\nTôi sẽ rất biết ơn nếu bạn có thể giúp tôi về mặt tài chính bằng cách trở thành thành viên Patreon và hỗ trợ tôi mang lại những cải tiến cho tiện ích mở rộng này.\n\nCảm ơn tất cả những người đã đóng góp cho dự án này."
   },
@@ -514,6 +526,6 @@
     "message": "Ngôn ngữ giao diện người dùng của tiện ích"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "Bạn có chắc chắn là muốn chuyển dịch vụ dịch thuật sang DeepL?\nMột thẻ mới sẽ mở, và bản dịch sẽ dịch ở đó."
   }
 }

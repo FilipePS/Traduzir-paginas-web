@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Arată traducerea dacă se pune săgeata pe acest sit"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Arată traducerea dacă se pune săgeata pe situri în $LANGUAGE_NAME$",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "Am creat, actualizat și susținut această extensie timp de peste trei ani. Este uimitor să vezi că există zilnic peste 600.000 de utilizatori, iar toți acești oameni au reușit să migreze definitiv la Firefox.\n\nÎmi propun să public o nouă versiune a acestei extensii în fiecare lună și să continui s-o îmbunătățesc.\n\nAș fi recunoscător dacă m-ai putea ajuta financiar devenind membru Patreon și sprijinindu-mă să aduc îmbunătățiri acestei extensii.\n\nLe mulțumesc tuturor celor care au contribuit deja la acest proiect."
   },
@@ -514,6 +526,6 @@
     "message": "Limba interfeței extensiei"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "Sigur vrei să alegi ca serviciul de traducere să fie DeepL?\nSe va deschide o pagină nouă, iar traducerea va avea loc acolo."
   }
 }

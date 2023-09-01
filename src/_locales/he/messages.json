@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "הראה תרגום בעת ריחוף מעל אתר זה"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "הצג תרגום כאשר אני מרחף עם העכבר מעל אתרים ב: $LANGUAGE_NAME$",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "אני מפתח, מעדכן ותומך בהרחבה זו במשך יותר משלוש שנים. מדהים לראות שיש לנו יותר מ-600,000 משתמשים יומיים, וכל האנשים האלה הצליחו לעבור ל-Firefox לצמיתות.\n\nאני שואף לשחרר גרסה חדשה של הרחבה זו מדי חודש ולהמשיך לשפר אותה.\n\nאודה לך אם תוכל לעזור לי כלכלית על ידי הפיכתך לחבר בפטראון ותתמוך בי בהבאת שיפורים להרחבה זו.\n\nתודה לכל מי שכבר תרם לפרויקט זה."
   },
@@ -514,6 +526,6 @@
     "message": "שפת ממשק התוסף"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "האם אתה בטוח שברצונך להגדיר את שירות התרגום ל-DeepL?\nכרטיסייה חדשה תיפתח, והתרגום יתבצע שם."
   }
 }

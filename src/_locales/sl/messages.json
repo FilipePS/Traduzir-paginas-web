@@ -206,6 +206,9 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Pokažite prevod, ko lebdite nad tem spletnim mestom"
   },
+  "lblShowTextSideBySide": {
+    "message": "Show original and translated text side by side"
+  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Prikaži prevod, ko miškin kazalec premaknete nad spletna mesta v $LANGUAGE_NAME$",
     "placeholders": {
@@ -480,6 +483,15 @@
       }
     }
   },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
   "donationText": {
     "message": "To razširitev razvijam, posodabljam in podpiram več kot tri leta. Neverjetno je videti, da imamo več kot 600.000 dnevnih uporabnikov in da so vsi ti ljudje lahko trajno prešli na Firefox.\n\nVsak mesec nameravam izdati novo različico te razširitve in jo še naprej izboljševati.\n\nHvaležen bi bil, če bi mi lahko finančno pomagali tako, da bi postal član Patreona in me podprli pri uvajanju izboljšav v to razširitev.\n\nHvala vsem, ki ste že prispevali k temu projektu."
   },
@@ -514,6 +526,6 @@
     "message": "Jezik uporabniškega vmesnika razširitve"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "Ali ste prepričani, da želite prevajalsko storitev nastaviti na DeepL?\nOdprl se bo nov zavihek in tam bo izveden prevod."
   }
 }

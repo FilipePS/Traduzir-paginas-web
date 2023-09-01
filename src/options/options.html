@@ -434,23 +434,23 @@
       </div>
 
       <div id="privacy" class="w3-container">
-        <p>
+        <div style="margin-top: 10px;">
           <b data-i18n="selectToEnableTranslationService">Select the translation services you want to use</b>
-        <div class="w3-container">
-          <label for="btnEnableGoogle" style="user-select: none;"><input type="checkbox" id="btnEnableGoogle" checked>
-            Google</label>
-          <br>
-          <label for="btnEnableBing" style="user-select: none;"><input type="checkbox" id="btnEnableBing" checked>
-            Bing</label>
-          <br>
-          <label for="btnEnableYandex" style="user-select: none;"><input type="checkbox" id="btnEnableYandex" checked>
-            Yandex</label>
-          <hr style="margin: 5px 0;">
-          <label for="btnEnableDeepL" style="user-select: none;"><input type="checkbox" id="btnEnableDeepL" checked>
-            DeepL</label>
-          <br>
+          <div class="w3-container">
+            <label for="btnEnableGoogle" style="user-select: none;"><input type="checkbox" id="btnEnableGoogle" checked>
+              Google</label>
+            <br>
+            <label for="btnEnableBing" style="user-select: none;"><input type="checkbox" id="btnEnableBing" checked>
+              Bing</label>
+            <br>
+            <label for="btnEnableYandex" style="user-select: none;"><input type="checkbox" id="btnEnableYandex" checked>
+              Yandex</label>
+            <hr style="margin: 5px 0;">
+            <label for="btnEnableDeepL" style="user-select: none;"><input type="checkbox" id="btnEnableDeepL" checked>
+              DeepL</label>
+            <br>
+          </div>
         </div>
-        </p>
         <p>
           <b data-i18n="useAlternativeService">Silently use an alternate translation service if the current target
             language is not supported by the selected translation service</b>
@@ -593,86 +593,93 @@
 
     <div>
       <div id="donation" class="w3-container">
-        <div class="w3-light-blue w3-padding w3-round">
+        <section style="background-color: #87CEEB; padding: 20px; border-radius: 20px; box-shadow: 0 0 10px 3px black;">
+          <div style="font-size: 1.2em;">
+            <p style="white-space: pre-line;" data-i18n="donationText">I have been developing, updating, and supporting this
+              extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of
+              these
+              people have been able to migrate to Firefox permanently.
 
-          <p style="white-space: pre-line;" data-i18n="donationText">I have been developing, updating, and supporting
-            this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of
-            these people have been able to migrate to Firefox permanently.
+              I aim to release a new version of this extension every month and keep improving it.
 
-            I aim to release a new version of this extension every month and keep improving it.
+              I would be grateful if you could help me financially by becoming a Patreon member and supporting me in
+              bringing improvements to this extension.
 
-            I would be grateful if you could help me financially by becoming a Patreon member and supporting me in
-            bringing improvements to this extension.
+              Thank you to everyone who has already contributed to this project.</p>
 
-            Thank you to everyone who has already contributed to this project.</p>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <a href="https://www.patreon.com/filipeps" target="blank" class="patreonButton"><img
+                    src="/icons/patreon.png" alt="Become a patreon" width="260" /></a>
+              </div>
 
-          <a href="https://www.patreon.com/filipeps" target="blank" class="patreonButton"><img src="/icons/patreon.png"
-              alt="Become a patreon" width="260px" /></a>
-          <br /><br />
+              <div style="font-size: 0.9em;">
+                <b>
+                  <div style="display: inline-block" data-i18n="donatewithpaypal">
+                    Donate With PayPal
+                  </div>
+                </b>
+                <select id="currency" style="margin-left: 8px">
+                  <option value="USD">USD</option>
+                  <option value="BRL">BRL</option>
+                </select>
+                <div id="donateInUSD">
+                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="3FH2APUZGCY3A" />
+                    <table>
+                      <tr>
+                        <td>
+                          <input type="hidden" name="on0" value="Donate With Paypal" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <select name="os0">
+                            <option value="Maximum">20,00 USD</option>
+                            <option value="Pizza">10,00 USD</option>
+                            <option value="Lunch" selected>5,00 USD</option>
+                            <option value="Coffe">3,00 USD</option>
+                          </select>
+                        </td>
+                      </tr>
+                    </table>
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal" />
+                    <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
+                  </form>
+                </div>
 
-          <b>
-            <div style="margin-top: 20px; display: inline-block" data-i18n="donateWithPayPal">
-              Donate With PayPal
+                <div id="donateInBRL">
+                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="UKVQDPTUB5HTG" />
+                    <table>
+                      <tr>
+                        <td>
+                          <input type="hidden" name="on0" value="Doar com o Paypal" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <select name="os0">
+                            <option value="Maximum">50,00 BRL</option>
+                            <option value="Pizza">30,00 BRL</option>
+                            <option value="Lunch" selected>15,00 BRL</option>
+                            <option value="Coffe">5,00 BRL</option>
+                          </select>
+                        </td>
+                      </tr>
+                    </table>
+                    <input type="hidden" name="currency_code" value="BRL" />
+                    <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal" />
+                    <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
+                  </form>
+                </div>
+              </div>
             </div>
-          </b>
-          <select id="currency" style="margin-left: 8px">
-            <option value="USD">USD</option>
-            <option value="BRL">BRL</option>
-          </select>
-          <div id="donateInUSD">
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-              <input type="hidden" name="cmd" value="_s-xclick" />
-              <input type="hidden" name="hosted_button_id" value="3FH2APUZGCY3A" />
-              <table>
-                <tr>
-                  <td>
-                    <input type="hidden" name="on0" value="Donate With Paypal" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <select name="os0">
-                      <option value="Maximum">20,00 USD</option>
-                      <option value="Pizza">10,00 USD</option>
-                      <option value="Lunch" selected>5,00 USD</option>
-                      <option value="Coffe">3,00 USD</option>
-                    </select>
-                  </td>
-                </tr>
-              </table>
-              <input type="hidden" name="currency_code" value="USD" />
-              <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal" />
-              <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
-            </form>
           </div>
-
-          <div id="donateInBRL">
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-              <input type="hidden" name="cmd" value="_s-xclick" />
-              <input type="hidden" name="hosted_button_id" value="UKVQDPTUB5HTG" />
-              <table>
-                <tr>
-                  <td>
-                    <input type="hidden" name="on0" value="Doar com o Paypal" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <select name="os0">
-                      <option value="Maximum">50,00 BRL</option>
-                      <option value="Pizza">30,00 BRL</option>
-                      <option value="Lunch" selected>15,00 BRL</option>
-                      <option value="Coffe">5,00 BRL</option>
-                    </select>
-                  </td>
-                </tr>
-              </table>
-              <input type="hidden" name="currency_code" value="BRL" />
-              <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal" />
-              <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
-            </form>
-          </div>
-        </div>
+        </section>
       </div>
 
       <div id="release_notes" class="w3-container"></div>
