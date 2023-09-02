@@ -253,7 +253,7 @@ const translationService = (function () {
     }
 
     /**
-     * Find the SID (IID and IG) of Bing Translator. The SID value is used in translation requests.
+     * Find the Auth of Bing Translator. The Auth value is used in translation requests.
      * @returns {Promise<void>}
      */
     static async findAuth() {

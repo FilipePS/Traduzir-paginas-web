@@ -618,6 +618,11 @@ twpConfig
     };
     $("#textTranslatorService").value = twpConfig.get("textTranslatorService");
 
+    $("#textToSpeechService").onchange = (e) => {
+      twpConfig.set("textToSpeechService", e.target.value);
+    };
+    $("#textToSpeechService").value = twpConfig.get("textToSpeechService");
+
     $("#ttsSpeed").oninput = (e) => {
       twpConfig.set("ttsSpeed", e.target.value);
       $("#displayTtsSpeed").textContent = e.target.value;
