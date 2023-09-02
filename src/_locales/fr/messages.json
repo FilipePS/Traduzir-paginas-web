@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Êtes-vous sûr de vouloir définir le service de traduction sur DeepL ?\nUn nouvel onglet s'ouvrira et la traduction s'y déroulera."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

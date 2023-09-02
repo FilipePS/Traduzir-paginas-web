@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Biztos, hogy a fordítási szolgáltatást a DeepL-re szeretné beállítani?\nEgy új lap fog megnyílni, és a fordítás ott fog megtörténni."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "您确定要将翻译服务设置为 DeepL 吗？\n使用 DeepL 翻译文本时将会打开一个新选项卡，并在那里进行翻译。"
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

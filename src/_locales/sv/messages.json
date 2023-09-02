@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Är du säker på att du vill ställa in översättningstjänsten till DeepL?\nEn ny flik öppnas och översättningen kommer att ske där."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

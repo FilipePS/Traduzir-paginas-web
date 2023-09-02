@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Esteu segur que voleu configurar el servei de traducció a DeepL?\nS'obrirà una pestanya nova i la traducció es farà allà."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

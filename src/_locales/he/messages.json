@@ -207,7 +207,7 @@
     "message": "הראה תרגום בעת ריחוף מעל אתר זה"
   },
   "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
+    "message": "הצג טקסט מקורי ותרגום זה לצד זה"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "הצג תרגום כאשר אני מרחף עם העכבר מעל אתרים ב: $LANGUAGE_NAME$",
@@ -484,7 +484,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "התרומה שלך עוברת למפתח של תוסף $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "האם אתה בטוח שברצונך להגדיר את שירות התרגום ל-DeepL?\nכרטיסייה חדשה תיפתח, והתרגום יתבצע שם."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

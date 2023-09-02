@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Вы уверены, что хотите выбрать DeepL в качестве службы перевода?\nПеревод откроется в новой вкладке."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

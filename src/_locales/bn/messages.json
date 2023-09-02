@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "আপনি কি অনুবাদ পরিষেবাটিকে DeepL-এ সেট করার বিষয়ে নিশ্চিত?\nএকটি নতুন ট্যাব খুলবে, এবং অনুবাদ সেখানে সঞ্চালিত হবে।"
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

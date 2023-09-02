@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "DeepL غا تەرجىمە مۇلازىمىتىنى تەڭشىمەكچىمۇ؟\nيېڭى بەتكۈچ ئېچىلىدۇ ، تەرجىمە شۇ يەردە ئېلىپ بېرىلىدۇ."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

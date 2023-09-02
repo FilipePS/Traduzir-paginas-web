@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Opravdu chcete nastavit překladatelskou službu na DeepL?\nOtevře se nová karta a tam se provede překlad."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

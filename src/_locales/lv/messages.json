@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Vai tiešām vēlaties iestatīt tulkošanas pakalpojumu DeepL?\nTiks atvērta jauna cilne, kurā notiks tulkojums."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

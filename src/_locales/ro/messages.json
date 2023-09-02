@@ -207,7 +207,7 @@
     "message": "Arată traducerea dacă se pune săgeata pe acest sit"
   },
   "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
+    "message": "Arată textul original și cel tradus unul lângă altul"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Arată traducerea dacă se pune săgeata pe situri în $LANGUAGE_NAME$",
@@ -484,7 +484,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Donația ta se duce la programatorul extensiei $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Sigur vrei să alegi ca serviciul de traducere să fie DeepL?\nSe va deschide o pagină nouă, iar traducerea va avea loc acolo."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

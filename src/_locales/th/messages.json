@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "คุณแน่ใจหรือไม่ว่าต้องการตั้งค่าบริการแปลเป็น DeepL\nแท็บใหม่จะเปิดขึ้น และการแปลจะเกิดขึ้นที่นั่น"
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

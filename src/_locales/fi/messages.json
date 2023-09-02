@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Haluatko varmasti asettaa käännöspalvelun DeepL:ksi?\nUusi välilehti avautuu, ja käännös tapahtuu siellä."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

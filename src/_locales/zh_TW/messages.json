@@ -207,7 +207,7 @@
     "message": "停留在此網站上時顯示翻譯"
   },
   "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
+    "message": "並排顯示原文與譯文"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "停留在$LANGUAGE_NAME$網站上時顯示翻譯",
@@ -484,7 +484,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "您的捐款會捐給《$EXTENSION_NAME$》的開發者。",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "您確定要將 DeepL 設爲翻譯服務嗎？\n這樣會打開一張新分頁，並在新分頁裏翻譯。"
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

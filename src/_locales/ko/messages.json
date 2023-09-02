@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "번역 서비스를 DeepL로 설정하시겠습니까? 새 탭을 열고 그곳에서 번역을 수행하게 됩니다."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

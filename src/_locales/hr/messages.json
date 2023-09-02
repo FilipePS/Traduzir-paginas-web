@@ -207,7 +207,7 @@
     "message": "Prikaži prijevod prilikom prelaženja mišem na ovoj web stranici"
   },
   "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
+    "message": "Prikaži izvorni i prevedeni tekst jedan pokraj drugog"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Prikaži prijevod prilikom prelaženja mišem na web stranicama koje koriste $LANGUAGE_NAME$ jezik",
@@ -484,7 +484,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Vaša donacija ide programeru dodatka $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Jeste li sigurni da želite postaviti odabrati DeepL kao prevoditeljsku uslugu?\nOtvorit će se nova kartica i tamo će se izvršiti prijevod."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

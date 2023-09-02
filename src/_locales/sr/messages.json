@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Да ли сте сигурни да желите да подесите услугу превођења на ДеепЛ?\nОтвориће се нова картица и ту ће се извршити превод."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

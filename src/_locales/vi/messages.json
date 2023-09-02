@@ -207,7 +207,7 @@
     "message": "Hiển thị bản dịch khi di chuột qua trang web này"
   },
   "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
+    "message": "Hiện văn bản gốc và văn bản đã dịch cạnh nhau"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Hiển thị bản dịch khi di chuột qua các trang web bằng $LANGUAGE_NAME$",
@@ -484,7 +484,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Khoản đóng góp của bạn sẽ chuyển đến nhà phát triển tiện ích $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Bạn có chắc chắn là muốn chuyển dịch vụ dịch thuật sang DeepL?\nMột thẻ mới sẽ mở, và bản dịch sẽ dịch ở đó."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

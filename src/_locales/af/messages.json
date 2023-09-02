@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Is jy seker jy wil die vertaaldiens op DeepL stel?\n'n Nuwe oortjie sal oopmaak, en die vertaling sal daar plaasvind."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

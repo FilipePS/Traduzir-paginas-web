@@ -207,7 +207,7 @@
     "message": "Mostra la traduzione quando passi la freccia su questo sito"
   },
   "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
+    "message": "Mostra il testo originale e quello tradotto fianco a fianco"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Mostra la traduzione quando passi la freccia sui siti web in $LANGUAGE_NAME$",
@@ -484,7 +484,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "La tua donazione va allo sviluppatore dell'estensione $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Sicuro di voler impostare il servizio di traduzione su DeepL?\nSi aprirà una nuova scheda e la traduzione avverrà lì."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

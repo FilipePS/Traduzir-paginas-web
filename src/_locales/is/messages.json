@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Ertu viss um að þú viljir stilla þýðingarþjónustuna í DeepL.\nNýr flipi mun opnast og þýðingin mun fara fram þar."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

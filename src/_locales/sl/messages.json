@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Ali ste prepričani, da želite prevajalsko storitev nastaviti na DeepL?\nOdprl se bo nov zavihek in tam bo izveden prevod."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

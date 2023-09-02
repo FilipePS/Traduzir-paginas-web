@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "क्या आप वाकई अनुवाद सेवा को डीपएल पर सेट करना चाहते हैं?\nएक नया टैब खुलेगा और अनुवाद वहां होगा।"
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

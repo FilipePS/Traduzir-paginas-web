@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "Ви впевнені, що хочете встановити службу перекладу на DeepL?\nВідкриється нова вкладка, у якій відбудеться переклад."
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }

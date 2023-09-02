@@ -207,7 +207,7 @@
     "message": "このサイトでマウスオーバーしたテキストを翻訳する"
   },
   "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
+    "message": "原文と翻訳を並べて表示"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "$LANGUAGE_NAME$のサイトでマウスオーバーしたテキストを翻訳する",
@@ -484,7 +484,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "あなたの寄付は$EXTENSION_NAME$の開発者に送られます。",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -527,5 +527,8 @@
   },
   "msgSetDeepLAlert": {
     "message": "本当に翻訳サービスをDeepLに設定しますか？\n翻訳は新しいタブで行われるようになります。"
+  },
+  "lblTextToSpeechService": {
+    "message": "Text-to-speech service"
   }
 }
