@@ -67,7 +67,9 @@ async function getSupportedLanguages(service, lang, key = "") {
                 url = `https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation`
         }
 
-        superagent.get(url).end((err, res) => {
+        const header = {'Accept-Language': lang}
+
+        superagent.get(url).set(service == "bing" ? header : null).end((err, res) => {
             function callback(langs) {
                 resolve(langs);
             }
@@ -179,7 +181,7 @@ async function getLanguages(service, lang, key = "") {
                     break;
             }
 
-            langs[newKey] = key.name;
+            langs[newKey] = result[key].name;
         }
 
     }
@@ -289,9 +291,11 @@ async function init() {
 
         Object.keys(info.supportedLanguages).forEach(key => {
             info.supportedOnlyBy[key] = info.supportedLanguages[key].filter(lang => {
+                let supportedonother = false
                 Object.keys(info.supportedLanguages).forEach(key2 => {
-                    return !(key2 != key && info.supportedLanguages[key2].includes(lang));
+                    if (key2 != key && info.supportedLanguages[key2].includes(lang)) supportedonother = true
                 })
+                return !supportedonother
             })
         })
 
@@ -311,7 +315,7 @@ async function init() {
 
         const final_result = {};
 
-        lang_codes.forEach((ui_lang) => {
+        lang_codes.forEach(ui_lang => {
             final_result[ui_lang] = {};
             info.allSupportedLangs.forEach((lang) => {
                 final_result[ui_lang][lang] =
