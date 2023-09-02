@@ -270,7 +270,7 @@ async function init() {
         info.supportedCount = {};
         info.supportedCount.google = Object.keys(langs.google["en"]).length;
         info.supportedCount.bing = Object.keys(langs.bing["en"]).length;
-        info.supportedCount.yandex = Object.keys(langs.bing["en"]).length;
+        info.supportedCount.yandex = Object.keys(langs.yandex["en"]).length;
 
         info.allSupportedLangs = [];
 
