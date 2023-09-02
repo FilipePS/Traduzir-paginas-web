@@ -67,9 +67,14 @@ async function getSupportedLanguages(service, lang, key = "") {
                 url = `https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation`
         }
 
-        const header = {'Accept-Language': lang}
+        const getRequest = superagent.get(url)
 
-        superagent.get(url).set(service == "bing" ? header : null).end((err, res) => {
+        if (service == "bing") {
+            const header = {'Accept-Language': lang}
+            getRequest.set(header)
+        }
+
+        getRequest.end((err, res) => {
             function callback(langs) {
                 resolve(langs);
             }
