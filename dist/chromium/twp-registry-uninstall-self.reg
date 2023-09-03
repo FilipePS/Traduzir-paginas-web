@@ -10,7 +10,23 @@ Windows Registry Editor Version 5.00
 "1336"=-
 "1337"=-
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave\ExtensionInstallAllowlist]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave\ExtensionInstallSources]
+"1335"=-
+"1336"=-
+"1337"=-
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallSources]
+"1335"=-
+"1336"=-
+"1337"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources]
+"1335"=-
+"1336"=-
+"1337"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave\ExtensionInstallSources]
 "1335"=-
 "1336"=-
 "1337"=-
