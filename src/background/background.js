@@ -191,7 +191,10 @@ chrome.runtime.onInstalled.addListener((details) => {
       translationCache.deleteTranslationCache();
     });
     twpConfig.onReady(async () => {
-      twpConfig.set("textTranslatorService", twpConfig.get("enabledServices")[0]);
+      twpConfig.set(
+        "textTranslatorService",
+        twpConfig.get("enabledServices")[0]
+      );
     });
   }
 
@@ -510,8 +513,30 @@ twpConfig.onReady(() => {
     {
       let pageLanguageState = "original";
 
+      // https://github.com/FilipePS/Traduzir-paginas-web/issues/548
+      const isFirefoxAlpenglow = function (theme) {
+        let isFirefoxAlpenglowTheme = false;
+        try {
+          if (
+            [
+              '{"additional_backgrounds_alignment":["right top","left top","right top"],"additional_backgrounds_tiling":["no-repeat","no-repeat","repeat-x"],"color_scheme":null,"content_color_scheme":null,"zap_gradient":"linear-gradient(90deg, #9059FF 0%, #FF4AA2 52.08%, #FFBD4F 100%)"}',
+              '{"additional_backgrounds_alignment":["right top","left top","right top"],"additional_backgrounds_tiling":["no-repeat","no-repeat","repeat-x"],"color_scheme":null,"content_color_scheme":null}',
+            ].includes(JSON.stringify(theme.properties)) &&
+            [
+              '{"accentcolor":null,"bookmark_text":"hsla(261, 53%, 15%, 1)","button_background_active":"hsla(240, 26%, 11%, .16)","button_background_hover":"hsla(240, 26%, 11%, .08)","frame":"hsla(240, 20%, 98%, 1)","frame_inactive":null,"icons":"hsla(258, 66%, 48%, 1)","icons_attention":"hsla(180, 100%, 32%, 1)","ntp_background":"#F9F9FB","ntp_card_background":null,"ntp_text":"hsla(261, 53%, 15%, 1)","popup":"hsla(254, 46%, 21%, 1)","popup_border":"hsla(255, 100%, 94%, .32)","popup_highlight":"hsla(255, 100%, 94%, .12)","popup_highlight_text":"hsla(0, 0%, 100%, 1)","popup_text":"hsla(255, 100%, 94%, 1)","sidebar":"hsla(240, 15%, 95%, 1)","sidebar_border":"hsla(261, 53%, 15%, .24)","sidebar_highlight":"hsla(265, 100%, 72%, 1)","sidebar_highlight_text":"hsla(0, 0%, 100%, 1)","sidebar_text":"hsla(261, 53%, 15%, 1)","tab_background_separator":"hsla(261, 53%, 15%, 1)","tab_background_text":"hsla(261, 53%, 15%, 1)","tab_line":"hsla(265, 100%, 72%, 1)","tab_loading":"hsla(265, 100%, 72%, 1)","tab_selected":null,"tab_text":"hsla(261, 53%, 15%, 1)","textcolor":null,"toolbar":"hsla(0, 0%, 100%, .76)","toolbar_bottom_separator":"hsla(261, 53%, 15%, .32)","toolbar_field":"hsla(0, 0%, 100%, .8)","toolbar_field_border":"transparent","toolbar_field_border_focus":"hsla(265, 100%, 72%, 1)","toolbar_field_focus":"hsla(261, 53%, 15%, .96)","toolbar_field_highlight":"hsla(265, 100%, 72%, .32)","toolbar_field_highlight_text":null,"toolbar_field_separator":null,"toolbar_field_text":"hsla(261, 53%, 15%, 1)","toolbar_field_text_focus":"hsla(255, 100%, 94%, 1)","toolbar_text":"hsla(261, 53%, 15%, 1)","toolbar_top_separator":"transparent","toolbar_vertical_separator":"hsla(261, 53%, 15%, .2)","focus_outline":"hsla(258, 65%, 48%, 1)"}',
+              '{"accentcolor":null,"bookmark_text":"hsla(261, 53%, 15%, 1)","button_background_active":"hsla(240, 26%, 11%, .16)","button_background_hover":"hsla(240, 26%, 11%, .08)","frame":"hsla(240, 20%, 98%, 1)","frame_inactive":null,"icons":"hsla(258, 66%, 48%, 1)","icons_attention":"hsla(180, 100%, 32%, 1)","ntp_background":"hsla(0, 0%, 100%, 1)","ntp_card_background":null,"ntp_text":"hsla(261, 53%, 15%, 1)","popup":"hsla(254, 46%, 21%, 1)","popup_border":"hsla(255, 100%, 94%, .32)","popup_highlight":"hsla(255, 100%, 94%, .12)","popup_highlight_text":null,"popup_text":"hsla(255, 100%, 94%, 1)","sidebar":"hsla(240, 15%, 95%, 1)","sidebar_border":"hsla(261, 53%, 15%, .24)","sidebar_highlight":"hsla(265, 100%, 72%, 1)","sidebar_highlight_text":"hsla(0, 0%, 100%, 1)","sidebar_text":"hsla(261, 53%, 15%, 1)","tab_background_separator":"hsla(261, 53%, 15%, 1)","tab_background_text":"hsla(261, 53%, 15%, 1)","tab_line":"hsla(265, 100%, 72%, 1)","tab_loading":"hsla(265, 100%, 72%, 1)","tab_selected":null,"tab_text":"hsla(261, 53%, 15%, 1)","textcolor":null,"toolbar":"hsla(0, 0%, 100%, .76)","toolbar_bottom_separator":"hsla(261, 53%, 15%, .32)","toolbar_field":"hsla(0, 0%, 100%, .8)","toolbar_field_border":"hsla(261, 53%, 15%, .32)","toolbar_field_border_focus":"hsla(265, 100%, 72%, 1)","toolbar_field_focus":"hsla(261, 53%, 15%, .96)","toolbar_field_highlight":"hsla(265, 100%, 72%, .32)","toolbar_field_highlight_text":null,"toolbar_field_separator":"hsla(261, 53%, 15%, .32)","toolbar_field_text":"hsla(261, 53%, 15%, 1)","toolbar_field_text_focus":"hsla(255, 100%, 94%, 1)","toolbar_text":"hsla(261, 53%, 15%, 1)","toolbar_top_separator":"hsla(261, 53%, 15%, 1)","toolbar_vertical_separator":"hsla(261, 53%, 15%, .08)"}',
+            ].includes(JSON.stringify(theme.colors))
+          ) {
+            isFirefoxAlpenglowTheme = true;
+          }
+        } catch {}
+        return isFirefoxAlpenglowTheme;
+      };
+
       let themeColorFieldText = null;
       let themeColorAttention = null;
+      let isUsingTheme = false;
+      let isFirefoxAlpenglowTheme = false;
       if (typeof browser != "undefined" && browser.theme) {
         browser.theme.getCurrent().then((theme) => {
           themeColorFieldText = null;
@@ -522,6 +547,13 @@ twpConfig.onReady(() => {
           if (theme.colors && theme.colors.icons_attention) {
             themeColorAttention = theme.colors.icons_attention;
           }
+
+          isUsingTheme = false;
+          if (theme.colors || theme.images || theme.properties) {
+            isUsingTheme = true;
+          }
+
+          isFirefoxAlpenglowTheme = isFirefoxAlpenglow(theme);
 
           updateIconInAllTabs();
         });
@@ -541,6 +573,17 @@ twpConfig.onReady(() => {
           ) {
             themeColorAttention = updateInfo.theme.colors.icons_attention;
           }
+
+          isUsingTheme = false;
+          if (
+            updateInfo.theme.colors ||
+            updateInfo.theme.images ||
+            updateInfo.theme.properties
+          ) {
+            isUsingTheme = true;
+          }
+
+          isFirefoxAlpenglowTheme = isFirefoxAlpenglow(updateInfo.theme);
 
           updateIconInAllTabs();
         });
@@ -575,21 +618,45 @@ twpConfig.onReady(() => {
           twpConfig.get("popupBlueWhenSiteIsTranslated") === "yes"
         ) {
           svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "1.0");
-          if (themeColorAttention) {
-            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorAttention));
-          } else if (darkMode || incognito) {
-            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#00ddff"));
+          if (isFirefoxAlpenglowTheme) {
+            if (darkMode || incognito) {
+              svg64 = btoa(
+                svg64.replace(/\$\(fill\)\;/g, "hsla(157, 100%, 66%, 1)")
+              );
+            } else {
+              svg64 = btoa(
+                svg64.replace(/\$\(fill\)\;/g, "hsla(180, 100%, 32%, 1)")
+              );
+            }
           } else {
-            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#0061e0"));
+            if (themeColorAttention) {
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorAttention));
+            } else if (!isUsingTheme && (darkMode || incognito)) {
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#00ddff"));
+            } else {
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#0061e0"));
+            }
           }
         } else {
           svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "0.5");
-          if (themeColorFieldText) {
-            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorFieldText));
-          } else if (darkMode || incognito) {
-            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "white"));
+          if (isFirefoxAlpenglowTheme) {
+            if (darkMode || incognito) {
+              svg64 = btoa(
+                svg64.replace(/\$\(fill\)\;/g, "hsla(255, 100%, 94%, 1)")
+              );
+            } else {
+              svg64 = btoa(
+                svg64.replace(/\$\(fill\)\;/g, "hsla(261, 53%, 15%, 1)")
+              );
+            }
           } else {
-            svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "black"));
+            if (themeColorFieldText) {
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorFieldText));
+            } else if (!isUsingTheme && (darkMode || incognito)) {
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "white"));
+            } else {
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "black"));
+            }
           }
         }
 
