@@ -331,7 +331,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   /* prettier-ignore */
   const htmlTagsInlineIgnore = ["br", "code", "kbd", "wbr"]; // and input if type is submit or button, and <pre> depending on settings
   /* prettier-ignore */
-  const htmlTagsNoTranslate = ["title", "script", "style", "textarea", "svg", "template"];
+  const htmlTagsNoTranslate = ["title", "script", "style", "textarea", "svg", "template",
+  "math", "mjx-container", "tex-math" // https://github.com/FilipePS/Traduzir-paginas-web/issues/704
+  ];
 
   if (location.hostname === "pdf.translatewebpages.org") {
     const index = htmlTagsInlineText.indexOf("span");
@@ -528,7 +530,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   function isNoTranslateNode(node) {
     const nodeName = node.nodeName.toLowerCase();
     const index = htmlTagsNoTranslate.indexOf(nodeName);
-    if (index === -1) {
+    
+    //https://github.com/FilipePS/Traduzir-paginas-web/issues/704
+    if (nodeName === "span" && node.classList.contains("mjx-chtml")) {
+      return true;
+    } else if (index === -1) {
       return false;
     } else {
       // https://github.com/FilipePS/Traduzir-paginas-web/issues/654

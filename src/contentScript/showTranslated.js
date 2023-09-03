@@ -91,6 +91,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     "var",
   ];
   const htmlTagsInlineIgnore = ["br", "code", "kbd", "wbr"]; // and input if type is submit or button, and <pre> depending on settings
+  /* prettier-ignore */
   const htmlTagsNoTranslate = [
     "title",
     "script",
@@ -98,6 +99,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     "textarea",
     "svg",
     "template",
+    "math", "mjx-container", "tex-math" // https://github.com/FilipePS/Traduzir-paginas-web/issues/704
   ];
 
   if (twpConfig.get("translateTag_pre") !== "yes") {
