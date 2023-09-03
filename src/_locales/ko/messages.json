@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "이 사이트에 마우스를 가져다 대면 번역 표시"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "$LANGUAGE_NAME$ 사이트에 마우스를 가져다 대면 번역 표시",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "귀하의 기부금은 $EXTENSION_NAME$ 확장 프로그램 개발자에게 전달됩니다.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "번역 서비스를 DeepL로 설정하시겠습니까? 새 탭을 열고 그곳에서 번역을 수행하게 됩니다."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "문자 음성 변환 서비스"
   }
 }

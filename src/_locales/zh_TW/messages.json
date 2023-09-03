@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "停留在此網站上時顯示翻譯"
   },
-  "lblShowTextSideBySide": {
-    "message": "並排顯示原文與譯文"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "停留在$LANGUAGE_NAME$網站上時顯示翻譯",
     "placeholders": {
@@ -529,6 +526,6 @@
     "message": "您確定要將 DeepL 設爲翻譯服務嗎？\n這樣會打開一張新分頁，並在新分頁裏翻譯。"
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "文字轉語音服務"
   }
 }

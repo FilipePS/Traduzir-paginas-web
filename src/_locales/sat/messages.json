@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱨᱮ ᱩᱰᱟᱹᱣ ᱡᱷᱚᱜ ᱛᱚᱨᱡᱚᱢᱟ ᱫᱮᱠᱷᱟᱣ ᱢᱮ"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱨᱮ ᱩᱰᱟᱹᱣ ᱡᱷᱚᱜ $LANGUAGE_NAME$ ᱨᱮ ᱛᱚᱨᱡᱚᱢᱟ ᱫᱮᱠᱷᱟᱣ ᱢᱮ",
     "placeholders": {

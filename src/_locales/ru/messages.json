@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Показывать перевод при наведении курсора на этом сайте"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Показывать перевод при наведении курсора, если сайты на $LANGUAGE_NAME$",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Ваше пожертвование пойдет разработчику расширения $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",

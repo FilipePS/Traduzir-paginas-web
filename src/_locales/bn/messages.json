@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "এই সাইটগুলিতে মাউস ভাসানোর সময় অনুবাদিত পাঠ্য দেখাবেন"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "$LANGUAGE_NAME$ ভাষার ওয়েবসাইটগুলোর উপর মাউস ভাসানোর সময় অনুবাদ দেখাবেন",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "আপনার অনুদান $EXTENSION_NAME$ এক্সটেনশনের বিকাশকারীর কাছে যায়।",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "আপনি কি অনুবাদ পরিষেবাটিকে DeepL-এ সেট করার বিষয়ে নিশ্চিত?\nএকটি নতুন ট্যাব খুলবে, এবং অনুবাদ সেখানে সঞ্চালিত হবে।"
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "টেক্সট-টু-স্পিচ পরিষেবা"
   }
 }

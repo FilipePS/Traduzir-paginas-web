@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "在此网站悬停显示译文"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "在此语言的网站悬停显示翻译 - $LANGUAGE_NAME$",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "您的捐款将捐献给 $EXTENSION_NAME$ 扩展的开发者。",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "您确定要将翻译服务设置为 DeepL 吗？\n使用 DeepL 翻译文本时将会打开一个新选项卡，并在那里进行翻译。"
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "文本转语音服务"
   }
 }

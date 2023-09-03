@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Vis oversættelse ved svævning over dette websted"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Vis oversættelse ved svævning over hjemmesider i $LANGUAGE_NAME$",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Din donation går til udvikleren af $EXTENSION_NAME$ -udvidelsen.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",

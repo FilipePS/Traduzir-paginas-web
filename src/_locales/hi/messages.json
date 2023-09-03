@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "इस साइट पर मँडराते समय अनुवाद दिखाएं"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "$LANGUAGE_NAME$में वेबसाइटों पर मँडराते समय अनुवाद दिखाएं",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "आपका दान $EXTENSION_NAME$ एक्सटेंशन के डेवलपर को जाता है।",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "क्या आप वाकई अनुवाद सेवा को डीपएल पर सेट करना चाहते हैं?\nएक नया टैब खुलेगा और अनुवाद वहां होगा।"
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "पाठ से वाक् सेवा"
   }
 }

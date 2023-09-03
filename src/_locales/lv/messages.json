@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Rādīt tulkojumu, virzot peles kursoru šai vietnei"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Rādīt tulkojumu, virzot peles kursoru vietnēm $LANGUAGE_NAME$ valodā",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Jūsu ziedojums tiek saņemts paplašinājuma $EXTENSION_NAME$ izstrādātājam.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "Vai tiešām vēlaties iestatīt tulkošanas pakalpojumu DeepL?\nTiks atvērta jauna cilne, kurā notiks tulkojums."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Teksta pārvēršanas runā pakalpojums"
   }
 }

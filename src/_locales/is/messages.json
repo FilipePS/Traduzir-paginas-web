@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Sýna þýðingu þegar þú sveimar yfir þessari síðu"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Sýna þýðingu þegar þú sveimar yfir vefsíður á $LANGUAGE_NAME$",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Framlag þitt rennur til þróunaraðila $EXTENSION_NAME$ viðbótarinnar.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "Ertu viss um að þú viljir stilla þýðingarþjónustuna í DeepL.\nNýr flipi mun opnast og þýðingin mun fara fram þar."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Texta-í-tal þjónusta"
   }
 }

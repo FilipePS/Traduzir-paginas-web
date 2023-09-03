@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Bu sitenin üzerine gelindiğinde çeviriyi göster"
   },
-  "lblShowTextSideBySide": {
-    "message": "Orijinal ve çevrilmiş metni yan yana göster"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "$LANGUAGE_NAME$ dilindeki sitelerinin üzerine gelindiğinde çeviriyi göster",
     "placeholders": {
@@ -529,6 +526,6 @@
     "message": "Çeviri hizmetini DeepL olarak ayarlamak istediğinizden emin misiniz?\n Yeni bir sekme açılacak ve çeviri orada gerçekleşecek."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Metinden konuşmaya hizmeti"
   }
 }

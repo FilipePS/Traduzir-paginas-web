@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "نمایش ترجمه هنگام نگه داشتن ماوس روی این سایت"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "نمایش ترجمه هنگام قرار دادن ماوس روی وب‌سایت‌ها به زبان $LANGUAGE_NAME$",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "کمک مالی شما به توسعه دهنده افزونه $EXTENSION_NAME$ می رسد.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "آیا مطمئن هستید که می خواهید سرویس ترجمه را روی DeepL تنظیم کنید؟\nیک برگه جدید باز می شود و ترجمه در آنجا انجام می شود."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "سرویس تبدیل متن به گفتار"
   }
 }

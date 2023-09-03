@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Prikaži prijevod prilikom prelaženja mišem na ovoj web stranici"
   },
-  "lblShowTextSideBySide": {
-    "message": "Prikaži izvorni i prevedeni tekst jedan pokraj drugog"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Prikaži prijevod prilikom prelaženja mišem na web stranicama koje koriste $LANGUAGE_NAME$ jezik",
     "placeholders": {
@@ -529,6 +526,6 @@
     "message": "Jeste li sigurni da želite postaviti odabrati DeepL kao prevoditeljsku uslugu?\nOtvorit će se nova kartica i tamo će se izvršiti prijevod."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Usluga pretvaranja teksta u govor"
   }
 }

@@ -7,7 +7,7 @@ twpConfig
   .then(() => twpI18n.updateUiMessages())
   .then(() => {
     twpI18n.translateDocument();
-    const popupSectionCount = 7;
+    const popupSectionCount = 6;
 
     $("#btnImproveTranslation").onclick = () => {
       window.location = "improve-translation.html";
@@ -459,37 +459,10 @@ twpConfig
           }
         );
 
-        $("#cbShowTextSideBySide").addEventListener("change", (e) => {
-          if (e.target.checked) {
-            twpConfig.set("showTextSideBySide", "yes");
-          } else {
-            twpConfig.set("showTextSideBySide", "no");
-          }
-
-          chrome.tabs.query(
-            {
-              active: true,
-              currentWindow: true,
-            },
-            (tabs) => {
-              chrome.tabs.sendMessage(
-                tabs[0].id,
-                {
-                  action: "setShowTextSideBySide",
-                  showTextSideBySide: e.target.checked,
-                },
-                checkedLastError
-              );
-            }
-          );
-        });
-
         $("#cbShowTranslateSelectedButton").checked =
           twpConfig.get("showTranslateSelectedButton") == "yes" ? true : false;
         $("#cbShowOriginalWhenHovering").checked =
           twpConfig.get("showOriginalTextWhenHovering") == "yes" ? true : false;
-        $("#cbShowTextSideBySide").checked =
-          twpConfig.get("showTextSideBySide") == "yes" ? true : false;
 
         const hostname = new URL(tabs[0].url).hostname;
         $("#cbAlwaysTranslateThisSite").checked =

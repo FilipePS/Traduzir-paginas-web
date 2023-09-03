@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Εμφάνιση μετάφρασης όταν αιωρείται ο δείκτης επάνω σε αυτόν τον ιστότοπο"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Εμφάνιση μετάφρασης όταν τοποθετείτε το δείκτη σε ιστότοπους σε $LANGUAGE_NAME$",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Η δωρεά σας πάει στον προγραμματιστή της επέκτασης $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "Είστε βέβαιοι ότι θέλετε να ρυθμίσετε την υπηρεσία μετάφρασης σε DeepL;\nΘα ανοίξει μια νέα καρτέλα και η μετάφραση θα πραγματοποιηθεί εκεί."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Υπηρεσία μετατροπής κειμένου σε ομιλία"
   }
 }

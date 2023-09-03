@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Toon vertaling wanneer u met de muis over deze site beweegt"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Toon vertaling bij het hoveren over websites in $LANGUAGE_NAME$",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Jouw donatie gaat naar de ontwikkelaar van de $EXTENSION_NAME$ -extensie.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "Weet u zeker dat u de vertaalservice op DeepL wilt instellen?\nEr wordt een nieuw tabblad geopend en daar vindt de vertaling plaats."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Tekst-naar-spraak-service"
   }
 }

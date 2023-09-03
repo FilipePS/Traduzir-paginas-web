@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Hiển thị bản dịch khi di chuột qua trang web này"
   },
-  "lblShowTextSideBySide": {
-    "message": "Hiện văn bản gốc và văn bản đã dịch cạnh nhau"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Hiển thị bản dịch khi di chuột qua các trang web bằng $LANGUAGE_NAME$",
     "placeholders": {
@@ -529,6 +526,6 @@
     "message": "Bạn có chắc chắn là muốn chuyển dịch vụ dịch thuật sang DeepL?\nMột thẻ mới sẽ mở, và bản dịch sẽ dịch ở đó."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Dịch vụ chuyển văn bản thành giọng nói"
   }
 }

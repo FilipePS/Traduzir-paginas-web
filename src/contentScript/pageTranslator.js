@@ -372,9 +372,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       case "dontSortResults":
         dontSortResults = newvalue == "yes" ? true : false;
         break;
-      case "showTextSideBySide":
-        showTextSideBySide = newvalue == "yes" ? true : false;
-        break;
     }
   });
 
@@ -397,7 +394,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   let customDictionary = sortDictionary(twpConfig.get("customDictionary"));
   let dontSortResults =
     twpConfig.get("dontSortResults") == "yes" ? true : false;
-  let showTextSideBySide = twpConfig.get("showTextSideBySide") == "yes";
 
   let fooCount = 0;
 
@@ -834,19 +830,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   }
 
   function translateTextContent(node, parentNode, text, toRestore) {
-    if (showTextSideBySide) {
-      const isSameText =
-        toRestore.originalText.trim().localeCompare(text.trim()) === 0;
-      const inlineText = isSameText
-        ? text
-        : toRestore.originalText + "\r\n" + text;
-      text = inlineText;
-      // Render \r\n properly
-      if (!isSameText) {
-        parentNode.setAttribute("style", "white-space: pre-line;");
-      }
-    }
-
     toRestore.translatedText = text;
 
     if (location.hostname === "pdf.translatewebpages.org") {
@@ -1245,13 +1228,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   };
 
-  pageTranslator.setShowTextSideBySide = function (_showTextSideBySide) {
-    showTextSideBySide = _showTextSideBySide;
-    if (pageLanguageState === "translated") {
-      pageTranslator.translatePage();
-    }
-  };
-
   let alreadyGotTheLanguage = false;
   const observers = [];
 
@@ -1318,8 +1294,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sendResponse(dontSortResults);
     } else if (request.action === "cleanUp") {
       pageTranslator.restorePage();
-    } else if (request.action === "setShowTextSideBySide") {
-      pageTranslator.setShowTextSideBySide(request.showTextSideBySide);
     }
   });
 

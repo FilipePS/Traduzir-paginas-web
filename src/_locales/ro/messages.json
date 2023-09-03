@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Arată traducerea dacă se pune săgeata pe acest sit"
   },
-  "lblShowTextSideBySide": {
-    "message": "Arată textul original și cel tradus unul lângă altul"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Arată traducerea dacă se pune săgeata pe situri în $LANGUAGE_NAME$",
     "placeholders": {
@@ -529,6 +526,6 @@
     "message": "Sigur vrei să alegi ca serviciul de traducere să fie DeepL?\nSe va deschide o pagină nouă, iar traducerea va avea loc acolo."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Serviciu de pronunțare a textului"
   }
 }

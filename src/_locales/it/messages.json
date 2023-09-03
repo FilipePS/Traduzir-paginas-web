@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Mostra la traduzione quando passi la freccia su questo sito"
   },
-  "lblShowTextSideBySide": {
-    "message": "Mostra il testo originale e quello tradotto fianco a fianco"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Mostra la traduzione quando passi la freccia sui siti web in $LANGUAGE_NAME$",
     "placeholders": {
@@ -529,6 +526,6 @@
     "message": "Sicuro di voler impostare il servizio di traduzione su DeepL?\nSi aprirà una nuova scheda e la traduzione avverrà lì."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Servizio di sintesi vocale"
   }
 }

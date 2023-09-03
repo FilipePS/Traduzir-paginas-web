@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "הראה תרגום בעת ריחוף מעל אתר זה"
   },
-  "lblShowTextSideBySide": {
-    "message": "הצג טקסט מקורי ותרגום זה לצד זה"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "הצג תרגום כאשר אני מרחף עם העכבר מעל אתרים ב: $LANGUAGE_NAME$",
     "placeholders": {
@@ -529,6 +526,6 @@
     "message": "האם אתה בטוח שברצונך להגדיר את שירות התרגום ל-DeepL?\nכרטיסייה חדשה תיפתח, והתרגום יתבצע שם."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "שירות טקסט לדיבור"
   }
 }

@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Fordítás mutatása, ha a kurzorral fölötte áll az oldalon"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "Fordítás mutatása, ha a kurzorral fölötte áll $LANGUAGE_NAME$ nyelvű oldalon",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Az adományt a $EXTENSION_NAME$ bővítmény fejlesztője kapja.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "Biztos, hogy a fordítási szolgáltatást a DeepL-re szeretné beállítani?\nEgy új lap fog megnyílni, és a fordítás ott fog megtörténni."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Szövegfelolvasó (TTS) szolgáltatás"
   }
 }

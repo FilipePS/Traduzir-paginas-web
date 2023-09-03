@@ -206,9 +206,6 @@
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "إظهار الترجمة عند التمرير فوق هذا الموقع"
   },
-  "lblShowTextSideBySide": {
-    "message": "Show original and translated text side by side"
-  },
   "lblShowTranslatedWhenHoveringThisLang": {
     "message": "إظهار الترجمة عند التمرير فوق المواقع باللغة $LANGUAGE_NAME$",
     "placeholders": {
@@ -484,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "يذهب تبرعك إلى مطور الامتداد $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -529,6 +526,6 @@
     "message": "هل أنت متأكد أنك تريد تعيين خدمة الترجمة على DeepL؟\nسيتم فتح علامة تبويب جديدة، وستتم الترجمة هناك."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "خدمة تحويل النص إلى كلام"
   }
 }
