@@ -126,7 +126,7 @@
     "message": "Přeložit označený text"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "V místní nabídce se zobrazí možnost překladu stránky"
+    "message": "Zobrazit možnost překladu vybraného textu v kontextové nabídce"
   },
   "lblNeverTranslateLangs": {
     "message": "Tento jazyk nikdy nepřekládat"

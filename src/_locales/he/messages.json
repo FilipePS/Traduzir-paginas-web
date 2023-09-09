@@ -126,7 +126,7 @@
     "message": "תרגם טקסט נבחר"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "הראה את האפשרות לתרגם את הדף בתפריט ההקשר"
+    "message": "הצג את האפשרות לתרגם את הטקסט שנבחר בתפריט ההקשר"
   },
   "lblNeverTranslateLangs": {
     "message": "לעולם אל תתרגם דפים אלו"

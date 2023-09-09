@@ -126,7 +126,7 @@
     "message": "ترجمة النص المحدد"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "اعرض خيار ترجمة الصفحة في قائمة السياق"
+    "message": "إظهار خيار ترجمة النص المحدد في قائمة السياق"
   },
   "lblNeverTranslateLangs": {
     "message": "لا تترجم هذه المواقع أبدًا"

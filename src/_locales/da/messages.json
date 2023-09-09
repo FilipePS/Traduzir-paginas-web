@@ -526,6 +526,6 @@
     "message": "Er du sikker på, at du vil indstille oversættelsestjenesten til DeepL?\nEn ny fane åbnes, og oversættelsen vil finde sted der."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Tekst-til-tale tjeneste"
   }
 }

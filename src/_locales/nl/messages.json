@@ -126,7 +126,7 @@
     "message": "Vertaal de geselecteerde tekst"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Geef de optie weer om de pagina te vertalen in het contextmenu"
+    "message": "Toon de optie om de geselecteerde tekst te vertalen in het contextmenu"
   },
   "lblNeverTranslateLangs": {
     "message": "Vertaal deze talen nooit"

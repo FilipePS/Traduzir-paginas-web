@@ -285,7 +285,7 @@
     "message": "Viltu endurheimta viðbótina í sjálfgefnar stillingar?"
   },
   "lblTtsSpeed": {
-    "message": "Hljóðhraði textatals"
+    "message": "Hljóðhraði gervitals"
   },
   "enterShortcut": {
     "message": "Sláðu inn flýtileið"
@@ -393,7 +393,7 @@
     "message": "PDF í HTML"
   },
   "msgTranslatePDF": {
-    "message": "Þýða PDF"
+    "message": "Þýða PDF-skjal"
   },
   "btncopy": {
     "message": "Afrita"
@@ -526,6 +526,6 @@
     "message": "Ertu viss um að þú viljir stilla þýðingarþjónustuna í DeepL.\nNýr flipi mun opnast og þýðingin mun fara fram þar."
   },
   "lblTextToSpeechService": {
-    "message": "Texta-í-tal þjónusta"
+    "message": "Talgervingarþjónusta"
   }
 }

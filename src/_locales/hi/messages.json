@@ -126,7 +126,7 @@
     "message": "चयनित विषय को अनूदित करें"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "संदर्भ मेनू में पृष्ठ का अनुवाद करने का विकल्प दिखाएं"
+    "message": "संदर्भ मेनू में चयनित पाठ का अनुवाद करने का विकल्प दिखाएँ"
   },
   "lblNeverTranslateLangs": {
     "message": "इन साइटों का अनुवाद कभी न करें"
