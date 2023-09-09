@@ -164,7 +164,7 @@ chrome.runtime.onInstalled.addListener((details) => {
       let showReleaseNotes = false;
       if (lastTimeShowingReleaseNotes) {
         const date = new Date();
-        date.setDate(date.getDate() - 21);
+        date.setDate(date.getDate() - 26);
         if (date.getTime() > lastTimeShowingReleaseNotes) {
           showReleaseNotes = true;
           lastTimeShowingReleaseNotes = Date.now();
