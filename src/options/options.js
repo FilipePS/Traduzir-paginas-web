@@ -1289,10 +1289,10 @@ twpConfig
       $("#libreKEY").value = libre.apiKey;
     }
 
-    async function testDeepLFreeApiKey(apiKey) {
+    async function testDeepLApiKey(apiKey) {
       return await new Promise((resolve) => {
         const xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "https://api-free.deepl.com/v2/usage");
+        xhttp.open("GET", apiKey.endsWith(":fx") ? "https://api-free.deepl.com/v2/usage" : "https://api.deepl.com/v2/usage");
         xhttp.responseType = "json";
         xhttp.setRequestHeader("Authorization", "DeepL-Auth-Key " + apiKey);
         xhttp.onload = () => {
@@ -1303,28 +1303,28 @@ twpConfig
     }
 
     $("#addDeepL").onclick = async () => {
-      const deepl_freeapi = {
-        name: "deepl_freeapi",
+      const deepl_api = {
+        name: "deepl_api",
         apiKey: $("#deeplKEY").value,
       };
       try {
-        const response = await testDeepLFreeApiKey(deepl_freeapi.apiKey);
+        const response = await testDeepLApiKey(deepl_api.apiKey);
         $("#deeplApiResponse").textContent = JSON.stringify(response);
         if (response) {
           const customServices = twpConfig.get("customServices");
 
           const index = customServices.findIndex(
-            (cs) => cs.name === "deepl_freeapi"
+            (cs) => cs.name === "deepl_api"
           );
           if (index !== -1) {
             customServices.splice(index, 1);
           }
 
-          customServices.push(deepl_freeapi);
+          customServices.push(deepl_api);
           twpConfig.set("customServices", customServices);
           chrome.runtime.sendMessage({
-            action: "createDeeplFreeApiService",
-            deepl_freeapi,
+            action: "createDeeplApiService",
+            deepl_api,
           });
         } else {
           alert("Invalid API key");
@@ -1337,13 +1337,13 @@ twpConfig
     $("#removeDeepL").onclick = () => {
       const customServices = twpConfig.get("customServices");
       const index = customServices.findIndex(
-        (cs) => cs.name === "deepl_freeapi"
+        (cs) => cs.name === "deepl_api"
       );
       if (index !== -1) {
         customServices.splice(index, 1);
         twpConfig.set("customServices", customServices);
         chrome.runtime.sendMessage(
-          { action: "removeDeeplFreeApiService" },
+          { action: "removeDeeplApiService" },
           checkedLastError
         );
       }
@@ -1351,12 +1351,12 @@ twpConfig
       $("#deeplApiResponse").textContent = "";
     };
 
-    const deepl_freeapi = twpConfig
+    const deepl_api = twpConfig
       .get("customServices")
-      .find((cs) => cs.name === "deepl_freeapi");
-    if (deepl_freeapi) {
-      $("#deeplKEY").value = deepl_freeapi.apiKey;
-      testDeepLFreeApiKey(deepl_freeapi.apiKey).then((response) => {
+      .find((cs) => cs.name === "deepl_api");
+    if (deepl_api) {
+      $("#deeplKEY").value = deepl_api.apiKey;
+      testDeepLApiKey(deepl_api.apiKey).then((response) => {
         $("#deeplApiResponse").textContent = JSON.stringify(response);
       });
     }
