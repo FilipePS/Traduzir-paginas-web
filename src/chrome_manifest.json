@@ -52,7 +52,8 @@
     "storage",
     "activeTab",
     "contextMenus",
-    "webRequest"
+    "webRequest",
+    "webRequestBlocking"
   ],
   "optional_permissions": ["webNavigation"],
   "web_accessible_resources": [
@@ -132,7 +133,8 @@
       "/background/translationCache.js",
       "/background/translationService.js",
       "/background/textToSpeech.js",
-      "/background/background.js"
+      "/background/background.js",
+      "/background/removeOrigin.js"
     ]
   }
 }
