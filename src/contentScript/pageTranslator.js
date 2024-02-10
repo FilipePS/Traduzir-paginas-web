@@ -965,11 +965,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
   function translationRoutine() {
     try {
-      if (piecesToTranslate.length < 1) return;
-      const innerHeight = window.innerHeight;
-
       if (piecesToTranslate && pageIsVisible) {
         (function () {
+          if (piecesToTranslate.length < 1) return;
+          const innerHeight = window.innerHeight;
+
           function isInScreen(element) {
             const rect = element.getBoundingClientRect();
             if (
