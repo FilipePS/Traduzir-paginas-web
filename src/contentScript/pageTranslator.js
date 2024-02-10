@@ -967,6 +967,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     try {
       if (piecesToTranslate && pageIsVisible) {
         (function () {
+          if (piecesToTranslate.length < 1) return;
           const innerHeight = window.innerHeight;
 
           function isInScreen(element) {
