@@ -234,7 +234,7 @@
     "message": "切换翻译服务"
   },
   "swapPopup": {
-    "message": "切换简单和复杂接口"
+    "message": "切换界面风格"
   },
   "lblTranslateInterface": {
     "message": "贡献翻译"
@@ -502,7 +502,7 @@
     "message": "选择目标语言"
   },
   "msgImproveTranslation": {
-    "message": "改进翻译"
+    "message": "高级翻译"
   },
   "lblExperimental": {
     "message": "实验性"

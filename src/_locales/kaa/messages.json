@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Translate your page in real time using Google or Yandex."
+    "message": "Google yamasa Yandex járdeminde real waqıtta betlerdi awdarmalaw."
   },
   "pageActionTitle": {
     "message": "Bul betti awdarıw"
@@ -24,7 +24,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "Awdarma tili $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -42,7 +42,7 @@
     "message": "Sazlawlar"
   },
   "btnRestore": {
-    "message": "Show original"
+    "message": "Túp nusqasın kórsetiw"
   },
   "btnTryAgain": {
     "message": "Qayta urınıp kóriń"
@@ -57,7 +57,7 @@
     "message": "Heshqashan bul sayttı awdarmaw"
   },
   "btnMobileOriginal": {
-    "message": "Original"
+    "message": "Negizgisi"
   },
   "btnMobileTranslated": {
     "message": "Awdarma"
@@ -69,10 +69,10 @@
     "message": "Hámiyshe bul tillerdi awdarıw"
   },
   "optionPopupConfig": {
-    "message": "Show the mobile popup"
+    "message": "Mobil telefon ushın qalqıb shıǵıwshı aynanı kórsetiw"
   },
   "optionPopupThreeFingers": {
-    "message": "When I touch three fingers on the screen"
+    "message": "Men ekranǵa ush barmaqtı basqanimda"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Yandex awdarmashıda ashıw"
@@ -96,7 +96,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Show the option to translate the page in the context menu"
+    "message": "Kontekst menyusında bet awdarmasın kórsetiw"
   },
   "msgYes": {
     "message": "Awa"
@@ -114,10 +114,10 @@
     "message": "Qarańǵı rejim"
   },
   "lblShowReleaseNotes": {
-    "message": "Show release notes when updating"
+    "message": "Jańalaw waqtında reliz jazıwların ashıw"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Show the button to translate the selected text"
+    "message": "Saylanǵan tekst ushın awdarma túymeshesin kórsetiw"
   },
   "msgAutomatic": {
     "message": "Avtomatikalıq"
@@ -126,7 +126,7 @@
     "message": "Tańlanǵan tekstti awdarıw"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Show the option to translate the selected text in the context menu"
+    "message": "Kontekst menyusında saylanǵan tekst ushın awdarma variantın kórsetiw"
   },
   "lblNeverTranslateLangs": {
     "message": "Bul tillerdi heshqashan awdarmaw"
@@ -135,7 +135,7 @@
     "message": "Bul tildi heshqashan awdarmaw"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Show original text when hovering"
+    "message": "Túp tekstti tıshqansha barǵanda kórsetiń"
   },
   "msgLanguages": {
     "message": "Tiller"
@@ -150,13 +150,13 @@
     "message": "Style"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "Íssı tuymeler"
   },
   "lblMakeDonation": {
     "message": "Qollap-quwatlaw"
   },
   "lblReleaseNotes": {
-    "message": "Release Notes"
+    "message": "Shıǵarıw esletpeleri"
   },
   "lblReport": {
     "message": "Mashqala haqqında xabar beriw"
@@ -168,22 +168,22 @@
     "message": "Qosıw"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Show translated text when hovering"
+    "message": "Tıshqanshanı alıp otip atırǵanda awdarma etilgen tekstti kórsetiw"
   },
   "lblKeyboardShortcuts": {
-    "message": "Keyboard shortcuts"
+    "message": "Íssı tuymeler"
   },
   "msgThanksForUseExtension": {
-    "message": "Thank you for using this extension."
+    "message": "Bul keńeytpeden paydalanǵanińiz ushın minnetdarlıq."
   },
   "msgIWillBeGrateful": {
-    "message": "I will be grateful if you can make a donation."
+    "message": "Eger qayır-saqawat ete alsańız, minnetdar bolar edim."
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Show translated text when hovering on these sites"
+    "message": "Bul saytlarda kursordı alıp barǵanıńızda awdarma etilgen tekstti kórsetiw"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Make the pop-up icon blue when the site is translated"
+    "message": "Sayt awdarma etilgende qalqıb shıǵıwshı belgini kók reńge aylantırıń"
   },
   "more": {
     "message": "Kóbirek"
@@ -192,22 +192,22 @@
     "message": "Azıraq"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Do not show if the page language is the target language"
+    "message": "Bet tili maqsetli til ekenligin kórsetpeń"
   },
   "dontShowIfPageLangIsUnknown": {
     "message": "Kórsetpew, eger bettiń tili belgisiz bolsa"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Do not show if the selected text language is the target language"
+    "message": "Saylanǵan tekst tili awdarma til ekenligin kórsetpeń"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Do not show if the selected text language is unknown"
+    "message": "Saylanǵan tekst tili belgisiz bolsa, kórsetilmesin"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Show translation when hovering over this site"
+    "message": "Bul saytda tıshqanshanı alıp kelgende awdarmanı kórsetiw"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "Eger saytlar qosılǵan bolsa, tıshqanshanı kóterip awdarmanı kórsetiw $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -216,10 +216,10 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Show translated text when hovering over sites with these languages"
+    "message": "Bul tillerdegi saytlarda tıshqansha ústine ornatılǵan awdarma etilgen tekstti kórsetiw"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Do not translate selected text"
+    "message": "Saylanǵan tekstti awdarma etpeń"
   },
   "btnListen": {
     "message": "Tıńlaw"
@@ -231,22 +231,22 @@
     "message": "Qollanıw"
   },
   "swapTranslationService": {
-    "message": "Switch between translation services"
+    "message": "Awdarma xızmetlerin almastırıw"
   },
   "swapPopup": {
-    "message": "Switch between simple and complex interface"
+    "message": "Ápiwayılastırılǵan hám rawajlanǵan ayna ortasında almaslaw"
   },
   "lblTranslateInterface": {
-    "message": "Translate the interface"
+    "message": "Awdarmaǵa menen járdem beriń"
   },
   "lblButtonInTheAddressBar": {
-    "message": "Show button in the address bar"
+    "message": "Mánzil qatarında belgin kórsetiw"
   },
   "lblPageTranslationService": {
-    "message": "Page translation service"
+    "message": "Betti awdarmalaw xızmeti"
   },
   "lblTextTranslationService": {
-    "message": "Text Translation Service"
+    "message": "Tekstti awdarmalaw xızmeti"
   },
   "msgStorage": {
     "message": "Saqlaw ornı"
@@ -255,7 +255,7 @@
     "message": "Awdarma keshi"
   },
   "lblStorageUsed": {
-    "message": "Storage used:"
+    "message": "Bánt:"
   },
   "deleteTranslationCache": {
     "message": "Awdarma keshin óshiriw"
@@ -264,7 +264,7 @@
     "message": "Jeke sazlawlar"
   },
   "backupToFile": {
-    "message": "Backup to file"
+    "message": "Faylǵa rezervlew"
   },
   "restoreFromFile": {
     "message": "Fayldan qayta tiklew"
@@ -276,19 +276,19 @@
     "message": "Awdarma keshin óshiriwdi qáleysiz be?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Do you want to overwrite all existing settings using the backup data?"
+    "message": "Rezerv maǵlıwmatlarınan paydalanıp, barlıq ámeldegi sazlawlardı qayta jazbaqshısızba?"
   },
   "fileIsCorrupted": {
-    "message": "The file appears to be corrupted"
+    "message": "Fayl ziyanlanǵan"
   },
   "doYouWantRestoreSettings": {
-    "message": "Do you want to restore the extension to its default settings?"
+    "message": "Keńeytpeni standart sazlawlarına qaytarmaqshısızba?"
   },
   "lblTtsSpeed": {
-    "message": "Text-to-speech audio speed"
+    "message": "Tekstti sóylew tezligi"
   },
   "enterShortcut": {
-    "message": "Type a shortcut"
+    "message": "Kombinatsiya kiritiń"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "Ctrl yamasa Altti qosıń"
@@ -297,19 +297,19 @@
     "message": "Hárip jazıń"
   },
   "hotkeyError_invalid": {
-    "message": "Invalid combination"
+    "message": "Jaramsız kombinatsiya"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Switch between the translated and the original page"
+    "message": "Awdarma etilgen hám túp betler ortasında almaslaw"
   },
   "lblRestorePageToOriginal": {
-    "message": "Restore page to original"
+    "message": "Bettiń túp tilin tikleń"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Translate the page to the target language"
+    "message": "Betti standart tilge awdarma etiń"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "Teg ushın awdarmanı qosıw $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -317,10 +317,10 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "Awdarma nátiyjeleri tártiplenbegen"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Translate dynamically created content"
+    "message": "Dinamikalıq túrde jaratılǵan kontentti awdarma etiń"
   },
   "calculatestorage": {
     "message": "Esaplaw"
@@ -329,16 +329,16 @@
     "message": "PayPal arqalı qollap-quwatlaw"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Automatically translate when clicking on a link that takes you to the same domain as the current site"
+    "message": "Ámeldegi sayt penen birdey domenge belgi etiwshi siltemeni basqanıńızda avtomatikalıq awdarma etiń"
   },
   "openNativeShortcutManager": {
-    "message": "Open native shortcut key manager"
+    "message": "Ornatılǵan operativ tuymeler menejerin ashıń"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Special keyboard shortcuts"
+    "message": "Arnawlı túymetaxta jarlıqları"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ eki ret basqanıńızda saylanǵan tekstti awdarma etiń",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -346,7 +346,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ di eki ret basqanıńızda kursor ústindegi tekstti awdarma etiń",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -354,13 +354,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Translate the page by clicking once on the button in the address bar. (To see the popup, right-click)"
+    "message": "Mánzil qatarındaǵı túymeni bir ret basıw arqalı betti awdarma etiń. Qalqıp shıǵıwshı aynanı kóriw ushın oń túymesin basıń"
   },
   "btnShowPopup": {
     "message": "Qalqıp shıǵıwshı aynalardı kórsetiw"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "$DOC_TYPE$ hújjetin awdarmalaw ushın onı HTML ǵa aylandırıwıńız kerek",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -369,10 +369,10 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Select a service to do this conversion"
+    "message": "Konvertatsiya xızmetin saylań"
   },
   "msgDownloadingDocument": {
-    "message": "Downloading the document..."
+    "message": "Fayl júklenip atır..."
   },
   "msgSendDocument": {
     "message": "Hújjet jiberiw"
@@ -390,16 +390,16 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF to HTML"
+    "message": "PDF ushın HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "Awdarma PDF"
   },
   "btncopy": {
     "message": "Kóshirip alıw"
   },
   "msgRecents": {
-    "message": "Recents"
+    "message": "Jaqındaǵı"
   },
   "msgAll": {
     "message": "Hámmesi"
@@ -414,22 +414,22 @@
     "message": "Almastırıw"
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Replace selected text with translated text instantly"
+    "message": "Saylanǵan tekstti tezlik penen awdarma menen almastırıń"
   },
   "optionsAddToCustomDictionary": {
-    "message": "Add to custom dictionary (This allows you to skip certain words during web page translation)"
+    "message": "Arnawlı sózlikke qosıw (betlerdi awdarmalawda belgilengen sózlerdi ótkerip jiberiw)"
   },
   "msgSelectTargetLanguage": {
     "message": "Veb-saytlardı tańlanǵan tilge awdarıw"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Translate selected text into this target language"
+    "message": "Saylanǵan tekstti awdarma tilge awdarma etiń"
   },
   "msgFavoriteLanguages": {
     "message": "Saylandı tiller"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "Ardaqlı til $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -438,13 +438,13 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Select popup interface style"
+    "message": "Qalqıp shıǵıwshı interfeys usılın saylań"
   },
   "msgInterfaceSimple": {
-    "message": "Simple"
+    "message": "Ápiwayılastırılǵan"
   },
   "msgInterfaceComplex": {
-    "message": "Complex"
+    "message": "Quramalı"
   },
   "lblTranslatePageInto": {
     "message": "Bet $LANGUAGE_NAME$ tiline awdarılsın ba?",
@@ -468,7 +468,7 @@
     "message": "Basqa tildi tańlań"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "$EXTENSION_NAME$ keńeytpesi $EXTENSION_vERSION$ versiyasına jańalandi.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -481,7 +481,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "Qayırqomlıǵıńız keńeytpeni islep shıǵıwshıǵa ótedi $EXTENSION_NAME$",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -490,22 +490,22 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Men úsh jıldan artıq waqıt dawamında bul keńeytpeni islep shıqtım, jańaladım hám qollap -quwatladım. Bizde hár kúni 600,000 nan artıq paydalanıwshı bar ekenin jáne bul adamlardıń barlıǵı Firefox-ǵa turaqlı túrde ótiwge erisilip bolǵanın kóriw tańqaldırarlı.\n\n Men hár ay bul keńeytpeniń jańa versiyasın shıǵarıwdı jáne onı jaqsılawdı dawam ettirmekshimen.\n\n Eger Patreon aǵzası bolıw arqalı maǵan finanslıq járdem berseńiz hám bul keńeytpeni jaqsılawda meni qollap - quwatlasańız, minnetder bolaman.\n\n Bul joybarǵa qashannan berli úles qosqan bársheńizge raxmet."
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "Turaqlı awdarma keshin qosıw (disk keshi)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "Sayttıń túp tilin saylań"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "Ulıwmalıq tildi saylań"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "Awdarmanı jaqsılaw"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "Eksperimental"
   },
   "msgPrivacy": {
     "message": "Qupıyalıq"
@@ -514,18 +514,18 @@
     "message": "Paydalanıwdı qáleytuǵın awdaema xızmetlerin tańlań"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "Eger ámeldegi awdarma til saylanǵan awdarma xızmeti tárepinen qollap - quwatlanbasa, avtomatikalıq awdarma xızmetinen paydalanıń"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "Standart til"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "Keńeytpe paydalanıwshı interfeys tili"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "Haqıyqattan da awdarma xızmetin DeepL ǵa ornatpaqshısızba?\n Jańa jarlıq ashıladı hám awdarma sol orında ámelge asıriladı."
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "Tekstti sózlewge aylandırıw xızmeti"
   }
 }

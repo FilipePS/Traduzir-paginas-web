@@ -135,7 +135,7 @@
     "message": "Non tradurre mai questa lingua"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Mostra il testo originale quando passi la freccia sopra"
+    "message": "Mostra il testo originale quando passi il cursore sopra"
   },
   "msgLanguages": {
     "message": "Lingue"
@@ -168,7 +168,7 @@
     "message": "Aggiungi"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Mostra il testo tradotto quando passi la freccia sopra"
+    "message": "Mostra il testo tradotto quando passi il cursore sopra"
   },
   "lblKeyboardShortcuts": {
     "message": "Scorciatoie da tastiera"
@@ -180,7 +180,7 @@
     "message": "Ti sarò grato se potrai fare una donazione."
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Mostra il testo tradotto quando passi la freccia su questi siti"
+    "message": "Mostra il testo tradotto quando passi il cursore su questi siti"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Rendi blu l'icona quando il sito è tradotto"
@@ -204,10 +204,10 @@
     "message": "Non mostrare se la lingua del testo selezionato è sconosciuta"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Mostra la traduzione quando passi la freccia su questo sito"
+    "message": "Mostra la traduzione quando passi il cursore su questo sito"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Mostra la traduzione quando passi la freccia sui siti web in $LANGUAGE_NAME$",
+    "message": "Mostra la traduzione quando passi il cursore sui siti web in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -216,7 +216,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Mostra il testo tradotto quando passi la freccia sui siti con queste lingue"
+    "message": "Mostra il testo tradotto quando passi il cursore sui siti con queste lingue"
   },
   "msgNoTranslateSelectedText": {
     "message": "Non tradurre il testo selezionato"
@@ -372,7 +372,7 @@
     "message": "Seleziona un servizio per fare questa conversione"
   },
   "msgDownloadingDocument": {
-    "message": "Scaricamento del documento..."
+    "message": "Scaricando il documento..."
   },
   "msgSendDocument": {
     "message": "Invia documento"
@@ -508,7 +508,7 @@
     "message": "Sperimentale"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "Riservatezza"
   },
   "selectToEnableTranslationService": {
     "message": "Seleziona i servizi di traduzione che desideri utilizzare"
