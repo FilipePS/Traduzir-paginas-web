@@ -128,7 +128,7 @@ selectService.onclick = async (e) => {
   }
 };
 
-$ = document.querySelector.bind(document);
+var $ = document.querySelector.bind(document);
 
 function disableDarkMode() {
   if (!$("#lightModeElement")) {

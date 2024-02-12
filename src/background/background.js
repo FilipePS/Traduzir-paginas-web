@@ -533,60 +533,49 @@ twpConfig.onReady(() => {
         return isFirefoxAlpenglowTheme;
       };
 
+      let themeColorFrame = null;
+      let themeColorToolbar = null;
+      let themeColorToolbarField = null;
       let themeColorFieldText = null;
       let themeColorAttention = null;
       let isUsingTheme = false;
       let isFirefoxAlpenglowTheme = false;
       if (typeof browser != "undefined" && browser.theme) {
-        browser.theme.getCurrent().then((theme) => {
-          themeColorFieldText = null;
-          themeColorAttention = null;
-          if (theme.colors && theme.colors.toolbar_field_text) {
-            themeColorFieldText = theme.colors.toolbar_field_text;
-          }
-          if (theme.colors && theme.colors.icons_attention) {
-            themeColorAttention = theme.colors.icons_attention;
-          }
+        function onThemeUpdated() {
+          browser.theme.getCurrent().then((theme) => {
+            themeColorFrame = null;
+            themeColorToolbar = null;
+            themeColorToolbarField = null;
+            themeColorFieldText = null;
+            themeColorAttention = null;
+            if (theme.colors && theme.colors.frame) {
+              themeColorFrame = theme.colors.frame;
+            }
+            if (theme.colors && theme.colors.toolbar) {
+              themeColorToolbar = theme.colors.toolbar;
+            }
+            if (theme.colors && theme.colors.toolbar_field) {
+              themeColorToolbarField = theme.colors.toolbar_field;
+            }
+            if (theme.colors && theme.colors.toolbar_field_text) {
+              themeColorFieldText = theme.colors.toolbar_field_text;
+            }
+            if (theme.colors && theme.colors.icons_attention) {
+              themeColorAttention = theme.colors.icons_attention;
+            }
 
-          isUsingTheme = false;
-          if (theme.colors || theme.images || theme.properties) {
-            isUsingTheme = true;
-          }
+            isUsingTheme = false;
+            if (theme.colors || theme.images || theme.properties) {
+              isUsingTheme = true;
+            }
 
-          isFirefoxAlpenglowTheme = isFirefoxAlpenglow(theme);
+            isFirefoxAlpenglowTheme = isFirefoxAlpenglow(theme);
 
-          updateIconInAllTabs();
-        });
-
-        chrome.theme.onUpdated.addListener((updateInfo) => {
-          themeColorFieldText = null;
-          themeColorAttention = null;
-          if (
-            updateInfo.theme.colors &&
-            updateInfo.theme.colors.toolbar_field_text
-          ) {
-            themeColorFieldText = updateInfo.theme.colors.toolbar_field_text;
-          }
-          if (
-            updateInfo.theme.colors &&
-            updateInfo.theme.colors.icons_attention
-          ) {
-            themeColorAttention = updateInfo.theme.colors.icons_attention;
-          }
-
-          isUsingTheme = false;
-          if (
-            updateInfo.theme.colors ||
-            updateInfo.theme.images ||
-            updateInfo.theme.properties
-          ) {
-            isUsingTheme = true;
-          }
-
-          isFirefoxAlpenglowTheme = isFirefoxAlpenglow(updateInfo.theme);
-
-          updateIconInAllTabs();
-        });
+            updateIconInAllTabs();
+          });
+        }
+        onThemeUpdated();
+        browser.theme.onUpdated.addListener(() => onThemeUpdated());
       }
 
       let darkMode = false;
@@ -629,16 +618,52 @@ twpConfig.onReady(() => {
               );
             }
           } else {
+            if (
+              themeColorFrame &&
+              themeColorToolbar &&
+              themeColorToolbarField
+            ) {
+              try {
+                darkMode = isDarkColor(
+                  standardize_color(
+                    themeColorFrame,
+                    themeColorToolbar,
+                    themeColorToolbarField
+                  )
+                );
+              } catch (e) {
+                console.error(e);
+              }
+            } else if (themeColorFieldText) {
+              try {
+                darkMode = !isDarkColor(
+                  standardize_color(
+                    themeColorFieldText,
+                    themeColorFieldText,
+                    themeColorFieldText
+                  )
+                );
+              } catch (e) {
+                console.error(e);
+              }
+            }
+
             if (themeColorAttention) {
               svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorAttention));
             } else if (!isUsingTheme && (darkMode || incognito)) {
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#00ddff"));
+            } else if (isUsingTheme && darkMode) {
               svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#00ddff"));
             } else {
               svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#0061e0"));
             }
           }
         } else {
-          svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "0.5");
+          if ((isUsingTheme && darkMode) || (!isUsingTheme && incognito)) {
+            svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "1.0");
+          } else {
+            svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "0.7");
+          }
           if (isFirefoxAlpenglowTheme) {
             if (darkMode || incognito) {
               svg64 = btoa(
@@ -662,6 +687,47 @@ twpConfig.onReady(() => {
 
         const b64Start = "data:image/svg+xml;base64,";
         return b64Start + svg64;
+      }
+
+      function standardize_color(str1, str2, str3) {
+        var ctx = new OffscreenCanvas(1, 1).getContext("2d");
+        ctx.imageSmoothingEnabled = false;
+        ctx.fillStyle = str1;
+        ctx.fillRect(0, 0, 1, 1);
+        ctx.fillStyle = str2;
+        ctx.fillRect(0, 0, 1, 1);
+        ctx.fillStyle = str3;
+        ctx.fillRect(0, 0, 1, 1);
+        var data = ctx.getImageData(0, 0, 1, 1).data;
+        var rgb = [data[0], data[1], data[2]];
+        ctx.fillStyle = "rgb(" + rgb.join(",") + ")";
+        return ctx.fillStyle;
+      }
+
+      function hexToRgb(hex) {
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result
+          ? {
+              r: parseInt(result[1], 16),
+              g: parseInt(result[2], 16),
+              b: parseInt(result[3], 16),
+            }
+          : null;
+      }
+
+      function isDarkColor(hexColor) {
+        var rgb = hexToRgb(hexColor);
+
+        // Normalizando os valores RGB para o intervalo [0, 1]
+        var r = rgb.r / 255,
+          g = rgb.g / 255,
+          b = rgb.b / 255,
+          max = Math.max(r, g, b),
+          min = Math.min(r, g, b),
+          l = (max + min) / 2;
+
+        // Verificando a luminosidade
+        return l <= 0.5;
       }
 
       function updateIcon(tabId) {
