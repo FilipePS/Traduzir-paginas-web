@@ -45,7 +45,7 @@ async function getKey(service) {
                     reject()
                 }
 
-                response = service == "google" ? res.text.match(/(key:")(\w+)/)[2] : res.header["set-cookie"][0].split('_yasc=')[1].split('; domain')[0]
+                response = service == "google" ? res.text.match(/(key:")(\w+)/)[2] : res.header["set-cookie"][1].split('_yasc=')[1].split('; domain')[0]
                 resolve(response)
             })
         })
@@ -150,7 +150,7 @@ async function getLanguages(service, lang, key = "") {
             }
 
             let newKey = key;
-
+            
             switch (key) {
                 case "zh-Hans":
                     newKey = "zh-CN";
@@ -161,6 +161,8 @@ async function getLanguages(service, lang, key = "") {
                 case "fil":
                     newKey = "tl";
                     break;
+                case "mni":
+                    newKey = "mni-Mtei";
                 case "mww":
                     newKey = "hmn";
                     break;
