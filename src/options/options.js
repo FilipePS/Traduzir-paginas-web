@@ -57,16 +57,26 @@ var $ = document.querySelector.bind(document);
 
 twpConfig
   .onReady()
-  .then(() =>
-    twpI18n.updateUiMessages(sessionStorage.getItem("temporaryUiLanguage"))
-  )
+  .then(() => {
+    // https://github.com/FilipePS/Traduzir-paginas-web/issues/774
+    if (sessionStorage !== null) {
+      return twpI18n.updateUiMessages(
+        sessionStorage.getItem("temporaryUiLanguage")
+      );
+    } else {
+      return twpI18n.updateUiMessages();
+    }
+  })
   .then(() => {
     twpI18n.translateDocument();
     document.querySelector("[data-i18n='msgDefaultLanguage']").textContent =
       twpI18n.getMessage("msgDefaultLanguage") + " - Default language";
 
-    const temporaryUiLanguage = sessionStorage.getItem("temporaryUiLanguage");
-    sessionStorage.removeItem("temporaryUiLanguage");
+    let temporaryUiLanguage = null;
+    if (sessionStorage !== null) {
+      temporaryUiLanguage = sessionStorage.getItem("temporaryUiLanguage");
+      sessionStorage.removeItem("temporaryUiLanguage");
+    }
 
     if (platformInfo.isMobile.any) {
       let style = document.createElement("style");
@@ -216,7 +226,11 @@ twpConfig
       if (e.target.value === "default") {
         twpConfig.set("uiLanguage", "default");
       } else {
-        sessionStorage.setItem("temporaryUiLanguage", e.target.value);
+        if (sessionStorage !== null) {
+          sessionStorage.setItem("temporaryUiLanguage", e.target.value);
+        } else {
+          return;
+        }
       }
       location.reload();
     };
@@ -228,6 +242,10 @@ twpConfig
             ? "default"
             : twpLang.fixUILanguageCode(temporaryUiLanguage)
         );
+        location.reload();
+      } else if (sessionStorage === null) {
+        const lang = $("#selectUiLanguage").value;
+        twpConfig.set('uiLanguage', lang === "default" ? "default" : twpLang.fixUILanguageCode(lang));
         location.reload();
       }
     };

@@ -1,7 +1,10 @@
 var $ = document.querySelector.bind(document);
 
 function enableDarkMode() {
-  sessionStorage.setItem("darkModeIsEnabled", "yes");
+  if (sessionStorage !== null) {
+    sessionStorage.setItem("darkModeIsEnabled", "yes");
+  }
+
   if (!$("#darkModeElement")) {
     const el = document.createElement("style");
     el.setAttribute("id", "darkModeElement");
@@ -28,12 +31,18 @@ function enableDarkMode() {
     document.head.appendChild(el);
   }
 }
-if (sessionStorage.getItem("darkModeIsEnabled") === "yes") {
+
+if (
+  sessionStorage !== null &&
+  sessionStorage.getItem("darkModeIsEnabled") === "yes"
+) {
   enableDarkMode();
 }
 
 function disableDarkMode() {
-  sessionStorage.setItem("darkModeIsEnabled", "no");
+  if (sessionStorage !== null) {
+    sessionStorage.setItem("darkModeIsEnabled", "no");
+  }
   if ($("#darkModeElement")) {
     $("#darkModeElement").remove();
   }
