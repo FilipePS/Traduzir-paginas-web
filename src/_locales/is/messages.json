@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Hljóðhraði gervitals"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "Sláðu inn flýtileið"
   },

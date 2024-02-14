@@ -630,6 +630,13 @@ twpConfig
     $("#ttsSpeed").value = twpConfig.get("ttsSpeed");
     $("#displayTtsSpeed").textContent = twpConfig.get("ttsSpeed");
 
+    $("#ttsVolume").oninput = (e) => {
+      twpConfig.set("ttsVolume", e.target.value);
+      $("#displayTtsVolume").textContent = e.target.value;
+    };
+    $("#ttsVolume").value = twpConfig.get("ttsVolume");
+    $("#displayTtsVolume").textContent = twpConfig.get("ttsVolume");
+
     $("#showOriginalTextWhenHovering").onchange = (e) => {
       twpConfig.set("showOriginalTextWhenHovering", e.target.value);
     };

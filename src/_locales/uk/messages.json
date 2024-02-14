@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Швидкість перетворення звуку Text-to-speech"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "Введіть комбінацію"
   },

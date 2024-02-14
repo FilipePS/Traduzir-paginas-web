@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "音声読み上げの速度"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "ショートカットを入力"
   },

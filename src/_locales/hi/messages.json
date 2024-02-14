@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "पाठ से वाक् ऑडियो गति"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "शॉर्टकट टाइप करें"
   },

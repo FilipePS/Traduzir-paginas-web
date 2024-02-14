@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Viteza de pronunțare a textului"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "Tastează o comandă rapidă"
   },

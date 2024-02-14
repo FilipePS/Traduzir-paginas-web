@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "הקראת טקסט - מהירות קול"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "הקלד קיצור דרך"
   },

@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "文字转语音的语速"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "输入一个快捷键"
   },

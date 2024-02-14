@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Скорость преобразования текста в речь"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "Введите комбинацию"
   },

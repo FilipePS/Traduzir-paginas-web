@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Velocidade de áudio do texto em voz"
   },
+  "lblTtsVolume": {
+    "message": "Volume do áudio do texto em voz"
+  },
   "enterShortcut": {
     "message": "Digite um atalho"
   },

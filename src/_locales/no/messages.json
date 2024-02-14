@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Tekst-til-tale lydhastighet"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "Skriv inn en snarvei"
   },

@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Ταχύτητα ήχου κειμένου σε ομιλία"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "Πληκτρολογήστε μια συντόμευση"
   },

@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Teks-na-spraak klank spoed"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "Tik 'n kortpad"
   },

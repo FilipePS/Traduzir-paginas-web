@@ -241,6 +241,47 @@ const textToSpeech = (function () {
    * @return {string} requestBody
    */
 
+  class AudioAmplifier {
+    /**
+     * Defines the Amplifier class for the text-to-speech service.
+     */
+    constructor() {
+      /** @type {MediaElementAudioSourceNode[]} */
+      this.sources = [];
+
+      if ("AudioContext" in window) {
+        this.audioCtx = new AudioContext();
+        this.gainNode = this.audioCtx.createGain();
+        this.gainNode.gain.value = 1;
+        this.gainNode.connect(this.audioCtx.destination);
+      }
+    }
+
+    /**
+     * Add an audio to the amplifier.
+     * @param {HTMLAudioElement} audio
+     */
+    addAudio(audio) {
+      if (!this.audioCtx) return;
+      const source = this.audioCtx.createMediaElementSource(audio);
+      source.connect(this.gainNode);
+      this.sources.push(source);
+    }
+
+    /**
+     * Set the volume of the amplifier.
+     * @param {number} volume
+     */
+    setVolume(volume) {
+      if (!this.gainNode) return;
+      if (volume > 1) {
+        this.gainNode.gain.value = volume;
+      } else {
+        this.gainNode.gain.value = 1;
+      }
+    }
+  }
+
   class Service {
     /**
      * Defines the Service class for the text-to-speech service.
@@ -266,6 +307,8 @@ const textToSpeech = (function () {
       /** @type {Map<string, HTMLAudioElement>} */
       this.audios = new Map();
       this.audioSpeed = 1.0;
+
+      this.audioAmplifier = new AudioAmplifier();
     }
 
     /**
@@ -374,7 +417,9 @@ const textToSpeech = (function () {
             this.makeRequest(requestText, targetLanguage)
               .then(
                 /** @type {string} */ (response) => {
-                  this.audios.set(audioKey, new Audio(response));
+                  const audio = new Audio(response);
+                  this.audioAmplifier.addAudio(audio);
+                  this.audios.set(audioKey, audio);
                   return response;
                 }
               )
@@ -440,6 +485,17 @@ const textToSpeech = (function () {
       this.audios.forEach((audio) => {
         audio.playbackRate = this.audioSpeed;
       });
+    }
+
+    /**
+     * Sets the audio volume
+     * @param {number} volume
+     */
+    setAudioVolume(volume) {
+      this.audios.forEach((audio) => {
+        audio.volume = volume > 1 ? 1 : volume;
+      });
+      this.audioAmplifier.setVolume(volume < 1 ? 1 : volume);
     }
 
     /**
@@ -529,8 +585,16 @@ const textToSpeech = (function () {
       if (name === "ttsSpeed") {
         googleService.setAudioSpeed(newvalue);
         bingService.setAudioSpeed(newvalue);
+      } else if (name === "ttsVolume") {
+        googleService.setAudioVolume(newvalue);
+        bingService.setAudioVolume(newvalue);
       }
     });
+
+    googleService.setAudioSpeed(twpConfig.get("ttsSpeed"));
+    bingService.setAudioSpeed(twpConfig.get("ttsSpeed"));
+    googleService.setAudioVolume(twpConfig.get("ttsVolume"));
+    bingService.setAudioVolume(twpConfig.get("ttsVolume"));
   });
 
   textToSpeech.google = googleService;

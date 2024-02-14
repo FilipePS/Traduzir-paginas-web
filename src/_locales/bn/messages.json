@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "টেক্সট-টু-স্পিচ অডিও গতি"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "শর্টকাট লিখুন"
   },

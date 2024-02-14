@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Teksta pārvēršana runā ātrums"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "Ievadiet īsinājumtaustiņa kombināciju"
   },

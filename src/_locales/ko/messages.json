@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "텍스트 음성 변환 오디오 속도"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "단축키 입력"
   },

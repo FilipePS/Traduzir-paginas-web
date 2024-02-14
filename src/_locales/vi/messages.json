@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Tốc độ âm thanh chuyển văn bản thành giọng nói"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "Nhập một phím tắt"
   },

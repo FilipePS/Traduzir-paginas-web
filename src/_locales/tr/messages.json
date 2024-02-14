@@ -287,6 +287,9 @@
   "lblTtsSpeed": {
     "message": "Metin okuma ses hızı"
   },
+  "lblTtsVolume": {
+    "message": "Text-to-speech audio volume"
+  },
   "enterShortcut": {
     "message": "Kısayol yazın"
   },
