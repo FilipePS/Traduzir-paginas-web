@@ -191,6 +191,9 @@
   "less": {
     "message": "Kevesebb"
   },
+  "dontShowIfIsNotValidText": {
+    "message": "Do not show if the selected text is not valid"
+  },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Ne mutassa, ha az oldal nyelve ugyanaz mint a fordítási cél"
   },

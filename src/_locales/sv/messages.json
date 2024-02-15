@@ -191,6 +191,9 @@
   "less": {
     "message": "Mindre"
   },
+  "dontShowIfIsNotValidText": {
+    "message": "Do not show if the selected text is not valid"
+  },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Visa inte om sidans språk är målspråket"
   },

@@ -191,6 +191,9 @@
   "less": {
     "message": "Daha az"
   },
+  "dontShowIfIsNotValidText": {
+    "message": "Do not show if the selected text is not valid"
+  },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Sayfa dili hedef dil ise gösterme"
   },

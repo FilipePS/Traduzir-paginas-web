@@ -222,6 +222,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   }
 
+  function isValidText(text) {
+    if (text.length < 2) return false;
+    if (/^[0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]*$/.test(text)) return false;
+    return true;
+  }
+
   function translateThisNode(node, usePrevNode = false) {
     fooCount++;
     let currentFooCount = fooCount;
@@ -303,6 +309,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
 
     if (!text || text.length < 1 || text.length > 1000) return;
+    if (!isValidText(text)) return;
 
     backgroundTranslateSingleText(
       currentTextTranslatorService,

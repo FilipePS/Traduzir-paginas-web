@@ -41,6 +41,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   let showTranslateSelectedButton = twpConfig.get(
     "showTranslateSelectedButton"
   );
+  let dontShowIfIsNotValidText = twpConfig.get("dontShowIfIsNotValidText");
   let dontShowIfPageLangIsTargetLang = twpConfig.get(
     "dontShowIfPageLangIsTargetLang"
   );
@@ -538,7 +539,10 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sBing.classList.add("selected");
     };
     sDeepL.onclick = () => {
-      if (twpConfig.get("deepl_confirmed") === "yes" || confirm(twpI18n.getMessage("msgSetDeepLAlert"))) {
+      if (
+        twpConfig.get("deepl_confirmed") === "yes" ||
+        confirm(twpI18n.getMessage("msgSetDeepLAlert"))
+      ) {
         twpConfig.set("deepl_confirmed", "yes");
 
         currentTextTranslatorService = "deepl";
@@ -834,6 +838,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         showTranslateSelectedButton = newValue;
         updateEventListener();
         break;
+      case "dontShowIfIsNotValidText":
+        dontShowIfIsNotValidText = newValue;
+        break;
       case "dontShowIfPageLangIsTargetLang":
         dontShowIfPageLangIsTargetLang = newValue;
         updateEventListener();
@@ -1051,6 +1058,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     return true;
   }
 
+  function isValidText(text) {
+    if (text.length < 2) return false;
+    if (/^[0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]*$/.test(text)) return false;
+    return true;
+  }
+
   async function onUp(e) {
     if (e.target == divElement) return;
 
@@ -1074,7 +1087,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         dontShowIfSelectedTextIsTargetLang != "yes") &&
       ((dontShowIfSelectedTextIsUnknown == "yes" &&
         detectedLanguage !== "und") ||
-        dontShowIfSelectedTextIsUnknown != "yes")
+        dontShowIfSelectedTextIsUnknown != "yes") &&
+      (dontShowIfIsNotValidText != "yes" || isValidText(selectedText))
     ) {
       init();
       if (platformInfo.isMobile.any) {

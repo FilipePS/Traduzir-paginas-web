@@ -251,7 +251,10 @@ twpConfig
         location.reload();
       } else if (sessionStorage === null) {
         const lang = $("#selectUiLanguage").value;
-        twpConfig.set('uiLanguage', lang === "default" ? "default" : twpLang.fixUILanguageCode(lang));
+        twpConfig.set(
+          "uiLanguage",
+          lang === "default" ? "default" : twpLang.fixUILanguageCode(lang)
+        );
         location.reload();
       }
     };
@@ -737,6 +740,15 @@ twpConfig
     enableOrDisableTranslateSelectedAdvancedOptions(
       twpConfig.get("showTranslateSelectedButton")
     );
+
+    $("#dontShowIfIsNotValidText").onchange = (e) => {
+      twpConfig.set(
+        "dontShowIfIsNotValidText",
+        e.target.checked ? "yes" : "no"
+      );
+    };
+    $("#dontShowIfIsNotValidText").checked =
+      twpConfig.get("dontShowIfIsNotValidText") === "yes" ? true : false;
 
     $("#dontShowIfPageLangIsTargetLang").onchange = (e) => {
       twpConfig.set(

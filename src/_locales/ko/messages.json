@@ -191,6 +191,9 @@
   "less": {
     "message": "간단히"
   },
+  "dontShowIfIsNotValidText": {
+    "message": "Do not show if the selected text is not valid"
+  },
   "dontShowIfPageLangIsTargetLang": {
     "message": "페이지의 언어가 대상 언어와 같으면 표시 안 함"
   },

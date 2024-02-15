@@ -191,6 +191,9 @@
   "less": {
     "message": "Manje"
   },
+  "dontShowIfIsNotValidText": {
+    "message": "Do not show if the selected text is not valid"
+  },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Ne prikazuj ako je jezik stranice ciljani jezik"
   },
