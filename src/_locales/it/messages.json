@@ -192,7 +192,7 @@
     "message": "Meno"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Non mostrare se il testo selezionato non è valido"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Non mostrare se la lingua della pagina è la lingua di destinazione"
@@ -533,5 +533,11 @@
   },
   "lblTextToSpeechService": {
     "message": "Servizio di sintesi vocale"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "This tab opened because you clicked to translate selected text using DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Don't show again"
   }
 }

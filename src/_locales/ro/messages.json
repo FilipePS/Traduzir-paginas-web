@@ -533,5 +533,11 @@
   },
   "lblTextToSpeechService": {
     "message": "Serviciu de pronunțare a textului"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "This tab opened because you clicked to translate selected text using DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Don't show again"
   }
 }

@@ -192,7 +192,7 @@
     "message": "Меньше"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Не показывать, если выбранный текст недопустим"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Не показывать, если язык страницы является целевым языком"
@@ -291,7 +291,7 @@
     "message": "Скорость преобразования текста в речь"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Громкость преобразованного текста в речь"
   },
   "enterShortcut": {
     "message": "Введите комбинацию"
@@ -533,5 +533,11 @@
   },
   "lblTextToSpeechService": {
     "message": "Служба преобразования текста в речь"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "This tab opened because you clicked to translate selected text using DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Don't show again"
   }
 }

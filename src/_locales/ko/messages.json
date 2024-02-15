@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "보고 계신 페이지를 실시간으로 Google이나 Yandex를 사용하여 번역합니다."
+    "message": "Google 또는 Yandex를 사용하여 실시간으로 페이지를 번역하세요."
   },
   "pageActionTitle": {
     "message": "이 페이지 번역"
@@ -192,7 +192,7 @@
     "message": "간단히"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "선택된 텍스트가 유효하지 않으면 표시하지 않음"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "페이지의 언어가 대상 언어와 같으면 표시 안 함"
@@ -291,7 +291,7 @@
     "message": "텍스트 음성 변환 오디오 속도"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "텍스트 음성 변환 오디오 볼륨"
   },
   "enterShortcut": {
     "message": "단축키 입력"
@@ -533,5 +533,11 @@
   },
   "lblTextToSpeechService": {
     "message": "문자 음성 변환 서비스"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "This tab opened because you clicked to translate selected text using DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Don't show again"
   }
 }

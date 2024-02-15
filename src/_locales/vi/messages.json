@@ -192,7 +192,7 @@
     "message": "Ít hơn"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Không hiển thị nếu văn bản đã chọn không hợp lệ"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Không hiển thị nếu ngôn ngữ trang là ngôn ngữ đích"
@@ -291,7 +291,7 @@
     "message": "Tốc độ âm thanh chuyển văn bản thành giọng nói"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Âm lượng của chuyển văn bản thành giọng nói"
   },
   "enterShortcut": {
     "message": "Nhập một phím tắt"
@@ -533,5 +533,11 @@
   },
   "lblTextToSpeechService": {
     "message": "Dịch vụ chuyển văn bản thành giọng nói"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "This tab opened because you clicked to translate selected text using DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Don't show again"
   }
 }

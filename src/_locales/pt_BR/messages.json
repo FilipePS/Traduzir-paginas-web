@@ -533,5 +533,11 @@
   },
   "lblTextToSpeechService": {
     "message": "Serviço de texto-para-voz"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "Esta guia foi aberta porque você clicou para traduzir o texto selecionado usando DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Não mostrar novamente"
   }
 }

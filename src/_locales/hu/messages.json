@@ -192,7 +192,7 @@
     "message": "Kevesebb"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Ne mutassa, ha a kiválasztott szöveg érvénytelen"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Ne mutassa, ha az oldal nyelve ugyanaz mint a fordítási cél"
@@ -291,7 +291,7 @@
     "message": "Felolvasási hang sebesség"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Szövegfelolvasó hangereje"
   },
   "enterShortcut": {
     "message": "Gyorsbillentyű megadása"
@@ -533,5 +533,11 @@
   },
   "lblTextToSpeechService": {
     "message": "Szövegfelolvasó (TTS) szolgáltatás"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "This tab opened because you clicked to translate selected text using DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Don't show again"
   }
 }

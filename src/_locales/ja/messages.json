@@ -192,7 +192,7 @@
     "message": "減らす"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "選択したテキストが無効な場合は表示しない"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "ページの言語が翻訳先言語と同じ場合は表示しない"
@@ -291,7 +291,7 @@
     "message": "音声読み上げの速度"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "音声読み上げの音量"
   },
   "enterShortcut": {
     "message": "ショートカットを入力"
@@ -533,5 +533,11 @@
   },
   "lblTextToSpeechService": {
     "message": "テキスト読み上げサービス"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "This tab opened because you clicked to translate selected text using DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Don't show again"
   }
 }

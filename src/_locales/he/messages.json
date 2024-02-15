@@ -192,7 +192,7 @@
     "message": "פחות"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "אל תציג אם הטקסט שנבחר אינו חוקי"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "אל תראה אם ​​שפת העמוד היא שפת היעד"
@@ -533,5 +533,11 @@
   },
   "lblTextToSpeechService": {
     "message": "שירות טקסט לדיבור"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "This tab opened because you clicked to translate selected text using DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Don't show again"
   }
 }

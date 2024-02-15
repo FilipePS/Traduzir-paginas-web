@@ -192,7 +192,7 @@
     "message": "更少"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "所選文字無效時不顯示"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "在頁面語言是要翻譯的目標語言時不顯示"
@@ -291,7 +291,7 @@
     "message": "文字轉語音速度"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "文字轉語音音量"
   },
   "enterShortcut": {
     "message": "輸入快速鍵"
@@ -533,5 +533,11 @@
   },
   "lblTextToSpeechService": {
     "message": "文字轉語音服務"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "This tab opened because you clicked to translate selected text using DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Don't show again"
   }
 }
