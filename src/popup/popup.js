@@ -73,23 +73,16 @@ twpConfig
     let currentPageLanguageState = "original";
     let currentPageTranslatorService = twpConfig.get("pageTranslatorService");
 
-    const twpButtons = document.querySelectorAll("button");
-
-    twpButtons.forEach((button) => {
-      button.addEventListener("click", (event) => {
-        twpButtons.forEach((button) => {
-          button.classList.remove("w3-buttonSelected");
-        });
-        event.target.classList.add("w3-buttonSelected");
-
-        currentPageLanguage = event.target.value;
+    function translateOrRestorePagePage(newTargetLanguage) {
+      const _translateOrRestorePagePage = (newTargetLanguage) => {
+        currentPageLanguage = newTargetLanguage;
         if (currentPageLanguage === "original") {
           currentPageLanguageState = "original";
         } else {
           currentPageLanguageState = "translated";
-          twpConfig.setTargetLanguage(event.target.value);
+          twpConfig.setTargetLanguage(newTargetLanguage);
         }
-
+  
         chrome.tabs.query(
           {
             active: true,
@@ -100,12 +93,50 @@ twpConfig
               tabs[0].id,
               {
                 action: "translatePage",
-                targetLanguage: event.target.value || "original",
+                targetLanguage: newTargetLanguage || "original",
               },
               checkedLastError
             );
           }
         );
+  
+        updateInterface();
+      }
+
+      if (newTargetLanguage) {
+        _translateOrRestorePagePage(newTargetLanguage)
+      } else {
+        chrome.tabs.query(
+          {
+            active: true,
+            currentWindow: true,
+          },
+          (tabs) => {
+            chrome.tabs.sendMessage(
+              tabs[0].id,
+              {
+                action: "currentTargetLanguage",
+              },
+              {
+                frameId: 0,
+              }, (pageLanguage) => {
+                checkedLastError();
+                if (pageLanguage) {
+                  _translateOrRestorePagePage(pageLanguage);
+                }
+              }
+            );
+          }
+        );
+      }
+    }
+
+    const twpButtons = document.querySelectorAll("button");
+
+    twpButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const newTargetLanguage = event.target.value;
+        translateOrRestorePagePage(newTargetLanguage);
       });
     });
 
@@ -404,6 +435,7 @@ twpConfig
           const hostname = new URL(tabs[0].url).hostname;
           if (e.target.checked) {
             twpConfig.addLangToAlwaysTranslate(originalTabLanguage, hostname);
+            translateOrRestorePagePage();
           } else {
             twpConfig.removeLangFromAlwaysTranslate(originalTabLanguage);
           }
@@ -413,6 +445,7 @@ twpConfig
           const hostname = new URL(tabs[0].url).hostname;
           if (e.target.checked) {
             twpConfig.addSiteToAlwaysTranslate(hostname);
+            translateOrRestorePagePage();
           } else {
             twpConfig.removeSiteFromAlwaysTranslate(hostname);
           }
@@ -542,6 +575,7 @@ twpConfig
                 twpConfig.get("neverTranslateSites").indexOf(hostname) === -1
               ) {
                 twpConfig.addSiteToNeverTranslate(hostname);
+                translateOrRestorePagePage("original");
               } else {
                 twpConfig.removeSiteFromNeverTranslate(hostname);
               }
@@ -572,6 +606,7 @@ twpConfig
                   originalTabLanguage,
                   hostname
                 );
+                translateOrRestorePagePage("original");
               } else {
                 twpConfig.removeLangFromNeverTranslate(originalTabLanguage);
               }

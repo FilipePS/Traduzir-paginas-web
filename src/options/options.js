@@ -50,6 +50,12 @@ setTimeout(() => {
           $("#_donateInBRL").style.display = "none";
         }
       };
+
+      const donationOverflow = document.getElementById("donationOverflow");
+      setTimeout(() => {
+        donationOverflow.style.display = "none";
+      }, 1000);
+      donationOverflow.style.display = "block";
     });
 }, 800);
 

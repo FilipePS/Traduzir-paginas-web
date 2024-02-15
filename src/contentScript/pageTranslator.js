@@ -1276,7 +1276,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             originalTabLanguage !== currentTargetLanguage &&
             twpConfig
               .get("neverTranslateLangs")
-              .indexOf(originalTabLanguage) === -1
+              .indexOf(originalTabLanguage) === -1 &&
+            twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1
           ) {
             pageTranslator.translatePage();
           }
@@ -1295,6 +1296,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sendResponse(dontSortResults);
     } else if (request.action === "cleanUp") {
       pageTranslator.restorePage();
+    } else if (request.action === "currentTargetLanguage") {
+      sendResponse(currentTargetLanguage);
     }
   });
 

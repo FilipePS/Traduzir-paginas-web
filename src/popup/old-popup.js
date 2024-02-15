@@ -383,7 +383,7 @@ twpConfig
             btnOptionsDiv.style.display = "inline";
 
             divShowTranslateSelectedButton.style.display = "block";
-            
+
             divIconTranslateContainer.style.display = "block";
 
             break;
@@ -439,7 +439,7 @@ twpConfig
     }
     updateInterface();
 
-    $("#btnTranslate").onclick = (e) => {
+    function onTranslateClick() {
       currentPageLanguageState = "translated";
 
       chrome.tabs.query(
@@ -479,9 +479,11 @@ twpConfig
 
       showSelectTargetLanguage = false;
       updateInterface();
-    };
+    }
 
-    $("#btnRestore").onclick = (e) => {
+    $("#btnTranslate").onclick = () => onTranslateClick();
+
+    function onRestoreClick() {
       currentPageLanguageState = "original";
 
       chrome.tabs.query(
@@ -501,7 +503,9 @@ twpConfig
       );
 
       updateInterface();
-    };
+    }
+
+    $("#btnRestore").onclick = () => onRestoreClick();
 
     $("#btnSwitchInterfaces").addEventListener("click", () => {
       twpConfig.set("useOldPopup", "no");
@@ -568,6 +572,7 @@ twpConfig
                 twpConfig.get("alwaysTranslateSites").indexOf(hostname) === -1
               ) {
                 twpConfig.addSiteToAlwaysTranslate(hostname);
+                onTranslateClick();
               } else {
                 twpConfig.removeSiteFromAlwaysTranslate(hostname);
               }
@@ -578,6 +583,7 @@ twpConfig
                 twpConfig.get("neverTranslateSites").indexOf(hostname) === -1
               ) {
                 twpConfig.addSiteToNeverTranslate(hostname);
+                onRestoreClick()
               } else {
                 twpConfig.removeSiteFromNeverTranslate(hostname);
               }
@@ -596,6 +602,7 @@ twpConfig
                   originalTabLanguage,
                   hostname
                 );
+                onRestoreClick()
               } else {
                 twpConfig.removeLangFromNeverTranslate(originalTabLanguage);
               }

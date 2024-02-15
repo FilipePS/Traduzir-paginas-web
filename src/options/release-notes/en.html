@@ -1,4 +1,4 @@
-<section style="background-color: #87CEEB; padding: 20px; border-radius: 20px; box-shadow: 0 0 10px 3px black;">
+<section style="background-color: #87CEEB; padding: 20px; border-radius: 20px; box-shadow: 0 0 10px 3px black; position: relative;">
     <div style="font-size: 1.2em;">
         <!-- i18n = msgHasBeenUpdated -->
         <p id="_msgHasBeenUpdated">The <b>TWP - Translate Web Pages</b> extension has been updated to version <b>9.7</b>.
@@ -93,6 +93,7 @@
         <p id="_donationRecipient" style="margin: 4px 0 -14px 0">Your donation goes to the developer of the <b>TWP -
                 Translate Web Pages</b> extension.</p>
     </div>
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0); display: none; opacity: 0;" id="donationOverflow"></div>
 </section>
 
 <section>
@@ -103,11 +104,13 @@
                 <li>Support for 3 new target languages:
                     <i>Bodo, Chhattisgarhi, Kashmiri.</i>
                 </li>
-                <li>Option to set the volume (with boost) of text-to-speech in the translation settings.</li>
+                <li>Option to set the volume (with boost) of text-to-speech in the translation settings</li>
             </ul>
         </li>
         <li>Changes
             <ul>
+                <li>The <b>[Automatically translate when clicking on a link...]</b> option will not be applied to <b>Never translate these sites</b></li>
+                <li>When you click on always/never translate this site/language, the site may be translated/restored to improve usability</li>
             </ul>
         </li>
         <li>Fixed
@@ -116,6 +119,7 @@
                 <li>Extension icon color when using some themes</li>
                 <li>Fix flash of unstyled content on some sites</li>
                 <li>The tts speed config is not loaded when starting the extension</li>
+                <li>Options page doesn't work if <b>sessionStorage</b> is <b><i>null</i></b></li>
             </ul>
         </li>
         <li>Updated some language names</li>
