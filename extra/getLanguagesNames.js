@@ -163,6 +163,7 @@ async function getLanguages(service, lang, key = "") {
                     break;
                 case "mni":
                     newKey = "mni-Mtei";
+                    break;
                 case "mww":
                     newKey = "hmn";
                     break;

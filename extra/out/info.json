@@ -213,10 +213,11 @@
       "ml",
       "mn",
       "mn-Mong",
-      "hmn",
+      "mni-Mtei",
       "mr",
       "ms",
       "mt",
+      "hmn",
       "my",
       "no",
       "ne",
@@ -381,7 +382,7 @@
   },
   "supportedCount": {
     "google": 135,
-    "bing": 134,
+    "bing": 135,
     "yandex": 103
   },
   "allSupportedLangs": [
@@ -570,7 +571,6 @@
       "haw",
       "ilo",
       "kri",
-      "mni-Mtei",
       "lus",
       "om",
       "qu",
@@ -678,7 +678,6 @@
       "lb",
       "lus",
       "mhr",
-      "mni-Mtei",
       "mrj",
       "ny",
       "om",

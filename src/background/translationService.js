@@ -1071,6 +1071,10 @@ const translationService = (function () {
           search: "sr",
           replace: "sr-Cyrl",
         },
+        {
+          search: "mni-Mtei",
+          replace: "mni",
+        },
       ];
       replacements.forEach((r) => {
         if (targetLanguage === r.search) {
