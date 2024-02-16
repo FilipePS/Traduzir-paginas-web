@@ -55,6 +55,47 @@ setTimeout(() => {
 
 var $ = document.querySelector.bind(document);
 
+
+document.querySelector("#getWebrequestBlocking").addEventListener("click", function() {
+  const permissionsToRequest = {
+    permissions: ["webRequestBlocking"]
+  };
+
+  browser.permissions.request(permissionsToRequest)
+    .then(function(granted) {
+      if (granted) {
+        console.log("Permission was granted");
+        function originWithId(header) {
+          return (
+            header.name.toLowerCase() === "origin" &&
+            (header.value.indexOf("moz-extension://") === 0 ||
+            header.value.indexOf("chrome-extension://") === 0)
+          );
+        }
+
+        let ManifestURL = browser.runtime.getURL("");
+
+        browser.webRequest.onBeforeSendHeaders.addListener(
+          (details) => {
+            if (details.originUrl.startsWith(ManifestURL)) {
+              return {
+                requestHeaders: details.requestHeaders.filter((x) => !originWithId(x)),
+              };
+            }
+          },
+          { urls: ["<all_urls>"] },
+          ["blocking", "requestHeaders"]
+        );
+      } else {
+        console.log("Permission was refused");
+      }
+    })
+    .catch(function(error) {
+      console.error("Error requesting permission:", error);
+    });
+});
+
+
 twpConfig
   .onReady()
   .then(() =>
@@ -842,7 +883,7 @@ twpConfig
             </div>
             <div class="w3-hover-light-grey shortcut-button" name="removeKey"><i class="gg-trash"></i></div>
             <div class="w3-hover-light-grey shortcut-button" name="resetKey"><i class="gg-sync"></i></div>
-        </div>  
+        </div>
         `;
       $("#KeyboardShortcuts").appendChild(li);
 

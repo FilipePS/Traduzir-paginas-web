@@ -71,10 +71,9 @@
     "storage",
     "activeTab",
     "contextMenus",
-    "webRequest",
-    "webRequestBlocking"
+    "webRequest"
   ],
-  "optional_permissions": ["webNavigation"],
+  "optional_permissions": ["webNavigation","webRequestBlocking"],
   "web_accessible_resources": [
     "/icons/icon-32.png",
     "/icons/google-translate-32.png",
