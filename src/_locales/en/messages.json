@@ -401,6 +401,9 @@
   "msgTranslatePDF": {
     "message": "Translate PDF"
   },
+  "msgOpenTranslatedPDF": {
+    "message": "Open translated PDF"
+  },
   "btncopy": {
     "message": "Copy"
   },
@@ -539,5 +542,8 @@
   },
   "msgDontShowAgain": {
     "message": "Don't show again"
+  },
+  "msgAutoDetect": {
+    "message": "Auto-detect"
   }
 }

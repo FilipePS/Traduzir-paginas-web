@@ -18,7 +18,8 @@ const twpI18n = (function () {
   twpI18n.getMessage = function (messageName, substitutions = null) {
     try {
       if (messages) {
-        const message = messages[messageName];
+        messageName = messageName.toLowerCase();
+        const message = messages.find((m) => m.name === messageName);
         if (!message) return "";
 
         /** @type {string} */
@@ -116,7 +117,11 @@ const twpI18n = (function () {
       )
         .then((response) => response.json())
         .then((result) => {
-          messages = result;
+          messages = Object.keys(result).map((key) => ({
+            name: key.toLowerCase(),
+            message: result[key].message,
+            placeholders: result[key].placeholders,
+          }));
         })
         .catch((e) => {
           messages = null;

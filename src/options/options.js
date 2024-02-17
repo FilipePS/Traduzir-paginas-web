@@ -248,14 +248,16 @@ twpConfig
             ? "default"
             : twpLang.fixUILanguageCode(temporaryUiLanguage)
         );
-        location.reload();
+        // timeout prevents: TypeError: NetworkError when attempting to fetch resource.
+        setTimeout(() => location.reload(), 100);
       } else if (sessionStorage === null) {
         const lang = $("#selectUiLanguage").value;
         twpConfig.set(
           "uiLanguage",
           lang === "default" ? "default" : twpLang.fixUILanguageCode(lang)
         );
-        location.reload();
+        // timeout prevents: TypeError: NetworkError when attempting to fetch resource.
+        setTimeout(() => location.reload(), 100);
       }
     };
 
@@ -858,10 +860,59 @@ twpConfig
       }
     }
 
+    function translateHotkeysDescription(hotkeyname) {
+      const descriptions = [
+        {
+          key: "hotkey-toggle-translation",
+          i18n: "lblSwitchTranslatedAndOriginal",
+        },
+        {
+          key: "hotkey-translate-selected-text",
+          i18n: "msgTranslateSelectedText",
+        },
+        {
+          key: "hotkey-swap-page-translation-service",
+          i18n: "swapTranslationService",
+        },
+        {
+          key: "hotkey-show-original",
+          i18n: "lblRestorePageToOriginal",
+        },
+        {
+          key: "hotkey-translate-page-1",
+          i18n: "lblTranslatePageToTargetLanguage",
+        },
+        {
+          key: "hotkey-translate-page-2",
+          i18n: "lblTranslatePageToTargetLanguage",
+        },
+        {
+          key: "hotkey-translate-page-3",
+          i18n: "lblTranslatePageToTargetLanguage",
+        },
+        {
+          key: "hotkey-hot-translate-selected-text",
+          i18n: "lblHotTranslatedSelectedText",
+        },
+      ];
+
+      const info = descriptions.find((d) => d.key === hotkeyname);
+      if (!info) return "";
+      let desc = twpI18n.getMessage(info.i18n);
+      if (hotkeyname.startsWith("hotkey-translate-page-")) {
+        desc += " " + hotkeyname.slice(-1);
+      }
+      return desc;
+    }
+
     function addHotkey(hotkeyname, description) {
       if (hotkeyname === "_execute_browser_action" && !description) {
         description = "Enable the extension";
       }
+      description = translateHotkeysDescription(hotkeyname) || description;
+
+      const enterShortcut =
+        twpI18n.getMessage("enterShortcut") || "Enter shortcut";
 
       function escapeHtml(unsafe) {
         return unsafe
@@ -880,7 +931,7 @@ twpConfig
         <div>${description}</div>
         <div class="shortcut-input-options">
             <div style="position: relative;">
-                <input name="input" class="w3-input w3-border shortcut-input" type="text" readonly placeholder="Enter a shortcut" data-i18n-placeholder="enterShortcut">
+                <input name="input" class="w3-input w3-border shortcut-input" type="text" readonly placeholder="${enterShortcut}" data-i18n-placeholder="enterShortcut">
                 <p name="error" class="shortcut-error" style="position: absolute;"></p>
             </div>
             <div class="w3-hover-light-grey shortcut-button" name="removeKey"><i class="gg-trash"></i></div>

@@ -250,42 +250,53 @@ function resetBrowserAction(forceShow = false) {
 }
 
 if (typeof chrome.contextMenus !== "undefined") {
-  chrome.contextMenus.create({
-    id: "browserAction-showPopup",
-    title: twpI18n.getMessage("btnShowPopup"),
-    contexts: ["browser_action"],
-  });
-  chrome.contextMenus.create({
-    id: "pageAction-showPopup",
-    title: twpI18n.getMessage("btnShowPopup"),
-    contexts: ["page_action"],
-  });
-  chrome.contextMenus.create({
-    id: "never-translate",
-    title: twpI18n.getMessage("btnNeverTranslate"),
-    contexts: ["browser_action", "page_action"],
-  });
-  chrome.contextMenus.create({
-    id: "more-options",
-    title: twpI18n.getMessage("btnMoreOptions"),
-    contexts: ["browser_action", "page_action"],
-  });
-  chrome.contextMenus.create({
-    id: "browserAction-translate-pdf",
-    title: twpI18n.getMessage("msgTranslatePDF"),
-    contexts: ["browser_action"],
-  });
-  chrome.contextMenus.create({
-    id: "pageAction-translate-pdf",
-    title: twpI18n.getMessage("msgTranslatePDF"),
-    contexts: ["page_action"],
-  });
+  const updateActionContextMenu = () => {
+    chrome.contextMenus.remove("browserAction-showPopup", checkedLastError);
+    chrome.contextMenus.remove("pageAction-showPopup", checkedLastError);
+    chrome.contextMenus.remove("never-translate", checkedLastError);
+    chrome.contextMenus.remove("more-options", checkedLastError);
+    chrome.contextMenus.remove("browserAction-translate-pdf", checkedLastError);
+    chrome.contextMenus.remove("pageAction-translate-pdf", checkedLastError);
+
+    chrome.contextMenus.create({
+      id: "browserAction-showPopup",
+      title: twpI18n.getMessage("btnShowPopup"),
+      contexts: ["browser_action"],
+    });
+    chrome.contextMenus.create({
+      id: "pageAction-showPopup",
+      title: twpI18n.getMessage("btnShowPopup"),
+      contexts: ["page_action"],
+    });
+    chrome.contextMenus.create({
+      id: "never-translate",
+      title: twpI18n.getMessage("btnNeverTranslate"),
+      contexts: ["browser_action", "page_action"],
+    });
+    chrome.contextMenus.create({
+      id: "more-options",
+      title: twpI18n.getMessage("btnMoreOptions"),
+      contexts: ["browser_action", "page_action"],
+    });
+    chrome.contextMenus.create({
+      id: "browserAction-translate-pdf",
+      title: twpI18n.getMessage("msgTranslatePDF"),
+      contexts: ["browser_action"],
+    });
+    chrome.contextMenus.create({
+      id: "pageAction-translate-pdf",
+      title: twpI18n.getMessage("msgTranslatePDF"),
+      contexts: ["page_action"],
+    });
+  };
+  updateActionContextMenu();
 
   const tabHasContentScript = {};
   let currentTabId = null;
-  chrome.tabs.onActivated.addListener(
-    (activeInfo) => (currentTabId = activeInfo.tabId)
-  );
+  chrome.tabs.onActivated.addListener((activeInfo) => {
+    currentTabId = activeInfo.tabId;
+    updateActionContextMenu();
+  });
 
   chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId == "translate-web-page") {
@@ -375,7 +386,10 @@ if (typeof chrome.contextMenus !== "undefined") {
   });
 
   chrome.tabs.onActivated.addListener((activeInfo) => {
-    twpConfig.onReady(() => updateContextMenu());
+    twpConfig.onReady(() => {
+      updateContextMenu();
+      updateTranslateSelectedContextMenu();
+    });
     chrome.tabs.sendMessage(
       activeInfo.tabId,
       {
