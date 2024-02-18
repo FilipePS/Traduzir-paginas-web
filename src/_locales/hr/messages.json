@@ -192,7 +192,7 @@
     "message": "Manje"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Nemoj prikazati ako odabrani tekst nije ispravan"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Ne prikazuj ako je jezik stranice ciljani jezik"
@@ -288,10 +288,10 @@
     "message": "Želiš li obnoviti zadane postavke dodatka?"
   },
   "lblTtsSpeed": {
-    "message": "Brzina govora za pretvoreni tekst u govor"
+    "message": "Brzina izgovaranja teksta"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Glasnoća izgovaranja teksta"
   },
   "enterShortcut": {
     "message": "Upiši prečac"
@@ -400,6 +400,9 @@
   },
   "msgTranslatePDF": {
     "message": "Prevedi PDF"
+  },
+  "msgOpenTranslatedPDF": {
+    "message": "Otvori prevedeni PDF"
   },
   "btncopy": {
     "message": "Kopiraj"
@@ -535,9 +538,34 @@
     "message": "Usluga pretvaranja teksta u govor"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Ova se kartica otvorila jer si pritisnuo(la) gumb za prevođenje odabranog teksta pomoću DeepL-a."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Nemoj više prikazati"
+  },
+  "msgTranslatePage": {
+    "message": "Prevesti stranicu?"
+  },
+  "msgPageTranslated": {
+    "message": "Stranica je prevedena"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ na $TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "Poništi"
+  },
+  "msgAutoDetect": {
+    "message": "Otkrij automatski"
   }
 }

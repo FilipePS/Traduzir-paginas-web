@@ -1,0 +1,292 @@
+<style>
+    *:not(svg, svg *) {
+        all: initial;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        color: var(--primary-text-color);
+        user-select: none;
+    }
+
+    * {
+        --primary-text-color: rgb(218, 218, 218);
+        --secondary-text-color: rgb(192, 192, 192);
+        --background-color: rgb(36, 34, 34);
+        --shadow-color: rgb(115, 148, 211);
+        --translate-button-text-color: rgb(138, 185, 255);
+        --hover-color: rgb(67, 78, 95);
+    }
+
+    main {
+        position: fixed;
+        top: 0;
+        left: 10px;
+        right: 10px;
+        animation: popup 0.6s ease-out;
+    }
+
+    main,
+    main * {
+        z-index: 9999999999;
+    }
+
+    #popup {
+        width: 100%;
+        background-color: var(--background-color);
+        box-shadow: 0 0 10px 0 var(--shadow-color);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        min-height: 60px;
+    }
+
+    #popup * {
+        pointer-events: none;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+    }
+
+    #serviceIconContainer {
+        position: relative;
+        cursor: pointer;
+        height: 100%;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #serviceSelector {
+        width: 100%;
+        height: 100%;
+    }
+
+    #serviceIcon {
+        height: 24px;
+        width: 24px;
+    }
+
+    #serviceIcon {
+        transition: all 0.6s ease-out;
+    }
+
+    #serviceSelector {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        color: var(--primary-text-color);
+        background-color: var(--background-color);
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
+
+    .text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #question {
+        font-size: 16px;
+    }
+
+    #from-to {
+        font-size: 11px;
+        color: var(--secondary-text-color);
+    }
+
+    #gear {
+        height: 100%;
+        cursor: pointer;
+        pointer-events: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        transition: rotate 0.3s ease-out;
+    }
+
+    svg {
+        height: 14px;
+        width: 14px;
+    }
+
+    .vl {
+        border-left: 1px solid var(--secondary-text-color);
+        height: 18px;
+    }
+
+    #btnTranslate {
+        color: var(--translate-button-text-color);
+        min-width: 50px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 100%;
+        pointer-events: auto;
+        padding: 0 5px;
+    }
+
+    .rotate {
+        rotate: 90deg;
+    }
+
+    #menu-options {
+        left: -5px;
+        top: -5px;
+        width: calc(100% - 60px);
+        position: relative;
+        background-color: var(--background-color);
+        box-shadow: 0 5px 10px 0 var(--shadow-color);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        animation: expand 0.3s ease-out;
+    }
+
+    #menu-options div {
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #menu-options div[data-value="choose-another-language"] {
+        position: relative;
+    }
+
+    #language-selector {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        color: var(--primary-text-color);
+        background-color: var(--background-color);
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
+    #menu-options div *:not(select) {
+        pointer-events: none;
+    }
+
+    #menu-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+    }
+
+    @media screen and (min-width: 360px) {
+        #popup {
+            min-height: 80px;
+        }
+
+        svg {
+            height: 24px;
+            width: 24px;
+        }
+    }
+
+    @keyframes popup {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes expand {
+        0% {
+            opacity: 0;
+            scale: 0 0;
+            translate: 50% -50%;
+        }
+
+        100% {
+            opacity: 1;
+            scale: 1 1;
+            translate: 0 0;
+        }
+    }
+</style>
+<main>
+    <section id="popup">
+        <div class="left">
+            <div id="serviceIconContainer">
+                <img id="serviceIcon">
+                <select id="serviceSelector">
+                    <optgroup data-i18n-label="lblPageTranslationService" label="Page translation service">
+                        <option value="google">Google</option>
+                        <option value="bing">Bing</option>
+                        <option value="yandex">Yandex</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="text">
+                <span id="question" data-i18n="msgTranslatePage">Translate Page?</span>
+                <span id="from-to">Unknown to Unknown</span>
+            </div>
+        </div>
+        <div class="right">
+            <div id="gear">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="var(--secondary-text-color)"
+                        d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z" />
+                </svg>
+            </div>
+            <div class="vl"></div>
+            <button data-i18n="btnTranslate" id="btnTranslate">Translate</button>
+        </div>
+    </section>
+    <section id="menu-container" style="display: none;">
+        <div id="menu-bg"></div>
+        <div id="menu-options">
+            <div data-value="choose-another-language"><span data-i18n="msgChooseAnotherLanguage">Choose another
+                    language</span>
+                <select id="language-selector">
+                    <optgroup name="targets" label="Recents" data-i18n-label="msgRecents">
+                    </optgroup>
+                    <optgroup name="all" label="All" data-i18n-label="msgAll">
+                    </optgroup>
+                </select>
+            </div>
+            <div data-value="always-translate-from" style="display: none;"><span data-i18n="lblAlwaysTranslate">Always
+                    translate from</span>
+                <span checkicon></span>
+            </div>
+            <div data-value="never-translate-from" style="display: none;"><span
+                    data-i18n="btnNeverTranslateThisLanguage">Never translate this
+                    language</span> <span checkicon></span></div>
+            <div data-value="never-translate-this-site"><span data-i18n="btnNeverTranslate">Never translate this
+                    site</span> <span checkicon></span></div>
+            <div data-value="show-translate-selected-button"><span data-i18n="lblShowTranslateSelectedButton">Show the
+                    button to
+                    translate the selected text</span> <span checkicon></span></div>
+            <div data-value="more-options"><span data-i18n="btnMoreOptions">More options</span></div>
+        </div>
+    </section>
+</main>

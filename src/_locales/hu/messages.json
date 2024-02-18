@@ -401,6 +401,9 @@
   "msgTranslatePDF": {
     "message": "PDF fordítása"
   },
+  "msgOpenTranslatedPDF": {
+    "message": "A lefordított PDF megnyitása"
+  },
   "btncopy": {
     "message": "Másolás"
   },
@@ -535,9 +538,34 @@
     "message": "Szövegfelolvasó (TTS) szolgáltatás"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Ez a lap azért nyílt meg, mert rákattintott a kijelölt szöveg DeepL-leé történő lefordításához."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Ne mutassa újra"
+  },
+  "msgTranslatePage": {
+    "message": "Oldal lefordítása?"
+  },
+  "msgPageTranslated": {
+    "message": "Oldal lefordítva"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ nyelvről $TO_LANGUAGE$ nyelvre",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "Visszavonás"
+  },
+  "msgAutoDetect": {
+    "message": "Automatikus felismerés"
   }
 }

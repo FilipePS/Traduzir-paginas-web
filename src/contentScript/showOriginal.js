@@ -8,6 +8,8 @@ twpConfig.onReady(function () {
     showOriginal.disable = () => {};
     showOriginal.add = () => {};
     showOriginal.removeAll = () => {};
+    showOriginal.enabledObserverSubscribe = () => {};
+    showOriginal.isEnabled = false;
     return;
   }
 

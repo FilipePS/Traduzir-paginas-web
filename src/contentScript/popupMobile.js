@@ -11,445 +11,548 @@ function getTabHostName() {
   );
 }
 
-Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
-  const tabHostName = _[1];
+void (async function () {
+  await twpConfig.onReady();
   if (!platformInfo.isMobile.any) return;
 
-  const htmlMobile = `
-    <link rel="stylesheet" href="${chrome.runtime.getURL(
-      "/contentScript/css/popupMobile.css"
-    )}">
-    
-    <div id='element'>
-    <div id='main'>
-        <img id="iconTranslate">
-        <button id="btnOriginal" class="item button" data-i18n="btnMobileOriginal">Original</button>
-        <button id="btnTranslate" class="item button" data-i18n="btnMobileTranslated">Translated</button>
-        <button id="spin" class="item button">
-            <div class="loader button"></div>
-        </button>
-        <button id="btnMenu" class="item2">
-            <div class="dropup">
-                <div id="menu" class="dropup-content">
-                    <a id="btnChangeLanguages" style="position: relative;">
-                      <span data-i18n="msgChooseAnotherLanguage">Choose another language</span>
-                      <select id="menuSelectLanguage">
-                        <optgroup name="targets" label="Recents" data-i18n-label="msgRecents"></optgroup>
-                        <optgroup name="all" label="All" data-i18n-label="msgAll"></optgroup>
-                      </select>
-                    </a>
-                    <a id="btnTranslateSelectedText" data-i18n="msgTranslateSelectedText">Translate selected text</a>
-                    <a id="btnNeverTranslate" data-i18n="btnNeverTranslate">Never translate this site</a>
-                    <a id="neverTranslateThisLanguage" data-i18n="btnNeverTranslateThisLanguage" display="none">Never translate this language</a>
-                    <a id="btnMoreOptions" data-i18n="btnMoreOptions">More options</a>
-                    <a id="btnDonate" data-i18n="btnDonate" href="https://www.patreon.com/filipeps" target="_blank" rel="noopener noreferrer">Donate</a>
-                </div>
-            </div>
-            <div class="menuDot"></div>
-            <div class="menuDot"></div>
-            <div class="menuDot"></div>
-        </button>
-        <button id="btnClose" class="item">&times;</button>
-    </div>
-    </div>
-    `;
+  const tabHostName = await getTabHostName();
+  let tabLanguage = "und";
+  let pageLanguageState = "original";
 
-  let originalTabLanguage = "und";
-  let currentTargetLanguage = twpConfig.get("targetLanguage");
-  let currentPageTranslatorService = twpConfig.get("pageTranslatorService");
-  let awaysTranslateThisSite =
-    twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !== -1;
-  let translateThisSite =
-    twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1;
-  let translateThisLanguage = false;
-  let showPopupMobile = twpConfig.get("showPopupMobile");
+  // load html and icons
+  const htmlText = await fetch(
+    chrome.runtime.getURL("/contentScript/html/popupMobile.html")
+  ).then((response) => response.text());
+  const googleIcon = await fetch(
+    chrome.runtime.getURL("/icons/google-translate-32.png")
+  ).then((response) => response.blob());
+  const yandexIcon = await fetch(
+    chrome.runtime.getURL("/icons/yandex-translate-32.png")
+  ).then((response) => response.blob());
+  const bingIcon = await fetch(
+    chrome.runtime.getURL("/icons/bing-translate-32.png")
+  ).then((response) => response.blob());
 
-  twpConfig.onChanged(function (name, newValue) {
-    switch (name) {
-      case "alwaysTranslateSites":
-        awaysTranslateThisSite = newValue.indexOf(tabHostName) !== -1;
-        popupMobile.show();
-        break;
-      case "neverTranslateSites":
-        translateThisSite = newValue.indexOf(tabHostName) === -1;
-        popupMobile.show();
-        break;
-      case "neverTranslateLangs":
-        translateThisLanguage =
-          originalTabLanguage === "und" ||
-          (currentTargetLanguage !== originalTabLanguage &&
-            newValue.indexOf(originalTabLanguage) === -1);
-        popupMobile.show();
-        break;
-      case "showPopupMobile":
-        showPopupMobile = newValue;
-        popupMobile.show();
-        break;
+  // Load i18n messages based on your language preference
+  await twpI18n.updateUiMessages();
+
+  // creates shadow root, root element and append to document
+  const rootElement = document.createElement("div");
+  rootElement.style.cssText = "all: initial";
+  rootElement.classList.add("notranslate");
+
+  const shadowRoot = rootElement.attachShadow({ mode: "closed" });
+  shadowRoot.innerHTML = htmlText;
+
+  // remove popup after 8 seconds of inactivity
+  let lastInteraction = Date.now();
+  let lastInteractionInterval = null;
+  let serviceSelectorIsOpen = false;
+
+  function showPopup() {
+    lastInteraction = Date.now();
+    clearInterval(lastInteractionInterval);
+
+    if (!rootElement.isConnected) {
+      document.documentElement.appendChild(rootElement);
+      lastInteractionInterval = setInterval(() => {
+        const menuContainer = shadowRoot.getElementById("menu-container");
+        if (
+          Date.now() - lastInteraction > 1000 * 6 &&
+          menuContainer.style.display !== "block" &&
+          serviceSelectorIsOpen === false
+        ) {
+          hidePopup();
+        }
+      }, 1000);
+
+      updateInterface();
     }
-  });
-
-  let divElement;
-  let getElemById;
-
-  function hideMenu(e) {
-    if (!divElement) return;
-    if (e.target === divElement) return;
-
-    getElemById("menu").style.display = "none";
   }
 
-  let pageLanguageState = "original";
+  function hidePopup() {
+    clearInterval(lastInteractionInterval);
+    if (rootElement.isConnected) {
+      const mainElement = shadowRoot.querySelector("main");
+      const animation = mainElement.animate(
+        [
+          { transform: "translateY(0px)", opacity: "1" },
+          { transform: "translateY(-50px)", opacity: "0" },
+        ],
+        {
+          duration: 200,
+          iterations: 1,
+        }
+      );
+      animation.onfinish = () => {
+        rootElement.remove();
+      };
+      const menuContainer = shadowRoot.getElementById("menu-container");
+      menuContainer.style.display = "none";
+    }
+  }
+
+  // set text direction
+  if (
+    twpLang.isRtlLanguage(
+      twpConfig.get("uiLanguage") ||
+        twpLang.fixUILanguageCode(chrome.i18n.getUILanguage())
+    )
+  ) {
+    shadowRoot.querySelector("main").setAttribute("dir", "rtl");
+  }
+
+  // translate shadow root
+  twpI18n.translateDocument(shadowRoot);
+
+  // close popup
+  const popupElement = shadowRoot.getElementById("popup");
+  popupElement.onpointerdown = (e) => {
+    if (e.target !== popupElement) return;
+    lastInteraction = Date.now();
+
+    e.stopImmediatePropagation();
+    const pointerId = e.pointerId;
+
+    const startPoint = { x: e.clientX, y: e.clientY };
+    popupElement.onpointermove = (e) => {
+      lastInteraction = Date.now();
+
+      e.stopImmediatePropagation();
+      const offset = e.clientX - startPoint.x;
+      popupElement.style.transform = `translateX(${offset}px)`;
+
+      if (Math.abs(offset) > window.innerWidth / 10) {
+        popupElement.releasePointerCapture(pointerId);
+        popupElement.onpointermove = null;
+        popupElement.style.transition = `transform 0.3s ease-in-out`;
+        if (offset > 0) {
+          popupElement.style.transform = `translateX(100%)`;
+        } else {
+          popupElement.style.transform = `translateX(-100%)`;
+        }
+        popupElement.ontransitionend = () => {
+          popupElement.ontransitionend = null;
+          rootElement.remove();
+        };
+      }
+    };
+    popupElement.setPointerCapture(pointerId);
+  };
+  popupElement.onpointerup = (e) => {
+    lastInteraction = Date.now();
+
+    e.stopImmediatePropagation();
+    popupElement.onpointermove = null;
+    popupElement.style.transform = `translateX(0px)`;
+    popupElement.releasePointerCapture(e.pointerId);
+  };
+  popupElement.onpointercancel = (e) => {
+    lastInteraction = Date.now();
+
+    e.stopImmediatePropagation();
+    popupElement.onpointermove = null;
+    popupElement.style.transform = `translateX(0px)`;
+    popupElement.releasePointerCapture(e.pointerId);
+  };
+
+  // update service icon
+  const serviceIconElement = /** @type {HTMLImageElement} */ (
+    shadowRoot.getElementById("serviceIcon")
+  );
+  const updateServiceIcon = () => {
+    const service = twpConfig.get("pageTranslatorService");
+    if (service === "google") {
+      serviceIconElement.src = URL.createObjectURL(googleIcon);
+    } else if (service === "yandex") {
+      serviceIconElement.src = URL.createObjectURL(yandexIcon);
+    } else if (service === "bing") {
+      serviceIconElement.src = URL.createObjectURL(bingIcon);
+    }
+    serviceIconElement.onload = () => {
+      serviceIconElement.onload = null;
+      URL.revokeObjectURL(serviceIconElement.src);
+    };
+  };
+  updateServiceIcon();
+
+  // select translation service
+  const serviceSelector = /** @type {HTMLSelectElement} */ (
+    shadowRoot.getElementById("serviceSelector")
+  );
+  serviceSelector.onclick = () => {
+    serviceSelectorIsOpen = true;
+    lastInteraction = Date.now();
+
+    serviceIconElement.style.scale = "1.5";
+    serviceIconElement.style.rotate = "180deg";
+  };
+  serviceSelector.onchange = () => {
+    serviceSelectorIsOpen = false;
+    lastInteraction = Date.now();
+
+    const service = serviceSelector.value;
+    twpConfig.set("pageTranslatorService", service);
+    updateServiceIcon();
+
+    serviceIconElement.style.scale = null;
+    serviceIconElement.style.rotate = null;
+
+    pageTranslator.swapTranslationService(service);
+  };
+  serviceSelector.onblur = () => {
+    serviceSelectorIsOpen = false;
+    lastInteraction = Date.now();
+
+    serviceIconElement.style.scale = null;
+    serviceIconElement.style.rotate = null;
+  };
+  serviceSelector.value = twpConfig.get("pageTranslatorService");
+
+  // gear button
+  const gearButton = shadowRoot.getElementById("gear");
+  gearButton.onclick = () => {
+    lastInteraction = Date.now();
+
+    gearButton.classList.add("rotate");
+    const menuContainer = shadowRoot.getElementById("menu-container");
+    menuContainer.style.display = "block";
+
+    const menuBg = shadowRoot.getElementById("menu-bg");
+    menuBg.onclick = (e) => {
+      lastInteraction = Date.now();
+
+      e.stopImmediatePropagation();
+      closeMenu();
+    };
+
+    const menuOptions = shadowRoot.getElementById("menu-options");
+    menuOptions.onclick = (e) => {
+      lastInteraction = Date.now();
+
+      const target = /** @type {HTMLElement} */ (e.target);
+      e.stopImmediatePropagation();
+      onMenuOptionClick(target.dataset.value);
+    };
+  };
+
+  // close menu
+  function closeMenu() {
+    const gearButton = shadowRoot.getElementById("gear");
+    const menuContainer = shadowRoot.getElementById("menu-container");
+
+    gearButton.classList.remove("rotate");
+    menuContainer.style.animation = "expand 0.3s ease-out reverse";
+    menuContainer.onanimationend = () => {
+      menuContainer.onanimationend = null;
+      menuContainer.style.display = "none";
+      menuContainer.style.animation = null;
+    };
+  }
+
+  // menu options
+  /**
+   * @param {string} action
+   * @returns
+   */
+  function onMenuOptionClick(action) {
+    if (!action) return;
+
+    if (action === "choose-another-language") {
+      return;
+    } else if (action === "always-translate-from") {
+      tabLanguage = twpLang.fixTLanguageCode(tabLanguage);
+      if (twpConfig.get("alwaysTranslateLangs").indexOf(tabLanguage) === -1) {
+        twpConfig.addLangToAlwaysTranslate(tabLanguage);
+        pageTranslator.translatePage();
+      } else {
+        twpConfig.removeLangFromAlwaysTranslate(tabLanguage);
+      }
+    } else if (action === "never-translate-from") {
+      tabLanguage = twpLang.fixTLanguageCode(tabLanguage);
+      if (twpConfig.get("neverTranslateLangs").indexOf(tabLanguage) === -1) {
+        twpConfig.addLangToNeverTranslate(tabLanguage);
+        pageTranslator.restorePage();
+      } else {
+        twpConfig.removeLangFromNeverTranslate(tabLanguage);
+      }
+    } else if (action === "never-translate-this-site") {
+      if (twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1) {
+        twpConfig.addSiteToNeverTranslate(tabHostName);
+        pageTranslator.restorePage();
+      } else {
+        twpConfig.removeSiteFromNeverTranslate(tabHostName);
+      }
+    } else if (action === "show-translate-selected-button") {
+      twpConfig.set(
+        "showTranslateSelectedButton",
+        twpConfig.get("showTranslateSelectedButton") === "yes" ? "no" : "yes"
+      );
+    } else if (action === "more-options") {
+      const generateRandomHash = (length) => {
+        const characters =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let hash = "";
+        for (let i = 0; i < length; i++) {
+          hash += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+          );
+        }
+        return hash;
+      };
+      const authorizationToOpenOptions = generateRandomHash(32);
+      chrome.runtime.sendMessage({
+        action: "authorizationToOpenOptions",
+        authorizationToOpenOptions,
+      });
+      window.open(
+        chrome.runtime.getURL("/options/open-options.html") +
+          `#!authorizationToOpenOptions=${authorizationToOpenOptions}`,
+        "blank"
+      );
+    }
+
+    closeMenu();
+
+    updateInterface();
+  }
+
+  // update interface
+  function updateInterface() {
+    // update the question text
+    const questionElement = shadowRoot.getElementById("question");
+    const btnTranslate = shadowRoot.getElementById("btnTranslate");
+    if (pageLanguageState === "original") {
+      questionElement.textContent = twpI18n.getMessage("msgTranslatePage");
+      btnTranslate.textContent = twpI18n.getMessage("btnTranslate");
+    } else {
+      questionElement.textContent = twpI18n.getMessage("msgPageTranslated");
+      btnTranslate.textContent = twpI18n.getMessage("btnUndoTranslation");
+    }
+
+    // update show-translate-selected-button checkicon
+    if (twpConfig.get("showTranslateSelectedButton") === "yes") {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="show-translate-selected-button"] [checkicon]`
+      ).textContent = "✔";
+    } else {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="show-translate-selected-button"] [checkicon]`
+      ).textContent = "";
+    }
+
+    // update never-translate-this-site checkicon
+    if (twpConfig.get("neverTranslateSites").indexOf(tabHostName) !== -1) {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="never-translate-this-site"] [checkicon]`
+      ).textContent = "✔";
+    } else {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="never-translate-this-site"] [checkicon]`
+      ).textContent = "";
+    }
+
+    tabLanguage = twpLang.fixTLanguageCode(tabLanguage) || "und";
+
+    // update from-to text when original tab is detected
+    const from_to_element = shadowRoot.getElementById("from-to");
+    from_to_element.textContent = twpI18n.getMessage("msgTranslateFromTo", [
+      twpLang.codeToLanguage(tabLanguage),
+      twpLang.codeToLanguage(twpConfig.get("targetLanguage")),
+    ]);
+
+    // show or hide always-translate-from and never-translate-from
+    if (
+      tabLanguage === "und" ||
+      tabLanguage == twpConfig.get("targetLanguage")
+    ) {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="always-translate-from"]`
+      ).style.display = "none";
+      shadowRoot.querySelector(
+        `#menu-options [data-value="never-translate-from"]`
+      ).style.display = "none";
+    } else {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="always-translate-from"]`
+      ).style.display = "flex";
+      shadowRoot.querySelector(
+        `#menu-options [data-value="never-translate-from"]`
+      ).style.display = "flex";
+    }
+
+    // update always-translate-from text
+    shadowRoot.querySelector(
+      `#menu-options [data-value="always-translate-from"] [data-i18n]`
+    ).textContent = twpI18n.getMessage("lblAlwaysTranslate", [
+      twpLang.codeToLanguage(tabLanguage),
+    ]);
+
+    // update always-translate-from checkicon
+    if (twpConfig.get("alwaysTranslateLangs").indexOf(tabLanguage) !== -1) {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="always-translate-from"] [checkicon]`
+      ).textContent = "✔";
+    } else {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="always-translate-from"] [checkicon]`
+      ).textContent = "";
+    }
+
+    // update never-translate-from checkicon
+    if (twpConfig.get("neverTranslateLangs").indexOf(tabLanguage) !== -1) {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="never-translate-from"] [checkicon]`
+      ).textContent = "✔";
+    } else {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="never-translate-from"] [checkicon]`
+      ).textContent = "";
+    }
+  }
+  updateInterface();
+
   pageTranslator.onPageLanguageStateChange((_pageLanguageState) => {
     pageLanguageState = _pageLanguageState;
+    updateInterface();
   });
 
-  popupMobile.show = function (forceShow = false) {
-    popupMobile.hide();
-
-    if (
-      !forceShow &&
-      ((!awaysTranslateThisSite &&
-        (!translateThisSite || !translateThisLanguage)) ||
-        showPopupMobile !== "yes")
-    )
-      return;
-
-    divElement = document.createElement("div");
-    divElement.style = "all: initial";
-    divElement.classList.add("notranslate");
-
-    const shadowRoot = divElement.attachShadow({
-      mode: "closed",
-    });
-    shadowRoot.innerHTML = htmlMobile;
-
-    document.body.appendChild(divElement);
-
-    twpI18n.translateDocument(shadowRoot);
-
-    function enableDarkMode() {
-      if (!shadowRoot.getElementById("darkModeElement")) {
-        const el = document.createElement("style");
-        el.setAttribute("id", "darkModeElement");
-        el.setAttribute("rel", "stylesheet");
-        el.textContent = `
-                div, button, select, option {
-                    color: rgb(231, 230, 228);
-                    background-color: #181a1b !important;
-                }
-            
-                a {
-                    color: rgb(231, 230, 228) !important;
-                    background-color: #181a1b;
-                }
-            
-                .dropup-content a:hover {
-                    background-color: #454a4d;
-                }
-            
-                .menuDot {
-                    background-color: rgb(231, 230, 228) !important;
-                }
-                `;
-        shadowRoot.appendChild(el);
-      }
-    }
-
-    function disableDarkMode() {
-      if (shadowRoot.getElementById("#darkModeElement")) {
-        shadowRoot.getElementById("#darkModeElement").remove();
-      }
-    }
-
-    switch (twpConfig.get("darkMode")) {
-      case "auto":
-        if (matchMedia("(prefers-color-scheme: dark)").matches) {
-          enableDarkMode();
-        } else {
-          disableDarkMode();
-        }
-        break;
-      case "yes":
-        enableDarkMode();
-        break;
-      case "no":
-        disableDarkMode();
-        break;
-      default:
-        break;
-    }
-
-    getElemById = shadowRoot.getElementById.bind(shadowRoot);
-
+  // translate or restore page
+  const btnTranslate = shadowRoot.getElementById("btnTranslate");
+  btnTranslate.onclick = () => {
     if (pageLanguageState === "original") {
-      getElemById("btnOriginal").style.color = "#2196F3";
-      getElemById("btnTranslate").style.color = null;
+      pageTranslator.translatePage();
     } else {
-      getElemById("btnOriginal").style.color = null;
-      getElemById("btnTranslate").style.color = "#2196F3";
-    }
-
-    function translatePage(targetLanguage = currentTargetLanguage) {
-      getElemById("menu").style.display = "none";
-
-      if (targetLanguage !== currentTargetLanguage) {
-        currentTargetLanguage = targetLanguage;
-        twpConfig.setTargetLanguage(targetLanguage, true);
-      }
-      pageTranslator.translatePage(targetLanguage);
-
-      getElemById("btnOriginal").style.color = null;
-      getElemById("btnTranslate").style.color = "#2196F3";
-    }
-
-    // fill language list
-    (function () {
-      let langs = twpLang.getLanguageList();
-
-      const langsSorted = [];
-
-      for (const i in langs) {
-        langsSorted.push([i, langs[i]]);
-      }
-
-      langsSorted.sort(function (a, b) {
-        return a[1].localeCompare(b[1]);
-      });
-
-      const menuSelectLanguage = getElemById("menuSelectLanguage");
-
-      const eAllLangs = menuSelectLanguage.querySelector('[name="all"]');
-      langsSorted.forEach((value) => {
-        const option = document.createElement("option");
-        option.value = value[0];
-        option.textContent = value[1];
-        eAllLangs.appendChild(option);
-      });
-
-      const eRecentsLangs =
-        menuSelectLanguage.querySelector('[name="targets"]');
-
-      const buildRecentsLanguages = () => {
-        eRecentsLangs.innerHTML = "";
-        for (const value of twpConfig.get("targetLanguages")) {
-          const option = document.createElement("option");
-          option.value = value;
-          option.textContent = langs[value];
-          eRecentsLangs.appendChild(option);
-        }
-        menuSelectLanguage.value = twpConfig.get("targetLanguages")[0];
-      };
-      buildRecentsLanguages();
-
-      menuSelectLanguage.oninput = () => {
-        translatePage(menuSelectLanguage.value);
-        getElemById("menu").style.display = "none";
-        buildRecentsLanguages();
-      };
-    })();
-
-    function updateIcon() {
-      if (!getElemById) return;
-
-      if (currentPageTranslatorService === "yandex") {
-        getElemById("iconTranslate").src = chrome.runtime.getURL(
-          "/icons/yandex-translate-32.png"
-        );
-      } else if (currentPageTranslatorService === "bing") {
-        getElemById("iconTranslate").src = chrome.runtime.getURL(
-          "/icons/bing-translate-32.png"
-        );
-      } else {
-        getElemById("iconTranslate").src = chrome.runtime.getURL(
-          "/icons/google-translate-32.png"
-        );
-      }
-    }
-    updateIcon();
-
-    getElemById("iconTranslate").onclick = (e) => {
-      currentPageTranslatorService = twpConfig.swapPageTranslationService();
-
-      pageTranslator.swapTranslationService(currentPageTranslatorService);
-      updateIcon();
-    };
-
-    getElemById("btnOriginal").onclick = (e) => {
       pageTranslator.restorePage();
-      if (!getElemById) return;
+    }
+  };
 
-      getElemById("btnOriginal").style.color = "#2196F3";
-      getElemById("btnTranslate").style.color = null;
-    };
+  // fill language list
+  (function () {
+    let langs = twpLang.getLanguageList();
 
-    getElemById("btnTranslate").onclick = (e) => {
-      translatePage();
-    };
+    const langsSorted = [];
 
-    getElemById("btnMenu").onclick = (e) => {
-      if (!getElemById) return;
-      if (getElemById("menu").style.display === "block") {
-        getElemById("menu").style.display = "none";
-      } else {
-        getElemById("menu").style.display = "block";
-      }
-    };
-
-    getElemById("btnClose").onclick = (e) => {
-      popupMobile.hide();
-    };
-
-    getElemById("btnChangeLanguages").onclick = (e) => {
-      e.stopPropagation();
-      if (!getElemById) return;
-      // getElemById("menu").style.display = "none";
-    };
-
-    getElemById("btnTranslateSelectedText").onclick = (e) => {
-      if (twpConfig.get("showTranslateSelectedButton") === "yes") {
-        twpConfig.set("showTranslateSelectedButton", "no");
-        getElemById("btnTranslateSelectedText").textContent =
-          twpI18n.getMessage("msgTranslateSelectedText");
-      } else {
-        twpConfig.set("showTranslateSelectedButton", "yes");
-        getElemById("btnTranslateSelectedText").textContent =
-          twpI18n.getMessage("msgNoTranslateSelectedText");
-      }
-      getElemById("menu").style.display = "none";
-      e.stopPropagation();
-    };
-
-    getElemById("btnNeverTranslate").onclick = (e) => {
-      twpConfig.addSiteToNeverTranslate(tabHostName);
-      popupMobile.hide();
-    };
-
-    getElemById("neverTranslateThisLanguage").onclick = (e) => {
-      twpConfig.addLangToNeverTranslate(originalTabLanguage);
-      popupMobile.hide();
-    };
-
-    getElemById("btnMoreOptions").onclick = (e) => {
-      chrome.runtime.sendMessage(
-        {
-          action: "openOptionsPage",
-        },
-        checkedLastError
-      );
-    };
-
-    getElemById("btnDonate").onclick = (e) => {
-      e.preventDefault();
-      chrome.runtime.sendMessage(
-        {
-          action: "openDonationPage",
-        },
-        checkedLastError
-      );
-    };
-
-    document.addEventListener("blur", hideMenu);
-    document.addEventListener("click", hideMenu);
-
-    if (twpConfig.get("showTranslateSelectedButton") === "yes") {
-      getElemById("btnTranslateSelectedText").textContent = twpI18n.getMessage(
-        "msgNoTranslateSelectedText"
-      );
-    } else {
-      getElemById("btnTranslateSelectedText").textContent = twpI18n.getMessage(
-        "msgTranslateSelectedText"
-      );
+    for (const i in langs) {
+      langsSorted.push([i, langs[i]]);
     }
 
-    getElemById("btnDonate").innerHTML += " &#10084;";
-  };
+    langsSorted.sort(function (a, b) {
+      return a[1].localeCompare(b[1]);
+    });
 
-  popupMobile.hide = function () {
-    if (!divElement) return;
+    const menuSelectLanguage = /** @type {HTMLSelectElement} */ (
+      shadowRoot.getElementById("language-selector")
+    );
 
-    divElement.remove();
-    divElement = getElemById = null;
+    const eAllLangs = menuSelectLanguage.querySelector('[name="all"]');
+    langsSorted.forEach((value) => {
+      const option = document.createElement("option");
+      option.value = value[0];
+      option.textContent = value[1];
+      eAllLangs.appendChild(option);
+    });
 
-    document.removeEventListener("blur", hideMenu);
-    document.removeEventListener("click", hideMenu);
-  };
+    const eRecentsLangs = menuSelectLanguage.querySelector('[name="targets"]');
 
-  if (showPopupMobile !== "no") {
+    const buildRecentsLanguages = () => {
+      eRecentsLangs.innerHTML = "";
+      for (const value of twpConfig.get("targetLanguages")) {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = langs[value];
+        eRecentsLangs.appendChild(option);
+      }
+      menuSelectLanguage.value = twpConfig.get("targetLanguages")[0];
+    };
+    buildRecentsLanguages();
+
+    menuSelectLanguage.oninput = () => {
+      twpConfig.setTargetLanguage(menuSelectLanguage.value, true);
+      pageTranslator.translatePage(menuSelectLanguage.value);
+      buildRecentsLanguages();
+      updateInterface();
+
+      closeMenu();
+    };
+  })();
+
+  // show/hide popup on 3 finger tap
+  if (twpConfig.get("showPopupMobile") !== "no") {
     window.addEventListener("touchstart", (e) => {
       if (e.touches.length == 3) {
-        // https://github.com/FilipePS/Traduzir-paginas-web/issues/702
-        if (divElement) {
-          popupMobile.hide();
+        if (rootElement.isConnected) {
+          hidePopup();
         } else {
-          popupMobile.show(true);
+          showPopup();
         }
       }
     });
   }
 
+  // show popup when clicked on the extension icon on the extension manager
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "showPopupMobile") {
-      popupMobile.show(true);
+      showPopup();
     }
   });
 
-  pageTranslator.onGetOriginalTabLanguage(function (tabLanguage) {
-    if (!tabLanguage || tabLanguage === "und") {
-      const lang = twpLang.fixTLanguageCode(document.documentElement.lang);
-      if (lang) {
-        originalTabLanguage = tabLanguage;
-      }
+  pageTranslator.onGetOriginalTabLanguage(function (_tabLanguage) {
+    tabLanguage = _tabLanguage || "und";
+    if (tabLanguage !== "und") {
+      tabLanguage = twpLang.fixTLanguageCode(tabLanguage);
+    }
+    if (
+      twpConfig.get("neverTranslateLangs").indexOf(tabLanguage) === -1 &&
+      twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1 &&
+      twpConfig.get("targetLanguage") !== tabLanguage
+    ) {
+      showPopup();
+    }
+  });
+
+  // dark/light mode
+  function updateTheme() {
+    let darkMode = false;
+    if (twpConfig.get("darkMode") === "auto") {
+      darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? true
+        : false;
     } else {
-      originalTabLanguage = tabLanguage;
+      darkMode = twpConfig.get("darkMode") === "yes" ? true : false;
     }
-    translateThisLanguage =
-      originalTabLanguage === "und" ||
-      (currentTargetLanguage !== originalTabLanguage &&
-        twpConfig.get("neverTranslateLangs").indexOf(originalTabLanguage) ===
-          -1);
-    popupMobile.show();
+
+    if (darkMode) {
+      const lightModeElement = shadowRoot.getElementById("light-mode");
+      if (lightModeElement) lightModeElement.remove();
+    } else {
+      let lightModeElement = shadowRoot.getElementById("light-mode");
+      if (!lightModeElement) {
+        lightModeElement = document.createElement("style");
+        lightModeElement.id = "light-mode";
+        lightModeElement.textContent = `
+          * {
+            --primary-text-color: rgb(36, 34, 34);
+            --secondary-text-color: rgb(68, 67, 67);
+            --background-color: rgb(238, 236, 236);
+            --shadow-color: rgb(115, 148, 211);
+            --translate-button-text-color: rgb(91, 153, 247);
+            --hover-color: rgb(67, 78, 95);
+          }
+        `;
+        shadowRoot.appendChild(lightModeElement);
+      }
+    }
+  }
+  updateTheme();
+
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    updateTheme();
   });
 
-  /*
-    const dpr = 1
-    const origInnerWidth = window.innerWidth * window.devicePixelRatio
-    console.log(origInnerWidth)
-    const el = iframeDiv
-
-    function f() {
-        el.style.scale = dpr / window.devicePixelRatio
-        el.style.width = ( 100 / (dpr / window.devicePixelRatio) ) + "%"
-        el.style.left = "0px"
-        el.style.bottom = "0px"
-
-        const eWidth = parseFloat(window.innerWidth)
-
-        const dX = (eWidth * window.devicePixelRatio - eWidth) / 2
-        const dY = ((50 * (window.devicePixelRatio)) - 50) / (window.devicePixelRatio * 2)
-        console.log({
-            scale: dpr / window.devicePixelRatio,
-            dpr: dpr,
-            devicePixelRatio: devicePixelRatio,
-            elWidth: getComputedStyle(el).width,
-            dx: dX
-        })
-        el.style.left = - (origInnerWidth - innerWidth) / 2 + "px"
-        el.style.bottom = -dY + "px" 
+  twpConfig.onChanged((name, newValue) => {
+    if (name == "darkMode") {
+      updateTheme();
     }
-    let oldwidth = null
-
-    function foo() {
-        if (oldwidth) {
-            if (oldwidth != window.innerWidth) {
-                f()
-            }
-            oldwidth = window.innerWidth
-        } else {
-            oldwidth = window.innerWidth
-            f()
-        }
-        requestAnimationFrame(foo)
-    }
-    requestAnimationFrame(foo)
-    //*/
-});
+  });
+})();

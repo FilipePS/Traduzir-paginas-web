@@ -192,7 +192,7 @@
     "message": "Menos"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "No mostrar si el texto seleccionado no es válido"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "No mostrar si el idioma de la página es el idioma de destino"
@@ -291,7 +291,7 @@
     "message": "Velocidad del audio de texto a voz"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Volumen de audio de texto a voz"
   },
   "enterShortcut": {
     "message": "Escriba un atajo"
@@ -400,6 +400,9 @@
   },
   "msgTranslatePDF": {
     "message": "Traducir PDF"
+  },
+  "msgOpenTranslatedPDF": {
+    "message": "Open translated PDF"
   },
   "btncopy": {
     "message": "Copiar"
@@ -535,9 +538,34 @@
     "message": "Servicio de texto a voz"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Esta pestaña se abrió porque hizo clic para traducir el texto seleccionado usando DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "No mostrar de nuevo"
+  },
+  "msgTranslatePage": {
+    "message": "Translate page?"
+  },
+  "msgPageTranslated": {
+    "message": "Page translated"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "Undo"
+  },
+  "msgAutoDetect": {
+    "message": "Auto-detect"
   }
 }

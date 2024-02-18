@@ -1352,7 +1352,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               ) {
                 if (
                   pageLanguageState === "original" &&
-                  !platformInfo.isMobile.any &&
+                  // !platformInfo.isMobile.any &&
                   !chrome.extension.inIncognitoContext
                 ) {
                   if (

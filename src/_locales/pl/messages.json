@@ -401,6 +401,9 @@
   "msgTranslatePDF": {
     "message": "Tłumacz pliki PDF"
   },
+  "msgOpenTranslatedPDF": {
+    "message": "Otwórz przetłumaczony plik PDF"
+  },
   "btncopy": {
     "message": "Kopiuj"
   },
@@ -535,9 +538,34 @@
     "message": "Usługa zamiany tekstu na mowę"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Ta karta została otwarta, ponieważ została wybrana opcja przetłumaczenia zaznaczonego tekstu za pomocą DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Nie pokazuj ponownie"
+  },
+  "msgTranslatePage": {
+    "message": "Przetłumaczyć stronę?"
+  },
+  "msgPageTranslated": {
+    "message": "Page translated"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ na $TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "Cofnij"
+  },
+  "msgAutoDetect": {
+    "message": "Wykryj automatycznie"
   }
 }

@@ -401,6 +401,9 @@
   "msgTranslatePDF": {
     "message": "Перевести PDF"
   },
+  "msgOpenTranslatedPDF": {
+    "message": "Откройте переведённый PDF-файл"
+  },
   "btncopy": {
     "message": "Копировать"
   },
@@ -535,9 +538,34 @@
     "message": "Служба преобразования текста в речь"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Эта вкладка открылась, потому что вы нажали кнопку перевода выделенного текста с помощью DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Больше не показывать"
+  },
+  "msgTranslatePage": {
+    "message": "Перевести страницу?"
+  },
+  "msgPageTranslated": {
+    "message": "Перевод страницы"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ на $TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "Отмена"
+  },
+  "msgAutoDetect": {
+    "message": "Автоопределение"
   }
 }

@@ -192,7 +192,7 @@
     "message": "Minna"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Ekki sýna ef valinn texti er ekki gildur"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Ekki sýna ef síðutungumálið er marktungumálið"
@@ -291,7 +291,7 @@
     "message": "Hljóðhraði gervitals"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Hljóðstyrkur gervitals"
   },
   "enterShortcut": {
     "message": "Sláðu inn flýtileið"
@@ -400,6 +400,9 @@
   },
   "msgTranslatePDF": {
     "message": "Þýða PDF-skjal"
+  },
+  "msgOpenTranslatedPDF": {
+    "message": "Open translated PDF"
   },
   "btncopy": {
     "message": "Afrita"
@@ -535,9 +538,34 @@
     "message": "Talgervingarþjónusta"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Þessi flipi opnaðist vegna þess að þú smelltir til að þýða valinn texta með DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Ekki birta aftur"
+  },
+  "msgTranslatePage": {
+    "message": "Translate page?"
+  },
+  "msgPageTranslated": {
+    "message": "Page translated"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "Undo"
+  },
+  "msgAutoDetect": {
+    "message": "Auto-detect"
   }
 }

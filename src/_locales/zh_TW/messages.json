@@ -401,6 +401,9 @@
   "msgTranslatePDF": {
     "message": "翻譯 PDF"
   },
+  "msgOpenTranslatedPDF": {
+    "message": "開啟翻譯完的 PDF"
+  },
   "btncopy": {
     "message": "複製"
   },
@@ -535,9 +538,34 @@
     "message": "文字轉語音服務"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "此標籤開啟是因為您點擊使用 DeepL 翻譯所選文字。"
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "不再提示"
+  },
+  "msgTranslatePage": {
+    "message": "要翻譯頁面？"
+  },
+  "msgPageTranslated": {
+    "message": "已翻譯頁面"
+  },
+  "msgTranslateFromTo": {
+    "message": "將$FROM_LANGUAGE$譯爲$TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "復原"
+  },
+  "msgAutoDetect": {
+    "message": "自動偵測"
   }
 }

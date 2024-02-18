@@ -401,6 +401,9 @@
   "msgTranslatePDF": {
     "message": "PDFを翻訳"
   },
+  "msgOpenTranslatedPDF": {
+    "message": "Open translated PDF"
+  },
   "btncopy": {
     "message": "コピー"
   },
@@ -539,5 +542,30 @@
   },
   "msgDontShowAgain": {
     "message": "Don't show again"
+  },
+  "msgTranslatePage": {
+    "message": "Translate page?"
+  },
+  "msgPageTranslated": {
+    "message": "Page translated"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "Undo"
+  },
+  "msgAutoDetect": {
+    "message": "Auto-detect"
   }
 }

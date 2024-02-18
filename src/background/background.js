@@ -97,6 +97,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         chrome.tabs.sendMessage(tab.id, request, checkedLastError);
       });
     });
+  } else if (request.action == "authorizationToOpenOptions") {
+    chrome.storage.local.set({ authorizationToOpenOptions: request.authorizationToOpenOptions });
   }
 });
 

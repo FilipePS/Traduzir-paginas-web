@@ -81,7 +81,9 @@
     "/icons/yandex-translate-32.png",
     "/icons/swap-32.png",
     "/contentScript/css/*",
-    "/_locales/*"
+    "/contentScript/html/*",
+    "/_locales/*",
+    "/options/open-options.html"
   ],
   "options_ui": {
     "page": "/options/options.html",

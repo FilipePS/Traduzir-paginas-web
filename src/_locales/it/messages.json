@@ -401,6 +401,9 @@
   "msgTranslatePDF": {
     "message": "Traduci PDF"
   },
+  "msgOpenTranslatedPDF": {
+    "message": "Open translated PDF"
+  },
   "btncopy": {
     "message": "Copia"
   },
@@ -535,9 +538,34 @@
     "message": "Servizio di sintesi vocale"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Questa scheda è stata aperta perché hai cliccato per tradurre il testo selezionato usando DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Non mostrare più"
+  },
+  "msgTranslatePage": {
+    "message": "Translate page?"
+  },
+  "msgPageTranslated": {
+    "message": "Pagina tradotta"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "Undo"
+  },
+  "msgAutoDetect": {
+    "message": "Auto-detect"
   }
 }

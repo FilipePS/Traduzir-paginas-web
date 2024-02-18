@@ -401,6 +401,9 @@
   "msgTranslatePDF": {
     "message": "Traduzir PDF"
   },
+  "msgOpenTranslatedPDF": {
+    "message": "Abrir PDF traduzido"
+  },
   "btncopy": {
     "message": "Copiar"
   },
@@ -539,5 +542,30 @@
   },
   "msgDontShowAgain": {
     "message": "Não mostrar novamente"
+  },
+  "msgTranslatePage": {
+    "message": "Traduzir página?"
+  },
+  "msgPageTranslated": {
+    "message": "Página traduzida"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ para $TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "Desfazer"
+  },
+  "msgAutoDetect": {
+    "message": "Detecção automática"
   }
 }
