@@ -288,9 +288,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 		#eSelTextTrans,#eOrigText {
 			margin-right: 22px;
 		}
-		#eDivResult {
-			min-width: 300px;
-		}
 		`;
     shadowRoot.appendChild(styleFix);
 
@@ -901,7 +898,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         ) + "px";
       eDivResult.style.left =
         Math.min(
-          window.innerWidth - parseInt(getComputedStyle(eDivResult).width) - 18,
+          window.innerWidth - parseInt(getComputedStyle(eDivResult).width),
           left
         ) + "px";
     }

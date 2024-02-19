@@ -12,10 +12,10 @@ Translate your page in real time using Google or Yandex.
 
 ### Firefox
 - Desktop users, download from [Mozilla Addons](https://addons.mozilla.org/firefox/addon/traduzir-paginas-web/).
-- Android/iOS users
+- Android users
   1. Install the latest version of _Firefox (v120+)_.
   2. Open the extension manager.
-  3. Scroll down and click Find more extensions.
+  3. Scroll down and click **Find more add-ons**.
   4. On the add-ons website, search for **TWP**.
   5. Install the **TWP - Translate For Mobile** extension.
 

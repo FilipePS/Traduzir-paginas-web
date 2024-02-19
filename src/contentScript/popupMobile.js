@@ -1,7 +1,5 @@
 "use strict";
 
-var popupMobile = {};
-
 function getTabHostName() {
   return new Promise((resolve) =>
     chrome.runtime.sendMessage({ action: "getTabHostName" }, (result) => {
@@ -43,6 +41,16 @@ void (async function () {
 
   const shadowRoot = rootElement.attachShadow({ mode: "closed" });
   shadowRoot.innerHTML = htmlText;
+
+  // update css property --popup-height
+  setInterval(() => {
+    const popupElement = shadowRoot.getElementById("popup");
+    const menuOptions = shadowRoot.getElementById("menu-options");
+    menuOptions.style.setProperty(
+      "--popup-height",
+      `${popupElement.clientHeight}px`
+    );
+  }, 1000);
 
   // remove popup after 8 seconds of inactivity
   let lastInteraction = Date.now();
