@@ -98,7 +98,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       });
     });
   } else if (request.action == "authorizationToOpenOptions") {
-    chrome.storage.local.set({ authorizationToOpenOptions: request.authorizationToOpenOptions });
+    chrome.storage.local.set({
+      authorizationToOpenOptions: request.authorizationToOpenOptions,
+    });
   }
 });
 
@@ -128,17 +130,45 @@ function updateContextMenu(pageLanguageState = "original") {
   }
   if (typeof chrome.contextMenus != "undefined") {
     chrome.contextMenus.remove("translate-web-page", checkedLastError);
-    if (twpConfig.get("showTranslatePageContextMenu") == "yes") {
+    chrome.contextMenus.remove(
+      "translate-restore-this-frame",
+      checkedLastError
+    );
+
+    if (twpConfig.get("enableIframePageTranslation") === "yes") {
+      if (twpConfig.get("showTranslatePageContextMenu") == "yes") {
+        chrome.contextMenus.create({
+          id: "translate-web-page",
+          title: contextMenuTitle,
+          contexts: ["page", "frame"],
+          documentUrlPatterns: [
+            "http://*/*",
+            "https://*/*",
+            "file://*/*",
+            "ftp://*/*",
+          ],
+        });
+      }
+    } else {
+      if (twpConfig.get("showTranslatePageContextMenu") == "yes") {
+        chrome.contextMenus.create({
+          id: "translate-web-page",
+          title: contextMenuTitle,
+          contexts: ["page"],
+          documentUrlPatterns: [
+            "http://*/*",
+            "https://*/*",
+            "file://*/*",
+            "ftp://*/*",
+          ],
+        });
+      }
+
       chrome.contextMenus.create({
-        id: "translate-web-page",
-        title: contextMenuTitle,
-        contexts: ["page", "frame"],
-        documentUrlPatterns: [
-          "http://*/*",
-          "https://*/*",
-          "file://*/*",
-          "ftp://*/*",
-        ],
+        id: "translate-restore-this-frame",
+        title: twpI18n.getMessage("btnTranslateRestoreThisFrame"),
+        contexts: ["frame"],
+        documentUrlPatterns: ["http://*/*", "https://*/*"],
       });
     }
   }
@@ -251,6 +281,50 @@ function resetBrowserAction(forceShow = false) {
   }
 }
 
+function sendToggleTranslationMessage(tabId) {
+  if (twpConfig.get("enableIframePageTranslation") === "yes") {
+    chrome.tabs.sendMessage(
+      tabId,
+      {
+        action: "toggle-translation",
+      },
+      checkedLastError
+    );
+  } else {
+    chrome.tabs.sendMessage(
+      tabId,
+      {
+        action: "toggle-translation",
+      },
+      { frameId: 0 },
+      checkedLastError
+    );
+  }
+}
+
+function sendTranslatePageMessage(tabId, targetLanguage) {
+  if (twpConfig.get("enableIframePageTranslation") === "yes") {
+    chrome.tabs.sendMessage(
+      tabId,
+      {
+        action: "translatePage",
+        targetLanguage,
+      },
+      checkedLastError
+    );
+  } else {
+    chrome.tabs.sendMessage(
+      tabId,
+      {
+        action: "translatePage",
+        targetLanguage,
+      },
+      { frameId: 0 },
+      checkedLastError
+    );
+  }
+}
+
 if (typeof chrome.contextMenus !== "undefined") {
   const updateActionContextMenu = () => {
     chrome.contextMenus.remove("browserAction-showPopup", checkedLastError);
@@ -311,14 +385,19 @@ if (typeof chrome.contextMenus !== "undefined") {
       ) {
         chrome.pageAction.openPopup();
       } else {
+        sendToggleTranslationMessage(tab.id);
+      }
+    } else if (info.menuItemId == "translate-restore-this-frame") {
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(
           tab.id,
           {
             action: "toggle-translation",
           },
+          { frameId: info.frameId },
           checkedLastError
         );
-      }
+      });
     } else if (info.menuItemId == "translate-selected-text") {
       if (
         chrome.pageAction &&
@@ -482,25 +561,13 @@ twpConfig.onReady(() => {
     if (chrome.pageAction) {
       chrome.pageAction.onClicked.addListener((tab) => {
         if (twpConfig.get("translateClickingOnce") === "yes") {
-          chrome.tabs.sendMessage(
-            tab.id,
-            {
-              action: "toggle-translation",
-            },
-            checkedLastError
-          );
+          sendToggleTranslationMessage(tab.id);
         }
       });
     }
     chrome.browserAction.onClicked.addListener((tab) => {
       if (twpConfig.get("translateClickingOnce") === "yes") {
-        chrome.tabs.sendMessage(
-          tab.id,
-          {
-            action: "toggle-translation",
-          },
-          checkedLastError
-        );
+        sendToggleTranslationMessage(tab.id);
       }
     });
 
@@ -863,15 +930,7 @@ if (typeof chrome.commands !== "undefined") {
           currentWindow: true,
           active: true,
         },
-        (tabs) => {
-          chrome.tabs.sendMessage(
-            tabs[0].id,
-            {
-              action: "toggle-translation",
-            },
-            checkedLastError
-          );
-        }
+        (tabs) => sendToggleTranslationMessage(tabs[0].id)
       );
     } else if (command === "hotkey-translate-selected-text") {
       chrome.tabs.query(
@@ -928,13 +987,9 @@ if (typeof chrome.commands !== "undefined") {
         },
         (tabs) => {
           twpConfig.setTargetLanguage(twpConfig.get("targetLanguages")[0]);
-          chrome.tabs.sendMessage(
+          sendTranslatePageMessage(
             tabs[0].id,
-            {
-              action: "translatePage",
-              targetLanguage: twpConfig.get("targetLanguages")[0],
-            },
-            checkedLastError
+            twpConfig.get("targetLanguages")[0]
           );
         }
       );
@@ -946,13 +1001,9 @@ if (typeof chrome.commands !== "undefined") {
         },
         (tabs) => {
           twpConfig.setTargetLanguage(twpConfig.get("targetLanguages")[1]);
-          chrome.tabs.sendMessage(
+          sendTranslatePageMessage(
             tabs[0].id,
-            {
-              action: "translatePage",
-              targetLanguage: twpConfig.get("targetLanguages")[1],
-            },
-            checkedLastError
+            twpConfig.get("targetLanguages")[1]
           );
         }
       );
@@ -964,13 +1015,9 @@ if (typeof chrome.commands !== "undefined") {
         },
         (tabs) => {
           twpConfig.setTargetLanguage(twpConfig.get("targetLanguages")[2]);
-          chrome.tabs.sendMessage(
+          sendTranslatePageMessage(
             tabs[0].id,
-            {
-              action: "translatePage",
-              targetLanguage: twpConfig.get("targetLanguages")[2],
-            },
-            checkedLastError
+            twpConfig.get("targetLanguages")[2]
           );
         }
       );

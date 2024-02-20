@@ -567,5 +567,16 @@
   },
   "msgAutoDetect": {
     "message": "Auto-detect"
+  },
+  "msgEnableIframePageTranslation": {
+    "message": "Enable page translation in $IFRAME_TAG$",
+    "placeholders": {
+      "IFRAME_TAG": {
+        "content": "<IFRAME>"
+      }
+    }
+  },
+  "btnTranslateRestoreThisFrame": {
+    "message": "Translate/Restore this frame"
   }
 }

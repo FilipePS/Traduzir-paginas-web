@@ -567,5 +567,16 @@
   },
   "msgAutoDetect": {
     "message": "Detecção automática"
+  },
+  "msgEnableIframePageTranslation": {
+    "message": "Habilitar tradução de página em $IFRAME_TAG$",
+    "placeholders": {
+      "IFRAME_TAG": {
+        "content": "<IFRAME>"
+      }
+    }
+  },
+  "btnTranslateRestoreThisFrame": {
+    "message": "Traduzir/Restaurar este frame"
   }
 }

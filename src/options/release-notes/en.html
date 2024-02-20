@@ -1,7 +1,9 @@
-<section style="background-color: #87CEEB; padding: 20px; border-radius: 20px; box-shadow: 0 0 10px 3px black; position: relative;">
+<section
+    style="background-color: #87CEEB; padding: 20px; border-radius: 20px; box-shadow: 0 0 10px 3px black; position: relative;">
     <div style="font-size: 1.2em;">
         <!-- i18n = msgHasBeenUpdated -->
-        <p id="_msgHasBeenUpdated">The <b>TWP - Translate Web Pages</b> extension has been updated to version <b>9.7</b>.
+        <p id="_msgHasBeenUpdated">The <b>TWP - Translate Web Pages</b> extension has been updated to version
+            <b>9.7</b>.
         </p>
 
         <!-- i18n = donationText -->
@@ -93,19 +95,25 @@
         <p id="_donationRecipient" style="margin: 4px 0 -14px 0">Your donation goes to the developer of the <b>TWP -
                 Translate Web Pages</b> extension.</p>
     </div>
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0); display: none; opacity: 0;" id="donationOverflow"></div>
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0); display: none; opacity: 0;"
+        id="donationOverflow"></div>
 </section>
 
 <section>
     <h4>February 29, 2024</h4>
     <ul>
-        <li>About the Android version.
+        <li>About the <b>Android</b> version.
             <ul>
-                <li>To use the extension on <b>Firefox Android</b>, install the latest version of <b>Firefox (120 or higher)</b> from the <i>Play Store</i>, older versions are not supported. It is no longer necessary to use <i>Iceraven</i> or <i>Firefox Nightly</i>.</li>
-                <li>After installing <i>Firefox</i> open the extension manager, scroll down and click <b>Find more add-ons</b>. Search <b>TWP</b> and install the <b>TWP - Translate For Mobile</b> extension.</li>
-                <li>The popup interface for <i>Android</i> has been completely redone, hopefully this fixes past issues.</li>
+                <li>To use the extension on <b>Firefox Android</b>, install the latest version of <b>Firefox (120 or
+                        higher)</b> from the <i>Play Store</i>, older versions are not supported. It is no longer
+                    necessary to use <i>Iceraven</i> or <i>Firefox Nightly</i>.</li>
+                <li>After installing <i>Firefox</i> open the extension manager, scroll down and click <b>Find more
+                        add-ons</b>. Search <b>TWP</b> and install the <b>TWP - Translate For Mobile</b> extension.</li>
+                <li>The popup interface for <i>Android</i> has been completely redone, hopefully this fixes past issues.
+                </li>
                 <li>The <b>Always translate from [language]</b> option is now available on Android.</li>
-                <li>Remember that when you touch the screen with three fingers, the popup is shown/hidden.</li>
+                <li>Remember that when you touch the screen with three fingers, the popup is shown/hidden. If you drag
+                    the popup to the side it will also be hidden.</li>
             </ul>
         </li>
         <li>Added
@@ -113,30 +121,42 @@
                 <li>Support for 3 new target languages:
                     <i>Bodo, Chhattisgarhi, Kashmiri.</i>
                 </li>
-                <li>Option to set the volume (with boost) of text-to-speech in the translation settings</li>
+                <li>Option to set the <b>volume (with boost)</b> of text-to-speech in the translation settings</li>
                 <li>
                     <dl>
                         <dt><b>Do not show if the selected text is not valid</b></dt>
-                        <dd>Enabled by default. And always active for the option <b>[Show translations when hovering over...]</b></dd>
+                        <dd>Enabled by default. And always active for the option <b>[Show translations when hovering
+                                over...]</b></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Option to disable <b>iframe</b> page translation</dt>
+                        <dd>If you disable it, you can translate the <i>iframe</i> manually using the button in the context menu</dd>
                     </dl>
                 </li>
             </ul>
         </li>
         <li>Changes
             <ul>
-                <li>The <b>[Automatically translate when clicking on a link...]</b> option will not be applied to <b>Never translate these sites</b></li>
-                <li>When you click on always/never translate this site/language, the site may be translated/restored to improve usability</li>
-                <li>Now the translate selected text button will be less annoying, appearing only when the selected text is valid</li>
+                <li>The <b>[Automatically translate when clicking on a link...]</b> option will not be applied to
+                    <b>Never translate these sites</b>
+                </li>
+                <li>When you click on always/never translate this site/language, the site may be translated/restored to
+                    improve usability</li>
+                <li>Now the translate selected text button will be less annoying, appearing only when the selected text
+                    is valid</li>
                 <li>When the DeepL tab opens, a message informs you of the reason</li>
             </ul>
         </li>
         <li>Fixed
             <ul>
-                <li>In Chrome, the translate selected text panel is not localized to the language selected in settings.</li>
+                <li>In Chrome, the translate selected text panel is not localized to the language selected in settings.
+                </li>
                 <li>Extension icon color when using some themes</li>
-                <li>Fix flash of unstyled content on some sites</li>
+                <li>Fix flash of unstyled content on some sites <i>(Thanks Psychpsyo)</i></li>
                 <li>The tts speed config is not loaded when starting the extension</li>
-                <li>Options page doesn't work if <b>sessionStorage</b> is <b><i>null</i></b></li>
+                <li>Options page doesn't work if <i>sessionStorage</i> is <i>null</i></li>
                 <li>Some texts are not localized in the preferred language for the UI</li>
                 <li>Translate selected text panel appears off-screen on Android</li>
             </ul>
@@ -156,7 +176,8 @@
         <li>Changes
             <ul>
                 <li>On Android when touching 3 fingers on the screen the popup of the extension will also be hidden</li>
-                <li>The html tags <i>&lt;math&gt;</i>, <i>&lt;mjx-container&gt;</i> and <i>&lt;tex-math&gt;</i> will not be translated</li>
+                <li>The html tags <i>&lt;math&gt;</i>, <i>&lt;mjx-container&gt;</i> and <i>&lt;tex-math&gt;</i> will not
+                    be translated</li>
             </ul>
         </li>
         <li>Fixed
@@ -1362,7 +1383,8 @@
 <section>
     <h4>3.4, 3.5, 3.6, 3.7, 3.8 - April 6, 2020</h4>
     <ul>
-        <li>Use <i><code>chrome.tabs.detectLanguage</code></i> instead of the <i>lang</i> attribute of the <i>html</i> tag
+        <li>Use <i><code>chrome.tabs.detectLanguage</code></i> instead of the <i>lang</i> attribute of the <i>html</i>
+            tag
             to detect the language of the site</li>
         <li>Added options on the mobile popup</li>
         <li>Added translations for the mobile popup interface</li>

@@ -466,14 +466,26 @@ twpConfig
               twpConfig.get("targetLanguage")
           );
 
-          chrome.tabs.sendMessage(
-            tabs[0].id,
-            {
-              action: "translatePage",
-              targetLanguage: selectTargetLanguage.value,
-            },
-            checkedLastError
-          );
+          if (twpConfig.get("enableIframePageTranslation") === "yes") {
+            chrome.tabs.sendMessage(
+              tabs[0].id,
+              {
+                action: "translatePage",
+                targetLanguage: selectTargetLanguage.value,
+              },
+              checkedLastError
+            );
+          } else {
+            chrome.tabs.sendMessage(
+              tabs[0].id,
+              {
+                action: "translatePage",
+                targetLanguage: selectTargetLanguage.value,
+              },
+              {frameId: 0},
+              checkedLastError
+            );
+          }
         }
       );
 
@@ -583,7 +595,7 @@ twpConfig
                 twpConfig.get("neverTranslateSites").indexOf(hostname) === -1
               ) {
                 twpConfig.addSiteToNeverTranslate(hostname);
-                onRestoreClick()
+                onRestoreClick();
               } else {
                 twpConfig.removeSiteFromNeverTranslate(hostname);
               }
@@ -602,7 +614,7 @@ twpConfig
                   originalTabLanguage,
                   hostname
                 );
-                onRestoreClick()
+                onRestoreClick();
               } else {
                 twpConfig.removeLangFromNeverTranslate(originalTabLanguage);
               }

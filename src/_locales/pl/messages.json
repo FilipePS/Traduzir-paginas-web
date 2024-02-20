@@ -547,7 +547,7 @@
     "message": "Przetłumaczyć stronę?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Strona została przetłumaczona"
   },
   "msgTranslateFromTo": {
     "message": "$FROM_LANGUAGE$ na $TO_LANGUAGE$",
@@ -567,5 +567,16 @@
   },
   "msgAutoDetect": {
     "message": "Wykryj automatycznie"
+  },
+  "msgEnableIframePageTranslation": {
+    "message": "Enable page translation in $IFRAME_TAG$",
+    "placeholders": {
+      "IFRAME_TAG": {
+        "content": "<IFRAME>"
+      }
+    }
+  },
+  "btnTranslateRestoreThisFrame": {
+    "message": "Translate/Restore this frame"
   }
 }

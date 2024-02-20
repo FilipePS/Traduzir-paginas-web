@@ -581,6 +581,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             node.classList.contains("notranslate") ||
             node.getAttribute("translate") === "no" ||
             node.isContentEditable ||
+            node.classList.contains("CodeMirror") || // https://www.w3schools.com/html/tryit.asp
             node.classList.contains("material-icons") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/481
             node.classList.contains("material-symbols-outlined") ||
             nodeName.startsWith("br-") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/627
@@ -1428,7 +1429,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       (result) => {
         checkedLastError();
 
-        if (result === "translated" && pageLanguageState === "original") {
+        if (result === "translated" && pageLanguageState === "original" && twpConfig.get("enableIframePageTranslation") === "yes") {
           pageTranslator.translatePage();
         }
       }

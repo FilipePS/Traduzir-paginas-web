@@ -678,6 +678,13 @@ twpConfig
     };
     $("#translateTag_pre").value = twpConfig.get("translateTag_pre");
 
+    $("#enableIframePageTranslation").onchange = (e) => {
+      twpConfig.set("enableIframePageTranslation", e.target.value);
+    };
+    $("#enableIframePageTranslation").value = twpConfig.get(
+      "enableIframePageTranslation"
+    );
+
     $("#dontSortResults").onchange = (e) => {
       twpConfig.set("dontSortResults", e.target.value);
     };

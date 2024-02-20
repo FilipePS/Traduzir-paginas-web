@@ -402,7 +402,7 @@
     "message": "PDF 번역"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "PDF 번역본 열기"
   },
   "btncopy": {
     "message": "복사"
@@ -544,13 +544,13 @@
     "message": "다시 보지 않기"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "페이지를 번역할까요?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "페이지 번역 완료"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$에서 $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,9 +563,20 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "실행 취소"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "자동 감지"
+  },
+  "msgEnableIframePageTranslation": {
+    "message": "Enable page translation in $IFRAME_TAG$",
+    "placeholders": {
+      "IFRAME_TAG": {
+        "content": "<IFRAME>"
+      }
+    }
+  },
+  "btnTranslateRestoreThisFrame": {
+    "message": "Translate/Restore this frame"
   }
 }

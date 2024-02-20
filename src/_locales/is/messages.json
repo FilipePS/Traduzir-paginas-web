@@ -402,7 +402,7 @@
     "message": "Þýða PDF-skjal"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Opna þýtt PDF-skjal"
   },
   "btncopy": {
     "message": "Afrita"
@@ -566,6 +566,17 @@
     "message": "Undo"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Greina sjálfkrafa"
+  },
+  "msgEnableIframePageTranslation": {
+    "message": "Enable page translation in $IFRAME_TAG$",
+    "placeholders": {
+      "IFRAME_TAG": {
+        "content": "<IFRAME>"
+      }
+    }
+  },
+  "btnTranslateRestoreThisFrame": {
+    "message": "Translate/Restore this frame"
   }
 }

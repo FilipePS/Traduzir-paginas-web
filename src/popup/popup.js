@@ -82,29 +82,41 @@ twpConfig
           currentPageLanguageState = "translated";
           twpConfig.setTargetLanguage(newTargetLanguage);
         }
-  
+
         chrome.tabs.query(
           {
             active: true,
             currentWindow: true,
           },
           (tabs) => {
-            chrome.tabs.sendMessage(
-              tabs[0].id,
-              {
-                action: "translatePage",
-                targetLanguage: newTargetLanguage || "original",
-              },
-              checkedLastError
-            );
+            if (twpConfig.get("enableIframePageTranslation") === "yes") {
+              chrome.tabs.sendMessage(
+                tabs[0].id,
+                {
+                  action: "translatePage",
+                  targetLanguage: newTargetLanguage || "original",
+                },
+                checkedLastError
+              );
+            } else {
+              chrome.tabs.sendMessage(
+                tabs[0].id,
+                {
+                  action: "translatePage",
+                  targetLanguage: newTargetLanguage || "original",
+                },
+                { frameId: 0 },
+                checkedLastError
+              );
+            }
           }
         );
-  
+
         updateInterface();
-      }
+      };
 
       if (newTargetLanguage) {
-        _translateOrRestorePagePage(newTargetLanguage)
+        _translateOrRestorePagePage(newTargetLanguage);
       } else {
         chrome.tabs.query(
           {
@@ -119,7 +131,8 @@ twpConfig
               },
               {
                 frameId: 0,
-              }, (pageLanguage) => {
+              },
+              (pageLanguage) => {
                 checkedLastError();
                 if (pageLanguage) {
                   _translateOrRestorePagePage(pageLanguage);
