@@ -544,13 +544,13 @@
     "message": "Ekki birta aftur"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Þýða síðu?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Síða þýdd"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ yfir á $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Afturkalla"
   },
   "msgAutoDetect": {
     "message": "Greina sjálfkrafa"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Virkja síðuþýðingu í $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,6 +577,6 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Þýða/Endurheimta þennan ramma"
   }
 }

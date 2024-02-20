@@ -291,7 +291,7 @@
     "message": "Velocità audio della pronuncia"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Volume audio della pronuncia"
   },
   "enterShortcut": {
     "message": "Digita una scorciatoia"
@@ -402,7 +402,7 @@
     "message": "Traduci PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Apri il PDF tradotto"
   },
   "btncopy": {
     "message": "Copia"
@@ -544,13 +544,13 @@
     "message": "Non mostrare più"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Tradurre la pagina?"
   },
   "msgPageTranslated": {
     "message": "Pagina tradotta"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "Da $FROM_LANGUAGE$ a $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Annulla"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Automatico"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Abilita la traduzione della pagina in $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,6 +577,6 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Traduci/Ripristina questo frame"
   }
 }

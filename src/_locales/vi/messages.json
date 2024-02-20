@@ -569,7 +569,7 @@
     "message": "Tự động phát hiện"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Kích hoạt dịch trang trong $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,6 +577,6 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Dịch/Khôi phục khung này"
   }
 }
