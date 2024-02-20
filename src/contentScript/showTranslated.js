@@ -712,6 +712,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   let lastTimePressedCtrl = null;
 
   function onKeyUp(e) {
+    if (e.key === "Escape") {
+      destroy();
+      return;
+    }
+
     if (!translateTextOverMouseWhenPressTwice) return;
     if (e.key == "Control") {
       if (

@@ -221,6 +221,8 @@ twpConfig.onReady(function () {
 
     document.addEventListener("blur", hideOriginalText);
     document.addEventListener("visibilitychange", hideOriginalText);
+
+    document.addEventListener("keyup", hideOnESC, true);
   };
 
   showOriginal.disable = function (dontDeleteNodesToShowOriginal = false) {
@@ -240,5 +242,13 @@ twpConfig.onReady(function () {
 
     document.removeEventListener("blur", hideOriginalText);
     document.removeEventListener("visibilitychange", hideOriginalText);
+
+    document.removeEventListener("keyup", hideOnESC, true);
   };
+
+  function hideOnESC(e) {
+    if (e.key === "Escape") {
+      hideOriginalText();
+    }
+  }
 });

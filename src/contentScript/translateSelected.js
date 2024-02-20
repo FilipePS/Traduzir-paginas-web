@@ -1152,6 +1152,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   let lastTimePressedCtrl = null;
 
   function onKeyUp(e) {
+    if (e.key === "Escape") {
+      destroy();
+      return;
+    }
+
     if (twpConfig.get("translateSelectedWhenPressTwice") !== "yes") return;
     if (e.key == "Control") {
       if (
@@ -1168,7 +1173,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   }
 
-  document.addEventListener("keyup", onKeyUp);
+  document.addEventListener("keyup", onKeyUp, true);
 
   let windowIsInFocus = true;
   window.addEventListener("focus", function (e) {
