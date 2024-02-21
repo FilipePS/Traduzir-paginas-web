@@ -526,7 +526,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   function isNoTranslateNode(node) {
     const nodeName = node.nodeName.toLowerCase();
     const index = htmlTagsNoTranslate.indexOf(nodeName);
-    
+
     //https://github.com/FilipePS/Traduzir-paginas-web/issues/704
     if (nodeName === "span" && node.classList.contains("mjx-chtml")) {
       return true;
@@ -1317,11 +1317,12 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           if (result === "und") {
             originalTabLanguage = result;
             if (
-              twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !==
+              (twpConfig.get("alwaysTranslateSites").indexOf(tabHostName) !==
                 -1 ||
-              (location.hostname === "pdf.translatewebpages.org" &&
-                twpConfig.get("neverTranslateSites").indexOf(tabHostName) ===
-                  -1)
+                (location.hostname === "pdf.translatewebpages.org" &&
+                  twpConfig.get("neverTranslateSites").indexOf(tabHostName) ===
+                    -1)) &&
+              !platformInfo.isMobile.any
             ) {
               pageTranslator.translatePage();
             }
@@ -1372,7 +1373,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
                     } else if (
                       twpConfig
                         .get("alwaysTranslateSites")
-                        .indexOf(tabHostName) !== -1
+                        .indexOf(tabHostName) !== -1 &&
+                      !platformInfo.isMobile.any
                     ) {
                       pageTranslator.translatePage();
                     }
@@ -1429,7 +1431,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       (result) => {
         checkedLastError();
 
-        if (result === "translated" && pageLanguageState === "original" && twpConfig.get("enableIframePageTranslation") === "yes") {
+        if (
+          result === "translated" &&
+          pageLanguageState === "original" &&
+          twpConfig.get("enableIframePageTranslation") === "yes"
+        ) {
           pageTranslator.translatePage();
         }
       }
