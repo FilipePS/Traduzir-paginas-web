@@ -1,0 +1,24 @@
+name: Custom issue
+description: I need more freedom to write my issue
+labels: [custom]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this form!
+  - type: textarea
+    id: body
+    attributes:
+      label: Body
+      description: Issue description
+    validations:
+      required: true
+  - type: checkboxes
+    id: i-am-nice
+    attributes:
+      label: What did you just do?
+      options:
+        - label: I wrote an objective issue, easy to understand.
+          required: true
+    validations:
+      required: true

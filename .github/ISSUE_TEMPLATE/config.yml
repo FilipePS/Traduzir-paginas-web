@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Issues
+    url: https://github.com/FilipePS/just-testing/issues
+    about: Please, before creating a new issue, search to see if anyone has already created it
