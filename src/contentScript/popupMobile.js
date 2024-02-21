@@ -66,7 +66,7 @@ void (async function () {
       lastInteractionInterval = setInterval(() => {
         const menuContainer = shadowRoot.getElementById("menu-container");
         if (
-          Date.now() - lastInteraction > 1000 * 6 &&
+          Date.now() - lastInteraction > 1000 * 8 &&
           menuContainer.style.display !== "block" &&
           serviceSelectorIsOpen === false
         ) {
