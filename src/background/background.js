@@ -249,9 +249,10 @@ chrome.runtime.onInstalled.addListener((details) => {
 });
 
 function resetPageAction(tabId, forceShow = false) {
+  if (!chrome.pageAction) return;
   if (twpConfig.get("translateClickingOnce") === "yes" && !forceShow) {
     chrome.pageAction.setPopup({
-      popup: null,
+      popup: "",
       tabId,
     });
   } else {
@@ -272,7 +273,7 @@ function resetPageAction(tabId, forceShow = false) {
 function resetBrowserAction(forceShow = false) {
   if (twpConfig.get("translateClickingOnce") === "yes" && !forceShow) {
     chrome.browserAction.setPopup({
-      popup: null,
+      popup: "",
     });
   } else {
     if (twpConfig.get("useOldPopup") === "yes") {
@@ -433,13 +434,17 @@ if (typeof chrome.contextMenus !== "undefined") {
     } else if (info.menuItemId == "browserAction-showPopup") {
       resetBrowserAction(true);
 
-      chrome.browserAction.openPopup();
+      if (chrome.browserAction.openPopup) {
+        chrome.browserAction.openPopup();
+      }
 
       resetBrowserAction();
     } else if (info.menuItemId == "pageAction-showPopup") {
       resetPageAction(tab.id, true);
 
-      chrome.pageAction.openPopup();
+      if (chrome.pageAction) {
+        chrome.pageAction.openPopup();
+      }
 
       resetPageAction(tab.id);
     } else if (info.menuItemId == "never-translate") {
