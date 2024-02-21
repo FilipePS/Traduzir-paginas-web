@@ -25,8 +25,9 @@
     main {
         position: fixed;
         top: 0;
-        left: 10px;
-        right: 10px;
+        --main-width: calc(max(calc(100vw) - 400px, 20px) / 2);
+        left: var(--main-width);
+        right: var(--main-width);
         animation: popup 0.6s ease-out;
     }
 
@@ -38,7 +39,7 @@
     #popup {
         width: 100%;
         background-color: var(--background-color);
-        box-shadow: 0 0 10px 0 var(--shadow-color);
+        box-shadow: 0 0 5px 0 var(--shadow-color);
         border-radius: 10px;
         display: flex;
         justify-content: space-between;
@@ -75,8 +76,8 @@
     }
 
     #serviceIcon {
-        height: 24px;
-        width: 24px;
+        height: 16px;
+        width: 16px;
     }
 
     #serviceIcon {
@@ -153,7 +154,7 @@
         width: calc(100% - 60px);
         position: relative;
         background-color: var(--background-color);
-        box-shadow: 0 5px 10px 0 var(--shadow-color);
+        box-shadow: 0 3px 6px 0 var(--shadow-color);
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -203,13 +204,20 @@
     }
 
     @media screen and (min-width: 360px) {
-        #popup {
-            min-height: 80px;
+        #serviceIcon {
+            height: 24px;
+            width: 24px;
         }
 
         svg {
-            height: 24px;
-            width: 24px;
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    @media screen and (min-height: 600px) {
+        #popup {
+            min-height: 80px;
         }
     }
 

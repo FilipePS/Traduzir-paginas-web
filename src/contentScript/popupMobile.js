@@ -511,6 +511,7 @@ void (async function () {
       tabLanguage = twpLang.fixTLanguageCode(tabLanguage);
     }
     if (
+      tabLanguage !== "und" &&
       twpConfig.get("neverTranslateLangs").indexOf(tabLanguage) === -1 &&
       twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1 &&
       twpConfig.get("targetLanguage") !== tabLanguage
