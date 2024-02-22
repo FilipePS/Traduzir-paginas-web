@@ -3,7 +3,7 @@
   "default_locale": "en",
   "name": "TWP - Translate Web Pages",
   "description": "__MSG_extensionDescription__",
-  "version": "10.0.0.0",
+  "version": "10.0.0.1",
   "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
   "update_url": "https://raw.githubusercontent.com/FilipePS/Traduzir-paginas-web/master/dist/chromium/updates.xml",
   "minimum_chrome_version": "70.0",
