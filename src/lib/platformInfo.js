@@ -30,5 +30,9 @@ twpConfig.onReady(function () {
 
   platformInfo.isDesktop = {
     any: !platformInfo.isMobile.any,
+    Firefox: typeof browser !== "undefined",
   };
+
+  platformInfo.isFirefox = typeof browser !== "undefined";
+  platformInfo.isOpera = userAgent.match(/OPR/i);
 });

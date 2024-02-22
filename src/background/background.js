@@ -69,9 +69,22 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       return;
     }
     try {
-      chrome.tabs.detectLanguage(sender.tab.id, (result) =>
-        sendResponse(result)
-      );
+      if (
+        (platformInfo.isMobile.any && !platformInfo.isFirefox) ||
+        (platformInfo.isDesktop.any && platformInfo.isOpera)
+      ) {
+        chrome.tabs.sendMessage(
+          sender.tab.id,
+          { action: "detectLanguageUsingTextContent" },
+          { frameId: 0 },
+          (result) => sendResponse(result)
+        );
+      } else {
+        chrome.tabs.detectLanguage(sender.tab.id, (result) => {
+          checkedLastError();
+          sendResponse(result);
+        });
+      }
     } catch (e) {
       console.error(e);
       sendResponse("und");

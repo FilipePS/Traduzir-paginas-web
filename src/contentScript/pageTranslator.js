@@ -1241,6 +1241,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   };
 
+  let textContentLanguageDetectionPromise = null;
+
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "translatePage") {
       if (request.targetLanguage === "original") {
@@ -1299,6 +1301,28 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       pageTranslator.restorePage();
     } else if (request.action === "currentTargetLanguage") {
       sendResponse(currentTargetLanguage);
+    } else if (request.action === "detectLanguageUsingTextContent") {
+      if (textContentLanguageDetectionPromise) {
+        textContentLanguageDetectionPromise.then((result) =>
+          sendResponse(result)
+        );
+      } else {
+        textContentLanguageDetectionPromise = new Promise((resolve) => {
+          chrome.i18n.detectLanguage(
+            document.body.textContent.trim().slice(0, 1000),
+            (result) => {
+              // checkedLastError();
+              if (result && result.isReliable && result.languages && result.languages.length > 0) {
+                resolve(result.languages[0].language);
+                sendResponse(result.languages[0].language);
+              } else {
+                sendResponse("und");
+              }
+            }
+          );
+        });
+      }
+      return true;
     }
   });
 
