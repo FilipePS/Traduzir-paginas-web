@@ -560,11 +560,15 @@ if (typeof chrome.contextMenus !== "undefined") {
 twpConfig.onReady(() => {
   if (platformInfo.isMobile.any) {
     chrome.tabs.query({}, (tabs) =>
-      tabs.forEach((tab) => chrome.pageAction.hide(tab.id))
+      tabs.forEach((tab) => {
+        if (chrome.pageAction) {
+          chrome.pageAction.hide(tab.id);
+        }
+      })
     );
 
     chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-      if (changeInfo.status == "loading") {
+      if (changeInfo.status == "loading" && chrome.pageAction) {
         chrome.pageAction.hide(tabId);
       }
     });

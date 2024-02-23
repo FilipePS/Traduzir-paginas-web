@@ -95,6 +95,10 @@ void (async function () {
       animation.onfinish = () => {
         rootElement.remove();
       };
+      setTimeout(() => {
+        rootElement.remove();
+        animation.onfinish = null;
+      }, 300);
       const menuContainer = shadowRoot.getElementById("menu-container");
       menuContainer.style.display = "none";
     }
@@ -115,24 +119,24 @@ void (async function () {
 
   // close popup
   const popupElement = shadowRoot.getElementById("popup");
-  popupElement.onpointerdown = (e) => {
+  popupElement.ontouchstart = (e) => {
     if (e.target !== popupElement) return;
     lastInteraction = Date.now();
 
     e.stopImmediatePropagation();
-    const pointerId = e.pointerId;
-
-    const startPoint = { x: e.clientX, y: e.clientY };
-    popupElement.onpointermove = (e) => {
+    const startPoint = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    popupElement.ontouchmove = (e) => {
       lastInteraction = Date.now();
 
       e.stopImmediatePropagation();
-      const offset = e.clientX - startPoint.x;
+      const offset = e.touches[0].clientX - startPoint.x;
       popupElement.style.transform = `translateX(${offset}px)`;
 
-      if (Math.abs(offset) > window.innerWidth / 10) {
-        popupElement.releasePointerCapture(pointerId);
-        popupElement.onpointermove = null;
+      if (Math.abs(offset) > window.innerWidth * 0.2) {
+        popupElement.ontouchmove = null;
+        popupElement.ontouchend = null;
+        popupElement.ontouchcancel = null;
+
         popupElement.style.transition = `transform 0.3s ease-in-out`;
         if (offset > 0) {
           popupElement.style.transform = `translateX(100%)`;
@@ -140,28 +144,30 @@ void (async function () {
           popupElement.style.transform = `translateX(-100%)`;
         }
         popupElement.ontransitionend = () => {
-          popupElement.ontransitionend = null;
           rootElement.remove();
+          popupElement.ontransitionend = null;
+          popupElement.style.cssText = "";
         };
+        setTimeout(() => {
+          rootElement.remove();
+          popupElement.ontransitionend = null;
+          popupElement.style.cssText = "";
+        }, 400);
       }
     };
-    popupElement.setPointerCapture(pointerId);
-  };
-  popupElement.onpointerup = (e) => {
-    lastInteraction = Date.now();
 
-    e.stopImmediatePropagation();
-    popupElement.onpointermove = null;
-    popupElement.style.transform = `translateX(0px)`;
-    popupElement.releasePointerCapture(e.pointerId);
-  };
-  popupElement.onpointercancel = (e) => {
-    lastInteraction = Date.now();
+    popupElement.ontouchend = (e) => {
+      lastInteraction = Date.now();
 
-    e.stopImmediatePropagation();
-    popupElement.onpointermove = null;
-    popupElement.style.transform = `translateX(0px)`;
-    popupElement.releasePointerCapture(e.pointerId);
+      e.stopImmediatePropagation();
+      popupElement.style.transform = `translateX(0px)`;
+    };
+    popupElement.ontouchcancel = (e) => {
+      lastInteraction = Date.now();
+
+      e.stopImmediatePropagation();
+      popupElement.style.transform = `translateX(0px)`;
+    };
   };
 
   // update service icon
