@@ -527,13 +527,11 @@
           </select>
         </div>
         <br />
-        <p><b data-i18n="optionPopupConfig">Show the mobile popup</b></p>
-        <select id="showPopupMobile" class="w3-select w3-margin">
-          <option value="yes" data-i18n="msgYes">Yes</option>
-          <option value="no" data-i18n="msgNo">No</option>
-          <option value="threeFingersOnTheScreen" data-i18n="optionPopupThreeFingers">
-            When I touch three fingers on the screen
-          </option>
+        <p><b data-i18n="msgWhenShowMobilePopup">When to show the popup on mobile devices</b></p>
+        <select id="whenShowMobilePopup" class="w3-select w3-margin">
+          <option value="when-necessary" data-i18n="msgWhenNecessary">When necessary</option>
+          <option value="only-when-i-touch" data-i18n="msgOnlyWhenItouch3">Only when I touch three fingers on the screen</option>
+          <option value="always-show" data-i18n="msgAlwaysShow">Always show</option>
         </select>
         <div class="desktopOnly">
           <br />
@@ -600,6 +598,14 @@
           <button id="addDeepL">Add DeepL Free API</button>
           <button id="removeDeepL">Remove DeepL Free API</button>
           <p id="deeplApiResponse"></p>
+        </div>
+        <hr>
+        <div>
+          <h3>Show the mobile popup on the desktop</h3>
+          <select id="showMobilePopupOnDesktop">
+            <option value="no">no</option>
+            <option value="yes">yes</option>
+          </select>
         </div>
       </div>
 

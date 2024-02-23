@@ -1281,10 +1281,10 @@ twpConfig
     };
     $("#showReleaseNotes").value = twpConfig.get("showReleaseNotes");
 
-    $("#showPopupMobile").onchange = (e) => {
-      twpConfig.set("showPopupMobile", e.target.value);
+    $("#whenShowMobilePopup").onchange = (e) => {
+      twpConfig.set("whenShowMobilePopup", e.target.value);
     };
-    $("#showPopupMobile").value = twpConfig.get("showPopupMobile");
+    $("#whenShowMobilePopup").value = twpConfig.get("whenShowMobilePopup");
 
     $("#showTranslatePageContextMenu").onchange = (e) => {
       twpConfig.set("showTranslatePageContextMenu", e.target.value);
@@ -1460,6 +1460,10 @@ twpConfig
       testDeepLFreeApiKey(deepl_freeapi.apiKey).then((response) => {
         $("#deeplApiResponse").textContent = JSON.stringify(response);
       });
+    }
+
+    $("#showMobilePopupOnDesktop").onchange = (e) => {
+      twpConfig.set("showMobilePopupOnDesktop", e.target.value);
     }
 
     // donation options

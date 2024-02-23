@@ -1309,10 +1309,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       } else {
         textContentLanguageDetectionPromise = new Promise((resolve) => {
           chrome.i18n.detectLanguage(
-            document.body.textContent.trim().slice(0, 1000),
+            document.body.innerText.trim().slice(0, 1000),
             (result) => {
               // checkedLastError();
-              if (result && result.isReliable && result.languages && result.languages.length > 0) {
+              if (
+                result &&
+                result.languages &&
+                result.languages.length > 0
+              ) {
                 resolve(result.languages[0].language);
                 sendResponse(result.languages[0].language);
               } else {

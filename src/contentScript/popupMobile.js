@@ -11,7 +11,7 @@ function getTabHostName() {
 
 void (async function () {
   await twpConfig.onReady();
-  if (!platformInfo.isMobile.any) return;
+  if (!platformInfo.isMobile.any && twpConfig.get("showMobilePopupOnDesktop") !== "yes") return;
 
   const tabHostName = await getTabHostName();
   let tabLanguage = "und";
@@ -492,17 +492,15 @@ void (async function () {
   })();
 
   // show/hide popup on 3 finger tap
-  if (twpConfig.get("showPopupMobile") !== "no") {
-    window.addEventListener("touchstart", (e) => {
-      if (e.touches.length == 3) {
-        if (rootElement.isConnected) {
-          hidePopup();
-        } else {
-          showPopup();
-        }
+  window.addEventListener("touchstart", (e) => {
+    if (e.touches.length == 3) {
+      if (rootElement.isConnected) {
+        hidePopup();
+      } else {
+        showPopup();
       }
-    });
-  }
+    }
+  });
 
   // show popup when clicked on the extension icon on the extension manager
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -517,11 +515,14 @@ void (async function () {
       tabLanguage = twpLang.fixTLanguageCode(tabLanguage);
     }
     if (
+      twpConfig.get("whenShowMobilePopup") !== "only-when-i-touch" &&
       tabLanguage !== "und" &&
       twpConfig.get("neverTranslateLangs").indexOf(tabLanguage) === -1 &&
       twpConfig.get("neverTranslateSites").indexOf(tabHostName) === -1 &&
       twpConfig.get("targetLanguage") !== tabLanguage
     ) {
+      showPopup();
+    } else if (twpConfig.get("whenShowMobilePopup") === "always-show") {
       showPopup();
     }
   });
