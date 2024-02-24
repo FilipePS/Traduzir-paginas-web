@@ -70,6 +70,7 @@ void (async function () {
         const popupElement = shadowRoot.getElementById("popup");
         let padding = popupElement.clientHeight + "px";
 
+        const scrollTop = document.documentElement.scrollTop;
         
         document.documentElement.style.height = null;
         document.documentElement.style.paddingTop = null;
@@ -84,6 +85,8 @@ void (async function () {
           document.documentElement.style.paddingTop = null;
           document.documentElement.style.paddingBottom = padding;
         }
+
+        document.documentElement.scrollTop = scrollTop;
       }
     };
 

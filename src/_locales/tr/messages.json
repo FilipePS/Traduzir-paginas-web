@@ -192,7 +192,7 @@
     "message": "Daha az"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Seçilen metin geçerli değilse gösterme"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Sayfa dili hedef dil ise gösterme"
@@ -291,7 +291,7 @@
     "message": "Metin okuma ses hızı"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Metinden konuşmaya ses düzeyi"
   },
   "enterShortcut": {
     "message": "Kısayol yazın"
@@ -402,7 +402,7 @@
     "message": "PDF'yi çevir"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Çevrilmiş PDF'yi aç"
   },
   "btncopy": {
     "message": "Kopyala"
@@ -538,19 +538,19 @@
     "message": "Metinden konuşmaya hizmeti"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Bu sekme, seçilen metni DeepL kullanarak çevirmek için tıkladığınız için açıldı."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Bir daha gösterme"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Sayfa çevrilsin mi?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Sayfa çevrildi"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ ila $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Geri alma"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Otomatik algılama"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "$IFRAME_TAG$içinde sayfa çevirisini etkinleştir",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Bu çerçeveyi çevir/geri yükle"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Mobil açılır pencere ne zaman gösterilecek?"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Gerektiğinde"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Yalnızca ekrana üç parmağımla dokunduğumda"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Her zaman göster"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Ekranda kal"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Konumu değiştir"
   }
 }

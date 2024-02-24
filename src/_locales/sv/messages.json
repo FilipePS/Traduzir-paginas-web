@@ -192,7 +192,7 @@
     "message": "Mindre"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Visa inte om den markerade texten inte är giltig"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Visa inte om sidans språk är målspråket"
@@ -291,7 +291,7 @@
     "message": "Ljudhastighet för text-till-tal"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Text-till-tal ljudvolym"
   },
   "enterShortcut": {
     "message": "Skriv en genväg"
@@ -402,7 +402,7 @@
     "message": "Översätt PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Öppna översatt PDF"
   },
   "btncopy": {
     "message": "Kopiera"
@@ -538,19 +538,19 @@
     "message": "Text-till-tal-tjänst"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Den här fliken öppnades eftersom du klickade för att översätta vald text med DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Visa inte igen"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Översätta sidan?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Sidan översatt"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ till $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Ångra"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Automatisk upptäckt"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Aktivera sidöversättning i $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Översätt/återställ denna ram"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "När ska popupen för mobilen visas"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "När det är nödvändigt"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Bara när jag trycker tre fingrar på skärmen"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Visa alltid"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Håll dig på skärmen"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Ändra ställning"
   }
 }

@@ -477,7 +477,7 @@
     "message": "Vyberte jiný jazyk"
   },
   "msgHasBeenUpdated": {
-    "message": "Přípona $EXTENSION_NAME$ byla aktualizována na verzi $EXTENSION_NAME$.",
+    "message": "Přípona $EXTENSION_NAME$ byla aktualizována na verzi $EXTENSION_VERSION$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -580,21 +580,21 @@
     "message": "Přeložit/Obnovit tento rámec"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Kdy zobrazit mobilní vyskakovací okno"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Když to bude nutné"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Jen když se dotknu tří prstů na displeji"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Vždy ukázat"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Zůstaňte na obrazovce"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Změň pozici"
   }
 }

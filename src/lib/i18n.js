@@ -20,7 +20,7 @@ const twpI18n = (function () {
       if (messages) {
         messageName = messageName.toLowerCase();
         const message = messages.find((m) => m.name === messageName);
-        if (!message) return "";
+        if (!message) return chrome.i18n.getMessage(messageName, substitutions);
 
         /** @type {string} */
         let finalMessage = message.message;

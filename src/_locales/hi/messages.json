@@ -192,7 +192,7 @@
     "message": "कम"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "यदि चयनित पाठ मान्य नहीं है तो न दिखाएं"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "यह न दिखाएं कि क्या पृष्ठ भाषा लक्ष्य भाषा है"
@@ -291,7 +291,7 @@
     "message": "पाठ से वाक् ऑडियो गति"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "टेक्स्ट-टू-स्पीच ऑडियो वॉल्यूम"
   },
   "enterShortcut": {
     "message": "शॉर्टकट टाइप करें"
@@ -402,7 +402,7 @@
     "message": "पीडीएफ का अनुवाद करें"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "अनुवादित पीडीएफ खोलें"
   },
   "btncopy": {
     "message": "प्रतिलिपि"
@@ -538,19 +538,19 @@
     "message": "पाठ से वाक् सेवा"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "यह टैब इसलिए खुला क्योंकि आपने डीपएल का उपयोग करके चयनित टेक्स्ट का अनुवाद करने के लिए क्लिक किया था।"
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "दोबारा मत दिखाना"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "पृष्ठ का अनुवाद करें?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "पेज का अनुवाद किया गया"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ से $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "पूर्ववत"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "ऑटो का पता लगाने"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "$IFRAME_TAG$में पृष्ठ अनुवाद सक्षम करें",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "इस फ़्रेम का अनुवाद/पुनर्स्थापना करें"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "मोबाइल पॉपअप कब दिखाना है"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "जब आवश्यक हो"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "केवल तभी जब मैं स्क्रीन पर तीन उंगलियां छूता हूं"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "हमेशा दिखाएं"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "स्क्रीन पर रखें"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "स्थिति बदलें"
   }
 }

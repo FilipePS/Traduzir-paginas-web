@@ -192,7 +192,7 @@
     "message": "Minder"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Moenie wys as die geselekteerde teks nie geldig is nie"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Moenie wys of die bladsytaal die doeltaal is nie"
@@ -291,7 +291,7 @@
     "message": "Teks-na-spraak klank spoed"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Teks-na-spraak klankvolume"
   },
   "enterShortcut": {
     "message": "Tik 'n kortpad"
@@ -402,7 +402,7 @@
     "message": "Vertaal PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Maak vertaalde PDF oop"
   },
   "btncopy": {
     "message": "Kopieer"
@@ -538,19 +538,19 @@
     "message": "Teks-na-spraak diens"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Hierdie oortjie het oopgemaak omdat jy geklik het om geselekteerde teks met DeepL te vertaal."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Moenie weer wys nie"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Vertaal bladsy?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Bladsy vertaal"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ tot $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Ontdoen"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Outo-bespeur"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Aktiveer bladsyvertaling in $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Vertaal/Herstel hierdie raam"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Wanneer om die mobiele pop-up te wys"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Wanneer nodig"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Eers wanneer ek drie vingers op die skerm raak"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Wys altyd"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Hou op die skerm"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Verander posisie"
   }
 }

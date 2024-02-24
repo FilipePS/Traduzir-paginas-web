@@ -580,21 +580,21 @@
     "message": "Diesen Frame übersetzen/wiederherstellen"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Wann das mobile Popup angezeigt werden soll"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Wenn nötig"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Nur wenn ich mit drei Fingern den Bildschirm berühre"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Immer anzeigen"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Bleiben Sie auf dem Bildschirm"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Position ändern"
   }
 }

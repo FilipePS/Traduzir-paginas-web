@@ -192,7 +192,7 @@
     "message": "کمتر"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "اگر متن انتخاب شده معتبر نیست نشان داده نشود"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "اگر زبان صفحه، زبان مقصد است، نشان داده نشود"
@@ -291,7 +291,7 @@
     "message": "سرعت تبدیل متن به گفتار"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "حجم صدا تبدیل متن به گفتار"
   },
   "enterShortcut": {
     "message": "یک میانبر تایپ کنید"
@@ -402,7 +402,7 @@
     "message": "PDF را ترجمه کنید"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "PDF ترجمه شده را باز کنید"
   },
   "btncopy": {
     "message": "کپی (رونوشت)"
@@ -538,19 +538,19 @@
     "message": "سرویس تبدیل متن به گفتار"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "این برگه باز شد زیرا برای ترجمه متن انتخابی با استفاده از DeepL کلیک کردید."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "دیگر نشان نده"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "صفحه ترجمه شود؟"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "صفحه ترجمه شده است"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ تا $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "واگرد"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "تشخیص خودکار"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "ترجمه صفحه را در $IFRAME_TAG$فعال کنید",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "این قاب را ترجمه/بازیابی کنید"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "زمان نمایش پاپ آپ موبایل"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "در صورت لزوم"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "فقط وقتی سه انگشت را روی صفحه لمس می کنم"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "همیشه نشان دهید"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "روی صفحه نگه دارید"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "تغییر موقعیت"
   }
 }

@@ -48,7 +48,7 @@
     "message": "Try again"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Open in google translator"
+    "message": "Open in Google Translate"
   },
   "btnDonate": {
     "message": "Donate"
@@ -75,7 +75,7 @@
     "message": "When I touch three fingers on the screen"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Open in yandex translate"
+    "message": "Open in Yandex Translate"
   },
   "lblOthers": {
     "message": "Others"

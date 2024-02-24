@@ -75,7 +75,7 @@
     "message": "以三指點螢幕時"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "用 Yandex 譯者開啟"
+    "message": "用 Yandex 翻譯開啟"
   },
   "lblOthers": {
     "message": "其它"
@@ -360,7 +360,7 @@
     }
   },
   "translateClickingOnce": {
-    "message": "點一下網址列中的按鈕來翻譯網頁。（要顯示彈出視窗則點擊右鍵）"
+    "message": "點網址列中的按鈕來翻譯網頁。（顯示彈出式選單則點右鍵）"
   },
   "btnShowPopup": {
     "message": "顯示彈出式視窗"
@@ -447,7 +447,7 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "選擇彈出式介面的樣式"
+    "message": "選擇彈出式選單的介面樣式"
   },
   "msgInterfaceSimple": {
     "message": "簡潔"
@@ -580,21 +580,21 @@
     "message": "翻譯／恢復此框"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "顯示行動版彈出式選單的時機"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "有需要時"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "以三指點螢幕時"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "一律顯示"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "保持在螢幕上"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "更改位置"
   }
 }

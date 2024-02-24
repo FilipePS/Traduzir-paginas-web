@@ -192,7 +192,7 @@
     "message": "更少"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "如果所选文本无效，则不显示"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "若页面语言与目标语言一致，则不显示"
@@ -291,7 +291,7 @@
     "message": "文字转语音的语速"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "文本转语音音量"
   },
   "enterShortcut": {
     "message": "输入一个快捷键"
@@ -402,7 +402,7 @@
     "message": "翻译 PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "打开翻译后的 PDF"
   },
   "btncopy": {
     "message": "复制"
@@ -538,19 +538,19 @@
     "message": "文本转语音服务"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "此选项卡打开是因为您单击使用 DeepL 翻译所选文本。"
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "不再显示"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "翻译页面？"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "页面已翻译"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ 至 $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "撤消"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "自动侦测"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "在 $IFRAME_TAG$中启用页面翻译",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "翻译/恢复该帧"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "何时显示移动弹出窗口"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "必要时"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "仅当我用三个手指触摸屏幕时"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "总是显示"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "保持在屏幕上"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "改变位置"
   }
 }

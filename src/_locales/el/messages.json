@@ -192,7 +192,7 @@
     "message": "Λιγότερα"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Να μην εμφανίζεται εάν το επιλεγμένο κείμενο δεν είναι έγκυρο"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Να μην εμφανίζεται αν η γλώσσα σελίδας είναι η γλώσσα προορισμού"
@@ -291,7 +291,7 @@
     "message": "Ταχύτητα ήχου κειμένου σε ομιλία"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Ένταση ήχου από κείμενο σε ομιλία"
   },
   "enterShortcut": {
     "message": "Πληκτρολογήστε μια συντόμευση"
@@ -402,7 +402,7 @@
     "message": "Μετάφραση PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Ανοίξτε το μεταφρασμένο PDF"
   },
   "btncopy": {
     "message": "Αντιγραφή"
@@ -538,19 +538,19 @@
     "message": "Υπηρεσία μετατροπής κειμένου σε ομιλία"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Αυτή η καρτέλα άνοιξε επειδή κάνατε κλικ για να μεταφράσετε το επιλεγμένο κείμενο χρησιμοποιώντας το DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Μην εμφανιστείτε ξανά"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Μετάφραση σελίδας;"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Η σελίδα μεταφράστηκε"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ έως $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Ξεκάνω"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Αυτόματη αναγνώριση"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Ενεργοποίηση μετάφρασης σελίδας σε $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Μετάφραση/Επαναφορά αυτού του πλαισίου"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Πότε να εμφανίζεται το αναδυόμενο παράθυρο για κινητά"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Οταν ειναι απαραίτητο"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Μόνο όταν αγγίζω τρία δάχτυλα στην οθόνη"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Να δείχνεις πάντα"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Διατήρηση στην οθόνη"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Αλλαξε θέση"
   }
 }

@@ -192,7 +192,7 @@
     "message": "Mindre"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Ikke vis hvis den valgte teksten ikke er gyldig"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Ikke vis om sidespråket er målspråket"
@@ -291,7 +291,7 @@
     "message": "Tekst-til-tale lydhastighet"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Tekst-til-tale lydvolum"
   },
   "enterShortcut": {
     "message": "Skriv inn en snarvei"
@@ -402,7 +402,7 @@
     "message": "Oversett PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Åpne oversatt PDF"
   },
   "btncopy": {
     "message": "Kopiere"
@@ -538,19 +538,19 @@
     "message": "Tekst-til-tale-tjeneste"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Denne fanen åpnet fordi du klikket for å oversette valgt tekst ved hjelp av DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Ikke vis igjen"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Oversette siden?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Side oversatt"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ til $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Angre"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Automatisk gjenkjenning"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Aktiver sideoversettelse i $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Oversett/gjenopprett denne rammen"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Når skal du vise mobilpopupen"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Når nødvendig"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Bare når jeg berører tre fingre på skjermen"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Alltid vis"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Hold deg på skjermen"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Forandre posisjon"
   }
 }

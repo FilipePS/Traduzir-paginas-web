@@ -569,7 +569,7 @@
     "message": "Wykryj automatycznie"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Włącz tłumaczenie strony w $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Przetłumacz/Przywróć tę ramkę"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Kiedy wyświetlać wyskakujące okienko mobilne"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Kiedy konieczne"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Tylko gdy dotknę trzema palcami ekranu"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Zawsze pokazuj"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Zachowaj na ekranie"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Zmień pozycję"
   }
 }

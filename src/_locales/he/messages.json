@@ -291,7 +291,7 @@
     "message": "הקראת טקסט - מהירות קול"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "עוצמת קול של טקסט לדיבור"
   },
   "enterShortcut": {
     "message": "הקלד קיצור דרך"
@@ -402,7 +402,7 @@
     "message": "תרגם PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "פתח PDF מתורגם"
   },
   "btncopy": {
     "message": "עותק"
@@ -538,19 +538,19 @@
     "message": "שירות טקסט לדיבור"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "כרטיסייה זו נפתחה כי לחצת כדי לתרגם טקסט נבחר באמצעות DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "אל תראה שוב"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "לתרגם עמוד?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "עמוד מתורגם"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ עד $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "לבטל"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "זיהוי אוטומטי"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "אפשר תרגום דפים ב- $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "תרגם/שחזר את המסגרת הזו"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "מתי להציג את החלון הקופץ לנייד"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "בעת צורך"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "רק כשאני נוגע בשלוש אצבעות על המסך"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "תמיד מראה"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "השאר על המסך"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "שנה מיקום"
   }
 }

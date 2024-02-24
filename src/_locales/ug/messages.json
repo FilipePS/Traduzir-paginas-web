@@ -192,7 +192,7 @@
     "message": "ئاز"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "تاللانغان تېكىستنىڭ ئىناۋەتلىك ياكى ئەمەسلىكىنى كۆرسەتمەڭ"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "بەت تىلى نىشان تىل ئىكەنلىكىنى كۆرسەتمەڭ"
@@ -291,7 +291,7 @@
     "message": "تېكىستتىن سۆزلەش ئاۋازى"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "تېكىستتىن سۆزلەش ئاۋازى"
   },
   "enterShortcut": {
     "message": "تېزلەتمە كىرگۈزۈڭ"
@@ -402,7 +402,7 @@
     "message": "PDF نى تەرجىمە قىلىڭ"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "تەرجىمە قىلىنغان PDF نى ئېچىڭ"
   },
   "btncopy": {
     "message": "كۆچۈرۈڭ"
@@ -538,19 +538,19 @@
     "message": "تېكىستتىن سۆزلەش مۇلازىمىتى"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "DeepL ئارقىلىق تاللانغان تېكىستنى تەرجىمە قىلىشنى چەككەنلىكىڭىز ئۈچۈن بۇ بەتكۈچ ئېچىلدى."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "قايتا كۆرسەتمەڭ"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "بەتنى تەرجىمە قىلامسىز؟"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "بەت تەرجىمە قىلىندى"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ سے $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "ئەمەلدىن قالدۇرۇش"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "ئاپتوماتىك بايقاش"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "صفحہ کا ترجمہ $IFRAME_TAG$ میں فعال کریں۔",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "بۇ رامكىنى تەرجىمە / ئەسلىگە كەلتۈرۈڭ"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "كۆچمە قاڭقىش قاچان كۆرسىتىلىدۇ"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "زۆرۈر تېپىلغاندا"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "ئېكرانغا ئۈچ بارماق تەگكەندىلا"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "ھەمىشە كۆرسىتىڭ"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "ئېكراندا ساقلاڭ"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "ئورۇننى ئۆزگەرتىش"
   }
 }

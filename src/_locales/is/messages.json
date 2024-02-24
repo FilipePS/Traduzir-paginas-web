@@ -204,7 +204,7 @@
     "message": "Ekki sýna ef textatungumálið er marktungumálið"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Ekki sýna ef valið textamál er óþekkt"
+    "message": "Ekki sýna ef valið tungumál textans er óþekkt"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
     "message": "Sýna þýðingu þegar þú sveimar yfir þessari síðu"
@@ -264,7 +264,7 @@
     "message": "Eyða þýðingarskyndiminni"
   },
   "lblPersonalSettings": {
-    "message": "Persónulegar stillingar"
+    "message": "Persónustillingar"
   },
   "backupToFile": {
     "message": "Afrita í skrá"
@@ -276,7 +276,7 @@
     "message": "Endurheimta sjálfgefnar stillingar"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Viltu eyða þýðingarskyndiminni?"
+    "message": "Viltu eyða þýðingarskyndiminninu?"
   },
   "doYouWantOverwriteAllSettings": {
     "message": "Viltu yfirskrifa allar núverandi stillingar með því að nota öryggisafritsgögnin?"
@@ -309,7 +309,7 @@
     "message": "Víxla milli þýddu og upprunalegu síðunnar"
   },
   "lblRestorePageToOriginal": {
-    "message": "Endurheimta síðu til upprunalegu"
+    "message": "Endurheimta síðu í upprunalega"
   },
   "lblTranslatePageToTargetLanguage": {
     "message": "Þýða síðuna yfir á marktungumálið"
@@ -326,7 +326,7 @@
     "message": "Ekki flokka þýðingarniðurstöður"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Þýða breytilega búið til efni"
+    "message": "Þýða skapað efni eftir þörfum"
   },
   "calculatestorage": {
     "message": "Reikna"
@@ -341,7 +341,7 @@
     "message": "Opna heimaflýtilyklastjóra"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Sérstakar flýtilyklar"
+    "message": "Sérstakir flýtilyklar"
   },
   "lblTranslateSelectedWhenPressTwice": {
     "message": "Þýða valinn texta þegar ýtt er tvisvar á $SHORTCUT_KEY$",
@@ -352,7 +352,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Þýddu textann yfir músarbendilinn þegar ýtt er tvisvar á $SHORTCUT_KEY$",
+    "message": "Þýða textann yfir músarbendilinn þegar ýtt er tvisvar á $SHORTCUT_KEY$",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -414,7 +414,7 @@
     "message": "Allt"
   },
   "msgPleaseWait": {
-    "message": "Vinsamlegast bíðið..."
+    "message": "Vinsamlegast bíddu..."
   },
   "msgUnknownLanguage": {
     "message": "Óþekkt"
@@ -426,7 +426,7 @@
     "message": "Skipta út völdum texta fyrir þýddan texta strax"
   },
   "optionsAddToCustomDictionary": {
-    "message": "Bæta við sérsniðna orðasafn (Þetta gerir þér kleift að sleppa tilteknum orðum við þýðingar á vefsíðu)"
+    "message": "Bæta við sérsniðið orðasafn (Þetta gerir þér kleift að sleppa tilteknum orðum við þýðingar á vefsíðu)"
   },
   "msgSelectTargetLanguage": {
     "message": "Þýða vefsíður yfir á þetta marktungumál"
@@ -490,7 +490,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Framlag þitt rennur til þróunaraðila $EXTENSION_NAME$ viðbótarinnar.",
+    "message": "Framlag þitt fer til hönnuðarins viðbótarinnar $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -523,7 +523,7 @@
     "message": "Veldu þýðingarþjónustuna sem þú vilt nota"
   },
   "useAlternativeService": {
-    "message": "Notaðu aðra þýðingarþjónustu án vitundar ef núverandi marktungumál er ekki stutt af völdu þýðingarþjónustunni"
+    "message": "Nota aðra þýðingarþjónustu án vitundar ef núverandi marktungumál er ekki stutt af völdu þýðingarþjónustunni"
   },
   "msgDefaultLanguage": {
     "message": "Sjálfgefið tungumál"
@@ -580,21 +580,21 @@
     "message": "Þýða/Endurheimta þennan ramma"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Hvenær á að sýna farsímasprettigluggann"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Þegar nauðsyn krefur"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Aðeins þegar ég snerti skjáinn með þremur fingrum"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Sýna alltaf"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Geyma á skjá"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Breyta staðsetningu"
   }
 }

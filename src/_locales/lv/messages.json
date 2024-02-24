@@ -192,7 +192,7 @@
     "message": "Mazāk"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Nerādīt, ja atlasītais teksts nav derīgs"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Nerādīt, ja lapas valoda ir mērķvaloda"
@@ -291,7 +291,7 @@
     "message": "Teksta pārvēršana runā ātrums"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Teksta pārvēršanas runā audio skaļums"
   },
   "enterShortcut": {
     "message": "Ievadiet īsinājumtaustiņa kombināciju"
@@ -402,7 +402,7 @@
     "message": "Tulkot PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Atvērt tulkoto PDF"
   },
   "btncopy": {
     "message": "Kopēt"
@@ -538,19 +538,19 @@
     "message": "Teksta pārvēršanas runā pakalpojums"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Šī cilne tika atvērta, jo jūs noklikšķinājāt, lai tulkotu atlasīto tekstu, izmantojot DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Nerādīt vēlreiz"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Vai tulkot lapu?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Lapa tulkota"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ līdz $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Atsaukt"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Automātiska noteikšana"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Iespējot lapas tulkošanu valodā $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Tulkot/atjaunot šo rāmi"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Kad rādīt mobilo sakaru uznirstošo logu"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Kad nepieciešams"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Tikai tad, kad pieskaros ekrānam trīs pirkstiem"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Vienmēr rādīt"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Turiet ekrānā"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Mainiet pozīciju"
   }
 }

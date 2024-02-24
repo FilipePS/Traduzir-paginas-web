@@ -580,21 +580,21 @@
     "message": "このフレームの翻訳を切り替え"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "モバイルポップアップを表示するタイミング"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "必要な場合"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "3本の指で画面に触れたときのみ"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "いつも見せる"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "画面上に表示し続ける"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "位置を変更する"
   }
 }

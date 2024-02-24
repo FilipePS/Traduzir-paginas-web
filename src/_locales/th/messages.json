@@ -192,7 +192,7 @@
     "message": "น้อย"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "อย่าแสดงว่าข้อความที่เลือกไม่ถูกต้อง"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "ไม่แสดงหากภาษาของเพจเป็นภาษาเป้าหมาย"
@@ -291,7 +291,7 @@
     "message": "ความเร็วเสียงอ่านออกเสียงข้อความ"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "ระดับเสียงของข้อความเป็นคำพูด"
   },
   "enterShortcut": {
     "message": "พิมพ์ทางลัด"
@@ -402,7 +402,7 @@
     "message": "แปล PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "เปิด PDF ที่แปลแล้ว"
   },
   "btncopy": {
     "message": "สำเนา"
@@ -538,19 +538,19 @@
     "message": "บริการแปลงข้อความเป็นคำพูด"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "แท็บนี้เปิดขึ้นเนื่องจากคุณคลิกเพื่อแปลข้อความที่เลือกโดยใช้ DeepL"
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "อย่าแสดงอีก"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "แปลหน้า?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "แปลเพจแล้ว"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ ถึง $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "เลิกทำ"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "ตรวจจับอัตโนมัติ"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "เปิดใช้งานการแปลหน้าใน $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "แปล/กู้คืนเฟรมนี้"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "เมื่อใดที่จะแสดงป๊อปอัปบนมือถือ"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "เมื่อจำเป็น"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "เมื่อฉันสัมผัสสามนิ้วบนหน้าจอเท่านั้น"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "แสดงอยู่เสมอ"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "เอาไว้บนจอ."
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "เปลี่ยนตำแหน่ง"
   }
 }

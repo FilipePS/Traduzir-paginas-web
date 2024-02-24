@@ -569,7 +569,7 @@
     "message": "Automatikus felismerés"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Oldalfordítás engedélyezése $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "A keret lefordítása/visszaállítása"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Mikor jelenjen meg a mobil felugró ablak"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Amikor szükséges"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Csak akkor, ha három ujjal megérintem a képernyőt"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Mindig mutassa"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Maradjon a képernyőn"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Pozíció módosítása"
   }
 }

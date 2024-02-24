@@ -402,7 +402,7 @@
     "message": "Traducir PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Abrir PDF traducido"
   },
   "btncopy": {
     "message": "Copiar"
@@ -544,13 +544,13 @@
     "message": "No mostrar de nuevo"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "¿Traducir página?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Página traducida"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ a $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Deshacer"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Detección automática"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Habilitar la traducción de páginas en $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Traducir/Restaurar este marco"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Cuándo mostrar la ventana emergente móvil"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Cuando sea necesario"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Solo cuando toco tres dedos en la pantalla"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Siempre muestra"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Mantener en pantalla"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Cambiar de posición"
   }
 }

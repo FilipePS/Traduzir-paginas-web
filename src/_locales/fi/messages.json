@@ -192,7 +192,7 @@
     "message": "Vähemmän"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Älä näytä, jos valittu teksti ei kelpaa"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Älä näytä, jos sivuston kieli on kohdekieli"
@@ -291,7 +291,7 @@
     "message": "Tekstistä puheeksi äänen nopeus"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Tekstistä puheeksi äänenvoimakkuus"
   },
   "enterShortcut": {
     "message": "Kirjoita pikakuvake"
@@ -402,7 +402,7 @@
     "message": "Käännä PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Avaa käännetty PDF"
   },
   "btncopy": {
     "message": "Kopio"
@@ -538,19 +538,19 @@
     "message": "Tekstistä puheeksi -palvelu"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Tämä välilehti avautui, koska klikkasit kääntääksesi valitun tekstin DeepL:llä."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Älä näytä uudelleen"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Käännetäänkö sivu?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Sivu käännetty"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ - $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Kumoa"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Automaattinen havainnointi"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Ota sivun käännös käyttöön kielellä $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Käännä/palauta tämä kehys"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Milloin mobiilin ponnahdusikkuna näytetään"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Tarvittaessa"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Vain kun kosketan kolmea sormea näyttöä"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Näytä aina"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Pysy näytöllä"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Vaihda asentoa"
   }
 }

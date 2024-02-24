@@ -569,7 +569,7 @@
     "message": "Otkrij automatski"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Omogući prijevod stranice na $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Prevedi/vrati ovaj okvir"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Kada prikazati mobilni skočni prozor"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Kad je potrebno"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Samo kad dodirnem tri prsta na ekranu"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Uvijek pokaži"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Zadrži na ekranu"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Promijeni položaj"
   }
 }

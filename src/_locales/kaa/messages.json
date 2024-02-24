@@ -477,7 +477,7 @@
     "message": "Basqa tildi tańlań"
   },
   "msgHasBeenUpdated": {
-    "message": "$EXTENSION_NAME$ keńeytpesi $EXTENSION_vERSION$ versiyasına jańalandi.",
+    "message": "$EXTENSION_NAME$ keńeytpesi $EXTENSION_VERSION$ versiyasına jańalandi.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",

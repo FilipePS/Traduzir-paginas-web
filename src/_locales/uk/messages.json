@@ -192,7 +192,7 @@
     "message": "Менше"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Не показувати, якщо виділений текст недійсний"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Не показувати, якщо мова сторінки є цільовою мовою"
@@ -291,7 +291,7 @@
     "message": "Швидкість перетворення звуку Text-to-speech"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Гучність звуку синтезу мовлення"
   },
   "enterShortcut": {
     "message": "Введіть комбінацію"
@@ -402,7 +402,7 @@
     "message": "Перекласти PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Відкрийте перекладений PDF"
   },
   "btncopy": {
     "message": "Копіювати"
@@ -538,19 +538,19 @@
     "message": "Служба синтезу мовлення"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Ця вкладка відкрилася, тому що ви натиснули, щоб перекласти виділений текст за допомогою DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Більше не показувати"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Перекласти сторінку?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Сторінка перекладена"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ до $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Скасувати"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Автовизначення"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Увімкнути переклад сторінки $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Перекласти/відновити цей кадр"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Коли показувати спливаюче вікно мобільного пристрою"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "При необхідності"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Лише коли я торкаюся трьома пальцями екрана"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Завжди показувати"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Тримайте на екрані"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Змінити позицію"
   }
 }

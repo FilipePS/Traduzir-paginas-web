@@ -192,7 +192,7 @@
     "message": "Manj"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Ne prikaži, če izbrano besedilo ni veljavno"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Ne prikazuj, ali je jezik strani ciljni jezik"
@@ -291,7 +291,7 @@
     "message": "Hitrost zvoka besedila v govor"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Glasnost zvoka pretvorbe besedila v govor"
   },
   "enterShortcut": {
     "message": "Vnesite bližnjico"
@@ -402,7 +402,7 @@
     "message": "Prevedi PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Odpri preveden PDF"
   },
   "btncopy": {
     "message": "Kopirati"
@@ -538,19 +538,19 @@
     "message": "Storitev pretvorbe besedila v govor"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Ta zavihek se je odprl, ker ste kliknili za prevod izbranega besedila z uporabo DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Ne pokaži več"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Želite prevesti stran?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Stran prevedena"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ do $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Razveljavi"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Samodejno zaznaj"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Omogoči prevod strani v $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Prevedi/obnovi ta okvir"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Kdaj prikazati pojavno okno mobilne naprave"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Ko je potrebno"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Samo ko se s tremi prsti dotaknem zaslona"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Vedno pokaži"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Ohrani na zaslonu"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Spremenite položaj"
   }
 }

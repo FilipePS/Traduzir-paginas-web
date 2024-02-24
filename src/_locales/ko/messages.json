@@ -569,7 +569,7 @@
     "message": "자동 감지"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "$IFRAME_TAG$에서 페이지 번역 활성화",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "이 프레임 번역/복원"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "모바일 팝업을 표시하는 경우"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "필요할 땐"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "화면에 세 손가락을 터치했을 때만"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "항상 표시"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "화면에 계속 표시"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "위치 변경"
   }
 }

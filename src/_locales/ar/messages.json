@@ -192,7 +192,7 @@
     "message": "أقل"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "لا تظهر إذا كان النص المحدد غير صالح"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "لا تعرض ما إذا كانت لغة الصفحة هي اللغة الهدف"
@@ -291,7 +291,7 @@
     "message": "سرعة صوت تحويل النص إلى كلام"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "حجم الصوت تحويل النص إلى كلام"
   },
   "enterShortcut": {
     "message": "أدخل الاختصار"
@@ -402,7 +402,7 @@
     "message": "ترجمة PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "افتح ملف PDF المترجم"
   },
   "btncopy": {
     "message": "نسخ"
@@ -538,19 +538,19 @@
     "message": "خدمة تحويل النص إلى كلام"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "تم فتح علامة التبويب هذه لأنك نقرت لترجمة النص المحدد باستخدام DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "لا تظهر مرة أخرى"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "ترجمة الصفحة؟"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "الصفحة مترجمة"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ إلى $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "الغاء التحميل"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "اكتشاف تلقائي"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "تمكين ترجمة الصفحة في $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "ترجمة/استعادة هذا الإطار"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "متى تظهر النافذة المنبثقة للجوال"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "عند الضرورة"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "فقط عندما ألمس ثلاثة أصابع على الشاشة"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "اعرض دائما"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "إبقاء على الشاشة"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "غير المكان"
   }
 }

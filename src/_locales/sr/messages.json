@@ -192,7 +192,7 @@
     "message": "Мање"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Не приказуј ако изабрани текст није важећи"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Не приказуј да ли је језик странице циљни језик"
@@ -291,7 +291,7 @@
     "message": "Брзина звука претварања текста у говор"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Јачина звука за претварање текста у говор"
   },
   "enterShortcut": {
     "message": "Унесите пречицу"
@@ -402,7 +402,7 @@
     "message": "Преведи ПДФ"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Отворите преведени ПДФ"
   },
   "btncopy": {
     "message": "Копирај"
@@ -538,19 +538,19 @@
     "message": "Услуга претварања текста у говор"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Ова картица је отворена јер сте кликнули да преведете изабрани текст користећи ДеепЛ."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Не приказуј поново"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Превести страницу?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Страница преведена"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ до $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Поништи"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Ауто-детецт"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Омогућите превод странице у $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Преведи/врати овај оквир"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Када да се прикаже искачући прозор на мобилном телефону"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Када је то потребно"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Тек када додирнем три прста на екрану"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Увек показују"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Задржи на екрану"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Промена позиције"
   }
 }

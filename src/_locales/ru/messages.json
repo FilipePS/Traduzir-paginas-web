@@ -580,21 +580,21 @@
     "message": "Перевести/восстановить этот фрейм"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Когда показывать всплывающее окно для мобильного устройства"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Когда необходимо"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Только когда я касаюсь экрана тремя пальцами"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Всегда показывать"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Оставаться на экране"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Изменить положение"
   }
 }

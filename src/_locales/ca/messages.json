@@ -192,7 +192,7 @@
     "message": "Menys"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "No mostris si el text seleccionat no és vàlid"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "No mostris si l'idioma de la pàgina és l'idioma de destinació"
@@ -291,7 +291,7 @@
     "message": "Velocitat de lectura del text"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Volum d'àudio de text a veu"
   },
   "enterShortcut": {
     "message": "Escriviu una drecera"
@@ -402,7 +402,7 @@
     "message": "Tradueix PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Obre PDF traduït"
   },
   "btncopy": {
     "message": "Copia"
@@ -538,19 +538,19 @@
     "message": "Servei de text a veu"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Aquesta pestanya s'ha obert perquè heu fet clic per traduir el text seleccionat amb DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "No tornis a mostrar"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Traduir la pàgina?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Pàgina traduïda"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ a $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Desfer"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Auto detectar"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Activa la traducció de pàgines a $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Tradueix/Restaura aquest marc"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Quan mostrar la finestra emergent del mòbil"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Quan sigui necessari"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Només quan toco tres dits a la pantalla"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Mostra sempre"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Continua a la pantalla"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Canvia de posició"
   }
 }

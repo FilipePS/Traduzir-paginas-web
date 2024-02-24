@@ -580,21 +580,21 @@
     "message": "Dịch/Khôi phục khung này"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "Khi nào thì hiển thị cửa sổ bật lên trên di động"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "Khi cần thiết"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "Chỉ khi tôi chạm 3 ngón tay trên màn hình"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "Luôn hiển thị"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "Giữ trên màn hình"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "Thay đổi vị trí"
   }
 }
