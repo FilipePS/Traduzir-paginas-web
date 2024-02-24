@@ -65,9 +65,35 @@ void (async function () {
     lastInteraction = Date.now();
     clearInterval(lastInteractionInterval);
 
+    const updatePadding = () => {
+      if (twpConfig.get("addPaddingToPage") === "yes") {
+        const popupElement = shadowRoot.getElementById("popup");
+        let padding = popupElement.clientHeight + "px";
+
+        
+        document.documentElement.style.height = null;
+        document.documentElement.style.paddingTop = null;
+        document.documentElement.style.paddingBottom = null;
+
+        document.documentElement.style.height =
+          document.documentElement.scrollHeight + "px";
+        if (twpConfig.get("popupMobilePosition") === "top") {
+          document.documentElement.style.paddingTop = padding;
+          document.documentElement.style.paddingBottom = null;
+        } else {
+          document.documentElement.style.paddingTop = null;
+          document.documentElement.style.paddingBottom = padding;
+        }
+      }
+    };
+
     if (!rootElement.isConnected) {
       document.documentElement.appendChild(rootElement);
+      updatePadding();
+
       lastInteractionInterval = setInterval(() => {
+        updatePadding();
+
         const menuContainer = shadowRoot.getElementById("menu-container");
         if (
           Date.now() - lastInteraction > 1000 * 8 &&
@@ -83,14 +109,19 @@ void (async function () {
     }
   }
 
-  function hidePopup() {
+  function hidePopup(withoutAnimation = false) {
     clearInterval(lastInteractionInterval);
-    if (rootElement.isConnected) {
+    if (rootElement.isConnected && !withoutAnimation) {
       const mainElement = shadowRoot.querySelector("main");
       const animation = mainElement.animate(
         [
           { transform: "translateY(0px)", opacity: "1" },
-          { transform: `translateY(${twpConfig.get("popupMobilePosition") === "top" ? "-50px" : "50px"})`, opacity: "0" },
+          {
+            transform: `translateY(${
+              twpConfig.get("popupMobilePosition") === "top" ? "-50px" : "50px"
+            })`,
+            opacity: "0",
+          },
         ],
         {
           duration: 200,
@@ -106,6 +137,16 @@ void (async function () {
       }, 300);
       const menuContainer = shadowRoot.getElementById("menu-container");
       menuContainer.style.display = "none";
+    }
+
+    if (withoutAnimation) {
+      rootElement.remove();
+    }
+
+    if (twpConfig.get("addPaddingToPage") === "yes") {
+      document.documentElement.style.height = null;
+      document.documentElement.style.paddingTop = null;
+      document.documentElement.style.paddingBottom = null;
     }
   }
 
@@ -149,12 +190,12 @@ void (async function () {
           popupElement.style.transform = `translateX(-100%)`;
         }
         popupElement.ontransitionend = () => {
-          rootElement.remove();
+          hidePopup(true);
           popupElement.ontransitionend = null;
           popupElement.style.cssText = "";
         };
         setTimeout(() => {
-          rootElement.remove();
+          hidePopup(true);
           popupElement.ontransitionend = null;
           popupElement.style.cssText = "";
         }, 400);
@@ -511,6 +552,8 @@ void (async function () {
   // translate or restore page
   const btnTranslate = shadowRoot.getElementById("btnTranslate");
   btnTranslate.onclick = () => {
+    lastInteraction = Date.now();
+
     if (pageLanguageState === "original") {
       pageTranslator.translatePage();
     } else {

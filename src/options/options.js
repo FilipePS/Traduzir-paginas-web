@@ -1465,6 +1465,12 @@ twpConfig
     $("#showMobilePopupOnDesktop").onchange = (e) => {
       twpConfig.set("showMobilePopupOnDesktop", e.target.value);
     }
+    $("#showMobilePopupOnDesktop").value = twpConfig.get("showMobilePopupOnDesktop");
+
+    $("#addPaddingToPage").onchange = (e) => {
+      twpConfig.set("addPaddingToPage", e.target.value);
+    }
+    $("#addPaddingToPage").value = twpConfig.get("addPaddingToPage");
 
     // donation options
     if (navigator.language === "pt-BR") {
