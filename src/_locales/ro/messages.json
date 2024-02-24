@@ -192,7 +192,7 @@
     "message": "Puțin"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Nu arăta dacă textul ales nu este valabil"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Nu arăta dacă limba paginii este limba de destinație"
@@ -291,7 +291,7 @@
     "message": "Viteza de pronunțare a textului"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Volumul pronunțării textului"
   },
   "enterShortcut": {
     "message": "Tastează o comandă rapidă"
@@ -402,7 +402,7 @@
     "message": "Tradu PDF"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Deschide PDF-ul tradus"
   },
   "btncopy": {
     "message": "Copiază"
@@ -538,19 +538,19 @@
     "message": "Serviciu de pronunțare a textului"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Această pagină s-a deschis deoarece ai făcut clic pentru a traduce textul ales folosind DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Nu arăta din nou"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Traduci pagina?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Pagină tradusă"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ în $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Anulează"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Automat"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Activează traducerea paginii în $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,6 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Tradu/Restabilește acest cadru"
+  },
+  "msgWhenShowMobilePopup": {
+    "message": "When to show the mobile popup"
+  },
+  "msgWhenNecessary": {
+    "message": "When necessary"
+  },
+  "msgOnlyWhenItouch3Fingers": {
+    "message": "Only when I touch three fingers on the screen"
+  },
+  "msgAlwaysShow": {
+    "message": "Always show"
+  },
+  "btnKeepOnScreen": {
+    "message": "Keep on screen"
+  },
+  "btnChangePosition": {
+    "message": "Change position"
   }
 }

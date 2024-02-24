@@ -578,5 +578,23 @@
   },
   "btnTranslateRestoreThisFrame": {
     "message": "Перевести/восстановить этот фрейм"
+  },
+  "msgWhenShowMobilePopup": {
+    "message": "When to show the mobile popup"
+  },
+  "msgWhenNecessary": {
+    "message": "When necessary"
+  },
+  "msgOnlyWhenItouch3Fingers": {
+    "message": "Only when I touch three fingers on the screen"
+  },
+  "msgAlwaysShow": {
+    "message": "Always show"
+  },
+  "btnKeepOnScreen": {
+    "message": "Keep on screen"
+  },
+  "btnChangePosition": {
+    "message": "Change position"
   }
 }

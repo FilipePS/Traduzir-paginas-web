@@ -192,7 +192,7 @@
     "message": "Weniger"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "Nicht zeigen, wenn der ausgewählte Text ungültig ist"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Nicht anzeigen, wenn die Seitensprache die Zielsprache ist"
@@ -291,7 +291,7 @@
     "message": "Sprachausgabegeschwindigkeit"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "Lautstärke der Sprachausgabe"
   },
   "enterShortcut": {
     "message": "Tastenkürzel eingeben"
@@ -402,7 +402,7 @@
     "message": "PDF übersetzen"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "Übersetztes PDF öffnen"
   },
   "btncopy": {
     "message": "Kopieren"
@@ -538,19 +538,19 @@
     "message": "Text-to-Speech-Dienst"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "Dieser Tab wurde geöffnet, da Sie ausgewählt haben, den Text mit DeepL zu übersetzen."
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "Nicht erneut anzeigen"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "Seite übersetzen?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "Seite übersetzt"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ zu $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "Rückgängig"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "Automatische Erkennung"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "Seitenübersetzung in $IFRAME_TAG$ aktivieren",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,6 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "Diesen Frame übersetzen/wiederherstellen"
+  },
+  "msgWhenShowMobilePopup": {
+    "message": "When to show the mobile popup"
+  },
+  "msgWhenNecessary": {
+    "message": "When necessary"
+  },
+  "msgOnlyWhenItouch3Fingers": {
+    "message": "Only when I touch three fingers on the screen"
+  },
+  "msgAlwaysShow": {
+    "message": "Always show"
+  },
+  "btnKeepOnScreen": {
+    "message": "Keep on screen"
+  },
+  "btnChangePosition": {
+    "message": "Change position"
   }
 }

@@ -578,5 +578,23 @@
   },
   "btnTranslateRestoreThisFrame": {
     "message": "Traduzir/Restaurar este quadro"
+  },
+  "msgWhenShowMobilePopup": {
+    "message": "Quando mostrar o pop-up móvel"
+  },
+  "msgWhenNecessary": {
+    "message": "Quando necessário"
+  },
+  "msgOnlyWhenItouch3Fingers": {
+    "message": "Apenas quando eu tocar três dedos na tela"
+  },
+  "msgAlwaysShow": {
+    "message": "Sempre Mostrar"
+  },
+  "btnKeepOnScreen": {
+    "message": "Manter na tela"
+  },
+  "btnChangePosition": {
+    "message": "Alterar posição"
   }
 }

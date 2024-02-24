@@ -402,7 +402,7 @@
     "message": "PDFを翻訳"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "翻訳されたPDFを開く"
   },
   "btncopy": {
     "message": "コピー"
@@ -538,19 +538,19 @@
     "message": "テキスト読み上げサービス"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "DeepLで選択したテキストを翻訳したため、このタブが開かれました。"
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "再度表示しない"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "ページを翻訳しますか？"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "ページを翻訳しました"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$から$TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "戻す"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "自動検出"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "$IFRAME_TAG$内のページも翻訳する",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,6 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "このフレームの翻訳を切り替え"
+  },
+  "msgWhenShowMobilePopup": {
+    "message": "When to show the mobile popup"
+  },
+  "msgWhenNecessary": {
+    "message": "When necessary"
+  },
+  "msgOnlyWhenItouch3Fingers": {
+    "message": "Only when I touch three fingers on the screen"
+  },
+  "msgAlwaysShow": {
+    "message": "Always show"
+  },
+  "btnKeepOnScreen": {
+    "message": "Keep on screen"
+  },
+  "btnChangePosition": {
+    "message": "Change position"
   }
 }
