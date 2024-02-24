@@ -590,5 +590,11 @@
   },
   "msgAlwaysShow": {
     "message": "Always show"
+  },
+  "btnKeepOnScreen": {
+    "message": "Keep on screen"
+  },
+  "btnChangePosition": {
+    "message": "Change position"
   }
 }

@@ -11,7 +11,11 @@ function getTabHostName() {
 
 void (async function () {
   await twpConfig.onReady();
-  if (!platformInfo.isMobile.any && twpConfig.get("showMobilePopupOnDesktop") !== "yes") return;
+  if (
+    !platformInfo.isMobile.any &&
+    twpConfig.get("showMobilePopupOnDesktop") !== "yes"
+  )
+    return;
 
   const tabHostName = await getTabHostName();
   let tabLanguage = "und";
@@ -68,7 +72,8 @@ void (async function () {
         if (
           Date.now() - lastInteraction > 1000 * 8 &&
           menuContainer.style.display !== "block" &&
-          serviceSelectorIsOpen === false
+          serviceSelectorIsOpen === false &&
+          twpConfig.get("popupMobileKeepOnScren") === "no"
         ) {
           hidePopup();
         }
@@ -85,7 +90,7 @@ void (async function () {
       const animation = mainElement.animate(
         [
           { transform: "translateY(0px)", opacity: "1" },
-          { transform: "translateY(-50px)", opacity: "0" },
+          { transform: `translateY(${twpConfig.get("popupMobilePosition") === "top" ? "-50px" : "50px"})`, opacity: "0" },
         ],
         {
           duration: 200,
@@ -324,6 +329,16 @@ void (async function () {
           `#!authorizationToOpenOptions=${authorizationToOpenOptions}`,
         "blank"
       );
+    } else if (action === "keep-on-screen") {
+      twpConfig.set(
+        "popupMobileKeepOnScren",
+        twpConfig.get("popupMobileKeepOnScren") === "yes" ? "no" : "yes"
+      );
+    } else if (action === "change-position") {
+      twpConfig.set(
+        "popupMobilePosition",
+        twpConfig.get("popupMobilePosition") === "top" ? "bottom" : "top"
+      );
     }
 
     closeMenu();
@@ -422,6 +437,68 @@ void (async function () {
       shadowRoot.querySelector(
         `#menu-options [data-value="never-translate-from"] [checkicon]`
       ).textContent = "";
+    }
+
+    // update keep-on-screen checkicon
+    if (twpConfig.get("popupMobileKeepOnScren") === "yes") {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="keep-on-screen"] [checkicon]`
+      ).textContent = "✔";
+    } else {
+      shadowRoot.querySelector(
+        `#menu-options [data-value="keep-on-screen"] [checkicon]`
+      ).textContent = "";
+    }
+
+    // update change-position
+    if (twpConfig.get("popupMobilePosition") === "top") {
+      const bottomStyle = shadowRoot.getElementById("bottom-style");
+      if (bottomStyle) bottomStyle.remove();
+    } else {
+      const bottomStyle = shadowRoot.getElementById("bottom-style");
+      if (!bottomStyle) {
+        const bottomStyle = document.createElement("style");
+        bottomStyle.id = "bottom-style";
+        bottomStyle.textContent = `
+          main {
+            bottom: 0;
+            display: flex;
+            flex-direction: column-reverse;
+          }
+
+          #menu-options {
+            top: 5px;
+            box-shadow: 0 -3px 6px 0 var(--shadow-color);
+          }
+
+          @keyframes popup {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+    
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+          }
+
+          @keyframes expand {
+            0% {
+                opacity: 0;
+                scale: 0 0;
+                translate: 50% 50%;
+            }
+    
+            100% {
+                opacity: 1;
+                scale: 1 1;
+                translate: 0 0;
+            }
+          }
+        `;
+        shadowRoot.appendChild(bottomStyle);
+      }
     }
   }
   updateInterface();
