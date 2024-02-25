@@ -1464,13 +1464,66 @@ twpConfig
 
     $("#showMobilePopupOnDesktop").onchange = (e) => {
       twpConfig.set("showMobilePopupOnDesktop", e.target.value);
-    }
-    $("#showMobilePopupOnDesktop").value = twpConfig.get("showMobilePopupOnDesktop");
+    };
+    $("#showMobilePopupOnDesktop").value = twpConfig.get(
+      "showMobilePopupOnDesktop"
+    );
 
     $("#addPaddingToPage").onchange = (e) => {
       twpConfig.set("addPaddingToPage", e.target.value);
-    }
+    };
     $("#addPaddingToPage").value = twpConfig.get("addPaddingToPage");
+
+    $("#btnShowProxyConfiguration").onclick = (e) => {
+      $("#googleProxyContainer").style.display = "block";
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
+    };
+
+    $("#addGoogleProxy").onclick = (e) => {
+      try {
+        const inputTranslationServer = $(
+          "#googleTranslateProxyServer"
+        ).value.trim();
+        const inputTtsServer = $("#googleTtsProxyServer").value.trim();
+        const translateServer = inputTranslationServer
+          ? new URL("https://" + inputTranslationServer).host
+          : null;
+        const ttsServer = inputTtsServer
+          ? new URL("https://" + inputTtsServer).host
+          : null;
+
+        const proxyServers = twpConfig.get("proxyServers");
+        proxyServers.google = {
+          translateServer,
+          ttsServer,
+        };
+        console.info("proxyServers: ", proxyServers);
+        twpConfig.set("proxyServers", proxyServers);
+
+        $("#googleTranslateProxyServer").value = translateServer;
+        $("#googleTtsProxyServer").value = ttsServer;
+      } catch (e) {
+        alert(e);
+      }
+    };
+
+    $("#removeGoogleProxy").onclick = (e) => {
+      const proxyServers = twpConfig.get("proxyServers");
+      delete proxyServers.google;
+      twpConfig.set("proxyServers", proxyServers);
+
+      $("#googleTranslateProxyServer").value = "";
+      $("#googleTtsProxyServer").value = "";
+    }
+
+    const googleProxy = twpConfig.get("proxyServers").google;
+    if (googleProxy) {
+      $("#googleTranslateProxyServer").value = googleProxy.translateServer;
+      $("#googleTtsProxyServer").value = googleProxy.ttsServer;
+    }
 
     // donation options
     if (navigator.language === "pt-BR") {

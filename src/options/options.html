@@ -612,6 +612,24 @@
             <option value="yes">yes</option>
           </select>
         </div>
+        <hr>
+        <div>
+          <p>If you live in a country with a firewall that blocks the Google translation service and have a server to act as a proxy, you can configure it here.</p>
+          <p>It is important to make it clear that what you are configuring below is not a regular http/https/socks proxy. It is a server created or shared with you. Translation requests will be sent to this server and the server will need to know how to direct this request to Google's servers.</p>
+          <button style="width: 100%;" id="btnShowProxyConfiguration">Show configuration</button>
+          <div id="googleProxyContainer" style="display: none;">
+            <label for="googleTranslateProxyServer">Translation Server</label><br>
+            <input type="text" id="googleTranslateProxyServer" placeholder="translate.googleapis.com"
+              style="width: 50%;" autocomplete="off" spellcheck="false"><br>
+            <br>
+            <label for="googleTtsProxyServer">Text-to-speech server</label><br>
+            <input type="text" id="googleTtsProxyServer" placeholder="translate.google.com" style="width: 50%;"
+              autocomplete="off" spellcheck="false"><br>
+            <br>
+            <button id="addGoogleProxy">Set Google Proxy</button>
+            <button id="removeGoogleProxy">Remove Google Proxy</button>
+          </div>
+        </div>
       </div>
 
       <div>

@@ -505,6 +505,7 @@ void (async function () {
         bottomStyle.id = "bottom-style";
         bottomStyle.textContent = `
           main {
+            top: unset;
             bottom: 0;
             display: flex;
             flex-direction: column-reverse;

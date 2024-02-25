@@ -588,6 +588,17 @@ const textToSpeech = (function () {
       } else if (name === "ttsVolume") {
         googleService.setAudioVolume(newvalue);
         bingService.setAudioVolume(newvalue);
+      } else if (name === "proxyServers") {
+        const proxyServers = newvalue;
+        if (proxyServers?.google?.ttsServer) {
+          const url = new URL(googleService.baseURL);
+          url.host = proxyServers.google.ttsServer;
+          googleService.baseURL = url.toString();
+        } else {
+          const url = new URL(googleService.baseURL);
+          url.host = "translate.google.com";
+          googleService.baseURL = url.toString();
+        }
       }
     });
 
@@ -595,6 +606,13 @@ const textToSpeech = (function () {
     bingService.setAudioSpeed(twpConfig.get("ttsSpeed"));
     googleService.setAudioVolume(twpConfig.get("ttsVolume"));
     bingService.setAudioVolume(twpConfig.get("ttsVolume"));
+
+    const proxyServers = twpConfig.get("proxyServers");
+    if (proxyServers?.google?.ttsServer) {
+      const url = new URL(googleService.baseURL);
+      url.host = proxyServers.google.ttsServer;
+      googleService.baseURL = url.toString(); 
+    }
   });
 
   textToSpeech.google = googleService;

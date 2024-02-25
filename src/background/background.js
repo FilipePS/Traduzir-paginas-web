@@ -202,10 +202,12 @@ chrome.runtime.onInstalled.addListener((details) => {
   ) {
     twpConfig.onReady(async () => {
       if (platformInfo.isMobile.any) {
-        twpConfig.set("neverTranslateLangs", []);
-        twpConfig.set("neverTranslateSites", []);
-        twpConfig.set("alwaysTranslateLangs", []);
-        twpConfig.set("alwaysTranslateSites", []);
+        if (details.previousVersion.split(".")[0] === "9") {
+          twpConfig.set("neverTranslateLangs", []);
+          twpConfig.set("neverTranslateSites", []);
+          twpConfig.set("alwaysTranslateLangs", []);
+          twpConfig.set("alwaysTranslateSites", []);
+        }
         return;
       }
       if (twpConfig.get("showReleaseNotes") !== "yes") return;

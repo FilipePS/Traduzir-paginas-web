@@ -1543,6 +1543,27 @@ const translationService = (function () {
         .find((cs) => cs.name === "deepl_freeapi");
       serviceList.set("deepl", createDeeplFreeApiService(deepl_freeapi.apiKey));
     }
+
+    const proxyServers = twpConfig.get("proxyServers");
+    if (proxyServers?.google?.translateServer) {
+      const url = new URL(googleService.baseURL);
+      url.host = proxyServers.google.translateServer;
+      googleService.baseURL = url.toString();
+    }
+  });
+
+  twpConfig.onChanged((name, newValue) => {
+    if (name === "proxyServers") {
+      if (newValue?.google?.translateServer) {
+        const url = new URL(googleService.baseURL);
+        url.host = newValue.google.translateServer;
+        googleService.baseURL = url.toString();
+      } else {
+        const url = new URL(googleService.baseURL);
+        url.host = "translate.googleapis.com";
+        googleService.baseURL = url.toString();
+      }
+    }
   });
 
   return translationService;
