@@ -15,7 +15,7 @@
     "message": "Nije bilo moguće prevesti ovu stranicu"
   },
   "lblAlwaysTranslate": {
-    "message": "Uvijek prevodi sa $LANGUAGE_NAME$",
+    "message": "Uvijek koristi $LANGUAGE_NAME$ za prevođenje",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -207,10 +207,10 @@
     "message": "Ne prikazuj ako je jezik odabranog teksta nepoznat"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Prikaži prijevod prilikom prelaženja mišem na ovoj web stranici"
+    "message": "Prikaži prijevod prilikom prelaženja mišem preko ove web stranice"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Prikaži prijevod prilikom prelaženja mišem na web stranicama koje koriste $LANGUAGE_NAME$ jezik",
+    "message": "Prikaži prijevod prilikom prelaženja mišem preko web stranica koje koriste $LANGUAGE_NAME$ jezik",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -228,7 +228,7 @@
     "message": "Slušaj"
   },
   "btnStopListening": {
-    "message": "Prestani slušati"
+    "message": "Prekini slušanje"
   },
   "btnApply": {
     "message": "Primijeni"
@@ -323,7 +323,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Ne razvrstavaj „Google Prevoditelj” rezultate"
+    "message": "Ne razvrstavaj rezultate prijevoda"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Prevedi dinamički stvoren sadržaj"
@@ -408,10 +408,10 @@
     "message": "Kopiraj"
   },
   "msgRecents": {
-    "message": "Nedavne"
+    "message": "Nedavni"
   },
   "msgAll": {
-    "message": "Sve"
+    "message": "Svi"
   },
   "msgPleaseWait": {
     "message": "Pričekaj …"
@@ -450,13 +450,13 @@
     "message": "Odaberi stil skočnog sučelja"
   },
   "msgInterfaceSimple": {
-    "message": "Jednostavno"
+    "message": "Jednostavni"
   },
   "msgInterfaceComplex": {
-    "message": "Kompleksno"
+    "message": "Kompleksni"
   },
   "lblTranslatePageInto": {
-    "message": "Prevedi stranicu na $LANGUAGE_NAME$?",
+    "message": "Prevesti stranicu na $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -490,7 +490,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Vaša donacija ide programeru dodatka $EXTENSION_NAME$.",
+    "message": "Tvoja donacija ide programeru dodatka $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -532,16 +532,16 @@
     "message": "Jezik korisničkog sučelja dodatka"
   },
   "msgSetDeepLAlert": {
-    "message": "Jeste li sigurni da želite postaviti odabrati DeepL kao prevoditeljsku uslugu?\nOtvorit će se nova kartica i tamo će se izvršiti prijevod."
+    "message": "Stvarno želiš postaviti DeepL kao uslugu prevođenja?\nOtvorit će se nova kartica u kojoj će se izvršiti prijevod."
   },
   "lblTextToSpeechService": {
     "message": "Usluga pretvaranja teksta u govor"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "Ova se kartica otvorila jer si pritisnuo(la) gumb za prevođenje odabranog teksta pomoću DeepL-a."
+    "message": "Ova se kartica otvorila jer si odabrao(la) prevoditi odabrani tekst pomoću DeepL-a."
   },
   "msgDontShowAgain": {
-    "message": "Nemoj više prikazati"
+    "message": "Ne prikazuj ponovo"
   },
   "msgTranslatePage": {
     "message": "Prevesti stranicu?"
@@ -569,7 +569,7 @@
     "message": "Otkrij automatski"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Omogući prijevod stranice na $IFRAME_TAG$",
+    "message": "Aktiviraj prijevod stranice u $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,16 +577,16 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Prevedi/vrati ovaj okvir"
+    "message": "Prevedi/Obnovi ovaj okvir"
   },
   "msgWhenShowMobilePopup": {
-    "message": "Kada prikazati mobilni skočni prozor"
+    "message": "Kada prikazati skočni prozor na mobitelu"
   },
   "msgWhenNecessary": {
     "message": "Kad je potrebno"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Samo kad dodirnem tri prsta na ekranu"
+    "message": "Samo kad dodirnem ekran s tri prsta"
   },
   "msgAlwaysShow": {
     "message": "Uvijek pokaži"

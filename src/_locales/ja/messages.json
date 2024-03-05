@@ -586,7 +586,7 @@
     "message": "必要な場合"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "3本の指で画面に触れたときのみ"
+    "message": "画面を3本指でタップしたとき"
   },
   "msgAlwaysShow": {
     "message": "いつも見せる"
@@ -595,6 +595,6 @@
     "message": "画面上に表示し続ける"
   },
   "btnChangePosition": {
-    "message": "位置を変更する"
+    "message": "位置を変更"
   }
 }

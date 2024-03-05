@@ -580,21 +580,21 @@
     "message": "Tradu/Restabilește acest cadru"
   },
   "msgWhenShowMobilePopup": {
-    "message": "Când să afișați pop-up-ul mobil"
+    "message": "Când să apară fereastra mobilă"
   },
   "msgWhenNecessary": {
     "message": "Când este necesar"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Doar când ating trei degete pe ecran"
+    "message": "Doar dacă se atinge ecranul cu trei degete"
   },
   "msgAlwaysShow": {
-    "message": "Arata intotdeauna"
+    "message": "Arată mereu"
   },
   "btnKeepOnScreen": {
-    "message": "Rămâneți pe ecran"
+    "message": "Menține pe ecran"
   },
   "btnChangePosition": {
-    "message": "Schimba poziția"
+    "message": "Schimbă poziția"
   }
 }
