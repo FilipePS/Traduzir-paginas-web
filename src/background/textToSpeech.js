@@ -248,9 +248,9 @@ const textToSpeech = (function () {
     constructor() {
       /** @type {MediaElementAudioSourceNode[]} */
       this.sources = [];
-
       if ("AudioContext" in window) {
         this.audioCtx = new AudioContext();
+        this.audioCtx.suspend();
         this.gainNode = this.audioCtx.createGain();
         this.gainNode.gain.value = 1;
         this.gainNode.connect(this.audioCtx.destination);
@@ -258,14 +258,22 @@ const textToSpeech = (function () {
     }
 
     /**
-     * Add an audio to the amplifier.
+     * Amplify the audio.
      * @param {HTMLAudioElement} audio
      */
-    addAudio(audio) {
+    async amplify(audio) {
       if (!this.audioCtx) return;
+      if (this.sources.find((source) => source.mediaElement === audio)) {
+        await this.audioCtx.resume();
+        return;
+      }
+
       const source = this.audioCtx.createMediaElementSource(audio);
-      source.connect(this.gainNode);
       this.sources.push(source);
+
+      source.connect(this.gainNode);
+
+      await this.audioCtx.resume();
     }
 
     /**
@@ -278,6 +286,17 @@ const textToSpeech = (function () {
         this.gainNode.gain.value = volume;
       } else {
         this.gainNode.gain.value = 1;
+      }
+    }
+
+    /**
+     * Suspend the audio context.
+     * https://github.com/FilipePS/Traduzir-paginas-web/issues/802
+     * @returns {Promise<void>} Promise\<void\>
+     */
+    async suspend() {
+      if (this.audioCtx) {
+        await this.audioCtx.suspend();
       }
     }
   }
@@ -418,7 +437,6 @@ const textToSpeech = (function () {
               .then(
                 /** @type {string} */ (response) => {
                   const audio = new Audio(response);
-                  this.audioAmplifier.addAudio(audio);
                   this.audios.set(audioKey, audio);
                   return response;
                 }
@@ -445,18 +463,23 @@ const textToSpeech = (function () {
      */
     async play(audios) {
       this.stopAll();
-      return await new Promise((resolve) => {
+      const result = await new Promise(async (resolve) => {
         try {
           if (audios instanceof Array) {
-            const playAll = (/** @type {number} */ currentIndex) => {
+            const playAll = async (/** @type {number} */ currentIndex) => {
               this.stopAll();
               const audio = audios[currentIndex];
               if (audio) {
                 audio.playbackRate = this.audioSpeed;
+                await this.audioAmplifier.amplify(audio);
                 audio.play();
-                audio.onended = () => {
-                  playAll(currentIndex + 1);
-                };
+                audio.addEventListener(
+                  "ended",
+                  () => {
+                    playAll(currentIndex + 1);
+                  },
+                  { once: true }
+                );
               } else {
                 resolve();
               }
@@ -464,16 +487,23 @@ const textToSpeech = (function () {
             playAll(0);
           } else if (audios instanceof HTMLAudioElement) {
             audios.playbackRate = this.audioSpeed;
+            await this.audioAmplifier.amplify(audios);
             audios.play();
-            audios.onended = () => {
-              resolve();
-            };
+            audios.addEventListener(
+              "ended",
+              () => {
+                resolve();
+              },
+              { once: true }
+            );
           }
         } catch (e) {
           console.error(e);
           resolve();
         }
       });
+      await this.audioAmplifier.suspend();
+      return result;
     }
 
     /**
@@ -504,8 +534,13 @@ const textToSpeech = (function () {
     stopAll() {
       this.audios.forEach((audio) => {
         audio.pause();
-        audio.currentTime = 0;
+        // If `currentTime` is not `duration` an audio stream will remain active in Firefox
+        // https://github.com/FilipePS/Traduzir-paginas-web/issues/802
+        if (!isNaN(audio.duration) && isFinite(audio.duration)) {
+          audio.currentTime = audio.duration;
+        }
       });
+      this.audioAmplifier.suspend();
     }
   }
 
@@ -611,7 +646,7 @@ const textToSpeech = (function () {
     if (proxyServers?.google?.ttsServer) {
       const url = new URL(googleService.baseURL);
       url.host = proxyServers.google.ttsServer;
-      googleService.baseURL = url.toString(); 
+      googleService.baseURL = url.toString();
     }
   });
 
