@@ -764,18 +764,20 @@ twpConfig.onReady(() => {
             if (themeColorAttention) {
               svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorAttention));
             } else if (!isUsingTheme && (darkMode || incognito)) {
-              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#00ddff"));
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "rgb(0, 221, 255)"));
             } else if (isUsingTheme && darkMode) {
-              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#00ddff"));
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "rgb(0, 221, 255)"));
             } else {
-              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "#0061e0"));
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "rgb(0, 97, 224)"));
             }
           }
         } else {
-          if ((isUsingTheme && darkMode) || (!isUsingTheme && incognito)) {
-            svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "1.0");
+          if (isUsingTheme) {
+            svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "0.9");
+          } else if (darkMode || incognito) {
+            svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "1");
           } else {
-            svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "0.7");
+            svg64 = svgXml.replace(/\$\(fill\-opacity\)\;/g, "0.72");
           }
           if (isFirefoxAlpenglowTheme) {
             if (darkMode || incognito) {
@@ -791,9 +793,11 @@ twpConfig.onReady(() => {
             if (themeColorFieldText) {
               svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, themeColorFieldText));
             } else if (!isUsingTheme && (darkMode || incognito)) {
-              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "white"));
+              svg64 = btoa(
+                svg64.replace(/\$\(fill\)\;/g, "rgb(251, 251, 254)")
+              );
             } else {
-              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "black"));
+              svg64 = btoa(svg64.replace(/\$\(fill\)\;/g, "rgb(21, 20, 26)"));
             }
           }
         }
