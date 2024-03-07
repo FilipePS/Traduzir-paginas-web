@@ -87,3 +87,6 @@ The pages are translated using the Google or Yandex translation engine (you choo
 **Limitations**
 
 Some pages like [support.mozilla.org](https://support.mozilla.org/) and [addons.mozilla.org](http://addons.mozilla.org/) will not be translated. For security reasons, the browser blocks extensions from accessing these sites.
+
+## Build instructions
+- You can see all the build instructions in the [build-instructions.md](build-instructions.md) file.
