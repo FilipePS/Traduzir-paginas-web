@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Oversæt din side i realtid via Google eller Yandex."
+    "message": "Oversæt din side i realtid med Google eller Yandex."
   },
   "pageActionTitle": {
     "message": "Oversæt denne side"
@@ -48,7 +48,7 @@
     "message": "Prøv igen"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Åbn i Google Translator"
+    "message": "Åbn i Google Oversæt"
   },
   "btnDonate": {
     "message": "Donér"

@@ -563,7 +563,7 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Ξεκάνω"
+    "message": "Αναίρεση"
   },
   "msgAutoDetect": {
     "message": "Αυτόματη αναγνώριση"
@@ -589,12 +589,12 @@
     "message": "Μόνο όταν αγγίζω τρία δάχτυλα στην οθόνη"
   },
   "msgAlwaysShow": {
-    "message": "Να δείχνεις πάντα"
+    "message": "Πάντα εμφάνιση"
   },
   "btnKeepOnScreen": {
     "message": "Διατήρηση στην οθόνη"
   },
   "btnChangePosition": {
-    "message": "Αλλαξε θέση"
+    "message": "Αλλαγή θέσης"
   }
 }

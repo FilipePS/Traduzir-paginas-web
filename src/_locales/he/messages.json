@@ -9,7 +9,7 @@
     "message": "לתרגם את הדף הזה?"
   },
   "lblTranslating": {
-    "message": "מתרגם..."
+    "message": "התרגום מתבצע..."
   },
   "lblError": {
     "message": "לא ניתן לתרגם דף זה"
@@ -87,7 +87,7 @@
     "message": "תרמו ועזרו למפתח"
   },
   "msgTranslateFor": {
-    "message": "תרגם ל: $LANGUAGE_NAME$",
+    "message": "תרגם ל$LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -120,7 +120,7 @@
     "message": "הראה את הלחצן לתרגום הטקסט שנבחר"
   },
   "msgAutomatic": {
-    "message": "אוֹטוֹמָטִי"
+    "message": "אוטומטי"
   },
   "msgTranslateSelectedText": {
     "message": "תרגם טקסט נבחר"
@@ -129,10 +129,10 @@
     "message": "הצג את האפשרות לתרגם את הטקסט שנבחר בתפריט ההקשר"
   },
   "lblNeverTranslateLangs": {
-    "message": "לעולם אל תתרגם דפים אלו"
+    "message": "לעולם לא לתרגם דפים אלו"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "לעולם אל תתרגם דפים אלו"
+    "message": "לעולם לא לתרגם משפה זו"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "הראה טקסט מקורי בעת ריחוף"
@@ -147,7 +147,7 @@
     "message": "תרגומים"
   },
   "msgStyle": {
-    "message": "עיצוב"
+    "message": "סגנון"
   },
   "msgHotkeys": {
     "message": "מקשי קיצור"
@@ -156,7 +156,7 @@
     "message": "תרומה"
   },
   "lblReleaseNotes": {
-    "message": "מכתבי שחרור"
+    "message": "הערות שחרור"
   },
   "lblReport": {
     "message": "לדווח על בעיה"
@@ -165,19 +165,19 @@
     "message": "הגדרות"
   },
   "lblAdd": {
-    "message": "לְהוֹסִיף"
+    "message": "הוספה"
   },
   "lblShowTranslatedWhenHovering": {
     "message": "הראה טקסט מתורגם בעת ריחוף"
   },
   "lblKeyboardShortcuts": {
-    "message": "קיצורי דרך במקלדת"
+    "message": "קיצורי מקשים"
   },
   "msgThanksForUseExtension": {
     "message": "תודה על השימוש בתוסף זה."
   },
   "msgIWillBeGrateful": {
-    "message": "אני אהיה אסיר תודה אם תוכל להתרום."
+    "message": "אודה בכל לבב אם אקבל ממך תרומה."
   },
   "lblShowTranslatedHoveringSites": {
     "message": "הראה טקסט מתורגם בעת ריחוף באתרים אלה"
@@ -225,13 +225,13 @@
     "message": "אל תתרגם את הטקסט שנבחר"
   },
   "btnListen": {
-    "message": "להקשיב"
+    "message": "האזנה"
   },
   "btnStopListening": {
-    "message": "הפסק להקשיב"
+    "message": "הפסק האזנה"
   },
   "btnApply": {
-    "message": "להגיש מועמדות"
+    "message": "החלה"
   },
   "swapTranslationService": {
     "message": "מעבר בין שירותי תרגום"
@@ -279,10 +279,10 @@
     "message": "האם ברצונך למחוק התרגום המטומן?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "האם ברצונך לכתוב על כל ההגדרות הקיימים דרך הגיבוי מידע?"
+    "message": "לשכתב את כל ההגדרות הקיימות מתוך נתוני הגיבוי?"
   },
   "fileIsCorrupted": {
-    "message": "הקובץ נראה כקובץ תקול"
+    "message": "הקובץ כנראה פגום"
   },
   "doYouWantRestoreSettings": {
     "message": "האם ברצונך לשחזר את התוסף להגדרת ברירת מחדל?"
@@ -309,10 +309,10 @@
     "message": "החלף בין תרגום אל השפה המקורית"
   },
   "lblRestorePageToOriginal": {
-    "message": "שחזר דף זה אל המקור"
+    "message": "החזרת הדף לשפת המקור"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "תרגם דף זה לשפה הנבחרת"
+    "message": "תרגום הדף לשפת היעד"
   },
   "lblTranslateTag_pre": {
     "message": "אפשר תרגום עבור $HTML_TAG_NAME$",
@@ -363,7 +363,7 @@
     "message": "תרגם את הדף על ידי לחיצה אחת על הכפתור בשורת הכתובת. (כדי לראות את החלון הקופץ, לחץ לחיצה ימנית)"
   },
   "btnShowPopup": {
-    "message": "הצג קופץ"
+    "message": "הצג חלון קופץ"
   },
   "msgToTranslateThisDocument": {
     "message": "כדי לתרגם מסמך זה $DOC_TYPE$ יש צורך להמיר אותו ל-HTML",
@@ -411,10 +411,10 @@
     "message": "אחרונים"
   },
   "msgAll": {
-    "message": "את כל"
+    "message": "הכול"
   },
   "msgPleaseWait": {
-    "message": "המתן בבקשה..."
+    "message": "נא להמתין..."
   },
   "msgUnknownLanguage": {
     "message": "לא ידוע"
@@ -423,7 +423,7 @@
     "message": "החלף"
   },
   "lblHotTranslatedSelectedText": {
-    "message": "החלף טקסט נבחר בטקסט מתורגם באופן מיידי"
+    "message": "החלפה מיידית של הטקסט הנבחר בתרגומו"
   },
   "optionsAddToCustomDictionary": {
     "message": "הוסף למילון מותאם אישית (זה מאפשר לך לדלג על מילים מסוימות במהלך תרגום דפי אינטרנט)"
@@ -529,7 +529,7 @@
     "message": "שפה ברירת מחדל"
   },
   "msgExtUILanguage": {
-    "message": "שפת ממשק התוסף"
+    "message": "שפת ממשק המשתמש של ההרחבה"
   },
   "msgSetDeepLAlert": {
     "message": "האם אתה בטוח שברצונך להגדיר את שירות התרגום ל-DeepL?\nכרטיסייה חדשה תיפתח, והתרגום יתבצע שם."
@@ -589,7 +589,7 @@
     "message": "רק כשאני נוגע בשלוש אצבעות על המסך"
   },
   "msgAlwaysShow": {
-    "message": "תמיד מראה"
+    "message": "תמיד להציג"
   },
   "btnKeepOnScreen": {
     "message": "השאר על המסך"

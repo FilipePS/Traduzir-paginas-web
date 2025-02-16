@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Prevodi stranice izravno koristeći Google ili Yandex."
+    "message": "Prevodi stranice u stvarnom vremenu koristeći Google ili Yandex."
   },
   "pageActionTitle": {
     "message": "Prevedi ovu stranicu"
@@ -15,7 +15,7 @@
     "message": "Nije bilo moguće prevesti ovu stranicu"
   },
   "lblAlwaysTranslate": {
-    "message": "Uvijek koristi $LANGUAGE_NAME$ za prevođenje",
+    "message": "Uvijek prevodi $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -33,7 +33,7 @@
     }
   },
   "btnReset": {
-    "message": "Resetiraj"
+    "message": "Ponovno postavi"
   },
   "btnTranslate": {
     "message": "Prevedi"
@@ -54,7 +54,7 @@
     "message": "Doniraj"
   },
   "btnNeverTranslate": {
-    "message": "Nikada ne prevodi ovu web stranicu"
+    "message": "Nikada ne prevodi ovu web-stranicu"
   },
   "btnMobileOriginal": {
     "message": "Original"
@@ -63,7 +63,7 @@
     "message": "Prevedeno"
   },
   "optionsNeverTranslate": {
-    "message": "Nikada ne prevodi ove web stranice"
+    "message": "Nikada ne prevodi ove web-stranice"
   },
   "optionsAlwaysTranslate": {
     "message": "Uvijek prevodi ove jezike"
@@ -105,10 +105,10 @@
     "message": "Ne"
   },
   "btnAlwaysTranslate": {
-    "message": "Uvijek prevodi ovu web stranicu"
+    "message": "Uvijek prevodi ovu web-stranicu"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Uvijek prevodi ove web stranice"
+    "message": "Uvijek prevodi ove web-stranice"
   },
   "lblDarkMode": {
     "message": "Tamni modus"
@@ -141,7 +141,7 @@
     "message": "Jezici"
   },
   "msgSites": {
-    "message": "Web stranice"
+    "message": "Web-stranice"
   },
   "msgTranslations": {
     "message": "Prijevodi"
@@ -192,7 +192,7 @@
     "message": "Manje"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Nemoj prikazati ako odabrani tekst nije ispravan"
+    "message": "Ne prikazuj ako odabrani tekst nije ispravan"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "Ne prikazuj ako je jezik stranice ciljani jezik"
@@ -538,10 +538,10 @@
     "message": "Usluga pretvaranja teksta u govor"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "Ova se kartica otvorila jer si odabrao(la) prevoditi odabrani tekst pomoću DeepL-a."
+    "message": "Ova se kartica otvorila jer ste odabrali prevoditi označeni tekst pomoću DeepL-a."
   },
   "msgDontShowAgain": {
-    "message": "Ne prikazuj ponovo"
+    "message": "Ne prikazuj ponovno"
   },
   "msgTranslatePage": {
     "message": "Prevesti stranicu?"
@@ -569,7 +569,7 @@
     "message": "Otkrij automatski"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Aktiviraj prijevod stranice u $IFRAME_TAG$",
+    "message": "Omogući prijevod stranice u $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"

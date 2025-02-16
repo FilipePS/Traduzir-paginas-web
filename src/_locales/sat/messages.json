@@ -399,10 +399,10 @@
     "message": "PDF ᱠᱷᱚᱱ HTML"
   },
   "msgTranslatePDF": {
-    "message": "Translate PDF"
+    "message": "PDF ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
   },
   "msgOpenTranslatedPDF": {
-    "message": "Open translated PDF"
+    "message": "ᱛᱚᱨᱡᱚ ᱟᱠᱟᱱ PDF ᱡᱷᱤᱡᱽ ᱢᱮ"
   },
   "btncopy": {
     "message": "ᱱᱚᱠᱚᱞ"
@@ -474,10 +474,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "Choose another language"
+    "message": "ᱮᱴᱟᱜ ᱯᱟᱹᱨᱥᱤ ᱵᱟᱪᱷᱟᱣ ᱢᱮ"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "$EXTENSION_NAME$ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱫᱚ $EXTENSION_VERSION$ ᱨᱮ ᱦᱟᱹᱞᱤᱭᱟᱹᱠ ᱟᱠᱟᱱᱟ ᱾",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -490,7 +490,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "ᱟᱢᱟᱜ ᱫᱟᱱ ᱫᱚ $EXTENSION_NAME$ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱨᱮᱱ ᱰᱮᱵᱷᱞᱚᱯᱚᱨ ᱴᱷᱮᱱ ᱪᱟᱞᱟᱜᱼᱟ ᱾",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -499,58 +499,58 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating, and supporting this extension for over three years. It's amazing to see that we have over 600,000 daily users, and all of these people have been able to migrate to Firefox permanently.\n\nI aim to release a new version of this extension every month and keep improving it.\n\nI would be grateful if you could help me financially by becoming a Patreon member and supporting me in bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "ᱤᱧ ᱯᱮ ᱥᱮᱨᱢᱟ ᱠᱷᱚᱱ ᱵᱟᱹᱲᱛᱤ ᱞᱟᱦᱟ ᱠᱷᱚᱱ ᱱᱚᱣᱟ ᱵᱟᱹᱲᱛᱤ ᱩᱛᱱᱟᱹᱣ, ᱟᱯᱰᱮᱴ ᱟᱨ ᱥᱟᱯᱚᱨᱴ ᱮᱢ ᱮᱫᱟᱹᱧ ᱾ ᱱᱚᱣᱟ ᱧᱮᱞ ᱠᱟᱛᱮ ᱟᱹᱰᱤ ᱦᱟᱦᱟᱲᱟ ᱜᱮᱭᱟ ᱡᱮ ᱟᱵᱚ ᱴᱷᱮᱱ ᱖᱐᱐,᱐᱐᱐ ᱠᱷᱚᱱ ᱦᱚᱸ ᱵᱟᱹᱲᱛᱤ ᱫᱤᱱᱟᱹᱢ ᱵᱮᱵᱷᱟᱨᱤᱭᱟᱹ ᱠᱚ ᱢᱮᱱᱟᱜ ᱠᱚᱣᱟ, ᱟᱨ ᱱᱩᱠᱩ ᱦᱚᱲ ᱠᱚ ᱥᱟᱱᱟᱢ ᱦᱚᱲ ᱯᱷᱟᱭᱟᱨᱯᱷᱚᱠᱥ ᱨᱮ ᱥᱟᱹᱢᱩᱫᱽ ᱞᱟᱹᱜᱤᱫ ᱠᱚ ᱩᱪᱟᱹᱲ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ᱾\n\nᱤᱧᱟᱜ ᱡᱚᱥ ᱫᱚ ᱫᱤᱱᱟᱹᱢ ᱪᱟᱸᱫᱚ ᱱᱚᱣᱟ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱱᱟᱶᱟ ᱵᱷᱟᱨᱥᱚᱱ ᱨᱤᱞᱤᱡᱽ ᱟᱨ ᱱᱚᱣᱟ ᱨᱮ ᱥᱩᱫᱷᱨᱟᱹᱣ ᱤᱧ ᱫᱚᱦᱚᱭᱟ᱾\n\nᱤᱧ ᱟᱹᱰᱤ ᱥᱟᱨᱦᱟᱣ ᱤᱧ ᱵᱩᱡᱷᱟᱹᱣᱟ ᱡᱩᱫᱤ ᱟᱢ ᱯᱮᱴᱨᱤᱭᱚᱱ ᱨᱟᱹᱥᱤᱭᱟᱹ ᱦᱩᱭ ᱠᱟᱛᱮ ᱟᱨ ᱱᱚᱶᱟ ᱵᱟᱹᱲᱛᱤ ᱨᱮ ᱥᱩᱫᱷᱟᱹᱨ ᱟᱹᱜᱩ ᱞᱟᱹᱜᱤᱫ ᱜᱚᱲᱚ ᱮᱢ ᱫᱟᱲᱮᱭᱟᱹᱧᱟᱢ᱾\n\nᱡᱟᱦᱟᱸᱭ ᱠᱚ ᱱᱚᱣᱟ ᱯᱨᱚᱡᱮᱠᱴ ᱨᱮ ᱮᱱᱮᱢ ᱠᱚ ᱮᱢ ᱟᱠᱟᱫᱟ ᱥᱟᱱᱟᱢ ᱠᱚ ᱥᱟᱨᱦᱟᱣ ᱾"
   },
   "lblEnableDiskCache": {
-    "message": "Enable persistent translation cache (on-disk cache)"
+    "message": "ᱞᱮᱛᱟᱲ ᱛᱚᱨᱡᱚ ᱠᱮᱪ ᱪᱟᱹᱞᱩᱭ ᱢᱮ (ᱚᱱ-ᱰᱤᱥᱠ ᱠᱮᱪ)"
   },
   "selectOriginalLanguage": {
-    "message": "Select the original website language"
+    "message": "ᱟᱥᱚᱞ ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱯᱟᱹᱨᱥᱤ ᱵᱟᱪᱷᱟᱣ ᱢᱮ"
   },
   "selectTargetLanguage": {
-    "message": "Select target language"
+    "message": "ᱡᱚᱥ ᱯᱟᱹᱨᱥᱤ ᱵᱟᱪᱷᱟᱣ ᱢᱮ"
   },
   "msgImproveTranslation": {
-    "message": "Improve translation"
+    "message": "ᱛᱚᱨᱡᱚᱢᱟ ᱥᱩᱫᱷᱨᱟᱹᱣ ᱢᱮ"
   },
   "lblExperimental": {
-    "message": "Experimental"
+    "message": "ᱮᱠᱥᱯᱮᱨᱤᱢᱮᱱᱴᱟᱞ"
   },
   "msgPrivacy": {
-    "message": "Privacy"
+    "message": "ᱯᱨᱟᱭᱣᱮᱥᱤ"
   },
   "selectToEnableTranslationService": {
-    "message": "Select the translation services you want to use"
+    "message": "ᱟᱢ ᱡᱟᱦᱟᱸ ᱛᱚᱨᱡᱚᱢᱟ ᱥᱮᱵᱟ ᱵᱮᱵᱷᱟᱨ ᱥᱟᱱᱟᱭᱮᱫ ᱢᱮᱭᱟ ᱚᱱᱟ ᱵᱟᱪᱷᱟᱣ ᱢᱮ"
   },
   "useAlternativeService": {
-    "message": "Silently use an alternate translation service if the current target language is not supported by the selected translation service"
+    "message": "ᱵᱟᱪᱷᱟᱣ ᱟᱠᱟᱱ ᱛᱚᱨᱡᱚ ᱥᱮᱵᱟ ᱦᱚᱛᱮᱛᱮ ᱱᱤᱛᱚᱜ ᱡᱚᱥ ᱯᱟᱹᱨᱥᱤ ᱵᱟᱭ ᱥᱟᱯᱚᱨᱴ ᱞᱮᱱᱠᱷᱟᱱ ᱛᱷᱤᱨ ᱠᱟᱛᱮ ᱵᱤᱠᱚᱞᱯᱚ ᱛᱚᱨᱡᱚ ᱥᱮᱵᱟ ᱵᱮᱵᱷᱟᱨ ᱢᱮ"
   },
   "msgDefaultLanguage": {
-    "message": "Default language"
+    "message": "ᱢᱩ ᱯᱟᱹᱨᱥᱤ"
   },
   "msgExtUILanguage": {
-    "message": "Extension user interface language"
+    "message": "ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱵᱮᱵᱷᱟᱨᱤᱭᱟᱹ ᱤᱱᱴᱟᱨᱯᱷᱮᱥ ᱯᱟᱹᱨᱥᱤ"
   },
   "msgSetDeepLAlert": {
-    "message": "Are you sure you want to set the translation service to DeepL?\nA new tab will open, and the translation will take place there."
+    "message": "ᱪᱮᱫ ᱟᱢ ᱴᱷᱟᱹᱣᱠᱟᱹ ᱜᱮᱭᱟᱢ ᱟᱢ ᱛᱚᱨᱡᱚᱢᱟ ᱥᱮᱵᱟ DeepL ᱨᱮ ᱥᱮᱴ ᱥᱟᱱᱟᱭᱮᱫ ᱢᱮᱭᱟ?\nᱢᱤᱫ ᱱᱟᱶᱟ ᱴᱮᱵᱽ ᱡᱷᱤᱡᱽᱚᱜᱼᱟ, ᱟᱨ ᱛᱚᱨᱡᱚᱢᱟ ᱚᱱᱰᱮ ᱦᱩᱭᱩᱜᱼᱟ ᱾"
   },
   "lblTextToSpeechService": {
-    "message": "Text-to-speech service"
+    "message": "ᱚᱞ ᱠᱷᱚᱱ ᱨᱚᱲ ᱥᱮᱵᱟ"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "This tab opened because you clicked to translate selected text using DeepL."
+    "message": "ᱱᱚᱣᱟ ᱴᱮᱵᱽ ᱫᱚ ᱡᱷᱤᱡ ᱮᱱᱟ ᱪᱮᱫᱟᱜ ᱥᱮ ᱟᱢ DeepLᱵᱮᱵᱷᱟᱨ ᱠᱟᱛᱮ ᱵᱟᱪᱷᱟᱣ ᱚᱱᱚᱞ ᱛᱚᱨᱡᱚᱢ ᱞᱟᱹᱜᱤᱫ ᱞᱤᱱ ᱠᱮᱫᱟᱢ ᱾"
   },
   "msgDontShowAgain": {
-    "message": "Don't show again"
+    "message": "ᱫᱚᱦᱲᱟ ᱟᱞᱚᱢ ᱩᱫᱩᱜᱼᱟ"
   },
   "msgTranslatePage": {
-    "message": "Translate page?"
+    "message": "ᱛᱚᱨᱡᱚᱢᱟ ᱥᱟᱦᱴᱟ?"
   },
   "msgPageTranslated": {
-    "message": "Page translated"
+    "message": "ᱛᱚᱨᱡᱚᱢᱟ ᱥᱟᱦᱴᱟ?"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ ᱠᱷᱚᱱ $TO_LANGUAGE$",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Undo"
+    "message": "ᱩᱞᱴᱟᱹ"
   },
   "msgAutoDetect": {
-    "message": "Auto-detect"
+    "message": "ᱟᱡ ᱛᱮ ᱪᱤᱱᱦᱟᱹ"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "$IFRAME_TAG$ ᱨᱮ ᱥᱟᱦᱴᱟ ᱛᱚᱨᱡᱚᱢᱟ ᱮᱢᱪᱷᱚᱭ ᱢᱮ",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -577,24 +577,24 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Translate/Restore this frame"
+    "message": "ᱱᱚᱣᱟ ᱯᱷᱨᱟᱢ ᱛᱚᱨᱡᱚᱢᱟ/ᱨᱩᱣᱟᱹᱨ ᱢᱮ"
   },
   "msgWhenShowMobilePopup": {
-    "message": "When to show the mobile popup"
+    "message": "ᱢᱚᱵᱟᱭᱤᱞ ᱯᱚᱯᱟᱯ ᱛᱤᱱ ᱨᱮ ᱩᱫᱩᱜ ᱦᱩᱭᱩᱜᱼᱟ"
   },
   "msgWhenNecessary": {
-    "message": "When necessary"
+    "message": "ᱡᱚᱠᱷᱚᱱ ᱞᱟᱹᱠᱛᱤᱜ-ᱟ"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Only when I touch three fingers on the screen"
+    "message": "ᱥᱩᱢᱩᱝ ᱛᱤᱱ ᱨᱮ ᱤᱧ ᱥᱠᱨᱤᱱ ᱨᱮ ᱯᱮᱭᱟ ᱠᱟᱹᱴᱩᱵ ᱤᱧ ᱡᱚᱴᱮᱫᱟ"
   },
   "msgAlwaysShow": {
-    "message": "Always show"
+    "message": "ᱥᱟᱨᱟ ᱜᱷᱟᱹᱲᱤᱡ ᱩᱫᱩᱜ ᱢᱮ"
   },
   "btnKeepOnScreen": {
-    "message": "Keep on screen"
+    "message": "ᱥᱠᱨᱤᱱ ᱨᱮ ᱫᱚᱦᱚ ᱠᱟᱜ ᱢᱮ"
   },
   "btnChangePosition": {
-    "message": "Change position"
+    "message": "ᱡᱟᱭᱜᱟ ᱵᱚᱫᱚᱞ ᱢᱮ"
   }
 }

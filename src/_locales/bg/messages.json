@@ -1,0 +1,600 @@
+{
+  "extensionDescription": {
+    "message": "Преведете страницата си в реално време с помощта на Google или Yandex."
+  },
+  "pageActionTitle": {
+    "message": "Преведи тази страница"
+  },
+  "lblTranslate": {
+    "message": "Преведи тази страница?"
+  },
+  "lblTranslating": {
+    "message": "Превежда се..."
+  },
+  "lblError": {
+    "message": "Тази страница не можа да бъде преведена"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Винаги превеждай от $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblTargetLanguage": {
+    "message": "Целеви език $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "btnReset": {
+    "message": "Възстанови"
+  },
+  "btnTranslate": {
+    "message": "Преведи"
+  },
+  "btnOptions": {
+    "message": "Опции"
+  },
+  "btnRestore": {
+    "message": "Покажи оригинала"
+  },
+  "btnTryAgain": {
+    "message": "Опитайте отново"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "Отваряне в Google Преводач"
+  },
+  "btnDonate": {
+    "message": "Дарение"
+  },
+  "btnNeverTranslate": {
+    "message": "Никога не превеждай този сайт"
+  },
+  "btnMobileOriginal": {
+    "message": "Оригинал"
+  },
+  "btnMobileTranslated": {
+    "message": "Преведено"
+  },
+  "optionsNeverTranslate": {
+    "message": "Никога не превеждай тези сайтове"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "Винаги превеждай тези езици"
+  },
+  "optionPopupConfig": {
+    "message": "Покажи изскачащ прозорец на мобилното устройство"
+  },
+  "optionPopupThreeFingers": {
+    "message": "Когато докосна екрана с три пръста"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "Отвори в Yandex Преводач"
+  },
+  "lblOthers": {
+    "message": "Други"
+  },
+  "btnMoreOptions": {
+    "message": "Още опции"
+  },
+  "lblPlsDonate": {
+    "message": "Помогнете разработчика с дарение"
+  },
+  "msgTranslateFor": {
+    "message": "Превод на $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowContextMenu": {
+    "message": "Покажи опцията за превод на страницата в контекстното меню"
+  },
+  "msgYes": {
+    "message": "Да"
+  },
+  "msgNo": {
+    "message": "Не"
+  },
+  "btnAlwaysTranslate": {
+    "message": "Винаги превеждай този сайт"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "Винаги превеждай тези сайтове"
+  },
+  "lblDarkMode": {
+    "message": "Тъмен режим"
+  },
+  "lblShowReleaseNotes": {
+    "message": "Покажи бележки за изданието при актуализиране"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "Покажи бутона за превод на избрания текст"
+  },
+  "msgAutomatic": {
+    "message": "Автоматично"
+  },
+  "msgTranslateSelectedText": {
+    "message": "Преведи избрания текст"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "Покажи опцията за превод на избрания текст в контекстното меню"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "Никога не превеждай тези езици"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "Никога не превеждай този език"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "Покажи оригиналния текст при задържане"
+  },
+  "msgLanguages": {
+    "message": "Езици"
+  },
+  "msgSites": {
+    "message": "Сайтове"
+  },
+  "msgTranslations": {
+    "message": "Преводи"
+  },
+  "msgStyle": {
+    "message": "Стил"
+  },
+  "msgHotkeys": {
+    "message": "Бързи клавиши"
+  },
+  "lblMakeDonation": {
+    "message": "Направете дарение"
+  },
+  "lblReleaseNotes": {
+    "message": "Бележки по изданието"
+  },
+  "lblReport": {
+    "message": "Съобщаване за проблем"
+  },
+  "lblSettings": {
+    "message": "Настройки"
+  },
+  "lblAdd": {
+    "message": "Добави"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "Покажи преведен текст при задържане"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "Клавишни комбинации"
+  },
+  "msgThanksForUseExtension": {
+    "message": "Благодарим ви, че използвате това разширение."
+  },
+  "msgIWillBeGrateful": {
+    "message": "Ще съм благодарен, ако можете да направите дарение."
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "Покажи преведен текст при задържане върху тези сайтове"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "Направи изскачащата икона синя, когато сайтът бъде преведен"
+  },
+  "more": {
+    "message": "Повече"
+  },
+  "less": {
+    "message": "По-малко"
+  },
+  "dontShowIfIsNotValidText": {
+    "message": "Не показвай, ако избраният текст не е валиден"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "Не показвай, ако езикът на страницата е целевият език"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "Не показвай, ако езикът на страницата е непознат"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "Не показвай, ако избраният език на текста е целевият език"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "Не показвай, ако избраният език на текста е неизвестен"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "Покажи превод, когато задържите върху този сайт"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Покажи превод, когато задържите върху уеб сайтове на $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "Покажи преведен текст при задържане върху сайтове с тези езици"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "Не превеждай избрания текст"
+  },
+  "btnListen": {
+    "message": "Прослушване"
+  },
+  "btnStopListening": {
+    "message": "Спиране на прослушване"
+  },
+  "btnApply": {
+    "message": "Прилагане"
+  },
+  "swapTranslationService": {
+    "message": "Превключване между услуги за превод"
+  },
+  "swapPopup": {
+    "message": "Превключване между прост и сложен интерфейс"
+  },
+  "lblTranslateInterface": {
+    "message": "Преведи интерфейса"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "Покажи бутона в адресната лента"
+  },
+  "lblPageTranslationService": {
+    "message": "Услуга за превод на страница"
+  },
+  "lblTextTranslationService": {
+    "message": "Услуга за превод на текст"
+  },
+  "msgStorage": {
+    "message": "Място за съхранение"
+  },
+  "lblTranslationCache": {
+    "message": "Кеш на превода"
+  },
+  "lblStorageUsed": {
+    "message": "Използвано място за съхранение:"
+  },
+  "deleteTranslationCache": {
+    "message": "Изтриване на кеша за превод"
+  },
+  "lblPersonalSettings": {
+    "message": "Персонални настройки"
+  },
+  "backupToFile": {
+    "message": "Резервно копие във файл"
+  },
+  "restoreFromFile": {
+    "message": "Възстановяване от файл"
+  },
+  "resetToDefault": {
+    "message": "Възстановяване на настройките по подразбиране"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "Искате ли да изтриете кеша за превод?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "Искате ли да презапишете всички съществуващи настройки, като използвате данните от резервното копие?"
+  },
+  "fileIsCorrupted": {
+    "message": "Файлът изглежда е повреден"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "Искате ли да възстановите разширението до настройките по подразбиране?"
+  },
+  "lblTtsSpeed": {
+    "message": "Скорост на звука от текст към говор"
+  },
+  "lblTtsVolume": {
+    "message": "Сила на звука на текст към говор"
+  },
+  "enterShortcut": {
+    "message": "Въведете бърз клавиш"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "Включете Ctrl или Alt"
+  },
+  "hotkeyError_letter": {
+    "message": "Въведете буква"
+  },
+  "hotkeyError_invalid": {
+    "message": "Невалидна комбинация"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "Превключи между преведената и оригиналната страница"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "Възстанови страницата до оригинала"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "Преведи страницата на целевия език"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Активирай превода за етикета $HTML_TAG_NAME$",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "Не сортирай резултатите от превода"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "Преведи динамично създадено съдържание"
+  },
+  "calculatestorage": {
+    "message": "Изчисляване"
+  },
+  "donatewithpaypal": {
+    "message": "Дарете с PayPal"
+  },
+  "lblAutoTranslateWhenClickingALink": {
+    "message": "Автоматичен превод, когато щракнете върху връзка, която ви отвежда до същия домейн като текущия сайт"
+  },
+  "openNativeShortcutManager": {
+    "message": "Отвори собствения мениджър на клавишни комбинации"
+  },
+  "lblKeyboardShortcutsSpecial": {
+    "message": "Специални клавишни комбинации"
+  },
+  "lblTranslateSelectedWhenPressTwice": {
+    "message": "Преведи избран текст, като натиснете $SHORTCUT_KEY$ два пъти",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "lblTranslateTextOverMouseWhenPressTwice": {
+    "message": "Преведи текста над курсора на мишката, когато натиснете $SHORTCUT_KEY$ два пъти",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "translateClickingOnce": {
+    "message": "Преведи страницата, като щракнете веднъж върху бутона в адресната лента. (За да видите изскачащия прозорец, щракнете с десния бутон)"
+  },
+  "btnShowPopup": {
+    "message": "Покажи изскачащ прозорец"
+  },
+  "msgToTranslateThisDocument": {
+    "message": "За да преведете този документ $DOC_TYPE$ е необходимо да го преобразувате в HTML",
+    "placeholders": {
+      "DOC_TYPE": {
+        "content": "$1",
+        "example": "(.pdf)"
+      }
+    }
+  },
+  "msgSelectServiceConversion": {
+    "message": "Избери услуга за извършване на това преобразуване"
+  },
+  "msgDownloadingDocument": {
+    "message": "Изтегляне на документ..."
+  },
+  "msgSendDocument": {
+    "message": "Изпрати документ"
+  },
+  "msgErrorDownloadingDocument": {
+    "message": "Грешка при изтегляне на документ"
+  },
+  "msgFileLargerThan": {
+    "message": "Тази услуга не поддържа файлове, по-големи от $FILE_SIZE$",
+    "placeholders": {
+      "FILE_SIZE": {
+        "content": "$1",
+        "example": "10 MB"
+      }
+    }
+  },
+  "msgPDFtoHTML": {
+    "message": "PDF към HTML"
+  },
+  "msgTranslatePDF": {
+    "message": "Превод на PDF"
+  },
+  "msgOpenTranslatedPDF": {
+    "message": "Отвори преведен PDF"
+  },
+  "btncopy": {
+    "message": "Копирай"
+  },
+  "msgRecents": {
+    "message": "Скорошни"
+  },
+  "msgAll": {
+    "message": "Всички"
+  },
+  "msgPleaseWait": {
+    "message": "Моля изчакайте..."
+  },
+  "msgUnknownLanguage": {
+    "message": "Неизвестен"
+  },
+  "btnReplace": {
+    "message": "Замени"
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "Замени избрания текст с преведен текст незабавно"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "Добави към персонализиран речник (Това ви позволява да пропускате определени думи по време на превод на уеб страница)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "Преведи уеб сайтове на този целеви език"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "Преведи избрания текст на този целеви език"
+  },
+  "msgFavoriteLanguages": {
+    "message": "Любими езици"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Любим език $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "Избери стил на изскачащ интерфейс"
+  },
+  "msgInterfaceSimple": {
+    "message": "Опростен"
+  },
+  "msgInterfaceComplex": {
+    "message": "Сложен"
+  },
+  "lblTranslatePageInto": {
+    "message": "Преведи страницата на $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Страницата е преведена на $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "msgChooseAnotherLanguage": {
+    "message": "Изберете друг език"
+  },
+  "msgHasBeenUpdated": {
+    "message": "Разширението $EXTENSION_NAME$ е актуализирано до версия $EXTENSION_VERSION$.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      },
+      "EXTENSION_VERSION": {
+        "content": "#EXTENSION_VERSION#",
+        "example": "9.7"
+      }
+    }
+  },
+  "msgDonationRecipient": {
+    "message": "Вашето дарение отива при разработчика на разширението $EXTENSION_NAME$.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
+  "donationText": {
+    "message": "Разработвам, актуализирам и поддържам това разширение повече от три години. Удивително е да видим, че имаме над 600 000 потребители дневно и всички тези хора са успели да мигрират към Firefox за постоянно.\n\nСтремя се да пускам нова версия на това разширение всеки месец и да продължавам да го подобрявам.\n\nЩе бъда благодарен, ако можете да ми помогнете финансово, като станете член на Patreon и ме подкрепите да внеса подобрения в това разширение.\n\nБлагодаря на всички, които вече са допринесли за този проект."
+  },
+  "lblEnableDiskCache": {
+    "message": "Активиране на постоянен кеш за превод (кеш на диска)"
+  },
+  "selectOriginalLanguage": {
+    "message": "Избери оригиналния език на уеб сайта"
+  },
+  "selectTargetLanguage": {
+    "message": "Избери целеви език"
+  },
+  "msgImproveTranslation": {
+    "message": "Подобрете превода"
+  },
+  "lblExperimental": {
+    "message": "Експериментално"
+  },
+  "msgPrivacy": {
+    "message": "Поверителност"
+  },
+  "selectToEnableTranslationService": {
+    "message": "Избери услугите за превод, които искате да използвате"
+  },
+  "useAlternativeService": {
+    "message": "Безшумно използване на алтернативна услуга за превод, ако текущият целеви език не се поддържа от избраната услуга за превод"
+  },
+  "msgDefaultLanguage": {
+    "message": "Език по подразбиране"
+  },
+  "msgExtUILanguage": {
+    "message": "Език на потребителския интерфейс на разширението"
+  },
+  "msgSetDeepLAlert": {
+    "message": "Сигурни ли сте, че искате да настроите услугата за превод на DeepL?\nЩе се отвори нов раздел и преводът ще се извърши там."
+  },
+  "lblTextToSpeechService": {
+    "message": "Услуга за текст в реч"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "Този раздел се отвори, защото сте щракнали, за да преведете избран текст с помощта на DeepL."
+  },
+  "msgDontShowAgain": {
+    "message": "Не показвай отново"
+  },
+  "msgTranslatePage": {
+    "message": "Преведи страницата"
+  },
+  "msgPageTranslated": {
+    "message": "Страницата е преведена"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ до $TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "Отмяна"
+  },
+  "msgAutoDetect": {
+    "message": "Автоматично разпознаване"
+  },
+  "msgEnableIframePageTranslation": {
+    "message": "Активирай превода на страница в $IFRAME_TAG$",
+    "placeholders": {
+      "IFRAME_TAG": {
+        "content": "<IFRAME>"
+      }
+    }
+  },
+  "btnTranslateRestoreThisFrame": {
+    "message": "Превод/Възстанови тази рамка"
+  },
+  "msgWhenShowMobilePopup": {
+    "message": "Кога да се показва изскачащият прозорец за мобилни устройства"
+  },
+  "msgWhenNecessary": {
+    "message": "Когато е необходимо"
+  },
+  "msgOnlyWhenItouch3Fingers": {
+    "message": "Само когато докосна екрана с три пръста"
+  },
+  "msgAlwaysShow": {
+    "message": "Винаги показвай"
+  },
+  "btnKeepOnScreen": {
+    "message": "Запази на екрана"
+  },
+  "btnChangePosition": {
+    "message": "Промени позицията"
+  }
+}

@@ -1,0 +1,600 @@
+{
+  "extensionDescription": {
+    "message": "Google அல்லது Yandex ஐப் பயன்படுத்தி உங்கள் பக்கத்தை உண்மையான நேரத்தில் மொழிபெயர்க்கவும்."
+  },
+  "pageActionTitle": {
+    "message": "இந்த பக்கத்தை மொழிபெயர்க்கவும்"
+  },
+  "lblTranslate": {
+    "message": "இந்த பக்கத்தை மொழிபெயர்க்கவா?"
+  },
+  "lblTranslating": {
+    "message": "மொழிபெயர்ப்பு ..."
+  },
+  "lblError": {
+    "message": "இந்த பக்கத்தை மொழிபெயர்க்க முடியவில்லை"
+  },
+  "lblAlwaysTranslate": {
+    "message": "Always translate from $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblTargetLanguage": {
+    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "placeholders": {
+      "TARGET_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "btnReset": {
+    "message": "மீட்டமை"
+  },
+  "btnTranslate": {
+    "message": "மொழிபெயர்த்திடு"
+  },
+  "btnOptions": {
+    "message": "விருப்பங்கள்"
+  },
+  "btnRestore": {
+    "message": "அசல் காட்டு"
+  },
+  "btnTryAgain": {
+    "message": "மீண்டும் முயற்சிக்கவும்"
+  },
+  "btnOpenOnGoogleTranslate": {
+    "message": "கூகிள் மொழிபெயர்ப்பில் திறக்கவும்"
+  },
+  "btnDonate": {
+    "message": "நன்கொடை"
+  },
+  "btnNeverTranslate": {
+    "message": "இந்த தளத்தை ஒருபோதும் மொழிபெயர்க்க வேண்டாம்"
+  },
+  "btnMobileOriginal": {
+    "message": "அசல்"
+  },
+  "btnMobileTranslated": {
+    "message": "மொழிபெயர்க்கப்பட்டுள்ளது"
+  },
+  "optionsNeverTranslate": {
+    "message": "இந்த தளங்களை ஒருபோதும் மொழிபெயர்க்க வேண்டாம்"
+  },
+  "optionsAlwaysTranslate": {
+    "message": "எப்போதும் இந்த மொழிகளை மொழிபெயர்க்கவும்"
+  },
+  "optionPopupConfig": {
+    "message": "மொபைல் பாப்அப்பைக் காட்டு"
+  },
+  "optionPopupThreeFingers": {
+    "message": "நான் திரையில் மூன்று விரல்களைத் தொடும்போது"
+  },
+  "msgOpenOnYandexTranslator": {
+    "message": "யாண்டெக்ச் மொழிபெயர்ப்பில் திறந்திருக்கும்"
+  },
+  "lblOthers": {
+    "message": "மற்றவர்கள்"
+  },
+  "btnMoreOptions": {
+    "message": "மேலும் விருப்பங்கள்"
+  },
+  "lblPlsDonate": {
+    "message": "நன்கொடையுடன் டெவலப்பருக்கு உதவுங்கள்"
+  },
+  "msgTranslateFor": {
+    "message": "Translate to $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowContextMenu": {
+    "message": "சூழல் பட்டியலில் பக்கத்தை மொழிபெயர்க்க விருப்பத்தைக் காட்டு"
+  },
+  "msgYes": {
+    "message": "ஆம்"
+  },
+  "msgNo": {
+    "message": "இல்லை"
+  },
+  "btnAlwaysTranslate": {
+    "message": "எப்போதும் இந்த தளத்தை மொழிபெயர்க்கவும்"
+  },
+  "lblAlwaysTranslateSites": {
+    "message": "இந்த தளங்களை எப்போதும் மொழிபெயர்க்கவும்"
+  },
+  "lblDarkMode": {
+    "message": "இருண்ட முறை"
+  },
+  "lblShowReleaseNotes": {
+    "message": "புதுப்பிக்கும்போது வெளியீட்டுக் குறிப்புகளைக் காட்டு"
+  },
+  "lblShowTranslateSelectedButton": {
+    "message": "தேர்ந்தெடுக்கப்பட்ட உரையை மொழிபெயர்க்க பொத்தானைக் காட்டு"
+  },
+  "msgAutomatic": {
+    "message": "தானியங்கி"
+  },
+  "msgTranslateSelectedText": {
+    "message": "தேர்ந்தெடுக்கப்பட்ட உரையை மொழிபெயர்க்கவும்"
+  },
+  "lblShowTranslateSelectedContextMenu": {
+    "message": "தேர்ந்தெடுக்கப்பட்ட உரையை சூழல் பட்டியலில் மொழிபெயர்க்க விருப்பத்தைக் காட்டு"
+  },
+  "lblNeverTranslateLangs": {
+    "message": "இந்த மொழிகளை ஒருபோதும் மொழிபெயர்க்க வேண்டாம்"
+  },
+  "btnNeverTranslateThisLanguage": {
+    "message": "இந்த மொழியை ஒருபோதும் மொழிபெயர்க்க வேண்டாம்"
+  },
+  "lblShowOriginalTextWhenHovering": {
+    "message": "சுற்றும் போது அசல் உரையைக் காட்டு"
+  },
+  "msgLanguages": {
+    "message": "மொழிகள்"
+  },
+  "msgSites": {
+    "message": "தளங்கள்"
+  },
+  "msgTranslations": {
+    "message": "மொழிபெயர்ப்புகள்"
+  },
+  "msgStyle": {
+    "message": "சூல் தண்டு"
+  },
+  "msgHotkeys": {
+    "message": "ஆட்கீச்"
+  },
+  "lblMakeDonation": {
+    "message": "நன்கொடை செய்யுங்கள்"
+  },
+  "lblReleaseNotes": {
+    "message": "வெளியீட்டு குறிப்புகள்"
+  },
+  "lblReport": {
+    "message": "ஒரு சிக்கலைப் புகாரளிக்கவும்"
+  },
+  "lblSettings": {
+    "message": "அமைப்புகள்"
+  },
+  "lblAdd": {
+    "message": "கூட்டு"
+  },
+  "lblShowTranslatedWhenHovering": {
+    "message": "சுற்றும் போது மொழிபெயர்க்கப்பட்ட உரையைக் காட்டு"
+  },
+  "lblKeyboardShortcuts": {
+    "message": "விசைப்பலகை குறுக்குவழிகள்"
+  },
+  "msgThanksForUseExtension": {
+    "message": "இந்த நீட்டிப்பைப் பயன்படுத்தியதற்கு நன்றி."
+  },
+  "msgIWillBeGrateful": {
+    "message": "நீங்கள் நன்கொடை அளிக்க முடிந்தால் நான் நன்றியுள்ளவனாக இருப்பேன்."
+  },
+  "lblShowTranslatedHoveringSites": {
+    "message": "இந்த தளங்களில் சுற்றும்போது மொழிபெயர்க்கப்பட்ட உரையைக் காட்டு"
+  },
+  "popupBlueWhenSiteIsTranslated": {
+    "message": "தளம் மொழிபெயர்க்கப்படும்போது பாப்-அப் ஐகானை நீலமாக்கவும்"
+  },
+  "more": {
+    "message": "மேலும்"
+  },
+  "less": {
+    "message": "குறைவாக"
+  },
+  "dontShowIfIsNotValidText": {
+    "message": "தேர்ந்தெடுக்கப்பட்ட உரை செல்லுபடியாகாது என்பதைக் காட்ட வேண்டாம்"
+  },
+  "dontShowIfPageLangIsTargetLang": {
+    "message": "பக்க மொழி இலக்கு மொழியாக இருக்கிறதா என்பதைக் காட்ட வேண்டாம்"
+  },
+  "dontShowIfPageLangIsUnknown": {
+    "message": "பக்க மொழி தெரியவில்லை என்றால் காட்ட வேண்டாம்"
+  },
+  "dontShowIfSelectedTextIsTargetLang": {
+    "message": "தேர்ந்தெடுக்கப்பட்ட உரை மொழி இலக்கு மொழியாக இருக்கிறதா என்பதைக் காட்ட வேண்டாம்"
+  },
+  "dontShowIfSelectedTextIsUnknown": {
+    "message": "தேர்ந்தெடுக்கப்பட்ட உரை மொழி தெரியவில்லை என்பதை காட்ட வேண்டாம்"
+  },
+  "lblShowTranslatedWhenHoveringThisSite": {
+    "message": "இந்த தளத்தின் மீது சுற்றும்போது மொழிபெயர்ப்பைக் காட்டு"
+  },
+  "lblShowTranslatedWhenHoveringThisLang": {
+    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
+  },
+  "lblShowTranslatedHoveringLangs": {
+    "message": "இந்த மொழிகளுடன் தளங்களில் சுற்றும்போது மொழிபெயர்க்கப்பட்ட உரையைக் காட்டு"
+  },
+  "msgNoTranslateSelectedText": {
+    "message": "தேர்ந்தெடுக்கப்பட்ட உரையை மொழிபெயர்க்க வேண்டாம்"
+  },
+  "btnListen": {
+    "message": "கேளுங்கள்"
+  },
+  "btnStopListening": {
+    "message": "கேட்பதை நிறுத்துங்கள்"
+  },
+  "btnApply": {
+    "message": "இடு"
+  },
+  "swapTranslationService": {
+    "message": "மொழிபெயர்ப்பு சேவைகளுக்கு இடையில் மாறவும்"
+  },
+  "swapPopup": {
+    "message": "எளிய மற்றும் சிக்கலான இடைமுகத்திற்கு இடையில் மாறவும்"
+  },
+  "lblTranslateInterface": {
+    "message": "இடைமுகத்தை மொழிபெயர்க்கவும்"
+  },
+  "lblButtonInTheAddressBar": {
+    "message": "முகவரி பட்டியில் பொத்தானைக் காட்டு"
+  },
+  "lblPageTranslationService": {
+    "message": "பக்க மொழிபெயர்ப்பு பணி"
+  },
+  "lblTextTranslationService": {
+    "message": "உரை மொழிபெயர்ப்பு பணி"
+  },
+  "msgStorage": {
+    "message": "சேமிப்பு"
+  },
+  "lblTranslationCache": {
+    "message": "மொழிபெயர்ப்பு தற்காலிக சேமிப்பு"
+  },
+  "lblStorageUsed": {
+    "message": "பயன்படுத்தப்பட்ட சேமிப்பு:"
+  },
+  "deleteTranslationCache": {
+    "message": "மொழிபெயர்ப்பு தற்காலிக சேமிப்பை நீக்கு"
+  },
+  "lblPersonalSettings": {
+    "message": "தனிப்பட்ட அமைப்புகள்"
+  },
+  "backupToFile": {
+    "message": "தாக்கல் செய்ய காப்புப்பிரதி"
+  },
+  "restoreFromFile": {
+    "message": "கோப்பிலிருந்து மீட்டமைக்கவும்"
+  },
+  "resetToDefault": {
+    "message": "இயல்புநிலை அமைப்புகளை மீட்டெடுக்கவும்"
+  },
+  "doYouWantToDeleteTranslationCache": {
+    "message": "மொழிபெயர்ப்பு தற்காலிக சேமிப்பை நீக்க விரும்புகிறீர்களா?"
+  },
+  "doYouWantOverwriteAllSettings": {
+    "message": "காப்பு தரவைப் பயன்படுத்தி ஏற்கனவே உள்ள அனைத்து அமைப்புகளையும் மேலெழுத விரும்புகிறீர்களா?"
+  },
+  "fileIsCorrupted": {
+    "message": "கோப்பு சிதைந்ததாகத் தெரிகிறது"
+  },
+  "doYouWantRestoreSettings": {
+    "message": "நீட்டிப்பை அதன் இயல்புநிலை அமைப்புகளுக்கு மீட்டெடுக்க விரும்புகிறீர்களா?"
+  },
+  "lblTtsSpeed": {
+    "message": "உரை-க்கு-பேச்சு ஆடியோ விரைவு"
+  },
+  "lblTtsVolume": {
+    "message": "உரை-க்கு-பேச்சு ஆடியோ தொகுதி"
+  },
+  "enterShortcut": {
+    "message": "குறுக்குவழியைத் தட்டச்சு செய்க"
+  },
+  "hotkeyError_ctrlOrAlt": {
+    "message": "கட்டுப்பாடு அல்லது மாற்று அடங்கும்"
+  },
+  "hotkeyError_letter": {
+    "message": "ஒரு கடிதத்தைத் தட்டச்சு செய்க"
+  },
+  "hotkeyError_invalid": {
+    "message": "தவறான சேர்க்கை"
+  },
+  "lblSwitchTranslatedAndOriginal": {
+    "message": "மொழிபெயர்க்கப்பட்ட மற்றும் அசல் பக்கத்திற்கு இடையில் மாறவும்"
+  },
+  "lblRestorePageToOriginal": {
+    "message": "பக்கத்தை அசலுக்கு மீட்டமைக்கவும்"
+  },
+  "lblTranslatePageToTargetLanguage": {
+    "message": "பக்கத்தை இலக்கு மொழிக்கு மொழிபெயர்க்கவும்"
+  },
+  "lblTranslateTag_pre": {
+    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "placeholders": {
+      "HTML_TAG_NAME": {
+        "content": "<PRE>"
+      }
+    }
+  },
+  "lbldontsortresults": {
+    "message": "மொழிபெயர்ப்பு முடிவுகளை வரிசைப்படுத்த வேண்டாம்"
+  },
+  "lbltranslatedynamicallycreatedcontent": {
+    "message": "மாறும் உருவாக்கப்பட்ட உள்ளடக்கத்தை மொழிபெயர்க்கவும்"
+  },
+  "calculatestorage": {
+    "message": "கணக்கிடுங்கள்"
+  },
+  "donatewithpaypal": {
+    "message": "பேபால் மூலம் நன்கொடை"
+  },
+  "lblAutoTranslateWhenClickingALink": {
+    "message": "தற்போதைய தளத்தின் அதே களத்திற்கு உங்களை அழைத்துச் செல்லும் இணைப்பைக் சொடுக்கு செய்யும் போது தானாக மொழிபெயர்க்கவும்"
+  },
+  "openNativeShortcutManager": {
+    "message": "சொந்த குறுக்குவழி விசை மேலாளரைத் திறக்கவும்"
+  },
+  "lblKeyboardShortcutsSpecial": {
+    "message": "சிறப்பு விசைப்பலகை குறுக்குவழிகள்"
+  },
+  "lblTranslateSelectedWhenPressTwice": {
+    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "lblTranslateTextOverMouseWhenPressTwice": {
+    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "placeholders": {
+      "SHORTCUT_KEY": {
+        "content": "[Ctrl]"
+      }
+    }
+  },
+  "translateClickingOnce": {
+    "message": "முகவரி பட்டியில் உள்ள பொத்தானைக் சொடுக்கு செய்வதன் மூலம் பக்கத்தை மொழிபெயர்க்கவும். (பாப்அப்பைக் காண, வலது சொடுக்கு செய்யவும்)"
+  },
+  "btnShowPopup": {
+    "message": "பாப்அப் காட்டு"
+  },
+  "msgToTranslateThisDocument": {
+    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "placeholders": {
+      "DOC_TYPE": {
+        "content": "$1",
+        "example": "(.pdf)"
+      }
+    }
+  },
+  "msgSelectServiceConversion": {
+    "message": "இந்த மாற்றத்தை செய்ய ஒரு சேவையைத் தேர்ந்தெடுக்கவும்"
+  },
+  "msgDownloadingDocument": {
+    "message": "ஆவணத்தைப் பதிவிறக்குகிறது ..."
+  },
+  "msgSendDocument": {
+    "message": "ஆவணத்தை அனுப்பவும்"
+  },
+  "msgErrorDownloadingDocument": {
+    "message": "ஆவணத்தை பதிவிறக்குவதில் பிழை"
+  },
+  "msgFileLargerThan": {
+    "message": "This service does not support files larger than $FILE_SIZE$",
+    "placeholders": {
+      "FILE_SIZE": {
+        "content": "$1",
+        "example": "10 MB"
+      }
+    }
+  },
+  "msgPDFtoHTML": {
+    "message": "PDF பெறுநர் உஉகுமொ"
+  },
+  "msgTranslatePDF": {
+    "message": "PDF ஐ மொழிபெயர்க்கவும்"
+  },
+  "msgOpenTranslatedPDF": {
+    "message": "மொழிபெயர்க்கப்பட்ட PDF"
+  },
+  "btncopy": {
+    "message": "நகலெடு"
+  },
+  "msgRecents": {
+    "message": "அண்மைக் கால"
+  },
+  "msgAll": {
+    "message": "அனைத்தும்"
+  },
+  "msgPleaseWait": {
+    "message": "தயவுசெய்து காத்திருங்கள் ..."
+  },
+  "msgUnknownLanguage": {
+    "message": "தெரியவில்லை"
+  },
+  "btnReplace": {
+    "message": "மாற்றவும்"
+  },
+  "lblHotTranslatedSelectedText": {
+    "message": "தேர்ந்தெடுக்கப்பட்ட உரையை மொழிபெயர்க்கப்பட்ட உரையுடன் உடனடியாக மாற்றவும்"
+  },
+  "optionsAddToCustomDictionary": {
+    "message": "தனிப்பயன் அகராதியில் சேர்க்கவும் (இது வலைப்பக்க மொழிபெயர்ப்பின் போது சில சொற்களைத் தவிர்க்க உங்களை அனுமதிக்கிறது)"
+  },
+  "msgSelectTargetLanguage": {
+    "message": "வலைத்தளங்களை இந்த இலக்கு மொழியில் மொழிபெயர்க்கவும்"
+  },
+  "msgSelectTargetLanguageForText": {
+    "message": "தேர்ந்தெடுக்கப்பட்ட உரையை இந்த இலக்கு மொழியில் மொழிபெயர்க்கவும்"
+  },
+  "msgFavoriteLanguages": {
+    "message": "பிடித்த மொழிகள்"
+  },
+  "lblFavoriteLanguage": {
+    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "placeholders": {
+      "FAVORITE_LANGUAGE_NUM": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "lblSelectPopupInterfaceStyle": {
+    "message": "பாப்அப் இடைமுக பாணியைத் தேர்ந்தெடுக்கவும்"
+  },
+  "msgInterfaceSimple": {
+    "message": "எளிய"
+  },
+  "msgInterfaceComplex": {
+    "message": "அணைவு"
+  },
+  "lblTranslatePageInto": {
+    "message": "Translate page into $LANGUAGE_NAME$?",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "lblPageTranslateInto": {
+    "message": "Page translated into $LANGUAGE_NAME$",
+    "placeholders": {
+      "LANGUAGE_NAME": {
+        "content": "$1",
+        "example": "German"
+      }
+    }
+  },
+  "msgChooseAnotherLanguage": {
+    "message": "மற்றொரு மொழியைத் தேர்வுசெய்க"
+  },
+  "msgHasBeenUpdated": {
+    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      },
+      "EXTENSION_VERSION": {
+        "content": "#EXTENSION_VERSION#",
+        "example": "9.7"
+      }
+    }
+  },
+  "msgDonationRecipient": {
+    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "placeholders": {
+      "EXTENSION_NAME": {
+        "content": "#EXTENSION_NAME#",
+        "example": "TWP - Translate Web Pages"
+      }
+    }
+  },
+  "donationText": {
+    "message": "இந்த நீட்டிப்பை நான் மூன்று ஆண்டுகளுக்கும் மேலாக உருவாக்கி வருகிறேன், புதுப்பித்து வருகிறேன். எங்களிடம் 600,000 க்கும் மேற்பட்ட நாள்தோறும் பயனர்கள் இருப்பதைப் பார்ப்பது ஆச்சரியமாக இருக்கிறது, மேலும் இந்த மக்கள் அனைவரும் நிரந்தரமாக பயர்பாக்சுக்கு இடம்பெயர முடிந்தது.\n\n இந்த நீட்டிப்பின் புதிய பதிப்பை ஒவ்வொரு மாதமும் வெளியிட்டு அதை மேம்படுத்துவதை நோக்கமாகக் கொண்டுள்ளேன்.\n\n ஒரு பேட்ரியன் உறுப்பினராகி, இந்த நீட்டிப்புக்கு மேம்பாடுகளைக் கொண்டுவருவதில் எனக்கு ஆதரவளிப்பதன் மூலம் நீங்கள் எனக்கு பொருள் ரீதியாக உதவ முடிந்தால் நான் நன்றியுள்ளவனாக இருப்பேன்.\n\n இந்த திட்டத்திற்கு ஏற்கனவே பங்களித்த அனைவருக்கும் நன்றி."
+  },
+  "lblEnableDiskCache": {
+    "message": "தொடர்ச்சியான மொழிபெயர்ப்பு தற்காலிக சேமிப்பை இயக்கவும் (ஆன்-வட்டு தற்காலிக சேமிப்பு)"
+  },
+  "selectOriginalLanguage": {
+    "message": "அசல் வலைத்தள மொழியைத் தேர்ந்தெடுக்கவும்"
+  },
+  "selectTargetLanguage": {
+    "message": "இலக்கு மொழியைத் தேர்ந்தெடுக்கவும்"
+  },
+  "msgImproveTranslation": {
+    "message": "மொழிபெயர்ப்பை மேம்படுத்தவும்"
+  },
+  "lblExperimental": {
+    "message": "சோதனை"
+  },
+  "msgPrivacy": {
+    "message": "தனியுரிமை"
+  },
+  "selectToEnableTranslationService": {
+    "message": "நீங்கள் பயன்படுத்த விரும்பும் மொழிபெயர்ப்பு சேவைகளைத் தேர்ந்தெடுக்கவும்"
+  },
+  "useAlternativeService": {
+    "message": "தேர்ந்தெடுக்கப்பட்ட மொழிபெயர்ப்பு சேவையால் தற்போதைய இலக்கு மொழி ஆதரிக்கப்படாவிட்டால் அமைதியாக மாற்று மொழிபெயர்ப்பு சேவையைப் பயன்படுத்தவும்"
+  },
+  "msgDefaultLanguage": {
+    "message": "இயல்புநிலை மொழி"
+  },
+  "msgExtUILanguage": {
+    "message": "நீட்டிப்பு பயனர் இடைமுக மொழி"
+  },
+  "msgSetDeepLAlert": {
+    "message": "மொழிபெயர்ப்பு சேவையை ஆழம்எல் க்கு அமைக்க விரும்புகிறீர்களா?\n ஒரு புதிய தாவல் திறக்கப்படும், மொழிபெயர்ப்பு அங்கு நடைபெறும்."
+  },
+  "lblTextToSpeechService": {
+    "message": "உரை-க்கு-பேச்சு பணி"
+  },
+  "msgDeepLTabReasoOpened": {
+    "message": "ஆழம்எல் ஐப் பயன்படுத்தி தேர்ந்தெடுக்கப்பட்ட உரையை மொழிபெயர்க்க நீங்கள் சொடுக்கு செய்ததால் இந்த தாவல் திறக்கப்பட்டது."
+  },
+  "msgDontShowAgain": {
+    "message": "மீண்டும் காட்ட வேண்டாம்"
+  },
+  "msgTranslatePage": {
+    "message": "பக்கத்தை மொழிபெயர்க்கவா?"
+  },
+  "msgPageTranslated": {
+    "message": "பக்கம் மொழிபெயர்க்கப்பட்டுள்ளது"
+  },
+  "msgTranslateFromTo": {
+    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "placeholders": {
+      "FROM_LANGUAGE": {
+        "content": "$1",
+        "example": "German"
+      },
+      "TO_LANGUAGE": {
+        "content": "$2",
+        "example": "English"
+      }
+    }
+  },
+  "btnUndoTranslation": {
+    "message": "செயல்தவிர்"
+  },
+  "msgAutoDetect": {
+    "message": "தானாக கண்டறியவும்"
+  },
+  "msgEnableIframePageTranslation": {
+    "message": "Enable page translation in $IFRAME_TAG$",
+    "placeholders": {
+      "IFRAME_TAG": {
+        "content": "<IFRAME>"
+      }
+    }
+  },
+  "btnTranslateRestoreThisFrame": {
+    "message": "இந்த சட்டகத்தை மொழிபெயர்க்கவும்/மீட்டெடுக்கவும்"
+  },
+  "msgWhenShowMobilePopup": {
+    "message": "மொபைல் பாப்அப்பை எப்போது காட்ட வேண்டும்"
+  },
+  "msgWhenNecessary": {
+    "message": "தேவைப்படும்போது"
+  },
+  "msgOnlyWhenItouch3Fingers": {
+    "message": "நான் திரையில் மூன்று விரல்களைத் தொடும்போது மட்டுமே"
+  },
+  "msgAlwaysShow": {
+    "message": "எப்போதும் காட்டு"
+  },
+  "btnKeepOnScreen": {
+    "message": "திரையில் வைத்திருங்கள்"
+  },
+  "btnChangePosition": {
+    "message": "நிலையை மாற்றவும்"
+  }
+}
