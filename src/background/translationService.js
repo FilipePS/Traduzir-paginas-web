@@ -1264,16 +1264,16 @@ const translationService = (function () {
   };
 
   /**
-   * Creates the DeepLFreeApi translation service
+   * Creates the DeepLApi translation service
    * @param {string} apiKey
    * @returns {Service} libreService
    */
-  const createDeeplFreeApiService = (apiKey) => {
+  const createDeeplApiService = (apiKey) => {
     return new (class extends Service {
       constructor() {
         super(
           "deepl",
-          "https://api-free.deepl.com/v2/translate",
+          apiKey.endsWith(":fx") ? "https://api-free.deepl.com/v2/translate" : "https://api.deepl.com/v2/translate",
           "POST",
           function cbTransformRequest(sourceArray) {
             return sourceArray[0];
@@ -1514,12 +1514,12 @@ const translationService = (function () {
       );
     } else if (request.action === "removeLibreService") {
       serviceList.delete("libre");
-    } else if (request.action === "createDeeplFreeApiService") {
+    } else if (request.action === "createDeeplApiService") {
       serviceList.set(
         "deepl",
-        createDeeplFreeApiService(request.deepl_freeapi.apiKey)
+        createDeeplApiService(request.deepl_api.apiKey)
       );
-    } else if (request.action === "removeDeeplFreeApiService") {
+    } else if (request.action === "removeDeeplApiService") {
       serviceList.set(
         "deepl",
         /** @type {Service} */ /** @type {?} */ (deeplService)
@@ -1536,12 +1536,12 @@ const translationService = (function () {
     }
 
     if (
-      twpConfig.get("customServices").find((cs) => cs.name === "deepl_freeapi")
+      twpConfig.get("customServices").find((cs) => cs.name === "deepl_api")
     ) {
-      const deepl_freeapi = twpConfig
+      const deepl_api = twpConfig
         .get("customServices")
-        .find((cs) => cs.name === "deepl_freeapi");
-      serviceList.set("deepl", createDeeplFreeApiService(deepl_freeapi.apiKey));
+        .find((cs) => cs.name === "deepl_api");
+      serviceList.set("deepl", createDeeplApiService(deepl_api.apiKey));
     }
 
     const proxyServers = twpConfig.get("proxyServers");
