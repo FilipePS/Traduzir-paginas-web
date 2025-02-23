@@ -855,6 +855,45 @@ const translationService = (function () {
         }
       );
     }
+
+    /**
+     * @param {string[][]} sourceArray2d - Only the string `sourceArray2d[0][0]` will be translated.
+     * @param {boolean} dontSortResults - Whether the translation result should be sorted according to ID <a i=ID>.
+     */
+    async translate(
+      sourceLanguage,
+      targetLanguage,
+      sourceArray2d,
+      dontSaveInPersistentCache,
+      dontSortResults = false
+    ) {
+      /** @type {{search: string, replace: string}[]} */
+      const replacements = [
+        {
+          search: "prs",
+          replace: "fa-AF",
+        }
+      ];
+      replacements.forEach((r) => {
+        if (targetLanguage === r.search) {
+          targetLanguage = r.replace;
+        }
+        if (sourceLanguage === r.search) {
+          sourceLanguage = r.replace;
+        }
+      });
+
+      // await GoogleHelper.findAuth();
+      // if (!GoogleHelper.translateAuth) return;
+
+      return await super.translate(
+        sourceLanguage,
+        targetLanguage,
+        sourceArray2d,
+        dontSaveInPersistentCache,
+        dontSortResults
+      );
+    }
   })();
 
   const yandexService = new (class extends Service {
@@ -919,8 +958,38 @@ const translationService = (function () {
     ) {
       await YandexHelper.findSID();
       if (!YandexHelper.translateSid) return;
-      sourceLanguage = sourceLanguage.split("-")[0];
-      targetLanguage = targetLanguage.split("-")[0];
+      /** @type {{search: string, replace: string}[]} */
+      const replacements = [
+        {
+          search: "zh-CN",
+          replace: "zh",
+        },
+        {
+          search: "zh-TW",
+          replace: "zh",
+        },
+        {
+          search: "fr-CA",
+          replace: "fr",
+        },
+        {
+          search: "pt",
+          replace: "pt-BR",
+        },
+        {
+          search: "pt-PT",
+          replace: "pt",
+        }
+      ];
+      replacements.forEach((r) => {
+        if (targetLanguage === r.search) {
+          targetLanguage = r.replace;
+        }
+        if (sourceLanguage === r.search) {
+          sourceLanguage = r.replace;
+        }
+      });
+
       return await super.translate(
         sourceLanguage,
         targetLanguage,
@@ -1122,10 +1191,10 @@ const translationService = (function () {
         targetLanguage = "pt-BR";
       } else if (targetLanguage === "no") {
         targetLanguage = "nb";
-      } else if (targetLanguage.startsWith("zh-")) {
+      } else if (targetLanguage == "zh-CN") {
+        targetLanguage = "zh-Hans";
+      } else if (targetLanguage == "zh-TW") {
         targetLanguage = "zh";
-      } else if (targetLanguage.startsWith("fr-")) {
-        targetLanguage = "fr";
       }
 
       return await new Promise((resolve) => {

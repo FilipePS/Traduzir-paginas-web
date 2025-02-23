@@ -117,14 +117,10 @@ async function getLanguages(service, lang, key = "") {
                 key.language = "he";
             } else if (key.language === "jw") {
                 key.language = "jv";
+            } else if (key.language === "fa-AF") {
+                key.language = "prs";
             }
             langs[key.language] = key.name;
-            if (key.language === "pt") {
-                langs["pt-PT"] = key.name;
-            }
-            if (key.language === "fr") {
-                langs["fr-CA"] = key.name;
-            }
         }
         if (service == "yandex") {
             if (lang.split("-")[0] === "fr") {
@@ -137,9 +133,10 @@ async function getLanguages(service, lang, key = "") {
                 langs["fr"] = result[key];
                 langs["fr-CA"] = result[key];
             } else if (key === "pt") {
-                langs["pt"] = result[key];
                 langs["pt-PT"] = result[key];
-            } else if (key.indexOf("-") === -1) {
+            } else if (key === "pt-BR") {
+                langs["pt"] = result[key];
+            } else {
                 langs[key] = result[key];
             }
         }
@@ -201,6 +198,7 @@ async function init() {
     const lang_codes = [
         "af",
         "ar",
+        "bg",
         "bn",
         "ca",
         "cs",
@@ -233,6 +231,7 @@ async function init() {
         "sl",
         "sr",
         "sv",
+        "ta",
         "th",
         "tr",
         "ug",

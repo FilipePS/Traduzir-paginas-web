@@ -140,7 +140,7 @@
       "js": ["/contentScript/popupMobile.js"]
     },
     {
-      "matches": ["https://www.deepl.com/translator*"],
+      "matches": ["https://www.deepl.com/*/translator*"],
       "run_at": "document_end",
       "all_frames": false,
       "js": ["/contentScript/deepl.js"]
