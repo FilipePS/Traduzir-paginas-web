@@ -161,6 +161,103 @@ const translationService = (function () {
     }
   }
 
+  class GoogleHelper_v2 {
+    /** @type {number} */
+    static #lastRequestAuthTime = null;
+    /** @type {string} */
+    static #translateAuth = null;
+    /** @type {boolean} */
+    static #AuthNotFound = false;
+    /** @type {Promise<void>} */
+    static #authPromise = null;
+
+    static get translateAuth() {
+      return GoogleHelper_v2.#translateAuth;
+    }
+
+    /**
+     * Find the Auth of Google Translator. The Auth value is used in translation requests.
+     * @returns {Promise<void>}
+     */
+    static async findAuth() {
+      if (GoogleHelper_v2.#authPromise)
+        return await GoogleHelper_v2.#authPromise;
+
+      GoogleHelper_v2.#authPromise = new Promise((resolve) => {
+        let updateGoogleAuth = false;
+        if (GoogleHelper_v2.#lastRequestAuthTime) {
+          const date = new Date();
+          if (GoogleHelper_v2.#translateAuth) {
+            date.setMinutes(date.getMinutes() - 20);
+          } else if (GoogleHelper_v2.#AuthNotFound) {
+            date.setMinutes(date.getMinutes() - 5);
+          } else {
+            date.setMinutes(date.getMinutes() - 1);
+          }
+          if (date.getTime() > GoogleHelper_v2.#lastRequestAuthTime) {
+            updateGoogleAuth = true;
+          }
+        } else {
+          updateGoogleAuth = true;
+        }
+
+        if (updateGoogleAuth) {
+          GoogleHelper_v2.#lastRequestAuthTime = Date.now();
+
+          const alternativeKey = new TextDecoder().decode(
+            new Uint8Array([
+              65, 73, 122, 97, 83, 121, 65, 84, 66, 88, 97, 106, 118, 122, 81,
+              76, 84, 68, 72, 69, 81, 98, 99, 112, 113, 48, 73, 104, 101, 48,
+              118, 87, 68, 72, 109, 79, 53, 50, 48,
+            ])
+          );
+
+          const http = new XMLHttpRequest();
+          http.open(
+            "GET",
+            "https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.en_US.YusFYy3P_ro.O/am=AAg/d=1/exm=el_conf/ed=1/rs=AN8SPfq1Hb8iJRleQqQc8zhdzXmF9E56eQ/m=el_main"
+          );
+          http.send();
+          http.onload = (e) => {
+            if (http.responseText && http.responseText.length > 1) {
+              const result = http.responseText.match(
+                /['"]x\-goog\-api\-key['"]\s*\:\s*['"](\w{39})['"]/i
+              );
+              console.log(result);
+              if (result && result.length === 2) {
+                GoogleHelper_v2.#translateAuth = result[1];
+                GoogleHelper_v2.#AuthNotFound = false;
+              } else {
+                GoogleHelper_v2.#AuthNotFound = true;
+                GoogleHelper_v2.#translateAuth = alternativeKey;
+              }
+            } else {
+              GoogleHelper_v2.#AuthNotFound = true;
+              GoogleHelper_v2.#translateAuth = alternativeKey;
+            }
+            resolve();
+          };
+          http.onerror =
+            http.onabort =
+            http.ontimeout =
+              (e) => {
+                console.error(e);
+                GoogleHelper_v2.#translateAuth = alternativeKey;
+                resolve();
+              };
+        } else {
+          resolve();
+        }
+      });
+
+      GoogleHelper_v2.#authPromise.finally(() => {
+        GoogleHelper_v2.#authPromise = null;
+      });
+
+      return await GoogleHelper_v2.#authPromise;
+    }
+  }
+
   class YandexHelper {
     /** @type {number} */
     static #lastRequestSidTime = null;
@@ -656,7 +753,7 @@ const translationService = (function () {
     constructor() {
       super(
         "google",
-        "https://translate.googleapis.com/translate_a/t?anno=3&client=te&v=1.0&format=html",
+        "https://translate-pa.googleapis.com/v1/translateHtml",
         "POST",
         function cbTransformRequest(sourceArray) {
           sourceArray = sourceArray.map((text) => Utils.escapeHTML(text));
@@ -671,21 +768,27 @@ const translationService = (function () {
         function cbParseResponse(response) {
           /** @type {[Service_Single_Result_Response]} */
           let responseJson;
-          if (typeof response === "string") {
-            responseJson = [{ text: response, detectedLanguage: null }];
-          } else if (typeof response[0] === "string") {
-            responseJson = response.map(
-              /** @returns {Service_Single_Result_Response} */ (
-                /** @type {string} */ value
-              ) => ({ text: value, detectedLanguage: null })
-            );
-          } else {
-            responseJson = response.map(
-              /** @returns {Service_Single_Result_Response} */ (
-                /** @type {[string, string]} */ value
-              ) => ({ text: value[0], detectedLanguage: value[1] })
-            );
-          }
+          // if (typeof response === "string") {
+          //   responseJson = [{ text: response, detectedLanguage: null }];
+          // } else if (typeof response[0] === "string") {
+          //   responseJson = response.map(
+          //     /** @returns {Service_Single_Result_Response} */ (
+          //       /** @type {string} */ value
+          //     ) => ({ text: value, detectedLanguage: null })
+          //   );
+          // } else {
+          //   responseJson = response.map(
+          //     /** @returns {Service_Single_Result_Response} */ (
+          //       /** @type {[string, string]} */ value
+          //     ) => ({ text: value[0], detectedLanguage: value[1] })
+          //   );
+          // }
+          responseJson = response[0].map(
+            /** @returns {Service_Single_Result_Response} */ (
+              /** @type {string} */ value,
+              /** @type {number} */ index
+            ) => ({ text: value, detectedLanguage: response[1][index] })
+          );
           return responseJson;
         },
         function cbTransformResponse(result, dontSortResults) {
@@ -836,20 +939,27 @@ const translationService = (function () {
           targetLanguage,
           requests
         ) {
-          return `&sl=${sourceLanguage}&tl=${targetLanguage}&tk=${GoogleHelper.calcHash(
-            requests.map((info) => info.originalText).join("")
-          )}`;
+          return ``;
         },
         function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
-          return requests
-            .map((info) => `&q=${encodeURIComponent(info.originalText)}`)
-            .join("");
+          return JSON.stringify([
+            [
+              requests.map((info) => info.originalText),
+              sourceLanguage,
+              targetLanguage,
+            ],
+            "te",
+          ]);
         },
         function cbGetExtraHeaders() {
           return [
             {
               name: "Content-Type",
-              value: "application/x-www-form-urlencoded",
+              value: "application/application/json+protobuf",
+            },
+            {
+              name: "X-goog-api-key",
+              value: GoogleHelper_v2.translateAuth,
             },
           ];
         }
@@ -872,7 +982,7 @@ const translationService = (function () {
         {
           search: "prs",
           replace: "fa-AF",
-        }
+        },
       ];
       replacements.forEach((r) => {
         if (targetLanguage === r.search) {
@@ -883,8 +993,8 @@ const translationService = (function () {
         }
       });
 
-      // await GoogleHelper.findAuth();
-      // if (!GoogleHelper.translateAuth) return;
+      await GoogleHelper_v2.findAuth();
+      if (!GoogleHelper_v2.translateAuth) return;
 
       return await super.translate(
         sourceLanguage,
@@ -979,7 +1089,7 @@ const translationService = (function () {
         {
           search: "pt-PT",
           replace: "pt",
-        }
+        },
       ];
       replacements.forEach((r) => {
         if (targetLanguage === r.search) {

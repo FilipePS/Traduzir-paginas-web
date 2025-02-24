@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "ฉันพัฒนา อัปเดต และสนับสนุนส่วนขยายนี้มากว่าสามปีแล้ว เป็นเรื่องน่าทึ่งที่เห็นว่าเรามีผู้ใช้มากกว่า 600,000 รายต่อวัน และผู้ใช้เหล่านี้ทั้งหมดสามารถย้ายไปยัง Firefox อย่างถาวรได้\n\nฉันตั้งเป้าที่จะออกเวอร์ชันใหม่ของส่วนขยายนี้ทุกเดือนและปรับปรุงต่อไป\n\nฉันจะขอบคุณมากหากคุณสามารถช่วยฉันทางการเงินด้วยการเป็นสมาชิก Patreon และสนับสนุนฉันในการปรับปรุงส่วนขยายนี้\n\nขอขอบคุณทุกคนที่มีส่วนสนับสนุนโครงการนี้แล้ว"
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "เปิดใช้งานแคชการแปลถาวร (แคชบนดิสก์)"

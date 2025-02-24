@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "To razširitev razvijam, posodabljam in podpiram več kot tri leta. Neverjetno je videti, da imamo več kot 600.000 dnevnih uporabnikov in da so vsi ti ljudje lahko trajno prešli na Firefox.\n\nVsak mesec nameravam izdati novo različico te razširitve in jo še naprej izboljševati.\n\nHvaležen bi bil, če bi mi lahko finančno pomagali tako, da bi postal član Patreona in me podprli pri uvajanju izboljšav v to razširitev.\n\nHvala vsem, ki ste že prispevali k temu projektu."
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "Omogoči trajni predpomnilnik prevodov (predpomnilnik na disku)"

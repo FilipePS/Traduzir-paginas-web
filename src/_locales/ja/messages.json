@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "私はこの拡張機能の開発、更新、およびサポートを 3 年以上行ってきました。毎日 600,000 人以上のユーザーがいて、その全員が Firefox に完全に移行できたことは驚くべきことです。\n\nこの拡張機能の新しいバージョンを毎月リリースし、改善し続けることを目指しています。\n\nPatreon のメンバーになって、この拡張機能を改善するために私をサポートすることで、私を経済的に支援していただければ幸いです。\n\nすでにこのプロジェクトに貢献してくれたすべての人に感謝します。"
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "永続的な翻訳キャッシュを使用（ディスク上にキャッシュを保存）"

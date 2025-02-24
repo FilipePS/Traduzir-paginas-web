@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "मैं तीन वर्षों से अधिक समय से इस विस्तार का विकास, अद्यतन और समर्थन कर रहा हूँ। यह देखना आश्चर्यजनक है कि हमारे पास 600,000 से अधिक दैनिक उपयोगकर्ता हैं, और ये सभी लोग फ़ायरफ़ॉक्स में स्थायी रूप से माइग्रेट करने में सक्षम हैं।\n\nमेरा लक्ष्य हर महीने इस विस्तार का एक नया संस्करण जारी करना और इसमें सुधार करना है।\n\nअगर आप पैट्रियन सदस्य बनकर और इस विस्तार में सुधार लाने में मेरी मदद करके मेरी आर्थिक मदद कर सकते हैं तो मैं आपका आभारी रहूंगा।\n\nउन सभी को धन्यवाद जिन्होंने इस परियोजना में पहले ही योगदान दिया है।"
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "लगातार अनुवाद कैश सक्षम करें (ऑन-डिस्क कैश)"

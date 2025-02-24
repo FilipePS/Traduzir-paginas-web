@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "Разработвам, актуализирам и поддържам това разширение повече от три години. Удивително е да видим, че имаме над 600 000 потребители дневно и всички тези хора са успели да мигрират към Firefox за постоянно.\n\nСтремя се да пускам нова версия на това разширение всеки месец и да продължавам да го подобрявам.\n\nЩе бъда благодарен, ако можете да ми помогнете финансово, като станете член на Patreon и ме подкрепите да внеса подобрения в това разширение.\n\nБлагодаря на всички, които вече са допринесли за този проект."
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "Активиране на постоянен кеш за превод (кеш на диска)"

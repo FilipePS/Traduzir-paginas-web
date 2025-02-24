@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "Men úsh jıldan artıq waqıt dawamında bul keńeytpeni islep shıqtım, jańaladım hám qollap -quwatladım. Bizde hár kúni 600,000 nan artıq paydalanıwshı bar ekenin jáne bul adamlardıń barlıǵı Firefox-ǵa turaqlı túrde ótiwge erisilip bolǵanın kóriw tańqaldırarlı.\n\n Men hár ay bul keńeytpeniń jańa versiyasın shıǵarıwdı jáne onı jaqsılawdı dawam ettirmekshimen.\n\n Eger Patreon aǵzası bolıw arqalı maǵan finanslıq járdem berseńiz hám bul keńeytpeni jaqsılawda meni qollap - quwatlasańız, minnetder bolaman.\n\n Bul joybarǵa qashannan berli úles qosqan bársheńizge raxmet."
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "Turaqlı awdarma keshin qosıw (disk keshi)"

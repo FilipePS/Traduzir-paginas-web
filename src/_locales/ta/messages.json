@@ -15,7 +15,7 @@
     "message": "இந்த பக்கத்தை மொழிபெயர்க்க முடியவில்லை"
   },
   "lblAlwaysTranslate": {
-    "message": "Always translate from $LANGUAGE_NAME$",
+    "message": "எப்போதும் $LANGUAGE_NAME$இலிருந்து மொழிபெயர்க்கவும்",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -24,7 +24,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Target language $TARGET_LANGUAGE_NUM$",
+    "message": "இலக்கு மொழி $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -87,7 +87,7 @@
     "message": "நன்கொடையுடன் டெவலப்பருக்கு உதவுங்கள்"
   },
   "msgTranslateFor": {
-    "message": "Translate to $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$க்கு மொழிபெயர்க்கவும்",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -210,7 +210,7 @@
     "message": "இந்த தளத்தின் மீது சுற்றும்போது மொழிபெயர்ப்பைக் காட்டு"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Show translation when hovering over websites in $LANGUAGE_NAME$",
+    "message": "$LANGUAGE_NAME$இல் வலைத்தளங்களின் மீது வட்டமிடும்போது மொழிபெயர்ப்பைக் காட்டு",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -315,7 +315,7 @@
     "message": "பக்கத்தை இலக்கு மொழிக்கு மொழிபெயர்க்கவும்"
   },
   "lblTranslateTag_pre": {
-    "message": "Enable translation for the tag $HTML_TAG_NAME$",
+    "message": "$HTML_TAG_NAME$என்ற குறிச்சொல்லுக்கு மொழிபெயர்ப்பை இயக்கு",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -344,7 +344,7 @@
     "message": "சிறப்பு விசைப்பலகை குறுக்குவழிகள்"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Translate selected text when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ ஐ இரண்டு முறை அழுத்தும்போது தேர்ந்தெடுக்கப்பட்ட உரையை மொழிபெயர்க்கவும்",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -352,7 +352,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Translate the text over the mouse cursor when pressing $SHORTCUT_KEY$ twice",
+    "message": "$SHORTCUT_KEY$ ஐ இரண்டு முறை அழுத்தும்போது மவுஸ் கர்சரின் மேல் உரையை மொழிபெயர்க்கவும்",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -366,7 +366,7 @@
     "message": "பாப்அப் காட்டு"
   },
   "msgToTranslateThisDocument": {
-    "message": "To translate this document $DOC_TYPE$ it is necessary to convert it to HTML",
+    "message": "இந்த ஆவணத்தை $DOC_TYPE$ மொழிபெயர்க்க இதை HTML ஆக மாற்றுவது அவசியம்",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -387,7 +387,7 @@
     "message": "ஆவணத்தை பதிவிறக்குவதில் பிழை"
   },
   "msgFileLargerThan": {
-    "message": "This service does not support files larger than $FILE_SIZE$",
+    "message": "இந்தச் சேவை $FILE_SIZE$ஐ விடப் பெரிய கோப்புகளை ஆதரிக்காது",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -438,7 +438,7 @@
     "message": "பிடித்த மொழிகள்"
   },
   "lblFavoriteLanguage": {
-    "message": "Favorite language $FAVORITE_LANGUAGE_NUM$",
+    "message": "பிடித்த மொழி $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -456,7 +456,7 @@
     "message": "அணைவு"
   },
   "lblTranslatePageInto": {
-    "message": "Translate page into $LANGUAGE_NAME$?",
+    "message": "பக்கத்தை $LANGUAGE_NAME$-க்கு மொழிபெயர்க்கவா?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -465,7 +465,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Page translated into $LANGUAGE_NAME$",
+    "message": "பக்கம் $LANGUAGE_NAME$க்கு மொழிபெயர்க்கப்பட்டுள்ளது",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -477,7 +477,7 @@
     "message": "மற்றொரு மொழியைத் தேர்வுசெய்க"
   },
   "msgHasBeenUpdated": {
-    "message": "The $EXTENSION_NAME$ extension has been updated to version $EXTENSION_VERSION$.",
+    "message": "$EXTENSION_NAME$ நீட்டிப்பு $EXTENSION_VERSION$பதிப்பிற்கு புதுப்பிக்கப்பட்டுள்ளது.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -490,7 +490,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Your donation goes to the developer of the $EXTENSION_NAME$ extension.",
+    "message": "உங்கள் நன்கொடை $EXTENSION_NAME$ நீட்டிப்பின் டெவலப்பருக்குச் செல்லும்.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "இந்த நீட்டிப்பை நான் மூன்று ஆண்டுகளுக்கும் மேலாக உருவாக்கி வருகிறேன், புதுப்பித்து வருகிறேன். எங்களிடம் 600,000 க்கும் மேற்பட்ட நாள்தோறும் பயனர்கள் இருப்பதைப் பார்ப்பது ஆச்சரியமாக இருக்கிறது, மேலும் இந்த மக்கள் அனைவரும் நிரந்தரமாக பயர்பாக்சுக்கு இடம்பெயர முடிந்தது.\n\n இந்த நீட்டிப்பின் புதிய பதிப்பை ஒவ்வொரு மாதமும் வெளியிட்டு அதை மேம்படுத்துவதை நோக்கமாகக் கொண்டுள்ளேன்.\n\n ஒரு பேட்ரியன் உறுப்பினராகி, இந்த நீட்டிப்புக்கு மேம்பாடுகளைக் கொண்டுவருவதில் எனக்கு ஆதரவளிப்பதன் மூலம் நீங்கள் எனக்கு பொருள் ரீதியாக உதவ முடிந்தால் நான் நன்றியுள்ளவனாக இருப்பேன்.\n\n இந்த திட்டத்திற்கு ஏற்கனவே பங்களித்த அனைவருக்கும் நன்றி."
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "தொடர்ச்சியான மொழிபெயர்ப்பு தற்காலிக சேமிப்பை இயக்கவும் (ஆன்-வட்டு தற்காலிக சேமிப்பு)"
@@ -550,7 +550,7 @@
     "message": "பக்கம் மொழிபெயர்க்கப்பட்டுள்ளது"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ to $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ முதல் $TO_LANGUAGE$வரை",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -569,7 +569,7 @@
     "message": "தானாக கண்டறியவும்"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Enable page translation in $IFRAME_TAG$",
+    "message": "$IFRAME_TAG$இல் பக்க மொழிபெயர்ப்பை இயக்கு",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"

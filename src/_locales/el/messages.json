@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "Αναπτύσσω, ενημερώνω και υποστηρίζω αυτήν την επέκταση για περισσότερα από τρία χρόνια. Είναι εκπληκτικό να βλέπουμε ότι έχουμε πάνω από 600.000 καθημερινούς χρήστες και όλοι αυτοί οι άνθρωποι μπόρεσαν να μετεγκατασταθούν μόνιμα στον Firefox.\n\nΣτόχος μου είναι να κυκλοφορώ μια νέα έκδοση αυτής της επέκτασης κάθε μήνα και να συνεχίσω να τη βελτιώνω.\n\nΘα σας ήμουν ευγνώμων εάν μπορούσατε να με βοηθήσετε οικονομικά, γίνοντας μέλος του Patreon και υποστηρίζοντάς με να βελτιώσω αυτήν την επέκταση.\n\nΕυχαριστούμε όλους όσους έχουν ήδη συνεισφέρει σε αυτό το έργο."
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "Ενεργοποίηση μόνιμης προσωρινής μνήμης μετάφρασης (κρυφή μνήμη στο δίσκο)"

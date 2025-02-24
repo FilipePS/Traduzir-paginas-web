@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "Több mint három éve fejlesztem, frissítem és támogatom ezt a bővítményt. Lenyűgöző látni, hogy több mint 600 000 napi felhasználónk van, és ezek az emberek véglegesen áttértek a Firefoxra.\n\nCélom, hogy minden hónapban kiadjam ennek a bővítménynek az új verzióját, és folyamatosan fejlesszem.\n\nHálás lennék, ha anyagilag segítene nekem azzal, hogy Patreon taggá válna és támogatna a bővítmény fejlesztésében.\n\nKöszönöm mindenkinek, aki már hozzájárult ehhez a projekthez."
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "Állandó fordítási gyorsítótár engedélyezése (lemezen lévő gyorsítótár)"

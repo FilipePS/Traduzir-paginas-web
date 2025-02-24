@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "He estat desenvolupant, actualitzant i donant suport a aquesta extensió durant més de tres anys. És increïble veure que tenim més de 600.000 usuaris diaris i totes aquestes persones han pogut migrar a Firefox de manera permanent.\n\nEl meu objectiu és llançar una nova versió d'aquesta extensió cada mes i seguir millorant-la.\n\nAgrairia que em pogués ajudar econòmicament fent-me membre de Patreon i donant-me suport per millorar aquesta extensió.\n\nGràcies a tots els que ja heu col·laborat en aquest projecte."
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "Activa la memòria cau de traducció persistent (caché al disc)"

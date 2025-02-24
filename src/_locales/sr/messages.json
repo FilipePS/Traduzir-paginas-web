@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "Развијам, ажурирам и подржавам ово проширење више од три године. Невероватно је видети да имамо преко 600.000 корисника дневно, и да су сви ови људи могли да мигрирају на Фирефок трајно.\n\nЦиљ ми је да објавим нову верзију овог проширења сваког месеца и наставим да је побољшавам.\n\nБио бих вам захвалан ако бисте ми могли финансијски помоћи тако што ћете постати члан Патреона и подржати ме у побољшању овог проширења.\n\nХвала свима који су већ допринели овом пројекту."
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "Омогући трајни кеш за превод (кеш меморија на диску)"

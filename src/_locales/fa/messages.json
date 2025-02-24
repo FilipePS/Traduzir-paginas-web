@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "من بیش از سه سال است که این برنامه افزودنی را توسعه، به روز رسانی و پشتیبانی می کنم. شگفت انگیز است که می بینیم روزانه بیش از 600000 کاربر داریم و همه این افراد توانسته اند به طور دائم به فایرفاکس مهاجرت کنند.\n\nمن قصد دارم هر ماه یک نسخه جدید از این افزونه منتشر کنم و به بهبود آن ادامه دهم.\n\nسپاسگزار خواهم بود اگر بتوانید با عضویت در Patreon و حمایت مالی از من در بهبود این برنامه افزودنی به من کمک مالی کنید.\n\nبا تشکر از همه کسانی که قبلاً در این پروژه مشارکت داشته اند."
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "فعال کردن حافظه پنهان ترجمه دائمی (کش روی دیسک)"

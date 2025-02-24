@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "مەن بۇ كېڭەيتىشنى ئۈچ يىلدىن كۆپرەك ۋاقىتتىن بۇيان تەتقىق قىلىۋاتىمەن ، يېڭىلاۋاتىمەن ۋە قوللاۋاتىمەن. بىزنىڭ كۈندىلىك ئىشلەتكۈچىلىرىمىزنىڭ 600،000 دىن ئاشىدىغانلىقى ئادەمنى ھەيران قالدۇرىدۇ ، بۇ كىشىلەرنىڭ ھەممىسى Firefox غا مەڭگۈلۈك كۆچۈپ كېتەلەيدۇ.\n\nمەن ھەر ئايدا بۇ كېڭەيتىلمىنىڭ يېڭى نەشرىنى ئېلان قىلىپ ، ئۇنى داۋاملىق ياخشىلاشنى مەقسەت قىلىمەن.\n\nئەگەر سىز پاترون ئەزاسى بولۇپ ، بۇ كېڭەيتىشكە ياخشىلىنىشلارنى ئېلىپ مېنى قوللاپ ئىقتىسادىي جەھەتتىن ياردەم قىلغان بولسىڭىز ، مەن مىننەتدار.\n\nبۇ تۈرگە تۆھپە قوشقان بارلىق كىشىلەرگە رەھمەت."
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "ئىزچىل تەرجىمە ساقلىغۇچنى قوزغىتىڭ (دىسكىدىكى غەملەك)"

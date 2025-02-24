@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "三年多来，我一直在开发、更新和支持这个扩展。看到我们每天有超过 600,000 名用户，并且所有这些人都能够永久迁移到 Firefox，真是太棒了。\n\n我的目标是每月发布此扩展的新版本并不断改进它。\n\n如果您能在经济上帮助我成为 Patreon 成员并支持我改进此扩展，我将不胜感激。\n\n感谢所有已经为这个项目做出贡献的人。"
+    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
   },
   "lblEnableDiskCache": {
     "message": "启用持久翻译缓存（磁盘缓存）"
