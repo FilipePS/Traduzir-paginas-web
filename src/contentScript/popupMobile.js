@@ -621,7 +621,7 @@ void (async function () {
       if (rootElement.isConnected) {
         hidePopup();
       } else {
-        showPopup();
+        setTimeout(showPopup, 800);
       }
     }
   });
