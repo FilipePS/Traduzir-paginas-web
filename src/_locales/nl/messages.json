@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Ik ontwikkel, update en ondersteun deze extensie al meer dan vijf jaar. Het is geweldig om te zien dat we meer dan 600.000 dagelijkse gebruikers hebben.\n\nIk zou het op prijs stellen als u mij financieel zou kunnen helpen via Paypal of door lid te worden van mijn Patreon, uw bijdrage helpt mij om verbeteringen aan deze extensie te blijven aanbrengen.\n\nBedankt aan iedereen die al heeft bijgedragen aan dit project."
   },
   "lblEnableDiskCache": {
     "message": "Permanente vertaalcache inschakelen (cache op schijf)"

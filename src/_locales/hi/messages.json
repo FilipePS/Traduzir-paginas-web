@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "मैं पिछले पाँच वर्षों से इस एक्सटेंशन को विकसित, अपडेट और समर्थन कर रहा हूँ। यह देखना आश्चर्यजनक है कि हमारे पास 600,000 से अधिक दैनिक उपयोगकर्ता हैं।\n\nयदि आप पेपैल के माध्यम से या मेरे पैट्रियन के सदस्य बनकर मेरी आर्थिक मदद कर सकते हैं तो मैं आभारी रहूँगा, आपका योगदान मुझे इस एक्सटेंशन में सुधार लाने में मदद करता है।\n\nइस परियोजना में पहले से ही योगदान देने वाले सभी लोगों को धन्यवाद।"
   },
   "lblEnableDiskCache": {
     "message": "लगातार अनुवाद कैश सक्षम करें (ऑन-डिस्क कैश)"

@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Esmu izstrādājis, atjauninājis un atbalstījis šo paplašinājumu vairāk nekā piecus gadus. Ir pārsteidzoši redzēt, ka mums ikdienā ir vairāk nekā 600 000 lietotāju.\n\nBūšu pateicīgs, ja jūs varētu man finansiāli palīdzēt, izmantojot Paypal vai kļūstot par mana Patreon dalībnieku. Jūsu ieguldījums palīdz man turpināt uzlabot šo paplašinājumu.\n\nPaldies visiem, kas jau ir devuši ieguldījumu šajā projektā."
   },
   "lblEnableDiskCache": {
     "message": "Iespējot pastāvīgo tulkošanas kešatmiņu (diska kešatmiņu)"

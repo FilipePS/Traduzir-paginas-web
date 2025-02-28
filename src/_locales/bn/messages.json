@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "আমি পাঁচ বছরেরও বেশি সময় ধরে এই এক্সটেনশনটি ডেভেলপ, আপডেট এবং সাপোর্ট করে আসছি। এটা দেখে অবাক লাগছে যে আমাদের দৈনিক ৬,০০,০০০ এরও বেশি ব্যবহারকারী রয়েছে।\n\nআপনি যদি Paypal এর মাধ্যমে অথবা আমার Patreon এর সদস্য হয়ে আমাকে আর্থিকভাবে সাহায্য করতে পারেন তাহলে আমি কৃতজ্ঞ থাকব, আপনার অবদান আমাকে এই এক্সটেনশনের উন্নতি অব্যাহত রাখতে সাহায্য করবে।\n\nযারা ইতিমধ্যে এই প্রকল্পে অবদান রেখেছেন তাদের সকলকে ধন্যবাদ।"
   },
   "lblEnableDiskCache": {
     "message": "স্থায়ী অনুবাদ ক্যাশে সক্ষম করুন (অন-ডিস্ক ক্যাশে)"

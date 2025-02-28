@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "To razširitev razvijam, posodabljam in podpiram že več kot pet let. Neverjetno je videti, da imamo več kot 600.000 dnevnih uporabnikov.\n\nHvaležen bi bil, če bi mi lahko finančno pomagali prek Paypala ali tako, da postanete član mojega Patreona. Vaš prispevek mi bo pomagal še naprej izboljševati to razširitev.\n\nHvala vsem, ki ste že prispevali k temu projektu."
   },
   "lblEnableDiskCache": {
     "message": "Omogoči trajni predpomnilnik prevodov (predpomnilnik na disku)"

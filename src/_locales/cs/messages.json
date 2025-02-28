@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Toto rozšíření vyvíjím, aktualizuji a podporuji více než pět let. Je úžasné vidět, že máme přes 600 000 uživatelů denně.\n\nByl bych vděčný, kdybyste mi mohli pomoci finančně přes Paypal nebo tím, že se stanete členem mého Patreonu, váš příspěvek mi pomáhá pokračovat ve vylepšování tohoto rozšíření.\n\nDěkujeme všem, kteří již přispěli k tomuto projektu."
   },
   "lblEnableDiskCache": {
     "message": "Povolit mezipaměť trvalého překladu (mezipaměť na disku)"

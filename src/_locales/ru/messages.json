@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Я разрабатываю, обновляю и поддерживаю это расширение уже более пяти лет. Удивительно видеть, что у нас более 600 000 ежедневных пользователей.\n\nЯ был бы признателен, если бы вы могли помочь мне финансово через Paypal или став участником моего Patreon, ваш вклад помогает мне продолжать вносить улучшения в это расширение.\n\nСпасибо всем, кто уже внес свой вклад в этот проект."
   },
   "lblEnableDiskCache": {
     "message": "Включить постоянный кэш переводов (кэш на диске)"

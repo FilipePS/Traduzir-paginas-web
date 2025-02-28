@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Olen kehittänyt, päivittänyt ja tukenut tätä laajennusta yli viiden vuoden ajan. On hämmästyttävää nähdä, että meillä on yli 600 000 päivittäistä käyttäjää.\n\nOlisin kiitollinen, jos voisit auttaa minua taloudellisesti Paypalin kautta tai liittymällä Patreonini jäseneksi, panoksesi auttaa minua jatkamaan tämän laajennuksen parantamista.\n\nKiitos kaikille, jotka ovat jo osallistuneet tähän projektiin."
   },
   "lblEnableDiskCache": {
     "message": "Ota käyttöön pysyvä käännösvälimuisti (levyn välimuisti)"

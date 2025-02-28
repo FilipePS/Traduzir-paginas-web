@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "من بیش از پنج سال است که این برنامه افزودنی را توسعه، به روز رسانی و پشتیبانی می کنم. شگفت انگیز است که می بینیم روزانه بیش از 600000 کاربر داریم.\n\nاگر بتوانید از طریق Paypal یا با عضویت در Patreon من از نظر مالی به من کمک کنید، سپاسگزار خواهم بود، کمک شما به من کمک می کند تا به بهبود این برنامه افزودنی ادامه دهم.\n\nاز همه کسانی که قبلاً در این پروژه مشارکت داشته اند سپاسگزاریم."
   },
   "lblEnableDiskCache": {
     "message": "فعال کردن حافظه پنهان ترجمه دائمی (کش روی دیسک)"

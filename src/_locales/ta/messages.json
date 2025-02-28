@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "நான் ஐந்து ஆண்டுகளுக்கும் மேலாக இந்த நீட்டிப்பை உருவாக்கி, புதுப்பித்து, ஆதரித்து வருகிறேன். எங்களிடம் 600,000க்கும் மேற்பட்ட தினசரி பயனர்கள் இருப்பதைக் காண்பது ஆச்சரியமாக இருக்கிறது.\n\nPaypal மூலமாகவோ அல்லது எனது Patreon இல் உறுப்பினராகவோ நீங்கள் எனக்கு நிதி உதவி செய்தால் நான் நன்றியுள்ளவனாக இருப்பேன், உங்கள் பங்களிப்பு இந்த நீட்டிப்பில் தொடர்ந்து மேம்பாடுகளைக் கொண்டுவர எனக்கு உதவுகிறது.\n\nஇந்த திட்டத்திற்கு ஏற்கனவே பங்களித்த அனைவருக்கும் நன்றி."
   },
   "lblEnableDiskCache": {
     "message": "தொடர்ச்சியான மொழிபெயர்ப்பு தற்காலிக சேமிப்பை இயக்கவும் (ஆன்-வட்டு தற்காலிக சேமிப்பு)"

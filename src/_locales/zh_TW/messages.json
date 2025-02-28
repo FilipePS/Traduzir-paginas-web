@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "我已經開發、更新和支援這個擴展五年多了。令人驚訝的是，我們每天有超過 60 萬名用戶。\n\n如果您能透過 Paypal 或成為我的 Patreon 會員為我提供財務幫助，我將不勝感激，您的貢獻可以幫助我繼續改進此擴展。\n\n感謝所有為此專案做出貢獻的人。"
   },
   "lblEnableDiskCache": {
     "message": "啟用永久翻譯快取（將快取存入磁碟）"

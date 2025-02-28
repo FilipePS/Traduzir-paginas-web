@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "我已经开发、更新和支持这个扩展超过五年了。看到我们每天有超过 600,000 名用户真是太神奇了。\n\n如果您能通过 Paypal 或成为我的 Patreon 会员为我提供经济帮助，我将不胜感激，您的贡献可以帮助我继续改进这个扩展。\n\n感谢所有已经为这个项目做出贡献的人。"
   },
   "lblEnableDiskCache": {
     "message": "启用持久翻译缓存（磁盘缓存）"

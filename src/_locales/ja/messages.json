@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "私はこの拡張機能を 5 年以上にわたって開発、更新、サポートしてきました。毎日 60 万人を超えるユーザーがいるのは驚くべきことです。\n\nPaypal 経由で、または私の Patreon のメンバーになって、金銭的に支援していただければ幸いです。あなたの貢献は、この拡張機能を継続的に改善するのに役立ちます。\n\nこのプロジェクトにすでに貢献してくださった皆様に感謝します。"
   },
   "lblEnableDiskCache": {
     "message": "永続的な翻訳キャッシュを使用（ディスク上にキャッシュを保存）"

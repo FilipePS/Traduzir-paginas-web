@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Jag har utvecklat, uppdaterat och stöttat denna förlängning i över fem år. Det är fantastiskt att se att vi har över 600 000 dagliga användare.\n\nJag skulle vara tacksam om du kunde hjälpa mig ekonomiskt via Paypal eller genom att bli medlem i min Patreon, ditt bidrag hjälper mig att fortsätta att förbättra denna förlängning.\n\nTack till alla som redan har bidragit till detta projekt."
   },
   "lblEnableDiskCache": {
     "message": "Aktivera beständig översättningscache (cache på disk)"

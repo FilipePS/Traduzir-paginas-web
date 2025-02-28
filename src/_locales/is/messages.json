@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Ég hef verið að þróa, uppfæra og styðja þessa framlengingu í meira en fimm ár. Það er ótrúlegt að sjá að við erum með yfir 600.000 daglega notendur.\n\nÉg væri þakklátur ef þú gætir hjálpað mér fjárhagslega í gegnum Paypal eða með því að gerast meðlimur Patreon minn, framlag þitt hjálpar mér að halda áfram að bæta þessa viðbót.\n\nÞakka öllum sem þegar hafa lagt þessu verkefni lið."
   },
   "lblEnableDiskCache": {
     "message": "Virkja varanlegt þýðingarskyndiminni (skyndiminni á diski)"

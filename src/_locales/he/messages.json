@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "אני מפתח, מעדכן ותומך בהרחבה זו במשך יותר מחמש שנים. מדהים לראות שיש לנו למעלה מ-600,000 משתמשים יומיים.\n\nאודה לך אם תוכל לעזור לי כלכלית באמצעות Paypal או על ידי הפיכתך לחבר בפטראון שלי, התרומה שלך עוזרת לי להמשיך ולהביא שיפורים להרחבה זו.\n\nתודה לכל מי שכבר תרם לפרויקט זה."
   },
   "lblEnableDiskCache": {
     "message": "אפשר מטמון תרגום מתמיד (מטמון בדיסק)"

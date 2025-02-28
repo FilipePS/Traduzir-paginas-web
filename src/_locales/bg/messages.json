@@ -36,7 +36,7 @@
     "message": "Възстанови"
   },
   "btnTranslate": {
-    "message": "Преведи"
+    "message": "Превод"
   },
   "btnOptions": {
     "message": "Опции"
@@ -123,7 +123,7 @@
     "message": "Автоматично"
   },
   "msgTranslateSelectedText": {
-    "message": "Преведи избрания текст"
+    "message": "Превод на избрания текст"
   },
   "lblShowTranslateSelectedContextMenu": {
     "message": "Покажи опцията за превод на избрания текст в контекстното меню"
@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "Разработвам, актуализирам и поддържам това разширение повече от пет години. Удивително е да видим, че имаме над 600,000 потребители дневно.\n\nЩе бъда благодарен, ако можете да ми помогнете финансово чрез Paypal или като станете член на моя Patreon, вашият принос ми помага да продължа да подобрявам това разширение.\n\nБлагодаря на всички, които вече са допринесли за този проект."
   },
   "lblEnableDiskCache": {
     "message": "Активиране на постоянен кеш за превод (кеш на диска)"
