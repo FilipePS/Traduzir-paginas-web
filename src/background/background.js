@@ -249,6 +249,9 @@ chrome.runtime.onInstalled.addListener((details) => {
         twpConfig.get("enabledServices")[0]
       );
     });
+    twpConfig.onReady(async () => {
+      twpConfig.set("proxyServers", {});
+    });
   }
 
   twpConfig.onReady(async () => {

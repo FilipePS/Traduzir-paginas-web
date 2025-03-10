@@ -3,7 +3,7 @@
   "default_locale": "en",
   "name": "TWP - Translate Web Pages",
   "description": "__MSG_extensionDescription__",
-  "version": "10.1.0.2",
+  "version": "10.1.0.3",
   "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
   "browser_specific_settings": {
     "gecko": {

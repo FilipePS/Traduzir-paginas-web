@@ -19,34 +19,10 @@ Translate your page in real time using Google or Yandex.
   4. On the add-ons website, search for **TWP**.
   5. Install the **TWP - Translate For Mobile** extension.
 
-
-### Vivaldi, Opera, Maxthon, Chromium and Yandex
-1. Download this CRX file [TWP_Chromium.crx](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v10.0.1.0/TWP_10.0.1.0_Chromium.crx)
-2. Open your browser's extension manager, you can find it at this link: `chrome://extensions`
-3. Activate developer mode
-4. Reload the extension manager page to avoid errors
-5. Drag and drop the **TWP_Chromium.crx** file into the extension manager
-6. Note 1: In Opera, Maxthon and Yandex you don't need to enable developer mode
-7. Note 2: In Yandex you need to reactivate the extension every time you open the browser
-
-### Chrome, Edge and Brave (With folder without auto update)
-1. Download and extract this ZIP file [TWP_Chromium.zip](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v10.0.1.0/TWP_10.0.1.0_Chromium.zip)
-2. Open your browser's extension manager, you can find it at this link: `chrome://extensions`
-3. Activate developer mode
-4. Reload the extension manager page to avoid errors
-5. Drag and drop the **TWP_Chromium** folder into the extension manager
-
-### Chrome, Edge and Brave (With CRX and auto update)
-- By default, these browsers block the installation of extensions outside the official extension store, however, changing a windows registry it is possible to reverse this, allowing the installation of certain extensions. If you want to do this, follow the tutorial below:
-
-1. Download this and run this file [twp-registry-install.reg](https://raw.githubusercontent.com/FilipePS/Traduzir-paginas-web/master/dist/chromium/twp-registry-install.reg). It edit the necessary windows registries
-2. Close your browser and reopen it
-3. Download this CRX file [TWP_Chromium.crx](https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v10.0.1.0/TWP_10.0.1.0_Chromium.crx)
-4. Open your browser's extension manager, you can find it at this link: `chrome://extensions`
-5. Activate developer mode
-6. Reload the extension manager page to avoid errors
-7. Drag and drop the **TWP_Chromium.crx** file into the extension manager
-8. Note: If you want to undo registry changes, download and run this [twp-registry-uninstall-self.reg](https://raw.githubusercontent.com/FilipePS/Traduzir-paginas-web/master/dist/chromium/twp-registry-uninstall-self.reg). If you want a deeper removal download and run this other file [twp-registry-uninstall-all.reg](https://raw.githubusercontent.com/FilipePS/Traduzir-paginas-web/master/dist/chromium/twp-registry-uninstall-all.reg)
+### Chrome, Edge and Brave
+- The extension will be officially released for these browsers in the future.
+- If you installed the extension in these browsers previously through a registry modification, please undo those changes.\
+Note: If you want to undo registry changes, download and run this [twp-registry-uninstall-self.reg](https://raw.githubusercontent.com/FilipePS/Traduzir-paginas-web/master/dist/chromium/twp-registry-uninstall-self.reg). If you want a deeper removal download and run this other file [twp-registry-uninstall-all.reg](https://raw.githubusercontent.com/FilipePS/Traduzir-paginas-web/master/dist/chromium/twp-registry-uninstall-all.reg)
 
 ## Screenshots
 | Menu 1 | Menu 2 | Translated |
