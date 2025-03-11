@@ -1739,7 +1739,7 @@ const translationService = (function () {
         googleService.baseURL = url.toString();
       } else {
         const url = new URL(googleService.baseURL);
-        url.host = "translate.googleapis.com";
+        url.host = "translate-pa.googleapis.com";
         googleService.baseURL = url.toString();
       }
     }
