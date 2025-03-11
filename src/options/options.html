@@ -290,6 +290,7 @@
             <option value="google">Google</option>
             <option value="bing">Bing</option>
             <option value="yandex">Yandex</option>
+            <option value="openai">OpenAI</option>
           </select>
           <br />
           <p>
@@ -300,6 +301,7 @@
             <option value="bing">Bing</option>
             <option value="yandex">Yandex</option>
             <option value="deepl">DeepL</option>
+            <option value="openai">OpenAI</option>
           </select>
           <br />
           <p>
@@ -600,6 +602,27 @@
           <button id="addDeepL">Add DeepL Free API</button>
           <button id="removeDeepL">Remove DeepL Free API</button>
           <p id="deeplApiResponse"></p>
+        </div>
+        <hr>
+        <div>
+          <h3>Configure OpenAI API for GPT translation. If you're running an openai-style dedicated LLM server, you can configure it here.</h3>
+          <label for="openaiUrl">Your OpenAI API url</label><br>
+          <input type="text" id="openaiUrl" placeholder="https://api.openai.com/v1/chat/completions" style="width: 90%;"
+          autocomplete="off" spellcheck="false"><br>
+          <br>
+          <label for="openaiModel">Your OpenAI model name</label><br>
+          <input type="text" id="openaiModel" placeholder="gpt-4o-mini" style="width: 90%;"
+          autocomplete="off" spellcheck="false"><br>
+          <br>
+          <label for="openaiKEY">Your OpenAI API key</label><br>
+          <input type="text" id="openaiKEY" placeholder="YOUR_OPENAI_API_KEY" style="width: 90%;"
+          autocomplete="off" spellcheck="false"><br>
+          <br>
+          <label for="btnEnableOpenAI" style="user-select: none;"><input type="checkbox" id="btnEnableOpenAI">
+            Enable OpenAI</label>
+          <br>
+          <button id="saveOpenAI">Save OpenAI</button>
+          <div id="openaiApiResponse"></div>
         </div>
         <hr>
         <div>
