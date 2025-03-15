@@ -16,6 +16,7 @@ const version = JSON.parse(
 
 const chromium_folder_name = `TWP_${version}_Chromium`;
 const firefox_folder_name = `TWP_${version}_Firefox`;
+const firefox_selfhosted_folder_name = `TWP_${version}_Firefox_selfhosted`;
 
 const mappath = `../maps/${version}`;
 const mapconfig = remoteSourceMaps
@@ -133,20 +134,20 @@ gulp.task("firefox-self-hosted", (cb) => {
   return new Promise((resolve, reject) => {
     gulp
       .src([`build/${firefox_folder_name}/**/**`], {encoding: false})
-      .pipe(gulp.dest(`build/${firefox_folder_name}_selfhosted`))
+      .pipe(gulp.dest(`build/${firefox_selfhosted_folder_name}`))
       .on("error", reject)
       .on("end", resolve);
   }).then(() => {
     const manifest = JSON.parse(
       fs.readFileSync(
-        `build/${firefox_folder_name}_selfhosted/manifest.json`,
+        `build/${firefox_selfhosted_folder_name}/manifest.json`,
         "utf8"
       )
     );
     manifest.browser_specific_settings.gecko.update_url =
       "https://raw.githubusercontent.com/FilipePS/Traduzir-paginas-web/master/dist/firefox/updates.json";
     fs.writeFileSync(
-      `build/${firefox_folder_name}_selfhosted/manifest.json`,
+      `build/${firefox_selfhosted_folder_name}/manifest.json`,
       JSON.stringify(manifest, null, 4),
       "utf8"
     );
@@ -157,6 +158,13 @@ gulp.task("firefox-zip", () => {
   return gulp
     .src([`build/${firefox_folder_name}/**/*`], {encoding: false})
     .pipe(zip(`TWP_${version}_Firefox.zip`))
+    .pipe(gulp.dest("build"));
+});
+
+gulp.task("firefox-self-hosted-zip", () => {
+  return gulp
+    .src([`build/${firefox_selfhosted_folder_name}/**/*`], {encoding: false})
+    .pipe(zip(`TWP_${version}_Firefox_selfhosted.zip`))
     .pipe(gulp.dest("build"));
 });
 
@@ -207,7 +215,8 @@ gulp.task(
     "firefox-babel",
     "firefox-move-sourcemap",
     "firefox-self-hosted",
-    "firefox-zip"
+    "firefox-zip",
+    "firefox-self-hosted-zip"
   )
 );
 gulp.task(
