@@ -63,7 +63,7 @@
     "message": "Þýtt"
   },
   "optionsNeverTranslate": {
-    "message": "Aldrei þýða þessa síðu"
+    "message": "Aldrei þýða þessar síður"
   },
   "optionsAlwaysTranslate": {
     "message": "Alltaf þýða þessi tungumál"
@@ -174,7 +174,7 @@
     "message": "Flýtileiðir á lyklaborði"
   },
   "msgThanksForUseExtension": {
-    "message": "Þakka þér fyrir að nota þessa viðbót."
+    "message": "Þakka þér fyrir að nota þennan forritsauka."
   },
   "msgIWillBeGrateful": {
     "message": "Ég mun vera þakklátur ef þú getur styrkt mig."
@@ -285,7 +285,7 @@
     "message": "Skráin virðist vera skemmd"
   },
   "doYouWantRestoreSettings": {
-    "message": "Viltu endurheimta viðbótina í sjálfgefnar stillingar?"
+    "message": "Viltu endurheimta forritsaukann til að nota sjálfgefnar stillingar sínar?"
   },
   "lblTtsSpeed": {
     "message": "Hljóðhraði gervitals"
@@ -477,7 +477,7 @@
     "message": "Velja annað tungumál"
   },
   "msgHasBeenUpdated": {
-    "message": "Viðbótin $EXTENSION_NAME$ hefur verið uppfærð í útgáfu $EXTENSION_VERSION$.",
+    "message": "Forritsaukinn $EXTENSION_NAME$ hefur verið uppfærður í útgáfu $EXTENSION_VERSION$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -490,7 +490,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Framlag þitt fer til hönnuðarins viðbótarinnar $EXTENSION_NAME$.",
+    "message": "Framlag þitt fer til hönnuðarins forritsaukans $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "Ég hef verið að þróa, uppfæra og styðja þessa framlengingu í meira en fimm ár. Það er ótrúlegt að sjá að við erum með yfir 600.000 daglega notendur.\n\nÉg væri þakklátur ef þú gætir hjálpað mér fjárhagslega í gegnum Paypal eða með því að gerast meðlimur Patreon minn, framlag þitt hjálpar mér að halda áfram að bæta þessa viðbót.\n\nÞakka öllum sem þegar hafa lagt þessu verkefni lið."
+    "message": "Ég hef verið að þróa, uppfæra og styðja þennan forritsauka í meira en fimm ár. Það er magnað að sjá að við séum með yfir 600.000 notendur daglega.\n\nÉg væri þakklátur ef þú gætir aðstoðað mig fjárhagslega með Paypal eða með því að gerast meðlimur að Patreon-síðu minni, framlag þitt hjálpar mér að halda áfram að bæta þennan forritsauka.\n\nÞökk sé öllum sem nú þegar hafa lagt þessu verkefni lið."
   },
   "lblEnableDiskCache": {
     "message": "Virkja varanlegt þýðingarskyndiminni (skyndiminni á diski)"
@@ -529,7 +529,7 @@
     "message": "Sjálfgefið tungumál"
   },
   "msgExtUILanguage": {
-    "message": "Tungumál aukanotendaviðmóts"
+    "message": "Tungumál notandaviðmóts forritsaukans"
   },
   "msgSetDeepLAlert": {
     "message": "Ertu viss um að þú viljir stilla þýðingarþjónustuna í DeepL.\nNýr flipi mun opnast og þýðingin mun fara fram þar."
