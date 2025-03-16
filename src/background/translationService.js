@@ -787,7 +787,13 @@ const translationService = (function () {
             /** @returns {Service_Single_Result_Response} */ (
               /** @type {string} */ value,
               /** @type {number} */ index
-            ) => ({ text: value, detectedLanguage: response[1][index] })
+            ) => {
+              let detectedLanguage = null;
+              if (response[1] && response[1][index]) {
+                detectedLanguage = response[1][index];
+              }
+              return { text: value, detectedLanguage };
+            }
           );
           return responseJson;
         },
@@ -836,7 +842,7 @@ const translationService = (function () {
           // maybe some text will be outside of <a i={number}> (Usually text before the first <a> tag, and some whitespace between the <a> tags),
           // in this case, The outside text will be placed inside the <a i={number}> closer
           // https://github.com/FilipePS/Traduzir-paginas-web/issues/449
-          // TODO lidar com tags dentro de tags e tags vazias
+          //TODO: lidar com tags dentro de tags e tags vazias
           // https://de.wikipedia.org/wiki/Wikipedia:Hauptseite
           // "{\"originalText\":\"<pre><a i=0>\\nFür den </a><a i=1>37. Schreib­wettbewerb</a><a i=2> und den </a><a i=3>18. Miniaturwettbewerb</a><a i=4> können ab sofort Artikel nominiert werden.</a></pre>\",\"translatedText\":\"<pre><a i=0>\\n</a>Artigos já podem ser indicados <a i=0>para o</a> <a i=1>37º Concurso de Redação <a i=2>e</a></a> <a i=3><a i=4>18º</a> Concurso de Miniaturas</a> .</pre>\",\"detectedLanguage\":\"de\",\"status\":\"complete\",\"waitTranlate\":{}}"
           let resultArray = [];
