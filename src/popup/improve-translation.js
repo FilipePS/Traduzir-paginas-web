@@ -88,12 +88,40 @@ twpConfig
       eAllLangs.appendChild(option);
     });
 
-    const selectOriginalLanguage = $("#selectOriginalLanguage");
+    const selectOriginalLanguage_group_1 = $("#selectOriginalLanguage > [name='group_1']");
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        {
+          action: "getOriginalTabLanguage",
+        },
+        {
+          frameId: 0,
+        },
+        (tabLanguage) => {
+          checkedLastError();
+          if (
+            tabLanguage && (tabLanguage = twpLang.fixTLanguageCode(tabLanguage))
+          ) {
+            langsSorted.forEach((value) => {
+              if (value[0] === tabLanguage) {
+                const option = document.createElement("option");
+                option.value = value[0];
+                option.textContent = value[1];
+                selectOriginalLanguage_group_1.appendChild(option);
+              }
+            });
+          }
+        }
+      );
+    });
+  
+    const selectOriginalLanguage_group_2 = $("#selectOriginalLanguage > [name='group_2']");
     langsSorted.forEach((value) => {
       const option = document.createElement("option");
       option.value = value[0];
       option.textContent = value[1];
-      selectOriginalLanguage.appendChild(option);
+      selectOriginalLanguage_group_2.appendChild(option);
     });
 
     const eRecentsLangs =
