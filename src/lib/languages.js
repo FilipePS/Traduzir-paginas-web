@@ -12223,6 +12223,41 @@ const twpLang = (function () {
       "uk",
       "zh-CN",
     ],
+    openai: [
+      "ar",
+      "bg",
+      "cs",
+      "da",
+      "de",
+      "el",
+      "en",
+      "en-GB",
+      "es",
+      "et",
+      "fi",
+      "fr",
+      "hu",
+      "id",
+      "it",
+      "ja",
+      "ko",
+      "lt",
+      "lv",
+      "no",
+      "nl",
+      "pl",
+      "pt",
+      "pt-PT",
+      "ro",
+      "ru",
+      "sk",
+      "sl",
+      "sv",
+      "tr",
+      "uk",
+      "zh-CN",
+      "zh-TW",
+    ],
   };
 
   twpLang.UILanguages = Object.keys(allLanguagesNames);
@@ -12243,7 +12278,7 @@ const twpLang = (function () {
 
   /** @type {Map<string, string>} */
   const alternatives = new Map();
-  const pageTranslationServices = ["google", "bing", "yandex"];
+  const pageTranslationServices = ["google", "bing", "yandex", "openai"];
   /**
    * gets an alternate translation service if the selected translation service does not support the current target language.
    * @param {string} lang
