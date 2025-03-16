@@ -3,11 +3,11 @@
     "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}": {
       "updates": [
         {
-          "version": "10.1.0.5",
+          "version": "10.1.1.0",
           "browser_specific_settings": {
             "gecko": { "strict_min_version": "64.0" }
           },
-          "update_link": "https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v10.1.0.5/TWP_10.1.0.5_Firefox.xpi"
+          "update_link": "https://github.com/FilipePS/Traduzir-paginas-web/releases/download/v10.1.1.0/TWP_10.1.1.0_Firefox.xpi"
         }
       ]
     }
