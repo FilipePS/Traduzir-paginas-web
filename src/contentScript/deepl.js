@@ -14,16 +14,52 @@ void (function () {
   async function translate(text, targetLanguage) {
     return await new Promise((resolve) => {
       /** @type {HTMLTextAreaElement} */
+      const source_textarea = document.querySelector(
+        "d-textarea[data-testid=translator-source-input] > div"
+      );
+      if (!source_textarea) {
+        throw new Error("source_textarea not found.");
+      }
+
+      /** @type {HTMLTextAreaElement} */
       const target_textarea = document.querySelector(
         "d-textarea[data-testid=translator-target-input]"
       );
-
-      // set the URL hash, the translation will start immediately
-      location.hash = `#/auto/${targetLanguage}/${encodeURIComponent(text)}`;
-
       if (!target_textarea) {
         throw new Error("target_textarea not found.");
       }
+
+      /** @type {HTMLButtonElement} */
+      const select_language_el = document.querySelector(
+        "button[data-testid=translator-target-lang-btn]"
+      );
+      if (!select_language_el) {
+        throw new Error("select_language_el not found.");
+      }
+
+      // select the target language
+      select_language_el.click();
+      setTimeout(() => {
+        /** @type {HTMLButtonElement} */
+        const btn = document.querySelector(
+          `[data-testid=translator-target-lang-list] button[data-testid^=translator-lang-option-${targetLanguage}]`
+        );
+        if (!btn) {
+          throw new Error(`btn ${targetLanguage} not found.`);
+        }
+        btn.click();
+      }, 200);
+
+      // put the original text in the correct place
+      setTimeout(() => {
+        source_textarea.focus();
+        source_textarea.textContent = text;
+        source_textarea.dispatchEvent(new Event("input", { bubbles: true }));
+      }, 400);
+
+
+      // set the URL hash, the translation will start immediately
+      //location.hash = `#/auto/${targetLanguage}/${encodeURIComponent(text)}`;
 
       const startTime = performance.now();
 
@@ -109,27 +145,29 @@ void (function () {
     targetLanguage = decodeURIComponent(targetLanguage.substring(2));
     text = decodeURIComponent(text);
 
-    translate(text, targetLanguage || "en")
-      .then((result) => {
-        console.info(result);
-        chrome.runtime.sendMessage(
-          {
-            action: "DeepL_firstTranslationResult",
-            result,
-          },
-          checkedLastError
-        );
-      })
-      .catch((e) => {
-        console.error(e);
-        chrome.runtime.sendMessage(
-          {
-            action: "DeepL_firstTranslationResult",
-            result: "",
-          },
-          checkedLastError
-        );
-      });
+    setTimeout(() => {
+      translate(text, targetLanguage || "en")
+        .then((result) => {
+          console.info(result);
+          chrome.runtime.sendMessage(
+            {
+              action: "DeepL_firstTranslationResult",
+              result,
+            },
+            checkedLastError
+          );
+        })
+        .catch((e) => {
+          console.error(e);
+          chrome.runtime.sendMessage(
+            {
+              action: "DeepL_firstTranslationResult",
+              result: "",
+            },
+            checkedLastError
+          );
+        });
+    }, 100);
   }
 
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
