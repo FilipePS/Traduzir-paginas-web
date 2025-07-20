@@ -210,6 +210,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         }
         return;
       }
+      return;
       if (twpConfig.get("showReleaseNotes") !== "yes") return;
       let lastTimeShowingReleaseNotes = twpConfig.get(
         "lastTimeShowingReleaseNotes"
