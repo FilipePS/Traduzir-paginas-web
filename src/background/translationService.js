@@ -1378,6 +1378,128 @@ const translationService = (function () {
     }
   })();
 
+  const openaiService = new (class extends Service {
+    constructor() {
+      super(
+        "openai",
+        twpConfig.get("openaiApiUrl"),
+        "POST",
+        function cbTransformRequest(sourceArray) {
+          let id = 1;
+          return sourceArray
+            .map((value) => {
+              const r = `<b${id}>${Utils.escapeHTML(value)}</b${id}>`;
+              id++;
+              return r;
+            })
+            .join("");
+        },
+        function cbParseResponse(response) {
+          try {
+            const translatedTexts = response.choices[0].message.content;
+            const parsedResponse = JSON.parse(translatedTexts);
+            const result = parsedResponse.texts.map((text) => ({
+              text: text.trim(),
+              detectedLanguage: null,
+            }));
+            return result;
+          } catch (e) {
+            return [{ text: "", detectedLanguage: null }];
+          }
+        },
+        function cbTransformResponse(result, dontSortResults) {
+          const resultArray = [];
+
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(result, "text/html");
+          let currText = "";
+          doc.body.childNodes.forEach((node) => {
+            if (dontSortResults) {
+              if (node.nodeName == "#text") {
+                currText += node.textContent;
+              } else {
+                resultArray.push(currText + node.textContent);
+                currText = "";
+              }
+            } else {
+              if (node.nodeName == "#text") {
+                currText += node.textContent;
+              } else {
+                const id = parseInt(node.nodeName.slice(1)) - 1;
+                resultArray[id] = currText + node.textContent;
+                currText = "";
+              }
+            }
+          });
+
+          return resultArray;
+        },
+        null,
+        function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
+          const isAutoSourceLanguage = sourceLanguage === "auto";
+          const requestString = JSON.stringify({
+            texts: requests.map((info) => info.originalText),
+          });
+          const prompt =
+            (isAutoSourceLanguage
+              ? `Translate the following list of texts to language code ${targetLanguage}, keeping the original JSON format and each text with HTML tags: `
+              : `Translate the following list of texts from language code ${sourceLanguage} to language code ${targetLanguage}, keeping the original JSON format and each text with HTML tags: `) +
+            requestString;
+
+          return JSON.stringify({
+            model: twpConfig.get("openaiModel"),
+            messages: [
+              {
+                role: "system",
+                content:
+                  'You are a professional multilingual translator. Your answer must be in correct JSON format, starting with {"texts":[...]}, no codeblock format.',
+              },
+              {
+                role: "user",
+                content: prompt,
+              },
+            ],
+            temperature: 0.3,
+            max_tokens: 4096,
+          });
+        },
+        function cbGetExtraHeaders() {
+          return [
+            {
+              name: "Content-Type",
+              value: "application/json",
+            },
+            {
+              name: "Authorization",
+              value: `Bearer ${twpConfig.get("openaiApiKey")}`,
+            },
+          ];
+        }
+      );
+    }
+
+    async translate(
+      sourceLanguage,
+      targetLanguage,
+      sourceArray2d,
+      dontSaveInPersistentCache,
+      dontSortResults = false
+    ) {
+      const apiKey = twpConfig.get("openaiApiKey");
+      if (!apiKey) {
+        throw new Error("OpenAI API key is not set.");
+      }
+
+      return await super.translate(
+        sourceLanguage,
+        targetLanguage,
+        sourceArray2d,
+        dontSaveInPersistentCache,
+        dontSortResults
+      );
+    }
+  })();
+
   /**
    * Creates the libreTranslate translation service from URL and apiKey
    * @param {string} url
@@ -1537,6 +1659,7 @@ const translationService = (function () {
   serviceList.set("google", googleService);
   serviceList.set("yandex", yandexService);
   serviceList.set("bing", bingService);
+  serviceList.set("openai", openaiService);
   serviceList.set(
     "deepl",
     /** @type {Service} */ /** @type {?} */ (deeplService)
