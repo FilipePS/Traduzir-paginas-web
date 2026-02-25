@@ -24,6 +24,48 @@ body {
   height: 35px;
 }
 
+.menu-container {
+  cursor: pointer;
+}
+
+.shortcut-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.shortcut-input {
+  width: 200px;
+  padding: 6px;
+}
+
+.shortcut-button {
+  position: absolute;
+  right: 50px;
+  display: block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.shortcut-input-options {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 50px;
+}
+
+.shortcut-error {
+  color: tomato;
+  font-size: 12px;
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+select {
+  padding-left: 10px !important;
+}
 kbd {
   background-color: #eee;
   border-radius: 3px;
@@ -38,75 +80,66 @@ kbd {
   padding: 2px 4px;
   white-space: nowrap;
 }
+  
+/* fix https://github.com/FilipePS/Traduzir-paginas-web/issues/324 */
+#menuContainer {
+  background-color: unset !important;
+}
 
-.menu-container {
+.w3-button {
+  border-radius: 10px;
+  margin-top: 3px;
+}
+
+.w3-check {
+  border-radius: 30px;
+}
+
+.w3-select {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+
+.shortcut-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.shortcut-input {
+  width: 200px;
+  padding: 6px;
+}
+
+.shortcut-button {
+  position: absolute;
+  right: -50px;
+  display: block;
+  margin-left: 10px;
+  padding: 10px;
   cursor: pointer;
 }
 
-.bar1 {
-  height: 5px;
-  width: 40px;
-  background-color: #fff !important;
-  border-radius: 12px;
-  transition: 400ms ease all;
+.shortcut-input-options {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 50px;
 }
 
-.bar2 {
-  height: 5px;
-  width: 40px;
-  background-color: #fff !important;
-  border-radius: 12px;
-  transition: 400ms ease all;
-  margin-top: 3px;
+.shortcut-error {
+  color: tomato;
+  font-size: 12px;
+  margin: 0px;
+  width: 100%;
+  text-align: center;
 }
-
-.bar3 {
-  height: 5px;
-  width: 40px;
-  background-color: #fff !important;
-  border-radius: 12px;
-  transition: 400ms ease all;
-  margin-top: 3px;
+.w3-bar-item {
+  width: fit-content !important;
 }
-
-.bar4 {
-  height: 5px;
-  width: 40px;
-  background-color: #fff !important;
-  border-radius: 12px;
-  transition: 400ms ease all;
-  margin-top: -13px;
-}
-
-.bar5 {
-  height: 5px;
-  width: 40px;
-  background-color: #fff !important;
-  border-radius: 12px;
-  transition: 400ms ease all;
-  margin-top: -5px;
-}
-
-.change .bar1 {
-  opacity: 0;
-}
-
-.change .bar2 {
-  opacity: 0;
-}
-
-.change .bar3 {
-  opacity: 0;
-}
-
-.change .bar4 {
-  transform: rotate(45deg);
-}
-
-.change .bar5 {
-  transform: rotate(-45deg);
-}
-
 .gg-trash {
   box-sizing: border-box;
   position: relative;
@@ -186,58 +219,4 @@ kbd {
   border-right: 6px solid;
   top: -1px;
   left: -3px;
-}
-
-.shortcut-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.shortcut-input {
-  width: 200px;
-  padding: 6px;
-}
-
-.shortcut-button {
-  position: absolute;
-  right: -50px;
-  display: block;
-  margin-left: 10px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.shortcut-input-options {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-right: 50px;
-}
-
-.shortcut-error {
-  color: tomato;
-  font-size: 12px;
-  margin: 0px;
-  width: 100%;
-  text-align: center;
-}
-
-select {
-  padding-left: 10px !important;
-}
-
-/* fix https://github.com/FilipePS/Traduzir-paginas-web/issues/324 */
-#menuContainer {
-  background-color: unset !important;
-}
-
-.patreonButton img {
-  box-shadow: 0 0 4px 0px black;
-  border-radius: 5px;
-}
-
-.patreonButton img:hover {
-  scale: 1.02;
 }
