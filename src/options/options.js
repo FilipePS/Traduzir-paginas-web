@@ -1390,6 +1390,64 @@ twpConfig
       $("#libreKEY").value = libre.apiKey;
     }
 
+    // Detect DeepLX API version from URL
+    function detectDeepLXVersion(apiUrl) {
+      if (apiUrl.endsWith('/v2/translate')) return 'v2';
+      if (apiUrl.endsWith('/v1/translate')) return 'v1';
+      if (apiUrl.endsWith('/translate')) return 'free';
+      return null;
+    }
+
+    // Test DeepLX API with a simple translation request
+    async function testDeepLXApi(config) {
+      return await new Promise((resolve) => {
+        const version = detectDeepLXVersion(config.apiUrl);
+        if (!version) {
+          resolve(null);
+          return;
+        }
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("POST", config.apiUrl);
+        xhttp.responseType = "json";
+        xhttp.setRequestHeader("Content-Type", "application/json");
+
+        // Set authorization header based on version
+        if (version === 'v2') {
+          xhttp.setRequestHeader("Authorization", "DeepL-Auth-Key " + (config.apiKey || ""));
+        } else {
+          if (config.apiKey) {
+            xhttp.setRequestHeader("Authorization", "Bearer " + config.apiKey);
+          }
+        }
+
+        // Prepare request body based on version
+        let requestBody;
+        if (version === 'v2') {
+          requestBody = JSON.stringify({
+            text: ["Hello"],
+            target_lang: "ZH"
+          });
+        } else {
+          requestBody = JSON.stringify({
+            text: "Hello",
+            source_lang: "EN",
+            target_lang: "ZH"
+          });
+        }
+
+        xhttp.onload = () => {
+          if (xhttp.status === 200 && xhttp.response && xhttp.response.code === 200) {
+            resolve(xhttp.response);
+          } else {
+            resolve(null);
+          }
+        };
+        xhttp.onerror = () => resolve(null);
+        xhttp.send(requestBody);
+      });
+    }
+
     async function testDeepLFreeApiKey(apiKey) {
       return await new Promise((resolve) => {
         const xhttp = new XMLHttpRequest();
@@ -1403,15 +1461,159 @@ twpConfig
       });
     }
 
+    // Unified test function for both DeepL and DeepLX
+    async function testDeepLService(config) {
+      if (config.isDeepLX) {
+        return await testDeepLXApi(config);
+      } else {
+        return await testDeepLFreeApiKey(config.apiKey);
+      }
+    }
+
+    // Track original configuration for change detection
+    let originalConfig = null;
+    let currentServiceType = 'official';
+
+    // Show status message with auto-hide
+    function showStatusMessage(message, isError = false) {
+      const statusDiv = $("#deeplStatusMessage");
+      statusDiv.style.display = "block";
+      statusDiv.textContent = message;
+
+      if (isError) {
+        statusDiv.style.color = "#d32f2f";
+      } else {
+        statusDiv.style.color = "#388e3c";
+      }
+
+      // Auto-hide after 3 seconds
+      setTimeout(() => {
+        statusDiv.style.display = "none";
+      }, 3000);
+    }
+
+    // Check if configuration has changed
+    function hasConfigChanged() {
+      const isDeepLX = currentServiceType === 'deeplx';
+      const apiKey = $("#deeplKEY").value;
+      const apiUrl = $("#deeplxURL").value;
+
+      if (!originalConfig) {
+        // No original config, check if user has entered any data
+        if (isDeepLX) {
+          return apiUrl.trim() !== "" || apiKey.trim() !== "";
+        } else {
+          return apiKey.trim() !== "";
+        }
+      }
+
+      // Compare with original config
+      if (originalConfig.isDeepLX !== isDeepLX) return true;
+      if (originalConfig.apiKey !== apiKey) return true;
+      if (isDeepLX && originalConfig.apiUrl !== apiUrl) return true;
+
+      return false;
+    }
+
+    // Update button state based on changes
+    function updateButtonState() {
+      const addButton = $("#addDeepL");
+      if (hasConfigChanged()) {
+        addButton.disabled = false;
+        addButton.style.opacity = "1";
+        addButton.style.cursor = "pointer";
+      } else {
+        addButton.disabled = true;
+        addButton.style.opacity = "0.5";
+        addButton.style.cursor = "not-allowed";
+      }
+    }
+
+    // Switch between DeepL tabs
+    function switchDeepLTab(type) {
+      currentServiceType = type;
+      const isDeepLX = type === 'deeplx';
+
+      // Update tab appearance
+      $("#deeplOfficialTab").classList.toggle('active', !isDeepLX);
+      $("#deeplxTab").classList.toggle('active', isDeepLX);
+
+      // Update UI
+      const deeplxUrlSection = $("#deeplxUrlSection");
+      const deeplKeyLabel = $("#deeplKeyLabel");
+      const deeplKEY = $("#deeplKEY");
+      const addButton = $("#addDeepL");
+      const removeButton = $("#removeDeepL");
+
+      if (isDeepLX) {
+        deeplxUrlSection.style.display = "block";
+        deeplKeyLabel.textContent = "Access Token (optional)";
+        deeplKEY.placeholder = "your_access_token";
+        addButton.textContent = "Add DeepLX Service";
+        removeButton.textContent = "Remove DeepLX Service";
+      } else {
+        deeplxUrlSection.style.display = "none";
+        deeplKeyLabel.textContent = "Your API key";
+        deeplKEY.placeholder = "7cad3e19-32b8-4cac-a03d-64f3c1e1c1be:fx";
+        addButton.textContent = "Add DeepL Service";
+        removeButton.textContent = "Remove DeepL Service";
+      }
+
+      updateButtonState();
+    }
+
+    // Add tab click listeners
+    $("#deeplOfficialTab").onclick = () => switchDeepLTab('official');
+    $("#deeplxTab").onclick = () => switchDeepLTab('deeplx');
+
+    // Add change listeners to inputs
+    $("#deeplKEY").oninput = updateButtonState;
+    $("#deeplxURL").oninput = updateButtonState;
+
     $("#addDeepL").onclick = async () => {
-      const deepl_freeapi = {
-        name: "deepl_freeapi",
-        apiKey: $("#deeplKEY").value,
-      };
+      if ($("#addDeepL").disabled) return;
+
+      const isDeepLX = currentServiceType === 'deeplx';
+      const apiKey = $("#deeplKEY").value;
+
+      let deepl_config;
+      if (isDeepLX) {
+        const apiUrl = $("#deeplxURL").value.trim();
+        if (!apiUrl) {
+          showStatusMessage("Please enter DeepLX API URL", true);
+          return;
+        }
+
+        const version = detectDeepLXVersion(apiUrl);
+        if (!version) {
+          showStatusMessage("Invalid DeepLX API URL. Must end with /translate, /v1/translate, or /v2/translate", true);
+          return;
+        }
+
+        deepl_config = {
+          name: "deepl_freeapi",
+          apiKey: apiKey || "",
+          isDeepLX: true,
+          apiUrl: apiUrl,
+          version: version
+        };
+      } else {
+        if (!apiKey) {
+          showStatusMessage("Please enter DeepL API key", true);
+          return;
+        }
+        deepl_config = {
+          name: "deepl_freeapi",
+          apiKey: apiKey,
+          isDeepLX: false
+        };
+      }
+
       try {
-        const response = await testDeepLFreeApiKey(deepl_freeapi.apiKey);
-        $("#deeplApiResponse").textContent = JSON.stringify(response);
+        // Test configuration silently in background
+        const response = await testDeepLService(deepl_config);
         if (response) {
+          // Test successful - save configuration and show success message
           const customServices = twpConfig.get("customServices");
 
           const index = customServices.findIndex(
@@ -1421,17 +1623,25 @@ twpConfig
             customServices.splice(index, 1);
           }
 
-          customServices.push(deepl_freeapi);
+          customServices.push(deepl_config);
           twpConfig.set("customServices", customServices);
           chrome.runtime.sendMessage({
             action: "createDeeplFreeApiService",
-            deepl_freeapi,
+            deepl_freeapi: deepl_config,
           });
+
+          // Update original config and button state
+          originalConfig = { ...deepl_config };
+          updateButtonState();
+
+          // Only show that configuration was saved, no mention of testing
+          showStatusMessage("Configuration saved successfully!", false);
         } else {
-          alert("Invalid API key");
+          // Test failed - show error message
+          showStatusMessage(isDeepLX ? "Configuration invalid. Please check your DeepLX URL and token." : "Invalid API key. Please check your configuration.", true);
         }
       } catch (e) {
-        alert(e);
+        showStatusMessage("Configuration invalid. Please check your settings.", true);
       }
     };
 
@@ -1448,18 +1658,46 @@ twpConfig
           checkedLastError
         );
       }
+      // Reset UI to default state
+      currentServiceType = 'official';
+      originalConfig = null;
+      switchDeepLTab('official');
       $("#deeplKEY").value = "";
-      $("#deeplApiResponse").textContent = "";
+      $("#deeplxURL").value = "";
+      $("#deeplStatusMessage").style.display = "none";
+      updateButtonState();
     };
 
+    // Load existing configuration
     const deepl_freeapi = twpConfig
       .get("customServices")
       .find((cs) => cs.name === "deepl_freeapi");
     if (deepl_freeapi) {
-      $("#deeplKEY").value = deepl_freeapi.apiKey;
-      testDeepLFreeApiKey(deepl_freeapi.apiKey).then((response) => {
-        $("#deeplApiResponse").textContent = JSON.stringify(response);
+      originalConfig = { ...deepl_freeapi };
+      $("#deeplKEY").value = deepl_freeapi.apiKey || "";
+
+      if (deepl_freeapi.isDeepLX) {
+        currentServiceType = 'deeplx';
+        switchDeepLTab('deeplx');
+        $("#deeplxURL").value = deepl_freeapi.apiUrl || "";
+      } else {
+        currentServiceType = 'official';
+        switchDeepLTab('official');
+      }
+
+      updateButtonState();
+
+      // Silently test configuration in background (no UI feedback unless it fails)
+      testDeepLService(deepl_freeapi).then((response) => {
+        if (!response) {
+          showStatusMessage("Current configuration may have issues. Please check and re-save.", true);
+        }
+      }).catch(() => {
+        // Ignore test errors on load
       });
+    } else {
+      // No existing config, ensure button is disabled initially
+      updateButtonState();
     }
 
     $("#showMobilePopupOnDesktop").onchange = (e) => {

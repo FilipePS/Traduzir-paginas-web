@@ -593,13 +593,32 @@
         <hr>
         <div>
           <h3>Configure a DeepL Free API API key to translate text (not pages) without opening new tabs.</h3>
-          <label for="deeplKEY">Your API key</label><br>
+
+          <!-- Service Type Tabs -->
+          <div class="deepl-tabs-container">
+            <button type="button" id="deeplOfficialTab" class="deepl-tab active">DeepL Official API</button>
+            <button type="button" id="deeplxTab" class="deepl-tab">DeepLX</button>
+          </div>
+
+          <!-- DeepLX API URL (hidden by default) -->
+          <div id="deeplxUrlSection" style="display: none;">
+            <label for="deeplxURL">DeepLX API URL</label><br>
+            <input type="text" id="deeplxURL" placeholder="http://localhost:1188/translate" style="width: 90%;"
+              autocomplete="off" spellcheck="false"><br>
+            <br>
+          </div>
+
+          <!-- API Key/Token -->
+          <label for="deeplKEY"><span id="deeplKeyLabel">Your API key</span></label><br>
           <input type="text" id="deeplKEY" placeholder="7cad3e19-32b8-4cac-a03d-64f3c1e1c1be:fx" style="width: 90%;"
             autocomplete="off" spellcheck="false"><br>
           <br>
-          <button id="addDeepL">Add DeepL Free API</button>
-          <button id="removeDeepL">Remove DeepL Free API</button>
-          <p id="deeplApiResponse"></p>
+
+          <button id="addDeepL" disabled>Add DeepL Service</button>
+          <button id="removeDeepL">Remove DeepL Service</button>
+
+          <!-- Status Message -->
+          <p id="deeplStatusMessage" style="display: none; margin-top: 10px;"></p>
         </div>
         <hr>
         <div>

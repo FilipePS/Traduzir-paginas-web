@@ -241,3 +241,46 @@ select {
 .patreonButton img:hover {
   scale: 1.02;
 }
+
+/* DeepL Configuration Styles */
+.deepl-tabs-container {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+  width: 90%;
+}
+
+.deepl-tab {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-right: -1px;
+  border-bottom: none;
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.deepl-tab:first-child {
+  border-top-left-radius: 4px;
+}
+
+.deepl-tab:last-child {
+  border-top-right-radius: 4px;
+  margin-right: 0;
+}
+
+.deepl-tab.active {
+  background: #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  position: relative;
+  z-index: 1;
+  color: #333;
+  font-weight: bold;
+}
+
+.deepl-tab:hover:not(.active) {
+  background: #f9f9f9;
+}
