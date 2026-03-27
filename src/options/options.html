@@ -290,6 +290,7 @@
             <option value="google">Google</option>
             <option value="bing">Bing</option>
             <option value="yandex">Yandex</option>
+            <option value="kagi" hidden>Kagi</option>
           </select>
           <br />
           <p>
@@ -300,6 +301,7 @@
             <option value="bing">Bing</option>
             <option value="yandex">Yandex</option>
             <option value="deepl">DeepL</option>
+            <option value="kagi" hidden>Kagi</option>
           </select>
           <br />
           <p>
@@ -589,6 +591,17 @@
           <br>
           <button id="addLibre">Add Libretranslate</button>
           <button id="removeLibre">Remove Libretranslate</button>
+        </div>
+        <hr>
+        <div>
+          <h3>Configure Kagi Translate for translation.</h3>
+          <label for="kagiSessionLink">Your Kagi session link</label><br>
+          <input type="text" id="kagiSessionLink"
+            placeholder="https://kagi.com/search?token=YOUR_TOKEN&q=%s" style="width: 90%;" autocomplete="off"
+            spellcheck="false"><br>
+          <br>
+          <button id="addKagi">Add Kagi Translate</button>
+          <button id="removeKagi">Remove Kagi Translate</button>
         </div>
         <hr>
         <div>
