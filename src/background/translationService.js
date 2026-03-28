@@ -1531,6 +1531,58 @@ const translationService = (function () {
     })();
   };
 
+  /**
+   * Creates the Kagi Translate service
+   * @param {string} token
+   * @returns {Service} kagiService
+   */
+  const createKagiService = (token) => {
+    return new (class extends Service {
+      constructor() {
+        super(
+          "kagi",
+          `https://translate.kagi.com/api/translate?keepToken=true&token=${encodeURIComponent(
+            token
+          )}`,
+          "POST",
+          function cbTransformRequest(sourceArray) {
+            return sourceArray[0];
+          },
+          function cbParseResponse(response) {
+            return response.snippets.map((text) => {
+              return {
+                text,
+                detectedLanguage: response?.detected_language?.iso,
+              }
+            })
+          },
+          function cbTransformResponse(result, dontSortResults) {
+            return [result];
+          },
+          null,
+          function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
+            return JSON.stringify({
+              text: requests.map((info) => info.originalText),
+              source_lang: sourceLanguage || "auto",
+              target_lang: targetLanguage,
+              preserve_formatting: true,
+              stream: false,
+              model: "fast",
+            });
+          },
+          function cbGetExtraHeaders() {
+            return [
+              {
+                name: "Content-Type",
+                value: "application/json",
+              },
+            ];
+          }
+        );
+      }
+    })();
+  };
+
   /** @type {Map<string, Service>} */
   const serviceList = new Map();
 
@@ -1704,6 +1756,10 @@ const translationService = (function () {
         "deepl",
         createDeeplFreeApiService(request.deepl_freeapi.apiKey)
       );
+    } else if (request.action === "createKagiService") {
+      serviceList.set("kagi", createKagiService(request.kagi.token));
+    } else if (request.action === "removeKagiService") {
+      serviceList.delete("kagi");
     } else if (request.action === "removeDeeplFreeApiService") {
       serviceList.set(
         "deepl",
@@ -1727,6 +1783,13 @@ const translationService = (function () {
         .get("customServices")
         .find((cs) => cs.name === "deepl_freeapi");
       serviceList.set("deepl", createDeeplFreeApiService(deepl_freeapi.apiKey));
+    }
+
+    if (twpConfig.get("customServices").find((cs) => cs.name === "kagi")) {
+      const kagi = twpConfig
+        .get("customServices")
+        .find((cs) => cs.name === "kagi");
+      serviceList.set("kagi", createKagiService(kagi.token));
     }
 
     const proxyServers = twpConfig.get("proxyServers");

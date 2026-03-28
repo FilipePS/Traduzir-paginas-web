@@ -264,6 +264,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 					<li title="Yandex" id="sYandex">y</li>
 					<li title="DeepL" id="sDeepL" hidden>d</li>
 					<li title="Libretranslate" id="sLibre" hidden>l</li>
+					<li title="Kagi" id="sKagi" hidden>k</li>
 					<li style="opacity: 0; cursor: move;">O</li>
 				</ul>
 			</div>
@@ -397,6 +398,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     const sBing = shadowRoot.getElementById("sBing");
     const sDeepL = shadowRoot.getElementById("sDeepL");
     const sLibre = shadowRoot.getElementById("sLibre");
+    const sKagi = shadowRoot.getElementById("sKagi");
     const eCopy = shadowRoot.getElementById("copy");
     const eReplace = shadowRoot.getElementById("replace");
     const eListenOriginal = shadowRoot.getElementById("listenOriginal");
@@ -506,6 +508,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
 
       sGoogle.classList.add("selected");
     };
@@ -519,6 +522,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
 
       sYandex.classList.add("selected");
     };
@@ -532,6 +536,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
 
       sBing.classList.add("selected");
     };
@@ -551,6 +556,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         sBing.classList.remove("selected");
         sDeepL.classList.remove("selected");
         sLibre.classList.remove("selected");
+        sKagi.classList.remove("selected");
 
         sDeepL.classList.add("selected");
       }
@@ -565,8 +571,23 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
 
       sLibre.classList.add("selected");
+    };
+    sKagi.onclick = () => {
+      currentTextTranslatorService = "kagi";
+      twpConfig.set("textTranslatorService", "kagi");
+      translateNewInput();
+
+      sGoogle.classList.remove("selected");
+      sYandex.classList.remove("selected");
+      sBing.classList.remove("selected");
+      sDeepL.classList.remove("selected");
+      sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
+
+      sKagi.classList.add("selected");
     };
 
     const setTargetLanguage = shadowRoot.getElementById("setTargetLanguage");
@@ -675,6 +696,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sBing.classList.add("selected");
     } else if (currentTextTranslatorService == "libre") {
       sLibre.classList.add("selected");
+    } else if (currentTextTranslatorService == "kagi") {
+      sKagi.classList.add("selected");
     } else {
       sGoogle.classList.add("selected");
     }
@@ -704,6 +727,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sLibre.removeAttribute("hidden");
     } else {
       sLibre.setAttribute("hidden", "");
+    }
+    if (twpConfig.get("customServices").find((cs) => cs.name === "kagi")) {
+      sKagi.removeAttribute("hidden");
+    } else {
+      sKagi.setAttribute("hidden", "");
     }
 
     if (
@@ -754,6 +782,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             sLibre.removeAttribute("hidden");
           } else {
             sLibre.setAttribute("hidden", "");
+          }
+          if (newvalue.find((cs) => cs.name === "kagi")) {
+            sKagi.removeAttribute("hidden");
+          } else {
+            sKagi.setAttribute("hidden", "");
           }
           break;
         }

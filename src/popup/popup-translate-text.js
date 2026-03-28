@@ -152,6 +152,7 @@ twpConfig
     const sBing = document.getElementById("sBing");
     const sDeepL = document.getElementById("sDeepL");
     const sLibre = document.getElementById("sLibre");
+    const sKagi = document.getElementById("sKagi");
     const eCopy = document.getElementById("copy");
     const eListenOriginal = document.getElementById("listenOriginal");
     const eListenTranslated = document.getElementById("listenTranslated");
@@ -194,6 +195,7 @@ twpConfig
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
 
       sGoogle.classList.add("selected");
     };
@@ -207,6 +209,7 @@ twpConfig
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
 
       sYandex.classList.add("selected");
     };
@@ -220,6 +223,7 @@ twpConfig
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
 
       sBing.classList.add("selected");
     };
@@ -233,6 +237,7 @@ twpConfig
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
 
       sDeepL.classList.add("selected");
     };
@@ -246,8 +251,23 @@ twpConfig
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
 
       sLibre.classList.add("selected");
+    };
+    sKagi.onclick = () => {
+      currentTextTranslatorService = "kagi";
+      twpConfig.set("textTranslatorService", "kagi");
+      translateText();
+
+      sGoogle.classList.remove("selected");
+      sYandex.classList.remove("selected");
+      sBing.classList.remove("selected");
+      sDeepL.classList.remove("selected");
+      sLibre.classList.remove("selected");
+      sKagi.classList.remove("selected");
+
+      sKagi.classList.add("selected");
     };
 
     const setTargetLanguage = document.getElementById("setTargetLanguage");
@@ -350,6 +370,10 @@ twpConfig
         break;
       case "libre":
         sLibre.classList.add("selected");
+        break;
+      case "kagi":
+        sKagi.classList.add("selected");
+        break;
       default:
         sGoogle.classList.add("selected");
         break;
@@ -380,6 +404,11 @@ twpConfig
       sLibre.removeAttribute("hidden");
     } else {
       sLibre.setAttribute("hidden", "");
+    }
+    if (twpConfig.get("customServices").find((cs) => cs.name === "kagi")) {
+      sKagi.removeAttribute("hidden");
+    } else {
+      sKagi.setAttribute("hidden", "");
     }
 
     twpConfig.onChanged((name, newvalue) => {
@@ -413,6 +442,11 @@ twpConfig
             sLibre.removeAttribute("hidden");
           } else {
             sLibre.setAttribute("hidden", "");
+          }
+          if (newvalue.find((cs) => cs.name === "kagi")) {
+            sKagi.removeAttribute("hidden");
+          } else {
+            sKagi.setAttribute("hidden", "");
           }
           break;
         }

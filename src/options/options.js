@@ -1096,30 +1096,30 @@ twpConfig
     };
     $("#useAlternativeService").value = twpConfig.get("useAlternativeService");
 
+    const updateServiceSelector = (enabledServices) => {
+      document
+        .querySelectorAll("#pageTranslatorService option")
+        .forEach((option) => option.setAttribute("hidden", ""));
+      document
+        .querySelectorAll("#textTranslatorService option")
+        .forEach((option) => option.setAttribute("hidden", ""));
+      enabledServices.forEach((svName) => {
+        let option;
+        option = $(`#pageTranslatorService option[value="${svName}"]`);
+        if (option) {
+          option.removeAttribute("hidden");
+        }
+        option = $(`#textTranslatorService option[value="${svName}"]`);
+        if (option) {
+          option.removeAttribute("hidden");
+        }
+      });
+    };
+    
     {
       if (platformInfo.isMobile.any) {
         $("#btnEnableDeepL").setAttribute("disabled", "");
       }
-
-      const updateServiceSelector = (enabledServices) => {
-        document
-          .querySelectorAll("#pageTranslatorService option")
-          .forEach((option) => option.setAttribute("hidden", ""));
-        document
-          .querySelectorAll("#textTranslatorService option")
-          .forEach((option) => option.setAttribute("hidden", ""));
-        enabledServices.forEach((svName) => {
-          let option;
-          option = $(`#pageTranslatorService option[value="${svName}"]`);
-          if (option) {
-            option.removeAttribute("hidden");
-          }
-          option = $(`#textTranslatorService option[value="${svName}"]`);
-          if (option) {
-            option.removeAttribute("hidden");
-          }
-        });
-      };
 
       const servicesInfo = [
         { selector: "#btnEnableGoogle", svName: "google" },
@@ -1164,7 +1164,7 @@ twpConfig
             twpConfig.set("pageTranslatorService", enabledServices[0]);
           }
 
-          const pageTranslationServices = ["google", "bing", "yandex"];
+          const pageTranslationServices = ["google", "bing", "yandex", "kagi"];
           chrome.runtime.sendMessage(
             {
               action: "restorePagesWithServiceNames",
@@ -1388,6 +1388,64 @@ twpConfig
     if (libre) {
       $("#libreURL").value = libre.url;
       $("#libreKEY").value = libre.apiKey;
+    }
+
+    function parseKagiToken(sessionLink) {
+      if (!sessionLink) {
+        throw new Error("Provide a Kagi session link");
+      }
+      const url = new URL(sessionLink);
+      const token = url.searchParams.get("token");
+      if (!token) {
+        throw new Error("Missing token parameter");
+      }
+      return token;
+    }
+
+    $("#addKagi").onclick = () => {
+      try {
+        const token = parseKagiToken($("#kagiSessionLink").value.trim());
+        const kagi = { name: "kagi", token };
+
+        const customServices = twpConfig.get("customServices");
+        const index = customServices.findIndex((cs) => cs.name === "kagi");
+        if (index !== -1) {
+          customServices.splice(index, 1);
+        }
+        customServices.push(kagi);
+        twpConfig.set("customServices", customServices);
+        const enabledServices = twpConfig.get("enabledServices");
+        enabledServices.push("kagi");
+        twpConfig.set("enabledServices", enabledServices);
+        updateServiceSelector(enabledServices);
+        chrome.runtime.sendMessage({ action: "createKagiService", kagi });
+      } catch (e) {
+        alert(e);
+      }
+    };
+
+    $("#removeKagi").onclick = () => {
+      let customServices = twpConfig.get("customServices");
+      customServices = customServices.filter((cs) => cs.name !== "kagi");
+      twpConfig.set("customServices", customServices);
+      let enabledServices = twpConfig.get("enabledServices");
+      enabledServices = enabledServices.filter((sv) => sv !== "kagi");
+      twpConfig.set("enabledServices", enabledServices);
+      updateServiceSelector(enabledServices);
+      chrome.runtime.sendMessage(
+        { action: "removeKagiService" },
+        checkedLastError
+      );
+
+      $("#kagiSessionLink").value = "";
+    };
+
+    const kagi = twpConfig
+      .get("customServices")
+      .find((cs) => cs.name === "kagi");
+    if (kagi?.token) {
+      $("#kagiSessionLink").value =
+        "https://kagi.com/search?token=" + kagi.token + "&q=%s";
     }
 
     async function testDeepLFreeApiKey(apiKey) {
