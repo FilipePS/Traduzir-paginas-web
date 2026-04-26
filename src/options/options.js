@@ -685,6 +685,11 @@ twpConfig
       "enableIframePageTranslation"
     );
 
+    $("#translatePageTitle").onchange = (e) => {
+      twpConfig.set("translatePageTitle", e.target.value);
+    };
+    $("#translatePageTitle").value = twpConfig.get("translatePageTitle");
+
     $("#dontSortResults").onchange = (e) => {
       twpConfig.set("dontSortResults", e.target.value);
     };
