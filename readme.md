@@ -1,7 +1,7 @@
 
 # <img src="https://github.com/FilipePS/Traduzir-paginas-web/blob/master/src/icons/icon-128.png" height="50"> Translate Web Pages
 
-Translate your page in real time using Google, Bing or Yandex.
+Translate your page in real time using Google, Bing, Yandex, or an optional OpenRouter provider.
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/FilipePS/Traduzir-paginas-web?label=latest%20version&sort=semver)](https://github.com/FilipePS/Traduzir-paginas-web/releases)
 [![GitHub release date](https://img.shields.io/github/release-date/FilipePS/Traduzir-paginas-web?labely)](https://github.com/FilipePS/Traduzir-paginas-web/latest)
@@ -54,11 +54,17 @@ To translate any website it is necessary to access and modify the text of the we
 
 **How are the pages translated?**
 
-The pages are translated using the Google or Yandex translation engine (you choose).
+The pages are translated using the Google, Bing, Yandex, or OpenRouter translation engine (you choose).
+
+**How does OpenRouter support work?**
+
+OpenRouter is optional and disabled by default. To use it, open the extension options, go to the experimental settings, and add your own OpenRouter API key. After the key is added, OpenRouter becomes available in both **Page translation service** and **Text Translation Service**.
+
+OpenRouter uses the `google/gemini-3-flash-preview` model by default, but you can enter a different OpenRouter model ID in the settings. Page translation requests use structured JSON output so translated fragments can be matched back to the original page text in the correct order. API usage may be billed by OpenRouter depending on your account and selected model.
 
 **And how's my privacy?**
 
-[Privacy policy](https://addons.mozilla.org/addon/traduzir-paginas-web/privacy/): We do not collect any information. However, to translate, the contents of the web pages will be sent to Google or Yandex servers.
+[Privacy policy](https://addons.mozilla.org/addon/traduzir-paginas-web/privacy/): We do not collect any information. However, to translate, the contents of the web pages will be sent to the selected translation provider. If OpenRouter is enabled, translated text is sent to OpenRouter and to the model provider selected by OpenRouter.
 
 **Limitations**
 

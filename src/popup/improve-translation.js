@@ -34,6 +34,16 @@ twpConfig
   .then(() => {
     twpI18n.translateDocument();
 
+    const updatePageServiceSelector = () => {
+      const openrouterOption = $(`#pageTranslatorService option[value="openrouter"]`);
+      if (twpConfig.get("customServices").find((cs) => cs.name === "openrouter")) {
+        openrouterOption.removeAttribute("hidden");
+      } else {
+        openrouterOption.setAttribute("hidden", "");
+      }
+    };
+    updatePageServiceSelector();
+
     $("#pageTranslatorService").value = twpConfig.get("pageTranslatorService");
     $("#dontSortResults").value = twpConfig.get("dontSortResults");
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {

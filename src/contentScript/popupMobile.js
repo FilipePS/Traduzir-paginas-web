@@ -34,6 +34,9 @@ void (async function () {
   const bingIcon = await fetch(
     chrome.runtime.getURL("/icons/bing-translate-32.png")
   ).then((response) => response.blob());
+  const openrouterIcon = await fetch(
+    chrome.runtime.getURL("/icons/icon-32.png")
+  ).then((response) => response.blob());
 
   // Load i18n messages based on your language preference
   await twpI18n.updateUiMessages();
@@ -231,6 +234,8 @@ void (async function () {
       serviceIconElement.src = URL.createObjectURL(yandexIcon);
     } else if (service === "bing") {
       serviceIconElement.src = URL.createObjectURL(bingIcon);
+    } else if (service === "openrouter") {
+      serviceIconElement.src = URL.createObjectURL(openrouterIcon);
     }
     serviceIconElement.onload = () => {
       serviceIconElement.onload = null;
@@ -243,6 +248,18 @@ void (async function () {
   const serviceSelector = /** @type {HTMLSelectElement} */ (
     shadowRoot.getElementById("serviceSelector")
   );
+  const updateServiceSelectorOptions = () => {
+    const openrouterOption = serviceSelector.querySelector(
+      `option[value="openrouter"]`
+    );
+    if (twpConfig.get("customServices").find((cs) => cs.name === "openrouter")) {
+      openrouterOption.removeAttribute("hidden");
+    } else {
+      openrouterOption.setAttribute("hidden", "");
+    }
+  };
+  updateServiceSelectorOptions();
+
   serviceSelector.onclick = () => {
     serviceSelectorIsOpen = true;
     lastInteraction = Date.now();
@@ -693,6 +710,8 @@ void (async function () {
   twpConfig.onChanged((name, newValue) => {
     if (name == "darkMode") {
       updateTheme();
+    } else if (name === "customServices") {
+      updateServiceSelectorOptions();
     }
   });
 })();

@@ -1096,30 +1096,62 @@ twpConfig
     };
     $("#useAlternativeService").value = twpConfig.get("useAlternativeService");
 
+    const customTextServiceNames = ["libre", "openrouter"];
+    const customPageServiceNames = ["openrouter"];
+    const getAvailablePageServices = (enabledServices) => [
+      ...enabledServices,
+      ...twpConfig
+        .get("customServices")
+        .filter((cs) => customPageServiceNames.includes(cs.name))
+        .map((cs) => cs.name),
+    ];
+    const getAvailableTextServices = (enabledServices) => [
+      ...enabledServices,
+      ...twpConfig
+        .get("customServices")
+        .filter((cs) => customTextServiceNames.includes(cs.name))
+        .map((cs) => cs.name),
+    ];
+    const isOpenRouterConfigured = () =>
+      twpConfig.get("customServices").find((cs) => cs.name === "openrouter");
+    const updateOpenRouterServiceOption = (selector) => {
+      const option = $(`${selector} option[value="openrouter"]`);
+      if (!option) return;
+
+      option.removeAttribute("hidden");
+      if (isOpenRouterConfigured()) {
+        option.removeAttribute("disabled");
+      } else {
+        option.setAttribute("disabled", "");
+      }
+    };
+    const updateServiceSelector = (enabledServices) => {
+      document
+        .querySelectorAll("#pageTranslatorService option")
+        .forEach((option) => option.setAttribute("hidden", ""));
+      document
+        .querySelectorAll("#textTranslatorService option")
+        .forEach((option) => option.setAttribute("hidden", ""));
+      getAvailablePageServices(enabledServices).forEach((svName) => {
+        const option = $(`#pageTranslatorService option[value="${svName}"]`);
+        if (option) {
+          option.removeAttribute("hidden");
+        }
+      });
+      getAvailableTextServices(enabledServices).forEach((svName) => {
+        const option = $(`#textTranslatorService option[value="${svName}"]`);
+        if (option) {
+          option.removeAttribute("hidden");
+        }
+      });
+      updateOpenRouterServiceOption("#pageTranslatorService");
+      updateOpenRouterServiceOption("#textTranslatorService");
+    };
+
     {
       if (platformInfo.isMobile.any) {
         $("#btnEnableDeepL").setAttribute("disabled", "");
       }
-
-      const updateServiceSelector = (enabledServices) => {
-        document
-          .querySelectorAll("#pageTranslatorService option")
-          .forEach((option) => option.setAttribute("hidden", ""));
-        document
-          .querySelectorAll("#textTranslatorService option")
-          .forEach((option) => option.setAttribute("hidden", ""));
-        enabledServices.forEach((svName) => {
-          let option;
-          option = $(`#pageTranslatorService option[value="${svName}"]`);
-          if (option) {
-            option.removeAttribute("hidden");
-          }
-          option = $(`#textTranslatorService option[value="${svName}"]`);
-          if (option) {
-            option.removeAttribute("hidden");
-          }
-        });
-      };
 
       const servicesInfo = [
         { selector: "#btnEnableGoogle", svName: "google" },
@@ -1153,13 +1185,15 @@ twpConfig
             }
           });
 
-          if (
-            !enabledServices.includes(twpConfig.get("textTranslatorService"))
-          ) {
+          if (!getAvailableTextServices(enabledServices).includes(
+            twpConfig.get("textTranslatorService")
+          )) {
             twpConfig.set("textTranslatorService", enabledServices[0]);
           }
           if (
-            !enabledServices.includes(twpConfig.get("pageTranslatorService"))
+            !getAvailablePageServices(enabledServices).includes(
+              twpConfig.get("pageTranslatorService")
+            )
           ) {
             twpConfig.set("pageTranslatorService", enabledServices[0]);
           }
@@ -1460,6 +1494,190 @@ twpConfig
       testDeepLFreeApiKey(deepl_freeapi.apiKey).then((response) => {
         $("#deeplApiResponse").textContent = JSON.stringify(response);
       });
+    }
+
+    async function testOpenRouterApiKey(apiKey, model) {
+      return await new Promise((resolve, reject) => {
+        const xhttp = new XMLHttpRequest();
+        xhttp.open(
+          "POST",
+          "https://openrouter.ai/api/v1/chat/completions"
+        );
+        xhttp.responseType = "json";
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.setRequestHeader("Authorization", "Bearer " + apiKey);
+        xhttp.setRequestHeader("X-Title", "TWP - Translate Web Pages");
+        xhttp.onload = () => {
+          if (xhttp.status >= 200 && xhttp.status < 300) {
+            resolve(xhttp.response);
+          } else {
+            reject(xhttp.response || new Error("Invalid OpenRouter API key"));
+          }
+        };
+        xhttp.onerror = () => reject(new Error("Could not reach OpenRouter API"));
+
+        const body = {
+          model,
+          messages: [
+            {
+              role: "system",
+              content:
+                "You are a translation engine. Return the requested JSON shape.",
+            },
+            {
+              role: "user",
+              content:
+                'Translate this JSON payload to English: {"requests":[{"request_index":0,"texts":["olá"]}]}',
+            },
+          ],
+          response_format: {
+            type: "json_schema",
+            json_schema: {
+              name: "translation_batch",
+              strict: true,
+              schema: {
+                type: "object",
+                properties: {
+                  translations: {
+                    type: "array",
+                    items: {
+                      type: "object",
+                      properties: {
+                        request_index: {
+                          type: "integer",
+                        },
+                        texts: {
+                          type: "array",
+                          items: {
+                            type: "string",
+                          },
+                        },
+                      },
+                      required: ["request_index", "texts"],
+                      additionalProperties: false,
+                    },
+                  },
+                },
+                required: ["translations"],
+                additionalProperties: false,
+              },
+            },
+          },
+          provider: {
+            require_parameters: true,
+          },
+          temperature: 0,
+        };
+
+        if (model === "openrouter/auto") {
+          body.plugins = [
+            {
+              id: "auto-router",
+              cost_quality_tradeoff: 8,
+            },
+          ];
+        }
+
+        xhttp.send(JSON.stringify(body));
+      });
+    }
+
+    $("#addOpenRouter").onclick = async () => {
+      const openrouter = {
+        name: "openrouter",
+        apiKey: $("#openrouterKEY").value.trim(),
+        model: $("#openrouterModel").value.trim() || "google/gemini-3-flash-preview",
+      };
+      try {
+        if (openrouter.apiKey.length < 10) {
+          throw new Error("Provides an API Key");
+        }
+
+        const response = await testOpenRouterApiKey(openrouter.apiKey, openrouter.model);
+        $("#openrouterApiResponse").textContent = JSON.stringify(response);
+        if (response) {
+          const customServices = twpConfig.get("customServices");
+
+          const index = customServices.findIndex((cs) => cs.name === "openrouter");
+          if (index !== -1) {
+            customServices.splice(index, 1);
+          }
+
+          customServices.push(openrouter);
+          twpConfig.set("customServices", customServices);
+          chrome.runtime.sendMessage({
+            action: "createOpenRouterService",
+            openrouter,
+          });
+          updateServiceSelector(twpConfig.get("enabledServices"));
+          twpConfig.set("textTranslatorService", "openrouter");
+          twpConfig.set("pageTranslatorService", "openrouter");
+          $("#pageTranslatorService").value = "openrouter";
+          $("#textTranslatorService").value = "openrouter";
+        } else {
+          alert("Invalid API key");
+        }
+      } catch (e) {
+        $("#openrouterApiResponse").textContent = JSON.stringify(e);
+        alert(e);
+      }
+    };
+
+    $("#removeOpenRouter").onclick = () => {
+      const customServices = twpConfig.get("customServices");
+      const index = customServices.findIndex((cs) => cs.name === "openrouter");
+      if (index !== -1) {
+        customServices.splice(index, 1);
+        twpConfig.set("customServices", customServices);
+        chrome.runtime.sendMessage(
+          { action: "removeOpenRouterService" },
+          checkedLastError
+        );
+      }
+
+      if (twpConfig.get("pageTranslatorService") === "openrouter") {
+        chrome.runtime.sendMessage(
+          {
+            action: "restorePagesWithServiceNames",
+            serviceNames: ["openrouter"],
+            newServiceName: twpConfig.get("enabledServices")[0],
+          },
+          checkedLastError
+        );
+        twpConfig.set(
+          "pageTranslatorService",
+          twpConfig.get("enabledServices")[0]
+        );
+        $("#pageTranslatorService").value = twpConfig.get(
+          "pageTranslatorService"
+        );
+      }
+
+      if (twpConfig.get("textTranslatorService") === "openrouter") {
+        twpConfig.set(
+          "textTranslatorService",
+          twpConfig.get("pageTranslatorService")
+        );
+        $("#textTranslatorService").value = twpConfig.get(
+          "textTranslatorService"
+        );
+      }
+
+      updateServiceSelector(twpConfig.get("enabledServices"));
+      $("#openrouterKEY").value = "";
+      $("#openrouterModel").value = "google/gemini-3-flash-preview";
+      $("#openrouterApiResponse").textContent = "";
+    };
+
+    const openrouter = twpConfig
+      .get("customServices")
+      .find((cs) => cs.name === "openrouter");
+    if (openrouter) {
+      $("#openrouterKEY").value = openrouter.apiKey;
+      $("#openrouterModel").value = openrouter.model || "google/gemini-3-flash-preview";
+      updateServiceSelector(twpConfig.get("enabledServices"));
+    } else {
+      $("#openrouterModel").value = "google/gemini-3-flash-preview";
     }
 
     $("#showMobilePopupOnDesktop").onchange = (e) => {

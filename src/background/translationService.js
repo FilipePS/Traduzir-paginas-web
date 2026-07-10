@@ -1530,6 +1530,178 @@ const translationService = (function () {
     })();
   };
 
+  /**
+   * Creates the OpenRouter API translation service.
+   * @param {string} apiKey
+   * @param {string} model
+   * @returns {Service} openrouterService
+   */
+  const createOpenRouterService = (apiKey, model = "google/gemini-3-flash-preview") => {
+    const openrouterTranslationSchema = {
+      type: "object",
+      properties: {
+        translations: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              request_index: {
+                type: "integer",
+              },
+              texts: {
+                type: "array",
+                items: {
+                  type: "string",
+                },
+              },
+            },
+            required: ["request_index", "texts"],
+            additionalProperties: false,
+          },
+        },
+      },
+      required: ["translations"],
+      additionalProperties: false,
+    };
+
+    const extractTextFromResponse = (response) => {
+      const content = response?.choices?.[0]?.message?.content;
+      if (typeof content === "string") {
+        return content;
+      }
+
+      if (Array.isArray(content)) {
+        const textBlocks = content
+          .map((part) => part.text || part.content || "")
+          .filter((text) => typeof text === "string");
+        if (textBlocks.length > 0) {
+          return textBlocks.join("");
+        }
+      }
+
+      throw new Error("Unexpected OpenRouter API response");
+    };
+
+    const parseResponseJson = (response) => {
+      const responseText = extractTextFromResponse(response);
+      return typeof responseText === "string"
+        ? JSON.parse(responseText)
+        : responseText;
+    };
+
+    const parseSourceArray = (requestText) => {
+      const sourceArray = JSON.parse(requestText);
+      if (!Array.isArray(sourceArray)) {
+        throw new Error("Unexpected OpenRouter request format");
+      }
+      return sourceArray;
+    };
+
+    const getLanguageName = (languageCode) => {
+      if (languageCode === "auto" || languageCode === "auto-detect") {
+        return "auto-detect";
+      }
+      return twpLang.codeToLanguage(languageCode) || languageCode;
+    };
+
+    return new (class extends Service {
+      constructor() {
+        super(
+          "openrouter",
+          "https://openrouter.ai/api/v1/chat/completions",
+          "POST",
+          function cbTransformRequest(sourceArray) {
+            return JSON.stringify(sourceArray);
+          },
+          function cbParseResponse(response) {
+            const responseJson = parseResponseJson(response);
+            if (!Array.isArray(responseJson?.translations)) {
+              throw new Error("Unexpected OpenRouter API response");
+            }
+
+            return responseJson.translations
+              .sort((a, b) => a.request_index - b.request_index)
+              .map((translation) => ({
+                text: JSON.stringify(translation.texts),
+                detectedLanguage: null,
+              }));
+          },
+          function cbTransformResponse(result, dontSortResults) {
+            return JSON.parse(result);
+          },
+          null,
+          function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
+            const items = requests.map((request, index) => ({
+              request_index: index,
+              texts: parseSourceArray(request.originalText),
+            }));
+
+            const body = {
+              model,
+              messages: [
+                {
+                  role: "system",
+                  content:
+                    "You are a translation engine. Translate every string in each request to the target language. Return the same request_index values, the same number of strings per request, and the same order. Preserve line breaks, URLs, code-like tokens, placeholders, HTML-like tags, and dictionary markers exactly unless translating the surrounding natural language requires moving them.",
+                },
+                {
+                  role: "user",
+                  content: [
+                    `Source language: ${getLanguageName(sourceLanguage)}`,
+                    `Target language: ${getLanguageName(targetLanguage)}`,
+                    "Translate this JSON payload:",
+                    JSON.stringify({
+                      requests: items,
+                    }),
+                  ].join("\n"),
+                },
+              ],
+              response_format: {
+                type: "json_schema",
+                json_schema: {
+                  name: "translation_batch",
+                  strict: true,
+                  schema: openrouterTranslationSchema,
+                },
+              },
+              provider: {
+                require_parameters: true,
+              },
+              temperature: 0,
+            };
+
+            if (model === "openrouter/auto") {
+              body.plugins = [
+                {
+                  id: "auto-router",
+                  cost_quality_tradeoff: 8,
+                },
+              ];
+            }
+
+            return JSON.stringify(body);
+          },
+          function cbGetExtraHeaders() {
+            return [
+              {
+                name: "Content-Type",
+                value: "application/json",
+              },
+              {
+                name: "Authorization",
+                value: "Bearer " + apiKey,
+              },
+              {
+                name: "X-Title",
+                value: "TWP - Translate Web Pages",
+              },
+            ];
+          }
+        );
+      }
+    })();
+  };
+
   /** @type {Map<string, Service>} */
   const serviceList = new Map();
 
@@ -1708,6 +1880,13 @@ const translationService = (function () {
         "deepl",
         /** @type {Service} */ /** @type {?} */ (deeplService)
       );
+    } else if (request.action === "createOpenRouterService") {
+      serviceList.set(
+        "openrouter",
+        createOpenRouterService(request.openrouter.apiKey, request.openrouter.model)
+      );
+    } else if (request.action === "removeOpenRouterService") {
+      serviceList.delete("openrouter");
     }
   });
 
@@ -1726,6 +1905,16 @@ const translationService = (function () {
         .get("customServices")
         .find((cs) => cs.name === "deepl_freeapi");
       serviceList.set("deepl", createDeeplFreeApiService(deepl_freeapi.apiKey));
+    }
+
+    if (twpConfig.get("customServices").find((cs) => cs.name === "openrouter")) {
+      const openrouter = twpConfig
+        .get("customServices")
+        .find((cs) => cs.name === "openrouter");
+      serviceList.set(
+        "openrouter",
+        createOpenRouterService(openrouter.apiKey, openrouter.model)
+      );
     }
 
     const proxyServers = twpConfig.get("proxyServers");

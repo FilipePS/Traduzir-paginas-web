@@ -152,6 +152,7 @@ twpConfig
     const sBing = document.getElementById("sBing");
     const sDeepL = document.getElementById("sDeepL");
     const sLibre = document.getElementById("sLibre");
+    const sOpenRouter = document.getElementById("sOpenRouter");
     const eCopy = document.getElementById("copy");
     const eListenOriginal = document.getElementById("listenOriginal");
     const eListenTranslated = document.getElementById("listenTranslated");
@@ -194,6 +195,7 @@ twpConfig
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sOpenRouter.classList.remove("selected");
 
       sGoogle.classList.add("selected");
     };
@@ -207,6 +209,7 @@ twpConfig
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sOpenRouter.classList.remove("selected");
 
       sYandex.classList.add("selected");
     };
@@ -220,6 +223,7 @@ twpConfig
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sOpenRouter.classList.remove("selected");
 
       sBing.classList.add("selected");
     };
@@ -233,6 +237,7 @@ twpConfig
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sOpenRouter.classList.remove("selected");
 
       sDeepL.classList.add("selected");
     };
@@ -246,8 +251,23 @@ twpConfig
       sBing.classList.remove("selected");
       sDeepL.classList.remove("selected");
       sLibre.classList.remove("selected");
+      sOpenRouter.classList.remove("selected");
 
       sLibre.classList.add("selected");
+    };
+    sOpenRouter.onclick = () => {
+      currentTextTranslatorService = "openrouter";
+      twpConfig.set("textTranslatorService", "openrouter");
+      translateText();
+
+      sGoogle.classList.remove("selected");
+      sYandex.classList.remove("selected");
+      sBing.classList.remove("selected");
+      sDeepL.classList.remove("selected");
+      sLibre.classList.remove("selected");
+      sOpenRouter.classList.remove("selected");
+
+      sOpenRouter.classList.add("selected");
     };
 
     const setTargetLanguage = document.getElementById("setTargetLanguage");
@@ -350,6 +370,10 @@ twpConfig
         break;
       case "libre":
         sLibre.classList.add("selected");
+        break;
+      case "openrouter":
+        sOpenRouter.classList.add("selected");
+        break;
       default:
         sGoogle.classList.add("selected");
         break;
@@ -380,6 +404,11 @@ twpConfig
       sLibre.removeAttribute("hidden");
     } else {
       sLibre.setAttribute("hidden", "");
+    }
+    if (twpConfig.get("customServices").find((cs) => cs.name === "openrouter")) {
+      sOpenRouter.removeAttribute("hidden");
+    } else {
+      sOpenRouter.setAttribute("hidden", "");
     }
 
     twpConfig.onChanged((name, newvalue) => {
@@ -413,6 +442,11 @@ twpConfig
             sLibre.removeAttribute("hidden");
           } else {
             sLibre.setAttribute("hidden", "");
+          }
+          if (newvalue.find((cs) => cs.name === "openrouter")) {
+            sOpenRouter.removeAttribute("hidden");
+          } else {
+            sOpenRouter.setAttribute("hidden", "");
           }
           break;
         }
