@@ -174,7 +174,7 @@
     "message": "Skróty klawiszowe"
   },
   "msgThanksForUseExtension": {
-    "message": "Dziękujemy że korzystasz z tego rozszerzenia."
+    "message": "Dziękujemy, że korzystasz z tego rozszerzenia."
   },
   "msgIWillBeGrateful": {
     "message": "Będę wdzięczny, jeśli możesz przekazać darowiznę."
@@ -335,7 +335,7 @@
     "message": "Wspomóż przy pomocy PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Tłumacz automatycznie po kliknięciu na link, który prowadzi do tej samej domeny co bieżąca strona"
+    "message": "Tłumacz automatycznie po nacisnieciulink, który prowadzi do tej samej domeny co bieżąca strona"
   },
   "openNativeShortcutManager": {
     "message": "Otwórz natywny menedżer skrótów"
@@ -456,7 +456,7 @@
     "message": "Zaawansowany"
   },
   "lblTranslatePageInto": {
-    "message": "Przetłumaczyć stronę na $LANGUAGE_NAME$?",
+    "message": "PolskiPrzetłumaczyć stronę na $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -577,7 +577,7 @@
     }
   },
   "btnTranslateRestoreThisFrame": {
-    "message": "Przetłumacz/Przywróć tę ramkę"
+    "message": "Przetłumacz/Przywróć ramkę"
   },
   "msgWhenShowMobilePopup": {
     "message": "Kiedy wyświetlać wyskakujące okienko mobilne"

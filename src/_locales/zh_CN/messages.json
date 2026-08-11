@@ -288,7 +288,7 @@
     "message": "要恢复扩展至默认设置吗？"
   },
   "lblTtsSpeed": {
-    "message": "文字转语音的语速"
+    "message": "文本转语音语速"
   },
   "lblTtsVolume": {
     "message": "文本转语音音量"
@@ -426,7 +426,7 @@
     "message": "自动替换选中文本为译文"
   },
   "optionsAddToCustomDictionary": {
-    "message": "添加到我的字典（这允许您在网页翻译时跳过某些单词）"
+    "message": "添加到自定义词典（可让您在网页翻译期间跳过特定单词）"
   },
   "msgSelectTargetLanguage": {
     "message": "将网站翻译成目标语言"
@@ -450,10 +450,10 @@
     "message": "选择弹出界面样式"
   },
   "msgInterfaceSimple": {
-    "message": "简单"
+    "message": "简明"
   },
   "msgInterfaceComplex": {
-    "message": "复杂"
+    "message": "详细"
   },
   "lblTranslatePageInto": {
     "message": "翻译页面为 $LANGUAGE_NAME$？",
@@ -465,7 +465,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "页面翻译为 $LANGUAGE_NAME$？",
+    "message": "页面已翻译成 $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -532,7 +532,7 @@
     "message": "扩展用户界面语言"
   },
   "msgSetDeepLAlert": {
-    "message": "您确定要将翻译服务设置为 DeepL 吗？\n使用 DeepL 翻译文本时将会打开一个新选项卡，并在那里进行翻译。"
+    "message": "您确定要将翻译服务设为 DeepL 吗？\n使用 DeepL 翻译文本时将会打开新的标签页，并在那里进行翻译。"
   },
   "lblTextToSpeechService": {
     "message": "文本转语音服务"
@@ -569,7 +569,7 @@
     "message": "自动侦测"
   },
   "msgEnableIframePageTranslation": {
-    "message": "在 $IFRAME_TAG$中启用页面翻译",
+    "message": "在 $IFRAME_TAG$ 中启用页面翻译",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"

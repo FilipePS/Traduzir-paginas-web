@@ -192,7 +192,7 @@
     "message": "ᱠᱚᱢ"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Do not show if the selected text is not valid"
+    "message": "ᱵᱟᱪᱷᱟᱣ ᱠᱟᱱ ᱚᱞ ᱡᱩᱫᱤ ᱵᱟᱹᱲᱤᱡ ᱵᱟᱝ ᱛᱟᱦᱮᱱ ᱫᱚ ᱵᱟᱝ ᱩᱫᱩᱜ ᱢᱮ"
   },
   "dontShowIfPageLangIsTargetLang": {
     "message": "ᱡᱩᱫᱤ ᱥᱟᱦᱴᱟ ᱫᱚ ᱞᱚᱠᱷᱭᱚ ᱠᱟᱱ ᱯᱟᱹᱨᱥᱤ ᱨᱮ ᱢᱮᱱᱟᱜ ᱠᱷᱟᱱ ᱟᱞᱚᱢ ᱫᱮᱠᱷᱟᱣ ᱟ"
@@ -291,7 +291,7 @@
     "message": "ᱚᱞ ᱠᱷᱚᱱ ᱨᱚᱲ ᱥᱟᱰᱮ ᱜᱚᱛᱤ"
   },
   "lblTtsVolume": {
-    "message": "Text-to-speech audio volume"
+    "message": "ᱴᱮᱠᱥᱴ-ᱴᱩ-ᱥᱯᱤᱪ ᱟᱣᱟᱡᱽ ᱵᱷᱚᱞᱭᱩᱢ"
   },
   "enterShortcut": {
     "message": "ᱢᱤᱫᱴᱟᱹᱝ ᱠᱷᱟᱴᱚᱢᱟᱪᱷᱟ ᱚᱞ ᱢᱮ"
@@ -323,7 +323,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Do not sort translation results"
+    "message": "অনুবাদ ফলাফলগুলি সাজাবেন না।"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "ᱴᱟᱴᱠᱟ ᱛᱮ ᱛᱮᱭᱟᱨ ᱡᱤᱱᱤᱥ ᱠᱚ ᱛᱚᱨᱡᱚᱢᱟᱭ ᱢᱮ"
@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "ᱤᱧ ᱵᱚᱞᱚᱱ ᱢᱟᱦᱟ ᱦᱟᱹᱞᱤ ᱦᱟᱹᱞᱤ ᱚᱱᱟ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱠᱚ ᱫᱚ ᱯᱟᱸᱪ ᱵᱚᱪᱷᱚᱨ ᱦᱚᱛᱮ ᱵᱟᱹᱲᱤᱡ, ᱦᱟᱹᱞᱤ ᱟᱨ ᱥᱟᱦᱟᱭ ᱠᱟᱹᱢᱤ ᱠᱟᱹᱛᱮ ᱟᱹᱜᱩ ᱠᱟᱫᱟᱹᱧᱟᱹ᱾ ᱱᱚᱣᱟ ᱧᱮᱞ ᱠᱟᱛᱮ ᱟᱢᱟᱹᱜ ᱠᱚ ᱥᱟᱶ ᱫᱚ ᱢᱤᱫ ᱫᱤᱱ ᱨᱮ ᱖,᱐᱐,᱐᱐᱐ ᱠᱷᱚᱱ ᱵᱟᱹᱲᱛᱤ ᱵᱮᱣᱦᱟᱨᱠᱟᱹᱨᱤ ᱢᱮᱱᱟᱜ ᱠᱟᱱᱟ, ᱱᱚᱣᱟ ᱫᱚ ᱟᱹᱰᱤ ᱵᱮᱥ ᱫᱤᱥᱟᱹ ᱠᱟᱱᱟ᱾\n\nᱯᱟᱭᱯᱟᱞ ᱫᱷᱟᱯᱟᱛᱮ ᱥᱟᱦᱟᱭ ᱚᱱᱟ ᱯᱟᱹᱭᱥᱟ ᱥᱟᱦᱟᱭ ᱥᱮ ᱤᱧᱟᱹᱜ ᱯᱮᱴᱨᱮᱣᱱ ᱢᱮᱢᱵᱟᱨ ᱵᱮᱱᱟᱣ ᱠᱟᱛᱮ ᱥᱟᱦᱟᱭ ᱠᱚᱨᱟᱣ ᱢᱮ ᱾ ᱟᱢᱟᱹᱜ ᱥᱟᱦᱟᱭ ᱫᱚ ᱤᱧ ᱚᱱᱟ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱨᱮ ᱱᱟᱣᱟ ᱱᱟᱣᱟ ᱥᱩᱫᱷᱟᱹᱨ ᱟᱹᱜᱩ ᱠᱟᱹᱛᱮ ᱟᱹᱜᱩ ᱞᱮᱠᱟ ᱠᱟᱹᱢᱤ ᱟᱹᱜᱩ ᱫᱟᱲᱮ ᱧᱟᱢᱚᱜᱼᱟ᱾\n\nᱚᱱᱟ ᱥᱟᱱᱛᱟ ᱠᱚ ᱧᱩᱛᱩᱢ ᱟᱢ ᱡᱟᱦᱟᱸ ᱱᱚᱣᱟ ᱠᱟᱹᱢᱤ ᱨᱮ ᱥᱟᱦᱟᱭ ᱮᱢ ᱟᱠᱟᱫᱟ, ᱥᱟᱱᱟᱢ ᱠᱚᱣᱟᱜ ᱢᱤᱫ ᱫᱷᱟᱱᱭᱚᱵᱟᱫ᱾\n"
   },
   "lblEnableDiskCache": {
     "message": "ᱞᱮᱛᱟᱲ ᱛᱚᱨᱡᱚ ᱠᱮᱪ ᱪᱟᱹᱞᱩᱭ ᱢᱮ (ᱚᱱ-ᱰᱤᱥᱠ ᱠᱮᱪ)"

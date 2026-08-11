@@ -42,7 +42,7 @@
     "message": "Seçenekler"
   },
   "btnRestore": {
-    "message": "Orijinali göster"
+    "message": "Orijinalini göster"
   },
   "btnTryAgain": {
     "message": "Yeniden dene"
@@ -180,7 +180,7 @@
     "message": "Bağış yapabilirseniz minnettar olurum."
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Bu sitelerde üzerine gelindiğinde çevrilmiş metni göster"
+    "message": "Bu sitelerin üzerine gelindiğinde çevrilmiş metni göster"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Site çevrildiğinde açılır pencere simgesini mavi yap"
@@ -249,7 +249,7 @@
     "message": "Sayfa çeviri hizmeti"
   },
   "lblTextTranslationService": {
-    "message": "Metin çeviri hizmeti"
+    "message": "Metin Çeviri Hizmeti"
   },
   "msgStorage": {
     "message": "Depolama"
@@ -288,16 +288,16 @@
     "message": "Uzantıyı varsayılan ayarlarına döndürmek istiyor musunuz?"
   },
   "lblTtsSpeed": {
-    "message": "Okuma hızı"
+    "message": "Metin okuma ses hızı"
   },
   "lblTtsVolume": {
-    "message": "Ses düzeyi"
+    "message": "Metin okuma ses düzeyi"
   },
   "enterShortcut": {
     "message": "Kısayol girin"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Ctrl veya Alt ekleyin"
+    "message": "Ctrl veya Alt tuşunu dahil edin"
   },
   "hotkeyError_letter": {
     "message": "Bir harf yazın"
@@ -381,7 +381,7 @@
     "message": "Belge indiriliyor..."
   },
   "msgSendDocument": {
-    "message": "Belgeyi gönder"
+    "message": "Belge gönder"
   },
   "msgErrorDownloadingDocument": {
     "message": "Belge indirilirken hata oluştu"
@@ -408,7 +408,7 @@
     "message": "Kopyala"
   },
   "msgRecents": {
-    "message": "Son kullanılanlar"
+    "message": "Son işlemler"
   },
   "msgAll": {
     "message": "Tümü"

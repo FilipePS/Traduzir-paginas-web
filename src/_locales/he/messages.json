@@ -129,10 +129,10 @@
     "message": "הצג את האפשרות לתרגם את הטקסט שנבחר בתפריט ההקשר"
   },
   "lblNeverTranslateLangs": {
-    "message": "לעולם לא לתרגם דפים אלו"
+    "message": "לעולם אל תתרגם את השפות האלה"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "לעולם לא לתרגם משפה זו"
+    "message": "לעולם אל תתרגם את השפה הזו"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "הראה טקסט מקורי בעת ריחוף"
@@ -168,7 +168,7 @@
     "message": "הוספה"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "הראה טקסט מתורגם בעת ריחוף"
+    "message": "הצג טקסט מתורגם בעת מעבר עם העכבר"
   },
   "lblKeyboardShortcuts": {
     "message": "קיצורי מקשים"
@@ -326,7 +326,7 @@
     "message": "אל תמיין את תוצאות התרגום"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "תרגום בצורה דינאמית יוצרת תוכן"
+    "message": "תרגום תוכן שנוצר באופן דינמי"
   },
   "calculatestorage": {
     "message": "חשב"

@@ -15,7 +15,7 @@
     "message": "Αυτή η σελίδα δεν μπόρεσε να μεταφραστεί"
   },
   "lblAlwaysTranslate": {
-    "message": "Πάντα μετάφραση από $LANGUAGE_NAME$",
+    "message": "Πάντα να μεταφράζεται από $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -57,7 +57,7 @@
     "message": "Ποτέ μετάφραση αυτή την ιστοσελίδα"
   },
   "btnMobileOriginal": {
-    "message": "Αρχική"
+    "message": "Αρχικό"
   },
   "btnMobileTranslated": {
     "message": "Μεταφράστηκε"
@@ -168,7 +168,7 @@
     "message": "Προσθήκη"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Εμφάνιση αρχικού κειμένου όταν αιωρείται το ποντίκι"
+    "message": "Εμφάνιση μεταφρασμένου κειμένου κατά την τοποθέτηση του δείκτη του ποντικιού"
   },
   "lblKeyboardShortcuts": {
     "message": "Συντομεύσεις πληκτρολογίου"
@@ -201,7 +201,7 @@
     "message": "Να μην εμφανίζεται αν η γλώσσα της σελίδας είναι άγνωστη"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Να μην εμφανίζεται αν η επιλεγμένη γλώσσα είναι η γλώσσα προορισμού"
+    "message": "Να μην εμφανίζεται εάν η επιλεγμένη γλώσσα κειμένου είναι η γλώσσα-στόχος"
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "Να μην εμφανίζεται αν η επιλεγμένη γλώσσα κειμένου είναι άγνωστη"
@@ -541,7 +541,7 @@
     "message": "Αυτή η καρτέλα άνοιξε επειδή κάνατε κλικ για να μεταφράσετε το επιλεγμένο κείμενο χρησιμοποιώντας το DeepL."
   },
   "msgDontShowAgain": {
-    "message": "Μην εμφανιστείτε ξανά"
+    "message": "Μην εμφανιστεί ξανά"
   },
   "msgTranslatePage": {
     "message": "Μετάφραση σελίδας;"

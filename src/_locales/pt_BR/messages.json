@@ -177,7 +177,7 @@
     "message": "Obrigado por usar esta extensão."
   },
   "msgIWillBeGrateful": {
-    "message": "Ficarei grato, se você podê me ajudar com uma doação."
+    "message": "Ficarei grato, se você puder me ajudar com uma doação."
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Mostrar texto traduzido ao passar o cursor do mouse nestes sites"
@@ -315,7 +315,7 @@
     "message": "Traduza a página para o idioma de destino"
   },
   "lblTranslateTag_pre": {
-    "message": "Ativar tradução para etiqueta\n$HTML_TAG_NAME$",
+    "message": "Ativar tradução para a tag $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -435,7 +435,7 @@
     "message": "Traduza o texto selecionado para este idioma de destino"
   },
   "msgFavoriteLanguages": {
-    "message": "idiomas favoritos"
+    "message": "Idiomas favoritos"
   },
   "lblFavoriteLanguage": {
     "message": "Idioma favorito $FAVORITE_LANGUAGE_NUM$",
@@ -589,7 +589,7 @@
     "message": "Apenas quando eu tocar três dedos na tela"
   },
   "msgAlwaysShow": {
-    "message": "Sempre Mostrar"
+    "message": "Sempre mostrar"
   },
   "btnKeepOnScreen": {
     "message": "Manter na tela"

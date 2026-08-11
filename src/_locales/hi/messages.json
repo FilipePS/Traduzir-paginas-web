@@ -129,10 +129,10 @@
     "message": "संदर्भ मेनू में चयनित पाठ का अनुवाद करने का विकल्प दिखाएँ"
   },
   "lblNeverTranslateLangs": {
-    "message": "इन साइटों का अनुवाद कभी न करें"
+    "message": "इन भाषाओं का अनुवाद कभी न करें"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "इस साइट का अनुवाद कभी मत करो"
+    "message": "इस भाषा का अनुवाद कभी न करें"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "मँडराते समय मूल पाठ दिखाएँ"

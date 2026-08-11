@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Traduza sua página em tempo real usando o Google ou Yandex."
+    "message": "Traduza a sua página em tempo real usando o Google, Bing, Yandex ou DeepL."
   },
   "pageActionTitle": {
     "message": "Traduzir esta página"
@@ -9,10 +9,10 @@
     "message": "Traduzir esta página?"
   },
   "lblTranslating": {
-    "message": "Traduzindo..."
+    "message": "A traduzir..."
   },
   "lblError": {
-    "message": "Esta página não pôde ser traduzida"
+    "message": "Esta página não pode ser traduzida"
   },
   "lblAlwaysTranslate": {
     "message": "Traduzir sempre do $LANGUAGE_NAME$",
@@ -48,13 +48,13 @@
     "message": "Tente novamente"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "Abrir no google tradutor"
+    "message": "Abrir no Google Tradutor"
   },
   "btnDonate": {
     "message": "Doar"
   },
   "btnNeverTranslate": {
-    "message": "Nunca traduzir este sítio"
+    "message": "Nunca traduzir esta página"
   },
   "btnMobileOriginal": {
     "message": "Original"
@@ -63,10 +63,10 @@
     "message": "Traduzido"
   },
   "optionsNeverTranslate": {
-    "message": "Nunca traduzir estes sítios"
+    "message": "Nunca traduzir estas páginas"
   },
   "optionsAlwaysTranslate": {
-    "message": "Sempre traduza esses idiomas"
+    "message": "Traduzir sempre estes idiomas"
   },
   "optionPopupConfig": {
     "message": "Mostrar o popup mobile"
@@ -75,7 +75,7 @@
     "message": "Quando eu tocar três dedos no ecrã"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Abrir no yandex translate"
+    "message": "Abrir no Yandex Translate"
   },
   "lblOthers": {
     "message": "Outros"
@@ -87,7 +87,7 @@
     "message": "Ajude o desenvolvedor com uma doação"
   },
   "msgTranslateFor": {
-    "message": "Traduzir pro $LANGUAGE_NAME$",
+    "message": "Traduzir para $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -96,7 +96,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Mostrar a opção de traduzir a pagina no menu de contexto"
+    "message": "Mostrar a opção de traduzir a página no menu de contexto"
   },
   "msgYes": {
     "message": "Sim"
@@ -105,16 +105,16 @@
     "message": "Não"
   },
   "btnAlwaysTranslate": {
-    "message": "Sempre traduzir este site"
+    "message": "Traduzir sempre esta página"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Sempre traduzir estes sites"
+    "message": "Traduzir sempre estas páginas"
   },
   "lblDarkMode": {
     "message": "Modo escuro"
   },
   "lblShowReleaseNotes": {
-    "message": "Mostrar notas da verão quando atualizar"
+    "message": "Mostrar notas da versão quando atualizar"
   },
   "lblShowTranslateSelectedButton": {
     "message": "Mostrar o botão para traduzir o texto selecionado"
@@ -123,25 +123,25 @@
     "message": "Automático"
   },
   "msgTranslateSelectedText": {
-    "message": "Traduzir o Texto Selecionado"
+    "message": "Traduzir o texto selecionado"
   },
   "lblShowTranslateSelectedContextMenu": {
     "message": "Mostrar a opção de traduzir o texto selecionado no menu de contexto"
   },
   "lblNeverTranslateLangs": {
-    "message": "Nunca traduza esses idiomas"
+    "message": "Nunca traduzir estes idiomas"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Nunca traduza este idioma"
+    "message": "Nunca traduzir este idioma"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Mostrar o texto original ao passar o mouse"
+    "message": "Mostrar o texto original ao passar o rato"
   },
   "msgLanguages": {
     "message": "Idiomas"
   },
   "msgSites": {
-    "message": "Sites"
+    "message": "Páginas"
   },
   "msgTranslations": {
     "message": "Traduções"
@@ -168,7 +168,7 @@
     "message": "Adicionar"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Mostrar tradução ao passar o mouse"
+    "message": "Mostrar tradução ao passar o rato"
   },
   "lblKeyboardShortcuts": {
     "message": "Atalhos do teclado"
@@ -177,13 +177,13 @@
     "message": "Obrigado por usar esta extensão."
   },
   "msgIWillBeGrateful": {
-    "message": "Ficarei grato se você puder fazer uma doação."
+    "message": "Ficarei grato se puder fazer uma doação."
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Mostrar texto traduzido ao passar o mouse sobre esses sites"
+    "message": "Mostrar texto traduzido ao passar o rato sobre estas páginas"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Deixe o ícone pop-up azul quando o site for traduzido"
+    "message": "Deixe o ícone pop-up azul quando a página for traduzida"
   },
   "more": {
     "message": "Mais"
@@ -207,10 +207,10 @@
     "message": "Não mostrar se o idioma do texto selecionado for desconhecido"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Mostrar tradução ao passar o mouse sobre este site"
+    "message": "Mostrar tradução ao passar o rato sobre esta página"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Mostrar tradução ao passar o mouse sobre sites em $LANGUAGE_NAME$",
+    "message": "Mostrar tradução ao passar o rato sobre páginas em $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -219,7 +219,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Mostrar texto traduzido ao passar o mouse sobre sites com estes idiomas"
+    "message": "Mostrar texto traduzido ao passar o rato sobre páginas com estes idiomas"
   },
   "msgNoTranslateSelectedText": {
     "message": "Não traduzir o texto selecionado"
@@ -276,7 +276,7 @@
     "message": "Restaurar configurações padrão"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Deseja deletar o cache de tradução?"
+    "message": "Deseja eliminar a cache de tradução?"
   },
   "doYouWantOverwriteAllSettings": {
     "message": "Deseja substituir todas as configurações existentes usando os dados do backup?"
@@ -332,19 +332,19 @@
     "message": "Calcular"
   },
   "donatewithpaypal": {
-    "message": "Doe com o PayPal"
+    "message": "Doar com o PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Traduzir automaticamente ao clicar em um link que leva você para o mesmo domínio do site atual"
+    "message": "Traduzir automaticamente ao clicar em um link que o leva para o mesmo domínio da página atual"
   },
   "openNativeShortcutManager": {
-    "message": "Abra o gerenciador de teclas de atalho nativo"
+    "message": "Abra o gestor de teclas de atalho nativo"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Atalhos do teclado especiais"
+    "message": "Atalhos especiais do teclado"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Traduza o texto selecionado ao pressionar $SHORTCUT_KEY$ duas vezes",
+    "message": "Traduzir o texto selecionado ao pressionar $SHORTCUT_KEY$ duas vezes",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -378,16 +378,16 @@
     "message": "Selecione um serviço para fazer esta conversão"
   },
   "msgDownloadingDocument": {
-    "message": "Baixando o documento..."
+    "message": "A descarregar o documento..."
   },
   "msgSendDocument": {
     "message": "Enviar documento"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Erro ao baixar o documento"
+    "message": "Erro ao descarregar o documento"
   },
   "msgFileLargerThan": {
-    "message": "Este serviço não oferece suporte a arquivos maiores que $FILE_SIZE$",
+    "message": "Este serviço não oferece suporte a ficheiros maiores que $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -426,13 +426,13 @@
     "message": "Substitua o texto selecionado pelo texto traduzido instantaneamente"
   },
   "optionsAddToCustomDictionary": {
-    "message": "Adicionar ao dicionário personalizado (isso permite que você pule certas palavras durante a tradução da página da web)"
+    "message": "Adicionar ao dicionário personalizado (isto permite que ignore certas palavras durante a tradução da página web)"
   },
   "msgSelectTargetLanguage": {
-    "message": "Traduzir sites para este idioma de destino"
+    "message": "Traduzir páginas para este idioma de destino"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Traduza o texto selecionado para este idioma de destino"
+    "message": "Traduzir o texto selecionado para este idioma de destino"
   },
   "msgFavoriteLanguages": {
     "message": "idiomas favoritos"
@@ -447,7 +447,7 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Selecione o estilo de interface pop-up"
+    "message": "Selecione o estilo da interface pop-up"
   },
   "msgInterfaceSimple": {
     "message": "Simples"
@@ -490,7 +490,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Sua doação vai para o desenvolvedor da extensão $EXTENSION_NAME$.",
+    "message": "A sua doação vai para o desenvolvedor da extensão $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -499,13 +499,13 @@
     }
   },
   "donationText": {
-    "message": "Estou desenvolvendo, atualizando e dando suporte a esta extensão há mais de cinco anos. É incrível ver que temos mais de 600.000 usuários diários.\n\nEu ficaria grato se você pudesse me ajudar financeiramente via Paypal ou se tornando um membro do meu Patreon, sua contribuição me ajuda a continuar trazendo melhorias para esta extensão.\n\nObrigado a todos que já contribuíram para este projeto."
+    "message": "Tenho desenvolvido, atualizado e apoiado esta extensão há mais de cinco anos. É incrível ver que temos mais de 600.000 utilizadores diários.\n\nFicaria grato se me pudesse ajudar financeiramente via Paypal ou tornando-se membro do meu Patreon, a sua contribuição ajuda-me a continuar a trazer melhorias para esta extensão.\n\nObrigado a todos os que já contribuíram para este projeto."
   },
   "lblEnableDiskCache": {
     "message": "Ativar cache de tradução persistente (cache em disco)"
   },
   "selectOriginalLanguage": {
-    "message": "Selecione o idioma original do site"
+    "message": "Selecione o idioma original da página"
   },
   "selectTargetLanguage": {
     "message": "Selecione o idioma de destino"
@@ -529,16 +529,16 @@
     "message": "Idioma padrão"
   },
   "msgExtUILanguage": {
-    "message": "Idioma da interface do usuário da extensão"
+    "message": "Idioma da interface do utilizador da extensão"
   },
   "msgSetDeepLAlert": {
-    "message": "Tem certeza de que deseja definir o serviço de tradução para DeepL?\nUma nova guia será aberta e a tradução ocorrerá lá."
+    "message": "Tem a certeza de que deseja definir o serviço de tradução para DeepL?\nSerá aberto um novo separador e a tradução ocorrerá lá."
   },
   "lblTextToSpeechService": {
     "message": "Serviço de conversão de texto em voz"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "Esta guia foi aberta porque você clicou para traduzir o texto selecionado usando DeepL."
+    "message": "Este separador foi aberto porque clicou para traduzir o texto selecionado utilizando o DeepL."
   },
   "msgDontShowAgain": {
     "message": "Não mostrar outra vez"
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Anular"
+    "message": "Desfazer"
   },
   "msgAutoDetect": {
-    "message": "Auto - Detectar"
+    "message": "Deteção automática"
   },
   "msgEnableIframePageTranslation": {
-    "message": "Habilitar tradução de página em $IFRAME_TAG$",
+    "message": "Ativar tradução de página em $IFRAME_TAG$",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -586,13 +586,13 @@
     "message": "Quando necessário"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Somente quando toco três dedos na tela"
+    "message": "Apenas quando toco três dedos na tela"
   },
   "msgAlwaysShow": {
     "message": "Mostrar sempre"
   },
   "btnKeepOnScreen": {
-    "message": "Manter na tela"
+    "message": "Manter no ecrã"
   },
   "btnChangePosition": {
     "message": "Alterar posição"

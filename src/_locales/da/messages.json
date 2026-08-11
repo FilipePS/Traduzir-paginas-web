@@ -54,7 +54,7 @@
     "message": "Donér"
   },
   "btnNeverTranslate": {
-    "message": "Oversæt aldrig denne hjemmeside"
+    "message": "Oversæt aldrig denne side"
   },
   "btnMobileOriginal": {
     "message": "Original"
@@ -69,13 +69,13 @@
     "message": "Oversæt altid disse sprog"
   },
   "optionPopupConfig": {
-    "message": "Vis mobilpopupen"
+    "message": "Vis mobil-popup'en"
   },
   "optionPopupThreeFingers": {
     "message": "Når jeg rører tre fingre på skærmen"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Åbn i Yandex oversæt"
+    "message": "Åbn i Yandex Oversæt"
   },
   "lblOthers": {
     "message": "Andre"
@@ -105,7 +105,7 @@
     "message": "Nej"
   },
   "btnAlwaysTranslate": {
-    "message": "Oversæt altid denne hjemmeside"
+    "message": "Oversæt altid denne side"
   },
   "lblAlwaysTranslateSites": {
     "message": "Oversæt altid disse hjemmesider"
@@ -117,7 +117,7 @@
     "message": "Vis udgivelsesnoter ved opdatering"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Vis knappen til oversættelse af det valgte tekst"
+    "message": "Vis knappen til at oversætte den markeret tekst"
   },
   "msgAutomatic": {
     "message": "Automatisk"
@@ -126,7 +126,7 @@
     "message": "Oversæt markeret tekst"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Vis muligheden for at oversætte det valgte tekst i kontekstmenuen"
+    "message": "Vis muligheden for at oversætte den markeret tekst i kontekstmenuen"
   },
   "lblNeverTranslateLangs": {
     "message": "Oversæt aldrig disse sprog"
@@ -135,13 +135,13 @@
     "message": "Oversæt aldrig dette sprog"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Vis original tekst ved svævning"
+    "message": "Vis originaltekst, når du holder markøren over"
   },
   "msgLanguages": {
     "message": "Sprog"
   },
   "msgSites": {
-    "message": "Sider"
+    "message": "Hjemmesider"
   },
   "msgTranslations": {
     "message": "Oversættelser"
@@ -159,7 +159,7 @@
     "message": "Udgivelsesnoter"
   },
   "lblReport": {
-    "message": "Rapporter et problem"
+    "message": "Rapportér et problem"
   },
   "lblSettings": {
     "message": "Indstillinger"
@@ -168,22 +168,22 @@
     "message": "Tilføj"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Vis oversat tekst ved svævning"
+    "message": "Vis oversat tekst, når du holder markøren over"
   },
   "lblKeyboardShortcuts": {
     "message": "Tastaturgenveje"
   },
   "msgThanksForUseExtension": {
-    "message": "Tak for din brug af denne udvidelse."
+    "message": "Tak, fordi du bruger denne udvidelse."
   },
   "msgIWillBeGrateful": {
     "message": "Jeg vil være taknemmelig, hvis du kan donere."
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Vis oversat tekst ved svævning på disse websteder"
+    "message": "Vis oversat tekst, når du holder markøren over på disse websteder"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Gør pop-up-ikonet blåt, når hjemmesiden er oversat"
+    "message": "Gør pop op-ikonet blåt, når webstedet er oversat"
   },
   "more": {
     "message": "Mere"
@@ -192,25 +192,25 @@
     "message": "Mindre"
   },
   "dontShowIfIsNotValidText": {
-    "message": "Vis ikke, hvis den valgte tekst ikke er gyldig"
+    "message": "Vis ikke, hvis den markeret tekst ikke er gyldig"
   },
   "dontShowIfPageLangIsTargetLang": {
-    "message": "Vis ikke hvis sidens sprog er målsproget"
+    "message": "Vis ikke, hvis sidens sprog er målsproget"
   },
   "dontShowIfPageLangIsUnknown": {
-    "message": "Vis ikke hvis sidens sprog er ukendt"
+    "message": "Vis ikke, hvis sidens sprog er ukendt"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "Vis ikke hvis det markerede teksts sprog er målsproget"
+    "message": "Vis ikke, hvis det markerede teksts sprog er målsproget"
   },
   "dontShowIfSelectedTextIsUnknown": {
-    "message": "Vis ikke hvis det markerede teksts sprog er ukendt"
+    "message": "Vis ikke, hvis det markerede teksts sprog er ukendt"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Vis oversættelse ved svævning over dette websted"
+    "message": "Vis oversættelse, når du holder markøren over på dette websted"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Vis oversættelse ved svævning over hjemmesider i $LANGUAGE_NAME$",
+    "message": "Vis oversættelse, når du holder markøren over på websteder på $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -219,16 +219,16 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Vis oversat tekst ved svævning over websteder med disse sprog"
+    "message": "Vis oversat tekst, når du holder markøren over på websteder med disse sprog"
   },
   "msgNoTranslateSelectedText": {
-    "message": "Oversæt ikke valgt tekst"
+    "message": "Oversæt ikke markeret tekst"
   },
   "btnListen": {
     "message": "Lyt"
   },
   "btnStopListening": {
-    "message": "Stop lytning"
+    "message": "Stop med at lytte"
   },
   "btnApply": {
     "message": "Anvend"
@@ -237,7 +237,7 @@
     "message": "Skift mellem oversættelsestjenester"
   },
   "swapPopup": {
-    "message": "Skift mellem enkel og kompleks grænseflade"
+    "message": "Skift mellem enkel og kompleks brugerflade"
   },
   "lblTranslateInterface": {
     "message": "Oversæt brugerflade"
@@ -246,10 +246,10 @@
     "message": "Vis knap i adresselinjen"
   },
   "lblPageTranslationService": {
-    "message": "Sideoversættelses tjeneste"
+    "message": "Sideoversættelsestjeneste"
   },
   "lblTextTranslationService": {
-    "message": "Tekstoversættelses tjeneste"
+    "message": "Tekstoversættelsestjeneste"
   },
   "msgStorage": {
     "message": "Lager"
@@ -279,22 +279,22 @@
     "message": "Vil du slette oversættelsescachen?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Vil du overskrive alle eksisterende indstillinger ved hjælp af backupdatane?"
+    "message": "Vil du overskrive alle eksisterende indstillinger med backup-dataene?"
   },
   "fileIsCorrupted": {
-    "message": "Filen synes at være korruptet"
+    "message": "Filen ser ud til at være beskadiget"
   },
   "doYouWantRestoreSettings": {
     "message": "Vil du gendanne udvidelsen til dens standardindstillinger?"
   },
   "lblTtsSpeed": {
-    "message": "Tekst-til-tale lydhastighed"
+    "message": "Tekst-til-tale-lydhastighed"
   },
   "lblTtsVolume": {
-    "message": "Tekst-til-tale lydstyrke"
+    "message": "Tekst-til-tale-lydstyrke"
   },
   "enterShortcut": {
-    "message": "Angiv en genvej"
+    "message": "Indtast en genvej"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "Inkluder Ctrl eller Alt"
@@ -306,7 +306,7 @@
     "message": "Ugyldig kombination"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Skift mellem den oversatte og den oprindelige side"
+    "message": "Skift mellem den oversatte og den originale side"
   },
   "lblRestorePageToOriginal": {
     "message": "Gendan side til original"
@@ -315,7 +315,7 @@
     "message": "Oversæt siden til målsproget"
   },
   "lblTranslateTag_pre": {
-    "message": "Aktiver oversættelse for tag $HTML_TAG_NAME$",
+    "message": "Aktiver oversættelse for tagget $HTML_TAG_NAME$",
     "placeholders": {
       "HTML_TAG_NAME": {
         "content": "<PRE>"
@@ -323,7 +323,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "Sorter ikke oversættelsesresultater"
+    "message": "Sortér ikke oversættelsesresultater"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "Oversæt dynamisk oprettet indhold"
@@ -332,19 +332,19 @@
     "message": "Beregn"
   },
   "donatewithpaypal": {
-    "message": "Doner med PayPal"
+    "message": "Donér med PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Oversæt automatisk, når du klikker på et link, der tager dig til det samme domæne som det aktuelle websted"
+    "message": "Oversæt automatisk, når du klikker på et link, der fører dig til samme domæne som det aktuelle websted"
   },
   "openNativeShortcutManager": {
-    "message": "Åbn håndtering af genvejstasten"
+    "message": "Åbn indbygget genvejstasthåndtering"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Særlige tastaturgenveje"
+    "message": "Specielle tastaturgenveje"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Oversæt valgt tekst ved tryk på $SHORTCUT_KEY$ to gange",
+    "message": "Oversæt markeret tekst ved tryk på $SHORTCUT_KEY$ to gange",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -360,10 +360,10 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Oversæt siden ved at klikke en gang på knappen i adresselinjen. (For at se popup, højreklik)"
+    "message": "Oversæt siden ved at klikke én gang på knappen i adresselinjen. (Højreklik for at se pop op-vinduet.)"
   },
   "btnShowPopup": {
-    "message": "Vis popup"
+    "message": "Vis pop op-vindue"
   },
   "msgToTranslateThisDocument": {
     "message": "For at oversætte dette dokument $DOC_TYPE$ er det nødvendigt at konvertere det til HTML",
@@ -405,7 +405,7 @@
     "message": "Åbn oversat PDF"
   },
   "btncopy": {
-    "message": "Kopier"
+    "message": "Kopiér"
   },
   "msgRecents": {
     "message": "Seneste"
@@ -420,25 +420,25 @@
     "message": "Ukendt"
   },
   "btnReplace": {
-    "message": "Erstatte"
+    "message": "Erstat"
   },
   "lblHotTranslatedSelectedText": {
-    "message": "Erstat valgt tekst med oversat tekst med det samme"
+    "message": "Erstat markeret tekst med oversat tekst"
   },
   "optionsAddToCustomDictionary": {
-    "message": "Føj til brugerdefineret ordbog (Dette giver dig mulighed for at springe visse ord over under oversættelse af websider)"
+    "message": "Føj til brugerdefineret ordbog (dette lader dig springe visse ord over under oversættelse af websider)"
   },
   "msgSelectTargetLanguage": {
     "message": "Oversæt websteder til dette målsprog"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "Oversæt valgt tekst til dette målsprog"
+    "message": "Oversæt markeret tekst til dette målsprog"
   },
   "msgFavoriteLanguages": {
-    "message": "Yndlingssprog"
+    "message": "Foretrukne sprog"
   },
   "lblFavoriteLanguage": {
-    "message": "Yndlingssprog $FAVORITE_LANGUAGE_NUM$",
+    "message": "Foretrukket sprog $FAVORITE_LANGUAGE_NUM$",
     "placeholders": {
       "FAVORITE_LANGUAGE_NUM": {
         "content": "$1",
@@ -447,7 +447,7 @@
     }
   },
   "lblSelectPopupInterfaceStyle": {
-    "message": "Vælg popup-grænsefladestil"
+    "message": "Vælg pop op-brugerfladestil"
   },
   "msgInterfaceSimple": {
     "message": "Enkel"
@@ -456,7 +456,7 @@
     "message": "Kompleks"
   },
   "lblTranslatePageInto": {
-    "message": "Oversætte side til $LANGUAGE_NAME$?",
+    "message": "Oversæt side til $LANGUAGE_NAME$?",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -477,7 +477,7 @@
     "message": "Vælg et andet sprog"
   },
   "msgHasBeenUpdated": {
-    "message": "$EXTENSION_NAME$ udvidelsen er blevet opdateret til version $EXTENSION_VERSION$.",
+    "message": "$EXTENSION_NAME$ er blevet opdateret til version $EXTENSION_VERSION$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -490,7 +490,7 @@
     }
   },
   "msgDonationRecipient": {
-    "message": "Din donation går til udvikleren af $EXTENSION_NAME$ -udvidelsen.",
+    "message": "Din donation går til udvikleren af $EXTENSION_NAME$.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -499,10 +499,10 @@
     }
   },
   "donationText": {
-    "message": "Jeg har udviklet, opdateret og understøttet denne udvidelse i over fem år. Det er fantastisk at se, at vi har over 600.000 daglige brugere.\n\nJeg ville være taknemmelig, hvis du kunne hjælpe mig økonomisk via Paypal eller ved at blive medlem af min Patreon, dit bidrag hjælper mig med at fortsætte med at forbedre denne udvidelse.\n\nTak til alle, der allerede har bidraget til dette projekt."
+    "message": "Jeg har udviklet, opdateret og understøttet denne udvidelse i over fem år. Det er fantastisk at se, at vi har over 600.000 daglige brugere.\n\nJeg ville være taknemmelig, hvis du kunne hjælpe mig økonomisk via PayPal eller ved at blive medlem af min Patreon. Dit bidrag hjælper mig med fortsat at bringe forbedringer til denne udvidelse.\n\nTak til alle, der allerede har bidraget til dette projekt."
   },
   "lblEnableDiskCache": {
-    "message": "Aktiver vedvarende oversættelsescache (cache på disk)"
+    "message": "Aktiver vedvarende oversættelsescache (cache på disken)"
   },
   "selectOriginalLanguage": {
     "message": "Vælg det originale webstedssprog"
@@ -511,7 +511,7 @@
     "message": "Vælg målsprog"
   },
   "msgImproveTranslation": {
-    "message": "Forbedre oversættelsen"
+    "message": "Forbedr oversættelse"
   },
   "lblExperimental": {
     "message": "Eksperimentel"
@@ -523,22 +523,22 @@
     "message": "Vælg de oversættelsestjenester, du vil bruge"
   },
   "useAlternativeService": {
-    "message": "Brug lydløst en alternativ oversættelsestjeneste, hvis det aktuelle målsprog ikke understøttes af den valgte oversættelsestjeneste"
+    "message": "Brug en alternativ oversættelsestjeneste i baggrunden, hvis det aktuelle målsprog ikke understøttes af den valgte oversættelsestjeneste"
   },
   "msgDefaultLanguage": {
     "message": "Standardsprog"
   },
   "msgExtUILanguage": {
-    "message": "Udvidelse brugergrænseflade sprog"
+    "message": "Udvidelsens brugergrænsefladesprog"
   },
   "msgSetDeepLAlert": {
-    "message": "Er du sikker på, at du vil indstille oversættelsestjenesten til DeepL?\nEn ny fane åbnes, og oversættelsen vil finde sted der."
+    "message": "Er du sikker på, at du vil indstille oversættelsestjenesten til DeepL?\nEn ny fane åbnes, og oversættelsen finder sted der."
   },
   "lblTextToSpeechService": {
-    "message": "Tekst-til-tale tjeneste"
+    "message": "Tekst-til-tale-tjeneste"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "Denne fane åbnede, fordi du klikkede for at oversætte valgt tekst ved hjælp af DeepL."
+    "message": "Denne fane åbnede, fordi du klikkede for at oversætte markeret tekst med DeepL."
   },
   "msgDontShowAgain": {
     "message": "Vis ikke igen"
@@ -566,7 +566,7 @@
     "message": "Fortryd"
   },
   "msgAutoDetect": {
-    "message": "Finde pr. automatik"
+    "message": "Auto-registrer"
   },
   "msgEnableIframePageTranslation": {
     "message": "Aktiver sideoversættelse i $IFRAME_TAG$",
@@ -580,7 +580,7 @@
     "message": "Oversæt/gendan denne ramme"
   },
   "msgWhenShowMobilePopup": {
-    "message": "Hvornår skal du vise mobil popup"
+    "message": "Hvornår mobil-popup'en skal vises"
   },
   "msgWhenNecessary": {
     "message": "Når det er nødvendigt"
@@ -592,9 +592,9 @@
     "message": "Vis altid"
   },
   "btnKeepOnScreen": {
-    "message": "Bliv på skærmen"
+    "message": "Behold på skærmen"
   },
   "btnChangePosition": {
-    "message": "Skift stilling"
+    "message": "Ændr position"
   }
 }

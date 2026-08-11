@@ -51,7 +51,7 @@
     "message": "Openen in google vertaler"
   },
   "btnDonate": {
-    "message": "Alleen maar"
+    "message": "Doneer"
   },
   "btnNeverTranslate": {
     "message": "Deze site nooit vertalen"
@@ -231,7 +231,7 @@
     "message": "Stop met luisteren"
   },
   "btnApply": {
-    "message": "Van toepassing zijn"
+    "message": "Toepassen"
   },
   "swapTranslationService": {
     "message": "Schakel tussen vertaaldiensten"

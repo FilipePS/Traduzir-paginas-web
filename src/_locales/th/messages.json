@@ -201,7 +201,7 @@
     "message": "ไม่แสดงหากไม่รู้จักภาษาของเพจ"
   },
   "dontShowIfSelectedTextIsTargetLang": {
-    "message": "ไม่แสดงว่าภาษาข้อความที่เลือกเป็นภาษาเป้าหมายหรือไม่"
+    "message": "ไม่ต้องแสดงผลหากภาษาข้อความที่เลือกเป็นภาษาเป้าหมาย"
   },
   "dontShowIfSelectedTextIsUnknown": {
     "message": "ไม่แสดงหากไม่รู้จักภาษาของข้อความที่เลือก"
@@ -323,7 +323,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "อย่าเรียงลำดับการแปลผล"
+    "message": "ไม่ต้องเรียงลำดับผลลัพธ์การแปล"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "แปลเนื้อหาที่สร้างขึ้นแบบไดนามิก"
@@ -592,7 +592,7 @@
     "message": "แสดงอยู่เสมอ"
   },
   "btnKeepOnScreen": {
-    "message": "เอาไว้บนจอ."
+    "message": "เอาไว้บนจอ"
   },
   "btnChangePosition": {
     "message": "เปลี่ยนตำแหน่ง"
