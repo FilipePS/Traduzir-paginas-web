@@ -285,9 +285,9 @@ const translationService = (function () {
           if (YandexHelper.#translateSid) {
             date.setMinutes(date.getMinutes() - 20);
           } else if (YandexHelper.#SIDNotFound) {
-            date.setMinutes(date.getMinutes() - 5);
+            date.setMinutes(date.getMinutes() - 10);
           } else {
-            date.setMinutes(date.getMinutes() - 1);
+            date.setMinutes(date.getMinutes() - 5);
           }
           if (date.getTime() > YandexHelper.#lastRequestSidTime) {
             updateYandexSid = true;
@@ -302,7 +302,7 @@ const translationService = (function () {
           const http = new XMLHttpRequest();
           http.open(
             "GET",
-            "https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=es&widgetTheme=light&autoMode=false"
+            "https://translated.turbopages.org/proxy_u/en-es.en/https/example.com/"
           );
           http.send();
           http.onload = (e) => {
@@ -1074,6 +1074,7 @@ const translationService = (function () {
     ) {
       await YandexHelper.findSID();
       if (!YandexHelper.translateSid) return;
+
       /** @type {{search: string, replace: string}[]} */
       const replacements = [
         {
@@ -1120,7 +1121,7 @@ const translationService = (function () {
     constructor() {
       super(
         "bing",
-        "https://api-edge.cognitive.microsofttranslator.com/translate?api-version=3.0&includeSentenceLength=true",
+        "https://edge.microsoft.com/translate/translatetext?isEnterpriseClient=false",
         "POST",
         function cbTransformRequest(sourceArray) {
           let id = 10;
@@ -1179,9 +1180,7 @@ const translationService = (function () {
         },
         function cbGetRequestBody(sourceLanguage, targetLanguage, requests) {
           return JSON.stringify(
-            requests.map((info) => ({
-              text: info.originalText,
-            }))
+            requests.map((info) => info.originalText)
           );
         },
         function cbGetExtraHeaders() {
@@ -1189,11 +1188,7 @@ const translationService = (function () {
             {
               name: "Content-Type",
               value: "application/json",
-            },
-            {
-              name: "authorization",
-              value: "Bearer " + BingHelper.translateAuth,
-            },
+            }
           ];
         }
       );
@@ -1270,8 +1265,8 @@ const translationService = (function () {
         }
       });
 
-      await BingHelper.findAuth();
-      if (!BingHelper.translateAuth) return;
+      // await BingHelper.findAuth();
+      // if (!BingHelper.translateAuth) return;
 
       return await super.translate(
         sourceLanguage,
