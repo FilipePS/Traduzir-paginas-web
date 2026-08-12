@@ -989,6 +989,10 @@ const translationService = (function () {
           search: "prs",
           replace: "fa-AF",
         },
+        {
+          search: "es-MX",
+          replace: "es",
+        }
       ];
       replacements.forEach((r) => {
         if (targetLanguage === r.search) {
@@ -1084,6 +1088,10 @@ const translationService = (function () {
         {
           search: "zh-TW",
           replace: "zh",
+        },
+        {
+          search: "es-MX",
+          replace: "es",
         },
         {
           search: "fr-CA",
@@ -1483,8 +1491,8 @@ const translationService = (function () {
               targetLanguage = "nb";
             } else if (targetLanguage.startsWith("zh-")) {
               targetLanguage = "zh";
-            } else if (targetLanguage.startsWith("fr-")) {
-              targetLanguage = "fr";
+            } else if (targetLanguage.startsWith("es-")) {
+              targetLanguage = "es";
             }
             params.append("target_lang", targetLanguage);
             return params.toString();

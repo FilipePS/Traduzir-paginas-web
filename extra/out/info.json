@@ -204,6 +204,7 @@
       "sl",
       "so",
       "es",
+      "es-MX",
       "su",
       "sus",
       "sw",
@@ -258,6 +259,7 @@
       "as",
       "az",
       "ba",
+      "be",
       "bg",
       "bho",
       "bn",
@@ -275,6 +277,7 @@
       "el",
       "en",
       "es",
+      "es-MX",
       "et",
       "eu",
       "fa",
@@ -314,6 +317,7 @@
       "ks",
       "ckb",
       "ky",
+      "lb",
       "ln",
       "lo",
       "lt",
@@ -410,6 +414,7 @@
       "en",
       "eo",
       "es",
+      "es-MX",
       "et",
       "eu",
       "fa",
@@ -499,7 +504,7 @@
   },
   "supportedCount": {
     "google": 249,
-    "bing": 135,
+    "bing": 138,
     "yandex": 106
   },
   "allSupportedLangs": [
@@ -571,6 +576,7 @@
     "en",
     "eo",
     "es",
+    "es-MX",
     "et",
     "eu",
     "fa",
@@ -773,7 +779,7 @@
     "zh-TW",
     "zu"
   ],
-  "totalSupported": 269,
+  "totalSupported": 270,
   "supportedOnlyBy": {
     "google": [
       "ab",
@@ -948,7 +954,6 @@
       "ban",
       "bbc",
       "bci",
-      "be",
       "bem",
       "ber",
       "ber-Latn",
@@ -1005,7 +1010,6 @@
       "ktu",
       "kv",
       "la",
-      "lb",
       "li",
       "lij",
       "lmo",

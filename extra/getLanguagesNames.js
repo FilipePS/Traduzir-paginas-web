@@ -7,6 +7,7 @@ if (!fs.existsSync("./out")) fs.mkdirSync("out");
 
 async function getKey(service) {
     if (service == "bing") return ""
+    else if (service == "yandex") return ""
     else {
         async function getURL() {
             return await new Promise(async (resolve, reject) => {
@@ -61,7 +62,7 @@ async function getSupportedLanguages(service, lang, key = "") {
                 url = `https://translate-pa.googleapis.com/v1/supportedLanguages?client=te&display_language=${lang}&key=${key}&callback=callback`
                 break
             case "yandex":
-                url = `https://translate.yandex.net/api/v1/tr.json/getLangs?srv=tr-url-widget&id=${key}&ui=${lang}`
+                url = `https://translate.yandex.net/api/v1/tr.json/getLangs?srv=tr-url-widget&ui=${lang}`
                 break
             case "bing":
                 url = `https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation`
