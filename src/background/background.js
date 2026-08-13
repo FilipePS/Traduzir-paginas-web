@@ -254,16 +254,16 @@ chrome.runtime.onInstalled.addListener((details) => {
     });
   }
 
-  twpConfig.onReady(async () => {
-    if (platformInfo.isMobile.any) {
-      const enabledServices = twpConfig.get("enabledServices");
-      const index = enabledServices.indexOf("deepl");
-      if (index !== -1) {
-        enabledServices.splice(index, 1);
-        twpConfig.set("enabledServices", enabledServices);
-      }
-    }
-  });
+  // twpConfig.onReady(async () => {
+  //   if (platformInfo.isMobile.any) {
+  //     const enabledServices = twpConfig.get("enabledServices");
+  //     const index = enabledServices.indexOf("deepl");
+  //     if (index !== -1) {
+  //       enabledServices.splice(index, 1);
+  //       twpConfig.set("enabledServices", enabledServices);
+  //     }
+  //   }
+  // });
 });
 
 function resetPageAction(tabId, forceShow = false) {
