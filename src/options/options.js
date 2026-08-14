@@ -1,64 +1,4 @@
 "use strict";
-
-setTimeout(() => {
-  fetch("./release-notes/en.html")
-    .then((response) => response.text())
-    .then((responseText) => {
-      window.scrollTo(0, 0);
-      document.getElementById("release_notes").innerHTML = responseText;
-      document.getElementById("_msgHasBeenUpdated").textContent =
-        twpI18n.getMessage("msgHasBeenUpdated");
-      document.getElementById("_msgHasBeenUpdated").innerHTML = document
-        .getElementById("_msgHasBeenUpdated")
-        .textContent.replace(
-          "#EXTENSION_NAME#",
-          "<b>" + chrome.runtime.getManifest().name + "</b>"
-        )
-        .replace(
-          "#EXTENSION_VERSION#",
-          "<b>" + chrome.runtime.getManifest().version + "</b>"
-        );
-      document.getElementById("_donationText").textContent =
-        twpI18n.getMessage("donationText");
-      document.getElementById("_donatewithpaypal").textContent =
-        twpI18n.getMessage("donatewithpaypal");
-
-      document.getElementById("_donationRecipient").textContent =
-        twpI18n.getMessage("msgDonationRecipient");
-      document.getElementById("_donationRecipient").innerHTML = document
-        .getElementById("_donationRecipient")
-        .textContent.replace(
-          "#EXTENSION_NAME#",
-          "<b>" + chrome.runtime.getManifest().name + "</b>"
-        );
-
-      // donation options
-      if (navigator.language === "pt-BR") {
-        $("#_currency").value = "BRL";
-        $("#_donateInUSD").style.display = "none";
-      } else {
-        $("#_currency").value = "USD";
-        $("#_donateInBRL").style.display = "none";
-      }
-
-      $("#_currency").onchange = (e) => {
-        if (e.target.value === "BRL") {
-          $("#_donateInUSD").style.display = "none";
-          $("#_donateInBRL").style.display = "block";
-        } else {
-          $("#_donateInUSD").style.display = "block";
-          $("#_donateInBRL").style.display = "none";
-        }
-      };
-
-      const donationOverflow = document.getElementById("donationOverflow");
-      setTimeout(() => {
-        donationOverflow.style.display = "none";
-      }, 1000);
-      donationOverflow.style.display = "block";
-    });
-}, 800);
-
 var $ = document.querySelector.bind(document);
 
 twpConfig
@@ -96,78 +36,28 @@ twpConfig
       document.head.appendChild(style);
     }
 
-    let sideBarIsVisible = false;
-    $("#btnOpenMenu").onclick = (e) => {
-      $("#menuContainer").classList.toggle("change");
-
-      if (sideBarIsVisible) {
-        $("#sideBar").style.display = "none";
-        sideBarIsVisible = false;
-      } else {
-        $("#sideBar").style.display = "block";
-        sideBarIsVisible = true;
-      }
-    };
-
     function hashchange() {
       const hash = location.hash || "#languages";
       const divs = [
         $("#languages"),
-        $("#sites"),
         $("#translations"),
         $("#style"),
         $("#hotkeys"),
-        $("#privacy"),
         $("#storage"),
-        $("#others"),
-        $("#experimental"),
-        $("#donation"),
-        $("#release_notes"),
       ];
       divs.forEach((element) => {
         element.style.display = "none";
       });
 
       document.querySelectorAll("nav a").forEach((a) => {
-        a.classList.remove("w3-light-grey");
+        a.classList.remove("w3-cobalt");
       });
 
       $(hash).style.display = "block";
-      $('a[href="' + hash + '"]').classList.add("w3-light-grey");
+      $('a[href="' + hash + '"]').classList.add("w3-cobalt");
 
       let text;
-      if (hash === "#donation") {
-        text = twpI18n.getMessage("lblMakeDonation");
-      } else if (hash === "#release_notes") {
-        text = twpI18n.getMessage("lblReleaseNotes");
-      } else {
-        text = twpI18n.getMessage("lblSettings");
-      }
       $("#itemSelectedName").textContent = text;
-
-      if (sideBarIsVisible) {
-        $("#menuContainer").classList.toggle("change");
-        $("#sideBar").style.display = "none";
-        sideBarIsVisible = false;
-      }
-
-      if (hash === "#release_notes") {
-        $("#btnPatreon").style.display = "none";
-      } else {
-        $("#btnPatreon").style.display = "block";
-      }
-
-      if (hash === "#translations") {
-        $("#translations").insertBefore(
-          $("#selectServiceContainer"),
-          $("#translations").firstChild
-        );
-      } else if (hash === "#privacy") {
-        $("#privacy").insertBefore(
-          $("#selectServiceContainer"),
-          $("#privacy").firstChild
-        );
-      }
     }
     hashchange();
     window.addEventListener("hashchange", hashchange);
@@ -684,7 +574,11 @@ twpConfig
     $("#enableIframePageTranslation").value = twpConfig.get(
       "enableIframePageTranslation"
     );
-
+    $("#useOldPopup").onchange = (e) => {
+      twpConfig.set("useOldPopup", e.target.value);
+      updateDarkMode();
+    };
+    $("#useOldPopup").value = twpConfig.get("useOldPopup");
     $("#dontSortResults").onchange = (e) => {
       twpConfig.set("dontSortResults", e.target.value);
     };
@@ -798,11 +692,6 @@ twpConfig
       twpConfig.get("dontShowIfSelectedTextIsUnknown") === "yes" ? true : false;
 
     // style options
-    $("#useOldPopup").onchange = (e) => {
-      twpConfig.set("useOldPopup", e.target.value);
-      updateDarkMode();
-    };
-    $("#useOldPopup").value = twpConfig.get("useOldPopup");
 
     $("#darkMode").onchange = (e) => {
       twpConfig.set("darkMode", e.target.value);
@@ -937,12 +826,12 @@ twpConfig
       li.innerHTML = `
         <div>${description}</div>
         <div class="shortcut-input-options">
-            <div style="position: relative;">
+            <div style="position: absolute;">
                 <input name="input" class="w3-input w3-border shortcut-input" type="text" readonly placeholder="${enterShortcut}" data-i18n-placeholder="enterShortcut">
                 <p name="error" class="shortcut-error" style="position: absolute;"></p>
             </div>
-            <div class="w3-hover-light-grey shortcut-button" name="removeKey"><i class="gg-trash"></i></div>
-            <div class="w3-hover-light-grey shortcut-button" name="resetKey"><i class="gg-sync"></i></div>
+            <div class="w3-btn shortcut-button" name="removeKey"><img class="shortcut-icon" src="../icons/delete.png"></div>
+            <div class="w3-btn shortcut-button" name="resetKey"><img class="shortcut-icon" src="../icons/undo.png"></div>
         </div>  
         `;
       $("#KeyboardShortcuts").appendChild(li);
@@ -1164,7 +1053,7 @@ twpConfig
             twpConfig.set("pageTranslatorService", enabledServices[0]);
           }
 
-          const pageTranslationServices = ["google", "bing", "yandex"];
+          const pageTranslationServices = ["google", "yandex"];
           chrome.runtime.sendMessage(
             {
               action: "restorePagesWithServiceNames",
@@ -1224,12 +1113,12 @@ twpConfig
       element.setAttribute(
         "download",
         "twp-backup_" +
-          new Date()
-            .toISOString()
-            .replace(/T/, "_")
-            .replace(/\..+/, "")
-            .replace(/\:/g, ".") +
-          ".txt"
+        new Date()
+          .toISOString()
+          .replace(/T/, "_")
+          .replace(/\..+/, "")
+          .replace(/\:/g, ".") +
+        ".txt"
       );
 
       element.style.display = "none";
@@ -1274,12 +1163,6 @@ twpConfig
         twpConfig.restoreToDefault();
       }
     };
-
-    // others options
-    $("#showReleaseNotes").onchange = (e) => {
-      twpConfig.set("showReleaseNotes", e.target.value);
-    };
-    $("#showReleaseNotes").value = twpConfig.get("showReleaseNotes");
 
     $("#whenShowMobilePopup").onchange = (e) => {
       twpConfig.set("whenShowMobilePopup", e.target.value);
@@ -1331,64 +1214,6 @@ twpConfig
     };
 
     // experimental options
-    $("#addLibre").onclick = () => {
-      const libre = {
-        name: "libre",
-        url: $("#libreURL").value,
-        apiKey: $("#libreKEY").value,
-      };
-      try {
-        new URL(libre.url);
-        if (libre.apiKey.length < 10) {
-          throw new Error("Provides an API Key");
-        }
-
-        const customServices = twpConfig.get("customServices");
-
-        const index = customServices.findIndex((cs) => cs.name === "libre");
-        if (index !== -1) {
-          customServices.splice(index, 1);
-        }
-
-        customServices.push(libre);
-        twpConfig.set("customServices", customServices);
-        chrome.runtime.sendMessage({ action: "createLibreService", libre });
-      } catch (e) {
-        alert(e);
-      }
-    };
-
-    $("#removeLibre").onclick = () => {
-      const customServices = twpConfig.get("customServices");
-      const index = customServices.findIndex((cs) => cs.name === "libre");
-
-      if (index !== -1) {
-        customServices.splice(index, 1);
-        twpConfig.set("customServices", customServices);
-        chrome.runtime.sendMessage(
-          { action: "removeLibreService" },
-          checkedLastError
-        );
-      }
-
-      if (twpConfig.get("textTranslatorService") === "libre") {
-        twpConfig.set(
-          "textTranslatorService",
-          twpConfig.get("pageTranslatorService")
-        );
-      }
-
-      $("#libreURL").value = "";
-      $("#libreKEY").value = "";
-    };
-
-    const libre = twpConfig
-      .get("customServices")
-      .find((cs) => cs.name === "libre");
-    if (libre) {
-      $("#libreURL").value = libre.url;
-      $("#libreKEY").value = libre.apiKey;
-    }
 
     async function testDeepLFreeApiKey(apiKey) {
       return await new Promise((resolve) => {
@@ -1475,11 +1300,7 @@ twpConfig
     $("#addPaddingToPage").value = twpConfig.get("addPaddingToPage");
 
     $("#btnShowProxyConfiguration").onclick = (e) => {
-      $("#googleProxyContainer").style.display = "block";
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: "smooth",
-      });
+      $("#googleProxyContainer").style.display = "block"
     };
 
     $("#addGoogleProxy").onclick = (e) => {
@@ -1525,26 +1346,5 @@ twpConfig
       $("#googleTtsProxyServer").value = googleProxy.ttsServer;
     }
 
-    // donation options
-    if (navigator.language === "pt-BR") {
-      $("#currency").value = "BRL";
-      $("#donateInUSD").style.display = "none";
-    } else {
-      $("#currency").value = "USD";
-      $("#donateInBRL").style.display = "none";
-    }
-
-    $("#currency").onchange = (e) => {
-      if (e.target.value === "BRL") {
-        $("#donateInUSD").style.display = "none";
-        $("#donateInBRL").style.display = "block";
-      } else {
-        $("#donateInUSD").style.display = "block";
-        $("#donateInBRL").style.display = "none";
-      }
-    };
   });
 
-window.scrollTo({
-  top: 0,
-});

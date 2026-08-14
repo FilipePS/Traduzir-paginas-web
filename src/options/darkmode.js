@@ -13,16 +13,6 @@ function enableDarkMode() {
             * {
                 scrollbar-color: #202324 #454a4d;
             }
-  
-            #donation * {
-                color: black !important;
-                background-color: #87CEEB !important;
-            }
-  
-            #donation select, #donation option {
-                background-color: rgb(231, 230, 228) !important;
-            }
-
             html *, nav, #header {
                 color: rgb(231, 230, 228) !important;
                 background-color: #181a1b !important;
@@ -32,7 +22,7 @@ function enableDarkMode() {
   }
 }
 
-if (
+if (  
   sessionStorage !== null &&
   sessionStorage.getItem("darkModeIsEnabled") === "yes"
 ) {
