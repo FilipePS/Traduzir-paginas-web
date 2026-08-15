@@ -1072,12 +1072,12 @@ twpConfig
       };
 
       //*
-      if (typeof browser === "undefined") {
+      if (platformInfo.supportsCommandsUpdate()) {
+        $("#openNativeShortcutManager").style.display = "none";
+      } else {
         input.setAttribute("disabled", "");
         resetKey.style.display = "none";
         removeKey.style.display = "none";
-      } else {
-        $("#openNativeShortcutManager").style.display = "none";
       }
       // */
     }
