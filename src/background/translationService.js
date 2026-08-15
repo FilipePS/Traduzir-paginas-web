@@ -609,13 +609,13 @@ const translationService = (function () {
             progressInfo.status = "complete";
             //this.translationsInProgress.delete([sourceLanguage, targetLanguage, requestString])
           } else {
-            currentRequest.push(progressInfo);
-            currentSize += progressInfo.originalText.length;
-            if (currentSize > 800) {
+            if (currentRequest.length > 0 && currentSize + progressInfo.originalText.length > 800) {
               requests.push(currentRequest);
               currentSize = 0;
               currentRequest = [];
             }
+            currentRequest.push(progressInfo);
+            currentSize += progressInfo.originalText.length;
           }
         }
       }
