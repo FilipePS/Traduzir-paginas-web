@@ -160,10 +160,7 @@ const twpConfig = (function () {
       }
     }
 
-    if (
-      typeof browser !== "undefined" &&
-      typeof browser.commands !== "undefined"
-    ) {
+    if (platformInfo.supportsCommandsUpdate()) {
       for (const name in config.hotkeys) {
         browser.commands.update({
           name: name,
@@ -180,10 +177,7 @@ const twpConfig = (function () {
    */
   twpConfig.restoreToDefault = function () {
     // try to reset the keyboard shortcuts
-    if (
-      typeof browser !== "undefined" &&
-      typeof browser.commands !== "undefined"
-    ) {
+    if (platformInfo.supportsCommandsUpdate()) {
       for (const name of Object.keys(
         chrome.runtime.getManifest().commands || {}
       )) {
