@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "ترجم صفحتك في الوقت الفعلي باستخدام Google أو Yandex."
+    "message": "ترجمة صفحتك في الوقت الحقيقي باستخدام جوجل أو يانديكس."
   },
   "pageActionTitle": {
     "message": "ترجم هذه الصفحة"
@@ -48,7 +48,7 @@
     "message": "حاول مجددًا"
   },
   "btnOpenOnGoogleTranslate": {
-    "message": "فتح في مترجم جوجل"
+    "message": "افتح في ترجمة جوجل"
   },
   "btnDonate": {
     "message": "تبرع"
@@ -66,7 +66,7 @@
     "message": "لا تترجم هذه المواقع أبدًا"
   },
   "optionsAlwaysTranslate": {
-    "message": "دائما ترجم اللغة"
+    "message": "قم دائمًا بترجمة هذه اللغات"
   },
   "optionPopupConfig": {
     "message": "إظهار النافذة المنبثقة للجوال"
@@ -105,10 +105,10 @@
     "message": "لا"
   },
   "btnAlwaysTranslate": {
-    "message": "ترجمة هذا الموقع دائمًا"
+    "message": "تَرْجَمَة هذا الموقع دائمًا"
   },
   "lblAlwaysTranslateSites": {
-    "message": "ترجمة هذه المواقع دائمًا"
+    "message": "تَرْجَمَة هذه المواقع دائمًا"
   },
   "lblDarkMode": {
     "message": "الوضع المظلم"
@@ -129,10 +129,10 @@
     "message": "إظهار خيار ترجمة النص المحدد في قائمة السياق"
   },
   "lblNeverTranslateLangs": {
-    "message": "لا تترجم هذه المواقع أبدًا"
+    "message": "لا تقم بترجمة هذه اللغات"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "لا تترجم هذه المواقع أبدًا"
+    "message": "لا تترجم هذه اللغة أبداً"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "إظهار النص الأصلي عند تحويله"
@@ -147,7 +147,7 @@
     "message": "الترجمات"
   },
   "msgStyle": {
-    "message": "أسلوب"
+    "message": "نمط"
   },
   "msgHotkeys": {
     "message": "مفاتيح التشغيل السريع"
@@ -165,7 +165,7 @@
     "message": "إعدادات"
   },
   "lblAdd": {
-    "message": "يضيف"
+    "message": "أضف"
   },
   "lblShowTranslatedWhenHovering": {
     "message": "إظهار النص المترجم عند التمرير"
@@ -207,10 +207,10 @@
     "message": "لا تظهر إذا كانت لغة النص المحددة غير معروفة"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "إظهار الترجمة عند التمرير فوق هذا الموقع"
+    "message": "إظهار التَّرْجَمَةً عند التمرير فوق هذا الموقع"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "إظهار الترجمة عند التمرير فوق المواقع باللغة $LANGUAGE_NAME$",
+    "message": "إظهار التَّرْجَمَةً عند التمرير فوق المواقع باللغة $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -231,22 +231,22 @@
     "message": "توقف عن الاستماع"
   },
   "btnApply": {
-    "message": "يتقدم"
+    "message": "تطبيق"
   },
   "swapTranslationService": {
-    "message": "التبديل بين خدمات الترجمة"
+    "message": "التبديل بين خِدْمَات التَّرْجَمَةً"
   },
   "swapPopup": {
     "message": "التبديل بين الواجهة البسيطة و المعقدة"
   },
   "lblTranslateInterface": {
-    "message": "ترجمة الواجهة"
+    "message": "تَرْجَمَة الواجهة"
   },
   "lblButtonInTheAddressBar": {
     "message": "إظهار الزر في شريط العنوان"
   },
   "lblPageTranslationService": {
-    "message": "خدمة ترجمة الصفحة"
+    "message": "خدمة تَرْجَمَة الصفحة"
   },
   "lblTextTranslationService": {
     "message": "خدمة ترجمة النص"
@@ -363,7 +363,7 @@
     "message": "ترجمة الصفحة بالنقر مرة واحدة على الزر في شريط العنوان. (لرؤية النوافذ، انقر بزر اليمين)"
   },
   "btnShowPopup": {
-    "message": "بدون إشعارات منبثقة"
+    "message": "إظهار النافذة المنبثقة"
   },
   "msgToTranslateThisDocument": {
     "message": "لترجمة هذا المستند $DOC_TYPE$ من الضروري تحويله إلى HTML",
@@ -432,7 +432,7 @@
     "message": "ترجمة الصفحة إلى اللغة المستهدفة"
   },
   "msgSelectTargetLanguageForText": {
-    "message": "تَرْجَمَة الصفحة إلى اللغة المستهدفة"
+    "message": "ترجمة النص المحدد إلى هذه اللغة المستهدفة"
   },
   "msgFavoriteLanguages": {
     "message": "اللغات المفضلة"
@@ -563,7 +563,7 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "الغاء التحميل"
+    "message": "التراجع"
   },
   "msgAutoDetect": {
     "message": "اكتشاف تلقائي"

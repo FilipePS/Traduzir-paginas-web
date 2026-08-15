@@ -9,7 +9,7 @@
     "message": "Bu sayfa çevrilsin mi?"
   },
   "lblTranslating": {
-    "message": "Çevriliyor ..."
+    "message": "Çevriliyor..."
   },
   "lblError": {
     "message": "Bu sayfa çevrilemedi"
@@ -72,7 +72,7 @@
     "message": "Mobil açılır pencereyi göster"
   },
   "optionPopupThreeFingers": {
-    "message": "Ekrana üç parmağımla dokunduğumda"
+    "message": "Ekrana üç parmakla dokunulduğunda"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Yandex Çeviri'de aç"
@@ -84,7 +84,7 @@
     "message": "Daha fazla seçenek"
   },
   "lblPlsDonate": {
-    "message": "Geliştiriciye bağış yaparak yardımcı ol"
+    "message": "Bağış yaparak geliştiriciye destek ol"
   },
   "msgTranslateFor": {
     "message": "$LANGUAGE_NAME$ diline çevir",
@@ -159,7 +159,7 @@
     "message": "Sürüm Notları"
   },
   "lblReport": {
-    "message": "Bir sorun bildir"
+    "message": "Sorun bildir"
   },
   "lblSettings": {
     "message": "Ayarlar"
@@ -174,10 +174,10 @@
     "message": "Klavye kısayolları"
   },
   "msgThanksForUseExtension": {
-    "message": "Bu uzantıyı kullandığınız için teşekkür ederiz."
+    "message": "Bu uzantıyı kullandığınız için teşekkürler."
   },
   "msgIWillBeGrateful": {
-    "message": "Bağış yapabilirseniz minnettar olacağım."
+    "message": "Bağış yapabilirseniz minnettar olurum."
   },
   "lblShowTranslatedHoveringSites": {
     "message": "Bu sitelerin üzerine gelindiğinde çevrilmiş metni göster"
@@ -210,7 +210,7 @@
     "message": "Bu sitenin üzerine gelindiğinde çeviriyi göster"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "$LANGUAGE_NAME$ dilindeki sitelerinin üzerine gelindiğinde çeviriyi göster",
+    "message": "$LANGUAGE_NAME$ dilindeki sitelerin üzerine gelindiğinde çeviriyi göster",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -219,7 +219,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Bu dillere sahip sitelerin üzerine gelindiğinde çevrilmiş metni göster"
+    "message": "Bu dillerdeki sitelerin üzerine gelindiğinde çevrilmiş metni göster"
   },
   "msgNoTranslateSelectedText": {
     "message": "Seçili metni çevirme"
@@ -234,10 +234,10 @@
     "message": "Uygula"
   },
   "swapTranslationService": {
-    "message": "Çeviri hizmetleri arasında geçiş yapın"
+    "message": "Çeviri hizmetleri arasında geçiş yap"
   },
   "swapPopup": {
-    "message": "Basit ve karmaşık arayüz arasında geçiş yap"
+    "message": "Basit ve gelişmiş arayüz arasında geçiş yap"
   },
   "lblTranslateInterface": {
     "message": "Arayüzü çevir"
@@ -285,22 +285,22 @@
     "message": "Dosya bozuk görünüyor"
   },
   "doYouWantRestoreSettings": {
-    "message": "Uzantıyı varsayılan ayarlarına geri yüklemek istiyor musunuz?"
+    "message": "Uzantıyı varsayılan ayarlarına döndürmek istiyor musunuz?"
   },
   "lblTtsSpeed": {
     "message": "Metin okuma ses hızı"
   },
   "lblTtsVolume": {
-    "message": "Metinden konuşmaya ses düzeyi"
+    "message": "Metin okuma ses düzeyi"
   },
   "enterShortcut": {
-    "message": "Kısayol yazın"
+    "message": "Kısayol girin"
   },
   "hotkeyError_ctrlOrAlt": {
     "message": "Ctrl veya Alt tuşunu dahil edin"
   },
   "hotkeyError_letter": {
-    "message": "Harf yazın"
+    "message": "Bir harf yazın"
   },
   "hotkeyError_invalid": {
     "message": "Geçersiz kombinasyon"
@@ -309,7 +309,7 @@
     "message": "Çevrilmiş sayfa ile orijinal sayfa arasında geçiş yap"
   },
   "lblRestorePageToOriginal": {
-    "message": "Orjinal sayfayı geri yükle"
+    "message": "Orijinal sayfayı geri yükle"
   },
   "lblTranslatePageToTargetLanguage": {
     "message": "Sayfayı hedef dile çevir"
@@ -335,10 +335,10 @@
     "message": "PayPal ile Bağış Yap"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Mevcut siteden aynı siteye götüren bir bağlantıya tıkladığınızda otomatik olarak çevir"
+    "message": "Mevcut siteyle aynı alana giden bir bağlantıya tıklandığında otomatik çevir"
   },
   "openNativeShortcutManager": {
-    "message": "Yerel kısayol tuş yöneticisini aç"
+    "message": "Yerel kısayol yöneticisini aç"
   },
   "lblKeyboardShortcutsSpecial": {
     "message": "Özel klavye kısayolları"
@@ -366,7 +366,7 @@
     "message": "Açılır pencereyi göster"
   },
   "msgToTranslateThisDocument": {
-    "message": "Bu belgeyi $DOC_TYPE$ türüne çevirmek için HTML'e dönüştürmek gerekiyor",
+    "message": "Bu belgeyi $DOC_TYPE$ çevirmek için HTML'e dönüştürmek gerekir",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -375,7 +375,7 @@
     }
   },
   "msgSelectServiceConversion": {
-    "message": "Bu dönüştürmeyi yapmak için bir hizmet seçin"
+    "message": "Bu dönüşümü yapmak için bir hizmet seçin"
   },
   "msgDownloadingDocument": {
     "message": "Belge indiriliyor..."
@@ -387,7 +387,7 @@
     "message": "Belge indirilirken hata oluştu"
   },
   "msgFileLargerThan": {
-    "message": "Bu hizmet $FILE_SIZE$ değerinden büyük dosyaları desteklemiyor",
+    "message": "Bu hizmet $FILE_SIZE$ boyutundan büyük dosyaları desteklemiyor",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -426,7 +426,7 @@
     "message": "Seçili metni anında çevrilmiş metinle değiştir"
   },
   "optionsAddToCustomDictionary": {
-    "message": "Özel sözlüğe ekle (Bu, web sayfası çevirisi sırasında belirli kelimeleri atlamanızı sağlar)"
+    "message": "Özel sözlüğe ekle (Web sayfası çevirisinde belirli kelimeleri atlamanızı sağlar)"
   },
   "msgSelectTargetLanguage": {
     "message": "Web sitelerini bu hedef dile çevir"
@@ -453,7 +453,7 @@
     "message": "Basit"
   },
   "msgInterfaceComplex": {
-    "message": "Karmaşık"
+    "message": "Gelişmiş"
   },
   "lblTranslatePageInto": {
     "message": "Sayfa $LANGUAGE_NAME$ diline çevrilsin mi?",
@@ -474,10 +474,10 @@
     }
   },
   "msgChooseAnotherLanguage": {
-    "message": "başka bir dil seç"
+    "message": "Başka bir dil seç"
   },
   "msgHasBeenUpdated": {
-    "message": "$EXTENSION_NAME$ uzantısı sürüm $EXTENSION_VERSION$güncellendi.",
+    "message": "$EXTENSION_NAME$ uzantısı $EXTENSION_VERSION$ sürümüne güncellendi.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "Beş yıldan uzun bir süredir bu uzantıyı geliştiriyor, güncelliyor ve destekliyorum. Günlük 600.000'den fazla kullanıcımız olduğunu görmek harika.\n\nPayPal üzerinden destek sağlamanızı veya Patreon üyeliği ile katkıda bulunmanızı takdirle karşılarım. Katkılarınız, bu uzantıyı geliştirmeye devam edebilmem için büyük önem taşımaktadır.\n\nBu projeye katkıda bulunan herkese teşekkür ederim."
+    "message": "Bu uzantıyı beş yıldan uzun bir süredir geliştiriyor, güncelliyor ve destekliyorum. Günlük 600.000'den fazla kullanıcımız olduğunu görmek harika.\n\nPayPal üzerinden destek sağlamanız veya Patreon üyeliği ile katkıda bulunmanız beni çok mutlu eder. Katkılarınız, bu uzantıyı geliştirmeye devam edebilmem için büyük önem taşıyor.\n\nBu projeye katkıda bulunan herkese teşekkür ederim."
   },
   "lblEnableDiskCache": {
     "message": "Kalıcı çeviri önbelleğini etkinleştir (disk önbelleği)"
@@ -523,22 +523,22 @@
     "message": "Kullanmak istediğiniz çeviri hizmetlerini seçin"
   },
   "useAlternativeService": {
-    "message": "Geçerli hedef dil, seçilen çeviri hizmeti tarafından desteklenmiyorsa, alternatif bir çeviri hizmetini sessizce kullanın"
+    "message": "Geçerli hedef dil seçilen hizmet tarafından desteklenmiyorsa, arka planda alternatif bir çeviri hizmeti kullan"
   },
   "msgDefaultLanguage": {
     "message": "Varsayılan dil"
   },
   "msgExtUILanguage": {
-    "message": "Eklenti kullanıcı arayüzü dili"
+    "message": "Eklenti arayüz dili"
   },
   "msgSetDeepLAlert": {
     "message": "Çeviri hizmetini DeepL olarak ayarlamak istediğinizden emin misiniz?\n Yeni bir sekme açılacak ve çeviri orada gerçekleşecek."
   },
   "lblTextToSpeechService": {
-    "message": "Metinden konuşmaya hizmeti"
+    "message": "Metin okuma hizmeti"
   },
   "msgDeepLTabReasoOpened": {
-    "message": "Bu sekme, seçilen metni DeepL kullanarak çevirmek için tıkladığınız için açıldı."
+    "message": "Bu sekme, seçilen metni DeepL kullanarak çevirmek için tıkladığınızda açıldı."
   },
   "msgDontShowAgain": {
     "message": "Bir daha gösterme"
@@ -550,7 +550,7 @@
     "message": "Sayfa çevrildi"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ ila $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ dilinden $TO_LANGUAGE$ diline",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -563,13 +563,13 @@
     }
   },
   "btnUndoTranslation": {
-    "message": "Geri alma"
+    "message": "Geri al"
   },
   "msgAutoDetect": {
-    "message": "Otomatik algılama"
+    "message": "Otomatik algıla"
   },
   "msgEnableIframePageTranslation": {
-    "message": "$IFRAME_TAG$içinde sayfa çevirisini etkinleştir",
+    "message": "$IFRAME_TAG$ içinde sayfa çevirisini etkinleştir",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"
@@ -586,13 +586,13 @@
     "message": "Gerektiğinde"
   },
   "msgOnlyWhenItouch3Fingers": {
-    "message": "Yalnızca ekrana üç parmağımla dokunduğumda"
+    "message": "Yalnızca ekrana üç parmakla dokunulduğunda"
   },
   "msgAlwaysShow": {
     "message": "Her zaman göster"
   },
   "btnKeepOnScreen": {
-    "message": "Ekranda kal"
+    "message": "Ekranda tut"
   },
   "btnChangePosition": {
     "message": "Konumu değiştir"

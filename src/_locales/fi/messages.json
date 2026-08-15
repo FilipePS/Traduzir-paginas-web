@@ -24,7 +24,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Kohdekieli $TARGET_LANGUAGE_NUM$$",
+    "message": "Kohdekieli $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",
@@ -69,13 +69,13 @@
     "message": "Käännä aina nämä kielet"
   },
   "optionPopupConfig": {
-    "message": "Näytä työkalupalkki mobiiliversiossa"
+    "message": "Näytä mobiiliponnahdusikkuna"
   },
   "optionPopupThreeFingers": {
     "message": "Kolmen sormen kosketuksella"
   },
   "msgOpenOnYandexTranslator": {
-    "message": "Avaa Yandex translatessa"
+    "message": "Avaa Yandex Translatessa"
   },
   "lblOthers": {
     "message": "Muut"
@@ -126,13 +126,13 @@
     "message": "Käännä valittu teksti"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Näytä valinta kääntämiselle pikavalikossa"
+    "message": "Näytä valitun tekstin käännösvaihtoehto kontekstivalikossa"
   },
   "lblNeverTranslateLangs": {
-    "message": "Älä koskaan käännä näitä sivustoja"
+    "message": "Älä koskaan käännä näitä kieliä"
   },
   "btnNeverTranslateThisLanguage": {
-    "message": "Älä koskaan käännä tätä sivua"
+    "message": "Älä koskaan käännä tätä kieltä"
   },
   "lblShowOriginalTextWhenHovering": {
     "message": "Näytä alkuperäinen teksti osoitinaktivoinnilla"
@@ -210,7 +210,7 @@
     "message": "Näytä käännökset osoitinaktivoinnilla tällä sivustolla"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Näytä käännös, kun vie hiiri verkkosivustojen päälle $LANGUAGE_NAME$",
+    "message": "Näytä käännös, kun hiiren osoitinta pidetään verkkosivustojen päällä kohdassa $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -240,7 +240,7 @@
     "message": "Vaihda yksinkertaisen ja monimutkaisen käyttöliittymän välillä"
   },
   "lblTranslateInterface": {
-    "message": "Auta käyttöliittymän kääntämisessä"
+    "message": "Käännä käyttöliittymä"
   },
   "lblButtonInTheAddressBar": {
     "message": "Näytä painike osoitepalkissa"

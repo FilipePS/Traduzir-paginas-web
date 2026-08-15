@@ -39,7 +39,7 @@
     "message": "Übersetzen"
   },
   "btnOptions": {
-    "message": "Auswahl"
+    "message": "Optionen"
   },
   "btnRestore": {
     "message": "Original anzeigen"
@@ -168,7 +168,7 @@
     "message": "Hinzufügen"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Originaltext beim Darüberfahren anzeigen"
+    "message": "Übersetzten Text beim Überfahren mit der Maus anzeigen"
   },
   "lblKeyboardShortcuts": {
     "message": "Tastenkürzel"
@@ -180,7 +180,7 @@
     "message": "Für eine Spende wäre ich Ihnen dankbar."
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Übersetzten Text beim Sofern auf diesen Seiten anzeigen"
+    "message": "Übersetzten Text beim Überfahren dieser Seiten anzeigen"
   },
   "popupBlueWhenSiteIsTranslated": {
     "message": "Mache das Pop-Up-Symbol blau, wenn die Seite übersetzt ist"
@@ -477,7 +477,7 @@
     "message": "Wählen Sie eine andere Sprache"
   },
   "msgHasBeenUpdated": {
-    "message": "Die Erweiterung $EXTENSION_NAME$ wurde auf Version $EXTENSION_VERSION$aktualisiert.",
+    "message": "Die Erweiterung $EXTENSION_NAME$ wurde auf Version $EXTENSION_VERSION$ aktualisiert.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",
@@ -592,7 +592,7 @@
     "message": "Immer anzeigen"
   },
   "btnKeepOnScreen": {
-    "message": "Bleiben Sie auf dem Bildschirm"
+    "message": "Auf dem Bildschirm behalten"
   },
   "btnChangePosition": {
     "message": "Position ändern"

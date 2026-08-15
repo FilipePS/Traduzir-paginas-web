@@ -60,7 +60,7 @@
     "message": "Oorspronklik"
   },
   "btnMobileTranslated": {
-    "message": "Vertaal"
+    "message": "Vertaalde"
   },
   "optionsNeverTranslate": {
     "message": "Moet nooit hierdie webwerwe vertaal nie"
@@ -102,7 +102,7 @@
     "message": "Ja"
   },
   "msgNo": {
-    "message": "Geen"
+    "message": "Nee"
   },
   "btnAlwaysTranslate": {
     "message": "Vertaal altyd hierdie webwerf"
@@ -210,7 +210,7 @@
     "message": "Wys vertaling wanneer jy oor hierdie werf beweeg"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Wys vertaling wanneer jy oor webwerwe in $LANGUAGE_NAME$beweeg",
+    "message": "Wys vertaling wanneer jy oor webwerwe in $LANGUAGE_NAME$ beweeg",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -231,7 +231,7 @@
     "message": "Hou op luister"
   },
   "btnApply": {
-    "message": "Doen aansoek"
+    "message": "Pas toe"
   },
   "swapTranslationService": {
     "message": "Wissel tussen vertaaldienste"
@@ -387,7 +387,7 @@
     "message": "Kon nie dokument aflaai nie"
   },
   "msgFileLargerThan": {
-    "message": "Hierdie diens ondersteun nie lêers groter as $FILE_SIZE$nie",
+    "message": "Hierdie diens ondersteun nie lêers groter as $FILE_SIZE$ nie",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -465,7 +465,7 @@
     }
   },
   "lblPageTranslateInto": {
-    "message": "Bladsy in $LANGUAGE_NAME$vertaal",
+    "message": "Bladsy vertaal in $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",

@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "extract-zip": "^2.0.1",
-    "superagent": "^8.0.9"
+    "superagent": "^10.2.0"
   }
 }

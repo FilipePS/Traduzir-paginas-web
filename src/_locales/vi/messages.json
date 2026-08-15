@@ -1,21 +1,21 @@
 {
   "extensionDescription": {
-    "message": "Dịch trang của bạn trong thời gian thực sử dụng Google hoặc Yandex. "
+    "message": "Dịch trang web của bạn trong thời gian thực sử dụng Google hoặc Yandex."
   },
   "pageActionTitle": {
-    "message": "Dịch trang này "
+    "message": "Dịch trang này"
   },
   "lblTranslate": {
-    "message": "Dịch trang này? "
+    "message": "Dịch trang này?"
   },
   "lblTranslating": {
-    "message": "Đang dịch... "
+    "message": "Đang dịch..."
   },
   "lblError": {
-    "message": "Không thể dịch trang này "
+    "message": "Không thẻ dịch trang này"
   },
   "lblAlwaysTranslate": {
-    "message": "Luôn dịch từ $LANGUAGE_NAME$ ",
+    "message": "Luôn dịch từ ngôn ngữ $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -33,16 +33,16 @@
     }
   },
   "btnReset": {
-    "message": "Đặt lại "
+    "message": "Đặt lại"
   },
   "btnTranslate": {
-    "message": "Dịch "
+    "message": "Dịch"
   },
   "btnOptions": {
     "message": "Tùy chọn "
   },
   "btnRestore": {
-    "message": "Hiển thị bản gốc "
+    "message": "Hiển thị bản gốc"
   },
   "btnTryAgain": {
     "message": "Thử lại"
@@ -63,16 +63,16 @@
     "message": "Đã dịch"
   },
   "optionsNeverTranslate": {
-    "message": "Không bao giờ dịch các trang này"
+    "message": "Không bao giờ dịch những trang này"
   },
   "optionsAlwaysTranslate": {
-    "message": "Luôn dịch các ngôn ngữ này"
+    "message": "Luôn dịch từ những ngôn ngữ này"
   },
   "optionPopupConfig": {
     "message": "Hiển thị cửa sổ bật lên trên di động"
   },
   "optionPopupThreeFingers": {
-    "message": "Khi tôi chạm 3 ngón tay trên màn hình"
+    "message": "Khi tôi chạm ba ngón tay trên màn hình"
   },
   "msgOpenOnYandexTranslator": {
     "message": "Mở trong Yandex Translate"
@@ -81,13 +81,13 @@
     "message": "Khác"
   },
   "btnMoreOptions": {
-    "message": "Tùy chọn khác"
+    "message": "Cài đặt khác"
   },
   "lblPlsDonate": {
     "message": "Giúp đỡ nhà phát triển bằng cách ủng hộ"
   },
   "msgTranslateFor": {
-    "message": "Dịch từ $LANGUAGE_NAME$",
+    "message": "DỊch sang $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -96,7 +96,7 @@
     }
   },
   "lblShowContextMenu": {
-    "message": "Hiển thị tùy chọn dịch trang trong menu ngữ cảnh"
+    "message": "Hiển thị tùy chọn để dịch trang trên menu ngữ cảnh"
   },
   "msgYes": {
     "message": "Đồng ý"
@@ -108,7 +108,7 @@
     "message": "Luôn dịch trang này"
   },
   "lblAlwaysTranslateSites": {
-    "message": "Luôn dịch những trang này"
+    "message": "Luôn dịch từ những trang này"
   },
   "lblDarkMode": {
     "message": "Chế độ tối"
@@ -117,7 +117,7 @@
     "message": "Hiển thị ghi chú phát hành khi cập nhật"
   },
   "lblShowTranslateSelectedButton": {
-    "message": "Hiển thị nút để dịch văn bản được chọn"
+    "message": "Hiển thị nút để dịch văn bản đã chọn"
   },
   "msgAutomatic": {
     "message": "Tự động"
@@ -126,16 +126,16 @@
     "message": "Dịch văn bản đã chọn"
   },
   "lblShowTranslateSelectedContextMenu": {
-    "message": "Hiển thị tùy chọn để dịch văn bản được chọn trong menu ngữ cảnh"
+    "message": "Hiển thị tùy chọn để dịch văn bản đã chọn trong menu ngữ cảnh"
   },
   "lblNeverTranslateLangs": {
-    "message": "Không bao giờ dịch các ngôn ngữ này"
+    "message": "Không bao giờ dịch từ những ngôn ngữ này"
   },
   "btnNeverTranslateThisLanguage": {
     "message": "Không bao giờ dịch ngôn ngữ này"
   },
   "lblShowOriginalTextWhenHovering": {
-    "message": "Hiển thị văn bản gốc khi di chuột đến nó"
+    "message": "Hiển thị văn bản gốc khi di chuột đến văn bản"
   },
   "msgLanguages": {
     "message": "Ngôn ngữ"
@@ -144,7 +144,7 @@
     "message": "Trang web"
   },
   "msgTranslations": {
-    "message": "Dịch"
+    "message": "Dịch thuật"
   },
   "msgStyle": {
     "message": "Hiển thị"
@@ -153,13 +153,13 @@
     "message": "Phím tắt"
   },
   "lblMakeDonation": {
-    "message": "Ủng hộ"
+    "message": "Thực hiện ủng hộ"
   },
   "lblReleaseNotes": {
     "message": "Ghi chú phát hành"
   },
   "lblReport": {
-    "message": "Báo cáo sự cố"
+    "message": "Báo cáo lỗi"
   },
   "lblSettings": {
     "message": "Cài đặt"
@@ -168,7 +168,7 @@
     "message": "Thêm"
   },
   "lblShowTranslatedWhenHovering": {
-    "message": "Hiển thị văn bản đã dịch khi di chuột đến nó"
+    "message": "Hiển thị văn bản đã dịch khi di chuột đến văn bản"
   },
   "lblKeyboardShortcuts": {
     "message": "Phím tắt bàn phím"
@@ -177,13 +177,13 @@
     "message": "Cảm ơn bạn đã sử dụng tiện ích này."
   },
   "msgIWillBeGrateful": {
-    "message": "Tôi sẽ biết ơn nếu bạn có thể đóng góp."
+    "message": "Tôi sẽ biết ơn nếu bạn có thể ủng hộ."
   },
   "lblShowTranslatedHoveringSites": {
-    "message": "Hiển thị văn bản đã dịch khi di chuột qua các trang web này"
+    "message": "Hiển thị văn bản đã dịch khi di chuột đến văn bản trên các trang này"
   },
   "popupBlueWhenSiteIsTranslated": {
-    "message": "Chuyển biểu tượng sang màu xanh lam khi trang web được dịch"
+    "message": "Chuyển biểu tượng cửa sổ bật lên thành màu xanh khi đã dịch trang"
   },
   "more": {
     "message": "Nhiều hơn"
@@ -207,10 +207,10 @@
     "message": "Không hiển thị nếu ngôn ngữ văn bản đã chọn không xác định"
   },
   "lblShowTranslatedWhenHoveringThisSite": {
-    "message": "Hiển thị bản dịch khi di chuột qua trang web này"
+    "message": "Hiển thị bản dịch khi di chuột đến văn bản với trang này"
   },
   "lblShowTranslatedWhenHoveringThisLang": {
-    "message": "Hiển thị bản dịch khi di chuột qua các trang web bằng $LANGUAGE_NAME$",
+    "message": "Hiển thị bản dịch khi di chuột đến văn bản với trang dùng ngôn ngữ $LANGUAGE_NAME$",
     "placeholders": {
       "LANGUAGE_NAME": {
         "content": "$1",
@@ -219,7 +219,7 @@
     }
   },
   "lblShowTranslatedHoveringLangs": {
-    "message": "Hiển thị văn bản đã dịch khi di chuột qua các trang web có ngôn ngữ này"
+    "message": "Hiển thị bản dịch khi di chuột đến văn bản với trang dùng những ngôn ngữ này"
   },
   "msgNoTranslateSelectedText": {
     "message": "Không dịch văn bản đã chọn"
@@ -234,7 +234,7 @@
     "message": "Áp dụng"
   },
   "swapTranslationService": {
-    "message": "Chuyển đổi giữa các dịch vụ dịch thuật"
+    "message": "Chuyển giữa dịch vụ dịch thuật"
   },
   "swapPopup": {
     "message": "Chuyển giữa giao diện đơn giản và phức tạp"
@@ -246,25 +246,25 @@
     "message": "Hiển thị nút trên thanh địa chỉ"
   },
   "lblPageTranslationService": {
-    "message": "Dịch vụ dịch trang"
+    "message": "Dịch vụ dịch thuật trang"
   },
   "lblTextTranslationService": {
-    "message": "Dịch vụ dịch văn bản"
+    "message": "Dịch vụ dịch thuật văn bản"
   },
   "msgStorage": {
-    "message": "Lưu trữ"
+    "message": "Bộ nhớ"
   },
   "lblTranslationCache": {
-    "message": "Bộ nhớ đệm dịch"
+    "message": "Bộ nhớ đệm dịch thuật"
   },
   "lblStorageUsed": {
     "message": "Bộ nhớ đã sử dụng:"
   },
   "deleteTranslationCache": {
-    "message": "Xóa bộ nhớ dịch đệm"
+    "message": "Xóa bộ nhớ đệm dịch thuật"
   },
   "lblPersonalSettings": {
-    "message": "Thiết lập cá nhân"
+    "message": "Cài đặt cá nhân"
   },
   "backupToFile": {
     "message": "Sao lưu vào tệp"
@@ -273,22 +273,22 @@
     "message": "Khôi phục từ tệp"
   },
   "resetToDefault": {
-    "message": "Khôi phục cài đặt gốc"
+    "message": "Khôi phục cài đặt mặc định"
   },
   "doYouWantToDeleteTranslationCache": {
-    "message": "Bạn có muốn xóa bộ nhớ đệm dịch không?"
+    "message": "Bạn có muốn xóa bộ nhớ đệm dịch thuật?"
   },
   "doYouWantOverwriteAllSettings": {
-    "message": "Bạn có muốn ghi đè tất cả các cài đặt hiện có bằng cách sử dụng dữ liệu sao lưu không?"
+    "message": "Bạn có muốn ghi đè tất cả cài đặt mặc định sử dụng dữ liệu sao lưu?"
   },
   "fileIsCorrupted": {
     "message": "Tệp có vẻ bị hỏng"
   },
   "doYouWantRestoreSettings": {
-    "message": "Bạn có muốn khôi phục cài đặt về mặc định không?"
+    "message": "Bạn có muốn khôi phục tiện ích về cài đặt mặc định?"
   },
   "lblTtsSpeed": {
-    "message": "Tốc độ âm thanh chuyển văn bản thành giọng nói"
+    "message": "Tốc độ âm thanh của Văn bản thành giọng nói"
   },
   "lblTtsVolume": {
     "message": "Âm lượng của chuyển văn bản thành giọng nói"
@@ -297,22 +297,22 @@
     "message": "Nhập một phím tắt"
   },
   "hotkeyError_ctrlOrAlt": {
-    "message": "Bao gồm phím Ctrl hoặc Alt"
+    "message": "Bao gồm Ctrl hoặc Alt"
   },
   "hotkeyError_letter": {
     "message": "Nhập một chữ"
   },
   "hotkeyError_invalid": {
-    "message": "Phím tắt kết hợp không hợp lệ"
+    "message": "Kết hợp phím tắt không hợp lệ"
   },
   "lblSwitchTranslatedAndOriginal": {
-    "message": "Chuyển đổi giữa trang đã dịch và trang gốc"
+    "message": "Chuyển giữa trang đã dịch và trang gốc"
   },
   "lblRestorePageToOriginal": {
-    "message": "Khôi phục trang về ban đầu"
+    "message": "Khôi phục trang về chưa dịch"
   },
   "lblTranslatePageToTargetLanguage": {
-    "message": "Dịch trang sang ngôn ngữ đích"
+    "message": "Dịch trang đến ngôn ngữ đích"
   },
   "lblTranslateTag_pre": {
     "message": "Bật dịch cho thẻ $HTML_TAG_NAME$",
@@ -326,7 +326,7 @@
     "message": "Không sắp xếp kết quả dịch"
   },
   "lbltranslatedynamicallycreatedcontent": {
-    "message": "Dịch các nội dung động"
+    "message": "Dịch các nội dung được tạo tự động"
   },
   "calculatestorage": {
     "message": "Tính toán"
@@ -335,16 +335,16 @@
     "message": "Ủng hộ qua PayPal"
   },
   "lblAutoTranslateWhenClickingALink": {
-    "message": "Tự động dịch khi nhấp vào liên kết đến cùng một tên miền với trang web hiện tại"
+    "message": "Tự động dịch khi nhấp vào liên kết mà nó chuyển bạn đến cùng tên miền của trang hiện tại"
   },
   "openNativeShortcutManager": {
-    "message": "Mở trình quản lý phím tắt riêng"
+    "message": "Mở quản lý phím tắt của trình duyệt"
   },
   "lblKeyboardShortcutsSpecial": {
-    "message": "Các phím tắt đặc biệt"
+    "message": "Phím tắt bàn phím đặc biệt"
   },
   "lblTranslateSelectedWhenPressTwice": {
-    "message": "Dịch văn bản đã chọn khi nhấn $SHORTCUT_KEY$ hai lần",
+    "message": "Dịch văn bản đã chọn khi nhấn phím $SHORTCUT_KEY$ hai lần",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -352,7 +352,7 @@
     }
   },
   "lblTranslateTextOverMouseWhenPressTwice": {
-    "message": "Dịch văn bản ở sau con trỏ chuột khi nhấn $SHORTCUT_KEY$ hai lần",
+    "message": "Dịch văn bản ở dưới con trỏ chuột khi nhấn phím $SHORTCUT_KEY$ hai lần",
     "placeholders": {
       "SHORTCUT_KEY": {
         "content": "[Ctrl]"
@@ -360,13 +360,13 @@
     }
   },
   "translateClickingOnce": {
-    "message": "Dịch trang web bằng cách nhấp một lần vào nút trên thanh địa chỉ. (Để xem cửa sổ bật lên, nhấp chuột phải)"
+    "message": "Dịch trang bằng cách nhấn một lần vào nút trên thanh địa chỉ. (Để hiển thị cửa sổ bật lên, nhấp chuột phải)"
   },
   "btnShowPopup": {
     "message": "Hiển thị cửa sổ bật lên"
   },
   "msgToTranslateThisDocument": {
-    "message": "Để dịch tài liệu $DOC_TYPE$, cần phải chuyển đổi nó sang HTML",
+    "message": "Để dịch tài liệu $DOC_TYPE$, nó cần phải được chuyển sang HTML",
     "placeholders": {
       "DOC_TYPE": {
         "content": "$1",
@@ -378,16 +378,16 @@
     "message": "Chọn một dịch vụ để thực hiện chuyển đổi"
   },
   "msgDownloadingDocument": {
-    "message": "Đang tải về tài liệu..."
+    "message": "Đang tải xuống tài liệu..."
   },
   "msgSendDocument": {
     "message": "Gửi tài liệu"
   },
   "msgErrorDownloadingDocument": {
-    "message": "Lỗi khi tải tài liệu"
+    "message": "Lỗi khi tải xuống tài liệu"
   },
   "msgFileLargerThan": {
-    "message": "Dịch vụ này không hỗ trợ tập tin lớn hơn $FILE_SIZE$",
+    "message": "Dịch vụ này không hỗ trợ tệp lớn hơn $FILE_SIZE$",
     "placeholders": {
       "FILE_SIZE": {
         "content": "$1",
@@ -405,7 +405,7 @@
     "message": "Mở PDF đã dịch"
   },
   "btncopy": {
-    "message": "Sao Chép"
+    "message": "Sao chép"
   },
   "msgRecents": {
     "message": "Gần đây"
@@ -414,7 +414,7 @@
     "message": "Tất cả"
   },
   "msgPleaseWait": {
-    "message": "Xin chờ..."
+    "message": "Vui lòng chờ..."
   },
   "msgUnknownLanguage": {
     "message": "Không rõ"
@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "Tôi đã phát triển, cập nhật và hỗ trợ tiện ích mở rộng này trong hơn năm năm. Thật tuyệt vời khi thấy chúng tôi có hơn 600.000 người dùng hàng ngày.\n\nTôi sẽ rất biết ơn nếu bạn có thể giúp tôi về mặt tài chính thông qua Paypal hoặc bằng cách trở thành thành viên Patreon của tôi, sự đóng góp của bạn giúp tôi tiếp tục mang đến những cải tiến cho tiện ích mở rộng này.\n\nCảm ơn tất cả những người đã đóng góp cho dự án này."
+    "message": "Tôi đã phát triển, cập nhật và hỗ trợ tiện ích mở rộng này trong hơn năm năm. Thật tuyệt vời khi thấy chúng ta có hơn 600.000 người dùng mỗi ngày.\n\nTôi sẽ rất biết ơn nếu bạn có thể hỗ trợ tôi về mặt tài chính thông qua Paypal hoặc trở thành thành viên Patreon của tôi, sự đóng góp của bạn giúp tôi tiếp tục mang đến những cải tiến cho tiện ích mở rộng này.\n\nCảm ơn tất cả những người đã đóng góp cho dự án này."
   },
   "lblEnableDiskCache": {
     "message": "Kích hoạt bộ nhớ đệm dịch lâu dài (bộ nhớ đệm trên ổ cứng)"

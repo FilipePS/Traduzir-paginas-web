@@ -536,24 +536,17 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       sBing.classList.add("selected");
     };
     sDeepL.onclick = () => {
-      if (
-        twpConfig.get("deepl_confirmed") === "yes" ||
-        confirm(twpI18n.getMessage("msgSetDeepLAlert"))
-      ) {
-        twpConfig.set("deepl_confirmed", "yes");
+      currentTextTranslatorService = "deepl";
+      twpConfig.set("textTranslatorService", "deepl");
+      translateNewInput();
 
-        currentTextTranslatorService = "deepl";
-        twpConfig.set("textTranslatorService", "deepl");
-        translateNewInput();
+      sGoogle.classList.remove("selected");
+      sYandex.classList.remove("selected");
+      sBing.classList.remove("selected");
+      sDeepL.classList.remove("selected");
+      sLibre.classList.remove("selected");
 
-        sGoogle.classList.remove("selected");
-        sYandex.classList.remove("selected");
-        sBing.classList.remove("selected");
-        sDeepL.classList.remove("selected");
-        sLibre.classList.remove("selected");
-
-        sDeepL.classList.add("selected");
-      }
+      sDeepL.classList.add("selected");
     };
     sLibre.onclick = () => {
       currentTextTranslatorService = "libre";

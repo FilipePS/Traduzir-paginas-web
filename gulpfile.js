@@ -14,7 +14,7 @@ const version = JSON.parse(
   fs.readFileSync("src/manifest.json", "utf8")
 ).version;
 
-const chromium_folder_name = `TWP_${version}_Chromium`;
+const chromium_folder_name = `TWP_${version}_Chromium_MV2_deprecated`;
 const firefox_folder_name = `TWP_${version}_Firefox`;
 const firefox_selfhosted_folder_name = `TWP_${version}_Firefox_selfhosted`;
 

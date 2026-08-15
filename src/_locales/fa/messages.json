@@ -33,7 +33,7 @@
     }
   },
   "btnReset": {
-    "message": "راه اندازی مجدد"
+    "message": "تنظیم مجدد"
   },
   "btnTranslate": {
     "message": "ترجمه"
@@ -252,7 +252,7 @@
     "message": "سرویس ترجمه•ی متن"
   },
   "msgStorage": {
-    "message": "مخزن"
+    "message": "ذخیره‌سازی"
   },
   "lblTranslationCache": {
     "message": "حافظه‌ی پنهان ترجمه"
@@ -323,7 +323,7 @@
     }
   },
   "lbldontsortresults": {
-    "message": "نتایج گوگل ترنسلیت را مرتب نکن"
+    "message": "نتایج ترجمه را مرتب نکن"
   },
   "lbltranslatedynamicallycreatedcontent": {
     "message": "محتوای ایجاد شده به صورت پویا را ترجمه کن"
@@ -477,7 +477,7 @@
     "message": "زبان دیگری را انتخاب کنید"
   },
   "msgHasBeenUpdated": {
-    "message": "پسوند $EXTENSION_NAME$ به نسخه $EXTENSION_VERSION$به روز شده است.",
+    "message": "افزونه‌ی $EXTENSION_NAME$ به نسخه‌ی $EXTENSION_VERSION$ به‌روزرسانی شده است.",
     "placeholders": {
       "EXTENSION_NAME": {
         "content": "#EXTENSION_NAME#",

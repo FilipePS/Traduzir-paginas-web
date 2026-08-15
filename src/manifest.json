@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "default_locale": "en",
-  "name": "TWP - Translate [BETA]",
-  "description": "THIS EXTENSION IS FOR BETA TESTING",
-  "version": "10.1.5.1",
+  "name": "TWP - Translate Web Pages",
+  "description": "__MSG_extensionDescription__",
+  "version": "10.2.0.0",
   "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
   "minimum_chrome_version": "88.0",
   "commands": {
@@ -119,12 +119,6 @@
       "run_at": "document_end",
       "all_frames": false,
       "js": ["/contentScript/popupMobile.js"]
-    },
-    {
-      "matches": ["https://www.deepl.com/*/translator*"],
-      "run_at": "document_end",
-      "all_frames": false,
-      "js": ["/contentScript/deepl.js"]
     }
   ],
   "background": {

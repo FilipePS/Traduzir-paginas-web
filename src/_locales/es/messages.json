@@ -24,7 +24,7 @@
     }
   },
   "lblTargetLanguage": {
-    "message": "Traducir a $TARGET_LANGUAGE_NUM$",
+    "message": "Idioma de destino $TARGET_LANGUAGE_NUM$",
     "placeholders": {
       "TARGET_LANGUAGE_NUM": {
         "content": "$1",

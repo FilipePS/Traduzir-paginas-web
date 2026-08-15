@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Google ياكى Yandex ئارقىلىق بېتىڭىزنى ھەقىقىي تەرجىمە قىلىڭ."
+    "message": "بېتىڭىزنى Google ياكى Yandex ئارقىلىق ھەقىقىي ۋاقىتتا تەرجىمە قىلىڭ."
   },
   "pageActionTitle": {
     "message": "بۇ بەتنى تەرجىمە قىلىڭ"
@@ -84,7 +84,7 @@
     "message": "تېخىمۇ كۆپ تاللاشلار"
   },
   "lblPlsDonate": {
-    "message": "ئىئانە قىلغۇچىغا ئىئانە بىلەن ياردەم قىلىڭ"
+    "message": "تەرەققىياتچىغا ئىئانە بىلەن ياردەم قىلىڭ"
   },
   "msgTranslateFor": {
     "message": "$LANGUAGE_NAME$تەرجىمە قىلىڭ",
@@ -150,7 +150,7 @@
     "message": "ئۇسلۇب"
   },
   "msgHotkeys": {
-    "message": "Hotkeys"
+    "message": "تېز كۇنۇپكىلار"
   },
   "lblMakeDonation": {
     "message": "ئىئانە قىلىڭ"
@@ -288,10 +288,10 @@
     "message": "كېڭەيتىلمىنى سۈكۈتتىكى تەڭشىكىگە ئەسلىگە كەلتۈرمەكچىمۇ؟"
   },
   "lblTtsSpeed": {
-    "message": "تېكىستتىن سۆزلەش ئاۋازى"
+    "message": "تېكىستنى ئاۋازغا ئايلاندۇرۇش سۈرئىتى"
   },
   "lblTtsVolume": {
-    "message": "تېكىستتىن سۆزلەش ئاۋازى"
+    "message": "تېكىستنى ئاۋازغا ئايلاندۇرۇش ئاۋاز مىقدارى"
   },
   "enterShortcut": {
     "message": "تېزلەتمە كىرگۈزۈڭ"
@@ -408,7 +408,7 @@
     "message": "كۆچۈرۈڭ"
   },
   "msgRecents": {
-    "message": "قوبۇل قىلىدۇ"
+    "message": "يېقىنقىلار"
   },
   "msgAll": {
     "message": "ھەممىسى"
@@ -499,7 +499,7 @@
     }
   },
   "donationText": {
-    "message": "I have been developing, updating and supporting this extension for over five years. It is amazing to see that we have over 600,000 daily users.\n\nI would be grateful if you could help me financially via Paypal or by becoming a member of my Patreon, your contribution helps me to continue bringing improvements to this extension.\n\nThank you to everyone who has already contributed to this project."
+    "message": "مەن بۇ كېڭەيتىلمىنى بەش يىلدىن ئارتۇق ۋاقىتتىن بۇيان تەرەققىي قىلدۇرۇپ، يېڭىلاپ ۋە قوللاپ كەلدىم. بىزنىڭ كۈنىگە 600 مىڭدىن ئارتۇق ئىشلەتكۈچىمىز بارلىقىنى كۆرۈش ھەيران قالارلىق ئىش.\n\nئەگەر سىز ماڭا Paypal ئارقىلىق ياكى Patreon غا ئەزا بولۇش ئارقىلىق ئىقتىسادىي جەھەتتىن ياردەم قىلسىڭىز، مەن مىننەتدار بولاتتىم، سىزنىڭ تۆھپىڭىز ماڭا بۇ كېڭەيتىلمىنى داۋاملىق ياخشىلاشقا ياردەم بېرىدۇ.\n\nبۇ تۈرگە تۆھپە قوشقان ھەممىگە رەھمەت."
   },
   "lblEnableDiskCache": {
     "message": "ئىزچىل تەرجىمە ساقلىغۇچنى قوزغىتىڭ (دىسكىدىكى غەملەك)"
@@ -550,7 +550,7 @@
     "message": "بەت تەرجىمە قىلىندى"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ سے $TO_LANGUAGE$",
+    "message": "$FROM_LANGUAGE$ دىن $TO_LANGUAGE$ غىچە",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",
@@ -569,7 +569,7 @@
     "message": "ئاپتوماتىك بايقاش"
   },
   "msgEnableIframePageTranslation": {
-    "message": "صفحہ کا ترجمہ $IFRAME_TAG$ میں فعال کریں۔",
+    "message": "$IFRAME_TAG$ دا بەت تەرجىمىسىنى قوزغىتىش",
     "placeholders": {
       "IFRAME_TAG": {
         "content": "<IFRAME>"

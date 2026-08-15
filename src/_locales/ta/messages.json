@@ -147,7 +147,7 @@
     "message": "மொழிபெயர்ப்புகள்"
   },
   "msgStyle": {
-    "message": "சூல் தண்டு"
+    "message": "பாணி"
   },
   "msgHotkeys": {
     "message": "ஆட்கீச்"
@@ -396,7 +396,7 @@
     }
   },
   "msgPDFtoHTML": {
-    "message": "PDF பெறுநர் உஉகுமொ"
+    "message": "PDF ஐ HTML ஆக மாற்றவும்"
   },
   "msgTranslatePDF": {
     "message": "PDF ஐ மொழிபெயர்க்கவும்"
@@ -550,7 +550,7 @@
     "message": "பக்கம் மொழிபெயர்க்கப்பட்டுள்ளது"
   },
   "msgTranslateFromTo": {
-    "message": "$FROM_LANGUAGE$ முதல் $TO_LANGUAGE$வரை",
+    "message": "$FROM_LANGUAGE$ இதிலிருந்து $TO_LANGUAGE$இதற்கு",
     "placeholders": {
       "FROM_LANGUAGE": {
         "content": "$1",

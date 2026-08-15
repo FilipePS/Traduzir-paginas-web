@@ -1097,9 +1097,9 @@ twpConfig
     $("#useAlternativeService").value = twpConfig.get("useAlternativeService");
 
     {
-      if (platformInfo.isMobile.any) {
-        $("#btnEnableDeepL").setAttribute("disabled", "");
-      }
+      // if (platformInfo.isMobile.any) {
+      //   $("#btnEnableDeepL").setAttribute("disabled", "");
+      // }
 
       const updateServiceSelector = (enabledServices) => {
         document
