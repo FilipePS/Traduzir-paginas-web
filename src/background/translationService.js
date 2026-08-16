@@ -273,6 +273,20 @@ const translationService = (function () {
     }
 
     /**
+     * Get the **srv** parameter.
+     * The **srv** parameter is different depending on the length of the **SID**.
+     * The **SID** is larger on mobile devices.
+     * @returns {string}
+     */
+    static get param_srv() {
+      if (YandexHelper.#translateSid && YandexHelper.#translateSid.length > 40) {
+        return "tr-touch-url";
+      } else {
+        return "tr-url-widget";
+      }
+    }
+
+    /**
      * Find the SID of Yandex Translator. The SID value is used in translation requests.
      * @returns {Promise<void>}
      */
@@ -595,13 +609,13 @@ const translationService = (function () {
             progressInfo.status = "complete";
             //this.translationsInProgress.delete([sourceLanguage, targetLanguage, requestString])
           } else {
-            currentRequest.push(progressInfo);
-            currentSize += progressInfo.originalText.length;
-            if (currentSize > 800) {
+            if (currentRequest.length > 0 && currentSize + progressInfo.originalText.length > 800) {
               requests.push(currentRequest);
               currentSize = 0;
               currentRequest = [];
             }
+            currentRequest.push(progressInfo);
+            currentSize += progressInfo.originalText.length;
           }
         }
       }
@@ -1022,7 +1036,7 @@ const translationService = (function () {
     constructor() {
       super(
         "yandex",
-        "https://translate.yandex.net/api/v1/tr.json/translate?srv=tr-url-widget",
+        "https://translate.yandex.net/api/v1/tr.json/translate?",
         "GET",
         function cbTransformRequest(sourceArray) {
           return sourceArray
@@ -1048,7 +1062,7 @@ const translationService = (function () {
           targetLanguage,
           requests,
         ) {
-          return `&id=${YandexHelper.translateSid}-0-0&format=html&lang=${
+          return `&srv=${YandexHelper.param_srv}&id=${YandexHelper.translateSid}-0-0&format=html&lang=${
             sourceLanguage === "auto" ? "" : sourceLanguage + "-"
           }${targetLanguage}${requests
             .map((info) => `&text=${encodeURIComponent(info.originalText)}`)

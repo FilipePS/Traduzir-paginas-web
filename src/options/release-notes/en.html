@@ -31,6 +31,7 @@
                 </b>
                 <select id="_currency" style="margin-left: 8px">
                     <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
                     <option value="BRL">BRL</option>
                 </select>
                 <div id="_donateInUSD">
@@ -55,7 +56,34 @@
                             </tr>
                         </table>
                         <input type="hidden" name="currency_code" value="USD" />
-                        <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal" />
+                        <input type="image" src="/icons/paypal-donate-button.png" border="0" name="submit" alt="PayPal" />
+                        <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
+                    </form>
+                </div>
+
+                <div id="_donateInEUR">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input type="hidden" name="hosted_button_id" value="QUGEPKVS7KZBW" />
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="hidden" name="on0" value="Donate With Paypal" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select name="os0">
+                                        <option value="Maximum">20,00 EUR</option>
+                                        <option value="Pizza">10,00 EUR</option>
+                                        <option value="Lunch" selected>5,00 EUR</option>
+                                        <option value="Coffe">3,00 EUR</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="currency_code" value="EUR" />
+                        <input type="image" src="/icons/paypal-donate-button.png" border="0" name="submit" alt="PayPal" />
                         <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
                     </form>
                 </div>
@@ -82,7 +110,7 @@
                             </tr>
                         </table>
                         <input type="hidden" name="currency_code" value="BRL" />
-                        <input type="image" src="/icons/btn_donate_LG.webp" border="0" name="submit" alt="PayPal" />
+                        <input type="image" src="/icons/paypal-donate-button.png" border="0" name="submit" alt="PayPal" />
                         <img alt="" border="0" src="/icons/pixel.gif" width="1" height="1" />
                     </form>
                 </div>
@@ -113,9 +141,7 @@
         <li>Fixed:
             <ul>
                 <li>Translation using <b>Bing</b>, <b>Yandex</b>, and <b>DeepL</b> not working</li>
-                <ul>
-                    <li>Note: <b>Yandex</b> does not yet work on Android</li>
-                </ul>
+                <li>Unable to import/reset settings in Chrome</li>
                 <li>Fixed incorrect extension user interface text
                     <ul>
                         <li><i>“Never translate this language”</i> in <i>Arabic, Finnish, Hebrew, and Hindi</i></li>

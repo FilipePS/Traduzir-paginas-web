@@ -36,17 +36,27 @@ setTimeout(() => {
       if (navigator.language === "pt-BR") {
         $("#_currency").value = "BRL";
         $("#_donateInUSD").style.display = "none";
+        $("#_donateInEUR").style.display = "none";
+        $("#_donateInBRL").style.display = "block";
       } else {
         $("#_currency").value = "USD";
+        $("#_donateInUSD").style.display = "block";
+        $("#_donateInEUR").style.display = "none";
         $("#_donateInBRL").style.display = "none";
       }
 
       $("#_currency").onchange = (e) => {
         if (e.target.value === "BRL") {
           $("#_donateInUSD").style.display = "none";
+          $("#_donateInEUR").style.display = "none";
           $("#_donateInBRL").style.display = "block";
+        } else if (e.target.value === "EUR") {
+          $("#_donateInUSD").style.display = "none";
+          $("#_donateInEUR").style.display = "block";
+          $("#_donateInBRL").style.display = "none";
         } else {
           $("#_donateInUSD").style.display = "block";
+          $("#_donateInEUR").style.display = "none";
           $("#_donateInBRL").style.display = "none";
         }
       };
@@ -1529,17 +1539,27 @@ twpConfig
     if (navigator.language === "pt-BR") {
       $("#currency").value = "BRL";
       $("#donateInUSD").style.display = "none";
+      $("#donateInEUR").style.display = "none";
+      $("#donateInBRL").style.display = "block";
     } else {
       $("#currency").value = "USD";
+      $("#donateInUSD").style.display = "block";
+      $("#donateInEUR").style.display = "none";
       $("#donateInBRL").style.display = "none";
     }
 
     $("#currency").onchange = (e) => {
       if (e.target.value === "BRL") {
         $("#donateInUSD").style.display = "none";
+        $("#donateInEUR").style.display = "none";
         $("#donateInBRL").style.display = "block";
+      } else if (e.target.value === "EUR") {
+        $("#donateInUSD").style.display = "none";
+        $("#donateInEUR").style.display = "block";
+        $("#donateInBRL").style.display = "none";
       } else {
         $("#donateInUSD").style.display = "block";
+        $("#donateInEUR").style.display = "none";
         $("#donateInBRL").style.display = "none";
       }
     };
