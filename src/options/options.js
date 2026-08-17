@@ -1136,6 +1136,7 @@ twpConfig
         { selector: "#btnEnableBing", svName: "bing" },
         { selector: "#btnEnableYandex", svName: "yandex" },
         { selector: "#btnEnableDeepL", svName: "deepl" },
+        { selector: "#btnEnableOpenAI", svName: "openai" },
       ];
 
       servicesInfo.forEach((svInfo) => {
@@ -1196,10 +1197,14 @@ twpConfig
           );
           updateServiceSelector(enabledServices);
         };
-        $(svInfo.selector).checked =
-          twpConfig.get("enabledServices").indexOf(svInfo.svName) === -1
-            ? false
-            : true;
+        if (svInfo.svName === "openai") {
+          $(svInfo.selector).checked = false;
+        } else {
+          $(svInfo.selector).checked =
+            twpConfig.get("enabledServices").indexOf(svInfo.svName) === -1
+              ? false
+              : true;
+        }
 
         updateServiceSelector(twpConfig.get("enabledServices"));
       });
@@ -1472,6 +1477,31 @@ twpConfig
       });
     }
 
+    $("#saveOpenAI").onclick = () => {
+      const openai = {
+        name: "openai",
+        url:
+          $("#openaiUrl").value.trim() ||
+          "https://api.openai.com/v1/chat/completions",
+        model: $("#openaiModel").value.trim() || "gpt-4o-mini",
+        apiKey: $("#openaiKEY").value.trim(),
+      };
+      try {
+        new URL(openai.url);
+        if (!openai.apiKey) {
+          throw new Error("API Key is required");
+        }
+        twpConfig.set("openaiApiUrl", openai.url);
+        twpConfig.set("openaiModel", openai.model);
+        twpConfig.set("openaiApiKey", openai.apiKey);
+
+        $("#openaiApiResponse").textContent =
+          "OpenAI service added successfully.";
+      } catch (e) {
+        alert(e);
+      }
+    };
+
     $("#showMobilePopupOnDesktop").onchange = (e) => {
       twpConfig.set("showMobilePopupOnDesktop", e.target.value);
     };
@@ -1527,7 +1557,7 @@ twpConfig
 
       $("#googleTranslateProxyServer").value = "";
       $("#googleTtsProxyServer").value = "";
-    }
+    };
 
     const googleProxy = twpConfig.get("proxyServers").google;
     if (googleProxy) {
