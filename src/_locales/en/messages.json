@@ -576,6 +576,9 @@
       }
     }
   },
+  "lblTranslatePageTitle": {
+    "message": "Translate page title"
+  },
   "btnTranslateRestoreThisFrame": {
     "message": "Translate/Restore this frame"
   },

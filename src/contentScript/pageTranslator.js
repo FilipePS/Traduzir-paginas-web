@@ -1159,7 +1159,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     );
     currentPageLanguage = currentTargetLanguage;
 
-    translatePageTitle();
+    if (twpConfig.get("translatePageTitle") !== "no") {
+      translatePageTitle();
+    }
 
     enableMutatinObserver();
 
