@@ -34,7 +34,26 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   let showTranslatedTextWhenHoveringThisLang = false;
   let translateTextOverMouseWhenPressTwice =
     twpConfig.get("translateTextOverMouseWhenPressTwice") === "yes";
+  let tabHoverOverride = null;
   let fooCount = 0;
+
+  function isHoverTranslationEnabled() {
+    if (tabHoverOverride !== null) {
+      return tabHoverOverride;
+    }
+    return showTranslatedTextWhenHoveringThisSite || showTranslatedTextWhenHoveringThisLang;
+  }
+
+  chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.action === "ToggleHoverCurrentTab") {
+      if (tabHoverOverride === null) {
+        tabHoverOverride = !isHoverTranslationEnabled();
+      } else {
+        tabHoverOverride = !tabHoverOverride;
+      }
+      updateEventListener();
+    }
+  });
 
   twpConfig.onChanged(function (name, newValue) {
     switch (name) {
@@ -143,12 +162,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     if (e.target === currentNodeOverMouse) return;
     currentNodeOverMouse = e.target;
 
-    if (
-      !(
-        !showTranslatedTextWhenHoveringThisSite &&
-        !showTranslatedTextWhenHoveringThisLang
-      )
-    ) {
+    if (isHoverTranslationEnabled()) {
       destroy();
       if (e.buttons === 0) {
         timeoutHandler = setTimeout(translateThisNode, 1250, e.target);
@@ -741,8 +755,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       platformInfo.isMobile.any ||
       pageLanguageState == "translated" ||
       !(
-        showTranslatedTextWhenHoveringThisSite ||
-        showTranslatedTextWhenHoveringThisLang ||
+        isHoverTranslationEnabled() ||
         translateTextOverMouseWhenPressTwice
       )
     ) {
