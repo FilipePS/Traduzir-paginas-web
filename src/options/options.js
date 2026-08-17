@@ -1101,7 +1101,7 @@ twpConfig
     }
 
     // privacy options
-    $("#useAlternativeService").oninput = (e) => {
+    $("#useAlternativeService").onchange = (e) => {
       twpConfig.set("useAlternativeService", e.target.value);
     };
     $("#useAlternativeService").value = twpConfig.get("useAlternativeService");
@@ -1139,7 +1139,7 @@ twpConfig
       ];
 
       servicesInfo.forEach((svInfo) => {
-        $(svInfo.selector).oninput = (e) => {
+        $(svInfo.selector).onchange = (e) => {
           const enabledServices = [];
           let enabledCount = 0;
           servicesInfo.forEach((_svInfo) => {
@@ -1218,7 +1218,7 @@ twpConfig
       }
     };
 
-    $("#enableDiskCache").oninput = (e) => {
+    $("#enableDiskCache").onchange = (e) => {
       twpConfig.set("enableDiskCache", $("#enableDiskCache").value);
     };
     $("#enableDiskCache").value = twpConfig.get("enableDiskCache");
