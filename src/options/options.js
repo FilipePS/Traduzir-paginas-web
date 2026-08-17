@@ -1147,10 +1147,7 @@ twpConfig
               enabledCount++;
             }
           });
-          if (
-            enabledCount === 0 ||
-            (enabledCount === 1 && $("#btnEnableDeepL").checked)
-          ) {
+          if (enabledCount === 0) {
             if (e.target === $("#btnEnableGoogle")) {
               $("#btnEnableBing").checked = true;
             } else {
