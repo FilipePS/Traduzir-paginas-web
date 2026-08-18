@@ -152,6 +152,7 @@ twpConfig
     const sBing = document.getElementById("sBing");
     const sDeepL = document.getElementById("sDeepL");
     const sLibre = document.getElementById("sLibre");
+    const sFirefoxTranslations = document.getElementById("sFirefoxTranslations");
     const eCopy = document.getElementById("copy");
     const eListenOriginal = document.getElementById("listenOriginal");
     const eListenTranslated = document.getElementById("listenTranslated");
@@ -248,6 +249,20 @@ twpConfig
       sLibre.classList.remove("selected");
 
       sLibre.classList.add("selected");
+    };
+    sFirefoxTranslations.onclick = () => {
+      currentTextTranslatorService = "firefoxTranslations";
+      twpConfig.set("textTranslatorService", "firefoxTranslations");
+      translateText();
+
+      sGoogle.classList.remove("selected");
+      sYandex.classList.remove("selected");
+      sBing.classList.remove("selected");
+      sDeepL.classList.remove("selected");
+      sLibre.classList.remove("selected");
+      sFirefoxTranslations.classList.remove("selected");
+
+      sFirefoxTranslations.classList.add("selected");
     };
 
     const setTargetLanguage = document.getElementById("setTargetLanguage");
@@ -350,6 +365,10 @@ twpConfig
         break;
       case "libre":
         sLibre.classList.add("selected");
+        break;
+      case "firefoxTranslations":
+        sFirefoxTranslations.classList.add("selected");
+        break;
       default:
         sGoogle.classList.add("selected");
         break;
@@ -375,6 +394,11 @@ twpConfig
       sDeepL.removeAttribute("hidden");
     } else {
       sDeepL.setAttribute("hidden", "");
+    }
+    if (enabledServices.includes("firefoxTranslations")) {
+      sFirefoxTranslations.removeAttribute("hidden");
+    } else {
+      sFirefoxTranslations.setAttribute("hidden", "");
     }
     if (twpConfig.get("customServices").find((cs) => cs.name === "libre")) {
       sLibre.removeAttribute("hidden");
@@ -405,6 +429,11 @@ twpConfig
             sDeepL.removeAttribute("hidden");
           } else {
             sDeepL.setAttribute("hidden", "");
+          }
+          if (enabledServices.includes("firefoxTranslations")) {
+            sFirefoxTranslations.removeAttribute("hidden");
+          } else {
+            sFirefoxTranslations.setAttribute("hidden", "");
           }
           break;
         }

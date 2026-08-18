@@ -10,10 +10,10 @@ const twpConfig = (function () {
    */
   const defaultConfig = {
     uiLanguage: "default",
-    pageTranslatorService: "google", // google yandex bing
-    textTranslatorService: "google", // google yandex bing deepl
+    pageTranslatorService: "google", // google yandex bing firefoxTranslations
+    textTranslatorService: "google", // google yandex bing deepl firefoxTranslations
     textToSpeechService: "google", // google bing
-    enabledServices: ["google", "bing", "yandex", "deepl"],
+    enabledServices: ["google", "bing", "yandex", "deepl", "firefoxTranslations"],
     ttsSpeed: 1.0,
     ttsVolume: 1.0,
     targetLanguage: null,
@@ -547,7 +547,7 @@ const twpConfig = (function () {
    * @returns {string} newServiceName
    */
   twpConfig.swapPageTranslationService = function () {
-    const pageTranslationServices = ["google", "bing", "yandex"];
+    const pageTranslationServices = ["google", "bing", "yandex", "firefoxTranslations"];
     const pageEnabledServices = twpConfig
       .get("enabledServices")
       .filter((svName) => pageTranslationServices.includes(svName));

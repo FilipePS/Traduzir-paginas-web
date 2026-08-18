@@ -80,6 +80,7 @@
     "/icons/bing-translate-32.png",
     "/icons/yandex-translate-32.png",
     "/icons/swap-32.png",
+    "/icons/firefox-translations-32.png",
     "/contentScript/css/*",
     "/contentScript/html/*",
     "/_locales/*",

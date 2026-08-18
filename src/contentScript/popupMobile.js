@@ -34,6 +34,9 @@ void (async function () {
   const bingIcon = await fetch(
     chrome.runtime.getURL("/icons/bing-translate-32.png")
   ).then((response) => response.blob());
+  const firefoxTranslationsIcon = await fetch(
+    chrome.runtime.getURL("/icons/firefox-translations-32.png")
+  ).then((response) => response.blob());
 
   // Load i18n messages based on your language preference
   await twpI18n.updateUiMessages();
@@ -231,6 +234,8 @@ void (async function () {
       serviceIconElement.src = URL.createObjectURL(yandexIcon);
     } else if (service === "bing") {
       serviceIconElement.src = URL.createObjectURL(bingIcon);
+    } else if (service === "firefoxTranslations") {
+      serviceIconElement.src = URL.createObjectURL(firefoxTranslationsIcon);
     }
     serviceIconElement.onload = () => {
       serviceIconElement.onload = null;

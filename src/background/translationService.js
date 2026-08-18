@@ -765,6 +765,250 @@ const translationService = (function () {
     }
   }
 
+  class FirefoxTranslationsService extends Service {
+    constructor() {
+      super(
+        "firefoxTranslations",
+        null,
+        "GET",
+        // Each element of `sourceArray` is one text to translate. The elements
+        // are joined with a control character so they can be split back after
+        // translation. This string is also used as the translation cache key.
+        (sourceArray) =>
+          sourceArray.join(FirefoxTranslationsService.TEXT_SEPARATOR),
+        // `response` is already an array of {text, detectedLanguage} (one item
+        // per sourceArray). See `makeRequest`.
+        (response) => response,
+        // Splits the translated text back into one text per sourceArray element.
+        (result) =>
+          String(result).split(FirefoxTranslationsService.TEXT_SEPARATOR),
+      );
+
+      /** @type {Worker|null} */
+      this.worker = null;
+      /** @type {Promise<Worker>|null} */
+      this.workerPromise = null;
+      /** @type {Map<number, {resolve: Function, reject: Function}>} */
+      this.pendingTranslations = new Map();
+      this.translationId = 0;
+    }
+
+    /**
+     * Separator used to join and split the texts of each sourceArray.
+     * @type {string}
+     */
+    static get TEXT_SEPARATOR() {
+      return "\u0001";
+    }
+
+    /**
+     * Converts a TWP language code to the language tag used by the Firefox
+     * Translations models.
+     * @param {string} lang
+     * @returns {string}
+     */
+    static toFirefoxLangCode(lang) {
+      return (
+        {
+          "zh-CN": "zh-Hans",
+          "zh-TW": "zh-Hant",
+          "pt-BR": "pt",
+          "pt-PT": "pt",
+          no: "nb",
+        }[lang] || lang
+      );
+    }
+
+    /**
+     * Detects the language of `text` using the WebExtensions `i18n` API
+     * (same API the content scripts use). Returns a TWP language code, or
+     * null when detection is unavailable or fails.
+     * @param {string} text
+     * @returns {Promise<string|null>}
+     */
+    static detectSourceLanguage(text) {
+      return new Promise((resolve) => {
+        if (
+          typeof chrome === "undefined" ||
+          !chrome.i18n ||
+          !chrome.i18n.detectLanguage
+        ) {
+          return resolve(null);
+        }
+        chrome.i18n.detectLanguage(String(text).slice(0, 1000), (result) => {
+          if (result && result.languages && result.languages.length > 0) {
+            resolve(
+              twpLang.fixTLanguageCode(result.languages[0].language) || null,
+            );
+          } else {
+            resolve(null);
+          }
+        });
+      });
+    }
+
+    /**
+     * Whether the engine has models for the `from`/`to` pair (directly or via
+     * the English pivot). Only languages listed in the supported set are
+     * usable by the local engine.
+     * @param {string} from
+     * @param {string} to
+     * @returns {boolean}
+     */
+    static isSupportedPair(from, to) {
+      const supported = twpLang.SupportedLanguages.firefoxTranslations.map(
+        (lang) => FirefoxTranslationsService.toFirefoxLangCode(lang),
+      );
+      return supported.indexOf(from) !== -1 && supported.indexOf(to) !== -1;
+    }
+
+    /**
+     * Returns the worker, creating it on first use.
+     * @returns {Promise<Worker>}
+     */
+    getWorker() {
+      if (this.worker) {
+        return Promise.resolve(this.worker);
+      }
+      if (this.workerPromise) {
+        return this.workerPromise;
+      }
+
+      this.workerPromise = new Promise((resolve, reject) => {
+        try {
+          const worker = new Worker(
+            chrome.runtime.getURL(
+              "/background/firefoxTranslationsWorker.js",
+            ),
+          );
+
+          worker.onmessage = (event) => {
+            const message = event.data;
+            if (!message) {
+              return;
+            }
+            if (message.type === "translated") {
+              const pending = this.pendingTranslations.get(message.id);
+              if (pending) {
+                this.pendingTranslations.delete(message.id);
+                pending.resolve(message.translations);
+              }
+            } else if (message.type === "error") {
+              const pending = this.pendingTranslations.get(message.id);
+              if (pending) {
+                this.pendingTranslations.delete(message.id);
+                pending.reject(new Error(message.message));
+              }
+            }
+          };
+
+          worker.onerror = (event) => {
+            this.pendingTranslations.forEach((pending) => {
+              pending.reject(
+                new Error(`Firefox Translations worker error: ${event.message}`),
+              );
+            });
+            this.pendingTranslations.clear();
+            // The worker crashed; drop it so the next request creates a new one.
+            this.worker = null;
+            this.workerPromise = null;
+          };
+
+          worker.postMessage({
+            type: "init",
+            glueScriptUrl: chrome.runtime.getURL(
+              "/background/firefoxTranslations/bergamot-translator.js",
+            ),
+          });
+
+          this.worker = worker;
+          resolve(worker);
+        } catch (error) {
+          reject(error);
+        }
+      });
+
+      this.workerPromise.finally(() => {
+        this.workerPromise = null;
+      });
+
+      return this.workerPromise;
+    }
+
+    /**
+     * Sends a batch of texts to the worker and waits for the translations.
+     * @param {string} from
+     * @param {string} to
+     * @param {string[]} texts
+     * @returns {Promise<string[]>}
+     */
+    requestTranslation(from, to, texts) {
+      return this.getWorker().then((worker) => {
+        return new Promise((resolve, reject) => {
+          const id = this.translationId++;
+          this.pendingTranslations.set(id, { resolve, reject });
+          worker.postMessage({ type: "translate", id, from, to, texts });
+        });
+      });
+    }
+
+    /**
+     * Sends a batch of `requests` (each request is one `sourceArray`, with the
+     * elements joined by the text separator) to the worker and returns an
+     * array with one `{text, detectedLanguage}` per request.
+     * @param {string} sourceLanguage
+     * @param {string} targetLanguage
+     * @param {Array<TranslationInfo>} requests
+     * @returns {Promise<Array<{text: string, detectedLanguage: string}>>}
+     */
+    async makeRequest(sourceLanguage, targetLanguage, requests) {
+      const elementsByRequest = requests.map((request) =>
+        String(request.originalText).split(
+          FirefoxTranslationsService.TEXT_SEPARATOR,
+        ),
+      );
+      const allTexts = elementsByRequest.reduce(
+        (acc, elements) => acc.concat(elements),
+        [],
+      );
+
+      // TWP sends "auto" as the source language for page and text
+      // translation. The local engine has no model named "auto", so the
+      // source language is detected from the text first.
+      let from = FirefoxTranslationsService.toFirefoxLangCode(sourceLanguage);
+      if (from === "auto" || from === "und" || from === "") {
+        const detected = await FirefoxTranslationsService.detectSourceLanguage(
+          allTexts.join(" "),
+        );
+        if (detected) {
+          from = FirefoxTranslationsService.toFirefoxLangCode(detected);
+        }
+      }
+      const to = FirefoxTranslationsService.toFirefoxLangCode(targetLanguage);
+
+      // When the engine has no models for the pair (e.g. the detected source
+      // or the requested target is not supported), return the original text
+      // unchanged instead of failing with an error.
+      if (!FirefoxTranslationsService.isSupportedPair(from, to)) {
+        return elementsByRequest.map((elements) => ({
+          text: elements.join(FirefoxTranslationsService.TEXT_SEPARATOR),
+          detectedLanguage: sourceLanguage,
+        }));
+      }
+
+      const translations = await this.requestTranslation(from, to, allTexts);
+
+      // Split the results back, one joined string per request.
+      let index = 0;
+      return elementsByRequest.map((elements) => {
+        const joined = elements
+          .map(() => translations[index++] || "")
+          .join(FirefoxTranslationsService.TEXT_SEPARATOR);
+        return { text: joined, detectedLanguage: sourceLanguage };
+      });
+    }
+  }
+
   const googleService = new (class extends Service {
     constructor() {
       super(
@@ -1555,6 +1799,7 @@ const translationService = (function () {
     "deepl",
     /** @type {Service} */ /** @type {?} */ (deeplService),
   );
+  serviceList.set("firefoxTranslations", new FirefoxTranslationsService());
 
   /**
    * Get translation service from your name

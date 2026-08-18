@@ -252,6 +252,11 @@ twpConfig
         $("#btnOptions option[value='translateInExternalSite']").textContent =
           twpI18n.getMessage("btnOpenOnGoogleTranslate");
         $("#iconTranslate").setAttribute("src", "/icons/bing-translate-32.png");
+      } else if (currentPageTranslatorService == "firefoxTranslations") {
+        $("#iconTranslate").setAttribute(
+          "src",
+          "/icons/firefox-translations-32.png"
+        );
       } else {
         // google
         $("#btnOptions option[value='translateInExternalSite']").textContent =
