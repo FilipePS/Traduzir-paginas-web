@@ -11703,6 +11703,59 @@ const twpLang = (function () {
   const twpLang = {};
 
   twpLang.SupportedLanguages = {
+    firefoxTranslations: [
+      "ar",
+      "az",
+      "bg",
+      "bn",
+      "bs",
+      "ca",
+      "cs",
+      "da",
+      "de",
+      "el",
+      "en",
+      "es",
+      "et",
+      "eu",
+      "fa",
+      "fi",
+      "fr",
+      "gl",
+      "gu",
+      "he",
+      "hi",
+      "hr",
+      "hu",
+      "id",
+      "is",
+      "it",
+      "ja",
+      "kn",
+      "ko",
+      "lt",
+      "lv",
+      "ml",
+      "ms",
+      "nb",
+      "nl",
+      "pl",
+      "pt",
+      "ro",
+      "ru",
+      "sk",
+      "sl",
+      "sr",
+      "sv",
+      "ta",
+      "te",
+      "th",
+      "tr",
+      "uk",
+      "vi",
+      "zh-CN",
+      "zh-TW",
+    ],
     google: [
       "ab",
       "ace",
@@ -12362,7 +12415,7 @@ const twpLang = (function () {
 
   /** @type {Map<string, string>} */
   const alternatives = new Map();
-  const pageTranslationServices = ["google", "bing", "yandex"];
+  const pageTranslationServices = ["google", "bing", "yandex", "firefoxTranslations"];
   /**
    * gets an alternate translation service if the selected translation service does not support the current target language.
    * @param {string} lang
