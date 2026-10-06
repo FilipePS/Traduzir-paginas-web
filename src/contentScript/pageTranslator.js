@@ -325,6 +325,12 @@ function getTabHostName() {
 
 Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   const tabHostName = _[1];
+  const isTwitter = [
+    "twitter.com",
+    "www.twitter.com",
+    "x.com",
+    "www.x.com",
+  ].includes(location.hostname);
   // "sup" não será traduzido https://github.com/FilipePS/Traduzir-paginas-web/issues/647
   /* prettier-ignore */
   const htmlTagsInlineText = ["#text", "a", "abbr", "acronym", "b", "bdo", "big", "cite", "dfn", "em", "i", "label", "q", "s", "small", "span", "strong", "sub", /*"sup",*/ "u", "tt", "var"];
@@ -412,6 +418,32 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       newNodes.forEach((nn) => {
         if (removedNodes.indexOf(nn) != -1) return;
 
+        if (
+          isTwitter &&
+          nn.nodeType === 1 &&
+          nn.matches('[data-testid="tweetText"]')
+        ) {
+          // Restore unchanged fragments before translating the expanded post.
+          nodesToRestore = nodesToRestore.filter((ntr) => {
+            if (!nn.contains(ntr.node)) return true;
+            if (ntr.node.textContent === ntr.translatedText) {
+              if (ntr.node === ntr.original) {
+                ntr.node.textContent = ntr.originalText;
+              } else {
+                ntr.node.replaceWith(ntr.original);
+              }
+            } else if (
+              ntr.node !== ntr.original &&
+              ntr.node.childNodes.length === 1 &&
+              ntr.node.firstChild.nodeType === 3
+            ) {
+              ntr.original.textContent = ntr.node.textContent;
+              ntr.node.replaceWith(ntr.original);
+            }
+            return false;
+          });
+        }
+
         let newPiecesToTranslate = getPiecesToTranslate(nn);
 
         for (const i in newPiecesToTranslate) {
@@ -432,21 +464,56 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     } catch (e) {
       console.error(e);
     } finally {
+      mutationObserver.takeRecords();
       newNodes = [];
       removedNodes = [];
     }
   }
 
   const mutationObserver = new MutationObserver(function (mutations) {
-    const piecesToTranslate = [];
+    const addedPieces = [];
 
     mutations.forEach((mutation) => {
+      const target = mutation.target.nodeType === 1
+        ? mutation.target
+        : mutation.target.parentElement;
+      const tweetText = isTwitter && target &&
+        target.closest('[data-testid="tweetText"]');
+      if (tweetText) {
+        // Ignore changes made by translation and original-text wrappers.
+        if (nodesToRestore.some((ntr) =>
+          ntr.node.contains(mutation.target) &&
+          ntr.node.textContent === ntr.translatedText
+        )) {
+          return;
+        }
+        if (
+          mutation.type === "childList" &&
+          [...mutation.addedNodes].every((node) =>
+            nodesToRestore.some((ntr) => ntr.node === node)
+          ) &&
+          [...mutation.removedNodes].every((node) =>
+            nodesToRestore.some((ntr) => ntr.original === node)
+          )
+        ) {
+          return;
+        }
+
+        piecesToTranslate = piecesToTranslate.filter((piece) =>
+          !piece.nodes.some((node) =>
+            tweetText.contains(node) ||
+            [...mutation.removedNodes].some((removed) => removed.contains(node))
+          )
+        );
+        if (!newNodes.includes(tweetText)) newNodes.push(tweetText);
+        return;
+      }
       mutation.addedNodes.forEach((addedNode) => {
         const nodeName = addedNode.nodeName.toLowerCase();
         if (!isNoTranslateNode(addedNode)) {
           if (htmlTagsInlineText.indexOf(nodeName) == -1) {
             if (htmlTagsInlineIgnore.indexOf(nodeName) == -1) {
-              piecesToTranslate.push(addedNode);
+              addedPieces.push(addedNode);
             }
           }
         }
@@ -457,7 +524,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       });
     });
 
-    piecesToTranslate.forEach((ptt) => {
+    addedPieces.forEach((ptt) => {
       if (newNodes.indexOf(ptt) == -1) {
         newNodes.push(ptt);
       }
@@ -472,6 +539,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       mutationObserver.observe(document.body, {
         childList: true,
         subtree: true,
+        characterData: isTwitter,
       });
     }
   }
@@ -864,6 +932,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   function translateResults(piecesToTranslateNow, results) {
     if (dontSortResults) {
       for (let i = 0; i < results.length; i++) {
+        if (!piecesToTranslate.includes(piecesToTranslateNow[i])) continue;
         for (let j = 0; j < results[i].length; j++) {
           if (piecesToTranslateNow[i].nodes[j]) {
             const nodes = piecesToTranslateNow[i].nodes;
@@ -904,6 +973,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               currentSourceLanguage,
               currentTargetLanguage
             ).then((results) => {
+              if (!piecesToTranslate.includes(piecesToTranslateNow[i])) return;
               // results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
               //   originalText.match(/\s*$/)[0]
               // }`;
@@ -914,6 +984,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
       }
     } else {
       for (const i in piecesToTranslateNow) {
+        if (!piecesToTranslate.includes(piecesToTranslateNow[i])) continue;
         for (const j in piecesToTranslateNow[i].nodes) {
           if (results[i][j]) {
             const nodes = piecesToTranslateNow[i].nodes;
@@ -944,6 +1015,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               currentSourceLanguage,
               currentTargetLanguage
             ).then((results) => {
+              if (!piecesToTranslate.includes(piecesToTranslateNow[i])) return;
               // results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
               //   originalText.match(/\s*$/)[0]
               // }`;
