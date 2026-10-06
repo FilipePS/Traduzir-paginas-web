@@ -428,6 +428,12 @@
   "optionsAddToCustomDictionary": {
     "message": "Добавить в пользовательский словарь (пропускать указанные слова при переводе страниц)"
   },
+  "customDictionaryKeyword": {
+    "message": "Слово или фраза без перевода"
+  },
+  "customDictionaryReplacement": {
+    "message": "Замена (необязательно)"
+  },
   "msgSelectTargetLanguage": {
     "message": "Перевести веб-сайты на выбранный язык"
   },

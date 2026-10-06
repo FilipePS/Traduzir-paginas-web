@@ -271,12 +271,18 @@
               </p>
             </div>
             <div class="w3-display-right">
-              <button id="addToCustomDictionary" class="w3-button w3-blue w3-round w3-margin-right add"
+              <button id="addToCustomDictionary" type="submit" form="customDictionaryForm" class="w3-button w3-blue w3-round w3-margin-right add"
                 data-i18n="lblAdd">
                 Add
               </button>
             </div>
           </div>
+          <form id="customDictionaryForm" class="w3-margin">
+            <label for="customDictionaryKeyword" data-i18n="customDictionaryKeyword">Word or phrase to keep untranslated</label>
+            <input id="customDictionaryKeyword" class="w3-input w3-border w3-round" type="text" required />
+            <label for="customDictionaryReplacement" data-i18n="customDictionaryReplacement">Replacement (optional)</label>
+            <input id="customDictionaryReplacement" class="w3-input w3-border w3-round" type="text" />
+          </form>
           <ul id="customDictionary" class="w3-ul w3-card-4 w3-margin w3-round list"></ul>
         </div>
       </div>

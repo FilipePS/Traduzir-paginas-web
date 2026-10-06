@@ -49,7 +49,6 @@ function filterKeywordsInText(
         if (index === -1) {
           break;
         } else {
-          textContext = removeExtraDelimiter(textContext);
           let previousIndex = index - 1;
           let nextIndex = index + keyWord.length;
           let previousChar =
@@ -125,10 +124,16 @@ async function handleCustomWords(
   try {
     if (customDictionary.size > 0 && currentPageTranslatorService !== "bing") {
       // If the translation is a single word and exists in the dictionary, return it directly
-      let customValue = customDictionary.get(originalText.trim());
-      if (customValue) return customValue;
+      const key = originalText.trim().toLowerCase();
+      if (customDictionary.has(key)) {
+        const value = customDictionary.get(key);
+        return (
+          originalText.match(/^\s*/)[0] +
+          (value === "" ? originalText.trim() : value) +
+          originalText.match(/\s*$/)[0]
+        );
+      }
 
-      translated = removeExtraDelimiter(translated);
       translated = translated.replaceAll(startMark0, startMark);
       translated = translated.replaceAll(endMark0, endMark);
 
@@ -230,15 +235,6 @@ function sortDictionary(customDictionary) {
       (a, b) => String(b[0]).length - String(a[0]).length
     )
   );
-}
-
-/**
- * Remove useless newlines, spaces inside, which may affect our semantics
- * */
-function removeExtraDelimiter(textContext) {
-  textContext = textContext.replaceAll("\n", " ");
-  textContext = textContext.replace(/  +/g, " ");
-  return textContext;
 }
 
 function backgroundTranslateHTML(

@@ -428,6 +428,12 @@
   "optionsAddToCustomDictionary": {
     "message": "Add to custom dictionary (This allows you to skip certain words during web page translation)"
   },
+  "customDictionaryKeyword": {
+    "message": "Word or phrase to keep untranslated"
+  },
+  "customDictionaryReplacement": {
+    "message": "Replacement (optional)"
+  },
   "msgSelectTargetLanguage": {
     "message": "Translate websites into this target language"
   },

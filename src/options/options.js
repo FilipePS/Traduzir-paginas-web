@@ -577,30 +577,29 @@ twpConfig
       return li;
     }
 
-    let customDictionary = twpConfig.get("customDictionary");
-    customDictionary = new Map(
-      [...customDictionary.entries()].sort((a, b) =>
-        String(a[0]).localeCompare(String(b[0]))
-      )
-    );
-    customDictionary.forEach(function (customValue, keyWord) {
-      const li = createcustomDictionary(keyWord, customValue);
-      $("#customDictionary").appendChild(li);
+    function refreshCustomDictionary() {
+      $("#customDictionary").textContent = "";
+      const entries = [...twpConfig.get("customDictionary").entries()].sort(
+        (a, b) => String(a[0]).localeCompare(String(b[0]))
+      );
+      for (const [keyWord, customValue] of entries) {
+        $("#customDictionary").appendChild(
+          createcustomDictionary(keyWord, customValue)
+        );
+      }
+    }
+    refreshCustomDictionary();
+    twpConfig.onChanged((name) => {
+      if (name === "customDictionary") refreshCustomDictionary();
     });
 
-    $("#addToCustomDictionary").onclick = (e) => {
-      let keyWord = prompt("Enter the keyWord, Minimum two letters ", "");
-      if (!keyWord || keyWord.length < 2) return;
-      keyWord = keyWord.trim().toLowerCase();
-      let customValue = prompt(
-        "(Optional)\nYou can enter a value to replace it , or fill in nothing.",
-        ""
-      );
-      if (!customValue) customValue = "";
-      customValue = customValue.trim();
-      const li = createcustomDictionary(keyWord, customValue);
-      $("#customDictionary").appendChild(li);
+    $("#customDictionaryForm").onsubmit = (e) => {
+      e.preventDefault();
+      const keyWord = $("#customDictionaryKeyword").value.trim().toLowerCase();
+      if (!keyWord) return;
+      const customValue = $("#customDictionaryReplacement").value.trim();
       twpConfig.addKeyWordTocustomDictionary(keyWord, customValue);
+      $("#customDictionaryForm").reset();
     };
 
     // sitesToTranslateWhenHovering
