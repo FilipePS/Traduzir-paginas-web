@@ -125,6 +125,12 @@
   "msgTranslateSelectedText": {
     "message": "Перевести выделенный текст"
   },
+  "contextMenuExcludeSelection": {
+    "message": "Добавить выделенное в исключения перевода"
+  },
+  "contextMenuRemoveSelectionExclusion": {
+    "message": "Убрать выделенное из исключений перевода"
+  },
   "lblShowTranslateSelectedContextMenu": {
     "message": "Показывать опцию перевода выделенного текста в контекстном меню"
   },

@@ -125,6 +125,12 @@
   "msgTranslateSelectedText": {
     "message": "Translate selected text"
   },
+  "contextMenuExcludeSelection": {
+    "message": "Add selection to translation exclusions"
+  },
+  "contextMenuRemoveSelectionExclusion": {
+    "message": "Remove selection from translation exclusions"
+  },
   "lblShowTranslateSelectedContextMenu": {
     "message": "Show the option to translate the selected text in the context menu"
   },

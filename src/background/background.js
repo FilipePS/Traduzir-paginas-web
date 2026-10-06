@@ -120,6 +120,24 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 function updateTranslateSelectedContextMenu() {
   if (typeof chrome.contextMenus !== "undefined") {
     chrome.contextMenus.remove("translate-selected-text", checkedLastError);
+    chrome.contextMenus.remove(
+      "add-selection-to-custom-dictionary",
+      checkedLastError
+    );
+    chrome.contextMenus.create({
+      id: "add-selection-to-custom-dictionary",
+      title: twpI18n.getMessage("contextMenuExcludeSelection"),
+      contexts: ["selection"],
+    });
+    chrome.contextMenus.remove(
+      "remove-selection-from-custom-dictionary",
+      checkedLastError
+    );
+    chrome.contextMenus.create({
+      id: "remove-selection-from-custom-dictionary",
+      title: twpI18n.getMessage("contextMenuRemoveSelectionExclusion"),
+      contexts: ["selection"],
+    });
     if (twpConfig.get("showTranslateSelectedContextMenu") === "yes") {
       chrome.contextMenus.create({
         id: "translate-selected-text",
@@ -423,6 +441,20 @@ if (typeof chrome.contextMenus !== "undefined") {
           checkedLastError
         );
       });
+    } else if (info.menuItemId == "add-selection-to-custom-dictionary") {
+      const key = (info.selectionText || "").trim().toLowerCase();
+      if (key) {
+        twpConfig.onReady(() => {
+          twpConfig.addKeyWordTocustomDictionary(key, "");
+        });
+      }
+    } else if (info.menuItemId == "remove-selection-from-custom-dictionary") {
+      const key = (info.selectionText || "").trim().toLowerCase();
+      if (key) {
+        twpConfig.onReady(() => {
+          twpConfig.removeKeyWordFromcustomDictionary(key);
+        });
+      }
     } else if (info.menuItemId == "translate-selected-text") {
       if (
         chrome.pageAction &&
