@@ -325,6 +325,12 @@ function getTabHostName() {
 
 Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   const tabHostName = _[1];
+  const isTwitter = [
+    "twitter.com",
+    "www.twitter.com",
+    "x.com",
+    "www.x.com",
+  ].includes(location.hostname);
   // "sup" não será traduzido https://github.com/FilipePS/Traduzir-paginas-web/issues/647
   /* prettier-ignore */
   const htmlTagsInlineText = ["#text", "a", "abbr", "acronym", "b", "bdo", "big", "cite", "dfn", "em", "i", "label", "q", "s", "small", "span", "strong", "sub", /*"sup",*/ "u", "tt", "var"];
@@ -586,7 +592,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             node.classList.contains("material-symbols-outlined") ||
             nodeName.startsWith("br-") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/627
             node.getAttribute("id") === "branch-select-menu" || // https://github.com/FilipePS/Traduzir-paginas-web/issues/570
-            (location.hostname === "twitter.com" &&
+            (isTwitter &&
               nodeName === "a" &&
               (node.matches ? node.matches("article a") : true)) // https://github.com/FilipePS/Traduzir-paginas-web/issues/449
           ) {
