@@ -972,38 +972,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           const innerHeight = window.innerHeight;
 
           function isInScreen(element) {
+            if (!element) return false;
             const rect = element.getBoundingClientRect();
-            if (
-              (rect.top > 0 && rect.top <= innerHeight) ||
-              (rect.bottom > 0 && rect.bottom <= innerHeight)
-            ) {
-              return true;
-            }
-            return false;
-          }
-
-          function topIsInScreen(element) {
-            if (!element) {
-              // debugger;
-              return false;
-            }
-            const rect = element.getBoundingClientRect();
-            if (rect.top > 0 && rect.top <= innerHeight) {
-              return true;
-            }
-            return false;
-          }
-
-          function bottomIsInScreen(element) {
-            if (!element) {
-              // debugger;
-              return false;
-            }
-            const rect = element.getBoundingClientRect();
-            if (rect.bottom > 0 && rect.bottom <= innerHeight) {
-              return true;
-            }
-            return false;
+            return rect.bottom > 0 && rect.top <= innerHeight;
           }
 
           const currentFooCount = fooCount;
@@ -1012,8 +983,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           piecesToTranslate.forEach((ptt) => {
             if (!ptt.isTranslated) {
               if (
-                bottomIsInScreen(ptt.topElement) ||
-                topIsInScreen(ptt.bottomElement)
+                isInScreen(ptt.topElement) || isInScreen(ptt.bottomElement)
               ) {
                 ptt.isTranslated = true;
                 piecesToTranslateNow.push(ptt);
