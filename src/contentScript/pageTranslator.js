@@ -246,7 +246,9 @@ function backgroundTranslateHTML(
   sourceLanguage,
   targetLanguage,
   sourceArray2d,
-  dontSortResults
+  dontSortResults,
+  retryFailedTranslation = false,
+  validateOriginal = false
 ) {
   return new Promise((resolve, reject) => {
     chrome.runtime.sendMessage(
@@ -257,6 +259,8 @@ function backgroundTranslateHTML(
         targetLanguage,
         sourceArray2d,
         dontSortResults,
+        retryFailedTranslation,
+        validateOriginal,
       },
       (response) => {
         checkedLastError();
@@ -396,6 +400,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     twpConfig.get("dontSortResults") == "yes" ? true : false;
 
   let fooCount = 0;
+  let manuallyRestored = false;
+  let retryInitialLanguageDetection = () => {};
 
   let originalPageTitle;
 
@@ -441,6 +447,8 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     const piecesToTranslate = [];
 
     mutations.forEach((mutation) => {
+      // X posts have a dedicated observer which also handles reused text nodes.
+      if (twitterTranslator.getPost(mutation.target)) return;
       mutation.addedNodes.forEach((addedNode) => {
         const nodeName = addedNode.nodeName.toLowerCase();
         if (!isNoTranslateNode(addedNode)) {
@@ -485,6 +493,52 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   }
 
   let pageIsVisible = document.visibilityState == "visible";
+
+  // The observer is deliberately paused in hidden tabs. Recover content
+  // created during that pause once, when the user returns, without changing
+  // the normal two-second collection interval.
+  function recoverContentAfterTabReturn() {
+    const restoredNodes = new Map(nodesToRestore.map((info) => [info.node, info]));
+    const knownNodes = new Set();
+    function remember(node) {
+      knownNodes.add(node);
+      // Hover-original mode replaces a Text node with a font element. Its
+      // children must count as translated too when rescanning the document.
+      if (node.nodeType === 1) {
+        const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+        while (walker.nextNode()) knownNodes.add(walker.currentNode);
+      }
+    }
+    piecesToTranslate.forEach((piece) => {
+      if (piece.obsolete) return;
+      if (piece.retrySource && !piece.retrySource.every(({ node, text }) => node.isConnected && node.textContent === text)) {
+        piece.obsolete = true;
+        return;
+      }
+      if (piece.pendingSource) {
+        if (!piece.pendingSource.every(({ node, text }) => node.isConnected && node.textContent === text)) {
+          piece.obsolete = true;
+          return;
+        }
+        piece.nodes.forEach(remember);
+        return;
+      }
+      piece.nodes.forEach((node) => {
+        if (!node.isConnected) return;
+        const previous = restoredNodes.get(node);
+        if ((!piece.isTranslated && !previous) ||
+            (previous && node.textContent === previous.translatedText)) remember(node);
+      });
+    });
+    for (const piece of getPiecesToTranslate(document.body)) {
+      piece.nodes = piece.nodes.filter((node) => !knownNodes.has(node));
+      if (piece.nodes.length) {
+        piecesToTranslate.push(piece);
+        piece.nodes.forEach(remember);
+      }
+    }
+    translationRoutine();
+  }
   // isto faz com que partes do youtube não sejam traduzidas
   // new IntersectionObserver(entries => {
   //         if (entries[0].isIntersecting && document.visibilityState == "visible") {
@@ -504,6 +558,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   //     .observe(document.body)
 
   const handleVisibilityChange = function () {
+    const wasVisible = pageIsVisible;
     if (document.visibilityState == "visible") {
       pageIsVisible = true;
     } else {
@@ -512,8 +567,21 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     if (pageIsVisible && pageLanguageState === "translated") {
       enableMutatinObserver();
+      if (!wasVisible) {
+        if (twpConfig.get("translateDynamicallyCreatedContent") === "yes") {
+          recoverContentAfterTabReturn();
+        } else {
+          translationRoutine();
+        }
+      }
     } else {
       disableMutatinObserver();
+      if (pageIsVisible && !wasVisible && alreadyGotTheLanguage &&
+          originalTabLanguage === "und" && !manuallyRestored &&
+          (twpConfig.get("alwaysTranslateLangs").length ||
+           twpConfig.get("alwaysTranslateSites").includes(tabHostName))) {
+        retryInitialLanguageDetection();
+      }
     }
   };
   document.addEventListener("visibilitychange", handleVisibilityChange, false);
@@ -546,7 +614,94 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   }
 
-  function getPiecesToTranslate(root = document.documentElement) {
+  const protectRedditNames = /(^|\.)reddit\.com$/.test(location.hostname);
+  const protectXNames = twitterTranslator.isTwitter;
+
+  // Follow explicit metadata through open shadow roots, without observers or
+  // whole-page name guessing. This also works when collection starts at a
+  // dynamically inserted Text node rather than its metadata container.
+  function closestIdentityElement(element, selector) {
+    while (element) {
+      const match = element.closest(selector);
+      if (match) return match;
+      element = element.getRootNode().host || null;
+    }
+    return null;
+  }
+
+  function isAddressText(text) {
+    return /^(?:https?:\/\/|www\.)[^\s<>]+$/i.test(text) ||
+      /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(text);
+  }
+
+  function isNumericCounterText(text) {
+    return /^[+\-−]?\d+(?:[.,\u00a0\u202f ]\d+)*(?:\s*[kmb])?$/i.test(text);
+  }
+
+  function isProtectedIdentityText(node) {
+    const element = node.nodeType === 1 ? node : (node.parentElement || node.getRootNode().host);
+    const text = (node.textContent || "").trim();
+    if (!element || !text) return false;
+    // Preserve Reddit's standalone numeric labels, including UI counters.
+    // Keep their precision, separators and K/M/B suffixes exactly as rendered.
+    // Whole-node matching leaves prose and adjacent button labels translatable.
+    if (protectRedditNames) {
+      if (isNumericCounterText(text)) return true;
+      const counter = closestIdentityElement(element, "faceplate-number");
+      if (counter && isNumericCounterText(counter.textContent.trim())) return true;
+    }
+    // Keep compact time labels verbatim; only complete labels are translated.
+    // Match the whole Text node so a duration inside prose never excludes it.
+    if (/^\d+(?:[.,]\d+)?\s*(?:s|sec|secs|min|mins|m|h|hr|hrs|d|w|wk|wks|mo|mos|y|yr|yrs)\.?$/i.test(text)) return true;
+    // Written-out time labels remain translatable, even beside an author's name.
+    if (closestIdentityElement(element, "time, faceplate-timeago")) return false;
+    // Some author widgets put the relative time in an ordinary inline span.
+    if (/\b\d+(?:\.\d+)?\s+(?:seconds?|minutes?|hours?|days?|weeks?|months?|years?)\s+ago\b/i.test(text)) return false;
+    if (isAddressText(text) || /^@[\p{L}\p{N}_][\p{L}\p{N}_.@-]*$/u.test(text)) return true;
+
+    const name = closestIdentityElement(element, '[itemprop~="name"]');
+    if (name) {
+      const owner = closestIdentityElement(name, "[itemscope]");
+      if (closestIdentityElement(name, '[itemprop~="author"], [itemprop~="creator"]') ||
+          owner?.matches('[itemtype~="https://schema.org/Person"], [itemtype~="http://schema.org/Person"], [itemtype~="https://schema.org/Organization"], [itemtype~="http://schema.org/Organization"]')) return true;
+    }
+    const author = closestIdentityElement(element, 'a[rel~="author"], [itemprop~="author"], [itemprop~="creator"]');
+    if (author && !author.querySelector('[itemprop~="name"], p, article, section, time, button, [itemprop~="description"]') &&
+        Math.max(author.textContent.trim().length, text.length) <= 100) return true;
+
+    if (protectXNames && closestIdentityElement(element, '[data-testid="UserName"]')) return true;
+    const anchor = closestIdentityElement(element, "a[href]");
+    if (!anchor) return false;
+    if (isAddressText(anchor.textContent.trim())) return true;
+    let url;
+    try { url = new URL(anchor.getAttribute("href"), anchor.baseURI); }
+    catch (_) { return false; }
+    if (!/^https?:$/.test(url.protocol)) return false;
+    const label = anchor.textContent.trim();
+    const address = url.host + url.pathname + url.search + url.hash;
+    if (label.replace(/\/$/, "") === address.replace(/\/$/, "")) return true;
+
+    if (protectRedditNames && /(^|\.)reddit\.com$/.test(url.hostname)) {
+      const path = url.pathname.match(/^\/(r|u|user)\/([A-Za-z0-9_-]+)\/?$/i);
+      if (path) {
+        const prefix = path[1].toLowerCase() === "r" ? "r" : "u";
+        const value = text.toLowerCase();
+        const full = label.toLowerCase();
+        const user = path[2].toLowerCase();
+        return value === user || value === prefix + "/" || value === prefix + "/" + user ||
+          value === "user/" + user || full === prefix + "/" + user || full === user;
+      }
+    }
+    if (protectXNames && /(^|\.)(x|twitter)\.com$/.test(url.hostname)) {
+      const profile = url.pathname.match(/^\/([A-Za-z0-9_]{1,15})\/?$/);
+      if (profile && closestIdentityElement(anchor, '[data-testid="User-Name"], [data-testid="UserCell"]') && label.length <= 100) return true;
+    }
+    // Preserve the existing X post-link workaround, while allowing timestamps
+    // and ordinary link labels outside post text to be translated.
+    return protectXNames && !!closestIdentityElement(anchor, '[data-testid="tweetText"]');
+  }
+
+  function getPiecesToTranslate(root = document.documentElement, includeTwitterPost = false) {
     const piecesToTranslate = [
       {
         isTranslated: false,
@@ -576,6 +731,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             lastSelectOrDataListElement = node;
 
           if (
+            (!includeTwitterPost && twitterTranslator.getPost(node) === node) ||
             htmlTagsInlineIgnore.indexOf(nodeName) !== -1 ||
             isNoTranslateNode(node) ||
             node.classList.contains("notranslate") ||
@@ -585,10 +741,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             node.classList.contains("material-icons") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/481
             node.classList.contains("material-symbols-outlined") ||
             nodeName.startsWith("br-") || // https://github.com/FilipePS/Traduzir-paginas-web/issues/627
-            node.getAttribute("id") === "branch-select-menu" || // https://github.com/FilipePS/Traduzir-paginas-web/issues/570
-            (location.hostname === "twitter.com" &&
-              nodeName === "a" &&
-              (node.matches ? node.matches("article a") : true)) // https://github.com/FilipePS/Traduzir-paginas-web/issues/449
+            node.getAttribute("id") === "branch-select-menu" // https://github.com/FilipePS/Traduzir-paginas-web/issues/570
           ) {
             if (piecesToTranslate[index].nodes.length > 0) {
               currentParagraphSize = 0;
@@ -661,6 +814,16 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           }
         }
       } else if (node.nodeType == 3) {
+        if (isProtectedIdentityText(node)) {
+          if (piecesToTranslate[index].nodes.length) {
+            currentParagraphSize = 0;
+            piecesToTranslate[index].bottomElement = node.parentElement;
+            piecesToTranslate.push({ isTranslated: false, parentElement: null,
+              topElement: null, bottomElement: null, nodes: [] });
+            index++;
+          }
+          return;
+        }
         if (node.textContent.trim().length > 0) {
           if (!piecesToTranslate[index].parentElement) {
             if (
@@ -862,11 +1025,13 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   }
 
   function translateResults(piecesToTranslateNow, results) {
+    const translationGeneration = fooCount;
     if (dontSortResults) {
       for (let i = 0; i < results.length; i++) {
         for (let j = 0; j < results[i].length; j++) {
           if (piecesToTranslateNow[i].nodes[j]) {
             const nodes = piecesToTranslateNow[i].nodes;
+            if (isProtectedIdentityText(nodes[j])) continue;
             let translated = results[i][j] + " ";
             // In some case, results items count is over original node count
             // Rest results append to last node
@@ -896,6 +1061,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             nodesToRestore.push(toRestore);
 
             const originalText = originalTextNode.textContent;
+            const expectedText = nodes[j].textContent;
             handleCustomWords(
               translated,
               nodes[j].textContent,
@@ -907,7 +1073,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               // results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
               //   originalText.match(/\s*$/)[0]
               // }`;
-              translateTextContent(nodes[j], parentNode, results, toRestore);
+              if (pageLanguageState === "translated" && fooCount === translationGeneration &&
+                  nodes[j].isConnected && nodes[j].textContent === expectedText &&
+                  !isProtectedIdentityText(nodes[j])) {
+                translateTextContent(nodes[j], parentNode, results, toRestore);
+              }
             });
           }
         }
@@ -917,6 +1087,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         for (const j in piecesToTranslateNow[i].nodes) {
           if (results[i][j]) {
             const nodes = piecesToTranslateNow[i].nodes;
+            if (isProtectedIdentityText(nodes[j])) continue;
             const translated = results[i][j] + " ";
 
             const originalTextNode = nodes[j];
@@ -936,6 +1107,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
             nodesToRestore.push(toRestore);
 
             const originalText = originalTextNode.textContent;
+            const expectedText = nodes[j].textContent;
             handleCustomWords(
               translated,
               nodes[j].textContent,
@@ -947,7 +1119,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
               // results = `${originalText.match(/^\s*/)[0]}${results.trim()}${
               //   originalText.match(/\s*$/)[0]
               // }`;
-              translateTextContent(nodes[j], parentNode, results, toRestore);
+              if (pageLanguageState === "translated" && fooCount === translationGeneration &&
+                  nodes[j].isConnected && nodes[j].textContent === expectedText &&
+                  !isProtectedIdentityText(nodes[j])) {
+                translateTextContent(nodes[j], parentNode, results, toRestore);
+              }
             });
           }
         }
@@ -964,109 +1140,127 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   }
 
+  // Shared by ordinary page blocks and the existing X helper. Initial
+  // requests keep their current batching; only recovery occupies these slots.
+  let googleRecoveriesInFlight = 0;
+  function acquireGoogleRecovery() {
+    if (googleRecoveriesInFlight >= 2) return null;
+    googleRecoveriesInFlight++;
+    let released = false;
+    return () => {
+      if (!released) {
+        released = true;
+        googleRecoveriesInFlight--;
+      }
+    };
+  }
+
   function translationRoutine() {
     try {
       if (piecesToTranslate && pageIsVisible) {
         (function () {
           if (piecesToTranslate.length < 1) return;
           const innerHeight = window.innerHeight;
-
+          const isGoogle = currentPageTranslatorService === "google";
           function isInScreen(element) {
+            if (!element) return false;
             const rect = element.getBoundingClientRect();
-            if (
-              (rect.top > 0 && rect.top <= innerHeight) ||
-              (rect.bottom > 0 && rect.bottom <= innerHeight)
-            ) {
-              return true;
-            }
-            return false;
+            return rect.bottom > 0 && rect.top < innerHeight;
           }
-
-          function topIsInScreen(element) {
-            if (!element) {
-              // debugger;
-              return false;
-            }
-            const rect = element.getBoundingClientRect();
-            if (rect.top > 0 && rect.top <= innerHeight) {
-              return true;
-            }
-            return false;
+          function snapshotMatches(snapshot) {
+            return snapshot && snapshot.every(({ node, text }) =>
+              node.isConnected && node.textContent === text);
           }
-
-          function bottomIsInScreen(element) {
-            if (!element) {
-              // debugger;
-              return false;
-            }
-            const rect = element.getBoundingClientRect();
-            if (rect.bottom > 0 && rect.bottom <= innerHeight) {
-              return true;
-            }
-            return false;
-          }
-
           const currentFooCount = fooCount;
-
-          const piecesToTranslateNow = [];
-          piecesToTranslate.forEach((ptt) => {
-            if (!ptt.isTranslated) {
-              if (
-                bottomIsInScreen(ptt.topElement) ||
-                topIsInScreen(ptt.bottomElement)
-              ) {
-                ptt.isTranslated = true;
-                piecesToTranslateNow.push(ptt);
-              }
+          const initial = [];
+          const recoveries = [];
+          piecesToTranslate.forEach((piece) => {
+            if (piece.isTranslated || piece.pendingSource || piece.obsolete || piece.failed) return;
+            if (piece.retrySource && !snapshotMatches(piece.retrySource)) {
+              piece.obsolete = true;
+              return;
             }
+            if (piece.retryAt > Date.now()) return;
+            if (!isInScreen(piece.topElement) && !isInScreen(piece.bottomElement)) return;
+            const retrying = (piece.attempts || 0) > 0;
+            const release = retrying && isGoogle ? acquireGoogleRecovery() : null;
+            if (retrying && isGoogle && !release) return;
+            piece.pendingSource = piece.nodes.map((node) => ({ node, text: node.textContent }));
+            piece.attempts = (piece.attempts || 0) + 1;
+            if (retrying) recoveries.push({ piece, release });
+            else initial.push(piece);
           });
+
+          async function requestPieces(pieces, retrying = false, release = null) {
+            try {
+              let results;
+              try {
+                results = await backgroundTranslateHTML(
+                  currentPageTranslatorService, currentSourceLanguage, currentTargetLanguage,
+                  pieces.map((piece) => {
+                    // Keep dictionary markers/cache keys stable across retries
+                    // of this exact source revision.
+                    if (!piece.preparedSource) piece.preparedSource = piece.pendingSource.map(({ text }) =>
+                      filterKeywordsInText(text, customDictionary, currentPageTranslatorService));
+                    return piece.preparedSource;
+                  }),
+                  dontSortResults, retrying && isGoogle, isGoogle
+                );
+              } catch (_) {
+                results = null;
+              }
+              if (pageLanguageState !== "translated" || currentFooCount !== fooCount) return;
+              const validPieces = [];
+              const validResults = [];
+              pieces.forEach((piece, i) => {
+                const snapshot = piece.pendingSource;
+                piece.pendingSource = null;
+                if (piece.obsolete || !snapshotMatches(snapshot)) {
+                  piece.obsolete = true;
+                  return;
+                }
+                const row = results && results[i];
+                const usable = Array.isArray(row) && (!isGoogle || snapshot.every(({ node, text }, j) =>
+                  !text.trim() || isProtectedIdentityText(node) ||
+                  (typeof row[j] === "string" && row[j].trim())));
+                if (usable) {
+                  piece.isTranslated = true;
+                  piece.retrySource = null;
+                  validPieces.push(piece);
+                  validResults.push(row);
+                } else if (isGoogle && piece.attempts < 3 &&
+                    snapshot.some(({ node }) => !isProtectedIdentityText(node))) {
+                  piece.retrySource = snapshot;
+                  piece.retryAt = Date.now() + (piece.attempts === 1 ? 1500 : 4000);
+                } else {
+                  // Keep exhausted work known to tab-return reconciliation so
+                  // switching tabs cannot reset the per-revision retry budget.
+                  piece.failed = true;
+                  piece.retrySource = snapshot;
+                }
+              });
+              translateResults(validPieces, validResults);
+            } finally {
+              if (release) release();
+            }
+          }
+          if (initial.length) requestPieces(initial).catch(console.error);
+          recoveries.forEach(({ piece, release }) =>
+            requestPieces([piece], true, release).catch(console.error));
 
           const attributesToTranslateNow = [];
           attributesToTranslate.forEach((ati) => {
-            if (!ati.isTranslated) {
-              if (isInScreen(ati.node)) {
-                ati.isTranslated = true;
-                attributesToTranslateNow.push(ati);
-              }
+            if (!ati.isTranslated && isInScreen(ati.node)) {
+              ati.isTranslated = true;
+              attributesToTranslateNow.push(ati);
             }
           });
-
-          if (piecesToTranslateNow.length > 0) {
-            backgroundTranslateHTML(
-              currentPageTranslatorService,
-              currentSourceLanguage,
-              currentTargetLanguage,
-              piecesToTranslateNow.map((ptt) =>
-                ptt.nodes.map((node) =>
-                  filterKeywordsInText(
-                    node.textContent,
-                    customDictionary,
-                    currentPageTranslatorService
-                  )
-                )
-              ),
-              dontSortResults
-            ).then((results) => {
-              if (
-                pageLanguageState === "translated" &&
-                currentFooCount === fooCount
-              ) {
-                translateResults(piecesToTranslateNow, results);
-              }
-            });
-          }
-
           if (attributesToTranslateNow.length > 0) {
             backgroundTranslateText(
-              currentPageTranslatorService,
-              currentSourceLanguage,
-              currentTargetLanguage,
+              currentPageTranslatorService, currentSourceLanguage, currentTargetLanguage,
               attributesToTranslateNow.map((ati) => ati.original)
             ).then((results) => {
-              if (
-                pageLanguageState === "translated" &&
-                currentFooCount === fooCount
-              ) {
+              if (pageLanguageState === "translated" && currentFooCount === fooCount) {
                 translateAttributes(attributesToTranslateNow, results);
               }
             });
@@ -1076,7 +1270,6 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     } catch (e) {
       console.error(e);
     }
-
     clearTimeout(translationRoutine_handler);
     translationRoutine_handler = setTimeout(translationRoutine, 300);
   }
@@ -1116,8 +1309,9 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   var translationRoutine_handler = null;
 
   pageTranslator.translatePage = function (targetLanguage) {
+    manuallyRestored = false;
     fooCount++;
-    pageTranslator.restorePage();
+    pageTranslator.restorePage(true);
     showOriginal.enable();
     chrome.runtime.sendMessage(
       { action: "removeTranslationsWithError" },
@@ -1163,11 +1357,47 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
 
     enableMutatinObserver();
 
+    const translationGeneration = fooCount;
+    twitterTranslator.start({
+      isProtected: isProtectedIdentityText,
+      retryFailed: currentPageTranslatorService === "google",
+      acquireRecovery: acquireGoogleRecovery,
+      dynamic: twpConfig.get("translateDynamicallyCreatedContent") === "yes",
+      getPieces(post) {
+        if (post.closest('.notranslate, [translate="no"], [contenteditable="true"]')) return [];
+        return getPiecesToTranslate(post, true);
+      },
+      async translate(sources, retryFailedTranslation = false) {
+        const service = currentPageTranslatorService;
+        const sourceLanguage = currentSourceLanguage;
+        const targetLanguage = currentTargetLanguage;
+        const dictionary = customDictionary;
+        const unsorted = dontSortResults;
+        const results = await backgroundTranslateHTML(
+          service, sourceLanguage, targetLanguage,
+          sources.map((piece) => piece.map((text) =>
+            filterKeywordsInText(text, dictionary, service)
+          )), unsorted, retryFailedTranslation, service === "google"
+        );
+        if (translationGeneration !== fooCount || !Array.isArray(results)) return [];
+        return Promise.all(sources.map((piece, i) => Promise.all(piece.map((text, j) => {
+          let translated = results[i] && results[i][j];
+          if (typeof translated !== "string") return null;
+          if (unsorted && j === piece.length - 1 && results[i].length > piece.length) {
+            translated += " " + results[i].slice(j + 1).join(" ");
+          }
+          return handleCustomWords(translated, text, dictionary, service, sourceLanguage, targetLanguage);
+        }))));
+      },
+    });
+
     translationRoutine();
   };
 
-  pageTranslator.restorePage = function () {
+  pageTranslator.restorePage = function (internal = false) {
+    if (!internal) manuallyRestored = true;
     fooCount++;
+    twitterTranslator.restore();
     piecesToTranslate = [];
 
     showOriginal.disable();
@@ -1333,15 +1563,28 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   // Requests the detection of the tab language in the background
   if (window.self === window.top) {
     // is main frame
+    let detectionInProgress = false;
+    let detectionAttempts = 0;
     const onTabVisible = function () {
+      if (detectionInProgress || detectionAttempts >= 3 || manuallyRestored ||
+          (alreadyGotTheLanguage && originalTabLanguage !== "und")) return;
+      detectionInProgress = true;
+      detectionAttempts++;
       chrome.runtime.sendMessage(
         {
           action: "detectTabLanguage",
         },
         (result) => {
+          detectionInProgress = false;
           checkedLastError();
 
           result = result || "und";
+          if (manuallyRestored) {
+            originalTabLanguage = twpLang.fixTLanguageCode(result) || "und";
+            observers.forEach((callback) => callback(originalTabLanguage));
+            alreadyGotTheLanguage = true;
+            return;
+          }
           if (result === "und") {
             originalTabLanguage = result;
             if (
@@ -1417,6 +1660,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
         }
       );
     };
+    retryInitialLanguageDetection = onTabVisible;
     setTimeout(function () {
       if (document.visibilityState == "visible") {
         onTabVisible();

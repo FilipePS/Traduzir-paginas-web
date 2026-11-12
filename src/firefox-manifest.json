@@ -133,6 +133,7 @@
       "js": [
         "/lib/i18n.js",
         "/contentScript/showOriginal.js",
+        "/contentScript/twitterTranslator.js",
         "/contentScript/pageTranslator.js",
         "/contentScript/translateSelected.js",
         "/contentScript/showTranslated.js"

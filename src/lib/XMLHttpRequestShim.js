@@ -139,7 +139,7 @@ const XMLHttpRequestShim = class XMLHttpRequest extends EventTarget {
           break;
       }
       this[sDispatch](new CustomEvent("load"));
-    }, err => {
+    }).catch(err => {
       let eventName = "abort";
       if (err.name !== "AbortError") {
         this[sErrored] = true;

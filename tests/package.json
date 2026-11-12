@@ -1,0 +1,13 @@
+{
+  "name": "twp-content-script-regressions",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:google && npm run test:browser",
+    "test:google": "node google-page-regression.cjs && node google-x-shared-regression.cjs && node google-transport-regression.cjs",
+    "test:browser": "node x-regression.cjs && node visibility-regression.cjs && node retry-regression.cjs && node cache-regression.cjs && node identity-regression.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

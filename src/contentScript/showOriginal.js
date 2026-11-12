@@ -124,13 +124,16 @@ twpConfig.onReady(function () {
     hideOriginalText();
   }
 
-  showOriginal.add = function (node) {
+  showOriginal.add = function (node, originalText = node && node.textContent) {
     if (platformInfo.isMobile.any) return;
 
-    if (node && nodesToShowOriginal.indexOf(node) === -1) {
+    const existing = nodesToShowOriginal.find((info) => info.node === node);
+    if (existing) {
+      existing.original = originalText;
+    } else if (node) {
       nodesToShowOriginal.push({
         node: node,
-        original: node.textContent,
+        original: originalText,
       });
       node.addEventListener("mouseenter", onMouseEnter);
       node.addEventListener("mouseout", onMouseOut);

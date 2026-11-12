@@ -213,12 +213,20 @@ const translationService = (function () {
           );
 
           const http = new XMLHttpRequestShim();
+          let finished = false;
+          let deadline;
+          const finish = () => {
+            if (finished) return false;
+            finished = true;
+            clearTimeout(deadline);
+            return true;
+          };
           http.open(
             "GET",
             "https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.en_US.YusFYy3P_ro.O/am=AAg/d=1/exm=el_conf/ed=1/rs=AN8SPfq1Hb8iJRleQqQc8zhdzXmF9E56eQ/m=el_main",
           );
-          http.send();
           http.onload = (e) => {
+            if (!finish()) return;
             if (http.responseText && http.responseText.length > 1) {
               const result = http.responseText.match(
                 /['"]x\-goog\-api\-key['"]\s*\:\s*['"](\w{39})['"]/i,
@@ -241,10 +249,18 @@ const translationService = (function () {
             http.onabort =
             http.ontimeout =
               (e) => {
+                if (!finish()) return;
                 console.error(e);
                 GoogleHelper_v2.#translateAuth = alternativeKey;
                 resolve();
               };
+          deadline = setTimeout(() => {
+            if (!finish()) return;
+            GoogleHelper_v2.#translateAuth = alternativeKey;
+            resolve();
+            http.abort();
+          }, 30000);
+          http.send();
         } else {
           resolve();
         }
@@ -536,6 +552,45 @@ const translationService = (function () {
       });
     }
 
+    // Google HTML requests use this conservative check. Short
+    // names, unknown languages and text already in the target language may
+    // legitimately stay unchanged. Do not invalidate those cache entries.
+    isUntranslatedForeignText(original, translated, detectedLanguage, targetLanguage) {
+      if (this.serviceName !== "google") return false;
+      const language = (detectedLanguage || "").toLowerCase().split("-")[0];
+      const target = (targetLanguage || "").toLowerCase().split("-")[0];
+      if (!language || language === "und" || language === "auto" ||
+          !target || language === target) return false;
+      try {
+        const normalize = (html) => this.cbTransformResponse(html, false)
+          .join(" ").replace(/\s+/g, " ").trim();
+        const source = normalize(original);
+        if (source.length < 80 || (source.match(/\p{L}+/gu) || []).length < 8) return false;
+        return source === normalize(translated);
+      } catch (_) {
+        // Malformed responses follow the existing failure/recovery path.
+        return false;
+      }
+    }
+
+    isIncompleteGoogleResult(original, translated) {
+      if (this.serviceName !== "google") return false;
+      if (typeof translated !== "string" || !translated.trim()) return true;
+      try {
+        const source = this.cbTransformResponse(original, false);
+        const result = this.cbTransformResponse(translated, false);
+        return source.some((text, i) => text.trim() &&
+          (typeof result[i] !== "string" || !result[i].trim()));
+      } catch (_) {
+        return true;
+      }
+    }
+
+    isInvalidGoogleResult(original, translated, detectedLanguage, targetLanguage) {
+      return this.isIncompleteGoogleResult(original, translated) ||
+        this.isUntranslatedForeignText(original, translated, detectedLanguage, targetLanguage);
+    }
+
     /**
      * Receives the `sourceArray2d` parameter and prepares the requests.
      * Calls `cbTransformRequest` for each `sourceArray` of `sourceArray2d`.
@@ -550,7 +605,7 @@ const translationService = (function () {
      * @param {Array<string[]>} sourceArray2d
      * @returns {Promise<[Array<TranslationInfo[]>, TranslationInfo[]]>} `requests`, `currentTranslationsInProgress`
      */
-    async getRequests(sourceLanguage, targetLanguage, sourceArray2d) {
+    async getRequests(sourceLanguage, targetLanguage, sourceArray2d, refresh = false, validateOriginal = false) {
       /** @type {Array<TranslationInfo[]>} */
       const requests = [];
       /** @type {TranslationInfo[]} */
@@ -570,7 +625,12 @@ const translationService = (function () {
         ].join(", ");
 
         const progressInfo = this.translationsInProgress.get(requestHash);
-        if (progressInfo) {
+        // A bounded recovery must not replay a failed/incomplete cached result.
+        // Keep sharing requests that are still in progress.
+        const unchangedCache = validateOriginal && progressInfo?.status === "complete" &&
+          this.isInvalidGoogleResult(requestString, progressInfo.translatedText,
+            progressInfo.detectedLanguage, targetLanguage);
+        if (progressInfo && !unchangedCache && (!refresh || progressInfo.status === "translating")) {
           currentTranslationsInProgress.push(progressInfo);
         } else {
           /** @type {TranslationStatus} */
@@ -597,13 +657,14 @@ const translationService = (function () {
           this.translationsInProgress.set(requestHash, progressInfo);
 
           //cast
-          const cacheEntry = await translationCache.get(
+          const cacheEntry = refresh ? null : await translationCache.get(
             this.serviceName,
             sourceLanguage,
             targetLanguage,
             requestString,
           );
-          if (cacheEntry) {
+          if (cacheEntry && !(validateOriginal && this.isInvalidGoogleResult(
+              requestString, cacheEntry.translatedText, cacheEntry.detectedLanguage, targetLanguage))) {
             progressInfo.translatedText = cacheEntry.translatedText;
             progressInfo.detectedLanguage = cacheEntry.detectedLanguage;
             progressInfo.status = "complete";
@@ -639,6 +700,14 @@ const translationService = (function () {
     async makeRequest(sourceLanguage, targetLanguage, requests) {
       return await new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequestShim();
+        let finished = false;
+        let deadline;
+        const finish = (callback, value) => {
+          if (finished) return;
+          finished = true;
+          clearTimeout(deadline);
+          callback(value);
+        };
         xhr.open(
           this.xhrMethod,
           this.baseURL +
@@ -661,7 +730,7 @@ const translationService = (function () {
         xhr.responseType = "json";
 
         xhr.onload = (event) => {
-          resolve(xhr.response);
+          finish(resolve, xhr.response);
         };
 
         xhr.onerror =
@@ -669,8 +738,17 @@ const translationService = (function () {
           xhr.ontimeout =
             (event) => {
               console.error(event);
-              reject();
+              finish(reject, new Error("Translation request failed"));
             };
+
+        if (this.serviceName === "google") {
+          // Cover response-body parsing too: the shim clears its own timeout
+          // when response headers arrive, before resp.json() has completed.
+          deadline = setTimeout(() => {
+            finish(reject, new Error("Google translation request timed out"));
+            xhr.abort();
+          }, 30000);
+        }
 
         xhr.send(
           this.cbGetRequestBody
@@ -699,11 +777,15 @@ const translationService = (function () {
       sourceArray2d,
       dontSaveInPersistentCache = false,
       dontSortResults = false,
+      retryFailedTranslation = false,
+      validateOriginal = false,
     ) {
       const [requests, currentTranslationsInProgress] = await this.getRequests(
         sourceLanguage,
         targetLanguage,
         sourceArray2d,
+        retryFailedTranslation,
+        validateOriginal,
       );
       /** @type {Promise<void>[]} */
       const promises = [];
@@ -715,9 +797,17 @@ const translationService = (function () {
               const results = this.cbParseResponse(response);
               for (const idx in request) {
                 const result = results[idx];
-                this.cbTransformResponse(result.text, dontSortResults); // apenas para gerar error
                 const transInfo = request[idx];
-                transInfo.detectedLanguage = result.detectedLanguage || "und";
+                transInfo.detectedLanguage = result?.detectedLanguage || "und";
+                if (validateOriginal && this.isInvalidGoogleResult(
+                    transInfo.originalText, result?.text, transInfo.detectedLanguage, targetLanguage)) {
+                  // Do not promote an unchanged foreign paragraph to a cached
+                  // success. The content script's existing retry budget applies.
+                  transInfo.translatedText = null;
+                  transInfo.status = "error";
+                  continue;
+                }
+                this.cbTransformResponse(result.text, dontSortResults); // validate syntax
                 transInfo.translatedText = result.text;
                 transInfo.status = "complete";
 
@@ -750,9 +840,11 @@ const translationService = (function () {
           (transInfo) => transInfo.waitTranlate,
         ),
       );
-      return currentTranslationsInProgress.map((transInfo) =>
-        this.cbTransformResponse(transInfo.translatedText, dontSortResults),
-      );
+      return currentTranslationsInProgress.map((transInfo) => {
+        // Preserve healthy rows from the same batch when another row fails.
+        if (this.serviceName === "google" && validateOriginal && transInfo.status !== "complete") return [];
+        return this.cbTransformResponse(transInfo.translatedText, dontSortResults);
+      });
     }
 
     /**
@@ -998,6 +1090,8 @@ const translationService = (function () {
       sourceArray2d,
       dontSaveInPersistentCache,
       dontSortResults = false,
+      retryFailedTranslation = false,
+      validateOriginal = false,
     ) {
       /** @type {{search: string, replace: string}[]} */
       const replacements = [
@@ -1028,6 +1122,8 @@ const translationService = (function () {
         sourceArray2d,
         dontSaveInPersistentCache,
         dontSortResults,
+        retryFailedTranslation,
+        validateOriginal,
       );
     }
   })();
@@ -1579,6 +1675,8 @@ const translationService = (function () {
     sourceArray2d,
     dontSaveInPersistentCache = false,
     dontSortResults = false,
+    retryFailedTranslation = false,
+    validateOriginal = false,
   ) => {
     serviceName = twpLang.getAlternativeService(
       targetLanguage,
@@ -1586,12 +1684,15 @@ const translationService = (function () {
       true,
     );
     const service = getSafeServiceByName(serviceName);
+    validateOriginal = validateOriginal || serviceName === "google";
     return await service.translate(
       sourceLanguage,
       targetLanguage,
       sourceArray2d,
       dontSaveInPersistentCache,
       dontSortResults,
+      retryFailedTranslation,
+      validateOriginal,
     );
   };
 
@@ -1659,6 +1760,8 @@ const translationService = (function () {
           request.sourceArray2d,
           dontSaveInPersistentCache,
           request.dontSortResults,
+          request.retryFailedTranslation === true,
+          request.validateOriginal === true,
         )
         .then((results) => sendResponse(results))
         .catch((e) => {
