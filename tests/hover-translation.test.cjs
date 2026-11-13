@@ -168,10 +168,12 @@ test("off removes an already visible hover popup", async () => {
 
 test("hover can be re-enabled over the same element", async () => {
   const page = await fixture();
-  page.toggle(); page.hover(); page.advance(500); page.toggle();
   page.toggle(); page.hover(); page.advance(1300);
   assert.equal(page.requests.length, 1);
-  assert.equal(page.requests[0].request.source, "A private fixture paragraph");
+  page.toggle();
+  page.toggle(); page.hover(); page.advance(1300);
+  assert.equal(page.requests.length, 2);
+  assert.equal(page.requests[1].request.source, "A private fixture paragraph");
 });
 
 test("intentional double-Control still translates with hover toggled off", async () => {
