@@ -34,7 +34,26 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
   let showTranslatedTextWhenHoveringThisLang = false;
   let translateTextOverMouseWhenPressTwice =
     twpConfig.get("translateTextOverMouseWhenPressTwice") === "yes";
+  let tabHoverOverride = null;
   let fooCount = 0;
+
+  function isHoverTranslationEnabled() {
+    if (tabHoverOverride !== null) {
+      return tabHoverOverride;
+    }
+    return showTranslatedTextWhenHoveringThisSite || showTranslatedTextWhenHoveringThisLang;
+  }
+
+  chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.action === "ToggleHoverCurrentTab") {
+      if (tabHoverOverride === null) {
+        tabHoverOverride = !isHoverTranslationEnabled();
+      } else {
+        tabHoverOverride = !tabHoverOverride;
+      }
+      updateEventListener();
+    }
+  });
 
   twpConfig.onChanged(function (name, newValue) {
     switch (name) {
@@ -143,15 +162,14 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     if (e.target === currentNodeOverMouse) return;
     currentNodeOverMouse = e.target;
 
-    if (
-      !(
-        !showTranslatedTextWhenHoveringThisSite &&
-        !showTranslatedTextWhenHoveringThisLang
-      )
-    ) {
+    if (isHoverTranslationEnabled()) {
       destroy();
       if (e.buttons === 0) {
-        timeoutHandler = setTimeout(translateThisNode, 1250, e.target);
+        timeoutHandler = setTimeout(() => {
+          if (isHoverTranslationEnabled()) {
+            translateThisNode(e.target);
+          }
+        }, 1250);
       }
     }
   }
@@ -736,13 +754,23 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   }
 
+  let wasHoverTranslationEnabled = false;
+
   function updateEventListener() {
+    const hoverTranslationEnabled = isHoverTranslationEnabled();
+    if (hoverTranslationEnabled !== wasHoverTranslationEnabled) {
+      // Double-Control can keep the listeners active after hover is disabled.
+      // Always cancel pending hover work and invalidate late results on a toggle.
+      destroy();
+      currentNodeOverMouse = null;
+      wasHoverTranslationEnabled = hoverTranslationEnabled;
+    }
+
     if (
       platformInfo.isMobile.any ||
       pageLanguageState == "translated" ||
       !(
-        showTranslatedTextWhenHoveringThisSite ||
-        showTranslatedTextWhenHoveringThisLang ||
+        hoverTranslationEnabled ||
         translateTextOverMouseWhenPressTwice
       )
     ) {

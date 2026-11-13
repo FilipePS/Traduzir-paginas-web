@@ -984,6 +984,21 @@ if (typeof chrome.commands !== "undefined") {
             checkedLastError
           )
       );
+    } else if (command === "hotkey-toggle-hover-current-tab") {
+      chrome.tabs.query(
+        {
+          currentWindow: true,
+          active: true,
+        },
+        (tabs) =>
+          chrome.tabs.sendMessage(
+            tabs[0].id,
+            {
+              action: "ToggleHoverCurrentTab",
+            },
+            checkedLastError
+          )
+      );
     } else if (command === "hotkey-swap-page-translation-service") {
       chrome.tabs.query(
         {

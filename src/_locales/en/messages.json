@@ -596,5 +596,8 @@
   },
   "btnChangePosition": {
     "message": "Change position"
+  },
+  "lblToggleHoverCurrentTab": {
+    "message": "Toggle hover translation for current tab"
   }
 }

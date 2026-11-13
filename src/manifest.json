@@ -59,6 +59,12 @@
         "default": "Ctrl+Alt+X"
       },
       "description": "__MSG_lblHotTranslatedSelectedText__"
+    },
+    "hotkey-toggle-hover-current-tab": {
+      "suggested_key": {
+        "default": "Shift+Alt+H"
+      },
+      "description": "__MSG_lblToggleHoverCurrentTab__"
     }
   },
   "icons": {
