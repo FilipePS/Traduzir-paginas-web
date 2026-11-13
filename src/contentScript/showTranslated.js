@@ -165,7 +165,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     if (isHoverTranslationEnabled()) {
       destroy();
       if (e.buttons === 0) {
-        timeoutHandler = setTimeout(translateThisNode, 1250, e.target);
+        timeoutHandler = setTimeout(() => {
+          if (isHoverTranslationEnabled()) {
+            translateThisNode(e.target);
+          }
+        }, 1250);
       }
     }
   }
@@ -750,12 +754,23 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   }
 
+  let wasHoverTranslationEnabled = false;
+
   function updateEventListener() {
+    const hoverTranslationEnabled = isHoverTranslationEnabled();
+    if (hoverTranslationEnabled !== wasHoverTranslationEnabled) {
+      // Double-Control can keep the listeners active after hover is disabled.
+      // Always cancel pending hover work and invalidate late results on a toggle.
+      destroy();
+      currentNodeOverMouse = null;
+      wasHoverTranslationEnabled = hoverTranslationEnabled;
+    }
+
     if (
       platformInfo.isMobile.any ||
       pageLanguageState == "translated" ||
       !(
-        isHoverTranslationEnabled() ||
+        hoverTranslationEnabled ||
         translateTextOverMouseWhenPressTwice
       )
     ) {
