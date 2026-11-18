@@ -12,148 +12,30 @@
     }
   },
   "commands": {
-    "hotkey-toggle-translation": {
-      "suggested_key": {
-        "default": "Ctrl+Alt+T"
-      },
-      "description": "__MSG_lblSwitchTranslatedAndOriginal__"
-    },
-    "hotkey-translate-selected-text": {
-      "suggested_key": {
-        "default": "Ctrl+Alt+S"
-      },
-      "description": "__MSG_msgTranslateSelectedText__"
-    },
-    "hotkey-swap-page-translation-service": {
-      "suggested_key": {
-        "default": "Ctrl+Alt+Q"
-      },
-      "description": "__MSG_swapTranslationService__"
-    },
-    "hotkey-show-original": {
-      "suggested_key": {
-        "default": "Shift+Alt+0"
-      },
-      "description": "__MSG_lblRestorePageToOriginal__"
-    },
-    "hotkey-translate-page-1": {
-      "suggested_key": {
-        "default": "Shift+Alt+1"
-      },
-      "description": "__MSG_lblTranslatePageToTargetLanguage__ 1"
-    },
-    "hotkey-translate-page-2": {
-      "suggested_key": {
-        "default": "Shift+Alt+2"
-      },
-      "description": "__MSG_lblTranslatePageToTargetLanguage__ 2"
-    },
-    "hotkey-translate-page-3": {
-      "suggested_key": {
-        "default": "Shift+Alt+3"
-      },
-      "description": "__MSG_lblTranslatePageToTargetLanguage__ 3"
-    },
-    "hotkey-hot-translate-selected-text": {
-      "suggested_key": {
-        "default": "Ctrl+Alt+X"
-      },
-      "description": "__MSG_lblHotTranslatedSelectedText__"
-    }
+    "hotkey-toggle-translation": { "suggested_key": { "default": "Ctrl+Alt+T" }, "description": "__MSG_lblSwitchTranslatedAndOriginal__" },
+    "hotkey-translate-selected-text": { "suggested_key": { "default": "Ctrl+Alt+S" }, "description": "__MSG_msgTranslateSelectedText__" },
+    "hotkey-swap-page-translation-service": { "suggested_key": { "default": "Ctrl+Alt+Q" }, "description": "__MSG_swapTranslationService__" },
+    "hotkey-show-original": { "suggested_key": { "default": "Shift+Alt+0" }, "description": "__MSG_lblRestorePageToOriginal__" },
+    "hotkey-translate-page-1": { "suggested_key": { "default": "Shift+Alt+1" }, "description": "__MSG_lblTranslatePageToTargetLanguage__ 1" },
+    "hotkey-translate-page-2": { "suggested_key": { "default": "Shift+Alt+2" }, "description": "__MSG_lblTranslatePageToTargetLanguage__ 2" },
+    "hotkey-translate-page-3": { "suggested_key": { "default": "Shift+Alt+3" }, "description": "__MSG_lblTranslatePageToTargetLanguage__ 3" },
+    "hotkey-hot-translate-selected-text": { "suggested_key": { "default": "Ctrl+Alt+X" }, "description": "__MSG_lblHotTranslatedSelectedText__" }
   },
-  "icons": {
-    "32": "/icons/icon-32.png",
-    "64": "/icons/icon-64.png",
-    "128": "/icons/icon-128.png"
-  },
-  "permissions": [
-    "<all_urls>",
-    "storage",
-    "activeTab",
-    "contextMenus",
-    "webRequest"
-  ],
+  "icons": { "32": "/icons/icon-32.png", "64": "/icons/icon-64.png", "128": "/icons/icon-128.png" },
+  "permissions": ["<all_urls>", "storage", "activeTab", "contextMenus", "webRequest"],
   "optional_permissions": ["webNavigation"],
-  "web_accessible_resources": [
-    "/icons/icon-32.png",
-    "/icons/google-translate-32.png",
-    "/icons/bing-translate-32.png",
-    "/icons/yandex-translate-32.png",
-    "/icons/swap-32.png",
-    "/contentScript/css/*",
-    "/contentScript/html/*",
-    "/_locales/*",
-    "/options/open-options.html"
-  ],
-  "options_ui": {
-    "page": "/options/options.html",
-    "open_in_tab": false,
-    "browser_style": false
-  },
-  "browser_action": {
-    "browser_style": false,
-    "default_icon": "/icons/icon-32.png",
-    "default_title": "__MSG_pageActionTitle__"
-  },
-  "page_action": {
-    "browser_style": false,
-    "default_icon": "/icons/icon-32.png",
-    "default_title": "__MSG_pageActionTitle__"
-  },
+  "web_accessible_resources": ["/icons/icon-32.png", "/icons/google-translate-32.png", "/icons/bing-translate-32.png", "/icons/yandex-translate-32.png", "/icons/swap-32.png", "/contentScript/css/*", "/contentScript/html/*", "/_locales/*", "/options/open-options.html"],
+  "options_ui": { "page": "/options/options.html", "open_in_tab": false, "browser_style": false },
+  "browser_action": { "browser_style": false, "default_icon": "/icons/icon-32.png", "default_title": "__MSG_pageActionTitle__" },
+  "page_action": { "browser_style": false, "default_icon": "/icons/icon-32.png", "default_title": "__MSG_pageActionTitle__" },
   "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "run_at": "document_start",
-      "all_frames": false,
-      "js": ["/contentScript/checkScriptIsInjected.js"]
-    },
-    {
-      "matches": ["<all_urls>"],
-      "run_at": "document_start",
-      "all_frames": true,
-      "match_about_blank": true,
-      "js": [
-        "/lib/polyfill.js",
-        "/lib/checkedLastError.js",
-        "/lib/languages.js",
-        "/lib/config.js",
-        "/lib/platformInfo.js"
-      ]
-    },
-    {
-      "matches": ["<all_urls>"],
-      "run_at": "document_end",
-      "all_frames": true,
-      "match_about_blank": true,
-      "js": [
-        "/lib/i18n.js",
-        "/contentScript/showOriginal.js",
-        "/contentScript/pageTranslator.js",
-        "/contentScript/translateSelected.js",
-        "/contentScript/showTranslated.js"
-      ]
-    },
-    {
-      "matches": ["<all_urls>"],
-      "run_at": "document_end",
-      "all_frames": false,
-      "js": ["/contentScript/popupMobile.js"]
-    }
+    { "matches": ["<all_urls>"], "run_at": "document_start", "all_frames": false, "js": ["/contentScript/checkScriptIsInjected.js"] },
+    { "matches": ["<all_urls>"], "run_at": "document_start", "all_frames": true, "match_about_blank": true, "js": ["/lib/polyfill.js", "/lib/checkedLastError.js", "/lib/languages.js", "/lib/config.js", "/lib/platformInfo.js"] },
+    { "matches": ["<all_urls>"], "run_at": "document_end", "all_frames": true, "match_about_blank": true, "js": ["/lib/i18n.js", "/contentScript/showOriginal.js", "/contentScript/pageTranslator.js", "/contentScript/selectionButtonOptionGuard.js", "/contentScript/translateSelected.js", "/contentScript/showTranslated.js"] },
+    { "matches": ["<all_urls>"], "run_at": "document_end", "all_frames": false, "js": ["/contentScript/popupMobile.js"] }
   ],
   "background": {
     "persistent": true,
-    "scripts": [
-      "/lib/polyfill.js",
-      "/lib/checkedLastError.js",
-      "/lib/stuff.js",
-      "/lib/languages.js",
-      "/lib/config.js",
-      "/lib/platformInfo.js",
-      "/lib/i18n.js",
-      "/background/translationCache.js",
-      "/background/translationService.js",
-      "/background/textToSpeech.js",
-      "/background/background.js"
-    ]
+    "scripts": ["/lib/polyfill.js", "/lib/checkedLastError.js", "/lib/stuff.js", "/lib/languages.js", "/lib/config.js", "/lib/platformInfo.js", "/lib/i18n.js", "/background/translationCache.js", "/background/translationService.js", "/background/textToSpeech.js", "/background/background.js"]
   }
 }
